@@ -1,4 +1,4 @@
-function App() {
+function Index() {
   return (
     <div className="relative overflow-hidden bg-white">
       <div className="h-screen sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
@@ -93,4 +93,4 @@ function App() {
   );
 }
 
-export default App;
+export default Index;
