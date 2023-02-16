@@ -1,12 +1,7 @@
-import {
-  ConnectButton,
-  darkTheme,
-  midnightTheme,
-  RainbowKitProvider,
-} from "@rainbow-me/rainbowkit";
+import { midnightTheme, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { Index } from "pages/Index";
 import { QueryClient, QueryClientProvider } from "react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { WagmiConfig } from "wagmi";
 import { chains, wagmiClient } from "wallet/wagmiClient";
 import { Navbar } from "./Navbar";
