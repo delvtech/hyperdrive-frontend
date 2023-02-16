@@ -1,16 +1,15 @@
 {
-  "name": "reactjs-vite-tailwindcss-boilerplate",
-  "description": "This is a boilerplate build with Vite, React 18, TypeScript, Vitest, Testing Library, TailwindCSS 3, Eslint and Prettier.",
+  "name": "hyperdrive-prototype-ui",
+  "description": "Prototype user interface for the hyperdrive protocol.",
   "version": "0.1.0",
   "private": true,
   "author": {
-    "name": "João Paulo Moraes",
-    "email": "joaopaulomoraes@outlook.com",
-    "url": "https://github.com/joaopaulomoraes"
+    "name": "Delve Labs",
+    "email": "contact@element.fi",
+    "url": "https://github.com/element-fi"
   },
   "bugs": {
-    "url": "https://github.com/joaopaulomoraes/reactjs-vite-tailwindcss-boilerplate/issues",
-    "email": "joaopaulomoraes@outlook.com"
+    "url": "https://github.com/element-fi/hyperdrive-prototype-ui/issues"
   },
   "scripts": {
     "dev": "vite",
@@ -18,6 +17,8 @@
     "serve": "vite preview",
     "test:ui": "vitest --ui",
     "lint": "eslint src --max-warnings=0",
+    "format": "prettier --write '**/*.{gql,graphql,js,jsx,ts,tsx,json,md,yaml,yml}'",
+    "format:check": "prettier --check '**/*.{gql,graphql,js,jsx,ts,tsx,json,md}'",
     "typecheck": "tsc --project tsconfig.json --noEmit"
   },
   "dependencies": {
