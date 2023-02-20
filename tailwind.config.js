@@ -10,6 +10,7 @@ module.exports = {
       },
       fontFamily: {
         Akira: ["Akira", "sans-serif"],
+        Retro: ["RetroGaming", "monospace"],
       },
     },
   },
