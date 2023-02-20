@@ -21,9 +21,15 @@ export function App() {
               fonts: {
                 body: "Akira",
               },
+              radii: {
+                connectButton: "none",
+                actionButton: "none",
+                menuButton: "none",
+                modal: "none",
+              },
               colors: {
                 connectButtonBackground: "#D5FF90",
-                closeButtonBackground: "#D5FF90",
+                closeButtonBackground: "#F4B1FF",
 
                 // TODO custom rainbow kit theme
               },
