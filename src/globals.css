@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "Akira";
+  src: url(/src/public/fonts/Akira.otf);
+}
+
+@font-face {
+  font-family: "RetroGaming";
+  src: url(/src/public/fonts/Retro\ Gaming.otf);
+}
+
+td {
+  padding: 1rem;
+}
