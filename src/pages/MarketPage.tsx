@@ -1,12 +1,16 @@
 import { LongPositionForm } from "components/LongPositionForm";
 import { MarketActionButtonGroup } from "components/MarketActionsButtonGroup";
+import { getMarketByAddress } from "hyperdrive/getMarketByAddress";
 import { MarketAction, OrderType } from "hyperdrive/types";
+import { useHyperdriveConfig } from "hyperdrive/useHyperdriveConfig";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 
 export function MarketPage() {
   const params = useParams();
+  const config = useHyperdriveConfig();
   const marketAddress = params.address;
+  const market = getMarketByAddress(marketAddress, config);
 
   const [marketAction, setMarketAction] = useState<MarketAction>("LONG");
   const [orderType, setOrderType] = useState<OrderType>("OPEN");
@@ -27,8 +31,7 @@ export function MarketPage() {
           onMarketActionChange={(newAction) => setMarketAction(newAction)}
           onOrderTypeChange={(newOrder) => setOrderType(newOrder)}
         />
-
-        <LongPositionForm order={orderType} />
+        {market && <LongPositionForm order={orderType} market={market} />}
       </div>
     </div>
   );

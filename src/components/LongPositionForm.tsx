@@ -1,16 +1,22 @@
-import { OrderType } from "hyperdrive/types";
+import { formatUnits } from "ethers/lib/utils.js";
+import { Market, OrderType } from "hyperdrive/types";
 import { match } from "ts-pattern";
+import { useAccount, useBalance } from "wagmi";
 import { Receipt } from "./Receipt";
 import { Tag } from "./Tag";
 
 interface LongPositionFormProps {
   order: OrderType;
+  market: Market;
 }
 
-export function LongPositionForm({ order }: LongPositionFormProps) {
-  // const {} = useHyperdriveOpenLong({});
-
-  const handleOpenLong = () => {};
+export function LongPositionForm({ order, market }: LongPositionFormProps) {
+  const { address } = useAccount();
+  const { data: baseTokenData } = useBalance({
+    address,
+    token: market.baseToken.address,
+  });
+  const baseTokenBalance = baseTokenData?.value;
 
   return match(order)
     .with("OPEN", () => (
@@ -34,7 +40,11 @@ export function LongPositionForm({ order }: LongPositionFormProps) {
             <h4 className="mr-auto underline">Max</h4>
             <div className="flex items-center">
               <span className="mr-1">Balance:</span>
-              <span className="font-bold">1,000,000</span>
+              {baseTokenBalance && (
+                <span className="font-bold">
+                  {formatUnits(baseTokenBalance, 18)}
+                </span>
+              )}
             </div>
           </div>
         </div>

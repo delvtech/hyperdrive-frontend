@@ -39,7 +39,7 @@ export function App() {
             <BrowserRouter>
               <Routes>
                 <Route path="/" element={<IndexPage />} />
-                <Route path="/term" element={<MarketPage />} />
+                <Route path="/market/:address" element={<MarketPage />} />
               </Routes>
             </BrowserRouter>
           </RainbowKitProvider>

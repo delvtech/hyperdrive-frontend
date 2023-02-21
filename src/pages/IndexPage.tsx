@@ -49,6 +49,7 @@ function useMarketsData() {
         markets.map((market) => {
           // TODO stubbed for now
           return {
+            address: market.address,
             token: market.baseToken,
             yieldSource: "Aave",
             fixedApr: 100,

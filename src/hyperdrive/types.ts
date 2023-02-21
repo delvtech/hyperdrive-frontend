@@ -14,6 +14,7 @@ export interface Market {
 }
 
 export interface MarketData {
+  address: Address;
   token: Token;
   yieldSource: string;
   fixedApr: number;

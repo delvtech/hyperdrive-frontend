@@ -8,10 +8,7 @@ interface MarketsTableProps {
 
 export function MarketsTable({ markets }: MarketsTableProps) {
   return (
-    <table
-      id="terms-table"
-      className="text-left text-white border-separate border-spacing-y-4"
-    >
+    <table className="text-left text-white border-separate border-spacing-y-4">
       <thead>
         <th>Token</th>
         <th>Yield Source</th>
@@ -22,14 +19,16 @@ export function MarketsTable({ markets }: MarketsTableProps) {
       </thead>
 
       <tbody>
-        {markets.map((term) => (
+        {markets.map((market) => (
           <MarketsTableRow
-            token={term.token}
+            address={market.address}
+            token={market.token}
             yieldSource="Aave"
             fixedApr={5.0}
             variableApr={5.0}
             lpApr={10.0}
             tvl={1_000_000}
+            key={market.address}
           />
         ))}
       </tbody>
@@ -38,6 +37,7 @@ export function MarketsTable({ markets }: MarketsTableProps) {
 }
 
 function MarketsTableRow({
+  address,
   token,
   yieldSource,
   fixedApr,
@@ -49,7 +49,11 @@ function MarketsTableRow({
 
   return (
     <tr
-      onClick={() => push("/term")}
+      onClick={() =>
+        push({
+          pathname: `/market/${address}`,
+        })
+      }
       className="text-black bg-lean hover:bg-racing-green hover:cursor-pointer font-Retro"
     >
       <td>
