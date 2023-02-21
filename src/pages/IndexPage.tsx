@@ -17,7 +17,7 @@ export function Section({ children, headerText }: SectionProps) {
   );
 }
 
-export function Index() {
+export function IndexPage() {
   const { data } = useMarketsData();
 
   return (

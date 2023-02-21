@@ -1,13 +1,12 @@
 import { lightTheme, RainbowKitProvider, Theme } from "@rainbow-me/rainbowkit";
-import { Index } from "pages/Index";
+import merge from "lodash.merge";
+import { IndexPage } from "pages/IndexPage";
+import { MarketPage } from "pages/MarketPage";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { WagmiConfig } from "wagmi";
 import { chains, wagmiClient } from "wallet/wagmiClient";
 import { Navbar } from "./Navbar";
-
-import merge from "lodash.merge";
-import { TermPage } from "pages/term";
 
 const queryClient = new QueryClient();
 
@@ -39,8 +38,8 @@ export function App() {
             <Navbar />
             <BrowserRouter>
               <Routes>
-                <Route path="/" element={<Index />} />
-                <Route path="/term" element={<TermPage />} />
+                <Route path="/" element={<IndexPage />} />
+                <Route path="/term" element={<MarketPage />} />
               </Routes>
             </BrowserRouter>
           </RainbowKitProvider>

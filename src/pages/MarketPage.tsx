@@ -2,22 +2,23 @@ import classNames from "classnames";
 import { Receipt } from "components/Receipt";
 import { Tag } from "components/Tag";
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 import { match } from "ts-pattern";
 
-interface TermActionButtonGroupProps {
-  selectedAction: TermAction;
+interface MarketActionButtonGroupProps {
+  selectedAction: MarketAction;
   selectedOrderType: OrderType;
 
-  onTermActionChange: (action: TermAction) => void;
+  onMarketActionChange: (action: MarketAction) => void;
   onOrderTypeChange: (order: OrderType) => void;
 }
 
-function TermActionButtonGroup({
+function MarketActionButtonGroup({
   selectedAction,
   selectedOrderType,
-  onTermActionChange,
+  onMarketActionChange,
   onOrderTypeChange,
-}: TermActionButtonGroupProps) {
+}: MarketActionButtonGroupProps) {
   return (
     <div className="flex flex-col gap-y-4">
       <div className="grid grid-cols-3 bg-slate-800">
@@ -28,7 +29,7 @@ function TermActionButtonGroup({
               "bg-lean text-black": selectedAction === "LONG",
             },
           )}
-          onClick={() => onTermActionChange("LONG")}
+          onClick={() => onMarketActionChange("LONG")}
         >
           Long
         </button>
@@ -39,7 +40,7 @@ function TermActionButtonGroup({
               "bg-lean text-black": selectedAction === "SHORT",
             },
           )}
-          onClick={() => onTermActionChange("SHORT")}
+          onClick={() => onMarketActionChange("SHORT")}
         >
           Short
         </button>
@@ -50,7 +51,7 @@ function TermActionButtonGroup({
               "bg-lean text-black": selectedAction === "LP",
             },
           )}
-          onClick={() => onTermActionChange("LP")}
+          onClick={() => onMarketActionChange("LP")}
         >
           LP
         </button>
@@ -84,7 +85,7 @@ function TermActionButtonGroup({
   );
 }
 
-type TermAction = "LONG" | "SHORT" | "LP";
+type MarketAction = "LONG" | "SHORT" | "LP";
 type OrderType = "OPEN" | "CLOSE";
 
 interface LongPositionFormProps {
@@ -190,8 +191,11 @@ function LongPositionForm({ order }: LongPositionFormProps) {
     .exhaustive();
 }
 
-export function TermPage() {
-  const [termAction, setTermAction] = useState<TermAction>("LONG");
+export function MarketPage() {
+  const params = useParams();
+  const marketAddress = params.address;
+
+  const [marketAction, setMarketAction] = useState<MarketAction>("LONG");
   const [orderType, setOrderType] = useState<OrderType>("OPEN");
 
   return (
@@ -204,10 +208,10 @@ export function TermPage() {
       </div>
 
       <div className="flex flex-col w-full max-w-md text-white gap-y-10">
-        <TermActionButtonGroup
-          selectedAction={termAction}
+        <MarketActionButtonGroup
+          selectedAction={marketAction}
           selectedOrderType={orderType}
-          onTermActionChange={(newAction) => setTermAction(newAction)}
+          onMarketActionChange={(newAction) => setMarketAction(newAction)}
           onOrderTypeChange={(newOrder) => setOrderType(newOrder)}
         />
 
