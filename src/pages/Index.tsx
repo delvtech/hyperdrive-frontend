@@ -27,7 +27,7 @@ export function Index() {
       </Section>
 
       <Section headerText="Markets">
-        <TermTable />
+        <TermTable terms={[]} />
       </Section>
     </div>
   );
