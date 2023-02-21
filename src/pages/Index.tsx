@@ -1,6 +1,9 @@
+import { MarketsTable } from "components/MarketsTable";
 import { StatBubble } from "components/StatBubble";
-import { TermTable } from "components/TermTable";
+import { MarketData } from "hyperdrive/types";
+import { useHyperdriveConfig } from "hyperdrive/useHyperdriveConfig";
 import { PropsWithChildren } from "react";
+import { useQuery } from "react-query";
 
 interface SectionProps extends PropsWithChildren {
   headerText: string;
@@ -15,6 +18,8 @@ export function Section({ children, headerText }: SectionProps) {
 }
 
 export function Index() {
+  const { data } = useMarketsData();
+
   return (
     <div className="flex flex-col w-full max-w-5xl px-10 m-auto mt-16 gap-y-20">
       <Section headerText="Protocol">
@@ -27,8 +32,31 @@ export function Index() {
       </Section>
 
       <Section headerText="Markets">
-        <TermTable terms={[]} />
+        {data && <MarketsTable markets={data} />}
       </Section>
     </div>
   );
+}
+
+function useMarketsData() {
+  const config = useHyperdriveConfig();
+  const markets = config.markets;
+
+  return useQuery({
+    queryKey: "markets-data",
+    queryFn: (): Promise<MarketData[]> => {
+      return Promise.resolve(
+        markets.map((market) => {
+          return {
+            token: market.baseToken,
+            yieldSource: "Aave",
+            fixedApr: 100,
+            variableApr: 100,
+            lpApr: 100,
+            tvl: 100,
+          };
+        }),
+      );
+    },
+  });
 }
