@@ -1,7 +1,3 @@
-export function classNames(...classes: unknown[]): string {
-  return classes.filter(Boolean).join(" ");
-}
-
 import { format } from "d3-format";
 import { commify } from "ethers/lib/utils";
 
