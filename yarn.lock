@@ -2504,6 +2504,11 @@ chokidar@3.5.3, chokidar@^3.5.3:
   optionalDependencies:
     fsevents "~2.3.2"
 
+classnames@^2.3.2:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.3.2.tgz#351d813bf0137fcc6a76a16b88208d2560a0d924"
+  integrity sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==
+
 cli-cursor@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/cli-cursor/-/cli-cursor-4.0.0.tgz#3cecfe3734bf4fe02a8361cbdc0f6fe28c6a57ea"
@@ -5809,6 +5814,11 @@ ts-node@^10.9.1:
     make-error "^1.1.1"
     v8-compile-cache-lib "^3.0.1"
     yn "3.1.1"
+
+ts-pattern@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/ts-pattern/-/ts-pattern-4.2.0.tgz#35b8840627619819ce5746dec5ca31c3030f8dcc"
+  integrity sha512-Bmi5G8KQyTnkcpRYzAwgPj8nvIodm2S7aneJtILrW0/2ZzqXQbl5nC5YjCiZUj5Iqihl8MLH+TK7pmCAZ61xJg==
 
 tsconfck@^2.0.1:
   version "2.0.2"
