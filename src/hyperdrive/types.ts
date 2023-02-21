@@ -21,3 +21,6 @@ export interface MarketData {
   lpApr: number;
   tvl: number;
 }
+
+export type MarketAction = "LONG" | "SHORT" | "LP";
+export type OrderType = "OPEN" | "CLOSE";
