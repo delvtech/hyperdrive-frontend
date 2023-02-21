@@ -16,15 +16,15 @@ export function MarketPage() {
   const [orderType, setOrderType] = useState<OrderType>("OPEN");
 
   return (
-    <div className="flex flex-col items-center w-full max-w-5xl px-10 m-auto mt-16 gap-y-12">
-      <div className="flex items-center text-white gap-x-4">
+    <div className="flex flex-col items-center w-full max-w-lg px-10 m-auto mt-16 gap-y-12">
+      <div className="flex items-center w-full text-white gap-x-4">
         <h2 className="text-3xl font-Akira">USDC Market</h2>
         <div className="flex p-2 rounded-lg h-fit max-h-fit bg-racing-green">
           <span className="text-xs font-bold text-black ">Lending</span>
         </div>
       </div>
 
-      <div className="flex flex-col w-full max-w-md text-white gap-y-10">
+      <div className="flex flex-col w-full text-white gap-y-10">
         <MarketActionButtonGroup
           selectedAction={marketAction}
           selectedOrderType={orderType}
