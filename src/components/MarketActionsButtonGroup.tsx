@@ -1,3 +1,8 @@
+import {
+  ArrowTrendingDownIcon,
+  ArrowTrendingUpIcon,
+  CubeIcon,
+} from "@heroicons/react/20/solid";
 import classNames from "classnames";
 import { MarketAction, OrderType } from "hyperdrive/types";
 
@@ -26,7 +31,8 @@ export function MarketActionButtonGroup({
           )}
           onClick={() => onMarketActionChange("LONG")}
         >
-          Long
+          <ArrowTrendingUpIcon className="w-5 mr-1" />
+          <span>Long</span>
         </button>
         <button
           className={classNames(
@@ -37,7 +43,8 @@ export function MarketActionButtonGroup({
           )}
           onClick={() => onMarketActionChange("SHORT")}
         >
-          Short
+          <ArrowTrendingDownIcon className="w-5 mr-1" />
+          <span>Short</span>
         </button>
         <button
           className={classNames(
@@ -48,7 +55,8 @@ export function MarketActionButtonGroup({
           )}
           onClick={() => onMarketActionChange("LP")}
         >
-          LP
+          <CubeIcon className="w-5 mr-1" />
+          <span>LP</span>
         </button>
       </div>
 
