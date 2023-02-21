@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@rainbow-me/rainbowkit": "^0.11.0",
+    "d3-format": "^3.1.0",
     "daisyui": "^2.50.1",
     "ethers": "^5.7.2",
     "lodash.merge": "^4.6.2",
@@ -35,6 +36,7 @@
     "wagmi": "^0.11.5"
   },
   "devDependencies": {
+    "@types/d3-format": "^3.0.1",
     "@types/lodash.merge": "^4.6.7",
     "@types/node": "^18.13.0",
     "@types/react": "^18.0.28",
