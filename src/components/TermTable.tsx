@@ -1,3 +1,4 @@
+import { Token } from "hyperdrive/types";
 import { useNavigate } from "react-router-dom";
 import { formatBalance } from "utils";
 
@@ -29,12 +30,6 @@ function TermTableRow({
       <td>${formatBalance(tvl)}</td>
     </tr>
   );
-}
-
-interface Token {
-  name: string;
-  symbol: string;
-  logoUrl: string;
 }
 
 interface TermData {
