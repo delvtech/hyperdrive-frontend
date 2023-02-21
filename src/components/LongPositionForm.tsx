@@ -1,6 +1,8 @@
 import { formatUnits } from "ethers/lib/utils.js";
-import { Market, OrderType } from "hyperdrive/types";
+import { Market, OrderType, Token } from "hyperdrive/types";
+import { useState } from "react";
 import { match } from "ts-pattern";
+import { formatBalance } from "utils";
 import { useAccount, useBalance } from "wagmi";
 import { Receipt } from "./Receipt";
 import { Tag } from "./Tag";
@@ -8,6 +10,77 @@ import { Tag } from "./Tag";
 interface LongPositionFormProps {
   order: OrderType;
   market: Market;
+}
+
+interface TokenInputProps {
+  token: Token;
+  currentBalance: string;
+  onChange: (value: string) => void;
+}
+
+function TokenInput({ token, onChange, currentBalance }: TokenInputProps) {
+  const [input, setInput] = useState("");
+
+  const b = formatUnits(currentBalance, token.decimals);
+
+  console.log(currentBalance === b);
+
+  return (
+    <div className="flex flex-col p-4 border-2 rounded border-lean gap-y-2">
+      <div className="flex items-center text-white gap-x-2">
+        <div className="grow basis-0">
+          <input
+            value={input}
+            className="w-full text-5xl font-bold bg-transparent"
+            placeholder="0"
+            onChange={(event) => {
+              const value = event.target.value;
+              setInput(value);
+              onChange(value);
+            }}
+          />
+        </div>
+        <Tag text={token.symbol}>
+          <img
+            className="inline mr-1"
+            src={token.logoUrl}
+            height={16}
+            width={16}
+          />
+        </Tag>
+      </div>
+
+      <div className="flex w-full text-white">
+        {currentBalance === input ? (
+          <button
+            className="mr-auto underline disabled:opacity-50"
+            // disabled={!currentBalance}
+            onClick={() => {
+              setInput("0");
+              onChange("0");
+            }}
+          >
+            Clear
+          </button>
+        ) : (
+          <button
+            className="mr-auto underline disabled:opacity-50"
+            disabled={!currentBalance}
+            onClick={() => {
+              setInput(b);
+              onChange(b);
+            }}
+          >
+            Max
+          </button>
+        )}
+        <div className="flex items-center">
+          <span className="mr-1">Balance:</span>
+          <span className="font-bold">{formatBalance(b)}</span>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export function LongPositionForm({ order, market }: LongPositionFormProps) {
@@ -24,29 +97,11 @@ export function LongPositionForm({ order, market }: LongPositionFormProps) {
         <div className="flex flex-col gap-4">
           <h3 className="text-2xl">From Wallet</h3>
 
-          <div className="flex items-center w-full">
-            <h4 className="mr-auto text-5xl font-bold">500</h4>
-            <Tag text="USDC">
-              <img
-                className="inline mr-1"
-                src={"/src/public/logos/usdc-logo.png"}
-                height={16}
-                width={16}
-              />
-            </Tag>
-          </div>
-
-          <div className="flex w-full text-white">
-            <h4 className="mr-auto underline">Max</h4>
-            <div className="flex items-center">
-              <span className="mr-1">Balance:</span>
-              {baseTokenBalance && (
-                <span className="font-bold">
-                  {formatUnits(baseTokenBalance, 18)}
-                </span>
-              )}
-            </div>
-          </div>
+          <TokenInput
+            token={market.baseToken}
+            currentBalance={baseTokenBalance?.toString() ?? "0"}
+            onChange={() => {}}
+          />
         </div>
         <div className="flex flex-col gap-4">
           <h3 className="text-2xl">You Receive</h3>
