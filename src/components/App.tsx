@@ -7,6 +7,7 @@ import { chains, wagmiClient } from "wallet/wagmiClient";
 import { Navbar } from "./Navbar";
 
 import merge from "lodash.merge";
+import { TermPage } from "pages/term";
 
 const queryClient = new QueryClient();
 
@@ -39,6 +40,7 @@ export function App() {
             <BrowserRouter>
               <Routes>
                 <Route path="/" element={<Index />} />
+                <Route path="/term" element={<TermPage />} />
               </Routes>
             </BrowserRouter>
           </RainbowKitProvider>
