@@ -47,6 +47,7 @@ function useMarketsData() {
     queryFn: (): Promise<MarketData[]> => {
       return Promise.resolve(
         markets.map((market) => {
+          // TODO stubbed for now
           return {
             token: market.baseToken,
             yieldSource: "Aave",

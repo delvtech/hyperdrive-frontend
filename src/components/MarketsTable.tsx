@@ -2,36 +2,6 @@ import { MarketData } from "hyperdrive/types";
 import { useNavigate } from "react-router-dom";
 import { formatBalance } from "utils";
 
-function MarketsTableRow({
-  token,
-  yieldSource,
-  fixedApr,
-  variableApr,
-  lpApr,
-  tvl,
-}: MarketData) {
-  const push = useNavigate();
-
-  return (
-    <tr
-      onClick={() => push("/term")}
-      className="text-black bg-lean hover:bg-racing-green hover:cursor-pointer font-Retro"
-    >
-      <td>
-        <div className="flex items-center gap-x-1">
-          <img className="inline" src={token.logoUrl} height={24} width={24} />
-          {token.symbol}
-        </div>
-      </td>
-      <td>{yieldSource}</td>
-      <td>{fixedApr}%</td>
-      <td>{variableApr}%</td>
-      <td>{lpApr}%</td>
-      <td>${formatBalance(tvl)}</td>
-    </tr>
-  );
-}
-
 interface MarketsTableProps {
   markets: MarketData[];
 }
@@ -64,5 +34,35 @@ export function MarketsTable({ markets }: MarketsTableProps) {
         ))}
       </tbody>
     </table>
+  );
+}
+
+function MarketsTableRow({
+  token,
+  yieldSource,
+  fixedApr,
+  variableApr,
+  lpApr,
+  tvl,
+}: MarketData) {
+  const push = useNavigate();
+
+  return (
+    <tr
+      onClick={() => push("/term")}
+      className="text-black bg-lean hover:bg-racing-green hover:cursor-pointer font-Retro"
+    >
+      <td>
+        <div className="flex items-center gap-x-1">
+          <img className="inline" src={token.logoUrl} height={24} width={24} />
+          {token.symbol}
+        </div>
+      </td>
+      <td>{yieldSource}</td>
+      <td>{fixedApr}%</td>
+      <td>{variableApr}%</td>
+      <td>{lpApr}%</td>
+      <td>${formatBalance(tvl)}</td>
+    </tr>
   );
 }

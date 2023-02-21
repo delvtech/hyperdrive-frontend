@@ -1,43 +1,8 @@
 import classNames from "classnames";
-import { PropsWithChildren, useState } from "react";
+import { Receipt } from "components/Receipt";
+import { Tag } from "components/Tag";
+import { useState } from "react";
 import { match } from "ts-pattern";
-
-interface TagProps extends PropsWithChildren {
-  className?: string;
-  text: string;
-}
-
-export function Tag({ text, className, children }: TagProps) {
-  return (
-    <div
-      className={classNames("flex items-center px-2 py-1 bg-white", className)}
-    >
-      {children}
-      <span className="font-bold text-black">{text}</span>
-    </div>
-  );
-}
-
-interface ReceiptProps {
-  data: Record<string, string | number>;
-}
-
-export function Receipt({ data }: ReceiptProps) {
-  const entries = Object.entries(data);
-
-  return (
-    <div className="flex flex-col w-full text-white gap-y-2">
-      {entries.map(([key, value]) => {
-        return (
-          <div className="flex" key={`${key}-${value}`}>
-            <span>{key}</span>
-            <span className="ml-auto font-bold">{value}</span>
-          </div>
-        );
-      })}
-    </div>
-  );
-}
 
 interface TermActionButtonGroupProps {
   selectedAction: TermAction;
@@ -53,7 +18,6 @@ function TermActionButtonGroup({
   onTermActionChange,
   onOrderTypeChange,
 }: TermActionButtonGroupProps) {
-  console.log(selectedAction, selectedAction === "LONG");
   return (
     <div className="flex flex-col gap-y-4">
       <div className="grid grid-cols-3 bg-slate-800">
