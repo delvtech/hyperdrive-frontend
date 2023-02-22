@@ -6,19 +6,11 @@ import { useQuery } from "react-query";
 import { Address, useProvider } from "wagmi";
 
 interface Long {
-  amount: string;
+  amount: BigNumber;
   id: string;
-  createdAt: Date;
 }
 
 export function useLongs(account: Address | undefined, market: Market) {
-  // const events = useMultiTokenTransferSingleEvent({
-  //   address: market.address,
-  //   listener(node, label, owner) {
-  //     console.log(node, label, owner);
-  //   },
-  // });
-
   const provider = useProvider();
 
   return useQuery({
@@ -66,16 +58,12 @@ export function useLongs(account: Address | undefined, market: Market) {
       });
 
       const closedLongs: Long[] = longBurnEvents.map((event) => {
-        // const longId: BigNumber = event.args?.id;
-
-        const amount: string = (event.args?.value as BigNumber).toString();
+        const amount = event.args?.value as BigNumber;
         const id: string = (event.args?.id as BigNumber).toString();
 
-        // console.log(getAssetTimestampFromTokenId(longId));
         return {
           id,
           amount,
-          createdAt: new Date(),
         };
       });
 
@@ -86,21 +74,37 @@ export function useLongs(account: Address | undefined, market: Market) {
 
       const openLongs: Long[] = longMintEvents
         .map((event) => {
-          // const longId: BigNumber = event.args?.id;
-
-          const amount: string = (event.args?.value as BigNumber).toString();
+          const amount = event.args?.value as BigNumber;
           const id: string = (event.args?.id as BigNumber).toString();
 
-          // console.log(getAssetTimestampFromTokenId(longId));
           return {
             id,
             amount,
-            createdAt: new Date(),
           };
         })
         .filter((long) => !closedLongIds.has(long.id));
 
-      return { openLongs, closedLongs };
+      // consolidate open long positions that have the same id
+      const consolidatedOpenLongs: Record<string, BigNumber> = {};
+      openLongs.forEach((long) => {
+        if (consolidatedOpenLongs[long.id]) {
+          consolidatedOpenLongs[long.id] = consolidatedOpenLongs[long.id].add(
+            long.amount,
+          );
+        } else {
+          consolidatedOpenLongs[long.id] = long.amount;
+        }
+      });
+
+      return {
+        openLongs: Object.entries(consolidatedOpenLongs).map(([id, amount]) => {
+          return {
+            id,
+            amount,
+          };
+        }),
+        closedLongs,
+      };
     },
   });
 }
