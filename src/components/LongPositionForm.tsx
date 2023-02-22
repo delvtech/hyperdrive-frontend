@@ -21,10 +21,6 @@ interface TokenInputProps {
 function TokenInput({ token, onChange, currentBalance }: TokenInputProps) {
   const [input, setInput] = useState("");
 
-  const b = formatUnits(currentBalance, token.decimals);
-
-  console.log(currentBalance === b);
-
   return (
     <div className="flex flex-col p-4 border-2 rounded border-lean gap-y-2">
       <div className="flex items-center text-white gap-x-2">
@@ -67,8 +63,8 @@ function TokenInput({ token, onChange, currentBalance }: TokenInputProps) {
             className="mr-auto underline disabled:opacity-50"
             disabled={!currentBalance}
             onClick={() => {
-              setInput(b);
-              onChange(b);
+              setInput(formatUnits(currentBalance, token.decimals));
+              onChange(currentBalance);
             }}
           >
             Max
@@ -76,7 +72,9 @@ function TokenInput({ token, onChange, currentBalance }: TokenInputProps) {
         )}
         <div className="flex items-center">
           <span className="mr-1">Balance:</span>
-          <span className="font-bold">{formatBalance(b)}</span>
+          <span className="font-bold">
+            {formatBalance(formatUnits(currentBalance, token.decimals))}
+          </span>
         </div>
       </div>
     </div>
