@@ -3,15 +3,18 @@ import { formatUnits, parseUnits } from "ethers/lib/utils.js";
 import {
   useErc20Allowance,
   useErc20Approve,
+  useHyperdriveBondReserves,
   useHyperdriveOpenLong,
+  useHyperdriveShareReserves,
   usePrepareErc20Approve,
   usePrepareHyperdriveOpenLong,
 } from "generated";
 import { useLongs } from "hyperdrive/hooks/useLongs";
 import { usePreviewOpenLong } from "hyperdrive/hooks/usePreviewOpenLong";
 import { Market, OrderType } from "hyperdrive/types";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { match } from "ts-pattern";
+import { formatBalance } from "utils";
 import { useAccount, useBalance } from "wagmi";
 import { Receipt } from "../Receipt";
 import { Tag } from "../Tag";
@@ -28,25 +31,27 @@ export function LongPositionForm({ order, market }: LongPositionFormProps) {
     address,
     token: market.baseToken.address,
   });
-  const baseTokenBalance = baseTokenData?.value;
 
+  const baseTokenBalance = baseTokenData?.value.toString() ?? "0";
   const [balance, setBalance] = useState("0");
 
+  // ERC-20 approval hooks
   const { config: erc20ApproveConfig } = usePrepareErc20Approve({
     address: market.baseToken.address,
     args: [market.address, constants.MaxUint256],
     enabled: !!address,
   });
-
   const { data: baseTokenAllowance } = useErc20Allowance({
     address: market.baseToken.address,
     args: [address!, market.address],
     enabled: !!address,
   });
-
   const { write: writeApprove } = useErc20Approve(erc20ApproveConfig);
+  const shouldApprove =
+    !!balance &&
+    parseUnits(balance, market.baseToken.decimals).gt(baseTokenAllowance ?? 0);
 
-  // todo slippage?
+  // Open long hooks
   const { config: openLongConfig } = usePrepareHyperdriveOpenLong({
     address: market.address,
     args: [
@@ -60,26 +65,29 @@ export function LongPositionForm({ order, market }: LongPositionFormProps) {
   const { write: writeOpenLong, isLoading: openLongLoading } =
     useHyperdriveOpenLong(openLongConfig);
 
-  const { data: previewAmountOut } = usePreviewOpenLong(
+  // Market information
+  const { data: marketShareReserves } = useHyperdriveShareReserves({
+    address: market.address,
+  });
+
+  const { data: marketBondReserves } = useHyperdriveBondReserves({
+    address: market.address,
+  });
+
+  // Preview amounts
+  const { data: previewAmountOutBN } = usePreviewOpenLong(
     address,
     market,
     balance,
   );
+  const previewAmountOut = formatUnits(
+    previewAmountOutBN ?? "0",
+    market.baseToken.decimals,
+  );
 
-  // console.log(previewAmountOut);
-
-  const shouldApprove = useMemo(() => {
-    if (!balance) {
-      return false;
-    }
-
-    const baseTokenBalanceBN = parseUnits(balance, market.baseToken.decimals);
-    return baseTokenBalanceBN.gt(baseTokenAllowance ?? 0);
-  }, [balance, baseTokenAllowance, market]);
-
+  // Current long data for connected account
   const { data: longs } = useLongs(address, market);
   const openLongs = longs?.openLongs ?? [];
-  // console.log(balance, baseTokenAllowance, shouldApprove);
 
   return match(order)
     .with("OPEN", () => (
@@ -89,7 +97,7 @@ export function LongPositionForm({ order, market }: LongPositionFormProps) {
 
           <TokenInput
             token={market.baseToken}
-            currentBalance={baseTokenBalance?.toString() ?? "0"}
+            currentBalance={baseTokenBalance}
             onChange={(newBalance) => {
               setBalance(newBalance || "0");
             }}
@@ -99,23 +107,24 @@ export function LongPositionForm({ order, market }: LongPositionFormProps) {
           <h3 className="text-2xl">You Receive</h3>
 
           <div className="flex items-center w-full p-4">
-            <h4 className="mr-auto text-5xl font-bold">
-              {previewAmountOut
-                ? formatUnits(
-                    previewAmountOut,
-                    market.baseToken.decimals,
-                  ).slice(0, 6)
-                : "0"}
-            </h4>
+            <div className="w-full mr-4 overflow-x-auto">
+              <h4 className="mr-auto text-5xl font-bold">{previewAmountOut}</h4>
+            </div>
             <Tag text="Long" />
             {/* <Tag text="June 21st, 2023" /> */}
           </div>
         </div>
         <Receipt
           data={{
-            Matures: "June 24th, 2023",
-            "Average Exchange Rate": "0.95",
-            Liquidity: "1,500,000",
+            Matures: new Date(
+              Date.now() + market.positionDuration,
+            ).toLocaleDateString(),
+            "Bond Reserves": formatBalance(
+              formatUnits(marketBondReserves ?? 0, market.baseToken.decimals),
+            ),
+            "Share Reserves": formatBalance(
+              formatUnits(marketShareReserves ?? 0, market.baseToken.decimals),
+            ),
           }}
         />
         {shouldApprove ? (
@@ -160,24 +169,12 @@ export function LongPositionForm({ order, market }: LongPositionFormProps) {
 
           <TokenInput
             token={market.baseToken}
-            currentBalance={baseTokenBalance?.toString() ?? "0"}
+            currentBalance={baseTokenBalance}
             onChange={(newBalance) => {
               console.log("newBalance", newBalance, newBalance || "0");
               setBalance(newBalance || "0");
             }}
           />
-
-          {/* <div className="flex items-center w-full">
-            <h4 className="mr-auto text-5xl font-bold">500</h4>
-            <Tag text="USDC">
-              <img
-                className="inline mr-1"
-                src={"/src/public/logos/usdc-logo.png"}
-                height={16}
-                width={16}
-              />
-            </Tag>
-          </div> */}
 
           <div className="flex w-full text-white">
             <h4 className="mr-auto underline">Max</h4>
