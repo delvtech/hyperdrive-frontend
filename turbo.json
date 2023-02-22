@@ -1,0 +1,26 @@
+{
+  "$schema": "https://turborepo.org/schema.json",
+  "pipeline": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", ".next/**"]
+    },
+    "hyperdrive-prototype-ui#build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"],
+      "env": ["ALCHEMY_GOERLI_RPC_KEY"]
+    },
+    "build:packages": {
+      "outputs": ["dist/**"]
+    },
+    "lint": {
+      "dependsOn": ["^build"],
+      "outputs": []
+    },
+    "dev": {
+      "cache": false
+    },
+    "format": { "outputs": [] },
+    "format:check": { "outputs": [] }
+  }
+}
