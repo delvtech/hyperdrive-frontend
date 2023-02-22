@@ -11,6 +11,9 @@ export interface Token {
 export interface Market {
   baseToken: Token;
   address: Address;
+
+  // Length in seconds of positions
+  positionDuration: number;
 }
 
 export interface MarketData {
