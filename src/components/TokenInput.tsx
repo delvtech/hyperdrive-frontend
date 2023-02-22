@@ -23,7 +23,7 @@ export function TokenInput({
         <div className="grow basis-0">
           <input
             value={input}
-            className="w-full text-5xl font-bold bg-transparent"
+            className="w-full text-5xl font-bold bg-transparent outline-none"
             placeholder="0"
             onChange={(event) => {
               const value = event.target.value;
