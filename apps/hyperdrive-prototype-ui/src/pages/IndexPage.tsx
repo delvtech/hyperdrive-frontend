@@ -40,6 +40,7 @@ export function IndexPage() {
 
 function useMarketsData() {
   const config = useHyperdriveConfig();
+  console.log(config)
   const markets = config.markets;
 
   return useQuery({
