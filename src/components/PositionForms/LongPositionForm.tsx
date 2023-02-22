@@ -13,9 +13,9 @@ import { Market, OrderType } from "hyperdrive/types";
 import { useMemo, useState } from "react";
 import { match } from "ts-pattern";
 import { useAccount, useBalance } from "wagmi";
-import { Receipt } from "./Receipt";
-import { Tag } from "./Tag";
-import { TokenInput } from "./TokenInput";
+import { Receipt } from "../Receipt";
+import { Tag } from "../Tag";
+import { TokenInput } from "../TokenInput";
 
 interface LongPositionFormProps {
   order: OrderType;
@@ -98,22 +98,24 @@ export function LongPositionForm({ order, market }: LongPositionFormProps) {
         <div className="flex flex-col gap-4">
           <h3 className="text-2xl">You Receive</h3>
 
-          <div className="flex items-center w-full">
+          <div className="flex items-center w-full p-4">
             <h4 className="mr-auto text-5xl font-bold">
-              {previewAmountOut &&
-                formatUnits(previewAmountOut, market.baseToken.decimals).slice(
-                  0,
-                  6,
-                )}
+              {previewAmountOut
+                ? formatUnits(
+                    previewAmountOut,
+                    market.baseToken.decimals,
+                  ).slice(0, 6)
+                : "0"}
             </h4>
-            <Tag text="Long" className="mr-1" />
-            <Tag text="June 21st, 2023" />
+            <Tag text="Long" />
+            {/* <Tag text="June 21st, 2023" /> */}
           </div>
         </div>
         <Receipt
           data={{
             Matures: "June 24th, 2023",
             "Average Exchange Rate": "0.95",
+            Liquidity: "1,500,000",
           }}
         />
         {shouldApprove ? (

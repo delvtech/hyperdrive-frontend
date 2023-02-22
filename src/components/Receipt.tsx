@@ -10,7 +10,7 @@ export function Receipt({ data }: ReceiptProps) {
       {entries.map(([key, value]) => {
         return (
           <div className="flex" key={`${key}-${value}`}>
-            <span>{key}</span>
+            <span>{key}:</span>
             <span className="ml-auto font-bold">{value}</span>
           </div>
         );
