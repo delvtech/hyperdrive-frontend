@@ -1,6 +1,7 @@
 import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { ReactElement } from "react";
 
-export function Navbar() {
+export function Navbar(): ReactElement {
   return (
     <div className="bg-zinc-900 navbar">
       <div className="navbar-start"></div>

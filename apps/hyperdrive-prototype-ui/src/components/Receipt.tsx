@@ -1,8 +1,10 @@
+import { ReactElement } from "react";
+
 interface ReceiptProps {
   data: Record<string, string | number>;
 }
 
-export function Receipt({ data }: ReceiptProps) {
+export function Receipt({ data }: ReceiptProps): ReactElement {
   const entries = Object.entries(data);
 
   return (
