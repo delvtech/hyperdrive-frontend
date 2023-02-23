@@ -1,14 +1,9 @@
 import { BigNumber, constants, Contract } from "ethers";
 import { multiTokenABI } from "generated";
-import { Market } from "hyperdrive/types";
+import { Long, Market } from "hyperdrive/types";
 import { getAssetPrefixFromTokenId } from "hyperdrive/utils";
 import { useQuery } from "react-query";
 import { Address, useProvider } from "wagmi";
-
-interface Long {
-  amount: BigNumber;
-  id: string;
-}
 
 export function useLongs(account: Address | undefined, market: Market) {
   const provider = useProvider();

@@ -2,18 +2,18 @@ import { lightTheme, RainbowKitProvider, Theme } from "@rainbow-me/rainbowkit";
 import merge from "lodash.merge";
 import { IndexPage } from "pages/IndexPage";
 import { MarketPage } from "pages/MarketPage";
+import { ReactElement } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { WagmiConfig } from "wagmi";
 import { chains, wagmiClient } from "wallet/wagmiClient";
 import { Navbar } from "./Navbar";
-import { ReactElement } from "react";
 
 const queryClient = new QueryClient();
 
 export function App(): ReactElement {
   return (
-    <div className="h-screen bg-zinc-900">
+    <div className="box-border h-full min-h-screen bg-zinc-900 pb-12">
       <QueryClientProvider client={queryClient}>
         <WagmiConfig client={wagmiClient}>
           <RainbowKitProvider

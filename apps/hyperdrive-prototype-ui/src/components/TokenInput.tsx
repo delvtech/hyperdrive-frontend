@@ -1,6 +1,6 @@
 import { formatUnits } from "ethers/lib/utils.js";
 import { Token } from "hyperdrive/types";
-import { ReactElement, useState } from "react";
+import { useState } from "react";
 import { formatBalance } from "utils";
 import { Tag } from "./Tag";
 
@@ -14,8 +14,8 @@ export function TokenInput({
   token,
   onChange,
   currentBalance,
-}: TokenInputProps): ReactElement {
-  const [input, setInput] = useState("");
+}: TokenInputProps) {
+  const [input, setInput] = useState<string>("");
 
   return (
     <div className="flex flex-col p-4 border-2 rounded border-lean gap-y-2">
