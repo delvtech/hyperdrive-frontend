@@ -12,7 +12,7 @@ const queryClient = new QueryClient();
 
 export function App() {
   return (
-    <div className="h-screen bg-zinc-900">
+    <div className="h-full min-h-screen bg-zinc-900 pb-52">
       <QueryClientProvider client={queryClient}>
         <WagmiConfig client={wagmiClient}>
           <RainbowKitProvider
