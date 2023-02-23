@@ -80,6 +80,7 @@ export function OpenLongPositionForm({
       parseUnits(balance, market.baseToken.decimals),
       constants.Zero,
       address!,
+      false,
     ],
     enabled: !!address && !!balance && balance !== "0",
   });
@@ -107,8 +108,8 @@ export function OpenLongPositionForm({
       <div className="flex flex-col gap-4">
         <h3 className="text-2xl">You Receive</h3>
 
-        <div className="flex items-center w-full p-4">
-          <div className="w-full mr-4 overflow-x-auto">
+        <div className="flex w-full items-center p-4">
+          <div className="mr-4 w-full overflow-x-auto">
             <h4 className="mr-auto text-5xl font-bold">{previewAmountOut}</h4>
           </div>
           <Tag text="Long" />
@@ -133,7 +134,7 @@ export function OpenLongPositionForm({
           onClick={() => {
             writeApprove && writeApprove();
           }}
-          className="font-bold text-black btn-lg btn hover:bg-racing-green bg-lean"
+          className="btn-lg btn hover:bg-racing-green bg-lean font-bold text-black"
         >
           Approve
         </button>
@@ -143,7 +144,7 @@ export function OpenLongPositionForm({
           onClick={() => {
             writeOpenLong && writeOpenLong();
           }}
-          className="font-bold text-black btn-lg btn hover:bg-racing-green bg-lean disabled:bg-lean disabled:text-opacity-100 disabled:bg-opacity-60"
+          className="btn-lg btn hover:bg-racing-green bg-lean disabled:bg-lean font-bold text-black disabled:bg-opacity-60 disabled:text-opacity-100"
         >
           Open Long
         </button>
