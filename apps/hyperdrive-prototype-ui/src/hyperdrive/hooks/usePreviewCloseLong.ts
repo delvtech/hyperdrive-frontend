@@ -3,6 +3,7 @@ import { parseUnits } from "ethers/lib/utils.js";
 import { hyperdriveABI } from "generated";
 import { Market } from "hyperdrive/types";
 import { useQuery } from "react-query";
+import { isTokenAmountNotZeroOrNull } from "utils";
 import { Address, useProvider, useSigner } from "wagmi";
 
 export function usePreviewCloseLong(
@@ -15,14 +16,13 @@ export function usePreviewCloseLong(
   const { data: signer } = useSigner();
 
   return useQuery({
-    queryKey: ["preview-close-long", account, market, bondAmount, tokenId],
+    queryKey: [account, tokenId, bondAmount],
     enabled:
       !!account &&
       !!tokenId &&
       !!provider &&
-      !!bondAmount &&
-      bondAmount !== "0" &&
-      !!signer,
+      !!signer &&
+      isTokenAmountNotZeroOrNull(bondAmount),
     queryFn: async () => {
       const hyperdriveContract = new Contract(
         market.address,
@@ -33,10 +33,10 @@ export function usePreviewCloseLong(
       const out: BigNumber = await hyperdriveContract
         .connect(signer!)
         .callStatic.closeLong(
-          tokenId,
-          parseUnits(bondAmount, market.baseToken.decimals),
-          0,
-          account,
+          tokenId, // token id
+          parseUnits(bondAmount, market.baseToken.decimals), // amount bond in
+          0, // min amount out
+          account, // destination
         );
 
       return out;
