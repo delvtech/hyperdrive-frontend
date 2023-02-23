@@ -1,3 +1,4 @@
+import { BigNumber } from "ethers";
 import { Address } from "wagmi";
 
 export interface Token {
@@ -28,3 +29,8 @@ export interface MarketData {
 
 export type MarketAction = "LONG" | "SHORT" | "LP";
 export type OrderType = "OPEN" | "CLOSE";
+
+export interface Long {
+  amount: BigNumber;
+  id: string;
+}
