@@ -5,25 +5,28 @@ import { formatBalance } from "utils";
 import { Tag } from "./Tag";
 
 interface TokenInputProps {
-  token: Token;
   currentBalance: string;
+  disabled?: boolean;
   onChange: (value: string) => void;
+  token: Token;
 }
 
 export function TokenInput({
-  token,
-  onChange,
   currentBalance,
+  disabled,
+  onChange,
+  token,
 }: TokenInputProps) {
   const [input, setInput] = useState<string>("");
 
   return (
-    <div className="flex flex-col p-4 border-2 rounded border-lean gap-y-2">
-      <div className="flex items-center text-white gap-x-2">
+    <div className="border-lean flex flex-col gap-y-2 rounded border-2 p-4">
+      <div className="flex items-center gap-x-2 text-white">
         <div className="grow basis-0">
           <input
             value={input}
-            className="w-full text-5xl font-bold bg-transparent outline-none"
+            disabled={disabled}
+            className="w-full bg-transparent text-5xl font-bold outline-none"
             placeholder="0"
             onChange={(event) => {
               const value = event.target.value;
@@ -33,12 +36,14 @@ export function TokenInput({
           />
         </div>
         <Tag text={token.symbol}>
-          <img
-            className="inline mr-1"
-            src={token.logoUrl}
-            height={16}
-            width={16}
-          />
+          {token.logoUrl && (
+            <img
+              className="mr-1 inline"
+              src={token.logoUrl}
+              height={16}
+              width={16}
+            />
+          )}
         </Tag>
       </div>
 
@@ -46,7 +51,7 @@ export function TokenInput({
         {currentBalance === input ? (
           <button
             className="mr-auto underline disabled:opacity-50"
-            // disabled={!currentBalance}
+            disabled={disabled}
             onClick={() => {
               setInput("0");
               onChange("0");
@@ -57,7 +62,7 @@ export function TokenInput({
         ) : (
           <button
             className="mr-auto underline disabled:opacity-50"
-            disabled={!currentBalance}
+            disabled={!currentBalance || disabled}
             onClick={() => {
               setInput(formatUnits(currentBalance, token.decimals));
               onChange(currentBalance);
