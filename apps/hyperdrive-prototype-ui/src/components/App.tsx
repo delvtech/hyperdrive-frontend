@@ -7,10 +7,11 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { WagmiConfig } from "wagmi";
 import { chains, wagmiClient } from "wallet/wagmiClient";
 import { Navbar } from "./Navbar";
+import { ReactElement } from "react";
 
 const queryClient = new QueryClient();
 
-export function App() {
+export function App(): ReactElement {
   return (
     <div className="h-full min-h-screen bg-zinc-900 pb-52">
       <QueryClientProvider client={queryClient}>
