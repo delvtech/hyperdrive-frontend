@@ -15,34 +15,41 @@ export function usePreviewOpenShort(
 
   const { data: signer } = useSigner();
 
+  const enabled =
+    !!account && !!provider && !!signer && isValidTokenAmount(bondAmount);
+
   return useQuery({
     queryKey: [account, market, bondAmount],
-    enabled:
-      !!account && !!provider && !!signer && isValidTokenAmount(bondAmount),
-    queryFn: async () => {
-      const bondAmountBN = parseUnits(bondAmount, market.baseToken.decimals);
+    enabled: enabled,
+    queryFn: enabled
+      ? async () => {
+          const bondAmountBN = parseUnits(
+            bondAmount,
+            market.baseToken.decimals,
+          );
 
-      if (bondAmountBN.isZero()) {
-        return BigNumber.from(0);
-      }
+          if (bondAmountBN.isZero()) {
+            return BigNumber.from(0);
+          }
 
-      const hyperdriveContract = new Contract(
-        market.address,
-        hyperdriveABI,
-        provider,
-      );
+          const hyperdriveContract = new Contract(
+            market.address,
+            hyperdriveABI,
+            provider,
+          );
 
-      const out = await hyperdriveContract
-        .connect(signer!)
-        .callStatic.openShort(
-          bondAmountBN,
-          // todo support slippage
-          constants.MaxUint256,
-          account,
-          false,
-        );
+          const out = await hyperdriveContract
+            .connect(signer!)
+            .callStatic.openShort(
+              bondAmountBN,
+              // todo support slippage
+              constants.MaxUint256,
+              account,
+              false,
+            );
 
-      return out;
-    },
+          return out;
+        }
+      : undefined,
   });
 }
