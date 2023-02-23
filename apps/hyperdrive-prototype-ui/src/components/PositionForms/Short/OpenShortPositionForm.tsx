@@ -80,7 +80,7 @@ export function OpenShortPositionForm({
     useHyperdriveOpenShort(OpenShortConfig);
 
   return (
-    <>
+    <div className="flex flex-col animate-ezn gap-y-10">
       <div className="flex flex-col gap-4">
         <h3 className="text-2xl">Short Amount</h3>
 
@@ -144,6 +144,6 @@ export function OpenShortPositionForm({
           Open Short
         </button>
       )}
-    </>
+    </div>
   );
 }

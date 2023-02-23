@@ -70,7 +70,7 @@ export function CloseLongPositionForm({
     useHyperdriveCloseLong(closeLongConfig);
 
   return (
-    <>
+    <div className="flex flex-col animate-ezn gap-y-10">
       <select
         className="w-full max-w-xs text-white bg-transparent select border-lean"
         defaultValue=""
@@ -158,6 +158,6 @@ export function CloseLongPositionForm({
           Close Long
         </button>
       )}
-    </>
+    </div>
   );
 }
