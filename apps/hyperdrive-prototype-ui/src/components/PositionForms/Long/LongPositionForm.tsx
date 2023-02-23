@@ -1,8 +1,8 @@
 import { Market, OrderType } from "hyperdrive/types";
 import { ReactElement } from "react";
 import { match } from "ts-pattern";
-import { CloseLongPositionForm } from "./Long/CloseLongPosititionForm";
-import { OpenLongPositionForm } from "./Long/OpenLongPositionForm";
+import { CloseLongPositionForm } from "./CloseLongPosititionForm";
+import { OpenLongPositionForm } from "./OpenLongPositionForm";
 
 interface LongPositionFormProps {
   order: OrderType;

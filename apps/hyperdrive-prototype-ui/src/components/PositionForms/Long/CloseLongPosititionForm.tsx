@@ -70,7 +70,7 @@ export function CloseLongPositionForm({
     useHyperdriveCloseLong(closeLongConfig);
 
   return (
-    <>
+    <div className="flex flex-col animate-ezn gap-y-10">
       <select
         className="w-full max-w-xs text-white bg-transparent select border-lean"
         defaultValue=""
@@ -113,7 +113,9 @@ export function CloseLongPositionForm({
 
         <div className="flex items-center w-full p-4">
           <div className="w-full mr-4 overflow-x-auto">
-            <h4 className="mr-auto text-5xl font-bold">{previewAmountOut}</h4>
+            <h4 className="mr-auto text-5xl font-bold">
+              {formattedPreviewAmountOut}
+            </h4>
           </div>
           <Tag text={market.baseToken.name}>
             <img
@@ -156,6 +158,6 @@ export function CloseLongPositionForm({
           Close Long
         </button>
       )}
-    </>
+    </div>
   );
 }

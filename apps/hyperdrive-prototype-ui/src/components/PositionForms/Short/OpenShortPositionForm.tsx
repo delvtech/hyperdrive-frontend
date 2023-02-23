@@ -1,4 +1,4 @@
-import { Receipt } from "components/Receipt";
+import { ExclamationCircleIcon } from "@heroicons/react/20/solid";
 import { Tag } from "components/Tag";
 import { TokenInput } from "components/TokenInput";
 import { constants } from "ethers";
@@ -6,26 +6,23 @@ import { formatUnits, parseUnits } from "ethers/lib/utils.js";
 import {
   useErc20Allowance,
   useErc20Approve,
-  useHyperdriveBondReserves,
-  useHyperdriveOpenLong,
-  useHyperdriveShareReserves,
+  useHyperdriveOpenShort,
   usePrepareErc20Approve,
-  usePrepareHyperdriveOpenLong,
+  usePrepareHyperdriveOpenShort,
 } from "generated";
-import { useLongs } from "hyperdrive/hooks/useLongs";
-import { usePreviewOpenLong } from "hyperdrive/hooks/usePreviewOpenLong";
+import { usePreviewOpenShort } from "hyperdrive/hooks/usePreviewOpenShort";
 import { Market } from "hyperdrive/types";
 import { ReactElement, useState } from "react";
-import { formatBalance } from "utils";
+import { isValidTokenAmount } from "utils";
 import { useAccount, useBalance } from "wagmi";
 
-interface OpenLongPositionFormProps {
+interface OpenShortPositionFormProps {
   market: Market;
 }
 
-export function OpenLongPositionForm({
+export function OpenShortPositionForm({
   market,
-}: OpenLongPositionFormProps): ReactElement {
+}: OpenShortPositionFormProps): ReactElement {
   const { address } = useAccount();
 
   // Base token hooks
@@ -38,7 +35,7 @@ export function OpenLongPositionForm({
   const [balance, setBalance] = useState("0");
 
   // Preview amounts
-  const { data: previewAmountOutBN } = usePreviewOpenLong(
+  const { data: previewAmountOutBN } = usePreviewOpenShort(
     address,
     market,
     balance,
@@ -47,15 +44,8 @@ export function OpenLongPositionForm({
     previewAmountOutBN ?? "0",
     market.baseToken.decimals,
   );
-
-  // Market information hooks
-  const { data: marketShareReserves } = useHyperdriveShareReserves({
-    address: market.address,
-  });
-
-  const { data: marketBondReserves } = useHyperdriveBondReserves({
-    address: market.address,
-  });
+  const formattedPreviewAmountOut =
+    previewAmountOut === "0.0" ? "0" : previewAmountOut;
 
   // ERC-20 approval hooks
   const { config: erc20ApproveConfig } = usePrepareErc20Approve({
@@ -73,32 +63,35 @@ export function OpenLongPositionForm({
     !!balance &&
     parseUnits(balance, market.baseToken.decimals).gt(baseTokenAllowance ?? 0);
 
-  // Open long hooks
-  const { config: openLongConfig } = usePrepareHyperdriveOpenLong({
+  //Open short hooks
+  const { config: OpenShortConfig, error } = usePrepareHyperdriveOpenShort({
     address: market.address,
     args: [
       parseUnits(balance, market.baseToken.decimals),
-      constants.Zero,
+      // todo slippage
+      constants.MaxUint256,
       address!,
       false,
     ],
     enabled: !!address && !!balance && balance !== "0",
   });
 
-  const { write: writeOpenLong, isLoading: openLongLoading } =
-    useHyperdriveOpenLong(openLongConfig);
-
-  // Current long data for connected account
-  const { data: longs } = useLongs(address, market);
-  const openLongs = longs?.openLongs ?? [];
+  const { write: writeOpenShort, isLoading: openShortLoading } =
+    useHyperdriveOpenShort(OpenShortConfig);
 
   return (
     <div className="flex flex-col animate-ezn gap-y-10">
       <div className="flex flex-col gap-4">
-        <h3 className="text-2xl">From Wallet</h3>
+        <h3 className="text-2xl">Short Amount</h3>
 
         <TokenInput
-          token={market.baseToken}
+          token={{
+            name: "Short",
+            symbol: "SHORT",
+            decimals: 18,
+          }}
+          disableMax
+          showInputError={!!error}
           currentBalance={baseTokenBalance}
           onChange={(newBalance: string) => {
             setBalance(newBalance || "0");
@@ -106,29 +99,25 @@ export function OpenLongPositionForm({
         />
       </div>
       <div className="flex flex-col gap-4">
-        <h3 className="text-2xl">You Receive</h3>
+        <h3 className="text-2xl">Cost</h3>
 
         <div className="flex items-center w-full p-4">
-          <div className="w-full mr-4 overflow-x-auto">
-            <h4 className="mr-auto text-5xl font-bold">{previewAmountOut}</h4>
+          <div className="mr-4 overflow-auto grow basis-0">
+            <h4 className="mr-auto text-5xl font-bold">
+              {formattedPreviewAmountOut}
+            </h4>
           </div>
-          <Tag text="Long" />
-          {/* <Tag text="June 21st, 2023" /> */}
+          <Tag text={market.baseToken.symbol}>
+            <img
+              className="inline mr-1"
+              src={market.baseToken.logoUrl}
+              height={16}
+              width={16}
+            />
+          </Tag>
         </div>
       </div>
-      <Receipt
-        data={{
-          Matures: new Date(
-            Date.now() + market.positionDuration,
-          ).toLocaleDateString(),
-          "Bond Reserves": formatBalance(
-            formatUnits(marketBondReserves ?? 0, market.baseToken.decimals),
-          ),
-          "Share Reserves": formatBalance(
-            formatUnits(marketShareReserves ?? 0, market.baseToken.decimals),
-          ),
-        }}
-      />
+
       {shouldApprove ? (
         <button
           onClick={() => {
@@ -138,15 +127,21 @@ export function OpenLongPositionForm({
         >
           Approve
         </button>
+      ) : error ? (
+        <button
+          disabled
+          className="font-bold disabled:text-black btn-lg btn disabled:bg-error"
+        >
+          <ExclamationCircleIcon className="w-5 mr-1" />
+          Can&apos;t swap
+        </button>
       ) : (
         <button
-          disabled={!balance || openLongLoading}
-          onClick={() => {
-            writeOpenLong && writeOpenLong();
-          }}
+          disabled={!isValidTokenAmount(balance) || openShortLoading}
+          onClick={() => writeOpenShort && writeOpenShort()}
           className="font-bold text-black btn-lg btn hover:bg-racing-green bg-lean disabled:bg-lean disabled:bg-opacity-60 disabled:text-opacity-100"
         >
-          Open Long
+          Open Short
         </button>
       )}
     </div>
