@@ -1,4 +1,4 @@
-import { Market, OrderType } from "hyperdrive/types";
+import { Market, OrderType } from "src/hyperdrive/types";
 import { ReactElement } from "react";
 import { match } from "ts-pattern";
 import { CloseLongPositionForm } from "./Long/CloseLongPosititionForm";

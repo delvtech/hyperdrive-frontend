@@ -4,8 +4,8 @@ import {
   CubeIcon,
 } from "@heroicons/react/20/solid";
 import classNames from "classnames";
-import { MarketAction, OrderType } from "hyperdrive/types";
 import { ReactElement } from "react";
+import { MarketAction, OrderType } from "src/hyperdrive/types";
 
 interface MarketActionButtonGroupProps {
   selectedAction: MarketAction;

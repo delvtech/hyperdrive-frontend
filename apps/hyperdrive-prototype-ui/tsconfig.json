@@ -1,21 +1,13 @@
 {
-  "compilerOptions": {
-    "baseUrl": "./src",
-    "target": "esnext",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
+  "extends": "@hyperdrive/tsconfig/base.json",
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"],
+  "paths": {
+    "src/*": ["./src/*"]
   },
-  "include": ["src"],
-  "exclude": ["node_modules"]
+  "compilerOptions": {
+    "rootDir": ".",
+    "baseUrl": ".",
+    "jsx": "preserve"
+  }
 }

@@ -1,7 +1,7 @@
-import { MarketData } from "hyperdrive/types";
 import { ReactElement } from "react";
 import { useNavigate } from "react-router-dom";
-import { formatBalance } from "utils";
+import { MarketData } from "src/hyperdrive/types";
+import { formatBalance } from "src/utils";
 
 interface MarketsTableProps {
   markets: MarketData[];
