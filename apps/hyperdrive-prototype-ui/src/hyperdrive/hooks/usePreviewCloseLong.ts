@@ -33,10 +33,11 @@ export function usePreviewCloseLong(
       const out: BigNumber = await hyperdriveContract
         .connect(signer!)
         .callStatic.closeLong(
-          tokenId, // token id
-          parseUnits(bondAmount, market.baseToken.decimals), // amount bond in
-          0, // min amount out
-          account, // destination
+          tokenId,
+          parseUnits(bondAmount, market.baseToken.decimals),
+          0,
+          account,
+          false,
         );
 
       return out;

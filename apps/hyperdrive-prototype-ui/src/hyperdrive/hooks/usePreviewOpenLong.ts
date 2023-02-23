@@ -31,6 +31,7 @@ export function usePreviewOpenLong(
           parseUnits(baseAmount, market.baseToken.decimals),
           0,
           account,
+          false,
         );
 
       return out;

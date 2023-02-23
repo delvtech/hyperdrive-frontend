@@ -61,6 +61,7 @@ export function CloseLongPositionForm({
       parseUnits(balance, market.baseToken.decimals),
       constants.Zero,
       address!,
+      false,
     ],
     enabled: !!address && !!balance && balance !== "0" && !!selectedLong,
   });
@@ -71,7 +72,7 @@ export function CloseLongPositionForm({
   return (
     <>
       <select
-        className="select border-lean w-full max-w-xs bg-transparent text-white"
+        className="w-full max-w-xs text-white bg-transparent select border-lean"
         defaultValue=""
         onChange={(event) => {
           const longId = event.target.value;
@@ -110,17 +111,13 @@ export function CloseLongPositionForm({
       <div className="flex flex-col gap-4">
         <h3 className="text-2xl">You Receive</h3>
 
-        <div className="flex w-full items-center p-4">
-          <div className="mr-2 grow basis-0 overflow-x-auto">
-            <div className="mr-4 w-full">
-              <h4 className="mr-auto text-5xl font-bold">
-                {formattedPreviewAmountOut}
-              </h4>
-            </div>
+        <div className="flex items-center w-full p-4">
+          <div className="w-full mr-4 overflow-x-auto">
+            <h4 className="mr-auto text-5xl font-bold">{previewAmountOut}</h4>
           </div>
           <Tag text={market.baseToken.name}>
             <img
-              className="mr-1 inline"
+              className="inline mr-1"
               src={market.baseToken.logoUrl}
               height={16}
               width={16}
@@ -142,11 +139,8 @@ export function CloseLongPositionForm({
         }}
       /> */}
       {error ? (
-        <button
-          disabled
-          className="btn-lg btn btn-error disabled:bg-error font-bold disabled:text-black"
-        >
-          <ExclamationCircleIcon className="mr-1 w-5" />
+        <button className="font-bold text-black btn-lg btn hover:bg-racing-green bg-lean">
+          <ExclamationCircleIcon className="w-5 mr-1" />
           Can&apos;t swap
         </button>
       ) : (
@@ -157,7 +151,7 @@ export function CloseLongPositionForm({
           onClick={() => {
             writeCloseLong && writeCloseLong();
           }}
-          className="btn-lg btn hover:bg-racing-green bg-lean disabled:bg-lean font-bold text-black disabled:bg-opacity-60 disabled:text-opacity-100"
+          className="font-bold text-black btn-lg btn hover:bg-racing-green bg-lean disabled:bg-lean disabled:bg-opacity-60 disabled:text-opacity-100"
         >
           Close Long
         </button>
