@@ -1,3 +1,4 @@
+import { ExclamationCircleIcon } from "@heroicons/react/20/solid";
 import { Tag } from "components/Tag";
 import { TokenInput } from "components/TokenInput";
 import { BigNumber, constants } from "ethers";
@@ -10,6 +11,7 @@ import { useLongs } from "hyperdrive/hooks/useLongs";
 import { usePreviewCloseLong } from "hyperdrive/hooks/usePreviewCloseLong";
 import { Long, Market } from "hyperdrive/types";
 import { ReactElement, useEffect, useState } from "react";
+import { formatBalance, isValidTokenAmount } from "utils";
 import { useAccount } from "wagmi";
 
 interface CloseLongPositionFormProps {
@@ -21,8 +23,8 @@ export function CloseLongPositionForm({
 }: CloseLongPositionFormProps): ReactElement {
   const { address } = useAccount();
 
-  // const baseTokenBalance = baseTokenData?.value.toString() ?? "0";
   const [balance, setBalance] = useState("0");
+  const [totalBalance, setTotalBalance] = useState("0");
 
   // Current long data for connected account
   const { data: longs } = useLongs(address, market);
@@ -33,11 +35,9 @@ export function CloseLongPositionForm({
   useEffect(() => {
     if (selectedLong) {
       setBalance(selectedLong.amount.toString());
+      setTotalBalance(selectedLong.amount.toString());
     }
   }, [selectedLong]);
-
-  // TODO maybe
-  const shouldApprove = false;
 
   const { data: previewCloseLongData } = usePreviewCloseLong(
     address,
@@ -50,8 +50,10 @@ export function CloseLongPositionForm({
     previewCloseLongData?.toString() ?? "0",
     market.baseToken.decimals,
   );
+  const formattedPreviewAmountOut =
+    previewAmountOut === "0.0" ? "0" : previewAmountOut;
 
-  const { config: closeLongConfig } = usePrepareHyperdriveCloseLong({
+  const { config: closeLongConfig, error } = usePrepareHyperdriveCloseLong({
     address: market.address,
     args: [
       // todo prevent from crashing page, since this gets typed check during runtime
@@ -63,17 +65,16 @@ export function CloseLongPositionForm({
     enabled: !!address && !!balance && balance !== "0" && !!selectedLong,
   });
 
-  const { write: writeCloseLong, isLoading: closeLongLoading } =
+  const { writeAsync: writeCloseLong, isLoading: closeLongLoading } =
     useHyperdriveCloseLong(closeLongConfig);
 
   return (
     <>
       <select
-        className="w-full max-w-xs text-white bg-transparent select border-lean"
+        className="select border-lean w-full max-w-xs bg-transparent text-white"
         defaultValue=""
         onChange={(event) => {
           const longId = event.target.value;
-
           // find long with id
           setSelectedLong(openLongs.find((long) => long.id === longId));
         }}
@@ -83,7 +84,8 @@ export function CloseLongPositionForm({
         </option>
         {openLongs.map((long) => (
           <option key={`${long.id}-${long.amount}`} value={long.id}>
-            {long.id} {formatUnits(long.amount, market.baseToken.decimals)}
+            Long {long.id}{" "}
+            {formatBalance(formatUnits(long.amount, market.baseToken.decimals))}
           </option>
         ))}
       </select>
@@ -92,8 +94,13 @@ export function CloseLongPositionForm({
         <h3 className="text-2xl">From Position</h3>
 
         <TokenInput
-          token={market.baseToken}
-          currentBalance={balance}
+          token={{
+            name: "Long",
+            symbol: "LONG",
+            decimals: 18,
+          }}
+          disabled={!selectedLong || closeLongLoading}
+          currentBalance={totalBalance}
           onChange={(newBalance) => {
             setBalance(newBalance || "0");
           }}
@@ -103,12 +110,22 @@ export function CloseLongPositionForm({
       <div className="flex flex-col gap-4">
         <h3 className="text-2xl">You Receive</h3>
 
-        <div className="flex items-center w-full p-4">
-          <div className="w-full mr-4 overflow-x-auto">
-            <h4 className="mr-auto text-5xl font-bold">{previewAmountOut}</h4>
+        <div className="flex w-full items-center p-4">
+          <div className="mr-2 grow basis-0 overflow-x-auto">
+            <div className="mr-4 w-full">
+              <h4 className="mr-auto text-5xl font-bold">
+                {formattedPreviewAmountOut}
+              </h4>
+            </div>
           </div>
-          <Tag text="Long" />
-          {/* <Tag text="June 21st, 2023" /> */}
+          <Tag text={market.baseToken.name}>
+            <img
+              className="mr-1 inline"
+              src={market.baseToken.logoUrl}
+              height={16}
+              width={16}
+            />
+          </Tag>
         </div>
       </div>
       {/* <Receipt
@@ -124,22 +141,23 @@ export function CloseLongPositionForm({
           ),
         }}
       /> */}
-      {shouldApprove ? (
+      {error ? (
         <button
-          // onClick={() => {
-          //   writeApprove && writeApprove();
-          // }}
-          className="font-bold text-black btn-lg btn hover:bg-racing-green bg-lean"
+          disabled
+          className="btn-lg btn btn-error disabled:bg-error font-bold disabled:text-black"
         >
-          Approve
+          <ExclamationCircleIcon className="mr-1 w-5" />
+          Can&apos;t swap
         </button>
       ) : (
         <button
-          disabled={!balance || closeLongLoading}
+          disabled={
+            !selectedLong || !isValidTokenAmount(balance) || closeLongLoading
+          }
           onClick={() => {
             writeCloseLong && writeCloseLong();
           }}
-          className="font-bold text-black btn-lg btn hover:bg-racing-green bg-lean disabled:bg-lean disabled:text-opacity-100 disabled:bg-opacity-60"
+          className="btn-lg btn hover:bg-racing-green bg-lean disabled:bg-lean font-bold text-black disabled:bg-opacity-60 disabled:text-opacity-100"
         >
           Close Long
         </button>

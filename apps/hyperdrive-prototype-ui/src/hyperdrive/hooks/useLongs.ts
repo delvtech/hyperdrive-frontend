@@ -18,6 +18,7 @@ export function useLongs(account: Address | undefined, market: Market) {
         provider,
       );
 
+      // Mint events are any TransferSingle event where the tokens come from the zero address
       const mintEventFilter = multiTokenContract.filters.TransferSingle(
         undefined,
         constants.AddressZero,
@@ -29,6 +30,7 @@ export function useLongs(account: Address | undefined, market: Market) {
         "latest",
       );
 
+      // Burn events are any TransferSingle event where the tokens goes to the zero address
       const burnEventFilter = multiTokenContract.filters.TransferSingle(
         undefined,
         account,
@@ -52,6 +54,7 @@ export function useLongs(account: Address | undefined, market: Market) {
         return getAssetPrefixFromTokenId(longId) === 0;
       });
 
+      // create long objects from close long events
       const closedLongs: Long[] = longBurnEvents.map((event) => {
         const amount = event.args?.value as BigNumber;
         const id: string = (event.args?.id as BigNumber).toString();
@@ -62,24 +65,18 @@ export function useLongs(account: Address | undefined, market: Market) {
         };
       });
 
-      // todo support partial closing
-      const closedLongIds: Set<string> = new Set(
-        closedLongs.map((long) => long.id),
-      );
+      // create long objects from open long events
+      const openLongs: Long[] = longMintEvents.map((event) => {
+        const amount = event.args?.value as BigNumber;
+        const id: string = (event.args?.id as BigNumber).toString();
 
-      const openLongs: Long[] = longMintEvents
-        .map((event) => {
-          const amount = event.args?.value as BigNumber;
-          const id: string = (event.args?.id as BigNumber).toString();
+        return {
+          id,
+          amount,
+        };
+      });
 
-          return {
-            id,
-            amount,
-          };
-        })
-        .filter((long) => !closedLongIds.has(long.id));
-
-      // consolidate open long positions that have the same id
+      // consolidate longs of the same id with the sum token amount
       const consolidatedOpenLongs: Record<string, BigNumber> = {};
       openLongs.forEach((long) => {
         if (consolidatedOpenLongs[long.id]) {
@@ -90,6 +87,13 @@ export function useLongs(account: Address | undefined, market: Market) {
           consolidatedOpenLongs[long.id] = long.amount;
         }
       });
+      closedLongs.forEach((long) => {
+        if (consolidatedOpenLongs[long.id]) {
+          consolidatedOpenLongs[long.id] = consolidatedOpenLongs[long.id].sub(
+            long.amount,
+          );
+        }
+      });
 
       return {
         openLongs: Object.entries(consolidatedOpenLongs).map(([id, amount]) => {
@@ -98,7 +102,6 @@ export function useLongs(account: Address | undefined, market: Market) {
             amount,
           };
         }),
-        closedLongs,
       };
     },
   });

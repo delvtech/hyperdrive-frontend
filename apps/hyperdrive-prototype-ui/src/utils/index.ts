@@ -1,4 +1,5 @@
 import { format } from "d3-format";
+import { BigNumber } from "ethers";
 import { commify } from "ethers/lib/utils";
 
 /**
@@ -12,4 +13,18 @@ export function formatBalance(
   numDecimals = 1,
 ): string {
   return commify(format(`.${numDecimals}~f`)(+balance));
+}
+
+export function isValidTokenAmount(amount: string | undefined) {
+  if (!amount) {
+    return false;
+  }
+
+  try {
+    BigNumber.from(amount).gt(0);
+  } catch (e) {
+    return false;
+  }
+
+  return true;
 }
