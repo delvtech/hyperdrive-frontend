@@ -99,7 +99,7 @@ export function OpenLongPositionForm({
         <TokenInput
           token={market.baseToken}
           currentBalance={baseTokenBalance}
-          onChange={(newBalance) => {
+          onChange={(newBalance: string) => {
             setBalance(newBalance || "0");
           }}
         />

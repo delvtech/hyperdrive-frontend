@@ -1,8 +1,12 @@
 import { useChainId } from "wagmi";
-import { hyperdriveConfigs, SupportedChainId } from "./config";
+import {
+  HyperdriveConfig,
+  hyperdriveConfigs,
+  SupportedChainId,
+} from "./config";
 
-export function useHyperdriveConfig() {
+export function useHyperdriveConfig(): HyperdriveConfig {
   const chainId = useChainId() as SupportedChainId;
-  console.log({hyperdriveConfigs, chainId})
+  console.log({ hyperdriveConfigs, chainId });
   return hyperdriveConfigs[chainId];
 }

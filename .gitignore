@@ -38,3 +38,6 @@ yarn-error.log*
 
 # turborepo
 .turbo
+
+# parcel
+.parcel-cache

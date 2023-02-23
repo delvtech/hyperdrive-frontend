@@ -5,11 +5,11 @@ import { ShortPositionForm } from "components/PositionForms/ShortPositionForm";
 import { getMarketByAddress } from "hyperdrive/getMarketByAddress";
 import { MarketAction, OrderType } from "hyperdrive/types";
 import { useHyperdriveConfig } from "hyperdrive/useHyperdriveConfig";
-import { useState } from "react";
+import { ReactElement, useState } from "react";
 import { useParams } from "react-router-dom";
 import { match } from "ts-pattern";
 
-export function MarketPage() {
+export function MarketPage(): ReactElement {
   const params = useParams();
   const config = useHyperdriveConfig();
   const marketAddress = params.address;

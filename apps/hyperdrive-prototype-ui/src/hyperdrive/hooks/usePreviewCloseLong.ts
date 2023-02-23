@@ -2,7 +2,7 @@ import { BigNumber, Contract } from "ethers";
 import { parseUnits } from "ethers/lib/utils.js";
 import { hyperdriveABI } from "generated";
 import { Market } from "hyperdrive/types";
-import { useQuery } from "react-query";
+import { useQuery, UseQueryResult } from "react-query";
 import { isValidTokenAmount } from "utils";
 import { Address, useProvider, useSigner } from "wagmi";
 
@@ -11,7 +11,7 @@ export function usePreviewCloseLong(
   market: Market,
   bondAmount: string,
   tokenId: string | undefined,
-) {
+): UseQueryResult<BigNumber> {
   const provider = useProvider();
   const { data: signer } = useSigner();
 

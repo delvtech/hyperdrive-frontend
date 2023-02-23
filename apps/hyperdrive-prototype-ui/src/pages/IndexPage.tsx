@@ -40,7 +40,7 @@ export function IndexPage(): ReactElement {
 
 function useMarketsData() {
   const config = useHyperdriveConfig();
-  console.log(config)
+  console.log(config);
   const markets = config.markets;
 
   return useQuery({
