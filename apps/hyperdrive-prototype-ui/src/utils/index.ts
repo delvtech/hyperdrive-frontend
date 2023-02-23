@@ -15,7 +15,7 @@ export function formatBalance(
   return commify(format(`.${numDecimals}~f`)(+balance));
 }
 
-export function isValidTokenAmount(amount: string | undefined) {
+export function isValidTokenAmount(amount: string | undefined): boolean {
   if (!amount) {
     return false;
   }
