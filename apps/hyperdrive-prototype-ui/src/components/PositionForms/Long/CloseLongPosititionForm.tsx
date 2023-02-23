@@ -113,7 +113,9 @@ export function CloseLongPositionForm({
 
         <div className="flex items-center w-full p-4">
           <div className="w-full mr-4 overflow-x-auto">
-            <h4 className="mr-auto text-5xl font-bold">{previewAmountOut}</h4>
+            <h4 className="mr-auto text-5xl font-bold">
+              {formattedPreviewAmountOut}
+            </h4>
           </div>
           <Tag text={market.baseToken.name}>
             <img
