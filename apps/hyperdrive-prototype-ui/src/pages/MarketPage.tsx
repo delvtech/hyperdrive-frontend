@@ -1,7 +1,7 @@
 import { MarketActionButtonGroup } from "components/MarketActionsButtonGroup";
-import { LongPositionForm } from "components/PositionForms/LongPositionForm";
-import { LpPositionForm } from "components/PositionForms/LpPositionForm";
-import { ShortPositionForm } from "components/PositionForms/ShortPositionForm";
+import { LongPositionForm } from "components/PositionForms/Long/LongPositionForm";
+import { LpPositionForm } from "components/PositionForms/LP/LpPositionForm";
+import { ShortPositionForm } from "components/PositionForms/Short/ShortPositionForm";
 import { getMarketByAddress } from "hyperdrive/getMarketByAddress";
 import { MarketAction, OrderType } from "hyperdrive/types";
 import { useHyperdriveConfig } from "hyperdrive/useHyperdriveConfig";
@@ -39,7 +39,9 @@ export function MarketPage(): ReactElement {
             .with("LONG", () => (
               <LongPositionForm order={orderType} market={market} />
             ))
-            .with("SHORT", () => <ShortPositionForm />)
+            .with("SHORT", () => (
+              <ShortPositionForm order={orderType} market={market} />
+            ))
             .with("LP", () => <LpPositionForm />)
             .exhaustive()}
       </div>
