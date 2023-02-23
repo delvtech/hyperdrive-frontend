@@ -1,8 +1,9 @@
-import { Receipt } from "components/Receipt";
-import { Tag } from "components/Tag";
-import { TokenInput } from "components/TokenInput";
 import { constants } from "ethers";
 import { formatUnits, parseUnits } from "ethers/lib/utils.js";
+import { ReactElement, useState } from "react";
+import { Receipt } from "src/components/Receipt";
+import { Tag } from "src/components/Tag";
+import { TokenInput } from "src/components/TokenInput";
 import {
   useErc20Allowance,
   useErc20Approve,
@@ -11,12 +12,11 @@ import {
   useHyperdriveShareReserves,
   usePrepareErc20Approve,
   usePrepareHyperdriveOpenLong,
-} from "generated";
-import { useLongs } from "hyperdrive/hooks/useLongs";
-import { usePreviewOpenLong } from "hyperdrive/hooks/usePreviewOpenLong";
-import { Market } from "hyperdrive/types";
-import { ReactElement, useState } from "react";
-import { formatBalance } from "utils";
+} from "src/generated";
+import { useLongs } from "src/hyperdrive/hooks/useLongs";
+import { usePreviewOpenLong } from "src/hyperdrive/hooks/usePreviewOpenLong";
+import { Market } from "src/hyperdrive/types";
+import { formatBalance } from "src/utils";
 import { useAccount, useBalance } from "wagmi";
 
 interface OpenLongPositionFormProps {
@@ -99,7 +99,7 @@ export function OpenLongPositionForm({
         <TokenInput
           token={market.baseToken}
           currentBalance={baseTokenBalance}
-          onChange={(newBalance) => {
+          onChange={(newBalance: string) => {
             setBalance(newBalance || "0");
           }}
         />
