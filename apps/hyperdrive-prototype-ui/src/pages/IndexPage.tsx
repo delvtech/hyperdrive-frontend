@@ -2,13 +2,13 @@ import { MarketsTable } from "components/MarketsTable";
 import { StatBubble } from "components/StatBubble";
 import { MarketData } from "hyperdrive/types";
 import { useHyperdriveConfig } from "hyperdrive/useHyperdriveConfig";
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, ReactElement } from "react";
 import { useQuery } from "react-query";
 
 interface SectionProps extends PropsWithChildren {
   headerText: string;
 }
-export function Section({ children, headerText }: SectionProps) {
+export function Section({ children, headerText }: SectionProps): ReactElement {
   return (
     <div className="flex flex-col gap-y-6">
       <h2 className="text-4xl text-white font-Akira">{headerText}</h2>
@@ -17,7 +17,7 @@ export function Section({ children, headerText }: SectionProps) {
   );
 }
 
-export function IndexPage() {
+export function IndexPage(): ReactElement {
   const { data } = useMarketsData();
 
   return (

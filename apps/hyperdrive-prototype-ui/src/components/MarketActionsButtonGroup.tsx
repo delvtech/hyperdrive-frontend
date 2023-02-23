@@ -5,6 +5,7 @@ import {
 } from "@heroicons/react/20/solid";
 import classNames from "classnames";
 import { MarketAction, OrderType } from "hyperdrive/types";
+import { ReactElement } from "react";
 
 interface MarketActionButtonGroupProps {
   selectedAction: MarketAction;
@@ -18,7 +19,7 @@ export function MarketActionButtonGroup({
   selectedOrderType,
   onMarketActionChange,
   onOrderTypeChange,
-}: MarketActionButtonGroupProps) {
+}: MarketActionButtonGroupProps): ReactElement {
   return (
     <div className="flex flex-col gap-y-4">
       <div className="grid grid-cols-3 bg-slate-800">

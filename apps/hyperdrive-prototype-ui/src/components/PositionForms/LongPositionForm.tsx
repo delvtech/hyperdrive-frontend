@@ -12,7 +12,7 @@ import {
 import { useLongs } from "hyperdrive/hooks/useLongs";
 import { usePreviewOpenLong } from "hyperdrive/hooks/usePreviewOpenLong";
 import { Market, OrderType } from "hyperdrive/types";
-import { useState } from "react";
+import { ReactElement, useState } from "react";
 import { match } from "ts-pattern";
 import { formatBalance } from "utils";
 import { useAccount, useBalance } from "wagmi";
@@ -25,7 +25,7 @@ interface LongPositionFormProps {
   market: Market;
 }
 
-export function LongPositionForm({ order, market }: LongPositionFormProps) {
+export function LongPositionForm({ order, market }: LongPositionFormProps): ReactElement {
   const { address } = useAccount();
   const { data: baseTokenData } = useBalance({
     address,

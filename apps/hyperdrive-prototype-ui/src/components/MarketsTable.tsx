@@ -1,4 +1,5 @@
 import { MarketData } from "hyperdrive/types";
+import { ReactElement } from "react";
 import { useNavigate } from "react-router-dom";
 import { formatBalance } from "utils";
 
@@ -6,7 +7,7 @@ interface MarketsTableProps {
   markets: MarketData[];
 }
 
-export function MarketsTable({ markets }: MarketsTableProps) {
+export function MarketsTable({ markets }: MarketsTableProps): ReactElement {
   return (
     <table className="text-left text-white border-separate border-spacing-y-4">
       <thead>
