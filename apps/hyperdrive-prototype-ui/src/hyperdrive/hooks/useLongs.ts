@@ -18,7 +18,7 @@ export function useLongs(account: Address | undefined, market: Market) {
         provider,
       );
 
-      // fetch transfer events from zero address to account
+      // Mint events are any TransferSingle event where the tokens come from the zero address
       const mintEventFilter = multiTokenContract.filters.TransferSingle(
         undefined,
         constants.AddressZero,
@@ -30,7 +30,7 @@ export function useLongs(account: Address | undefined, market: Market) {
         "latest",
       );
 
-      // fetch transfer events from account to zero address
+      // Burn events are any TransferSingle event where the tokens goes to the zero address
       const burnEventFilter = multiTokenContract.filters.TransferSingle(
         undefined,
         account,

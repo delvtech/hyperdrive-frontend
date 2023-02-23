@@ -10,6 +10,12 @@ interface TokenInputProps {
   onChange: (value: string) => void;
   token: Token;
 }
+const inputRegexPattern = /[+-]?([0-9]*[.])?[0-9]+/;
+const inputRegex = new RegExp(inputRegexPattern);
+
+function isValidInput(input: string) {
+  return !input || inputRegex.test(input);
+}
 
 export function TokenInput({
   currentBalance,
@@ -30,8 +36,10 @@ export function TokenInput({
             placeholder="0"
             onChange={(event) => {
               const value = event.target.value;
-              setInput(value);
-              onChange(value);
+              if (isValidInput(value)) {
+                setInput(value);
+                onChange(value);
+              }
             }}
           />
         </div>

@@ -3,7 +3,7 @@ import { parseUnits } from "ethers/lib/utils.js";
 import { hyperdriveABI } from "generated";
 import { Market } from "hyperdrive/types";
 import { useQuery } from "react-query";
-import { isTokenAmountNotZeroOrNull } from "utils";
+import { isValidTokenAmount } from "utils";
 import { Address, useProvider, useSigner } from "wagmi";
 
 export function usePreviewCloseLong(
@@ -22,7 +22,7 @@ export function usePreviewCloseLong(
       !!tokenId &&
       !!provider &&
       !!signer &&
-      isTokenAmountNotZeroOrNull(bondAmount),
+      isValidTokenAmount(bondAmount),
     queryFn: async () => {
       const hyperdriveContract = new Contract(
         market.address,

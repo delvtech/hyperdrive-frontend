@@ -11,7 +11,7 @@ import { useLongs } from "hyperdrive/hooks/useLongs";
 import { usePreviewCloseLong } from "hyperdrive/hooks/usePreviewCloseLong";
 import { Long, Market } from "hyperdrive/types";
 import { ReactElement, useEffect, useState } from "react";
-import { formatBalance, isTokenAmountNotZeroOrNull } from "utils";
+import { formatBalance, isValidTokenAmount } from "utils";
 import { useAccount } from "wagmi";
 
 interface CloseLongPositionFormProps {
@@ -23,7 +23,6 @@ export function CloseLongPositionForm({
 }: CloseLongPositionFormProps): ReactElement {
   const { address } = useAccount();
 
-  // const baseTokenBalance = baseTokenData?.value.toString() ?? "0";
   const [balance, setBalance] = useState("0");
   const [totalBalance, setTotalBalance] = useState("0");
 
@@ -153,9 +152,7 @@ export function CloseLongPositionForm({
       ) : (
         <button
           disabled={
-            !selectedLong ||
-            !isTokenAmountNotZeroOrNull(balance) ||
-            closeLongLoading
+            !selectedLong || !isValidTokenAmount(balance) || closeLongLoading
           }
           onClick={() => {
             writeCloseLong && writeCloseLong();
