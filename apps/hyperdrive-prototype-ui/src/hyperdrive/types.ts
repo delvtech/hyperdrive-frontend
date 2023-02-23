@@ -34,3 +34,8 @@ export interface Long {
   amount: BigNumber;
   id: string;
 }
+
+export interface Short {
+  amount: BigNumber;
+  id: string;
+}
