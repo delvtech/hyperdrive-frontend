@@ -4,9 +4,9 @@ import { Address } from "wagmi";
 export interface Token {
   name: string;
   symbol: string;
-  logoUrl: string;
-  address: Address;
   decimals: number;
+  logoUrl?: string;
+  address?: Address;
 }
 
 export interface Market {
