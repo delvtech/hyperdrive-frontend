@@ -15,7 +15,7 @@ export function TokenInput({
   onChange,
   currentBalance,
 }: TokenInputProps) {
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState<string>("");
 
   return (
     <div className="flex flex-col p-4 border-2 rounded border-lean gap-y-2">
