@@ -13,3 +13,14 @@ export function formatBalance(
 ): string {
   return commify(format(`.${numDecimals}~f`)(+balance));
 }
+
+export function isTokenAmountNotZeroOrNull(amount?: string) {
+  if (!amount) {
+    return false;
+  }
+  if (amount === "0" || amount === "0.0") {
+    return false;
+  }
+
+  return true;
+}
