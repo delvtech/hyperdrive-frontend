@@ -39,7 +39,7 @@ export function usePreviewOpenShort(
           );
 
           const out = await hyperdriveContract
-            .connect(signer!)
+            .connect(signer)
             .callStatic.openShort(
               bondAmountBN,
               // todo support slippage
