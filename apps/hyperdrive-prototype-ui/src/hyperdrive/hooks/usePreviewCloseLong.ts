@@ -3,6 +3,7 @@ import { parseUnits } from "ethers/lib/utils.js";
 import { useQuery, UseQueryResult } from "react-query";
 import { hyperdriveABI } from "src/generated";
 import { Market } from "src/hyperdrive/types";
+import { isValidTokenAmount } from "src/utils";
 import { Address, useProvider, useSigner } from "wagmi";
 
 export function usePreviewCloseLong(
