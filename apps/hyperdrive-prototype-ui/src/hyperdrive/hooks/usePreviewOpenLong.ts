@@ -5,24 +5,11 @@ import { Market } from "hyperdrive/types";
 import { useQuery } from "react-query";
 import { Address, useProvider, useSigner } from "wagmi";
 
-interface Long {
-  amount: string;
-  id: string;
-  createdAt: Date;
-}
-
 export function usePreviewOpenLong(
   account: Address | undefined,
   market: Market,
   baseAmount: string,
 ) {
-  // const events = useMultiTokenTransferSingleEvent({
-  //   address: market.address,
-  //   listener(node, label, owner) {
-  //     console.log(node, label, owner);
-  //   },
-  // });
-
   const provider = useProvider();
 
   const { data: signer } = useSigner();
