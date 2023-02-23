@@ -1,8 +1,8 @@
+import { Tag } from "components/Tag";
 import { formatUnits } from "ethers/lib/utils.js";
 import { Token } from "hyperdrive/types";
 import { useState } from "react";
 import { formatBalance } from "utils";
-import { Tag } from "./Tag";
 
 interface TokenInputProps {
   currentBalance: string;
