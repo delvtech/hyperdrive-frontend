@@ -1,5 +1,6 @@
 module.exports = {
   root: true,
+  ignorePatterns: ["generated.ts"],
   extends: [
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
