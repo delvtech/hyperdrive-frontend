@@ -1,4 +1,4 @@
-import { lightTheme, RainbowKitProvider, Theme } from "@rainbow-me/rainbowkit";
+import { lightTheme, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import merge from "lodash.merge";
 import { IndexPage } from "pages/IndexPage";
 import { MarketPage } from "pages/MarketPage";
@@ -34,7 +34,7 @@ export function App(): ReactElement {
 
                 // TODO custom rainbow kit theme
               },
-            } as Theme)}
+            })}
           >
             <Navbar />
             <BrowserRouter>

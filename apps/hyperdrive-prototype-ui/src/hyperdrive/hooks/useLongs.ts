@@ -2,10 +2,21 @@ import { BigNumber, constants, Contract } from "ethers";
 import { multiTokenABI } from "generated";
 import { Long, Market } from "hyperdrive/types";
 import { getAssetPrefixFromTokenId } from "hyperdrive/utils";
-import { useQuery } from "react-query";
+import { useQuery, UseQueryResult } from "react-query";
 import { Address, useProvider } from "wagmi";
 
-export function useLongs(account: Address | undefined, market: Market) {
+interface Longs {
+  openLongs: {
+    id: string;
+    amount: BigNumber;
+  }[];
+  closedLongs: Long[];
+}
+
+export function useLongs(
+  account: Address | undefined,
+  market: Market,
+): UseQueryResult<Longs> {
   const provider = useProvider();
 
   return useQuery({
