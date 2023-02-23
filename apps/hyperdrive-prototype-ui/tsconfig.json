@@ -16,6 +16,6 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src"],
+  "include": ["src", "wagmi.config.ts"],
   "exclude": ["node_modules"]
 }
