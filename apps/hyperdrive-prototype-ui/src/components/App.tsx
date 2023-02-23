@@ -1,12 +1,12 @@
 import { lightTheme, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import merge from "lodash.merge";
+import { IndexPage } from "pages/IndexPage";
+import { MarketPage } from "pages/MarketPage";
 import { ReactElement } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { IndexPage } from "src/pages/IndexPage";
-import { MarketPage } from "src/pages/MarketPage";
-import { chains, wagmiClient } from "src/wallet/wagmiClient";
 import { WagmiConfig } from "wagmi";
+import { chains, wagmiClient } from "wallet/wagmiClient";
 import { Navbar } from "./Navbar";
 
 const queryClient = new QueryClient();

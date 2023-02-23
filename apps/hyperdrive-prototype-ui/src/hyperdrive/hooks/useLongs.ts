@@ -1,8 +1,8 @@
 import { BigNumber, constants, Contract } from "ethers";
+import { multiTokenABI } from "generated";
+import { Long, Market } from "hyperdrive/types";
+import { getAssetPrefixFromTokenId } from "hyperdrive/utils";
 import { useQuery, UseQueryResult } from "react-query";
-import { multiTokenABI } from "src/generated";
-import { Long, Market } from "src/hyperdrive/types";
-import { getAssetPrefixFromTokenId } from "src/hyperdrive/utils";
 import { Address, useProvider } from "wagmi";
 
 interface Longs {

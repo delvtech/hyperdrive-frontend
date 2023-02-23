@@ -1,8 +1,8 @@
-import { Tag } from "src/components/Tag";
+import { Tag } from "components/Tag";
 import { formatUnits } from "ethers/lib/utils.js";
-import { Token } from "src/hyperdrive/types";
-import { useState } from "react";
-import { formatBalance } from "src/utils";
+import { Token } from "hyperdrive/types";
+import { ReactElement, useState } from "react";
+import { formatBalance } from "utils";
 
 interface TokenInputProps {
   currentBalance: string;
@@ -22,7 +22,7 @@ export function TokenInput({
   disabled,
   onChange,
   token,
-}: TokenInputProps) {
+}: TokenInputProps): ReactElement {
   const [input, setInput] = useState<string>("");
 
   return (

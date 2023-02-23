@@ -1,17 +1,17 @@
 import { ExclamationCircleIcon } from "@heroicons/react/20/solid";
+import { Tag } from "components/Tag";
+import { TokenInput } from "components/TokenInput";
 import { BigNumber, constants } from "ethers";
 import { formatUnits, parseUnits } from "ethers/lib/utils.js";
-import { ReactElement, useEffect, useState } from "react";
-import { Tag } from "src/components/Tag";
-import { TokenInput } from "src/components/TokenInput";
 import {
   useHyperdriveCloseLong,
   usePrepareHyperdriveCloseLong,
-} from "src/generated";
-import { useLongs } from "src/hyperdrive/hooks/useLongs";
-import { usePreviewCloseLong } from "src/hyperdrive/hooks/usePreviewCloseLong";
-import { Long, Market } from "src/hyperdrive/types";
-import { formatBalance, isValidTokenAmount } from "src/utils";
+} from "generated";
+import { useLongs } from "hyperdrive/hooks/useLongs";
+import { usePreviewCloseLong } from "hyperdrive/hooks/usePreviewCloseLong";
+import { Long, Market } from "hyperdrive/types";
+import { ReactElement, useEffect, useState } from "react";
+import { formatBalance, isValidTokenAmount } from "utils";
 import { useAccount } from "wagmi";
 
 interface CloseLongPositionFormProps {

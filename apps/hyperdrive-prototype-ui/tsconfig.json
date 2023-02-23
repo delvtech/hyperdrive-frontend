@@ -2,12 +2,9 @@
   "extends": "@hyperdrive/tsconfig/base.json",
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"],
-  "paths": {
-    "src/*": ["./src/*"]
-  },
   "compilerOptions": {
     "rootDir": ".",
-    "baseUrl": ".",
+    "baseUrl": "src",
     "jsx": "preserve",
     "module": "ESNext",
     "noEmit": true

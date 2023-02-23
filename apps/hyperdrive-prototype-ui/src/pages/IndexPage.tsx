@@ -1,9 +1,9 @@
+import { MarketsTable } from "components/MarketsTable";
+import { StatBubble } from "components/StatBubble";
+import { MarketData } from "hyperdrive/types";
+import { useHyperdriveConfig } from "hyperdrive/useHyperdriveConfig";
 import { PropsWithChildren, ReactElement } from "react";
 import { useQuery } from "react-query";
-import { MarketsTable } from "src/components/MarketsTable";
-import { StatBubble } from "src/components/StatBubble";
-import { MarketData } from "src/hyperdrive/types";
-import { useHyperdriveConfig } from "src/hyperdrive/useHyperdriveConfig";
 
 interface SectionProps extends PropsWithChildren {
   headerText: string;
