@@ -15,7 +15,7 @@ import {
 import { useLongs } from "hyperdrive/hooks/useLongs";
 import { usePreviewOpenLong } from "hyperdrive/hooks/usePreviewOpenLong";
 import { Market } from "hyperdrive/types";
-import { useState } from "react";
+import { ReactElement, useState } from "react";
 import { formatBalance } from "utils";
 import { useAccount, useBalance } from "wagmi";
 
@@ -23,7 +23,9 @@ interface OpenLongPositionFormProps {
   market: Market;
 }
 
-export function OpenLongPositionForm({ market }: OpenLongPositionFormProps) {
+export function OpenLongPositionForm({
+  market,
+}: OpenLongPositionFormProps): ReactElement {
   const { address } = useAccount();
 
   // Base token hooks

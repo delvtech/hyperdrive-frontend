@@ -9,14 +9,16 @@ import {
 import { useLongs } from "hyperdrive/hooks/useLongs";
 import { usePreviewCloseLong } from "hyperdrive/hooks/usePreviewCloseLong";
 import { Long, Market } from "hyperdrive/types";
-import { useEffect, useState } from "react";
+import { ReactElement, useEffect, useState } from "react";
 import { useAccount } from "wagmi";
 
 interface CloseLongPositionFormProps {
   market: Market;
 }
 
-export function CloseLongPositionForm({ market }: CloseLongPositionFormProps) {
+export function CloseLongPositionForm({
+  market,
+}: CloseLongPositionFormProps): ReactElement {
   const { address } = useAccount();
 
   // const baseTokenBalance = baseTokenData?.value.toString() ?? "0";
