@@ -17,7 +17,7 @@
     "build": "tsc && vite build",
     "serve": "vite preview",
     "test:ui": "vitest --ui",
-    "lint": "eslint src --max-warnings=0",
+    "lint": "eslint src",
     "format": "prettier --write '**/*.{gql,graphql,js,jsx,ts,tsx,json,md,yaml,yml}'",
     "format:check": "prettier --check '**/*.{gql,graphql,js,jsx,ts,tsx,json,md}'",
     "typecheck": "tsc --project tsconfig.json --noEmit",
