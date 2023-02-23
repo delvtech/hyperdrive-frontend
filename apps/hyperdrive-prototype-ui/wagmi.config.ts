@@ -6,7 +6,7 @@ export default defineConfig({
   contracts: [],
   plugins: [
     foundry({
-      project: "../hyperdrive",
+      project: "/Users/cashd/workspace/delve/hyperdrive",
       exclude: [
         "IERC20.sol",
         "Common.sol/**",
