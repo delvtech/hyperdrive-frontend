@@ -33,7 +33,6 @@ export function OpenLpPositionForm({
   const { data: baseTokenData } = useBalance({
     address,
     token: market.baseToken.address,
-    staleTime: 2,
   });
 
   const baseTokenBalance = baseTokenData?.value.toString() ?? "0";
@@ -47,7 +46,7 @@ export function OpenLpPositionForm({
   );
 
   const formattedPreviewAmountOut = previewAmountOutBN
-    ? previewAmountOutBN.toString()
+    ? formatUnits(previewAmountOutBN, 0)
     : "0";
 
   // Market information hooks
@@ -58,10 +57,10 @@ export function OpenLpPositionForm({
   const { data: sharePrice } = useHyperdriveBaseInitialSharePrice({
     address: market.address,
   });
-  const baseReserves =
+  const baseReservesLabel =
     sharePrice &&
     marketShareReserves &&
-    +formatEther(sharePrice) * +formatEther(marketShareReserves);
+    formatBalance(+formatEther(sharePrice) * +formatEther(marketShareReserves));
 
   const { data: marketBondReserves } = useHyperdriveBondReserves({
     address: market.address,
@@ -133,7 +132,7 @@ export function OpenLpPositionForm({
           "Bond Reserves": formatBalance(
             formatUnits(marketBondReserves ?? 0, market.baseToken.decimals),
           ),
-          "Base Reserves": formatBalance(baseReserves ?? "0"),
+          "Base Reserves": baseReservesLabel,
         }}
       />
       {shouldApprove ? (

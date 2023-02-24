@@ -30,21 +30,13 @@ export function CloseLpPositionForm({
 }: CloseLpPositionFormProps): ReactElement {
   const { address } = useAccount();
 
-  // Base token hooks
-  // const { data: baseTokenData } = useBalance({
-  //   address,
-  //   token: market.baseToken.address,
-  // });
-
-  const useHyperdriveBalanceOfEnabled = !!address;
+  const hyperdriveBalanceOfEnabled = !!address;
   const { data: lpBalance } = useHyperdriveBalanceOf({
     address: market.address,
-    args: useHyperdriveBalanceOfEnabled
-      ? [BigNumber.from(0), address]
-      : undefined,
+    enabled: hyperdriveBalanceOfEnabled,
+    args: hyperdriveBalanceOfEnabled ? [BigNumber.from(0), address] : undefined,
   });
 
-  // const baseTokenBalance = baseTokenData?.value.toString() ?? "0";
   const [balance, setBalance] = useState("0");
 
   // Preview amounts
@@ -53,8 +45,6 @@ export function CloseLpPositionForm({
     market,
     balance,
   );
-
-  console.log(previewAmountOutBN?.toString());
 
   const formattedPreviewAmountOut = previewAmountOutBN
     ? formatUnits(previewAmountOutBN, market.baseToken.decimals)
@@ -172,7 +162,7 @@ export function CloseLpPositionForm({
       ) : (
         <button
           disabled={!isValidTokenAmount(balance) || openLpLoading}
-          onClick={() => writeOpenLp && writeOpenLp()}
+          onClick={() => writeOpenLp?.()}
           className="font-bold text-black btn-lg btn hover:bg-racing-green bg-lean disabled:bg-lean disabled:bg-opacity-60 disabled:text-opacity-100"
         >
           Close LP

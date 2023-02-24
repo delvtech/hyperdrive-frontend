@@ -34,7 +34,6 @@ export function OpenLongPositionForm({
   const { data: baseTokenData } = useBalance({
     address,
     token: market.baseToken.address,
-    staleTime: 2,
   });
 
   const baseTokenBalance = baseTokenData?.value.toString() ?? "0";
