@@ -1,7 +1,8 @@
 import { Receipt } from "components/Receipt";
+import { SwapErrorButton } from "components/SwapErrorButton";
 import { Tag } from "components/Tag";
 import { TokenInput } from "components/TokenInput";
-import { constants } from "ethers";
+import { BigNumber, constants } from "ethers";
 import { formatUnits, parseUnits } from "ethers/lib/utils.js";
 import {
   useErc20Allowance,
@@ -12,11 +13,10 @@ import {
   usePrepareErc20Approve,
   usePrepareHyperdriveOpenLong,
 } from "generated";
-import { useLongs } from "hyperdrive/hooks/useLongs";
 import { usePreviewOpenLong } from "hyperdrive/hooks/usePreviewOpenLong";
 import { Market } from "hyperdrive/types";
 import { ReactElement, useState } from "react";
-import { formatBalance } from "utils";
+import { formatBalance, isValidTokenAmount } from "utils";
 import { useAccount, useBalance } from "wagmi";
 
 interface OpenLongPositionFormProps {
@@ -43,10 +43,12 @@ export function OpenLongPositionForm({
     market,
     balance,
   );
-  const previewAmountOut = formatUnits(
-    previewAmountOutBN ?? "0",
-    market.baseToken.decimals,
-  );
+
+  const formattedPreviewAmountOut = (
+    previewAmountOutBN || BigNumber.from(0)
+  ).eq(0)
+    ? "0"
+    : formatUnits(previewAmountOutBN ?? "0", market.baseToken.decimals);
 
   // Market information hooks
   const { data: marketShareReserves } = useHyperdriveShareReserves({
@@ -74,23 +76,23 @@ export function OpenLongPositionForm({
     parseUnits(balance, market.baseToken.decimals).gt(baseTokenAllowance ?? 0);
 
   // Open long hooks
-  const { config: openLongConfig } = usePrepareHyperdriveOpenLong({
+  const prepareHyperdriveOpenLongEnabled =
+    !!address && !!balance && isValidTokenAmount(balance);
+  const { config: openLongConfig, error } = usePrepareHyperdriveOpenLong({
     address: market.address,
-    args: [
-      parseUnits(balance, market.baseToken.decimals),
-      constants.Zero,
-      address!,
-      false,
-    ],
-    enabled: !!address && !!balance && balance !== "0",
+    enabled: prepareHyperdriveOpenLongEnabled,
+    args: prepareHyperdriveOpenLongEnabled
+      ? [
+          parseUnits(balance, market.baseToken.decimals),
+          constants.Zero,
+          address,
+          false,
+        ]
+      : undefined,
   });
 
   const { write: writeOpenLong, isLoading: openLongLoading } =
     useHyperdriveOpenLong(openLongConfig);
-
-  // Current long data for connected account
-  const { data: longs } = useLongs(address, market);
-  const openLongs = longs?.openLongs ?? [];
 
   return (
     <div className="flex flex-col animate-ezn gap-y-10">
@@ -110,10 +112,11 @@ export function OpenLongPositionForm({
 
         <div className="flex items-center w-full p-4">
           <div className="w-full mr-4 overflow-x-auto">
-            <h4 className="mr-auto text-5xl font-bold">{previewAmountOut}</h4>
+            <h4 className="mr-auto text-5xl font-bold">
+              {formattedPreviewAmountOut}
+            </h4>
           </div>
           <Tag text="Long" />
-          {/* <Tag text="June 21st, 2023" /> */}
         </div>
       </div>
       <Receipt
@@ -138,15 +141,15 @@ export function OpenLongPositionForm({
         >
           Approve
         </button>
+      ) : error ? (
+        <SwapErrorButton />
       ) : (
         <button
-          disabled={!balance || openLongLoading}
-          onClick={() => {
-            writeOpenLong && writeOpenLong();
-          }}
+          disabled={!isValidTokenAmount(balance) || openLongLoading}
+          onClick={() => writeOpenLong && writeOpenLong()}
           className="font-bold text-black btn-lg btn hover:bg-racing-green bg-lean disabled:bg-lean disabled:bg-opacity-60 disabled:text-opacity-100"
         >
-          Open Long
+          Open long
         </button>
       )}
     </div>
