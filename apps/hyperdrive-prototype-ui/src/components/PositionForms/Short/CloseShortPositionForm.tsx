@@ -38,7 +38,9 @@ export function CloseShortPositionForm({
     selectedShort?.id,
     balance,
   );
-  const formattedPreviewAmountOut = previewAmountOutBN?.eq(0)
+  const formattedPreviewAmountOut = (
+    previewAmountOutBN || BigNumber.from(0)
+  ).eq(0)
     ? "0"
     : formatUnits(previewAmountOutBN ?? "0", market.baseToken.decimals);
 
