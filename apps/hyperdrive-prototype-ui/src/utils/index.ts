@@ -21,7 +21,7 @@ export function isValidTokenAmount(amount: string | undefined): boolean {
   }
 
   try {
-    BigNumber.from(amount).gt(0);
+    return BigNumber.from(amount).gt(0);
   } catch (e) {
     return false;
   }
