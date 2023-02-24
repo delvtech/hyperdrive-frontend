@@ -44,7 +44,9 @@ export function MarketPage(): ReactElement {
             .with("SHORT", () => (
               <ShortPositionForm order={orderType} market={market} />
             ))
-            .with("LP", () => <LpPositionForm />)
+            .with("LP", () => (
+              <LpPositionForm order={orderType} market={market} />
+            ))
             .exhaustive()}
       </div>
     </div>

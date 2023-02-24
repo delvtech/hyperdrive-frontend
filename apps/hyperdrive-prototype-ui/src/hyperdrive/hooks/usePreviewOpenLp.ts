@@ -6,45 +6,34 @@ import { useQuery, UseQueryResult } from "react-query";
 import { isValidTokenAmount } from "utils";
 import { Address, useProvider, useSigner } from "wagmi";
 
-export function usePreviewCloseLong(
+export function usePreviewOpenLp(
   account: Address | undefined,
   market: Market,
-  bondAmount: string,
-  tokenId: string | undefined,
+  baseAmount: string,
 ): UseQueryResult<BigNumber> {
   const provider = useProvider();
+
   const { data: signer } = useSigner();
 
   return useQuery({
-    queryKey: [account, tokenId, bondAmount],
+    queryKey: [account, market, baseAmount],
     enabled:
-      !!account &&
-      !!tokenId &&
-      !!provider &&
-      !!signer &&
-      isValidTokenAmount(bondAmount),
+      !!account && !!provider && isValidTokenAmount(baseAmount) && !!signer,
     queryFn: async () => {
-      const bondAmountBN = parseUnits(bondAmount, market.baseToken.decimals);
+      const baseAmountBN = parseUnits(baseAmount, market.baseToken.decimals);
 
-      if (bondAmountBN.isZero()) {
+      if (baseAmountBN.isZero()) {
         return BigNumber.from(0);
       }
-
       const hyperdriveContract = new Contract(
         market.address,
         hyperdriveABI,
         provider,
       );
 
-      const out: BigNumber = await hyperdriveContract
+      const out = await hyperdriveContract
         .connect(signer as Signer)
-        .callStatic.closeLong(
-          tokenId,
-          parseUnits(bondAmount, market.baseToken.decimals),
-          0,
-          account,
-          false,
-        );
+        .callStatic.addLiquidity(baseAmount, 0, account, false);
 
       return out;
     },
