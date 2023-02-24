@@ -24,7 +24,6 @@ export function CloseLongPositionForm({
   const { address } = useAccount();
 
   const [balance, setBalance] = useState("0");
-  const [totalBalance, setTotalBalance] = useState("0");
 
   // Current long data for connected account
   const { data: longs } = useLongs(address, market);
