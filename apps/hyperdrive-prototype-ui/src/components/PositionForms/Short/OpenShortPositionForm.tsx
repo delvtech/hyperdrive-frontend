@@ -1,4 +1,4 @@
-import { ExclamationCircleIcon } from "@heroicons/react/20/solid";
+import { SwapErrorButton } from "components/SwapErrorButton";
 import { Tag } from "components/Tag";
 import { TokenInput } from "components/TokenInput";
 import { constants } from "ethers";
@@ -131,17 +131,11 @@ export function OpenShortPositionForm({
         >
           Approve
         </button>
-      ) : error ? (
-        <button
-          disabled
-          className="font-bold disabled:text-black btn-lg btn disabled:bg-error"
-        >
-          <ExclamationCircleIcon className="w-5 mr-1" />
-          Can&apos;t swap
-        </button>
+      ) : false ? (
+        <SwapErrorButton />
       ) : (
         <button
-          disabled={!isValidTokenAmount(balance) || openShortLoading}
+          // disabled={!isValidTokenAmount(balance) || openShortLoading}
           onClick={() => writeOpenShort && writeOpenShort()}
           className="font-bold text-black btn-lg btn hover:bg-racing-green bg-lean disabled:bg-lean disabled:bg-opacity-60 disabled:text-opacity-100"
         >

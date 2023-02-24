@@ -1,4 +1,4 @@
-import { ExclamationCircleIcon } from "@heroicons/react/20/solid";
+import { SwapErrorButton } from "components/SwapErrorButton";
 import { Tag } from "components/Tag";
 import { TokenInput } from "components/TokenInput";
 import { BigNumber, constants } from "ethers";
@@ -53,17 +53,20 @@ export function CloseLongPositionForm({
   const formattedPreviewAmountOut =
     previewAmountOut === "0.0" ? "0" : previewAmountOut;
 
+  const prepareHyperdriveCloseLongEnabled =
+    !!address && isValidTokenAmount(balance) && !!selectedLong;
   const { config: closeLongConfig, error } = usePrepareHyperdriveCloseLong({
     address: market.address,
-    args: [
-      // todo prevent from crashing page, since this gets typed check during runtime
-      BigNumber.from(selectedLong?.id ?? "0"),
-      parseUnits(balance, market.baseToken.decimals),
-      constants.Zero,
-      address!,
-      false,
-    ],
-    enabled: !!address && !!balance && balance !== "0" && !!selectedLong,
+    args: prepareHyperdriveCloseLongEnabled
+      ? [
+          BigNumber.from(selectedLong.id),
+          parseUnits(balance, market.baseToken.decimals),
+          constants.Zero,
+          address,
+          false,
+        ]
+      : undefined,
+    enabled: prepareHyperdriveCloseLongEnabled,
   });
 
   const { writeAsync: writeCloseLong, isLoading: closeLongLoading } =
@@ -112,7 +115,7 @@ export function CloseLongPositionForm({
         <h3 className="text-2xl">You Receive</h3>
 
         <div className="flex items-center w-full p-4">
-          <div className="w-full mr-4 overflow-x-auto">
+          <div className="w-full mr-4 overflow-x-auto grow basis-0">
             <h4 className="mr-auto text-5xl font-bold">
               {formattedPreviewAmountOut}
             </h4>
@@ -140,11 +143,8 @@ export function CloseLongPositionForm({
           ),
         }}
       /> */}
-      {error ? (
-        <button className="font-bold text-black btn-lg btn hover:bg-racing-green bg-lean">
-          <ExclamationCircleIcon className="w-5 mr-1" />
-          Can&apos;t swap
-        </button>
+      {!!error ? (
+        <SwapErrorButton />
       ) : (
         <button
           disabled={

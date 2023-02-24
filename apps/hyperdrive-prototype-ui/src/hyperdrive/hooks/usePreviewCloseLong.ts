@@ -24,6 +24,12 @@ export function usePreviewCloseLong(
       !!signer &&
       isValidTokenAmount(bondAmount),
     queryFn: async () => {
+      const bondAmountBN = parseUnits(bondAmount, market.baseToken.decimals);
+
+      if (bondAmountBN.isZero()) {
+        return BigNumber.from(0);
+      }
+
       const hyperdriveContract = new Contract(
         market.address,
         hyperdriveABI,
