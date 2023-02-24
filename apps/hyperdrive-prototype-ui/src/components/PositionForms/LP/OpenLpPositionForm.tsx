@@ -1,7 +1,7 @@
 import { Receipt } from "components/Receipt";
 import { Tag } from "components/Tag";
 import { TokenInput } from "components/TokenInput";
-import { BigNumber, constants } from "ethers";
+import { constants } from "ethers";
 import { formatEther, formatUnits, parseUnits } from "ethers/lib/utils.js";
 import {
   useErc20Allowance,
@@ -32,6 +32,7 @@ export function OpenLpPositionForm({
   const { data: baseTokenData } = useBalance({
     address,
     token: market.baseToken.address,
+    staleTime: 2,
   });
 
   const baseTokenBalance = baseTokenData?.value.toString() ?? "0";
@@ -44,11 +45,9 @@ export function OpenLpPositionForm({
     balance,
   );
 
-  const formattedPreviewAmountOut = (
-    previewAmountOutBN || BigNumber.from(0)
-  ).eq(0)
-    ? "0"
-    : formatUnits(previewAmountOutBN ?? "0", 0);
+  const formattedPreviewAmountOut = previewAmountOutBN
+    ? previewAmountOutBN.toString()
+    : "0";
 
   // Market information hooks
   const { data: marketShareReserves } = useHyperdriveShareReserves({
