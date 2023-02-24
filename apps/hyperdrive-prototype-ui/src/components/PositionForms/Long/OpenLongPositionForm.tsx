@@ -60,6 +60,8 @@ export function OpenLongPositionForm({
   const { data: sharePrice } = useHyperdriveBaseInitialSharePrice({
     address: market.address,
   });
+
+  // doing regular number math okay here for now. TODO: get bignumber math to work.
   const baseReserves =
     sharePrice &&
     marketShareReserves &&
