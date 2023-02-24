@@ -7,17 +7,18 @@ import {
   useErc20Allowance,
   useErc20Approve,
   useHyperdriveAddLiquidity,
+  useHyperdriveBalanceOf,
   useHyperdriveBaseInitialSharePrice,
   useHyperdriveBondReserves,
   useHyperdriveShareReserves,
   usePrepareErc20Approve,
   usePrepareHyperdriveAddLiquidity,
 } from "generated";
-import { usePreviewOpenLp } from "hyperdrive/hooks/usePreviewOpenLp";
+import { usePreviewCloseLp } from "hyperdrive/hooks/usePreviewCloseLp";
 import { Market } from "hyperdrive/types";
 import { ReactElement, useState } from "react";
 import { formatBalance, isValidTokenAmount } from "utils";
-import { useAccount, useBalance } from "wagmi";
+import { useAccount } from "wagmi";
 
 interface CloseLpPositionFormProps {
   market: Market;
@@ -29,26 +30,32 @@ export function CloseLpPositionForm({
   const { address } = useAccount();
 
   // Base token hooks
-  const { data: baseTokenData } = useBalance({
-    address,
-    token: market.baseToken.address,
+  // const { data: baseTokenData } = useBalance({
+  //   address,
+  //   token: market.baseToken.address,
+  // });
+
+  const useHyperdriveBalanceOfEnabled = !!address;
+  const { data: lpBalance } = useHyperdriveBalanceOf({
+    address: market.address,
+    args: useHyperdriveBalanceOfEnabled
+      ? [BigNumber.from(0), address]
+      : undefined,
   });
 
-  const baseTokenBalance = baseTokenData?.value.toString() ?? "0";
+  // const baseTokenBalance = baseTokenData?.value.toString() ?? "0";
   const [balance, setBalance] = useState("0");
 
   // Preview amounts
-  const { data: previewAmountOutBN } = usePreviewOpenLp(
+  const { data: previewAmountOutBN } = usePreviewCloseLp(
     address,
     market,
     balance,
   );
 
-  const formattedPreviewAmountOut = (
-    previewAmountOutBN || BigNumber.from(0)
-  ).eq(0)
-    ? "0"
-    : formatUnits(previewAmountOutBN ?? "0", 0);
+  console.log(previewAmountOutBN?.toString());
+
+  const formattedPreviewAmountOut = "0";
 
   // Market information hooks
   const { data: marketShareReserves } = useHyperdriveShareReserves({
@@ -108,8 +115,13 @@ export function CloseLpPositionForm({
         <h3 className="text-2xl">From Wallet</h3>
 
         <TokenInput
-          token={market.baseToken}
-          currentBalance={baseTokenBalance}
+          token={{
+            name: "LP",
+            symbol: "LP",
+            decimals: 0,
+          }}
+          disableMax
+          currentBalance={lpBalance?.toString() ?? "0"}
           showInputError={!!error}
           onChange={(newBalance: string) => {
             setBalance(newBalance || "0");
