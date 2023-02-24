@@ -3,10 +3,11 @@ import { SwapErrorButton } from "components/SwapErrorButton";
 import { Tag } from "components/Tag";
 import { TokenInput } from "components/TokenInput";
 import { BigNumber, constants } from "ethers";
-import { formatUnits, parseUnits } from "ethers/lib/utils.js";
+import { formatEther, formatUnits, parseUnits } from "ethers/lib/utils.js";
 import {
   useErc20Allowance,
   useErc20Approve,
+  useHyperdriveBaseInitialSharePrice,
   useHyperdriveBondReserves,
   useHyperdriveOpenLong,
   useHyperdriveShareReserves,
@@ -15,6 +16,7 @@ import {
 } from "generated";
 import { usePreviewOpenLong } from "hyperdrive/hooks/usePreviewOpenLong";
 import { Market } from "hyperdrive/types";
+import moment from "moment";
 import { ReactElement, useState } from "react";
 import { formatBalance, isValidTokenAmount } from "utils";
 import { useAccount, useBalance } from "wagmi";
@@ -54,6 +56,14 @@ export function OpenLongPositionForm({
   const { data: marketShareReserves } = useHyperdriveShareReserves({
     address: market.address,
   });
+
+  const { data: sharePrice } = useHyperdriveBaseInitialSharePrice({
+    address: market.address,
+  });
+  const baseReserves =
+    sharePrice &&
+    marketShareReserves &&
+    +formatEther(sharePrice) * +formatEther(marketShareReserves);
 
   const { data: marketBondReserves } = useHyperdriveBondReserves({
     address: market.address,
@@ -102,6 +112,7 @@ export function OpenLongPositionForm({
         <TokenInput
           token={market.baseToken}
           currentBalance={baseTokenBalance}
+          showInputError={!!error}
           onChange={(newBalance: string) => {
             setBalance(newBalance || "0");
           }}
@@ -121,15 +132,11 @@ export function OpenLongPositionForm({
       </div>
       <Receipt
         data={{
-          Matures: new Date(
-            Date.now() + market.positionDuration,
-          ).toLocaleDateString(),
+          Matures: moment().add("1 year").format("LLL"),
           "Bond Reserves": formatBalance(
             formatUnits(marketBondReserves ?? 0, market.baseToken.decimals),
           ),
-          "Share Reserves": formatBalance(
-            formatUnits(marketShareReserves ?? 0, market.baseToken.decimals),
-          ),
+          "Base Reserves": formatBalance(baseReserves ?? "0"),
         }}
       />
       {shouldApprove ? (

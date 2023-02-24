@@ -1,19 +1,24 @@
+import { Receipt } from "components/Receipt";
 import { SwapErrorButton } from "components/SwapErrorButton";
 import { Tag } from "components/Tag";
 import { TokenInput } from "components/TokenInput";
 import { constants } from "ethers";
-import { formatUnits, parseUnits } from "ethers/lib/utils.js";
+import { formatEther, formatUnits, parseUnits } from "ethers/lib/utils.js";
 import {
   useErc20Allowance,
   useErc20Approve,
+  useHyperdriveBaseInitialSharePrice,
+  useHyperdriveBondReserves,
   useHyperdriveOpenShort,
+  useHyperdriveShareReserves,
   usePrepareErc20Approve,
   usePrepareHyperdriveOpenShort,
 } from "generated";
 import { usePreviewOpenShort } from "hyperdrive/hooks/usePreviewOpenShort";
 import { Market } from "hyperdrive/types";
+import moment from "moment";
 import { ReactElement, useState } from "react";
-import { isValidTokenAmount } from "utils";
+import { formatBalance, isValidTokenAmount } from "utils";
 import { useAccount, useBalance } from "wagmi";
 
 interface OpenShortPositionFormProps {
@@ -46,6 +51,23 @@ export function OpenShortPositionForm({
   );
   const formattedPreviewAmountOut =
     previewAmountOut === "0.0" ? "0" : previewAmountOut;
+
+  // Market information hooks
+  const { data: marketShareReserves } = useHyperdriveShareReserves({
+    address: market.address,
+  });
+
+  const { data: sharePrice } = useHyperdriveBaseInitialSharePrice({
+    address: market.address,
+  });
+  const baseReserves =
+    sharePrice &&
+    marketShareReserves &&
+    +formatEther(sharePrice) * +formatEther(marketShareReserves);
+
+  const { data: marketBondReserves } = useHyperdriveBondReserves({
+    address: market.address,
+  });
 
   // ERC-20 approval hooks
   const { config: erc20ApproveConfig } = usePrepareErc20Approve({
@@ -121,6 +143,16 @@ export function OpenShortPositionForm({
           </Tag>
         </div>
       </div>
+
+      <Receipt
+        data={{
+          Matures: moment().add("1 year").format("LLL"),
+          "Bond Reserves": formatBalance(
+            formatUnits(marketBondReserves ?? 0, market.baseToken.decimals),
+          ),
+          "Base Reserves": formatBalance(baseReserves ?? "0"),
+        }}
+      />
 
       {shouldApprove ? (
         <button
