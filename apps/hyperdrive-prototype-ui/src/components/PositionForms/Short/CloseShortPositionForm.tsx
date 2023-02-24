@@ -27,7 +27,7 @@ export function CloseShortPositionForm({
   const [balance, setBalance] = useState("0");
 
   const { data: shorts } = useShorts(address, market);
-  const openShorts = shorts?.openShorts ?? [];
+  const openShorts = shorts?.openShorts || [];
 
   const [selectedShort, setSelectedShort] = useState<Short | undefined>();
 
@@ -38,15 +38,11 @@ export function CloseShortPositionForm({
     selectedShort?.id,
     balance,
   );
-  const previewAmountOut = formatUnits(
-    previewAmountOutBN ?? "0",
-    market.baseToken.decimals,
-  );
-  const formattedPreviewAmountOut =
-    previewAmountOut === "0.0" ? "0" : previewAmountOut;
+  const formattedPreviewAmountOut = previewAmountOutBN?.eq(0)
+    ? "0"
+    : formatUnits(previewAmountOutBN ?? "0", market.baseToken.decimals);
 
   // Open short hooks
-  // todo find out why this throws an error when balance is zero
   const prepareHyperdriveCloseShortEnabled =
     !!address && !!selectedShort && isValidTokenAmount(balance);
   const { config: CloseShortConfig, error } = usePrepareHyperdriveCloseShort({
@@ -54,7 +50,6 @@ export function CloseShortPositionForm({
     enabled: prepareHyperdriveCloseShortEnabled,
     args: prepareHyperdriveCloseShortEnabled
       ? [
-          // todo prevent from crashing page, since this gets typed check during runtime
           getAssetTimestampFromTokenId(BigNumber.from(selectedShort.id)),
           parseUnits(balance, market.baseToken.decimals),
           constants.Zero,
@@ -63,11 +58,6 @@ export function CloseShortPositionForm({
         ]
       : undefined,
   });
-
-  // console.log(
-  //   error,
-  //   !!address && !!selectedShort && isValidTokenAmount(balance),
-  // );
 
   const { write: writeCloseShort, isLoading: CloseShortLoading } =
     useHyperdriveCloseShort(CloseShortConfig);

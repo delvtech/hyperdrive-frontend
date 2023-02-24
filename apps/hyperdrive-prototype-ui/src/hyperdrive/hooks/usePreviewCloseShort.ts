@@ -17,8 +17,6 @@ export function usePreviewCloseShort(
 
   const { data: signer } = useSigner();
 
-  // console.log("AHHH", shortAmount, isValidTokenAmount(shortAmount));
-
   const enabled =
     !!account &&
     !!provider &&
