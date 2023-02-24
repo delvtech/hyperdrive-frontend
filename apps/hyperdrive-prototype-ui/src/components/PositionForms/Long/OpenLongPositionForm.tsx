@@ -34,6 +34,7 @@ export function OpenLongPositionForm({
   const { data: baseTokenData } = useBalance({
     address,
     token: market.baseToken.address,
+    staleTime: 2,
   });
 
   const baseTokenBalance = baseTokenData?.value.toString() ?? "0";
@@ -89,7 +90,7 @@ export function OpenLongPositionForm({
 
   // Open long hooks
   const prepareHyperdriveOpenLongEnabled =
-    !!address && !!balance && isValidTokenAmount(balance);
+    !!address && isValidTokenAmount(balance);
   const { config: openLongConfig, error } = usePrepareHyperdriveOpenLong({
     address: market.address,
     enabled: prepareHyperdriveOpenLongEnabled,
