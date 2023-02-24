@@ -103,6 +103,7 @@ export function CloseLongPositionForm({
             symbol: "LONG",
             decimals: 18,
           }}
+          showInputError={!!error}
           disabled={!selectedLong || closeLongLoading}
           currentBalance={totalBalance}
           onChange={(newBalance) => {
