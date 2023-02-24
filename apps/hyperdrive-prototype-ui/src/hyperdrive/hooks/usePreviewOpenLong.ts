@@ -19,6 +19,11 @@ export function usePreviewOpenLong(
     enabled:
       !!account && !!provider && !!baseAmount && baseAmount !== "0" && !!signer,
     queryFn: async () => {
+      const baseAmountBN = parseUnits(baseAmount, market.baseToken.decimals);
+
+      if (baseAmountBN.isZero()) {
+        return BigNumber.from(0);
+      }
       const hyperdriveContract = new Contract(
         market.address,
         hyperdriveABI,
@@ -27,12 +32,7 @@ export function usePreviewOpenLong(
 
       const out = await hyperdriveContract
         .connect(signer!)
-        .callStatic.openLong(
-          parseUnits(baseAmount, market.baseToken.decimals),
-          0,
-          account,
-          false,
-        );
+        .callStatic.openLong(baseAmountBN, 0, account, false);
 
       return out;
     },
