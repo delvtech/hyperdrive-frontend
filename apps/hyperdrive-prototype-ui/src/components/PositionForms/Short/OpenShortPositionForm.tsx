@@ -64,16 +64,20 @@ export function OpenShortPositionForm({
     parseUnits(balance, market.baseToken.decimals).gt(baseTokenAllowance ?? 0);
 
   //Open short hooks
+  const prepareHyperdriveOpenShortEnabled =
+    !!address && !!balance && isValidTokenAmount(balance);
   const { config: OpenShortConfig, error } = usePrepareHyperdriveOpenShort({
     address: market.address,
-    args: [
-      parseUnits(balance, market.baseToken.decimals),
-      // todo slippage
-      constants.MaxUint256,
-      address!,
-      false,
-    ],
-    enabled: !!address && !!balance && balance !== "0",
+    enabled: prepareHyperdriveOpenShortEnabled,
+    args: prepareHyperdriveOpenShortEnabled
+      ? [
+          parseUnits(balance, market.baseToken.decimals),
+          // todo slippage
+          constants.MaxUint256,
+          address,
+          false,
+        ]
+      : undefined,
   });
 
   const { write: writeOpenShort, isLoading: openShortLoading } =
