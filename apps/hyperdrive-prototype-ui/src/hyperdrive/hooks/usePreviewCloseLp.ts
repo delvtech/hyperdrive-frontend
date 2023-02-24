@@ -1,27 +1,28 @@
-import { BigNumber, Contract } from "ethers";
+import { BigNumber, Contract, Signer } from "ethers";
 import { parseUnits } from "ethers/lib/utils.js";
 import { hyperdriveABI } from "generated";
 import { Market } from "hyperdrive/types";
 import { useQuery, UseQueryResult } from "react-query";
+import { isValidTokenAmount } from "utils";
 import { Address, useProvider, useSigner } from "wagmi";
 
-export function usePreviewOpenLong(
+export function usePreviewCloseLp(
   account: Address | undefined,
   market: Market,
-  baseAmount: string,
+  lpShares: string,
 ): UseQueryResult<BigNumber> {
   const provider = useProvider();
 
   const { data: signer } = useSigner();
 
   return useQuery({
-    queryKey: ["preview-open-long", account, market, baseAmount],
+    queryKey: [account, market, lpShares],
     enabled:
-      !!account && !!provider && !!baseAmount && baseAmount !== "0" && !!signer,
+      !!account && !!provider && isValidTokenAmount(lpShares) && !!signer,
     queryFn: async () => {
-      const baseAmountBN = parseUnits(baseAmount, market.baseToken.decimals);
+      const lpSharesBN = parseUnits(lpShares, 18);
 
-      if (baseAmountBN.isZero()) {
+      if (lpSharesBN.isZero()) {
         return BigNumber.from(0);
       }
       const hyperdriveContract = new Contract(
@@ -31,10 +32,10 @@ export function usePreviewOpenLong(
       );
 
       const out = await hyperdriveContract
-        .connect(signer!)
-        .callStatic.openLong(baseAmountBN, 0, account, false);
+        .connect(signer as Signer)
+        .callStatic.removeLiquidity(lpSharesBN, 0, account, false);
 
-      return out;
+      return out[0];
     },
   });
 }

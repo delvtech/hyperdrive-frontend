@@ -25,6 +25,4 @@ export function isValidTokenAmount(amount: string | undefined): boolean {
   } catch (e) {
     return false;
   }
-
-  return true;
 }

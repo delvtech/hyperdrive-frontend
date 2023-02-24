@@ -1,4 +1,4 @@
-import { BigNumber, Contract } from "ethers";
+import { BigNumber, Contract, Signer } from "ethers";
 import { parseUnits } from "ethers/lib/utils.js";
 import { hyperdriveABI } from "generated";
 import { Market } from "hyperdrive/types";
@@ -37,7 +37,7 @@ export function usePreviewCloseLong(
       );
 
       const out: BigNumber = await hyperdriveContract
-        .connect(signer!)
+        .connect(signer as Signer)
         .callStatic.closeLong(
           tokenId,
           parseUnits(bondAmount, market.baseToken.decimals),

@@ -1,11 +1,12 @@
-import { BigNumber, Contract } from "ethers";
+import { BigNumber, Contract, Signer } from "ethers";
 import { parseUnits } from "ethers/lib/utils.js";
 import { hyperdriveABI } from "generated";
 import { Market } from "hyperdrive/types";
 import { useQuery, UseQueryResult } from "react-query";
+import { isValidTokenAmount } from "utils";
 import { Address, useProvider, useSigner } from "wagmi";
 
-export function usePreviewOpenLong(
+export function usePreviewOpenLp(
   account: Address | undefined,
   market: Market,
   baseAmount: string,
@@ -15,9 +16,9 @@ export function usePreviewOpenLong(
   const { data: signer } = useSigner();
 
   return useQuery({
-    queryKey: ["preview-open-long", account, market, baseAmount],
+    queryKey: [account, market, baseAmount],
     enabled:
-      !!account && !!provider && !!baseAmount && baseAmount !== "0" && !!signer,
+      !!account && !!provider && isValidTokenAmount(baseAmount) && !!signer,
     queryFn: async () => {
       const baseAmountBN = parseUnits(baseAmount, market.baseToken.decimals);
 
@@ -31,8 +32,8 @@ export function usePreviewOpenLong(
       );
 
       const out = await hyperdriveContract
-        .connect(signer!)
-        .callStatic.openLong(baseAmountBN, 0, account, false);
+        .connect(signer as Signer)
+        .callStatic.addLiquidity(baseAmount, 0, account, false);
 
       return out;
     },

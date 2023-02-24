@@ -2,32 +2,31 @@ import { Receipt } from "components/Receipt";
 import { SwapErrorButton } from "components/SwapErrorButton";
 import { Tag } from "components/Tag";
 import { TokenInput } from "components/TokenInput";
-import { BigNumber, constants } from "ethers";
+import { constants } from "ethers";
 import { formatEther, formatUnits, parseUnits } from "ethers/lib/utils.js";
 import {
   useErc20Allowance,
   useErc20Approve,
+  useHyperdriveAddLiquidity,
   useHyperdriveBaseInitialSharePrice,
   useHyperdriveBondReserves,
-  useHyperdriveOpenLong,
   useHyperdriveShareReserves,
   usePrepareErc20Approve,
-  usePrepareHyperdriveOpenLong,
+  usePrepareHyperdriveAddLiquidity,
 } from "generated";
-import { usePreviewOpenLong } from "hyperdrive/hooks/usePreviewOpenLong";
+import { usePreviewOpenLp } from "hyperdrive/hooks/usePreviewOpenLp";
 import { Market } from "hyperdrive/types";
-import moment from "moment";
 import { ReactElement, useState } from "react";
 import { formatBalance, isValidTokenAmount } from "utils";
 import { useAccount, useBalance } from "wagmi";
 
-interface OpenLongPositionFormProps {
+interface OpenLpPositionFormProps {
   market: Market;
 }
 
-export function OpenLongPositionForm({
+export function OpenLpPositionForm({
   market,
-}: OpenLongPositionFormProps): ReactElement {
+}: OpenLpPositionFormProps): ReactElement {
   const { address } = useAccount();
 
   // Base token hooks
@@ -40,17 +39,15 @@ export function OpenLongPositionForm({
   const [balance, setBalance] = useState("0");
 
   // Preview amounts
-  const { data: previewAmountOutBN } = usePreviewOpenLong(
+  const { data: previewAmountOutBN } = usePreviewOpenLp(
     address,
     market,
     balance,
   );
 
-  const formattedPreviewAmountOut = (
-    previewAmountOutBN || BigNumber.from(0)
-  ).eq(0)
-    ? "0"
-    : formatUnits(previewAmountOutBN ?? "0", market.baseToken.decimals);
+  const formattedPreviewAmountOut = previewAmountOutBN
+    ? formatUnits(previewAmountOutBN, 0)
+    : "0";
 
   // Market information hooks
   const { data: marketShareReserves } = useHyperdriveShareReserves({
@@ -60,12 +57,10 @@ export function OpenLongPositionForm({
   const { data: sharePrice } = useHyperdriveBaseInitialSharePrice({
     address: market.address,
   });
-
-  // doing regular number math okay here for now. TODO: get bignumber math to work.
-  const baseReserves =
+  const baseReservesLabel =
     sharePrice &&
     marketShareReserves &&
-    +formatEther(sharePrice) * +formatEther(marketShareReserves);
+    formatBalance(+formatEther(sharePrice) * +formatEther(marketShareReserves));
 
   const { data: marketBondReserves } = useHyperdriveBondReserves({
     address: market.address,
@@ -88,12 +83,12 @@ export function OpenLongPositionForm({
     parseUnits(balance, market.baseToken.decimals).gt(baseTokenAllowance ?? 0);
 
   // Open long hooks
-  const prepareHyperdriveOpenLongEnabled =
-    !!address && isValidTokenAmount(balance);
-  const { config: openLongConfig, error } = usePrepareHyperdriveOpenLong({
+  const prepareHyperdriveAddLiquidityEnabled =
+    !!address && !!balance && isValidTokenAmount(balance);
+  const { config: openLpConfig, error } = usePrepareHyperdriveAddLiquidity({
     address: market.address,
-    enabled: prepareHyperdriveOpenLongEnabled,
-    args: prepareHyperdriveOpenLongEnabled
+    enabled: prepareHyperdriveAddLiquidityEnabled,
+    args: prepareHyperdriveAddLiquidityEnabled
       ? [
           parseUnits(balance, market.baseToken.decimals),
           constants.Zero,
@@ -103,8 +98,8 @@ export function OpenLongPositionForm({
       : undefined,
   });
 
-  const { write: writeOpenLong, isLoading: openLongLoading } =
-    useHyperdriveOpenLong(openLongConfig);
+  const { write: writeOpenLp, isLoading: openLpLoading } =
+    useHyperdriveAddLiquidity(openLpConfig);
 
   return (
     <div className="flex flex-col animate-ezn gap-y-10">
@@ -129,16 +124,15 @@ export function OpenLongPositionForm({
               {formattedPreviewAmountOut}
             </h4>
           </div>
-          <Tag text="Long" />
+          <Tag text="LP" />
         </div>
       </div>
       <Receipt
         data={{
-          Matures: moment().add("1 year").format("LLL"),
           "Bond Reserves": formatBalance(
             formatUnits(marketBondReserves ?? 0, market.baseToken.decimals),
           ),
-          "Base Reserves": formatBalance(baseReserves ?? "0"),
+          "Base Reserves": baseReservesLabel,
         }}
       />
       {shouldApprove ? (
@@ -154,11 +148,11 @@ export function OpenLongPositionForm({
         <SwapErrorButton />
       ) : (
         <button
-          disabled={!isValidTokenAmount(balance) || openLongLoading}
-          onClick={() => writeOpenLong && writeOpenLong()}
+          disabled={!isValidTokenAmount(balance) || openLpLoading}
+          onClick={() => writeOpenLp && writeOpenLp()}
           className="font-bold text-black btn-lg btn hover:bg-racing-green bg-lean disabled:bg-lean disabled:bg-opacity-60 disabled:text-opacity-100"
         >
-          Open long
+          Open LP
         </button>
       )}
     </div>
