@@ -3,7 +3,7 @@ import { multiTokenABI } from "generated";
 import { Long, Market } from "hyperdrive/types";
 import { getAssetPrefixFromTokenId } from "hyperdrive/utils";
 import { useQuery, UseQueryResult } from "react-query";
-import { Address, useProvider } from "wagmi";
+import { Address, useBlockNumber, useProvider } from "wagmi";
 
 interface Longs {
   openLongs: {
@@ -18,9 +18,10 @@ export function useLongs(
   market: Market,
 ): UseQueryResult<Longs> {
   const provider = useProvider();
+  const { data: blockNumber } = useBlockNumber();
 
   return useQuery({
-    queryKey: ["long-history", account],
+    queryKey: ["long-history", account, blockNumber],
     enabled: !!account && !!provider,
     queryFn: async () => {
       const multiTokenContract = new Contract(

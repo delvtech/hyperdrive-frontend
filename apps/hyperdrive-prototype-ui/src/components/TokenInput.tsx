@@ -26,18 +26,16 @@ export function TokenInput({
   onChange,
   token,
   disableMax = false,
-  showInputError = false,
+  showInputError,
 }: TokenInputProps): ReactElement {
   const [input, setInput] = useState<string>("");
 
   return (
     <div
-      className={classNames(
-        "flex flex-col p-4 border-2 rounded border-lean gap-y-2",
-        {
-          "border-error": showInputError,
-        },
-      )}
+      className={classNames("flex flex-col p-4 border-2 gap-y-2", {
+        "border-error": showInputError,
+        "border-lean": !showInputError,
+      })}
     >
       <div className="flex items-center text-white gap-x-2">
         <div className="grow basis-0">

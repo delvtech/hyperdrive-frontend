@@ -1,19 +1,24 @@
-import { ExclamationCircleIcon } from "@heroicons/react/20/solid";
+import { Receipt } from "components/Receipt";
+import { SwapErrorButton } from "components/SwapErrorButton";
 import { Tag } from "components/Tag";
 import { TokenInput } from "components/TokenInput";
 import { constants } from "ethers";
-import { formatUnits, parseUnits } from "ethers/lib/utils.js";
+import { formatEther, formatUnits, parseUnits } from "ethers/lib/utils.js";
 import {
   useErc20Allowance,
   useErc20Approve,
+  useHyperdriveBaseInitialSharePrice,
+  useHyperdriveBondReserves,
   useHyperdriveOpenShort,
+  useHyperdriveShareReserves,
   usePrepareErc20Approve,
   usePrepareHyperdriveOpenShort,
 } from "generated";
 import { usePreviewOpenShort } from "hyperdrive/hooks/usePreviewOpenShort";
 import { Market } from "hyperdrive/types";
+import moment from "moment";
 import { ReactElement, useState } from "react";
-import { isValidTokenAmount } from "utils";
+import { formatBalance, isValidTokenAmount } from "utils";
 import { useAccount, useBalance } from "wagmi";
 
 interface OpenShortPositionFormProps {
@@ -47,6 +52,24 @@ export function OpenShortPositionForm({
   const formattedPreviewAmountOut =
     previewAmountOut === "0.0" ? "0" : previewAmountOut;
 
+  // Market information hooks
+  const { data: marketShareReserves } = useHyperdriveShareReserves({
+    address: market.address,
+  });
+
+  const { data: sharePrice } = useHyperdriveBaseInitialSharePrice({
+    address: market.address,
+  });
+  // doing regular number math okay here for now. TODO: get bignumber math to work.
+  const baseReserves =
+    sharePrice &&
+    marketShareReserves &&
+    +formatEther(sharePrice) * +formatEther(marketShareReserves);
+
+  const { data: marketBondReserves } = useHyperdriveBondReserves({
+    address: market.address,
+  });
+
   // ERC-20 approval hooks
   const { config: erc20ApproveConfig } = usePrepareErc20Approve({
     address: market.baseToken.address,
@@ -64,16 +87,20 @@ export function OpenShortPositionForm({
     parseUnits(balance, market.baseToken.decimals).gt(baseTokenAllowance ?? 0);
 
   //Open short hooks
+  const prepareHyperdriveOpenShortEnabled =
+    !!address && !!balance && isValidTokenAmount(balance);
   const { config: OpenShortConfig, error } = usePrepareHyperdriveOpenShort({
     address: market.address,
-    args: [
-      parseUnits(balance, market.baseToken.decimals),
-      // todo slippage
-      constants.MaxUint256,
-      address!,
-      false,
-    ],
-    enabled: !!address && !!balance && balance !== "0",
+    enabled: prepareHyperdriveOpenShortEnabled,
+    args: prepareHyperdriveOpenShortEnabled
+      ? [
+          parseUnits(balance, market.baseToken.decimals),
+          // todo slippage
+          constants.MaxUint256,
+          address,
+          false,
+        ]
+      : undefined,
   });
 
   const { write: writeOpenShort, isLoading: openShortLoading } =
@@ -94,7 +121,7 @@ export function OpenShortPositionForm({
           showInputError={!!error}
           currentBalance={baseTokenBalance}
           onChange={(newBalance: string) => {
-            setBalance(newBalance || "0");
+            setBalance(newBalance);
           }}
         />
       </div>
@@ -118,6 +145,16 @@ export function OpenShortPositionForm({
         </div>
       </div>
 
+      <Receipt
+        data={{
+          Matures: moment().add("1 year").format("LLL"),
+          "Bond Reserves": formatBalance(
+            formatUnits(marketBondReserves ?? 0, market.baseToken.decimals),
+          ),
+          "Base Reserves": formatBalance(baseReserves ?? "0"),
+        }}
+      />
+
       {shouldApprove ? (
         <button
           onClick={() => {
@@ -128,13 +165,7 @@ export function OpenShortPositionForm({
           Approve
         </button>
       ) : error ? (
-        <button
-          disabled
-          className="font-bold disabled:text-black btn-lg btn disabled:bg-error"
-        >
-          <ExclamationCircleIcon className="w-5 mr-1" />
-          Can&apos;t swap
-        </button>
+        <SwapErrorButton />
       ) : (
         <button
           disabled={!isValidTokenAmount(balance) || openShortLoading}
