@@ -7,7 +7,7 @@ export function Navbar(): ReactElement {
       <div className="navbar-start hover:bg-racing-green w-min">
         <a
           href="/"
-          className="text-4xl normal-case btn btn-ghost font-Akira text-lean hover:text-black"
+          className="text-4xl normal-case btn btn-ghost font-Akira text-lean hover:text-black hover:animate-glitch"
         >
           Hyperdrive
         </a>
