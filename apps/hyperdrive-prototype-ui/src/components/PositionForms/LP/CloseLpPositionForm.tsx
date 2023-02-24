@@ -1,4 +1,5 @@
 import { Receipt } from "components/Receipt";
+import { SwapErrorButton } from "components/SwapErrorButton";
 import { Tag } from "components/Tag";
 import { TokenInput } from "components/TokenInput";
 import { BigNumber, constants } from "ethers";
@@ -158,7 +159,7 @@ export function CloseLpPositionForm({
           Approve
         </button>
       ) : error ? (
-        <></>
+        <SwapErrorButton />
       ) : (
         <button
           disabled={!isValidTokenAmount(balance) || openLpLoading}
