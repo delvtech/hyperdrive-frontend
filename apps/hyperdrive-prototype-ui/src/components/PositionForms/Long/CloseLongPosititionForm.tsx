@@ -10,7 +10,7 @@ import {
 import { useLongs } from "hyperdrive/hooks/useLongs";
 import { usePreviewCloseLong } from "hyperdrive/hooks/usePreviewCloseLong";
 import { Long, Market } from "hyperdrive/types";
-import { ReactElement, useEffect, useState } from "react";
+import { ReactElement, useState } from "react";
 import { formatBalance, isValidTokenAmount } from "utils";
 import { useAccount } from "wagmi";
 
@@ -31,13 +31,6 @@ export function CloseLongPositionForm({
   const openLongs = longs?.openLongs ?? [];
 
   const [selectedLong, setSelectedLong] = useState<Long | undefined>();
-
-  useEffect(() => {
-    if (selectedLong) {
-      setBalance(selectedLong.amount.toString());
-      setTotalBalance(selectedLong.amount.toString());
-    }
-  }, [selectedLong]);
 
   const { data: previewCloseLongData } = usePreviewCloseLong(
     address,
@@ -105,7 +98,7 @@ export function CloseLongPositionForm({
           }}
           showInputError={!!error}
           disabled={!selectedLong || closeLongLoading}
-          currentBalance={totalBalance}
+          currentBalance={selectedLong?.amount.toString() ?? "0"}
           onChange={(newBalance) => {
             setBalance(newBalance);
           }}
