@@ -57,6 +57,7 @@ export function CloseLongPositionForm({
     !!address && isValidTokenAmount(balance) && !!selectedLong;
   const { config: closeLongConfig, error } = usePrepareHyperdriveCloseLong({
     address: market.address,
+    enabled: prepareHyperdriveCloseLongEnabled,
     args: prepareHyperdriveCloseLongEnabled
       ? [
           BigNumber.from(selectedLong.id),
@@ -66,7 +67,6 @@ export function CloseLongPositionForm({
           false,
         ]
       : undefined,
-    enabled: prepareHyperdriveCloseLongEnabled,
   });
 
   const { writeAsync: writeCloseLong, isLoading: closeLongLoading } =
@@ -106,7 +106,7 @@ export function CloseLongPositionForm({
           disabled={!selectedLong || closeLongLoading}
           currentBalance={totalBalance}
           onChange={(newBalance) => {
-            setBalance(newBalance || "0");
+            setBalance(newBalance);
           }}
         />
       </div>

@@ -98,7 +98,7 @@ export function OpenShortPositionForm({
           showInputError={!!error}
           currentBalance={baseTokenBalance}
           onChange={(newBalance: string) => {
-            setBalance(newBalance || "0");
+            setBalance(newBalance);
           }}
         />
       </div>
@@ -131,11 +131,11 @@ export function OpenShortPositionForm({
         >
           Approve
         </button>
-      ) : false ? (
+      ) : error ? (
         <SwapErrorButton />
       ) : (
         <button
-          // disabled={!isValidTokenAmount(balance) || openShortLoading}
+          disabled={!isValidTokenAmount(balance) || openShortLoading}
           onClick={() => writeOpenShort && writeOpenShort()}
           className="font-bold text-black btn-lg btn hover:bg-racing-green bg-lean disabled:bg-lean disabled:bg-opacity-60 disabled:text-opacity-100"
         >
