@@ -13,7 +13,7 @@ const queryClient = new QueryClient();
 
 export function App(): ReactElement {
   return (
-    <div className="box-border h-full min-h-screen bg-zinc-900 pb-12">
+    <div className="box-border h-full min-h-screen pb-12 bg-zinc-900">
       <QueryClientProvider client={queryClient}>
         <WagmiConfig client={wagmiClient}>
           <RainbowKitProvider
