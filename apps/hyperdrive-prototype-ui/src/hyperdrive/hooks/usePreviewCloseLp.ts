@@ -20,7 +20,7 @@ export function usePreviewCloseLp(
     enabled:
       !!account && !!provider && isValidTokenAmount(lpShares) && !!signer,
     queryFn: async () => {
-      const lpSharesBN = parseUnits(lpShares, market.baseToken.decimals);
+      const lpSharesBN = parseUnits(lpShares, 18);
 
       if (lpSharesBN.isZero()) {
         return BigNumber.from(0);
@@ -33,9 +33,9 @@ export function usePreviewCloseLp(
 
       const out = await hyperdriveContract
         .connect(signer as Signer)
-        .callStatic.removeLiquidity(lpShares, 0, account, false);
+        .callStatic.removeLiquidity(lpSharesBN, 0, account, false);
 
-      return out;
+      return out[0];
     },
   });
 }

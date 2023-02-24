@@ -56,7 +56,9 @@ export function CloseLpPositionForm({
 
   console.log(previewAmountOutBN?.toString());
 
-  const formattedPreviewAmountOut = "0";
+  const formattedPreviewAmountOut = previewAmountOutBN
+    ? formatUnits(previewAmountOutBN, market.baseToken.decimals)
+    : "0";
 
   // Market information hooks
   const { data: marketShareReserves } = useHyperdriveShareReserves({
@@ -113,7 +115,7 @@ export function CloseLpPositionForm({
   return (
     <div className="flex flex-col animate-ezn gap-y-10">
       <div className="flex flex-col gap-4">
-        <h3 className="text-2xl">From Wallet</h3>
+        <h3 className="text-2xl">From Position</h3>
 
         <TokenInput
           token={{
@@ -133,12 +135,19 @@ export function CloseLpPositionForm({
         <h3 className="text-2xl">You Receive</h3>
 
         <div className="flex items-center w-full p-4">
-          <div className="w-full mr-4 overflow-x-auto">
+          <div className="w-full mr-4 overflow-x-auto grow basis-0">
             <h4 className="mr-auto text-5xl font-bold">
               {formattedPreviewAmountOut}
             </h4>
           </div>
-          <Tag text="LP" />
+          <Tag text={market.baseToken.symbol}>
+            <img
+              className="inline mr-1"
+              src={market.baseToken.logoUrl}
+              height={16}
+              width={16}
+            />
+          </Tag>
         </div>
       </div>
       <Receipt
