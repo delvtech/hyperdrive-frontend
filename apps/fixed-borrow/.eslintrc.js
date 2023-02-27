@@ -13,5 +13,6 @@ module.exports = {
   rules: {
     // Disable ordering in favor of prettier plugin
     "tailwindcss/classnames-order": "off",
+    "tailwindcss/no-custom-classname": "off",
   },
 };
