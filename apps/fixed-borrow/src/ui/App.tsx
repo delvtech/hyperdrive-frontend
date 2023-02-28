@@ -17,36 +17,13 @@ export default function App(): ReactElement {
 
       <div className="flex h-full justify-center">
         <div className="flex flex-col items-center gap-12">
-          <div className="daisy-stats daisy-stats-vertical justify-center text-center lg:daisy-stats-horizontal lg:text-start">
-            <Stat
-              title="Collat. Ratio"
-              value="152%"
-              description="Min ratio: 100%"
-            />
-
-            <Stat
-              title="Liquidation Price"
-              value="$1,200"
-              description="Current price: $1600"
-            />
-            <Stat
-              title="Borrow Rate (APY)"
-              value="1.25%"
-              description={
-                <>
-                  View on{" "}
-                  <a href="#" className="daisy-link">
-                    Spark
-                  </a>
-                </>
-              }
-            />
-          </div>
-
           {/* Collateral */}
           <div className="daisy-form-control w-full">
             <label className="daisy-label">
               <span className="daisy-label-text">Collateral</span>
+              <span className="daisy-label-text">
+                Currently locked: 5.02 ETH
+              </span>
             </label>
             <label className="daisy-input-group">
               <span>ETH</span>
@@ -62,6 +39,7 @@ export default function App(): ReactElement {
           <div className="daisy-form-control w-full">
             <label className="daisy-label">
               <span className="daisy-label-text">Debt</span>
+              <span className="daisy-label-text">Current debt: 3,001 DAI</span>
             </label>
             <label className="daisy-input-group">
               <span>DAI</span>
@@ -78,6 +56,14 @@ export default function App(): ReactElement {
             <div className="daisy-form-control">
               <label className="daisy-label">
                 <span className="daisy-label-text">Hyperdrive Short</span>
+                <span className="daisy-label-text">
+                  Existing shorts: (
+                  <button className="daisy-link">
+                    {/* TODO: Make a modal open up on click to show your shorts */}
+                    5
+                  </button>
+                  )
+                </span>
               </label>
               <label className="daisy-input-group">
                 <span className="shrink-0">You Pay</span>
@@ -118,6 +104,31 @@ export default function App(): ReactElement {
                 9 months
               </button>
             </div>
+          </div>
+          <div className="daisy-stats daisy-stats-vertical justify-center text-center lg:daisy-stats-horizontal lg:text-start">
+            <Stat
+              title="Collat. Ratio"
+              value="152%"
+              description="Min ratio: 100%"
+            />
+
+            <Stat
+              title="Liquidation Price"
+              value="$1,200"
+              description="Current price: $1600"
+            />
+            <Stat
+              title="Borrow Rate (APY)"
+              value="1.25%"
+              description={
+                <>
+                  View on{" "}
+                  <a href="#" className="daisy-link">
+                    Spark
+                  </a>
+                </>
+              }
+            />
           </div>
           <button className="daisy-btn-info daisy-btn-wide daisy-btn">
             Submit transaction
