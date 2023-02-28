@@ -1,3 +1,4 @@
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 import classNames from "classnames";
 import { ReactElement, useState } from "react";
 import { Stat } from "./base/Stat/Stat";
@@ -8,9 +9,10 @@ export default function App(): ReactElement {
   const [duration, setDuration] = useState<TermDuration | undefined>();
   return (
     <div className="space-y-14 p-8">
-      <div className="space-y-2 text-center">
+      <div className="flex flex-col items-center justify-center gap-2">
         <h1 className="text-5xl font-bold">Fixed Borrow</h1>
-        <h4 className="text-xl">Built by Delve</h4>
+        <h4 className="mb-3 text-xl">Built by Delve</h4>
+        <ConnectButton />
       </div>
 
       <div className="flex h-full justify-center">
