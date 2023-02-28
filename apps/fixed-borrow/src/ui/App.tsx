@@ -116,7 +116,7 @@ export default function App(): ReactElement {
               </button>
             </div>
           </div>
-          <button className="daisy-btn daisy-btn-info daisy-btn-wide">
+          <button className="daisy-btn-info daisy-btn-wide daisy-btn">
             Submit transaction
           </button>
         </div>
