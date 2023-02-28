@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import { ReactElement, useState } from "react";
+import { Stat } from "./base/Stat/Stat";
 
 type TermDuration = "90_DAYS" | "180_DAYS" | "270_DAYS";
 
@@ -15,31 +16,31 @@ export default function App(): ReactElement {
       <div className="flex h-full justify-center">
         <div className="flex flex-col items-center gap-12">
           <div className="daisy-stats daisy-stats-vertical justify-center text-center lg:daisy-stats-horizontal lg:text-start">
-            <div className="daisy-stat">
-              <div className="daisy-stat-title">Collat. Ratio</div>
-              <div className="daisy-stat-value">152%</div>
-              <div className="daisy-stat-desc text-sm">Min. ratio: 100%</div>
-            </div>
+            <Stat
+              title="Collat. Ratio"
+              value="152%"
+              description="Min ratio: 100%"
+            />
 
-            <div className="daisy-stat">
-              <div className="daisy-stat-title">Liquidation Price</div>
-              <div className="daisy-stat-value">$1,200</div>
-              <div className="daisy-stat-desc text-sm">
-                Current price: $1600
-              </div>
-            </div>
-
-            <div className="daisy-stat">
-              <div className="daisy-stat-title">Borrow Rate (APY)</div>
-              <div className="daisy-stat-value">1.25%</div>
-              <div className="daisy-stat-desc text-sm">
-                View on{" "}
-                <a href="#" className="daisy-link">
-                  Spark
-                </a>
-              </div>
-            </div>
+            <Stat
+              title="Liquidation Price"
+              value="$1,200"
+              description="Current price: $1600"
+            />
+            <Stat
+              title="Borrow Rate (APY)"
+              value="1.25%"
+              description={
+                <>
+                  View on{" "}
+                  <a href="#" className="daisy-link">
+                    Spark
+                  </a>
+                </>
+              }
+            />
           </div>
+
           {/* Collateral */}
           <div className="daisy-form-control w-full">
             <label className="daisy-label">
