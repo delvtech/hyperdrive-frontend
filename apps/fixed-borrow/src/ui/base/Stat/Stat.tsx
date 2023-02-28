@@ -8,7 +8,7 @@ interface StatProps {
 
 export function Stat({ title, value, description }: StatProps): ReactElement {
   return (
-    <div className="daisy-stat">
+    <div className="daisy-stat text-center">
       <div className="daisy-stat-title">{title}</div>
       <div className="daisy-stat-value">{value}</div>
       <div className="daisy-stat-desc text-sm">{description}</div>

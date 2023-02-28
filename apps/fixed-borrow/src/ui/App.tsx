@@ -25,6 +25,14 @@ export default function App(): ReactElement {
                 Currently locked: 5.02 ETH
               </span>
             </label>
+
+            <label className="daisy-label -mt-4">
+              <span className="daisy-label-text" />
+              <span className="daisy-label-text text-warning">
+                After: 15.02 ETH
+              </span>
+            </label>
+
             <label className="daisy-input-group">
               <span>ETH</span>
               <input
@@ -40,6 +48,12 @@ export default function App(): ReactElement {
             <label className="daisy-label">
               <span className="daisy-label-text">Debt</span>
               <span className="daisy-label-text">Current debt: 3,001 DAI</span>
+            </label>
+            <label className="daisy-label -mt-4">
+              <span className="daisy-label-text" />
+              <span className="daisy-label-text text-warning">
+                After: 8,004.02 DAI
+              </span>
             </label>
             <label className="daisy-input-group">
               <span>DAI</span>
@@ -109,25 +123,34 @@ export default function App(): ReactElement {
             <Stat
               title="Collat. Ratio"
               value="152%"
-              description="Min ratio: 100%"
+              description={
+                <span className="font-bold text-warning">
+                  {
+                    // TODO: Show "Min ratio: 100%" w/out warning style for the
+                    // empty state
+                  }
+                  After: 182%
+                </span>
+              }
             />
 
             <Stat
               title="Liquidation Price"
               value="$1,200"
-              description="Current price: $1600"
+              description={
+                <span className="font-bold text-warning">
+                  {
+                    // TODO: Show "Current price: $1600" w/out warning style for
+                    // the empty state
+                  }
+                  After: $1,450
+                </span>
+              }
             />
             <Stat
               title="Borrow Rate (APY)"
               value="1.25%"
-              description={
-                <>
-                  View on{" "}
-                  <a href="#" className="daisy-link">
-                    Spark
-                  </a>
-                </>
-              }
+              description={"Until June 27, 2023"}
             />
           </div>
           <button className="daisy-btn-info daisy-btn-wide daisy-btn">
