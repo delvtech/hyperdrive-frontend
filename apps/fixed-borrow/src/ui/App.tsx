@@ -1,7 +1,8 @@
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import classNames from "classnames";
 import { ReactElement, useState } from "react";
-import { Stat } from "./base/Stat/Stat";
+import { Stat } from "src/ui/base/Stat/Stat";
+import { CollateralizationRatioStat } from "src/ui/loans/CollateralizationRatioStat";
 
 type TermDuration = "90_DAYS" | "180_DAYS" | "270_DAYS";
 
@@ -120,19 +121,7 @@ export default function App(): ReactElement {
             </div>
           </div>
           <div className="daisy-stats daisy-stats-vertical justify-center text-center lg:daisy-stats-horizontal lg:text-start">
-            <Stat
-              title="Collat. Ratio"
-              value="152%"
-              description={
-                <span className="font-bold text-warning">
-                  {
-                    // TODO: Show "Min ratio: 100%" w/out warning style for the
-                    // empty state
-                  }
-                  After: 182%
-                </span>
-              }
-            />
+            <CollateralizationRatioStat />
 
             <Stat
               title="Liquidation Price"
