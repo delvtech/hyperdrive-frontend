@@ -59,6 +59,8 @@ export const SparkGoerliAddresses = {
   WETH_oracle: "0xD4a33860578De61DBAbDc8BFdb98FD742fA7028e",
   wstETH_interestRateStrategy: "0xD947D877fcFBD9B0aaEf66772080515c83FA4787",
   WETH_variableDebtToken: "0x0455CB116fe0C45383ea9F370c6a0698b0acC0a9",
+  // The Aave oracle manages the prices for all the base assets in USD
+  // see: https://goerli.etherscan.io/address/0x4fDe26275FC0837d9086459e1DE8a5b7e3a6d73A#code
   aaveOracle: "0x4fDe26275FC0837d9086459e1DE8a5b7e3a6d73A",
   uiPoolDataProvider: "0x8e0872C40Ba6866CdE563Ea53D848F505973846d",
   wstETH_oracle: "0xD4a33860578De61DBAbDc8BFdb98FD742fA7028e",

@@ -1,5 +1,4 @@
-import aaveOracleABI from "./abis/AaveOracle.json";
-import aToken from "./abis/AToken.json";
-export { aaveOracleABI, aToken };
+export { SparkGoerliAddresses } from "src/goerli";
 
-export { SparkGoerliAddresses } from "./goerli";
+export { AaveOracleABI } from "src/abis/AaveOracle";
+export { ATokenABI } from "src/abis/AToken";

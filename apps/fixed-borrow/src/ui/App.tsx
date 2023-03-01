@@ -1,3 +1,4 @@
+import { SparkGoerliAddresses } from "@hyperdrive/spark";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import classNames from "classnames";
 import { ReactElement, useState } from "react";
@@ -6,6 +7,8 @@ import { CollateralFormControl } from "src/ui/loans/CollateralFormControl";
 import { CollateralizationRatioStat } from "src/ui/loans/CollateralizationRatioStat";
 
 type TermDuration = "90_DAYS" | "180_DAYS" | "270_DAYS";
+
+console.log(SparkGoerliAddresses);
 
 export default function App(): ReactElement {
   const [duration, setDuration] = useState<TermDuration | undefined>();
