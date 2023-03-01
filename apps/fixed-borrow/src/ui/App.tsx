@@ -2,6 +2,7 @@ import { ConnectButton } from "@rainbow-me/rainbowkit";
 import classNames from "classnames";
 import { ReactElement, useState } from "react";
 import { Stat } from "src/ui/base/Stat/Stat";
+import { CollateralFormControl } from "src/ui/loans/CollateralFormControl";
 import { CollateralizationRatioStat } from "src/ui/loans/CollateralizationRatioStat";
 
 type TermDuration = "90_DAYS" | "180_DAYS" | "270_DAYS";
@@ -19,30 +20,7 @@ export default function App(): ReactElement {
       <div className="flex h-full justify-center">
         <div className="flex flex-col items-center gap-12">
           {/* Collateral */}
-          <div className="daisy-form-control w-full">
-            <label className="daisy-label">
-              <span className="daisy-label-text">Collateral</span>
-              <span className="daisy-label-text">
-                Currently locked: 5.02 USDC
-              </span>
-            </label>
-
-            <label className="daisy-label -mt-4">
-              <span className="daisy-label-text" />
-              <span className="daisy-label-text text-warning">
-                After: 15.02 USDC
-              </span>
-            </label>
-
-            <label className="daisy-input-group">
-              <span>USDC</span>
-              <input
-                type="text"
-                placeholder="10"
-                className="daisy-input-bordered daisy-input w-full"
-              />
-            </label>
-          </div>
+          <CollateralFormControl />
 
           {/* Debt */}
           <div className="daisy-form-control w-full">
