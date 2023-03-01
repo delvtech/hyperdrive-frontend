@@ -23,19 +23,19 @@ export default function App(): ReactElement {
             <label className="daisy-label">
               <span className="daisy-label-text">Collateral</span>
               <span className="daisy-label-text">
-                Currently locked: 5.02 ETH
+                Currently locked: 5.02 USDC
               </span>
             </label>
 
             <label className="daisy-label -mt-4">
               <span className="daisy-label-text" />
               <span className="daisy-label-text text-warning">
-                After: 15.02 ETH
+                After: 15.02 USDC
               </span>
             </label>
 
             <label className="daisy-input-group">
-              <span>ETH</span>
+              <span>USDC</span>
               <input
                 type="text"
                 placeholder="10"
