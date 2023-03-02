@@ -15,7 +15,7 @@ export function useTokenApproval({
 }: UseTokenApprovalOptions): { approve: (() => void) | undefined } {
   const { config: approveConfig } = usePrepareContractWrite({
     address: tokenAddress,
-    abi: DSTokenABI,
+    abi: DSTokenABI, // tokens are a DSToken on goerli, see: https://github.com/dapphub/ds-token
     functionName: "approve",
     args: [spender, amount],
   });

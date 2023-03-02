@@ -38,7 +38,7 @@ export function SupplyCollateralForm(): ReactElement {
   const inputAmountAsBigNumber = parseUnits(inputAmount || "0", 8);
 
   const { data: allowance } = useContractRead({
-    abi: DSTokenABI,
+    abi: DSTokenABI, // USDC is a DSToken on goerli, see: https://github.com/dapphub/ds-token
     address: SparkGoerliAddresses.USDC_token,
     functionName: "allowance",
     enabled: !!account,
@@ -106,18 +106,21 @@ export function SupplyCollateralForm(): ReactElement {
       </label>
       {afterAmount ? (
         <div className="daisy-btn-group justify-end">
+          {/* Approve button */}
           {!hasEnoughAllowance ? (
             <button
               disabled={!approve}
-              className="daisy-btn-outline daisy-btn daisy-btn-wide"
+              className="daisy-btn-outline daisy-btn-wide daisy-btn"
               onClick={() => approve?.()}
             >
               Approve
             </button>
           ) : null}
+
+          {/* Supply collateral button */}
           <button
             disabled={!hasEnoughAllowance}
-            className="daisy-btn-outline daisy-btn daisy-btn-warning daisy-btn-wide"
+            className="daisy-btn-outline daisy-btn-warning daisy-btn-wide daisy-btn"
           >
             Supply collateral
           </button>
