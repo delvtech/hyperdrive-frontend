@@ -1,32 +1,53 @@
-import { AaveOracleABI, SparkGoerliAddresses } from "@hyperdrive/spark";
+import {
+  AaveOracleABI,
+  DSTokenABI,
+  PoolABI,
+  SparkGoerliAddresses,
+} from "@hyperdrive/spark";
 import { formatUnits, parseUnits } from "ethers/lib/utils.js";
 import { ReactElement, useState } from "react";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { useTokenApproval } from "src/ui/token/useTokenApproval";
 import { useAccount, useBalance, useContractRead } from "wagmi";
 
-export function CollateralFormControl(): ReactElement {
+export function SupplyCollateralForm(): ReactElement {
   const { address: account } = useAccount();
   const { data: assetBalance } = useBalance({
-    token: SparkGoerliAddresses.USDC_token as `0x${string}`,
+    token: SparkGoerliAddresses.USDC_token,
     address: account,
   });
 
   const { data: assetPrice } = useContractRead({
     abi: AaveOracleABI,
-    address: SparkGoerliAddresses.aaveOracle as `0x${string}`,
+    address: SparkGoerliAddresses.aaveOracle,
     functionName: "getAssetPrice",
-    args: [SparkGoerliAddresses.USDC_token as `0x${string}`],
+    args: [SparkGoerliAddresses.USDC_token],
   });
 
   const { data: aTokenBalance } = useBalance({
-    token: SparkGoerliAddresses.USDC_aToken as `0x${string}`,
+    token: SparkGoerliAddresses.USDC_aToken,
     address: account,
+  });
+  const { approve } = useTokenApproval({
+    tokenAddress: SparkGoerliAddresses.USDC_token,
+    spender: SparkGoerliAddresses.pool,
+    amount: parseUnits("1000000", 8),
   });
 
   const [inputAmount, setInputAmount] = useState<string | undefined>();
+  const inputAmountAsBigNumber = parseUnits(inputAmount || "0", 8);
+
+  const { data: allowance } = useContractRead({
+    abi: DSTokenABI, // USDC is a DSToken on goerli, see: https://github.com/dapphub/ds-token
+    address: SparkGoerliAddresses.USDC_token,
+    functionName: "allowance",
+    enabled: !!account,
+    args: [account as `0x${string}`, SparkGoerliAddresses.pool],
+  });
+  const hasEnoughAllowance = allowance?.gte(inputAmountAsBigNumber);
 
   const afterAmount = inputAmount
-    ? aTokenBalance?.value.add(parseUnits(inputAmount, 8))
+    ? aTokenBalance?.value.add(inputAmountAsBigNumber)
     : undefined;
   const formattedAfterAmount = afterAmount
     ? formatBalance(formatUnits(afterAmount, 8))
@@ -39,7 +60,7 @@ export function CollateralFormControl(): ReactElement {
           {afterAmount ? "" : "Collateral"}
         </span>
         <span className="daisy-label-text">
-          Currently locked: {aTokenBalance?.formatted} USDC
+          Currently supplied: {aTokenBalance?.formatted} USDC
         </span>
       </label>
 
@@ -83,6 +104,28 @@ export function CollateralFormControl(): ReactElement {
             : null}
         </span>
       </label>
+      {afterAmount ? (
+        <div className="daisy-btn-group justify-end">
+          {/* Approve button */}
+          {!hasEnoughAllowance ? (
+            <button
+              disabled={!approve}
+              className="daisy-btn-outline daisy-btn-wide daisy-btn"
+              onClick={() => approve?.()}
+            >
+              Approve
+            </button>
+          ) : null}
+
+          {/* Supply collateral button */}
+          <button
+            disabled={!hasEnoughAllowance}
+            className="daisy-btn-outline daisy-btn-warning daisy-btn-wide daisy-btn"
+          >
+            Supply collateral
+          </button>
+        </div>
+      ) : null}
     </div>
   );
 }

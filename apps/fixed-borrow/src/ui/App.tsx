@@ -3,7 +3,7 @@ import { ConnectButton } from "@rainbow-me/rainbowkit";
 import classNames from "classnames";
 import { ReactElement, useState } from "react";
 import { Stat } from "src/ui/base/Stat/Stat";
-import { CollateralFormControl } from "src/ui/loans/CollateralFormControl";
+import { SupplyCollateralForm } from "src/ui/loans/SupplyCollateralForm";
 import { CollateralizationRatioStat } from "src/ui/loans/CollateralizationRatioStat";
 import { MintUSDCButton } from "./faucet/MintUSDCButton";
 
@@ -19,14 +19,13 @@ export default function App(): ReactElement {
         <h1 className="text-5xl font-bold">Fixed Borrow</h1>
         <h4 className="mb-3 text-xl">Built by Delve</h4>
         <ConnectButton />
-
         <MintUSDCButton />
       </div>
 
       <div className="flex h-full justify-center">
         <div className="flex flex-col items-center gap-12">
           {/* Collateral */}
-          <CollateralFormControl />
+          <SupplyCollateralForm />
 
           {/* Debt */}
           <div className="daisy-form-control w-full">

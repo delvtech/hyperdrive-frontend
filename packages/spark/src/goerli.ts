@@ -66,4 +66,4 @@ export const SparkGoerliAddresses = {
   wstETH_oracle: "0xD4a33860578De61DBAbDc8BFdb98FD742fA7028e",
   incentivesImpl: "0x44e531d32f5c49A40D2991f326844Ae02cEfFE07",
   admin: "0x5DCdbD3cCF9B09EAAD03bc5f50fA2B3d3ACA0121",
-};
+} as const;
