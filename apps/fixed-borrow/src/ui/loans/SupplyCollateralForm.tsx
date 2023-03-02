@@ -83,7 +83,7 @@ export function SupplyCollateralForm(): ReactElement {
           {!afterAmount ? "" : "Collateral"}
         </span>
         {formattedAfterAmount && (
-          <span className="daisy-label-text text-warning">
+          <span className="daisy-label-text text-primary">
             After: {formattedAfterAmount} USDC
           </span>
         )}
@@ -94,7 +94,7 @@ export function SupplyCollateralForm(): ReactElement {
         <input
           type="number"
           placeholder="Enter an amount to deposit as collateral"
-          className="daisy-input-bordered daisy-input w-full text-warning"
+          className="daisy-input-bordered daisy-input w-full text-primary"
           onChange={(e) => {
             setInputAmount(e.target.value);
           }}
@@ -135,7 +135,7 @@ export function SupplyCollateralForm(): ReactElement {
           <button
             disabled={isSupplyButtonDisabled}
             className={classNames(
-              "daisy-btn-outline daisy-btn-warning daisy-btn-wide daisy-btn",
+              "daisy-btn-outline daisy-btn-primary daisy-btn-wide daisy-btn",
               { "daisy-loading": supplyStatus === "loading" },
             )}
             onClick={() => supply?.()}
