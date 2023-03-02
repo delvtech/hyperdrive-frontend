@@ -1,6 +1,12 @@
-import { ReactElement } from "react";
+import { parseUnits } from "ethers/lib/utils.js";
+import { ReactElement, useState } from "react";
+import { useAccount } from "wagmi";
 
 export function BorrowDebtForm(): ReactElement {
+  const { address: account } = useAccount();
+  const [debtAmount, setDebtAmount] = useState<string | undefined>();
+  const debtAmountAsBigNumber = parseUnits(debtAmount || "0", 8);
+
   return (
     <div className="daisy-form-control w-full">
       <label className="daisy-label">
@@ -16,9 +22,12 @@ export function BorrowDebtForm(): ReactElement {
       <label className="daisy-input-group">
         <span>DAI</span>
         <input
-          type="text"
-          placeholder="10"
-          className="daisy-input-bordered daisy-input w-full"
+          type="number"
+          placeholder="Enter an amount to borrow"
+          className="daisy-input-bordered daisy-input w-full text-primary"
+          onChange={(e) => {
+            setDebtAmount(e.target.value);
+          }}
         />
       </label>
     </div>

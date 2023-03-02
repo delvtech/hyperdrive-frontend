@@ -19,7 +19,7 @@ export function SupplyCollateralForm(): ReactElement {
     address: account,
   });
 
-  const { data: assetPrice } = useContractRead({
+  const { data: collateralPrice } = useContractRead({
     abi: AaveOracleABI,
     address: SparkGoerliAddresses.aaveOracle,
     functionName: "getAssetPrice",
@@ -35,12 +35,14 @@ export function SupplyCollateralForm(): ReactElement {
     spender: SparkGoerliAddresses.pool,
     amount: parseUnits("1000000", 8),
   });
-  const [inputAmount, setInputAmount] = useState<string | undefined>();
-  const inputAmountAsBigNumber = parseUnits(inputAmount || "0", 8);
+  const [collateralAmount, setCollateralAmount] = useState<
+    string | undefined
+  >();
+  const collateralAmountAsBigNumber = parseUnits(collateralAmount || "0", 8);
 
   const { supply, status: supplyStatus } = useSupplyCollateral(
     SparkGoerliAddresses.USDC_token,
-    inputAmountAsBigNumber,
+    collateralAmountAsBigNumber,
     account,
   );
 
@@ -51,10 +53,10 @@ export function SupplyCollateralForm(): ReactElement {
     enabled: !!account,
     args: [account as `0x${string}`, SparkGoerliAddresses.pool],
   });
-  const hasEnoughAllowance = allowance?.gte(inputAmountAsBigNumber);
+  const hasEnoughAllowance = allowance?.gte(collateralAmountAsBigNumber);
 
-  const afterAmount = inputAmount
-    ? aTokenBalance?.value.add(inputAmountAsBigNumber)
+  const afterAmount = collateralAmount
+    ? aTokenBalance?.value.add(collateralAmountAsBigNumber)
     : undefined;
   const formattedAfterAmount = afterAmount
     ? formatBalance(formatUnits(afterAmount, 8))
@@ -96,15 +98,15 @@ export function SupplyCollateralForm(): ReactElement {
           placeholder="Enter an amount to deposit as collateral"
           className="daisy-input-bordered daisy-input w-full text-primary"
           onChange={(e) => {
-            setInputAmount(e.target.value);
+            setCollateralAmount(e.target.value);
           }}
         />
       </label>
       <label className="daisy-label">
         <span className="daisy-label-text">
-          {assetPrice
+          {collateralPrice
             ? `Current price: 1 USDC = $${formatBalance(
-                formatUnits(assetPrice, 8),
+                formatUnits(collateralPrice, 8),
                 2,
               )}`
             : null}
@@ -124,7 +126,7 @@ export function SupplyCollateralForm(): ReactElement {
           {!hasEnoughAllowance ? (
             <button
               disabled={!approve}
-              className="daisy-btn-outline daisy-btn daisy-btn-wide"
+              className="daisy-btn-outline daisy-btn-wide daisy-btn"
               onClick={() => approve?.()}
             >
               Approve
@@ -135,7 +137,7 @@ export function SupplyCollateralForm(): ReactElement {
           <button
             disabled={isSupplyButtonDisabled}
             className={classNames(
-              "daisy-btn-outline daisy-btn daisy-btn-primary daisy-btn-wide",
+              "daisy-btn-outline daisy-btn-primary daisy-btn-wide daisy-btn",
               { "daisy-loading": supplyStatus === "loading" },
             )}
             onClick={() => supply?.()}
