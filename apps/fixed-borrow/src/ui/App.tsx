@@ -5,7 +5,7 @@ import { ReactElement, useState } from "react";
 import { Stat } from "src/ui/base/Stat/Stat";
 import { CollateralFormControl } from "src/ui/loans/CollateralFormControl";
 import { CollateralizationRatioStat } from "src/ui/loans/CollateralizationRatioStat";
-import { MintUSDCButton } from "./MintUSDCButton";
+import { MintUSDCButton } from "./faucet/MintUSDCButton";
 
 type TermDuration = "90_DAYS" | "180_DAYS" | "270_DAYS";
 
