@@ -1,12 +1,14 @@
 import {
   AaveOracleABI,
   DSTokenABI,
-  PoolABI,
   SparkGoerliAddresses,
 } from "@hyperdrive/spark";
+import classNames from "classnames";
+import { BigNumber } from "ethers";
 import { formatUnits, parseUnits } from "ethers/lib/utils.js";
 import { ReactElement, useState } from "react";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { useSupplyCollateral } from "src/ui/loans/useSupplyCollateral";
 import { useTokenApproval } from "src/ui/token/useTokenApproval";
 import { useAccount, useBalance, useContractRead } from "wagmi";
 
@@ -33,9 +35,14 @@ export function SupplyCollateralForm(): ReactElement {
     spender: SparkGoerliAddresses.pool,
     amount: parseUnits("1000000", 8),
   });
-
   const [inputAmount, setInputAmount] = useState<string | undefined>();
   const inputAmountAsBigNumber = parseUnits(inputAmount || "0", 8);
+
+  const { supply, status: supplyStatus } = useSupplyCollateral(
+    SparkGoerliAddresses.USDC_token,
+    inputAmountAsBigNumber,
+    account,
+  );
 
   const { data: allowance } = useContractRead({
     abi: DSTokenABI, // USDC is a DSToken on goerli, see: https://github.com/dapphub/ds-token
@@ -53,6 +60,9 @@ export function SupplyCollateralForm(): ReactElement {
     ? formatBalance(formatUnits(afterAmount, 8))
     : undefined;
 
+  const isSupplyButtonDisabled =
+    !hasEnoughAllowance || !supply || supplyStatus === "loading";
+
   return (
     <div className="daisy-form-control w-full">
       <label className="daisy-label">
@@ -60,7 +70,11 @@ export function SupplyCollateralForm(): ReactElement {
           {afterAmount ? "" : "Collateral"}
         </span>
         <span className="daisy-label-text">
-          Currently supplied: {aTokenBalance?.formatted} USDC
+          Currently supplied:{" "}
+          {formatBalance(
+            formatUnits(aTokenBalance?.value || BigNumber.from(0), 8),
+          )}{" "}
+          USDC
         </span>
       </label>
 
@@ -97,10 +111,10 @@ export function SupplyCollateralForm(): ReactElement {
         </span>
         <span className="daisy-label-text">
           {assetBalance
-            ? `Available to deposit: $${formatBalance(
+            ? `Available to deposit: ${formatBalance(
                 formatUnits(assetBalance.value, 8),
                 2,
-              )}`
+              )} USDC`
             : null}
         </span>
       </label>
@@ -119,8 +133,12 @@ export function SupplyCollateralForm(): ReactElement {
 
           {/* Supply collateral button */}
           <button
-            disabled={!hasEnoughAllowance}
-            className="daisy-btn-outline daisy-btn-warning daisy-btn-wide daisy-btn"
+            disabled={isSupplyButtonDisabled}
+            className={classNames(
+              "daisy-btn-outline daisy-btn-warning daisy-btn-wide daisy-btn",
+              { "daisy-loading": supplyStatus === "loading" },
+            )}
+            onClick={() => supply?.()}
           >
             Supply collateral
           </button>
