@@ -5,7 +5,8 @@ import { ReactElement, useState } from "react";
 import { Stat } from "src/ui/base/Stat/Stat";
 import { SupplyCollateralForm } from "src/ui/loans/SupplyCollateralForm";
 import { CollateralizationRatioStat } from "src/ui/loans/CollateralizationRatioStat";
-import { MintUSDCButton } from "./faucet/MintUSDCButton";
+import { MintUSDCButton } from "src/ui/faucet/MintUSDCButton";
+import { BorrowDebtForm } from "src/ui/loans/BorrowDebtForm";
 
 type TermDuration = "90_DAYS" | "180_DAYS" | "270_DAYS";
 
@@ -28,26 +29,7 @@ export default function App(): ReactElement {
           <SupplyCollateralForm />
 
           {/* Debt */}
-          <div className="daisy-form-control w-full">
-            <label className="daisy-label">
-              <span className="daisy-label-text">Debt</span>
-              <span className="daisy-label-text">Current debt: 3,001 DAI</span>
-            </label>
-            <label className="daisy-label -mt-4">
-              <span className="daisy-label-text" />
-              <span className="daisy-label-text text-warning">
-                After: 8,004.02 DAI
-              </span>
-            </label>
-            <label className="daisy-input-group">
-              <span>DAI</span>
-              <input
-                type="text"
-                placeholder="10"
-                className="daisy-input-bordered daisy-input w-full"
-              />
-            </label>
-          </div>
+          <BorrowDebtForm />
 
           {/* Hyperdrive Short */}
           <div className="flex w-full flex-col gap-4">

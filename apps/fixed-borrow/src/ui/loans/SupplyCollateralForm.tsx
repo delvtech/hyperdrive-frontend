@@ -8,7 +8,7 @@ import { BigNumber } from "ethers";
 import { formatUnits, parseUnits } from "ethers/lib/utils.js";
 import { ReactElement, useState } from "react";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { useSupplyCollateral } from "src/ui/loans/useSupplyCollateral";
+import { useSupplyCollateral } from "src/ui/loans/hooks/useSupplyCollateral";
 import { useTokenApproval } from "src/ui/token/useTokenApproval";
 import { useAccount, useBalance, useContractRead } from "wagmi";
 
@@ -124,7 +124,7 @@ export function SupplyCollateralForm(): ReactElement {
           {!hasEnoughAllowance ? (
             <button
               disabled={!approve}
-              className="daisy-btn-outline daisy-btn-wide daisy-btn"
+              className="daisy-btn-outline daisy-btn daisy-btn-wide"
               onClick={() => approve?.()}
             >
               Approve
@@ -135,7 +135,7 @@ export function SupplyCollateralForm(): ReactElement {
           <button
             disabled={isSupplyButtonDisabled}
             className={classNames(
-              "daisy-btn-outline daisy-btn-primary daisy-btn-wide daisy-btn",
+              "daisy-btn-outline daisy-btn daisy-btn-primary daisy-btn-wide",
               { "daisy-loading": supplyStatus === "loading" },
             )}
             onClick={() => supply?.()}
