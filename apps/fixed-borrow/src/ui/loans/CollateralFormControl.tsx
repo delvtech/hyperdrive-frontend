@@ -1,14 +1,13 @@
 import { AaveOracleABI, SparkGoerliAddresses } from "@hyperdrive/spark";
-import { BigNumber } from "ethers";
-import { commify, formatUnits, parseUnits } from "ethers/lib/utils.js";
+import { formatUnits, parseUnits } from "ethers/lib/utils.js";
 import { ReactElement, useState } from "react";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useAccount, useBalance, useContractRead } from "wagmi";
 
 export function CollateralFormControl(): ReactElement {
   const { address: account } = useAccount();
-  const { data: aTokenBalance } = useBalance({
-    token: SparkGoerliAddresses.USDC_aToken as `0x${string}`,
+  const { data: assetBalance } = useBalance({
+    token: SparkGoerliAddresses.USDC_token as `0x${string}`,
     address: account,
   });
 
@@ -17,6 +16,11 @@ export function CollateralFormControl(): ReactElement {
     address: SparkGoerliAddresses.aaveOracle as `0x${string}`,
     functionName: "getAssetPrice",
     args: [SparkGoerliAddresses.USDC_token as `0x${string}`],
+  });
+
+  const { data: aTokenBalance } = useBalance({
+    token: SparkGoerliAddresses.USDC_aToken as `0x${string}`,
+    address: account,
   });
 
   const [inputAmount, setInputAmount] = useState<string | undefined>();
@@ -70,7 +74,14 @@ export function CollateralFormControl(): ReactElement {
               )}`
             : null}
         </span>
-        <span className="daisy-label-text" />
+        <span className="daisy-label-text">
+          {assetBalance
+            ? `Available to deposit: $${formatBalance(
+                formatUnits(assetBalance.value, 8),
+                2,
+              )}`
+            : null}
+        </span>
       </label>
     </div>
   );

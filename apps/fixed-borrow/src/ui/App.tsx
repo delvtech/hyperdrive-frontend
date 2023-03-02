@@ -5,6 +5,7 @@ import { ReactElement, useState } from "react";
 import { Stat } from "src/ui/base/Stat/Stat";
 import { CollateralFormControl } from "src/ui/loans/CollateralFormControl";
 import { CollateralizationRatioStat } from "src/ui/loans/CollateralizationRatioStat";
+import { MintUSDCButton } from "./MintUSDCButton";
 
 type TermDuration = "90_DAYS" | "180_DAYS" | "270_DAYS";
 
@@ -18,6 +19,8 @@ export default function App(): ReactElement {
         <h1 className="text-5xl font-bold">Fixed Borrow</h1>
         <h4 className="mb-3 text-xl">Built by Delve</h4>
         <ConnectButton />
+
+        <MintUSDCButton />
       </div>
 
       <div className="flex h-full justify-center">
