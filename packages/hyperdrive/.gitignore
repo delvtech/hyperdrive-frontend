@@ -8,5 +8,5 @@ typechain-types
 # Hardhat files
 cache
 artifacts
-contracts
+/contracts
 
