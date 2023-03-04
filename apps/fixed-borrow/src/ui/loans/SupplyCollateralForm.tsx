@@ -105,9 +105,10 @@ export function SupplyCollateralForm({
       <label className="daisy-label">
         <span className="daisy-label-text">
           {collateralPrice
-            ? `Current price: 1 ${
-                collateralTokenMetadata?.symbol
-              } = $${formatBalance(formatUnits(collateralPrice, 8), 2)}`
+            ? `1 ${collateralTokenMetadata?.symbol} = $${formatBalance(
+                formatUnits(collateralPrice, 8),
+                2,
+              )}`
             : null}
         </span>
         <span className="daisy-label-text">
