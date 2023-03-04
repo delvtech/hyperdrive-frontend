@@ -5,8 +5,9 @@ import { ReactElement, useState } from "react";
 import { Stat } from "src/ui/base/Stat/Stat";
 import { SupplyCollateralForm } from "src/ui/loans/SupplyCollateralForm";
 import { CollateralizationRatioStat } from "src/ui/loans/CollateralizationRatioStat";
-import { MintUSDCButton } from "src/ui/faucet/MintUSDCButton";
 import { BorrowDebtForm } from "src/ui/loans/BorrowDebtForm";
+import { parseEther } from "ethers/lib/utils.js";
+import { MintButton } from "src/ui/faucet/MintButton";
 
 type TermDuration = "90_DAYS" | "180_DAYS" | "270_DAYS";
 
@@ -20,13 +21,21 @@ export default function App(): ReactElement {
         <h1 className="text-5xl font-bold">Fixed Borrow</h1>
         <h4 className="mb-3 text-xl">Built by Delve</h4>
         <ConnectButton />
-        <MintUSDCButton />
+        <div className="mt-8 flex items-center justify-center gap-4">
+          <MintButton
+            tokenAddress={SparkGoerliAddresses.wstETH_token}
+            amount={parseEther("1000")}
+          />
+        </div>
       </div>
 
       <div className="flex h-full justify-center">
         <div className="flex flex-col items-center gap-12">
           {/* Collateral */}
-          <SupplyCollateralForm />
+          <SupplyCollateralForm
+            collateralTokenAddress={SparkGoerliAddresses.wstETH_token}
+            collateralATokenAddress={SparkGoerliAddresses.wstETH_aToken}
+          />
 
           {/* Debt */}
           <BorrowDebtForm />
