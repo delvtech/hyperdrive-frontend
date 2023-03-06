@@ -1,17 +1,23 @@
 import { AaveOracleABI, SparkGoerliAddresses } from "@hyperdrive/spark";
 import classNames from "classnames";
 import { formatUnits, parseUnits } from "ethers/lib/utils.js";
-import { ReactElement, useState } from "react";
+import { ReactElement } from "react";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/useNumericInput";
 import { ApproveCollateralButton } from "src/ui/loans/ApproveCollateralButton";
 import { useSupplyCollateral } from "src/ui/loans/hooks/useSupplyCollateral";
 import { useSpenderAllowance } from "src/ui/token/useSpenderAllowance";
-import { useAccount, useBalance, useContractRead, useToken } from "wagmi";
+import {
+  Address,
+  useAccount,
+  useBalance,
+  useContractRead,
+  useToken,
+} from "wagmi";
 
 interface SupplyCollateralFormProps {
-  collateralTokenAddress: `0x${string}`;
-  collateralATokenAddress: `0x${string}`;
+  collateralTokenAddress: Address;
+  collateralATokenAddress: Address;
 }
 
 export function SupplyCollateralForm({
@@ -70,24 +76,21 @@ export function SupplyCollateralForm({
   return (
     <div className="daisy-form-control w-full">
       <label className="daisy-label">
-        <span className="daisy-label-text">
-          {afterAmount ? "" : "Collateral"}
-        </span>
-        <span className="daisy-label-text">
-          Currently supplied: {formatBalance(aTokenBalance?.formatted || "0")}{" "}
-          {collateralTokenMetadata?.symbol}
-        </span>
-      </label>
-
-      <label className="daisy-label -mt-4">
-        <span className="daisy-label-text">
-          {!afterAmount ? "" : "Collateral"}
-        </span>
-        {formattedAfterAmount && (
-          <span className="daisy-label-text text-primary">
-            After: {formattedAfterAmount} {collateralTokenMetadata?.symbol}
-          </span>
-        )}
+        <div className="daisy-label-text grid w-full grid-cols-2">
+          <span className="self-end">Collateral</span>
+          <div className="text-right">
+            <p>
+              Currently supplied:{" "}
+              {formatBalance(aTokenBalance?.formatted || "0")}{" "}
+              {collateralTokenMetadata?.symbol}
+            </p>
+            {formattedAfterAmount && (
+              <p className="daisy-label-text text-primary">
+                After: {formattedAfterAmount} {collateralTokenMetadata?.symbol}
+              </p>
+            )}
+          </div>
+        </div>
       </label>
 
       <label className="daisy-input-group">
@@ -95,13 +98,13 @@ export function SupplyCollateralForm({
         <input
           type="number"
           placeholder="Enter an amount to supply"
-          className="daisy-input-bordered daisy-input w-full appearance-none text-primary"
+          className="daisy-input-bordered daisy-input w-full appearance-none text-primary focus:border-primary"
           onChange={(e) => {
             setCollateralAmount(e.target.value);
           }}
         />
       </label>
-      <label className="daisy-label">
+      <label className="daisy-label mb-2">
         <span className="daisy-label-text">
           {collateralPrice
             ? `1 ${collateralTokenMetadata?.symbol} = $${formatBalance(
@@ -132,7 +135,7 @@ export function SupplyCollateralForm({
           <button
             disabled={isSupplyButtonDisabled}
             className={classNames(
-              "daisy-btn-outline daisy-btn-primary daisy-btn-wide daisy-btn",
+              "daisy-btn-outline daisy-btn daisy-btn-primary daisy-btn-wide",
               { "daisy-loading": supplyStatus === "loading" },
             )}
             onClick={() => supply?.()}

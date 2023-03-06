@@ -1,11 +1,11 @@
 import { PoolABI, SparkGoerliAddresses } from "@hyperdrive/spark";
 import { BigNumber } from "ethers";
-import { useContractWrite, usePrepareContractWrite } from "wagmi";
+import { Address, useContractWrite, usePrepareContractWrite } from "wagmi";
 
 export function useSupplyCollateral(
-  token: `0x${string}`,
+  token: Address,
   amount: BigNumber,
-  onBehalfOf: `0x${string}` | undefined,
+  onBehalfOf: Address | undefined,
 ): {
   supply: (() => void) | undefined;
   status: "error" | "success" | "loading" | "idle";
@@ -18,7 +18,7 @@ export function useSupplyCollateral(
     args: [
       token,
       amount,
-      onBehalfOf as `0x${string}`, // safe to cast because enabled is set
+      onBehalfOf as Address, // safe to cast because enabled is set
       0, // an optional referral code, 0 for now
     ],
   });

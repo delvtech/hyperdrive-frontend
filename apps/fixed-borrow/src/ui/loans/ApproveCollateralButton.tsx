@@ -2,16 +2,16 @@ import { BigNumber } from "ethers";
 import { ReactElement } from "react";
 import { useSpenderAllowance } from "src/ui/token/useSpenderAllowance";
 import { useTokenApproval } from "src/ui/token/useTokenApproval";
-import { useToken } from "wagmi";
+import { Address, useToken } from "wagmi";
 
 export function ApproveCollateralButton({
   collateralTokenAddress,
   amount,
   spender,
 }: {
-  collateralTokenAddress: `0x${string}`;
+  collateralTokenAddress: Address;
   amount: BigNumber;
-  spender: `0x${string}`;
+  spender: Address;
 }): ReactElement | null {
   const { data: token } = useToken({ address: collateralTokenAddress });
   const { approve } = useTokenApproval({
