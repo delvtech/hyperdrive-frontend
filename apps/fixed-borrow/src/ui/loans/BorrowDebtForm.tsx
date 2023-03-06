@@ -1,7 +1,9 @@
 import classNames from "classnames";
 import { formatUnits, parseUnits } from "ethers/lib/utils.js";
-import { ReactElement, useState } from "react";
+import { ReactElement } from "react";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { useNumericInput } from "src/ui/base/useNumericInput";
+import { useBorrowDebt } from "src/ui/loans/hooks/useBorrowDebt";
 import { useAccount, useToken } from "wagmi";
 
 interface BorrowDebtFormProps {
@@ -14,17 +16,22 @@ export function BorrowDebtForm({
   const { data: debtTokenMetadata } = useToken({
     address: debtTokenAddress,
   });
-  const accountCurrentDebt = parseUnits("0"); // TODO: Get this from on-chain
 
-  const [debtAmount, setDebtAmount] = useState<string | undefined>();
-  const debtAmountAsBigNumber = parseUnits(
-    debtAmount || "0",
-    debtTokenMetadata?.decimals,
-  );
+  const { amountAsBigNumber: debtAmountAsBigNumber, setAmount: setDebtAmount } =
+    useNumericInput({ decimals: debtTokenMetadata?.decimals });
+
+  const accountCurrentDebt = parseUnits("0"); // TODO: Get this from on-chain
   const afterAmount = accountCurrentDebt.add(debtAmountAsBigNumber);
   const formattedAfterAmount = formatBalance(
     formatUnits(afterAmount, debtTokenMetadata?.decimals),
   );
+
+  const { borrow, status: borrowStatus } = useBorrowDebt(
+    debtTokenAddress,
+    debtAmountAsBigNumber,
+    account,
+  );
+  const isBorrowButtonDisabled = !borrow || borrowStatus === "loading";
 
   return (
     <div className="daisy-form-control w-full">
@@ -61,12 +68,12 @@ export function BorrowDebtForm({
         <div className="daisy-btn-group justify-end gap-4">
           {/* Supply collateral button */}
           <button
-            // disabled={isSupplyButtonDisabled}
+            disabled={isBorrowButtonDisabled}
             className={classNames(
-              "daisy-btn-outline daisy-btn daisy-btn-secondary daisy-btn-wide",
-              // { "daisy-loading": supplyStatus === "loading" },
+              "daisy-btn-outline daisy-btn-secondary daisy-btn-wide daisy-btn",
+              { "daisy-loading": borrowStatus === "loading" },
             )}
-            // onClick={() => supply?.()}
+            onClick={() => borrow?.()}
           >
             Borrow {debtTokenMetadata?.symbol}
           </button>

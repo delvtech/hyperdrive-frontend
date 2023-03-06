@@ -3,7 +3,7 @@ import { BigNumber } from "ethers";
 import { useContractWrite, usePrepareContractWrite } from "wagmi";
 
 export function useBorrowDebt(
-  token: `0x${string}`,
+  debtToken: `0x${string}`,
   amount: BigNumber,
   onBehalfOf: `0x${string}` | undefined,
 ): {
@@ -16,7 +16,7 @@ export function useBorrowDebt(
     functionName: "borrow",
     enabled: !!onBehalfOf && amount.gt(0),
     args: [
-      token,
+      debtToken,
       amount,
       BigNumber.from(2), // 1 for Stable rate, 2 for Variable rate, see: https://docs.aave.com/developers/core-contracts/pool#borrow
       0, // an optional referral code, 0 for now
