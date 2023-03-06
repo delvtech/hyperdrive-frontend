@@ -5,7 +5,7 @@ import { ReactElement, useState } from "react";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { ApproveCollateralButton } from "src/ui/loans/ApproveCollateralButton";
 import { useSupplyCollateral } from "src/ui/loans/hooks/useSupplyCollateral";
-import { useSpenderAllowance } from "src/ui/loans/useSpenderAllowance";
+import { useSpenderAllowance } from "src/ui/token/useSpenderAllowance";
 import { useAccount, useBalance, useContractRead, useToken } from "wagmi";
 
 interface SupplyCollateralFormProps {
@@ -133,12 +133,12 @@ export function SupplyCollateralForm({
           <button
             disabled={isSupplyButtonDisabled}
             className={classNames(
-              "daisy-btn-outline daisy-btn-primary daisy-btn-wide daisy-btn",
+              "daisy-btn-outline daisy-btn daisy-btn-primary daisy-btn-wide",
               { "daisy-loading": supplyStatus === "loading" },
             )}
             onClick={() => supply?.()}
           >
-            Supply collateral
+            Supply {collateralTokenMetadata?.symbol}
           </button>
         </div>
       ) : null}

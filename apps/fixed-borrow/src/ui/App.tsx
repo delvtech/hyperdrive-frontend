@@ -38,7 +38,7 @@ export default function App(): ReactElement {
           />
 
           {/* Debt */}
-          <BorrowDebtForm />
+          <BorrowDebtForm debtTokenAddress={SparkGoerliAddresses.DAI_token} />
 
           {/* Hyperdrive Short */}
           <div className="flex w-full flex-col gap-4">
