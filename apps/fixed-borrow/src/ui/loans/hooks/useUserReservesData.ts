@@ -6,7 +6,7 @@ import {
 import { useContractRead } from "wagmi";
 
 export function useUserReservesData(userAdress: `0x${string}` | undefined): {
-  userReservesData: readonly UserReserveData[] | undefined;
+  userReservesData: UserReserveData[] | undefined;
   status: "error" | "idle" | "loading" | "success";
 } {
   const { data, status } = useContractRead({
@@ -22,7 +22,7 @@ export function useUserReservesData(userAdress: `0x${string}` | undefined): {
       // We only care about the reserves data, but the data actually looks like
       // this: [reservesData, userEmodeCategoryId].
       return data[0].map((data) => ({
-        // convert data to a real object, it's actually one of those weird
+        // convert data to a real object, since it's actually one of those weird
         // arrays that also includes named properties on it. These are dangerous
         // since you can still .filter() on them, but then the named properties
         // are lost.
