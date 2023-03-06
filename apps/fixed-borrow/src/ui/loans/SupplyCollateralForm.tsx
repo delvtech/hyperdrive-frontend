@@ -7,11 +7,17 @@ import { useNumericInput } from "src/ui/base/useNumericInput";
 import { ApproveCollateralButton } from "src/ui/loans/ApproveCollateralButton";
 import { useSupplyCollateral } from "src/ui/loans/hooks/useSupplyCollateral";
 import { useSpenderAllowance } from "src/ui/token/useSpenderAllowance";
-import { useAccount, useBalance, useContractRead, useToken } from "wagmi";
+import {
+  Address,
+  useAccount,
+  useBalance,
+  useContractRead,
+  useToken,
+} from "wagmi";
 
 interface SupplyCollateralFormProps {
-  collateralTokenAddress: `0x${string}`;
-  collateralATokenAddress: `0x${string}`;
+  collateralTokenAddress: Address;
+  collateralATokenAddress: Address;
 }
 
 export function SupplyCollateralForm({
@@ -129,7 +135,7 @@ export function SupplyCollateralForm({
           <button
             disabled={isSupplyButtonDisabled}
             className={classNames(
-              "daisy-btn-outline daisy-btn-primary daisy-btn-wide daisy-btn",
+              "daisy-btn-outline daisy-btn daisy-btn-primary daisy-btn-wide",
               { "daisy-loading": supplyStatus === "loading" },
             )}
             onClick={() => supply?.()}

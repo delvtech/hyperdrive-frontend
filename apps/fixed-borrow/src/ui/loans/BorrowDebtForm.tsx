@@ -6,10 +6,10 @@ import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/useNumericInput";
 import { useBorrowDebt } from "src/ui/loans/hooks/useBorrowDebt";
 import { useUserReservesData } from "src/ui/loans/hooks/useUserReservesData";
-import { useAccount, useToken } from "wagmi";
+import { Address, useAccount, useToken } from "wagmi";
 
 interface BorrowDebtFormProps {
-  debtTokenAddress: `0x${string}`;
+  debtTokenAddress: Address;
 }
 export function BorrowDebtForm({
   debtTokenAddress,
@@ -87,7 +87,7 @@ export function BorrowDebtForm({
           <button
             disabled={isBorrowButtonDisabled}
             className={classNames(
-              "daisy-btn-outline daisy-btn-secondary daisy-btn-wide daisy-btn",
+              "daisy-btn-outline daisy-btn daisy-btn-secondary daisy-btn-wide",
               { "daisy-loading": borrowStatus === "loading" },
             )}
             onClick={() => borrow?.()}

@@ -1,10 +1,10 @@
 import { DSTokenABI } from "@hyperdrive/spark";
 import { BigNumber } from "ethers";
-import { useContractWrite, usePrepareContractWrite } from "wagmi";
+import { Address, useContractWrite, usePrepareContractWrite } from "wagmi";
 
 interface UseTokenApprovalOptions {
-  tokenAddress: `0x${string}`;
-  spender: `0x${string}`;
+  tokenAddress: Address;
+  spender: Address;
   amount: BigNumber;
 }
 

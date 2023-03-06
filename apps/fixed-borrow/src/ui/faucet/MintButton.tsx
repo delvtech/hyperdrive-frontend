@@ -7,22 +7,23 @@ import {
   usePrepareContractWrite,
   useContractWrite,
   useToken,
+  Address,
 } from "wagmi";
 
 export function MintButton({
   tokenAddress,
   amount,
 }: {
-  tokenAddress: `0x${string}`;
+  tokenAddress: Address;
   amount: BigNumber;
 }): ReactElement {
   const { address: account } = useAccount();
   const { data: token } = useToken({ address: tokenAddress });
   const { config: mintConfig } = usePrepareContractWrite({
-    address: SparkGoerliAddresses.faucet as `0x${string}`,
+    address: SparkGoerliAddresses.faucet,
     abi: FaucetABI,
     functionName: "mint",
-    args: [tokenAddress, account as `0x${string}`, amount],
+    args: [tokenAddress, account as Address, amount],
   });
   const { write: mintTokens } = useContractWrite(mintConfig);
   return (
