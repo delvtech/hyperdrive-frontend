@@ -1,6 +1,6 @@
 import { BigNumber } from "ethers";
 import { formatUnits, parseUnits } from "ethers/lib/utils.js";
-import { SetStateAction, useState } from "react";
+import { useState } from "react";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 
 export function useNumericInput({
