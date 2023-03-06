@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Don't show increment/decrement arrows for number inputs 
+ see: https://github.com/tailwindlabs/tailwindcss/discussions/2173 */
+@layer utilities {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    @apply appearance-none;
+  }
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

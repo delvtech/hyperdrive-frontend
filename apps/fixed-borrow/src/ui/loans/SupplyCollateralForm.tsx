@@ -1,65 +1,70 @@
-import {
-  AaveOracleABI,
-  DSTokenABI,
-  SparkGoerliAddresses,
-} from "@hyperdrive/spark";
+import { AaveOracleABI, SparkGoerliAddresses } from "@hyperdrive/spark";
 import classNames from "classnames";
-import { BigNumber } from "ethers";
 import { formatUnits, parseUnits } from "ethers/lib/utils.js";
 import { ReactElement, useState } from "react";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { useSupplyCollateral } from "src/ui/loans/useSupplyCollateral";
-import { useTokenApproval } from "src/ui/token/useTokenApproval";
-import { useAccount, useBalance, useContractRead } from "wagmi";
+import { ApproveCollateralButton } from "src/ui/loans/ApproveCollateralButton";
+import { useSupplyCollateral } from "src/ui/loans/hooks/useSupplyCollateral";
+import { useSpenderAllowance } from "src/ui/loans/useSpenderAllowance";
+import { useAccount, useBalance, useContractRead, useToken } from "wagmi";
 
-export function SupplyCollateralForm(): ReactElement {
+interface SupplyCollateralFormProps {
+  collateralTokenAddress: `0x${string}`;
+  collateralATokenAddress: `0x${string}`;
+}
+
+export function SupplyCollateralForm({
+  collateralTokenAddress,
+  collateralATokenAddress,
+}: SupplyCollateralFormProps): ReactElement {
   const { address: account } = useAccount();
-  const { data: assetBalance } = useBalance({
-    token: SparkGoerliAddresses.USDC_token,
+  const { data: collateralTokenMetadata } = useToken({
+    address: collateralTokenAddress,
+  });
+  const { data: accountCollateralBalance } = useBalance({
+    token: collateralTokenAddress,
     address: account,
   });
 
-  const { data: assetPrice } = useContractRead({
+  const { data: collateralPrice } = useContractRead({
     abi: AaveOracleABI,
     address: SparkGoerliAddresses.aaveOracle,
     functionName: "getAssetPrice",
-    args: [SparkGoerliAddresses.USDC_token],
+    args: [collateralTokenAddress],
   });
 
+  // TODO: Get this from getUserReservesData
   const { data: aTokenBalance } = useBalance({
-    token: SparkGoerliAddresses.USDC_aToken,
+    token: collateralATokenAddress,
     address: account,
   });
-  const { approve } = useTokenApproval({
-    tokenAddress: SparkGoerliAddresses.USDC_token,
-    spender: SparkGoerliAddresses.pool,
-    amount: parseUnits("1000000", 8),
-  });
-  const [inputAmount, setInputAmount] = useState<string | undefined>();
-  const inputAmountAsBigNumber = parseUnits(inputAmount || "0", 8);
+
+  const [collateralAmount, setCollateralAmount] = useState<
+    string | undefined
+  >();
+  const collateralAmountAsBigNumber = parseUnits(
+    collateralAmount || "0",
+    collateralTokenMetadata?.decimals,
+  );
+
+  const afterAmount = collateralAmount
+    ? aTokenBalance?.value.add(collateralAmountAsBigNumber)
+    : undefined;
+  const formattedAfterAmount = afterAmount
+    ? formatBalance(formatUnits(afterAmount, collateralTokenMetadata?.decimals))
+    : undefined;
 
   const { supply, status: supplyStatus } = useSupplyCollateral(
-    SparkGoerliAddresses.USDC_token,
-    inputAmountAsBigNumber,
+    collateralTokenAddress,
+    collateralAmountAsBigNumber,
     account,
   );
 
-  const { data: allowance } = useContractRead({
-    abi: DSTokenABI, // USDC is a DSToken on goerli, see: https://github.com/dapphub/ds-token
-    address: SparkGoerliAddresses.USDC_token,
-    functionName: "allowance",
-    enabled: !!account,
-    args: [account as `0x${string}`, SparkGoerliAddresses.pool],
-  });
-  const hasEnoughAllowance = allowance?.gte(inputAmountAsBigNumber);
-
-  const afterAmount = inputAmount
-    ? aTokenBalance?.value.add(inputAmountAsBigNumber)
-    : undefined;
-  const formattedAfterAmount = afterAmount
-    ? formatBalance(formatUnits(afterAmount, 8))
-    : undefined;
-
+  const { allowance } = useSpenderAllowance(
+    collateralTokenAddress,
+    SparkGoerliAddresses.pool,
+  );
+  const hasEnoughAllowance = allowance?.gte(collateralAmountAsBigNumber);
   const isSupplyButtonDisabled =
     !hasEnoughAllowance || !supply || supplyStatus === "loading";
 
@@ -70,11 +75,8 @@ export function SupplyCollateralForm(): ReactElement {
           {afterAmount ? "" : "Collateral"}
         </span>
         <span className="daisy-label-text">
-          Currently supplied:{" "}
-          {formatBalance(
-            formatUnits(aTokenBalance?.value || BigNumber.from(0), 8),
-          )}{" "}
-          USDC
+          Currently supplied: {formatBalance(aTokenBalance?.formatted || "0")}{" "}
+          {collateralTokenMetadata?.symbol}
         </span>
       </label>
 
@@ -83,59 +85,55 @@ export function SupplyCollateralForm(): ReactElement {
           {!afterAmount ? "" : "Collateral"}
         </span>
         {formattedAfterAmount && (
-          <span className="daisy-label-text text-warning">
-            After: {formattedAfterAmount} USDC
+          <span className="daisy-label-text text-primary">
+            After: {formattedAfterAmount} {collateralTokenMetadata?.symbol}
           </span>
         )}
       </label>
 
       <label className="daisy-input-group">
-        <span>USDC</span>
+        <span>{collateralTokenMetadata?.symbol}</span>
         <input
           type="number"
-          placeholder="Enter an amount to deposit as collateral"
-          className="daisy-input-bordered daisy-input w-full text-warning"
+          placeholder="Enter an amount to supply"
+          className="daisy-input-bordered daisy-input w-full appearance-none text-primary"
           onChange={(e) => {
-            setInputAmount(e.target.value);
+            setCollateralAmount(e.target.value);
           }}
         />
       </label>
       <label className="daisy-label">
         <span className="daisy-label-text">
-          {assetPrice
-            ? `Current price: 1 USDC = $${formatBalance(
-                formatUnits(assetPrice, 8),
+          {collateralPrice
+            ? `1 ${collateralTokenMetadata?.symbol} = $${formatBalance(
+                formatUnits(collateralPrice, 8),
                 2,
               )}`
             : null}
         </span>
         <span className="daisy-label-text">
-          {assetBalance
+          {accountCollateralBalance
             ? `Available to deposit: ${formatBalance(
-                formatUnits(assetBalance.value, 8),
+                accountCollateralBalance.formatted,
                 2,
-              )} USDC`
+              )} ${collateralTokenMetadata?.symbol}`
             : null}
         </span>
       </label>
       {afterAmount ? (
-        <div className="daisy-btn-group justify-end">
+        <div className="daisy-btn-group justify-end gap-4">
           {/* Approve button */}
-          {!hasEnoughAllowance ? (
-            <button
-              disabled={!approve}
-              className="daisy-btn-outline daisy-btn-wide daisy-btn"
-              onClick={() => approve?.()}
-            >
-              Approve
-            </button>
-          ) : null}
+          <ApproveCollateralButton
+            collateralTokenAddress={collateralTokenAddress}
+            amount={parseUnits("1000000", collateralTokenMetadata?.decimals)}
+            spender={SparkGoerliAddresses.pool}
+          />
 
           {/* Supply collateral button */}
           <button
             disabled={isSupplyButtonDisabled}
             className={classNames(
-              "daisy-btn-outline daisy-btn-warning daisy-btn-wide daisy-btn",
+              "daisy-btn-outline daisy-btn-primary daisy-btn-wide daisy-btn",
               { "daisy-loading": supplyStatus === "loading" },
             )}
             onClick={() => supply?.()}

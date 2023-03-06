@@ -5,7 +5,9 @@ import { ReactElement, useState } from "react";
 import { Stat } from "src/ui/base/Stat/Stat";
 import { SupplyCollateralForm } from "src/ui/loans/SupplyCollateralForm";
 import { CollateralizationRatioStat } from "src/ui/loans/CollateralizationRatioStat";
-import { MintUSDCButton } from "./faucet/MintUSDCButton";
+import { BorrowDebtForm } from "src/ui/loans/BorrowDebtForm";
+import { parseEther } from "ethers/lib/utils.js";
+import { MintButton } from "src/ui/faucet/MintButton";
 
 type TermDuration = "90_DAYS" | "180_DAYS" | "270_DAYS";
 
@@ -19,35 +21,24 @@ export default function App(): ReactElement {
         <h1 className="text-5xl font-bold">Fixed Borrow</h1>
         <h4 className="mb-3 text-xl">Built by Delve</h4>
         <ConnectButton />
-        <MintUSDCButton />
+        <div className="mt-8 flex items-center justify-center gap-4">
+          <MintButton
+            tokenAddress={SparkGoerliAddresses.wstETH_token}
+            amount={parseEther("1000")}
+          />
+        </div>
       </div>
 
       <div className="flex h-full justify-center">
         <div className="flex flex-col items-center gap-12">
           {/* Collateral */}
-          <SupplyCollateralForm />
+          <SupplyCollateralForm
+            collateralTokenAddress={SparkGoerliAddresses.wstETH_token}
+            collateralATokenAddress={SparkGoerliAddresses.wstETH_aToken}
+          />
 
           {/* Debt */}
-          <div className="daisy-form-control w-full">
-            <label className="daisy-label">
-              <span className="daisy-label-text">Debt</span>
-              <span className="daisy-label-text">Current debt: 3,001 DAI</span>
-            </label>
-            <label className="daisy-label -mt-4">
-              <span className="daisy-label-text" />
-              <span className="daisy-label-text text-warning">
-                After: 8,004.02 DAI
-              </span>
-            </label>
-            <label className="daisy-input-group">
-              <span>DAI</span>
-              <input
-                type="text"
-                placeholder="10"
-                className="daisy-input-bordered daisy-input w-full"
-              />
-            </label>
-          </div>
+          <BorrowDebtForm />
 
           {/* Hyperdrive Short */}
           <div className="flex w-full flex-col gap-4">
