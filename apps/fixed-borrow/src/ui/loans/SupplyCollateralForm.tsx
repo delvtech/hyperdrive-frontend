@@ -3,9 +3,10 @@ import classNames from "classnames";
 import { formatUnits, parseUnits } from "ethers/lib/utils.js";
 import { ReactElement, useState } from "react";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { useNumericInput } from "src/ui/base/useNumericInput";
 import { ApproveCollateralButton } from "src/ui/loans/ApproveCollateralButton";
 import { useSupplyCollateral } from "src/ui/loans/hooks/useSupplyCollateral";
-import { useSpenderAllowance } from "src/ui/loans/useSpenderAllowance";
+import { useSpenderAllowance } from "src/ui/token/useSpenderAllowance";
 import { useAccount, useBalance, useContractRead, useToken } from "wagmi";
 
 interface SupplyCollateralFormProps {
@@ -39,13 +40,11 @@ export function SupplyCollateralForm({
     address: account,
   });
 
-  const [collateralAmount, setCollateralAmount] = useState<
-    string | undefined
-  >();
-  const collateralAmountAsBigNumber = parseUnits(
-    collateralAmount || "0",
-    collateralTokenMetadata?.decimals,
-  );
+  const {
+    amount: collateralAmount,
+    amountAsBigNumber: collateralAmountAsBigNumber,
+    setAmount: setCollateralAmount,
+  } = useNumericInput({ decimals: collateralTokenMetadata?.decimals });
 
   const afterAmount = collateralAmount
     ? aTokenBalance?.value.add(collateralAmountAsBigNumber)
@@ -138,7 +137,7 @@ export function SupplyCollateralForm({
             )}
             onClick={() => supply?.()}
           >
-            Supply collateral
+            Supply {collateralTokenMetadata?.symbol}
           </button>
         </div>
       ) : null}

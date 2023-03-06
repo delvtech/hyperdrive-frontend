@@ -1,9 +1,8 @@
 import { BigNumber } from "ethers";
-import { formatEther } from "ethers/lib/utils.js";
 import { ReactElement } from "react";
+import { useSpenderAllowance } from "src/ui/token/useSpenderAllowance";
 import { useTokenApproval } from "src/ui/token/useTokenApproval";
 import { useToken } from "wagmi";
-import { useSpenderAllowance } from "./useSpenderAllowance";
 
 export function ApproveCollateralButton({
   collateralTokenAddress,

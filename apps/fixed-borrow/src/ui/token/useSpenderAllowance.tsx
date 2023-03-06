@@ -1,4 +1,4 @@
-import { DSTokenABI, SparkGoerliAddresses } from "@hyperdrive/spark";
+import { DSTokenABI } from "@hyperdrive/spark";
 import { BigNumber } from "ethers";
 import { useAccount, useContractRead } from "wagmi";
 
