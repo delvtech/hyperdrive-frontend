@@ -4,17 +4,41 @@ import classNames from "classnames";
 import { ReactElement, useState } from "react";
 import { Stat } from "src/ui/base/Stat/Stat";
 import { SupplyCollateralForm } from "src/ui/loans/SupplyCollateralForm";
-import { CollateralizationRatioStat } from "src/ui/loans/CollateralizationRatioStat";
+import { SupplyBalanceStat } from "src/ui/loans/SupplyBalanceStat";
 import { BorrowDebtForm } from "src/ui/loans/BorrowDebtForm";
-import { parseEther } from "ethers/lib/utils.js";
+import { formatUnits, parseEther } from "ethers/lib/utils.js";
 import { MintButton } from "src/ui/faucet/MintButton";
+import { BigNumber } from "ethers";
+import { useUserAccountData } from "src/ui/loans/hooks/useUserAccountData";
+import { useAccount, useToken } from "wagmi";
+import { useCollateralPrice } from "src/ui/loans/hooks/useCollateralPrice";
+import { formatBalance } from "src/ui/base/formatting/formatBalance";
 
 type TermDuration = "90_DAYS" | "180_DAYS" | "270_DAYS";
 
 console.log(SparkGoerliAddresses);
 
+const COLLATERAL = SparkGoerliAddresses.wstETH_token;
+const COLLATERAL_A_TOKEN = SparkGoerliAddresses.wstETH_aToken;
+const DEBT_TOKEN = SparkGoerliAddresses.DAI_token;
 export default function App(): ReactElement {
   const [duration, setDuration] = useState<TermDuration | undefined>();
+  const { address: account } = useAccount();
+  const { userAccountData } = useUserAccountData(account);
+  const { data: collateralMetadata } = useToken({ address: COLLATERAL });
+  const { data: collateralPrice } = useCollateralPrice(COLLATERAL);
+
+  const [collateralAmountInput, setCollateralAmountInput] = useState<
+    BigNumber | undefined
+  >();
+
+  const afterAmountCollateralValueBase = calculateCollateralBaseValue(
+    userAccountData?.totalCollateralBase,
+    collateralAmountInput,
+    collateralMetadata?.decimals,
+    collateralPrice,
+  );
+
   return (
     <div className="space-y-14 p-8">
       <div className="flex flex-col items-center justify-center gap-2">
@@ -22,10 +46,7 @@ export default function App(): ReactElement {
         <h4 className="mb-3 text-xl">Built by Delve</h4>
         <ConnectButton />
         <div className="mt-8 flex items-center justify-center gap-4">
-          <MintButton
-            tokenAddress={SparkGoerliAddresses.wstETH_token}
-            amount={parseEther("1000")}
-          />
+          <MintButton tokenAddress={COLLATERAL} amount={parseEther("1000")} />
         </div>
       </div>
 
@@ -33,12 +54,13 @@ export default function App(): ReactElement {
         <div className="flex flex-col items-center gap-12">
           {/* Collateral */}
           <SupplyCollateralForm
-            collateralTokenAddress={SparkGoerliAddresses.wstETH_token}
-            collateralATokenAddress={SparkGoerliAddresses.wstETH_aToken}
+            collateralTokenAddress={COLLATERAL}
+            collateralATokenAddress={COLLATERAL_A_TOKEN}
+            onCollateralInputAmountChange={setCollateralAmountInput}
           />
 
           {/* Debt */}
-          <BorrowDebtForm debtTokenAddress={SparkGoerliAddresses.DAI_token} />
+          <BorrowDebtForm debtTokenAddress={DEBT_TOKEN} />
 
           {/* Hyperdrive Short */}
           <div className="flex w-full flex-col gap-4">
@@ -95,7 +117,13 @@ export default function App(): ReactElement {
             </div>
           </div>
           <div className="daisy-stats daisy-stats-vertical justify-center text-center lg:daisy-stats-horizontal lg:text-start">
-            <CollateralizationRatioStat />
+            <SupplyBalanceStat
+              previewCollateralAmountAfter={
+                collateralAmountInput?.gt(0)
+                  ? afterAmountCollateralValueBase
+                  : undefined
+              }
+            />
 
             <Stat
               title="Liquidation Price"
@@ -123,4 +151,27 @@ export default function App(): ReactElement {
       </div>
     </div>
   );
+}
+
+function calculateCollateralBaseValue(
+  totalCollateralBase: BigNumber | undefined,
+  collateralAmountInput: BigNumber | undefined,
+  collateralDecimals: number | undefined,
+  collateralPrice: BigNumber | undefined,
+) {
+  const totalCollateralBaseValue = formatUnits(
+    totalCollateralBase || BigNumber.from(0),
+    8,
+  );
+
+  const newCollateralAmountBaseValue =
+    +formatUnits(
+      collateralAmountInput || BigNumber.from(0),
+      collateralDecimals,
+    ) * +formatUnits(collateralPrice || BigNumber.from(0), 8);
+
+  const afterAmountCollateralValueBase = formatBalance(
+    +totalCollateralBaseValue + newCollateralAmountBaseValue,
+  );
+  return afterAmountCollateralValueBase;
 }
