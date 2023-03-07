@@ -120,6 +120,16 @@ export default function App(): ReactElement {
               </button>
             </div>
           </div>
+<<<<<<< HEAD
+=======
+          <StatsBar
+            collateralAmountInput={collateralAmountInput}
+            afterAmountCollateralValueBase={afterAmountCollateralValueBase}
+          />
+          <button className="daisy-btn-info daisy-btn-wide daisy-btn">
+            Submit transaction
+          </button>
+>>>>>>> 197a441 (Move stats bar to own component)
         </div>
       </div>
     </div>
