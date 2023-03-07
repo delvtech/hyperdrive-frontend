@@ -25,6 +25,7 @@ export function SupplyBalanceStat({
           userAccountData?.totalCollateralBase || BigNumber.from(0),
           8,
         ),
+        2,
       )}`}
       description={
         <span

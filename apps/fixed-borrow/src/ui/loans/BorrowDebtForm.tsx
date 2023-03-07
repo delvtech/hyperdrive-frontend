@@ -5,6 +5,7 @@ import { ReactElement } from "react";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/useNumericInput";
 import { useBorrowDebt } from "src/ui/loans/hooks/useBorrowDebt";
+import { useUserAccountData } from "src/ui/loans/hooks/useUserAccountData";
 import { useUserReservesData } from "src/ui/loans/hooks/useUserReservesData";
 import { Address, useAccount, useToken } from "wagmi";
 
@@ -19,6 +20,12 @@ export function BorrowDebtForm({
     address: debtTokenAddress,
   });
 
+  const { userAccountData } = useUserAccountData(account);
+  const formattedAvailableBorrow = formatBalance(
+    formatUnits(userAccountData?.availableBorrowBase || BigNumber.from(0), 8),
+    2,
+  );
+
   const { userReservesData } = useUserReservesData(account);
   const debtTokenReservesData = userReservesData?.find(
     (d) => d.underlyingAsset === debtTokenAddress,
@@ -28,6 +35,7 @@ export function BorrowDebtForm({
       debtTokenReservesData?.scaledVariableDebt || BigNumber.from(0),
       debtTokenMetadata?.decimals,
     ),
+    2,
   );
 
   const {
@@ -40,7 +48,7 @@ export function BorrowDebtForm({
     ? debtTokenReservesData.scaledVariableDebt.add(debtInputAmountAsBigNumber)
     : undefined;
   const formattedNewDebtPreview = newDebtPreview
-    ? formatBalance(formatUnits(newDebtPreview, debtTokenMetadata?.decimals))
+    ? formatBalance(formatUnits(newDebtPreview, debtTokenMetadata?.decimals), 2)
     : undefined;
 
   const { borrow, status: borrowStatus } = useBorrowDebt(
@@ -69,7 +77,7 @@ export function BorrowDebtForm({
         </div>
       </label>
 
-      <label className="daisy-input-group mb-2">
+      <label className="daisy-input-group">
         <span>{debtTokenMetadata?.symbol}</span>
         <input
           type="number"
@@ -80,6 +88,11 @@ export function BorrowDebtForm({
           }}
         />
       </label>
+      <label className="daisy-label">
+        <div className="daisy-label-text w-full text-right">
+          <p>Available to borrow: ${formattedAvailableBorrow}</p>
+        </div>
+      </label>
 
       {/* Borrow Debt button */}
       {debtInputAmount ? (
@@ -87,7 +100,7 @@ export function BorrowDebtForm({
           <button
             disabled={isBorrowButtonDisabled}
             className={classNames(
-              "daisy-btn-outline daisy-btn daisy-btn-secondary daisy-btn-wide",
+              "daisy-btn-outline daisy-btn-secondary daisy-btn-wide daisy-btn",
               { "daisy-loading": borrowStatus === "loading" },
             )}
             onClick={() => borrow?.()}
