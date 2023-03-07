@@ -23,7 +23,7 @@ export function StatsBar({
       />
 
       <Stat
-        title="Liquidation Price"
+        title="Loan to value"
         value="$1,200"
         description={
           <span className="font-bold text-warning">
