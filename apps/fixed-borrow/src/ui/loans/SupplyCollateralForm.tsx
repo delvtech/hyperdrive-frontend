@@ -9,7 +9,7 @@ import { ApproveCollateralButton } from "src/ui/loans/ApproveCollateralButton";
 import { useSupplyCollateral } from "src/ui/loans/hooks/useSupplyCollateral";
 import { useSpenderAllowance } from "src/ui/token/useSpenderAllowance";
 import { Address, useAccount, useBalance, useToken } from "wagmi";
-import { useCollateralPrice } from "./hooks/useCollateralPrice";
+import { useAaveOracleAssetPrice } from "./hooks/useAaveOracleAssetPrice";
 
 interface SupplyCollateralFormProps {
   collateralTokenAddress: Address;
@@ -31,7 +31,9 @@ export function SupplyCollateralForm({
     address: account,
   });
 
-  const { data: collateralPrice } = useCollateralPrice(collateralTokenAddress);
+  const { data: collateralPrice } = useAaveOracleAssetPrice(
+    collateralTokenAddress,
+  );
 
   // TODO: Get this from getUserReservesData
   const { data: aTokenBalance } = useBalance({
@@ -72,16 +74,12 @@ export function SupplyCollateralForm({
         <div className="daisy-label-text grid w-full grid-cols-2">
           <span className="self-end">Collateral</span>
           <div className="text-right">
-            <p>
-              Currently supplied:{" "}
-              {formatBalance(aTokenBalance?.formatted || "0")}{" "}
-              {collateralTokenMetadata?.symbol}
-            </p>
-            {formattedAfterAmount && (
-              <p className="daisy-label-text text-primary">
-                After: {formattedAfterAmount} {collateralTokenMetadata?.symbol}
-              </p>
-            )}
+            {accountCollateralBalance
+              ? `Available to deposit: ${formatBalance(
+                  accountCollateralBalance.formatted,
+                  2,
+                )} ${collateralTokenMetadata?.symbol}`
+              : null}
           </div>
         </div>
       </label>
@@ -102,23 +100,29 @@ export function SupplyCollateralForm({
           }}
         />
       </label>
-      <label className="daisy-label mb-2">
-        <span className="daisy-label-text">
-          {collateralPrice
-            ? `1 ${collateralTokenMetadata?.symbol} = $${formatBalance(
-                formatUnits(collateralPrice, 8),
-                2,
-              )}`
-            : null}
-        </span>
-        <span className="daisy-label-text">
-          {accountCollateralBalance
-            ? `Available to deposit: ${formatBalance(
-                accountCollateralBalance.formatted,
-                2,
-              )} ${collateralTokenMetadata?.symbol}`
-            : null}
-        </span>
+      <label className="daisy-label">
+        <div className="daisy-label-text grid w-full grid-cols-2">
+          <span className="self-start">
+            {collateralPrice
+              ? `1 ${collateralTokenMetadata?.symbol} = $${formatBalance(
+                  formatUnits(collateralPrice, 8),
+                  2,
+                )}`
+              : null}
+          </span>
+          <span className="text-right">
+            <p>
+              Currently supplied:{" "}
+              {formatBalance(aTokenBalance?.formatted || "0")}{" "}
+              {collateralTokenMetadata?.symbol}
+            </p>
+            {formattedAfterAmount && (
+              <p className="daisy-label-text text-primary">
+                After: {formattedAfterAmount} {collateralTokenMetadata?.symbol}
+              </p>
+            )}
+          </span>
+        </div>
       </label>
       {afterAmount ? (
         <div className="daisy-btn-group justify-end gap-4">

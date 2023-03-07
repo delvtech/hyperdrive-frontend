@@ -1,9 +1,11 @@
+import { SparkGoerliAddresses } from "@hyperdrive/spark";
 import classNames from "classnames";
 import { BigNumber } from "ethers";
 import { formatUnits } from "ethers/lib/utils.js";
 import { ReactElement } from "react";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/useNumericInput";
+import { useAaveOracleAssetPrice } from "src/ui/loans/hooks/useAaveOracleAssetPrice";
 import { useBorrowDebt } from "src/ui/loans/hooks/useBorrowDebt";
 import { useUserAccountData } from "src/ui/loans/hooks/useUserAccountData";
 import { useUserReservesData } from "src/ui/loans/hooks/useUserReservesData";
@@ -44,6 +46,8 @@ export function BorrowDebtForm({
     setAmount: setDebtInputAmount,
   } = useNumericInput({ decimals: debtTokenMetadata?.decimals });
 
+  const { data: debtTokenPrice } = useAaveOracleAssetPrice(debtTokenAddress);
+
   const newDebtPreview = debtTokenReservesData
     ? debtTokenReservesData.scaledVariableDebt.add(debtInputAmountAsBigNumber)
     : undefined;
@@ -63,16 +67,8 @@ export function BorrowDebtForm({
       <label className="daisy-label">
         <div className="daisy-label-text grid w-full grid-cols-2">
           <span className="self-end">Debt</span>
-          <div className="text-right">
-            <p>
-              Current debt: {formattedUserCurrentDebt}{" "}
-              {debtTokenMetadata?.symbol}
-            </p>
-            {debtInputAmount && (
-              <p className="daisy-label-text text-secondary">
-                After: {formattedNewDebtPreview} {debtTokenMetadata?.symbol}
-              </p>
-            )}
+          <div className="daisy-label-text w-full text-right">
+            <p>Available to borrow: ${formattedAvailableBorrow}</p>
           </div>
         </div>
       </label>
@@ -88,9 +84,28 @@ export function BorrowDebtForm({
           }}
         />
       </label>
+
       <label className="daisy-label">
-        <div className="daisy-label-text w-full text-right">
-          <p>Available to borrow: ${formattedAvailableBorrow}</p>
+        <div className="daisy-label-text grid w-full grid-cols-2">
+          <span className="self-start">
+            {debtTokenPrice
+              ? `1 ${debtTokenMetadata?.symbol} = $${formatBalance(
+                  formatUnits(debtTokenPrice, 8),
+                  2,
+                )}`
+              : null}
+          </span>
+          <div className="text-right">
+            <p>
+              Current debt: {formattedUserCurrentDebt}{" "}
+              {debtTokenMetadata?.symbol}
+            </p>
+            {debtInputAmount && (
+              <p className="text-secondary">
+                After: {formattedNewDebtPreview} {debtTokenMetadata?.symbol}
+              </p>
+            )}
+          </div>
         </div>
       </label>
 
@@ -100,7 +115,7 @@ export function BorrowDebtForm({
           <button
             disabled={isBorrowButtonDisabled}
             className={classNames(
-              "daisy-btn-outline daisy-btn-secondary daisy-btn-wide daisy-btn",
+              "daisy-btn-outline daisy-btn daisy-btn-secondary daisy-btn-wide",
               { "daisy-loading": borrowStatus === "loading" },
             )}
             onClick={() => borrow?.()}

@@ -11,7 +11,7 @@ import { MintButton } from "src/ui/faucet/MintButton";
 import { BigNumber } from "ethers";
 import { useUserAccountData } from "src/ui/loans/hooks/useUserAccountData";
 import { useAccount, useToken } from "wagmi";
-import { useCollateralPrice } from "src/ui/loans/hooks/useCollateralPrice";
+import { useAaveOracleAssetPrice } from "src/ui/loans/hooks/useAaveOracleAssetPrice";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 
 type TermDuration = "90_DAYS" | "180_DAYS" | "270_DAYS";
@@ -26,7 +26,7 @@ export default function App(): ReactElement {
   const { address: account } = useAccount();
   const { userAccountData } = useUserAccountData(account);
   const { data: collateralMetadata } = useToken({ address: COLLATERAL });
-  const { data: collateralPrice } = useCollateralPrice(COLLATERAL);
+  const { data: collateralPrice } = useAaveOracleAssetPrice(COLLATERAL);
 
   const [collateralAmountInput, setCollateralAmountInput] = useState<
     BigNumber | undefined
