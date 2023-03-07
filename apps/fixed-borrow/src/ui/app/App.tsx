@@ -52,6 +52,10 @@ export default function App(): ReactElement {
 
       <div className="flex h-full justify-center">
         <div className="flex flex-col items-center gap-12">
+          <StatsBar
+            collateralAmountInput={collateralAmountInput}
+            afterAmountCollateralValueBase={afterAmountCollateralValueBase}
+          />
           {/* Collateral */}
           <SupplyCollateralForm
             collateralTokenAddress={COLLATERAL}
@@ -116,13 +120,6 @@ export default function App(): ReactElement {
               </button>
             </div>
           </div>
-          <StatsBar
-            collateralAmountInput={collateralAmountInput}
-            afterAmountCollateralValueBase={afterAmountCollateralValueBase}
-          />
-          <button className="daisy-btn-info daisy-btn-wide daisy-btn">
-            Submit transaction
-          </button>
         </div>
       </div>
     </div>
