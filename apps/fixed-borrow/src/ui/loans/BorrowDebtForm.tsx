@@ -1,10 +1,13 @@
+import { SparkGoerliAddresses } from "@hyperdrive/spark";
 import classNames from "classnames";
 import { BigNumber } from "ethers";
 import { formatUnits } from "ethers/lib/utils.js";
 import { ReactElement } from "react";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/useNumericInput";
+import { useAaveOracleAssetPrice } from "src/ui/loans/hooks/useAaveOracleAssetPrice";
 import { useBorrowDebt } from "src/ui/loans/hooks/useBorrowDebt";
+import { useUserAccountData } from "src/ui/loans/hooks/useUserAccountData";
 import { useUserReservesData } from "src/ui/loans/hooks/useUserReservesData";
 import { Address, useAccount, useToken } from "wagmi";
 
@@ -19,6 +22,12 @@ export function BorrowDebtForm({
     address: debtTokenAddress,
   });
 
+  const { userAccountData } = useUserAccountData(account);
+  const formattedAvailableBorrow = formatBalance(
+    formatUnits(userAccountData?.availableBorrowBase || BigNumber.from(0), 8),
+    2,
+  );
+
   const { userReservesData } = useUserReservesData(account);
   const debtTokenReservesData = userReservesData?.find(
     (d) => d.underlyingAsset === debtTokenAddress,
@@ -28,6 +37,7 @@ export function BorrowDebtForm({
       debtTokenReservesData?.scaledVariableDebt || BigNumber.from(0),
       debtTokenMetadata?.decimals,
     ),
+    2,
   );
 
   const {
@@ -36,11 +46,13 @@ export function BorrowDebtForm({
     setAmount: setDebtInputAmount,
   } = useNumericInput({ decimals: debtTokenMetadata?.decimals });
 
+  const { data: debtTokenPrice } = useAaveOracleAssetPrice(debtTokenAddress);
+
   const newDebtPreview = debtTokenReservesData
     ? debtTokenReservesData.scaledVariableDebt.add(debtInputAmountAsBigNumber)
     : undefined;
   const formattedNewDebtPreview = newDebtPreview
-    ? formatBalance(formatUnits(newDebtPreview, debtTokenMetadata?.decimals))
+    ? formatBalance(formatUnits(newDebtPreview, debtTokenMetadata?.decimals), 2)
     : undefined;
 
   const { borrow, status: borrowStatus } = useBorrowDebt(
@@ -55,21 +67,13 @@ export function BorrowDebtForm({
       <label className="daisy-label">
         <div className="daisy-label-text grid w-full grid-cols-2">
           <span className="self-end">Debt</span>
-          <div className="text-right">
-            <p>
-              Current debt: {formattedUserCurrentDebt}{" "}
-              {debtTokenMetadata?.symbol}
-            </p>
-            {debtInputAmount && (
-              <p className="daisy-label-text text-secondary">
-                After: {formattedNewDebtPreview} {debtTokenMetadata?.symbol}
-              </p>
-            )}
+          <div className="daisy-label-text w-full text-right">
+            <p>Available to borrow: ${formattedAvailableBorrow}</p>
           </div>
         </div>
       </label>
 
-      <label className="daisy-input-group mb-2">
+      <label className="daisy-input-group">
         <span>{debtTokenMetadata?.symbol}</span>
         <input
           type="number"
@@ -79,6 +83,30 @@ export function BorrowDebtForm({
             setDebtInputAmount(e.target.value);
           }}
         />
+      </label>
+
+      <label className="daisy-label">
+        <div className="daisy-label-text grid w-full grid-cols-2">
+          <span className="self-start">
+            {debtTokenPrice
+              ? `1 ${debtTokenMetadata?.symbol} = $${formatBalance(
+                  formatUnits(debtTokenPrice, 8),
+                  2,
+                )}`
+              : null}
+          </span>
+          <div className="text-right">
+            <p>
+              Current debt: {formattedUserCurrentDebt}{" "}
+              {debtTokenMetadata?.symbol}
+            </p>
+            {debtInputAmount && (
+              <p className="text-secondary">
+                After: {formattedNewDebtPreview} {debtTokenMetadata?.symbol}
+              </p>
+            )}
+          </div>
+        </div>
       </label>
 
       {/* Borrow Debt button */}

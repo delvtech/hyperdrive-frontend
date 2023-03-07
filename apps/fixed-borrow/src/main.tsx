@@ -9,7 +9,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { queryClient } from "src/network/queryClient";
 import { chains, wagmiClient } from "src/network/wagmiClient";
-import App from "src/ui/App";
+import App from "src/ui/app/App";
 import { WagmiConfig } from "wagmi";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
