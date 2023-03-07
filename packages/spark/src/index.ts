@@ -8,3 +8,4 @@ export { PoolABI } from "src/abis/Pool";
 export { UiPoolDataProviderABI } from "src/abis/UiPoolDataProvider";
 
 export type { UserReserveData } from "src/types/UserReserveData";
+export type { UserAccountData } from "src/types/UserAccountData";
