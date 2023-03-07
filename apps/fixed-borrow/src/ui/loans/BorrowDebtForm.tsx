@@ -84,6 +84,11 @@ export function BorrowDebtForm({
           }}
         />
       </label>
+      <label className="daisy-label">
+        <div className="daisy-label-text w-full text-right">
+          <p>Available to borrow: ${formattedAvailableBorrow}</p>
+        </div>
+      </label>
 
       <label className="daisy-label">
         <div className="daisy-label-text grid w-full grid-cols-2">
@@ -115,7 +120,7 @@ export function BorrowDebtForm({
           <button
             disabled={isBorrowButtonDisabled}
             className={classNames(
-              "daisy-btn-outline daisy-btn daisy-btn-secondary daisy-btn-wide",
+              "daisy-btn-outline daisy-btn-secondary daisy-btn-wide daisy-btn",
               { "daisy-loading": borrowStatus === "loading" },
             )}
             onClick={() => borrow?.()}
