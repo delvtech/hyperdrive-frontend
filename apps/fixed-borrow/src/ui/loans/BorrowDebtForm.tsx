@@ -84,9 +84,28 @@ export function BorrowDebtForm({
           }}
         />
       </label>
+
       <label className="daisy-label">
-        <div className="daisy-label-text w-full text-right">
-          <p>Available to borrow: ${formattedAvailableBorrow}</p>
+        <div className="daisy-label-text grid w-full grid-cols-2">
+          <span className="self-start">
+            {debtTokenPrice
+              ? `1 ${debtTokenMetadata?.symbol} = $${formatBalance(
+                  formatUnits(debtTokenPrice, 8),
+                  2,
+                )}`
+              : null}
+          </span>
+          <div className="text-right">
+            <p>
+              Current debt: {formattedUserCurrentDebt}{" "}
+              {debtTokenMetadata?.symbol}
+            </p>
+            {debtInputAmount && (
+              <p className="text-secondary">
+                After: {formattedNewDebtPreview} {debtTokenMetadata?.symbol}
+              </p>
+            )}
+          </div>
         </div>
       </label>
 
@@ -120,7 +139,7 @@ export function BorrowDebtForm({
           <button
             disabled={isBorrowButtonDisabled}
             className={classNames(
-              "daisy-btn-outline daisy-btn-secondary daisy-btn-wide daisy-btn",
+              "daisy-btn-outline daisy-btn daisy-btn-secondary daisy-btn-wide",
               { "daisy-loading": borrowStatus === "loading" },
             )}
             onClick={() => borrow?.()}
