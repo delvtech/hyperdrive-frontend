@@ -2,9 +2,7 @@ import { SparkGoerliAddresses } from "@hyperdrive/spark";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import classNames from "classnames";
 import { ReactElement, useState } from "react";
-import { Stat } from "src/ui/base/Stat/Stat";
 import { SupplyCollateralForm } from "src/ui/loans/SupplyCollateralForm";
-import { SupplyBalanceStat } from "src/ui/loans/SupplyBalanceStat";
 import { BorrowDebtForm } from "src/ui/loans/BorrowDebtForm";
 import { formatUnits, parseEther } from "ethers/lib/utils.js";
 import { MintButton } from "src/ui/faucet/MintButton";
@@ -13,6 +11,7 @@ import { useUserAccountData } from "src/ui/loans/hooks/useUserAccountData";
 import { useAccount, useToken } from "wagmi";
 import { useAaveOracleAssetPrice } from "src/ui/loans/hooks/useAaveOracleAssetPrice";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { StatsBar } from "src/ui/app/StatsBar";
 
 type TermDuration = "90_DAYS" | "180_DAYS" | "270_DAYS";
 
@@ -21,6 +20,7 @@ console.log(SparkGoerliAddresses);
 const COLLATERAL = SparkGoerliAddresses.wstETH_token;
 const COLLATERAL_A_TOKEN = SparkGoerliAddresses.wstETH_aToken;
 const DEBT_TOKEN = SparkGoerliAddresses.DAI_token;
+
 export default function App(): ReactElement {
   const [duration, setDuration] = useState<TermDuration | undefined>();
   const { address: account } = useAccount();
@@ -116,34 +116,10 @@ export default function App(): ReactElement {
               </button>
             </div>
           </div>
-          <div className="daisy-stats daisy-stats-vertical justify-center text-center lg:daisy-stats-horizontal lg:text-start">
-            <SupplyBalanceStat
-              previewCollateralAmountAfter={
-                collateralAmountInput?.gt(0)
-                  ? afterAmountCollateralValueBase
-                  : undefined
-              }
-            />
-
-            <Stat
-              title="Liquidation Price"
-              value="$1,200"
-              description={
-                <span className="font-bold text-warning">
-                  {
-                    // TODO: Show "Current price: $1600" w/out warning style for
-                    // the empty state
-                  }
-                  After: $1,450
-                </span>
-              }
-            />
-            <Stat
-              title="Borrow Rate (APY)"
-              value="1.25%"
-              description={"Until June 27, 2023"}
-            />
-          </div>
+          <StatsBar
+            collateralAmountInput={collateralAmountInput}
+            afterAmountCollateralValueBase={afterAmountCollateralValueBase}
+          />
           <button className="daisy-btn-info daisy-btn-wide daisy-btn">
             Submit transaction
           </button>
