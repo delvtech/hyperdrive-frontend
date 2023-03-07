@@ -1,5 +1,6 @@
-import { AaveOracleABI, SparkGoerliAddresses } from "@hyperdrive/spark";
+import { SparkGoerliAddresses } from "@hyperdrive/spark";
 import classNames from "classnames";
+import { BigNumber } from "ethers";
 import { formatUnits, parseUnits } from "ethers/lib/utils.js";
 import { ReactElement } from "react";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -7,22 +8,19 @@ import { useNumericInput } from "src/ui/base/useNumericInput";
 import { ApproveCollateralButton } from "src/ui/loans/ApproveCollateralButton";
 import { useSupplyCollateral } from "src/ui/loans/hooks/useSupplyCollateral";
 import { useSpenderAllowance } from "src/ui/token/useSpenderAllowance";
-import {
-  Address,
-  useAccount,
-  useBalance,
-  useContractRead,
-  useToken,
-} from "wagmi";
+import { Address, useAccount, useBalance, useToken } from "wagmi";
+import { useCollateralPrice } from "./hooks/useCollateralPrice";
 
 interface SupplyCollateralFormProps {
   collateralTokenAddress: Address;
   collateralATokenAddress: Address;
+  onCollateralInputAmountChange?: (newAmount: BigNumber) => void;
 }
 
 export function SupplyCollateralForm({
   collateralTokenAddress,
   collateralATokenAddress,
+  onCollateralInputAmountChange,
 }: SupplyCollateralFormProps): ReactElement {
   const { address: account } = useAccount();
   const { data: collateralTokenMetadata } = useToken({
@@ -33,12 +31,7 @@ export function SupplyCollateralForm({
     address: account,
   });
 
-  const { data: collateralPrice } = useContractRead({
-    abi: AaveOracleABI,
-    address: SparkGoerliAddresses.aaveOracle,
-    functionName: "getAssetPrice",
-    args: [collateralTokenAddress],
-  });
+  const { data: collateralPrice } = useCollateralPrice(collateralTokenAddress);
 
   // TODO: Get this from getUserReservesData
   const { data: aTokenBalance } = useBalance({
@@ -100,6 +93,11 @@ export function SupplyCollateralForm({
           placeholder="Enter an amount to supply"
           className="daisy-input-bordered daisy-input w-full appearance-none text-primary focus:border-primary"
           onChange={(e) => {
+            const valueAsBigNumber = parseUnits(
+              e.target.value || "0",
+              collateralTokenMetadata?.decimals,
+            );
+            onCollateralInputAmountChange?.(valueAsBigNumber);
             setCollateralAmount(e.target.value);
           }}
         />
