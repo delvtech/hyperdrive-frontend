@@ -15,7 +15,7 @@ export function StatsBar({
   return (
     <div className="daisy-stats daisy-stats-vertical justify-center text-center lg:daisy-stats-horizontal lg:text-start">
       <SupplyBalanceStat
-        previewCollateralAmountAfter={
+        previewBalanceAfter={
           collateralAmountInput?.gt(0)
             ? afterAmountCollateralValueBase
             : undefined

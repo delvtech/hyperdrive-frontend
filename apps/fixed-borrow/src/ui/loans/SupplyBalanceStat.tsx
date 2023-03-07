@@ -8,11 +8,14 @@ import { useUserAccountData } from "src/ui/loans/hooks/useUserAccountData";
 import { useAccount } from "wagmi";
 
 interface SupplyBalanceStat {
-  previewCollateralAmountAfter?: string;
+  /**
+   * Balance in the pool's base (USD)
+   */
+  previewBalanceAfter?: string;
 }
 
 export function SupplyBalanceStat({
-  previewCollateralAmountAfter,
+  previewBalanceAfter,
 }: SupplyBalanceStat): ReactElement {
   const { address: account } = useAccount();
   const { userAccountData } = useUserAccountData(account);
@@ -30,10 +33,10 @@ export function SupplyBalanceStat({
       description={
         <span
           className={classNames("font-bold text-primary", {
-            invisible: !previewCollateralAmountAfter,
+            invisible: !previewBalanceAfter,
           })}
         >
-          After: ${previewCollateralAmountAfter}
+          After: ${previewBalanceAfter}
         </span>
       }
     />
