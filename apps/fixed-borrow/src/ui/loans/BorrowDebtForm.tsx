@@ -4,7 +4,7 @@ import { formatUnits } from "ethers/lib/utils.js";
 import { ReactElement } from "react";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/useNumericInput";
-import { useAaveOracleAssetPrice } from "src/ui/loans/hooks/useAaveOracleAssetPrice";
+import { useAaveOracleAssetPrice } from "src/ui/oracles/useAaveOracleAssetPrice";
 import { useBorrowDebt } from "src/ui/loans/hooks/useBorrowDebt";
 import { useUserAccountData } from "src/ui/loans/hooks/useUserAccountData";
 import { useUserCurrentDebt } from "src/ui/loans/hooks/useUserCurrentDebt";
@@ -111,7 +111,7 @@ export function BorrowDebtForm({
           <button
             disabled={isBorrowButtonDisabled}
             className={classNames(
-              "daisy-btn-outline daisy-btn-secondary daisy-btn-wide daisy-btn",
+              "daisy-btn-outline daisy-btn daisy-btn-secondary daisy-btn-wide",
               { "daisy-loading": borrowStatus === "loading" },
             )}
             onClick={() => borrow?.()}

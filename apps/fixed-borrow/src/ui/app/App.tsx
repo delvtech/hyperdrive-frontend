@@ -9,7 +9,7 @@ import { MintButton } from "src/ui/faucet/MintButton";
 import { BigNumber } from "ethers";
 import { useUserAccountData } from "src/ui/loans/hooks/useUserAccountData";
 import { useAccount, useToken } from "wagmi";
-import { useAaveOracleAssetPrice } from "src/ui/loans/hooks/useAaveOracleAssetPrice";
+import { useAaveOracleAssetPrice } from "src/ui/oracles/useAaveOracleAssetPrice";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { StatsBar } from "src/ui/app/StatsBar";
 
