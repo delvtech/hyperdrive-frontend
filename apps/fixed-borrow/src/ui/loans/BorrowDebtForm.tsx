@@ -8,6 +8,7 @@ import { useNumericInput } from "src/ui/base/useNumericInput";
 import { useAaveOracleAssetPrice } from "src/ui/loans/hooks/useAaveOracleAssetPrice";
 import { useBorrowDebt } from "src/ui/loans/hooks/useBorrowDebt";
 import { useUserAccountData } from "src/ui/loans/hooks/useUserAccountData";
+import { useUserCurrentDebt } from "src/ui/loans/hooks/useUserCurrentDebt";
 import { useUserReservesData } from "src/ui/loans/hooks/useUserReservesData";
 import { Address, useAccount, useToken } from "wagmi";
 
@@ -28,17 +29,8 @@ export function BorrowDebtForm({
     2,
   );
 
-  const { userReservesData } = useUserReservesData(account);
-  const debtTokenReservesData = userReservesData?.find(
-    (d) => d.underlyingAsset === debtTokenAddress,
-  );
-  const formattedUserCurrentDebt = formatBalance(
-    formatUnits(
-      debtTokenReservesData?.scaledVariableDebt || BigNumber.from(0),
-      debtTokenMetadata?.decimals,
-    ),
-    2,
-  );
+  const { currentDebt, formattedCurrentDebt: formattedUserCurrentDebt } =
+    useUserCurrentDebt(account, debtTokenAddress);
 
   const {
     amount: debtInputAmount,
@@ -48,8 +40,8 @@ export function BorrowDebtForm({
 
   const { data: debtTokenPrice } = useAaveOracleAssetPrice(debtTokenAddress);
 
-  const newDebtPreview = debtTokenReservesData
-    ? debtTokenReservesData.scaledVariableDebt.add(debtInputAmountAsBigNumber)
+  const newDebtPreview = currentDebt
+    ? currentDebt.add(debtInputAmountAsBigNumber)
     : undefined;
   const formattedNewDebtPreview = newDebtPreview
     ? formatBalance(formatUnits(newDebtPreview, debtTokenMetadata?.decimals), 2)
@@ -115,7 +107,7 @@ export function BorrowDebtForm({
           <button
             disabled={isBorrowButtonDisabled}
             className={classNames(
-              "daisy-btn-outline daisy-btn daisy-btn-secondary daisy-btn-wide",
+              "daisy-btn-outline daisy-btn-secondary daisy-btn-wide daisy-btn",
               { "daisy-loading": borrowStatus === "loading" },
             )}
             onClick={() => borrow?.()}
