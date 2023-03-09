@@ -1,4 +1,3 @@
-import { SparkGoerliAddresses } from "@hyperdrive/spark";
 import classNames from "classnames";
 import { BigNumber } from "ethers";
 import { formatUnits } from "ethers/lib/utils.js";
@@ -9,7 +8,6 @@ import { useAaveOracleAssetPrice } from "src/ui/loans/hooks/useAaveOracleAssetPr
 import { useBorrowDebt } from "src/ui/loans/hooks/useBorrowDebt";
 import { useUserAccountData } from "src/ui/loans/hooks/useUserAccountData";
 import { useUserCurrentDebt } from "src/ui/loans/hooks/useUserCurrentDebt";
-import { useUserReservesData } from "src/ui/loans/hooks/useUserReservesData";
 import { Address, useAccount, useToken } from "wagmi";
 
 interface BorrowDebtFormProps {
@@ -29,7 +27,7 @@ export function BorrowDebtForm({
     2,
   );
 
-  const { currentDebt, formattedCurrentDebt: formattedUserCurrentDebt } =
+  const { value: currentDebt, formattedCurrentDebt: formattedUserCurrentDebt } =
     useUserCurrentDebt(account, debtTokenAddress);
 
   const {

@@ -7,22 +7,26 @@ import { Address, useToken } from "wagmi";
 export function useUserCurrentDebt(
   account: Address | undefined,
   debtTokenAddress: Address,
-): { currentDebt: BigNumber | undefined; formattedCurrentDebt: string } {
+): {
+  value: BigNumber | undefined;
+  currentDebt: string;
+  formattedCurrentDebt: string;
+} {
   const { userReservesData } = useUserReservesData(account);
   const { data: debtTokenMetadata } = useToken({ address: debtTokenAddress });
   const debtTokenReservesData = userReservesData?.find(
     (d) => d.underlyingAsset === debtTokenAddress,
   );
-  const formattedUserCurrentDebt = formatBalance(
-    formatUnits(
-      debtTokenReservesData?.scaledVariableDebt || BigNumber.from(0),
-      debtTokenMetadata?.decimals,
-    ),
-    2,
+  const currentDebt = formatUnits(
+    debtTokenReservesData?.scaledVariableDebt || BigNumber.from(0),
+    debtTokenMetadata?.decimals,
   );
 
+  const formattedUserCurrentDebt = formatBalance(currentDebt, 2);
+
   return {
-    currentDebt: debtTokenReservesData?.scaledVariableDebt,
+    value: debtTokenReservesData?.scaledVariableDebt,
+    currentDebt,
     formattedCurrentDebt: formattedUserCurrentDebt,
   };
 }

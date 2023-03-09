@@ -1,5 +1,6 @@
-// TODO: Move this to packages/hyperdrive if we can get the non-parcel build to
-// work properly.
+// TODO: Move this to packages/hyperdrive if we can get the non-parcel build
+// over there to work properly. Typechain + Parcel don't get along, maybe we
+// ditch Typechain all together there in favor of wagmi?
 export const HyperdriveABI = [
   {
     anonymous: false,

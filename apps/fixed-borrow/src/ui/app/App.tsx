@@ -66,7 +66,11 @@ export default function App(): ReactElement {
           <BorrowDebtForm debtTokenAddress={DEBT_TOKEN} />
 
           {/* Hyperdrive Short */}
-          <OpenShortForm duration={duration} setDuration={setDuration} />
+          <OpenShortForm
+            debtTokenAddress={DEBT_TOKEN}
+            duration={duration}
+            setDuration={setDuration}
+          />
         </div>
       </div>
     </div>

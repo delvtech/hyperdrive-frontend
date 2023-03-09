@@ -1,16 +1,42 @@
 import classNames from "classnames";
+import { BigNumber, ethers } from "ethers";
+import { formatUnits, parseUnits } from "ethers/lib/utils.js";
 import { ReactElement } from "react";
+import { useUserCurrentDebt } from "src/ui/loans/hooks/useUserCurrentDebt";
+import { useOpenShortPreview } from "src/ui/shorts/hooks/useOpenShortPreview";
 import { TermDuration } from "src/ui/shorts/termDuration";
+import { Address, useAccount, useToken } from "wagmi";
 
 interface OpenShortFormProps {
   setDuration: (duration: TermDuration) => void;
   duration: TermDuration | undefined;
+
+  debtTokenAddress: Address;
 }
 
 export function OpenShortForm({
   setDuration,
   duration,
+  debtTokenAddress,
 }: OpenShortFormProps): ReactElement {
+  const { address: account } = useAccount();
+  const { currentDebt } = useUserCurrentDebt(account, debtTokenAddress);
+  const { data: debtTokenMetadata } = useToken({ address: debtTokenAddress });
+  const shortAmount = parseUnits(
+    `${+currentDebt * 1.25}`,
+    debtTokenMetadata?.decimals,
+  );
+  const { openShortPreview } = useOpenShortPreview(
+    shortAmount,
+    ethers.constants.MaxInt256,
+    account,
+    true,
+  );
+  console.log("openShortPreview", openShortPreview);
+  const amountToPay = formatUnits(
+    openShortPreview || BigNumber.from(0),
+    debtTokenMetadata?.decimals,
+  );
   return (
     <div className="flex w-full flex-col gap-4">
       <div className="daisy-form-control">
@@ -29,6 +55,7 @@ export function OpenShortForm({
           <input
             type="text"
             disabled
+            value={amountToPay}
             className="daisy-input-bordered daisy-input w-full"
           />
           <span>DAI</span>
