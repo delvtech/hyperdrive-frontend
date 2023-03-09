@@ -32,6 +32,7 @@
     "ethers": "^5.7.2",
     "lodash.merge": "^4.6.2",
     "moment": "^2.29.4",
+    "@hyperdrive/core": "*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-query": "^3.39.3",
