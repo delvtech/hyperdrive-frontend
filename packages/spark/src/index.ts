@@ -1,4 +1,4 @@
-export { SparkGoerliAddresses } from "src/goerli";
+export { SparkGoerliAddresses } from "src/addresses/goerli";
 
 export { AaveOracleABI } from "src/abis/AaveOracle";
 export { ATokenABI } from "src/abis/AToken";

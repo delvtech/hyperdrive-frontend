@@ -1,0 +1,10 @@
+{
+  "extends": "@hyperdrive/tsconfig/base.json",
+  "include": ["./hardhat.config.ts"],
+  "compilerOptions": {
+    "outDir": "dist/",
+    "target": "es5",
+    "module": "ESNext",
+    "resolveJsonModule": true
+  }
+}

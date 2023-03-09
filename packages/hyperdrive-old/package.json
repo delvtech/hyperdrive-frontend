@@ -1,0 +1,44 @@
+{
+  "name": "hyperdrive",
+  "version": "0.0.0",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/main.js",
+  "types": "dist/types.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "load-contracts": "sh scripts/load-contracts.sh",
+    "build:typechcain": "npm run load-contracts && hardhat clean && hardhat compile",
+    "build": "tsc --project tsconfig.build.json"
+  },
+  "devDependencies": {
+    "@hyperdrive/eslint-config": "*",
+    "@hyperdrive/prettier-config": "*",
+    "@hyperdrive/tsconfig": "*",
+    "@nomicfoundation/hardhat-chai-matchers": "^1.0.0",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.0",
+    "@nomicfoundation/hardhat-toolbox": "^2.0.2",
+    "@nomiclabs/hardhat-ethers": "^2.0.0",
+    "@nomiclabs/hardhat-etherscan": "^3.0.0",
+    "@typechain/ethers-v5": "^10.2.0",
+    "@typechain/hardhat": "^6.1.2",
+    "@types/mocha": ">=9.1.0",
+    "hardhat": "^2.13.0",
+    "hardhat-gas-reporter": "^1.0.8",
+    "prettier-plugin-organize-imports": "^3.2.2",
+    "solidity-coverage": "^0.8.1",
+    "typechain": "^8.1.1",
+    "typescript": "^4.9.3"
+  },
+  "peerDependencies": {
+    "ethers": ">=5.6"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.8.2"
+  }
+}
