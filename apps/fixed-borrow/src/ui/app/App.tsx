@@ -26,16 +26,27 @@ export default function App(): ReactElement {
   const { data: collateralMetadata } = useToken({ address: COLLATERAL });
   const { data: collateralPrice } = useAaveOracleAssetPrice(COLLATERAL);
 
+  // The collateral amount state lives here in the app, and is updated whenever
+  // the SupplyCollateralForm calls it's onChange handler. This allows us to
+  // calculate the correct "after" amount to pass to the StatsBar.
   const [collateralAmountInput, setCollateralAmountInput] = useState<
     BigNumber | undefined
   >();
+  const afterAmountCollateralValueBase =
+    calculateBaseValueOfCurrentCollateralAndNewAmount(
+      userAccountData?.totalCollateralBase,
+      collateralAmountInput,
+      collateralMetadata?.decimals,
+      collateralPrice,
+    );
 
-  const afterAmountCollateralValueBase = calculateCollateralBaseValue(
-    userAccountData?.totalCollateralBase,
-    collateralAmountInput,
-    collateralMetadata?.decimals,
-    collateralPrice,
-  );
+  // The debt amount state management follows the same pattern as the
+  // collateralAmount. Whenever the BorrowDebtForm calls it's onChange handler,
+  // the debt amount value updates and a new "after" amount can be calculated
+  // and passed to the StatsBar.
+  const [debtAmountInput, setDebtAmountInput] = useState<
+    BigNumber | undefined
+  >();
 
   return (
     <div className="space-y-14 p-8">
@@ -62,12 +73,16 @@ export default function App(): ReactElement {
           />
 
           {/* Debt */}
-          <BorrowDebtForm debtTokenAddress={DEBT_TOKEN} />
+          <BorrowDebtForm
+            onDebtInputAmountChange={setDebtAmountInput}
+            debtTokenAddress={DEBT_TOKEN}
+          />
 
           {/* Hyperdrive Short */}
           <OpenShortForm
             termDuration={duration}
             onTermDurationChange={setDuration}
+            valueToShort={undefined}
           />
         </div>
       </div>
@@ -75,23 +90,24 @@ export default function App(): ReactElement {
   );
 }
 
-function calculateCollateralBaseValue(
-  totalCollateralBase: BigNumber | undefined,
-  collateralAmountInput: BigNumber | undefined,
+function calculateBaseValueOfCurrentCollateralAndNewAmount(
+  currentCollateralBase: BigNumber | undefined,
+  newCollateralAmount: BigNumber | undefined,
   collateralDecimals: number | undefined,
   collateralPrice: BigNumber | undefined,
 ) {
+  // you start with this much already as collateral
   const totalCollateralBaseValue = formatUnits(
-    totalCollateralBase || BigNumber.from(0),
+    currentCollateralBase || BigNumber.from(0),
     8,
   );
 
+  // Convert the new collateral amount to a value in base
   const newCollateralAmountBaseValue =
-    +formatUnits(
-      collateralAmountInput || BigNumber.from(0),
-      collateralDecimals,
-    ) * +formatUnits(collateralPrice || BigNumber.from(0), 8);
+    +formatUnits(newCollateralAmount || BigNumber.from(0), collateralDecimals) *
+    +formatUnits(collateralPrice || BigNumber.from(0), 8);
 
+  // add the current base value and the new collateral's base value together
   const afterAmountCollateralValueBase = formatBalance(
     +totalCollateralBaseValue + newCollateralAmountBaseValue,
   );
