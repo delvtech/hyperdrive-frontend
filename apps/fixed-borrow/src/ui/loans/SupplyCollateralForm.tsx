@@ -7,9 +7,9 @@ import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/useNumericInput";
 import { ApproveCollateralButton } from "src/ui/loans/ApproveCollateralButton";
 import { useSupplyCollateral } from "src/ui/loans/hooks/useSupplyCollateral";
+import { useAaveOracleAssetPrice } from "src/ui/oracles/useAaveOracleAssetPrice";
 import { useSpenderAllowance } from "src/ui/token/useSpenderAllowance";
 import { Address, useAccount, useBalance, useToken } from "wagmi";
-import { useAaveOracleAssetPrice } from "./hooks/useAaveOracleAssetPrice";
 
 interface SupplyCollateralFormProps {
   collateralTokenAddress: Address;
