@@ -1,6 +1,5 @@
 import { SparkGoerliAddresses } from "@hyperdrive/spark";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import classNames from "classnames";
 import { ReactElement, useState } from "react";
 import { SupplyCollateralForm } from "src/ui/loans/SupplyCollateralForm";
 import { BorrowDebtForm } from "src/ui/loans/BorrowDebtForm";
@@ -12,8 +11,8 @@ import { useAccount, useToken } from "wagmi";
 import { useAaveOracleAssetPrice } from "src/ui/loans/hooks/useAaveOracleAssetPrice";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { StatsBar } from "src/ui/app/StatsBar";
-
-type TermDuration = "90_DAYS" | "180_DAYS" | "270_DAYS";
+import { OpenShortForm } from "src/ui/shorts/OpenShortForm";
+import { TermDuration } from "src/ui/shorts/termDuration";
 
 console.log(SparkGoerliAddresses);
 
@@ -67,59 +66,7 @@ export default function App(): ReactElement {
           <BorrowDebtForm debtTokenAddress={DEBT_TOKEN} />
 
           {/* Hyperdrive Short */}
-          <div className="flex w-full flex-col gap-4">
-            <div className="daisy-form-control">
-              <label className="daisy-label">
-                <span className="daisy-label-text">Hyperdrive Short</span>
-                <span className="daisy-label-text">
-                  Existing shorts: (
-                  <button className="daisy-link">
-                    {/* TODO: Make a modal open up on click to show your shorts */}
-                    5
-                  </button>
-                  )
-                </span>
-              </label>
-              <label className="daisy-input-group">
-                <span className="shrink-0">You Pay</span>
-                <input
-                  type="text"
-                  disabled
-                  className="daisy-input-bordered daisy-input w-full"
-                />
-                <span>DAI</span>
-              </label>
-            </div>
-            <div className="flex justify-end gap-2">
-              <button
-                onClick={() => setDuration("90_DAYS")}
-                className={classNames("daisy-btn ", {
-                  "daisy-btn-outline daisy-btn-active":
-                    duration && duration === "90_DAYS",
-                })}
-              >
-                3 months
-              </button>
-              <button
-                onClick={() => setDuration("180_DAYS")}
-                className={classNames("daisy-btn", {
-                  "daisy-btn-outline daisy-btn-active":
-                    duration && duration === "180_DAYS",
-                })}
-              >
-                6 months
-              </button>
-              <button
-                onClick={() => setDuration("270_DAYS")}
-                className={classNames("daisy-btn", {
-                  "daisy-btn-outline daisy-btn-active":
-                    duration && duration === "270_DAYS",
-                })}
-              >
-                9 months
-              </button>
-            </div>
-          </div>
+          <OpenShortForm duration={duration} setDuration={setDuration} />
         </div>
       </div>
     </div>
