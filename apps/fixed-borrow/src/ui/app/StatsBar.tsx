@@ -3,15 +3,15 @@ import { Stat } from "src/ui/base/Stat/Stat";
 import { SupplyBalanceStat } from "src/ui/loans/SupplyBalanceStat";
 
 interface StatsBarProps {
-  afterAmountCollateralValueBase: string | undefined;
+  previewCollateralBalance: string | undefined;
 }
 
 export function StatsBar({
-  afterAmountCollateralValueBase,
+  previewCollateralBalance,
 }: StatsBarProps): ReactElement {
   return (
     <div className="daisy-stats daisy-stats-vertical justify-center text-center lg:daisy-stats-horizontal lg:text-start">
-      <SupplyBalanceStat previewBalanceAfter={afterAmountCollateralValueBase} />
+      <SupplyBalanceStat previewCollateralBalance={previewCollateralBalance} />
 
       <Stat
         title="Loan to value"

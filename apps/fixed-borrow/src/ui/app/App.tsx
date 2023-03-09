@@ -32,7 +32,7 @@ export default function App(): ReactElement {
   const [collateralAmountInput, setCollateralAmountInput] = useState<
     BigNumber | undefined
   >();
-  const afterAmountCollateralValueBase =
+  const previewCollateralBalance =
     calculateBaseValueOfCurrentCollateralAndNewAmount(
       userAccountData?.totalCollateralBase,
       collateralAmountInput,
@@ -62,9 +62,9 @@ export default function App(): ReactElement {
       <div className="flex h-full justify-center">
         <div className="flex flex-col items-center gap-12">
           <StatsBar
-            afterAmountCollateralValueBase={
+            previewCollateralBalance={
               collateralAmountInput?.gt(0)
-                ? afterAmountCollateralValueBase
+                ? previewCollateralBalance
                 : undefined
             }
           />
