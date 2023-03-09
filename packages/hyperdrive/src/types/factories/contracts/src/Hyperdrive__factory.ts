@@ -470,6 +470,19 @@ const _abi = [
   },
   {
     inputs: [],
+    name: "collectGovFee",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "proceeds",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
     name: "curveFee",
     outputs: [
       {
@@ -541,6 +554,11 @@ const _abi = [
         name: "curveFee_",
         type: "uint256",
       },
+      {
+        internalType: "uint256",
+        name: "govFee_",
+        type: "uint256",
+      },
     ],
     stateMutability: "view",
     type: "function",
@@ -598,6 +616,45 @@ const _abi = [
         internalType: "uint256",
         name: "shortBaseVolume_",
         type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "govFeePercent",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "govFeesAccrued",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "governance",
+    outputs: [
+      {
+        internalType: "address",
+        name: "",
+        type: "address",
       },
     ],
     stateMutability: "view",
@@ -904,12 +961,7 @@ const _abi = [
     inputs: [
       {
         internalType: "uint256",
-        name: "_longWithdrawalShares",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "_shortWithdrawalShares",
+        name: "_shares",
         type: "uint256",
       },
       {
@@ -1166,26 +1218,21 @@ const _abi = [
   },
   {
     inputs: [],
-    name: "withdrawalState",
+    name: "withdrawPool",
     outputs: [
       {
         internalType: "uint128",
-        name: "longWithdrawalSharesOutstanding",
+        name: "withdrawSharesReadyToWithdraw",
         type: "uint128",
       },
       {
         internalType: "uint128",
-        name: "shortWithdrawalSharesOutstanding",
+        name: "capital",
         type: "uint128",
       },
       {
         internalType: "uint128",
-        name: "longWithdrawalShareProceeds",
-        type: "uint128",
-      },
-      {
-        internalType: "uint128",
-        name: "shortWithdrawalShareProceeds",
+        name: "interest",
         type: "uint128",
       },
     ],

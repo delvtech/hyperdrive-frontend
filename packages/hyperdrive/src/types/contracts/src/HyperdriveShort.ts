@@ -31,6 +31,7 @@ export interface HyperdriveShortInterface extends utils.Interface {
   functions: {
     "DOMAIN_SEPARATOR()": FunctionFragment;
     "PERMIT_TYPEHASH()": FunctionFragment;
+    "addLiquidity(uint256,uint256,address,bool)": FunctionFragment;
     "aggregates()": FunctionFragment;
     "balanceOf(uint256,address)": FunctionFragment;
     "baseToken()": FunctionFragment;
@@ -39,12 +40,17 @@ export interface HyperdriveShortInterface extends utils.Interface {
     "checkpointDuration()": FunctionFragment;
     "checkpoints(uint256)": FunctionFragment;
     "closeShort(uint256,uint256,uint256,address,bool)": FunctionFragment;
+    "collectGovFee()": FunctionFragment;
     "curveFee()": FunctionFragment;
     "factory()": FunctionFragment;
     "flatFee()": FunctionFragment;
     "getPoolConfiguration()": FunctionFragment;
     "getPoolInfo()": FunctionFragment;
+    "govFeePercent()": FunctionFragment;
+    "govFeesAccrued()": FunctionFragment;
+    "governance()": FunctionFragment;
     "initialSharePrice()": FunctionFragment;
+    "initialize(uint256,uint256,address,bool)": FunctionFragment;
     "isApprovedForAll(address,address)": FunctionFragment;
     "linkerCodeHash()": FunctionFragment;
     "marketState()": FunctionFragment;
@@ -54,6 +60,8 @@ export interface HyperdriveShortInterface extends utils.Interface {
     "perTokenApprovals(uint256,address,address)": FunctionFragment;
     "permitForAll(address,address,bool,uint256,uint8,bytes32,bytes32)": FunctionFragment;
     "positionDuration()": FunctionFragment;
+    "redeemWithdrawalShares(uint256,uint256,address,bool)": FunctionFragment;
+    "removeLiquidity(uint256,uint256,address,bool)": FunctionFragment;
     "setApproval(uint256,address,uint256)": FunctionFragment;
     "setApprovalBridge(uint256,address,uint256,address)": FunctionFragment;
     "setApprovalForAll(address,bool)": FunctionFragment;
@@ -62,7 +70,7 @@ export interface HyperdriveShortInterface extends utils.Interface {
     "totalSupply(uint256)": FunctionFragment;
     "transferFrom(uint256,address,address,uint256)": FunctionFragment;
     "transferFromBridge(uint256,address,address,uint256,address)": FunctionFragment;
-    "withdrawalState()": FunctionFragment;
+    "withdrawPool()": FunctionFragment;
   };
 
   getFunction(
@@ -71,6 +79,8 @@ export interface HyperdriveShortInterface extends utils.Interface {
       | "DOMAIN_SEPARATOR()"
       | "PERMIT_TYPEHASH"
       | "PERMIT_TYPEHASH()"
+      | "addLiquidity"
+      | "addLiquidity(uint256,uint256,address,bool)"
       | "aggregates"
       | "aggregates()"
       | "balanceOf"
@@ -87,6 +97,8 @@ export interface HyperdriveShortInterface extends utils.Interface {
       | "checkpoints(uint256)"
       | "closeShort"
       | "closeShort(uint256,uint256,uint256,address,bool)"
+      | "collectGovFee"
+      | "collectGovFee()"
       | "curveFee"
       | "curveFee()"
       | "factory"
@@ -97,8 +109,16 @@ export interface HyperdriveShortInterface extends utils.Interface {
       | "getPoolConfiguration()"
       | "getPoolInfo"
       | "getPoolInfo()"
+      | "govFeePercent"
+      | "govFeePercent()"
+      | "govFeesAccrued"
+      | "govFeesAccrued()"
+      | "governance"
+      | "governance()"
       | "initialSharePrice"
       | "initialSharePrice()"
+      | "initialize"
+      | "initialize(uint256,uint256,address,bool)"
       | "isApprovedForAll"
       | "isApprovedForAll(address,address)"
       | "linkerCodeHash"
@@ -117,6 +137,10 @@ export interface HyperdriveShortInterface extends utils.Interface {
       | "permitForAll(address,address,bool,uint256,uint8,bytes32,bytes32)"
       | "positionDuration"
       | "positionDuration()"
+      | "redeemWithdrawalShares"
+      | "redeemWithdrawalShares(uint256,uint256,address,bool)"
+      | "removeLiquidity"
+      | "removeLiquidity(uint256,uint256,address,bool)"
       | "setApproval"
       | "setApproval(uint256,address,uint256)"
       | "setApprovalBridge"
@@ -133,8 +157,8 @@ export interface HyperdriveShortInterface extends utils.Interface {
       | "transferFrom(uint256,address,address,uint256)"
       | "transferFromBridge"
       | "transferFromBridge(uint256,address,address,uint256,address)"
-      | "withdrawalState"
-      | "withdrawalState()"
+      | "withdrawPool"
+      | "withdrawPool()"
   ): FunctionFragment;
 
   encodeFunctionData(
@@ -152,6 +176,24 @@ export interface HyperdriveShortInterface extends utils.Interface {
   encodeFunctionData(
     functionFragment: "PERMIT_TYPEHASH()",
     values?: undefined
+  ): string;
+  encodeFunctionData(
+    functionFragment: "addLiquidity",
+    values: [
+      PromiseOrValue<BigNumberish>,
+      PromiseOrValue<BigNumberish>,
+      PromiseOrValue<string>,
+      PromiseOrValue<boolean>
+    ]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "addLiquidity(uint256,uint256,address,bool)",
+    values: [
+      PromiseOrValue<BigNumberish>,
+      PromiseOrValue<BigNumberish>,
+      PromiseOrValue<string>,
+      PromiseOrValue<boolean>
+    ]
   ): string;
   encodeFunctionData(
     functionFragment: "aggregates",
@@ -236,6 +278,14 @@ export interface HyperdriveShortInterface extends utils.Interface {
       PromiseOrValue<boolean>
     ]
   ): string;
+  encodeFunctionData(
+    functionFragment: "collectGovFee",
+    values?: undefined
+  ): string;
+  encodeFunctionData(
+    functionFragment: "collectGovFee()",
+    values?: undefined
+  ): string;
   encodeFunctionData(functionFragment: "curveFee", values?: undefined): string;
   encodeFunctionData(
     functionFragment: "curveFee()",
@@ -262,12 +312,54 @@ export interface HyperdriveShortInterface extends utils.Interface {
     values?: undefined
   ): string;
   encodeFunctionData(
+    functionFragment: "govFeePercent",
+    values?: undefined
+  ): string;
+  encodeFunctionData(
+    functionFragment: "govFeePercent()",
+    values?: undefined
+  ): string;
+  encodeFunctionData(
+    functionFragment: "govFeesAccrued",
+    values?: undefined
+  ): string;
+  encodeFunctionData(
+    functionFragment: "govFeesAccrued()",
+    values?: undefined
+  ): string;
+  encodeFunctionData(
+    functionFragment: "governance",
+    values?: undefined
+  ): string;
+  encodeFunctionData(
+    functionFragment: "governance()",
+    values?: undefined
+  ): string;
+  encodeFunctionData(
     functionFragment: "initialSharePrice",
     values?: undefined
   ): string;
   encodeFunctionData(
     functionFragment: "initialSharePrice()",
     values?: undefined
+  ): string;
+  encodeFunctionData(
+    functionFragment: "initialize",
+    values: [
+      PromiseOrValue<BigNumberish>,
+      PromiseOrValue<BigNumberish>,
+      PromiseOrValue<string>,
+      PromiseOrValue<boolean>
+    ]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "initialize(uint256,uint256,address,bool)",
+    values: [
+      PromiseOrValue<BigNumberish>,
+      PromiseOrValue<BigNumberish>,
+      PromiseOrValue<string>,
+      PromiseOrValue<boolean>
+    ]
   ): string;
   encodeFunctionData(
     functionFragment: "isApprovedForAll",
@@ -376,6 +468,42 @@ export interface HyperdriveShortInterface extends utils.Interface {
     values?: undefined
   ): string;
   encodeFunctionData(
+    functionFragment: "redeemWithdrawalShares",
+    values: [
+      PromiseOrValue<BigNumberish>,
+      PromiseOrValue<BigNumberish>,
+      PromiseOrValue<string>,
+      PromiseOrValue<boolean>
+    ]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "redeemWithdrawalShares(uint256,uint256,address,bool)",
+    values: [
+      PromiseOrValue<BigNumberish>,
+      PromiseOrValue<BigNumberish>,
+      PromiseOrValue<string>,
+      PromiseOrValue<boolean>
+    ]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "removeLiquidity",
+    values: [
+      PromiseOrValue<BigNumberish>,
+      PromiseOrValue<BigNumberish>,
+      PromiseOrValue<string>,
+      PromiseOrValue<boolean>
+    ]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "removeLiquidity(uint256,uint256,address,bool)",
+    values: [
+      PromiseOrValue<BigNumberish>,
+      PromiseOrValue<BigNumberish>,
+      PromiseOrValue<string>,
+      PromiseOrValue<boolean>
+    ]
+  ): string;
+  encodeFunctionData(
     functionFragment: "setApproval",
     values: [
       PromiseOrValue<BigNumberish>,
@@ -480,11 +608,11 @@ export interface HyperdriveShortInterface extends utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: "withdrawalState",
+    functionFragment: "withdrawPool",
     values?: undefined
   ): string;
   encodeFunctionData(
-    functionFragment: "withdrawalState()",
+    functionFragment: "withdrawPool()",
     values?: undefined
   ): string;
 
@@ -502,6 +630,14 @@ export interface HyperdriveShortInterface extends utils.Interface {
   ): Result;
   decodeFunctionResult(
     functionFragment: "PERMIT_TYPEHASH()",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "addLiquidity",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "addLiquidity(uint256,uint256,address,bool)",
     data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "aggregates", data: BytesLike): Result;
@@ -553,6 +689,14 @@ export interface HyperdriveShortInterface extends utils.Interface {
     functionFragment: "closeShort(uint256,uint256,uint256,address,bool)",
     data: BytesLike
   ): Result;
+  decodeFunctionResult(
+    functionFragment: "collectGovFee",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "collectGovFee()",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(functionFragment: "curveFee", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "curveFee()", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "factory", data: BytesLike): Result;
@@ -576,11 +720,37 @@ export interface HyperdriveShortInterface extends utils.Interface {
     data: BytesLike
   ): Result;
   decodeFunctionResult(
+    functionFragment: "govFeePercent",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "govFeePercent()",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "govFeesAccrued",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "govFeesAccrued()",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(functionFragment: "governance", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "governance()",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
     functionFragment: "initialSharePrice",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
     functionFragment: "initialSharePrice()",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(functionFragment: "initialize", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "initialize(uint256,uint256,address,bool)",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
@@ -647,6 +817,22 @@ export interface HyperdriveShortInterface extends utils.Interface {
     data: BytesLike
   ): Result;
   decodeFunctionResult(
+    functionFragment: "redeemWithdrawalShares",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "redeemWithdrawalShares(uint256,uint256,address,bool)",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "removeLiquidity",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "removeLiquidity(uint256,uint256,address,bool)",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
     functionFragment: "setApproval",
     data: BytesLike
   ): Result;
@@ -708,11 +894,11 @@ export interface HyperdriveShortInterface extends utils.Interface {
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "withdrawalState",
+    functionFragment: "withdrawPool",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "withdrawalState()",
+    functionFragment: "withdrawPool()",
     data: BytesLike
   ): Result;
 
@@ -808,6 +994,22 @@ export interface HyperdriveShort extends BaseContract {
     PERMIT_TYPEHASH(overrides?: CallOverrides): Promise<[string]>;
 
     "PERMIT_TYPEHASH()"(overrides?: CallOverrides): Promise<[string]>;
+
+    addLiquidity(
+      _contribution: PromiseOrValue<BigNumberish>,
+      _minOutput: PromiseOrValue<BigNumberish>,
+      _destination: PromiseOrValue<string>,
+      _asUnderlying: PromiseOrValue<boolean>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>;
+
+    "addLiquidity(uint256,uint256,address,bool)"(
+      _contribution: PromiseOrValue<BigNumberish>,
+      _minOutput: PromiseOrValue<BigNumberish>,
+      _destination: PromiseOrValue<string>,
+      _asUnderlying: PromiseOrValue<boolean>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>;
 
     aggregates(overrides?: CallOverrides): Promise<
       [BigNumber, BigNumber, BigNumber, BigNumber] & {
@@ -913,6 +1115,14 @@ export interface HyperdriveShort extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
+    collectGovFee(
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>;
+
+    "collectGovFee()"(
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>;
+
     curveFee(overrides?: CallOverrides): Promise<[BigNumber]>;
 
     "curveFee()"(overrides?: CallOverrides): Promise<[BigNumber]>;
@@ -926,24 +1136,42 @@ export interface HyperdriveShort extends BaseContract {
     "flatFee()"(overrides?: CallOverrides): Promise<[BigNumber]>;
 
     getPoolConfiguration(overrides?: CallOverrides): Promise<
-      [BigNumber, BigNumber, BigNumber, BigNumber, BigNumber, BigNumber] & {
+      [
+        BigNumber,
+        BigNumber,
+        BigNumber,
+        BigNumber,
+        BigNumber,
+        BigNumber,
+        BigNumber
+      ] & {
         initialSharePrice_: BigNumber;
         positionDuration_: BigNumber;
         checkpointDuration_: BigNumber;
         timeStretch_: BigNumber;
         flatFee_: BigNumber;
         curveFee_: BigNumber;
+        govFee_: BigNumber;
       }
     >;
 
     "getPoolConfiguration()"(overrides?: CallOverrides): Promise<
-      [BigNumber, BigNumber, BigNumber, BigNumber, BigNumber, BigNumber] & {
+      [
+        BigNumber,
+        BigNumber,
+        BigNumber,
+        BigNumber,
+        BigNumber,
+        BigNumber,
+        BigNumber
+      ] & {
         initialSharePrice_: BigNumber;
         positionDuration_: BigNumber;
         checkpointDuration_: BigNumber;
         timeStretch_: BigNumber;
         flatFee_: BigNumber;
         curveFee_: BigNumber;
+        govFee_: BigNumber;
       }
     >;
 
@@ -999,9 +1227,37 @@ export interface HyperdriveShort extends BaseContract {
       }
     >;
 
+    govFeePercent(overrides?: CallOverrides): Promise<[BigNumber]>;
+
+    "govFeePercent()"(overrides?: CallOverrides): Promise<[BigNumber]>;
+
+    govFeesAccrued(overrides?: CallOverrides): Promise<[BigNumber]>;
+
+    "govFeesAccrued()"(overrides?: CallOverrides): Promise<[BigNumber]>;
+
+    governance(overrides?: CallOverrides): Promise<[string]>;
+
+    "governance()"(overrides?: CallOverrides): Promise<[string]>;
+
     initialSharePrice(overrides?: CallOverrides): Promise<[BigNumber]>;
 
     "initialSharePrice()"(overrides?: CallOverrides): Promise<[BigNumber]>;
+
+    initialize(
+      _contribution: PromiseOrValue<BigNumberish>,
+      _apr: PromiseOrValue<BigNumberish>,
+      _destination: PromiseOrValue<string>,
+      _asUnderlying: PromiseOrValue<boolean>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>;
+
+    "initialize(uint256,uint256,address,bool)"(
+      _contribution: PromiseOrValue<BigNumberish>,
+      _apr: PromiseOrValue<BigNumberish>,
+      _destination: PromiseOrValue<string>,
+      _asUnderlying: PromiseOrValue<boolean>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>;
 
     isApprovedForAll(
       arg0: PromiseOrValue<string>,
@@ -1113,6 +1369,38 @@ export interface HyperdriveShort extends BaseContract {
 
     "positionDuration()"(overrides?: CallOverrides): Promise<[BigNumber]>;
 
+    redeemWithdrawalShares(
+      _shares: PromiseOrValue<BigNumberish>,
+      _minOutput: PromiseOrValue<BigNumberish>,
+      _destination: PromiseOrValue<string>,
+      _asUnderlying: PromiseOrValue<boolean>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>;
+
+    "redeemWithdrawalShares(uint256,uint256,address,bool)"(
+      _shares: PromiseOrValue<BigNumberish>,
+      _minOutput: PromiseOrValue<BigNumberish>,
+      _destination: PromiseOrValue<string>,
+      _asUnderlying: PromiseOrValue<boolean>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>;
+
+    removeLiquidity(
+      _shares: PromiseOrValue<BigNumberish>,
+      _minOutput: PromiseOrValue<BigNumberish>,
+      _destination: PromiseOrValue<string>,
+      _asUnderlying: PromiseOrValue<boolean>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>;
+
+    "removeLiquidity(uint256,uint256,address,bool)"(
+      _shares: PromiseOrValue<BigNumberish>,
+      _minOutput: PromiseOrValue<BigNumberish>,
+      _destination: PromiseOrValue<string>,
+      _asUnderlying: PromiseOrValue<boolean>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<ContractTransaction>;
+
     setApproval(
       tokenID: PromiseOrValue<BigNumberish>,
       operator: PromiseOrValue<string>,
@@ -1213,21 +1501,19 @@ export interface HyperdriveShort extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
 
-    withdrawalState(overrides?: CallOverrides): Promise<
-      [BigNumber, BigNumber, BigNumber, BigNumber] & {
-        longWithdrawalSharesOutstanding: BigNumber;
-        shortWithdrawalSharesOutstanding: BigNumber;
-        longWithdrawalShareProceeds: BigNumber;
-        shortWithdrawalShareProceeds: BigNumber;
+    withdrawPool(overrides?: CallOverrides): Promise<
+      [BigNumber, BigNumber, BigNumber] & {
+        withdrawSharesReadyToWithdraw: BigNumber;
+        capital: BigNumber;
+        interest: BigNumber;
       }
     >;
 
-    "withdrawalState()"(overrides?: CallOverrides): Promise<
-      [BigNumber, BigNumber, BigNumber, BigNumber] & {
-        longWithdrawalSharesOutstanding: BigNumber;
-        shortWithdrawalSharesOutstanding: BigNumber;
-        longWithdrawalShareProceeds: BigNumber;
-        shortWithdrawalShareProceeds: BigNumber;
+    "withdrawPool()"(overrides?: CallOverrides): Promise<
+      [BigNumber, BigNumber, BigNumber] & {
+        withdrawSharesReadyToWithdraw: BigNumber;
+        capital: BigNumber;
+        interest: BigNumber;
       }
     >;
   };
@@ -1239,6 +1525,22 @@ export interface HyperdriveShort extends BaseContract {
   PERMIT_TYPEHASH(overrides?: CallOverrides): Promise<string>;
 
   "PERMIT_TYPEHASH()"(overrides?: CallOverrides): Promise<string>;
+
+  addLiquidity(
+    _contribution: PromiseOrValue<BigNumberish>,
+    _minOutput: PromiseOrValue<BigNumberish>,
+    _destination: PromiseOrValue<string>,
+    _asUnderlying: PromiseOrValue<boolean>,
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>;
+
+  "addLiquidity(uint256,uint256,address,bool)"(
+    _contribution: PromiseOrValue<BigNumberish>,
+    _minOutput: PromiseOrValue<BigNumberish>,
+    _destination: PromiseOrValue<string>,
+    _asUnderlying: PromiseOrValue<boolean>,
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>;
 
   aggregates(overrides?: CallOverrides): Promise<
     [BigNumber, BigNumber, BigNumber, BigNumber] & {
@@ -1344,6 +1646,14 @@ export interface HyperdriveShort extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
+  collectGovFee(
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>;
+
+  "collectGovFee()"(
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>;
+
   curveFee(overrides?: CallOverrides): Promise<BigNumber>;
 
   "curveFee()"(overrides?: CallOverrides): Promise<BigNumber>;
@@ -1357,24 +1667,42 @@ export interface HyperdriveShort extends BaseContract {
   "flatFee()"(overrides?: CallOverrides): Promise<BigNumber>;
 
   getPoolConfiguration(overrides?: CallOverrides): Promise<
-    [BigNumber, BigNumber, BigNumber, BigNumber, BigNumber, BigNumber] & {
+    [
+      BigNumber,
+      BigNumber,
+      BigNumber,
+      BigNumber,
+      BigNumber,
+      BigNumber,
+      BigNumber
+    ] & {
       initialSharePrice_: BigNumber;
       positionDuration_: BigNumber;
       checkpointDuration_: BigNumber;
       timeStretch_: BigNumber;
       flatFee_: BigNumber;
       curveFee_: BigNumber;
+      govFee_: BigNumber;
     }
   >;
 
   "getPoolConfiguration()"(overrides?: CallOverrides): Promise<
-    [BigNumber, BigNumber, BigNumber, BigNumber, BigNumber, BigNumber] & {
+    [
+      BigNumber,
+      BigNumber,
+      BigNumber,
+      BigNumber,
+      BigNumber,
+      BigNumber,
+      BigNumber
+    ] & {
       initialSharePrice_: BigNumber;
       positionDuration_: BigNumber;
       checkpointDuration_: BigNumber;
       timeStretch_: BigNumber;
       flatFee_: BigNumber;
       curveFee_: BigNumber;
+      govFee_: BigNumber;
     }
   >;
 
@@ -1430,9 +1758,37 @@ export interface HyperdriveShort extends BaseContract {
     }
   >;
 
+  govFeePercent(overrides?: CallOverrides): Promise<BigNumber>;
+
+  "govFeePercent()"(overrides?: CallOverrides): Promise<BigNumber>;
+
+  govFeesAccrued(overrides?: CallOverrides): Promise<BigNumber>;
+
+  "govFeesAccrued()"(overrides?: CallOverrides): Promise<BigNumber>;
+
+  governance(overrides?: CallOverrides): Promise<string>;
+
+  "governance()"(overrides?: CallOverrides): Promise<string>;
+
   initialSharePrice(overrides?: CallOverrides): Promise<BigNumber>;
 
   "initialSharePrice()"(overrides?: CallOverrides): Promise<BigNumber>;
+
+  initialize(
+    _contribution: PromiseOrValue<BigNumberish>,
+    _apr: PromiseOrValue<BigNumberish>,
+    _destination: PromiseOrValue<string>,
+    _asUnderlying: PromiseOrValue<boolean>,
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>;
+
+  "initialize(uint256,uint256,address,bool)"(
+    _contribution: PromiseOrValue<BigNumberish>,
+    _apr: PromiseOrValue<BigNumberish>,
+    _destination: PromiseOrValue<string>,
+    _asUnderlying: PromiseOrValue<boolean>,
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>;
 
   isApprovedForAll(
     arg0: PromiseOrValue<string>,
@@ -1544,6 +1900,38 @@ export interface HyperdriveShort extends BaseContract {
 
   "positionDuration()"(overrides?: CallOverrides): Promise<BigNumber>;
 
+  redeemWithdrawalShares(
+    _shares: PromiseOrValue<BigNumberish>,
+    _minOutput: PromiseOrValue<BigNumberish>,
+    _destination: PromiseOrValue<string>,
+    _asUnderlying: PromiseOrValue<boolean>,
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>;
+
+  "redeemWithdrawalShares(uint256,uint256,address,bool)"(
+    _shares: PromiseOrValue<BigNumberish>,
+    _minOutput: PromiseOrValue<BigNumberish>,
+    _destination: PromiseOrValue<string>,
+    _asUnderlying: PromiseOrValue<boolean>,
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>;
+
+  removeLiquidity(
+    _shares: PromiseOrValue<BigNumberish>,
+    _minOutput: PromiseOrValue<BigNumberish>,
+    _destination: PromiseOrValue<string>,
+    _asUnderlying: PromiseOrValue<boolean>,
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>;
+
+  "removeLiquidity(uint256,uint256,address,bool)"(
+    _shares: PromiseOrValue<BigNumberish>,
+    _minOutput: PromiseOrValue<BigNumberish>,
+    _destination: PromiseOrValue<string>,
+    _asUnderlying: PromiseOrValue<boolean>,
+    overrides?: Overrides & { from?: PromiseOrValue<string> }
+  ): Promise<ContractTransaction>;
+
   setApproval(
     tokenID: PromiseOrValue<BigNumberish>,
     operator: PromiseOrValue<string>,
@@ -1644,21 +2032,19 @@ export interface HyperdriveShort extends BaseContract {
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
 
-  withdrawalState(overrides?: CallOverrides): Promise<
-    [BigNumber, BigNumber, BigNumber, BigNumber] & {
-      longWithdrawalSharesOutstanding: BigNumber;
-      shortWithdrawalSharesOutstanding: BigNumber;
-      longWithdrawalShareProceeds: BigNumber;
-      shortWithdrawalShareProceeds: BigNumber;
+  withdrawPool(overrides?: CallOverrides): Promise<
+    [BigNumber, BigNumber, BigNumber] & {
+      withdrawSharesReadyToWithdraw: BigNumber;
+      capital: BigNumber;
+      interest: BigNumber;
     }
   >;
 
-  "withdrawalState()"(overrides?: CallOverrides): Promise<
-    [BigNumber, BigNumber, BigNumber, BigNumber] & {
-      longWithdrawalSharesOutstanding: BigNumber;
-      shortWithdrawalSharesOutstanding: BigNumber;
-      longWithdrawalShareProceeds: BigNumber;
-      shortWithdrawalShareProceeds: BigNumber;
+  "withdrawPool()"(overrides?: CallOverrides): Promise<
+    [BigNumber, BigNumber, BigNumber] & {
+      withdrawSharesReadyToWithdraw: BigNumber;
+      capital: BigNumber;
+      interest: BigNumber;
     }
   >;
 
@@ -1670,6 +2056,22 @@ export interface HyperdriveShort extends BaseContract {
     PERMIT_TYPEHASH(overrides?: CallOverrides): Promise<string>;
 
     "PERMIT_TYPEHASH()"(overrides?: CallOverrides): Promise<string>;
+
+    addLiquidity(
+      _contribution: PromiseOrValue<BigNumberish>,
+      _minOutput: PromiseOrValue<BigNumberish>,
+      _destination: PromiseOrValue<string>,
+      _asUnderlying: PromiseOrValue<boolean>,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
+    "addLiquidity(uint256,uint256,address,bool)"(
+      _contribution: PromiseOrValue<BigNumberish>,
+      _minOutput: PromiseOrValue<BigNumberish>,
+      _destination: PromiseOrValue<string>,
+      _asUnderlying: PromiseOrValue<boolean>,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
 
     aggregates(overrides?: CallOverrides): Promise<
       [BigNumber, BigNumber, BigNumber, BigNumber] & {
@@ -1775,6 +2177,10 @@ export interface HyperdriveShort extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
+    collectGovFee(overrides?: CallOverrides): Promise<BigNumber>;
+
+    "collectGovFee()"(overrides?: CallOverrides): Promise<BigNumber>;
+
     curveFee(overrides?: CallOverrides): Promise<BigNumber>;
 
     "curveFee()"(overrides?: CallOverrides): Promise<BigNumber>;
@@ -1788,24 +2194,42 @@ export interface HyperdriveShort extends BaseContract {
     "flatFee()"(overrides?: CallOverrides): Promise<BigNumber>;
 
     getPoolConfiguration(overrides?: CallOverrides): Promise<
-      [BigNumber, BigNumber, BigNumber, BigNumber, BigNumber, BigNumber] & {
+      [
+        BigNumber,
+        BigNumber,
+        BigNumber,
+        BigNumber,
+        BigNumber,
+        BigNumber,
+        BigNumber
+      ] & {
         initialSharePrice_: BigNumber;
         positionDuration_: BigNumber;
         checkpointDuration_: BigNumber;
         timeStretch_: BigNumber;
         flatFee_: BigNumber;
         curveFee_: BigNumber;
+        govFee_: BigNumber;
       }
     >;
 
     "getPoolConfiguration()"(overrides?: CallOverrides): Promise<
-      [BigNumber, BigNumber, BigNumber, BigNumber, BigNumber, BigNumber] & {
+      [
+        BigNumber,
+        BigNumber,
+        BigNumber,
+        BigNumber,
+        BigNumber,
+        BigNumber,
+        BigNumber
+      ] & {
         initialSharePrice_: BigNumber;
         positionDuration_: BigNumber;
         checkpointDuration_: BigNumber;
         timeStretch_: BigNumber;
         flatFee_: BigNumber;
         curveFee_: BigNumber;
+        govFee_: BigNumber;
       }
     >;
 
@@ -1861,9 +2285,37 @@ export interface HyperdriveShort extends BaseContract {
       }
     >;
 
+    govFeePercent(overrides?: CallOverrides): Promise<BigNumber>;
+
+    "govFeePercent()"(overrides?: CallOverrides): Promise<BigNumber>;
+
+    govFeesAccrued(overrides?: CallOverrides): Promise<BigNumber>;
+
+    "govFeesAccrued()"(overrides?: CallOverrides): Promise<BigNumber>;
+
+    governance(overrides?: CallOverrides): Promise<string>;
+
+    "governance()"(overrides?: CallOverrides): Promise<string>;
+
     initialSharePrice(overrides?: CallOverrides): Promise<BigNumber>;
 
     "initialSharePrice()"(overrides?: CallOverrides): Promise<BigNumber>;
+
+    initialize(
+      _contribution: PromiseOrValue<BigNumberish>,
+      _apr: PromiseOrValue<BigNumberish>,
+      _destination: PromiseOrValue<string>,
+      _asUnderlying: PromiseOrValue<boolean>,
+      overrides?: CallOverrides
+    ): Promise<void>;
+
+    "initialize(uint256,uint256,address,bool)"(
+      _contribution: PromiseOrValue<BigNumberish>,
+      _apr: PromiseOrValue<BigNumberish>,
+      _destination: PromiseOrValue<string>,
+      _asUnderlying: PromiseOrValue<boolean>,
+      overrides?: CallOverrides
+    ): Promise<void>;
 
     isApprovedForAll(
       arg0: PromiseOrValue<string>,
@@ -1975,6 +2427,38 @@ export interface HyperdriveShort extends BaseContract {
 
     "positionDuration()"(overrides?: CallOverrides): Promise<BigNumber>;
 
+    redeemWithdrawalShares(
+      _shares: PromiseOrValue<BigNumberish>,
+      _minOutput: PromiseOrValue<BigNumberish>,
+      _destination: PromiseOrValue<string>,
+      _asUnderlying: PromiseOrValue<boolean>,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
+    "redeemWithdrawalShares(uint256,uint256,address,bool)"(
+      _shares: PromiseOrValue<BigNumberish>,
+      _minOutput: PromiseOrValue<BigNumberish>,
+      _destination: PromiseOrValue<string>,
+      _asUnderlying: PromiseOrValue<boolean>,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
+    removeLiquidity(
+      _shares: PromiseOrValue<BigNumberish>,
+      _minOutput: PromiseOrValue<BigNumberish>,
+      _destination: PromiseOrValue<string>,
+      _asUnderlying: PromiseOrValue<boolean>,
+      overrides?: CallOverrides
+    ): Promise<[BigNumber, BigNumber, BigNumber]>;
+
+    "removeLiquidity(uint256,uint256,address,bool)"(
+      _shares: PromiseOrValue<BigNumberish>,
+      _minOutput: PromiseOrValue<BigNumberish>,
+      _destination: PromiseOrValue<string>,
+      _asUnderlying: PromiseOrValue<boolean>,
+      overrides?: CallOverrides
+    ): Promise<[BigNumber, BigNumber, BigNumber]>;
+
     setApproval(
       tokenID: PromiseOrValue<BigNumberish>,
       operator: PromiseOrValue<string>,
@@ -2075,21 +2559,19 @@ export interface HyperdriveShort extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    withdrawalState(overrides?: CallOverrides): Promise<
-      [BigNumber, BigNumber, BigNumber, BigNumber] & {
-        longWithdrawalSharesOutstanding: BigNumber;
-        shortWithdrawalSharesOutstanding: BigNumber;
-        longWithdrawalShareProceeds: BigNumber;
-        shortWithdrawalShareProceeds: BigNumber;
+    withdrawPool(overrides?: CallOverrides): Promise<
+      [BigNumber, BigNumber, BigNumber] & {
+        withdrawSharesReadyToWithdraw: BigNumber;
+        capital: BigNumber;
+        interest: BigNumber;
       }
     >;
 
-    "withdrawalState()"(overrides?: CallOverrides): Promise<
-      [BigNumber, BigNumber, BigNumber, BigNumber] & {
-        longWithdrawalSharesOutstanding: BigNumber;
-        shortWithdrawalSharesOutstanding: BigNumber;
-        longWithdrawalShareProceeds: BigNumber;
-        shortWithdrawalShareProceeds: BigNumber;
+    "withdrawPool()"(overrides?: CallOverrides): Promise<
+      [BigNumber, BigNumber, BigNumber] & {
+        withdrawSharesReadyToWithdraw: BigNumber;
+        capital: BigNumber;
+        interest: BigNumber;
       }
     >;
   };
@@ -2141,6 +2623,22 @@ export interface HyperdriveShort extends BaseContract {
     PERMIT_TYPEHASH(overrides?: CallOverrides): Promise<BigNumber>;
 
     "PERMIT_TYPEHASH()"(overrides?: CallOverrides): Promise<BigNumber>;
+
+    addLiquidity(
+      _contribution: PromiseOrValue<BigNumberish>,
+      _minOutput: PromiseOrValue<BigNumberish>,
+      _destination: PromiseOrValue<string>,
+      _asUnderlying: PromiseOrValue<boolean>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>;
+
+    "addLiquidity(uint256,uint256,address,bool)"(
+      _contribution: PromiseOrValue<BigNumberish>,
+      _minOutput: PromiseOrValue<BigNumberish>,
+      _destination: PromiseOrValue<string>,
+      _asUnderlying: PromiseOrValue<boolean>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>;
 
     aggregates(overrides?: CallOverrides): Promise<BigNumber>;
 
@@ -2220,6 +2718,14 @@ export interface HyperdriveShort extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
+    collectGovFee(
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>;
+
+    "collectGovFee()"(
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>;
+
     curveFee(overrides?: CallOverrides): Promise<BigNumber>;
 
     "curveFee()"(overrides?: CallOverrides): Promise<BigNumber>;
@@ -2240,9 +2746,37 @@ export interface HyperdriveShort extends BaseContract {
 
     "getPoolInfo()"(overrides?: CallOverrides): Promise<BigNumber>;
 
+    govFeePercent(overrides?: CallOverrides): Promise<BigNumber>;
+
+    "govFeePercent()"(overrides?: CallOverrides): Promise<BigNumber>;
+
+    govFeesAccrued(overrides?: CallOverrides): Promise<BigNumber>;
+
+    "govFeesAccrued()"(overrides?: CallOverrides): Promise<BigNumber>;
+
+    governance(overrides?: CallOverrides): Promise<BigNumber>;
+
+    "governance()"(overrides?: CallOverrides): Promise<BigNumber>;
+
     initialSharePrice(overrides?: CallOverrides): Promise<BigNumber>;
 
     "initialSharePrice()"(overrides?: CallOverrides): Promise<BigNumber>;
+
+    initialize(
+      _contribution: PromiseOrValue<BigNumberish>,
+      _apr: PromiseOrValue<BigNumberish>,
+      _destination: PromiseOrValue<string>,
+      _asUnderlying: PromiseOrValue<boolean>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>;
+
+    "initialize(uint256,uint256,address,bool)"(
+      _contribution: PromiseOrValue<BigNumberish>,
+      _apr: PromiseOrValue<BigNumberish>,
+      _destination: PromiseOrValue<string>,
+      _asUnderlying: PromiseOrValue<boolean>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>;
 
     isApprovedForAll(
       arg0: PromiseOrValue<string>,
@@ -2340,6 +2874,38 @@ export interface HyperdriveShort extends BaseContract {
 
     "positionDuration()"(overrides?: CallOverrides): Promise<BigNumber>;
 
+    redeemWithdrawalShares(
+      _shares: PromiseOrValue<BigNumberish>,
+      _minOutput: PromiseOrValue<BigNumberish>,
+      _destination: PromiseOrValue<string>,
+      _asUnderlying: PromiseOrValue<boolean>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>;
+
+    "redeemWithdrawalShares(uint256,uint256,address,bool)"(
+      _shares: PromiseOrValue<BigNumberish>,
+      _minOutput: PromiseOrValue<BigNumberish>,
+      _destination: PromiseOrValue<string>,
+      _asUnderlying: PromiseOrValue<boolean>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>;
+
+    removeLiquidity(
+      _shares: PromiseOrValue<BigNumberish>,
+      _minOutput: PromiseOrValue<BigNumberish>,
+      _destination: PromiseOrValue<string>,
+      _asUnderlying: PromiseOrValue<boolean>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>;
+
+    "removeLiquidity(uint256,uint256,address,bool)"(
+      _shares: PromiseOrValue<BigNumberish>,
+      _minOutput: PromiseOrValue<BigNumberish>,
+      _destination: PromiseOrValue<string>,
+      _asUnderlying: PromiseOrValue<boolean>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<BigNumber>;
+
     setApproval(
       tokenID: PromiseOrValue<BigNumberish>,
       operator: PromiseOrValue<string>,
@@ -2440,9 +3006,9 @@ export interface HyperdriveShort extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
 
-    withdrawalState(overrides?: CallOverrides): Promise<BigNumber>;
+    withdrawPool(overrides?: CallOverrides): Promise<BigNumber>;
 
-    "withdrawalState()"(overrides?: CallOverrides): Promise<BigNumber>;
+    "withdrawPool()"(overrides?: CallOverrides): Promise<BigNumber>;
   };
 
   populateTransaction: {
@@ -2456,6 +3022,22 @@ export interface HyperdriveShort extends BaseContract {
 
     "PERMIT_TYPEHASH()"(
       overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
+    addLiquidity(
+      _contribution: PromiseOrValue<BigNumberish>,
+      _minOutput: PromiseOrValue<BigNumberish>,
+      _destination: PromiseOrValue<string>,
+      _asUnderlying: PromiseOrValue<boolean>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>;
+
+    "addLiquidity(uint256,uint256,address,bool)"(
+      _contribution: PromiseOrValue<BigNumberish>,
+      _minOutput: PromiseOrValue<BigNumberish>,
+      _destination: PromiseOrValue<string>,
+      _asUnderlying: PromiseOrValue<boolean>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     aggregates(overrides?: CallOverrides): Promise<PopulatedTransaction>;
@@ -2540,6 +3122,14 @@ export interface HyperdriveShort extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
+    collectGovFee(
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>;
+
+    "collectGovFee()"(
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>;
+
     curveFee(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     "curveFee()"(overrides?: CallOverrides): Promise<PopulatedTransaction>;
@@ -2564,10 +3154,40 @@ export interface HyperdriveShort extends BaseContract {
 
     "getPoolInfo()"(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
+    govFeePercent(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
+    "govFeePercent()"(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
+    govFeesAccrued(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
+    "govFeesAccrued()"(
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
+    governance(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
+    "governance()"(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
     initialSharePrice(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     "initialSharePrice()"(
       overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
+    initialize(
+      _contribution: PromiseOrValue<BigNumberish>,
+      _apr: PromiseOrValue<BigNumberish>,
+      _destination: PromiseOrValue<string>,
+      _asUnderlying: PromiseOrValue<boolean>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>;
+
+    "initialize(uint256,uint256,address,bool)"(
+      _contribution: PromiseOrValue<BigNumberish>,
+      _apr: PromiseOrValue<BigNumberish>,
+      _destination: PromiseOrValue<string>,
+      _asUnderlying: PromiseOrValue<boolean>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
     isApprovedForAll(
@@ -2670,6 +3290,38 @@ export interface HyperdriveShort extends BaseContract {
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
+    redeemWithdrawalShares(
+      _shares: PromiseOrValue<BigNumberish>,
+      _minOutput: PromiseOrValue<BigNumberish>,
+      _destination: PromiseOrValue<string>,
+      _asUnderlying: PromiseOrValue<boolean>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>;
+
+    "redeemWithdrawalShares(uint256,uint256,address,bool)"(
+      _shares: PromiseOrValue<BigNumberish>,
+      _minOutput: PromiseOrValue<BigNumberish>,
+      _destination: PromiseOrValue<string>,
+      _asUnderlying: PromiseOrValue<boolean>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>;
+
+    removeLiquidity(
+      _shares: PromiseOrValue<BigNumberish>,
+      _minOutput: PromiseOrValue<BigNumberish>,
+      _destination: PromiseOrValue<string>,
+      _asUnderlying: PromiseOrValue<boolean>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>;
+
+    "removeLiquidity(uint256,uint256,address,bool)"(
+      _shares: PromiseOrValue<BigNumberish>,
+      _minOutput: PromiseOrValue<BigNumberish>,
+      _destination: PromiseOrValue<string>,
+      _asUnderlying: PromiseOrValue<boolean>,
+      overrides?: Overrides & { from?: PromiseOrValue<string> }
+    ): Promise<PopulatedTransaction>;
+
     setApproval(
       tokenID: PromiseOrValue<BigNumberish>,
       operator: PromiseOrValue<string>,
@@ -2770,10 +3422,8 @@ export interface HyperdriveShort extends BaseContract {
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
 
-    withdrawalState(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+    withdrawPool(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    "withdrawalState()"(
-      overrides?: CallOverrides
-    ): Promise<PopulatedTransaction>;
+    "withdrawPool()"(overrides?: CallOverrides): Promise<PopulatedTransaction>;
   };
 }

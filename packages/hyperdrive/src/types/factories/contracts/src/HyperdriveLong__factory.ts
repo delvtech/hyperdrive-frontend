@@ -77,6 +77,11 @@ const _abi = [
   },
   {
     inputs: [],
+    name: "PoolAlreadyInitialized",
+    type: "error",
+  },
+  {
+    inputs: [],
     name: "RestrictedZeroAddress",
     type: "error",
   },
@@ -196,6 +201,40 @@ const _abi = [
       },
     ],
     stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "_contribution",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_minOutput",
+        type: "uint256",
+      },
+      {
+        internalType: "address",
+        name: "_destination",
+        type: "address",
+      },
+      {
+        internalType: "bool",
+        name: "_asUnderlying",
+        type: "bool",
+      },
+    ],
+    name: "addLiquidity",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "lpShares",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "nonpayable",
     type: "function",
   },
   {
@@ -387,6 +426,19 @@ const _abi = [
   },
   {
     inputs: [],
+    name: "collectGovFee",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "proceeds",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
     name: "curveFee",
     outputs: [
       {
@@ -458,6 +510,11 @@ const _abi = [
         name: "curveFee_",
         type: "uint256",
       },
+      {
+        internalType: "uint256",
+        name: "govFee_",
+        type: "uint256",
+      },
     ],
     stateMutability: "view",
     type: "function",
@@ -522,6 +579,45 @@ const _abi = [
   },
   {
     inputs: [],
+    name: "govFeePercent",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "govFeesAccrued",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "governance",
+    outputs: [
+      {
+        internalType: "address",
+        name: "",
+        type: "address",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
     name: "initialSharePrice",
     outputs: [
       {
@@ -531,6 +627,34 @@ const _abi = [
       },
     ],
     stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "_contribution",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_apr",
+        type: "uint256",
+      },
+      {
+        internalType: "address",
+        name: "_destination",
+        type: "address",
+      },
+      {
+        internalType: "bool",
+        name: "_asUnderlying",
+        type: "bool",
+      },
+    ],
+    name: "initialize",
+    outputs: [],
+    stateMutability: "nonpayable",
     type: "function",
   },
   {
@@ -759,6 +883,84 @@ const _abi = [
     inputs: [
       {
         internalType: "uint256",
+        name: "_shares",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_minOutput",
+        type: "uint256",
+      },
+      {
+        internalType: "address",
+        name: "_destination",
+        type: "address",
+      },
+      {
+        internalType: "bool",
+        name: "_asUnderlying",
+        type: "bool",
+      },
+    ],
+    name: "redeemWithdrawalShares",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "_proceeds",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "_shares",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_minOutput",
+        type: "uint256",
+      },
+      {
+        internalType: "address",
+        name: "_destination",
+        type: "address",
+      },
+      {
+        internalType: "bool",
+        name: "_asUnderlying",
+        type: "bool",
+      },
+    ],
+    name: "removeLiquidity",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
         name: "tokenID",
         type: "uint256",
       },
@@ -938,26 +1140,21 @@ const _abi = [
   },
   {
     inputs: [],
-    name: "withdrawalState",
+    name: "withdrawPool",
     outputs: [
       {
         internalType: "uint128",
-        name: "longWithdrawalSharesOutstanding",
+        name: "withdrawSharesReadyToWithdraw",
         type: "uint128",
       },
       {
         internalType: "uint128",
-        name: "shortWithdrawalSharesOutstanding",
+        name: "capital",
         type: "uint128",
       },
       {
         internalType: "uint128",
-        name: "longWithdrawalShareProceeds",
-        type: "uint128",
-      },
-      {
-        internalType: "uint128",
-        name: "shortWithdrawalShareProceeds",
+        name: "interest",
         type: "uint128",
       },
     ],
