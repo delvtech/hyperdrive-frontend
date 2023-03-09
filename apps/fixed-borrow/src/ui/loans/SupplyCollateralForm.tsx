@@ -14,7 +14,7 @@ import { Address, useAccount, useBalance, useToken } from "wagmi";
 interface SupplyCollateralFormProps {
   collateralTokenAddress: Address;
   collateralATokenAddress: Address;
-  onCollateralInputAmountChange?: (newAmount: BigNumber) => void;
+  onCollateralInputAmountChange?: (newAmount: BigNumber | undefined) => void;
 }
 
 export function SupplyCollateralForm({
@@ -91,10 +91,10 @@ export function SupplyCollateralForm({
           placeholder="Enter an amount to supply"
           className="daisy-input-bordered daisy-input w-full appearance-none text-primary focus:border-primary"
           onChange={(e) => {
-            const valueAsBigNumber = parseUnits(
-              e.target.value || "0",
-              collateralTokenMetadata?.decimals,
-            );
+            const valueAsBigNumber =
+              +e.target.value > 0
+                ? parseUnits(e.target.value, collateralTokenMetadata?.decimals)
+                : undefined;
             onCollateralInputAmountChange?.(valueAsBigNumber);
             setCollateralAmount(e.target.value);
           }}
@@ -137,7 +137,7 @@ export function SupplyCollateralForm({
           <button
             disabled={isSupplyButtonDisabled}
             className={classNames(
-              "daisy-btn-outline daisy-btn daisy-btn-primary daisy-btn-wide",
+              "daisy-btn-outline daisy-btn-primary daisy-btn-wide daisy-btn",
               { "daisy-loading": supplyStatus === "loading" },
             )}
             onClick={() => supply?.()}

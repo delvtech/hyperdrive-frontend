@@ -62,8 +62,11 @@ export default function App(): ReactElement {
       <div className="flex h-full justify-center">
         <div className="flex flex-col items-center gap-12">
           <StatsBar
-            collateralAmountInput={collateralAmountInput}
-            afterAmountCollateralValueBase={afterAmountCollateralValueBase}
+            afterAmountCollateralValueBase={
+              collateralAmountInput?.gt(0)
+                ? afterAmountCollateralValueBase
+                : undefined
+            }
           />
           {/* Collateral */}
           <SupplyCollateralForm
@@ -74,8 +77,8 @@ export default function App(): ReactElement {
 
           {/* Debt */}
           <BorrowDebtForm
-            onDebtInputAmountChange={setDebtAmountInput}
             debtTokenAddress={DEBT_TOKEN}
+            onDebtInputAmountChange={setDebtAmountInput}
           />
 
           {/* Hyperdrive Short */}
