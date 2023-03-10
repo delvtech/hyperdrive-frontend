@@ -11,17 +11,17 @@ import { useAccount, useToken } from "wagmi";
 import { useAaveOracleAssetPrice } from "src/ui/oracles/useAaveOracleAssetPrice";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { StatsBar } from "src/ui/app/StatsBar";
-import { OpenShortForm, TermDuration } from "src/ui/shorts/OpenShortForm";
+import { OpenShortForm } from "src/ui/shorts/OpenShortForm";
 import { HyperdriveGoerliAddresses } from "@hyperdrive/core";
 
 console.log(SparkGoerliAddresses);
+console.log(HyperdriveGoerliAddresses);
 
 const COLLATERAL = SparkGoerliAddresses.wstETH_token;
 const COLLATERAL_A_TOKEN = SparkGoerliAddresses.wstETH_aToken;
 const DEBT_TOKEN = SparkGoerliAddresses.DAI_token;
 
 export default function App(): ReactElement {
-  const [duration, setDuration] = useState<TermDuration | undefined>();
   const { address: account } = useAccount();
   const { userAccountData } = useUserAccountData(account);
   const { data: collateralMetadata } = useToken({ address: COLLATERAL });
@@ -91,8 +91,6 @@ export default function App(): ReactElement {
           <OpenShortForm
             hyperdrivePoolAddress={HyperdriveGoerliAddresses.makerDsrHyperdrive}
             debtTokenAddress={DEBT_TOKEN}
-            termDuration={duration}
-            onTermDurationChange={setDuration}
             debtToShort={valueToShort}
           />
         </div>

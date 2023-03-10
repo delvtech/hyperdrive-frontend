@@ -27,6 +27,7 @@ export function useOpenShortPreview({
   // There is no callStatic wagmi hook, so we gotta call the contract directly,
   // see: https://github.com/wagmi-dev/wagmi/discussions/1571
   const { data: signer } = useSigner();
+
   const makerDsrHyperdrive = useContract({
     abi: HyperdriveABI,
     address: hyperdrivePool,
