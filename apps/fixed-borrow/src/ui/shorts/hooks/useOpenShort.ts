@@ -1,12 +1,5 @@
-import { useQuery } from "@tanstack/react-query";
 import { BigNumber } from "ethers";
-import {
-  Address,
-  useContract,
-  useContractWrite,
-  usePrepareContractWrite,
-  useSigner,
-} from "wagmi";
+import { Address, useContractWrite, usePrepareContractWrite } from "wagmi";
 import { HyperdriveABI } from "@hyperdrive/core";
 
 interface UseOpenShortOptions {
