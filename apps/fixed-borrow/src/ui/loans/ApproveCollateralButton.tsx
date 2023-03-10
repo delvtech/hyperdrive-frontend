@@ -4,22 +4,22 @@ import { useSpenderAllowance } from "src/ui/token/useSpenderAllowance";
 import { useTokenApproval } from "src/ui/token/useTokenApproval";
 import { Address, useToken } from "wagmi";
 
-export function ApproveCollateralButton({
-  collateralTokenAddress,
+export function ApproveAllowanceButton({
+  tokenAddress,
   amount,
   spender,
 }: {
-  collateralTokenAddress: Address;
+  tokenAddress: Address;
   amount: BigNumber;
   spender: Address;
 }): ReactElement | null {
-  const { data: token } = useToken({ address: collateralTokenAddress });
+  const { data: token } = useToken({ address: tokenAddress });
   const { approve } = useTokenApproval({
-    tokenAddress: collateralTokenAddress,
+    tokenAddress: tokenAddress,
     spender,
     amount,
   });
-  const { allowance } = useSpenderAllowance(collateralTokenAddress, spender);
+  const { allowance } = useSpenderAllowance(tokenAddress, spender);
 
   if (allowance?.gte(amount)) {
     return null;

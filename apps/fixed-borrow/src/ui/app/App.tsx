@@ -3,7 +3,7 @@ import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { ReactElement, useState } from "react";
 import { SupplyCollateralForm } from "src/ui/loans/SupplyCollateralForm";
 import { BorrowDebtForm } from "src/ui/loans/BorrowDebtForm";
-import { formatUnits, parseEther } from "ethers/lib/utils.js";
+import { formatUnits, parseEther, parseUnits } from "ethers/lib/utils.js";
 import { MintButton } from "src/ui/faucet/MintButton";
 import { BigNumber } from "ethers";
 import { useUserAccountData } from "src/ui/loans/hooks/useUserAccountData";
@@ -12,6 +12,7 @@ import { useAaveOracleAssetPrice } from "src/ui/oracles/useAaveOracleAssetPrice"
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { StatsBar } from "src/ui/app/StatsBar";
 import { OpenShortForm, TermDuration } from "src/ui/shorts/OpenShortForm";
+import { HyperdriveGoerliAddresses } from "@hyperdrive/core";
 
 console.log(SparkGoerliAddresses);
 
@@ -25,6 +26,7 @@ export default function App(): ReactElement {
   const { userAccountData } = useUserAccountData(account);
   const { data: collateralMetadata } = useToken({ address: COLLATERAL });
   const { data: collateralPrice } = useAaveOracleAssetPrice(COLLATERAL);
+  const { data: debtTokenMetadata } = useToken({ address: DEBT_TOKEN });
 
   // The collateral amount state lives here in the app, and is updated whenever
   // the SupplyCollateralForm calls it's onChange handler. This allows us to
@@ -47,6 +49,10 @@ export default function App(): ReactElement {
   const [debtAmountInput, setDebtAmountInput] = useState<
     BigNumber | undefined
   >();
+  const valueToShort = calculateValueToShort(
+    debtAmountInput,
+    debtTokenMetadata?.decimals,
+  );
 
   return (
     <div className="space-y-14 p-8">
@@ -83,9 +89,11 @@ export default function App(): ReactElement {
 
           {/* Hyperdrive Short */}
           <OpenShortForm
+            hyperdrivePoolAddress={HyperdriveGoerliAddresses.makerDsrHyperdrive}
+            debtTokenAddress={DEBT_TOKEN}
             termDuration={duration}
             onTermDurationChange={setDuration}
-            valueToShort={undefined}
+            debtToShort={valueToShort}
           />
         </div>
       </div>
@@ -115,4 +123,17 @@ function calculateBaseValueOfCurrentCollateralAndNewAmount(
     +totalCollateralBaseValue + newCollateralAmountBaseValue,
   );
   return afterAmountCollateralValueBase;
+}
+function calculateValueToShort(
+  debtAmountInput: BigNumber | undefined,
+  debtTokenDecimals: number | undefined,
+) {
+  if (!debtAmountInput) {
+    return;
+  }
+
+  const valueToShortAsNumber =
+    +formatUnits(debtAmountInput, debtTokenDecimals) * 1.25;
+
+  return parseUnits(valueToShortAsNumber.toString(), debtTokenDecimals);
 }

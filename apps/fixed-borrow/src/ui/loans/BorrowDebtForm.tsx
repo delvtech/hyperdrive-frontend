@@ -12,7 +12,7 @@ import { Address, useAccount, useToken } from "wagmi";
 
 interface BorrowDebtFormProps {
   debtTokenAddress: Address;
-  onDebtInputAmountChange?: (newAmount: BigNumber) => void;
+  onDebtInputAmountChange?: (newAmount: BigNumber | undefined) => void;
 }
 export function BorrowDebtForm({
   debtTokenAddress,
@@ -78,10 +78,10 @@ export function BorrowDebtForm({
           placeholder="Enter an amount to borrow"
           className="daisy-input-bordered daisy-input w-full text-secondary focus:border-secondary"
           onChange={(e) => {
-            const valueAsBigNumber = parseUnits(
-              e.target.value || "0",
-              debtTokenMetadata?.decimals,
-            );
+            const valueAsBigNumber =
+              +e.target.value > 0
+                ? parseUnits(e.target.value, debtTokenMetadata?.decimals)
+                : undefined;
             onDebtInputAmountChange?.(valueAsBigNumber);
             setDebtInputAmount(e.target.value);
           }}
@@ -118,7 +118,7 @@ export function BorrowDebtForm({
           <button
             disabled={isBorrowButtonDisabled}
             className={classNames(
-              "daisy-btn-outline daisy-btn-secondary daisy-btn-wide daisy-btn",
+              "daisy-btn-outline daisy-btn daisy-btn-secondary daisy-btn-wide",
               { "daisy-loading": borrowStatus === "loading" },
             )}
             onClick={() => borrow?.()}

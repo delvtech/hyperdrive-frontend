@@ -5,7 +5,7 @@ import { formatUnits, parseUnits } from "ethers/lib/utils.js";
 import { ReactElement } from "react";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/useNumericInput";
-import { ApproveCollateralButton } from "src/ui/loans/ApproveCollateralButton";
+import { ApproveAllowanceButton } from "src/ui/loans/ApproveCollateralButton";
 import { useSupplyCollateral } from "src/ui/loans/hooks/useSupplyCollateral";
 import { useAaveOracleAssetPrice } from "src/ui/oracles/useAaveOracleAssetPrice";
 import { useSpenderAllowance } from "src/ui/token/useSpenderAllowance";
@@ -127,8 +127,8 @@ export function SupplyCollateralForm({
       {afterAmount ? (
         <div className="daisy-btn-group justify-end gap-4">
           {/* Approve button */}
-          <ApproveCollateralButton
-            collateralTokenAddress={collateralTokenAddress}
+          <ApproveAllowanceButton
+            tokenAddress={collateralTokenAddress}
             amount={parseUnits("1000000", collateralTokenMetadata?.decimals)}
             spender={SparkGoerliAddresses.pool}
           />
@@ -137,7 +137,7 @@ export function SupplyCollateralForm({
           <button
             disabled={isSupplyButtonDisabled}
             className={classNames(
-              "daisy-btn-outline daisy-btn-primary daisy-btn-wide daisy-btn",
+              "daisy-btn-outline daisy-btn daisy-btn-primary daisy-btn-wide",
               { "daisy-loading": supplyStatus === "loading" },
             )}
             onClick={() => supply?.()}
