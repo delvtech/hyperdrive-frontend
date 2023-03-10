@@ -75,7 +75,7 @@ export function OpenShortForm({
           </div>
           <div className="flex flex-col justify-between gap-2 self-end md:flex-row">
             <ApproveAllowanceButton
-              amount={ethers.constants.MaxUint256}
+              amount={debtToShort}
               tokenAddress={debtTokenAddress}
               spender={hyperdrivePoolAddress}
             />

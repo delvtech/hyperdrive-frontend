@@ -1,4 +1,4 @@
-import { BigNumber } from "ethers";
+import { BigNumber, ethers } from "ethers";
 import { ReactElement } from "react";
 import { useSpenderAllowance } from "src/ui/token/useSpenderAllowance";
 import { useTokenApproval } from "src/ui/token/useTokenApproval";
@@ -17,7 +17,7 @@ export function ApproveAllowanceButton({
   const { approve } = useTokenApproval({
     tokenAddress: tokenAddress,
     spender,
-    amount,
+    amount: ethers.constants.MaxUint256,
   });
   const { allowance } = useSpenderAllowance(tokenAddress, spender);
 
