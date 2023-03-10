@@ -59,9 +59,9 @@ export default function App(): ReactElement {
       <div className="flex flex-col items-center justify-center gap-2">
         <h1 className="text-5xl font-bold">Fixed Borrow</h1>
         <h4 className="mb-3 text-xl">Built by Delve</h4>
-        <ConnectButton />
-        <div className="mt-8 flex items-center justify-center gap-4">
+        <div className="flex items-center justify-center gap-4">
           <MintButton tokenAddress={COLLATERAL} amount={parseEther("1000")} />
+          <ConnectButton />
         </div>
       </div>
 
