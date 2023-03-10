@@ -28,24 +28,28 @@ export default function App(): ReactElement {
   const { data: collateralPrice } = useAaveOracleAssetPrice(COLLATERAL);
   const { data: debtTokenMetadata } = useToken({ address: DEBT_TOKEN });
 
-  // The collateral amount state lives here in the app, and is updated whenever
-  // the SupplyCollateralForm calls it's onChange handler. This allows us to
-  // calculate the correct "after" amount to pass to the StatsBar.
+  // The collateral amount input state lives here in the app, and is updated
+  // whenever the SupplyCollateralForm calls it's onChange prop. Controlling
+  // this here allows allows us to calculate the correct "preview" amount to
+  // pass to the StatsBar.
   const [collateralAmountInput, setCollateralAmountInput] = useState<
     BigNumber | undefined
   >();
-  const previewCollateralBalance =
-    calculateBaseValueOfCurrentCollateralAndNewAmount(
-      userAccountData?.totalCollateralBase,
-      collateralAmountInput,
-      collateralMetadata?.decimals,
-      collateralPrice,
-    );
+  // TODO: previewSupplyBalance should also be used to calculate the preview
+  // loan to value
+  const previewSupplyBalance = collateralAmountInput?.gt(0)
+    ? calculateBaseValueOfCurrentCollateralAndNewAmount(
+        userAccountData?.totalCollateralBase,
+        collateralAmountInput,
+        collateralMetadata?.decimals,
+        collateralPrice,
+      )
+    : undefined;
 
   // The debt amount state management follows the same pattern as the
-  // collateralAmount. Whenever the BorrowDebtForm calls it's onChange handler,
-  // the debt amount value updates and a new "after" amount can be calculated
-  // and passed to the StatsBar.
+  // collateralAmount. Whenever the BorrowDebtForm calls it's onChange prop, the
+  // debt amount value updates and a new "preview" amount for loan-to-value can
+  // be calculated and passed to the StatsBar.
   const [debtAmountInput, setDebtAmountInput] = useState<
     BigNumber | undefined
   >();
@@ -55,25 +59,19 @@ export default function App(): ReactElement {
   );
 
   return (
-    <div className="space-y-14 p-8">
+    <div className="space-y-8 p-8">
       <div className="flex flex-col items-center justify-center gap-2">
         <h1 className="text-5xl font-bold">Fixed Borrow</h1>
         <h4 className="mb-3 text-xl">Built by Delve</h4>
-        <ConnectButton />
-        <div className="mt-8 flex items-center justify-center gap-4">
+        <div className="flex items-center justify-center gap-4">
           <MintButton tokenAddress={COLLATERAL} amount={parseEther("1000")} />
+          <ConnectButton />
         </div>
       </div>
 
       <div className="flex h-full justify-center">
         <div className="flex flex-col items-center gap-12">
-          <StatsBar
-            previewCollateralBalance={
-              collateralAmountInput?.gt(0)
-                ? previewCollateralBalance
-                : undefined
-            }
-          />
+          <StatsBar previewSupplyBalance={previewSupplyBalance} />
           {/* Collateral */}
           <SupplyCollateralForm
             collateralTokenAddress={COLLATERAL}
