@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { BigNumber } from "ethers";
-import { formatUnits } from "ethers/lib/utils.js";
+import { formatUnits, parseUnits } from "ethers/lib/utils.js";
 import { ReactElement } from "react";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/useNumericInput";
@@ -12,9 +12,11 @@ import { Address, useAccount, useToken } from "wagmi";
 
 interface BorrowDebtFormProps {
   debtTokenAddress: Address;
+  onDebtInputAmountChange?: (newAmount: BigNumber | undefined) => void;
 }
 export function BorrowDebtForm({
   debtTokenAddress,
+  onDebtInputAmountChange,
 }: BorrowDebtFormProps): ReactElement {
   const { address: account } = useAccount();
   const { data: debtTokenMetadata } = useToken({
@@ -76,6 +78,12 @@ export function BorrowDebtForm({
           placeholder="Enter an amount to borrow"
           className="daisy-input-bordered daisy-input w-full text-secondary focus:border-secondary"
           onChange={(e) => {
+            // TODO: Clean this up with input validation, etc..
+            const valueAsBigNumber =
+              +e.target.value > 0
+                ? parseUnits(e.target.value, debtTokenMetadata?.decimals)
+                : undefined;
+            onDebtInputAmountChange?.(valueAsBigNumber);
             setDebtInputAmount(e.target.value);
           }}
         />
@@ -111,7 +119,7 @@ export function BorrowDebtForm({
           <button
             disabled={isBorrowButtonDisabled}
             className={classNames(
-              "daisy-btn-outline daisy-btn daisy-btn-secondary daisy-btn-wide",
+              "daisy-btn-outline daisy-btn-secondary daisy-btn-wide daisy-btn",
               { "daisy-loading": borrowStatus === "loading" },
             )}
             onClick={() => borrow?.()}

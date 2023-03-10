@@ -11,11 +11,11 @@ interface SupplyBalanceStat {
   /**
    * Balance in the pool's base (USD)
    */
-  previewBalanceAfter?: string;
+  previewCollateralBalance?: string;
 }
 
 export function SupplyBalanceStat({
-  previewBalanceAfter,
+  previewCollateralBalance,
 }: SupplyBalanceStat): ReactElement {
   const { address: account } = useAccount();
   const { userAccountData } = useUserAccountData(account);
@@ -33,10 +33,10 @@ export function SupplyBalanceStat({
       description={
         <span
           className={classNames("font-bold text-primary", {
-            invisible: !previewBalanceAfter,
+            invisible: !previewCollateralBalance,
           })}
         >
-          After: ${previewBalanceAfter}
+          After: ${previewCollateralBalance}
         </span>
       }
     />

@@ -5,7 +5,7 @@ import { formatUnits, parseUnits } from "ethers/lib/utils.js";
 import { ReactElement } from "react";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/useNumericInput";
-import { ApproveCollateralButton } from "src/ui/loans/ApproveCollateralButton";
+import { ApproveAllowanceButton } from "src/ui/loans/ApproveCollateralButton";
 import { useSupplyCollateral } from "src/ui/loans/hooks/useSupplyCollateral";
 import { useAaveOracleAssetPrice } from "src/ui/oracles/useAaveOracleAssetPrice";
 import { useSpenderAllowance } from "src/ui/token/useSpenderAllowance";
@@ -14,7 +14,7 @@ import { Address, useAccount, useBalance, useToken } from "wagmi";
 interface SupplyCollateralFormProps {
   collateralTokenAddress: Address;
   collateralATokenAddress: Address;
-  onCollateralInputAmountChange?: (newAmount: BigNumber) => void;
+  onCollateralInputAmountChange?: (newAmount: BigNumber | undefined) => void;
 }
 
 export function SupplyCollateralForm({
@@ -91,10 +91,11 @@ export function SupplyCollateralForm({
           placeholder="Enter an amount to supply"
           className="daisy-input-bordered daisy-input w-full appearance-none text-primary focus:border-primary"
           onChange={(e) => {
-            const valueAsBigNumber = parseUnits(
-              e.target.value || "0",
-              collateralTokenMetadata?.decimals,
-            );
+            // TODO: Clean this up with input validation, etc..
+            const valueAsBigNumber =
+              +e.target.value > 0
+                ? parseUnits(e.target.value, collateralTokenMetadata?.decimals)
+                : undefined;
             onCollateralInputAmountChange?.(valueAsBigNumber);
             setCollateralAmount(e.target.value);
           }}
@@ -127,8 +128,8 @@ export function SupplyCollateralForm({
       {afterAmount ? (
         <div className="daisy-btn-group justify-end gap-4">
           {/* Approve button */}
-          <ApproveCollateralButton
-            collateralTokenAddress={collateralTokenAddress}
+          <ApproveAllowanceButton
+            tokenAddress={collateralTokenAddress}
             amount={parseUnits("1000000", collateralTokenMetadata?.decimals)}
             spender={SparkGoerliAddresses.pool}
           />
@@ -137,7 +138,7 @@ export function SupplyCollateralForm({
           <button
             disabled={isSupplyButtonDisabled}
             className={classNames(
-              "daisy-btn-outline daisy-btn daisy-btn-primary daisy-btn-wide",
+              "daisy-btn-outline daisy-btn-primary daisy-btn-wide daisy-btn",
               { "daisy-loading": supplyStatus === "loading" },
             )}
             onClick={() => supply?.()}

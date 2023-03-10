@@ -1,26 +1,17 @@
-import { BigNumber } from "ethers";
 import { ReactElement } from "react";
 import { Stat } from "src/ui/base/Stat/Stat";
 import { SupplyBalanceStat } from "src/ui/loans/SupplyBalanceStat";
 
 interface StatsBarProps {
-  collateralAmountInput?: BigNumber;
-  afterAmountCollateralValueBase: string;
+  previewCollateralBalance: string | undefined;
 }
 
 export function StatsBar({
-  collateralAmountInput,
-  afterAmountCollateralValueBase,
+  previewCollateralBalance,
 }: StatsBarProps): ReactElement {
   return (
     <div className="daisy-stats daisy-stats-vertical justify-center text-center lg:daisy-stats-horizontal lg:text-start">
-      <SupplyBalanceStat
-        previewBalanceAfter={
-          collateralAmountInput?.gt(0)
-            ? afterAmountCollateralValueBase
-            : undefined
-        }
-      />
+      <SupplyBalanceStat previewCollateralBalance={previewCollateralBalance} />
 
       <Stat
         title="Loan to value"
