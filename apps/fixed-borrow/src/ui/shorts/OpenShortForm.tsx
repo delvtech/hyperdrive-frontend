@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { BigNumber } from "ethers";
+import { BigNumber, ethers } from "ethers";
 import { formatUnits, parseUnits } from "ethers/lib/utils.js";
 import { ReactElement } from "react";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -75,10 +75,7 @@ export function OpenShortForm({
           </div>
           <div className="flex flex-col justify-between gap-2 self-end md:flex-row">
             <ApproveAllowanceButton
-              amount={
-                openShortPreview ||
-                parseUnits("1000000000", debtTokenMetadata?.decimals)
-              }
+              amount={ethers.constants.MaxUint256}
               tokenAddress={debtTokenAddress}
               spender={hyperdrivePoolAddress}
             />
@@ -120,6 +117,18 @@ export function OpenShortForm({
                 9 months
               </button>
             </div>
+            <button
+              onClick={() => onTermDurationChange("270_DAYS")}
+              className={classNames(
+                "daisy-btn-outline daisy-btn-info daisy-btn",
+                {
+                  "daisy-btn-active":
+                    termDuration && termDuration === "270_DAYS",
+                },
+              )}
+            >
+              Open short position
+            </button>
           </div>
         </>
       ) : null}

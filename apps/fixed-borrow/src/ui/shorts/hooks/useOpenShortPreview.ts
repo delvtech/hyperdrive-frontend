@@ -4,7 +4,7 @@ import { Address, useContract, useSigner } from "wagmi";
 import { HyperdriveABI, HyperdriveGoerliAddresses } from "@hyperdrive/core";
 
 const makerDsrHyperdriveAddress =
-  HyperdriveGoerliAddresses.makerDsrHyperdrive as `0x${string}`;
+  HyperdriveGoerliAddresses.makerDsrHyperdrive as Address;
 
 interface UseOpenShortPreviewOptions {
   hyperdrivePool: Address;
@@ -36,7 +36,8 @@ export function useOpenShortPreview({
     signerOrProvider: signer,
   });
 
-  const queryEnabled = !!bondAmount && !!maxDeposit && !!destination;
+  const queryEnabled =
+    !!bondAmount && !!maxDeposit && !!destination && !!makerDsrHyperdrive;
   const { data, status } = useQuery({
     queryKey: [
       "preview-open-short",
@@ -46,7 +47,7 @@ export function useOpenShortPreview({
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? () =>
-          makerDsrHyperdrive?.callStatic.openShort(
+          makerDsrHyperdrive.callStatic.openShort(
             bondAmount,
             maxDeposit,
             destination,

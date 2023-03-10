@@ -78,6 +78,7 @@ export function BorrowDebtForm({
           placeholder="Enter an amount to borrow"
           className="daisy-input-bordered daisy-input w-full text-secondary focus:border-secondary"
           onChange={(e) => {
+            // TODO: Clean this up with input validation, etc..
             const valueAsBigNumber =
               +e.target.value > 0
                 ? parseUnits(e.target.value, debtTokenMetadata?.decimals)
@@ -118,7 +119,7 @@ export function BorrowDebtForm({
           <button
             disabled={isBorrowButtonDisabled}
             className={classNames(
-              "daisy-btn-outline daisy-btn daisy-btn-secondary daisy-btn-wide",
+              "daisy-btn-outline daisy-btn-secondary daisy-btn-wide daisy-btn",
               { "daisy-loading": borrowStatus === "loading" },
             )}
             onClick={() => borrow?.()}

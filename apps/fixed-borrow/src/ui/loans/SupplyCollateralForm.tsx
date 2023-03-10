@@ -91,6 +91,7 @@ export function SupplyCollateralForm({
           placeholder="Enter an amount to supply"
           className="daisy-input-bordered daisy-input w-full appearance-none text-primary focus:border-primary"
           onChange={(e) => {
+            // TODO: Clean this up with input validation, etc..
             const valueAsBigNumber =
               +e.target.value > 0
                 ? parseUnits(e.target.value, collateralTokenMetadata?.decimals)
@@ -137,7 +138,7 @@ export function SupplyCollateralForm({
           <button
             disabled={isSupplyButtonDisabled}
             className={classNames(
-              "daisy-btn-outline daisy-btn daisy-btn-primary daisy-btn-wide",
+              "daisy-btn-outline daisy-btn-primary daisy-btn-wide daisy-btn",
               { "daisy-loading": supplyStatus === "loading" },
             )}
             onClick={() => supply?.()}
