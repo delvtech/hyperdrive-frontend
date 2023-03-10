@@ -15,6 +15,7 @@ import { OpenShortForm } from "src/ui/shorts/OpenShortForm";
 import { HyperdriveGoerliAddresses } from "@hyperdrive/core";
 
 console.log(SparkGoerliAddresses);
+console.log(HyperdriveGoerliAddresses);
 
 const COLLATERAL = SparkGoerliAddresses.wstETH_token;
 const COLLATERAL_A_TOKEN = SparkGoerliAddresses.wstETH_aToken;

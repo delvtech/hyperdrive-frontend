@@ -3,6 +3,7 @@ import { BigNumber } from "ethers";
 import { formatUnits } from "ethers/lib/utils.js";
 import { ReactElement } from "react";
 import { ApproveAllowanceButton } from "src/ui/loans/ApproveCollateralButton";
+import { useOpenShort } from "src/ui/shorts/hooks/useOpenShort";
 import { useOpenShortPreview } from "src/ui/shorts/hooks/useOpenShortPreview";
 import { Address, useAccount, useToken } from "wagmi";
 
@@ -33,6 +34,13 @@ export function OpenShortForm({
     openShortPreview && debtToShort?.gt(0)
       ? formatUnits(openShortPreview, debtTokenMetadata?.decimals)
       : undefined;
+  const { openShort, openShortStatus } = useOpenShort({
+    hyperdrivePool: hyperdrivePoolAddress,
+    bondAmount: debtToShort,
+    maxDeposit: debtToShort,
+    destination: account,
+    asUnderlying: true,
+  });
 
   return (
     <div className="flex w-full flex-col ">
@@ -65,16 +73,16 @@ export function OpenShortForm({
             tokenAddress={debtTokenAddress}
             spender={hyperdrivePoolAddress}
           />
-          <div className="flex gap-2">
-            <button
-              className={classNames(
-                "daisy-btn-outline daisy-btn-active daisy-btn",
-              )}
-            >
-              12 months
-            </button>
-          </div>
           <button
+            className={classNames(
+              "daisy-btn-outline daisy-btn-active daisy-btn ",
+            )}
+          >
+            12 months
+          </button>
+          <button
+            onClick={() => openShort?.()}
+            disabled={!openShort || openShortStatus === "loading"}
             className={classNames("daisy-btn-outline daisy-btn-info daisy-btn")}
           >
             Open short position
