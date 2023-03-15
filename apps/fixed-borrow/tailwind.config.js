@@ -17,7 +17,8 @@ module.exports = {
         success: "#1AE483",
         pinkSlip: "#FF78D9",
         sun: "#EEB857",
-        // for use in gradients
+        // for use in gradients, see:
+        // https://v2.tailwindcss.com/docs/gradient-color-stops
         pinkSlipBurst: { start: "#DA6DF8", middle: "#FF6881", end: "#F28ED6" },
         sunBurst: {
           start: "#E9ED73",
