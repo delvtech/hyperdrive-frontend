@@ -34,7 +34,7 @@ module.exports = {
             // eslint-disable-next-line @typescript-eslint/no-var-requires
             ...require("daisyui/src/colors/themes")["[data-theme=black]"],
             primary: "#ff00ff", // Collateral is pink, because in fast-and-the-furious they use pink slips as collateral
-            secondary: "linear-gradient(91.08deg, #E9ED73 0%, #FFA977 100%)",
+            secondary: "#ffff00", // Debt is yellow
 
             info: "#00ffff", // lighter shade of blue so outlined buttons are legible
             success: "#00ff7f", // lighter shade of green so outlined buttons are legible
