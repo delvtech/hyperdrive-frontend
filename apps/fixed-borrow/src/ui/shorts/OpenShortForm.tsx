@@ -2,7 +2,7 @@ import classNames from "classnames";
 import { BigNumber } from "ethers";
 import { formatUnits } from "ethers/lib/utils.js";
 import { ReactElement } from "react";
-import { ApproveAllowanceButton } from "src/ui/loans/ApproveCollateralButton";
+import { ApproveAllowanceButton } from "src/ui/token/ApproveAllowanceButton";
 import { useOpenShort } from "src/ui/shorts/hooks/useOpenShort";
 import { useOpenShortPreview } from "src/ui/shorts/hooks/useOpenShortPreview";
 import { Address, useAccount, useToken } from "wagmi";
