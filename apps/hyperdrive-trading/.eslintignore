@@ -1,0 +1,5 @@
+node_modules
+src/types
+dist
+.prettierrc.js
+settings.json
