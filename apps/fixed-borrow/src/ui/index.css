@@ -15,7 +15,12 @@ html {
   height: 100%;
 }
 body {
-  @apply min-h-full bg-midnight;
+  @apply min-h-screen bg-midnight bg-gradient-to-br from-midnight via-midnight to-[#1E233D];
+}
+
+[data-rk],
+#root {
+  @apply min-h-screen;
 }
 
 :root {
