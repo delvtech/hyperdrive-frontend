@@ -11,7 +11,7 @@ export function LoanCard({}: LoanCardProps): ReactElement {
   return (
     <Card>
       {/* Scaffold two columns */}
-      <div className="flex">
+      <div className="flex gap-10">
         {/* Form */}
         <div className="flex-1">
           left side here
