@@ -1,5 +1,8 @@
-import { midnightTheme, RainbowKitProvider } from "@rainbow-me/rainbowkit";
+import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { Index } from "pages/Index";
+import { Markets } from "pages/Markets";
+import { Portfolio } from "pages/Portfolio";
+import { Trade } from "pages/Trade";
 import { ReactElement } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -11,14 +14,17 @@ const queryClient = new QueryClient();
 
 export function App(): ReactElement {
   return (
-    <div className="h-screen">
+    <div className="h-screen bg-base">
       <QueryClientProvider client={queryClient}>
         <WagmiConfig client={wagmiClient}>
-          <RainbowKitProvider chains={chains} theme={midnightTheme()}>
-            <Navbar />
+          <RainbowKitProvider chains={chains}>
             <BrowserRouter>
+              <Navbar />
               <Routes>
                 <Route path="/" element={<Index />} />
+                <Route path="/markets" element={<Markets />} />
+                <Route path="/trade" element={<Trade />} />
+                <Route path="/portfolio" element={<Portfolio />} />
               </Routes>
             </BrowserRouter>
           </RainbowKitProvider>

@@ -1,45 +1,45 @@
 import { ConnectButton } from "@rainbow-me/rainbowkit";
+import classNames from "classnames";
 import { ReactElement } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 export function Navbar(): ReactElement {
+  const { pathname } = useLocation();
+
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-200 px-8">
       <div className="navbar-start">
-        {/* <div className="dropdown">
-      <label tabIndex={0} className="btn btn-ghost btn-circle">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-5 h-5"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
+        <Link
+          to="/"
+          className="font-akira text-2xl normal-case text-hyper-pink"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M4 6h16M4 12h16M4 18h7"
-          />
-        </svg>
-      </label>
-      <ul
-        tabIndex={0}
-        className="p-2 mt-3 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
-      >
-        <li>
-          <a>Homepage</a>
-        </li>
-        <li>
-          <a>Portfolio</a>
-        </li>
-        <li>
-          <a>About</a>
-        </li>
-      </ul>
-    </div> */}
+          HYPERDRIVE TRADING
+        </Link>
       </div>
-      <div className="navbar-center">
-        <a className="btn-ghost btn text-xl normal-case">Hyperdrive UI</a>
+
+      <div className="navbar-center flex gap-x-12">
+        <Link
+          to="/markets"
+          className={classNames(
+            "border-b-2 border-transparent font-quantico text-xl normal-case text-off-white transition duration-200 hover:border-hyper-green",
+            {
+              "font-bold": pathname === "/markets",
+            },
+          )}
+        >
+          Markets
+        </Link>
+        <Link
+          to="/portfolio"
+          className={classNames(
+            "border-b-2 border-transparent font-quantico text-xl normal-case text-off-white transition duration-200 hover:border-hyper-green",
+            {
+              "font-bold": pathname === "/portfolio",
+            },
+          )}
+        >
+          Portfolio
+        </Link>
       </div>
       <div className="navbar-end">
         <ConnectButton />
