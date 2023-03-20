@@ -3,7 +3,7 @@ import { BigNumber } from "ethers";
 import { formatUnits } from "ethers/lib/utils.js";
 import { ReactElement } from "react";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { Stat } from "src/ui/base/Stat/Stat";
+import { StatOld } from "src/ui/base/Stat/StatOld";
 import { useUserAccountData } from "src/ui/loans/hooks/useUserAccountData";
 import { useAccount } from "wagmi";
 
@@ -21,7 +21,7 @@ export function SupplyBalanceStat({
   const { userAccountData } = useUserAccountData(account);
 
   return (
-    <Stat
+    <StatOld
       title="Supply Balance"
       value={`$${formatBalance(
         formatUnits(

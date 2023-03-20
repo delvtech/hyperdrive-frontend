@@ -6,7 +6,11 @@ interface StatProps {
   description: ReactNode;
 }
 
-export function Stat({ title, value, description }: StatProps): ReactElement {
+export function StatOld({
+  title,
+  value,
+  description,
+}: StatProps): ReactElement {
   return (
     <div className="daisy-stat text-center">
       <div className="daisy-stat-title">{title}</div>
