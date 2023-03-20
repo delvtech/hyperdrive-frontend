@@ -14,7 +14,7 @@ const queryClient = new QueryClient();
 
 export function App(): ReactElement {
   return (
-    <div className="h-screen bg-bg-base">
+    <div className="h-screen bg-base">
       <QueryClientProvider client={queryClient}>
         <WagmiConfig client={wagmiClient}>
           <RainbowKitProvider chains={chains}>

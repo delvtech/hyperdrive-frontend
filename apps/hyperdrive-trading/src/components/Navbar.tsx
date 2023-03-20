@@ -7,11 +7,11 @@ export function Navbar(): ReactElement {
   const { pathname } = useLocation();
 
   return (
-    <div className="navbar bg-bg-base-200 px-8">
+    <div className="navbar bg-base-200 px-8">
       <div className="navbar-start">
         <Link
           to="/"
-          className="font-Akira text-2xl normal-case text-hyper-pink"
+          className="font-akira text-2xl normal-case text-hyper-pink"
         >
           HYPERDRIVE TRADING
         </Link>
@@ -21,7 +21,7 @@ export function Navbar(): ReactElement {
         <Link
           to="/markets"
           className={classNames(
-            "border-b-2 border-transparent font-Quantico text-xl normal-case text-off-white transition duration-200 hover:border-hyper-green",
+            "border-b-2 border-transparent font-quantico text-xl normal-case text-off-white transition duration-200 hover:border-hyper-green",
             {
               "font-bold": pathname === "/markets",
             },
@@ -32,7 +32,7 @@ export function Navbar(): ReactElement {
         <Link
           to="/portfolio"
           className={classNames(
-            "border-b-2 border-transparent font-Quantico text-xl normal-case text-off-white transition duration-200 hover:border-hyper-green",
+            "border-b-2 border-transparent font-quantico text-xl normal-case text-off-white transition duration-200 hover:border-hyper-green",
             {
               "font-bold": pathname === "/portfolio",
             },

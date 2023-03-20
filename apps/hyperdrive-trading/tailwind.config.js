@@ -5,12 +5,12 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        Akira: ["Akira", "sans-serif"],
-        Quantico: ["Quantico"],
+        akira: ["Akira", "sans-serif"],
+        quantico: ["Quantico"],
       },
       colors: {
-        "bg-base": "#171B2C",
-        "bg-base-200": "#0E111B",
+        base: "#171B2C",
+        "base-200": "#0E111B",
         "hyper-pink": "#F4B1FF",
         "hyper-green": "#61E4A3",
         "off-white": "#F0F0F0",
