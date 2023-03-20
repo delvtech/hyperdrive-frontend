@@ -3,6 +3,7 @@ import { Card } from "src/ui/base/Card/Card";
 import { Tabs } from "src/ui/base/Tabs/Tabs";
 import { InfoTooltip } from "src/ui/base/Tooltip/InfoTooltip";
 import { Well } from "src/ui/base/Well/Well";
+import { LoanCardHeader } from "src/ui/loans/LoanCard/LoanCardHeader";
 
 interface LoanCardProps {}
 
@@ -32,9 +33,8 @@ export function LoanCard({}: LoanCardProps): ReactElement {
         {/* Scaffold two columns */}
         <div className="flex gap-10">
           {/* Form */}
-          <div className="flex-1">
-            left side here
-            {/* Asset Header */}
+          <div className="flex min-w-[320px] flex-1 flex-col justify-between gap-6">
+            <LoanCardHeader />
             <div></div>
             {/* Inputs */}
             <div>
