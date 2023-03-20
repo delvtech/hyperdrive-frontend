@@ -61,7 +61,7 @@ export default function App(): ReactElement {
   );
 
   return (
-    <div className="flex min-h-[75vh] w-full items-center justify-center px-[4vw]">
+    <div className="flex min-h-[75vh] w-full items-center justify-center py-[10vh] px-[4vw]">
       <div className="max-w-4xl">
         <LoanCard />
       </div>
@@ -86,7 +86,7 @@ export default function App(): ReactElement {
             debtToShort={valueToShort}
           /> */}
       {/* </div> */}
-      {/* </div> */} */
+      {/* </div> */}
     </div>
   );
 }

@@ -22,14 +22,6 @@ const typeScale = gudTypeScale(
 
 console.log("Type scale:", typeScale);
 
-// Split up the styles by font size and line height
-const fontSize = {};
-const lineHeight = {};
-for (const [name, styles] of Object.entries(typeScale)) {
-  fontSize[name] = styles.fontSize;
-  lineHeight[name] = styles.lineHeight;
-}
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
@@ -55,8 +47,28 @@ module.exports = {
           start: "#E9ED73",
           end: "#FFA977",
         },
-        fontSize,
-        lineHeight,
+      },
+      fontSize: {
+        sm: typeScale.sm.fontSize,
+        body: typeScale.body.fontSize,
+        lg: typeScale.lg.fontSize,
+        h6: typeScale.h6.fontSize,
+        h5: typeScale.h5.fontSize,
+        h4: typeScale.h4.fontSize,
+        h3: typeScale.h3.fontSize,
+        h2: typeScale.h2.fontSize,
+        h1: typeScale.h1.fontSize,
+      },
+      lineHeight: {
+        sm: typeScale.sm.lineHeight,
+        body: typeScale.body.lineHeight,
+        lg: typeScale.lg.lineHeight,
+        h6: typeScale.h6.lineHeight,
+        h5: typeScale.h5.lineHeight,
+        h4: typeScale.h4.lineHeight,
+        h3: typeScale.h3.lineHeight,
+        h2: typeScale.h2.lineHeight,
+        h1: typeScale.h1.lineHeight,
       },
     },
   },
