@@ -13,6 +13,8 @@ import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { StatsBar } from "src/ui/app/StatsBar";
 import { OpenShortForm } from "src/ui/shorts/OpenShortForm";
 import { HyperdriveGoerliAddresses } from "@hyperdrive/core";
+import { Card } from "src/ui/base/Card/Card";
+import { LoanCard } from "src/ui/loans/LoanCard/LoanCard";
 
 console.log(SparkGoerliAddresses);
 console.log(HyperdriveGoerliAddresses);
@@ -59,40 +61,32 @@ export default function App(): ReactElement {
   );
 
   return (
-    <div className="space-y-8 p-8">
-      <div className="flex flex-col items-center justify-center gap-2">
-        <h1 className="text-5xl font-bold">Fixed Borrow</h1>
-        <h4 className="mb-3 text-xl">Built by Delve</h4>
-        <div className="flex items-center justify-center gap-4">
-          <MintButton tokenAddress={COLLATERAL} amount={parseEther("1000")} />
-          <ConnectButton />
-        </div>
+    <div className="flex min-h-[75vh] w-full items-center justify-center px-[4vw]">
+      <div className="max-w-4xl">
+        <LoanCard />
       </div>
-
-      <div className="flex h-full justify-center">
+      {/* <div className="flex h-full justify-center">
         <div className="flex flex-col items-center gap-12">
           <StatsBar previewSupplyBalance={previewSupplyBalance} />
           {/* Collateral */}
-          <SupplyCollateralForm
+      {/* <SupplyCollateralForm
             collateralTokenAddress={COLLATERAL}
             collateralATokenAddress={COLLATERAL_A_TOKEN}
             onCollateralInputAmountChange={setCollateralAmountInput}
-          />
-
-          {/* Debt */}
-          <BorrowDebtForm
+          /> */}
+      {/* Debt */}
+      {/* <BorrowDebtForm
             debtTokenAddress={DEBT_TOKEN}
             onDebtInputAmountChange={setDebtAmountInput}
-          />
-
-          {/* Hyperdrive Short */}
-          <OpenShortForm
+          /> */}
+      {/* Hyperdrive Short */}
+      {/* <OpenShortForm
             hyperdrivePoolAddress={HyperdriveGoerliAddresses.makerDsrHyperdrive}
             debtTokenAddress={DEBT_TOKEN}
             debtToShort={valueToShort}
-          />
-        </div>
-      </div>
+          /> */}
+      {/* </div> */}
+      {/* </div> */} */
     </div>
   );
 }
