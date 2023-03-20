@@ -12,17 +12,18 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.0.16",
+    "@hyperdrive/core": "*",
+    "@hyperdrive/spark": "*",
     "@rainbow-me/rainbowkit": "^0.11.0",
     "@tanstack/react-query": "^4.24.10",
     "@wagmi/core": "^0.9.7",
-    "@hyperdrive/core": "*",
     "classnames": "^2.3.2",
     "d3-format": "^3.1.0",
     "ethers": "^5.7.2",
+    "gud-type": "^1.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "wagmi": "^0.11.5",
-    "@hyperdrive/spark": "*"
+    "wagmi": "^0.11.5"
   },
   "devDependencies": {
     "@hyperdrive/eslint-config": "*",
@@ -30,6 +31,7 @@
     "@hyperdrive/tsconfig": "*",
     "@tanstack/eslint-plugin-query": "^4.15.1",
     "@types/classnames": "^2.3.1",
+    "@types/d3-format": "^3.0.1",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@typescript-eslint/eslint-plugin": "^5.51.0",
@@ -39,7 +41,6 @@
     "eslint": "^8.34.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "@types/d3-format": "^3.0.1",
     "eslint-plugin-tailwindcss": "^3.9.0",
     "postcss": "^8.4.21",
     "prettier": "2.8.4",
