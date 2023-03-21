@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { Stat } from "src/ui/base/Stat/Stat";
+import { StatOld } from "src/ui/base/Stat/StatOld";
 import { SupplyBalanceStat } from "src/ui/loans/SupplyBalanceStat";
 
 interface StatsBarProps {
@@ -10,10 +10,10 @@ export function StatsBar({
   previewSupplyBalance: previewCollateralBalance,
 }: StatsBarProps): ReactElement {
   return (
-    <div className="daisy-stats daisy-stats-vertical justify-center text-center lg:daisy-stats-horizontal lg:text-start">
+    <div className="daisy-stats daisy-stats-vertical lg:daisy-stats-horizontal justify-center text-center lg:text-start">
       <SupplyBalanceStat previewSupplyBalance={previewCollateralBalance} />
 
-      <Stat
+      <StatOld
         title="Loan to value"
         value="$1,200"
         description={
@@ -26,7 +26,7 @@ export function StatsBar({
           </span>
         }
       />
-      <Stat
+      <StatOld
         title="Borrow Rate (APY)"
         value="1.25%"
         description={"Until June 27, 2023"}
