@@ -4,7 +4,7 @@ import { BigNumber } from "ethers";
 import { formatUnits, parseUnits } from "ethers/lib/utils.js";
 import { ReactElement } from "react";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { useNumericInput } from "src/ui/base/useNumericInput";
+import { useNumericInput } from "src/ui/base/NumericInput/useNumericInput";
 import { ApproveAllowanceButton } from "src/ui/token/ApproveAllowanceButton";
 import { useSupplyCollateral } from "src/ui/loans/hooks/useSupplyCollateral";
 import { useAaveOracleAssetPrice } from "src/ui/oracles/useAaveOracleAssetPrice";
