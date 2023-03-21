@@ -11,6 +11,7 @@
     "format:check": "prettier --check '**/*.{js,jsx,ts,tsx,json,md}'"
   },
   "dependencies": {
+    "@floating-ui/react": "^0.22.0",
     "@heroicons/react": "^2.0.16",
     "@hyperdrive/core": "*",
     "@hyperdrive/spark": "*",
