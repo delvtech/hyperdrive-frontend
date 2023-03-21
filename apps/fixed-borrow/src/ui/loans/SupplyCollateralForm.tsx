@@ -72,7 +72,7 @@ export function SupplyCollateralForm({
     <div className="daisy-form-control w-full">
       <label className="daisy-label">
         <div className="daisy-label-text grid w-full grid-cols-2">
-          <span className="self-end">Collateral</span>
+          <span className="self-end">Supply</span>
           <div className="text-right">
             {accountCollateralBalance
               ? `Available to deposit: ${formatBalance(

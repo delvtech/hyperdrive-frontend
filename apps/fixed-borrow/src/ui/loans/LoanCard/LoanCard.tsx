@@ -1,9 +1,11 @@
+import { SparkGoerliAddresses } from "@hyperdrive/spark";
 import { ReactElement, useState } from "react";
 import { Card } from "src/ui/base/Card/Card";
 import { Tabs } from "src/ui/base/Tabs/Tabs";
 import { InfoTooltip } from "src/ui/base/Tooltip/InfoTooltip";
 import { Well } from "src/ui/base/Well/Well";
 import { LoanCardHeader } from "src/ui/loans/LoanCard/LoanCardHeader";
+import { SupplyCollateralForm } from "src/ui/loans/SupplyCollateralForm";
 
 interface LoanCardProps {}
 
@@ -38,7 +40,10 @@ export function LoanCard({}: LoanCardProps): ReactElement {
             <div></div>
             {/* Inputs */}
             <div>
-              {/* Supply Input */}
+              <SupplyCollateralForm
+                collateralTokenAddress={SparkGoerliAddresses.DAI_token}
+                collateralATokenAddress={SparkGoerliAddresses.wstETH_aToken}
+              />
               {/* Borrow Input */}
             </div>
           </div>
