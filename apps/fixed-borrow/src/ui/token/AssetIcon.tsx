@@ -1,4 +1,4 @@
-import { ReactElement, ReactNode } from "react";
+import { ReactElement } from "react";
 import daiLogo from "src/assets/DAI.svg";
 
 type AssetId = "dai";
@@ -17,7 +17,7 @@ export function AssetIcon({ assetId, large }: AssetIconProps): ReactElement {
   return (
     <img
       src={AssetIcons[assetId]}
-      alt="dai"
+      alt={assetId}
       className={large ? "h-12 w-12" : "h-6 w-6"}
     />
   );

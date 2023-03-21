@@ -33,7 +33,7 @@ export function LoanCard({}: LoanCardProps): ReactElement {
         {/* Scaffold two columns */}
         <div className="flex gap-10">
           {/* Form */}
-          <div className="flex min-w-[320px] flex-1 flex-col justify-between gap-6">
+          <div className="flex min-w-[320px] flex-1 flex-col gap-6">
             <LoanCardHeader />
             <div></div>
             {/* Inputs */}
