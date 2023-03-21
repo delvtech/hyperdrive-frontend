@@ -32,7 +32,6 @@ export function SupplyInput({
 
   return (
     <NumericInput
-      showMaxButton={balanceOf?.value.gt(0)}
       value={value}
       maxValue={balanceOf?.formatted}
       primaryLabel={"Supply"}

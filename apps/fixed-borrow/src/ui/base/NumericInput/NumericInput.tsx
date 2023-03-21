@@ -7,7 +7,6 @@ interface NumericInputProps {
   secondaryLabel?: string;
   placeholderText?: string;
   icon?: ReactNode;
-  showMaxButton?: boolean;
   value?: string;
   maxValue?: string;
   onChange?: (value: string | undefined) => void;
@@ -16,7 +15,6 @@ interface NumericInputProps {
 export function NumericInput({
   icon,
   secondaryLabel,
-  showMaxButton,
   onChange,
   primaryLabel,
   value,
@@ -30,42 +28,31 @@ export function NumericInput({
         <span>{secondaryLabel}</span>
       </div>
 
-      <div className="relative flex flex-1">
+      <div className="flex h-14 flex-1 items-center gap-4 rounded-lg border border-inputBorder bg-inputBg px-4 text-right text-h4">
+        {icon ? <div className="shrink-0">{icon}</div> : null}
         <input
           type="number"
           placeholder={placeholderText}
-          className={classNames(
-            "h-14 flex-1 rounded-lg border border-inputBorder bg-inputBg px-4 text-right text-h4",
-            {
-              "pl-11": !!icon, // the icon overlaps the input on the left
-              "pr-[72px]": showMaxButton, // the max button overlaps the input on the right
-            },
-          )}
+          className={classNames("h-14 w-full bg-inputBg text-right text-h4")}
           value={value}
           onChange={(event) => {
             onChange?.(event.target.value);
           }}
         />
 
-        {icon ? (
-          <div className="absolute ml-3 flex h-full items-center">{icon}</div>
-        ) : null}
-
-        {showMaxButton ? (
-          <div className="absolute right-0 mr-2 flex h-full items-center">
-            <Button
-              size="sm"
-              disabled={!!+(maxValue || 0)}
-              onClick={() => {
-                if (maxValue) {
-                  onChange?.(maxValue);
-                }
-              }}
-              variant="dark"
-            >
-              MAX
-            </Button>
-          </div>
+        {maxValue ? (
+          <Button
+            size="sm"
+            disabled={!!+(maxValue || 0)}
+            variant="dark"
+            onClick={() => {
+              if (maxValue) {
+                onChange?.(maxValue);
+              }
+            }}
+          >
+            <span className="uppercase">Max</span>
+          </Button>
         ) : null}
       </div>
     </div>
