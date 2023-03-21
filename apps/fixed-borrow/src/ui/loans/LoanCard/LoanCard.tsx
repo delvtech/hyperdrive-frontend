@@ -1,6 +1,7 @@
 import { ReactElement, useState } from "react";
 import { Card } from "src/ui/base/Card/Card";
 import { Tabs } from "src/ui/base/Tabs/Tabs";
+import { InfoTooltip } from "src/ui/base/Tooltip/InfoTooltip";
 import { Well } from "src/ui/base/Well/Well";
 
 interface LoanCardProps {}
@@ -88,7 +89,8 @@ export function LoanCard({}: LoanCardProps): ReactElement {
                   </div>
                   <div className="flex justify-between">
                     <span className="flex items-center gap-2 text-lightText">
-                      Hyperdrive short<span>( i )</span>
+                      Hyperdrive short
+                      <InfoTooltip content="The amount required to lock in the fixed rate via a Hyperdrive short." />
                     </span>
                     <span>4.4321 DAI</span>
                   </div>
