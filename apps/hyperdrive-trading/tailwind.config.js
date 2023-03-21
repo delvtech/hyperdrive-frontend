@@ -19,6 +19,9 @@ module.exports = {
         "giga-blue-200": "#425079",
         "giga-blue-300": "#7680B8",
       },
+      gridTemplateColumns: {
+        "protocol-stats": "repeat(4, minmax(0, 110px))",
+      },
     },
   },
   plugins: [require("daisyui")],
