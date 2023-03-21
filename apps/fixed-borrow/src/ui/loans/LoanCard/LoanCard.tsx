@@ -5,7 +5,7 @@ import { Tabs } from "src/ui/base/Tabs/Tabs";
 import { InfoTooltip } from "src/ui/base/Tooltip/InfoTooltip";
 import { Well } from "src/ui/base/Well/Well";
 import { LoanCardHeader } from "src/ui/loans/LoanCard/LoanCardHeader";
-import { SupplyCollateralForm } from "src/ui/loans/SupplyCollateralForm";
+import { SupplyInput } from "src/ui/loans/SupplyInput";
 
 interface LoanCardProps {}
 
@@ -40,10 +40,12 @@ export function LoanCard({}: LoanCardProps): ReactElement {
             <div></div>
             {/* Inputs */}
             <div>
-              <SupplyCollateralForm
-                collateralTokenAddress={SparkGoerliAddresses.DAI_token}
-                collateralATokenAddress={SparkGoerliAddresses.wstETH_aToken}
+              <SupplyInput
+                tokenAddress={SparkGoerliAddresses.DAI_token}
+                value={supplyAmount}
+                onInputChange={(newValue) => setSupplyAmount(newValue)}
               />
+
               {/* Borrow Input */}
             </div>
           </div>

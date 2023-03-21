@@ -1,7 +1,7 @@
 import { SparkGoerliAddresses } from "@hyperdrive/spark";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { ReactElement, useState } from "react";
-import { SupplyCollateralForm } from "src/ui/loans/SupplyCollateralForm";
+import { SupplyInput } from "src/ui/loans/SupplyInput";
 import { BorrowDebtForm } from "src/ui/loans/BorrowDebtForm";
 import { formatUnits, parseEther, parseUnits } from "ethers/lib/utils.js";
 import { MintButton } from "src/ui/faucet/MintButton";
@@ -65,28 +65,6 @@ export default function App(): ReactElement {
       <div className="max-w-4xl">
         <LoanCard />
       </div>
-      {/* <div className="flex h-full justify-center">
-        <div className="flex flex-col items-center gap-12">
-          <StatsBar previewSupplyBalance={previewSupplyBalance} />
-          {/* Collateral */}
-      {/* <SupplyCollateralForm
-            collateralTokenAddress={COLLATERAL}
-            collateralATokenAddress={COLLATERAL_A_TOKEN}
-            onCollateralInputAmountChange={setCollateralAmountInput}
-          /> */}
-      {/* Debt */}
-      {/* <BorrowDebtForm
-            debtTokenAddress={DEBT_TOKEN}
-            onDebtInputAmountChange={setDebtAmountInput}
-          /> */}
-      {/* Hyperdrive Short */}
-      {/* <OpenShortForm
-            hyperdrivePoolAddress={HyperdriveGoerliAddresses.makerDsrHyperdrive}
-            debtTokenAddress={DEBT_TOKEN}
-            debtToShort={valueToShort}
-          /> */}
-      {/* </div> */}
-      {/* </div> */}
     </div>
   );
 }
