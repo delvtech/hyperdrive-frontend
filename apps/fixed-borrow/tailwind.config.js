@@ -52,21 +52,21 @@ module.exports = {
         pinkSlipBurst: {
           start: {
             DEFAULT: "#DA6DF8",
-            hover: "#E89BFD",
+            hover: "#E38FFA",
           },
           end: {
             DEFAULT: "#FF6881",
-            hover: "#FF99AA",
+            hover: "#FF8A9D",
           },
         },
         sunBurst: {
           start: {
             DEFAULT: "#E9ED73",
-            hover: "#F1F49F",
+            hover: "#EFF297",
           },
           end: {
             DEFAULT: "#FFA977",
-            hover: "#FFC8A8",
+            hover: "#FFC29E",
           },
         },
       },
