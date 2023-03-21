@@ -28,7 +28,7 @@ html {
 }
 
 body {
-  @apply min-h-screen bg-midnight bg-gradient-to-br from-midnight via-midnight to-[#1E233D] text-body leading-body;
+  @apply min-h-screen bg-midnight bg-gradient-to-br from-midnight via-midnight to-[#1E233D] bg-fixed text-body leading-body;
 }
 
 h1 {
