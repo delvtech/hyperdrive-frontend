@@ -30,22 +30,44 @@ module.exports = {
     extend: {
       colors: {
         midnight: "#121520",
-        dawn: "#2C3144",
+        dawn: "#293047",
         dawnAccent: "#434C6D",
+        inputBg: "#191E2E",
         inputBorder: "#3C4979",
-        darkButton: "#2A325A",
+        darkButton: {
+          DEFAULT: "#2A325A",
+          hover: "#374681",
+        },
         secondaryText: "#8792BB",
         lightText: "#DADEED",
-        lightButton: "#576CBD",
+        lightButton: {
+          DEFAULT: "#576CBD",
+          hover: "#3F5093",
+        },
         success: "#1AE483",
         pinkSlip: "#FF78D9",
         sun: "#EEB857",
         // for use in gradients, see:
         // https://v2.tailwindcss.com/docs/gradient-color-stops
-        pinkSlipBurst: { start: "#DA6DF8", middle: "#FF6881", end: "#F28ED6" },
+        pinkSlipBurst: {
+          start: {
+            DEFAULT: "#DA6DF8",
+            hover: "#E38FFA",
+          },
+          end: {
+            DEFAULT: "#FF6881",
+            hover: "#FF8A9D",
+          },
+        },
         sunBurst: {
-          start: "#E9ED73",
-          end: "#FFA977",
+          start: {
+            DEFAULT: "#E9ED73",
+            hover: "#EFF297",
+          },
+          end: {
+            DEFAULT: "#FFA977",
+            hover: "#FFC29E",
+          },
         },
       },
       fontSize: {
