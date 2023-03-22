@@ -1,4 +1,3 @@
-import { FeaturedMarkets } from "src/ui/markets/components/FeaturedMarkets";
 import { ReactElement } from "react";
 import classNames from "classnames";
 
