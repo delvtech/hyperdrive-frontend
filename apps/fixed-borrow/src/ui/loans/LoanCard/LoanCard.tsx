@@ -53,6 +53,15 @@ export function LoanCard({}: LoanCardProps): ReactElement {
                 value={supplyAmount}
                 onChange={(newValue) => setBorrowAmount(newValue)}
               />
+              <div className="flex items-center justify-between">
+                <span className="flex items-center gap-1 text-lg text-lightText">
+                  <InfoTooltip content="The borrow rate becomes variable after the fixed rate expires." />
+                  Fixed rate expires in:
+                </span>
+                {/* TODO: Add an active style to the button so it looks
+                selected, or switch to radio buttons */}
+                <Button onClick={() => {}}>12 months</Button>
+              </div>
             </div>
             <Button size="lg" variant="sun" onClick={() => {}}>
               Borrow
