@@ -11,7 +11,7 @@ export function Navbar(): ReactElement {
       <div className="navbar-start">
         <Link
           to="/"
-          className="whitespace-nowrap font-akira text-2xl uppercase text-hyper-pink"
+          className="whitespace-nowrap font-akira text-3xl uppercase text-hyper-pink"
         >
           Hyperdrive
         </Link>
