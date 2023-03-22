@@ -52,11 +52,13 @@ export function MarketsTable(): ReactElement {
       </h2>
 
       <div className="flex flex-wrap items-center gap-6">
+        {/* TODO: abstract to own component */}
         <input
           className="rounded border border-giga-blue-300 bg-transparent px-6 py-2 text-center font-quantico text-giga-blue-100 placeholder:text-giga-blue-300"
           placeholder="Search Markets"
         />
 
+        {/* TODO: abstract to own component, both the button group and button */}
         <div className="flex flex-wrap gap-2">
           <button className="whitespace-nowrap border border-giga-blue-300 bg-transparent px-6 py-2 font-quantico text-hyper-green hover:bg-giga-blue-300">
             All Markets
@@ -93,6 +95,7 @@ export function MarketsTable(): ReactElement {
           </button>
         </div>
       </div>
+
       <SortableGridTable
         headingRowClassName="grid-cols-[repeat(7,minmax(0,1fr))] bg-transparent text-giga-blue-100 font-quantico text-md [&>*]:p-2"
         bodyRowClassName="grid-cols-[repeat(7,minmax(0,1fr))] bg-transparent text-off-white font-rubik [&>*]:p-2"
