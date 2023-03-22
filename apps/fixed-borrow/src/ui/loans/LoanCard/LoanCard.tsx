@@ -42,35 +42,37 @@ export function LoanCard({}: LoanCardProps): ReactElement {
             <LoanCardHeader />
             <div></div>
             {/* Inputs */}
-            <div className="flex flex-col gap-[26px]">
-              <SupplyInput
-                tokenAddress={SparkGoerliAddresses.wstETH_token}
-                value={supplyAmount}
-                onChange={(newValue) => setSupplyAmount(newValue)}
-              />
+            <div className="flex flex-col gap-10">
+              <div className="flex flex-col gap-[26px]">
+                <SupplyInput
+                  tokenAddress={SparkGoerliAddresses.wstETH_token}
+                  value={supplyAmount}
+                  onChange={(newValue) => setSupplyAmount(newValue)}
+                />
 
-              <BorrowInput
-                tokenAddress={SparkGoerliAddresses.DAI_token}
-                value={borrowAmount}
-                onChange={(newValue) => setBorrowAmount(newValue)}
-              />
-              <div className="flex items-center justify-between">
-                <span className="flex items-center gap-1 text-lg text-lightText">
-                  <InfoTooltip content="The borrow rate becomes variable after the fixed rate expires." />
-                  Fixed rate expires in:
-                </span>
-                <Button
-                  onClick={() => {
-                    setTermLength("365_DAYS");
-                  }}
-                >
-                  12 months
-                </Button>
+                <BorrowInput
+                  tokenAddress={SparkGoerliAddresses.DAI_token}
+                  value={borrowAmount}
+                  onChange={(newValue) => setBorrowAmount(newValue)}
+                />
+                <div className="flex items-center justify-between">
+                  <span className="flex items-center gap-1 text-lg text-lightText">
+                    <InfoTooltip content="The borrow rate becomes variable after the fixed rate expires." />
+                    Fixed rate expires in:
+                  </span>
+                  <Button
+                    onClick={() => {
+                      setTermLength("365_DAYS");
+                    }}
+                  >
+                    12 months
+                  </Button>
+                </div>
               </div>
+              <Button size="lg" variant="sun" onClick={() => {}}>
+                Borrow
+              </Button>
             </div>
-            <Button size="lg" variant="sun" onClick={() => {}}>
-              Borrow
-            </Button>
           </div>
           {/* Previews */}
           <div className="flex min-w-[320px] flex-1 flex-col justify-between gap-6">
