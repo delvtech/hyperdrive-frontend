@@ -8,6 +8,7 @@ import { Well } from "src/ui/base/Well/Well";
 import { BorrowInput } from "src/ui/loans/BorrowInput/BorrowInput";
 import { LoanCardHeader } from "src/ui/loans/LoanCard/LoanCardHeader";
 import { SupplyInput } from "src/ui/loans/SupplyInput";
+import { TermLength } from "src/ui/shorts/termLength";
 
 interface LoanCardProps {}
 
@@ -15,7 +16,7 @@ export function LoanCard({}: LoanCardProps): ReactElement {
   const [activeTab, setActiveTab] = useState(0);
   const [supplyAmount, setSupplyAmount] = useState<string | undefined>();
   const [borrowAmount, setBorrowAmount] = useState<string | undefined>();
-  const [termLength, setTermLength] = useState<string | undefined>();
+  const [termLength, setTermLength] = useState<TermLength | undefined>();
 
   return (
     <div className="flex flex-col items-center gap-6">
@@ -50,7 +51,7 @@ export function LoanCard({}: LoanCardProps): ReactElement {
 
               <BorrowInput
                 tokenAddress={SparkGoerliAddresses.DAI_token}
-                value={supplyAmount}
+                value={borrowAmount}
                 onChange={(newValue) => setBorrowAmount(newValue)}
               />
               <div className="flex items-center justify-between">
@@ -58,9 +59,13 @@ export function LoanCard({}: LoanCardProps): ReactElement {
                   <InfoTooltip content="The borrow rate becomes variable after the fixed rate expires." />
                   Fixed rate expires in:
                 </span>
-                {/* TODO: Add an active style to the button so it looks
-                selected, or switch to radio buttons */}
-                <Button onClick={() => {}}>12 months</Button>
+                <Button
+                  onClick={() => {
+                    setTermLength("365_DAYS");
+                  }}
+                >
+                  12 months
+                </Button>
               </div>
             </div>
             <Button size="lg" variant="sun" onClick={() => {}}>
