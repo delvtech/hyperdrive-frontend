@@ -5,7 +5,7 @@ interface ProtocolStatsBarProps {}
 export function ProtocolStatsBar({}: ProtocolStatsBarProps): ReactElement {
   return (
     <div className="grid grid-cols-2 items-center gap-x-24 gap-y-4 rounded bg-base-200 px-12 py-4 md:grid-cols-protocol-stats">
-      <h2 className="col-span-2 font-quantico text-2xl text-off-white md:col-span-1">
+      <h2 className="col-span-2 font-quantico text-2xl font-bold text-off-white md:col-span-1">
         Protocol
       </h2>
       <Stat label="TVL" value="$150,000,000" />
