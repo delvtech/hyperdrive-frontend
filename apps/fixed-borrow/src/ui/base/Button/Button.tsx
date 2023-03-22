@@ -36,7 +36,7 @@ export function Button({
             variant === "sun",
           "bg-gradient-to-br from-pinkSlipBurst-start to-pinkSlipBurst-end text-midnight hover:from-pinkSlipBurst-start-hover hover:to-pinkSlipBurst-end-hover":
             variant === "pinkSlip",
-          "bg-darkButton text-white hover:bg-darkButton-hover":
+          "bg-darkButton text-white hover:bg-darkButton-hover active:bg-darkButton-hover":
             variant === "dark",
         },
       )}

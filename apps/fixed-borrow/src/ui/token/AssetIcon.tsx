@@ -1,7 +1,8 @@
 import { ReactElement } from "react";
 import daiLogo from "src/assets/DAI.svg";
+import wstethLogo from "src/assets/wsteth.svg";
 
-type AssetId = "dai";
+type AssetId = "dai" | "wsteth";
 
 interface AssetIconProps {
   assetId: AssetId;
@@ -11,6 +12,7 @@ interface AssetIconProps {
 
 const AssetIcons: Record<AssetId, string> = {
   dai: daiLogo,
+  wsteth: wstethLogo,
 };
 
 export function AssetIcon({ assetId, large }: AssetIconProps): ReactElement {

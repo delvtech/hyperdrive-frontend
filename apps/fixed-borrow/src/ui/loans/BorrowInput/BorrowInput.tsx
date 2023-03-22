@@ -4,17 +4,17 @@ import { Address, useAccount, useBalance, useToken } from "wagmi";
 import { NumericInput } from "src/ui/base/NumericInput/NumericInput";
 import { AssetIcon } from "src/ui/token/AssetIcon";
 
-interface SupplyInputProps {
+interface BorrowInputProps {
   tokenAddress: Address;
   value?: string;
   onChange?: (newAmount: string | undefined) => void;
 }
 
-export function SupplyInput({
+export function BorrowInput({
   tokenAddress,
   value,
   onChange,
-}: SupplyInputProps): ReactElement {
+}: BorrowInputProps): ReactElement {
   const { address: account } = useAccount();
   const { data: tokenMetadata } = useToken({
     address: tokenAddress,
@@ -34,10 +34,10 @@ export function SupplyInput({
     <NumericInput
       value={value}
       maxValue={balanceOf?.formatted}
-      primaryLabel="Supply"
+      primaryLabel="Borrow"
       icon={
-        // TODO: Don't hardcode this to wsteth
-        <AssetIcon assetId="wsteth" />
+        // TODO: Don't hardcode this to dai
+        <AssetIcon assetId="dai" />
       }
       placeholderText="0"
       secondaryLabel={availableToDepositLabel}
