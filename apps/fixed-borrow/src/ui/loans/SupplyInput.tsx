@@ -7,13 +7,13 @@ import { AssetIcon } from "src/ui/token/AssetIcon";
 interface SupplyInputProps {
   tokenAddress: Address;
   value?: string;
-  onInputChange?: (newAmount: string | undefined) => void;
+  onChange?: (newAmount: string | undefined) => void;
 }
 
 export function SupplyInput({
   tokenAddress,
   value,
-  onInputChange,
+  onChange,
 }: SupplyInputProps): ReactElement {
   const { address: account } = useAccount();
   const { data: tokenMetadata } = useToken({
@@ -34,14 +34,14 @@ export function SupplyInput({
     <NumericInput
       value={value}
       maxValue={balanceOf?.formatted}
-      primaryLabel={"Supply"}
+      primaryLabel="Supply"
       icon={
         // TODO: Don't hardcode this to dai
         <AssetIcon assetId="dai" />
       }
       placeholderText="0"
       secondaryLabel={availableToDepositLabel}
-      onChange={onInputChange}
+      onChange={onChange}
     />
   );
 }

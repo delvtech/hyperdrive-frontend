@@ -43,7 +43,7 @@ export function LoanCard({}: LoanCardProps): ReactElement {
               <SupplyInput
                 tokenAddress={SparkGoerliAddresses.DAI_token}
                 value={supplyAmount}
-                onInputChange={(newValue) => setSupplyAmount(newValue)}
+                onChange={(newValue) => setSupplyAmount(newValue)}
               />
 
               {/* Borrow Input */}

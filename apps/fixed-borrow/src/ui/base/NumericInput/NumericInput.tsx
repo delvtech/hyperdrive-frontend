@@ -1,4 +1,3 @@
-import classNames from "classnames";
 import { ReactElement, ReactNode } from "react";
 import { Button } from "src/ui/base/Button/Button";
 
@@ -23,33 +22,29 @@ export function NumericInput({
 }: NumericInputProps): ReactElement {
   return (
     <div className="flex flex-col gap-1">
-      <div className="flex flex-1 justify-between text-lightText">
+      <div className="flex w-full justify-between gap-2 text-lightText">
         <span className="text-lg">{primaryLabel}</span>
         <span>{secondaryLabel}</span>
       </div>
 
-      <div className="flex h-14 flex-1 items-center gap-4 rounded-lg border border-inputBorder bg-inputBg px-4 text-right text-h4">
+      <div className="flex h-14 w-full items-center gap-4 rounded-lg border border-inputBorder bg-inputBg p-3 text-right text-h4">
         {icon ? <div className="shrink-0">{icon}</div> : null}
         <input
           type="number"
           placeholder={placeholderText}
-          className={classNames("h-14 w-full bg-inputBg text-right text-h4")}
+          className="h-full w-full bg-inputBg text-right text-h4"
           value={value}
           onChange={(event) => {
             onChange?.(event.target.value);
           }}
         />
 
-        {maxValue ? (
+        {maxValue && onChange ? (
           <Button
             size="sm"
             disabled={!!+(maxValue || 0)}
             variant="dark"
-            onClick={() => {
-              if (maxValue) {
-                onChange?.(maxValue);
-              }
-            }}
+            onClick={() => onChange(maxValue)}
           >
             <span className="uppercase">Max</span>
           </Button>

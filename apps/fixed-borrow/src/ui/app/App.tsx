@@ -1,19 +1,12 @@
 import { SparkGoerliAddresses } from "@hyperdrive/spark";
-import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { ReactElement, useState } from "react";
-import { SupplyInput } from "src/ui/loans/SupplyInput";
-import { BorrowDebtForm } from "src/ui/loans/BorrowDebtForm";
-import { formatUnits, parseEther, parseUnits } from "ethers/lib/utils.js";
-import { MintButton } from "src/ui/faucet/MintButton";
+import { formatUnits, parseUnits } from "ethers/lib/utils.js";
 import { BigNumber } from "ethers";
 import { useUserAccountData } from "src/ui/loans/hooks/useUserAccountData";
 import { useAccount, useToken } from "wagmi";
 import { useAaveOracleAssetPrice } from "src/ui/oracles/useAaveOracleAssetPrice";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { StatsBar } from "src/ui/app/StatsBar";
-import { OpenShortForm } from "src/ui/shorts/OpenShortForm";
 import { HyperdriveGoerliAddresses } from "@hyperdrive/core";
-import { Card } from "src/ui/base/Card/Card";
 import { LoanCard } from "src/ui/loans/LoanCard/LoanCard";
 
 console.log(SparkGoerliAddresses);
