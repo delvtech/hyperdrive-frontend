@@ -97,8 +97,8 @@ export function MarketsTable(): ReactElement {
       </div>
 
       <SortableGridTable
-        headingRowClassName="grid-cols-[repeat(7,minmax(0,1fr))] bg-transparent text-giga-blue-100 font-quantico text-md [&>*]:p-2"
-        bodyRowClassName="grid-cols-[repeat(7,minmax(0,1fr))] bg-transparent text-off-white font-rubik [&>*]:p-2"
+        headingRowClassName="grid-cols-7 bg-transparent text-giga-blue-100 font-quantico text-md [&>*]:p-2"
+        bodyRowClassName="grid-cols-7 bg-transparent text-off-white font-rubik [&>*]:p-2"
         cols={[
           "Name",
           "Yield Source",
