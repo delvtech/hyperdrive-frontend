@@ -1,5 +1,6 @@
 import { SparkGoerliAddresses } from "@hyperdrive/spark";
 import { ReactElement, useState } from "react";
+import { Button } from "src/ui/base/Button/Button";
 import { Card } from "src/ui/base/Card/Card";
 import { Tabs } from "src/ui/base/Tabs/Tabs";
 import { InfoTooltip } from "src/ui/base/Tooltip/InfoTooltip";
@@ -53,6 +54,9 @@ export function LoanCard({}: LoanCardProps): ReactElement {
                 onChange={(newValue) => setBorrowAmount(newValue)}
               />
             </div>
+            <Button size="lg" variant="sun" onClick={() => {}}>
+              Borrow
+            </Button>
           </div>
           {/* Previews */}
           <div className="flex min-w-[320px] flex-1 flex-col justify-between gap-6">
