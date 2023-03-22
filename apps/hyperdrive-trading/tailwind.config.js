@@ -16,11 +16,8 @@ module.exports = {
         "hyper-green": "#61E4A3",
         "off-white": "#F0F0F0",
         "giga-blue-100": "#99A1D3",
-        "giga-blue-200": "#425079",
-        "giga-blue-300": "#7680B8",
-      },
-      gridTemplateColumns: {
-        "protocol-stats": "repeat(4, minmax(0, 110px))",
+        "giga-blue-200": "#7680B8",
+        "giga-blue-300": "#425079",
       },
     },
   },
