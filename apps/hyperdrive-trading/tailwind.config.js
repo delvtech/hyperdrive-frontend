@@ -7,6 +7,7 @@ module.exports = {
       fontFamily: {
         akira: ["Akira", "sans-serif"],
         quantico: ["Quantico"],
+        rubik: ["Rubik", "sans-serif"],
       },
       colors: {
         base: "#171B2C",
@@ -14,7 +15,9 @@ module.exports = {
         "hyper-pink": "#F4B1FF",
         "hyper-green": "#61E4A3",
         "off-white": "#F0F0F0",
-        "giga-blue-100": "99A1D3",
+        "giga-blue-100": "#99A1D3",
+        "giga-blue-200": "#7680B8",
+        "giga-blue-300": "#425079",
       },
     },
   },
