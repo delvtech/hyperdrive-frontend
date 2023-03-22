@@ -38,7 +38,7 @@ module.exports = {
           DEFAULT: "#2A325A",
           hover: "#374681",
         },
-        secondaryText: "#8792BB",
+        secondaryText: "#A4ABC6",
         lightText: "#DADEED",
         lightButton: {
           DEFAULT: "#576CBD",
