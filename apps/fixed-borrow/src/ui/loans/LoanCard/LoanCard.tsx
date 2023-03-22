@@ -4,6 +4,7 @@ import { Card } from "src/ui/base/Card/Card";
 import { Tabs } from "src/ui/base/Tabs/Tabs";
 import { InfoTooltip } from "src/ui/base/Tooltip/InfoTooltip";
 import { Well } from "src/ui/base/Well/Well";
+import { BorrowInput } from "src/ui/loans/BorrowInput/BorrowInput";
 import { LoanCardHeader } from "src/ui/loans/LoanCard/LoanCardHeader";
 import { SupplyInput } from "src/ui/loans/SupplyInput";
 
@@ -39,14 +40,18 @@ export function LoanCard({}: LoanCardProps): ReactElement {
             <LoanCardHeader />
             <div></div>
             {/* Inputs */}
-            <div>
+            <div className="flex flex-col gap-[26px]">
               <SupplyInput
-                tokenAddress={SparkGoerliAddresses.DAI_token}
+                tokenAddress={SparkGoerliAddresses.wstETH_token}
                 value={supplyAmount}
                 onChange={(newValue) => setSupplyAmount(newValue)}
               />
 
-              {/* Borrow Input */}
+              <BorrowInput
+                tokenAddress={SparkGoerliAddresses.DAI_token}
+                value={supplyAmount}
+                onChange={(newValue) => setBorrowAmount(newValue)}
+              />
             </div>
           </div>
           {/* Previews */}
