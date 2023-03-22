@@ -1,19 +1,12 @@
 import { SparkGoerliAddresses } from "@hyperdrive/spark";
-import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { ReactElement, useState } from "react";
-import { SupplyCollateralForm } from "src/ui/loans/SupplyCollateralForm";
-import { BorrowDebtForm } from "src/ui/loans/BorrowDebtForm";
-import { formatUnits, parseEther, parseUnits } from "ethers/lib/utils.js";
-import { MintButton } from "src/ui/faucet/MintButton";
+import { formatUnits, parseUnits } from "ethers/lib/utils.js";
 import { BigNumber } from "ethers";
 import { useUserAccountData } from "src/ui/loans/hooks/useUserAccountData";
 import { useAccount, useToken } from "wagmi";
 import { useAaveOracleAssetPrice } from "src/ui/oracles/useAaveOracleAssetPrice";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { StatsBar } from "src/ui/app/StatsBar";
-import { OpenShortForm } from "src/ui/shorts/OpenShortForm";
 import { HyperdriveGoerliAddresses } from "@hyperdrive/core";
-import { Card } from "src/ui/base/Card/Card";
 import { LoanCard } from "src/ui/loans/LoanCard/LoanCard";
 
 console.log(SparkGoerliAddresses);
@@ -65,28 +58,6 @@ export default function App(): ReactElement {
       <div className="max-w-4xl">
         <LoanCard />
       </div>
-      {/* <div className="flex h-full justify-center">
-        <div className="flex flex-col items-center gap-12">
-          <StatsBar previewSupplyBalance={previewSupplyBalance} />
-          {/* Collateral */}
-      {/* <SupplyCollateralForm
-            collateralTokenAddress={COLLATERAL}
-            collateralATokenAddress={COLLATERAL_A_TOKEN}
-            onCollateralInputAmountChange={setCollateralAmountInput}
-          /> */}
-      {/* Debt */}
-      {/* <BorrowDebtForm
-            debtTokenAddress={DEBT_TOKEN}
-            onDebtInputAmountChange={setDebtAmountInput}
-          /> */}
-      {/* Hyperdrive Short */}
-      {/* <OpenShortForm
-            hyperdrivePoolAddress={HyperdriveGoerliAddresses.makerDsrHyperdrive}
-            debtTokenAddress={DEBT_TOKEN}
-            debtToShort={valueToShort}
-          /> */}
-      {/* </div> */}
-      {/* </div> */}
     </div>
   );
 }
