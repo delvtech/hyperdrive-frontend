@@ -8,12 +8,12 @@ export function LoanCardHeader({}: LoanCardHeaderProps): ReactElement {
   return (
     <div className="flex w-full justify-between">
       <Stat
-        icon={<AssetIcon assetId={"dai"} large />}
-        stat={"DAI"}
-        label={"1 DAI = $1"}
+        icon={<AssetIcon assetId="DAI" large />}
+        stat="DAI"
+        label="1 DAI = $1"
         alignment="left"
       />
-      <Stat stat={"1.50%"} label={"Fixed Borrow APY"} alignment="right" />
+      <Stat stat="1.50%" label="Fixed Borrow APY" alignment="right" />
     </div>
   );
 }

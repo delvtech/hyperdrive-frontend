@@ -27,7 +27,7 @@ export function NumericInput({
         <span>{secondaryLabel}</span>
       </div>
 
-      <div className="flex h-14 w-full items-center gap-4 rounded-lg border border-inputBorder bg-inputBg p-3 text-right text-h4">
+      <div className="flex h-[60px] w-full items-center gap-4 rounded-lg border border-inputBorder bg-inputBg p-3 text-right text-h4">
         {icon ? <div className="shrink-0">{icon}</div> : null}
         <input
           type="number"
