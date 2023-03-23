@@ -1,7 +1,7 @@
 import { SparkGoerliAddresses, FaucetABI } from "@hyperdrive/spark";
 import { BigNumber } from "ethers";
 import { ReactElement } from "react";
-import { DollarIcon } from "src/ui/base/DollarIcon";
+import { Button } from "src/ui/base/Button/Button";
 import {
   useAccount,
   usePrepareContractWrite,
@@ -27,13 +27,8 @@ export function MintButton({
   });
   const { write: mintTokens } = useContractWrite(mintConfig);
   return (
-    <button
-      className="daisy-btn-outline daisy-btn-success daisy-btn "
-      disabled={!mintTokens}
-      onClick={() => mintTokens?.()}
-    >
-      <DollarIcon />
+    <Button variant="sun" disabled={!mintTokens} onClick={() => mintTokens?.()}>
       Mint {token?.symbol}
-    </button>
+    </Button>
   );
 }
