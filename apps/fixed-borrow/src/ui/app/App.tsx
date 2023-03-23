@@ -1,6 +1,6 @@
 import { SparkGoerliAddresses } from "@hyperdrive/spark";
 import { ReactElement, useState } from "react";
-import { formatUnits, parseUnits } from "ethers/lib/utils.js";
+import { formatUnits, parseEther, parseUnits } from "ethers/lib/utils.js";
 import { BigNumber } from "ethers";
 import { useUserAccountData } from "src/ui/loans/hooks/useUserAccountData";
 import { useAccount, useToken } from "wagmi";
@@ -9,6 +9,7 @@ import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { HyperdriveGoerliAddresses } from "@hyperdrive/core";
 import { LoanCard } from "src/ui/loans/LoanCard/LoanCard";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { MintButton } from "src/ui/faucet/MintButton";
 
 console.log(SparkGoerliAddresses);
 console.log(HyperdriveGoerliAddresses);
@@ -58,6 +59,16 @@ export default function App(): ReactElement {
     <div className="col-span-2 grid">
       <div className="flex justify-between gap-2 p-4">
         <h4 className="font-bold text-white">Fixed Borrow Demo</h4>
+        <div className="flex gap-2">
+          <MintButton
+            tokenAddress={SparkGoerliAddresses.wstETH_token}
+            amount={parseEther("100")}
+          />
+          <MintButton
+            tokenAddress={SparkGoerliAddresses.DAI_token}
+            amount={parseEther("10000")}
+          />
+        </div>
         <ConnectButton showBalance={false} />
       </div>
       <div className="flex min-h-[75vh] w-full flex-col items-center justify-center py-[10vh] px-[4vw]">
