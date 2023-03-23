@@ -26,7 +26,7 @@ export function BorrowInput({
   });
 
   const availableToDepositLabel = balanceOf
-    ? `Available to deposit: ${formatBalance(balanceOf.formatted, 2)} ${
+    ? `Available to borrow: ${formatBalance(balanceOf.formatted, 2)} ${
         tokenMetadata?.symbol
       }`
     : undefined;
