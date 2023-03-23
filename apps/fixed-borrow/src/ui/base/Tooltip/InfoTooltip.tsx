@@ -2,7 +2,7 @@ import { ReactElement } from "react";
 import { InformationCircleIcon } from "@heroicons/react/24/outline";
 import { Tooltip, TooltipProps } from "./Tooltip";
 
-interface InfoTooltipProps extends Exclude<TooltipProps, "children"> {}
+interface InfoTooltipProps extends TooltipProps {}
 
 export function InfoTooltip(props: InfoTooltipProps): ReactElement {
   return (
