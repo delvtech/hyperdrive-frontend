@@ -96,20 +96,22 @@ export function MarketsTable(): ReactElement {
         </div>
       </div>
 
-      <SortableGridTable
-        headingRowClassName="grid-cols-7 bg-transparent text-giga-blue-100 font-quantico text-md [&>*]:p-2"
-        bodyRowClassName="grid-cols-7 bg-transparent text-off-white font-rubik [&>*]:p-2"
-        cols={[
-          "Name",
-          "Yield Source",
-          "Token",
-          "Liquidity",
-          "Long APR",
-          "Short APR",
-          "LP APR",
-        ]}
-        rows={fakeRowData}
-      />
+      <div>
+        <SortableGridTable
+          headingRowClassName="grid-cols-7 bg-transparent text-giga-blue-100 font-quantico text-md [&>*]:p-5"
+          bodyRowClassName="grid-cols-7 bg-transparent text-off-white font-rubik odd:bg-base-300 [&>*]:p-5"
+          cols={[
+            "Name",
+            "Yield Source",
+            "Token",
+            "Liquidity",
+            "Long APR",
+            "Short APR",
+            "LP APR",
+          ]}
+          rows={fakeRowData}
+        />
+      </div>
     </div>
   );
 }
