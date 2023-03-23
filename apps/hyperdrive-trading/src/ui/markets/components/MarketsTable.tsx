@@ -55,11 +55,9 @@ export function MarketsTable(): ReactElement {
   const protocols = config.protocols;
   const termLengths = config.supportedTermLengths;
 
-  const [selectedProtocolFilter, setSelectedProtocolFilter] = useState<
-    string | "All"
-  >("All");
+  const [, setSelectedProtocolFilter] = useState<string | "All">("All");
 
-  const [selectedTermLength, setSelectedTermLength] = useState<
+  const [, setSelectedTermLength] = useState<
     (typeof termLengths)[number] | "All"
   >("All");
 
