@@ -1,3 +1,4 @@
+import { SparkGoerliAddresses } from "@hyperdrive/spark";
 import { ReactElement } from "react";
 import { Stat } from "src/ui/base/Stat/Stat";
 import { AssetIcon } from "src/ui/token/AssetIcon";
@@ -8,7 +9,7 @@ export function LoanCardHeader({}: LoanCardHeaderProps): ReactElement {
   return (
     <div className="flex w-full justify-between">
       <Stat
-        icon={<AssetIcon assetId="DAI" large />}
+        icon={<AssetIcon address={SparkGoerliAddresses.DAI_token} large />}
         stat="DAI"
         label="1 DAI = $1"
         alignment="left"
