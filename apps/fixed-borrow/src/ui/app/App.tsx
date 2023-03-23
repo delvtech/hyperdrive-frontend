@@ -55,9 +55,15 @@ export default function App(): ReactElement {
   );
 
   return (
-    <div className="flex min-h-[75vh] w-full flex-col items-center justify-center py-[10vh] px-[4vw]">
-      <div className="max-w-4xl">
-        <LoanCard />
+    <div className="col-span-2 grid">
+      <div className="flex justify-between gap-2 p-4">
+        <h4 className="font-bold text-white">Fixed Borrow Demo</h4>
+        <ConnectButton showBalance={false} />
+      </div>
+      <div className="flex min-h-[75vh] w-full flex-col items-center justify-center py-[10vh] px-[4vw]">
+        <div className="max-w-4xl">
+          <LoanCard />
+        </div>
       </div>
     </div>
   );
