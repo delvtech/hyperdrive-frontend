@@ -7,7 +7,7 @@ import { InfoTooltip } from "src/ui/base/Tooltip/InfoTooltip";
 import { Well } from "src/ui/base/Well/Well";
 import { BorrowInput } from "src/ui/loans/BorrowInput/BorrowInput";
 import { LoanCardHeader } from "src/ui/loans/LoanCard/LoanCardHeader";
-import { SupplyInput } from "src/ui/loans/SupplyInput";
+import { SupplyInput } from "src/ui/loans/SupplyInput/SupplyInput";
 import { TermLength } from "src/ui/shorts/termLength";
 
 interface LoanCardProps {}

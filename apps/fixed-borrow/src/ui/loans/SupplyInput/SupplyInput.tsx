@@ -35,10 +35,7 @@ export function SupplyInput({
       value={value}
       maxValue={balanceOf?.formatted}
       primaryLabel="Supply"
-      icon={
-        // TODO: Don't hardcode this to wsteth
-        <AssetBadge assetId="wstETH" />
-      }
+      icon={<AssetBadge address={tokenAddress} />}
       placeholderText="0"
       secondaryLabel={availableToDepositLabel}
       onChange={onChange}

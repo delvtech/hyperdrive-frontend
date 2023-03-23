@@ -2,7 +2,6 @@ import { ReactElement } from "react";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { Address, useAccount, useBalance, useToken } from "wagmi";
 import { NumericInput } from "src/ui/base/NumericInput/NumericInput";
-import { AssetIcon } from "src/ui/token/AssetIcon";
 import { AssetBadge } from "src/ui/token/AssetBadge";
 
 interface BorrowInputProps {
@@ -26,7 +25,7 @@ export function BorrowInput({
   });
 
   const availableToDepositLabel = balanceOf
-    ? `Available to deposit: ${formatBalance(balanceOf.formatted, 2)} ${
+    ? `Available to borrow: ${formatBalance(balanceOf.formatted, 2)} ${
         tokenMetadata?.symbol
       }`
     : undefined;
@@ -36,10 +35,7 @@ export function BorrowInput({
       value={value}
       maxValue={balanceOf?.formatted}
       primaryLabel="Borrow"
-      icon={
-        // TODO: Don't hardcode this to dai
-        <AssetBadge assetId="DAI" />
-      }
+      icon={<AssetBadge address={tokenAddress} />}
       placeholderText="0"
       secondaryLabel={availableToDepositLabel}
       onChange={onChange}

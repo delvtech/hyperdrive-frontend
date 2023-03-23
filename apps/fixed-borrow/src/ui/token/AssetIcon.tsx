@@ -1,24 +1,26 @@
 import { ReactElement } from "react";
-import daiLogo from "src/assets/DAI.svg";
-import wstethLogo from "src/assets/wsteth.svg";
-import { AssetId } from "./AssetId";
+import { AssetIcons } from "src/ui/token/iconConfig";
+import { Address, useNetwork, useToken } from "wagmi";
 
 interface AssetIconProps {
-  assetId: AssetId;
+  address: Address;
 
   large?: boolean;
 }
 
-const AssetIcons: Record<AssetId, string> = {
-  DAI: daiLogo,
-  wstETH: wstethLogo,
-};
+export function AssetIcon({ address, large }: AssetIconProps): ReactElement {
+  const { chain } = useNetwork();
+  const { data: tokenMetadata } = useToken({ address });
 
-export function AssetIcon({ assetId, large }: AssetIconProps): ReactElement {
+  const assetIcon = chain ? AssetIcons[chain.id][address] : null;
+  if (!assetIcon) {
+    return <span className={large ? "h-12 w-12" : "h-6 w-6"}>🤔</span>;
+  }
+
   return (
     <img
-      src={AssetIcons[assetId]}
-      alt={assetId}
+      src={assetIcon}
+      alt={tokenMetadata?.symbol}
       className={large ? "h-12 w-12" : "h-6 w-6"}
     />
   );
