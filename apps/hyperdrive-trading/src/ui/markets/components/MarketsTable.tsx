@@ -1,9 +1,13 @@
 /* eslint-disable react/jsx-key */
 
-import { ReactElement } from "react";
+import { ReactElement, useState } from "react";
 import { YieldSourceLabel } from "src/ui/base/components/YieldSourceLabel";
 import { SortableGridTable } from "src/ui/base/tables/SortableGridTable";
 import { TokenLabel } from "src/ui/base/components/TokenLabel";
+import Button from "src/ui/base/components/Button";
+import { useHyperdriveConfig } from "src/config/hooks/useHyperdriveConfig";
+import { useChainId } from "wagmi";
+import { SupportedChainId } from "src/config/hyperdrive.config";
 
 const fakeRowData = [
   [
@@ -44,7 +48,20 @@ const fakeRowData = [
   ],
 ];
 
+// TODO get from config
+type Protocol = string;
+
 export function MarketsTable(): ReactElement {
+  const chainId = useChainId();
+  const config = useHyperdriveConfig(chainId as SupportedChainId);
+
+  const protocols = config.protocols;
+  const termLengths = config.supportedTermLengths;
+
+  const [selectedProtocolFilter, setSelectedProtocolFilter] = useState<
+    string | "All"
+  >("All");
+
   return (
     <div className="space-y-6 rounded bg-base-200 p-10">
       <h2 className="font-quantico text-3xl font-bold text-off-white">
@@ -60,40 +77,27 @@ export function MarketsTable(): ReactElement {
 
         {/* TODO: abstract to own component, both the button group and button */}
         <div className="flex flex-wrap gap-2">
-          <button className="whitespace-nowrap border border-giga-blue-300 bg-transparent px-6 py-2 font-quantico text-hyper-green hover:bg-giga-blue-300">
+          <Button onClick={() => setSelectedProtocolFilter("All")}>
             All Markets
-          </button>
+          </Button>
 
-          <button className="whitespace-nowrap border border-giga-blue-300 bg-transparent px-6 py-2 font-quantico text-hyper-green hover:bg-giga-blue-300">
-            Aave
-          </button>
-
-          <button className="whitespace-nowrap border border-giga-blue-300 bg-transparent px-6 py-2 font-quantico text-hyper-green hover:bg-giga-blue-300">
-            Curve
-          </button>
-
-          <button className="whitespace-nowrap border border-giga-blue-300 bg-transparent px-6 py-2 font-quantico text-hyper-green hover:bg-giga-blue-300">
-            Maker
-          </button>
-
-          <button className="whitespace-nowrap border border-giga-blue-300 bg-transparent px-6 py-2 font-quantico text-hyper-green hover:bg-giga-blue-300">
-            Yearn
-          </button>
+          {protocols.map((protocol) => (
+            <Button
+              key={`protocol-${protocol}`}
+              onClick={() => setSelectedProtocolFilter(protocol)}
+            >
+              {protocol}
+            </Button>
+          ))}
         </div>
+      </div>
 
-        <div className="flex flex-wrap gap-2">
-          <button className="whitespace-nowrap border border-giga-blue-300 bg-transparent px-6 py-2 font-quantico text-hyper-green hover:bg-giga-blue-300">
-            3 months
-          </button>
-
-          <button className="whitespace-nowrap border border-giga-blue-300 bg-transparent px-6 py-2 font-quantico text-hyper-green hover:bg-giga-blue-300">
-            6 months
-          </button>
-
-          <button className="whitespace-nowrap border border-giga-blue-300 bg-transparent px-6 py-2 font-quantico text-hyper-green hover:bg-giga-blue-300">
-            12 months
-          </button>
-        </div>
+      <div className="flex flex-wrap gap-2">
+        {termLengths.map((termLength) => (
+          <Button key={`termLengths-${termLength}-months`} onClick={() => {}}>
+            {termLength} months
+          </Button>
+        ))}
       </div>
 
       <SortableGridTable
