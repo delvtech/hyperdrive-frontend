@@ -27,7 +27,7 @@ export function MintButton({
   });
   const { write: mintTokens } = useContractWrite(mintConfig);
   return (
-    <Button variant="sun" disabled={!mintTokens} onClick={() => mintTokens?.()}>
+    <Button disabled={!mintTokens} onClick={() => mintTokens?.()}>
       Mint {token?.symbol}
     </Button>
   );
