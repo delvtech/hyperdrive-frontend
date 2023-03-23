@@ -3,6 +3,7 @@ import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { Address, useAccount, useBalance, useToken } from "wagmi";
 import { NumericInput } from "src/ui/base/NumericInput/NumericInput";
 import { AssetIcon } from "src/ui/token/AssetIcon";
+import { AssetBadge } from "src/ui/token/AssetBadge";
 
 interface BorrowInputProps {
   tokenAddress: Address;
@@ -37,7 +38,7 @@ export function BorrowInput({
       primaryLabel="Borrow"
       icon={
         // TODO: Don't hardcode this to dai
-        <AssetIcon assetId="dai" />
+        <AssetBadge assetId="DAI" />
       }
       placeholderText="0"
       secondaryLabel={availableToDepositLabel}
