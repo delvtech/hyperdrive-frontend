@@ -12,6 +12,7 @@ module.exports = {
       colors: {
         base: "#171B2C",
         "base-200": "#0E111B",
+        "base-300": "#161A29",
         "hyper-pink": "#F4B1FF",
         "hyper-green": "#61E4A3",
         "off-white": "#F0F0F0",
