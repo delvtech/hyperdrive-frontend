@@ -4,7 +4,7 @@ import {
 } from "src/config/hyperdrive.config";
 import { HyperdriveConfig } from "src/config/HyperdriveConfig";
 
-export function useHyperdriveConfig(
+export function getHyperdriveConfig(
   chainId: SupportedChainId,
 ): HyperdriveConfig {
   return hyperdriveConfigs[chainId];

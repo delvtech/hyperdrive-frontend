@@ -5,7 +5,7 @@ import { YieldSourceLabel } from "src/ui/base/components/YieldSourceLabel";
 import { SortableGridTable } from "src/ui/base/tables/SortableGridTable";
 import { TokenLabel } from "src/ui/base/components/TokenLabel";
 import Button from "src/ui/base/components/Button";
-import { useHyperdriveConfig } from "src/config/hooks/useHyperdriveConfig";
+import { getHyperdriveConfig } from "src/config/utils/getHyperdriveConfig";
 import { useChainId } from "wagmi";
 import { SupportedChainId } from "src/config/hyperdrive.config";
 
@@ -48,18 +48,19 @@ const fakeRowData = [
   ],
 ];
 
-// TODO get from config
-type Protocol = string;
-
 export function MarketsTable(): ReactElement {
   const chainId = useChainId();
-  const config = useHyperdriveConfig(chainId as SupportedChainId);
+  const config = getHyperdriveConfig(chainId as SupportedChainId);
 
   const protocols = config.protocols;
   const termLengths = config.supportedTermLengths;
 
   const [selectedProtocolFilter, setSelectedProtocolFilter] = useState<
     string | "All"
+  >("All");
+
+  const [selectedTermLength, setSelectedTermLength] = useState<
+    (typeof termLengths)[number] | "All"
   >("All");
 
   return (
@@ -94,7 +95,10 @@ export function MarketsTable(): ReactElement {
 
       <div className="flex flex-wrap gap-2">
         {termLengths.map((termLength) => (
-          <Button key={`termLengths-${termLength}-months`} onClick={() => {}}>
+          <Button
+            key={`termLengths-${termLength}-months`}
+            onClick={() => setSelectedTermLength(termLength)}
+          >
             {termLength} months
           </Button>
         ))}
