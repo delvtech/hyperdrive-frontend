@@ -5,6 +5,7 @@ import { MarketStatistics, MarketTableRowData } from "src/ui/markets/types";
 // TODO: stubbed function for now
 // ideally fetched from an api
 function getMarketStatistics(
+  /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
   market: HyperdriveMarket,
 ): Promise<MarketStatistics> {
   return Promise.resolve({
