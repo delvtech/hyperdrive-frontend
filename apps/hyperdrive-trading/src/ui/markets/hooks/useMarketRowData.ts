@@ -27,7 +27,6 @@ export function useMarketRowData(
           return {
             market,
             ...stats,
-            liquidity: stats.liquidity.toString(),
           };
         }),
       );
