@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import { ReactElement } from "react";
 import { AssetIcons } from "src/ui/token/iconConfig";
 import { Address, useNetwork, useToken } from "wagmi";
@@ -12,9 +13,9 @@ export function AssetIcon({ address, large }: AssetIconProps): ReactElement {
   const { chain } = useNetwork();
   const { data: tokenMetadata } = useToken({ address });
 
-  const assetIcon = chain ? AssetIcons[chain.id][address] : null;
+  const assetIcon = chain ? AssetIcons[chain.id]?.[address] : null;
   if (!assetIcon) {
-    return <span className={large ? "h-12 w-12" : "h-6 w-6"}>🤔</span>;
+    return <span className={classNames({ "text-h2": large })}>🤔</span>;
   }
 
   return (
