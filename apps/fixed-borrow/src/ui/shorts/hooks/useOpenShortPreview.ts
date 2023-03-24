@@ -8,8 +8,8 @@ const makerDsrHyperdriveAddress =
 
 interface UseOpenShortPreviewOptions {
   hyperdrivePool: Address;
-  bondAmount: BigNumber | undefined;
-  maxDeposit: BigNumber | undefined;
+  bondAmount: bigint | undefined;
+  maxDeposit: bigint | undefined;
   destination: Address | undefined;
   asUnderlying?: boolean;
 }
@@ -21,7 +21,7 @@ export function useOpenShortPreview({
   destination,
   asUnderlying = true,
 }: UseOpenShortPreviewOptions): {
-  openShortPreview: BigNumber | undefined;
+  openShortPreview: bigint | undefined;
   openShortPreviewStatus: "error" | "success" | "loading";
 } {
   // There is no callStatic wagmi hook, so we gotta call the contract directly,
@@ -47,13 +47,16 @@ export function useOpenShortPreview({
     ],
     enabled: queryEnabled,
     queryFn: queryEnabled
-      ? () =>
-          makerDsrHyperdrive.callStatic.openShort(
-            bondAmount,
-            maxDeposit,
-            destination,
-            asUnderlying,
-          ) as unknown as Promise<BigNumber>
+      ? async () => {
+          const openShortResult =
+            (await makerDsrHyperdrive.callStatic.openShort(
+              BigNumber.from(bondAmount),
+              BigNumber.from(maxDeposit),
+              destination,
+              asUnderlying,
+            )) as unknown as BigNumber;
+          return openShortResult.toBigInt();
+        }
       : undefined,
   });
   return { openShortPreview: data, openShortPreviewStatus: status };
