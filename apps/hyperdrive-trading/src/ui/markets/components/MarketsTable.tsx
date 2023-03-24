@@ -5,11 +5,11 @@ import { ReactElement, useMemo, useState } from "react";
 import { SupportedChainId } from "src/config/hyperdrive.config";
 import { getHyperdriveConfig } from "src/config/utils/getHyperdriveConfig";
 import Button from "src/ui/base/components/Button";
-import { ProtocolLabel } from "src/ui/base/components/ProtocolLabel";
-import { TokenLabel } from "src/ui/base/components/TokenLabel";
 import { Row, SortableGridTable } from "src/ui/base/tables/SortableGridTable";
 import { useMarketRowData } from "src/ui/markets/hooks/useMarketRowData";
 import { MarketTableRowData } from "src/ui/markets/types";
+import { ProtocolLabel } from "src/ui/protocol/components/ProtocolLabel";
+import { TokenLabel } from "src/ui/token/components/TokenLabel";
 import { useChainId } from "wagmi";
 
 const ALL_MARKETS_KEY = "All Markets";

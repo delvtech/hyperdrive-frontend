@@ -1,7 +1,7 @@
-import { FeaturedMarkets } from "src/ui/markets/components/FeaturedMarkets";
-import { ProtocolStatsBar } from "src/protocol/components/ProtocolStatsBar";
 import { ReactElement } from "react";
+import { FeaturedMarkets } from "src/ui/markets/components/FeaturedMarkets";
 import { MarketsTable } from "src/ui/markets/components/MarketsTable";
+import { ProtocolStatsBar } from "src/ui/protocol/components/ProtocolStatsBar";
 
 export function Markets(): ReactElement {
   return (
