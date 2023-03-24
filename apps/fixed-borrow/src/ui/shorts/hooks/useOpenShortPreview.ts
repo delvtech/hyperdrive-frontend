@@ -39,11 +39,17 @@ export function useOpenShortPreview({
 
   const queryEnabled =
     !!bondAmount && !!maxDeposit && !!destination && !!makerDsrHyperdrive;
+
   const { data, status } = useQuery({
     queryKey: [
       "preview-open-short",
       makerDsrHyperdriveAddress,
-      { bondAmount, maxDeposit, destination, asUnderlying },
+      {
+        bondAmount: bondAmount?.toString(),
+        maxDeposit: maxDeposit?.toString(),
+        destination: destination?.toString(),
+        asUnderlying: asUnderlying?.toString(),
+      },
     ],
     enabled: queryEnabled,
     queryFn: queryEnabled
