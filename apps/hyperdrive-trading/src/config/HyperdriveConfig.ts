@@ -1,14 +1,15 @@
+export interface Protocol {
+  name: string;
+}
+
 export interface HyperdriveConfig<
-  Protocols extends readonly string[] = readonly string[],
-  TermLengths extends readonly number[] = readonly number[],
+  Protocols extends readonly Protocol[] = readonly Protocol[],
 > {
   /**
    * The chain id where the contracts are deployed
    */
   chainId: number;
-  protocols: Protocols;
-  supportedTermLengths: TermLengths;
-  markets: HyperdriveMarket<Protocols[number], TermLengths[number]>[];
+  markets: HyperdriveMarket<Protocols[number]>[];
 }
 
 export interface ContractConfig {
@@ -30,9 +31,8 @@ export interface Token {
 /**
  * Hyperdrive market interface
  */
-export interface HyperdriveMarket<P extends string, T extends number>
-  extends ContractConfig {
-  termLength: T;
+export interface HyperdriveMarket<P extends Protocol> extends ContractConfig {
+  termLength: number;
   protocol: P;
   baseToken: Token;
 }

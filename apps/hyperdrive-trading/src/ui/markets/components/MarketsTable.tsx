@@ -9,6 +9,8 @@ import { getHyperdriveConfig } from "src/config/utils/getHyperdriveConfig";
 import { useChainId } from "wagmi";
 import { SupportedChainId } from "src/config/hyperdrive.config";
 
+import uniqBy from "lodash.uniqby";
+
 const fakeRowData = [
   [
     <span className="font-semibold">Maker DSR</span>,
@@ -52,14 +54,15 @@ export function MarketsTable(): ReactElement {
   const chainId = useChainId();
   const config = getHyperdriveConfig(chainId as SupportedChainId);
 
-  const protocols = config.protocols;
-  const termLengths = config.supportedTermLengths;
+  const allProtocols = config.markets.map((market) => market.protocol);
+  const protocols = uniqBy(allProtocols, (protocol) => protocol.name);
 
-  const [, setSelectedProtocolFilter] = useState<string | "All">("All");
+  const allTermLengths = config.markets.map((market) => market.termLength);
+  const termLengths = uniqBy(allTermLengths, (termLength) => termLength);
 
-  const [, setSelectedTermLength] = useState<
-    (typeof termLengths)[number] | "All"
-  >("All");
+  const [, setSelectedProtocolFilter] = useState<string>("All");
+
+  const [, setSelectedTermLength] = useState<string>("All");
 
   return (
     <div className="space-y-6 rounded bg-base-200 p-10">
@@ -83,9 +86,9 @@ export function MarketsTable(): ReactElement {
           {protocols.map((protocol) => (
             <Button
               key={`protocol-${protocol}`}
-              onClick={() => setSelectedProtocolFilter(protocol)}
+              onClick={() => setSelectedProtocolFilter(protocol.name)}
             >
-              {protocol}
+              {protocol.name}
             </Button>
           ))}
         </div>
@@ -95,7 +98,7 @@ export function MarketsTable(): ReactElement {
         {termLengths.map((termLength) => (
           <Button
             key={`termLengths-${termLength}-months`}
-            onClick={() => setSelectedTermLength(termLength)}
+            onClick={() => setSelectedTermLength(termLength.toString())}
           >
             {termLength} months
           </Button>
