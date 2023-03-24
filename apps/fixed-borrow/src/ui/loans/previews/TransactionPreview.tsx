@@ -110,7 +110,9 @@ export function TransactionPreview({
                   ? `${formatBalance(borrowAmount)} ${borrowTokenData.symbol}`
                   : formatBalance(borrowAmount)}
               </p>
-              <p>{`${valueToShort?.formattedShortAmount ?? 0} Short`}</p>
+              <p>{`${formatBalance(
+                valueToShort?.formattedShortAmount ?? 0,
+              )} Short`}</p>
             </div>
           }
         />
