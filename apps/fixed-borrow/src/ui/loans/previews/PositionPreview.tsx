@@ -96,16 +96,12 @@ export function PositionPreview({
         <PreviewRow
           label="Loan-to-value"
           value={(() => {
-            console.log("here");
             if (!account) {
-              console.log("!account");
               return "0";
             }
             if (!userAccountData) {
-              console.log("!userAccountData");
               return <Skeleton width={120} />;
             }
-            console.log("ltv", userAccountData.ltv);
             return `${formatBigInt(
               userAccountData.ltv,
               MARKET_BASE_DECIMALS,
