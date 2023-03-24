@@ -1,5 +1,6 @@
 export interface Protocol {
   name: string;
+  iconUrl?: string;
 }
 
 export interface HyperdriveConfig<
@@ -31,8 +32,10 @@ export interface Token {
 /**
  * Hyperdrive market interface
  */
-export interface HyperdriveMarket<P extends Protocol> extends ContractConfig {
-  termLength: number;
-  protocol: P;
+export interface HyperdriveMarket<P extends Protocol = Protocol>
+  extends ContractConfig {
   baseToken: Token;
+  name: string;
+  protocol: P;
+  termLength: number;
 }
