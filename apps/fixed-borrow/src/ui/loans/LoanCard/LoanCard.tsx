@@ -4,11 +4,12 @@ import { Button } from "src/ui/base/Button/Button";
 import { Card } from "src/ui/base/Card/Card";
 import { Tabs } from "src/ui/base/Tabs/Tabs";
 import { InfoTooltip } from "src/ui/base/Tooltip/InfoTooltip";
-import { Well } from "src/ui/base/Well/Well";
 import { BorrowInput } from "src/ui/loans/BorrowInput/BorrowInput";
 import { LoanCardHeader } from "src/ui/loans/LoanCard/LoanCardHeader";
 import { SupplyInput } from "src/ui/loans/SupplyInput/SupplyInput";
 import { TermLength } from "src/ui/shorts/termLength";
+import { PositionPreview } from "src/ui/loans/previews/PositionPreview";
+import { TransactionPreview } from "src/ui/loans/previews/TransactionPreview";
 
 interface LoanCardProps {}
 
@@ -80,69 +81,21 @@ export function LoanCard({}: LoanCardProps): ReactElement {
               <h3 className="mb-1 text-lg font-bold leading-lg">
                 Position Preview
               </h3>
-              {/* Position Preview */}
-              <Well>
-                <div className="space-y-4 leading-sm">
-                  <div className="flex justify-between">
-                    <span className="text-lightText">Collateral</span>
-                    <span>$119,338.90</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-lightText">Debt</span>
-                    <span>7,378 DAI</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-lightText">Borrow limit</span>
-                    <span>85,794.16 DAI</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-lightText">Loan-to-value</span>
-                    <span>6%</span>
-                  </div>
-                </div>
-              </Well>
+              <PositionPreview
+                borrowTokenAddress={SparkGoerliAddresses.DAI_token}
+              />
             </div>
             <div>
               <h3 className="mb-1 text-lg font-bold  leading-lg">
                 Transaction Preview
               </h3>
-              {/* Position Preview */}
-              <Well>
-                <div className="space-y-4 leading-sm">
-                  <div className="flex justify-between">
-                    <span className="text-lightText">Deposit Amount</span>
-                    <span>7 wstETH</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-lightText">
-                      Desired borrow amount
-                    </span>
-                    <span>2,500 DAI</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="flex items-center gap-2 text-lightText">
-                      Hyperdrive short
-                      <InfoTooltip content="The amount required to lock in the fixed rate via a Hyperdrive short." />
-                    </span>
-                    <span>4.4321 DAI</span>
-                  </div>
-                  <div className="flex justify-between font-bold">
-                    <span className="text-lightText">Total new debt</span>
-                    <span>2,504.4321 DAI</span>
-                  </div>
-                  <div className="flex justify-between font-bold">
-                    <span className="text-lightText">You receive</span>
-                    <span className="text-right">
-                      2,500 DAI
-                      <br />
-                      2,500 Short
-                    </span>
-                  </div>
-                </div>
-              </Well>
+              <TransactionPreview
+                borrowAmount={borrowAmount}
+                borrowTokenAddress={SparkGoerliAddresses.DAI_token}
+                supplyAmount={supplyAmount}
+                supplyTokenAddress={SparkGoerliAddresses.wstETH_token}
+              />
             </div>
-            {/* Transaction Preview */}
-            {/* <Well /> */}
           </div>
         </div>
       </Card>
