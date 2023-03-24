@@ -1,6 +1,6 @@
 import { SparkGoerliAddresses } from "@hyperdrive/spark";
 import { ReactElement, useState } from "react";
-import { formatUnits, parseEther, parseUnits } from "ethers/lib/utils.js";
+import { formatUnits, parseEther } from "ethers/lib/utils.js";
 import { BigNumber } from "ethers";
 import { useUserAccountData } from "src/ui/loans/hooks/useUserAccountData";
 import { useAccount, useToken } from "wagmi";
@@ -32,16 +32,6 @@ export default function App(): ReactElement {
   const [collateralAmountInput, setCollateralAmountInput] = useState<
     BigNumber | undefined
   >();
-  // TODO: previewSupplyBalance should also be used to calculate the preview
-  // loan to value
-  const previewSupplyBalance = collateralAmountInput?.gt(0)
-    ? calculateBaseValueOfCurrentCollateralAndNewAmount(
-        userAccountData?.totalCollateralBase,
-        collateralAmountInput,
-        collateralMetadata?.decimals,
-        collateralPrice,
-      )
-    : undefined;
 
   // The debt amount state management follows the same pattern as the
   // collateralAmount. Whenever the BorrowDebtForm calls it's onChange prop, the
@@ -50,10 +40,6 @@ export default function App(): ReactElement {
   const [debtAmountInput, setDebtAmountInput] = useState<
     BigNumber | undefined
   >();
-  const valueToShort = calculateValueToShort(
-    debtAmountInput,
-    debtTokenMetadata?.decimals,
-  );
 
   return (
     <div className="col-span-2 grid">
@@ -102,17 +88,4 @@ function calculateBaseValueOfCurrentCollateralAndNewAmount(
     +totalCollateralBaseValue + newCollateralAmountBaseValue,
   );
   return afterAmountCollateralValueBase;
-}
-function calculateValueToShort(
-  debtAmountInput: BigNumber | undefined,
-  debtTokenDecimals: number | undefined,
-) {
-  if (!debtAmountInput) {
-    return;
-  }
-
-  const valueToShortAsNumber =
-    +formatUnits(debtAmountInput, debtTokenDecimals) * 1.25;
-
-  return parseUnits(valueToShortAsNumber.toString(), debtTokenDecimals);
 }
