@@ -23,6 +23,7 @@
     "typecheck": "tsc --project tsconfig.json --noEmit"
   },
   "dependencies": {
+    "@heroicons/react": "^2.0.16",
     "@rainbow-me/rainbowkit": "^0.12.1",
     "@tanstack/react-query": "^4.24.10",
     "buffer": "^6.0.3",

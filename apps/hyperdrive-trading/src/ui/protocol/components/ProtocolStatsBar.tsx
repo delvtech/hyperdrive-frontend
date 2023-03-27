@@ -5,8 +5,8 @@ interface ProtocolStatsBarProps {}
 
 export function ProtocolStatsBar({}: ProtocolStatsBarProps): ReactElement {
   return (
-    <div className="grid grid-flow-row items-center justify-start gap-y-8 gap-x-28 rounded bg-base-200 px-12 py-8 md:grid-flow-col md:py-4">
-      <h2 className="font-quantico text-3xl font-bold text-off-white">
+    <div className="grid items-center justify-start grid-flow-row px-12 py-8 rounded gap-y-8 gap-x-28 bg-base-200 md:grid-flow-col md:py-4">
+      <h2 className="text-3xl font-bold font-quantico text-off-white">
         Protocol
       </h2>
 
