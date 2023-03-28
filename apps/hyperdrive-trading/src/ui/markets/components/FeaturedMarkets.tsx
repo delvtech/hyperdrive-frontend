@@ -5,15 +5,16 @@ interface FeaturedMarketsProps {}
 
 export function FeaturedMarkets({}: FeaturedMarketsProps): ReactElement {
   return (
-    <div className="flex flex-col gap-y-12 rounded bg-base-200 p-10">
-      <h2 className="font-quantico text-2xl font-bold text-off-white">
-        Featured Markets ✨
+    <div className="space-y-4">
+      <h2 className="text-xl font-bold font-akira text-hyper-blue-100">
+        Featured Markets
       </h2>
-
-      <div className="grid grid-cols-1 gap-x-20 gap-y-10 md:grid-cols-3">
-        <FeaturedMarket />
-        <FeaturedMarket />
-        <FeaturedMarket />
+      <div className="flex flex-col p-10 rounded gap-y-12 bg-base-100">
+        <div className="grid grid-cols-1 gap-x-20 gap-y-10 md:grid-cols-3">
+          <FeaturedMarket />
+          <FeaturedMarket />
+          <FeaturedMarket />
+        </div>
       </div>
     </div>
   );

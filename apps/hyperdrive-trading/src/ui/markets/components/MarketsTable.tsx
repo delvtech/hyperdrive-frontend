@@ -48,85 +48,86 @@ export function MarketsTable(): ReactElement {
   }, [marketsRowData, protocolFilter, termLengthFilter]);
 
   return (
-    <div className="p-10 space-y-6 rounded bg-base-200">
-      <h2 className="text-3xl font-bold font-quantico text-off-white">
+    <div className="space-y-4">
+      <h2 className="text-xl font-bold font-akira text-hyper-blue-100">
         Markets
       </h2>
+      <div className="p-10 space-y-6 rounded bg-base-100">
+        <div className="flex flex-wrap items-center gap-6">
+          {/* TODO: abstract to own component */}
+          <input
+            className="px-6 py-2 text-center bg-transparent border rounded border-hyper-blue-400 font-quantico text-hyper-blue-300 placeholder:text-hyper-blue-400"
+            placeholder="Search Markets"
+          />
 
-      <div className="flex flex-wrap items-center gap-6">
-        {/* TODO: abstract to own component */}
-        <input
-          className="px-6 py-2 text-center bg-transparent border rounded border-giga-blue-300 font-quantico text-giga-blue-100 placeholder:text-giga-blue-300"
-          placeholder="Search Markets"
-        />
+          <div className="flex flex-wrap gap-2">
+            <Button
+              active={protocolFilter === ALL_MARKETS_KEY}
+              onClick={() => setSelectedProtocolFilter(ALL_MARKETS_KEY)}
+            >
+              All Markets
+            </Button>
+
+            {protocols.map((protocol) => (
+              <Button
+                key={`protocol-${protocol}`}
+                active={protocolFilter === protocol.name}
+                onClick={() => setSelectedProtocolFilter(protocol.name)}
+              >
+                {protocol.name}
+              </Button>
+            ))}
+          </div>
+        </div>
 
         <div className="flex flex-wrap gap-2">
-          <Button
-            active={protocolFilter === ALL_MARKETS_KEY}
-            onClick={() => setSelectedProtocolFilter(ALL_MARKETS_KEY)}
-          >
-            All Markets
-          </Button>
-
-          {protocols.map((protocol) => (
+          {termLengths.map((termLength) => (
             <Button
-              key={`protocol-${protocol}`}
-              active={protocolFilter === protocol.name}
-              onClick={() => setSelectedProtocolFilter(protocol.name)}
+              key={`termLengths-${termLength}-months`}
+              active={termLengthFilter === termLength}
+              onClick={() => setSelectedTermLengthFilter(termLength)}
             >
-              {protocol.name}
+              {termLength} months
             </Button>
           ))}
         </div>
-      </div>
 
-      <div className="flex flex-wrap gap-2">
-        {termLengths.map((termLength) => (
-          <Button
-            key={`termLengths-${termLength}-months`}
-            active={termLengthFilter === termLength}
-            onClick={() => setSelectedTermLengthFilter(termLength)}
-          >
-            {termLength} months
-          </Button>
-        ))}
-      </div>
-
-      <div>
-        <SortableGridTable
-          headingRowClassName="grid-cols-7 bg-transparent text-giga-blue-100 font-quantico text-md [&>*]:p-5"
-          bodyRowClassName="grid-cols-7 bg-transparent text-off-white font-rubik [&>*]:p-5"
-          cols={[
-            {
-              cell: "Name",
-              sortKey: "name",
-            },
-            {
-              cell: "Protocol",
-              sortKey: "protocol",
-            },
-            "Token",
-            {
-              cell: "Liquidity",
-              sortKey: "liquidity",
-            },
-            {
-              cell: "Long APR",
-              sortKey: "longAPR",
-            },
-            {
-              cell: "Short APR",
-              sortKey: "shortAPR",
-            },
-            {
-              cell: "LP APR",
-              sortKey: "lpAPR",
-            },
-          ]}
-          rows={filteredMarkets.map((marketRowData) =>
-            createMarketRow(marketRowData),
-          )}
-        />
+        <div>
+          <SortableGridTable
+            headingRowClassName="grid-cols-7 bg-transparent text-hyper-blue-300 font-quantico text-md [&>*]:p-5"
+            bodyRowClassName="grid-cols-7 bg-transparent text-hyper-blue-100 font-rubik [&>*]:p-5"
+            cols={[
+              {
+                cell: "Name",
+                sortKey: "name",
+              },
+              {
+                cell: "Protocol",
+                sortKey: "protocol",
+              },
+              "Token",
+              {
+                cell: "Liquidity",
+                sortKey: "liquidity",
+              },
+              {
+                cell: "Long APR",
+                sortKey: "longAPR",
+              },
+              {
+                cell: "Short APR",
+                sortKey: "shortAPR",
+              },
+              {
+                cell: "LP APR",
+                sortKey: "lpAPR",
+              },
+            ]}
+            rows={filteredMarkets.map((marketRowData) =>
+              createMarketRow(marketRowData),
+            )}
+          />
+        </div>
       </div>
     </div>
   );

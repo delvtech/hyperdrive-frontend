@@ -7,34 +7,50 @@ export function Navbar(): ReactElement {
   const { pathname } = useLocation();
 
   return (
-    <div className="navbar bg-base-200 px-8">
+    <div className="px-8 navbar bg-base-100">
       <div className="navbar-start">
         <Link
           to="/"
-          className="whitespace-nowrap font-akira text-3xl uppercase text-hyper-pink"
+          className="text-3xl uppercase whitespace-nowrap font-akira text-hyper-red"
         >
           Hyperdrive
         </Link>
       </div>
 
-      <div className="navbar-center flex gap-x-12">
+      <div className="flex navbar-center gap-x-12">
         <Link
           to="/markets"
           className={classNames(
-            "border-b-2 border-transparent font-quantico text-xl normal-case text-off-white transition duration-200 hover:border-hyper-green",
+            "font-akira normal-case text-hyper-blue-100 transition duration-200 border-hyper-green hover:hyper-green",
             {
               "font-bold": pathname === "/markets",
+              "border-b-2": pathname === "/markets",
             },
           )}
         >
           Markets
         </Link>
+
+        <Link
+          to="/trade"
+          className={classNames(
+            "font-akira normal-case text-hyper-blue-100 transition duration-200 border-hyper-green hover:hyper-green",
+            {
+              "font-bold": pathname === "/trade",
+              "border-b-2": pathname === "/trade",
+            },
+          )}
+        >
+          Trade
+        </Link>
+
         <Link
           to="/portfolio"
           className={classNames(
-            "border-b-2 border-transparent font-quantico text-xl normal-case text-off-white transition duration-200 hover:border-hyper-green",
+            "font-akira normal-case text-hyper-blue-100 transition duration-200 hover:border-hyper-green border-hyper-green",
             {
-              "font-bold": pathname === "/portfolio",
+              "font-bold": pathname === "/trade",
+              "border-b-2": pathname === "/portfolio",
             },
           )}
         >

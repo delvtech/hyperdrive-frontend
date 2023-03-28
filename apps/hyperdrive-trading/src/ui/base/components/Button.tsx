@@ -17,10 +17,10 @@ export default function Button({
     <button
       className={classNames(
         {
-          "bg-giga-blue-300": active,
+          "bg-hyper-blue-400": active,
           "bg-transparent": !active,
         },
-        "whitespace-nowrap border border-giga-blue-300 px-6 py-2 font-quantico text-hyper-green hover:bg-giga-blue-300",
+        "whitespace-nowrap border border-hyper-blue-400 px-6 py-2 font-quantico text-hyper-green hover:bg-giga-blue-300",
         className,
       )}
       onClick={onClick}
