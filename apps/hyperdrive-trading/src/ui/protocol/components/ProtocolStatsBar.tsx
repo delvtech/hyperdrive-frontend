@@ -6,7 +6,7 @@ interface ProtocolStatsBarProps {}
 export function ProtocolStatsBar({}: ProtocolStatsBarProps): ReactElement {
   return (
     <div className="space-y-4">
-      <h2 className="text-xl font-bold font-akira text-hyper-blue-100">
+      <h2 className="text-xl font-bold font-akira text-section-text">
         Protocol
       </h2>
       <div className="grid items-center justify-start grid-flow-row px-12 py-8 rounded gap-y-8 gap-x-28 bg-base-100 md:grid-flow-col md:py-4">

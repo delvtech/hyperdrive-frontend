@@ -13,7 +13,9 @@ export function FeaturedMarket({}: FeaturedMarketProps): ReactElement {
             src="https://cryptologos.cc/logos/yearn-finance-yfi-logo.png?v=024"
             className="h-6"
           />
-          <span className="text-xl text-hyper-blue-100">USDC Vault</span>
+          <span className="text-xl font-bold text-hyper-blue-100">
+            USDC Vault
+          </span>
         </div>
         <Pill>6 months</Pill>
       </div>

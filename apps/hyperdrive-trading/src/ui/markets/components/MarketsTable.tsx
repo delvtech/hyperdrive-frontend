@@ -49,7 +49,7 @@ export function MarketsTable(): ReactElement {
 
   return (
     <div className="space-y-4">
-      <h2 className="text-xl font-bold font-akira text-hyper-blue-100">
+      <h2 className="text-xl font-bold font-akira text-section-text">
         Markets
       </h2>
       <div className="p-10 space-y-6 rounded bg-base-100">
@@ -142,9 +142,9 @@ function createMarketRow({ market }: MarketTableRowData): Row {
       <ProtocolLabel protocol={market.protocol} />,
       <TokenLabel className="font-semibold" token="DAI" />,
       "$100M",
-      <span className="font-semibold">1.25%</span>,
-      <span className="font-semibold">1.25%</span>,
-      <span className="font-semibold">1.25%</span>,
+      <span>1.25%</span>,
+      <span>1.25%</span>,
+      <span>1.25%</span>,
     ],
   };
 }

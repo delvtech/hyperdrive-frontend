@@ -19,6 +19,7 @@ module.exports = {
         "hyper-blue-200": "#8D96C4",
         "hyper-blue-300": "#7680B8",
         "hyper-blue-400": "#425079",
+        "section-text": "#8C8CC4",
       },
     },
   },

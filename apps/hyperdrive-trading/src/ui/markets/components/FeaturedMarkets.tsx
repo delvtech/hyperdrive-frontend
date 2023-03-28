@@ -6,7 +6,7 @@ interface FeaturedMarketsProps {}
 export function FeaturedMarkets({}: FeaturedMarketsProps): ReactElement {
   return (
     <div className="space-y-4">
-      <h2 className="text-xl font-bold font-akira text-hyper-blue-100">
+      <h2 className="text-xl font-bold font-akira text-section-text">
         Featured Markets
       </h2>
       <div className="flex flex-col p-10 rounded gap-y-12 bg-base-100">
