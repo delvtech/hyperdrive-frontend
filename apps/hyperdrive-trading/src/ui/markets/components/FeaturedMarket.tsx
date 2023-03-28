@@ -1,4 +1,5 @@
 import { ReactElement } from "react";
+import { Pill } from "src/ui/base/components/Pill";
 import { Stat } from "src/ui/base/components/Stat";
 
 interface FeaturedMarketProps {}
@@ -6,15 +7,17 @@ interface FeaturedMarketProps {}
 export function FeaturedMarket({}: FeaturedMarketProps): ReactElement {
   return (
     <div className="flex flex-col gap-y-6 whitespace-nowrap font-quantico">
-      <div className="flex flex-nowrap items-center gap-x-2">
-        <img
-          src="https://cryptologos.cc/logos/yearn-finance-yfi-logo.png?v=024"
-          className="w-6"
-        />
-        <span className="text-xl text-off-white">USDC Vault</span>
-        <span className="whitespace-nowrap rounded-xl bg-giga-blue-300 px-3 py-0.5 font-quantico text-sm text-hyper-green">
-          6 months
-        </span>
+      <div className="flex items-center gap-x-6">
+        <div className="flex items-center gap-x-2">
+          <img
+            src="https://cryptologos.cc/logos/yearn-finance-yfi-logo.png?v=024"
+            className="h-6"
+          />
+          <span className="text-xl font-bold text-hyper-blue-100">
+            USDC Vault
+          </span>
+        </div>
+        <Pill>6 months</Pill>
       </div>
 
       <div className="grid grid-cols-3 gap-x-8">

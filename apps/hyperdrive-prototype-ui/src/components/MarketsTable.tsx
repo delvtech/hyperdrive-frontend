@@ -9,7 +9,7 @@ interface MarketsTableProps {
 
 export function MarketsTable({ markets }: MarketsTableProps): ReactElement {
   return (
-    <table className="text-left text-white border-separate border-spacing-y-4">
+    <table className="border-separate border-spacing-y-4 text-left text-white">
       <thead>
         <th>Token</th>
         <th>Yield Source</th>
@@ -55,7 +55,7 @@ function MarketsTableRow({
           pathname: `/market/${address}`,
         })
       }
-      className="text-black bg-lean hover:bg-racing-green hover:cursor-pointer font-Retro"
+      className="bg-lean font-Retro text-black hover:cursor-pointer hover:bg-racing-green"
     >
       <td>
         <div className="flex items-center gap-x-1">

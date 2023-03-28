@@ -8,10 +8,10 @@ interface StatProps {
 export function Stat({ label, value }: StatProps): ReactElement {
   return (
     <div>
-      <p className="mb-1 whitespace-nowrap font-quantico text-giga-blue-200">
+      <p className="mb-1 whitespace-nowrap font-quantico text-hyper-blue-300">
         {label}
       </p>
-      <p className="whitespace-nowrap font-rubik font-bold text-off-white">
+      <p className="font-bold whitespace-nowrap font-quantico text-hyper-blue-100">
         {value}
       </p>
     </div>
