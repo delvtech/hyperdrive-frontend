@@ -7,12 +7,14 @@ interface FeaturedMarketProps {}
 export function FeaturedMarket({}: FeaturedMarketProps): ReactElement {
   return (
     <div className="flex flex-col gap-y-6 whitespace-nowrap font-quantico">
-      <div className="flex items-center flex-nowrap gap-x-2">
-        <img
-          src="https://cryptologos.cc/logos/yearn-finance-yfi-logo.png?v=024"
-          className="w-6"
-        />
-        <span className="text-xl text-hyper-blue-100">USDC Vault</span>
+      <div className="flex items-center gap-x-6">
+        <div className="flex items-center gap-x-2">
+          <img
+            src="https://cryptologos.cc/logos/yearn-finance-yfi-logo.png?v=024"
+            className="h-6"
+          />
+          <span className="text-xl text-hyper-blue-100">USDC Vault</span>
+        </div>
         <Pill>6 months</Pill>
       </div>
 

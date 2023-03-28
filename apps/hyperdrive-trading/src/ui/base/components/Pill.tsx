@@ -9,7 +9,7 @@ export function Pill({ children, className }: PillProps): ReactElement {
   return (
     <span
       className={classNames(
-        "whitespace-nowrap rounded-xl bg-hyper-blue-400 flex items-center px-3 py-0.5 font-quantico text-sm text-hyper-green",
+        "whitespace-nowrap rounded bg-hyper-blue-400 flex items-center px-3 py-0.5 font-quantico text-sm text-hyper-green",
         className,
       )}
     >
