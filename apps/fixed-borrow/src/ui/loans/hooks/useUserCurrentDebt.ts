@@ -1,5 +1,6 @@
 import { BigNumber } from "ethers";
 import { formatUnits } from "ethers/lib/utils.js";
+import { formatBigInt } from "src/base/bigint/formatBigInt";
 import { useUserReservesData } from "src/ui/loans/hooks/useUserReservesData";
 import { Address, useToken } from "wagmi";
 
@@ -7,7 +8,7 @@ export function useUserCurrentDebt(
   account: Address | undefined,
   debtTokenAddress: Address,
 ): {
-  currentDebt: BigNumber | undefined;
+  currentDebt: bigint | undefined;
   formattedCurrentDebt: string | undefined;
 } {
   const { userReservesData } = useUserReservesData(account);
@@ -15,14 +16,13 @@ export function useUserCurrentDebt(
   const debtTokenReservesData = userReservesData?.find(
     (d) => d.underlyingAsset === debtTokenAddress,
   );
-  const currentDebt =
-    debtTokenReservesData?.scaledVariableDebt || BigNumber.from(0);
+  const currentDebt = debtTokenReservesData?.scaledVariableDebt;
   const formattedCurrentDebt = currentDebt
-    ? formatUnits(currentDebt, debtTokenMetadata?.decimals)
+    ? formatBigInt(currentDebt.toBigInt(), debtTokenMetadata?.decimals)
     : undefined;
 
   return {
-    currentDebt: debtTokenReservesData?.scaledVariableDebt,
+    currentDebt: debtTokenReservesData?.scaledVariableDebt.toBigInt(),
     formattedCurrentDebt: formattedCurrentDebt,
   };
 }

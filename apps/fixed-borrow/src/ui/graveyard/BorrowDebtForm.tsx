@@ -46,12 +46,12 @@ export function BorrowDebtForm({
 
   const { data: debtTokenPrice } = useAaveOracleAssetPrice(debtTokenAddress);
 
-  const newDebtPreview = currentDebt
-    ? currentDebt.add(debtInputAmountAsBigNumber)
-    : undefined;
-  const formattedNewDebtPreview = newDebtPreview
-    ? formatBalance(formatUnits(newDebtPreview, debtTokenMetadata?.decimals), 2)
-    : undefined;
+  // const newDebtPreview = currentDebt
+  // ? currentDebt.add(debtInputAmountAsBigNumber)
+  // : undefined;
+  // const formattedNewDebtPreview = newDebtPreview
+  //   ? formatBalance(formatUnits(newDebtPreview, debtTokenMetadata?.decimals), 2)
+  //   : undefined;
 
   const { borrow, status: borrowStatus } = useBorrowDebt(
     debtTokenAddress,
@@ -66,7 +66,7 @@ export function BorrowDebtForm({
         <div className="daisy-label-text grid w-full grid-cols-2">
           <span className="self-end">Debt</span>
           <div className="daisy-label-text w-full text-right">
-            <p>Available to borrow: ${formattedAvailableBorrow}</p>
+            {/* <p>Available to borrow: ${formattedAvailableBorrow}</p> */}
           </div>
         </div>
       </label>
@@ -76,7 +76,7 @@ export function BorrowDebtForm({
         <input
           type="number"
           placeholder="Enter an amount to borrow"
-          className="daisy-input-bordered daisy-input w-full text-secondary focus:border-secondary"
+          className="daisy-input-bordered daisy-input text-secondary focus:border-secondary w-full"
           onChange={(e) => {
             // TODO: Clean this up with input validation, etc..
             const valueAsBigNumber =
@@ -106,7 +106,7 @@ export function BorrowDebtForm({
             </p>
             {debtInputAmount && (
               <p className="text-secondary">
-                After: {formattedNewDebtPreview} {debtTokenMetadata?.symbol}
+                {/* After: {formattedNewDebtPreview} {debtTokenMetadata?.symbol} */}
               </p>
             )}
           </div>
