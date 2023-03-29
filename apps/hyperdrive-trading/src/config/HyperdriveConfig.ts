@@ -25,8 +25,11 @@ export type SupportedTermLength = number;
 /**
  * Token interface TODO
  */
-export interface Token {
-  // TODO
+export interface Token extends ContractConfig {
+  name: string;
+  symbol: string;
+  decimals: number;
+  iconUrl?: string;
 }
 
 /**
