@@ -12,8 +12,6 @@ function PositionFormContainer({ children }: PropsWithChildren): ReactElement {
   );
 }
 
-function getMarketByAddress(address: string) {}
-
 export function Trade(): ReactElement {
   const [position] = useState<PositionType>("Long");
   const [order] = useState<OrderType>("Open");
