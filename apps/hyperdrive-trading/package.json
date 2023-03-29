@@ -37,7 +37,8 @@
     "react-query": "^3.39.3",
     "react-router-dom": "^6.8.1",
     "ts-pattern": "^4.2.2",
-    "wagmi": "^0.12.1"
+    "wagmi": "^0.12.1",
+    "@hyperdrive/core": "*"
   },
   "devDependencies": {
     "@hyperdrive/eslint-config": "*",
