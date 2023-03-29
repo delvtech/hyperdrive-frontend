@@ -52,7 +52,7 @@ export function Trade(): ReactElement {
               <div className="flex">
                 <input
                   autoFocus
-                  className="w-full text-3xl font-semibold bg-transparent placeholder:text-hyper-blue-200 focus:outline-none"
+                  className="w-full text-3xl font-semibold bg-transparent placeholder:text-hyper-blue-200 focus:outline-dashed outline-hyper-blue-200"
                   placeholder="0"
                 />
 
@@ -107,32 +107,6 @@ export function Trade(): ReactElement {
               </div>
             </div>
           </div>
-
-          {/* Transaction Receipt */}
-          {/* <div className="flex flex-col gap-y-1">
-            <div className="flex">
-              <p className="mr-auto tracking-wide font-rubik text-hyper-blue-100">
-                Total Cost
-              </p>
-              <p className="font-bold tracking-wide font-rubik text-hyper-blue-100">
-                120000 DAI
-              </p>
-            </div>
-            <div className="flex">
-              <p className="mr-auto font-rubik text-hyper-blue-100">Slippage</p>
-              <p className="font-bold tracking-wide font-rubik text-hyper-blue-100">
-                $10.42 (-0.10%)
-              </p>
-            </div>
-            <div className="flex">
-              <p className="mr-auto font-rubik text-hyper-blue-100">
-                Est. Network Fee
-              </p>
-              <p className="font-bold tracking-wide font-rubik text-hyper-blue-100">
-                0.003 ETH ($1.16)
-              </p>
-            </div>
-          </div> */}
 
           {/* Order Action Button */}
           <Button

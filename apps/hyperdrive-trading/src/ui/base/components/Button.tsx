@@ -10,7 +10,7 @@ interface ButtonProps extends PropsWithChildren {
 
 type ButtonVariant = "Trade" | "Default";
 
-const ButtonVariantStyles: Record<ButtonVariant, classNames.Argument> = {
+const ButtonVariantStyles: Record<ButtonVariant, string> = {
   Trade: "text-xl font-bold bg-hyper-green text-base-300 font-quantico",
   Default:
     "whitespace-nowrap border border-hyper-blue-400 px-4 py-2 font-quantico text-hyper-green hover:bg-hyper-blue-300",
