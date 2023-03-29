@@ -23,17 +23,17 @@ export function OpenShortForm({
 }: OpenShortFormProps): ReactElement {
   const { address: account } = useAccount();
   const { data: debtTokenMetadata } = useToken({ address: debtTokenAddress });
-  const { openShortPreview } = useOpenShortPreview({
-    hyperdrivePool: hyperdrivePoolAddress,
-    bondAmount: debtToShort,
-    maxDeposit: debtToShort,
-    destination: account,
-    asUnderlying: true,
-  });
-  const formattedOpenShortPreview =
-    openShortPreview && debtToShort?.gt(0)
-      ? formatUnits(openShortPreview, debtTokenMetadata?.decimals)
-      : undefined;
+  // const { openShortPreview } = useOpenShortPreview({
+  //   hyperdrivePool: hyperdrivePoolAddress,
+  //   bondAmount: debtToShort,
+  //   maxDeposit: debtToShort,
+  //   destination: account,
+  //   asUnderlying: true,
+  // });
+  // const formattedOpenShortPreview =
+  //   openShortPreview && debtToShort?.gt(0)
+  //     ? formatUnits(openShortPreview, debtTokenMetadata?.decimals)
+  //     : undefined;
   const { openShort, openShortStatus } = useOpenShort({
     hyperdrivePool: hyperdrivePoolAddress,
     bondAmount: debtToShort,
@@ -59,8 +59,8 @@ export function OpenShortForm({
           <span className="shrink-0">You Pay</span>
           <input
             type="number"
-            className="daisy-input-bordered daisy-input w-full appearance-none text-info !text-opacity-100 focus:border-info"
-            value={formattedOpenShortPreview || ""}
+            className="daisy-input-bordered daisy-input text-info focus:border-info w-full appearance-none !text-opacity-100"
+            // value={formattedOpenShortPreview || ""}
           />
           <span>{debtTokenMetadata?.symbol}</span>
         </label>
