@@ -135,8 +135,7 @@ export function MarketsTable(): ReactElement {
 
 function createMarketRow({ market }: MarketTableRowData): Row {
   return {
-    // TODO: link to trade page with query parameter
-    href: `/trade`,
+    href: `/trade/${market.address}`,
     cells: [
       <span className="font-semibold">{market.name}</span>,
       <ProtocolLabel protocol={market.protocol} />,

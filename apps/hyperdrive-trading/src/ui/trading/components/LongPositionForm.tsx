@@ -35,7 +35,7 @@ function OpenLongPositionForm({ market }: OpenLongPositionFormProps) {
     <>
       {/* You Pay Section */}
       <div className="space-y-4 text-hyper-blue-100 font-rubik">
-        <h3 className="text-xl text-hyper-blue-100 font-quantico">You Pay</h3>
+        <h3 className="text-xl">You Pay</h3>
         <TokenInput
           token={market.baseToken}
           value={baseTokenAmount}
@@ -46,7 +46,7 @@ function OpenLongPositionForm({ market }: OpenLongPositionFormProps) {
 
       {/* New Position Section */}
       <div className="space-y-4 text-hyper-blue-100 font-rubik">
-        <h3 className="text-xl font-quantico">New Position</h3>
+        <h3 className="text-xl">New Position</h3>
         <PositionOverviewWell />
       </div>
 
