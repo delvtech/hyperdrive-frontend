@@ -1,0 +1,68 @@
+import { Cog6ToothIcon } from "@heroicons/react/20/solid";
+import { ReactElement } from "react";
+import Button from "src/ui/base/components/Button";
+import { LongPositionForm } from "src/ui/trading/components/LongPositionForm";
+import { OrderType, PositionType } from "src/ui/trading/types";
+import { match } from "ts-pattern";
+
+interface PositionFormProps {
+  position: PositionType;
+  order: OrderType;
+}
+
+export function PositionForm({
+  position,
+  order,
+}: PositionFormProps): ReactElement {
+  return (
+    <div className="flex flex-col p-8 border-b border-hyper-blue-300 gap-y-12">
+      {/* Header */}
+      <div className="flex items-center">
+        <h2 className="mr-auto text-xl font-bold text-hyper-blue-100 font-akira">
+          Trade
+        </h2>
+        <div>
+          <Cog6ToothIcon className="h-5 stroke-2 stroke-hyper-blue-100" />
+        </div>
+      </div>
+
+      {/* Trade button group */}
+      <div className="space-y-2">
+        <div className="flex">
+          <Button
+            active={position === "Long"}
+            className="w-full"
+            onClick={() => {}}
+          >
+            Long
+          </Button>
+          <Button disabled className="w-full" onClick={() => {}}>
+            Short
+          </Button>
+          <Button disabled className="w-full" onClick={() => {}}>
+            LP
+          </Button>
+        </div>
+
+        <div className="flex">
+          <Button
+            active={order === "Open"}
+            className="w-full"
+            onClick={() => {}}
+          >
+            Open
+          </Button>
+          <Button disabled className="w-full" onClick={() => {}}>
+            Close
+          </Button>
+        </div>
+      </div>
+
+      {match(position)
+        .with("Long", () => <LongPositionForm order={order} />)
+        .with("Short", () => <div></div>)
+        .with("LP", () => <div></div>)
+        .exhaustive()}
+    </div>
+  );
+}

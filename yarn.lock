@@ -10777,6 +10777,11 @@ ts-pattern@^4.2.0:
   resolved "https://registry.yarnpkg.com/ts-pattern/-/ts-pattern-4.2.0.tgz#35b8840627619819ce5746dec5ca31c3030f8dcc"
   integrity sha512-Bmi5G8KQyTnkcpRYzAwgPj8nvIodm2S7aneJtILrW0/2ZzqXQbl5nC5YjCiZUj5Iqihl8MLH+TK7pmCAZ61xJg==
 
+ts-pattern@^4.2.2:
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/ts-pattern/-/ts-pattern-4.2.2.tgz#e6fae2aa1ff1a7ff2ce3166f8c329a4f252f78d6"
+  integrity sha512-qzJMo2pbkUJWusRH5o8xR+xogn6RmvViyUgwBFTtRENLse470clCGjHDf6haWGZ1AOmk8XkEohUoBW8Uut6Scg==
+
 tsconfck@^2.0.1:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/tsconfck/-/tsconfck-2.0.2.tgz#860a488f9acd024a85b2db458888410009b5383d"
