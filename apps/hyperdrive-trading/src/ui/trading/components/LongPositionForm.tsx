@@ -28,6 +28,9 @@ interface OpenLongPositionFormProps {
 function OpenLongPositionForm({ market }: OpenLongPositionFormProps) {
   const [baseTokenAmount, setBaseTokenAmount] = useState("");
 
+  // TODO: stubbed for now until I have correct token address w a balance
+  const baseTokenBalance = "100000";
+
   return (
     <>
       {/* You Pay Section */}
@@ -36,6 +39,7 @@ function OpenLongPositionForm({ market }: OpenLongPositionFormProps) {
         <TokenInput
           token={market.baseToken}
           value={baseTokenAmount}
+          maxValue={baseTokenBalance}
           onChange={(newAmount) => setBaseTokenAmount(newAmount)}
         />
       </div>
