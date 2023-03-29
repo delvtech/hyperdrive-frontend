@@ -7,7 +7,7 @@ export function Navbar(): ReactElement {
   const { pathname } = useLocation();
 
   return (
-    <div className="px-8 navbar bg-base-100">
+    <div className="px-8 navbar bg-base-100 grow-0">
       <div className="navbar-start">
         <Link
           to="/"

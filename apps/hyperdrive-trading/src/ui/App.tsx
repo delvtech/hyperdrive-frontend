@@ -18,8 +18,8 @@ export function App(): ReactElement {
       <WagmiConfig client={wagmiClient}>
         <RainbowKitProvider chains={chains}>
           <BrowserRouter>
-            <Navbar />
-            <div className="min-h-screen bg-gradient-to-b from-base-200 to-base-300 px-[4vw] py-[5vh]">
+            <div className="flex flex-col h-full min-h-screen bg-gradient-to-b from-base-200 to-base-300">
+              <Navbar />
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/markets" element={<Markets />} />
