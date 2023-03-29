@@ -12,7 +12,8 @@ interface ButtonProps extends PropsWithChildren {
 type ButtonVariant = "Trade" | "Default";
 
 const ButtonVariantStyles: Record<ButtonVariant, string> = {
-  Trade: "text-xl font-bold bg-hyper-green text-base-300 font-quantico",
+  Trade:
+    "text-xl font-bold bg-hyper-green text-base-300 font-quantico hover:bg-opacity-70",
   Default:
     "whitespace-nowrap border border-hyper-blue-400 px-4 py-2 font-quantico text-hyper-green hover:bg-hyper-blue-400 hover:bg-opacity-50 bg-base-200 disabled:bg-base-400 disabled:text-opacity-50",
 };

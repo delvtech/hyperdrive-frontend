@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 
 export function BottomNavbar(): ReactElement {
   return (
-    <div className="grid grid-cols-3 px-4 btm-nav md:hidden bg-base-300">
+    <div className="grid h-20 grid-cols-3 px-4 btm-nav md:hidden bg-base-300">
       <div className="flex-row navbar-start">
         <Link
-          to="/"
+          to="/markets"
           className="text-xl uppercase whitespace-nowrap font-akira text-hyper-pink"
         >
           Hyperdrive

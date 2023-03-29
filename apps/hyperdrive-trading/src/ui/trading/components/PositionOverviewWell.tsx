@@ -3,7 +3,7 @@ import { Pill } from "src/ui/base/components/Pill";
 
 export function PositionOverviewWell(): ReactElement {
   return (
-    <div className="flex flex-col p-4 border rounded bg-base-300 gap-y-4 border-hyper-blue-300">
+    <div className="flex flex-col p-4 bg-transparent border rounded gap-y-4 border-hyper-blue-300">
       <div className="flex items-center">
         <h3 className="mr-4 text-2xl font-semibold">Maker DSR Long</h3>
         <Pill className="h-6">6 months</Pill>
