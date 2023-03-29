@@ -23,7 +23,7 @@ export function App(): ReactElement {
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/markets" element={<Markets />} />
-                <Route path="/trade" element={<Trade />} />
+                <Route path="/trade/:address" element={<Trade />} />
                 <Route path="/portfolio" element={<Portfolio />} />
               </Routes>
             </div>

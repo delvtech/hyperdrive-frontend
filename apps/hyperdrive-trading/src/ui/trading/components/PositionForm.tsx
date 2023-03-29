@@ -1,11 +1,13 @@
 import { Cog6ToothIcon } from "@heroicons/react/20/solid";
 import { ReactElement } from "react";
+import { HyperdriveMarket } from "src/config/HyperdriveConfig";
 import Button from "src/ui/base/components/Button";
 import { LongPositionForm } from "src/ui/trading/components/LongPositionForm";
 import { OrderType, PositionType } from "src/ui/trading/types";
 import { match } from "ts-pattern";
 
 interface PositionFormProps {
+  market: HyperdriveMarket;
   position: PositionType;
   order: OrderType;
 }
@@ -13,6 +15,7 @@ interface PositionFormProps {
 export function PositionForm({
   position,
   order,
+  market,
 }: PositionFormProps): ReactElement {
   return (
     <div className="flex flex-col p-8 border-b border-hyper-blue-300 gap-y-12">
@@ -59,7 +62,7 @@ export function PositionForm({
       </div>
 
       {match(position)
-        .with("Long", () => <LongPositionForm order={order} />)
+        .with("Long", () => <LongPositionForm market={market} order={order} />)
         .with("Short", () => <div></div>)
         .with("LP", () => <div></div>)
         .exhaustive()}
