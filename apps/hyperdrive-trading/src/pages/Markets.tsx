@@ -5,7 +5,7 @@ import { ProtocolStatsBar } from "src/ui/protocol/components/ProtocolStatsBar";
 
 export function Markets(): ReactElement {
   return (
-    <div className="m-auto flex max-w-6xl flex-col gap-y-12">
+    <div className="m-auto flex max-w-6xl flex-col gap-y-12 px-[4vw] py-[5vh]">
       <ProtocolStatsBar />
       <FeaturedMarkets />
       <MarketsTable />
