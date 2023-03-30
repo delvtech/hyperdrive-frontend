@@ -8,7 +8,6 @@ import { Portfolio } from "src/pages/Portfolio";
 import { Trade } from "src/pages/Trade";
 import { chains, wagmiClient } from "src/wallet/wagmiClient";
 import { WagmiConfig } from "wagmi";
-import { BottomNavbar } from "./base/components/BottomNavbar";
 import { Navbar } from "./base/components/Navbar";
 
 const queryClient = new QueryClient();
@@ -27,7 +26,6 @@ export function App(): ReactElement {
                 <Route path="/trade/:address" element={<Trade />} />
                 <Route path="/portfolio" element={<Portfolio />} />
               </Routes>
-              <BottomNavbar />
             </div>
           </BrowserRouter>
         </RainbowKitProvider>
