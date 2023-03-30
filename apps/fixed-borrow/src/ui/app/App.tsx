@@ -59,7 +59,10 @@ export default function App(): ReactElement {
       </div>
       <div className="flex min-h-[75vh] w-full flex-col items-center justify-center py-[10vh] px-[4vw]">
         <div className="max-w-4xl">
-          <LoanCard />
+          <LoanCard
+            supplyTokenAddress={COLLATERAL}
+            borrowTokenAddress={DEBT_TOKEN}
+          />
         </div>
       </div>
     </div>

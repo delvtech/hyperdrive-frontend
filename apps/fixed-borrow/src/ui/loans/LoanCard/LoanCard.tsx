@@ -10,14 +10,62 @@ import { SupplyInput } from "src/ui/loans/SupplyInput/SupplyInput";
 import { TermLength } from "src/ui/shorts/termLength";
 import { PositionPreview } from "src/ui/loans/previews/PositionPreview";
 import { TransactionPreview } from "src/ui/loans/previews/TransactionPreview";
+import { useSupplyBorrowAndOpenShort } from "src/ui/loans/hooks/useSupplyBorrowAndOpenShort";
+import { useToken } from "wagmi";
+import { useNumericInput } from "src/ui/base/NumericInput/useNumericInput";
+import { useOpenShortPreview } from "src/ui/shorts/hooks/useOpenShortPreview";
+import { calculateValueToShort } from "src/shorts/calculateValueToShort";
 
-interface LoanCardProps {}
+interface LoanCardProps {
+  supplyTokenAddress: `0x${string}`;
+  borrowTokenAddress: `0x${string}`;
+}
 
-export function LoanCard({}: LoanCardProps): ReactElement {
+export function LoanCard({
+  supplyTokenAddress,
+  borrowTokenAddress,
+}: LoanCardProps): ReactElement {
   const [activeTab, setActiveTab] = useState(0);
-  const [supplyAmount, setSupplyAmount] = useState<string | undefined>();
-  const [borrowAmount, setBorrowAmount] = useState<string | undefined>();
   const [termLength, setTermLength] = useState<TermLength | undefined>();
+
+  // Supply input state
+  const { data: supplyTokenMetadata } = useToken({
+    address: supplyTokenAddress,
+  });
+  const {
+    amount: supplyAmount,
+    amountAsBigInt: supplyAmountBigInt,
+    setAmount: setSupplyAmount,
+  } = useNumericInput({
+    decimals: supplyTokenMetadata?.decimals,
+  });
+
+  // Borrow input state
+  const { data: borrowTokenMetadata } = useToken({
+    address: borrowTokenAddress,
+  });
+  const {
+    amountAsBigInt: borrowAmountBigInt,
+    amount: borrowAmount,
+    setAmount: setBorrowAmount,
+  } = useNumericInput({
+    decimals: borrowTokenMetadata?.decimals,
+  });
+
+  // Simple calc for how many bonds (aka longs) are needed to short the borrow
+  // amount
+  const bondAmount =
+    borrowAmountBigInt && borrowTokenMetadata?.decimals
+      ? calculateValueToShort(borrowAmountBigInt, borrowTokenMetadata.decimals)
+      : undefined;
+
+  const { supplyBorrowAndOpenShort } = useSupplyBorrowAndOpenShort({
+    collateralToken: supplyTokenAddress,
+    borrowAmount: borrowAmountBigInt,
+    supplyAmount: supplyAmountBigInt,
+    bondAmount: bondAmount?.shortAmount,
+    maxDeposit: bondAmount?.shortAmount,
+  });
 
   return (
     <div className="flex flex-col items-center gap-6">
@@ -70,7 +118,12 @@ export function LoanCard({}: LoanCardProps): ReactElement {
                   </Button>
                 </div>
               </div>
-              <Button size="lg" variant="sun" onClick={() => {}}>
+              <Button
+                size="lg"
+                variant="sun"
+                disabled={!supplyBorrowAndOpenShort}
+                onClick={() => supplyBorrowAndOpenShort?.()}
+              >
                 Borrow
               </Button>
             </div>
