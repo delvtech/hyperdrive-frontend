@@ -1,27 +1,33 @@
-import { BigNumber } from "ethers";
-import { formatUnits, parseUnits } from "ethers/lib/utils.js";
 import { useState } from "react";
+import { formatBigInt } from "src/base/bigint/formatBigInt";
+import { parseBigInt } from "src/base/bigint/parseBigInt";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+
+interface UseNumericInputResult {
+  amount: string | undefined;
+  amountAsBigInt: bigint | undefined;
+  /**
+   * Includes commification
+   */
+  formattedAmount: string | undefined;
+  setAmount: (newAmount: string | undefined) => void;
+}
 
 export function useNumericInput({
   decimals,
 }: {
   decimals: number | undefined;
-}): {
-  amount: string | undefined;
-  amountAsBigNumber: BigNumber;
-  formattedAmount: string;
-  setAmount: (newAmount: string | undefined) => void;
-} {
+}): UseNumericInputResult {
   const [amount, setAmount] = useState<string | undefined>();
-  const amountAsBigNumber = parseUnits(amount || "0", decimals);
-  const formattedAmount = formatBalance(
-    formatUnits(amountAsBigNumber, decimals),
-  );
+  const amountAsBigInt = amount ? parseBigInt(amount, decimals) : undefined;
+
+  const formattedAmount = amountAsBigInt
+    ? formatBalance(formatBigInt(amountAsBigInt, decimals))
+    : undefined;
 
   return {
-    amount: amount,
-    amountAsBigNumber,
+    amount,
+    amountAsBigInt,
     formattedAmount,
     setAmount: setAmount,
   };
