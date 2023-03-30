@@ -8,6 +8,7 @@ module.exports = {
         akira: ["Akira", "sans-serif"],
         quantico: ["Quantico"],
         rubik: ["Rubik", "sans-serif"],
+        "dm-sans": ["DM Sans", "sans-serif"],
       },
       colors: {
         "base-100": "#151427",
