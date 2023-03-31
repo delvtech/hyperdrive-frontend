@@ -1,3 +1,5 @@
+import { Address } from "wagmi";
+
 export interface Protocol {
   name: string;
   iconUrl?: string;
@@ -14,7 +16,7 @@ export interface HyperdriveConfig<
 }
 
 export interface ContractConfig {
-  address: string;
+  address: Address;
 }
 
 /**
