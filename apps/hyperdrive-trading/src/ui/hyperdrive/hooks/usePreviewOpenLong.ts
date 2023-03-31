@@ -59,7 +59,7 @@ export function usePreviewOpenLong({
     queryFn: queryEnabled
       ? async () => {
           const openLongResult = (await hyperdriveContract.callStatic.openLong(
-            BigNumber.from(baseAmount * BigInt(1e18)),
+            BigNumber.from(baseAmount),
             BigNumber.from(bondAmountOut),
             destination,
             asUnderlying,
