@@ -42,16 +42,14 @@ export function OpenLongPositionForm({
   });
 
   const needsApproval =
-    tokenAllowance !== undefined &&
-    amountAsBigInt &&
-    amountAsBigInt > tokenAllowance;
+    tokenAllowance && amountAsBigInt ? amountAsBigInt > tokenAllowance : false;
 
   const { longAmountOut, status: openLongPreviewStatus } = usePreviewOpenLong({
     market,
     baseAmount: amountAsBigInt,
-    bondAmountOut: BigInt(1),
+    bondAmountOut: BigInt(1), // todo add slippage control
     destination: account,
-    enabled: needsApproval === false,
+    enabled: !needsApproval,
   });
 
   const { openLong } = useOpenLong({
@@ -60,7 +58,7 @@ export function OpenLongPositionForm({
     // TODO: handle slippage
     bondAmountOut: BigInt(1),
     destination: account,
-    enabled: openLongPreviewStatus === "success" && needsApproval === false,
+    enabled: openLongPreviewStatus === "success" && !needsApproval,
   });
 
   return (
