@@ -10,6 +10,9 @@ import { commify } from "ethers/lib/utils";
 export function formatBalance(
   balance: string | number,
   numDecimals = 1,
+  includeCommas = true,
 ): string {
-  return commify(format(`.${numDecimals}~f`)(+balance));
+  return includeCommas
+    ? commify(format(`.${numDecimals}~f`)(+balance))
+    : format(`.${numDecimals}~f`)(+balance);
 }
