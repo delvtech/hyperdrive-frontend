@@ -1,6 +1,6 @@
 import classNames from "classnames";
-import { Link } from "react-router-dom";
 import { PropsWithChildren, ReactElement } from "react";
+import { Link } from "react-router-dom";
 
 /**
  * A div with `display: grid` pretending to be a table row :).
