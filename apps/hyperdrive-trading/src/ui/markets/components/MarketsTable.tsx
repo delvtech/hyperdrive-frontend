@@ -57,6 +57,7 @@ export function MarketsTable(): ReactElement {
           </h3> */}
           <div className="flex flex-wrap gap-2">
             {termLengths
+              .slice()
               .sort((a, b) => a - b)
               .map((termLength) => (
                 <Button
@@ -87,15 +88,21 @@ export function MarketsTable(): ReactElement {
               All Protocols
             </Button>
 
-            {protocols.sort().map((protocol) => (
-              <Button
-                key={`protocol-${protocol.name}`}
-                active={protocolFilter === protocol.name}
-                onClick={() => setSelectedProtocolFilter(protocol.name)}
-              >
-                <ProtocolLabel className="font-quantico" protocol={protocol} />
-              </Button>
-            ))}
+            {protocols
+              .slice()
+              .sort()
+              .map((protocol) => (
+                <Button
+                  key={`protocol-${protocol.name}`}
+                  active={protocolFilter === protocol.name}
+                  onClick={() => setSelectedProtocolFilter(protocol.name)}
+                >
+                  <ProtocolLabel
+                    className="font-quantico"
+                    protocol={protocol}
+                  />
+                </Button>
+              ))}
           </div>
         </div>
       </div>
