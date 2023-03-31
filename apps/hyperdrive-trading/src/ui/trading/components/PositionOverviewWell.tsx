@@ -7,14 +7,15 @@ import { formatBigInt } from "src/ui/base/formatting/formatBigInt";
 interface PositionOverviewWellProps {
   market: HyperdriveMarket;
   costBasis: bigint;
-  fixedApr: number;
+  // TODO: stubbed for now
+  // fixedApr: number;
   claimableAtMaturity: bigint;
 }
 
 export function PositionOverviewWell({
   market,
   costBasis,
-  fixedApr,
+  // fixedApr,
   claimableAtMaturity,
 }: PositionOverviewWellProps): ReactElement {
   const current = new Date();

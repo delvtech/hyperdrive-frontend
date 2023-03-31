@@ -82,7 +82,6 @@ export function OpenLongPositionForm({
         <PositionOverviewWell
           market={market}
           costBasis={amountAsBigInt ?? 0n}
-          fixedApr={1.5}
           claimableAtMaturity={longAmountOut ?? 0n}
         />
       </div>

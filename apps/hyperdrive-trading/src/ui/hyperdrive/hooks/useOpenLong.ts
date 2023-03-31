@@ -1,12 +1,7 @@
 import { HyperdriveABI } from "@hyperdrive/core";
 import { BigNumber } from "ethers";
 import { HyperdriveMarket } from "src/config/HyperdriveConfig";
-import {
-  Address,
-  useContractWrite,
-  usePrepareContractWrite,
-  useSigner,
-} from "wagmi";
+import { Address, useContractWrite, usePrepareContractWrite } from "wagmi";
 
 interface UseOpenLongOptions {
   market: HyperdriveMarket;
@@ -30,10 +25,6 @@ export function useOpenLong({
   asUnderlying = true,
   enabled,
 }: UseOpenLongOptions): UseOpenLongResult {
-  // There is no callStatic wagmi hook, so we gotta call the contract directly,
-  // see: https://github.com/wagmi-dev/wagmi/discussions/1571
-  const { data: signer } = useSigner();
-
   const queryEnabled =
     !!baseAmount && !!bondAmountOut && !!destination && enabled;
 
