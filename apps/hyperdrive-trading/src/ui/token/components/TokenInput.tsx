@@ -43,18 +43,15 @@ export function TokenInput({
       </div>
 
       <div className="flex text-hyper-blue-200">
-        <p className="mr-auto uppercase">1 {token.symbol} = $1.00</p>
-        <p>
-          Balance: {formatBalance(maxValue ?? "0")}
-          {maxValue && (
-            <span
-              onClick={() => onChange(maxValue)}
-              className="ml-1 underline cursor-pointer hover:text-hyper-blue-400"
-            >
-              Max
-            </span>
-          )}
-        </p>
+        {maxValue && (
+          <span
+            onClick={() => onChange(maxValue)}
+            className="mr-auto underline cursor-pointer hover:text-hyper-blue-400"
+          >
+            Max
+          </span>
+        )}
+        <p>Balance: {formatBalance(maxValue ?? "0")}</p>
       </div>
     </div>
   );
