@@ -7,7 +7,7 @@ import { AssetBadge } from "src/ui/token/AssetBadge";
 interface BorrowInputProps {
   tokenAddress: Address;
   value?: string;
-  onChange?: (newAmount: string | undefined) => void;
+  onChange?: (newAmount: string) => void;
 }
 
 export function BorrowInput({

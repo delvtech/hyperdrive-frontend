@@ -8,7 +8,7 @@ interface NumericInputProps {
   icon?: ReactNode;
   value?: string;
   maxValue?: string;
-  onChange?: (value: string | undefined) => void;
+  onChange?: (value: string) => void;
 }
 
 export function NumericInput({

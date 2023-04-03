@@ -10,7 +10,7 @@ interface UseNumericInputResult {
    * Includes commification
    */
   formattedAmount: string | undefined;
-  setAmount: (newAmount: string | undefined) => void;
+  setAmount: (newAmount: string) => void;
 }
 
 export function useNumericInput({
@@ -18,7 +18,7 @@ export function useNumericInput({
 }: {
   decimals: number | undefined;
 }): UseNumericInputResult {
-  const [amount, setAmount] = useState<string | undefined>();
+  const [amount, setAmount] = useState<string>("");
   const amountAsBigInt = amount ? parseBigInt(amount, decimals) : undefined;
 
   const formattedAmount = amountAsBigInt

@@ -1,7 +1,5 @@
 import { SparkGoerliAddresses } from "@hyperdrive/spark";
 import { ReactElement, useState } from "react";
-import { formatUnits, parseEther } from "ethers/lib/utils.js";
-import { BigNumber } from "ethers";
 import { useUserAccountData } from "src/ui/loans/hooks/useUserAccountData";
 import { useAccount, useToken } from "wagmi";
 import { useAaveOracleAssetPrice } from "src/ui/oracles/useAaveOracleAssetPrice";
@@ -10,6 +8,8 @@ import { HyperdriveGoerliAddresses } from "@hyperdrive/core";
 import { LoanCard } from "src/ui/loans/LoanCard/LoanCard";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MintButton } from "src/ui/faucet/MintButton";
+import { formatBigInt } from "src/base/bigint/formatBigInt";
+import { parseBigInt } from "src/base/bigint/parseBigInt";
 
 console.log(SparkGoerliAddresses);
 console.log(HyperdriveGoerliAddresses);
@@ -30,16 +30,14 @@ export default function App(): ReactElement {
   // this here allows allows us to calculate the correct "preview" amount to
   // pass to the StatsBar.
   const [collateralAmountInput, setCollateralAmountInput] = useState<
-    BigNumber | undefined
+    bigint | undefined
   >();
 
   // The debt amount state management follows the same pattern as the
   // collateralAmount. Whenever the BorrowDebtForm calls it's onChange prop, the
   // debt amount value updates and a new "preview" amount for loan-to-value can
   // be calculated and passed to the StatsBar.
-  const [debtAmountInput, setDebtAmountInput] = useState<
-    BigNumber | undefined
-  >();
+  const [debtAmountInput, setDebtAmountInput] = useState<bigint | undefined>();
 
   return (
     <div className="col-span-2 grid">
@@ -48,11 +46,11 @@ export default function App(): ReactElement {
         <div className="flex gap-2">
           <MintButton
             tokenAddress={SparkGoerliAddresses.wstETH_token}
-            amount={parseEther("100")}
+            amount={parseBigInt("100", 18)}
           />
           <MintButton
             tokenAddress={SparkGoerliAddresses.DAI_token}
-            amount={parseEther("10000")}
+            amount={parseBigInt("10000", 18)}
           />
         </div>
         <ConnectButton showBalance={false} />
@@ -70,21 +68,18 @@ export default function App(): ReactElement {
 }
 
 function calculateBaseValueOfCurrentCollateralAndNewAmount(
-  currentCollateralBase: BigNumber | undefined,
-  newCollateralAmount: BigNumber | undefined,
+  currentCollateralBase: bigint | undefined,
+  newCollateralAmount: bigint | undefined,
   collateralDecimals: number | undefined,
-  collateralPrice: BigNumber | undefined,
+  collateralPrice: bigint | undefined,
 ) {
   // you start with this much already as collateral
-  const totalCollateralBaseValue = formatUnits(
-    currentCollateralBase || BigNumber.from(0),
-    8,
-  );
+  const totalCollateralBaseValue = formatBigInt(currentCollateralBase || 0n, 8);
 
   // Convert the new collateral amount to a value in base
   const newCollateralAmountBaseValue =
-    +formatUnits(newCollateralAmount || BigNumber.from(0), collateralDecimals) *
-    +formatUnits(collateralPrice || BigNumber.from(0), 8);
+    +formatBigInt(newCollateralAmount || 0n, collateralDecimals) *
+    +formatBigInt(collateralPrice || 0n, 8);
 
   // add the current base value and the new collateral's base value together
   const afterAmountCollateralValueBase = formatBalance(

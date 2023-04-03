@@ -15,7 +15,7 @@ export function MintButton({
   amount,
 }: {
   tokenAddress: Address;
-  amount: BigNumber;
+  amount: bigint;
 }): ReactElement {
   const { address: account } = useAccount();
   const { data: token } = useToken({ address: tokenAddress });
@@ -23,7 +23,7 @@ export function MintButton({
     address: SparkGoerliAddresses.faucet,
     abi: FaucetABI,
     functionName: "mint",
-    args: [tokenAddress, account as Address, amount],
+    args: [tokenAddress, account as Address, BigNumber.from(amount)],
   });
   const { write: mintTokens } = useContractWrite(mintConfig);
   return (
