@@ -69,7 +69,7 @@ export function OpenShortForm({
       {debtToShort?.gt(0) ? (
         <div className="mt-2 flex flex-col justify-between gap-2 self-end md:flex-row">
           <ApproveAllowanceButton
-            amount={debtToShort}
+            amount={debtToShort.toBigInt()}
             tokenAddress={debtTokenAddress}
             spender={hyperdrivePoolAddress}
           />
