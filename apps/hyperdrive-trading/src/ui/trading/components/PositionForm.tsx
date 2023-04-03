@@ -21,9 +21,9 @@ export function PositionForm({
     <div className="flex flex-col p-8 border-b border-hyper-blue-300 gap-y-12">
       {/* Header */}
       <div className="flex items-center">
-        <h2 className="mr-auto text-xl font-bold text-hyper-blue-100 font-akira">
+        <h3 className="mr-auto text-xl font-bold text-hyper-blue-100 font-akira">
           Trade
-        </h2>
+        </h3>
         <div>
           <Cog6ToothIcon className="h-5 stroke-2 stroke-hyper-blue-100" />
         </div>
@@ -37,13 +37,13 @@ export function PositionForm({
             className="w-full"
             onClick={() => {}}
           >
-            Long
+            <p>Long</p>
           </Button>
           <Button disabled className="w-full" onClick={() => {}}>
-            Short
+            <p>Short</p>
           </Button>
           <Button disabled className="w-full" onClick={() => {}}>
-            LP
+            <p>LP</p>
           </Button>
         </div>
 
@@ -53,10 +53,10 @@ export function PositionForm({
             className="w-full"
             onClick={() => {}}
           >
-            Open
+            <p>Open</p>
           </Button>
           <Button disabled className="w-full" onClick={() => {}}>
-            Close
+            <p>Close</p>
           </Button>
         </div>
       </div>

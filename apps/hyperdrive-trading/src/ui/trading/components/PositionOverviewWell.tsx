@@ -26,8 +26,8 @@ export function PositionOverviewWell({
   return (
     <div className="flex flex-col p-4 bg-transparent border rounded gap-y-4 border-hyper-blue-300">
       <div className="flex items-center">
-        <h3 className="mr-4 text-2xl font-semibold">{market.name}</h3>
-        <Pill className="h-6">{market.termLength} months</Pill>
+        <h5 className="mr-4 font-bold">{market.name}</h5>
+        <Pill className="h-6">Long</Pill>
       </div>
 
       <div className="flex flex-col tracking-wide gap-y-1">
@@ -36,6 +36,13 @@ export function PositionOverviewWell({
           <p className="font-semibold tracking-wide">
             {formatBigInt(costBasis, market.baseToken.decimals)}{" "}
             {market.baseToken.symbol}
+          </p>
+        </div>
+
+        <div className="flex">
+          <p className="mr-auto">Term Length</p>
+          <p className="font-semibold tracking-wide">
+            {market.termLength} months
           </p>
         </div>
 
@@ -56,7 +63,7 @@ export function PositionOverviewWell({
               formatBigInt(claimableAtMaturity, market.baseToken.decimals),
               4,
               false,
-            )}
+            )}{" "}
             {market.baseToken.symbol}
           </p>
         </div>

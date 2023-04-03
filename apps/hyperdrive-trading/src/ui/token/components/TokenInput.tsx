@@ -20,11 +20,11 @@ export function TokenInput({
   };
 
   return (
-    <div className="flex flex-col p-4 border rounded bg-base-200 gap-y-2 border-hyper-blue-300">
+    <div className="flex flex-col p-4 border rounded bg-base-200 gap-y-2 border-hyper-blue-300 font-dm-sans">
       <div className="flex gap-x-4">
         <input
           autoFocus
-          className="w-full text-3xl font-semibold bg-transparent placeholder:text-hyper-blue-200 focus:outline-dashed outline-hyper-blue-200"
+          className="w-full font-semibold bg-transparent text-h4 placeholder:text-hyper-blue-200 focus:outline-dashed outline-hyper-blue-200"
           max={maxValue}
           min="0"
           name="Base Token Input"
@@ -36,7 +36,7 @@ export function TokenInput({
 
         <div className="flex items-center min-w-fit gap-x-2">
           {token.iconUrl && <img className="h-6" src={token.iconUrl} />}
-          <h4 className="text-2xl uppercase font-quantico">{token.symbol}</h4>
+          <h4 className="font-semibold uppercase">{token.symbol}</h4>
           {/* TODO: support multiple token input options */}
           {/* <ChevronDownIcon className="w-6 h-6 stroke-hyper-blue-100 fill-hyper-blue-100" /> */}
         </div>

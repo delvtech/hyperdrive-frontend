@@ -13,7 +13,10 @@ export function ProtocolLabel({
 }: ProtocolLabelProps): ReactElement {
   return (
     <span
-      className={classNames("flex items-center gap-x-2 font-rubik", className)}
+      className={classNames(
+        className,
+        "flex items-center gap-x-2 font-quantico",
+      )}
     >
       <img className="h-4" src={protocol.iconUrl} />
       {protocol.name}
