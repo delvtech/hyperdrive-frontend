@@ -17,7 +17,7 @@
     "dev": "vite",
     "format": "prettier --write '**/*.{gql,graphql,js,jsx,ts,tsx,json,md,yaml,yml}'",
     "format:check": "prettier --check '**/*.{gql,graphql,js,jsx,ts,tsx,json,md}'",
-    "lint": "eslint src --max-warnings=0",
+    "lint": "eslint src",
     "serve": "vite preview",
     "test:ui": "vitest --ui",
     "typecheck": "tsc --project tsconfig.json --noEmit"
@@ -32,6 +32,7 @@
     "daisyui": "^2.50.1",
     "ethers": "^5.7.2",
     "gud-type": "^1.0.4",
+    "lightweight-charts": "^4.0.1",
     "lodash.uniqby": "^4.7.0",
     "process": "^0.11.10",
     "react": "^18.2.0",
