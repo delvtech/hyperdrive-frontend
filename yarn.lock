@@ -6908,6 +6908,11 @@ gud-type@^1.0.3:
   resolved "https://registry.yarnpkg.com/gud-type/-/gud-type-1.0.3.tgz#b38ceba984e00d33c2a82bc18a1af2c2f1c4f3c2"
   integrity sha512-UcZljnOPE0vqNOe2NhsZeaOChJAZ+pCa5J+BcEIAgZ2fdJQgNfboogS5PlWPgaLW3DhlhcPRmQjIm20y1chtTA==
 
+gud-type@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/gud-type/-/gud-type-1.0.4.tgz#526bd1661e10f99860e434e713465e0b9760d992"
+  integrity sha512-ChRPKWpWKIypcQ/v/XGlgiLQAlhF40Pl2CHOxCPONIvlU6O1u5G1XffUZGYAIktEVFSkW+rH3MTRqPnVEgWVOA==
+
 handlebars@4.7.7, handlebars@^4.0.1:
   version "4.7.7"
   resolved "https://registry.yarnpkg.com/handlebars/-/handlebars-4.7.7.tgz#9ce33416aad02dbd6c8fafa8240d5d98004945a1"
@@ -10972,10 +10977,20 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA==
 
-typescript@4.7.4, typescript@>=3.0.0, typescript@^4.7.4, typescript@^4.9.3, typescript@^5.0.2:
+typescript@>=3.0.0, typescript@^4.7.4:
   version "4.7.4"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.7.4.tgz#1a88596d1cf47d59507a1bcdfb5b9dfe4d488235"
   integrity sha512-C0WQT0gezHuw6AdY1M2jxUO83Rjf0HP7Sk1DtXj6j1EwkQNZrHAg2XPWlq62oqEhYvONq5pkC2Y9oPljWToLmQ==
+
+typescript@^4.9.3:
+  version "4.9.5"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.9.5.tgz#095979f9bcc0d09da324d58d03ce8f8374cbe65a"
+  integrity sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==
+
+typescript@^5.0.2:
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.0.3.tgz#fe976f0c826a88d0a382007681cbb2da44afdedf"
+  integrity sha512-xv8mOEDnigb/tN9PSMTwSEqAnUvkoXMQlicOb0IUVDBSQCgBSaAAROUZYy2IcUy5qU6XajK5jjjO7TMWqBTKZA==
 
 typical@^4.0.0:
   version "4.0.0"
