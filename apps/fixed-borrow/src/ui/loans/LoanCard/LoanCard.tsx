@@ -13,7 +13,6 @@ import { TransactionPreview } from "src/ui/loans/previews/TransactionPreview";
 import { useSupplyBorrowAndOpenShort } from "src/ui/loans/hooks/useSupplyBorrowAndOpenShort";
 import { useToken } from "wagmi";
 import { useNumericInput } from "src/ui/base/NumericInput/useNumericInput";
-import { useOpenShortPreview } from "src/ui/shorts/hooks/useOpenShortPreview";
 import { calculateValueToShort } from "src/shorts/calculateValueToShort";
 
 interface LoanCardProps {
