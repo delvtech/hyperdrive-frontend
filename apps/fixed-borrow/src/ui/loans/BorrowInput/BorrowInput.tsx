@@ -6,7 +6,6 @@ import { AssetBadge } from "src/ui/token/AssetBadge";
 import { HyperdriveGoerliAddresses } from "@hyperdrive/core";
 import { parseBigInt } from "src/base/bigint/parseBigInt";
 import { ApproveAllowanceButton } from "src/ui/token/ApproveAllowanceButton";
-import { SparkGoerliAddresses } from "@hyperdrive/spark";
 
 interface BorrowInputProps {
   tokenAddress: Address;

@@ -71,11 +71,6 @@ export default function App(): ReactElement {
           spenderLabel="aaveFixedBorrowAction"
         />
         <ClearAllowanceButton
-          tokenAddress={SparkGoerliAddresses.wstETH_token}
-          spender={SparkGoerliAddresses.pool}
-          spenderLabel="sparkPool"
-        />
-        <ClearAllowanceButton
           tokenAddress={SparkGoerliAddresses.DAI_token}
           spender={SparkGoerliAddresses.pool}
           spenderLabel="sparkPool"

@@ -51,12 +51,6 @@ export function SupplyInput({
         amount={parseBigInt(value || "0", tokenMetadata?.decimals)}
         spender={HyperdriveGoerliAddresses.aaveFixedBorrowAction}
       />
-      <ApproveAllowanceButton
-        spenderLabel="sparkPool"
-        tokenAddress={tokenAddress}
-        amount={parseBigInt(value || "0", tokenMetadata?.decimals)}
-        spender={SparkGoerliAddresses.pool}
-      />
     </div>
   );
 }
