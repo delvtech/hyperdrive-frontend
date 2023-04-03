@@ -14,6 +14,7 @@ import { useSupplyBorrowAndOpenShort } from "src/ui/loans/hooks/useSupplyBorrowA
 import { useToken } from "wagmi";
 import { useNumericInput } from "src/ui/base/NumericInput/useNumericInput";
 import { calculateValueToShort } from "src/shorts/calculateValueToShort";
+import { parseBigInt } from "src/base/bigint/parseBigInt";
 
 interface LoanCardProps {
   supplyTokenAddress: `0x${string}`;
@@ -63,7 +64,7 @@ export function LoanCard({
     borrowAmount: borrowAmountBigInt,
     supplyAmount: supplyAmountBigInt,
     bondAmount: bondAmount?.shortAmount,
-    maxDeposit: bondAmount?.shortAmount,
+    maxDeposit: (bondAmount?.shortAmount || 0n) + parseBigInt("1.1", 18),
   });
 
   return (

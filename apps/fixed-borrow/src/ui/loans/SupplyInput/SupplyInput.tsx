@@ -6,6 +6,7 @@ import { AssetBadge } from "src/ui/token/AssetBadge";
 import { ApproveAllowanceButton } from "src/ui/token/ApproveAllowanceButton";
 import { parseBigInt } from "src/base/bigint/parseBigInt";
 import { HyperdriveGoerliAddresses } from "@hyperdrive/core";
+import { SparkGoerliAddresses } from "@hyperdrive/spark";
 
 interface SupplyInputProps {
   tokenAddress: Address;
@@ -48,6 +49,11 @@ export function SupplyInput({
         tokenAddress={tokenAddress}
         amount={parseBigInt(value || "0", tokenMetadata?.decimals)}
         spender={HyperdriveGoerliAddresses.aaveFixedBorrowAction}
+      />
+      <ApproveAllowanceButton
+        tokenAddress={tokenAddress}
+        amount={parseBigInt(value || "0", tokenMetadata?.decimals)}
+        spender={SparkGoerliAddresses.pool}
       />
     </div>
   );
