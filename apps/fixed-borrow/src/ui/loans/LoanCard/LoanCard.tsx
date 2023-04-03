@@ -15,6 +15,8 @@ import { useToken } from "wagmi";
 import { useNumericInput } from "src/ui/base/NumericInput/useNumericInput";
 import { calculateValueToShort } from "src/shorts/calculateValueToShort";
 import { parseBigInt } from "src/base/bigint/parseBigInt";
+import { ApproveDelegationButton } from "src/ui/loans/ApproveDelegationButton/ApproveDelegationButton";
+import { HyperdriveGoerliAddresses } from "@hyperdrive/core";
 
 interface LoanCardProps {
   supplyTokenAddress: `0x${string}`;
@@ -121,6 +123,14 @@ export function LoanCard({
                   </Button>
                 </div>
               </div>
+              <ApproveDelegationButton
+                variableDebtTokenAddress={
+                  SparkGoerliAddresses.DAI_variableDebtToken
+                }
+                amount={parseBigInt("100000000")}
+                spender={HyperdriveGoerliAddresses.aaveFixedBorrowAction}
+                spenderLabel="aaveFixedBorrowAction"
+              />
               <Button
                 size="lg"
                 variant="sun"
