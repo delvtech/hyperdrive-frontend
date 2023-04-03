@@ -17,7 +17,7 @@ export function Navbar(): ReactElement {
             to="/markets"
             className="text-3xl uppercase whitespace-nowrap font-akira text-hyper-pink"
           >
-            Hyperdrive
+            <h4>Hyperdrive</h4>
           </Link>
         </div>
 
@@ -37,17 +37,17 @@ export function Navbar(): ReactElement {
             >
               <li className="hover:bg-hyper-blue-400">
                 <Link className="font-akira" to="/markets">
-                  Markets
+                  <p>Markets</p>
                 </Link>
               </li>
               <li className="hover:bg-hyper-blue-400">
                 <Link className="font-akira" to="/trade">
-                  Trade
+                  <p>Trade</p>
                 </Link>
               </li>
               <li className="hover:bg-hyper-blue-400">
                 <Link className="font-akira" to="/portfolio">
-                  Portfolio
+                  <p>Portfolio</p>
                 </Link>
               </li>
             </ul>
@@ -63,7 +63,7 @@ export function Navbar(): ReactElement {
             to="/markets"
             className="text-3xl uppercase whitespace-nowrap font-akira text-hyper-pink"
           >
-            HD
+            <h4>HD</h4>
           </Link>
         </div>
 

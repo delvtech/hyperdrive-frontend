@@ -6908,6 +6908,11 @@ gud-type@^1.0.3:
   resolved "https://registry.yarnpkg.com/gud-type/-/gud-type-1.0.3.tgz#b38ceba984e00d33c2a82bc18a1af2c2f1c4f3c2"
   integrity sha512-UcZljnOPE0vqNOe2NhsZeaOChJAZ+pCa5J+BcEIAgZ2fdJQgNfboogS5PlWPgaLW3DhlhcPRmQjIm20y1chtTA==
 
+gud-type@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/gud-type/-/gud-type-1.0.4.tgz#526bd1661e10f99860e434e713465e0b9760d992"
+  integrity sha512-ChRPKWpWKIypcQ/v/XGlgiLQAlhF40Pl2CHOxCPONIvlU6O1u5G1XffUZGYAIktEVFSkW+rH3MTRqPnVEgWVOA==
+
 handlebars@4.7.7, handlebars@^4.0.1:
   version "4.7.7"
   resolved "https://registry.yarnpkg.com/handlebars/-/handlebars-4.7.7.tgz#9ce33416aad02dbd6c8fafa8240d5d98004945a1"

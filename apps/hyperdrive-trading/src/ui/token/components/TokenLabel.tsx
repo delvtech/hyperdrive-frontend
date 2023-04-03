@@ -14,7 +14,10 @@ export function TokenLabel({
   // TODO: get token image from config
   return (
     <span
-      className={classNames("flex items-center gap-x-2 font-rubik", className)}
+      className={classNames(
+        "flex items-center gap-x-2 font-dm-sans",
+        className,
+      )}
     >
       <img
         className="h-4"

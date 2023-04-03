@@ -1,8 +1,7 @@
-import { PropsWithChildren, ReactElement, useState } from "react";
-import { useParams } from "react-router-dom";
-import { useConfig } from "src/config/hooks/useConfig";
+import { PropsWithChildren, ReactElement } from "react";
+import { useLoaderData } from "react-router-dom";
+import { HyperdriveMarket } from "src/config/HyperdriveConfig";
 import { PositionForm } from "src/ui/trading/components/PositionForm";
-import { OrderType, PositionType } from "src/ui/trading/types";
 
 function PositionFormContainer({ children }: PropsWithChildren): ReactElement {
   return (
@@ -13,23 +12,13 @@ function PositionFormContainer({ children }: PropsWithChildren): ReactElement {
 }
 
 export function Trade(): ReactElement {
-  const [position] = useState<PositionType>("Long");
-  const [order] = useState<OrderType>("Open");
-
-  const config = useConfig();
-
-  const { address } = useParams();
-  const market = config.markets.find((market) => market.address === address);
-
-  if (!market) {
-    // TODO: handle this
-    throw Error("could not find market from address.");
-  }
+  // Safe to cast this variable because router configs this page is rendered with a valid market
+  const market = useLoaderData() as HyperdriveMarket;
 
   return (
     <div className="flex border-t grow border-hyper-blue-300">
       <PositionFormContainer>
-        <PositionForm market={market} position={position} order={order} />
+        <PositionForm market={market} />
       </PositionFormContainer>
     </div>
   );

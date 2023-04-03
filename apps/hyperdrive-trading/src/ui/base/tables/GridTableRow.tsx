@@ -15,7 +15,7 @@ export function GridTableRow({
   return (
     <div
       className={classNames(
-        "grid auto-cols-fr grid-flow-col last:rounded-b-lg [&>*]:overflow-hidden [&>*]:text-ellipsis [&>*]:p-4",
+        "grid auto-cols-fr grid-flow-col last:rounded-b-md [&>*]:overflow-hidden [&>*]:text-ellipsis [&>*]:p-4",
         className,
       )}
     >

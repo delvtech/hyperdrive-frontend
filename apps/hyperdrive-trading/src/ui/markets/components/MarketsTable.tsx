@@ -52,9 +52,6 @@ export function MarketsTable(): ReactElement {
       <div className="space-y-4">
         {/* Market Duration button group */}
         <div className="flex items-center gap-x-4">
-          {/* <h3 className="text-lg text-hyper-blue-100 font-quantico">
-            Select Market Duration:
-          </h3> */}
           <div className="flex flex-wrap gap-2">
             {termLengths
               .slice()
@@ -65,7 +62,7 @@ export function MarketsTable(): ReactElement {
                   active={termLengthFilter === termLength}
                   onClick={() => setSelectedTermLengthFilter(termLength)}
                 >
-                  {termLength} months
+                  <p>{termLength} months</p>
                 </Button>
               ))}
           </div>
@@ -85,7 +82,7 @@ export function MarketsTable(): ReactElement {
               active={protocolFilter === ALL_MARKETS_KEY}
               onClick={() => setSelectedProtocolFilter(ALL_MARKETS_KEY)}
             >
-              All Protocols
+              <p>All Protocols</p>
             </Button>
 
             {protocols
@@ -97,10 +94,7 @@ export function MarketsTable(): ReactElement {
                   active={protocolFilter === protocol.name}
                   onClick={() => setSelectedProtocolFilter(protocol.name)}
                 >
-                  <ProtocolLabel
-                    className="font-quantico"
-                    protocol={protocol}
-                  />
+                  <ProtocolLabel className="font-bold" protocol={protocol} />
                 </Button>
               ))}
           </div>
@@ -110,16 +104,12 @@ export function MarketsTable(): ReactElement {
       {/* Markets sortable table */}
       <div>
         <SortableGridTable
-          headingRowClassName="grid-cols-[2fr_1fr_1fr_1fr_1fr] bg-base-100 text-hyper-blue-200 font-dm-sans text-md [&>*]:p-5 bg-opacity-100"
+          headingRowClassName="grid-cols-[2fr_1fr_1fr_1fr_1fr] bg-base-100 text-hyper-blue-200 font-dm-sans [&>*]:p-5 bg-opacity-100"
           bodyRowClassName="grid-cols-[2fr_1fr_1fr_1fr_1fr] bg-transparent text-hyper-blue-100 font-dm-sans [&>*]:p-5"
           cols={[
             {
               cell: "Name",
               sortKey: "name",
-            },
-            {
-              cell: "Protocol",
-              sortKey: "protocol",
             },
             "Token",
             {
@@ -127,8 +117,12 @@ export function MarketsTable(): ReactElement {
               sortKey: "liquidity",
             },
             {
-              cell: "APR",
+              cell: "Long APR",
               sortKey: "longAPR",
+            },
+            {
+              cell: "Short APR",
+              sortKey: "shortAPR",
             },
           ]}
           rows={filteredMarkets.map((marketRowData) =>
@@ -144,16 +138,19 @@ function createMarketRow({ market }: MarketTableRowData): Row {
   return {
     href: `/trade/${market.address}`,
     cells: [
-      <span className="font-bold">{market.name}</span>,
-      <ProtocolLabel
-        className="font-bold font-dm-sans"
-        protocol={market.protocol}
-      />,
-      <TokenLabel className="font-bold font-dm-sans" token="DAI" />,
-      <span className="font-medium font-dm-sans" data-tip="hello">
+      <span className="font-bold">
+        <p>{market.name}</p>
+        <ProtocolLabel
+          className="font-normal font-dm-sans"
+          protocol={market.protocol}
+        />
+      </span>,
+      <TokenLabel className="font-semibold font-dm-sans" token="DAI" />,
+      <span className="font-medium" data-tip="hello">
         $100M
       </span>,
-      <span className="font-medium font-dm-sans">1.25%</span>,
+      <span className="font-semibold">1.25%</span>,
+      <span className="font-semibold">1.25%</span>,
     ],
   };
 }
