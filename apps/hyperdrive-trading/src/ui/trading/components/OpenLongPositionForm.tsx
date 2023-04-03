@@ -31,7 +31,7 @@ export function OpenLongPositionForm({
     decimals: market.baseToken.decimals,
   });
 
-  const { tokenAllowance, status: tokenAllowanceStatus } = useTokenAllowance({
+  const { tokenAllowance } = useTokenAllowance({
     account,
     spender: market.address,
     tokenAddress: market.baseToken.address,
