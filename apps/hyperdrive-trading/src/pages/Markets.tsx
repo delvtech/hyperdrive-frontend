@@ -10,8 +10,10 @@ export function Markets(): ReactElement {
           <h2 className="text-4xl font-bold sm:text-6xl font-akira text-hyper-blue-100">
             Markets
           </h2>
-          <p className="text-xl font-medium sm:text-2xl text-hyper-blue-200 font-dm-sans">
-            Discover fixed and variable yield markets
+          <p className="max-w-2xl text-xl font-medium sm:text-xl text-hyper-blue-200 font-dm-sans">
+            Advanced yield markets featuring no preset expiration dates, no
+            fragmented liquidity, and no LP rollovers — aka everlasting
+            liquidity.
           </p>
         </div>
 

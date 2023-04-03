@@ -9,11 +9,13 @@ interface ButtonProps extends PropsWithChildren {
   onClick: MouseEventHandler<HTMLButtonElement>;
 }
 
-type ButtonVariant = "Trade" | "Default";
+type ButtonVariant = "Trade" | "Default" | "Approve";
 
 const ButtonVariantStyles: Record<ButtonVariant, string> = {
   Trade:
     "text-xl font-bold bg-hyper-green text-base-300 font-quantico hover:bg-opacity-60 rounded-sm disabled:bg-opacity-50",
+  Approve:
+    "text-xl font-bold  bg-[#FF9031] text-base-300 font-quantico hover:bg-opacity-60 rounded-sm disabled:bg-opacity-50",
   Default:
     "whitespace-nowrap border border-hyper-blue-400 px-4 py-2 font-quantico text-hyper-green hover:bg-hyper-blue-400 hover:bg-opacity-50 bg-base-200 disabled:bg-base-400 disabled:text-opacity-50",
 };

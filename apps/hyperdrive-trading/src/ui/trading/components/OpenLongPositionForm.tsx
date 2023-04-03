@@ -1,3 +1,4 @@
+import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { ethers } from "ethers";
 import { ReactElement } from "react";
 import { HyperdriveMarket } from "src/config/HyperdriveConfig";
@@ -19,6 +20,7 @@ export function OpenLongPositionForm({
   market,
 }: OpenLongPositionFormProps): ReactElement {
   const { address: account } = useAccount();
+  const { openConnectModal } = useConnectModal();
 
   const { data: baseTokenBalance } = useBalance({
     address: account,
@@ -29,7 +31,7 @@ export function OpenLongPositionForm({
     decimals: market.baseToken.decimals,
   });
 
-  const { tokenAllowance, status: tokenAllowanceStatus } = useTokenAllowance({
+  const { tokenAllowance } = useTokenAllowance({
     account,
     spender: market.address,
     tokenAddress: market.baseToken.address,
@@ -41,8 +43,9 @@ export function OpenLongPositionForm({
     amount: ethers.constants.MaxUint256.toBigInt(),
   });
 
-  const needsApproval =
-    tokenAllowance && amountAsBigInt ? amountAsBigInt > tokenAllowance : false;
+  const needsApproval = tokenAllowance
+    ? amountAsBigInt && amountAsBigInt > tokenAllowance
+    : true;
 
   const { longAmountOut, status: openLongPreviewStatus } = usePreviewOpenLong({
     market,
@@ -84,25 +87,35 @@ export function OpenLongPositionForm({
         />
       </div>
 
-      {needsApproval ? (
-        // Approval button
-        <Button
-          disabled={!approve || tokenAllowanceStatus !== "success"}
-          variant="Trade"
-          className="w-full px-0 py-4 text-xl bg-[#FF9031]"
-          onClick={() => approve?.()}
-        >
-          Approve {market.baseToken.symbol}
-        </Button>
+      {account ? (
+        needsApproval ? (
+          // Approval button
+          <Button
+            disabled={!approve}
+            variant="Approve"
+            className="w-full px-0 py-4 text-xl"
+            onClick={() => approve?.()}
+          >
+            Approve {market.baseToken.symbol}
+          </Button>
+        ) : (
+          // Trade button
+          <Button
+            disabled={!openLong}
+            variant="Trade"
+            className="w-full px-0 py-4 text-xl"
+            onClick={() => openLong?.()}
+          >
+            Open Long
+          </Button>
+        )
       ) : (
-        // Trade button
         <Button
-          disabled={!openLong}
           variant="Trade"
+          onClick={() => openConnectModal?.()}
           className="w-full px-0 py-4 text-xl"
-          onClick={() => openLong?.()}
         >
-          Open Long
+          Connect Wallet
         </Button>
       )}
     </>
