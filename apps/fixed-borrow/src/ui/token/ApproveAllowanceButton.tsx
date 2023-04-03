@@ -1,4 +1,4 @@
-import { BigNumber, ethers } from "ethers";
+import { ethers } from "ethers";
 import { ReactElement } from "react";
 import { Button } from "src/ui/base/Button/Button";
 import { useSpenderAllowance } from "src/ui/token/useSpenderAllowance";

@@ -10,7 +10,7 @@ import { HyperdriveGoerliAddresses } from "@hyperdrive/core";
 interface SupplyInputProps {
   tokenAddress: Address;
   value?: string;
-  onChange?: (newAmount: string | undefined) => void;
+  onChange?: (newAmount: string) => void;
 }
 
 export function SupplyInput({
