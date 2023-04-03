@@ -1,6 +1,6 @@
-import { ethers } from "ethers";
 import { ReactElement } from "react";
 import { Button } from "src/ui/base/Button/Button";
+import { formatAddress } from "src/ui/base/formatting/formatAddress";
 import { useSpenderAllowance } from "src/ui/token/useSpenderAllowance";
 import { useTokenApproval } from "src/ui/token/useTokenApproval";
 import { Address, useToken } from "wagmi";
@@ -9,22 +9,22 @@ export function ApproveAllowanceButton({
   tokenAddress,
   amount,
   spender,
+  spenderLabel,
 }: {
   tokenAddress: Address;
   amount: bigint;
   spender: Address;
+  spenderLabel?: string;
 }): ReactElement | null {
   const { data: token } = useToken({ address: tokenAddress });
   const { approve } = useTokenApproval({
     tokenAddress: tokenAddress,
     spender,
-    // This will render a big nasty looking warning in MetaMask
-    // TODO: Switch to a reasonable amount instead, (eg: amount + some buffer)
-    amount: ethers.constants.MaxUint256,
+    amount,
   });
   const { allowance } = useSpenderAllowance(tokenAddress, spender);
 
-  if (allowance?.gte(amount)) {
+  if (allowance === undefined || amount <= 0 || allowance >= amount) {
     return null;
   }
 
@@ -35,7 +35,8 @@ export function ApproveAllowanceButton({
       disabled={!approve}
       onClick={() => approve?.()}
     >
-      Approve {token?.symbol}
+      Approve {token?.symbol}, spender:{" "}
+      {spenderLabel ? spenderLabel : formatAddress(spender)}
     </Button>
   );
 }

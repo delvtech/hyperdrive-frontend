@@ -5,7 +5,7 @@ import { Address, useContractWrite, usePrepareContractWrite } from "wagmi";
 interface UseTokenApprovalOptions {
   tokenAddress: Address;
   spender: Address;
-  amount: BigNumber;
+  amount: bigint;
 }
 
 export function useTokenApproval({
@@ -17,7 +17,7 @@ export function useTokenApproval({
     address: tokenAddress,
     abi: DSTokenABI, // tokens are a DSToken on goerli, see: https://github.com/dapphub/ds-token
     functionName: "approve",
-    args: [spender, amount],
+    args: [spender, BigNumber.from(amount)],
   });
   const { write: approve } = useContractWrite(approveConfig);
   return { approve };

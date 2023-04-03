@@ -49,11 +49,13 @@ export function BorrowInput({
         tokenAddress={tokenAddress}
         amount={parseBigInt(value || "0", tokenMetadata?.decimals)}
         spender={HyperdriveGoerliAddresses.aaveFixedBorrowAction}
+        spenderLabel="aaveFixedBorrowAction"
       />
       <ApproveAllowanceButton
         tokenAddress={tokenAddress}
         amount={parseBigInt(value || "0", tokenMetadata?.decimals)}
         spender={HyperdriveGoerliAddresses.makerDsrHyperdrive}
+        spenderLabel="makerDsrHyperdrive"
       />
     </div>
   );
