@@ -4,12 +4,16 @@ import { useUserAccountData } from "src/ui/loans/hooks/useUserAccountData";
 import { useAccount, useToken } from "wagmi";
 import { useAaveOracleAssetPrice } from "src/ui/oracles/useAaveOracleAssetPrice";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { HyperdriveGoerliAddresses } from "@hyperdrive/core";
+import {
+  AaveFixedBorrowActionABI,
+  HyperdriveGoerliAddresses,
+} from "@hyperdrive/core";
 import { LoanCard } from "src/ui/loans/LoanCard/LoanCard";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MintButton } from "src/ui/faucet/MintButton";
 import { formatBigInt } from "src/base/bigint/formatBigInt";
 import { parseBigInt } from "src/base/bigint/parseBigInt";
+import { ClearAllowanceButton } from "src/ui/token/ClearAllowanceButton";
 
 console.log(SparkGoerliAddresses);
 console.log(HyperdriveGoerliAddresses);
@@ -54,6 +58,28 @@ export default function App(): ReactElement {
           />
         </div>
         <ConnectButton showBalance={false} />
+      </div>
+      <div className="flex w-full justify-center gap-2">
+        <ClearAllowanceButton
+          tokenAddress={SparkGoerliAddresses.DAI_token}
+          spender={HyperdriveGoerliAddresses.aaveFixedBorrowAction}
+          spenderLabel="aaveFixedBorrowAction"
+        />
+        <ClearAllowanceButton
+          tokenAddress={SparkGoerliAddresses.wstETH_token}
+          spender={HyperdriveGoerliAddresses.aaveFixedBorrowAction}
+          spenderLabel="aaveFixedBorrowAction"
+        />
+        <ClearAllowanceButton
+          tokenAddress={SparkGoerliAddresses.wstETH_token}
+          spender={SparkGoerliAddresses.pool}
+          spenderLabel="sparkPool"
+        />
+        <ClearAllowanceButton
+          tokenAddress={SparkGoerliAddresses.DAI_token}
+          spender={SparkGoerliAddresses.pool}
+          spenderLabel="sparkPool"
+        />
       </div>
       <div className="flex min-h-[75vh] w-full flex-col items-center justify-center py-[10vh] px-[4vw]">
         <div className="max-w-4xl">
