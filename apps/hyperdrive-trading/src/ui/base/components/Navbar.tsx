@@ -42,16 +42,12 @@ export function Navbar(): ReactElement {
               </li>
               <li className="hover:bg-hyper-blue-400">
                 <Link className="font-akira" to="/trade">
-                  <Link className="font-akira" to="/markets">
-                    <p>Trade</p>
-                  </Link>
+                  <p>Trade</p>
                 </Link>
               </li>
               <li className="hover:bg-hyper-blue-400">
                 <Link className="font-akira" to="/portfolio">
-                  <Link className="font-akira" to="/markets">
-                    <p>Portfolio</p>
-                  </Link>
+                  <p>Portfolio</p>
                 </Link>
               </li>
             </ul>
