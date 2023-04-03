@@ -85,7 +85,8 @@ export function App(): ReactElement {
         ],
       },
     ]);
-  }, [config, lastViewedMarket, setLastViewedMarket]);
+    /* eslint-disable-next-line  react-hooks/exhaustive-deps */
+  }, [config]);
 
   return (
     <QueryClientProvider client={queryClient}>
