@@ -1,7 +1,7 @@
 // See: https://github.com/element-fi/hyperdrive/blob/main/addresses.json
 export const HyperdriveGoerliAddresses = {
-  makerDsrHyperdrive: "0x8C9Ccd26fFB734658171EE2B0C6d087e72752c20",
+  makerDsrHyperdrive: "0xB311B825171AF5A60d69aAD590B857B1E5ed23a2",
   // fixed borrow action is deployed with a reference to the makerDsrHyperdrive
   // https://github.com/element-fi/hyperdrive/blob/main/contracts/src/actions/AaveFixedBorrow.sol
-  aaveFixedBorrowAction: "0x6F97F6662eF2BDD2b468E1a5eB1956729648A9b8",
+  aaveFixedBorrowAction: "0x42d211e3B53E460D7122464Cd888d83310c455A5",
 } as const;
