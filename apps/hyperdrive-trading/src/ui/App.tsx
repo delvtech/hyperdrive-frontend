@@ -85,7 +85,7 @@ export function App(): ReactElement {
         ],
       },
     ]);
-  }, [config]);
+  }, [config, lastViewedMarket, setLastViewedMarket]);
 
   return (
     <QueryClientProvider client={queryClient}>

@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { useState } from "react";
 
 // source: https://usehooks.com/useLocalStorage/
