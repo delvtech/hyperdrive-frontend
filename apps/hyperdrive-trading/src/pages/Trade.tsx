@@ -1,7 +1,13 @@
-import { PropsWithChildren, ReactElement, useState, useEffect, useRef } from "react";
+import { ChartOptions, createChart, IChartApi } from "lightweight-charts";
+import {
+  PropsWithChildren,
+  ReactElement,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { useLoaderData } from "react-router-dom";
 import { HyperdriveMarket } from "src/config/HyperdriveConfig";
-import { ChartOptions, createChart, IChartApi } from "lightweight-charts";
 import { OpenOrdersTable } from "src/ui/orders/components/OpenOrdersTable";
 import { PositionForm } from "src/ui/trading/components/PositionForm";
 
@@ -17,16 +23,13 @@ export function Trade(): ReactElement {
   // Safe to cast this variable because router configs this page is rendered with a valid market
   const market = useLoaderData() as HyperdriveMarket;
 
-
-
-
   const [isChartRendered, setIsChartRendered] = useState(false);
 
   const chartOptions = {
     autoSize: true,
     layout: {
       textColor: "white",
-      background: { type: "solid", color: "black" },
+      background: { type: "solid", color: "#151427" },
     },
     grid: {
       vertLines: {
@@ -55,9 +58,9 @@ export function Trade(): ReactElement {
   useEffect(() => {
     if (!!chart.current && !isChartRendered) {
       const areaSeries = chart.current.addAreaSeries({
-        lineColor: "#2962FF",
-        topColor: "#2962FF",
-        bottomColor: "rgba(41, 98, 255, 0.28)",
+        lineColor: "#FF99FA",
+        topColor: "#F4B1FF",
+        bottomColor: "rgba(244, 177, 255, 0.5)",
       });
       areaSeries.setData([
         { time: "2018-12-22", value: 32.51 },
@@ -119,7 +122,7 @@ export function Trade(): ReactElement {
         <PositionForm market={market} />
       </PositionFormContainer>
 
-      <div className="flex flex-col w-full border-b border-hyper-blue-300">
+      <div className="flex flex-col w-full border-b border-hyper-blue-300 bg-base-100">
         <div className="grid h-full grid-flow-row grid-rows-2">
           <div id="chart-container" className="overflow-hidden">
             <div id="chart" className="h-full grid-rows-1" />
