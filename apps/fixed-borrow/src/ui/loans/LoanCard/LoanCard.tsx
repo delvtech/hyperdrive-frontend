@@ -127,7 +127,6 @@ export function LoanCard({
                 variableDebtTokenAddress={
                   SparkGoerliAddresses.DAI_variableDebtToken
                 }
-                amount={parseBigInt("100000000")}
                 spender={HyperdriveGoerliAddresses.aaveFixedBorrowAction}
                 spenderLabel="aaveFixedBorrowAction"
               />

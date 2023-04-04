@@ -41,6 +41,9 @@ export function useSupplyBorrowAndOpenShort({
           BigNumber.from(maxDeposit),
         ]
       : undefined,
+    overrides: {
+      gasLimit: BigNumber.from(2_000_000),
+    },
   });
   const { write: supplyBorrowAndOpenShort, status } = useContractWrite(config);
 
