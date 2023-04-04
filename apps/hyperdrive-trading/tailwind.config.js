@@ -36,7 +36,7 @@ module.exports = {
         "base-200": "#1A1A33",
         "base-300": "#212140",
         "base-400": "#1F1F3D",
-        "hyper-red": "#f5405d",
+        "hyper-red": "#BF5856",
         "hyper-green": "#61E4A3",
         "hyper-pink": "#F4B1FF",
         "hyper-blue-100": "#D6D5F6",
