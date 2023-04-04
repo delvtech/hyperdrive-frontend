@@ -1,73 +1,109 @@
 /* eslint-disable react/jsx-key */
 
 import { ReactElement } from "react";
-import { useConfig } from "src/config/hooks/useConfig";
-import { HyperdriveMarket } from "src/config/HyperdriveConfig";
-import Button from "src/ui/base/components/Button";
 import { Row, SortableGridTable } from "src/ui/base/tables/SortableGridTable";
-import { ProtocolLabel } from "src/ui/protocol/components/ProtocolLabel";
-import { TokenLabel } from "src/ui/token/components/TokenLabel";
+import { OrderType, PositionType } from "src/ui/trading/types";
 
 export function OpenOrdersTable(): ReactElement {
-  const config = useConfig();
-
-  const asasad = "";
-
   return (
-    <div className="flex flex-col pt-4 text-hyper-blue-100 gap-y-4">
-      {/* <h2 className="font-akira">Open Positions</h2> */}
-
-      <div className="">
-        <div className="flex justify-center">
-          <Button active={true} className="w-48" onClick={() => {}}>
-            Open Positions
-          </Button>
-          <Button className="w-48" onClick={() => {}}>
-            Closed Positions
-          </Button>
-          <Button className="w-48" onClick={() => {}}>
-            Recent Trades
-          </Button>
-          {/* <Button disabled className="w-full" onClick={() => {}}>
-            LP
-          </Button> */}
-        </div>
-      </div>
-      <SortableGridTable
-        headingRowClassName="grid-cols-[2fr_1fr_1fr_1fr_1fr] bg-base-100 text-hyper-blue-200 font-dm-sans text-md [&>*]:p-5 bg-opacity-100"
-        bodyRowClassName="grid-cols-[2fr_1fr_1fr_1fr_1fr] bg-transparent text-hyper-blue-100 font-dm-sans [&>*]:p-5"
-        cols={[
-          {
-            cell: "Name",
-            sortKey: "name",
-          },
-          "Type",
-          "Amount",
-          "Open Date",
-          "Expiry Date",
-        ]}
-        rows={config.markets.map((marketRowData) =>
-          createOpenOrderRow(marketRowData),
-        )}
-      />
-    </div>
+    <SortableGridTable
+      headingRowClassName="grid-cols-6 text-hyper-blue-200 font-dm-sans text-md [&>*]:p-2"
+      bodyRowClassName="grid-cols-6 text-hyper-blue-100 font-dm-sans [&>*]:p-2 items-center"
+      cols={["Position", "Type", "Amount", "Value", "Expiry Date", ""]}
+      rows={stubbedOrderData.map((order) => createOpenOrderRow(order))}
+    />
   );
 }
 
-function createOpenOrderRow(market: HyperdriveMarket): Row {
+interface Order {
+  position: PositionType;
+  type: OrderType;
+  amount: string;
+  value: string;
+  openDate: Date;
+  expiryDate: Date;
+}
+
+function createOpenOrderRow(order: Order): Row {
   return {
-    href: `/trade/${market.address}`,
     cells: [
-      <span className="font-bold">{market.name}</span>,
-      <ProtocolLabel
-        className="font-bold font-dm-sans"
-        protocol={market.protocol}
-      />,
-      <TokenLabel className="font-bold font-dm-sans" token="DAI" />,
-      <span className="font-medium font-dm-sans" data-tip="hello">
-        $100M
+      <span className="font-bold text-hyper-green">{order.position}</span>,
+      <span className="font-bold">{order.type}</span>,
+      <span>{order.amount}</span>,
+      <span>{order.value}</span>,
+      <span>{order.expiryDate.toLocaleDateString()}</span>,
+      <span>
+        <button className="px-2 py-1 text-sm font-bold uppercase bg-hyper-red font-quantico text-base-100">
+          Close
+        </button>
       </span>,
-      <span className="font-medium font-dm-sans">1.25%</span>,
     ],
   };
 }
+
+const stubbedOrderData: Order[] = [
+  {
+    type: "Open",
+    position: "Long",
+    amount: "10000 DAI",
+    value: "$10000",
+    openDate: new Date(),
+    expiryDate: new Date(),
+  },
+  {
+    type: "Open",
+    position: "Long",
+    amount: "10000 DAI",
+    value: "$10000",
+    openDate: new Date(),
+    expiryDate: new Date(),
+  },
+  {
+    type: "Open",
+    position: "Long",
+    amount: "10000 DAI",
+    value: "$10000",
+    openDate: new Date(),
+    expiryDate: new Date(),
+  },
+  {
+    type: "Open",
+    position: "Long",
+    amount: "10000 DAI",
+    value: "$10000",
+    openDate: new Date(),
+    expiryDate: new Date(),
+  },
+  {
+    type: "Open",
+    position: "Long",
+    amount: "10000 DAI",
+    value: "$10000",
+    openDate: new Date(),
+    expiryDate: new Date(),
+  },
+  {
+    type: "Open",
+    position: "Long",
+    amount: "10000 DAI",
+    value: "$10000",
+    openDate: new Date(),
+    expiryDate: new Date(),
+  },
+  {
+    type: "Open",
+    position: "Long",
+    amount: "10000 DAI",
+    value: "$10000",
+    openDate: new Date(),
+    expiryDate: new Date(),
+  },
+  {
+    type: "Open",
+    position: "Long",
+    amount: "10000 DAI",
+    value: "$10000",
+    openDate: new Date(),
+    expiryDate: new Date(),
+  },
+];
