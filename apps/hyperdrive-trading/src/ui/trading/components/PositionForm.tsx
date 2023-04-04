@@ -20,7 +20,7 @@ export function PositionForm({ market }: PositionFormProps): ReactElement {
   const [order, setOrder] = useState<OrderType>("Open");
 
   return (
-    <div className="flex flex-col p-8 border-b border-hyper-blue-300 gap-y-12">
+    <div className="flex flex-col gap-y-12">
       {/* Header */}
       <div className="flex items-center">
         <h3 className="mr-auto text-xl font-bold text-hyper-blue-100 font-akira">
