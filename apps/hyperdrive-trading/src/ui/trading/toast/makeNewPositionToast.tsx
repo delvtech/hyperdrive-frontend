@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import { ReactElement } from "react";
 import { formatAddress } from "src/ui/base/formatting/formatAddress";
 import { OrderType, PositionType } from "src/ui/trading/types";
 import { Address } from "wagmi";
@@ -13,7 +14,7 @@ export function makeNewPositionToast({
   order,
   position,
   hash,
-}: MakeNewPositionToastOptions): JSX.Element {
+}: MakeNewPositionToastOptions): ReactElement {
   return (
     <div
       className={classNames(
