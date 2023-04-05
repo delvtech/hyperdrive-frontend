@@ -15,7 +15,7 @@ export function useVariableDebtTokenAllowance({
   const { data: allowance, status } = useContractRead({
     address: variableDebtTokenAddress,
     abi: VariableDebtTokenABI,
-    functionName: "allowance",
+    functionName: "borrowAllowance",
     enabled: !!account,
     args: !!account ? [account, delegatee] : undefined,
   });
