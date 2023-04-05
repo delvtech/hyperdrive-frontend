@@ -21,6 +21,10 @@ interface LoanCardProps {
   borrowTokenAddress: `0x${string}`;
 }
 
+// The same buffer that's used in the contract tests:
+// https://github.com/element-fi/hyperdrive/blob/main/test/integrations/AaveFixedBorrow.t.sol#L104
+const MAX_DEPOSIT_BUFFER = parseBigInt("1.1", 18);
+
 export function LoanCard({
   supplyTokenAddress,
   borrowTokenAddress,
@@ -64,7 +68,7 @@ export function LoanCard({
     borrowAmount: borrowAmountBigInt,
     supplyAmount: supplyAmountBigInt,
     bondAmount: bondAmount?.shortAmount,
-    maxDeposit: (bondAmount?.shortAmount || 0n) + parseBigInt("1.1", 18),
+    maxDeposit: (bondAmount?.shortAmount || 0n) + MAX_DEPOSIT_BUFFER,
   });
 
   return (
