@@ -10,7 +10,7 @@ import { usePreviewOpenLong } from "src/ui/hyperdrive/hooks/usePreviewOpenLong";
 import { TokenInput } from "src/ui/token/components/TokenInput";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenApproval } from "src/ui/token/hooks/useTokenApproval";
-import { PositionOverviewWell } from "src/ui/trading/components/PositionOverviewWell";
+import { LongPositionOverviewWell } from "src/ui/trading/components/LongPositionOverviewWell";
 import { useAccount, useBalance } from "wagmi";
 
 interface OpenLongPositionFormProps {
@@ -89,7 +89,7 @@ export function OpenLongPositionForm({
       {/* New Position Section */}
       <div className="space-y-4 text-hyper-blue-100 font-rubik">
         <h4>New Position</h4>
-        <PositionOverviewWell
+        <LongPositionOverviewWell
           market={market}
           costBasis={amountAsBigInt ?? 0n}
           claimableAtMaturity={longAmountOut ?? 0n}
