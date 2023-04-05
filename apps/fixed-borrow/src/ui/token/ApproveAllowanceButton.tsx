@@ -11,7 +11,7 @@ export function ApproveAllowanceButton({
   spender,
 }: {
   tokenAddress: Address;
-  amount: bigint;
+  amount: bigint | undefined;
   spender: Address;
 }): ReactElement | null {
   const { data: token } = useToken({ address: tokenAddress });
@@ -22,9 +22,19 @@ export function ApproveAllowanceButton({
     // TODO: Switch to a reasonable amount instead, (eg: amount + some buffer)
     amount: ethers.constants.MaxUint256,
   });
-  const { allowance } = useSpenderAllowance(tokenAddress, spender);
+  const { allowance, status: allowanceStatus } = useSpenderAllowance(
+    tokenAddress,
+    spender,
+  );
 
-  if (allowance?.gte(amount)) {
+  // don't show the button if there's no amount given, or we're waiting on the
+  // allowance result
+  if (!amount || allowanceStatus === "loading") {
+    return null;
+  }
+
+  // don't show the button if the current allowance covers the amount to spend
+  if (allowance && allowance >= amount) {
     return null;
   }
 
