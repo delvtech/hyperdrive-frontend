@@ -10,6 +10,7 @@ import Button from "src/ui/base/components/Button";
 import { LongPositionForm } from "src/ui/trading/components/LongPositionForm";
 import { OrderType, PositionType } from "src/ui/trading/types";
 import { match } from "ts-pattern";
+import { ShortPositionForm } from "./ShortPositionForm";
 
 interface PositionFormProps {
   market: HyperdriveMarket;
@@ -43,7 +44,7 @@ export function PositionForm({ market }: PositionFormProps): ReactElement {
             <p>Long</p>
           </Button>
           <Button
-            disabled
+            active={position === "Short"}
             className="flex items-center justify-center w-full gap-x-1"
             onClick={() => setPosition("Short")}
           >
@@ -77,7 +78,9 @@ export function PositionForm({ market }: PositionFormProps): ReactElement {
 
       {match(position)
         .with("Long", () => <LongPositionForm market={market} order={order} />)
-        .with("Short", () => <div></div>)
+        .with("Short", () => (
+          <ShortPositionForm market={market} order={order} />
+        ))
         .with("LP", () => <div></div>)
         .exhaustive()}
     </div>
