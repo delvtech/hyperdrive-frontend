@@ -1,6 +1,7 @@
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { ethers } from "ethers";
 import { ReactElement } from "react";
+import { useQueryClient } from "react-query";
 import { HyperdriveMarket } from "src/config/HyperdriveConfig";
 import Button from "src/ui/base/components/Button";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
@@ -19,6 +20,8 @@ interface OpenLongPositionFormProps {
 export function OpenLongPositionForm({
   market,
 }: OpenLongPositionFormProps): ReactElement {
+  const queryClient = useQueryClient();
+
   const { address: account } = useAccount();
   const { openConnectModal } = useConnectModal();
 
@@ -55,13 +58,19 @@ export function OpenLongPositionForm({
     enabled: !needsApproval,
   });
 
-  const { openLong } = useOpenLong({
+  const { openLong, openLongTransactionStatus, openLongStatus } = useOpenLong({
     market,
     baseAmount: amountAsBigInt,
     // TODO: handle slippage
     bondAmountOut: BigInt(1),
     destination: account,
     enabled: openLongPreviewStatus === "success" && !needsApproval,
+    onExecuted: () => {
+      // reset local state after successful transaction
+      setAmount(undefined);
+      // TODO: could be smarter about this in the future
+      queryClient.invalidateQueries();
+    },
   });
 
   return (
@@ -101,7 +110,11 @@ export function OpenLongPositionForm({
         ) : (
           // Trade button
           <Button
-            disabled={!openLong}
+            disabled={
+              !openLong ||
+              openLongTransactionStatus === "loading" ||
+              openLongStatus === "loading"
+            }
             variant="Trade"
             className="w-full px-0 py-4 text-xl"
             onClick={() => openLong?.()}
