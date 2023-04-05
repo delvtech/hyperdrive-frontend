@@ -65,6 +65,7 @@ export function useOpenLong({
     hash,
     onSuccess: (data) => {
       toast.dismiss(data.transactionHash);
+      setHash(undefined);
       onExecuted?.();
     },
   });
