@@ -4,7 +4,7 @@ import { Pill } from "src/ui/base/components/Pill";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { formatBigInt } from "src/ui/base/formatting/formatBigInt";
 
-interface PositionOverviewWellProps {
+interface LongPositionOverviewWellProps {
   market: HyperdriveMarket;
   costBasis: bigint;
   // TODO: stubbed for now
@@ -12,12 +12,12 @@ interface PositionOverviewWellProps {
   claimableAtMaturity: bigint;
 }
 
-export function PositionOverviewWell({
+export function LongPositionOverviewWell({
   market,
   costBasis,
   // fixedApr,
   claimableAtMaturity,
-}: PositionOverviewWellProps): ReactElement {
+}: LongPositionOverviewWellProps): ReactElement {
   const current = new Date();
   const formattedMaturityDate = new Date(
     current.setMonth(current.getMonth() + market.termLength),
