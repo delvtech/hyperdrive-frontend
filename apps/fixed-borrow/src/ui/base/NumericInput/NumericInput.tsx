@@ -42,7 +42,7 @@ export function NumericInput({
         {maxValue && onChange ? (
           <Button
             size="sm"
-            disabled={!!+(maxValue || 0)}
+            disabled={!+(maxValue || 0)}
             variant="dark"
             onClick={() => onChange(maxValue)}
           >

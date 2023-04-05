@@ -4,7 +4,6 @@ import { Address, useAccount, useBalance, useToken } from "wagmi";
 import { NumericInput } from "src/ui/base/NumericInput/NumericInput";
 import { AssetBadge } from "src/ui/token/AssetBadge";
 import { ApproveAllowanceButton } from "src/ui/token/ApproveAllowanceButton";
-import { parseBigInt } from "src/base/bigint/parseBigInt";
 import { HyperdriveGoerliAddresses } from "@hyperdrive/core";
 
 interface SupplyInputProps {
@@ -44,9 +43,11 @@ export function SupplyInput({
         secondaryLabel={availableToDepositLabel}
         onChange={onChange}
       />
+      {/* The action contract must be able to spend your collateral in order to
+      deposit it into Spark on your behalf */}
       <ApproveAllowanceButton
         tokenAddress={tokenAddress}
-        amount={parseBigInt(value || "0", tokenMetadata?.decimals)}
+        amount={balanceOf?.value.toBigInt()}
         spender={HyperdriveGoerliAddresses.aaveFixedBorrowAction}
       />
     </div>

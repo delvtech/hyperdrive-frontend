@@ -2,31 +2,31 @@ import { ethers } from "ethers";
 import { ReactElement } from "react";
 import { formatBigInt } from "src/base/bigint/formatBigInt";
 import { Button } from "src/ui/base/Button/Button";
-import { useSpenderAllowance } from "src/ui/token/useSpenderAllowance";
-import { useTokenApproval } from "src/ui/token/useTokenApproval";
+import { useApproveDelegation } from "src/ui/loans/hooks/useApproveDelegation";
+import { useVariableDebtTokenAllowance } from "src/ui/loans/hooks/useVariableDebtTokenAllowance";
 import { Address, useToken } from "wagmi";
 
-export function ApproveAllowanceButton({
-  tokenAddress,
+export function ApproveDelegationButton({
+  variableDebtTokenAddress,
   amount,
-  spender,
+  delegatee,
 }: {
-  tokenAddress: Address;
+  variableDebtTokenAddress: Address;
   amount: bigint | undefined;
-  spender: Address;
+  delegatee: Address;
 }): ReactElement | null {
-  const { data: token } = useToken({ address: tokenAddress });
-  const { approve } = useTokenApproval({
-    tokenAddress: tokenAddress,
-    spender,
+  const { data: token } = useToken({ address: variableDebtTokenAddress });
+  const { approveDelegation } = useApproveDelegation({
+    variableDebtTokenAddress,
+    delegatee,
     // This will render a big nasty looking warning in MetaMask
     // TODO: Switch to a reasonable amount instead, (eg: amount + some buffer)
-    amount: ethers.constants.MaxUint256,
+    amount: ethers.constants.MaxUint256.toBigInt(),
   });
-  const { allowance, status: allowanceStatus } = useSpenderAllowance(
-    tokenAddress,
-    spender,
-  );
+  const { allowance, status: allowanceStatus } = useVariableDebtTokenAllowance({
+    variableDebtTokenAddress,
+    delegatee,
+  });
 
   // don't show the button if there's no amount given, or we're waiting on the
   // allowance result
@@ -43,8 +43,8 @@ export function ApproveAllowanceButton({
     <Button
       size="lg"
       variant="sun"
-      disabled={!approve}
-      onClick={() => approve?.()}
+      disabled={!approveDelegation}
+      onClick={() => approveDelegation?.()}
     >
       <span title={`Current allowance: ${formatBigInt(allowance || 0n)}`}>
         Approve {token?.symbol}
