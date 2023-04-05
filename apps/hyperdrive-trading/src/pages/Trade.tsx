@@ -20,38 +20,42 @@ export function Trade(): ReactElement {
   const [isChartRendered, setIsChartRendered] = useState(false);
   const chart = useRef<IChartApi | undefined>(undefined);
 
-  // Create chart on page mount
-  useEffect(() => {
-    chart.current = createChart(
-      document.getElementById("chart")!,
-      chartOptions,
-    );
-  }, []);
-
   // Add chart data when chart is mounted
   useEffect(() => {
-    if (chart.current && !isChartRendered) {
+    if (!isChartRendered) {
+      // set the ref to the chart object
+      chart.current = createChart(
+        document.getElementById("chart")!,
+        chartOptions,
+      );
+
+      // create the area series chart
       const areaSeries = chart.current.addAreaSeries({
         lineColor: "#FF99FA",
         topColor: "#F4B1FF",
         bottomColor: "rgba(244, 177, 255, 0.2)",
       });
-
       areaSeries.setData(stubbedChartData);
+
+      // scale the x axis to fit the viewport
       chart.current.timeScale().fitContent();
     }
 
+    // set state to prevent a new chart from being rendered when hot-reloading
     setIsChartRendered(true);
-  }, [chart]);
+  }, []);
 
-  // Resize x-axis when chart is redrawn
+  const resizeChartHandler = () => {
+    if (chart.current) {
+      chart.current.timeScale().fitContent();
+    }
+  };
+
+  // Resize timescale when chart is resized
   useEffect(() => {
-    window.addEventListener("resize", () => {
-      if (chart.current) {
-        chart.current.timeScale().fitContent();
-      }
-    });
-  });
+    window.addEventListener("resize-chart", resizeChartHandler);
+    return removeEventListener("resize-chart", resizeChartHandler);
+  }, []);
 
   return (
     <div className="grid grid-flow-row border-t border-hyper-blue-300 md:grid-cols-[447px_1fr] lg:h-[calc(100vh_-_64px)]">
@@ -61,15 +65,13 @@ export function Trade(): ReactElement {
           {market.name}
         </h4>
 
-        <div className="flex items-center pt-2">
-          <div className="flex flex-wrap justify-between w-full gap-2">
-            <Stat label="Protocol" value="Maker" />
-            <Stat label="Liquidity" value="$100M" />
-            <Stat label="Volume" value="$4.4M" />
-            <Stat label="Long APR" value="1.50%" />
-            <Stat label="Short APR" value="1.75%" />
-            <Stat label="LP APR" value="1.60%" />
-          </div>
+        <div className="flex flex-wrap justify-between w-full gap-2">
+          <Stat label="Protocol" value="Maker" />
+          <Stat label="Liquidity" value="$100M" />
+          <Stat label="Volume" value="$4.4M" />
+          <Stat label="Long APR" value="1.50%" />
+          <Stat label="Short APR" value="1.75%" />
+          <Stat label="LP APR" value="1.60%" />
         </div>
       </div>
 
