@@ -1,5 +1,6 @@
 import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { ReactElement, useMemo } from "react";
+import { Toaster } from "react-hot-toast";
 import { QueryClient, QueryClientProvider } from "react-query";
 import {
   createBrowserRouter,
@@ -90,6 +91,7 @@ export function App(): ReactElement {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <Toaster position="bottom-left" reverseOrder={false} />
       <WagmiConfig client={wagmiClient}>
         <RainbowKitProvider chains={chains}>
           <div className="flex flex-col h-full min-h-screen bg-gradient-to-b from-base-200 to-base-300">
