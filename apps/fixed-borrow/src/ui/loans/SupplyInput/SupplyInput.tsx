@@ -4,9 +4,7 @@ import { Address, useAccount, useBalance, useToken } from "wagmi";
 import { NumericInput } from "src/ui/base/NumericInput/NumericInput";
 import { AssetBadge } from "src/ui/token/AssetBadge";
 import { ApproveAllowanceButton } from "src/ui/token/ApproveAllowanceButton";
-import { parseBigInt } from "src/base/bigint/parseBigInt";
 import { HyperdriveGoerliAddresses } from "@hyperdrive/core";
-import { SparkGoerliAddresses } from "@hyperdrive/spark";
 
 interface SupplyInputProps {
   tokenAddress: Address;
