@@ -1,30 +1,46 @@
 import { HyperdriveABI } from "@hyperdrive/core";
 import { BigNumber } from "ethers";
+import { useState } from "react";
+import toast from "react-hot-toast";
 import { HyperdriveMarket } from "src/config/HyperdriveConfig";
-import { Address, useContractWrite, usePrepareContractWrite } from "wagmi";
+import { WagmiHookStatusType } from "src/ui/base/types";
+import { makeNewPositionToast } from "src/ui/trading/toast/makeNewPositionToast";
+import {
+  Address,
+  useContractWrite,
+  usePrepareContractWrite,
+  useWaitForTransaction,
+} from "wagmi";
 
 interface UseOpenLongOptions {
   market: HyperdriveMarket;
+  destination: Address | undefined;
   baseAmount: bigint | undefined;
   bondAmountOut: bigint | undefined;
-  destination: Address | undefined;
   asUnderlying?: boolean;
   enabled?: boolean;
+  /** Callback to be invoked when the transaction is finalized */
+  onExecuted?: () => void;
 }
 
 interface UseOpenLongResult {
   openLong: (() => void) | undefined;
-  openLongStatus: "error" | "idle" | "success" | "loading";
+  openLongStatus: WagmiHookStatusType;
+  openLongTransactionStatus: WagmiHookStatusType;
 }
 
 export function useOpenLong({
   market,
+  destination,
   baseAmount,
   bondAmountOut,
-  destination,
   asUnderlying = true,
   enabled,
+  onExecuted,
 }: UseOpenLongOptions): UseOpenLongResult {
+  // state to store transaction hash
+  const [hash, setHash] = useState<Address | undefined>(undefined);
+
   const queryEnabled =
     !!baseAmount && !!bondAmountOut && !!destination && enabled;
 
@@ -45,6 +61,41 @@ export function useOpenLong({
     overrides: { gasLimit: BigNumber.from(500_000) },
   });
 
-  const { write: openLong, status } = useContractWrite(config);
-  return { openLong, openLongStatus: status };
+  const { status: txnStatus } = useWaitForTransaction({
+    hash,
+    onSuccess: (data) => {
+      toast.dismiss(data.transactionHash);
+      setHash(undefined);
+      onExecuted?.();
+    },
+  });
+
+  const { write: openLong, status } = useContractWrite({
+    ...config,
+    onSettled: (data) => {
+      if (data) {
+        setHash(data.hash);
+        toast.custom(
+          () =>
+            makeNewPositionToast({
+              order: "Open",
+              position: "Long",
+              hash: data.hash,
+            }),
+          {
+            // setting id of toast to the transaction hash
+            id: data.hash,
+            // toast will programmatically be removed
+            duration: Infinity,
+          },
+        );
+      }
+    },
+  });
+
+  return {
+    openLong,
+    openLongStatus: status,
+    openLongTransactionStatus: txnStatus,
+  };
 }

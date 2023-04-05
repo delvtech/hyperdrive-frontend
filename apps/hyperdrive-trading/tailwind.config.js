@@ -39,6 +39,7 @@ module.exports = {
         "hyper-red": "#BF5856",
         "hyper-green": "#61E4A3",
         "hyper-pink": "#F4B1FF",
+        "hyper-orange": "#FF9031",
         "hyper-blue-100": "#D6D5F6",
         "hyper-blue-200": "#8D96C4",
         "hyper-blue-300": "#7680B8",
