@@ -1,11 +1,11 @@
 import { VariableDebtTokenABI } from "@hyperdrive/spark";
 import { BigNumber } from "ethers";
-import { useContractWrite, usePrepareContractWrite } from "wagmi";
+import { Address, useContractWrite, usePrepareContractWrite } from "wagmi";
 
 interface UseApproveDelegationOptions {
-  variableDebtTokenAddress: `0x${string}`;
+  variableDebtTokenAddress: Address;
   amount: bigint;
-  delegatee: `0x${string}` | undefined;
+  delegatee: Address | undefined;
 }
 
 /**
