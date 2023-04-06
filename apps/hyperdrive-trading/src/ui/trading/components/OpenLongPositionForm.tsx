@@ -2,7 +2,7 @@ import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { ethers } from "ethers";
 import { ReactElement } from "react";
 import { HyperdriveMarket } from "src/config/HyperdriveConfig";
-import Button from "src/ui/base/components/Button";
+import { Button } from "src/ui/base/components/Button";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { useOpenLong } from "src/ui/hyperdrive/hooks/useOpenLong";
 import { usePreviewOpenLong } from "src/ui/hyperdrive/hooks/usePreviewOpenLong";
@@ -96,8 +96,9 @@ export function OpenLongPositionForm({
           // Approval button
           <Button
             disabled={!approve}
-            variant="Approve"
-            className="w-full px-0 py-4 text-xl"
+            variant="Work"
+            size="lg"
+            block
             onClick={() => approve?.()}
           >
             <h5>Approve {market.baseToken.symbol}</h5>
@@ -110,8 +111,9 @@ export function OpenLongPositionForm({
               openLongTransactionStatus === "loading" ||
               openLongStatus === "loading"
             }
-            variant="Trade"
-            className="w-full px-0 py-4 text-xl"
+            variant="Emerald"
+            size="lg"
+            block
             onClick={() => openLong?.()}
           >
             <h5>Open Long</h5>
@@ -119,9 +121,10 @@ export function OpenLongPositionForm({
         )
       ) : (
         <Button
-          variant="Trade"
+          variant="Emerald"
+          size="lg"
+          block
           onClick={() => openConnectModal?.()}
-          className="w-full px-0 py-4 text-xl"
         >
           <h5>Connect wallet</h5>
         </Button>

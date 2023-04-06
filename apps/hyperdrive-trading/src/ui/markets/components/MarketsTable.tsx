@@ -4,7 +4,7 @@ import uniqBy from "lodash.uniqby";
 import { ReactElement, useMemo, useState } from "react";
 import { SupportedChainId } from "src/config/hyperdrive.config";
 import { getHyperdriveConfig } from "src/config/utils/getHyperdriveConfig";
-import Button from "src/ui/base/components/Button";
+import { Button } from "src/ui/base/components/Button";
 import { Row, SortableGridTable } from "src/ui/base/tables/SortableGridTable";
 import { useMarketRowData } from "src/ui/markets/hooks/useMarketRowData";
 import { MarketTableRowData } from "src/ui/markets/types";
@@ -48,37 +48,39 @@ export function MarketsTable(): ReactElement {
   }, [marketsRowData, protocolFilter, termLengthFilter]);
 
   return (
-    <div className="space-y-8">
+    <div className="px-8 py-10 space-y-8 rounded-sm bg-base-100">
       <div className="space-y-4">
         {/* Market Duration button group */}
-        <div className="flex items-center gap-x-4">
+        {/* <div className="flex items-center gap-x-4">
           <div className="flex flex-wrap gap-2">
             {termLengths
               .slice()
               .sort((a, b) => a - b)
               .map((termLength) => (
                 <Button
+                  variant="Future"
                   key={`termLengths-${termLength}-months`}
-                  active={termLengthFilter === termLength}
+                  // active={termLengthFilter === termLength}
                   onClick={() => setSelectedTermLengthFilter(termLength)}
                 >
                   <p>{termLength} months</p>
                 </Button>
               ))}
           </div>
-        </div>
+        </div> */}
 
         {/* Markets search and protocol filter row */}
         <div className="flex flex-wrap items-center gap-6">
           {/* Markets search input */}
-          <input
+          {/* <input
             className="w-[250px] bg-base-200 px-6 py-2 text-center border rounded border-hyper-blue-300 font-quantico text-hyper-blue-100 placeholder:text-hyper-blue-300"
             placeholder="Search Markets"
-          />
+          /> */}
 
           {/* Protocol filter button group */}
           <div className="flex flex-wrap gap-2">
             <Button
+              variant="Future"
               active={protocolFilter === ALL_MARKETS_KEY}
               onClick={() => setSelectedProtocolFilter(ALL_MARKETS_KEY)}
             >
@@ -90,11 +92,28 @@ export function MarketsTable(): ReactElement {
               .sort()
               .map((protocol) => (
                 <Button
+                  variant="Future"
                   key={`protocol-${protocol.name}`}
                   active={protocolFilter === protocol.name}
                   onClick={() => setSelectedProtocolFilter(protocol.name)}
                 >
                   <ProtocolLabel className="font-bold" protocol={protocol} />
+                </Button>
+              ))}
+          </div>
+
+          <div className="flex flex-wrap gap-2 ml-auto">
+            {termLengths
+              .slice()
+              .sort((a, b) => a - b)
+              .map((termLength) => (
+                <Button
+                  variant="Future"
+                  key={`termLengths-${termLength}-months`}
+                  active={termLengthFilter === termLength}
+                  onClick={() => setSelectedTermLengthFilter(termLength)}
+                >
+                  <p>{termLength} months</p>
                 </Button>
               ))}
           </div>

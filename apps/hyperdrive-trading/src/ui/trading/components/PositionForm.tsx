@@ -6,7 +6,7 @@ import {
 } from "@heroicons/react/20/solid";
 import { ReactElement, useState } from "react";
 import { HyperdriveMarket } from "src/config/HyperdriveConfig";
-import Button from "src/ui/base/components/Button";
+import { Button } from "src/ui/base/components/Button";
 import { LongPositionForm } from "src/ui/trading/components/LongPositionForm";
 import { OrderType, PositionType } from "src/ui/trading/types";
 import { match } from "ts-pattern";
@@ -33,11 +33,13 @@ export function PositionForm({ market }: PositionFormProps): ReactElement {
       </div>
 
       {/* Trade button group */}
-      <div className="space-y-2">
-        <div className="flex">
+      <div className="space-y-4">
+        <div className="flex gap-1">
           <Button
             active={position === "Long"}
-            className="flex items-center justify-center w-full gap-x-1"
+            variant="Future"
+            block
+            // className="flex items-center justify-center w-full gap-x-1"
             onClick={() => setPosition("Long")}
           >
             <ArrowTrendingUpIcon className="w-5" />
@@ -45,7 +47,9 @@ export function PositionForm({ market }: PositionFormProps): ReactElement {
           </Button>
           <Button
             active={position === "Short"}
-            className="flex items-center justify-center w-full gap-x-1"
+            variant="Future"
+            block
+            // className="flex items-center justify-center w-full gap-x-1"
             onClick={() => setPosition("Short")}
           >
             <ArrowTrendingDownIcon className="w-5" />
@@ -53,7 +57,9 @@ export function PositionForm({ market }: PositionFormProps): ReactElement {
           </Button>
           <Button
             disabled
-            className="flex items-center justify-center w-full gap-x-1"
+            variant="Future"
+            block
+            // className="flex items-center justify-center w-full gap-x-1"
             onClick={() => setPosition("LP")}
           >
             <CircleStackIcon className="w-4" />
@@ -62,15 +68,21 @@ export function PositionForm({ market }: PositionFormProps): ReactElement {
           </Button>
         </div>
 
-        <div className="flex">
+        <div className="flex gap-1">
           <Button
             active={order === "Open"}
-            className="w-full"
+            variant="Future"
+            block
             onClick={() => setOrder("Open")}
           >
             <p>Open</p>
           </Button>
-          <Button disabled className="w-full" onClick={() => setOrder("Close")}>
+          <Button
+            disabled
+            variant="Future"
+            block
+            onClick={() => setOrder("Close")}
+          >
             <p>Close</p>
           </Button>
         </div>

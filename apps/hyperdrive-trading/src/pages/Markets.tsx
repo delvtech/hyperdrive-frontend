@@ -5,7 +5,7 @@ import { MarketsTable } from "src/ui/markets/components/MarketsTable";
 export function Markets(): ReactElement {
   return (
     <div className="mx-auto flex flex-col gap-y-20 px-[4vw] py-[5vh] w-full max-w-7xl">
-      <div className="space-y-12">
+      <div className="space-y-8">
         <div>
           <h2 className="font-bold font-akira text-hyper-blue-100 text-h3 sm:text-h2 leading-h3 sm:leading-h2">
             Markets

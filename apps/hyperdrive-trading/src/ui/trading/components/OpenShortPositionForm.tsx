@@ -2,7 +2,7 @@ import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { constants, ethers } from "ethers";
 import { ReactElement } from "react";
 import { HyperdriveMarket } from "src/config/HyperdriveConfig";
-import Button from "src/ui/base/components/Button";
+import { Button } from "src/ui/base/components/Button";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { useOpenShort } from "src/ui/hyperdrive/hooks/useOpenShort";
 import { usePreviewOpenShort } from "src/ui/hyperdrive/hooks/usePreviewOpenShort";
@@ -76,9 +76,10 @@ export function OpenShortPositionForm({
     if (!account) {
       return (
         <Button
-          variant="Trade"
+          variant="Crimson"
+          size="lg"
+          block
           onClick={() => openConnectModal?.()}
-          className="w-full px-0 py-4 text-xl"
         >
           <h5>Connect wallet</h5>
         </Button>
@@ -90,8 +91,7 @@ export function OpenShortPositionForm({
         return (
           <Button
             disabled={!approve}
-            variant="Approve"
-            className="w-full px-0 py-4 text-xl"
+            variant="Work"
             onClick={() => approve?.()}
           >
             <h5>Approve {market.baseToken.symbol}</h5>
@@ -105,8 +105,9 @@ export function OpenShortPositionForm({
               openShortTransactionStatus === "loading" ||
               openShortSubmittedStatus === "loading"
             }
-            variant="Short"
-            className="w-full px-0 py-4 text-xl"
+            variant="Crimson"
+            size="lg"
+            block
             onClick={() => openShort?.()}
           >
             <h5>Open Short</h5>
@@ -115,11 +116,7 @@ export function OpenShortPositionForm({
       }
     } else {
       return (
-        <Button
-          variant="Short"
-          onClick={() => {}}
-          className="w-full px-0 py-4 text-xl"
-        >
+        <Button variant="Crimson" size="lg" block onClick={() => {}}>
           <h5>Not enough {market.baseToken.symbol}</h5>
         </Button>
       );
