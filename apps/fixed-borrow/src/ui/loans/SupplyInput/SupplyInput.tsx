@@ -45,11 +45,13 @@ export function SupplyInput({
       />
       {/* The action contract must be able to spend your collateral in order to
       deposit it into Spark on your behalf */}
-      <ApproveAllowanceButton
-        tokenAddress={tokenAddress}
-        amount={balanceOf?.value.toBigInt()}
-        spender={HyperdriveGoerliAddresses.aaveFixedBorrowAction}
-      />
+      {value ? (
+        <ApproveAllowanceButton
+          tokenAddress={tokenAddress}
+          amount={balanceOf?.value.toBigInt()}
+          spender={HyperdriveGoerliAddresses.aaveFixedBorrowAction}
+        />
+      ) : null}
     </div>
   );
 }
