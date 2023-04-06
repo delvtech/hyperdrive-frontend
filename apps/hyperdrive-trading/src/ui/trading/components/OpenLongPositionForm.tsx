@@ -72,7 +72,7 @@ export function OpenLongPositionForm({
     <>
       {/* You Pay Section */}
       <div className="space-y-4 text-hyper-blue-100 font-rubik">
-        <h4>You Pay</h4>
+        <h5>You Pay</h5>
         <TokenInput
           token={market.baseToken}
           value={amount ?? ""}
@@ -83,7 +83,7 @@ export function OpenLongPositionForm({
 
       {/* New Position Section */}
       <div className="space-y-4 text-hyper-blue-100 font-rubik">
-        <h4>New Position</h4>
+        <h5>Position preview</h5>
         <LongPositionOverviewWell
           market={market}
           costBasis={amountAsBigInt ?? 0n}

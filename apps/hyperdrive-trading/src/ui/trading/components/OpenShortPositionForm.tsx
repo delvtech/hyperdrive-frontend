@@ -127,7 +127,7 @@ export function OpenShortPositionForm({
     <>
       {/* You Pay Section */}
       <div className="space-y-4 text-hyper-blue-100 font-rubik">
-        <h5>Bond Amount</h5>
+        <h5>Amount to short</h5>
         <TokenInput
           token={market.baseToken}
           value={amount ?? ""}
@@ -138,7 +138,7 @@ export function OpenShortPositionForm({
 
       {/* New Position Section */}
       <div className="space-y-4 text-hyper-blue-100 font-rubik">
-        <h5>New Position</h5>
+        <h5>Position preview</h5>
         <ShortPositionOverviewWell
           market={market}
           costBasis={baseAmountIn ?? 0n}

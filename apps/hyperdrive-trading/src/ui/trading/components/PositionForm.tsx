@@ -39,7 +39,6 @@ export function PositionForm({ market }: PositionFormProps): ReactElement {
             active={position === "Long"}
             variant="Future"
             block
-            // className="flex items-center justify-center w-full gap-x-1"
             onClick={() => setPosition("Long")}
           >
             <ArrowTrendingUpIcon className="w-5" />
@@ -49,7 +48,6 @@ export function PositionForm({ market }: PositionFormProps): ReactElement {
             active={position === "Short"}
             variant="Future"
             block
-            // className="flex items-center justify-center w-full gap-x-1"
             onClick={() => setPosition("Short")}
           >
             <ArrowTrendingDownIcon className="w-5" />
@@ -59,7 +57,6 @@ export function PositionForm({ market }: PositionFormProps): ReactElement {
             disabled
             variant="Future"
             block
-            // className="flex items-center justify-center w-full gap-x-1"
             onClick={() => setPosition("LP")}
           >
             <CircleStackIcon className="w-4" />

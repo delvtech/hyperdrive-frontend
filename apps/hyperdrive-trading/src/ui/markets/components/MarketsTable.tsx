@@ -50,28 +50,9 @@ export function MarketsTable(): ReactElement {
   return (
     <div className="px-8 py-10 space-y-8 rounded-sm bg-base-100">
       <div className="space-y-4">
-        {/* Market Duration button group */}
-        {/* <div className="flex items-center gap-x-4">
-          <div className="flex flex-wrap gap-2">
-            {termLengths
-              .slice()
-              .sort((a, b) => a - b)
-              .map((termLength) => (
-                <Button
-                  variant="Future"
-                  key={`termLengths-${termLength}-months`}
-                  // active={termLengthFilter === termLength}
-                  onClick={() => setSelectedTermLengthFilter(termLength)}
-                >
-                  <p>{termLength} months</p>
-                </Button>
-              ))}
-          </div>
-        </div> */}
-
         {/* Markets search and protocol filter row */}
         <div className="flex flex-wrap items-center gap-6">
-          {/* Markets search input */}
+          {/* Markets search input, disabled for now */}
           {/* <input
             className="w-[250px] bg-base-200 px-6 py-2 text-center border rounded border-hyper-blue-300 font-quantico text-hyper-blue-100 placeholder:text-hyper-blue-300"
             placeholder="Search Markets"
@@ -103,6 +84,7 @@ export function MarketsTable(): ReactElement {
           </div>
 
           <div className="flex flex-wrap gap-2 ml-auto">
+            {/* Market Duration button group */}
             {termLengths
               .slice()
               .sort((a, b) => a - b)
