@@ -67,10 +67,22 @@ export function useOpenLong({
   const { status: txnStatus } = useWaitForTransaction({
     hash,
     onSuccess: (data) => {
-      toast.dismiss(data.transactionHash);
+      toast.remove(data.transactionHash);
       setHash(undefined);
       // TODO: could be smarter about this in the future
       queryClient.invalidateQueries();
+      toast.custom(
+        () =>
+          makeNewPositionToast({
+            order: "Open",
+            position: "Long",
+            hash: data.transactionHash,
+            status: "Executed",
+          }),
+        {
+          duration: 3000,
+        },
+      );
       onExecuted?.();
     },
   });

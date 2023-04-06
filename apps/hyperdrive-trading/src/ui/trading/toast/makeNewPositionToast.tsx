@@ -2,18 +2,21 @@ import classNames from "classnames";
 import { ReactElement } from "react";
 import { formatAddress } from "src/ui/base/formatting/formatAddress";
 import { OrderType, PositionType } from "src/ui/trading/types";
-import { Address } from "wagmi";
+
+type Status = "Pending..." | "Executed";
 
 interface MakeNewPositionToastOptions {
   order: OrderType;
   position: PositionType;
-  hash: Address | undefined;
+  hash: string | undefined;
+  status?: Status;
 }
 
 export function makeNewPositionToast({
   order,
   position,
   hash,
+  status = "Pending...",
 }: MakeNewPositionToastOptions): ReactElement {
   return (
     <div
@@ -29,7 +32,7 @@ export function makeNewPositionToast({
       </h6>
 
       <h6>
-        Status: <span className="mr-2 font-bold">Pending...</span>
+        Status: <span className="mr-2 font-bold">{status}</span>
       </h6>
 
       {hash && (
