@@ -2,6 +2,7 @@ import { HyperdriveABI } from "@hyperdrive/core";
 import { BigNumber } from "ethers";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import { useQueryClient } from "react-query";
 import { HyperdriveMarket } from "src/config/HyperdriveConfig";
 import { WagmiHookStatusType } from "src/ui/base/types";
 import { makeNewPositionToast } from "src/ui/trading/toast/makeNewPositionToast";
@@ -38,6 +39,8 @@ export function useOpenLong({
   enabled,
   onExecuted,
 }: UseOpenLongOptions): UseOpenLongResult {
+  const queryClient = useQueryClient();
+
   // state to store transaction hash
   const [hash, setHash] = useState<Address | undefined>(undefined);
 
@@ -66,6 +69,8 @@ export function useOpenLong({
     onSuccess: (data) => {
       toast.dismiss(data.transactionHash);
       setHash(undefined);
+      // TODO: could be smarter about this in the future
+      queryClient.invalidateQueries();
       onExecuted?.();
     },
   });

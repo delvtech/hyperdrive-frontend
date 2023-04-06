@@ -1,7 +1,6 @@
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { constants, ethers } from "ethers";
 import { ReactElement } from "react";
-import { useQueryClient } from "react-query";
 import { HyperdriveMarket } from "src/config/HyperdriveConfig";
 import Button from "src/ui/base/components/Button";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
@@ -20,8 +19,6 @@ interface OpenShortPositionFormProps {
 export function OpenShortPositionForm({
   market,
 }: OpenShortPositionFormProps): ReactElement {
-  const queryClient = useQueryClient();
-
   const { address: account } = useAccount();
   const { openConnectModal } = useConnectModal();
 
@@ -61,7 +58,7 @@ export function OpenShortPositionForm({
     ? baseAmountIn && baseAmountIn > tokenAllowance
     : true;
 
-  const { openShort, openShortTransactionStatus, openShortStatus } =
+  const { openShort, openShortTransactionStatus, openShortSubmittedStatus } =
     useOpenShort({
       market,
       amountBondShorts: amountAsBigInt,
@@ -72,8 +69,6 @@ export function OpenShortPositionForm({
       onExecuted: () => {
         // reset local state after successful transaction
         setAmount(undefined);
-        // TODO: could be smarter about this in the future
-        queryClient.invalidateQueries();
       },
     });
 
@@ -108,7 +103,7 @@ export function OpenShortPositionForm({
             disabled={
               !openShort ||
               openShortTransactionStatus === "loading" ||
-              openShortStatus === "loading"
+              openShortSubmittedStatus === "loading"
             }
             variant="Short"
             className="w-full px-0 py-4 text-xl"
