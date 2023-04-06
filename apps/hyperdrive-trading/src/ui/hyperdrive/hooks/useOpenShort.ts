@@ -13,49 +13,49 @@ import {
   useWaitForTransaction,
 } from "wagmi";
 
-interface UseOpenLongOptions {
+interface UseOpenShortOptions {
   market: HyperdriveMarket;
+  amountBondShorts: bigint | undefined;
+  maxBaseAmountIn: bigint | undefined;
   destination: Address | undefined;
-  baseAmount: bigint | undefined;
-  bondAmountOut: bigint | undefined;
   asUnderlying?: boolean;
   enabled?: boolean;
   /** Callback to be invoked when the transaction is finalized */
   onExecuted?: () => void;
 }
 
-interface UseOpenLongResult {
-  openLong: (() => void) | undefined;
-  openLongStatus: WagmiHookStatusType;
-  openLongTransactionStatus: WagmiHookStatusType;
+interface UseOpenShortResult {
+  openShort: (() => void) | undefined;
+  openShortSubmittedStatus: WagmiHookStatusType;
+  openShortTransactionStatus: WagmiHookStatusType;
 }
 
-export function useOpenLong({
+export function useOpenShort({
   market,
+  amountBondShorts,
+  maxBaseAmountIn,
   destination,
-  baseAmount,
-  bondAmountOut,
   asUnderlying = true,
   enabled,
   onExecuted,
-}: UseOpenLongOptions): UseOpenLongResult {
+}: UseOpenShortOptions): UseOpenShortResult {
   const queryClient = useQueryClient();
 
   // state to store transaction hash
   const [hash, setHash] = useState<Address | undefined>(undefined);
 
   const queryEnabled =
-    !!baseAmount && !!bondAmountOut && !!destination && enabled;
+    !!amountBondShorts && !!maxBaseAmountIn && !!destination && enabled;
 
   const { config } = usePrepareContractWrite({
     abi: HyperdriveABI,
     address: market.address,
-    functionName: "openLong",
+    functionName: "openShort",
     enabled: queryEnabled,
     args: queryEnabled
       ? [
-          BigNumber.from(baseAmount),
-          BigNumber.from(bondAmountOut),
+          BigNumber.from(amountBondShorts),
+          BigNumber.from(maxBaseAmountIn),
           destination,
           asUnderlying,
         ]
@@ -71,11 +71,12 @@ export function useOpenLong({
       setHash(undefined);
       // TODO: could be smarter about this in the future
       queryClient.invalidateQueries();
+
       onExecuted?.();
     },
   });
 
-  const { write: openLong, status } = useContractWrite({
+  const { write: openShort, status } = useContractWrite({
     ...config,
     onSettled: (data) => {
       if (data) {
@@ -84,7 +85,7 @@ export function useOpenLong({
           () =>
             makeNewPositionToast({
               order: "Open",
-              position: "Long",
+              position: "Short",
               hash: data.hash,
             }),
           {
@@ -99,8 +100,8 @@ export function useOpenLong({
   });
 
   return {
-    openLong,
-    openLongStatus: status,
-    openLongTransactionStatus: txnStatus,
+    openShort,
+    openShortSubmittedStatus: status,
+    openShortTransactionStatus: txnStatus,
   };
 }

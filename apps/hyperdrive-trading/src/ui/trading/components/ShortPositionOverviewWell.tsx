@@ -4,20 +4,17 @@ import { Pill } from "src/ui/base/components/Pill";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { formatBigInt } from "src/ui/base/formatting/formatBigInt";
 
-interface PositionOverviewWellProps {
+interface ShortPositionOverviewWellProps {
   market: HyperdriveMarket;
   costBasis: bigint;
-  // TODO: stubbed for now
-  // fixedApr: number;
-  claimableAtMaturity: bigint;
+  amountShort: bigint;
 }
 
-export function PositionOverviewWell({
+export function ShortPositionOverviewWell({
   market,
   costBasis,
-  // fixedApr,
-  claimableAtMaturity,
-}: PositionOverviewWellProps): ReactElement {
+  amountShort,
+}: ShortPositionOverviewWellProps): ReactElement {
   const current = new Date();
   const formattedMaturityDate = new Date(
     current.setMonth(current.getMonth() + market.termLength),
@@ -27,14 +24,21 @@ export function PositionOverviewWell({
     <div className="flex flex-col p-4 bg-transparent border rounded gap-y-4 border-hyper-blue-300">
       <div className="flex items-center">
         <h5 className="mr-4 font-bold">{market.name}</h5>
-        <Pill className="h-6">Long</Pill>
+        <Pill variant="Red" className="h-6 text-hyper-blue-100">
+          Short
+        </Pill>
       </div>
 
       <div className="flex flex-col tracking-wide gap-y-1">
         <div className="flex">
           <p className="mr-auto">Cost Basis</p>
           <p className="font-semibold tracking-wide">
-            {formatBigInt(costBasis, market.baseToken.decimals)}{" "}
+            {/* TODO: formatBalance has a bug when the BigInt is less than 1 */}
+            {formatBalance(
+              formatBigInt(costBasis, market.baseToken.decimals),
+              6,
+              false,
+            )}{" "}
             {market.baseToken.symbol}
           </p>
         </div>
@@ -52,21 +56,18 @@ export function PositionOverviewWell({
         </div>
 
         <div className="flex">
-          <p className="mr-auto">Fixed APR</p>
+          <p className="mr-auto">Var. APR</p>
           <p className="font-semibold tracking-wide">1.50%</p>
         </div>
 
-        <div className="flex">
-          <p className="mr-auto">Claimable at Maturity</p>
-          <p className="font-semibold tracking-wide">
-            {formatBalance(
-              formatBigInt(claimableAtMaturity, market.baseToken.decimals),
-              4,
-              false,
-            )}{" "}
-            {market.baseToken.symbol}
-          </p>
-        </div>
+        {amountShort > 0n && costBasis > 0n && (
+          <div className="flex">
+            <p className="mr-auto">Exposure</p>
+            <p className="font-semibold tracking-wide">
+              {formatBalance((amountShort / costBasis).toString(), 4, false)}x
+            </p>
+          </div>
+        )}
       </div>
     </div>
   );

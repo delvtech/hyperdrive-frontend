@@ -7,6 +7,7 @@ interface TokenInputProps {
   value: string;
   onChange: (newAmount: string) => void;
   maxValue?: string;
+  showBalance?: boolean;
 }
 
 export function TokenInput({
@@ -14,6 +15,7 @@ export function TokenInput({
   token,
   onChange,
   maxValue,
+  showBalance = true,
 }: TokenInputProps): ReactElement {
   const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
     onChange(event.target.value);
@@ -42,17 +44,19 @@ export function TokenInput({
         </div>
       </div>
 
-      <div className="flex text-hyper-blue-200">
-        {maxValue && (
-          <span
-            onClick={() => onChange(maxValue)}
-            className="mr-auto underline cursor-pointer hover:text-hyper-blue-400"
-          >
-            Max
-          </span>
-        )}
-        <p>Balance: {formatBalance(maxValue ?? "0")}</p>
-      </div>
+      {showBalance && (
+        <div className="flex text-hyper-blue-200">
+          {maxValue && (
+            <span
+              onClick={() => onChange(maxValue)}
+              className="mr-auto underline cursor-pointer hover:text-hyper-blue-400"
+            >
+              Max
+            </span>
+          )}
+          <p>Balance: {formatBalance(maxValue ?? "0")}</p>
+        </div>
+      )}
     </div>
   );
 }
