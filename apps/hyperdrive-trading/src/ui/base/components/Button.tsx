@@ -4,7 +4,7 @@ import { PropsWithChildren, ReactElement } from "react";
 type ButtonVariant = "Future" | "Work" | "Crimson" | "Emerald";
 
 interface ButtonProps {
-  onClick: (...args: any) => void;
+  onClick: () => void;
   disabled?: boolean;
   active?: boolean;
   size?: "sm" | "md" | "lg";
@@ -38,7 +38,6 @@ export function Button({
           // No Variant
           ...{
             "border border-transparent  text-white ": !variant,
-            "": !variant && disabled,
           },
 
           // Future Variant
