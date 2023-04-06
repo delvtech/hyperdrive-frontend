@@ -27,7 +27,8 @@ export function Button({
         "flex items-center justify-center gap-1 rounded-[6px] font-bold transition-all",
         {
           "w-full": block,
-          "cursor-not-allowed opacity-50": disabled === true,
+          "cursor-not-allowed opacity-50": disabled,
+          "hover:bg-opacity-60": !disabled,
 
           // Size
           "h-8 rounded-sm px-2 py-1 text-sm leading-sm": size === "sm",
@@ -52,19 +53,16 @@ export function Button({
           // Work Variant
           ...{
             "bg-hyper-orange text-base-300 font-quantico": variant === "Work",
-            "hover:bg-opacity-50": variant === "Work" && !disabled,
           },
 
           // Crimson Variant
           ...{
             "bg-hyper-red text-base-300 font-quantico": variant === "Crimson",
-            "hover:bg-opacity-80": variant === "Crimson" && !disabled,
           },
 
           // Emerald Variant
           ...{
             "bg-hyper-green text-base-300 font-quantico": variant === "Emerald",
-            "hover:bg-opacity-60": variant === "Emerald" && !disabled,
           },
         },
       )}
