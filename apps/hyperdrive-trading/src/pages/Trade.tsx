@@ -8,7 +8,7 @@ import {
 } from "react";
 import { useLoaderData } from "react-router-dom";
 import { HyperdriveMarket } from "src/config/HyperdriveConfig";
-import Button from "src/ui/base/components/Button";
+import { Button } from "src/ui/base/components/Button";
 import { Stat } from "src/ui/base/components/Stat";
 import { OpenOrdersTable } from "src/ui/orders/components/OpenOrdersTable";
 import { PositionForm } from "src/ui/trading/components/PositionForm";
@@ -110,14 +110,14 @@ export function Trade(): ReactElement {
           </div>
 
           <div className="flex flex-col row-span-1 px-8 pt-4 text-hyper-blue-100 gap-y-4">
-            <div className="flex">
-              <Button active={true} className="w-fit" onClick={() => {}}>
+            <div className="flex gap-2">
+              <Button active={true} variant="Future" onClick={() => {}}>
                 Open Positions
               </Button>
-              <Button className="w-fit" onClick={() => {}}>
+              <Button variant="Future" onClick={() => {}}>
                 Closed Positions
               </Button>
-              <Button className="w-fit" onClick={() => {}}>
+              <Button variant="Future" onClick={() => {}}>
                 Recent Trades
               </Button>
             </div>
