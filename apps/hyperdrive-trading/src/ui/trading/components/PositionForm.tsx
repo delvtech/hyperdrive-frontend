@@ -34,7 +34,7 @@ export function PositionForm({ market }: PositionFormProps): ReactElement {
 
       {/* Trade button group */}
       <div className="space-y-4">
-        <div className="flex gap-1">
+        <div className="flex gap-2">
           <Button
             active={position === "Long"}
             variant="Future"
@@ -68,7 +68,7 @@ export function PositionForm({ market }: PositionFormProps): ReactElement {
           </Button>
         </div>
 
-        <div className="flex gap-1">
+        <div className="flex gap-2">
           <Button
             active={order === "Open"}
             variant="Future"
