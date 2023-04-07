@@ -44,6 +44,10 @@ export function App(): ReactElement {
         element: <BaseLayout />,
         children: [
           {
+            path: "/",
+            element: <Markets />,
+          },
+          {
             path: "markets",
             element: <Markets />,
           },
