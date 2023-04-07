@@ -53,15 +53,15 @@ export function Trade(): ReactElement {
 
   // Resize timescale when chart is resized
   useEffect(() => {
-    window.addEventListener("resize-chart", resizeChartHandler);
-    return removeEventListener("resize-chart", resizeChartHandler);
+    window.addEventListener("resize", resizeChartHandler);
+    return removeEventListener("resize", resizeChartHandler);
   }, []);
 
   return (
-    <div className="grid grid-flow-row border-t border-hyper-blue-300 md:grid-cols-[447px_1fr] lg:h-[calc(100vh_-_64px)]">
+    <div className="grid grid-flow-row border-t border-hyper-blue-300 md:grid-cols-[447px_1fr] md:h-[calc(100vh_-_64px)]">
       {/* Market information row - mobile only */}
-      <div className="px-8 pt-6 pb-2 border-b md:hidden gap-x-8 border-hyper-blue-300">
-        <h4 className="font-bold text-hyper-blue-100 font-dm-sans whitespace-nowrap">
+      <div className="px-8 pt-4 pb-2 border-b md:hidden gap-x-8 border-hyper-blue-300">
+        <h4 className="mb-2 font-bold text-hyper-blue-100 font-dm-sans whitespace-nowrap">
           {market.name}
         </h4>
 
@@ -94,7 +94,7 @@ export function Trade(): ReactElement {
             <Stat className="hidden xl:block" label="Short APR" value="1.75%" />
             <Stat className="hidden xl:block" label="LP APR" value="1.60%" />
             <Stat
-              className="hidden md:block"
+              className="hidden lg:block"
               label="Volume (24H)"
               value="$4.4M"
             />
@@ -110,7 +110,7 @@ export function Trade(): ReactElement {
           </div>
 
           <div className="flex flex-col row-span-1 px-8 pt-4 text-hyper-blue-100 gap-y-4">
-            <div className="flex gap-2">
+            <div className="flex flex-wrap gap-2">
               <Button active={true} variant="Future" onClick={() => {}}>
                 Open Positions
               </Button>
