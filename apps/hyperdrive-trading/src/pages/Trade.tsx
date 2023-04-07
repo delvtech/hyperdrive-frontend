@@ -110,7 +110,7 @@ export function Trade(): ReactElement {
           </div>
 
           <div className="flex flex-col row-span-1 px-8 pt-4 text-hyper-blue-100 gap-y-4">
-            <div className="flex flex-wflex-wrap">
+            <div className="flex flex-wrap gap-2">
               <Button active={true} variant="Future" onClick={() => {}}>
                 Open Positions
               </Button>
