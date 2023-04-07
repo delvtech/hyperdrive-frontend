@@ -4,7 +4,7 @@ import { parseBigInt } from "src/base/bigint/parseBigInt";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 
 interface UseNumericInputResult {
-  amount: string | undefined;
+  amount: string;
   amountAsBigInt: bigint | undefined;
   /**
    * Includes commification
