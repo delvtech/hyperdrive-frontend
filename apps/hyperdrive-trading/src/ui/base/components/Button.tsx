@@ -24,7 +24,7 @@ export function Button({
   return (
     <button
       className={classNames(
-        "flex items-center justify-center gap-1 rounded-[6px] font-bold transition-all",
+        "flex items-center justify-center gap-1 rounded-[6px] font-bold transition-all whitespace-nowrap",
         {
           "w-full": block,
           "cursor-not-allowed opacity-50": disabled,
