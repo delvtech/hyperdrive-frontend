@@ -45,7 +45,7 @@ export function Button({
             "bg-base-300 border border-hyper-blue-300 text-hyper-blue-100 font-quantico":
               variant === "Future",
             "hover:bg-hyper-blue-400": variant === "Future" && !disabled,
-            "border-hyper-green hover:bg-base-300":
+            "border-hyper-pink hover:bg-base-300":
               variant === "Future" && active,
           },
 
