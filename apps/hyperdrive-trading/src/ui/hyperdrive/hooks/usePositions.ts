@@ -21,6 +21,7 @@ export function usePositions(
 ): UseQueryResult<UsePositionsResult> {
   const provider = useProvider();
   return useQuery({
+    // this eslint rule is firing because of the constants.AddressZero import
     // eslint-disable-next-line @tanstack/query/exhaustive-deps
     queryKey: ["positions", account, market.address],
     enabled: !!account,
