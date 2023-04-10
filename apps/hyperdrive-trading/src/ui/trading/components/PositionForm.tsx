@@ -7,8 +7,8 @@ import {
 import { ReactElement, useState } from "react";
 import { HyperdriveMarket } from "src/config/HyperdriveConfig";
 import { Button } from "src/ui/base/components/Button";
+import { OrderType, PositionType } from "src/ui/hyperdrive/types";
 import { LongPositionForm } from "src/ui/trading/components/LongPositionForm";
-import { OrderType, PositionType } from "src/ui/trading/types";
 import { match } from "ts-pattern";
 import { ShortPositionForm } from "./ShortPositionForm";
 

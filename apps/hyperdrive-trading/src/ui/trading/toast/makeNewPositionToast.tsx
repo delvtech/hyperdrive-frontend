@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { ReactElement } from "react";
 import { formatAddress } from "src/ui/base/formatting/formatAddress";
-import { OrderType, PositionType } from "src/ui/trading/types";
+import { OrderType, PositionType } from "src/ui/hyperdrive/types";
 
 type Status = "Pending..." | "Executed";
 
