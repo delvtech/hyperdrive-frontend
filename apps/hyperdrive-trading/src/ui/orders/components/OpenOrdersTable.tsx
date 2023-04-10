@@ -1,109 +1,66 @@
 /* eslint-disable react/jsx-key */
 
+import classNames from "classnames";
 import { ReactElement } from "react";
+import { HyperdriveMarket } from "src/config/HyperdriveConfig";
+import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { formatBigInt } from "src/ui/base/formatting/formatBigInt";
 import { Row, SortableGridTable } from "src/ui/base/tables/SortableGridTable";
-import { OrderType, PositionType } from "src/ui/trading/types";
+import { usePositions } from "src/ui/hyperdrive/hooks/usePositions";
+import { Position } from "src/ui/hyperdrive/types";
+import { useAccount } from "wagmi";
 
-export function OpenOrdersTable(): ReactElement {
+interface OpenOrdersTableProps {
+  market: HyperdriveMarket;
+}
+
+export function OpenOrdersTable({
+  market,
+}: OpenOrdersTableProps): ReactElement {
+  const { address } = useAccount();
+  const { data: positionsData } = usePositions(address, market);
+
+  const longPositions = positionsData ? [...positionsData.openLongs] : [];
+  const shortPositions = positionsData ? [...positionsData.openShorts] : [];
+  const allPositions = [...longPositions, ...shortPositions];
+
   return (
     <SortableGridTable
       headingRowClassName="grid-cols-6 text-hyper-blue-200 font-dm-sans text-md [&>*]:p-2"
       bodyRowClassName="grid-cols-6 text-hyper-blue-100 font-dm-sans [&>*]:p-2 items-center"
       cols={["Position", "Type", "Amount", "Value", "Expiry Date", ""]}
-      rows={stubbedOrderData.map((order) => createOpenOrderRow(order))}
+      rows={allPositions.map((position) => {
+        return createOpenOrderRow(position, market.baseToken.decimals);
+      })}
     />
   );
 }
 
-interface Order {
-  position: PositionType;
-  type: OrderType;
-  amount: string;
-  value: string;
-  openDate: Date;
-  expiryDate: Date;
-}
-
-function createOpenOrderRow(order: Order): Row {
+function createOpenOrderRow(position: Position, positionDecimals: number): Row {
   return {
     cells: [
-      <span className="font-bold text-hyper-green">{order.position}</span>,
-      <span className="font-bold">{order.type}</span>,
-      <span>{order.amount}</span>,
-      <span>{order.value}</span>,
-      <span>{order.expiryDate.toLocaleDateString()}</span>,
+      <span
+        className={classNames("font-bold", {
+          "text-hyper-green": position.type === "Long",
+          "text-hyper-red": position.type === "Short",
+        })}
+      >
+        {position.type}
+      </span>,
+      <span className="font-bold">Open</span>,
       <span>
-        <button className="px-2 py-1 text-sm font-bold uppercase bg-hyper-red font-quantico text-base-100">
+        {formatBalance(formatBigInt(position.amount, positionDecimals))}
+      </span>,
+      <span>{position.currencyValue}</span>,
+      <span>{position.expiryDate.toLocaleDateString()}</span>,
+      <span>
+        <button
+          disabled
+          className="px-2 py-1 text-sm font-bold uppercase bg-hyper-red font-quantico text-base-100"
+        >
           Close
         </button>
       </span>,
     ],
   };
 }
-
-const stubbedOrderData: Order[] = [
-  {
-    type: "Open",
-    position: "Long",
-    amount: "10000 DAI",
-    value: "$10000",
-    openDate: new Date(),
-    expiryDate: new Date(),
-  },
-  {
-    type: "Open",
-    position: "Long",
-    amount: "10000 DAI",
-    value: "$10000",
-    openDate: new Date(),
-    expiryDate: new Date(),
-  },
-  {
-    type: "Open",
-    position: "Long",
-    amount: "10000 DAI",
-    value: "$10000",
-    openDate: new Date(),
-    expiryDate: new Date(),
-  },
-  {
-    type: "Open",
-    position: "Long",
-    amount: "10000 DAI",
-    value: "$10000",
-    openDate: new Date(),
-    expiryDate: new Date(),
-  },
-  {
-    type: "Open",
-    position: "Long",
-    amount: "10000 DAI",
-    value: "$10000",
-    openDate: new Date(),
-    expiryDate: new Date(),
-  },
-  {
-    type: "Open",
-    position: "Long",
-    amount: "10000 DAI",
-    value: "$10000",
-    openDate: new Date(),
-    expiryDate: new Date(),
-  },
-  {
-    type: "Open",
-    position: "Long",
-    amount: "10000 DAI",
-    value: "$10000",
-    openDate: new Date(),
-    expiryDate: new Date(),
-  },
-  {
-    type: "Open",
-    position: "Long",
-    amount: "10000 DAI",
-    value: "$10000",
-    openDate: new Date(),
-    expiryDate: new Date(),
-  },
-];
