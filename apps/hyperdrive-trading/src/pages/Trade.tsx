@@ -127,7 +127,7 @@ export function Trade(): ReactElement {
 
       {/* Mobile only */}
       {tradeModalOpen && (
-        <div className="absolute z-50 w-full px-8 overflow-y-hidden overscroll-none bg-base-100 md:hidden">
+        <div className="absolute z-50 w-full px-8 pt-4 overflow-y-hidden overscroll-none bg-base-100 md:hidden h-[calc(100vh_-_64px)]">
           <PositionForm
             market={market}
             handleClose={() => setTradeModalOpen(false)}
