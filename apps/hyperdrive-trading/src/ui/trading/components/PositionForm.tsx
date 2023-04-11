@@ -2,7 +2,7 @@ import {
   ArrowTrendingDownIcon,
   ArrowTrendingUpIcon,
   CircleStackIcon,
-  Cog6ToothIcon,
+  XMarkIcon,
 } from "@heroicons/react/20/solid";
 import { ReactElement, useState } from "react";
 import { HyperdriveMarket } from "src/config/HyperdriveConfig";
@@ -10,13 +10,16 @@ import { Button } from "src/ui/base/components/Button";
 import { OrderType, PositionType } from "src/ui/hyperdrive/types";
 import { LongPositionForm } from "src/ui/trading/components/LongPositionForm";
 import { match } from "ts-pattern";
-import { ShortPositionForm } from "./ShortPositionForm";
 
 interface PositionFormProps {
   market: HyperdriveMarket;
+  handleClose?: () => void;
 }
 
-export function PositionForm({ market }: PositionFormProps): ReactElement {
+export function PositionForm({
+  market,
+  handleClose,
+}: PositionFormProps): ReactElement {
   const [position, setPosition] = useState<PositionType>("Long");
   const [order, setOrder] = useState<OrderType>("Open");
 
@@ -27,9 +30,14 @@ export function PositionForm({ market }: PositionFormProps): ReactElement {
         <h3 className="mr-auto text-xl font-bold text-hyper-blue-100 font-akira">
           Trade
         </h3>
-        <div>
-          <Cog6ToothIcon className="h-5 stroke-2 stroke-hyper-blue-100" />
-        </div>
+        {handleClose && (
+          <div>
+            <XMarkIcon
+              className="h-5 stroke-2 stroke-hyper-blue-100"
+              onClick={handleClose}
+            />
+          </div>
+        )}
       </div>
 
       {/* Trade button group */}
@@ -75,7 +83,7 @@ export function PositionForm({ market }: PositionFormProps): ReactElement {
             <p>Open</p>
           </Button>
           <Button
-            disabled
+            active={order === "Close"}
             variant="Future"
             block
             onClick={() => setOrder("Close")}
@@ -87,9 +95,7 @@ export function PositionForm({ market }: PositionFormProps): ReactElement {
 
       {match(position)
         .with("Long", () => <LongPositionForm market={market} order={order} />)
-        .with("Short", () => (
-          <ShortPositionForm market={market} order={order} />
-        ))
+        .with("Short", () => <div></div>)
         .with("LP", () => <div></div>)
         .exhaustive()}
     </div>
