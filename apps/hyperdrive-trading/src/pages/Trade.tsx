@@ -54,7 +54,7 @@ export function Trade(): ReactElement {
   const [tradeModalOpen, setTradeModalOpen] = useState(false);
 
   return (
-    <div className="grid grid-flow-row border-t border-hyper-blue-300 md:grid-cols-[447px_1fr] h-[calc(100vh_-_64px)]">
+    <div className="grid grid-flow-row border-t border-hyper-blue-300 md:grid-cols-[365px_1fr] lg:grid-cols-[447px_1fr] h-[calc(100vh_-_64px)]">
       {/* Market information row - mobile only */}
       <div className="px-8 pt-4 pb-2 border-b md:hidden gap-x-8 border-hyper-blue-300">
         <h4 className="mb-2 font-bold text-hyper-blue-100 font-dm-sans whitespace-nowrap">
