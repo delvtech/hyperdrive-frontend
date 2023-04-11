@@ -101,10 +101,10 @@ export function Trade(): ReactElement {
           </div>
         </div>
 
-        <div className="grid grid-rows-2 md:grid-rows-3 max-h-[800px] md:max-h-full">
+        <div className="grid grid-rows-2 max-h-[800px] md:max-h-full">
           <div
             id="chart-container"
-            className="row-span-1 px-8 overflow-hidden border-b md:row-span-2 border-hyper-blue-300"
+            className="row-span-1 px-8 overflow-hidden border-b border-hyper-blue-300"
           >
             <div id="chart" className="h-full" />
           </div>
@@ -114,16 +114,16 @@ export function Trade(): ReactElement {
               <Button active={true} variant="Future" onClick={() => {}}>
                 Open Positions
               </Button>
-              <Button variant="Future" onClick={() => {}}>
+              <Button disabled variant="Future" onClick={() => {}}>
                 Closed Positions
               </Button>
-              <Button variant="Future" onClick={() => {}}>
+              <Button disabled variant="Future" onClick={() => {}}>
                 Recent Trades
               </Button>
             </div>
 
             <div className="overflow-scroll">
-              <OpenOrdersTable />
+              <OpenOrdersTable market={market} />
             </div>
           </div>
         </div>
