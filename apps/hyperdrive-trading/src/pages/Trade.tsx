@@ -1,11 +1,5 @@
 import { ChartOptions, createChart, IChartApi } from "lightweight-charts";
-import {
-  PropsWithChildren,
-  ReactElement,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import { ReactElement, useEffect, useRef, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { HyperdriveMarket } from "src/config/HyperdriveConfig";
 import { Button } from "src/ui/base/components/Button";
@@ -54,11 +48,13 @@ export function Trade(): ReactElement {
   // Resize timescale when chart is resized
   useEffect(() => {
     window.addEventListener("resize", resizeChartHandler);
-    return removeEventListener("resize", resizeChartHandler);
+    return () => removeEventListener("resize", resizeChartHandler);
   }, []);
 
+  const [tradeModalOpen, setTradeModalOpen] = useState(false);
+
   return (
-    <div className="grid grid-flow-row border-t border-hyper-blue-300 md:grid-cols-[447px_1fr] md:h-[calc(100vh_-_64px)]">
+    <div className="grid grid-flow-row border-t border-hyper-blue-300 md:grid-cols-[447px_1fr] h-[calc(100vh_-_64px)]">
       {/* Market information row - mobile only */}
       <div className="px-8 pt-4 pb-2 border-b md:hidden gap-x-8 border-hyper-blue-300">
         <h4 className="mb-2 font-bold text-hyper-blue-100 font-dm-sans whitespace-nowrap">
@@ -76,9 +72,9 @@ export function Trade(): ReactElement {
       </div>
 
       {/* Position form column */}
-      <PositionFormContainer>
+      <div className="md:flex flex-col w-full md:max-w-md col-span-1 border-r border-b bg-base-100 border-hyper-blue-300 shrink-0 md:basis=[447px] px-8 py-6 hidden">
         <PositionForm market={market} />
-      </PositionFormContainer>
+      </div>
 
       {/* Chart column */}
       <div className="flex flex-col overflow-hidden bg-base-100">
@@ -109,7 +105,7 @@ export function Trade(): ReactElement {
             <div id="chart" className="h-full" />
           </div>
 
-          <div className="flex flex-col row-span-1 px-8 pt-4 text-hyper-blue-100 gap-y-4">
+          <div className="flex flex-col row-span-1 px-8 pt-4 text-hyper-blue-100 gap-y-4 h-[calc(100%_-_64px)] md:h-auto">
             <div className="flex flex-wrap gap-2">
               <Button active={true} variant="Future" onClick={() => {}}>
                 Open Positions
@@ -128,14 +124,27 @@ export function Trade(): ReactElement {
           </div>
         </div>
       </div>
-    </div>
-  );
-}
 
-function PositionFormContainer({ children }: PropsWithChildren): ReactElement {
-  return (
-    <div className="flex flex-col w-full md:max-w-md col-span-1 border-r border-b bg-base-100 border-hyper-blue-300 shrink-0 md:basis=[447px] px-8 py-6">
-      {children}
+      {/* Mobile only */}
+      {tradeModalOpen && (
+        <div className="absolute z-50 w-full px-8 overflow-y-hidden overscroll-none bg-base-100 md:hidden">
+          <PositionForm
+            market={market}
+            handleClose={() => setTradeModalOpen(false)}
+          />
+        </div>
+      )}
+
+      {/* Mobile only */}
+      {!tradeModalOpen && (
+        <div className="btm-nav md:hidden bg-base-200 z-60">
+          <div className="w-48">
+            <Button variant="Emerald" onClick={() => setTradeModalOpen(true)}>
+              Trade
+            </Button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
