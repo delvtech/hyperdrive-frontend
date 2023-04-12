@@ -6,10 +6,11 @@ import { formatBigInt } from "src/ui/base/formatting/formatBigInt";
 
 interface LongPositionOverviewWellProps {
   market: HyperdriveMarket;
-  costBasis: bigint;
+  costBasis?: bigint;
   // TODO: stubbed for now
   // fixedApr: number;
   claimableAtMaturity: bigint;
+  expiryDate: Date;
 }
 
 export function LongPositionOverviewWell({
@@ -17,12 +18,8 @@ export function LongPositionOverviewWell({
   costBasis,
   // fixedApr,
   claimableAtMaturity,
+  expiryDate,
 }: LongPositionOverviewWellProps): ReactElement {
-  const current = new Date();
-  const formattedMaturityDate = new Date(
-    current.setMonth(current.getMonth() + market.termLength),
-  ).toLocaleDateString();
-
   return (
     <div className="flex flex-col p-4 bg-transparent border rounded gap-y-4 border-hyper-blue-300">
       <div className="flex items-center">
@@ -31,13 +28,15 @@ export function LongPositionOverviewWell({
       </div>
 
       <div className="flex flex-col tracking-wide gap-y-1">
-        <div className="flex">
-          <p className="mr-auto">Cost Basis</p>
-          <p className="font-semibold tracking-wide">
-            {formatBigInt(costBasis, market.baseToken.decimals)}{" "}
-            {market.baseToken.symbol}
-          </p>
-        </div>
+        {costBasis && (
+          <div className="flex">
+            <p className="mr-auto">Cost Basis</p>
+            <p className="font-semibold tracking-wide">
+              {formatBigInt(costBasis, market.baseToken.decimals)}{" "}
+              {market.baseToken.symbol}
+            </p>
+          </div>
+        )}
 
         <div className="flex">
           <p className="mr-auto">Term Length</p>
@@ -48,7 +47,9 @@ export function LongPositionOverviewWell({
 
         <div className="flex">
           <p className="mr-auto">Matures</p>
-          <p className="font-semibold tracking-wide">{formattedMaturityDate}</p>
+          <p className="font-semibold tracking-wide">
+            {expiryDate.toLocaleDateString()}
+          </p>
         </div>
 
         <div className="flex">
