@@ -13,6 +13,8 @@ import { chains, wagmiClient } from "src/network/wagmiClient";
 import App from "src/ui/app/App";
 import { WagmiConfig } from "wagmi";
 import { SkeletonTheme } from "react-loading-skeleton";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { PortfolioPage } from "src/ui/portfolio/PortfolioPage/PortfolioPage";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
@@ -23,7 +25,12 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
             baseColor="var(--color-inputBg)"
             highlightColor="var(--color-dawn)"
           >
-            <App />
+            <BrowserRouter>
+              <Routes>
+                <Route path="/" element={<App />} />
+                <Route path="/portfolio/" element={<PortfolioPage />} />
+              </Routes>
+            </BrowserRouter>
           </SkeletonTheme>
         </RainbowKitProvider>
       </WagmiConfig>
