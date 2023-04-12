@@ -132,7 +132,6 @@ export function CloseLongPositionForm({
             }
             showBalance={false}
             disabled
-            // maxValue={baseTokenBalance?.formatted}
             onChange={(newAmount) => {}}
           />
         </div>
