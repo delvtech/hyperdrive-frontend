@@ -1,5 +1,54 @@
 export const AaveFixedBorrowActionABI = [
   {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "shortId",
+        type: "uint256",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "costOfShort",
+        type: "uint256",
+      },
+      {
+        indexed: true,
+        internalType: "address",
+        name: "who",
+        type: "address",
+      },
+      {
+        indexed: false,
+        internalType: "address",
+        name: "collateralToken",
+        type: "address",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "collateralDeposited",
+        type: "uint256",
+      },
+      {
+        indexed: false,
+        internalType: "address",
+        name: "borrowToken",
+        type: "address",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "borrowAmount",
+        type: "uint256",
+      },
+    ],
+    name: "SupplyBorrowAndOpenShort",
+    type: "event",
+  },
+  {
     inputs: [
       {
         internalType: "contract IHyperdrive",

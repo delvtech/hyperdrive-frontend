@@ -1,5 +1,3 @@
-import { BigNumber } from "ethers";
-import { formatUnits } from "ethers/lib/utils.js";
 import { formatBigInt } from "src/base/bigint/formatBigInt";
 import { useUserReservesData } from "src/ui/loans/hooks/useUserReservesData";
 import { Address, useToken } from "wagmi";
