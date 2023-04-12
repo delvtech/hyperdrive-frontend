@@ -2,22 +2,24 @@ import {
   AaveFixedBorrowActionABI,
   HyperdriveGoerliAddresses,
 } from "@hyperdrive/core";
-import { QueryStatus, useQuery } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
+import { Hash } from "@wagmi/core";
 import { Contract } from "ethers";
-import { Address, useContract, useProvider } from "wagmi";
+import { Address, useProvider } from "wagmi";
+
+interface UserFixedRateLoan {
+  txHash: Hash;
+  shortId: bigint;
+  costOfShort: bigint;
+  who: Address;
+  collateralTokenAddress: Address;
+  collateralDeposited: bigint;
+  borrowTokenAddress: Address;
+  borrowedAmount: bigint;
+}
 
 interface UseUserLoansResult {
-  userLoans:
-    | {
-        shortId: bigint;
-        costOfShort: bigint;
-        who: string;
-        collateralTokenAddress: string;
-        collateralDeposited: bigint;
-        borrowTokenAddress: string;
-        borrowedAmount: bigint;
-      }[]
-    | undefined;
+  userLoans: UserFixedRateLoan[] | undefined;
   userLoansStatus: "error" | "success" | "loading";
 }
 
@@ -51,13 +53,14 @@ export function useUserLoans(account: Address | undefined): UseUserLoansResult {
           );
           // TODO: remove casting once on viem, which has strong event types
           return userLoans.map((userLoan) => ({
+            txHash: userLoan.transactionHash as Hash,
             shortId: userLoan.args?.shortId.toBigInt() as bigint,
             costOfShort: userLoan.args?.costOfShort.toBigInt() as bigint,
-            who: userLoan.args?.who as string,
-            collateralTokenAddress: userLoan.args?.collateralToken as string,
+            who: userLoan.args?.who as Address,
+            collateralTokenAddress: userLoan.args?.collateralToken as Address,
             collateralDeposited:
               userLoan.args?.collateralDeposited.toBigInt() as bigint,
-            borrowTokenAddress: userLoan.args?.borrowToken as string,
+            borrowTokenAddress: userLoan.args?.borrowToken as Address,
             borrowedAmount: userLoan.args?.borrowAmount.toBigInt() as bigint,
           }));
         }
