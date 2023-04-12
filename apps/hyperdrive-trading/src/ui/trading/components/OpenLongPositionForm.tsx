@@ -68,6 +68,11 @@ export function OpenLongPositionForm({
     },
   });
 
+  const current = new Date();
+  const expiryDate = new Date(
+    current.setMonth(current.getMonth() + market.termLength),
+  );
+
   return (
     <>
       {/* You Pay Section */}
@@ -88,6 +93,7 @@ export function OpenLongPositionForm({
           market={market}
           costBasis={amountAsBigInt ?? 0n}
           claimableAtMaturity={longAmountOut ?? 0n}
+          expiryDate={expiryDate}
         />
       </div>
 
