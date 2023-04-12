@@ -8,8 +8,9 @@ export function PortfolioPage(): ReactElement {
 
   const { userLoans } = useUserLoans(account);
   return (
-    <div className="flex min-h-[75vh] w-full flex-col items-center justify-center py-[10vh] px-[4vw]">
-      <div className="max-w-4xl">
+    <div className="flex flex-col gap-3">
+      <h4 className="h4 font-bold text-white">Positions</h4>
+      <div>
         {userLoans?.map((loan) => {
           return (
             <div key={loan.shortId.toString()}>
