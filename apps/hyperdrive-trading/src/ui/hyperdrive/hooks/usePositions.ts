@@ -96,7 +96,7 @@ export function usePositions(
 
       // Create position objects from multi-token data
       const multiTokenList = Object.values(multiTokens);
-      const openLongs: Position[] = multiTokenList
+      const longs: Position[] = multiTokenList
         .filter((multiToken) => getAssetPrefixFromTokenId(multiToken.id) === 0)
         .map((token) => {
           return {
@@ -108,7 +108,7 @@ export function usePositions(
           };
         });
 
-      const openShorts: Position[] = multiTokenList
+      const shorts: Position[] = multiTokenList
         .filter((multiToken) => getAssetPrefixFromTokenId(multiToken.id) === 1)
         .map((token) => {
           return {
@@ -121,8 +121,10 @@ export function usePositions(
         });
 
       return {
-        openLongs,
-        openShorts,
+        openLongs: longs.filter((long) => long.amount > 0n),
+        openShorts: shorts.filter((short) => short.amount > 0n),
+        closedLongs: longs.filter((long) => long.amount === 0n),
+        closedShorts: shorts.filter((short) => short.amount === 0n),
       };
     },
   });
