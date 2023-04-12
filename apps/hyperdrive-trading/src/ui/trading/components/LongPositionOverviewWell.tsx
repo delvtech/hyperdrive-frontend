@@ -7,8 +7,6 @@ import { formatBigInt } from "src/ui/base/formatting/formatBigInt";
 interface LongPositionOverviewWellProps {
   market: HyperdriveMarket;
   costBasis?: bigint;
-  // TODO: stubbed for now
-  // fixedApr: number;
   claimableAtMaturity: bigint;
   expiryDate: Date;
 }
@@ -16,7 +14,6 @@ interface LongPositionOverviewWellProps {
 export function LongPositionOverviewWell({
   market,
   costBasis,
-  // fixedApr,
   claimableAtMaturity,
   expiryDate,
 }: LongPositionOverviewWellProps): ReactElement {
@@ -28,16 +25,6 @@ export function LongPositionOverviewWell({
       </div>
 
       <div className="flex flex-col tracking-wide gap-y-1">
-        {costBasis && (
-          <div className="flex">
-            <p className="mr-auto">Cost Basis</p>
-            <p className="font-semibold tracking-wide">
-              {formatBigInt(costBasis, market.baseToken.decimals)}{" "}
-              {market.baseToken.symbol}
-            </p>
-          </div>
-        )}
-
         <div className="flex">
           <p className="mr-auto">Term Length</p>
           <p className="font-semibold tracking-wide">
@@ -50,11 +37,6 @@ export function LongPositionOverviewWell({
           <p className="font-semibold tracking-wide">
             {expiryDate.toLocaleDateString()}
           </p>
-        </div>
-
-        <div className="flex">
-          <p className="mr-auto">Fixed APR</p>
-          <p className="font-semibold tracking-wide">1.50%</p>
         </div>
 
         <div className="flex">
