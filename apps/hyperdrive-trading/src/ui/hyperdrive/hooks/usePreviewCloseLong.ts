@@ -48,11 +48,10 @@ export function usePreviewCloseLong({
     queryKey: [
       "preview-close-long",
       market.address,
-      {
-        baseAmount: bondAmountIn?.toString(),
-        bondAmountOut: minBaseAmountOut?.toString(),
-        destination: destination?.toString(),
-      },
+      bondAmountIn?.toString(),
+      minBaseAmountOut?.toString(),
+      destination?.toString(),
+      ,
     ],
     enabled: queryEnabled,
     queryFn: queryEnabled

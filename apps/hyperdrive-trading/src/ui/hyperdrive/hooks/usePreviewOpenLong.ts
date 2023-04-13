@@ -49,11 +49,10 @@ export function usePreviewOpenLong({
     queryKey: [
       "preview-open-long",
       market.address,
-      {
-        baseAmount: baseAmount?.toString(),
-        bondAmountOut: bondAmountOut?.toString(),
-        destination: destination?.toString(),
-      },
+      baseAmount?.toString(),
+      bondAmountOut?.toString(),
+      destination?.toString(),
+      ,
     ],
     enabled: queryEnabled,
     queryFn: queryEnabled
