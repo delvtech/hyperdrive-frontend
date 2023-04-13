@@ -1,5 +1,3 @@
-// TODO: Find out if vite will let us move main.tsx to ui/ instead
-
 import "@rainbow-me/rainbowkit/styles.css";
 import "react-loading-skeleton/dist/skeleton.css";
 import "src/ui/index.css";
