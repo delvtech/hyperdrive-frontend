@@ -13,18 +13,9 @@ console.log(HyperdriveGoerliAddresses);
 const COLLATERAL = SparkGoerliAddresses.wstETH_token;
 const DEBT_TOKEN = SparkGoerliAddresses.DAI_token;
 
-export default function App(): ReactElement {
-  const [activeTab, setActiveTab] = useState<ActiveTab>("borrow");
+export default function BorrowPage(): ReactElement {
   return (
-    <Page
-      header={<AppHeader activeTab={activeTab} setActiveTab={setActiveTab} />}
-      content={
-        <LoanCard
-          supplyTokenAddress={COLLATERAL}
-          borrowTokenAddress={DEBT_TOKEN}
-        />
-      }
-    />
+    <LoanCard supplyTokenAddress={COLLATERAL} borrowTokenAddress={DEBT_TOKEN} />
   );
 }
 

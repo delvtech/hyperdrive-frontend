@@ -3,34 +3,22 @@ import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MintButton } from "src/ui/faucet/MintButton";
 import { parseBigInt } from "src/base/bigint/parseBigInt";
 import { Tabs } from "src/ui/base/Tabs/Tabs";
-import { ReactElement, useCallback } from "react";
+import { ReactElement } from "react";
+import { useLocation } from "react-router-dom";
 
 export type ActiveTab = "borrow" | "portfolio";
 
-interface AppHeaderProps {
-  activeTab: ActiveTab;
-  setActiveTab: (tab: ActiveTab) => void;
-}
+interface AppHeaderProps {}
 
 const tabIds: Record<ActiveTab, number> = {
   borrow: 0,
   portfolio: 1,
 };
 
-export function AppHeader({
-  activeTab,
-  setActiveTab,
-}: AppHeaderProps): ReactElement {
-  const handleChange = useCallback(
-    (tabIndex: number) => {
-      if (tabIndex === 0) {
-        setActiveTab("borrow");
-      } else if (tabIndex === 1) {
-        setActiveTab("portfolio");
-      }
-    },
-    [setActiveTab],
-  );
+export function AppHeader({}: AppHeaderProps): ReactElement {
+  const location = useLocation();
+  const activeTabIndex =
+    location.pathname === "/" ? tabIds.borrow : tabIds.portfolio;
   return (
     <div className="flex h-16 items-center justify-between gap-2 p-4">
       <h4 className="shrink-0 font-bold text-white">Fixed Borrow Demo</h4>
@@ -40,14 +28,15 @@ export function AppHeader({
             {
               label: "Borrow",
               variant: "sun",
+              href: "/",
             },
             {
               label: "Portfolio",
               variant: "pinkSlip",
+              href: "/portfolio",
             },
           ]}
-          activeTab={tabIds[activeTab]}
-          onChange={handleChange}
+          activeTab={activeTabIndex}
         />
       </div>
       <div className="flex shrink-0 items-center gap-2">
