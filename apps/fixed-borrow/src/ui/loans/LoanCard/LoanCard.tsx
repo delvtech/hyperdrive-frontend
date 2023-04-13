@@ -2,7 +2,6 @@ import { SparkGoerliAddresses } from "@hyperdrive/spark";
 import { ReactElement, useState } from "react";
 import { Button } from "src/ui/base/Button/Button";
 import { Card } from "src/ui/base/Card/Card";
-import { Tabs } from "src/ui/base/Tabs/Tabs";
 import { InfoTooltip } from "src/ui/base/Tooltip/InfoTooltip";
 import { BorrowInput } from "src/ui/loans/BorrowInput/BorrowInput";
 import { LoanCardHeader } from "src/ui/loans/LoanCard/LoanCardHeader";
@@ -29,7 +28,6 @@ export function LoanCard({
   supplyTokenAddress,
   borrowTokenAddress,
 }: LoanCardProps): ReactElement {
-  const [activeTab, setActiveTab] = useState(0);
   const [termLength, setTermLength] = useState<TermLength | undefined>();
 
   // Supply input state
@@ -73,20 +71,6 @@ export function LoanCard({
 
   return (
     <div className="flex flex-col items-center gap-6">
-      <Tabs
-        tabs={[
-          {
-            label: "Borrow",
-            variant: "sun",
-          },
-          {
-            label: "Portfolio",
-            variant: "pinkSlip",
-          },
-        ]}
-        activeTab={activeTab}
-        onChange={setActiveTab}
-      />
       <Card>
         {/* Scaffold two columns */}
         <div className="flex gap-10">
