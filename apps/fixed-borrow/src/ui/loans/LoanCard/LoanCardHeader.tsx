@@ -9,7 +9,7 @@ export function LoanCardHeader({}: LoanCardHeaderProps): ReactElement {
   return (
     <div className="flex w-full justify-between">
       <Stat
-        icon={<AssetIcon address={SparkGoerliAddresses.DAI_token} large />}
+        icon={<AssetIcon address={SparkGoerliAddresses.DAI_token} size="lg" />}
         stat="DAI"
         label="1 DAI = $1"
         alignment="left"
