@@ -6,23 +6,17 @@ import { formatBigInt } from "src/ui/base/formatting/formatBigInt";
 
 interface LongPositionOverviewWellProps {
   market: HyperdriveMarket;
-  costBasis: bigint;
-  // TODO: stubbed for now
-  // fixedApr: number;
+  costBasis?: bigint;
   claimableAtMaturity: bigint;
+  expiryDate: Date;
 }
 
 export function LongPositionOverviewWell({
   market,
   costBasis,
-  // fixedApr,
   claimableAtMaturity,
+  expiryDate,
 }: LongPositionOverviewWellProps): ReactElement {
-  const current = new Date();
-  const formattedMaturityDate = new Date(
-    current.setMonth(current.getMonth() + market.termLength),
-  ).toLocaleDateString();
-
   return (
     <div className="flex flex-col p-4 bg-transparent border rounded gap-y-4 border-hyper-blue-300">
       <div className="flex items-center">
@@ -32,14 +26,6 @@ export function LongPositionOverviewWell({
 
       <div className="flex flex-col tracking-wide gap-y-1">
         <div className="flex">
-          <p className="mr-auto">Cost Basis</p>
-          <p className="font-semibold tracking-wide">
-            {formatBigInt(costBasis, market.baseToken.decimals)}{" "}
-            {market.baseToken.symbol}
-          </p>
-        </div>
-
-        <div className="flex">
           <p className="mr-auto">Term Length</p>
           <p className="font-semibold tracking-wide">
             {market.termLength} months
@@ -48,12 +34,9 @@ export function LongPositionOverviewWell({
 
         <div className="flex">
           <p className="mr-auto">Matures</p>
-          <p className="font-semibold tracking-wide">{formattedMaturityDate}</p>
-        </div>
-
-        <div className="flex">
-          <p className="mr-auto">Fixed APR</p>
-          <p className="font-semibold tracking-wide">1.50%</p>
+          <p className="font-semibold tracking-wide">
+            {expiryDate.toLocaleDateString()}
+          </p>
         </div>
 
         <div className="flex">

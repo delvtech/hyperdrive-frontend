@@ -2,64 +2,64 @@ import { BigNumber } from "@ethersproject/bignumber";
 import { HyperdriveABI } from "@hyperdrive/core";
 import { useQuery } from "react-query";
 import { HyperdriveMarket } from "src/config/HyperdriveConfig";
+import { WagmiHookStatusType } from "src/ui/base/types";
 import { Address, useContract, useSigner } from "wagmi";
 
-interface UsePreviewOpenLongOptions {
+interface UsePreviewCloseLongOptions {
   market: HyperdriveMarket;
-  baseAmount: bigint | undefined;
-  bondAmountOut: bigint | undefined;
+  tokenID: bigint | undefined;
+  bondAmountIn: bigint | undefined;
+  minBaseAmountOut: bigint | undefined;
   destination: Address | undefined;
   asUnderlying?: boolean;
   enabled?: boolean;
 }
 
-interface UsePreviewOpenLongResult {
-  status: "error" | "idle" | "loading" | "success";
-  longAmountOut: bigint | undefined;
+interface UsePreviewCloseLongResult {
+  previewCloseLongStatus: WagmiHookStatusType;
+  baseAmountOut: bigint | undefined;
 }
 
-export function usePreviewOpenLong({
+export function usePreviewCloseLong({
   market,
-  baseAmount,
-  bondAmountOut,
+  tokenID,
+  bondAmountIn,
+  minBaseAmountOut,
   destination,
   asUnderlying = true,
-  enabled,
-}: UsePreviewOpenLongOptions): UsePreviewOpenLongResult {
-  // There is no callStatic wagmi hook, so we gotta call the contract directly,
-  // see: https://github.com/wagmi-dev/wagmi/discussions/1571
+  enabled = true,
+}: UsePreviewCloseLongOptions): UsePreviewCloseLongResult {
   const { data: signer } = useSigner();
 
   const hyperdriveContract = useContract({
     abi: HyperdriveABI,
     address: market.address,
-    // In order for callStatic to work, you need a signer still, and enough
-    // allowance to compute the preview.
     signerOrProvider: signer,
   });
 
   const queryEnabled =
-    !!baseAmount &&
-    !!bondAmountOut &&
+    !!bondAmountIn &&
+    !!minBaseAmountOut &&
     !!destination &&
     !!hyperdriveContract &&
     enabled;
 
   const { data, status } = useQuery({
     queryKey: [
-      "preview-open-long",
+      "preview-close-long",
       market.address,
-      baseAmount?.toString(),
-      bondAmountOut?.toString(),
+      bondAmountIn?.toString(),
+      minBaseAmountOut?.toString(),
       destination?.toString(),
       ,
     ],
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? async () => {
-          const openLongResult = (await hyperdriveContract.callStatic.openLong(
-            BigNumber.from(baseAmount),
-            BigNumber.from(bondAmountOut),
+          const openLongResult = (await hyperdriveContract.callStatic.closeLong(
+            BigNumber.from(tokenID),
+            BigNumber.from(bondAmountIn),
+            BigNumber.from(minBaseAmountOut),
             destination,
             asUnderlying,
           )) as unknown as BigNumber;
@@ -67,5 +67,6 @@ export function usePreviewOpenLong({
         }
       : undefined,
   });
-  return { longAmountOut: data, status };
+
+  return { baseAmountOut: data, previewCloseLongStatus: status };
 }

@@ -8,6 +8,8 @@ interface TokenInputProps {
   onChange: (newAmount: string) => void;
   maxValue?: string;
   showBalance?: boolean;
+  disabled?: boolean;
+  autoFocus?: boolean;
 }
 
 export function TokenInput({
@@ -16,6 +18,8 @@ export function TokenInput({
   onChange,
   maxValue,
   showBalance = true,
+  disabled = false,
+  autoFocus = false,
 }: TokenInputProps): ReactElement {
   const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
     onChange(event.target.value);
@@ -25,7 +29,7 @@ export function TokenInput({
     <div className="flex flex-col p-4 border rounded bg-base-200 gap-y-2 border-hyper-blue-300 font-dm-sans">
       <div className="flex gap-x-4">
         <input
-          autoFocus
+          autoFocus={autoFocus}
           className="w-full font-semibold bg-transparent text-h4 placeholder:text-hyper-blue-200 focus:outline-dashed outline-hyper-blue-200"
           max={maxValue}
           min="0"
@@ -34,6 +38,7 @@ export function TokenInput({
           placeholder="0"
           type="number"
           value={value}
+          disabled={disabled}
         />
 
         <div className="flex items-center min-w-fit gap-x-2">
@@ -54,7 +59,7 @@ export function TokenInput({
               Max
             </span>
           )}
-          <p>Balance: {formatBalance(maxValue ?? "0")}</p>
+          <p>Balance: {formatBalance(maxValue ?? "0", 8)}</p>
         </div>
       )}
     </div>

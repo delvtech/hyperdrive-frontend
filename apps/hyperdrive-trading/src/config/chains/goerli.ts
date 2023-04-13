@@ -48,7 +48,7 @@ export const goerliHyperdriveConfig: HyperdriveConfig<
       address: "0x8C9Ccd26fFB734658171EE2B0C6d087e72752c20",
       baseToken: daiBaseToken,
       protocol: MakerProtocol,
-      termLength: 6,
+      termLength: 12,
     },
     // Stubbed below
     {
