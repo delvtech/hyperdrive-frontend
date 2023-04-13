@@ -1,5 +1,3 @@
-// TODO: Find out if vite will let us move main.tsx to ui/ instead
-
 import "@rainbow-me/rainbowkit/styles.css";
 import "react-loading-skeleton/dist/skeleton.css";
 import "src/ui/index.css";
@@ -28,7 +26,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
             <BrowserRouter>
               <Routes>
                 <Route path="/" element={<App />} />
-                <Route path="/portfolio/" element={<PortfolioPage />} />
+                <Route path="/portfolio/:address" element={<PortfolioPage />} />
               </Routes>
             </BrowserRouter>
           </SkeletonTheme>
