@@ -5,14 +5,11 @@ import { HyperdriveMarket } from "src/config/HyperdriveConfig";
 import { Button } from "src/ui/base/components/Button";
 import { Stat } from "src/ui/base/components/Stat";
 import { OpenOrdersTable } from "src/ui/orders/components/OpenOrdersTable";
-import { twConfig } from "src/ui/tailwind/config";
 import { PositionForm } from "src/ui/trading/components/PositionForm";
 
 export function Trade(): ReactElement {
   // Safe to cast this variable because router configs this page is rendered with a valid market
   const market = useLoaderData() as HyperdriveMarket;
-
-  console.log(twConfig);
 
   const [isChartRendered, setIsChartRendered] = useState(false);
   const chart = useRef<IChartApi | undefined>(undefined);
