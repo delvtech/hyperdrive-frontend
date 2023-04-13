@@ -5,7 +5,7 @@ import { HyperdriveGoerliAddresses } from "@hyperdrive/core";
 import { LoanCard } from "src/ui/loans/LoanCard/LoanCard";
 import { formatBigInt } from "src/base/bigint/formatBigInt";
 import Page from "src/ui/base/Page/Page";
-import { AppHeader } from "src/ui/app/AppHeader";
+import { ActiveTab, AppHeader } from "src/ui/app/AppHeader";
 
 console.log(SparkGoerliAddresses);
 console.log(HyperdriveGoerliAddresses);
@@ -14,7 +14,7 @@ const COLLATERAL = SparkGoerliAddresses.wstETH_token;
 const DEBT_TOKEN = SparkGoerliAddresses.DAI_token;
 
 export default function App(): ReactElement {
-  const [activeTab, setActiveTab] = useState(0);
+  const [activeTab, setActiveTab] = useState<ActiveTab>("borrow");
   return (
     <Page
       header={<AppHeader activeTab={activeTab} setActiveTab={setActiveTab} />}

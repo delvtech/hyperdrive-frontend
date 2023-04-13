@@ -3,15 +3,34 @@ import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MintButton } from "src/ui/faucet/MintButton";
 import { parseBigInt } from "src/base/bigint/parseBigInt";
 import { Tabs } from "src/ui/base/Tabs/Tabs";
-import { ReactElement } from "react";
+import { ReactElement, useCallback } from "react";
+
+export type ActiveTab = "borrow" | "portfolio";
+
+interface AppHeaderProps {
+  activeTab: ActiveTab;
+  setActiveTab: (tab: ActiveTab) => void;
+}
+
+const tabIds: Record<ActiveTab, number> = {
+  borrow: 0,
+  portfolio: 1,
+};
 
 export function AppHeader({
   activeTab,
   setActiveTab,
-}: {
-  activeTab: number;
-  setActiveTab: (tabIndex: number) => void;
-}): ReactElement {
+}: AppHeaderProps): ReactElement {
+  const handleChange = useCallback(
+    (tabIndex: number) => {
+      if (tabIndex === 0) {
+        setActiveTab("borrow");
+      } else if (tabIndex === 1) {
+        setActiveTab("portfolio");
+      }
+    },
+    [setActiveTab],
+  );
   return (
     <div className="flex h-16 items-center justify-between gap-2 p-4">
       <h4 className="shrink-0 font-bold text-white">Fixed Borrow Demo</h4>
@@ -27,8 +46,8 @@ export function AppHeader({
               variant: "pinkSlip",
             },
           ]}
-          activeTab={activeTab}
-          onChange={setActiveTab}
+          activeTab={tabIds[activeTab]}
+          onChange={handleChange}
         />
       </div>
       <div className="flex shrink-0 items-center gap-2">

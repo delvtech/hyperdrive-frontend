@@ -26,7 +26,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
             <BrowserRouter>
               <Routes>
                 <Route path="/" element={<App />} />
-                <Route path="/portfolio/" element={<PortfolioPage />} />
+                <Route path="/portfolio/:address" element={<PortfolioPage />} />
               </Routes>
             </BrowserRouter>
           </SkeletonTheme>
