@@ -8,11 +8,13 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { queryClient } from "src/network/queryClient";
 import { chains, wagmiClient } from "src/network/wagmiClient";
-import App from "src/ui/app/App";
+import BorrowPage from "src/ui/loans/BorrowPage/BorrowPage";
 import { WagmiConfig } from "wagmi";
 import { SkeletonTheme } from "react-loading-skeleton";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { PortfolioPage } from "src/ui/portfolio/PortfolioPage/PortfolioPage";
+import { AppHeader } from "src/ui/app/AppHeader";
+import Page from "src/ui/base/Page/Page";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
@@ -25,8 +27,18 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
           >
             <BrowserRouter>
               <Routes>
-                <Route path="/" element={<App />} />
-                <Route path="/portfolio/:address" element={<PortfolioPage />} />
+                <Route
+                  path="/"
+                  element={
+                    <Page header={<AppHeader />} content={<BorrowPage />} />
+                  }
+                />
+                <Route
+                  path="/portfolio"
+                  element={
+                    <Page header={<AppHeader />} content={<PortfolioPage />} />
+                  }
+                />
               </Routes>
             </BrowserRouter>
           </SkeletonTheme>
