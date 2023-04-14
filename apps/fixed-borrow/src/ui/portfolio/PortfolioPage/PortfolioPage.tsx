@@ -17,8 +17,8 @@ export function PortfolioPage(): ReactElement {
       <h4 className="h4 font-bold text-white">Positions</h4>
       <div className="max-w-4xl">
         <SortableGridTable
-          headingRowClassName="grid-cols-[1fr_1fr_1fr_1fr] gap-10"
-          bodyRowClassName="group grid-cols-[1fr_1fr_1fr_1fr] gap-10"
+          headingRowClassName="grid-cols-[1fr_1fr_1fr_1fr_64px] gap-10"
+          bodyRowClassName="group grid-cols-[1fr_1fr_1fr_1fr_64px] gap-10"
           emptyTableElement={<span className="text-white">No loans found</span>}
           cols={[
             {
@@ -49,13 +49,12 @@ export function PortfolioPage(): ReactElement {
               },
               i,
             ) => ({
-              className: "even:bg-inputBg",
               cells: [
                 <DateOpenedCell
                   key={`dateopened-${txHash}-${i}`}
                   txHash={txHash}
                 />,
-                // TODO: Implement these
+                // TODO: Implement this
                 <DateOpenedCell key={`rate-${txHash}-${i}`} txHash={txHash} />,
                 <AmountCell
                   key={`collateral-${txHash}-${i}`}
@@ -67,6 +66,12 @@ export function PortfolioPage(): ReactElement {
                   amount={borrowedAmount}
                   tokenAddress={borrowTokenAddress}
                 />,
+                <div
+                  key={`expand-${txHash}-${i}`}
+                  className="flex shrink-0 items-center"
+                >
+                  <img src="/caret-down.svg" />
+                </div>,
               ],
             }),
           )}
