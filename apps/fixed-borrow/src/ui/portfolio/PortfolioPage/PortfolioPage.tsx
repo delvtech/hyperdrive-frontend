@@ -42,6 +42,7 @@ export function PortfolioPage(): ReactElement {
             (
               {
                 txHash,
+                shortId,
                 collateralDeposited,
                 collateralTokenAddress,
                 borrowedAmount,
@@ -55,7 +56,11 @@ export function PortfolioPage(): ReactElement {
                   txHash={txHash}
                 />,
                 // TODO: Implement this
-                <DateOpenedCell key={`rate-${txHash}-${i}`} txHash={txHash} />,
+                <RateCell
+                  key={`rate-${txHash}-${i}`}
+                  shortId={shortId}
+                  txHash={txHash}
+                />,
                 <AmountCell
                   key={`collateral-${txHash}-${i}`}
                   amount={collateralDeposited}
@@ -87,6 +92,26 @@ function DateOpenedCell({ txHash }: { txHash: Hash }): ReactElement {
     <span className="text-lg text-white">
       {timestamp ? new Date(timestamp).toDateString() : ""}
     </span>
+  );
+}
+
+const SIX_MONTHS_IN_MILLISECONDS = 15778800000;
+function RateCell({ txHash }: { shortId: bigint; txHash: Hash }): ReactElement {
+  const { timestamp } = useTransactionTimestamp(txHash);
+  return (
+    <div className="flex flex-col ">
+      <span className="inline-flex items-center gap-2 text-h6 text-white">
+        <span>1.50%</span>
+        <span className="text-success">Fixed</span>
+      </span>
+      <span className="leading-sm text-secondaryText">
+        {timestamp
+          ? `until ${new Date(
+              timestamp + SIX_MONTHS_IN_MILLISECONDS,
+            ).toDateString()}`
+          : ""}
+      </span>
+    </div>
   );
 }
 
