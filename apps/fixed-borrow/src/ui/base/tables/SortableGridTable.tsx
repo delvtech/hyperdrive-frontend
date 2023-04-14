@@ -93,7 +93,7 @@ export function SortableGridTable<K extends string>({
               return (
                 <button
                   key={i}
-                  className="hover:bg-base-300 flex items-center gap-1 text-left"
+                  className="hover:bg-inputBg flex items-center gap-1 text-left"
                   onClick={() => handleSortChange(col.sortKey as K)}
                 >
                   {col.cell}

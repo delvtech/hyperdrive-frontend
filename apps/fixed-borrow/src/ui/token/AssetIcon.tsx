@@ -6,23 +6,39 @@ import { Address, useNetwork, useToken } from "wagmi";
 interface AssetIconProps {
   address: Address;
 
-  large?: boolean;
+  size?: "sm" | "md" | "lg";
 }
 
-export function AssetIcon({ address, large }: AssetIconProps): ReactElement {
+export function AssetIcon({
+  address,
+  size = "md",
+}: AssetIconProps): ReactElement {
   const { chain } = useNetwork();
   const { data: tokenMetadata } = useToken({ address });
 
   const assetIcon = chain ? AssetIcons[chain.id]?.[address] : null;
   if (!assetIcon) {
-    return <span className={classNames({ "text-h2": large })}>🤔</span>;
+    return (
+      <span
+        className={classNames({
+          "text-h2": size === "lg",
+          "text-h6": size === "sm",
+        })}
+      >
+        🤔
+      </span>
+    );
   }
 
   return (
     <img
       src={assetIcon}
       alt={tokenMetadata?.symbol}
-      className={large ? "h-12 w-12" : "h-6 w-6"}
+      className={classNames({
+        "h-12 w-12": size === "lg",
+        "h-6 w-6": size === "md",
+        "h-4 w-4": size === "sm",
+      })}
     />
   );
 }
