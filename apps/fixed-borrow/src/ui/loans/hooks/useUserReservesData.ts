@@ -5,6 +5,11 @@ import {
 } from "@hyperdrive/spark";
 import { useContractRead } from "wagmi";
 
+/**
+ * See: https://docs.aave.com/developers/periphery-contracts/uipooldataproviderv3#getreservesdata
+ * @param userAdress
+ * @returns
+ */
 export function useUserReservesData(userAdress: `0x${string}` | undefined): {
   userReservesData: UserReserveData[] | undefined;
   status: "error" | "idle" | "loading" | "success";
