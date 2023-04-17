@@ -10,6 +10,7 @@ import { Button } from "src/ui/base/components/Button";
 import { OrderType, PositionType } from "src/ui/hyperdrive/types";
 import { LongPositionForm } from "src/ui/trading/components/LongPositionForm";
 import { match } from "ts-pattern";
+import { ShortPositionForm } from "./ShortPositionForm";
 
 interface PositionFormProps {
   market: HyperdriveMarket;
@@ -95,7 +96,9 @@ export function PositionForm({
 
       {match(position)
         .with("Long", () => <LongPositionForm market={market} order={order} />)
-        .with("Short", () => <div></div>)
+        .with("Short", () => (
+          <ShortPositionForm market={market} order={order} />
+        ))
         .with("LP", () => <div></div>)
         .exhaustive()}
     </div>
