@@ -42,6 +42,16 @@ export function ShortPositionOverviewWell({
         )}
 
         <div className="flex">
+          <p className="mr-auto">Amount</p>
+          <p className="font-semibold tracking-wide">
+            {formatBalance(
+              formatBigInt(amountShort, market.baseToken.decimals),
+              6,
+            )}
+          </p>
+        </div>
+
+        <div className="flex">
           <p className="mr-auto">Term Length</p>
           <p className="font-semibold tracking-wide">
             {market.termLength} months
@@ -53,11 +63,6 @@ export function ShortPositionOverviewWell({
           <p className="font-semibold tracking-wide">
             {expiryDate.toLocaleDateString()}
           </p>
-        </div>
-
-        <div className="flex">
-          <p className="mr-auto">Var. APR</p>
-          <p className="font-semibold tracking-wide">1.50%</p>
         </div>
 
         {!!costBasis && amountShort > 0n && costBasis > 0n && (
