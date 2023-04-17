@@ -14,6 +14,6 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src", "tailwind.config.mjs"],
+  "include": ["src", "tailwind.config.cjs"],
   "exclude": ["node_modules"]
 }
