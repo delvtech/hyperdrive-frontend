@@ -3,12 +3,11 @@ import {
   SparkGoerliAddresses,
   UserAccountData,
 } from "@hyperdrive/spark";
-import { Hack_BigNumberToBigInt } from "src/hack/Hack_BigNumberToBigInt";
 import { Address, useContractRead } from "wagmi";
 
 export function useUserAccountData(userAddress: Address | undefined): {
-  userAccountData: Hack_BigNumberToBigInt<UserAccountData> | undefined;
-  status: "error" | "idle" | "loading" | "success";
+  userAccountData: UserAccountData | undefined;
+  userAccountDataStatus: "error" | "idle" | "loading" | "success";
 } {
   const { data, status } = useContractRead({
     abi: PoolABI,
@@ -35,6 +34,6 @@ export function useUserAccountData(userAddress: Address | undefined): {
 
   return {
     userAccountData: data,
-    status,
+    userAccountDataStatus: status,
   };
 }

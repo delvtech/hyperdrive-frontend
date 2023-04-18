@@ -5,7 +5,7 @@ import { useUserAccountData } from "src/ui/loans/hooks/useUserAccountData";
 import Skeleton from "react-loading-skeleton";
 import { PreviewRow } from "src/ui/loans/previews/PreviewRow";
 import { formatBigInt } from "src/base/bigint/formatBigInt";
-import { MARKET_BASE_DECIMALS } from "src/pools/constants";
+import { NETWORK_BASE_TOKEN_DECIMALS } from "src/pools/networkBaseToken";
 import { useUserCurrentDebt } from "src/ui/loans/hooks/useUserCurrentDebt";
 import { formatUSD } from "src/ui/base/formatting/formatUSD";
 
@@ -41,7 +41,7 @@ export function PositionPreview({
             return formatUSD(
               formatBigInt(
                 userAccountData.totalCollateralBase,
-                MARKET_BASE_DECIMALS,
+                NETWORK_BASE_TOKEN_DECIMALS,
               ),
             );
           })()}
@@ -56,7 +56,10 @@ export function PositionPreview({
               return <Skeleton width={120} />;
             }
             return formatUSD(
-              formatBigInt(userAccountData.totalDebtBase, MARKET_BASE_DECIMALS),
+              formatBigInt(
+                userAccountData.totalDebtBase,
+                NETWORK_BASE_TOKEN_DECIMALS,
+              ),
             );
           })()}
         />
@@ -88,7 +91,7 @@ export function PositionPreview({
             return formatUSD(
               formatBigInt(
                 userAccountData.availableBorrowBase,
-                MARKET_BASE_DECIMALS,
+                NETWORK_BASE_TOKEN_DECIMALS,
               ),
             );
           })()}
@@ -104,7 +107,7 @@ export function PositionPreview({
             }
             return `${formatBigInt(
               userAccountData.ltv,
-              MARKET_BASE_DECIMALS,
+              NETWORK_BASE_TOKEN_DECIMALS,
             )}%`;
           })()}
         />
