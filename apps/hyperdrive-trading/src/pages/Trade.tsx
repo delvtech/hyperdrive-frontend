@@ -90,7 +90,7 @@ export function Trade(): ReactElement {
 
       {/* Chart column */}
       <div className="flex flex-col overflow-hidden bg-base-100 h-full">
-        <div className="items-center justify-start hidden px-8 py-4 border-b gap-x-20 md:flex">
+        <div className="items-center justify-start hidden px-8 py-4 border-b gap-x-20 md:flex border-hyper-blue-300">
           <h4 className="font-bold text-hyper-blue-100 font-dm-sans whitespace-nowrap">
             {market.name}
           </h4>
