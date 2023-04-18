@@ -66,7 +66,7 @@ export function Trade(): ReactElement {
 
           <button
             onClick={() => setTradeModalOpen(true)}
-            className="flex hover:opacity-80 h-fit items-center px-4 py-2 font-bold rounded gap-x-1 text-base-100 font-dm-sans bg-gradient-to-r from-hyper-pink to-hyper-green"
+            className="flex hover:opacity-80 h-fit items-center px-4 py-2 font-bold rounded gap-x-1 text-base-100 font-dm-sans bg-gradient-to-r from-hyper-pink via-[#afd5ff] to-hyper-green"
           >
             <p>Trade</p>
           </button>
@@ -138,7 +138,7 @@ export function Trade(): ReactElement {
             </Button>
           </div>
 
-          <div className="flex flex-col row-span-1 px-8 pt-4 text-hyper-blue-100 gap-y-4 h-[calc(100%_-_64px)] md:h-auto">
+          <div className="flex flex-col row-span-1 pt-4 px-4 text-hyper-blue-100 gap-y-4 h-[calc(100%_-_64px)] md:h-auto">
             <div className="overflow-scroll">
               <OpenOrdersTable market={market} />
             </div>

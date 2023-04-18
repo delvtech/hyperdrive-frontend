@@ -1,13 +1,10 @@
-/* eslint-disable react/jsx-key */
-
 import uniqBy from "lodash.uniqby";
 import { ReactElement, useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import { SupportedChainId } from "src/config/hyperdrive.config";
 import { getHyperdriveConfig } from "src/config/utils/getHyperdriveConfig";
 import { Button } from "src/ui/base/components/Button";
-import { Row, SortableGridTable } from "src/ui/base/tables/SortableGridTable";
 import { useMarketRowData } from "src/ui/markets/hooks/useMarketRowData";
-import { MarketTableRowData } from "src/ui/markets/types";
 import { ProtocolLabel } from "src/ui/protocol/components/ProtocolLabel";
 import { TokenLabel } from "src/ui/token/components/TokenLabel";
 import { useChainId } from "wagmi";
@@ -15,7 +12,7 @@ import { useChainId } from "wagmi";
 const ALL_MARKETS_KEY = "All Markets";
 const DEFAULT_TERM_LENGTH = 6;
 
-export function MarketsTable(): ReactElement {
+export function MarketsTableMini(): ReactElement {
   const chainId = useChainId();
   const config = getHyperdriveConfig(chainId as SupportedChainId);
 
@@ -51,13 +48,7 @@ export function MarketsTable(): ReactElement {
     <div className="px-8 py-10 space-y-8 rounded-sm bg-base-100">
       <div className="space-y-4">
         {/* Markets search and protocol filter row */}
-        <div className="flex flex-wrap items-center gap-6">
-          {/* Markets search input, disabled for now */}
-          {/* <input
-            className="w-[250px] bg-base-200 px-6 py-2 text-center border rounded border-hyper-blue-300 font-quantico text-hyper-blue-100 placeholder:text-hyper-blue-300"
-            placeholder="Search Markets"
-          /> */}
-
+        <div className="flex flex-wrap items-center gap-6 px-4">
           {/* Protocol filter button group */}
           <div className="flex flex-wrap gap-2">
             <Button
@@ -68,7 +59,7 @@ export function MarketsTable(): ReactElement {
               <p>All Protocols</p>
             </Button>
 
-            {protocols.slice().map((protocol) => (
+            {protocols.map((protocol) => (
               <Button
                 variant="Future"
                 key={`protocol-${protocol.name}`}
@@ -80,7 +71,7 @@ export function MarketsTable(): ReactElement {
             ))}
           </div>
 
-          <div className="flex flex-wrap gap-2 md:ml-auto">
+          <div className="flex flex-wrap gap-2">
             {/* Market Duration button group */}
             {termLengths
               .slice()
@@ -100,55 +91,47 @@ export function MarketsTable(): ReactElement {
       </div>
 
       {/* Markets sortable table */}
-      <div>
-        <SortableGridTable
-          headingRowClassName="grid-cols-[2fr_1fr_1fr_1fr_1fr] bg-base-100 text-hyper-blue-200 font-dm-sans [&>*]:p-5 bg-opacity-100"
-          bodyRowClassName="grid-cols-[2fr_1fr_1fr_1fr_1fr] bg-transparent text-hyper-blue-100 font-dm-sans [&>*]:p-5"
-          cols={[
-            {
-              cell: "Name",
-              sortKey: "name",
-            },
-            "Token",
-            {
-              cell: "Liquidity",
-              sortKey: "liquidity",
-            },
-            {
-              cell: "Long APR",
-              sortKey: "longAPR",
-            },
-            {
-              cell: "Short APR",
-              sortKey: "shortAPR",
-            },
-          ]}
-          rows={filteredMarkets.map((marketRowData) =>
-            createMarketRow(marketRowData),
-          )}
-        />
+      <div className="flex gap-y-8 flex-col">
+        {filteredMarkets.map(({ market }) => {
+          return (
+            <Link
+              to={`/trade/${market.address}`}
+              key={market.address}
+              className="flex flex-col text-hyper-blue-100 font-dm-sans hover:bg-base-300 p-4"
+            >
+              <div className="flex">
+                <h5 className="font-bold">{market.name}</h5>
+              </div>
+              <div className="flex">
+                <p className="mr-auto text-hyper-blue-200">Protocol</p>
+                <p>
+                  <ProtocolLabel
+                    className="font-semibold font-dm-sans"
+                    protocol={market.protocol}
+                  />
+                </p>
+              </div>
+              <div className="flex">
+                <p className="mr-auto text-hyper-blue-200">Token</p>
+                <p>
+                  <TokenLabel
+                    className="font-semibold font-dm-sans"
+                    token="DAI"
+                  />
+                </p>
+              </div>
+              <div className="flex">
+                <p className="mr-auto text-hyper-blue-200">Liquidity</p>
+                <p className="font-semibold">$100M</p>
+              </div>
+              <div className="flex">
+                <p className="mr-auto text-hyper-blue-200">APR</p>
+                <p className="font-semibold">1.25%</p>
+              </div>
+            </Link>
+          );
+        })}
       </div>
     </div>
   );
-}
-
-function createMarketRow({ market }: MarketTableRowData): Row {
-  return {
-    href: `/trade/${market.address}`,
-    cells: [
-      <span className="font-bold">
-        <p>{market.name}</p>
-        <ProtocolLabel
-          className="font-normal font-dm-sans"
-          protocol={market.protocol}
-        />
-      </span>,
-      <TokenLabel className="font-semibold font-dm-sans" token="DAI" />,
-      <span className="font-medium" data-tip="hello">
-        $100M
-      </span>,
-      <span className="font-semibold">1.25%</span>,
-      <span className="font-semibold">1.25%</span>,
-    ],
-  };
 }
