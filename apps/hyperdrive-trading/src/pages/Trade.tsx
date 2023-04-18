@@ -138,7 +138,7 @@ export function Trade(): ReactElement {
             </Button>
           </div>
 
-          <div className="flex flex-col row-span-1 px-8 pt-4 text-hyper-blue-100 gap-y-4 h-[calc(100%_-_64px)] md:h-auto">
+          <div className="flex flex-col row-span-1 pt-4 px-4 text-hyper-blue-100 gap-y-4 h-[calc(100%_-_64px)] md:h-auto">
             <div className="overflow-scroll">
               <OpenOrdersTable market={market} />
             </div>
