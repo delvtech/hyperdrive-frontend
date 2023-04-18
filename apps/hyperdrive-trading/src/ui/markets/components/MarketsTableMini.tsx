@@ -1,5 +1,3 @@
-/* eslint-disable react/jsx-key */
-
 import uniqBy from "lodash.uniqby";
 import { ReactElement, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
@@ -61,19 +59,16 @@ export function MarketsTableMini(): ReactElement {
               <p>All Protocols</p>
             </Button>
 
-            {protocols
-              .slice()
-              .sort()
-              .map((protocol) => (
-                <Button
-                  variant="Future"
-                  key={`protocol-${protocol.name}`}
-                  active={protocolFilter === protocol.name}
-                  onClick={() => setSelectedProtocolFilter(protocol.name)}
-                >
-                  <ProtocolLabel className="font-bold" protocol={protocol} />
-                </Button>
-              ))}
+            {protocols.map((protocol) => (
+              <Button
+                variant="Future"
+                key={`protocol-${protocol.name}`}
+                active={protocolFilter === protocol.name}
+                onClick={() => setSelectedProtocolFilter(protocol.name)}
+              >
+                <ProtocolLabel className="font-bold" protocol={protocol} />
+              </Button>
+            ))}
           </div>
 
           <div className="flex flex-wrap gap-2">

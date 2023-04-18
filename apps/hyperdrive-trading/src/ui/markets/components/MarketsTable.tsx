@@ -68,19 +68,16 @@ export function MarketsTable(): ReactElement {
               <p>All Protocols</p>
             </Button>
 
-            {protocols
-              .slice()
-              .sort()
-              .map((protocol) => (
-                <Button
-                  variant="Future"
-                  key={`protocol-${protocol.name}`}
-                  active={protocolFilter === protocol.name}
-                  onClick={() => setSelectedProtocolFilter(protocol.name)}
-                >
-                  <ProtocolLabel className="font-bold" protocol={protocol} />
-                </Button>
-              ))}
+            {protocols.slice().map((protocol) => (
+              <Button
+                variant="Future"
+                key={`protocol-${protocol.name}`}
+                active={protocolFilter === protocol.name}
+                onClick={() => setSelectedProtocolFilter(protocol.name)}
+              >
+                <ProtocolLabel className="font-bold" protocol={protocol} />
+              </Button>
+            ))}
           </div>
 
           <div className="flex flex-wrap gap-2 md:ml-auto">
