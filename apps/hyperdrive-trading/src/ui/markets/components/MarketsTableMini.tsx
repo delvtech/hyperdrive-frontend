@@ -50,7 +50,7 @@ export function MarketsTableMini(): ReactElement {
     <div className="px-8 py-10 space-y-8 rounded-sm bg-base-100">
       <div className="space-y-4">
         {/* Markets search and protocol filter row */}
-        <div className="flex flex-wrap items-center gap-6">
+        <div className="flex flex-wrap items-center gap-6 px-4">
           {/* Protocol filter button group */}
           <div className="flex flex-wrap gap-2">
             <Button
