@@ -1,11 +1,14 @@
-import { Bars3BottomLeftIcon } from "@heroicons/react/20/solid";
-import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { Bars3BottomLeftIcon, WalletIcon } from "@heroicons/react/20/solid";
+import { ConnectButton, useAccountModal } from "@rainbow-me/rainbowkit";
 import classNames from "classnames";
 import { ReactElement } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useAccount } from "wagmi";
 
 export function Navbar(): ReactElement {
   const { pathname } = useLocation();
+  const { isConnected } = useAccount();
+  const { openAccountModal } = useAccountModal();
 
   return (
     <div className="grid items-center grid-cols-3 px-8 navbar bg-base-100">
@@ -113,7 +116,15 @@ export function Navbar(): ReactElement {
 
       {/* Navbar end */}
       <div className="justify-self-end">
-        <ConnectButton showBalance={false} />
+        {isConnected ? (
+          <WalletIcon
+            type="button"
+            onClick={() => openAccountModal?.()}
+            className="fill-hyper-blue-100 h-6 cursor-pointer hover:opacity-80"
+          />
+        ) : (
+          <ConnectButton showBalance={false} />
+        )}
       </div>
     </div>
   );
