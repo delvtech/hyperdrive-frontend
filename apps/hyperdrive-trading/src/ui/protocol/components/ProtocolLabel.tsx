@@ -15,7 +15,7 @@ export function ProtocolLabel({
     <span
       className={classNames(
         className,
-        "flex items-center gap-x-2 font-quantico",
+        "flex items-center gap-x-2 font-dm-sans",
       )}
     >
       <img className="h-4" src={protocol.iconUrl} />

@@ -68,6 +68,8 @@ export function Trade(): ReactElement {
         </div>
       </div>
 
+      {/* <div className="px-8 pt-4 pb-2 border-b md:hidden gap-x-8 border-hyper-blue-300 h-fit bg-base-100"></div> */}
+
       {/* Position form column */}
       <div className="md:flex flex-col w-full md:max-w-md border-r border-b bg-base-100 border-hyper-blue-300 shrink-0 md:basis=[447px] px-8 py-6 hidden">
         <PositionForm market={market} />
@@ -122,22 +124,11 @@ export function Trade(): ReactElement {
 
       {/* Mobile only */}
       {tradeModalOpen && (
-        <div className="absolute z-50 w-full px-8 pt-4 overflow-y-hidden overscroll-none bg-base-100 md:hidden h-[calc(100vh_-_64px)]">
+        <div className="absolute z-50 w-full px-8 pt-4 overflow-y-hidden overflow-scroll bg-base-100 md:hidden h-[calc(100vh_-_64px)]">
           <PositionForm
             market={market}
             handleClose={() => setTradeModalOpen(false)}
           />
-        </div>
-      )}
-
-      {/* Mobile only */}
-      {!tradeModalOpen && (
-        <div className="btm-nav md:hidden bg-base-200 z-60">
-          <div className="w-48">
-            <Button variant="Emerald" onClick={() => setTradeModalOpen(true)}>
-              Trade
-            </Button>
-          </div>
         </div>
       )}
     </div>

@@ -25,7 +25,7 @@ export function PositionForm({
   const [order, setOrder] = useState<OrderType>("Open");
 
   return (
-    <div className="flex flex-col gap-y-12">
+    <div className="flex flex-col gap-y-10 py-8">
       {/* Header */}
       <div className="flex items-center">
         <h3 className="mr-auto text-xl font-bold text-hyper-blue-100 font-akira">
@@ -34,7 +34,7 @@ export function PositionForm({
         {handleClose && (
           <div>
             <XMarkIcon
-              className="h-5 stroke-2 stroke-hyper-blue-100"
+              className="h-6 stroke-2 stroke-hyper-blue-100 hover:opacity-50  cursor-pointer"
               onClick={handleClose}
             />
           </div>

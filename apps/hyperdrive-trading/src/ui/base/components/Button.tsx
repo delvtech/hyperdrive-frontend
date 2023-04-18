@@ -10,6 +10,7 @@ interface ButtonProps {
   size?: "sm" | "md" | "lg";
   block?: boolean;
   variant?: ButtonVariant;
+  className?: string;
 }
 
 export function Button({
@@ -20,10 +21,12 @@ export function Button({
   block,
   variant,
   children,
+  className,
 }: PropsWithChildren<ButtonProps>): ReactElement {
   return (
     <button
       className={classNames(
+        className,
         "flex items-center justify-center gap-1 rounded-[6px] font-bold transition-all whitespace-nowrap",
         {
           "w-full": block,

@@ -1,8 +1,8 @@
-import { ReactElement } from "react";
+import { ReactElement, ReactNode } from "react";
 
 interface StatProps {
   label: string;
-  value: string;
+  value: ReactNode;
   className?: string;
 }
 
