@@ -6,20 +6,17 @@ import { formatBigInt } from "src/ui/base/formatting/formatBigInt";
 
 interface ShortPositionOverviewWellProps {
   market: HyperdriveMarket;
-  costBasis: bigint;
+  costBasis?: bigint;
   amountShort: bigint;
+  expiryDate: Date;
 }
 
 export function ShortPositionOverviewWell({
   market,
   costBasis,
   amountShort,
+  expiryDate,
 }: ShortPositionOverviewWellProps): ReactElement {
-  const current = new Date();
-  const formattedMaturityDate = new Date(
-    current.setMonth(current.getMonth() + market.termLength),
-  ).toLocaleDateString();
-
   return (
     <div className="flex flex-col p-4 bg-transparent border rounded gap-y-4 border-hyper-blue-300">
       <div className="flex items-center">
@@ -30,16 +27,27 @@ export function ShortPositionOverviewWell({
       </div>
 
       <div className="flex flex-col tracking-wide gap-y-1">
+        {!!costBasis && (
+          <div className="flex">
+            <p className="mr-auto">Cost Basis</p>
+            <p className="font-semibold tracking-wide">
+              {formatBalance(
+                formatBigInt(costBasis, market.baseToken.decimals),
+                6,
+                false,
+              )}{" "}
+              {market.baseToken.symbol}
+            </p>
+          </div>
+        )}
+
         <div className="flex">
-          <p className="mr-auto">Cost Basis</p>
+          <p className="mr-auto">Amount</p>
           <p className="font-semibold tracking-wide">
-            {/* TODO: formatBalance has a bug when the BigInt is less than 1 */}
             {formatBalance(
-              formatBigInt(costBasis, market.baseToken.decimals),
+              formatBigInt(amountShort, market.baseToken.decimals),
               6,
-              false,
-            )}{" "}
-            {market.baseToken.symbol}
+            )}
           </p>
         </div>
 
@@ -52,15 +60,12 @@ export function ShortPositionOverviewWell({
 
         <div className="flex">
           <p className="mr-auto">Matures</p>
-          <p className="font-semibold tracking-wide">{formattedMaturityDate}</p>
+          <p className="font-semibold tracking-wide">
+            {expiryDate.toLocaleDateString()}
+          </p>
         </div>
 
-        <div className="flex">
-          <p className="mr-auto">Var. APR</p>
-          <p className="font-semibold tracking-wide">1.50%</p>
-        </div>
-
-        {amountShort > 0n && costBasis > 0n && (
+        {!!costBasis && amountShort > 0n && costBasis > 0n && (
           <div className="flex">
             <p className="mr-auto">Exposure</p>
             <p className="font-semibold tracking-wide">

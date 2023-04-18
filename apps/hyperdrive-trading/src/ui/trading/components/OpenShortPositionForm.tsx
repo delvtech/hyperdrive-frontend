@@ -123,6 +123,11 @@ export function OpenShortPositionForm({
     }
   };
 
+  const current = new Date();
+  const expiryDate = new Date(
+    current.setMonth(current.getMonth() + market.termLength),
+  );
+
   return (
     <>
       {/* You Pay Section */}
@@ -143,6 +148,7 @@ export function OpenShortPositionForm({
           market={market}
           costBasis={baseAmountIn ?? 0n}
           amountShort={amountAsBigInt ?? 0n}
+          expiryDate={expiryDate}
         />
       </div>
 
