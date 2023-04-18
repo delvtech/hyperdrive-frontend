@@ -72,7 +72,7 @@ export function Trade(): ReactElement {
           </button>
         </div>
 
-        <div className="flex flex-wrap w-full gap-x-8">
+        <div className="flex w-full gap-x-8">
           <Stat
             label="Protocol"
             value={<ProtocolLabel protocol={market.protocol} />}
@@ -120,12 +120,12 @@ export function Trade(): ReactElement {
             <InformationCircleIcon className="h-4 fill-hyper-blue-100" />
           </div>
 
-          <div id="chart-container" className="h-64  grow md:h-auto">
-            <div id="chart" className="h-full" />
+          <div id="chart-container h-full">
+            <div id="chart" className="h-[30vh] md:h-[40vh]" />
           </div>
         </div>
 
-        <div className="flex flex-col overflow-hidden py-4 grow">
+        <div className="flex flex-col overflow-hidden py-4">
           <div className="flex flex-wrap gap-2 py-2 w-full px-8">
             <Button active={true} variant="Future" onClick={() => {}}>
               Open
