@@ -83,7 +83,7 @@ export function MarketsTable(): ReactElement {
               ))}
           </div>
 
-          <div className="flex flex-wrap gap-2 ml-auto">
+          <div className="flex flex-wrap gap-2 md:ml-auto">
             {/* Market Duration button group */}
             {termLengths
               .slice()
