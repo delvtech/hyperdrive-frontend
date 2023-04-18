@@ -52,7 +52,6 @@ function createOpenOrderRow(position: Position, positionDecimals: number): Row {
       </span>,
       <span>{position.currencyValue}</span>,
       <span>{position.expiryDate.toLocaleDateString()}</span>,
-      ,
     ],
   };
 }

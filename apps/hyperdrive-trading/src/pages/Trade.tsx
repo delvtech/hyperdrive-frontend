@@ -1,3 +1,4 @@
+import { InformationCircleIcon } from "@heroicons/react/20/solid";
 import { ChartOptions, createChart, IChartApi } from "lightweight-charts";
 import { ReactElement, useEffect, useRef, useState } from "react";
 import { useLoaderData } from "react-router-dom";
@@ -5,6 +6,7 @@ import { HyperdriveMarket } from "src/config/HyperdriveConfig";
 import { Button } from "src/ui/base/components/Button";
 import { Stat } from "src/ui/base/components/Stat";
 import { OpenOrdersTable } from "src/ui/orders/components/OpenOrdersTable";
+import { ProtocolLabel } from "src/ui/protocol/components/ProtocolLabel";
 import { PositionForm } from "src/ui/trading/components/PositionForm";
 
 export function Trade(): ReactElement {
@@ -54,17 +56,30 @@ export function Trade(): ReactElement {
   const [tradeModalOpen, setTradeModalOpen] = useState(false);
 
   return (
-    <div className="overflow-hidden grid border-t border-hyper-blue-300 grid-rows-[125px_1fr] md:grid-rows-1 md:grid-cols-[365px_1fr] lg:grid-cols-[447px_1fr] h-[calc(100vh_-_64px)]">
+    <div className="overflow-hidden grid border-t border-hyper-blue-300 grid-rows-[157px_1fr] md:grid-rows-1 md:grid-cols-[365px_1fr] lg:grid-cols-[447px_1fr] h-[calc(100vh_-_64px)]">
       {/* Market information row - mobile only */}
-      <div className="px-8 pt-4 pb-2 border-b md:hidden gap-x-8 border-hyper-blue-300 h-fit">
-        <h4 className="mb-2 font-bold text-hyper-blue-100 font-dm-sans whitespace-nowrap">
-          {market.name}
-        </h4>
+      <div className="px-8 pb-4 pt-6 border-b md:hidden gap-4 border-hyper-blue-300 h-fit bg-base-100 flex flex-col">
+        <div className="flex">
+          <h4 className="mb-2 font-bold text-hyper-blue-100 font-dm-sans whitespace-nowrap mr-auto">
+            {market.name}
+          </h4>
 
-        <div className="flex flex-wrap w-full gap-x-8">
-          <Stat label="Protocol" value="Maker" />
+          <button
+            onClick={() => setTradeModalOpen(true)}
+            className="flex hover:opacity-80 h-fit items-center px-4 py-2 font-bold rounded gap-x-1 text-base-100 font-dm-sans bg-gradient-to-r from-hyper-pink to-hyper-green"
+          >
+            <p>Trade</p>
+          </button>
+        </div>
+
+        <div className="flex w-full gap-x-8">
+          <Stat
+            label="Protocol"
+            value={<ProtocolLabel protocol={market.protocol} />}
+          />
           <Stat label="Liquidity" value="$100M" />
           <Stat label="Volume" value="$4.4M" />
+          <Stat label="APR" value="1.50%" />
         </div>
       </div>
 
@@ -74,14 +89,17 @@ export function Trade(): ReactElement {
       </div>
 
       {/* Chart column */}
-      <div className="flex flex-col overflow-hidden bg-base-100 h-[calc(100%_-_64px)] md:h-full">
-        <div className="items-center justify-start hidden px-8 py-4 border-b gap-x-20 border-hyper-blue-300 md:flex">
+      <div className="flex flex-col overflow-hidden bg-base-100 h-full">
+        <div className="items-center justify-start hidden px-8 py-4 border-b gap-x-20 md:flex border-hyper-blue-300">
           <h4 className="font-bold text-hyper-blue-100 font-dm-sans whitespace-nowrap">
             {market.name}
           </h4>
 
           <div className="flex gap-x-16">
-            <Stat label="Protocol" value="Maker" />
+            <Stat
+              label="Protocol"
+              value={<ProtocolLabel protocol={market.protocol} />}
+            />
             <Stat className="hidden lg:block" label="Liquidity" value="$100M" />
             <Stat className="hidden xl:block" label="Long APR" value="1.50%" />
             <Stat className="hidden xl:block" label="Short APR" value="1.75%" />
@@ -94,14 +112,20 @@ export function Trade(): ReactElement {
           </div>
         </div>
 
-        <div
-          id="chart-container"
-          className="h-64 border-b border-hyper-blue-300 grow px-8 md:h-auto"
-        >
-          <div id="chart" className="h-full" />
+        <div className="px-8 py-4 border-b border-hyper-blue-300">
+          <div className="flex items-center gap-x-2">
+            <h6 className="text-hyper-blue-100 font-dm-sans font-bold">
+              Market Sentiment Indicator
+            </h6>
+            <InformationCircleIcon className="h-4 fill-hyper-blue-100" />
+          </div>
+
+          <div id="chart-container h-full">
+            <div id="chart" className="h-[30vh] md:h-[40vh]" />
+          </div>
         </div>
 
-        <div className="flex flex-col overflow-hidden pt-2 grow">
+        <div className="flex flex-col overflow-hidden py-4">
           <div className="flex flex-wrap gap-2 py-2 w-full px-8">
             <Button active={true} variant="Future" onClick={() => {}}>
               Open
@@ -114,30 +138,21 @@ export function Trade(): ReactElement {
             </Button>
           </div>
 
-          <div className="overflow-scroll px-4">
-            <OpenOrdersTable market={market} />
+          <div className="flex flex-col row-span-1 px-8 pt-4 text-hyper-blue-100 gap-y-4 h-[calc(100%_-_64px)] md:h-auto">
+            <div className="overflow-scroll">
+              <OpenOrdersTable market={market} />
+            </div>
           </div>
         </div>
       </div>
 
       {/* Mobile only */}
       {tradeModalOpen && (
-        <div className="absolute z-50 w-full px-8 pt-4 overflow-y-hidden overscroll-none bg-base-100 md:hidden h-[calc(100vh_-_64px)]">
+        <div className="absolute z-50 w-full px-8 pt-4 overflow-y-hidden overflow-scroll bg-base-100 md:hidden h-[calc(100vh_-_64px)]">
           <PositionForm
             market={market}
             handleClose={() => setTradeModalOpen(false)}
           />
-        </div>
-      )}
-
-      {/* Mobile only */}
-      {!tradeModalOpen && (
-        <div className="btm-nav md:hidden bg-base-200 z-60">
-          <div className="w-48">
-            <Button variant="Emerald" onClick={() => setTradeModalOpen(true)}>
-              Trade
-            </Button>
-          </div>
         </div>
       )}
     </div>
