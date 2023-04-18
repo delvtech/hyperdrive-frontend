@@ -26,9 +26,9 @@ export function OpenOrdersTable({
 
   return (
     <SortableGridTable
-      headingRowClassName="grid-cols-6 text-hyper-blue-200 font-dm-sans text-md [&>*]:p-2"
-      bodyRowClassName="grid-cols-6 text-hyper-blue-100 font-dm-sans [&>*]:p-2 items-center"
-      cols={["Position", "Type", "Amount", "Value", "Expiry Date", ""]}
+      headingRowClassName="grid-cols-4 text-hyper-blue-200 font-dm-sans text-md [&>*]:p-2"
+      bodyRowClassName="grid-cols-4 text-hyper-blue-100 font-dm-sans [&>*]:p-2 items-center"
+      cols={["Position", "Amount", "Value", "Expiry Date"]}
       rows={allPositions.map((position) => {
         return createOpenOrderRow(position, market.baseToken.decimals);
       })}
@@ -47,20 +47,12 @@ function createOpenOrderRow(position: Position, positionDecimals: number): Row {
       >
         {position.type}
       </span>,
-      <span className="font-bold">Open</span>,
       <span>
         {formatBalance(formatBigInt(position.amount, positionDecimals))}
       </span>,
       <span>{position.currencyValue}</span>,
       <span>{position.expiryDate.toLocaleDateString()}</span>,
-      <span>
-        <button
-          disabled
-          className="px-2 py-1 text-sm font-bold uppercase bg-hyper-red font-quantico text-base-100"
-        >
-          Close
-        </button>
-      </span>,
+      ,
     ],
   };
 }

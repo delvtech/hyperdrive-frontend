@@ -1,8 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-import daisyui from "daisyui";
-import { gudTypeScale, rounder } from "gud-type";
-
+const { gudTypeScale, rounder } = require("gud-type");
 const typeScale = gudTypeScale(
   ["sm", "body", "lg", "h6", "h5", "h4", "h3", "h2", "h1"],
   {
@@ -21,8 +19,7 @@ const typeScale = gudTypeScale(
     unit: "px",
   },
 );
-
-export default {
+module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
@@ -72,7 +69,7 @@ export default {
       h1: typeScale.h1.lineHeight,
     },
   },
-  plugins: [daisyui],
+  plugins: [require("daisyui")],
   daisyui: {
     themes: ["lofi"],
   },
