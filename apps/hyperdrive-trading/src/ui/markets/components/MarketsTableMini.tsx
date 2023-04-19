@@ -3,14 +3,12 @@ import { ReactElement, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { SupportedChainId } from "src/config/hyperdrive.config";
 import { getHyperdriveConfig } from "src/config/utils/getHyperdriveConfig";
-import { Button } from "src/ui/base/components/Button";
 import { useMarketRowData } from "src/ui/markets/hooks/useMarketRowData";
 import { ProtocolLabel } from "src/ui/protocol/components/ProtocolLabel";
-import { TokenLabel } from "src/ui/token/components/TokenLabel";
 import { useChainId } from "wagmi";
 
-const ALL_MARKETS_KEY = "All Markets";
-const DEFAULT_TERM_LENGTH = 6;
+const ALL_PROTOCOLS_KEY = "All Markets";
+const ALL_TERM_LENGTHS_KEY = 0;
 
 export function MarketsTableMini(): ReactElement {
   const chainId = useChainId();
@@ -22,19 +20,22 @@ export function MarketsTableMini(): ReactElement {
   const termLengths = uniqBy(allTermLengths, (termLength) => termLength);
 
   const [protocolFilter, setSelectedProtocolFilter] =
-    useState<string>(ALL_MARKETS_KEY);
+    useState<string>(ALL_PROTOCOLS_KEY);
   const [termLengthFilter, setSelectedTermLengthFilter] =
-    useState<number>(DEFAULT_TERM_LENGTH);
+    useState<number>(ALL_TERM_LENGTHS_KEY);
 
   // TODO: no loading state for now
   const { data: marketsRowData = [] } = useMarketRowData(config.markets);
 
   const filteredMarkets = useMemo(() => {
-    const marketFilteredByTermLength = marketsRowData.filter(
-      (marketRowData) => marketRowData.market.termLength === termLengthFilter,
-    );
+    const marketFilteredByTermLength = termLengthFilter
+      ? marketsRowData.filter(
+          (marketRowData) =>
+            marketRowData.market.termLength === termLengthFilter,
+        )
+      : marketsRowData;
 
-    if (protocolFilter !== ALL_MARKETS_KEY) {
+    if (protocolFilter !== ALL_PROTOCOLS_KEY) {
       return marketFilteredByTermLength.filter(
         (marketRowData) =>
           marketRowData.market.protocol.name === protocolFilter,
@@ -50,42 +51,55 @@ export function MarketsTableMini(): ReactElement {
         {/* Markets search and protocol filter row */}
         <div className="flex flex-wrap items-center gap-6 px-4">
           {/* Protocol filter button group */}
-          <div className="flex flex-wrap gap-2">
-            <Button
-              variant="Future"
-              active={protocolFilter === ALL_MARKETS_KEY}
-              onClick={() => setSelectedProtocolFilter(ALL_MARKETS_KEY)}
+          <div className="flex flex-col gap-y-2">
+            <p className="font-medium text-hyper-blue-300">
+              Filter by protocol
+            </p>
+            <select
+              onChange={(event) => {
+                if (event.currentTarget.value === "none") {
+                  setSelectedProtocolFilter(ALL_PROTOCOLS_KEY);
+                } else {
+                  setSelectedProtocolFilter(event.currentTarget.value);
+                }
+              }}
+              defaultValue="none"
+              className="select w-[20rem] text-[1rem] rounded-sm font-dm-sans bg-base-300"
             >
-              <p>All Protocols</p>
-            </Button>
-
-            {protocols.map((protocol) => (
-              <Button
-                variant="Future"
-                key={`protocol-${protocol.name}`}
-                active={protocolFilter === protocol.name}
-                onClick={() => setSelectedProtocolFilter(protocol.name)}
-              >
-                <ProtocolLabel className="font-bold" protocol={protocol} />
-              </Button>
-            ))}
+              <option value="none">All protocols</option>
+              {protocols.map((protocol) => (
+                <option key={protocol.name} value={protocol.name}>
+                  {protocol.name}
+                </option>
+              ))}
+            </select>
           </div>
 
-          <div className="flex flex-wrap gap-2">
-            {/* Market Duration button group */}
-            {termLengths
-              .slice()
-              .sort((a, b) => a - b)
-              .map((termLength) => (
-                <Button
-                  variant="Future"
-                  key={`termLengths-${termLength}-months`}
-                  active={termLengthFilter === termLength}
-                  onClick={() => setSelectedTermLengthFilter(termLength)}
-                >
-                  <p>{termLength} months</p>
-                </Button>
-              ))}
+          <div className="flex flex-col gap-y-2">
+            <p className="font-medium text-hyper-blue-300">
+              Select term length
+            </p>
+            <select
+              onChange={(event) => {
+                if (event.currentTarget.value === "none") {
+                  setSelectedTermLengthFilter(ALL_TERM_LENGTHS_KEY);
+                } else {
+                  setSelectedTermLengthFilter(+event.currentTarget.value);
+                }
+              }}
+              defaultValue="none"
+              className="select w-[12rem] text-[1rem] rounded-sm font-dm-sans bg-base-300"
+            >
+              <option value="none">All term lengths</option>
+              {termLengths
+                .slice()
+                .sort((a, b) => a - b)
+                .map((termLength) => (
+                  <option key={termLength} value={termLength}>
+                    {termLength} months
+                  </option>
+                ))}
+            </select>
           </div>
         </div>
       </div>
@@ -112,20 +126,15 @@ export function MarketsTableMini(): ReactElement {
                 </p>
               </div>
               <div className="flex">
-                <p className="mr-auto text-hyper-blue-200">Token</p>
-                <p>
-                  <TokenLabel
-                    className="font-semibold font-dm-sans"
-                    token="DAI"
-                  />
-                </p>
+                <p className="mr-auto text-hyper-blue-200">Term Length</p>
+                <p className="font-semibold">{market.termLength} months</p>
               </div>
               <div className="flex">
                 <p className="mr-auto text-hyper-blue-200">Liquidity</p>
                 <p className="font-semibold">$100M</p>
               </div>
               <div className="flex">
-                <p className="mr-auto text-hyper-blue-200">APR</p>
+                <p className="mr-auto text-hyper-blue-200">MSI</p>
                 <p className="font-semibold">1.25%</p>
               </div>
             </Link>
