@@ -1,7 +1,6 @@
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/20/solid";
 import { ReactElement } from "react";
 import { MarketsTable } from "src/ui/markets/components/MarketsTable";
-import { MarketsTableMini } from "src/ui/markets/components/MarketsTableMini";
 
 export function Markets(): ReactElement {
   return (
@@ -24,15 +23,7 @@ export function Markets(): ReactElement {
         </button>
       </div>
 
-      {/* Mobile view only */}
-      <div className="md:hidden">
-        <MarketsTableMini />
-      </div>
-
-      {/* Tablet+ view only */}
-      <div className="hidden md:block">
-        <MarketsTable />
-      </div>
+      <MarketsTable />
     </div>
   );
 }
