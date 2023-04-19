@@ -8,9 +8,9 @@ export function Markets(): ReactElement {
     <div className="mx-auto flex flex-col gap-y-20 px-[3vw] py-[5vh] w-full max-w-[90rem]">
       <div className="space-y-8">
         <div>
-          <h3 className="font-bold font-akira text-hyper-blue-100 text-h3 sm:text-h3 leading-h3 sm:leading-h3">
+          <h2 className="font-bold font-akira text-hyper-blue-100 text-h3 sm:text-h2 leading-h3 sm:leading-h2">
             Markets
-          </h3>
+          </h2>
           <h5 className="max-w-2xl font-medium text-hyper-blue-200 font-dm-sans text-h6 sm:text-h5 leading-h6 sm:leading-h5">
             Advanced yield markets featuring no preset expiration dates, no
             fragmented liquidity, and no LP rollovers — aka everlasting
