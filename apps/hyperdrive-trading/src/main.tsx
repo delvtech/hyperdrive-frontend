@@ -1,6 +1,6 @@
 import "@rainbow-me/rainbowkit/styles.css";
-import { App } from "src/ui/App";
 import { createRoot } from "react-dom/client";
+import { App } from "src/ui/App";
 import "tailwindcss/tailwind.css";
 import "./globals.css";
 
