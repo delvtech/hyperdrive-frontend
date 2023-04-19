@@ -5,6 +5,7 @@ import { useLoaderData } from "react-router-dom";
 import { HyperdriveMarket } from "src/config/HyperdriveConfig";
 import { Button } from "src/ui/base/components/Button";
 import { Stat } from "src/ui/base/components/Stat";
+import { MarketsTable } from "src/ui/markets/components/MarketsTable";
 import { OpenOrdersTable } from "src/ui/orders/components/OpenOrdersTable";
 import { ProtocolLabel } from "src/ui/protocol/components/ProtocolLabel";
 import { PositionForm } from "src/ui/trading/components/PositionForm";
@@ -54,6 +55,7 @@ export function Trade(): ReactElement {
   }, []);
 
   const [tradeModalOpen, setTradeModalOpen] = useState(false);
+  const [marketsModalOpen, setMarketsModalOpen] = useState(false);
 
   return (
     <div className="overflow-hidden grid border-t border-hyper-blue-300 grid-rows-[157px_1fr] md:grid-rows-1 md:grid-cols-[365px_1fr] lg:grid-cols-[447px_1fr] h-[calc(100vh_-_64px)]">
@@ -91,8 +93,16 @@ export function Trade(): ReactElement {
       {/* Chart column */}
       <div className="flex flex-col overflow-hidden bg-base-100 h-full">
         <div className="items-center justify-start hidden px-8 py-4 border-b gap-x-20 md:flex border-hyper-blue-300">
-          <h4 className="font-bold text-hyper-blue-100 font-dm-sans whitespace-nowrap">
+          <h4
+            onClick={() => {
+              setMarketsModalOpen(true);
+            }}
+            className="font-bold text-hyper-blue-100 font-dm-sans whitespace-nowrap"
+          >
             {market.name}
+            <label htmlFor="my-modal-4" className="btn">
+              open modal
+            </label>
           </h4>
 
           <div className="flex gap-x-16">
@@ -155,6 +165,19 @@ export function Trade(): ReactElement {
           />
         </div>
       )}
+
+      <input type="checkbox" id="my-modal-4" className="modal-toggle" />
+      <label htmlFor="my-modal-4" className="modal cursor-pointer">
+        <div className="rounded  max-h-[50vh]">
+          <MarketsTable />
+        </div>
+      </label>
+
+      {/* {marketsModalOpen && (
+        <div className="absolute h-screen w-screen">
+          <MarketsTable />
+        </div>
+      )} */}
     </div>
   );
 }
