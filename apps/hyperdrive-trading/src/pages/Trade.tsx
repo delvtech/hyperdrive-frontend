@@ -1,4 +1,7 @@
-import { InformationCircleIcon } from "@heroicons/react/20/solid";
+import {
+  ChevronDownIcon,
+  InformationCircleIcon,
+} from "@heroicons/react/20/solid";
 import { ChartOptions, createChart, IChartApi } from "lightweight-charts";
 import { ReactElement, useEffect, useRef, useState } from "react";
 import { useLoaderData } from "react-router-dom";
@@ -9,6 +12,8 @@ import { MarketsTable } from "src/ui/markets/components/MarketsTable";
 import { OpenOrdersTable } from "src/ui/orders/components/OpenOrdersTable";
 import { ProtocolLabel } from "src/ui/protocol/components/ProtocolLabel";
 import { PositionForm } from "src/ui/trading/components/PositionForm";
+
+const MARKETS_MODAL_KEY = "MARKETS_MODAL";
 
 export function Trade(): ReactElement {
   // Safe to cast this variable because router configs this page is rendered with a valid market
@@ -55,16 +60,18 @@ export function Trade(): ReactElement {
   }, []);
 
   const [tradeModalOpen, setTradeModalOpen] = useState(false);
-  const [marketsModalOpen, setMarketsModalOpen] = useState(false);
 
   return (
     <div className="overflow-hidden grid border-t border-hyper-blue-300 grid-rows-[157px_1fr] md:grid-rows-1 md:grid-cols-[365px_1fr] lg:grid-cols-[447px_1fr] h-[calc(100vh_-_64px)]">
       {/* Market information row - mobile only */}
       <div className="px-8 pb-4 pt-6 border-b md:hidden gap-4 border-hyper-blue-300 h-fit bg-base-100 flex flex-col">
         <div className="flex">
-          <h4 className="mb-2 font-bold text-hyper-blue-100 font-dm-sans whitespace-nowrap mr-auto">
-            {market.name}
-          </h4>
+          <label
+            htmlFor={MARKETS_MODAL_KEY}
+            className="btn text-h4 rounded-sm normal-case gap-x-2 bg-base-300"
+          >
+            {market.name} <ChevronDownIcon className="h-8" />
+          </label>
 
           <button
             onClick={() => setTradeModalOpen(true)}
@@ -93,17 +100,12 @@ export function Trade(): ReactElement {
       {/* Chart column */}
       <div className="flex flex-col overflow-hidden bg-base-100 h-full">
         <div className="items-center justify-start hidden px-8 py-4 border-b gap-x-20 md:flex border-hyper-blue-300">
-          <h4
-            onClick={() => {
-              setMarketsModalOpen(true);
-            }}
-            className="font-bold text-hyper-blue-100 font-dm-sans whitespace-nowrap"
+          <label
+            htmlFor={MARKETS_MODAL_KEY}
+            className="btn text-h4 rounded-sm normal-case gap-x-2 bg-base-300"
           >
-            {market.name}
-            <label htmlFor="my-modal-4" className="btn">
-              open modal
-            </label>
-          </h4>
+            {market.name} <ChevronDownIcon className="h-8" />
+          </label>
 
           <div className="flex gap-x-16">
             <Stat
@@ -166,18 +168,12 @@ export function Trade(): ReactElement {
         </div>
       )}
 
-      <input type="checkbox" id="my-modal-4" className="modal-toggle" />
-      <label htmlFor="my-modal-4" className="modal cursor-pointer">
-        <div className="rounded  max-h-[50vh]">
+      <input type="checkbox" id={MARKETS_MODAL_KEY} className="modal-toggle" />
+      <label htmlFor={MARKETS_MODAL_KEY} className="modal cursor-pointer">
+        <div className="rounded max-h-[60vh] overflow-auto px-8">
           <MarketsTable />
         </div>
       </label>
-
-      {/* {marketsModalOpen && (
-        <div className="absolute h-screen w-screen">
-          <MarketsTable />
-        </div>
-      )} */}
     </div>
   );
 }
