@@ -4,16 +4,14 @@ import uniqBy from "lodash.uniqby";
 import { ReactElement, useMemo, useState } from "react";
 import { SupportedChainId } from "src/config/hyperdrive.config";
 import { getHyperdriveConfig } from "src/config/utils/getHyperdriveConfig";
-import { Button } from "src/ui/base/components/Button";
 import { Row, SortableGridTable } from "src/ui/base/tables/SortableGridTable";
 import { useMarketRowData } from "src/ui/markets/hooks/useMarketRowData";
 import { MarketTableRowData } from "src/ui/markets/types";
 import { ProtocolLabel } from "src/ui/protocol/components/ProtocolLabel";
-import { TokenLabel } from "src/ui/token/components/TokenLabel";
 import { useChainId } from "wagmi";
 
-const ALL_MARKETS_KEY = "All Markets";
-const DEFAULT_TERM_LENGTH = 6;
+const ALL_PROTOCOLS_KEY = "All Markets";
+const ALL_TERM_LENGTHS_KEY = 0;
 
 export function MarketsTable(): ReactElement {
   const chainId = useChainId();
@@ -25,19 +23,22 @@ export function MarketsTable(): ReactElement {
   const termLengths = uniqBy(allTermLengths, (termLength) => termLength);
 
   const [protocolFilter, setSelectedProtocolFilter] =
-    useState<string>(ALL_MARKETS_KEY);
+    useState<string>(ALL_PROTOCOLS_KEY);
   const [termLengthFilter, setSelectedTermLengthFilter] =
-    useState<number>(DEFAULT_TERM_LENGTH);
+    useState<number>(ALL_TERM_LENGTHS_KEY);
 
   // TODO: no loading state for now
   const { data: marketsRowData = [] } = useMarketRowData(config.markets);
 
   const filteredMarkets = useMemo(() => {
-    const marketFilteredByTermLength = marketsRowData.filter(
-      (marketRowData) => marketRowData.market.termLength === termLengthFilter,
-    );
+    const marketFilteredByTermLength = termLengthFilter
+      ? marketsRowData.filter(
+          (marketRowData) =>
+            marketRowData.market.termLength === termLengthFilter,
+        )
+      : marketsRowData;
 
-    if (protocolFilter !== ALL_MARKETS_KEY) {
+    if (protocolFilter !== ALL_PROTOCOLS_KEY) {
       return marketFilteredByTermLength.filter(
         (marketRowData) =>
           marketRowData.market.protocol.name === protocolFilter,
@@ -51,50 +52,69 @@ export function MarketsTable(): ReactElement {
     <div className="px-8 py-10 space-y-8 rounded-sm bg-base-100">
       <div className="space-y-4">
         {/* Markets search and protocol filter row */}
-        <div className="flex flex-wrap items-center gap-6">
+        <div className="flex items-end gap-6">
           {/* Markets search input, disabled for now */}
-          {/* <input
-            className="w-[250px] bg-base-200 px-6 py-2 text-center border rounded border-hyper-blue-300 font-quantico text-hyper-blue-100 placeholder:text-hyper-blue-300"
-            placeholder="Search Markets"
-          /> */}
+          <div className="hidden lg:flex flex-col gap-y-2  mr-auto">
+            <div className="flex gap-x-1 items-center">
+              <p className="font-medium text-hyper-blue-300">Search Markets</p>
+            </div>
 
-          {/* Protocol filter button group */}
-          <div className="flex flex-wrap gap-2">
-            <Button
-              variant="Future"
-              active={protocolFilter === ALL_MARKETS_KEY}
-              onClick={() => setSelectedProtocolFilter(ALL_MARKETS_KEY)}
-            >
-              <p>All Protocols</p>
-            </Button>
-
-            {protocols.slice().map((protocol) => (
-              <Button
-                variant="Future"
-                key={`protocol-${protocol.name}`}
-                active={protocolFilter === protocol.name}
-                onClick={() => setSelectedProtocolFilter(protocol.name)}
-              >
-                <ProtocolLabel className="font-bold" protocol={protocol} />
-              </Button>
-            ))}
+            <input
+              className="w-[250px] bg-base-300 text-[1rem] p-2 border rounded-sm font-dm-sans text-hyper-blue-100 placeholder:text-hyper-blue-300 input font-medium"
+              placeholder="Maker DSR"
+            />
           </div>
 
-          <div className="flex flex-wrap gap-2 md:ml-auto">
-            {/* Market Duration button group */}
-            {termLengths
-              .slice()
-              .sort((a, b) => a - b)
-              .map((termLength) => (
-                <Button
-                  variant="Future"
-                  key={`termLengths-${termLength}-months`}
-                  active={termLengthFilter === termLength}
-                  onClick={() => setSelectedTermLengthFilter(termLength)}
-                >
-                  <p>{termLength} months</p>
-                </Button>
+          <div className="flex flex-col gap-y-2">
+            <p className="font-medium text-hyper-blue-300">
+              Filter by protocol
+            </p>
+            <select
+              onChange={(event) => {
+                if (event.currentTarget.value === "none") {
+                  setSelectedProtocolFilter(ALL_PROTOCOLS_KEY);
+                } else {
+                  setSelectedProtocolFilter(event.currentTarget.value);
+                }
+              }}
+              defaultValue="none"
+              className="select w-[20rem] text-[1rem] rounded-sm font-dm-sans bg-base-300"
+            >
+              <option value="none">All protocols</option>
+              {protocols.map((protocol) => (
+                <option key={protocol.name} value={protocol.name}>
+                  {protocol.name}
+                </option>
               ))}
+            </select>
+          </div>
+
+          <div className="flex flex-col gap-y-2">
+            <p className="font-medium text-hyper-blue-300">
+              Select term length
+            </p>
+            <select
+              onChange={(event) => {
+                console.log(event.currentTarget.value);
+                if (event.currentTarget.value === "none") {
+                  setSelectedTermLengthFilter(ALL_TERM_LENGTHS_KEY);
+                } else {
+                  setSelectedTermLengthFilter(+event.currentTarget.value);
+                }
+              }}
+              defaultValue="none"
+              className="select w-[12rem] text-[1rem] rounded-sm font-dm-sans bg-base-300"
+            >
+              <option value="none">All term lengths</option>
+              {termLengths
+                .slice()
+                .sort((a, b) => a - b)
+                .map((termLength) => (
+                  <option key={termLength} value={termLength}>
+                    {termLength} months
+                  </option>
+                ))}
+            </select>
           </div>
         </div>
       </div>
@@ -102,25 +122,24 @@ export function MarketsTable(): ReactElement {
       {/* Markets sortable table */}
       <div>
         <SortableGridTable
-          headingRowClassName="grid-cols-[2fr_1fr_1fr_1fr_1fr] bg-base-100 text-hyper-blue-200 font-dm-sans [&>*]:p-5 bg-opacity-100"
-          bodyRowClassName="grid-cols-[2fr_1fr_1fr_1fr_1fr] bg-transparent text-hyper-blue-100 font-dm-sans [&>*]:p-5"
+          headingRowClassName="grid-cols-[2fr_1fr_1fr_1fr] bg-base-100 text-hyper-blue-200 font-dm-sans [&>*]:p-5 bg-opacity-100"
+          bodyRowClassName="grid-cols-[2fr_1fr_1fr_1fr] bg-transparent text-hyper-blue-100 font-dm-sans [&>*]:p-5"
           cols={[
             {
               cell: "Name",
               sortKey: "name",
             },
-            "Token",
+            {
+              cell: "Term Length",
+              sortKey: "termLength",
+            },
             {
               cell: "Liquidity",
               sortKey: "liquidity",
             },
             {
-              cell: "Long APR",
+              cell: "MSI",
               sortKey: "longAPR",
-            },
-            {
-              cell: "Short APR",
-              sortKey: "shortAPR",
             },
           ]}
           rows={filteredMarkets.map((marketRowData) =>
@@ -143,11 +162,9 @@ function createMarketRow({ market }: MarketTableRowData): Row {
           protocol={market.protocol}
         />
       </span>,
-      <TokenLabel className="font-semibold font-dm-sans" token="DAI" />,
-      <span className="font-medium" data-tip="hello">
-        $100M
-      </span>,
-      <span className="font-semibold">1.25%</span>,
+      <p className="font-semibold">{market.termLength} months</p>,
+
+      <span className="font-semibold">$100M</span>,
       <span className="font-semibold">1.25%</span>,
     ],
   };
