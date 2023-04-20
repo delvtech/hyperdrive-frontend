@@ -64,7 +64,7 @@ export function MarketsTableMini(): ReactElement {
                 }
               }}
               defaultValue="none"
-              className="select w-[20rem] text-[1rem] rounded-sm font-dm-sans bg-base-300"
+              className="select w-[10rem] text-[1rem] rounded-sm font-dm-sans bg-base-300"
             >
               <option value="none">All protocols</option>
               {protocols.map((protocol) => (

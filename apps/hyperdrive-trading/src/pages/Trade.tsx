@@ -68,7 +68,7 @@ export function Trade(): ReactElement {
         <div className="flex">
           <label
             htmlFor={MARKETS_MODAL_KEY}
-            className="btn text-h4 rounded-sm normal-case gap-x-2 bg-base-300"
+            className="btn text-h4 rounded-sm normal-case gap-x-2 bg-base-300 mr-auto"
           >
             {market.name} <ChevronDownIcon className="h-8" />
           </label>
@@ -169,8 +169,10 @@ export function Trade(): ReactElement {
       )}
 
       <input type="checkbox" id={MARKETS_MODAL_KEY} className="modal-toggle" />
-      <label htmlFor={MARKETS_MODAL_KEY} className="modal cursor-pointer">
-        <div className="rounded max-h-[60vh] overflow-auto px-8">
+      <label htmlFor={MARKETS_MODAL_KEY} className="modal cursor-pointer px-8">
+        <div className="rounded max-h-[70vh] overflow-auto bg-base-100 flex flex-col p-4 items-center">
+          <h3 className="font-akira">Markets</h3>
+
           <MarketsTable />
         </div>
       </label>
