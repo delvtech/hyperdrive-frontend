@@ -27,7 +27,7 @@ export function Button({
     <button
       className={classNames(
         className,
-        "flex items-center justify-center gap-1 rounded-[6px] font-bold transition-all whitespace-nowrap",
+        "flex items-center justify-center gap-1 whitespace-nowrap rounded-[6px] font-bold transition-all",
         {
           "w-full": block,
           "cursor-not-allowed opacity-50": disabled,
@@ -45,7 +45,7 @@ export function Button({
 
           // Future Variant
           ...{
-            "bg-base-300 border border-hyper-blue-300 text-hyper-blue-100 font-quantico":
+            "border border-hyper-blue-300 bg-base-300 font-quantico text-hyper-blue-100":
               variant === "Future",
             "hover:bg-hyper-blue-400": variant === "Future" && !disabled,
             "border-hyper-pink hover:bg-base-300":
@@ -54,17 +54,17 @@ export function Button({
 
           // Work Variant
           ...{
-            "bg-hyper-orange text-base-300 font-quantico": variant === "Work",
+            "bg-hyper-orange font-quantico text-base-300": variant === "Work",
           },
 
           // Crimson Variant
           ...{
-            "bg-hyper-red text-base-300 font-quantico": variant === "Crimson",
+            "bg-hyper-red font-quantico text-base-300": variant === "Crimson",
           },
 
           // Emerald Variant
           ...{
-            "bg-hyper-green text-base-300 font-quantico": variant === "Emerald",
+            "bg-hyper-green font-quantico text-base-300": variant === "Emerald",
           },
         },
       )}

@@ -26,11 +26,11 @@ export function TokenInput({
   };
 
   return (
-    <div className="flex flex-col p-4 border rounded bg-base-200 gap-y-2 border-hyper-blue-300 font-dm-sans">
+    <div className="flex flex-col gap-y-2 rounded border border-hyper-blue-300 bg-base-200 p-4 font-dm-sans">
       <div className="flex gap-x-4">
         <input
           autoFocus={autoFocus}
-          className="w-full font-semibold bg-transparent text-h4 placeholder:text-hyper-blue-200 focus:outline-dashed outline-hyper-blue-200"
+          className="w-full bg-transparent text-h4 font-semibold outline-hyper-blue-200 placeholder:text-hyper-blue-200 focus:outline-dashed"
           max={maxValue}
           min="0"
           name="Base Token Input"
@@ -41,7 +41,7 @@ export function TokenInput({
           disabled={disabled}
         />
 
-        <div className="flex items-center min-w-fit gap-x-2">
+        <div className="flex min-w-fit items-center gap-x-2">
           {token.iconUrl && <img className="h-6" src={token.iconUrl} />}
           <h4 className="font-semibold uppercase">{token.symbol}</h4>
           {/* TODO: support multiple token input options */}
@@ -54,7 +54,7 @@ export function TokenInput({
           {maxValue && (
             <span
               onClick={() => onChange(maxValue)}
-              className="mr-auto underline cursor-pointer hover:text-hyper-blue-400"
+              className="mr-auto cursor-pointer underline hover:text-hyper-blue-400"
             >
               Max
             </span>

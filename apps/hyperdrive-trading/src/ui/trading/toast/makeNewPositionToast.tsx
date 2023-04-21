@@ -21,7 +21,7 @@ export function makeNewPositionToast({
   return (
     <div
       className={classNames(
-        "px-6 py-2 border w-fit text-hyper-blue-100 bg-base-300 border-hyper-pink font-quantico",
+        "w-fit border border-hyper-pink bg-base-300 px-6 py-2 font-quantico text-hyper-blue-100",
       )}
     >
       <h6>

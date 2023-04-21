@@ -18,7 +18,7 @@ export function ShortPositionOverviewWell({
   expiryDate,
 }: ShortPositionOverviewWellProps): ReactElement {
   return (
-    <div className="flex flex-col p-4 bg-transparent border rounded gap-y-4 border-hyper-blue-300">
+    <div className="flex flex-col gap-y-4 rounded border border-hyper-blue-300 bg-transparent p-4">
       <div className="flex items-center">
         <h5 className="mr-4 font-bold">{market.name}</h5>
         <Pill variant="Red" className="h-6 text-hyper-blue-100">
@@ -26,7 +26,7 @@ export function ShortPositionOverviewWell({
         </Pill>
       </div>
 
-      <div className="flex flex-col tracking-wide gap-y-1">
+      <div className="flex flex-col gap-y-1 tracking-wide">
         {!!costBasis && (
           <div className="flex">
             <p className="mr-auto">Cost Basis</p>

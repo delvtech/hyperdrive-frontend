@@ -73,7 +73,7 @@ export function CloseShortPositionForm({
               setSelectedShort(foundPosition ?? null);
             }
           }}
-          className="w-full select bg-base-100 text-hyper-blue-100 border-hyper-blue-200"
+          className="select w-full border-hyper-blue-200 bg-base-100 text-hyper-blue-100"
           defaultValue="none"
         >
           <option value="none">None selected</option>;
@@ -98,7 +98,7 @@ export function CloseShortPositionForm({
 
       {/* Amount to close section */}
       {selectedShort && (
-        <div className="space-y-4 text-hyper-blue-100 font-rubik">
+        <div className="space-y-4 font-rubik text-hyper-blue-100">
           <h5>Amount to close</h5>
           <TokenInput
             token={{
@@ -120,7 +120,7 @@ export function CloseShortPositionForm({
 
       {/* You receive Section */}
       {selectedShort && (
-        <div className="space-y-4 text-hyper-blue-100 font-rubik">
+        <div className="space-y-4 font-rubik text-hyper-blue-100">
           <h5>You receive</h5>
           <TokenInput
             token={market.baseToken}

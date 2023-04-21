@@ -21,7 +21,7 @@ export function Pill({
   return (
     <span
       className={classNames(
-        "whitespace-nowrap font-bold rounded flex items-center px-3 py-0.5 font-quantico",
+        "flex items-center whitespace-nowrap rounded px-3 py-0.5 font-quantico font-bold",
         PillVariantStyles[variant],
         className,
       )}

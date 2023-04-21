@@ -21,7 +21,7 @@ const LASTED_VIEWED_MARKET_KEY = "last-viewed-market";
 
 function BaseLayout(): ReactElement {
   return (
-    <div className="flex flex-col h-full min-h-screen bg-gradient-to-b from-base-200 to-base-300">
+    <div className="flex h-full min-h-screen flex-col bg-gradient-to-b from-base-200 to-base-300">
       <Navbar />
       <Outlet />
     </div>
@@ -98,7 +98,7 @@ export function App(): ReactElement {
       <Toaster position="bottom-left" reverseOrder={false} />
       <WagmiConfig client={wagmiClient}>
         <RainbowKitProvider chains={chains}>
-          <div className="flex flex-col h-full min-h-screen bg-gradient-to-b from-base-200 to-base-300">
+          <div className="flex h-full min-h-screen flex-col bg-gradient-to-b from-base-200 to-base-300">
             <RouterProvider router={router} />
           </div>
         </RainbowKitProvider>

@@ -74,7 +74,7 @@ export function CloseLongPositionForm({
               setSelectedLong(foundPosition ?? null);
             }
           }}
-          className="w-full select bg-base-100 text-hyper-blue-100 border-hyper-blue-200"
+          className="select w-full border-hyper-blue-200 bg-base-100 text-hyper-blue-100"
           defaultValue="none"
         >
           <option value="none">None selected</option>;
@@ -99,7 +99,7 @@ export function CloseLongPositionForm({
 
       {/* Amount to close section */}
       {selectedLong && (
-        <div className="space-y-4 text-hyper-blue-100 font-rubik">
+        <div className="space-y-4 font-rubik text-hyper-blue-100">
           <h5>Amount to close</h5>
           <TokenInput
             token={{
@@ -121,7 +121,7 @@ export function CloseLongPositionForm({
 
       {/* You receive Section */}
       {selectedLong && (
-        <div className="space-y-4 text-hyper-blue-100 font-rubik">
+        <div className="space-y-4 font-rubik text-hyper-blue-100">
           <h5>You receive</h5>
           <TokenInput
             token={market.baseToken}

@@ -11,32 +11,32 @@ export function Navbar(): ReactElement {
   const { openAccountModal } = useAccountModal();
 
   return (
-    <div className="grid items-center grid-cols-3 px-8 navbar bg-base-100">
+    <div className="navbar grid grid-cols-3 items-center bg-base-100 px-8">
       {/* Navbar start */}
       <div className="justify-self-start">
         {/* Renders in desktop */}
         <div className="hidden lg:block">
           <Link
             to="/markets"
-            className="text-3xl uppercase whitespace-nowrap font-akira text-hyper-pink"
+            className="text-3xl whitespace-nowrap font-akira uppercase text-hyper-pink"
           >
             <h4>Hyperdrive</h4>
           </Link>
         </div>
 
         {/* Renders in mobile */}
-        <div className="flex items-center lg:hidden gap-x-2">
+        <div className="flex items-center gap-x-2 lg:hidden">
           {/* Menu dropdown */}
           <div className="dropdown text-hyper-blue-100">
             <label
               tabIndex={0}
-              className="p-0 btn btn-ghost lg:hidden font-akira"
+              className="btn-ghost btn p-0 font-akira lg:hidden"
             >
               <Bars3BottomLeftIcon className="w-6 stroke-hyper-blue-100" />
             </label>
             <ul
               tabIndex={0}
-              className="p-2 mt-3 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
+              className="dropdown-content menu rounded-box menu-compact mt-3 w-52 bg-base-100 p-2 shadow"
             >
               <li className="hover:bg-hyper-blue-400">
                 <Link className="font-akira" to="/markets">
@@ -64,20 +64,20 @@ export function Navbar(): ReactElement {
         <div className="lg:hidden">
           <Link
             to="/markets"
-            className="text-3xl uppercase whitespace-nowrap font-akira text-hyper-pink"
+            className="text-3xl whitespace-nowrap font-akira uppercase text-hyper-pink"
           >
             <h4>HD</h4>
           </Link>
         </div>
 
         {/* Renders in mobile */}
-        <div className="hidden lg:flex gap-x-8">
+        <div className="hidden gap-x-8 lg:flex">
           <Link
             to="/markets"
             className={classNames(
-              "font-akira hover:text-hyper-blue-100 transition duration-200 border-hyper-green hover:hyper-green",
+              "hover:hyper-green border-hyper-green font-akira transition duration-200 hover:text-hyper-blue-100",
               {
-                "font-bold border-b-2 text-hyper-blue-100":
+                "border-b-2 font-bold text-hyper-blue-100":
                   pathname.startsWith("/markets"),
                 "text-hyper-blue-200": !pathname.startsWith("/markets"),
               },
@@ -88,9 +88,9 @@ export function Navbar(): ReactElement {
           <Link
             to="/trade"
             className={classNames(
-              "font-akira hover:text-hyper-blue-100 transition duration-200 border-hyper-green hover:hyper-green",
+              "hover:hyper-green border-hyper-green font-akira transition duration-200 hover:text-hyper-blue-100",
               {
-                "font-bold border-b-2 text-hyper-blue-100":
+                "border-b-2 font-bold text-hyper-blue-100":
                   pathname.startsWith("/trade"),
                 "text-hyper-blue-200": !pathname.startsWith("/trade"),
               },
@@ -101,9 +101,9 @@ export function Navbar(): ReactElement {
           <Link
             to="/portfolio"
             className={classNames(
-              "font-akira hover:text-hyper-blue-100 transition duration-200 hover:border-hyper-green border-hyper-green",
+              "border-hyper-green font-akira transition duration-200 hover:border-hyper-green hover:text-hyper-blue-100",
               {
-                "font-bold border-b-2 text-hyper-blue-100":
+                "border-b-2 font-bold text-hyper-blue-100":
                   pathname.startsWith("/portfolio"),
                 "text-hyper-blue-200": !pathname.startsWith("/portfolio"),
               },
@@ -120,7 +120,7 @@ export function Navbar(): ReactElement {
           <WalletIcon
             type="button"
             onClick={() => openAccountModal?.()}
-            className="fill-hyper-blue-100 h-6 cursor-pointer hover:opacity-80"
+            className="h-6 cursor-pointer fill-hyper-blue-100 hover:opacity-80"
           />
         ) : (
           <ConnectButton showBalance={false} />
