@@ -93,7 +93,7 @@ export function Trade(): ReactElement {
       </div>
 
       {/* Position form column */}
-      <div className="md:basis=[447px] hidden w-full shrink-0 flex-col overflow-auto border-r border-b border-hyper-blue-300 bg-base-100 px-8 py-4 md:flex md:max-w-md">
+      <div className="md:basis=[447px] hidden w-full shrink-0 flex-col border-r border-b border-hyper-blue-300 bg-base-100 px-8 py-6 md:flex md:max-w-md">
         <PositionForm market={market} />
       </div>
 
@@ -160,7 +160,7 @@ export function Trade(): ReactElement {
 
       {/* Mobile only */}
       {tradeModalOpen && (
-        <div className="absolute z-50 h-[calc(100vh_-_64px)] w-full overflow-scroll bg-base-100 p-8 md:hidden">
+        <div className="absolute z-50 h-[calc(100vh_-_64px)] w-full overflow-scroll overflow-y-hidden bg-base-100 px-8 pt-4 md:hidden">
           <PositionForm
             market={market}
             handleClose={() => setTradeModalOpen(false)}
@@ -172,6 +172,7 @@ export function Trade(): ReactElement {
       <label htmlFor={MARKETS_MODAL_KEY} className="modal cursor-pointer px-8">
         <div className="flex max-h-[70vh] flex-col items-center overflow-auto rounded bg-base-100 p-4">
           <h3 className="font-akira">Markets</h3>
+
           <MarketsTable />
         </div>
       </label>

@@ -1,9 +1,9 @@
-import { SortDirection } from "./types";
 import {
   ChevronDoubleDownIcon,
   ChevronDoubleUpIcon,
 } from "@heroicons/react/20/solid";
 import { ReactElement } from "react";
+import { SortDirection } from "./types";
 
 interface SortDirectionStatusProps {
   direction: SortDirection | undefined;

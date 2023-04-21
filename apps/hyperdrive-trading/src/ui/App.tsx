@@ -1,5 +1,3 @@
-import { Navbar } from "./base/components/Navbar";
-import { useLocalStorage } from "./base/hooks/useLocalStorage";
 import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { ReactElement, useMemo } from "react";
 import { Toaster } from "react-hot-toast";
@@ -16,6 +14,8 @@ import { Portfolio } from "src/pages/Portfolio";
 import { Trade } from "src/pages/Trade";
 import { chains, wagmiClient } from "src/wallet/wagmiClient";
 import { WagmiConfig } from "wagmi";
+import { Navbar } from "./base/components/Navbar";
+import { useLocalStorage } from "./base/hooks/useLocalStorage";
 
 const LASTED_VIEWED_MARKET_KEY = "last-viewed-market";
 

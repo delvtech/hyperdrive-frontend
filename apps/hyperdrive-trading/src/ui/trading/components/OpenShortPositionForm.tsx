@@ -1,4 +1,3 @@
-import { ShortPositionOverviewWell } from "./ShortPositionOverviewWell";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { constants, ethers } from "ethers";
 import { ReactElement } from "react";
@@ -11,6 +10,7 @@ import { TokenInput } from "src/ui/token/components/TokenInput";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenApproval } from "src/ui/token/hooks/useTokenApproval";
 import { useAccount, useBalance } from "wagmi";
+import { ShortPositionOverviewWell } from "./ShortPositionOverviewWell";
 
 interface OpenShortPositionFormProps {
   market: HyperdriveMarket;
