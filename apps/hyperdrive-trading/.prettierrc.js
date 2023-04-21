@@ -2,5 +2,5 @@ module.exports = {
   ...require("@hyperdrive/prettier-config"),
   // required for plugin to be used within monorepo
   pluginSearchDirs: ["./"],
-  plugins: ["prettier-plugin-organize-imports"],
+  plugins: ["prettier-plugin-organize-imports", "prettier-plugin-tailwindcss"],
 };
