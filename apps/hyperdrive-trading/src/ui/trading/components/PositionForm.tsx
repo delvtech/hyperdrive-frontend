@@ -4,9 +4,9 @@ import {
   CircleStackIcon,
   XMarkIcon,
 } from "@heroicons/react/20/solid";
-import { ReactElement, useState } from "react";
+import classNames from "classnames";
+import { PropsWithChildren, ReactElement, useState } from "react";
 import { HyperdriveMarket } from "src/config/HyperdriveConfig";
-import { Button } from "src/ui/base/components/Button";
 import { OrderType, PositionType } from "src/ui/hyperdrive/types";
 import { LongPositionForm } from "src/ui/trading/components/LongPositionForm";
 import { match } from "ts-pattern";
@@ -25,72 +25,62 @@ export function PositionForm({
   const [order, setOrder] = useState<OrderType>("Open");
 
   return (
-    <div className="flex flex-col gap-y-10 py-8">
+    <div className="flex flex-col gap-y-10">
       {/* Header */}
       <div className="flex items-center">
-        <h3 className="mr-auto text-xl font-bold text-hyper-blue-100 font-akira">
+        <h3 className="text-xl mr-auto font-akira font-bold text-hyper-blue-100">
           Trade
         </h3>
         {handleClose && (
           <div>
             <XMarkIcon
-              className="h-6 stroke-2 stroke-hyper-blue-100 hover:opacity-50  cursor-pointer"
+              className="h-6 cursor-pointer stroke-hyper-blue-100 stroke-2  hover:opacity-50"
               onClick={handleClose}
             />
           </div>
         )}
       </div>
 
-      {/* Trade button group */}
+      {/* Position button group */}
       <div className="space-y-4">
-        <div className="flex gap-2">
-          <Button
-            active={position === "Long"}
-            variant="Future"
-            block
+        <div className="rounded-xs btn-group w-full border-hyper-blue-100">
+          <PositionFormButton
             onClick={() => setPosition("Long")}
+            active={position === "Long"}
           >
-            <ArrowTrendingUpIcon className="w-5" />
-            <p>Long</p>
-          </Button>
-          <Button
-            active={position === "Short"}
-            variant="Future"
-            block
+            <ArrowTrendingUpIcon className="mr-1 w-5" />
+            Long
+          </PositionFormButton>
+          <PositionFormButton
             onClick={() => setPosition("Short")}
+            active={position === "Short"}
           >
-            <ArrowTrendingDownIcon className="w-5" />
-            <p>Short</p>
-          </Button>
-          <Button
-            disabled
-            variant="Future"
-            block
+            <ArrowTrendingDownIcon className="mr-1 w-5" />
+            Short
+          </PositionFormButton>
+          <PositionFormButton
             onClick={() => setPosition("LP")}
+            active={position === "LP"}
           >
-            <CircleStackIcon className="w-4" />
-
-            <p>LP</p>
-          </Button>
+            <CircleStackIcon className="mr-1 w-4" />
+            LP
+          </PositionFormButton>
         </div>
 
-        <div className="flex gap-2">
-          <Button
-            active={order === "Open"}
-            variant="Future"
-            block
+        {/* Order button group */}
+        <div className="rounded-xs btn-group w-full border-hyper-blue-100">
+          <PositionFormButton
             onClick={() => setOrder("Open")}
+            active={order === "Open"}
           >
-            <p>Open</p>
-          </Button>
-          <Button
-            active={order === "Close"}
-            variant="Future"
-            block
+            Open
+          </PositionFormButton>
+          <PositionFormButton
             onClick={() => setOrder("Close")}
+            active={order === "Close"}
           >
-            <p>Close</p>
-          </Button>
+            Close
+          </PositionFormButton>
         </div>
       </div>
 
@@ -102,5 +92,31 @@ export function PositionForm({
         .with("LP", () => <div></div>)
         .exhaustive()}
     </div>
+  );
+}
+
+interface PositionFormButtonProps extends PropsWithChildren {
+  onClick: () => void;
+  active?: boolean;
+}
+
+function PositionFormButton({
+  onClick,
+  children,
+  active = false,
+}: PositionFormButtonProps) {
+  return (
+    <button
+      onClick={onClick}
+      className={classNames(
+        {
+          "bg-hyper-blue-400": active,
+          "hover:bg-hyper-blue-400": !active,
+        },
+        "border-1 btn flex-1 rounded-sm border-hyper-blue-400 bg-base-200 font-dm-sans normal-case",
+      )}
+    >
+      {children}
+    </button>
   );
 }
