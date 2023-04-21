@@ -1,8 +1,8 @@
+import { HyperdriveConfig } from "src/config/HyperdriveConfig";
 import {
   SupportedChainId,
   supportedChainIds,
 } from "src/config/hyperdrive.config";
-import { HyperdriveConfig } from "src/config/HyperdriveConfig";
 import { getHyperdriveConfig } from "src/config/utils/getHyperdriveConfig";
 import { useChainId } from "wagmi";
 

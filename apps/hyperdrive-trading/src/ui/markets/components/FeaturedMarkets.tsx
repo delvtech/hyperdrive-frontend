@@ -1,5 +1,5 @@
-import { ReactElement } from "react";
 import { FeaturedMarket } from "./FeaturedMarket";
+import { ReactElement } from "react";
 
 interface FeaturedMarketsProps {}
 

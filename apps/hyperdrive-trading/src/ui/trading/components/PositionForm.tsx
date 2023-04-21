@@ -9,8 +9,8 @@ import { PropsWithChildren, ReactElement, useState } from "react";
 import { HyperdriveMarket } from "src/config/HyperdriveConfig";
 import { OrderType, PositionType } from "src/ui/hyperdrive/types";
 import { LongPositionForm } from "src/ui/trading/components/LongPositionForm";
+import { ShortPositionForm } from "src/ui/trading/components/ShortPositionForm";
 import { match } from "ts-pattern";
-import { ShortPositionForm } from "./ShortPositionForm";
 
 interface PositionFormProps {
   market: HyperdriveMarket;

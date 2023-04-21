@@ -1,3 +1,4 @@
+import { ShortPositionOverviewWell } from "./ShortPositionOverviewWell";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { ReactElement, useState } from "react";
 import { HyperdriveMarket } from "src/config/HyperdriveConfig";
@@ -11,7 +12,6 @@ import { usePreviewCloseShort } from "src/ui/hyperdrive/hooks/usePreviewCloseSho
 import { Position } from "src/ui/hyperdrive/types";
 import { TokenInput } from "src/ui/token/components/TokenInput";
 import { useAccount } from "wagmi";
-import { ShortPositionOverviewWell } from "./ShortPositionOverviewWell";
 
 interface CloseShortPositionFormProps {
   market: HyperdriveMarket;
