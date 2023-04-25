@@ -4,7 +4,7 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { useQueryClient } from "react-query";
 import { HyperdriveMarket } from "src/config/HyperdriveConfig";
-import { WagmiHookStatusType } from "src/ui/base/types";
+import { QueryStatusType } from "src/ui/base/types";
 import { makeNewPositionToast } from "src/ui/trading/toast/makeNewPositionToast";
 import {
   Address,
@@ -26,8 +26,8 @@ interface UseOpenLongOptions {
 
 interface UseOpenLongResult {
   openLong: (() => void) | undefined;
-  openLongStatus: WagmiHookStatusType;
-  openLongTransactionStatus: WagmiHookStatusType;
+  openLongStatus: QueryStatusType;
+  openLongTransactionStatus: QueryStatusType;
 }
 
 export function useOpenLong({

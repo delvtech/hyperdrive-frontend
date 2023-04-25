@@ -4,7 +4,7 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { useQueryClient } from "react-query";
 import { HyperdriveMarket } from "src/config/HyperdriveConfig";
-import { WagmiHookStatusType } from "src/ui/base/types";
+import { QueryStatusType } from "src/ui/base/types";
 import { getAssetTimestampFromTokenId } from "src/ui/hyperdrive/utils";
 import { makeNewPositionToast } from "src/ui/trading/toast/makeNewPositionToast";
 import {
@@ -30,9 +30,9 @@ interface UseCloseShortResult {
   /** Function to close short */
   closeShort: (() => void) | undefined;
   /** Status of close short invocation */
-  closeShortStatus: WagmiHookStatusType;
+  closeShortStatus: QueryStatusType;
   /** Status of close short transaction */
-  closeShortTransactionStatus: WagmiHookStatusType;
+  closeShortTransactionStatus: QueryStatusType;
 }
 
 export function useCloseShort({

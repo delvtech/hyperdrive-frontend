@@ -8,6 +8,7 @@ import { useLoaderData } from "react-router-dom";
 import { HyperdriveMarket } from "src/config/HyperdriveConfig";
 import { Button } from "src/ui/base/components/Button";
 import { Stat } from "src/ui/base/components/Stat";
+import { useHistoricalVolume } from "src/ui/hyperdrive/hooks/useHistoricalVolume";
 import { MarketsTable } from "src/ui/markets/components/MarketsTable";
 import { OpenOrdersTable } from "src/ui/orders/components/OpenOrdersTable";
 import { ProtocolLabel } from "src/ui/protocol/components/ProtocolLabel";
@@ -22,12 +23,14 @@ export function Trade(): ReactElement {
   const [isChartRendered, setIsChartRendered] = useState(false);
   const chart = useRef<IChartApi | undefined>(undefined);
 
+  const { data: volumeData } = useHistoricalVolume(market);
+
   // Add chart data when chart is mounted
   useEffect(() => {
-    if (!isChartRendered) {
+    if (!isChartRendered && !!volumeData) {
       // set the ref to the chart object
       chart.current = createChart(
-        document.getElementById("chart")!,
+        document.getElementById("chart") as HTMLElement,
         chartOptions,
       );
 
@@ -39,13 +42,29 @@ export function Trade(): ReactElement {
       });
       areaSeries.setData(stubbedChartData);
 
+      const volumeSeries = chart.current.addHistogramSeries({
+        priceFormat: {
+          type: "volume",
+        },
+        priceScaleId: "", // set as an overlay by setting a blank priceScaleId
+      });
+      volumeSeries.priceScale().applyOptions({
+        // set the positioning of the volume series
+        scaleMargins: {
+          top: 0.7, // highest point of the series will be 70% away from the top
+          bottom: 0,
+        },
+      });
+
+      volumeSeries.setData(volumeData);
+
       // scale the x axis to fit the viewport
       chart.current.timeScale().fitContent();
-    }
 
-    // set state to prevent a new chart from being rendered when hot-reloading
-    setIsChartRendered(true);
-  }, []);
+      // set state to prevent a new chart from being rendered when hot-reloading
+      setIsChartRendered(true);
+    }
+  }, [volumeData, isChartRendered]);
 
   const resizeChartHandler = () => {
     if (chart.current) {
@@ -181,16 +200,16 @@ export function Trade(): ReactElement {
 }
 
 const stubbedChartData = [
-  { time: "2018-12-22", value: 32.51 },
-  { time: "2018-12-23", value: 31.11 },
-  { time: "2018-12-24", value: 27.02 },
-  { time: "2018-12-25", value: 27.32 },
-  { time: "2018-12-26", value: 25.17 },
-  { time: "2018-12-27", value: 28.89 },
-  { time: "2018-12-28", value: 25.46 },
-  { time: "2018-12-29", value: 23.92 },
-  { time: "2018-12-30", value: 22.68 },
-  { time: "2018-12-31", value: 22.67 },
+  { time: "2023-03-31", value: 32.51 },
+  { time: "2023-04-01", value: 31.11 },
+  { time: "2023-04-02", value: 27.02 },
+  { time: "2023-04-03", value: 27.32 },
+  { time: "2023-04-04", value: 25.17 },
+  { time: "2023-04-15", value: 28.89 },
+  { time: "2023-04-16", value: 25.46 },
+  { time: "2023-04-17", value: 23.92 },
+  { time: "2023-04-18", value: 22.68 },
+  { time: "2023-04-19", value: 22.67 },
 ];
 
 const chartOptions = {
