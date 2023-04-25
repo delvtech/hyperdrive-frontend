@@ -1,5 +1,4 @@
 /* eslint-disable react/jsx-key */
-
 import uniqBy from "lodash.uniqby";
 import { ReactElement, useMemo, useState } from "react";
 import { SupportedChainId } from "src/config/hyperdrive.config";
@@ -49,18 +48,18 @@ export function MarketsTableLarge(): ReactElement {
   }, [marketsRowData, protocolFilter, termLengthFilter]);
 
   return (
-    <div className="px-8 py-10 space-y-8 rounded-sm bg-base-100">
+    <div className="space-y-8 rounded-sm bg-base-100 px-8 py-10">
       <div className="space-y-4">
         {/* Markets search and protocol filter row */}
         <div className="flex items-end gap-6">
           {/* Markets search input, disabled for now */}
-          <div className="hidden lg:flex flex-col gap-y-2  mr-auto">
-            <div className="flex gap-x-1 items-center">
+          <div className="mr-auto hidden flex-col gap-y-2  lg:flex">
+            <div className="flex items-center gap-x-1">
               <p className="font-medium text-hyper-blue-300">Search Markets</p>
             </div>
 
             <input
-              className="w-[250px] bg-base-300 text-[1rem] p-2 border rounded-sm font-dm-sans text-hyper-blue-100 placeholder:text-hyper-blue-300 input font-medium"
+              className="input w-[250px] rounded-sm border bg-base-300 p-2 font-dm-sans text-[1rem] font-medium text-hyper-blue-100 placeholder:text-hyper-blue-300"
               placeholder="Maker DSR"
             />
           </div>
@@ -78,7 +77,7 @@ export function MarketsTableLarge(): ReactElement {
                 }
               }}
               defaultValue="none"
-              className="select w-[20rem] text-[1rem] rounded-sm font-dm-sans bg-base-300"
+              className="select w-[20rem] rounded-sm bg-base-300 font-dm-sans text-[1rem]"
             >
               <option value="none">All protocols</option>
               {protocols.map((protocol) => (
@@ -103,7 +102,7 @@ export function MarketsTableLarge(): ReactElement {
                 }
               }}
               defaultValue="none"
-              className="select w-[12rem] text-[1rem] rounded-sm font-dm-sans bg-base-300"
+              className="select w-[12rem] rounded-sm bg-base-300 font-dm-sans text-[1rem]"
             >
               <option value="none">All term lengths</option>
               {termLengths
@@ -158,7 +157,7 @@ function createMarketRow({ market }: MarketTableRowData): Row {
       <span className="font-bold">
         <p>{market.name}</p>
         <ProtocolLabel
-          className="font-normal font-dm-sans"
+          className="font-dm-sans font-normal"
           protocol={market.protocol}
         />
       </span>,

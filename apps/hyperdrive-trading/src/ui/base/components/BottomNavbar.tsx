@@ -5,24 +5,24 @@ import { Link } from "react-router-dom";
 
 export function BottomNavbar(): ReactElement {
   return (
-    <div className="grid h-20 grid-cols-3 px-4 btm-nav md:hidden bg-base-300">
-      <div className="flex-row navbar-start">
+    <div className="btm-nav grid h-20 grid-cols-3 bg-base-300 px-4 md:hidden">
+      <div className="navbar-start flex-row">
         <Link
           to="/markets"
-          className="text-xl uppercase whitespace-nowrap font-akira text-hyper-pink"
+          className="text-xl whitespace-nowrap font-akira uppercase text-hyper-pink"
         >
           Hyperdrive
         </Link>
       </div>
       <div className="flex-row">
-        <Link to="/markets" className="btn btn-ghost">
-          <HomeIcon className="w-5 h-5 stroke-hyper-blue-100 fill-transparent" />
+        <Link to="/markets" className="btn-ghost btn">
+          <HomeIcon className="h-5 w-5 fill-transparent stroke-hyper-blue-100" />
         </Link>
-        <Link to="/trade" className="btn btn-ghost">
-          <ChartBarIcon className="w-5 h-5 stroke-hyper-blue-100 fill-transparent" />
+        <Link to="/trade" className="btn-ghost btn">
+          <ChartBarIcon className="h-5 w-5 fill-transparent stroke-hyper-blue-100" />
         </Link>
-        <Link to="/portfolio" className="btn btn-ghost">
-          <UserIcon className="w-5 h-5 stroke-hyper-blue-100 fill-transparent" />
+        <Link to="/portfolio" className="btn-ghost btn">
+          <UserIcon className="h-5 w-5 fill-transparent stroke-hyper-blue-100" />
         </Link>
       </div>
       <ConnectButton />

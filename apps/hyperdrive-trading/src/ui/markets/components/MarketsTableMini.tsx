@@ -46,7 +46,7 @@ export function MarketsTableMini(): ReactElement {
   }, [marketsRowData, protocolFilter, termLengthFilter]);
 
   return (
-    <div className="px-8 py-10 space-y-8 rounded-sm bg-base-100">
+    <div className="space-y-8 rounded-sm bg-base-100 px-8 py-10">
       <div className="space-y-4">
         {/* Markets search and protocol filter row */}
         <div className="flex flex-wrap items-center gap-6 px-4">
@@ -64,7 +64,7 @@ export function MarketsTableMini(): ReactElement {
                 }
               }}
               defaultValue="none"
-              className="select w-[10rem] text-[1rem] rounded-sm font-dm-sans bg-base-300"
+              className="select w-[10rem] rounded-sm bg-base-300 font-dm-sans text-[1rem]"
             >
               <option value="none">All protocols</option>
               {protocols.map((protocol) => (
@@ -88,7 +88,7 @@ export function MarketsTableMini(): ReactElement {
                 }
               }}
               defaultValue="none"
-              className="select w-[12rem] text-[1rem] rounded-sm font-dm-sans bg-base-300"
+              className="select w-[12rem] rounded-sm bg-base-300 font-dm-sans text-[1rem]"
             >
               <option value="none">All term lengths</option>
               {termLengths
@@ -105,13 +105,13 @@ export function MarketsTableMini(): ReactElement {
       </div>
 
       {/* Markets sortable table */}
-      <div className="flex gap-y-8 flex-col">
+      <div className="flex flex-col gap-y-8">
         {filteredMarkets.map(({ market }) => {
           return (
             <Link
               to={`/trade/${market.address}`}
               key={market.address}
-              className="flex flex-col text-hyper-blue-100 font-dm-sans hover:bg-base-300 p-4"
+              className="flex flex-col p-4 font-dm-sans text-hyper-blue-100 hover:bg-base-300"
             >
               <div className="flex">
                 <h5 className="font-bold">{market.name}</h5>
@@ -120,7 +120,7 @@ export function MarketsTableMini(): ReactElement {
                 <p className="mr-auto text-hyper-blue-200">Protocol</p>
                 <p>
                   <ProtocolLabel
-                    className="font-semibold font-dm-sans"
+                    className="font-dm-sans font-semibold"
                     protocol={market.protocol}
                   />
                 </p>

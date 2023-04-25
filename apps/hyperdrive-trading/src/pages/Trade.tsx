@@ -62,20 +62,20 @@ export function Trade(): ReactElement {
   const [tradeModalOpen, setTradeModalOpen] = useState(false);
 
   return (
-    <div className="overflow-hidden grid border-t border-hyper-blue-300 grid-rows-[157px_1fr] md:grid-rows-1 md:grid-cols-[365px_1fr] lg:grid-cols-[447px_1fr] h-[calc(100vh_-_64px)]">
+    <div className="grid h-[calc(100vh_-_64px)] grid-rows-[157px_1fr] overflow-hidden border-t border-hyper-blue-300 md:grid-cols-[365px_1fr] md:grid-rows-1 lg:grid-cols-[447px_1fr]">
       {/* Market information row - mobile only */}
-      <div className="px-8 pb-4 pt-6 border-b md:hidden gap-4 border-hyper-blue-300 h-fit bg-base-100 flex flex-col">
+      <div className="flex h-fit flex-col gap-4 border-b border-hyper-blue-300 bg-base-100 px-8 pb-4 pt-6 md:hidden">
         <div className="flex">
           <label
             htmlFor={MARKETS_MODAL_KEY}
-            className="btn text-h4 rounded-sm normal-case gap-x-2 bg-base-300 mr-auto"
+            className="btn mr-auto gap-x-2 rounded-sm bg-base-300 text-h4 normal-case"
           >
             {market.name} <ChevronDownIcon className="h-8" />
           </label>
 
           <button
             onClick={() => setTradeModalOpen(true)}
-            className="flex hover:opacity-80 h-fit items-center px-4 py-2 font-bold rounded gap-x-1 text-base-100 font-dm-sans bg-gradient-to-r from-hyper-pink via-[#afd5ff] to-hyper-green"
+            className="flex h-fit items-center gap-x-1 rounded bg-gradient-to-r from-hyper-pink via-[#afd5ff] to-hyper-green px-4 py-2 font-dm-sans font-bold text-base-100 hover:opacity-80"
           >
             <p>Trade</p>
           </button>
@@ -93,16 +93,16 @@ export function Trade(): ReactElement {
       </div>
 
       {/* Position form column */}
-      <div className="md:flex flex-col w-full md:max-w-md border-r border-b bg-base-100 border-hyper-blue-300 shrink-0 md:basis=[447px] px-8 py-6 hidden">
+      <div className="md:basis=[447px] hidden w-full shrink-0 flex-col border-r border-b border-hyper-blue-300 bg-base-100 px-8 py-6 md:flex md:max-w-md">
         <PositionForm market={market} />
       </div>
 
       {/* Chart column */}
-      <div className="flex flex-col overflow-hidden bg-base-100 h-full">
-        <div className="items-center justify-start hidden px-8 py-4 border-b gap-x-20 md:flex border-hyper-blue-300">
+      <div className="flex h-full flex-col overflow-hidden bg-base-100">
+        <div className="hidden items-center justify-start gap-x-20 border-b border-hyper-blue-300 px-8 py-4 md:flex">
           <label
             htmlFor={MARKETS_MODAL_KEY}
-            className="btn text-h4 rounded-sm normal-case gap-x-2 bg-base-300"
+            className="btn gap-x-2 rounded-sm bg-base-300 text-h4 normal-case"
           >
             {market.name} <ChevronDownIcon className="h-8" />
           </label>
@@ -124,9 +124,9 @@ export function Trade(): ReactElement {
           </div>
         </div>
 
-        <div className="px-8 py-4 border-b border-hyper-blue-300">
+        <div className="border-b border-hyper-blue-300 px-8 py-4">
           <div className="flex items-center gap-x-2">
-            <h6 className="text-hyper-blue-100 font-dm-sans font-bold">
+            <h6 className="font-dm-sans font-bold text-hyper-blue-100">
               Market Sentiment Indicator
             </h6>
             <InformationCircleIcon className="h-4 fill-hyper-blue-100" />
@@ -138,7 +138,7 @@ export function Trade(): ReactElement {
         </div>
 
         <div className="flex flex-col overflow-hidden py-4">
-          <div className="flex flex-wrap gap-2 py-2 w-full px-8">
+          <div className="flex w-full flex-wrap gap-2 py-2 px-8">
             <Button active={true} variant="Future" onClick={() => {}}>
               Open
             </Button>
@@ -150,7 +150,7 @@ export function Trade(): ReactElement {
             </Button>
           </div>
 
-          <div className="flex flex-col row-span-1 pt-4 px-4 text-hyper-blue-100 gap-y-4 h-[calc(100%_-_64px)] md:h-auto">
+          <div className="row-span-1 flex h-[calc(100%_-_64px)] flex-col gap-y-4 px-4 pt-4 text-hyper-blue-100 md:h-auto">
             <div className="overflow-scroll">
               <OpenOrdersTable market={market} />
             </div>
@@ -160,7 +160,7 @@ export function Trade(): ReactElement {
 
       {/* Mobile only */}
       {tradeModalOpen && (
-        <div className="absolute z-50 w-full px-8 pt-4 overflow-y-hidden overflow-scroll bg-base-100 md:hidden h-[calc(100vh_-_64px)]">
+        <div className="absolute z-50 h-[calc(100vh_-_64px)] w-full overflow-scroll overflow-y-hidden bg-base-100 px-8 pt-4 md:hidden">
           <PositionForm
             market={market}
             handleClose={() => setTradeModalOpen(false)}
@@ -170,7 +170,7 @@ export function Trade(): ReactElement {
 
       <input type="checkbox" id={MARKETS_MODAL_KEY} className="modal-toggle" />
       <label htmlFor={MARKETS_MODAL_KEY} className="modal cursor-pointer px-8">
-        <div className="rounded max-h-[70vh] overflow-auto bg-base-100 flex flex-col p-4 items-center">
+        <div className="flex max-h-[70vh] flex-col items-center overflow-auto rounded bg-base-100 p-4">
           <h3 className="font-akira">Markets</h3>
 
           <MarketsTable />
