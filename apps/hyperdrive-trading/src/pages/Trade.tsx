@@ -8,6 +8,7 @@ import { useLoaderData } from "react-router-dom";
 import { HyperdriveMarket } from "src/config/HyperdriveConfig";
 import { Button } from "src/ui/base/components/Button";
 import { Stat } from "src/ui/base/components/Stat";
+import { useHistoricalVolume } from "src/ui/hyperdrive/hooks/useHistoricalVolume";
 import { MarketsTable } from "src/ui/markets/components/MarketsTable";
 import { OpenOrdersTable } from "src/ui/orders/components/OpenOrdersTable";
 import { ProtocolLabel } from "src/ui/protocol/components/ProtocolLabel";
@@ -22,12 +23,14 @@ export function Trade(): ReactElement {
   const [isChartRendered, setIsChartRendered] = useState(false);
   const chart = useRef<IChartApi | undefined>(undefined);
 
+  const { data: volumeData } = useHistoricalVolume();
+
   // Add chart data when chart is mounted
   useEffect(() => {
-    if (!isChartRendered) {
+    if (!isChartRendered && !!volumeData) {
       // set the ref to the chart object
       chart.current = createChart(
-        document.getElementById("chart")!,
+        document.getElementById("chart") as HTMLElement,
         chartOptions,
       );
 
@@ -53,44 +56,15 @@ export function Trade(): ReactElement {
         },
       });
 
-      const dd = volumeData
-        .map((v) => {
-          return { time: v.time.slice(0, 10), value: v.volume };
-        })
-        .sort((a, b) => {
-          return (
-            new Date(a.time.slice(0, 10)).getMilliseconds() -
-            new Date(b.time.slice(0, 10)).getMilliseconds()
-          );
-        });
-
-      const xx: Record<string, number> = {};
-
-      dd.forEach((d) => {
-        const key = d.time;
-
-        if (xx[key]) {
-          xx[key] = xx[key] + d.value;
-        } else {
-          xx[key] = d.value;
-        }
-      });
-
-      console.log(xx);
-
-      volumeSeries.setData(
-        Object.entries(xx).map((x) => {
-          return { time: x[0], value: x[1] };
-        }),
-      );
+      volumeSeries.setData(volumeData);
 
       // scale the x axis to fit the viewport
       chart.current.timeScale().fitContent();
-    }
 
-    // set state to prevent a new chart from being rendered when hot-reloading
-    setIsChartRendered(true);
-  }, []);
+      // set state to prevent a new chart from being rendered when hot-reloading
+      setIsChartRendered(true);
+    }
+  }, [volumeData, isChartRendered]);
 
   const resizeChartHandler = () => {
     if (chart.current) {
@@ -224,273 +198,6 @@ export function Trade(): ReactElement {
     </div>
   );
 }
-
-const volumeData = [
-  {
-    time: "2023-03-31 1200",
-    volume: 2,
-  },
-  {
-    time: "2023-04-11 2012",
-    volume: 1,
-  },
-  {
-    time: "2023-04-11 2000",
-    volume: 1,
-  },
-  {
-    time: "2023-04-12 0824",
-    volume: 3,
-  },
-  {
-    time: "2023-04-12 0812",
-    volume: 1,
-  },
-  {
-    time: "2023-04-12 0800",
-    volume: 2,
-  },
-  {
-    time: "2023-04-12 0836",
-    volume: 2,
-  },
-  {
-    time: "2023-04-12 1012",
-    volume: 1,
-  },
-  {
-    time: "2023-04-12 1000",
-    volume: 1,
-  },
-  {
-    time: "2023-04-13 1524",
-    volume: 1,
-  },
-  {
-    time: "2023-04-13 1500",
-    volume: 1,
-  },
-  {
-    time: "2023-04-17 1524",
-    volume: 1,
-  },
-  {
-    time: "2023-04-17 1512",
-    volume: 1,
-  },
-  {
-    time: "2023-04-18 1824",
-    volume: 2,
-  },
-  {
-    time: "2023-04-18 1836",
-    volume: 1,
-  },
-  {
-    time: "2023-04-18 1800",
-    volume: 1,
-  },
-  {
-    time: "2023-04-18 1936",
-    volume: 2,
-  },
-  {
-    time: "2023-04-18 2124",
-    volume: 4,
-  },
-  {
-    time: "2023-04-18 2100",
-    volume: 6,
-  },
-  {
-    time: "2023-04-18 2136",
-    volume: 8,
-  },
-  {
-    time: "2023-04-18 2112",
-    volume: 2,
-  },
-  {
-    time: "2023-04-18 2148",
-    volume: 5,
-  },
-  {
-    time: "2023-04-18 2224",
-    volume: 3,
-  },
-  {
-    time: "2023-04-18 2248",
-    volume: 8,
-  },
-  {
-    time: "2023-04-18 2236",
-    volume: 5,
-  },
-  {
-    time: "2023-04-18 2200",
-    volume: 3,
-  },
-  {
-    time: "2023-04-18 2212",
-    volume: 3,
-  },
-  {
-    time: "2023-04-19 0236",
-    volume: 8,
-  },
-  {
-    time: "2023-04-19 0224",
-    volume: 9,
-  },
-  {
-    time: "2023-04-19 0200",
-    volume: 7,
-  },
-  {
-    time: "2023-04-19 0212",
-    volume: 4,
-  },
-  {
-    time: "2023-04-19 0248",
-    volume: 5,
-  },
-  {
-    time: "2023-04-19 0348",
-    volume: 13,
-  },
-  {
-    time: "2023-04-19 0336",
-    volume: 3,
-  },
-  {
-    time: "2023-04-19 0300",
-    volume: 4,
-  },
-  {
-    time: "2023-04-19 0312",
-    volume: 5,
-  },
-  {
-    time: "2023-04-19 0324",
-    volume: 5,
-  },
-  {
-    time: "2023-04-19 0436",
-    volume: 1,
-  },
-  {
-    time: "2023-04-19 0400",
-    volume: 2,
-  },
-  {
-    time: "2023-04-19 0448",
-    volume: 1,
-  },
-  {
-    time: "2023-04-19 0424",
-    volume: 1,
-  },
-  {
-    time: "2023-04-19 1512",
-    volume: 7,
-  },
-  {
-    time: "2023-04-19 1548",
-    volume: 5,
-  },
-  {
-    time: "2023-04-19 1524",
-    volume: 9,
-  },
-  {
-    time: "2023-04-19 1500",
-    volume: 5,
-  },
-  {
-    time: "2023-04-19 1536",
-    volume: 7,
-  },
-  {
-    time: "2023-04-19 1648",
-    volume: 15,
-  },
-  {
-    time: "2023-04-19 1612",
-    volume: 9,
-  },
-  {
-    time: "2023-04-19 1624",
-    volume: 11,
-  },
-  {
-    time: "2023-04-19 1600",
-    volume: 8,
-  },
-  {
-    time: "2023-04-19 1636",
-    volume: 8,
-  },
-  {
-    time: "2023-04-19 1712",
-    volume: 14,
-  },
-  {
-    time: "2023-04-19 1700",
-    volume: 13,
-  },
-  {
-    time: "2023-04-19 1724",
-    volume: 13,
-  },
-  {
-    time: "2023-04-19 1748",
-    volume: 12,
-  },
-  {
-    time: "2023-04-19 1736",
-    volume: 8,
-  },
-  {
-    time: "2023-04-19 1848",
-    volume: 16,
-  },
-  {
-    time: "2023-04-19 1836",
-    volume: 12,
-  },
-  {
-    time: "2023-04-19 1812",
-    volume: 14,
-  },
-  {
-    time: "2023-04-19 1824",
-    volume: 16,
-  },
-  {
-    time: "2023-04-19 1800",
-    volume: 4,
-  },
-  {
-    time: "2023-04-19 1924",
-    volume: 11,
-  },
-  {
-    time: "2023-04-19 1912",
-    volume: 6,
-  },
-  {
-    time: "2023-04-19 1936",
-    volume: 8,
-  },
-  {
-    time: "2023-04-19 1900",
-    volume: 6,
-  },
-  {
-    time: "2023-04-19 1948",
-    volume: 4,
-  },
-];
 
 const stubbedChartData = [
   { time: "2023-03-31", value: 32.51 },
