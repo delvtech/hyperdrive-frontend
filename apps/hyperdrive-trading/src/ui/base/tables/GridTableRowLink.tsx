@@ -17,7 +17,6 @@ export function GridTableRowLink({
 }>): ReactElement {
   return (
     <Link
-      // reloadDocument
       to={href}
       className={classNames(
         "grid auto-cols-fr grid-flow-col transition-all last:rounded-b-lg odd:bg-base-200 hover:bg-base-300 [&>*]:overflow-hidden [&>*]:text-ellipsis [&>*]:p-4",
