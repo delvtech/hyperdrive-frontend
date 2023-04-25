@@ -1,1 +1,1 @@
-export type WagmiHookStatusType = "error" | "idle" | "success" | "loading";
+export type QueryStatusType = "error" | "idle" | "success" | "loading";

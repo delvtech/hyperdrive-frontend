@@ -2,7 +2,7 @@ import { BigNumber } from "@ethersproject/bignumber";
 import { HyperdriveABI } from "@hyperdrive/core";
 import { useQuery } from "react-query";
 import { HyperdriveMarket } from "src/config/HyperdriveConfig";
-import { WagmiHookStatusType } from "src/ui/base/types";
+import { QueryStatusType } from "src/ui/base/types";
 import { getAssetTimestampFromTokenId } from "src/ui/hyperdrive/utils";
 import { Address, useContract, useSigner } from "wagmi";
 
@@ -17,7 +17,7 @@ interface UsePreviewCloseShortOptions {
 }
 
 interface UsePreviewCloseShortResult {
-  previewCloseShortStatus: WagmiHookStatusType;
+  previewCloseShortStatus: QueryStatusType;
   baseAmountOut: bigint | undefined;
 }
 
