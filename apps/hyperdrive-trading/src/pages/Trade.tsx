@@ -23,7 +23,7 @@ export function Trade(): ReactElement {
   const [isChartRendered, setIsChartRendered] = useState(false);
   const chart = useRef<IChartApi | undefined>(undefined);
 
-  const { data: volumeData } = useHistoricalVolume();
+  const { data: volumeData } = useHistoricalVolume(market);
 
   // Add chart data when chart is mounted
   useEffect(() => {
