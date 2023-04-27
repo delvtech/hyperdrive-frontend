@@ -21,7 +21,8 @@ export function AssetIcon({
     return (
       <span
         className={classNames({
-          "text-h2": size === "lg",
+          // 36px is equivalent to the h-9, w-9 img size below
+          "text-[36px]": size === "lg",
           "text-h6": size === "sm",
         })}
       >
@@ -35,7 +36,7 @@ export function AssetIcon({
       src={assetIcon}
       alt={tokenMetadata?.symbol}
       className={classNames({
-        "h-12 w-12": size === "lg",
+        "h-9 w-9": size === "lg",
         "h-6 w-6": size === "md",
         "h-4 w-4": size === "sm",
       })}

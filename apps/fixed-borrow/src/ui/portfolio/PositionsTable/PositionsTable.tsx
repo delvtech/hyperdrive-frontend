@@ -14,28 +14,28 @@ export function PositionsTable(): ReactElement {
 
   return (
     <SortableGridTable
-      headingRowClassName="grid-cols-[1fr_1fr_1fr_1fr_64px] gap-10"
-      bodyRowClassName="group grid-cols-[1fr_1fr_1fr_1fr_64px] gap-10"
-      emptyTableElement={<span className="text-white">No loans found</span>}
+      headingRowClassName="grid-cols-[1fr_1fr_1fr_173px_64px] gap-10"
+      bodyRowClassName="group grid-cols-[1fr_1fr_1fr_173px_64px] gap-10"
+      emptyTableElement={<span className="text-white">No borrows found</span>}
       cols={[
         {
-          cell: <span className="text-secondaryText">Date opened</span>,
-          sortKey: "openDate",
+          cell: <span className="text-secondaryText">Asset</span>,
+          sortKey: "asset",
         },
         {
-          cell: <span className="text-secondaryText">Rate</span>,
-          sortKey: "votingPower",
+          cell: <span className="text-secondaryText">Total Debt</span>,
+          sortKey: "totalDebt",
         },
         {
-          cell: <span className="text-secondaryText">Collateral</span>,
-          sortKey: "collateralAmount",
+          cell: <span className="text-secondaryText">Fixed Rate Debt</span>,
+          sortKey: "fixedRateDebt",
         },
         {
-          cell: <span className="text-secondaryText">Debt</span>,
-          sortKey: "debtAmount",
+          cell: <span className="text-secondaryText">Variable Rate Debt</span>,
+          sortKey: "variableRateDebt",
         },
       ]}
-      rows={[...userLoans, ...userLoans, ...userLoans].map(
+      rows={userLoans.map(
         (
           {
             txHash,
@@ -48,9 +48,9 @@ export function PositionsTable(): ReactElement {
           i,
         ) => ({
           cells: [
-            <DateOpenedCell
-              key={`dateopened-${txHash}-${i}`}
-              txHash={txHash}
+            <BorrowedAssetCell
+              key={`asset-${txHash}-${i}`}
+              borrowedAssetAddress={borrowTokenAddress}
             />,
             // TODO: Implement this
             <RateCell
@@ -81,12 +81,22 @@ export function PositionsTable(): ReactElement {
   );
 }
 
-function DateOpenedCell({ txHash }: { txHash: Hash }): ReactElement {
-  const { timestamp } = useTransactionTimestamp(txHash);
+function BorrowedAssetCell({
+  borrowedAssetAddress,
+}: {
+  borrowedAssetAddress: Address;
+}): ReactElement {
+  const { data: tokenMetadata } = useToken({ address: borrowedAssetAddress });
   return (
-    <span className="text-lg text-white">
-      {timestamp ? new Date(timestamp).toDateString() : ""}
-    </span>
+    <div className="flex items-center gap-2">
+      <AssetIcon size="lg" address={borrowedAssetAddress} />
+      <div className="flex flex-col ">
+        <span className="inline-flex items-center gap-1 text-h6 text-white">
+          {tokenMetadata?.symbol}
+        </span>
+        <span className="leading-sm text-secondaryText">$1.00</span>
+      </div>
+    </div>
   );
 }
 
