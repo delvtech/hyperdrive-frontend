@@ -13,6 +13,8 @@
   },
   "dependencies": {
     "@floating-ui/react": "^0.22.0",
+    "@headlessui/react": "^1.7.14",
+    "@headlessui/tailwindcss": "^0.1.3",
     "@heroicons/react": "^2.0.16",
     "@hyperdrive/core": "*",
     "@hyperdrive/spark": "*",
