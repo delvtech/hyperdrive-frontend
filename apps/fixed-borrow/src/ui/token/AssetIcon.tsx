@@ -21,6 +21,7 @@ export function AssetIcon({
     return (
       <span
         className={classNames({
+          // 36px is equivalent to the h-9, w-9 img size below
           "text-[36px]": size === "lg",
           "text-h6": size === "sm",
         })}

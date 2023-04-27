@@ -35,7 +35,7 @@ export function PositionsTable(): ReactElement {
           sortKey: "variableRateDebt",
         },
       ]}
-      rows={[...userLoans, ...userLoans, ...userLoans].map(
+      rows={userLoans.map(
         (
           {
             txHash,
@@ -49,7 +49,7 @@ export function PositionsTable(): ReactElement {
         ) => ({
           cells: [
             <BorrowedAssetCell
-              key={`dateopened-${txHash}-${i}`}
+              key={`asset-${txHash}-${i}`}
               borrowedAssetAddress={borrowTokenAddress}
             />,
             // TODO: Implement this
@@ -82,14 +82,14 @@ export function PositionsTable(): ReactElement {
 }
 
 function BorrowedAssetCell({
-  borrowedAssetAddress: tokenAddress,
+  borrowedAssetAddress,
 }: {
   borrowedAssetAddress: Address;
 }): ReactElement {
-  const { data: tokenMetadata } = useToken({ address: tokenAddress });
+  const { data: tokenMetadata } = useToken({ address: borrowedAssetAddress });
   return (
     <div className="flex items-center gap-2">
-      <AssetIcon size="lg" address={tokenAddress} />
+      <AssetIcon size="lg" address={borrowedAssetAddress} />
       <div className="flex flex-col ">
         <span className="inline-flex items-center gap-1 text-h6 text-white">
           {tokenMetadata?.symbol}
