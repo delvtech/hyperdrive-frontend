@@ -20,7 +20,7 @@ export function PositionsTable(): ReactElement {
       cols={[
         {
           cell: <span className="text-secondaryText">Asset</span>,
-          sortKey: "Asset",
+          sortKey: "asset",
         },
         {
           cell: <span className="text-secondaryText">Total Debt</span>,
