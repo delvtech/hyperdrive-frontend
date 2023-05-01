@@ -2,82 +2,22 @@ import {
   ChevronDownIcon,
   InformationCircleIcon,
 } from "@heroicons/react/20/solid";
-import { ChartOptions, createChart, IChartApi } from "lightweight-charts";
-import { ReactElement, useEffect, useRef, useState } from "react";
+import { ReactElement, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { HyperdriveMarket } from "src/config/HyperdriveConfig";
 import { Button } from "src/ui/base/components/Button";
 import { Stat } from "src/ui/base/components/Stat";
-import { useHistoricalVolume } from "src/ui/hyperdrive/hooks/useHistoricalVolume";
 import { MarketsTable } from "src/ui/markets/components/MarketsTable";
 import { OpenOrdersTable } from "src/ui/orders/components/OpenOrdersTable";
 import { ProtocolLabel } from "src/ui/protocol/components/ProtocolLabel";
 import { PositionForm } from "src/ui/trading/components/PositionForm";
+import { TradingChart } from "src/ui/trading/components/TradingChart";
 
 const MARKETS_MODAL_KEY = "MARKETS_MODAL";
 
 export function Trade(): ReactElement {
   // Safe to cast this variable because router configs this page is rendered with a valid market
   const market = useLoaderData() as HyperdriveMarket;
-
-  const [isChartRendered, setIsChartRendered] = useState(false);
-  const chart = useRef<IChartApi | undefined>(undefined);
-
-  const { data: volumeData } = useHistoricalVolume(market);
-
-  // Add chart data when chart is mounted
-  useEffect(() => {
-    if (!isChartRendered && !!volumeData) {
-      // set the ref to the chart object
-      chart.current = createChart(
-        document.getElementById("chart") as HTMLElement,
-        chartOptions,
-      );
-
-      // create the area series chart
-      const areaSeries = chart.current.addAreaSeries({
-        lineColor: "#FF99FA",
-        topColor: "#F4B1FF",
-        bottomColor: "rgba(244, 177, 255, 0.2)",
-      });
-      areaSeries.setData(stubbedChartData);
-
-      const volumeSeries = chart.current.addHistogramSeries({
-        priceFormat: {
-          type: "volume",
-        },
-        priceScaleId: "", // set as an overlay by setting a blank priceScaleId
-      });
-      volumeSeries.priceScale().applyOptions({
-        // set the positioning of the volume series
-        scaleMargins: {
-          top: 0.7, // highest point of the series will be 70% away from the top
-          bottom: 0,
-        },
-      });
-
-      volumeSeries.setData(volumeData);
-
-      // scale the x axis to fit the viewport
-      chart.current.timeScale().fitContent();
-
-      // set state to prevent a new chart from being rendered when hot-reloading
-      setIsChartRendered(true);
-    }
-  }, [volumeData, isChartRendered]);
-
-  const resizeChartHandler = () => {
-    if (chart.current) {
-      chart.current.timeScale().fitContent();
-    }
-  };
-
-  // Resize timescale when chart is resized
-  useEffect(() => {
-    window.addEventListener("resize", resizeChartHandler);
-    return () => removeEventListener("resize", resizeChartHandler);
-  }, []);
-
   const [tradeModalOpen, setTradeModalOpen] = useState(false);
 
   return (
@@ -151,8 +91,8 @@ export function Trade(): ReactElement {
             <InformationCircleIcon className="h-4 fill-hyper-blue-100" />
           </div>
 
-          <div id="chart-container h-full">
-            <div id="chart" className="h-[30vh] md:h-[40vh]" />
+          <div className="h-[30vh] md:h-[40vh]">
+            <TradingChart market={market} />
           </div>
         </div>
 
@@ -187,6 +127,7 @@ export function Trade(): ReactElement {
         </div>
       )}
 
+      {/* Markets modal */}
       <input type="checkbox" id={MARKETS_MODAL_KEY} className="modal-toggle" />
       <label htmlFor={MARKETS_MODAL_KEY} className="modal cursor-pointer px-8">
         <div className="flex max-h-[70vh] flex-col items-center overflow-auto rounded bg-base-100 p-4">
@@ -198,32 +139,3 @@ export function Trade(): ReactElement {
     </div>
   );
 }
-
-const stubbedChartData = [
-  { time: "2023-03-31", value: 32.51 },
-  { time: "2023-04-01", value: 31.11 },
-  { time: "2023-04-02", value: 27.02 },
-  { time: "2023-04-03", value: 27.32 },
-  { time: "2023-04-04", value: 25.17 },
-  { time: "2023-04-15", value: 28.89 },
-  { time: "2023-04-16", value: 25.46 },
-  { time: "2023-04-17", value: 23.92 },
-  { time: "2023-04-18", value: 22.68 },
-  { time: "2023-04-19", value: 22.67 },
-];
-
-const chartOptions = {
-  autoSize: true,
-  layout: {
-    textColor: "white",
-    background: { type: "solid", color: "#151427" },
-  },
-  grid: {
-    vertLines: {
-      visible: false,
-    },
-    horzLines: {
-      visible: false,
-    },
-  },
-} as ChartOptions;
