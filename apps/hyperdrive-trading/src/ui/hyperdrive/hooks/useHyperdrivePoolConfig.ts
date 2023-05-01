@@ -1,11 +1,10 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { HyperdriveABI } from "@hyperdrive/core";
-import { HyperdriveMarket } from "src/config/HyperdriveConfig";
-import { useContractRead } from "wagmi";
+import { Address, useContractRead } from "wagmi";
 
-export function useHyperdrivePoolConfig(market: HyperdriveMarket) {
+export function useHyperdrivePoolConfig(marketAddress: Address) {
   const { data: poolConfig, status: poolConfigStatus } = useContractRead({
-    address: market.address,
+    address: marketAddress,
     abi: HyperdriveABI,
     functionName: "getPoolConfiguration",
   });
