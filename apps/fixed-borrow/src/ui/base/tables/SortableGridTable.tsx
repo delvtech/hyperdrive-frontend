@@ -6,6 +6,7 @@ import { SortDirection } from "src/ui/base/sorting/types";
 import { GridTableHeader } from "src/ui/base/tables/GridTableHeader";
 import { GridTableRow } from "src/ui/base/tables/GridTableRow";
 import { GridTableRowLink } from "src/ui/base/tables/GridTableRowLink";
+import { ExpandableGridTableRow } from "src/ui/base/tables/GridTableRowWithExpand";
 
 interface SortableGridTableProps<K extends string> {
   cols: Column<K>[];
@@ -93,7 +94,7 @@ export function SortableGridTable<K extends string>({
               return (
                 <button
                   key={i}
-                  className="hover:bg-inputBg flex items-center gap-1 text-left"
+                  className="flex items-center gap-1 text-left hover:bg-inputBg"
                   onClick={() => handleSortChange(col.sortKey as K)}
                 >
                   {col.cell}
@@ -117,37 +118,42 @@ export function SortableGridTable<K extends string>({
 
       {rows.length
         ? rows.map((row, i) => {
-            // is row options object
-            if ("cells" in row) {
-              if (row.href) {
-                return (
-                  <GridTableRowLink
-                    key={i}
-                    href={row.href}
-                    className={classNames(bodyRowClassName, row.className)}
-                  >
-                    {row.cells.map((cell, i) => (
-                      <span key={i}>{cell}</span>
-                    ))}
-                  </GridTableRowLink>
-                );
-              }
-
+            if (isRowWithHref(row)) {
               return (
-                <GridTableRow
+                <GridTableRowLink
                   key={i}
+                  href={row.href}
                   className={classNames(bodyRowClassName, row.className)}
                 >
-                  {row.cells}
-                </GridTableRow>
+                  {row.cells.map((cell, i) => (
+                    <span key={i}>{cell}</span>
+                  ))}
+                </GridTableRowLink>
+              );
+            }
+
+            if (isRowWithExpand(row)) {
+              return (
+                <ExpandableGridTableRow
+                  key={i}
+                  className={classNames(bodyRowClassName, row.className)}
+                  detailsElement={row.detailsElement}
+                >
+                  {row.cells.map((cell, i) => (
+                    <span className="h-full" key={i}>
+                      {cell}
+                    </span>
+                  ))}
+                </ExpandableGridTableRow>
               );
             }
 
             return (
-              <GridTableRow key={i} className={bodyRowClassName}>
-                {row.map((cell, i) => (
-                  <span key={i}>{cell}</span>
-                ))}
+              <GridTableRow
+                key={i}
+                className={classNames(bodyRowClassName, row.className)}
+              >
+                {row.cells}
               </GridTableRow>
             );
           })
@@ -164,13 +170,32 @@ export type Column<K extends string> =
       sortKey?: K;
     };
 
+interface BaseRow {
+  cells: ReactNode[];
+  className?: string;
+}
+
+interface RowWithHref extends BaseRow {
+  href: To;
+}
+
+interface RowWithExpand extends BaseRow {
+  detailsElement?: ReactNode;
+}
 export type Row =
-  | ReactNode[]
+  | RowWithHref
   | {
       cells: ReactNode[];
       className?: string;
-      href?: To;
     };
+
+function isRowWithHref(row: Row): row is RowWithHref {
+  return (row as RowWithHref).href !== undefined;
+}
+
+function isRowWithExpand(row: Row): row is RowWithExpand {
+  return (row as RowWithExpand).detailsElement !== undefined;
+}
 
 export interface SortOptions<K extends string> {
   key?: K;
