@@ -7,10 +7,10 @@
   "author": {
     "name": "Element Labs",
     "email": "contact@element.fi",
-    "url": "https://github.com/element-fi"
+    "url": "https://github.com/delv-tech"
   },
   "bugs": {
-    "url": "https://github.com/element-fi/hyperdrive-monorepo/issues"
+    "url": "https://github.com/delv-tech/hyperdrive-monorepo/issues"
   },
   "scripts": {
     "build": "tsc && vite build",
