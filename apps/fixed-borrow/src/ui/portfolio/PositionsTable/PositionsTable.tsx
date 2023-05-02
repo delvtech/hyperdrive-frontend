@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import { ReactElement, ReactNode } from "react";
 import { Address, useAccount, useToken } from "wagmi";
 import { SortableGridTable } from "src/ui/base/tables/SortableGridTable";
 import { useUserLoans } from "src/ui/loans/hooks/useUserLoans";
@@ -7,6 +7,7 @@ import { useTransactionTimestamp } from "src/ui/base/transactions/useTransaction
 import { formatBigInt } from "src/base/bigint/formatBigInt";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { AssetIcon } from "src/ui/token/AssetIcon";
+import { Tabs } from "src/ui/base/Tabs/Tabs";
 
 export function PositionsTable(): ReactElement {
   const { address: account } = useAccount();
@@ -14,65 +15,91 @@ export function PositionsTable(): ReactElement {
 
   return (
     <SortableGridTable
-      headingRowClassName="grid-cols-[1fr_1fr_1fr_173px_64px] gap-10"
-      bodyRowClassName="group grid-cols-[1fr_1fr_1fr_173px_64px] gap-10"
+      headingRowClassName="grid-cols-[1fr_150px_160px_180px_64px] gap-4"
+      bodyRowClassName="group grid-cols-[1fr_150px_160px_180px_64px] gap-4"
       emptyTableElement={<span className="text-white">No borrows found</span>}
       cols={[
         {
           cell: <span className="text-secondaryText">Asset</span>,
-          sortKey: "asset",
         },
         {
           cell: <span className="text-secondaryText">Total Debt</span>,
-          sortKey: "totalDebt",
         },
         {
           cell: <span className="text-secondaryText">Fixed Rate Debt</span>,
-          sortKey: "fixedRateDebt",
         },
         {
           cell: <span className="text-secondaryText">Variable Rate Debt</span>,
-          sortKey: "variableRateDebt",
+        },
+        {
+          cell: <span className="text-secondaryText" />,
         },
       ]}
       rows={userLoans.map(
-        (
-          {
-            txHash,
-            shortId,
-            collateralDeposited,
-            collateralTokenAddress,
-            borrowedAmount,
-            borrowTokenAddress,
-          },
-          i,
-        ) => ({
+        ({
+          txHash,
+          shortId,
+          collateralDeposited,
+          collateralTokenAddress,
+          borrowedAmount,
+          borrowTokenAddress,
+        }) => ({
+          detailsElement: (
+            <div className="flex w-full flex-col gap-7 p-8 text-white">
+              <Tabs
+                tabs={[
+                  {
+                    label: "Debt Coverage",
+                    variant: "sun",
+                  },
+                  {
+                    label: "Uncovered Debt",
+                    variant: "pinkSlip",
+                  },
+                ]}
+                activeTab={0 /* TODO: add a useState to make tabs controlled */}
+              />
+              <p className="text-h6">
+                This table shows all the shorts that have been purchased and how
+                much debt they cover. Check out our docs to learn more about how
+                fixed rate borrowing works.j
+              </p>
+              {/* TODO: Add table here */}
+            </div>
+          ),
           cells: [
             <BorrowedAssetCell
-              key={`asset-${txHash}-${i}`}
+              key="asset"
               borrowedAssetAddress={borrowTokenAddress}
             />,
-            // TODO: Implement this
-            <RateCell
-              key={`rate-${txHash}-${i}`}
-              shortId={shortId}
-              txHash={txHash}
-            />,
             <AmountCell
-              key={`collateral-${txHash}-${i}`}
-              amount={collateralDeposited}
-              tokenAddress={collateralTokenAddress}
-            />,
-            <AmountCell
-              key={`debt-${txHash}-${i}`}
+              key="totalDebt"
               amount={borrowedAmount}
+              secondaryText="$2,302.13"
+              tokenAddress={borrowTokenAddress}
+            />,
+            <AmountCell
+              key="fixedRateDebt"
+              amount={borrowedAmount}
+              secondaryText="1.5% APY"
+              tokenAddress={borrowTokenAddress}
+            />,
+            <AmountCell
+              key="variableRateDebt"
+              amount={borrowedAmount}
+              secondaryText="1.5% APY"
               tokenAddress={borrowTokenAddress}
             />,
             <div
-              key={`expand-${txHash}-${i}`}
-              className="flex shrink-0 items-center"
+              key="expand"
+              className="flex h-full shrink-0 items-center justify-center"
             >
-              <img src="/caret-down.svg" />
+              <div>
+                <img
+                  src="/caret-down.svg"
+                  className="transition duration-300 ui-open:rotate-0 ui-not-open:-rotate-90"
+                />
+              </div>
             </div>,
           ],
         }),
@@ -100,44 +127,27 @@ function BorrowedAssetCell({
   );
 }
 
-const SIX_MONTHS_IN_MILLISECONDS = 15778800000;
-function RateCell({ txHash }: { shortId: bigint; txHash: Hash }): ReactElement {
-  const { timestamp } = useTransactionTimestamp(txHash);
-  return (
-    <div className="flex flex-col ">
-      <span className="inline-flex items-center gap-2 text-h6 text-white">
-        <span>1.50%</span>
-        <span className="text-success">Fixed</span>
-      </span>
-      <span className="leading-sm text-secondaryText">
-        {timestamp
-          ? `until ${new Date(
-              timestamp + SIX_MONTHS_IN_MILLISECONDS,
-            ).toDateString()}`
-          : ""}
-      </span>
-    </div>
-  );
-}
-
 function AmountCell({
   amount,
   tokenAddress,
+  secondaryText,
 }: {
   amount: bigint;
   tokenAddress: Address;
+  secondaryText: ReactNode;
 }): ReactElement {
   const { data: tokenMetadata } = useToken({ address: tokenAddress });
   const amountLabel = formatBalance(
     formatBigInt(amount, tokenMetadata?.decimals),
   );
   return (
-    <div className="flex flex-col ">
+    <div className="flex flex-col">
       <span className="inline-flex items-center gap-1 text-h6 text-white">
-        <AssetIcon size="sm" address={tokenAddress} /> {amountLabel}{" "}
-        {tokenMetadata?.symbol}
+        {amountLabel} {tokenMetadata?.symbol}
       </span>
-      <span className="leading-sm text-secondaryText">$2,302.13</span>
+      <span className="flex leading-sm text-secondaryText">
+        {secondaryText}
+      </span>
     </div>
   );
 }
