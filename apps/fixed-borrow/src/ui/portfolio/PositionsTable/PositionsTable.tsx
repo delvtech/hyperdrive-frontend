@@ -14,7 +14,7 @@ export function PositionsTable(): ReactElement {
   return (
     <SortableGridTable
       headingRowClassName="grid-cols-[180px_150px_160px_180px_64px] gap-4"
-      bodyRowClassName="group grid-cols-[180px_150px_160px_180px_64px] gap-4"
+      bodyRowClassName="group grid-cols-[180px_150px_160px_180px_64px] gap-4 h-20"
       emptyTableElement={<span className="text-white">No borrows found</span>}
       cols={[
         {

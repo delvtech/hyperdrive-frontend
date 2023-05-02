@@ -19,7 +19,7 @@ export function ExpandableGridTableRow({
     <Disclosure>
       <Disclosure.Button
         className={classNames(
-          "grid w-full cursor-pointer auto-cols-fr grid-flow-col transition-all last:rounded-b-lg odd:bg-midnight hover:bg-inputBg ui-open:bg-inputBg [&>*]:overflow-hidden [&>*]:text-ellipsis [&>*]:p-4",
+          "grid w-full cursor-pointer auto-cols-fr grid-flow-col transition-all last:rounded-b-lg odd:bg-midnight hover:bg-inputBg ui-open:border-b ui-open:border-[#272F49] ui-open:bg-inputBg [&>*]:overflow-hidden [&>*]:text-ellipsis [&>*]:p-4",
           className,
         )}
       >
