@@ -25,13 +25,13 @@ export function Tabs({
   onChange,
 }: PropsWithChildren<TabsProps>): ReactElement {
   return (
-    <ul className="flex gap-4">
+    <ul className="flex gap-4 border-b border-inputBorder">
       {tabs.map((tab, i) => {
         const { label, variant, href } = tab;
         const isActive = activeTab === i;
 
         const className = classNames(
-          "border-b-2 border-transparent p-2 text-h4 leading-body transition-all hover:text-white",
+          "border-b-2 border-transparent px-2 pb-2 text-h6 transition-all hover:text-white",
           {
             // Active
             "font-bold text-white": isActive,

@@ -1,11 +1,9 @@
 import { SparkGoerliAddresses } from "@hyperdrive/spark";
-import { ReactElement, useState } from "react";
+import { ReactElement } from "react";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { HyperdriveGoerliAddresses } from "@hyperdrive/core";
 import { LoanCard } from "src/ui/loans/LoanCard/LoanCard";
 import { formatBigInt } from "src/base/bigint/formatBigInt";
-import Page from "src/ui/base/Page/Page";
-import { ActiveTab, AppHeader } from "src/ui/app/AppHeader";
 
 console.log(SparkGoerliAddresses);
 console.log(HyperdriveGoerliAddresses);
