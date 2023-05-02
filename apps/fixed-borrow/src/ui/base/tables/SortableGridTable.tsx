@@ -182,12 +182,7 @@ interface RowWithHref extends BaseRow {
 interface RowWithExpand extends BaseRow {
   detailsElement?: ReactNode;
 }
-export type Row =
-  | RowWithHref
-  | {
-      cells: ReactNode[];
-      className?: string;
-    };
+export type Row = RowWithHref | RowWithExpand | BaseRow;
 
 function isRowWithHref(row: Row): row is RowWithHref {
   return (row as RowWithHref).href !== undefined;

@@ -2,8 +2,6 @@ import { ReactElement, ReactNode } from "react";
 import { Address, useAccount, useToken } from "wagmi";
 import { SortableGridTable } from "src/ui/base/tables/SortableGridTable";
 import { useUserLoans } from "src/ui/loans/hooks/useUserLoans";
-import { Hash } from "@wagmi/core";
-import { useTransactionTimestamp } from "src/ui/base/transactions/useTransactionTimestamp/useTransactionTimestamp";
 import { formatBigInt } from "src/base/bigint/formatBigInt";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { AssetIcon } from "src/ui/token/AssetIcon";
@@ -15,8 +13,8 @@ export function PositionsTable(): ReactElement {
 
   return (
     <SortableGridTable
-      headingRowClassName="grid-cols-[1fr_150px_160px_180px_64px] gap-4"
-      bodyRowClassName="group grid-cols-[1fr_150px_160px_180px_64px] gap-4"
+      headingRowClassName="grid-cols-[180px_150px_160px_180px_64px] gap-4"
+      bodyRowClassName="group grid-cols-[180px_150px_160px_180px_64px] gap-4"
       emptyTableElement={<span className="text-white">No borrows found</span>}
       cols={[
         {
