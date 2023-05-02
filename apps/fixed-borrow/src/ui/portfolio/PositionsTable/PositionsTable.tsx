@@ -21,13 +21,34 @@ export function PositionsTable(): ReactElement {
           cell: <span className="text-secondaryText">Asset</span>,
         },
         {
-          cell: <span className="text-secondaryText">Total Debt</span>,
+          cell: (
+            <span
+              className="text-secondaryText"
+              title="The total amount of the asset you are borrowing"
+            >
+              Total Debt
+            </span>
+          ),
         },
         {
-          cell: <span className="text-secondaryText">Fixed Rate Debt</span>,
+          cell: (
+            <span
+              className="text-secondaryText"
+              title="The portion of your total debt that is covered by fixed rate interest"
+            >
+              Fixed Rate Debt
+            </span>
+          ),
         },
         {
-          cell: <span className="text-secondaryText">Variable Rate Debt</span>,
+          cell: (
+            <span
+              className="text-secondaryText"
+              title="The portion of your total debt currently exposed to variable rate interest"
+            >
+              Variable Rate Debt
+            </span>
+          ),
         },
         {
           cell: <span className="text-secondaryText" />,
