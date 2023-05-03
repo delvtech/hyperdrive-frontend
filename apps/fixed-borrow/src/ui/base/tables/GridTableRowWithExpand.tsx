@@ -1,6 +1,6 @@
 import { Disclosure, Transition } from "@headlessui/react";
 import classNames from "classnames";
-import { PropsWithChildren, ReactElement, ReactNode } from "react";
+import { Fragment, PropsWithChildren, ReactElement, ReactNode } from "react";
 
 /**
  * A table row with an expandable section for when you need to show more
@@ -19,7 +19,7 @@ export function ExpandableGridTableRow({
     <Disclosure>
       <Disclosure.Button
         className={classNames(
-          "grid w-full cursor-pointer auto-cols-fr grid-flow-col transition-all last:rounded-b-lg odd:bg-midnight hover:bg-inputBg ui-open:border-b ui-open:border-[#272F49] ui-open:bg-inputBg [&>*]:overflow-hidden [&>*]:text-ellipsis [&>*]:p-4",
+          "grid w-full cursor-pointer auto-cols-fr grid-flow-col rounded-lg odd:bg-midnight hover:bg-inputBg ui-open:rounded-b-none ui-open:border-b ui-open:border-[#272F49] ui-open:bg-inputBg ui-not-open:border-none [&>*]:overflow-hidden [&>*]:text-ellipsis [&>*]:p-4",
           className,
         )}
       >
@@ -27,12 +27,12 @@ export function ExpandableGridTableRow({
       </Disclosure.Button>
 
       <Transition
-        enter="transition duration-100 ease-out"
-        enterFrom="transform scale-95 opacity-0"
-        enterTo="transform scale-100 opacity-100"
-        leave="transition duration-75 ease-out"
-        leaveFrom="transform scale-100 opacity-100"
-        leaveTo="transform scale-95 opacity-0"
+        enter="transition ease-in duration-200 transform"
+        enterFrom="opacity-0 -translate-y-2"
+        enterTo="opacity-100 translate-y-0"
+        leave="transition ease-in duration-200 transform"
+        leaveFrom="opacity-100 translate-y-0"
+        leaveTo="opacity-0 -translate-y-2"
       >
         <Disclosure.Panel className="last:rounded-b-lg ui-open:bg-inputBg ">
           {detailsElement}
