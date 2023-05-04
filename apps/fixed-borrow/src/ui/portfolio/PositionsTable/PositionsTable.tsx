@@ -5,7 +5,7 @@ import { useUserLoans } from "src/ui/loans/hooks/useUserLoans";
 import { formatBigInt } from "src/base/bigint/formatBigInt";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { AssetIcon } from "src/ui/token/AssetIcon";
-import { Tabs } from "src/ui/base/Tabs/Tabs";
+import { DebtDetailsSection } from "./DebtDetailsSection";
 
 export function PositionsTable(): ReactElement {
   const { address: account } = useAccount();
@@ -51,6 +51,7 @@ export function PositionsTable(): ReactElement {
           ),
         },
         {
+          // Empty cell for arrow icon
           cell: <span className="text-secondaryText" />,
         },
       ]}
@@ -63,29 +64,7 @@ export function PositionsTable(): ReactElement {
           borrowedAmount,
           borrowTokenAddress,
         }) => ({
-          detailsElement: (
-            <div className="flex w-full flex-col gap-7 p-8 text-white">
-              <Tabs
-                tabs={[
-                  {
-                    label: "Debt Coverage",
-                    variant: "sun",
-                  },
-                  {
-                    label: "Uncovered Debt",
-                    variant: "pinkSlip",
-                  },
-                ]}
-                activeTab={0 /* TODO: add a useState to make tabs controlled */}
-              />
-              <p className="text-h6">
-                This table shows all the shorts that have been purchased and how
-                much debt they cover. Check out our docs to learn more about how
-                fixed rate borrowing works.j
-              </p>
-              {/* TODO: Add table here */}
-            </div>
-          ),
+          detailsElement: <DebtDetailsSection />,
           cells: [
             <BorrowedAssetCell
               key="asset"
@@ -109,21 +88,24 @@ export function PositionsTable(): ReactElement {
               secondaryText="1.5% APY"
               tokenAddress={borrowTokenAddress}
             />,
-            <div
-              key="expand"
-              className="flex h-full shrink-0 items-center justify-center"
-            >
-              <div>
-                <img
-                  src="/caret-down.svg"
-                  className="transition duration-300 ui-open:rotate-0 ui-not-open:-rotate-90"
-                />
-              </div>
-            </div>,
+            <ExpandIconCell key="expand" />,
           ],
         }),
       )}
     />
+  );
+}
+
+function ExpandIconCell(): ReactElement {
+  return (
+    <div className="flex h-full shrink-0 items-center justify-center">
+      <div>
+        <img
+          src="/caret-down.svg"
+          className="transition duration-300 ui-open:rotate-0 ui-not-open:-rotate-90"
+        />
+      </div>
+    </div>
   );
 }
 
