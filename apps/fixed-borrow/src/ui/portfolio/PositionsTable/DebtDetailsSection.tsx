@@ -6,7 +6,7 @@ export function DebtDetailsSection(): ReactElement {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <div className="flex w-full flex-col gap-7 p-8 text-white">
+    <div className="flex w-full flex-col gap-6 p-8 text-white">
       <Tabs
         tabs={[
           {
@@ -25,7 +25,7 @@ export function DebtDetailsSection(): ReactElement {
       <p className="text-h6 text-lightText">
         This table shows all the shorts that have been purchased and how much
         debt they cover. Check out our docs to learn more about{" "}
-        <a href="#" className="underline underline-offset-2 hover:no-underline">
+        <a href="#" className="underline underline-offset-4 hover:no-underline">
           how fixed rate borrowing works
         </a>
         .
