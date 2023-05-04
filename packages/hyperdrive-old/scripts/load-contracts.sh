@@ -1,9 +1,9 @@
 echo "Downloading contracts..."
 
 if [[ -z "${GITHUB_TOKEN}" ]]; then
-  git clone git@github.com:delv-tech/hyperdrive.git hyperdrive-src
+  git clone git@github.com:delvtech/hyperdrive.git hyperdrive-src
 else
- git clone https://$GITHUB_TOKEN@github.com/delv-tech/hyperdrive.git hyperdrive-src
+ git clone https://$GITHUB_TOKEN@github.com/delvtech/hyperdrive.git hyperdrive-src
 fi
 
 # blow away old-contracts
