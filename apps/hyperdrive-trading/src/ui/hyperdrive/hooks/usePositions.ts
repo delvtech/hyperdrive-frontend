@@ -12,6 +12,8 @@ import { Address, useProvider } from "wagmi";
 interface UsePositionsResult {
   openLongs: Position[];
   openShorts: Position[];
+  closedLongs: Position[];
+  closedShorts: Position[];
 }
 
 /** Hook that fetches all the open positions for the provided account */
@@ -77,9 +79,24 @@ export function usePositions(
         }
       });
 
+      // keep track of the amount of multi-token burns in a separate data structure
+      // this will keep track of the amount of a long/short that has been closed
+      const multiTokenBurns: Record<string, MultiToken> = {};
       burnEvents.forEach((event) => {
         const amount = (event.args?.value as BigNumber).toBigInt();
         const idBN = event.args?.id as BigNumber;
+
+        if (multiTokenBurns[idBN.toString()]) {
+          multiTokenBurns[idBN.toString()] = {
+            id: idBN.toBigInt(),
+            amount: multiTokenBurns[idBN.toString()].amount + amount,
+          };
+        } else {
+          multiTokenBurns[idBN.toString()] = {
+            id: idBN.toBigInt(),
+            amount,
+          };
+        }
 
         if (multiTokens[idBN.toString()]) {
           multiTokens[idBN.toString()] = {
@@ -120,11 +137,39 @@ export function usePositions(
           };
         });
 
+      // Create position objects from multi-token burn data
+      const multiTokenListBurns = Object.values(multiTokenBurns);
+      const closedLongs: Position[] = multiTokenListBurns
+        .filter((multiToken) => getAssetPrefixFromTokenId(multiToken.id) === 0)
+        .map((token) => {
+          return {
+            type: "Long",
+            id: token.id,
+            amount: token.amount,
+            currencyValue: "$10000", // TODO: stubbed for now
+            expiryDate: new Date(getAssetTimestampFromTokenId(token.id) * 1000),
+          };
+        });
+
+      const closedShorts: Position[] = multiTokenListBurns
+        .filter((multiToken) => getAssetPrefixFromTokenId(multiToken.id) === 1)
+        .map((token) => {
+          return {
+            type: "Short",
+            id: token.id,
+            amount: token.amount,
+            currencyValue: "$10000", // TODO: stubbed for now
+            expiryDate: new Date(getAssetTimestampFromTokenId(token.id) * 1000),
+          };
+        });
+
       return {
         openLongs: longs.filter((long) => long.amount > 0n),
         openShorts: shorts.filter((short) => short.amount > 0n),
-        closedLongs: longs.filter((long) => long.amount === 0n),
-        closedShorts: shorts.filter((short) => short.amount === 0n),
+        closedLongs,
+        closedShorts,
+        // closedLongs: longs.filter((long) => long.amount === 0n),
+        // closedShorts: shorts.filter((short) => short.amount === 0n),
       };
     },
   });
