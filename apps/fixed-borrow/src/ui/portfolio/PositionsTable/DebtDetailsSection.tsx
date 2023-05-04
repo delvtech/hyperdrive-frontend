@@ -25,7 +25,7 @@ export function DebtDetailsSection(): ReactElement {
       <p className="text-h6 text-lightText">
         This table shows all the shorts that have been purchased and how much
         debt they cover. Check out our docs to learn more about{" "}
-        <a href="#" className="underline hover:no-underline">
+        <a href="#" className="underline underline-offset-2 hover:no-underline">
           how fixed rate borrowing works
         </a>
         .
@@ -33,8 +33,8 @@ export function DebtDetailsSection(): ReactElement {
 
       <div>
         <SortableGridTable
-          headingRowClassName="grid-cols-[170px_160px_130px_1fr] gap-8 border-b-2 border-dawn h-9 items-center"
-          bodyRowClassName="grid-cols-[170px_160px_130px_1fr] gap-8 even:border-b border-dawn text-h6"
+          headingRowClassName="grid-cols-[170px_2fr_2fr_1fr] gap-8 border-b-2 border-dawn h-9 items-center"
+          bodyRowClassName="grid-cols-[170px_2fr_2fr_1fr] gap-8 even:border-b border-dawn text-h6"
           emptyTableElement={
             <span className="text-white">No debt coverage found</span>
           }
@@ -81,7 +81,7 @@ export function DebtDetailsSection(): ReactElement {
                   December 14, 2024
                 </span>,
                 <span key="amount" className="text-lightText">
-                  9,999,992,353.27
+                  992,353.27 DAI
                 </span>,
                 <span key="fixedRate" className="text-lightText">
                   1.25%
@@ -110,7 +110,7 @@ export function DebtDetailsSection(): ReactElement {
                   December 14, 2024
                 </span>,
                 <span key="amount" className="text-lightText">
-                  2,353.27
+                  2,353.27 DAI
                 </span>,
                 <span key="fixedRate" className="text-lightText">
                   1.25%
