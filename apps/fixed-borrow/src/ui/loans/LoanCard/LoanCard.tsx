@@ -21,7 +21,7 @@ interface LoanCardProps {
 }
 
 // The same buffer that's used in the contract tests:
-// https://github.com/element-fi/hyperdrive/blob/main/test/integrations/AaveFixedBorrow.t.sol#L104
+// https://github.com/delv-tech/hyperdrive/blob/main/test/integrations/AaveFixedBorrow.t.sol#L104
 const MAX_DEPOSIT_BUFFER = parseBigInt("1.1", 18);
 
 export function LoanCard({

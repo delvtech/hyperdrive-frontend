@@ -7,10 +7,10 @@
   "author": {
     "name": "Delve Labs",
     "email": "contact@element.fi",
-    "url": "https://github.com/element-fi"
+    "url": "https://github.com/delv-tech"
   },
   "bugs": {
-    "url": "https://github.com/element-fi/hyperdrive-prototype-ui/issues"
+    "url": "https://github.com/delv-tech/hyperdrive-prototype-ui/issues"
   },
   "scripts": {
     "dev": "vite",
