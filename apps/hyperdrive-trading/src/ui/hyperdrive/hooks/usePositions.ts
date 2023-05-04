@@ -16,16 +16,14 @@ interface UsePositionsResult {
   closedShorts: Position[];
 }
 
-/** Hook that fetches all the open positions for the provided account */
+/** Hook that fetches all open and closed positions for an account. */
 export function usePositions(
   account: Address | undefined,
   market: HyperdriveMarket,
 ): UseQueryResult<UsePositionsResult> {
   const provider = useProvider();
   return useQuery({
-    // this eslint rule is firing because of the constants.AddressZero import
-    // eslint-disable-next-line @tanstack/query/exhaustive-deps
-    queryKey: ["positions", account, market.address],
+    queryKey: ["positions", account, market.address, constants.AddressZero],
     enabled: !!account,
     queryFn: async () => {
       const hyperdriveContract = new Contract(
@@ -97,11 +95,10 @@ export function usePositions(
         }
       });
 
-      // Create a list of all open positions
-      const openPositions = Object.values(multiTokens);
+      const multiTokenList = Object.values(multiTokens);
 
       // filter by longs
-      const openLongs: Position[] = openPositions
+      const longs: Position[] = multiTokenList
         .filter((multiToken) => getAssetPrefixFromTokenId(multiToken.id) === 0)
         .map((token) => {
           // calculate, if any, the amount of the position that has been closed
@@ -115,59 +112,31 @@ export function usePositions(
             amount: token.amount - amountBurned,
             currencyValue: "$10000", // TODO: stubbed for now
             expiryDate: new Date(getAssetTimestampFromTokenId(token.id) * 1000),
+            amountClosed: amountBurned,
           } as Position;
-        })
-        .filter((long) => long.amount > 0n);
-
-      const openShorts: Position[] = openPositions
-        .filter((multiToken) => getAssetPrefixFromTokenId(multiToken.id) === 1)
-        .map((token) => {
-          // calculate, if any, the amount of the position that has been closed
-          // we look up the aggregated value from the multi-token burn events
-          const amountBurned =
-            multiTokenBurns[token.id.toString()]?.amount ?? 0n;
-
-          return {
-            type: "Short",
-            id: token.id,
-            amount: token.amount - amountBurned,
-            currencyValue: "$10000", // TODO: stubbed for now
-            expiryDate: new Date(getAssetTimestampFromTokenId(token.id) * 1000),
-          } as Position;
-        })
-        .filter((short) => short.amount > 0n);
-
-      // Create list of all closed positions
-      const multiTokenListBurns = Object.values(multiTokenBurns);
-      const closedLongs: Position[] = multiTokenListBurns
-        .filter((multiToken) => getAssetPrefixFromTokenId(multiToken.id) === 0)
-        .map((token) => {
-          return {
-            type: "Long",
-            id: token.id,
-            amount: token.amount,
-            currencyValue: "$10000", // TODO: stubbed for now
-            expiryDate: new Date(getAssetTimestampFromTokenId(token.id) * 1000),
-          };
         });
 
-      const closedShorts: Position[] = multiTokenListBurns
+      const shorts: Position[] = multiTokenList
         .filter((multiToken) => getAssetPrefixFromTokenId(multiToken.id) === 1)
         .map((token) => {
+          const amountBurned =
+            multiTokenBurns[token.id.toString()]?.amount ?? 0n;
+
           return {
             type: "Short",
             id: token.id,
-            amount: token.amount,
+            amount: token.amount - amountBurned,
             currencyValue: "$10000", // TODO: stubbed for now
             expiryDate: new Date(getAssetTimestampFromTokenId(token.id) * 1000),
-          };
+            amountClosed: amountBurned,
+          } as Position;
         });
 
       return {
-        openLongs,
-        openShorts,
-        closedLongs,
-        closedShorts,
+        openLongs: longs.filter((long) => long.amount > 0n),
+        openShorts: shorts.filter((short) => short.amount > 0n),
+        closedLongs: longs.filter((long) => long.amount === 0n),
+        closedShorts: shorts.filter((short) => short.amount === 0n),
       };
     },
   });

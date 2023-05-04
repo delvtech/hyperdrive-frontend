@@ -47,7 +47,7 @@ function createOpenOrderRow(position: Position, positionDecimals: number): Row {
         {position.type}
       </span>,
       <span>
-        {formatBalance(formatBigInt(position.amount, positionDecimals))}
+        {formatBalance(formatBigInt(position.amountClosed, positionDecimals))}
       </span>,
       <span>{position.currencyValue}</span>,
       <span>{position.expiryDate.toLocaleDateString()}</span>,
