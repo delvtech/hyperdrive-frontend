@@ -27,10 +27,10 @@ export function ExpandableGridTableRow({
       </Disclosure.Button>
 
       <Transition
-        enter="transition ease-in duration-200 transform"
+        enter="transition ease-in duration-100 transform"
         enterFrom="opacity-0 -translate-y-2"
         enterTo="opacity-100 translate-y-0"
-        leave="transition ease-in duration-200 transform"
+        leave="transition ease-in duration-100 transform"
         leaveFrom="opacity-100 translate-y-0"
         leaveTo="opacity-0 -translate-y-2"
       >

@@ -31,13 +31,15 @@ export function Tabs({
         const isActive = activeTab === i;
 
         const className = classNames(
-          "border-b-2 border-transparent px-2 pb-2 text-h6 transition-all hover:text-white",
+          "border-b-2 border-transparent px-2 pb-2 text-h6 hover:text-white -mb-0.5",
           {
             // Active
             "font-bold text-white": isActive,
             "border-b-lightButton": isActive && !variant,
-            "border-b-sun": isActive && variant === "sun",
-            "border-b-pinkSlip": isActive && variant === "pinkSlip",
+            "bg-gradient-to-r from-sunBurst-start via-sunBurst-middle to-sunBurst-end bg-[length:100%_2px] bg-no-repeat bg-bottom":
+              isActive && variant === "sun",
+            "bg-gradient-to-r from-pinkSlipBurst-start via-pinkSlipBurst-middle to-pinkSlipBurst-end bg-[length:100%_2px] bg-no-repeat bg-bottom":
+              isActive && variant === "pinkSlip",
 
             // Inactive
             "text-secondaryText": !isActive,
