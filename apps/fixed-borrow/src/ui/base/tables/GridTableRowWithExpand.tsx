@@ -1,6 +1,6 @@
 import { Disclosure, Transition } from "@headlessui/react";
 import classNames from "classnames";
-import { Fragment, PropsWithChildren, ReactElement, ReactNode } from "react";
+import { PropsWithChildren, ReactElement, ReactNode } from "react";
 
 /**
  * A table row with an expandable section for when you need to show more
