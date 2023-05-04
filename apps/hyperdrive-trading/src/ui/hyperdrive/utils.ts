@@ -11,3 +11,6 @@ export function getAssetTimestampFromTokenId(id: bigint): number {
     .and("0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff")
     .toNumber();
 }
+
+export const LONG_PREFIX_ID = 0;
+export const SHORT_PREFIX_ID = 0;

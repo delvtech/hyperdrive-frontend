@@ -6,6 +6,8 @@ import { MultiToken, Position } from "src/ui/hyperdrive/types";
 import {
   getAssetPrefixFromTokenId,
   getAssetTimestampFromTokenId,
+  LONG_PREFIX_ID,
+  SHORT_PREFIX_ID,
 } from "src/ui/hyperdrive/utils";
 import { Address, useProvider } from "wagmi";
 
@@ -32,7 +34,7 @@ export function usePositions(
         provider,
       );
 
-      // Get all mint events from account
+      // Get all mint events for account
       const mintEventFilter = hyperdriveContract.filters.TransferSingle(
         undefined,
         constants.AddressZero,
@@ -44,7 +46,7 @@ export function usePositions(
         "latest",
       );
 
-      // Get all burn events from account
+      // Get all burn events for account
       const burnEventFilter = hyperdriveContract.filters.TransferSingle(
         undefined,
         account,
@@ -56,7 +58,7 @@ export function usePositions(
         "latest",
       );
 
-      // Parse events to into multi-token objects stored in a record
+      // Parse events to into multi-token objects stored in a record by token id
       const multiTokens: Record<string, MultiToken> = {};
       mintEvents.forEach((event) => {
         const amount = (event.args?.value as BigNumber).toBigInt();
@@ -97,9 +99,12 @@ export function usePositions(
 
       const multiTokenList = Object.values(multiTokens);
 
-      // filter by longs
+      // find and create all long positions
       const longs: Position[] = multiTokenList
-        .filter((multiToken) => getAssetPrefixFromTokenId(multiToken.id) === 0)
+        .filter(
+          (multiToken) =>
+            getAssetPrefixFromTokenId(multiToken.id) === LONG_PREFIX_ID,
+        )
         .map((token) => {
           // calculate, if any, the amount of the position that has been closed
           // we look up the aggregated value from the multi-token burn events
@@ -116,9 +121,15 @@ export function usePositions(
           } as Position;
         });
 
+      // find and create all short positions
       const shorts: Position[] = multiTokenList
-        .filter((multiToken) => getAssetPrefixFromTokenId(multiToken.id) === 1)
+        .filter(
+          (multiToken) =>
+            getAssetPrefixFromTokenId(multiToken.id) === SHORT_PREFIX_ID,
+        )
         .map((token) => {
+          // calculate, if any, the amount of the position that has been closed
+          // we look up the aggregated value from the multi-token burn events
           const amountBurned =
             multiTokenBurns[token.id.toString()]?.amount ?? 0n;
 
