@@ -1,3 +1,6 @@
+import { Popover } from "@headlessui/react";
+import { EllipsisVerticalIcon } from "@heroicons/react/20/solid";
+import { XCircleIcon } from "@heroicons/react/24/outline";
 import { ReactElement, useState } from "react";
 import { Tabs } from "src/ui/base/Tabs/Tabs";
 import { SortableGridTable } from "src/ui/base/tables/SortableGridTable";
@@ -25,7 +28,7 @@ export function DebtDetailsSection(): ReactElement {
       <p className="text-h6 text-lightText">
         This table shows all the shorts that have been purchased and how much
         debt they cover. Check out our docs to learn more about{" "}
-        <a href="#" className="underline underline-offset-4 hover:no-underline">
+        <a href="#" className="underline underline-offset-4 hover:text-white ">
           how fixed rate borrowing works
         </a>
         .
@@ -87,49 +90,7 @@ export function DebtDetailsSection(): ReactElement {
                   1.25%
                 </span>,
                 <span key="optionsMenu" className="text-right text-lightText">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="inline-block h-5 w-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z"
-                    />
-                  </svg>
-                </span>,
-              ],
-            },
-            {
-              cells: [
-                <span key="expiration" className="text-lightText">
-                  December 14, 2024
-                </span>,
-                <span key="amount" className="text-lightText">
-                  2,353.27 DAI
-                </span>,
-                <span key="fixedRate" className="text-lightText">
-                  1.25%
-                </span>,
-                <span key="optionsMenu" className="text-right text-lightText">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="inline-block h-5 w-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z"
-                    />
-                  </svg>
+                  <ShortActionsMenu />
                 </span>,
               ],
             },
@@ -137,5 +98,21 @@ export function DebtDetailsSection(): ReactElement {
         />
       </div>
     </div>
+  );
+}
+
+function ShortActionsMenu() {
+  return (
+    <Popover>
+      <Popover.Button className="rounded-md hover:bg-darkButton-hover">
+        <EllipsisVerticalIcon className="h-5 w-5 hover:text-white" />
+      </Popover.Button>
+
+      <Popover.Panel className="bg-background absolute -right-24 flex w-40 flex-col justify-start gap-1 rounded-lg bg-inputBg p-1 shadow-2xl shadow-midnight ring-1 ring-inset ring-dawn">
+        <button className="flex w-full items-center gap-3 rounded-lg p-2 text-left hover:bg-darkButton hover:text-white">
+          <XCircleIcon className="h-5 w-5" /> Close Position
+        </button>
+      </Popover.Panel>
+    </Popover>
   );
 }

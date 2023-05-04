@@ -31,7 +31,7 @@ export function Tabs({
         const isActive = activeTab === i;
 
         const className = classNames(
-          "border-b-2 border-transparent px-2 pb-2 text-h6 transition-transform hover:text-white -mb-0.5",
+          "border-b-2 border-transparent px-2 pb-2 text-h6 hover:text-white -mb-0.5",
           {
             // Active
             "font-bold text-white": isActive,
