@@ -140,7 +140,7 @@ export function SortableGridTable<K extends string>({
                   detailsElement={row.detailsElement}
                 >
                   {row.cells.map((cell, i) => (
-                    <span className="h-full" key={i}>
+                    <span className="flex h-full items-center" key={i}>
                       {cell}
                     </span>
                   ))}
@@ -215,7 +215,7 @@ function nextSortDirection(
 
 function DefaultEmptyTableElement() {
   return (
-    <div className="bg-base-200 rounded-b-lg p-10 text-center">
+    <div className="rounded-b-lg p-10 text-center">
       <p className="text-lg">Nothing to show.</p>
     </div>
   );
