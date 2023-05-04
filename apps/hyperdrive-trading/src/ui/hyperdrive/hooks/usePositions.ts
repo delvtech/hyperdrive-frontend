@@ -28,7 +28,6 @@ export function usePositions(
     queryKey: ["positions", account, market.address],
     enabled: !!account,
     queryFn: async () => {
-      // Create hyperdrive contract instance
       const hyperdriveContract = new Contract(
         market.address,
         HyperdriveABI,
@@ -59,8 +58,7 @@ export function usePositions(
         "latest",
       );
 
-      // Parse events to get current state of multi-token ownership
-      // Adding amounts from mints and subtracting from burns
+      // Parse events to into multi-token objects stored in a record
       const multiTokens: Record<string, MultiToken> = {};
       mintEvents.forEach((event) => {
         const amount = (event.args?.value as BigNumber).toBigInt();
@@ -79,8 +77,8 @@ export function usePositions(
         }
       });
 
-      // keep track of the amount of multi-token burns in a separate data structure
-      // this will keep track of the amount of a long/short that has been closed
+      // Parse events to into multi-token objects stored in a record
+      // This will be used to calculate the amount of a position that has been closed
       const multiTokenBurns: Record<string, MultiToken> = {};
       burnEvents.forEach((event) => {
         const amount = (event.args?.value as BigNumber).toBigInt();
@@ -97,47 +95,49 @@ export function usePositions(
             amount,
           };
         }
-
-        if (multiTokens[idBN.toString()]) {
-          multiTokens[idBN.toString()] = {
-            id: idBN.toBigInt(),
-            amount: multiTokens[idBN.toString()].amount - amount,
-          };
-        } else {
-          multiTokens[idBN.toString()] = {
-            id: idBN.toBigInt(),
-            amount,
-          };
-        }
       });
 
-      // Create position objects from multi-token data
-      const multiTokenList = Object.values(multiTokens);
-      const longs: Position[] = multiTokenList
+      // Create a list of all open positions
+      const openPositions = Object.values(multiTokens);
+
+      // filter by longs
+      const openLongs: Position[] = openPositions
         .filter((multiToken) => getAssetPrefixFromTokenId(multiToken.id) === 0)
         .map((token) => {
+          // calculate, if any, the amount of the position that has been closed
+          // we look up the aggregated value from the multi-token burn events
+          const amountBurned =
+            multiTokenBurns[token.id.toString()]?.amount ?? 0n;
+
           return {
             type: "Long",
             id: token.id,
-            amount: token.amount,
+            amount: token.amount - amountBurned,
             currencyValue: "$10000", // TODO: stubbed for now
             expiryDate: new Date(getAssetTimestampFromTokenId(token.id) * 1000),
-          };
-        });
+          } as Position;
+        })
+        .filter((long) => long.amount > 0n);
 
-      const shorts: Position[] = multiTokenList
+      const openShorts: Position[] = openPositions
         .filter((multiToken) => getAssetPrefixFromTokenId(multiToken.id) === 1)
         .map((token) => {
+          // calculate, if any, the amount of the position that has been closed
+          // we look up the aggregated value from the multi-token burn events
+          const amountBurned =
+            multiTokenBurns[token.id.toString()]?.amount ?? 0n;
+
           return {
             type: "Short",
             id: token.id,
-            amount: token.amount,
+            amount: token.amount - amountBurned,
             currencyValue: "$10000", // TODO: stubbed for now
             expiryDate: new Date(getAssetTimestampFromTokenId(token.id) * 1000),
-          };
-        });
+          } as Position;
+        })
+        .filter((short) => short.amount > 0n);
 
-      // Create position objects from multi-token burn data
+      // Create list of all closed positions
       const multiTokenListBurns = Object.values(multiTokenBurns);
       const closedLongs: Position[] = multiTokenListBurns
         .filter((multiToken) => getAssetPrefixFromTokenId(multiToken.id) === 0)
@@ -164,12 +164,10 @@ export function usePositions(
         });
 
       return {
-        openLongs: longs.filter((long) => long.amount > 0n),
-        openShorts: shorts.filter((short) => short.amount > 0n),
+        openLongs,
+        openShorts,
         closedLongs,
         closedShorts,
-        // closedLongs: longs.filter((long) => long.amount === 0n),
-        // closedShorts: shorts.filter((short) => short.amount === 0n),
       };
     },
   });

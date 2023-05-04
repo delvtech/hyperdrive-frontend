@@ -32,7 +32,7 @@ export function PositionsTable({ market }: PositionsTableProps): ReactElement {
           {match(selectedTable)
             .with("Open", () => <OpenOrdersTable market={market} />)
             .with("Closed", () => <ClosedOrdersTable market={market} />)
-            .with("Recent", () => <OpenOrdersTable market={market} />)
+            .with("Recent", () => <></>)
             .exhaustive()}
         </div>
       </div>
