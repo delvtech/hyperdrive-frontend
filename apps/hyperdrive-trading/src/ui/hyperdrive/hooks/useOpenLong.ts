@@ -60,7 +60,7 @@ export function useOpenLong({
           asUnderlying,
         ]
       : undefined,
-    // TODO better gas optimization
+    // TODO: better gas optimization
     overrides: { gasLimit: BigNumber.from(500_000) },
   });
 
