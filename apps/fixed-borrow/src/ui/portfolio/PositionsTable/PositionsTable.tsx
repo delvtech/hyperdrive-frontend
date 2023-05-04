@@ -51,6 +51,7 @@ export function PositionsTable(): ReactElement {
           ),
         },
         {
+          // Empty cell for arrow icon
           cell: <span className="text-secondaryText" />,
         },
       ]}
@@ -87,21 +88,24 @@ export function PositionsTable(): ReactElement {
               secondaryText="1.5% APY"
               tokenAddress={borrowTokenAddress}
             />,
-            <div
-              key="expand"
-              className="flex h-full shrink-0 items-center justify-center"
-            >
-              <div>
-                <img
-                  src="/caret-down.svg"
-                  className="transition duration-300 ui-open:rotate-0 ui-not-open:-rotate-90"
-                />
-              </div>
-            </div>,
+            <ExpandIconCell key="expand" />,
           ],
         }),
       )}
     />
+  );
+}
+
+function ExpandIconCell(): ReactElement {
+  return (
+    <div className="flex h-full shrink-0 items-center justify-center">
+      <div>
+        <img
+          src="/caret-down.svg"
+          className="transition duration-300 ui-open:rotate-0 ui-not-open:-rotate-90"
+        />
+      </div>
+    </div>
   );
 }
 

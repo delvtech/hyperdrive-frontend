@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { ReactElement, useState } from "react";
 import { Tabs } from "src/ui/base/Tabs/Tabs";
 
-export function DebtDetailsSection(): JSX.Element {
+export function DebtDetailsSection(): ReactElement {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
