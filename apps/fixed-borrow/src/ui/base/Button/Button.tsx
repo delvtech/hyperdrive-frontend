@@ -26,9 +26,9 @@ export function Button({
           "cursor-not-allowed opacity-50": disabled,
 
           // Size
-          "h-8 rounded-[6px] px-2 py-1 text-sm leading-sm": size === "sm",
-          "h-8 rounded-[6px] px-3 py-1 ": size === "md",
-          "h-12 rounded-lg px-5 py-3 text-lg leading-lg": size === "lg",
+          "h-8 rounded-[6px] px-2 py-2": size === "sm",
+          "h-9 rounded-[6px] px-4 py-4 text-h6": size === "md",
+          "h-12 rounded-lg px-5 py-3 text-h4 leading-h4": size === "lg",
 
           // No Variant
           ...{

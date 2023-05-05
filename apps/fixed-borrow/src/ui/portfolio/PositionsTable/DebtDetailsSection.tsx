@@ -4,6 +4,7 @@ import { XCircleIcon } from "@heroicons/react/24/outline";
 import { ReactElement, useState } from "react";
 import { Tabs } from "src/ui/base/Tabs/Tabs";
 import { SortableGridTable } from "src/ui/base/tables/SortableGridTable";
+import { ClosePositionModal } from "./ClosePositionModal";
 
 export function DebtDetailsSection(): ReactElement {
   const [activeTab, setActiveTab] = useState(0);
@@ -58,7 +59,7 @@ export function DebtDetailsSection(): ReactElement {
                   className="text-secondaryText"
                   title="The amount of debt that is covered by the locked in fixed rate"
                 >
-                  Amount
+                  Debt covered
                 </span>
               ),
             },
@@ -66,9 +67,9 @@ export function DebtDetailsSection(): ReactElement {
               cell: (
                 <span
                   className="text-secondaryText"
-                  title="The fixed rate you locked in as coverage when the short was opened"
+                  title="The fixed rate you locked in when the short was opened"
                 >
-                  Rate Fixed At
+                  Fixed Rate
                 </span>
               ),
             },
@@ -84,7 +85,7 @@ export function DebtDetailsSection(): ReactElement {
                   December 14, 2024
                 </span>,
                 <span key="amount" className="text-lightText">
-                  992,353.27 DAI
+                  92,353.27 DAI
                 </span>,
                 <span key="fixedRate" className="text-lightText">
                   1.25%
@@ -102,17 +103,34 @@ export function DebtDetailsSection(): ReactElement {
 }
 
 function ShortActionsMenu() {
-  return (
-    <Popover>
-      <Popover.Button className="rounded-md hover:bg-darkButton-hover">
-        <EllipsisVerticalIcon className="h-5 w-5 hover:text-white" />
-      </Popover.Button>
+  const [isOpen, setIsOpen] = useState(false);
 
-      <Popover.Panel className="bg-background absolute -right-24 flex w-40 flex-col justify-start gap-1 rounded-lg bg-inputBg p-1 shadow-2xl shadow-midnight ring-1 ring-inset ring-dawn">
-        <button className="flex w-full items-center gap-3 rounded-lg p-2 text-left hover:bg-darkButton hover:text-white">
-          <XCircleIcon className="h-5 w-5" /> Close Position
-        </button>
-      </Popover.Panel>
-    </Popover>
+  function handleOpenModal() {
+    setIsOpen(true);
+  }
+
+  function handleCloseModal() {
+    setIsOpen(false);
+  }
+
+  return (
+    <>
+      <Popover>
+        <Popover.Button className="rounded-md hover:bg-darkButton-hover">
+          <EllipsisVerticalIcon className="h-5 w-5 hover:text-white" />
+        </Popover.Button>
+
+        <Popover.Panel className="bg-background absolute -right-24 flex w-52 flex-col justify-start gap-1 rounded-lg bg-inputBg p-1 shadow-2xl shadow-midnight ring-1 ring-inset ring-dawn">
+          <button
+            onClick={handleOpenModal}
+            className="flex w-full items-center gap-3 rounded-lg p-2 text-left hover:bg-darkButton hover:text-white"
+          >
+            <XCircleIcon className="h-5 w-5" /> Close coverage
+          </button>
+        </Popover.Panel>
+      </Popover>
+
+      <ClosePositionModal isOpen={isOpen} onClose={handleCloseModal} />
+    </>
   );
 }

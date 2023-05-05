@@ -2,7 +2,7 @@ import classNames from "classnames";
 import { ReactNode, ReactElement } from "react";
 
 interface StatProps {
-  stat: string;
+  stat: ReactNode;
   label: string;
   icon?: ReactNode;
   alignment?: "left" | "right" | "center";
@@ -30,8 +30,8 @@ export function Stat({
           "text-end": alignment === "right",
         })}
       >
-        <div className="text-h4 font-bold leading-body text-white">{stat}</div>
-        <div className="text-body leading-sm text-secondaryText">{label}</div>
+        <div className="text-h4 font-bold text-white">{stat}</div>
+        <div className="text-h6 text-secondaryText">{label}</div>
       </div>
     </div>
   );
