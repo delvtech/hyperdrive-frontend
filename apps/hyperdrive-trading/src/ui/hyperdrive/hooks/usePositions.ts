@@ -6,34 +6,35 @@ import { MultiToken, Position } from "src/ui/hyperdrive/types";
 import {
   getAssetPrefixFromTokenId,
   getAssetTimestampFromTokenId,
+  LONG_PREFIX_ID,
+  SHORT_PREFIX_ID,
 } from "src/ui/hyperdrive/utils";
 import { Address, useProvider } from "wagmi";
 
 interface UsePositionsResult {
   openLongs: Position[];
   openShorts: Position[];
+  closedLongs: Position[];
+  closedShorts: Position[];
 }
 
-/** Hook that fetches all the open positions for the provided account */
+/** Hook that fetches all open and closed positions for an account. */
 export function usePositions(
   account: Address | undefined,
   market: HyperdriveMarket,
 ): UseQueryResult<UsePositionsResult> {
   const provider = useProvider();
   return useQuery({
-    // this eslint rule is firing because of the constants.AddressZero import
-    // eslint-disable-next-line @tanstack/query/exhaustive-deps
-    queryKey: ["positions", account, market.address],
+    queryKey: ["positions", account, market.address, constants.AddressZero],
     enabled: !!account,
     queryFn: async () => {
-      // Create hyperdrive contract instance
       const hyperdriveContract = new Contract(
         market.address,
         HyperdriveABI,
         provider,
       );
 
-      // Get all mint events from account
+      // Get all mint events for account
       const mintEventFilter = hyperdriveContract.filters.TransferSingle(
         undefined,
         constants.AddressZero,
@@ -45,7 +46,7 @@ export function usePositions(
         "latest",
       );
 
-      // Get all burn events from account
+      // Get all burn events for account
       const burnEventFilter = hyperdriveContract.filters.TransferSingle(
         undefined,
         account,
@@ -57,8 +58,7 @@ export function usePositions(
         "latest",
       );
 
-      // Parse events to get current state of multi-token ownership
-      // Adding amounts from mints and subtracting from burns
+      // Parse events to into multi-token objects stored in a record by token id
       const multiTokens: Record<string, MultiToken> = {};
       mintEvents.forEach((event) => {
         const amount = (event.args?.value as BigNumber).toBigInt();
@@ -77,47 +77,70 @@ export function usePositions(
         }
       });
 
+      // Parse events to into multi-token objects stored in a record
+      // This will be used to calculate the amount of a position that has been closed
+      const multiTokenBurns: Record<string, MultiToken> = {};
       burnEvents.forEach((event) => {
         const amount = (event.args?.value as BigNumber).toBigInt();
         const idBN = event.args?.id as BigNumber;
 
-        if (multiTokens[idBN.toString()]) {
-          multiTokens[idBN.toString()] = {
+        if (multiTokenBurns[idBN.toString()]) {
+          multiTokenBurns[idBN.toString()] = {
             id: idBN.toBigInt(),
-            amount: multiTokens[idBN.toString()].amount - amount,
+            amount: multiTokenBurns[idBN.toString()].amount + amount,
           };
         } else {
-          multiTokens[idBN.toString()] = {
+          multiTokenBurns[idBN.toString()] = {
             id: idBN.toBigInt(),
             amount,
           };
         }
       });
 
-      // Create position objects from multi-token data
       const multiTokenList = Object.values(multiTokens);
+
+      // find and create all long positions
       const longs: Position[] = multiTokenList
-        .filter((multiToken) => getAssetPrefixFromTokenId(multiToken.id) === 0)
+        .filter(
+          (multiToken) =>
+            getAssetPrefixFromTokenId(multiToken.id) === LONG_PREFIX_ID,
+        )
         .map((token) => {
+          // calculate, if any, the amount of the position that has been closed
+          // we look up the aggregated value from the multi-token burn events
+          const amountBurned =
+            multiTokenBurns[token.id.toString()]?.amount ?? 0n;
+
           return {
             type: "Long",
             id: token.id,
-            amount: token.amount,
+            amount: token.amount - amountBurned,
             currencyValue: "$10000", // TODO: stubbed for now
             expiryDate: new Date(getAssetTimestampFromTokenId(token.id) * 1000),
-          };
+            amountClosed: amountBurned,
+          } as Position;
         });
 
+      // find and create all short positions
       const shorts: Position[] = multiTokenList
-        .filter((multiToken) => getAssetPrefixFromTokenId(multiToken.id) === 1)
+        .filter(
+          (multiToken) =>
+            getAssetPrefixFromTokenId(multiToken.id) === SHORT_PREFIX_ID,
+        )
         .map((token) => {
+          // calculate, if any, the amount of the position that has been closed
+          // we look up the aggregated value from the multi-token burn events
+          const amountBurned =
+            multiTokenBurns[token.id.toString()]?.amount ?? 0n;
+
           return {
             type: "Short",
             id: token.id,
-            amount: token.amount,
+            amount: token.amount - amountBurned,
             currencyValue: "$10000", // TODO: stubbed for now
             expiryDate: new Date(getAssetTimestampFromTokenId(token.id) * 1000),
-          };
+            amountClosed: amountBurned,
+          } as Position;
         });
 
       return {

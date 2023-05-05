@@ -10,4 +10,5 @@ export interface Position extends MultiToken {
   type: PositionType;
   currencyValue: string;
   expiryDate: Date;
+  amountClosed: bigint;
 }

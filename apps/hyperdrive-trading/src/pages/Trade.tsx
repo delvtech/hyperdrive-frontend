@@ -5,10 +5,9 @@ import {
 import { ReactElement, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { HyperdriveMarket } from "src/config/HyperdriveConfig";
-import { Button } from "src/ui/base/components/Button";
 import { Stat } from "src/ui/base/components/Stat";
 import { MarketsTable } from "src/ui/markets/components/MarketsTable";
-import { OpenOrdersTable } from "src/ui/orders/components/OpenOrdersTable";
+import { PositionsTable } from "src/ui/orders/components/PositionsTable";
 import { ProtocolLabel } from "src/ui/protocol/components/ProtocolLabel";
 import { PositionForm } from "src/ui/trading/components/PositionForm";
 import { TradingChart } from "src/ui/trading/components/TradingChart";
@@ -96,7 +95,11 @@ export function Trade(): ReactElement {
           </div>
         </div>
 
-        <div className="flex flex-col overflow-hidden py-4">
+        <div className="h-[calc(100%_-_64px)] md:h-auto">
+          <PositionsTable market={market} />
+        </div>
+
+        {/* <div className="flex flex-col overflow-hidden py-4">
           <div className="flex w-full flex-wrap gap-2 py-2 px-8">
             <Button active={true} variant="Future" onClick={() => {}}>
               Open
@@ -114,7 +117,7 @@ export function Trade(): ReactElement {
               <OpenOrdersTable market={market} />
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Mobile only */}
