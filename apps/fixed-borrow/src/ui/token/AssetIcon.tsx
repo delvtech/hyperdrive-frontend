@@ -23,6 +23,8 @@ export function AssetIcon({
         className={classNames({
           // 36px is equivalent to the h-9, w-9 img size below
           "text-[36px]": size === "lg",
+          // 24px is equivalent to the h-6, w-6 img size below
+          "text-[24px]": size === "md",
           "text-h6": size === "sm",
         })}
       >
