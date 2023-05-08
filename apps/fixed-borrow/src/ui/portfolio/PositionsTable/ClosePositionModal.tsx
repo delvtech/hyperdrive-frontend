@@ -1,6 +1,8 @@
 import { Dialog, Transition } from "@headlessui/react";
+import { InformationCircleIcon } from "@heroicons/react/24/outline";
 import { Fragment, ReactElement } from "react";
 import { Button } from "src/ui/base/Button/Button";
+import { InfoTooltip } from "src/ui/base/Tooltip/InfoTooltip";
 import { Well } from "src/ui/base/Well/Well";
 
 interface ClosePositionModalProps {
@@ -58,34 +60,36 @@ export function ClosePositionModal({
               </Dialog.Title>
               <div className="space-y-6">
                 <p className="text-h6 text-lightText">
-                  Debt that is covered by this position will automatically
-                  switch back to variable rate exposure when you close coverage
-                  or it expires.
+                  This position is currently locking in a fixed rate.
+                </p>
+                <p className="text-h6 text-lightText">
+                  By ending your fixed rate coverage, your interest exposure
+                  will automatically switch back to the current variable rate.
+                </p>
+                <p className="text-h6 text-lightText">
+                  Note: Your total debt will remain the same.
                 </p>
                 <Well>
                   <div className="flex flex-col gap-4 bg-midnight ">
                     <div className={"flex justify-between font-bold"}>
                       <span className=" text-h6 font-semibold uppercase text-secondaryText">
-                        Expiration
-                      </span>
-                      <span className=" text-h6 text-lightText">
-                        {"December 14, 2023"}
-                      </span>
-                    </div>
-                    <div className={"flex justify-between font-bold"}>
-                      <span className=" text-h6 font-semibold uppercase text-secondaryText">
-                        Coverage Amount
+                        Terminate coverage for
                       </span>
                       <span className=" text-h6 text-lightText">
                         {"23,00.23 DAI"}
                       </span>
                     </div>
                     <div className={"flex justify-between font-bold"}>
-                      <span className=" text-h6 font-semibold uppercase text-secondaryText">
-                        Fixed Rate
-                      </span>
+                      <div className="flex items-center gap-1 text-h6 font-semibold uppercase text-secondaryText">
+                        <span>Amount returned</span>{" "}
+                        <InformationCircleIcon
+                          title="The value of the Hyperdrive short, which acts as a guarantee for the fixed rate coverage, will be transfered to you upon closing coverage."
+                          width={18}
+                          className="stroke-current"
+                        />
+                      </div>
                       <span className=" text-h6 text-lightText">
-                        {"1.1% APY"}
+                        {"32.14 DAI"}
                       </span>
                     </div>
                   </div>
