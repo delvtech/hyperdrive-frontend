@@ -12,7 +12,7 @@ import BorrowPage from "src/ui/loans/BorrowPage/BorrowPage";
 import { WagmiConfig } from "wagmi";
 import { SkeletonTheme } from "react-loading-skeleton";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { PortfolioPage } from "src/ui/portfolio/PortfolioPage/PortfolioPage";
+import { FixedBorrowPage } from "src/ui/fixedborrow/FixedBorrowPage/FixedBorrowPage";
 import { AppHeader } from "src/ui/app/AppHeader";
 import Page from "src/ui/base/Page/Page";
 
@@ -30,13 +30,16 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
                 <Route
                   path="/"
                   element={
-                    <Page header={<AppHeader />} content={<BorrowPage />} />
+                    <Page
+                      header={<AppHeader />}
+                      content={<FixedBorrowPage />}
+                    />
                   }
                 />
                 <Route
-                  path="/portfolio"
+                  path="/graveyard"
                   element={
-                    <Page header={<AppHeader />} content={<PortfolioPage />} />
+                    <Page header={<AppHeader />} content={<BorrowPage />} />
                   }
                 />
               </Routes>

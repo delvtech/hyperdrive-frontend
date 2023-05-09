@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
-import { PositionsTable } from "src/ui/portfolio/PositionsTable/PositionsTable";
+import { PositionsTable } from "src/ui/fixedborrow/PositionsTable/PositionsTable";
 
-export function PortfolioPage(): ReactElement {
+export function FixedBorrowPage(): ReactElement {
   return (
     <div className="flex flex-col">
       <div className="space-y-2">
