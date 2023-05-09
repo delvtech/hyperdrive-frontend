@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { PositionsTable } from "src/ui/fixedborrow/PositionsTable/PositionsTable";
+import { CoverageTable } from "src/ui/fixedborrow/CoverageTable/CoverageTable";
 
 export function FixedBorrowPage(): ReactElement {
   return (
@@ -7,7 +7,7 @@ export function FixedBorrowPage(): ReactElement {
       <div className="space-y-2">
         <h4 className="font-bold text-white">Spark Borrows</h4>
         <div className="max-w-4xl">
-          <PositionsTable />
+          <CoverageTable />
         </div>
       </div>
     </div>
