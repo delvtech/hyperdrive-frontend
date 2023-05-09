@@ -7,7 +7,7 @@ import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { AssetIcon } from "src/ui/token/AssetIcon";
 import { DebtDetailsSection } from "./DebtDetailsSection";
 
-export function PositionsTable(): ReactElement {
+export function CoverageTable(): ReactElement {
   const { address: account } = useAccount();
   const { userLoans = [] } = useUserLoans(account);
 

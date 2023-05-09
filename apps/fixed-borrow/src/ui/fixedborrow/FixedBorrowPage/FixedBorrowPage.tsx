@@ -1,13 +1,13 @@
 import { ReactElement } from "react";
-import { PositionsTable } from "src/ui/portfolio/PositionsTable/PositionsTable";
+import { CoverageTable } from "src/ui/fixedborrow/CoverageTable/CoverageTable";
 
-export function PortfolioPage(): ReactElement {
+export function FixedBorrowPage(): ReactElement {
   return (
     <div className="flex flex-col">
       <div className="space-y-2">
         <h4 className="font-bold text-white">Spark Borrows</h4>
         <div className="max-w-4xl">
-          <PositionsTable />
+          <CoverageTable />
         </div>
       </div>
     </div>
