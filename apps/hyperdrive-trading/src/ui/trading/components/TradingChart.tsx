@@ -8,6 +8,7 @@ interface TradingChartProps {
 }
 
 export function TradingChart({ market }: TradingChartProps): ReactElement {
+  // used to prevent page crash from vite hot-reloading
   const [isChartRendered, setIsChartRendered] = useState(false);
   const { data: volumeData } = useHistoricalVolume(market);
   const chart = useRef<IChartApi | undefined>(undefined);
