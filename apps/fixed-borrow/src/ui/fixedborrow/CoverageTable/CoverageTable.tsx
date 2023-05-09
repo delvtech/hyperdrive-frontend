@@ -73,13 +73,13 @@ export function CoverageTable(): ReactElement {
             <AmountCell
               key="totalDebt"
               amount={borrowedAmount}
-              secondaryText="$2,302.13"
+              secondaryText="$4,602.13"
               tokenAddress={borrowTokenAddress}
             />,
             <AmountCell
               key="fixedRateDebt"
-              amount={borrowedAmount}
-              secondaryText="1.5% APY"
+              amount={0n}
+              secondaryText="-"
               tokenAddress={borrowTokenAddress}
             />,
             <AmountCell
