@@ -4,7 +4,7 @@ import { Button } from "src/ui/base/Button/Button";
 import { Card } from "src/ui/base/Card/Card";
 import { InfoTooltip } from "src/ui/base/Tooltip/InfoTooltip";
 import { BorrowInput } from "src/ui/loans/BorrowInput/BorrowInput";
-import { LoanCardHeader } from "src/ui/loans/LoanCard/LoanCardHeader";
+import { LoanCardHeader } from "src/ui/graveyard/LoanCard/LoanCardHeader";
 import { SupplyInput } from "src/ui/loans/SupplyInput/SupplyInput";
 import { TermLength } from "src/ui/shorts/termLength";
 import { PositionPreview } from "src/ui/loans/previews/PositionPreview";

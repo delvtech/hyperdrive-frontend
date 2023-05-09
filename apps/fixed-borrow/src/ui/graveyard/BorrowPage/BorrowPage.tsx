@@ -2,7 +2,7 @@ import { SparkGoerliAddresses } from "@hyperdrive/spark";
 import { ReactElement } from "react";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { HyperdriveGoerliAddresses } from "@hyperdrive/core";
-import { LoanCard } from "src/ui/loans/LoanCard/LoanCard";
+import { LoanCard } from "src/ui/graveyard/LoanCard/LoanCard";
 import { formatBigInt } from "src/base/bigint/formatBigInt";
 
 console.log(SparkGoerliAddresses);

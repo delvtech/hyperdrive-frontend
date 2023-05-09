@@ -8,7 +8,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { queryClient } from "src/network/queryClient";
 import { chains, wagmiClient } from "src/network/wagmiClient";
-import BorrowPage from "src/ui/loans/BorrowPage/BorrowPage";
+import BorrowPage from "src/ui/graveyard/BorrowPage/BorrowPage";
 import { WagmiConfig } from "wagmi";
 import { SkeletonTheme } from "react-loading-skeleton";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
