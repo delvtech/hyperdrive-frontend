@@ -2,7 +2,6 @@ import { Disclosure, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import classNames from "classnames";
 import { PropsWithChildren, ReactElement } from "react";
-import { Card } from "src/ui/base/Card/Card";
 
 export function InfoDisclosure({
   heading,

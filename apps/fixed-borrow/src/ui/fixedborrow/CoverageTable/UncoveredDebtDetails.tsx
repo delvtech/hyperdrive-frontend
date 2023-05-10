@@ -1,11 +1,6 @@
-import { SortableGridTable } from "src/ui/base/tables/SortableGridTable";
-import { ShortActionsMenu } from "./DebtDetailsSection";
 import { ReactElement } from "react";
 import { Well } from "src/ui/base/Well/Well";
-import {
-  ExclamationCircleIcon,
-  InformationCircleIcon,
-} from "@heroicons/react/24/outline";
+import { InformationCircleIcon } from "@heroicons/react/24/outline";
 import { Button } from "src/ui/base/Button/Button";
 
 export function UncoveredDebtDetails(): ReactElement {
