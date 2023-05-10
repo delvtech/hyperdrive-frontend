@@ -11,14 +11,6 @@ export function AppHeader({}: AppHeaderProps): ReactElement {
     <div className="flex h-16 items-center justify-between gap-2 p-4">
       <h4 className="shrink-0 font-bold text-white">Fixed Borrow Demo</h4>
       <div className="flex shrink-0 items-center gap-2">
-        <MintButton
-          tokenAddress={SparkGoerliAddresses.wstETH_token}
-          amount={parseBigInt("100", 18)}
-        />
-        <MintButton
-          tokenAddress={SparkGoerliAddresses.DAI_token}
-          amount={parseBigInt("10000", 18)}
-        />
         <ConnectButton showBalance={false} />
       </div>
     </div>

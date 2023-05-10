@@ -14,7 +14,7 @@ export function StatWell({
   onClick,
 }: StatWellProps): ReactElement {
   return (
-    <Well interactive={!!onClick}>
+    <Well interactive={!!onClick} onClick={onClick}>
       <div className="flex flex-col items-center text-center">
         <span className="font-bold uppercase text-secondaryText">{label}</span>
         <span className="text-h6 font-bold text-lightText">{stat}</span>

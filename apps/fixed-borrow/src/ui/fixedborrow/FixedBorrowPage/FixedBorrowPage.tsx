@@ -1,6 +1,9 @@
+import { SparkGoerliAddresses } from "@hyperdrive/spark";
 import { ReactElement } from "react";
+import { parseBigInt } from "src/base/bigint/parseBigInt";
 import { InfoDisclosure } from "src/ui/base/InfoDisclosure/InfoDisclosure";
 import { StatWell } from "src/ui/base/StatWell/StatWell";
+import { MintStatWell } from "src/ui/faucet/MintStatWell";
 import { CoverageTable } from "src/ui/fixedborrow/CoverageTable/CoverageTable";
 
 export function FixedBorrowPage(): ReactElement {
@@ -10,32 +13,7 @@ export function FixedBorrowPage(): ReactElement {
         <div className="flex max-w-4xl flex-col gap-28">
           <div className="flex flex-col gap-2">
             <h4 className="font-bold text-white">Quick start</h4>
-            <span className="mb-2 text-h6 text-secondaryText">
-              After <strong>Step 2</strong>, you will be able to open fixed rate
-              coverage in the <strong>Spark Borrows</strong> section below.
-            </span>
-            <div className="grid grid-cols-4 gap-4">
-              <StatWell
-                label={"Step 1"}
-                stat={"Mint Collateral"}
-                onClick={() => {}}
-              ></StatWell>
-              <StatWell
-                label={"Step 2"}
-                stat={"Borrow DAI on Spark"}
-                onClick={() => {}}
-              ></StatWell>
-              <StatWell
-                label={"Step 3"}
-                stat={"Repay DAI on Spark"}
-                onClick={() => {}}
-              ></StatWell>
-              <StatWell
-                label={"Just in case"}
-                stat={"Mint DAI"}
-                onClick={() => {}}
-              ></StatWell>
-            </div>
+            <QuickstartSection />
           </div>
           <div>
             <h4 className="mb-4 font-bold text-white">Spark Borrows</h4>
@@ -61,5 +39,40 @@ export function FixedBorrowPage(): ReactElement {
         </div>
       </div>
     </div>
+  );
+}
+
+function QuickstartSection() {
+  return (
+    <>
+      <span className="mb-2 text-h6 text-secondaryText">
+        After <strong>Step 2</strong>, you will be able to open fixed rate
+        coverage in the <strong>Spark Borrows</strong> section below.
+      </span>
+      <div className="grid grid-cols-4 gap-4">
+        <MintStatWell
+          tokenAddress={SparkGoerliAddresses.wstETH_token}
+          amount={parseBigInt("100", 18)}
+          label={"Step 1"}
+          stat={"Mint Collateral"}
+        />
+        <StatWell
+          label={"Step 2"}
+          stat={"Borrow DAI on Spark"}
+          onClick={() => {}}
+        ></StatWell>
+        <StatWell
+          label={"Step 3"}
+          stat={"Repay DAI on Spark"}
+          onClick={() => {}}
+        ></StatWell>
+        <MintStatWell
+          tokenAddress={SparkGoerliAddresses.DAI_token}
+          amount={parseBigInt("10000", 18)}
+          label={"Just in case"}
+          stat={"Mint DAI"}
+        />
+      </div>
+    </>
   );
 }
