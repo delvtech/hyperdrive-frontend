@@ -2,22 +2,24 @@ import { DSTokenABI } from "@hyperdrive/spark";
 import { BigNumber } from "ethers";
 import { Address, useContractWrite, usePrepareContractWrite } from "wagmi";
 
-interface UseTokenApprovalOptions {
+interface UseTokenApproveOptions {
   tokenAddress: Address;
   spender: Address;
-  amount: BigNumber;
+  amount: bigint | undefined;
 }
 
-export function useTokenApproval({
+export function useTokenApprove({
   tokenAddress,
   spender,
   amount,
-}: UseTokenApprovalOptions): { approve: (() => void) | undefined } {
+}: UseTokenApproveOptions): { approve: (() => void) | undefined } {
+  const approveEnabled = amount !== undefined;
   const { config: approveConfig } = usePrepareContractWrite({
     address: tokenAddress,
     abi: DSTokenABI, // tokens are a DSToken on goerli, see: https://github.com/dapphub/ds-token
     functionName: "approve",
-    args: [spender, amount],
+    enabled: approveEnabled,
+    args: approveEnabled ? [spender, BigNumber.from(amount)] : undefined,
   });
   const { write: approve } = useContractWrite(approveConfig);
   return { approve };

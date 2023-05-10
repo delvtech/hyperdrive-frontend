@@ -5,6 +5,8 @@ import { InfoDisclosure } from "src/ui/base/InfoDisclosure/InfoDisclosure";
 import { StatWell } from "src/ui/base/StatWell/StatWell";
 import { MintStatWell } from "src/ui/faucet/MintStatWell";
 import { CoverageTable } from "src/ui/fixedborrow/CoverageTable/CoverageTable";
+import { BorrowStatWell } from "src/ui/loans/BorrowStatWell/BorrowStatWell";
+import { SupplyStatWell } from "src/ui/loans/SupplyStatWell/SupplyStatWell";
 
 export function FixedBorrowPage(): ReactElement {
   return (
@@ -54,13 +56,20 @@ function QuickstartSection() {
           tokenAddress={SparkGoerliAddresses.wstETH_token}
           amount={parseBigInt("100", 18)}
           label={"Step 1"}
-          stat={"Mint Collateral"}
+          stat={"Mint Collateral wstETH"}
         />
-        <StatWell
+        <SupplyStatWell
+          label={"Step 2"}
+          stat={"Supply Collateral on Spark"}
+          tokenAddress={SparkGoerliAddresses.wstETH_token}
+          amount={parseBigInt("10", 18)}
+        />
+        <BorrowStatWell
           label={"Step 2"}
           stat={"Borrow DAI on Spark"}
-          onClick={() => {}}
-        ></StatWell>
+          tokenAddress={SparkGoerliAddresses.DAI_token}
+          amount={parseBigInt("10", 18)}
+        />
         <StatWell
           label={"Step 3"}
           stat={"Repay DAI on Spark"}

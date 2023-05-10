@@ -4,7 +4,7 @@ import { Address, useContractWrite, usePrepareContractWrite } from "wagmi";
 
 export function useSupplyCollateral(
   token: Address,
-  amount: BigNumber,
+  amount: bigint,
   onBehalfOf: Address | undefined,
 ): {
   supply: (() => void) | undefined;
@@ -17,7 +17,7 @@ export function useSupplyCollateral(
     enabled: !!onBehalfOf,
     args: [
       token,
-      amount,
+      BigNumber.from(amount),
       onBehalfOf as Address, // safe to cast because enabled is set
       0, // an optional referral code, 0 for now
     ],
