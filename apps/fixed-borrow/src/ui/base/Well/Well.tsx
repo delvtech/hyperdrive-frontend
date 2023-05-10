@@ -1,10 +1,21 @@
+import classNames from "classnames";
 import { PropsWithChildren, ReactElement } from "react";
 
-interface WellProps {}
+interface WellProps {
+  interactive?: boolean;
+}
 
-export function Well({ children }: PropsWithChildren<WellProps>): ReactElement {
+export function Well({
+  interactive,
+  children,
+}: PropsWithChildren<WellProps>): ReactElement {
   return (
-    <div className="rounded-lg bg-midnight p-4 ring-1 ring-dawnAccent">
+    <div
+      className={classNames(
+        "rounded-lg bg-midnight p-4 ring-1 ring-dawnAccent",
+        { "hover:cursor-pointer hover:bg-inputBg": interactive },
+      )}
+    >
       {children}
     </div>
   );

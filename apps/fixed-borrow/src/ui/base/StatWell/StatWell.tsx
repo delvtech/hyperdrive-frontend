@@ -4,14 +4,20 @@ import { Well } from "src/ui/base/Well/Well";
 interface StatWellProps {
   label: string;
   stat: string;
+
+  onClick?: () => void;
 }
 
-export function StatWell({ label, stat }: StatWellProps): ReactElement {
+export function StatWell({
+  label,
+  stat,
+  onClick,
+}: StatWellProps): ReactElement {
   return (
-    <Well>
+    <Well interactive={!!onClick}>
       <div className="flex flex-col items-center text-center">
         <span className="font-bold uppercase text-secondaryText">{label}</span>
-        <span className="text-h4 text-white">{stat}</span>
+        <span className="text-h6 font-bold text-lightText">{stat}</span>
       </div>
     </Well>
   );
