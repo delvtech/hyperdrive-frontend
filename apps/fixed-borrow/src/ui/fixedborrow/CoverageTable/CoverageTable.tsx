@@ -6,6 +6,7 @@ import { formatBigInt } from "src/base/bigint/formatBigInt";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { AssetIcon } from "src/ui/token/AssetIcon";
 import { DebtDetailsSection } from "./DebtDetailsSection";
+import { ChevronDownIcon } from "@heroicons/react/24/outline";
 
 export function CoverageTable(): ReactElement {
   const { address: account } = useAccount();
@@ -100,9 +101,9 @@ function ExpandIconCell(): ReactElement {
   return (
     <div className="flex h-full shrink-0 items-center justify-center">
       <div>
-        <img
-          src="/caret-down.svg"
-          className="transition duration-300 ui-open:rotate-0 ui-not-open:-rotate-90"
+        <ChevronDownIcon
+          width={24}
+          className="text-secondaryText transition duration-500 ui-open:rotate-180"
         />
       </div>
     </div>
