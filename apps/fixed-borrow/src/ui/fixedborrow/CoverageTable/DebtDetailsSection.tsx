@@ -15,7 +15,7 @@ export function DebtDetailsSection(): ReactElement {
       <Tabs
         tabs={[
           {
-            label: "Debt Coverage",
+            label: "Existing Coverage",
             variant: "sun",
           },
           {
