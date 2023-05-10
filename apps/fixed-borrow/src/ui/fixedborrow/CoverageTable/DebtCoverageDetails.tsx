@@ -64,7 +64,7 @@ export function DebtCoverageDetails(): ReactElement {
                   December 14, 2024
                 </span>,
                 <span key="amount" className="text-lightText">
-                  92,353.27 DAI
+                  13.27 DAI
                 </span>,
                 <span key="fixedRate" className="text-lightText">
                   1.25%

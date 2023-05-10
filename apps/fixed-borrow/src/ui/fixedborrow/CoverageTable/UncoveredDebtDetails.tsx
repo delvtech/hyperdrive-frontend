@@ -16,8 +16,8 @@ export function UncoveredDebtDetails(): ReactElement {
           Your DAI debt is currently exposed to variable rate interest.
         </p>
         <p className="text-h6 text-lightText">
-          In order to convert this into a fixed interest rate, you can make use
-          of the{" "}
+          By opening coverage below, you will “convert” this into a fixed
+          interest rate through the use of the{" "}
           <a
             href="#"
             className="font-semibold underline underline-offset-4 hover:no-underline"
@@ -25,11 +25,8 @@ export function UncoveredDebtDetails(): ReactElement {
             Hyperdrive protocol
           </a>
           , which allows you to hedge against any fluctuations in the variable
-          rate.
-        </p>
-        <p className="text-h6 text-lightText">
-          Note: Your total debt will not change, and you have the option to
-          terminate your coverage at any time.
+          rate. , which allows you to hedge against any fluctuations in the
+          variable rate.
         </p>
         <Well>
           <div className="flex flex-col gap-4 bg-midnight ">
@@ -51,7 +48,7 @@ export function UncoveredDebtDetails(): ReactElement {
               <span className=" text-h6 font-semibold uppercase text-secondaryText">
                 Fixed Rate
               </span>
-              <span className=" text-h6 text-lightText">{"1.5%"}</span>
+              <span className="text-h6 text-lightText">{"1.5% APY"}</span>
             </div>
             <div className={"flex justify-between font-bold"}>
               <div className="flex items-center gap-1 text-h6 font-bold uppercase text-secondaryText">
