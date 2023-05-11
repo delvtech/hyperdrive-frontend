@@ -1,26 +1,25 @@
 import { SparkGoerliAddresses, FaucetABI } from "@hyperdrive/spark";
 import { BigNumber } from "ethers";
 import { ReactElement } from "react";
-import { StatWell } from "src/ui/base/StatWell/StatWell";
+import { Button } from "src/ui/base/Button/Button";
+import { Well } from "src/ui/base/Well/Well";
 import {
   useAccount,
   usePrepareContractWrite,
   useContractWrite,
+  useToken,
   Address,
 } from "wagmi";
 
-export function MintStatWell({
+export function QuickStartMintButton({
   tokenAddress,
   amount,
-  label,
-  stat,
 }: {
   tokenAddress: Address;
   amount: bigint;
-  label: string;
-  stat: string;
 }): ReactElement {
   const { address: account } = useAccount();
+  const { data: token } = useToken({ address: tokenAddress });
   const { config: mintConfig } = usePrepareContractWrite({
     address: SparkGoerliAddresses.faucet,
     abi: FaucetABI,
@@ -29,10 +28,8 @@ export function MintStatWell({
   });
   const { write: mintTokens } = useContractWrite(mintConfig);
   return (
-    <StatWell
-      label={label}
-      stat={stat}
-      onClick={mintTokens ? () => mintTokens() : undefined}
-    />
+    <Well disabled={!mintTokens} onClick={() => mintTokens?.()}>
+      <span className="text-lightText">Mint {token?.symbol}</span>
+    </Well>
   );
 }
