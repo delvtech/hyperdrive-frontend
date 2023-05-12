@@ -26,7 +26,7 @@ export function InfoDisclosure({
         leaveTo="opacity-0 -translate-y-2"
       >
         <Disclosure.Panel className="last:rounded-b-lg ">
-          <div className="rounded-b-lg border-b border-b-dawn p-8 text-h6  text-lightText">
+          <div className="rounded-b-lg border-b border-b-dawn p-8 text-h6 text-lightText">
             {children}
           </div>
         </Disclosure.Panel>

@@ -1,9 +1,7 @@
 import { SparkGoerliAddresses, FaucetABI } from "@hyperdrive/spark";
 import { BigNumber } from "ethers";
 import { ReactElement } from "react";
-import { parseBigInt } from "src/base/bigint/parseBigInt";
-import { StatWell } from "src/ui/base/StatWell/StatWell";
-import { ApproveAllowanceButton } from "src/ui/token/ApproveAllowanceButton";
+import { Well } from "src/ui/base/Well/Well";
 import {
   useAccount,
   usePrepareContractWrite,
@@ -11,16 +9,16 @@ import {
   Address,
 } from "wagmi";
 
-export function BorrowStatWell({
+export function MintQuickStartButton({
   tokenAddress,
   amount,
   label,
-  stat,
+  description,
 }: {
   tokenAddress: Address;
   amount: bigint;
   label: string;
-  stat: string;
+  description: string;
 }): ReactElement {
   const { address: account } = useAccount();
   const { config: mintConfig } = usePrepareContractWrite({
@@ -31,17 +29,11 @@ export function BorrowStatWell({
   });
   const { write: mintTokens } = useContractWrite(mintConfig);
   return (
-    <div>
-      <StatWell
-        label={label}
-        stat={stat}
-        onClick={mintTokens ? () => mintTokens() : undefined}
-      />
-      <ApproveAllowanceButton
-        tokenAddress={SparkGoerliAddresses.DAI_token}
-        amount={parseBigInt("1000", 18)}
-        spender={SparkGoerliAddresses.pool}
-      />
-    </div>
+    <Well block onClick={() => mintTokens?.()}>
+      <div className="flex items-center justify-between">
+        <span className="font-bold uppercase text-secondaryText">{label}</span>
+        <span className="text-h6 text-lightText">{description}</span>
+      </div>
+    </Well>
   );
 }

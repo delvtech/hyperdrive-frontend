@@ -1,11 +1,12 @@
 import { SparkGoerliAddresses } from "@hyperdrive/spark";
 import { ReactElement } from "react";
 import { StatWell } from "src/ui/base/StatWell/StatWell";
+import { Well } from "src/ui/base/Well/Well";
 import { useSupplyCollateral } from "src/ui/loans/hooks/useSupplyCollateral";
 import { ApproveAllowanceButton } from "src/ui/token/ApproveAllowanceButton";
 import { useAccount, Address, useBalance } from "wagmi";
 
-export function SupplyStatWell({
+export function SupplyQuickStartButton({
   tokenAddress,
   amount,
   label,
@@ -26,18 +27,22 @@ export function SupplyStatWell({
     <div className="flex w-full flex-col gap-2">
       {/* The action contract must be able to spend your collateral in order to
       deposit it into Spark on your behalf */}
-      {amount ? (
+      {/* TODO: Make this a modal */}
+      {/* {amount ? (
         <ApproveAllowanceButton
           tokenAddress={tokenAddress}
           amount={balanceOf?.value.toBigInt()}
           spender={SparkGoerliAddresses.pool}
         />
-      ) : null}
-      <StatWell
-        label={label}
-        stat={stat}
-        onClick={supply ? () => supply() : undefined}
-      />
+      ) : null} */}
+      <Well block onClick={() => supply?.()}>
+        <div className="flex items-center justify-between">
+          <span className="font-bold uppercase text-secondaryText">
+            {label}
+          </span>
+          <span className="text-h6 text-lightText">{stat}</span>
+        </div>
+      </Well>
     </div>
   );
 }

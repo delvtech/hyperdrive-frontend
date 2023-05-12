@@ -14,10 +14,10 @@ export function StatWell({
   onClick,
 }: StatWellProps): ReactElement {
   return (
-    <Well interactive={!!onClick} onClick={onClick}>
-      <div className="flex flex-col items-center text-center">
+    <Well block onClick={() => {}}>
+      <div className="flex items-center justify-between">
         <span className="font-bold uppercase text-secondaryText">{label}</span>
-        <span className="text-h6 font-bold text-lightText">{stat}</span>
+        <span className="text-h6 text-lightText">{stat}</span>
       </div>
     </Well>
   );

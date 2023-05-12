@@ -41,7 +41,7 @@ export function ApproveAllowanceButton({
 
   return (
     <StatWell
-      label="Step 2a:"
+      label="Pre-step"
       stat={`Approve ${token?.symbol}`}
       onClick={() => approve?.()}
     />
