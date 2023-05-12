@@ -1,7 +1,7 @@
 import { getDefaultWallets } from "@rainbow-me/rainbowkit";
-import { configureChains, createClient, goerli } from "wagmi";
+import { goerli } from "@wagmi/chains";
+import { configureChains, createConfig } from "wagmi";
 import { alchemyProvider } from "wagmi/providers/alchemy";
-import { publicProvider } from "wagmi/providers/public";
 
 const ALCHEMY_GOERLI_RPC_KEY = import.meta.env.VITE_ALCHEMY_GOERLI_RPC_KEY;
 
@@ -9,18 +9,26 @@ if (!ALCHEMY_GOERLI_RPC_KEY) {
   throw new Error("Provide an ALCHEMY_GOERLI_RPC_KEY variable in .env");
 }
 
-export const { chains, provider } = configureChains(
+// export const { chains, publicClient, webSocketPublicClient } = configureChains(
+//   [goerli],
+//   [alchemyProvider({ apiKey: ALCHEMY_GOERLI_RPC_KEY })],
+// );
+
+const { chains, publicClient, webSocketPublicClient } = configureChains(
   [goerli],
-  [alchemyProvider({ apiKey: ALCHEMY_GOERLI_RPC_KEY }), publicProvider()],
+  [alchemyProvider({ apiKey: ALCHEMY_GOERLI_RPC_KEY })],
 );
+
+export const wagmiChains = chains;
 
 const { connectors } = getDefaultWallets({
   appName: "Hyperdrive Prototype UI",
   chains,
 });
 
-export const wagmiClient = createClient({
+export const wagmiConfig = createConfig({
   autoConnect: true,
   connectors,
-  provider,
+  publicClient,
+  webSocketPublicClient,
 });
