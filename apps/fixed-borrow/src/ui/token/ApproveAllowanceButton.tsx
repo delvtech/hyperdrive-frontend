@@ -27,7 +27,6 @@ export function ApproveAllowanceButton({
     spender,
   );
 
-  console.log("allowance", amount, allowance);
   // don't show the button if there's no amount given, or we're waiting on the
   // allowance result
   if (!amount || allowanceStatus === "loading") {

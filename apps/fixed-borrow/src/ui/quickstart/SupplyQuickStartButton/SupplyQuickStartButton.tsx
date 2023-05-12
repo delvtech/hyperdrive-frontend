@@ -24,25 +24,11 @@ export function SupplyQuickStartButton({
   });
   const { supply } = useSupplyCollateral(tokenAddress, amount, account);
   return (
-    <div className="flex w-full flex-col gap-2">
-      {/* The action contract must be able to spend your collateral in order to
-      deposit it into Spark on your behalf */}
-      {/* TODO: Make this a modal */}
-      {/* {amount ? (
-        <ApproveAllowanceButton
-          tokenAddress={tokenAddress}
-          amount={balanceOf?.value.toBigInt()}
-          spender={SparkGoerliAddresses.pool}
-        />
-      ) : null} */}
-      <Well block onClick={() => supply?.()}>
-        <div className="flex items-center justify-between">
-          <span className="font-bold uppercase text-secondaryText">
-            {label}
-          </span>
-          <span className="text-h6 text-lightText">{stat}</span>
-        </div>
-      </Well>
-    </div>
+    <Well block onClick={() => supply?.()}>
+      <div className="flex items-center justify-between">
+        <span className="font-bold uppercase text-secondaryText">{label}</span>
+        <span className="text-h6 text-lightText">{stat}</span>
+      </div>
+    </Well>
   );
 }
