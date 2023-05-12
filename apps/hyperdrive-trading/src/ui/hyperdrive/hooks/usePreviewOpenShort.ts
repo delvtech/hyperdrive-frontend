@@ -1,9 +1,7 @@
-import { BigNumber } from "@ethersproject/bignumber";
-import { HyperdriveABI } from "@hyperdrive/core";
 import { useQuery } from "react-query";
 import { HyperdriveMarket } from "src/config/HyperdriveConfig";
 import { QueryStatusType } from "src/ui/base/types";
-import { Address, useContract, useSigner } from "wagmi";
+import { Address } from "wagmi";
 
 interface UsePreviewOpenShortOptions {
   market: HyperdriveMarket;
@@ -27,23 +25,21 @@ export function usePreviewOpenShort({
   asUnderlying = true,
   enabled = true,
 }: UsePreviewOpenShortOptions): UsePreviewOpenShortResult {
-  // There is no callStatic wagmi hook, so we gotta call the contract directly,
-  // see: https://github.com/wagmi-dev/wagmi/discussions/1571
-  const { data: signer } = useSigner();
+  // const { data: signer } = useSigner();
 
-  const hyperdriveContract = useContract({
-    abi: HyperdriveABI,
-    address: market.address,
-    // In order for callStatic to work, you need a signer still, and enough
-    // allowance to compute the preview.
-    signerOrProvider: signer,
-  });
+  // const hyperdriveContract = useContract({
+  //   abi: HyperdriveABI,
+  //   address: market.address,
+  //   // In order for callStatic to work, you need a signer still, and enough
+  //   // allowance to compute the preview.
+  //   signerOrProvider: signer,
+  // });
 
   const queryEnabled =
     !!amountBondShorts &&
     !!maxBaseAmountIn &&
     !!destination &&
-    !!hyperdriveContract &&
+    // !!hyperdriveContract &&
     enabled;
 
   const { data, status } = useQuery({
@@ -57,14 +53,16 @@ export function usePreviewOpenShort({
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? async () => {
-          const openShortResult =
-            (await hyperdriveContract.callStatic.openShort(
-              BigNumber.from(amountBondShorts),
-              BigNumber.from(maxBaseAmountIn),
-              destination,
-              asUnderlying,
-            )) as unknown as BigNumber;
-          return openShortResult.toBigInt();
+          // const openShortResult =
+          //   (await hyperdriveContract.callStatic.openShort(
+          //     BigNumber.from(amountBondShorts),
+          //     BigNumber.from(maxBaseAmountIn),
+          //     destination,
+          //     asUnderlying,
+          //   )) as unknown as BigNumber;
+          // return openShortResult.toBigInt();
+
+          return 0n;
         }
       : undefined,
   });

@@ -1,10 +1,7 @@
-import { BigNumber } from "@ethersproject/bignumber";
-import { HyperdriveABI } from "@hyperdrive/core";
 import { useQuery } from "react-query";
 import { HyperdriveMarket } from "src/config/HyperdriveConfig";
 import { QueryStatusType } from "src/ui/base/types";
-import { getAssetTimestampFromTokenId } from "src/ui/hyperdrive/utils";
-import { Address, useContract, useSigner } from "wagmi";
+import { Address } from "wagmi";
 
 interface UsePreviewCloseShortOptions {
   market: HyperdriveMarket;
@@ -30,20 +27,14 @@ export function usePreviewCloseShort({
   asUnderlying = true,
   enabled = true,
 }: UsePreviewCloseShortOptions): UsePreviewCloseShortResult {
-  const { data: signer } = useSigner();
-
-  const hyperdriveContract = useContract({
-    abi: HyperdriveABI,
-    address: market.address,
-    signerOrProvider: signer,
-  });
+  // const { data: signer } = useSigner();
 
   const queryEnabled =
     !!tokenID &&
     !!shortAmountIn &&
     !!minBaseAmountOut &&
     !!destination &&
-    !!hyperdriveContract &&
+    // !!hyperdriveContract &&
     enabled;
 
   const { data, status } = useQuery({
@@ -57,15 +48,17 @@ export function usePreviewCloseShort({
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? async () => {
-          const closeShortResult =
-            (await hyperdriveContract.callStatic.closeShort(
-              BigNumber.from(getAssetTimestampFromTokenId(tokenID)),
-              BigNumber.from(shortAmountIn),
-              BigNumber.from(minBaseAmountOut),
-              destination,
-              asUnderlying,
-            )) as unknown as BigNumber;
-          return closeShortResult.toBigInt();
+          // const closeShortResult =
+          //   (await hyperdriveContract.callStatic.closeShort(
+          //     BigNumber.from(getAssetTimestampFromTokenId(tokenID)),
+          //     BigNumber.from(shortAmountIn),
+          //     BigNumber.from(minBaseAmountOut),
+          //     destination,
+          //     asUnderlying,
+          //   )) as unknown as BigNumber;
+          // return closeShortResult.toBigInt();
+
+          return 0n;
         }
       : undefined,
   });

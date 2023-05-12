@@ -1,9 +1,7 @@
-import { BigNumber } from "@ethersproject/bignumber";
-import { HyperdriveABI } from "@hyperdrive/core";
 import { useQuery } from "react-query";
 import { HyperdriveMarket } from "src/config/HyperdriveConfig";
 import { QueryStatusType } from "src/ui/base/types";
-import { Address, useContract, useSigner } from "wagmi";
+import { Address } from "wagmi";
 
 interface UsePreviewCloseLongOptions {
   market: HyperdriveMarket;
@@ -29,19 +27,19 @@ export function usePreviewCloseLong({
   asUnderlying = true,
   enabled = true,
 }: UsePreviewCloseLongOptions): UsePreviewCloseLongResult {
-  const { data: signer } = useSigner();
+  // const { data: signer } = useSigner();
 
-  const hyperdriveContract = useContract({
-    abi: HyperdriveABI,
-    address: market.address,
-    signerOrProvider: signer,
-  });
+  // const hyperdriveContract = useContract({
+  //   abi: HyperdriveABI,
+  //   address: market.address,
+  //   signerOrProvider: signer,
+  // });
 
   const queryEnabled =
     !!bondAmountIn &&
     !!minBaseAmountOut &&
     !!destination &&
-    !!hyperdriveContract &&
+    // !!hyperdriveContract &&
     enabled;
 
   const { data, status } = useQuery({
@@ -56,14 +54,16 @@ export function usePreviewCloseLong({
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? async () => {
-          const openLongResult = (await hyperdriveContract.callStatic.closeLong(
-            BigNumber.from(tokenID),
-            BigNumber.from(bondAmountIn),
-            BigNumber.from(minBaseAmountOut),
-            destination,
-            asUnderlying,
-          )) as unknown as BigNumber;
-          return openLongResult.toBigInt();
+          // const openLongResult = (await hyperdriveContract.callStatic.closeLong(
+          //   BigNumber.from(tokenID),
+          //   BigNumber.from(bondAmountIn),
+          //   BigNumber.from(minBaseAmountOut),
+          //   destination,
+          //   asUnderlying,
+          // )) as unknown as BigNumber;
+          // return openLongResult.toBigInt();
+
+          return 0n;
         }
       : undefined,
   });
