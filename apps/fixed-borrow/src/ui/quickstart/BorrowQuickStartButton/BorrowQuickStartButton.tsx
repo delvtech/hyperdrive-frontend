@@ -1,18 +1,19 @@
 import { ReactElement } from "react";
 import { Well } from "src/ui/base/Well/Well";
+import { useAccount, Address } from "wagmi";
 
-interface StatWellProps {
-  label: string;
-  stat: string;
-
-  onClick?: () => void;
-}
-
-export function StatWell({
+export function BorrowQuickStartButton({
+  tokenAddress,
+  amount,
   label,
   stat,
-  onClick,
-}: StatWellProps): ReactElement {
+}: {
+  tokenAddress: Address;
+  amount: bigint;
+  label: string;
+  stat: string;
+}): ReactElement {
+  const { address: account } = useAccount();
   return (
     <Well block onClick={() => {}}>
       <div className="flex items-center justify-between">

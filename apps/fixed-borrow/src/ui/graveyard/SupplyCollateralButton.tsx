@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import { BigNumber } from "ethers";
 import { ReactElement } from "react";
+import { parseBigInt } from "src/base/bigint/parseBigInt";
 import { useSupplyCollateral } from "src/ui/loans/hooks/useSupplyCollateral";
 import { Address, useAccount, useToken } from "wagmi";
 
@@ -15,7 +16,7 @@ export function SupplyCollateralButton({
   const { data: token } = useToken({ address: collateralTokenAddress });
   const { supply, status } = useSupplyCollateral(
     collateralTokenAddress,
-    amount,
+    amount.toBigInt(),
     account,
   );
   return (
