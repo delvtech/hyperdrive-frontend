@@ -1,5 +1,4 @@
 import { HyperdriveABI } from "@hyperdrive/core";
-import { BigNumber } from "ethers";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { useQueryClient } from "react-query";
@@ -53,15 +52,10 @@ export function useOpenLong({
     functionName: "openLong",
     enabled: queryEnabled,
     args: queryEnabled
-      ? [
-          BigNumber.from(baseAmount),
-          BigNumber.from(bondAmountOut),
-          destination,
-          asUnderlying,
-        ]
+      ? [baseAmount, bondAmountOut, destination, asUnderlying]
       : undefined,
     // TODO: better gas optimization
-    overrides: { gasLimit: BigNumber.from(500_000) },
+    // overrides: { gasLimit: BigNumber.from(500_000) },
   });
 
   const { status: txnStatus } = useWaitForTransaction({

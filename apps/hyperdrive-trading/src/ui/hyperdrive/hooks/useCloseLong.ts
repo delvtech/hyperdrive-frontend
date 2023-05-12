@@ -1,5 +1,4 @@
 import { HyperdriveABI } from "@hyperdrive/core";
-import { BigNumber } from "ethers";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { useQueryClient } from "react-query";
@@ -47,7 +46,11 @@ export function useCloseLong({
   const [hash, setHash] = useState<Address | undefined>(undefined);
 
   const queryEnabled =
-    !!bondAmountIn && !!minBaseAmountOut && !!destination && enabled;
+    !!tokenID &&
+    !!bondAmountIn &&
+    !!minBaseAmountOut &&
+    !!destination &&
+    enabled;
 
   const { config } = usePrepareContractWrite({
     abi: HyperdriveABI,
@@ -55,16 +58,10 @@ export function useCloseLong({
     functionName: "closeLong",
     enabled: queryEnabled,
     args: queryEnabled
-      ? [
-          BigNumber.from(tokenID),
-          BigNumber.from(bondAmountIn),
-          BigNumber.from(minBaseAmountOut),
-          destination,
-          asUnderlying,
-        ]
+      ? [tokenID, bondAmountIn, minBaseAmountOut, destination, asUnderlying]
       : undefined,
     // TODO better gas optimization
-    overrides: { gasLimit: BigNumber.from(500_000) },
+    // overrides: { gasLimit: BigNumber.from(500_000) },
   });
 
   const { status: txnStatus } = useWaitForTransaction({
