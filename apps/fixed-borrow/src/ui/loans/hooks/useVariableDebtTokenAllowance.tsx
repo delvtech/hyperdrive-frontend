@@ -20,5 +20,5 @@ export function useVariableDebtTokenAllowance({
     args: !!account ? [account, delegatee] : undefined,
   });
 
-  return { allowance: allowance?.toBigInt(), status };
+  return { allowance, status };
 }

@@ -1,6 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { BigNumber } from "ethers";
-import { Address, useContract, useSigner } from "wagmi";
+import { Address, useAccount, usePublicClient } from "wagmi";
 import { HyperdriveABI, HyperdriveGoerliAddresses } from "@hyperdrive/core";
 
 const makerDsrHyperdriveAddress =
@@ -24,21 +23,14 @@ export function useOpenShortPreview({
   openShortPreview: bigint | undefined;
   openShortPreviewStatus: "error" | "success" | "loading";
 } {
-  // There is no callStatic wagmi hook, so we gotta call the contract directly,
-  // see: https://github.com/wagmi-dev/wagmi/discussions/1571
-  const { data: signer } = useSigner();
+  const { address: account } = useAccount();
 
-  const makerDsrHyperdrive = useContract({
-    abi: HyperdriveABI,
-    address: hyperdrivePool,
-    // In order for callStatic to work, you need a signer still, and enough
-    // allowance to compute the preview. TODO: Find a way to calculate this
-    // client-side so users can experiment with any values they like.
-    signerOrProvider: signer,
-  });
+  // There is no callStatic wagmi hook, so we gotta call the publicClient
+  // directly, see: https://github.com/wagmi-dev/wagmi/discussions/1571
+  const publicClient = usePublicClient();
 
   const queryEnabled =
-    !!bondAmount && !!maxDeposit && !!destination && !!makerDsrHyperdrive;
+    !!bondAmount && !!maxDeposit && !!destination && !!account;
 
   const { data, status } = useQuery({
     queryKey: [
@@ -54,16 +46,17 @@ export function useOpenShortPreview({
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? async () => {
-          const openShortResult =
-            (await makerDsrHyperdrive.callStatic.openShort(
-              BigNumber.from(bondAmount),
-              BigNumber.from(maxDeposit),
-              destination,
-              asUnderlying,
-            )) as unknown as BigNumber;
-          return openShortResult.toBigInt();
+          const { result: short } = await publicClient.simulateContract({
+            abi: HyperdriveABI,
+            address: hyperdrivePool,
+            functionName: "openShort",
+            account,
+            args: [bondAmount, maxDeposit, destination, asUnderlying],
+          });
+          return short;
         }
       : undefined,
   });
+
   return { openShortPreview: data, openShortPreviewStatus: status };
 }

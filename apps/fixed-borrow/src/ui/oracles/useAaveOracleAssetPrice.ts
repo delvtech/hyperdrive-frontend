@@ -9,6 +9,5 @@ export function useAaveOracleAssetPrice(assetAddress: Address): {
     address: SparkGoerliAddresses.aaveOracle,
     functionName: "getAssetPrice",
     args: [assetAddress],
-    select: (price) => price.toBigInt(),
   });
 }

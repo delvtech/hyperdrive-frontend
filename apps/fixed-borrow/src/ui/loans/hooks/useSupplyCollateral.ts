@@ -1,5 +1,4 @@
 import { PoolABI, SparkGoerliAddresses } from "@hyperdrive/spark";
-import { BigNumber } from "ethers";
 import { Address, useContractWrite, usePrepareContractWrite } from "wagmi";
 
 export function useSupplyCollateral(
@@ -17,7 +16,7 @@ export function useSupplyCollateral(
     enabled: !!onBehalfOf,
     args: [
       token,
-      BigNumber.from(amount),
+      amount,
       onBehalfOf as Address, // safe to cast because enabled is set
       0, // an optional referral code, 0 for now
     ],

@@ -1,7 +1,4 @@
-import { BigNumber } from "ethers";
 import { ReactElement } from "react";
-import { formatBigInt } from "src/base/bigint/formatBigInt";
-import { Button } from "src/ui/base/Button/Button";
 import { StatWell } from "src/ui/base/StatWell/StatWell";
 import { useSpenderAllowance } from "src/ui/token/useSpenderAllowance";
 import { useTokenApprove } from "src/ui/token/useTokenApprove";

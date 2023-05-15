@@ -1,5 +1,4 @@
 import { SparkGoerliAddresses, FaucetABI } from "@hyperdrive/spark";
-import { BigNumber } from "ethers";
 import { ReactElement } from "react";
 import { Well } from "src/ui/base/Well/Well";
 import {
@@ -25,7 +24,7 @@ export function MintQuickStartButton({
     address: SparkGoerliAddresses.faucet,
     abi: FaucetABI,
     functionName: "mint",
-    args: [tokenAddress, account as Address, BigNumber.from(amount)],
+    args: [tokenAddress, account as Address, amount],
   });
   const { write: mintTokens } = useContractWrite(mintConfig);
   return (

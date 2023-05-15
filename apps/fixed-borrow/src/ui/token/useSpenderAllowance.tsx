@@ -1,5 +1,4 @@
 import { DSTokenABI } from "@hyperdrive/spark";
-import { BigNumber } from "ethers";
 import { Address, useAccount, useContractRead } from "wagmi";
 
 export function useSpenderAllowance(
@@ -17,5 +16,5 @@ export function useSpenderAllowance(
     enabled: !!account,
     args: [account as Address, spender],
   });
-  return { allowance: allowance?.toBigInt(), status };
+  return { allowance: allowance, status };
 }
