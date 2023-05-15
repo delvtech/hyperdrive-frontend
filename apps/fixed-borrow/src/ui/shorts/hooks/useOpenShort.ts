@@ -1,11 +1,10 @@
-import { BigNumber } from "ethers";
 import { Address, useContractWrite, usePrepareContractWrite } from "wagmi";
 import { HyperdriveABI } from "@hyperdrive/core";
 
 interface UseOpenShortOptions {
   hyperdrivePool: Address;
-  bondAmount: BigNumber | undefined;
-  maxDeposit: BigNumber | undefined;
+  bondAmount: bigint | undefined;
+  maxDeposit: bigint | undefined;
   destination: Address | undefined;
   asUnderlying?: boolean;
 }
@@ -32,7 +31,7 @@ export function useOpenShort({
     // The gas cost estimate is innacurate because openShort also deposits into
     // the DSR, which has a variable gas cost.
     // TODO: Get the estimateGas value then multiply it by some constant instead
-    overrides: { gasLimit: BigNumber.from(500_000) },
+    gas: 500_000n,
   });
 
   const { write: openShort, status } = useContractWrite(config);

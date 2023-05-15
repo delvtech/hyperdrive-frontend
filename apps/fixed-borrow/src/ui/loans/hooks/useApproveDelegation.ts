@@ -1,5 +1,4 @@
 import { VariableDebtTokenABI } from "@hyperdrive/spark";
-import { BigNumber } from "ethers";
 import { Address, useContractWrite, usePrepareContractWrite } from "wagmi";
 
 interface UseApproveDelegationOptions {
@@ -32,7 +31,7 @@ export function useApproveDelegation({
     abi: VariableDebtTokenABI,
     functionName: "approveDelegation",
     enabled: enabled,
-    args: enabled ? [delegatee, BigNumber.from(amount)] : undefined,
+    args: enabled ? [delegatee, amount] : undefined,
   });
 
   const { write: approveDelegation, status } = useContractWrite(

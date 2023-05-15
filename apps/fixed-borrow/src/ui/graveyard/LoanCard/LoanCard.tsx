@@ -9,7 +9,6 @@ import { SupplyInput } from "src/ui/loans/SupplyInput/SupplyInput";
 import { TermLength } from "src/ui/shorts/termLength";
 import { PositionPreview } from "src/ui/loans/previews/PositionPreview";
 import { TransactionPreview } from "src/ui/loans/previews/TransactionPreview";
-import { useSupplyBorrowAndOpenShort } from "src/ui/loans/hooks/useSupplyBorrowAndOpenShort";
 import { useToken } from "wagmi";
 import { useNumericInput } from "src/ui/base/NumericInput/useNumericInput";
 import { calculateValueToShort } from "src/shorts/calculateValueToShort";
@@ -61,14 +60,6 @@ export function LoanCard({
       ? calculateValueToShort(borrowAmountBigInt, borrowTokenMetadata.decimals)
       : undefined;
 
-  const { supplyBorrowAndOpenShort } = useSupplyBorrowAndOpenShort({
-    collateralToken: supplyTokenAddress,
-    borrowAmount: borrowAmountBigInt,
-    supplyAmount: supplyAmountBigInt,
-    bondAmount: bondAmount?.shortAmount,
-    maxDeposit: (bondAmount?.shortAmount || 0n) + MAX_DEPOSIT_BUFFER,
-  });
-
   return (
     <div className="flex flex-col items-center gap-6">
       <Card>
@@ -106,12 +97,7 @@ export function LoanCard({
                   </Button>
                 </div>
               </div>
-              <Button
-                size="lg"
-                variant="sun"
-                disabled={!supplyBorrowAndOpenShort}
-                onClick={() => supplyBorrowAndOpenShort?.()}
-              >
+              <Button size="lg" variant="sun" disabled onClick={() => {}}>
                 Borrow
               </Button>
             </div>

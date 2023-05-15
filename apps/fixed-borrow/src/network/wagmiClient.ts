@@ -39,8 +39,8 @@ const configuredChains = configureChains(
   ],
 );
 
-// Export this so it can be used by RainbowKit to know which chains to use
-export const { chains } = configuredChains;
+// Export this so it can be used by RainbowKit and viem consumers.
+export const { chains, publicClient } = configuredChains;
 
 const { connectors } = getDefaultWallets({
   appName: "Fixed Borrow",
@@ -50,5 +50,5 @@ const { connectors } = getDefaultWallets({
 export const wagmiConfig = createConfig({
   autoConnect: true,
   connectors,
-  publicClient: configuredChains.publicClient,
+  publicClient,
 });

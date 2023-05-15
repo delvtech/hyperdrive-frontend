@@ -48,7 +48,7 @@ export function SupplyInput({
       {value ? (
         <ApproveAllowanceButton
           tokenAddress={tokenAddress}
-          amount={balanceOf?.value.toBigInt()}
+          amount={balanceOf?.value}
           spender={HyperdriveGoerliAddresses.aaveFixedBorrowAction}
         />
       ) : null}

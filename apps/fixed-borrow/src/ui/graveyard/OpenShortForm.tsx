@@ -1,10 +1,7 @@
 import classNames from "classnames";
-import { BigNumber } from "ethers";
-import { formatUnits } from "ethers/lib/utils.js";
 import { ReactElement } from "react";
 import { ApproveAllowanceButton } from "src/ui/token/ApproveAllowanceButton";
 import { useOpenShort } from "src/ui/shorts/hooks/useOpenShort";
-import { useOpenShortPreview } from "src/ui/shorts/hooks/useOpenShortPreview";
 import { Address, useAccount, useToken } from "wagmi";
 
 interface OpenShortFormProps {
@@ -13,7 +10,7 @@ interface OpenShortFormProps {
   /**
    * The amount of debt to short.
    */
-  debtToShort: BigNumber | undefined;
+  debtToShort: bigint | undefined;
 }
 
 export function OpenShortForm({
@@ -66,10 +63,10 @@ export function OpenShortForm({
         </label>
       </div>
 
-      {debtToShort?.gt(0) ? (
+      {debtToShort && debtToShort > 0 ? (
         <div className="mt-2 flex flex-col justify-between gap-2 self-end md:flex-row">
           <ApproveAllowanceButton
-            amount={debtToShort.toBigInt()}
+            amount={debtToShort}
             tokenAddress={debtTokenAddress}
             spender={hyperdrivePoolAddress}
           />

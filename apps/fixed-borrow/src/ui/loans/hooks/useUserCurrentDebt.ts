@@ -16,11 +16,11 @@ export function useUserCurrentDebt(
   );
   const currentDebt = debtTokenReservesData?.scaledVariableDebt;
   const formattedCurrentDebt = currentDebt
-    ? formatBigInt(currentDebt.toBigInt(), debtTokenMetadata?.decimals)
+    ? formatBigInt(currentDebt, debtTokenMetadata?.decimals)
     : undefined;
 
   return {
-    currentDebt: debtTokenReservesData?.scaledVariableDebt.toBigInt(),
+    currentDebt: debtTokenReservesData?.scaledVariableDebt,
     formattedCurrentDebt: formattedCurrentDebt,
   };
 }
