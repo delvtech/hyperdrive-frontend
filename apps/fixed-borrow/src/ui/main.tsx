@@ -7,7 +7,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { queryClient } from "src/network/queryClient";
-import { chains, wagmiClient } from "src/network/wagmiClient";
+import { chains, wagmiConfig } from "src/network/wagmiClient";
 import BorrowPage from "src/ui/graveyard/BorrowPage/BorrowPage";
 import { WagmiConfig } from "wagmi";
 import { SkeletonTheme } from "react-loading-skeleton";
@@ -19,7 +19,7 @@ import Page from "src/ui/base/Page/Page";
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-      <WagmiConfig client={wagmiClient}>
+      <WagmiConfig config={wagmiConfig}>
         <RainbowKitProvider chains={chains} theme={darkTheme()}>
           <SkeletonTheme
             baseColor="var(--color-inputBg)"

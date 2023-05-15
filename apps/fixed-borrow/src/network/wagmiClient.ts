@@ -1,5 +1,6 @@
 import { getDefaultWallets } from "@rainbow-me/rainbowkit";
-import { Chain, configureChains, createClient, goerli } from "wagmi";
+import { Chain, configureChains, createConfig } from "wagmi";
+import { goerli } from "wagmi/chains";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
 
@@ -11,7 +12,7 @@ if (!ALCHEMY_GOERLI_RPC_KEY) {
   throw new Error("Provide an VITE_ALCHEMY_GOERLI_RPC_KEY variable in .env");
 }
 
-const _localhost: Chain = {
+const localnet: Chain = {
   name: "Localhost",
   network: "localhost",
   nativeCurrency: {
@@ -26,8 +27,8 @@ const _localhost: Chain = {
   },
 };
 
-export const { chains, provider } = configureChains(
-  [goerli, _localhost],
+const configuredChains = configureChains(
+  [goerli, localnet],
   [
     alchemyProvider({ apiKey: ALCHEMY_GOERLI_RPC_KEY }),
     jsonRpcProvider({
@@ -38,13 +39,16 @@ export const { chains, provider } = configureChains(
   ],
 );
 
+// Export this so it can be used by RainbowKit to know which chains to use
+export const { chains } = configuredChains;
+
 const { connectors } = getDefaultWallets({
   appName: "Fixed Borrow",
   chains,
 });
 
-export const wagmiClient = createClient({
+export const wagmiConfig = createConfig({
   autoConnect: true,
   connectors,
-  provider,
+  publicClient: configuredChains.publicClient,
 });
