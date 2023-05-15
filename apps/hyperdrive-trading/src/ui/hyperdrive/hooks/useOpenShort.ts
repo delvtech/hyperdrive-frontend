@@ -54,8 +54,8 @@ export function useOpenShort({
     args: queryEnabled
       ? [amountBondShorts, maxBaseAmountIn, destination, asUnderlying]
       : undefined,
-    // TODO better gas optimization
-    // overrides: { gasLimit: BigNumber.from(500_000) },
+    // TODO: better gas optimization
+    gas: 500_000n,
   });
 
   const { status: txnStatus } = useWaitForTransaction({

@@ -55,7 +55,7 @@ export function useOpenLong({
       ? [baseAmount, bondAmountOut, destination, asUnderlying]
       : undefined,
     // TODO: better gas optimization
-    // overrides: { gasLimit: BigNumber.from(500_000) },
+    gas: 500_000n,
   });
 
   const { status: txnStatus } = useWaitForTransaction({
