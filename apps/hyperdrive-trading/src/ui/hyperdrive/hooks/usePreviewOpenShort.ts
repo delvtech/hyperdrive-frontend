@@ -60,6 +60,7 @@ export function usePreviewOpenShort({
           const { result } = await publicClient.simulateContract({
             abi: HyperdriveABI,
             address: market.address,
+            //@ts-ignore
             account,
             functionName: "openShort",
             args: [
