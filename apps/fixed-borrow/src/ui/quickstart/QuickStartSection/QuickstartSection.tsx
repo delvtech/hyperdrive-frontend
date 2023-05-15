@@ -9,10 +9,10 @@ import { ReactElement } from "react";
 export function QuickstartSection(): ReactElement {
   return (
     <div className="space-y-6 p-4">
-      <span className="text-h6 text-secondaryText">
+      <p className="text-h6 text-secondaryText">
         After <strong>Step 3</strong>, you will be able to open fixed rate
         coverage in the <strong>Spark Borrows</strong> section below.
-      </span>
+      </p>
       <div className="flex flex-col gap-4">
         <div className="grid grid-cols-2 gap-3">
           <div>

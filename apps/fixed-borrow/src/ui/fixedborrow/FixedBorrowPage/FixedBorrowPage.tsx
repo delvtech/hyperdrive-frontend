@@ -27,9 +27,9 @@ export function FixedBorrowPage(): ReactElement {
                     width={24}
                   />
                 </div>
-                <p className=" text-h6 text-secondaryText">
-                  Pre-requisite transactions for minting collateral and opening
-                  a testnet loan before trying out Fixed Borrow.
+                <p className="text-left text-h6 text-secondaryText">
+                  Mint collateral and open a testnet loan before trying out
+                  Fixed Borrow.
                 </p>
               </Disclosure.Button>
               <Disclosure.Panel>
