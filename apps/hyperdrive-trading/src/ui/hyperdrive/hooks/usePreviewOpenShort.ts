@@ -28,15 +28,6 @@ export function usePreviewOpenShort({
 }: UsePreviewOpenShortOptions): UsePreviewOpenShortResult {
   const publicClient = usePublicClient();
   const { address: account } = useAccount();
-  // const { data: signer } = useSigner();
-
-  // const hyperdriveContract = useContract({
-  //   abi: HyperdriveABI,
-  //   address: market.address,
-  //   // In order for callStatic to work, you need a signer still, and enough
-  //   // allowance to compute the preview.
-  //   signerOrProvider: signer,
-  // });
 
   const queryEnabled =
     !!amountBondShorts &&

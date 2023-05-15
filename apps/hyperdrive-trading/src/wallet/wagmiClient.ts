@@ -9,11 +9,6 @@ if (!ALCHEMY_GOERLI_RPC_KEY) {
   throw new Error("Provide an ALCHEMY_GOERLI_RPC_KEY variable in .env");
 }
 
-// export const { chains, publicClient, webSocketPublicClient } = configureChains(
-//   [goerli],
-//   [alchemyProvider({ apiKey: ALCHEMY_GOERLI_RPC_KEY })],
-// );
-
 const { chains, publicClient, webSocketPublicClient } = configureChains(
   [goerli],
   [alchemyProvider({ apiKey: ALCHEMY_GOERLI_RPC_KEY })],
