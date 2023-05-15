@@ -7,6 +7,7 @@ import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { AssetIcon } from "src/ui/token/AssetIcon";
 import { DebtDetailsSection } from "./DebtDetailsSection";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
+import { parseBigInt } from "src/base/bigint/parseBigInt";
 
 export function CoverageTable(): ReactElement {
   const { address: account } = useAccount();
@@ -14,8 +15,8 @@ export function CoverageTable(): ReactElement {
 
   return (
     <SortableGridTable
-      headingRowClassName="grid-cols-[180px_150px_160px_180px_64px] gap-4"
-      bodyRowClassName="group grid-cols-[180px_150px_160px_180px_64px] gap-4 h-20"
+      headingRowClassName="grid-cols-[180px_150px_200px__64px] gap-4"
+      bodyRowClassName="group grid-cols-[180px_150px_200px_64px] gap-4 h-20"
       emptyTableElement={<span className="text-white">No borrows found</span>}
       cols={[
         {
@@ -37,17 +38,7 @@ export function CoverageTable(): ReactElement {
               className="text-secondaryText"
               title="The portion of your total debt that is covered by fixed rate interest"
             >
-              Fixed Rate Debt
-            </span>
-          ),
-        },
-        {
-          cell: (
-            <span
-              className="text-secondaryText"
-              title="The portion of your total debt currently exposed to variable rate interest"
-            >
-              Variable Rate Debt
+              Fixed Rate Coverage
             </span>
           ),
         },
@@ -79,14 +70,8 @@ export function CoverageTable(): ReactElement {
             />,
             <AmountCell
               key="fixedRateDebt"
-              amount={1302400000n}
-              secondaryText="-"
-              tokenAddress={borrowTokenAddress}
-            />,
-            <AmountCell
-              key="variableRateDebt"
-              amount={borrowedAmount}
-              secondaryText="1.5% APY"
+              amount={parseBigInt("13.27", 18)}
+              secondaryText="1.26% APY"
               tokenAddress={borrowTokenAddress}
             />,
             <ExpandIconCell key="expand" />,
