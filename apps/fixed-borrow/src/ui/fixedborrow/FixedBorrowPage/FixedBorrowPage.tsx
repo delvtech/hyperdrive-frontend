@@ -1,14 +1,9 @@
 import { Disclosure } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
-import { SparkGoerliAddresses } from "@hyperdrive/spark";
 import { ReactElement } from "react";
-import { parseBigInt } from "src/base/bigint/parseBigInt";
 import { InfoDisclosure } from "src/ui/base/InfoDisclosure/InfoDisclosure";
-import { StatWell } from "src/ui/base/StatWell/StatWell";
 import { CoverageTable } from "src/ui/fixedborrow/CoverageTable/CoverageTable";
-import { BorrowQuickStartButton } from "src/ui/quickstart/BorrowQuickStartButton/BorrowQuickStartButton";
-import { SupplyQuickStartButton } from "src/ui/quickstart/SupplyQuickStartButton/SupplyQuickStartButton";
-import { MintQuickStartButton } from "src/ui/quickstart/MintQuickStartButton";
+import { QuickstartSection } from "src/ui/quickstart/QuickStartSection/QuickstartSection";
 
 export function FixedBorrowPage(): ReactElement {
   return (
@@ -32,9 +27,9 @@ export function FixedBorrowPage(): ReactElement {
                     width={24}
                   />
                 </div>
-                <p className=" text-h6 text-secondaryText">
-                  Pre-requisite transactions for minting collateral and opening
-                  a testnet loan before trying out Fixed Borrow.
+                <p className="text-left text-h6 text-secondaryText">
+                  Mint collateral and open a testnet loan before trying out
+                  Fixed Borrow.
                 </p>
               </Disclosure.Button>
               <Disclosure.Panel>
@@ -68,61 +63,6 @@ export function FixedBorrowPage(): ReactElement {
             </InfoDisclosure>
           </div>
         </div>
-      </div>
-    </div>
-  );
-}
-
-function QuickstartSection() {
-  return (
-    <div className="space-y-6 p-4">
-      <span className="text-h6 text-secondaryText">
-        After <strong>Step 3</strong>, you will be able to open fixed rate
-        coverage in the <strong>Spark Borrows</strong> section below.
-      </span>
-      <div className="flex flex-col gap-4">
-        <div className="grid grid-cols-2 gap-3">
-          <div>
-            <MintQuickStartButton
-              tokenAddress={SparkGoerliAddresses.wstETH_token}
-              amount={parseBigInt("100", 18)}
-              label={"Step 1"}
-              description={"Mint Collateral"}
-            />
-          </div>
-          <div>
-            <SupplyQuickStartButton
-              label={"Step 2"}
-              stat={"Supply Collateral on Spark"}
-              tokenAddress={SparkGoerliAddresses.wstETH_token}
-              amount={parseBigInt("10", 18)}
-            />
-          </div>
-        </div>
-        <div className="grid grid-cols-2 gap-4">
-          <div>
-            <BorrowQuickStartButton
-              label={"Step 3"}
-              stat={"Borrow DAI on Spark"}
-              tokenAddress={SparkGoerliAddresses.DAI_token}
-              amount={parseBigInt("10", 18)}
-            />
-          </div>
-          <div>
-            <StatWell
-              label={"Step 4"}
-              stat={"Repay DAI on Spark"}
-              onClick={() => {}}
-            />
-          </div>
-        </div>
-
-        <MintQuickStartButton
-          tokenAddress={SparkGoerliAddresses.DAI_token}
-          amount={parseBigInt("10000", 18)}
-          label={"Just in case"}
-          description={"Mint DAI"}
-        />
       </div>
     </div>
   );
