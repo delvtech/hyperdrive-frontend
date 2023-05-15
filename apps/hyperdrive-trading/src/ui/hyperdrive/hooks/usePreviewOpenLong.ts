@@ -33,8 +33,8 @@ export function usePreviewOpenLong({
     !!bondAmountOut &&
     !!destination &&
     !!publicClient &&
-    !!account;
-  enabled;
+    !!account &&
+    enabled;
 
   const { data, status } = useQuery({
     queryKey: [

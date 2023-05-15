@@ -1,7 +1,9 @@
+import { HyperdriveABI } from "@hyperdrive/core";
 import { useQuery } from "react-query";
 import { HyperdriveMarket } from "src/config/HyperdriveConfig";
 import { QueryStatusType } from "src/ui/base/types";
-import { Address } from "wagmi";
+import { getAssetTimestampFromTokenId } from "src/ui/hyperdrive/utils";
+import { Address, useAccount, usePublicClient } from "wagmi";
 
 interface UsePreviewCloseShortOptions {
   market: HyperdriveMarket;
@@ -27,14 +29,16 @@ export function usePreviewCloseShort({
   asUnderlying = true,
   enabled = true,
 }: UsePreviewCloseShortOptions): UsePreviewCloseShortResult {
-  // const { data: signer } = useSigner();
+  const publicClient = usePublicClient();
+  const { address: account } = useAccount();
 
   const queryEnabled =
     !!tokenID &&
     !!shortAmountIn &&
     !!minBaseAmountOut &&
     !!destination &&
-    // !!hyperdriveContract &&
+    !!publicClient &&
+    !!account &&
     enabled;
 
   const { data, status } = useQuery({
@@ -48,17 +52,21 @@ export function usePreviewCloseShort({
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? async () => {
-          // const closeShortResult =
-          //   (await hyperdriveContract.callStatic.closeShort(
-          //     BigNumber.from(getAssetTimestampFromTokenId(tokenID)),
-          //     BigNumber.from(shortAmountIn),
-          //     BigNumber.from(minBaseAmountOut),
-          //     destination,
-          //     asUnderlying,
-          //   )) as unknown as BigNumber;
-          // return closeShortResult.toBigInt();
+          const { result } = await publicClient.simulateContract({
+            abi: HyperdriveABI,
+            address: market.address,
+            account,
+            functionName: "closeShort",
+            args: [
+              BigInt(getAssetTimestampFromTokenId(tokenID)),
+              shortAmountIn,
+              minBaseAmountOut,
+              destination,
+              asUnderlying,
+            ],
+          });
 
-          return 0n;
+          return result;
         }
       : undefined,
   });

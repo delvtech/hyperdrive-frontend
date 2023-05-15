@@ -1,7 +1,8 @@
+import { HyperdriveABI } from "@hyperdrive/core";
 import { useQuery } from "react-query";
 import { HyperdriveMarket } from "src/config/HyperdriveConfig";
 import { QueryStatusType } from "src/ui/base/types";
-import { Address } from "wagmi";
+import { Address, useAccount, usePublicClient } from "wagmi";
 
 interface UsePreviewOpenShortOptions {
   market: HyperdriveMarket;
@@ -25,6 +26,8 @@ export function usePreviewOpenShort({
   asUnderlying = true,
   enabled = true,
 }: UsePreviewOpenShortOptions): UsePreviewOpenShortResult {
+  const publicClient = usePublicClient();
+  const { address: account } = useAccount();
   // const { data: signer } = useSigner();
 
   // const hyperdriveContract = useContract({
@@ -39,7 +42,8 @@ export function usePreviewOpenShort({
     !!amountBondShorts &&
     !!maxBaseAmountIn &&
     !!destination &&
-    // !!hyperdriveContract &&
+    !!publicClient &&
+    !!account &&
     enabled;
 
   const { data, status } = useQuery({
@@ -53,16 +57,20 @@ export function usePreviewOpenShort({
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? async () => {
-          // const openShortResult =
-          //   (await hyperdriveContract.callStatic.openShort(
-          //     BigNumber.from(amountBondShorts),
-          //     BigNumber.from(maxBaseAmountIn),
-          //     destination,
-          //     asUnderlying,
-          //   )) as unknown as BigNumber;
-          // return openShortResult.toBigInt();
+          const { result } = await publicClient.simulateContract({
+            abi: HyperdriveABI,
+            address: market.address,
+            account,
+            functionName: "openShort",
+            args: [
+              amountBondShorts,
+              maxBaseAmountIn,
+              destination,
+              asUnderlying,
+            ],
+          });
 
-          return 0n;
+          return result;
         }
       : undefined,
   });
