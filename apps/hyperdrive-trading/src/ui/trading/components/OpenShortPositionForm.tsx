@@ -39,8 +39,7 @@ export function OpenShortPositionForm({
   });
 
   const hasEnoughBalance =
-    baseTokenBalance &&
-    (baseAmountIn ?? 0n) <= baseTokenBalance.value.toBigInt();
+    baseTokenBalance && (baseAmountIn ?? 0n) <= baseTokenBalance.value;
 
   const { tokenAllowance } = useTokenAllowance({
     account,

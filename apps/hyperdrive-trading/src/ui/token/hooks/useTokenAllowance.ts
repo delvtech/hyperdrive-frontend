@@ -27,5 +27,5 @@ export function useTokenAllowance({
     args: enabled ? [account, spender] : undefined,
   });
 
-  return { tokenAllowance: data?.toBigInt(), status };
+  return { tokenAllowance: data, status };
 }
