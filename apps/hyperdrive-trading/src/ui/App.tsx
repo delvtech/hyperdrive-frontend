@@ -12,7 +12,7 @@ import { useConfig } from "src/config/hooks/useConfig";
 import { Markets } from "src/pages/Markets";
 import { Portfolio } from "src/pages/Portfolio";
 import { Trade } from "src/pages/Trade";
-import { chains, wagmiClient } from "src/wallet/wagmiClient";
+import { wagmiChains, wagmiConfig } from "src/wallet/wagmiClient";
 import { WagmiConfig } from "wagmi";
 import { Navbar } from "./base/components/Navbar";
 import { useLocalStorage } from "./base/hooks/useLocalStorage";
@@ -96,8 +96,8 @@ export function App(): ReactElement {
   return (
     <QueryClientProvider client={queryClient}>
       <Toaster position="bottom-left" reverseOrder={false} />
-      <WagmiConfig client={wagmiClient}>
-        <RainbowKitProvider chains={chains}>
+      <WagmiConfig config={wagmiConfig}>
+        <RainbowKitProvider chains={wagmiChains}>
           <div className="flex h-full min-h-screen flex-col bg-gradient-to-b from-base-200 to-base-300">
             <RouterProvider router={router} />
           </div>

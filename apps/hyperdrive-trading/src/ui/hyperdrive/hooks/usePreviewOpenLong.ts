@@ -1,8 +1,7 @@
-import { BigNumber } from "@ethersproject/bignumber";
 import { HyperdriveABI } from "@hyperdrive/core";
 import { useQuery } from "react-query";
 import { HyperdriveMarket } from "src/config/HyperdriveConfig";
-import { Address, useContract, useSigner } from "wagmi";
+import { Address, useAccount, usePublicClient } from "wagmi";
 
 interface UsePreviewOpenLongOptions {
   market: HyperdriveMarket;
@@ -26,23 +25,15 @@ export function usePreviewOpenLong({
   asUnderlying = true,
   enabled,
 }: UsePreviewOpenLongOptions): UsePreviewOpenLongResult {
-  // There is no callStatic wagmi hook, so we gotta call the contract directly,
-  // see: https://github.com/wagmi-dev/wagmi/discussions/1571
-  const { data: signer } = useSigner();
-
-  const hyperdriveContract = useContract({
-    abi: HyperdriveABI,
-    address: market.address,
-    // In order for callStatic to work, you need a signer still, and enough
-    // allowance to compute the preview.
-    signerOrProvider: signer,
-  });
+  const publicClient = usePublicClient();
+  const { address: account } = useAccount();
 
   const queryEnabled =
     !!baseAmount &&
     !!bondAmountOut &&
     !!destination &&
-    !!hyperdriveContract &&
+    !!publicClient &&
+    !!account &&
     enabled;
 
   const { data, status } = useQuery({
@@ -57,13 +48,15 @@ export function usePreviewOpenLong({
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? async () => {
-          const openLongResult = (await hyperdriveContract.callStatic.openLong(
-            BigNumber.from(baseAmount),
-            BigNumber.from(bondAmountOut),
-            destination,
-            asUnderlying,
-          )) as unknown as BigNumber;
-          return openLongResult.toBigInt();
+          const { result } = await publicClient.simulateContract({
+            abi: HyperdriveABI,
+            address: market.address,
+            account,
+            functionName: "openLong",
+            args: [baseAmount, bondAmountOut, destination, asUnderlying],
+          });
+
+          return result;
         }
       : undefined,
   });

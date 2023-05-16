@@ -7,10 +7,6 @@ import tailwindConfig from "./tailwind.config.cjs";
 
 // https://vitejs.dev/config https://vitest.dev/config
 export default defineConfig({
-  // Node.js global to browser globalThis
-  define: {
-    global: "globalThis",
-  },
   resolve: {
     alias: {
       process: "process/browser",

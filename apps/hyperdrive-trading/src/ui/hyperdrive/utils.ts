@@ -1,5 +1,6 @@
 import { BigNumber } from "ethers";
 
+// todo: move to hyperdrive package
 export function getAssetPrefixFromTokenId(id: bigint): number {
   const idBN = BigNumber.from(id);
   return idBN.shr(0xf8).toNumber();

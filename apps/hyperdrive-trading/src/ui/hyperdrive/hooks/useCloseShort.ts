@@ -1,5 +1,4 @@
 import { HyperdriveABI } from "@hyperdrive/core";
-import { BigNumber } from "ethers";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { useQueryClient } from "react-query";
@@ -64,15 +63,15 @@ export function useCloseShort({
     enabled: queryEnabled,
     args: queryEnabled
       ? [
-          BigNumber.from(getAssetTimestampFromTokenId(tokenID)),
-          BigNumber.from(shortAmountIn),
-          BigNumber.from(minBaseAmountOut),
+          BigInt(getAssetTimestampFromTokenId(tokenID)),
+          shortAmountIn,
+          minBaseAmountOut,
           destination,
           asUnderlying,
         ]
       : undefined,
-    // TODO better gas optimization
-    overrides: { gasLimit: BigNumber.from(500_000) },
+    // TODO: better gas optimization
+    gas: 500_000n,
   });
 
   const { status: txnStatus } = useWaitForTransaction({
