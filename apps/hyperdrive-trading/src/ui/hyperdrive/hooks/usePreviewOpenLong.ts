@@ -51,7 +51,6 @@ export function usePreviewOpenLong({
           const { result } = await publicClient.simulateContract({
             abi: HyperdriveABI,
             address: market.address,
-            //@ts-ignore
             account,
             functionName: "openLong",
             args: [baseAmount, bondAmountOut, destination, asUnderlying],

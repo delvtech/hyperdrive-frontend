@@ -14,6 +14,5 @@ module.exports = {
     // Disable ordering in favor of prettier plugin
     "tailwindcss/classnames-order": "off",
     "tailwindcss/no-custom-classname": "off",
-    "@typescript-eslint/ban-ts-comment": "off",
   },
 };
