@@ -1,3 +1,4 @@
+import "src/ui/polyfills";
 import "@rainbow-me/rainbowkit/styles.css";
 import "react-loading-skeleton/dist/skeleton.css";
 import "src/ui/index.css";
@@ -25,28 +26,28 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
             baseColor="var(--color-inputBg)"
             highlightColor="var(--color-dawn)"
           >
-            <BrowserRouter>
-              <Routes>
-                <Route
-                  path="/"
-                  element={
-                    <Page
-                      header={<AppHeader />}
-                      content={<FixedBorrowPage />}
-                    />
-                  }
-                />
-                <Route
-                  path="/graveyard"
-                  element={
-                    <Page header={<AppHeader />} content={<BorrowPage />} />
-                  }
-                />
-              </Routes>
-            </BrowserRouter>
+            <App />
           </SkeletonTheme>
         </RainbowKitProvider>
       </WagmiConfig>
     </QueryClientProvider>
   </React.StrictMode>,
 );
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Page header={<AppHeader />} content={<FixedBorrowPage />} />
+          }
+        />
+        <Route
+          path="/graveyard"
+          element={<Page header={<AppHeader />} content={<BorrowPage />} />}
+        />
+      </Routes>
+    </BrowserRouter>
+  );
+}
