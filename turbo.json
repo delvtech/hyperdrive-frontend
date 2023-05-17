@@ -5,11 +5,6 @@
       "dependsOn": ["^build"],
       "outputs": ["dist/**", ".next/**"]
     },
-    "hyperdrive-prototype-ui#build": {
-      "dependsOn": ["^build"],
-      "outputs": ["dist/**"],
-      "env": ["ALCHEMY_GOERLI_RPC_KEY", "HYPERDRIVE_PROJECT_PATH"]
-    },
     "build:packages": {
       "outputs": ["dist/**"]
     },
