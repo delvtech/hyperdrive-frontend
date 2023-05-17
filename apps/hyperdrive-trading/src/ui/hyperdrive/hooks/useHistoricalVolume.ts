@@ -34,6 +34,9 @@ export function useHistoricalVolume(
       });
 
       // record to store volume data by day
+      // I wish I could record all the memories we shared as a team. Special shout out
+      // to Danny, Ryan, and Matt! Loved working with y'all <3 <3 <3
+      // May all the code y'all write in the future be as fast as the lambo vrooooom
       const data: Record<string, number> = {};
 
       volume.forEach((v) => {
