@@ -1,9 +1,6 @@
-import { SparkGoerliAddresses } from "@hyperdrive/spark";
 import { ReactElement } from "react";
-import { StatWell } from "src/ui/base/StatWell/StatWell";
 import { Well } from "src/ui/base/Well/Well";
 import { useSupplyCollateral } from "src/ui/loans/hooks/useSupplyCollateral";
-import { ApproveAllowanceButton } from "src/ui/token/ApproveAllowanceButton";
 import { useAccount, Address, useBalance } from "wagmi";
 
 export function SupplyQuickStartButton({
