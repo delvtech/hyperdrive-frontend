@@ -20,10 +20,6 @@ export function PositionPreview({
 }: PositionPreviewProps): ReactElement {
   const { address: account } = useAccount();
   const { data: borrowTokenData } = useToken({ address: borrowTokenAddress });
-  const { formattedCurrentDebt } = useUserCurrentDebt(
-    account,
-    borrowTokenAddress,
-  );
   const { userAccountData } = useUserAccountData(account);
 
   return (
@@ -61,22 +57,6 @@ export function PositionPreview({
                 NETWORK_BASE_TOKEN_DECIMALS,
               ),
             );
-          })()}
-        />
-        <PreviewRow
-          label={
-            borrowTokenData
-              ? `${borrowTokenData.symbol} debt`
-              : "Borrow token debt"
-          }
-          value={(() => {
-            if (!account) {
-              return "$0";
-            }
-            if (!formattedCurrentDebt) {
-              return <Skeleton width={120} />;
-            }
-            return `${formattedCurrentDebt} ${borrowTokenData?.symbol}`;
           })()}
         />
         <PreviewRow
