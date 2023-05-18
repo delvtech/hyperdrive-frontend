@@ -77,15 +77,13 @@ export function BorrowModal({
                   below.
                 </p>
                 <Well>
-                  <div className="flex flex-col gap-4 bg-midnight ">
-                    <div className={"flex justify-between font-bold"}>
-                      <span className=" text-h6 font-semibold uppercase text-secondaryText">
-                        Borrow
-                      </span>
-                      <span className=" text-h6 text-lightText">
-                        {formatBigInt(amount, token?.decimals)} {token?.symbol}
-                      </span>
-                    </div>
+                  <div className="flex justify-between  gap-4 bg-midnight ">
+                    <span className=" text-h6 font-semibold uppercase text-secondaryText">
+                      Borrow
+                    </span>
+                    <span className=" text-h6 font-bold text-lightText">
+                      {formatBigInt(amount, token?.decimals)} {token?.symbol}
+                    </span>
                   </div>
                 </Well>
                 <div className="flex w-full justify-center gap-4 pt-2">
