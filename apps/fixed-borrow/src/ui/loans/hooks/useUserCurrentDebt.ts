@@ -1,26 +1,21 @@
-import { formatBigInt } from "src/base/bigint/formatBigInt";
 import { useUserReservesData } from "src/ui/loans/hooks/useUserReservesData";
-import { Address, useToken } from "wagmi";
+import { Address } from "wagmi";
 
 export function useUserCurrentDebt(
   account: Address | undefined,
   debtTokenAddress: Address,
 ): {
   currentDebt: bigint | undefined;
-  formattedCurrentDebt: string | undefined;
+  status: "error" | "idle" | "loading" | "success";
 } {
-  const { userReservesData } = useUserReservesData(account);
-  const { data: debtTokenMetadata } = useToken({ address: debtTokenAddress });
+  const { userReservesData, status } = useUserReservesData(account);
   const debtTokenReservesData = userReservesData?.find(
     (d) => d.underlyingAsset === debtTokenAddress,
   );
   const currentDebt = debtTokenReservesData?.scaledVariableDebt;
-  const formattedCurrentDebt = currentDebt
-    ? formatBigInt(currentDebt, debtTokenMetadata?.decimals)
-    : undefined;
 
   return {
-    currentDebt: debtTokenReservesData?.scaledVariableDebt,
-    formattedCurrentDebt: formattedCurrentDebt,
+    currentDebt,
+    status,
   };
 }
