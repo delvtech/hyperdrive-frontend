@@ -1,5 +1,10 @@
 import { PoolABI, SparkGoerliAddresses } from "@hyperdrive/spark";
-import { Address, useContractWrite, usePrepareContractWrite } from "wagmi";
+import {
+  Address,
+  useContractWrite,
+  usePrepareContractWrite,
+  useWaitForTransaction,
+} from "wagmi";
 
 export function useSupplyCollateral(
   token: Address,
@@ -7,7 +12,8 @@ export function useSupplyCollateral(
   onBehalfOf: Address | undefined,
 ): {
   supply: (() => void) | undefined;
-  status: "error" | "success" | "loading" | "idle";
+  isPendingWalletAction: boolean;
+  isTxProcessing: boolean;
 } {
   const { config: supplyConfig } = usePrepareContractWrite({
     address: SparkGoerliAddresses.pool,
@@ -21,6 +27,18 @@ export function useSupplyCollateral(
       0, // an optional referral code, 0 for now
     ],
   });
-  const { write: supply, status } = useContractWrite(supplyConfig);
-  return { supply, status };
+  const {
+    write: supply,
+    isLoading: isPendingWalletAction,
+    data, // contains the hash of the pending tx
+  } = useContractWrite(supplyConfig);
+
+  const { status: txStatus } = useWaitForTransaction({
+    hash: data?.hash,
+  });
+  return {
+    supply,
+    isPendingWalletAction,
+    isTxProcessing: txStatus === "loading",
+  };
 }

@@ -32,7 +32,7 @@ export function SupplyBalanceStat({
       )}`}
       description={
         <span
-          className={classNames("font-bold text-primary", {
+          className={classNames("text-primary font-bold", {
             invisible: !previewSupplyBalance,
           })}
         >

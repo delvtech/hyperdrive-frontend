@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 import { StatOld } from "src/ui/base/Stat/StatOld";
-import { SupplyBalanceStat } from "src/ui/loans/SupplyBalanceStat";
+import { SupplyBalanceStat } from "src/ui/graveyard/SupplyBalanceStat";
 
 interface StatsBarProps {
   previewSupplyBalance: string | undefined;
@@ -17,7 +17,7 @@ export function StatsBar({
         title="Loan to value"
         value="$1,200"
         description={
-          <span className="font-bold text-warning">
+          <span className="text-warning font-bold">
             {
               // TODO: Show "Current price: $1600" w/out warning style for
               // the empty state
