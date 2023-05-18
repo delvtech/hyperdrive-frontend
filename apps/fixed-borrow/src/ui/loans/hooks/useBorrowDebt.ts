@@ -1,13 +1,22 @@
 import { PoolABI, SparkGoerliAddresses } from "@hyperdrive/spark";
-import { useContractWrite, usePrepareContractWrite } from "wagmi";
+import {
+  useContractWrite,
+  usePrepareContractWrite,
+  useWaitForTransaction,
+} from "wagmi";
 
-export function useBorrowDebt(
-  debtToken: `0x${string}`,
-  amount: bigint,
-  onBehalfOf: `0x${string}` | undefined,
-): {
+export function useBorrowDebt({
+  debtToken,
+  amount,
+  onBehalfOf,
+}: {
+  debtToken: `0x${string}`;
+  amount: bigint;
+  onBehalfOf: `0x${string}` | undefined;
+}): {
   borrow: (() => void) | undefined;
-  status: "error" | "success" | "loading" | "idle";
+  isPendingWalletAction: boolean;
+  isTxProcessing: boolean;
 } {
   const { config: borrowConfig } = usePrepareContractWrite({
     address: SparkGoerliAddresses.pool,
@@ -22,6 +31,18 @@ export function useBorrowDebt(
       onBehalfOf as `0x${string}`, // safe to cast because enabled is set
     ],
   });
-  const { write: borrow, status } = useContractWrite(borrowConfig);
-  return { borrow, status };
+  const {
+    write: borrow,
+    isLoading: isPendingWalletAction,
+    data, // contains the hash of the pending tx
+  } = useContractWrite(borrowConfig);
+  const { status: txStatus } = useWaitForTransaction({
+    hash: data?.hash,
+  });
+
+  return {
+    borrow,
+    isPendingWalletAction,
+    isTxProcessing: txStatus === "loading",
+  };
 }

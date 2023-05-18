@@ -1,6 +1,7 @@
 import { SparkGoerliAddresses } from "@hyperdrive/spark";
 import { ReactElement } from "react";
 import { Button } from "src/ui/base/Button/Button";
+import Spinner from "src/ui/base/Spinner/Spinner";
 import { useSupplyCollateral } from "src/ui/loans/hooks/useSupplyCollateral";
 import { useSpenderAllowance } from "src/ui/token/useSpenderAllowance";
 import { Address, useAccount } from "wagmi";
@@ -35,7 +36,7 @@ export function SupplyCollateralButton({
       block
       disabled={isDisabled}
     >
-      Supply
+      {isTxLoading ? <Spinner /> : "Supply"}
     </Button>
   );
 }

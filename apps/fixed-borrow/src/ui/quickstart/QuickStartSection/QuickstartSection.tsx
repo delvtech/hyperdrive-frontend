@@ -18,7 +18,7 @@ export function QuickstartSection(): ReactElement {
           <div>
             <MintQuickStartButton
               tokenAddress={SparkGoerliAddresses.wstETH_token}
-              amount={parseBigInt("100", 18)}
+              amount={parseBigInt("10", 18)}
               label={"Step 1"}
               description={"Mint Collateral"}
             />
