@@ -1,8 +1,7 @@
 import { ReactElement, useState } from "react";
 import { Well } from "src/ui/base/Well/Well";
-import { useSupplyCollateral } from "src/ui/loans/hooks/useSupplyCollateral";
 import { SupplyModal } from "src/ui/quickstart/SupplyQuickStartButton/SupplyModal";
-import { useAccount, Address, useBalance } from "wagmi";
+import { Address } from "wagmi";
 
 export function SupplyQuickStartButton({
   tokenAddress,
@@ -15,9 +14,6 @@ export function SupplyQuickStartButton({
   label: string;
   stat: string;
 }): ReactElement {
-  const { address: account } = useAccount();
-  const { supply } = useSupplyCollateral(tokenAddress, amount, account);
-
   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <>

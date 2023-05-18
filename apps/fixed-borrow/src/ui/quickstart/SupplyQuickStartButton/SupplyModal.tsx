@@ -1,16 +1,13 @@
 import { Dialog, Transition } from "@headlessui/react";
-import { InformationCircleIcon } from "@heroicons/react/24/outline";
 import { SparkGoerliAddresses } from "@hyperdrive/spark";
 import { Fragment, ReactElement } from "react";
 import { formatBigInt } from "src/base/bigint/formatBigInt";
-import { parseBigInt } from "src/base/bigint/parseBigInt";
 import { Button } from "src/ui/base/Button/Button";
-import { InfoTooltip } from "src/ui/base/Tooltip/InfoTooltip";
 import { Well } from "src/ui/base/Well/Well";
+import { SupplyCollateralButton } from "src/ui/loans/SupplyCollateralButton/SupplyCollateralButton";
 import { ApproveAllowanceButton } from "src/ui/token/ApproveAllowanceButton";
 import { useSpenderAllowance } from "src/ui/token/useSpenderAllowance";
-import { useTokenApprove } from "src/ui/token/useTokenApprove";
-import { Address, useBalance, useToken } from "wagmi";
+import { Address, useToken } from "wagmi";
 
 interface SupplyModalProps {
   tokenAddress: Address;
@@ -26,17 +23,11 @@ export function SupplyModal({
   onClose,
 }: SupplyModalProps): ReactElement {
   const { data: token } = useToken({ address: tokenAddress });
-  const { data: balance } = useBalance({ address: tokenAddress });
   const { allowance } = useSpenderAllowance({
     tokenAddress: tokenAddress,
     spender: SparkGoerliAddresses.pool,
   });
 
-  const { approve } = useTokenApprove({
-    tokenAddress,
-    amount: balance?.value,
-    spender: SparkGoerliAddresses.pool,
-  });
   return (
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog
@@ -103,15 +94,10 @@ export function SupplyModal({
                     amount={amount}
                     spender={SparkGoerliAddresses.pool}
                   />
-                  <Button
-                    size="md"
-                    variant="sun"
-                    onClick={onClose}
-                    block
-                    disabled={allowance === undefined || allowance < amount}
-                  >
-                    Supply
-                  </Button>
+                  <SupplyCollateralButton
+                    collateralTokenAddress={tokenAddress}
+                    amount={amount}
+                  />
                   <Button size="md" variant="dark" onClick={onClose} block>
                     Cancel
                   </Button>
