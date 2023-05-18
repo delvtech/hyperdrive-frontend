@@ -7,7 +7,6 @@ import { BorrowInput } from "src/ui/loans/BorrowInput/BorrowInput";
 import { LoanCardHeader } from "src/ui/graveyard/LoanCard/LoanCardHeader";
 import { SupplyInput } from "src/ui/loans/SupplyInput/SupplyInput";
 import { TermLength } from "src/ui/shorts/termLength";
-import { PositionPreview } from "src/ui/loans/previews/PositionPreview";
 import { TransactionPreview } from "src/ui/loans/previews/TransactionPreview";
 import { useToken } from "wagmi";
 import { useNumericInput } from "src/ui/base/NumericInput/useNumericInput";
@@ -104,14 +103,6 @@ export function LoanCard({
           </div>
           {/* Previews */}
           <div className="flex min-w-[320px] flex-1 flex-col justify-between gap-6">
-            <div>
-              <h3 className="mb-1 text-lg font-bold leading-lg">
-                Position Preview
-              </h3>
-              <PositionPreview
-                borrowTokenAddress={SparkGoerliAddresses.DAI_token}
-              />
-            </div>
             <div>
               <h3 className="mb-1 text-lg font-bold  leading-lg">
                 Transaction Preview

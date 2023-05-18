@@ -1,17 +1,32 @@
 import { ReactElement, ReactNode } from "react";
 import { Address, useAccount, useToken } from "wagmi";
 import { SortableGridTable } from "src/ui/base/tables/SortableGridTable";
-import { useUserLoans } from "src/ui/loans/hooks/useUserLoans";
 import { formatBigInt } from "src/base/bigint/formatBigInt";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { AssetIcon } from "src/ui/token/AssetIcon";
 import { DebtDetailsSection } from "./DebtDetailsSection";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { parseBigInt } from "src/base/bigint/parseBigInt";
+import { useUserCurrentDebt } from "src/ui/loans/hooks/useUserCurrentDebt";
+import { SparkGoerliAddresses } from "@hyperdrive/spark";
+import { useAaveOracleAssetPrice } from "src/ui/oracles/useAaveOracleAssetPrice";
+import { NETWORK_BASE_TOKEN_DECIMALS } from "src/pools/networkBaseToken";
 
 export function CoverageTable(): ReactElement {
   const { address: account } = useAccount();
-  const { userLoans = [] } = useUserLoans(account);
+  const { currentDebt } = useUserCurrentDebt(
+    account,
+    SparkGoerliAddresses.DAI_token,
+  );
+
+  const { data: price } = useAaveOracleAssetPrice(
+    SparkGoerliAddresses.DAI_token,
+  );
+
+  const valueOfDebtLabel =
+    currentDebt !== undefined && price !== undefined
+      ? formatDebtValueLabel(currentDebt, 18, price)
+      : undefined;
 
   return (
     <SortableGridTable
@@ -47,39 +62,48 @@ export function CoverageTable(): ReactElement {
           cell: <span className="text-secondaryText" />,
         },
       ]}
-      rows={userLoans.map(
-        ({
-          txHash,
-          shortId,
-          collateralDeposited,
-          collateralTokenAddress,
-          borrowedAmount,
-          borrowTokenAddress,
-        }) => ({
-          detailsElement: <DebtDetailsSection />,
-          cells: [
-            <BorrowedAssetCell
-              key="asset"
-              borrowedAssetAddress={borrowTokenAddress}
-            />,
-            <AmountCell
-              key="totalDebt"
-              amount={borrowedAmount}
-              secondaryText="$4,602.13"
-              tokenAddress={borrowTokenAddress}
-            />,
-            <AmountCell
-              key="fixedRateDebt"
-              amount={parseBigInt("13.27", 18)}
-              secondaryText="1.26% APY"
-              tokenAddress={borrowTokenAddress}
-            />,
-            <ExpandIconCell key="expand" />,
-          ],
-        }),
-      )}
+      rows={
+        currentDebt
+          ? [
+              {
+                detailsElement: <DebtDetailsSection />,
+                cells: [
+                  <BorrowedAssetCell
+                    key="asset"
+                    borrowedAssetAddress={SparkGoerliAddresses.DAI_token}
+                  />,
+                  <AmountCell
+                    key="totalDebt"
+                    amount={currentDebt}
+                    secondaryText={valueOfDebtLabel}
+                    tokenAddress={SparkGoerliAddresses.DAI_token}
+                  />,
+                  <AmountCell
+                    key="fixedRateDebt"
+                    amount={parseBigInt("13.27", 18)}
+                    secondaryText="1.26% APY"
+                    tokenAddress={SparkGoerliAddresses.DAI_token}
+                  />,
+                  <ExpandIconCell key="expand" />,
+                ],
+              },
+            ]
+          : []
+      }
     />
   );
+}
+
+function formatDebtValueLabel(
+  currentDebt: bigint,
+  debtTokenDecimals: number,
+  price: bigint,
+) {
+  const valueOfDebt =
+    +formatBigInt(currentDebt, debtTokenDecimals) *
+    +formatBigInt(price, NETWORK_BASE_TOKEN_DECIMALS);
+
+  return `$${formatBalance(valueOfDebt)}`;
 }
 
 function ExpandIconCell(): ReactElement {
