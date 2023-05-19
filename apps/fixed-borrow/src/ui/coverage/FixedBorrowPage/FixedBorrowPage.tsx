@@ -2,7 +2,7 @@ import { Disclosure } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { ReactElement } from "react";
 import { InfoDisclosure } from "src/ui/base/InfoDisclosure/InfoDisclosure";
-import { CoverageTable } from "src/ui/fixedborrow/CoverageTable/CoverageTable";
+import { CoverageTable } from "src/ui/coverage/CoverageTable/CoverageTable";
 import { QuickstartSection } from "src/ui/quickstart/QuickStartSection/QuickstartSection";
 
 export function FixedBorrowPage(): ReactElement {
