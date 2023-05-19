@@ -1,8 +1,11 @@
 import { PoolABI, SparkGoerliAddresses } from "@hyperdrive/spark";
+import { useEffect, useRef } from "react";
+import { useWaitForTransactionThenInvalidateCache } from "src/ui/network/useWaitForTransactionThenInvalidateCache/useWaitForTransactionThenInvalidateCache";
 import {
   Address,
   useContractWrite,
   usePrepareContractWrite,
+  useQueryClient,
   useWaitForTransaction,
 } from "wagmi";
 
@@ -33,9 +36,10 @@ export function useSupplyCollateral(
     data, // contains the hash of the pending tx
   } = useContractWrite(supplyConfig);
 
-  const { status: txStatus } = useWaitForTransaction({
+  const { status: txStatus } = useWaitForTransactionThenInvalidateCache({
     hash: data?.hash,
   });
+
   return {
     supply,
     isPendingWalletAction,
