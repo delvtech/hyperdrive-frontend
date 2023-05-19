@@ -1,9 +1,6 @@
 import { PoolABI, SparkGoerliAddresses } from "@hyperdrive/spark";
-import {
-  useContractWrite,
-  usePrepareContractWrite,
-  useWaitForTransaction,
-} from "wagmi";
+import { useWaitForTransactionThenInvalidateCache } from "src/ui/network/useWaitForTransactionThenInvalidateCache/useWaitForTransactionThenInvalidateCache";
+import { useContractWrite, usePrepareContractWrite } from "wagmi";
 
 export function useBorrowDebt({
   debtToken,
@@ -36,7 +33,8 @@ export function useBorrowDebt({
     isLoading: isPendingWalletAction,
     data, // contains the hash of the pending tx
   } = useContractWrite(borrowConfig);
-  const { status: txStatus } = useWaitForTransaction({
+
+  const { status: txStatus } = useWaitForTransactionThenInvalidateCache({
     hash: data?.hash,
   });
 
