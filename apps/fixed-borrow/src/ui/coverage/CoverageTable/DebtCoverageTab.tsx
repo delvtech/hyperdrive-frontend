@@ -2,7 +2,44 @@ import { SortableGridTable } from "src/ui/base/tables/SortableGridTable";
 import { ShortActionsMenu } from "./DebtDetailsSection";
 import { ReactElement } from "react";
 
-export function DebtCoverageDetails(): ReactElement {
+const tableCols = [
+  {
+    cell: (
+      <span
+        className="text-secondaryText"
+        title="The fixed rate expires on this date. After expiry this debt becomes variable rate debt."
+      >
+        Expiration
+      </span>
+    ),
+  },
+  {
+    cell: (
+      <span
+        className="text-secondaryText"
+        title="The amount of debt that is covered by the locked in fixed rate"
+      >
+        Debt covered
+      </span>
+    ),
+  },
+  {
+    cell: (
+      <span
+        className="text-secondaryText"
+        title="The fixed rate you locked in when the short was opened"
+      >
+        Fixed Rate
+      </span>
+    ),
+  },
+  {
+    // Empty cell for kebab menu icon
+    cell: <span className="text-secondaryText" />,
+  },
+];
+
+export function DebtCoverageTab(): ReactElement {
   return (
     <>
       <p className="text-h6 text-lightText">
@@ -21,42 +58,7 @@ export function DebtCoverageDetails(): ReactElement {
           emptyTableElement={
             <span className="text-white">No debt coverage found</span>
           }
-          cols={[
-            {
-              cell: (
-                <span
-                  className="text-secondaryText"
-                  title="The fixed rate expires on this date. After expiry this debt becomes variable rate debt."
-                >
-                  Expiration
-                </span>
-              ),
-            },
-            {
-              cell: (
-                <span
-                  className="text-secondaryText"
-                  title="The amount of debt that is covered by the locked in fixed rate"
-                >
-                  Debt covered
-                </span>
-              ),
-            },
-            {
-              cell: (
-                <span
-                  className="text-secondaryText"
-                  title="The fixed rate you locked in when the short was opened"
-                >
-                  Fixed Rate
-                </span>
-              ),
-            },
-            {
-              // Empty cell for kebab menu icon
-              cell: <span className="text-secondaryText" />,
-            },
-          ]}
+          cols={tableCols}
           rows={[
             {
               cells: [

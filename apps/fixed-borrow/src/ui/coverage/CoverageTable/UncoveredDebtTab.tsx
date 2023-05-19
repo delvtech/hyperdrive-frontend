@@ -3,7 +3,7 @@ import { Well } from "src/ui/base/Well/Well";
 import { InformationCircleIcon } from "@heroicons/react/24/outline";
 import { Button } from "src/ui/base/Button/Button";
 
-export function UncoveredDebtDetails(): ReactElement {
+export function UncoveredDebtTab(): ReactElement {
   return (
     <>
       <div className="space-y-6">
