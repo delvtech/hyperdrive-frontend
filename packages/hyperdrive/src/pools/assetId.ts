@@ -5,10 +5,10 @@
  * @see github.com/delvtech/hyperdrive/blob/main/contracts/src/libraries/AssetId.sol
  */
 
-export const LP_ASSET_ID_PREFIX = 0 as const;
-export const LONG_ASSET_ID_PREFIX = 1 as const;
-export const SHORT_ASSET_ID_PREFIX = 2 as const;
-export const WITHDRAWAL_SHARE_ASSET_ID_PREFIX = 3 as const;
+export const LP_ASSET_ID_PREFIX = 0;
+export const LONG_ASSET_ID_PREFIX = 1;
+export const SHORT_ASSET_ID_PREFIX = 2;
+export const WITHDRAWAL_SHARE_ASSET_ID_PREFIX = 3;
 
 export type AssetIdPrefix =
   | typeof LP_ASSET_ID_PREFIX
