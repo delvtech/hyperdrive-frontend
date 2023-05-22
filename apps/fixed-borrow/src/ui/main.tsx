@@ -12,7 +12,7 @@ import BorrowPage from "src/ui/graveyard/BorrowPage/BorrowPage";
 import { WagmiConfig } from "wagmi";
 import { SkeletonTheme } from "react-loading-skeleton";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { FixedBorrowPage } from "src/ui/fixedborrow/FixedBorrowPage/FixedBorrowPage";
+import { FixedBorrowPage } from "src/ui/coverage/FixedBorrowPage/FixedBorrowPage";
 import { AppHeader } from "src/ui/app/AppHeader";
 import Page from "src/ui/base/Page/Page";
 

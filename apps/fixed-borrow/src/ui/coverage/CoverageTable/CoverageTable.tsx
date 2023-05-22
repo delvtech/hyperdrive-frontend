@@ -125,6 +125,10 @@ function BorrowedAssetCell({
   borrowedAssetAddress: Address;
 }): ReactElement {
   const { data: tokenMetadata } = useToken({ address: borrowedAssetAddress });
+  const { data: price } = useAaveOracleAssetPrice(
+    SparkGoerliAddresses.DAI_token,
+  );
+
   return (
     <div className="flex items-center gap-2">
       <AssetIcon size="lg" address={borrowedAssetAddress} />
@@ -132,7 +136,11 @@ function BorrowedAssetCell({
         <span className="inline-flex items-center gap-1 text-h6 text-white">
           {tokenMetadata?.symbol}
         </span>
-        <span className="leading-sm text-secondaryText">$1.00</span>
+        <span className="leading-sm text-secondaryText">
+          {price
+            ? `$${formatBigInt(price, NETWORK_BASE_TOKEN_DECIMALS)}`
+            : null}
+        </span>
       </div>
     </div>
   );

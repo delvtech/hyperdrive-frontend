@@ -4,8 +4,8 @@ import { XCircleIcon } from "@heroicons/react/24/outline";
 import { ReactElement, useState } from "react";
 import { Tabs } from "src/ui/base/Tabs/Tabs";
 import { ClosePositionModal } from "./ClosePositionModal";
-import { DebtCoverageDetails } from "src/ui/fixedborrow/CoverageTable/DebtCoverageDetails";
-import { UncoveredDebtDetails } from "src/ui/fixedborrow/CoverageTable/UncoveredDebtDetails";
+import { ExistingCoverageTab } from "src/ui/coverage/CoverageTable/ExistingCoverageTab";
+import { UncoveredDebtTab } from "src/ui/coverage/CoverageTable/UncoveredDebtTab";
 
 export function DebtDetailsSection(): ReactElement {
   const [activeTab, setActiveTab] = useState(0);
@@ -27,7 +27,7 @@ export function DebtDetailsSection(): ReactElement {
         onChange={(tabIndex) => setActiveTab(tabIndex)}
       />
 
-      {activeTab === 0 ? <DebtCoverageDetails /> : <UncoveredDebtDetails />}
+      {activeTab === 0 ? <ExistingCoverageTab /> : <UncoveredDebtTab />}
     </div>
   );
 }
