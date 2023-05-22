@@ -39,7 +39,7 @@ const tableCols = [
   },
 ];
 
-export function DebtCoverageTab(): ReactElement {
+export function ExistingCoverageTab(): ReactElement {
   return (
     <>
       <p className="text-h6 text-lightText">
@@ -53,8 +53,8 @@ export function DebtCoverageTab(): ReactElement {
 
       <div>
         <SortableGridTable
-          headingRowClassName="grid-cols-[170px_2fr_2fr_1fr] gap-8 border-b-2 border-dawn h-9 items-center"
-          bodyRowClassName="grid-cols-[170px_2fr_2fr_1fr] gap-8 even:border-b border-dawn text-h6"
+          headingRowClassName="grid-cols-[170px_140px_2fr_1fr] gap-8 border-b-2 border-dawn h-9 items-center"
+          bodyRowClassName="grid-cols-[170px_140px_2fr_1fr] gap-8 even:border-b border-dawn text-h6"
           emptyTableElement={
             <span className="text-white">No debt coverage found</span>
           }
