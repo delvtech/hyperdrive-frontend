@@ -1,8 +1,8 @@
 /**
  * This is a TypeScript port of the AssetId contract, which provides utils for
  * encoding and decoding the token ids of the Hyperdrive contract, which is a
- * multi-token contract, see:
- * github.com/delvtech/hyperdrive/blob/main/contracts/src/libraries/AssetId.sol
+ * multi-token contract.
+ * @see github.com/delvtech/hyperdrive/blob/main/contracts/src/libraries/AssetId.sol
  */
 
 export const LP_ASSET_ID_PREFIX = 0 as const;
