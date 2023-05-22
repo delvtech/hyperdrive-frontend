@@ -52,3 +52,7 @@ export function decodeAssetId(assetId: bigint): {
     assetId & 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffn;
   return { assetIdPrefix, timestamp };
 }
+
+export function isHyperdriveShort(assetId: bigint): boolean {
+  return decodeAssetId(assetId).assetIdPrefix === SHORT_ASSET_ID_PREFIX;
+}
