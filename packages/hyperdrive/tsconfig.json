@@ -5,6 +5,7 @@
   "compilerOptions": {
     "rootDir": ".",
     "baseUrl": ".",
+    "target": "esnext",
     "paths": {
       "src/*": ["src/*"]
     },

@@ -1,43 +1,8 @@
 import { SortableGridTable } from "src/ui/base/tables/SortableGridTable";
-import { ShortActionsMenu } from "./DebtDetailsSection";
-import { ReactElement } from "react";
-
-const tableCols = [
-  {
-    cell: (
-      <span
-        className="text-secondaryText"
-        title="The fixed rate expires on this date. After expiry this debt becomes variable rate debt."
-      >
-        Expiration
-      </span>
-    ),
-  },
-  {
-    cell: (
-      <span
-        className="text-secondaryText"
-        title="The amount of debt that is covered by the locked in fixed rate"
-      >
-        Debt covered
-      </span>
-    ),
-  },
-  {
-    cell: (
-      <span
-        className="text-secondaryText"
-        title="The fixed rate you locked in when the short was opened"
-      >
-        Fixed Rate
-      </span>
-    ),
-  },
-  {
-    // Empty cell for kebab menu icon
-    cell: <span className="text-secondaryText" />,
-  },
-];
+import { ReactElement, useState } from "react";
+import { Popover } from "@headlessui/react";
+import { EllipsisVerticalIcon, XCircleIcon } from "@heroicons/react/24/outline";
+import { ClosePositionModal } from "src/ui/coverage/CoverageTable/ClosePositionModal";
 
 export function ExistingCoverageTab(): ReactElement {
   return (
@@ -58,7 +23,42 @@ export function ExistingCoverageTab(): ReactElement {
           emptyTableElement={
             <span className="text-white">No debt coverage found</span>
           }
-          cols={tableCols}
+          cols={[
+            {
+              cell: (
+                <span
+                  className="text-secondaryText"
+                  title="The fixed rate expires on this date. After expiry this debt becomes variable rate debt."
+                >
+                  Expiration
+                </span>
+              ),
+            },
+            {
+              cell: (
+                <span
+                  className="text-secondaryText"
+                  title="The amount of debt that is covered by the locked in fixed rate"
+                >
+                  Debt covered
+                </span>
+              ),
+            },
+            {
+              cell: (
+                <span
+                  className="text-secondaryText"
+                  title="The fixed rate you locked in when the short was opened"
+                >
+                  Fixed Rate
+                </span>
+              ),
+            },
+            {
+              // Empty cell for kebab menu icon
+              cell: <span className="text-secondaryText" />,
+            },
+          ]}
           rows={[
             {
               cells: [
@@ -79,6 +79,39 @@ export function ExistingCoverageTab(): ReactElement {
           ]}
         />
       </div>
+    </>
+  );
+}
+
+export function ShortActionsMenu(): ReactElement {
+  const [isOpen, setIsOpen] = useState(false);
+
+  function handleOpenModal() {
+    setIsOpen(true);
+  }
+
+  function handleCloseModal() {
+    setIsOpen(false);
+  }
+
+  return (
+    <>
+      <Popover>
+        <Popover.Button className="rounded-md hover:bg-darkButton-hover">
+          <EllipsisVerticalIcon className="h-5 w-5 hover:text-white" />
+        </Popover.Button>
+
+        <Popover.Panel className="bg-background absolute -right-24 flex w-52 flex-col justify-start gap-1 rounded-lg bg-inputBg p-1 shadow-2xl shadow-midnight ring-1 ring-inset ring-dawn">
+          <button
+            onClick={handleOpenModal}
+            className="flex w-full items-center gap-3 rounded-lg p-2 text-left hover:bg-darkButton hover:text-white"
+          >
+            <XCircleIcon className="h-5 w-5" /> Close coverage
+          </button>
+        </Popover.Panel>
+      </Popover>
+
+      <ClosePositionModal isOpen={isOpen} onClose={handleCloseModal} />
     </>
   );
 }

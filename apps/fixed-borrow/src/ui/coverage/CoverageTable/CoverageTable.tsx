@@ -6,11 +6,11 @@ import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { AssetIcon } from "src/ui/token/AssetIcon";
 import { DebtDetailsSection } from "./DebtDetailsSection";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
-import { parseBigInt } from "src/base/bigint/parseBigInt";
 import { useUserCurrentDebt } from "src/ui/loans/hooks/useUserCurrentDebt";
 import { SparkGoerliAddresses } from "@hyperdrive/spark";
 import { useAaveOracleAssetPrice } from "src/ui/oracles/useAaveOracleAssetPrice";
 import { NETWORK_BASE_TOKEN_DECIMALS } from "src/pools/networkBaseToken";
+import { useTotalCoverage } from "src/ui/coverage/hooks/useTotalFixedRateCoverage";
 
 export function CoverageTable(): ReactElement {
   const { address: account } = useAccount();
@@ -27,6 +27,8 @@ export function CoverageTable(): ReactElement {
     currentDebt !== undefined && price !== undefined
       ? formatDebtValueLabel(currentDebt, 18, price)
       : undefined;
+
+  const { totalCoverage } = useTotalCoverage();
 
   return (
     <SortableGridTable
@@ -80,8 +82,8 @@ export function CoverageTable(): ReactElement {
                   />,
                   <AmountCell
                     key="fixedRateDebt"
-                    amount={parseBigInt("13.27", 18)}
-                    secondaryText="1.26% APY"
+                    amount={totalCoverage?.amount || 0n}
+                    secondaryText={`${totalCoverage?.rate || 0 * 100}% APR`}
                     tokenAddress={SparkGoerliAddresses.DAI_token}
                   />,
                   <ExpandIconCell key="expand" />,
