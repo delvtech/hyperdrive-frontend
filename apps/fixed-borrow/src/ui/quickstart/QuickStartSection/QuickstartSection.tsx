@@ -5,6 +5,7 @@ import { BorrowQuickStartButton } from "src/ui/quickstart/BorrowQuickStartButton
 import { SupplyQuickStartButton } from "src/ui/quickstart/SupplyQuickStartButton/SupplyQuickStartButton";
 import { MintQuickStartButton } from "src/ui/quickstart/MintQuickStartButton/MintQuickStartButton";
 import { ReactElement } from "react";
+import { RepayQuickStartButton } from "src/ui/quickstart/RepayQuickStartButton/RepayQuickStartButton";
 
 export function QuickstartSection(): ReactElement {
   return (
@@ -42,10 +43,10 @@ export function QuickstartSection(): ReactElement {
             />
           </div>
           <div>
-            <StatWell
+            <RepayQuickStartButton
               label={"Step 4"}
               stat={"Repay DAI on Spark"}
-              onClick={() => {}}
+              tokenAddress={SparkGoerliAddresses.DAI_token}
             />
           </div>
         </div>
