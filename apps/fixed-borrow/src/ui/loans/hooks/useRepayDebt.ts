@@ -1,5 +1,6 @@
 import { PoolABI, SparkGoerliAddresses } from "@hyperdrive/spark";
 import { useWaitForTransactionThenInvalidateCache } from "src/ui/network/useWaitForTransactionThenInvalidateCache/useWaitForTransactionThenInvalidateCache";
+import { Address } from "viem";
 import { useContractWrite, usePrepareContractWrite } from "wagmi";
 
 export function useRepayDebt({
