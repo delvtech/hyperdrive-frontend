@@ -19,7 +19,7 @@
     "@hyperdrive/core": "*",
     "@hyperdrive/spark": "*",
     "@rainbow-me/rainbowkit": "^1.0.0",
-    "@tanstack/react-query": "^4.24.10",
+    "@tanstack/react-query": "^4.29.7",
     "assert-never": "^1.2.1",
     "classnames": "^2.3.2",
     "d3-format": "^3.1.0",
