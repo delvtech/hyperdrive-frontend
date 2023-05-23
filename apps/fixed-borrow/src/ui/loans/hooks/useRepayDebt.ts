@@ -7,9 +7,9 @@ export function useRepayDebt({
   amount,
   onBehalfOf,
 }: {
-  debtToken: `0x${string}`;
+  debtToken: Address;
   amount: bigint | undefined;
-  onBehalfOf: `0x${string}` | undefined;
+  onBehalfOf: Address | undefined;
 }): {
   repay: (() => void) | undefined;
   isPendingWalletAction: boolean;
