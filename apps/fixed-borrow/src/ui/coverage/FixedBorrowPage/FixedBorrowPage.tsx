@@ -77,7 +77,7 @@ export function FixedBorrowPage(): ReactElement {
               <Banner>
                 Your DAI debt is currently exposed to variable rate interest. To
                 secure fixed rate coverage, choose your borrow position from the
-                table above.
+                table above and select <strong>Uncovered Debt</strong>.
               </Banner>
             ) : null}
           </div>
