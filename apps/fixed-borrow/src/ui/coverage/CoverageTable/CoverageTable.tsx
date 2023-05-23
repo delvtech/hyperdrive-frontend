@@ -12,6 +12,7 @@ import { useAaveOracleAssetPrice } from "src/ui/oracles/useAaveOracleAssetPrice"
 import { NETWORK_BASE_TOKEN_DECIMALS } from "src/pools/networkBaseToken";
 import { useTotalCoverage } from "src/ui/coverage/hooks/useTotalFixedRateCoverage";
 import classNames from "classnames";
+import { parseBigInt } from "src/base/bigint/parseBigInt";
 
 export function CoverageTable(): ReactElement {
   const { address: account } = useAccount();
@@ -66,7 +67,8 @@ export function CoverageTable(): ReactElement {
         },
       ]}
       rows={
-        currentDebt
+        // if the user has less than 1 dollar of debt, consider it to be dust
+        currentDebt && currentDebt > parseBigInt("1")
           ? [
               {
                 detailsElement: <DebtDetailsSection />,

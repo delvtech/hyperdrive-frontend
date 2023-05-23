@@ -3,6 +3,7 @@ import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { HyperdriveGoerliAddresses } from "@hyperdrive/core";
 import { SparkGoerliAddresses } from "@hyperdrive/spark";
 import { ReactElement } from "react";
+import { parseBigInt } from "src/base/bigint/parseBigInt";
 import { Banner } from "src/ui/base/Banner/Banner";
 import { InfoDisclosure } from "src/ui/base/InfoDisclosure/InfoDisclosure";
 import { Well } from "src/ui/base/Well/Well";
@@ -24,7 +25,16 @@ export function FixedBorrowPage(): ReactElement {
   });
 
   // TODO: Use a more robust way of calculating hasUncoveredDebt
-  const hasUncoveredDebt = !!currentDebt && currentDebt > 0 && !shorts?.length;
+  const hasUncoveredDebt =
+    !!currentDebt &&
+    currentDebt >
+      parseBigInt(
+        // if the user has less than 1 dollar of debt, consider it to be dust
+        "1",
+        18,
+      ) &&
+    !shorts?.length;
+
   return (
     <div className="flex flex-col">
       <div className="space-y-2">
