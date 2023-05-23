@@ -1,11 +1,30 @@
 import { Disclosure } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
+import { HyperdriveGoerliAddresses } from "@hyperdrive/core";
+import { SparkGoerliAddresses } from "@hyperdrive/spark";
 import { ReactElement } from "react";
+import { Banner } from "src/ui/base/Banner/Banner";
 import { InfoDisclosure } from "src/ui/base/InfoDisclosure/InfoDisclosure";
+import { Well } from "src/ui/base/Well/Well";
 import { CoverageTable } from "src/ui/coverage/CoverageTable/CoverageTable";
+import { useUserCurrentDebt } from "src/ui/loans/hooks/useUserCurrentDebt";
 import { QuickstartSection } from "src/ui/quickstart/QuickStartSection/QuickstartSection";
+import { useShorts } from "src/ui/shorts/hooks/useShorts";
+import { useAccount } from "wagmi";
 
 export function FixedBorrowPage(): ReactElement {
+  const { address: account } = useAccount();
+  const { currentDebt } = useUserCurrentDebt(
+    account,
+    SparkGoerliAddresses.DAI_token,
+  );
+  const { shorts } = useShorts({
+    account,
+    hyperdriveMarket: HyperdriveGoerliAddresses.makerDsrHyperdrive,
+  });
+
+  // TODO: Use a more robust way of calculating hasUncoveredDebt
+  const hasUncoveredDebt = !!currentDebt && currentDebt > 0 && !shorts?.length;
   return (
     <div className="flex flex-col">
       <div className="space-y-2">
@@ -39,9 +58,18 @@ export function FixedBorrowPage(): ReactElement {
           </div>
 
           {/* Borrows table */}
-          <div>
+          <div className="flex flex-col gap-8">
             <h4 className="mb-4 font-bold text-white">Spark Borrows</h4>
-            <CoverageTable />
+            <div>
+              <CoverageTable />
+            </div>
+            {hasUncoveredDebt ? (
+              <Banner>
+                Your DAI debt is currently exposed to variable rate interest. To
+                secure fixed rate coverage, choose your borrow position from the
+                table above.
+              </Banner>
+            ) : null}
           </div>
 
           {/* FAQ */}

@@ -11,6 +11,7 @@ import { SparkGoerliAddresses } from "@hyperdrive/spark";
 import { useAaveOracleAssetPrice } from "src/ui/oracles/useAaveOracleAssetPrice";
 import { NETWORK_BASE_TOKEN_DECIMALS } from "src/pools/networkBaseToken";
 import { useTotalCoverage } from "src/ui/coverage/hooks/useTotalFixedRateCoverage";
+import classNames from "classnames";
 
 export function CoverageTable(): ReactElement {
   const { address: account } = useAccount();
@@ -82,6 +83,7 @@ export function CoverageTable(): ReactElement {
                   />,
                   <AmountCell
                     key="fixedRateDebt"
+                    variant={!totalCoverage?.amount ? "pinkSlip" : undefined}
                     amount={totalCoverage?.amount || 0n}
                     secondaryText={`${totalCoverage?.rate || 0 * 100}% APR`}
                     tokenAddress={SparkGoerliAddresses.DAI_token}
@@ -152,10 +154,12 @@ function AmountCell({
   amount,
   tokenAddress,
   secondaryText,
+  variant,
 }: {
   amount: bigint;
   tokenAddress: Address;
   secondaryText: ReactNode;
+  variant?: "pinkSlip";
 }): ReactElement {
   const { data: tokenMetadata } = useToken({ address: tokenAddress });
   const amountLabel = formatBalance(
@@ -163,7 +167,12 @@ function AmountCell({
   );
   return (
     <div className="flex flex-col">
-      <span className="inline-flex items-center gap-1 text-h6 text-white">
+      <span
+        className={classNames("inline-flex items-center gap-1 text-h6", {
+          "text-white": !variant,
+          "text-pinkSlip": variant === "pinkSlip",
+        })}
+      >
         {amountLabel} {tokenMetadata?.symbol}
       </span>
       <span className="flex leading-sm text-secondaryText">
