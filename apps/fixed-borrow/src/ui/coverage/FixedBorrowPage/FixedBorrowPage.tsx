@@ -6,7 +6,6 @@ import { ReactElement } from "react";
 import { parseUnits } from "viem";
 import { Banner } from "src/ui/base/Banner/Banner";
 import { InfoDisclosure } from "src/ui/base/InfoDisclosure/InfoDisclosure";
-import { Well } from "src/ui/base/Well/Well";
 import { CoverageTable } from "src/ui/coverage/CoverageTable/CoverageTable";
 import { useUserCurrentDebt } from "src/ui/loans/hooks/useUserCurrentDebt";
 import { QuickstartSection } from "src/ui/quickstart/QuickStartSection/QuickstartSection";

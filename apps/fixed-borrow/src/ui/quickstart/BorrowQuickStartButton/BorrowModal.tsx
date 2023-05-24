@@ -82,7 +82,8 @@ export function BorrowModal({
                       Borrow
                     </span>
                     <span className=" text-h6 font-bold text-lightText">
-                      {formatUnits(amount, token?.decimals)} {token?.symbol}
+                      {formatUnits(amount, token?.decimals || 18)}{" "}
+                      {token?.symbol}
                     </span>
                   </div>
                 </Well>

@@ -6,7 +6,6 @@ import Skeleton from "react-loading-skeleton";
 import { PreviewRow } from "src/ui/loans/previews/PreviewRow";
 import { formatUnits } from "viem";
 import { NETWORK_BASE_TOKEN_DECIMALS } from "src/pools/networkBaseToken";
-import { useUserCurrentDebt } from "src/ui/loans/hooks/useUserCurrentDebt";
 import { formatUSD } from "src/ui/base/formatting/formatUSD";
 
 // TODO: use previewSupplyBalance to calculate the preview loan to value

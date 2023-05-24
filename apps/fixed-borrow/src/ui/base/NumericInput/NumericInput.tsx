@@ -7,8 +7,8 @@ interface NumericInputProps {
   placeholderText?: string;
   icon?: ReactNode;
   value?: string;
-  maxValue?: string;
-  onChange?: (value: string) => void;
+  maxValue?: `${number}`;
+  onChange?: (value: `${number}`) => void;
 }
 
 export function NumericInput({
@@ -35,7 +35,7 @@ export function NumericInput({
           className="h-full w-full bg-inputBg text-right text-h4"
           value={value}
           onChange={(event) => {
-            onChange?.(event.target.value);
+            onChange?.(event.target.value as `${number}`);
           }}
         />
 

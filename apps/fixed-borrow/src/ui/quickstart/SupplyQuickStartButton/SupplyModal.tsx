@@ -82,7 +82,10 @@ export function SupplyModal({
                       Supply
                     </span>
                     <span className=" text-h6 font-bold text-lightText">
-                      {formatUnits(amount, token?.decimals)} {token?.symbol}
+                      {token?.decimals
+                        ? formatUnits(amount, token?.decimals)
+                        : null}{" "}
+                      {token?.symbol}
                     </span>
                   </div>
                 </Well>

@@ -28,7 +28,7 @@ function calculateBaseValueOfCurrentCollateralAndNewAmount(
 
   // Convert the new collateral amount to a value in base
   const newCollateralAmountBaseValue =
-    +formatUnits(newCollateralAmount || 0n, collateralDecimals) *
+    +formatUnits(newCollateralAmount || 0n, collateralDecimals || 18) *
     +formatUnits(collateralPrice || 0n, 8);
 
   // add the current base value and the new collateral's base value together

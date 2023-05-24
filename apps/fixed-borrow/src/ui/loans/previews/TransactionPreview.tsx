@@ -32,7 +32,10 @@ export function TransactionPreview({
 
   const borrowAmountBigInt =
     borrowTokenData &&
-    parseUnits(borrowAmount.toString(), borrowTokenData.decimals);
+    parseUnits(
+      borrowAmount.toString() as `${number}`,
+      borrowTokenData.decimals,
+    );
 
   const { formattedBorrowAmount } = getTotalBorrow(
     currentDebt,
@@ -42,7 +45,10 @@ export function TransactionPreview({
 
   const borrowBigInt =
     borrowTokenData &&
-    parseUnits(borrowAmount.toString(), borrowTokenData.decimals);
+    parseUnits(
+      borrowAmount.toString() as `${number}`,
+      borrowTokenData.decimals,
+    );
 
   const valueToShort = borrowBigInt
     ? calculateValueToShort(borrowBigInt, borrowTokenData.decimals)

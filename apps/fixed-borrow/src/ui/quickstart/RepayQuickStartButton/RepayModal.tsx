@@ -81,7 +81,7 @@ export function RepayModal({
                     </span>
                     <span className=" text-h6 font-bold text-lightText">
                       {formatBalance(
-                        formatUnits(currentDebt || 0n, token?.decimals),
+                        formatUnits(currentDebt || 0n, token?.decimals || 18),
                       )}{" "}
                       {token?.symbol}
                     </span>

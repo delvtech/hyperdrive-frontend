@@ -46,7 +46,7 @@ export function ApproveDelegationButton({
       disabled={!approveDelegation}
       onClick={() => approveDelegation?.()}
     >
-      <span title={`Current allowance: ${formatUnits(allowance || 0n)}`}>
+      <span title={`Current allowance: ${formatUnits(allowance || 0n, 18)}`}>
         Approve {token?.symbol}
       </span>
     </Button>

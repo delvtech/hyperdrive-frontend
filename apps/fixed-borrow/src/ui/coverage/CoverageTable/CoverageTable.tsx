@@ -67,7 +67,7 @@ export function CoverageTable(): ReactElement {
       ]}
       rows={
         // if the user has less than 1 dollar of debt, consider it to be dust
-        currentDebt && currentDebt > parseUnits("1")
+        currentDebt && currentDebt > parseUnits("1", 18)
           ? [
               {
                 detailsElement: <DebtDetailsSection />,
@@ -161,9 +161,9 @@ function AmountCell({
   variant?: "pinkSlip";
 }): ReactElement {
   const { data: tokenMetadata } = useToken({ address: tokenAddress });
-  const amountLabel = formatBalance(
-    formatUnits(amount, tokenMetadata?.decimals),
-  );
+  const amountLabel = tokenMetadata?.decimals
+    ? formatBalance(formatUnits(amount, tokenMetadata?.decimals))
+    : null;
   return (
     <div className="flex flex-col">
       <span
