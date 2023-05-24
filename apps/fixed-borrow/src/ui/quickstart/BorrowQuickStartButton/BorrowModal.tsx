@@ -1,6 +1,6 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, ReactElement } from "react";
-import { formatBigInt } from "src/base/bigint/formatBigInt";
+import { formatUnits } from "src/base/bigint/formatBigInt";
 import { Button } from "src/ui/base/Button/Button";
 import { Well } from "src/ui/base/Well/Well";
 import { BorrowButton } from "src/ui/loans/BorrowButton/BorrowButton";
@@ -82,7 +82,7 @@ export function BorrowModal({
                       Borrow
                     </span>
                     <span className=" text-h6 font-bold text-lightText">
-                      {formatBigInt(amount, token?.decimals)} {token?.symbol}
+                      {formatUnits(amount, token?.decimals)} {token?.symbol}
                     </span>
                   </div>
                 </Well>

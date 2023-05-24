@@ -5,7 +5,7 @@ import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { InfoTooltip } from "src/ui/base/Tooltip/InfoTooltip";
 import { parseBigInt } from "src/base/bigint/parseBigInt";
 import { PreviewRow } from "src/ui/loans/previews/PreviewRow";
-import { formatBigInt } from "src/base/bigint/formatBigInt";
+import { formatUnits } from "src/base/bigint/formatBigInt";
 import { calculateValueToShort } from "src/shorts/calculateValueToShort";
 import { useOpenShortPreview } from "src/ui/shorts/hooks/useOpenShortPreview";
 import { HyperdriveGoerliAddresses } from "@hyperdrive/core";
@@ -85,7 +85,7 @@ export function TransactionPreview({
           }
           value={
             openShortPreview && borrowTokenData
-              ? `${formatBigInt(openShortPreview, borrowTokenData.decimals)} ${
+              ? `${formatUnits(openShortPreview, borrowTokenData.decimals)} ${
                   borrowTokenData.symbol
                 }`
               : `0 ${borrowTokenData?.symbol}`
@@ -135,6 +135,6 @@ function getTotalBorrow(
   const amount = borrowAmount + currentDebt;
   return {
     amount: amount,
-    formattedBorrowAmount: formatBigInt(borrowAmount, borrowTokenDecimals),
+    formattedBorrowAmount: formatUnits(borrowAmount, borrowTokenDecimals),
   };
 }

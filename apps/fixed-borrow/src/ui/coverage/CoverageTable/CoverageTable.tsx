@@ -1,7 +1,7 @@
 import { ReactElement, ReactNode } from "react";
 import { Address, useAccount, useToken } from "wagmi";
 import { SortableGridTable } from "src/ui/base/tables/SortableGridTable";
-import { formatBigInt } from "src/base/bigint/formatBigInt";
+import { formatUnits } from "src/base/bigint/formatBigInt";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { AssetIcon } from "src/ui/token/AssetIcon";
 import { DebtDetailsSection } from "./DebtDetailsSection";
@@ -106,8 +106,8 @@ function formatDebtValueLabel(
   price: bigint,
 ) {
   const valueOfDebt =
-    +formatBigInt(currentDebt, debtTokenDecimals) *
-    +formatBigInt(price, NETWORK_BASE_TOKEN_DECIMALS);
+    +formatUnits(currentDebt, debtTokenDecimals) *
+    +formatUnits(price, NETWORK_BASE_TOKEN_DECIMALS);
 
   return `$${formatBalance(valueOfDebt)}`;
 }
@@ -143,9 +143,7 @@ function BorrowedAssetCell({
           {tokenMetadata?.symbol}
         </span>
         <span className="leading-sm text-secondaryText">
-          {price
-            ? `$${formatBigInt(price, NETWORK_BASE_TOKEN_DECIMALS)}`
-            : null}
+          {price ? `$${formatUnits(price, NETWORK_BASE_TOKEN_DECIMALS)}` : null}
         </span>
       </div>
     </div>
@@ -165,7 +163,7 @@ function AmountCell({
 }): ReactElement {
   const { data: tokenMetadata } = useToken({ address: tokenAddress });
   const amountLabel = formatBalance(
-    formatBigInt(amount, tokenMetadata?.decimals),
+    formatUnits(amount, tokenMetadata?.decimals),
   );
   return (
     <div className="flex flex-col">

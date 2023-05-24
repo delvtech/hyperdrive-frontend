@@ -1,7 +1,7 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { SparkGoerliAddresses } from "@hyperdrive/spark";
 import { Fragment, ReactElement } from "react";
-import { formatBigInt } from "src/base/bigint/formatBigInt";
+import { formatUnits } from "src/base/bigint/formatBigInt";
 import { Button } from "src/ui/base/Button/Button";
 import { Well } from "src/ui/base/Well/Well";
 import { SupplyCollateralButton } from "src/ui/loans/SupplyCollateralButton/SupplyCollateralButton";
@@ -82,7 +82,7 @@ export function SupplyModal({
                       Supply
                     </span>
                     <span className=" text-h6 font-bold text-lightText">
-                      {formatBigInt(amount, token?.decimals)} {token?.symbol}
+                      {formatUnits(amount, token?.decimals)} {token?.symbol}
                     </span>
                   </div>
                 </Well>

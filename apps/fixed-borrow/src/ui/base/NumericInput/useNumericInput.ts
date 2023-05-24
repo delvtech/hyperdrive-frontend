@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { formatBigInt } from "src/base/bigint/formatBigInt";
+import { formatUnits } from "src/base/bigint/formatBigInt";
 import { parseBigInt } from "src/base/bigint/parseBigInt";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 
@@ -22,7 +22,7 @@ export function useNumericInput({
   const amountAsBigInt = amount ? parseBigInt(amount, decimals) : undefined;
 
   const formattedAmount = amountAsBigInt
-    ? formatBalance(formatBigInt(amountAsBigInt, decimals))
+    ? formatBalance(formatUnits(amountAsBigInt, decimals))
     : undefined;
 
   return {

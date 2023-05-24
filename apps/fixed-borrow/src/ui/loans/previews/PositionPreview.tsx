@@ -4,7 +4,7 @@ import { Address, useAccount, useToken } from "wagmi";
 import { useUserAccountData } from "src/ui/loans/hooks/useUserAccountData";
 import Skeleton from "react-loading-skeleton";
 import { PreviewRow } from "src/ui/loans/previews/PreviewRow";
-import { formatBigInt } from "src/base/bigint/formatBigInt";
+import { formatUnits } from "src/base/bigint/formatBigInt";
 import { NETWORK_BASE_TOKEN_DECIMALS } from "src/pools/networkBaseToken";
 import { useUserCurrentDebt } from "src/ui/loans/hooks/useUserCurrentDebt";
 import { formatUSD } from "src/ui/base/formatting/formatUSD";
@@ -35,7 +35,7 @@ export function PositionPreview({
               return <Skeleton width={120} />;
             }
             return formatUSD(
-              formatBigInt(
+              formatUnits(
                 userAccountData.totalCollateralBase,
                 NETWORK_BASE_TOKEN_DECIMALS,
               ),
@@ -52,7 +52,7 @@ export function PositionPreview({
               return <Skeleton width={120} />;
             }
             return formatUSD(
-              formatBigInt(
+              formatUnits(
                 userAccountData.totalDebtBase,
                 NETWORK_BASE_TOKEN_DECIMALS,
               ),
@@ -69,7 +69,7 @@ export function PositionPreview({
               return <Skeleton width={120} />;
             }
             return formatUSD(
-              formatBigInt(
+              formatUnits(
                 userAccountData.availableBorrowBase,
                 NETWORK_BASE_TOKEN_DECIMALS,
               ),
@@ -85,7 +85,7 @@ export function PositionPreview({
             if (!userAccountData) {
               return <Skeleton width={120} />;
             }
-            return `${formatBigInt(
+            return `${formatUnits(
               userAccountData.ltv,
               NETWORK_BASE_TOKEN_DECIMALS,
             )}%`;

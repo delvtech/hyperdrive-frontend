@@ -1,5 +1,5 @@
 import { parseBigInt } from "src/base/bigint/parseBigInt";
-import { formatBigInt } from "src/base/bigint/formatBigInt";
+import { formatUnits } from "src/base/bigint/formatBigInt";
 
 export function calculateValueToShort(
   debtAmountInput: bigint,
@@ -11,6 +11,6 @@ export function calculateValueToShort(
 
   return {
     shortAmount: valueToShort,
-    formattedShortAmount: formatBigInt(valueToShort, debtTokenDecimals),
+    formattedShortAmount: formatUnits(valueToShort, debtTokenDecimals),
   };
 }

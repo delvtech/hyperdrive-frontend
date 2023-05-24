@@ -1,7 +1,7 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { SparkGoerliAddresses } from "@hyperdrive/spark";
 import { Fragment, ReactElement } from "react";
-import { formatBigInt } from "src/base/bigint/formatBigInt";
+import { formatUnits } from "src/base/bigint/formatBigInt";
 import { Button } from "src/ui/base/Button/Button";
 import { Well } from "src/ui/base/Well/Well";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -81,7 +81,7 @@ export function RepayModal({
                     </span>
                     <span className=" text-h6 font-bold text-lightText">
                       {formatBalance(
-                        formatBigInt(currentDebt || 0n, token?.decimals),
+                        formatUnits(currentDebt || 0n, token?.decimals),
                       )}{" "}
                       {token?.symbol}
                     </span>

@@ -3,7 +3,7 @@ import { ReactElement } from "react";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { HyperdriveGoerliAddresses } from "@hyperdrive/core";
 import { LoanCard } from "src/ui/graveyard/LoanCard/LoanCard";
-import { formatBigInt } from "src/base/bigint/formatBigInt";
+import { formatUnits } from "src/base/bigint/formatBigInt";
 
 console.log(SparkGoerliAddresses);
 console.log(HyperdriveGoerliAddresses);
@@ -24,12 +24,12 @@ function calculateBaseValueOfCurrentCollateralAndNewAmount(
   collateralPrice: bigint | undefined,
 ) {
   // you start with this much already as collateral
-  const totalCollateralBaseValue = formatBigInt(currentCollateralBase || 0n, 8);
+  const totalCollateralBaseValue = formatUnits(currentCollateralBase || 0n, 8);
 
   // Convert the new collateral amount to a value in base
   const newCollateralAmountBaseValue =
-    +formatBigInt(newCollateralAmount || 0n, collateralDecimals) *
-    +formatBigInt(collateralPrice || 0n, 8);
+    +formatUnits(newCollateralAmount || 0n, collateralDecimals) *
+    +formatUnits(collateralPrice || 0n, 8);
 
   // add the current base value and the new collateral's base value together
   const afterAmountCollateralValueBase = formatBalance(
