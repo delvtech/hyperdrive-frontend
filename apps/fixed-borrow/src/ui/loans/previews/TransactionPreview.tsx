@@ -3,7 +3,7 @@ import { Well } from "src/ui/base/Well/Well";
 import { useAccount, Address, useToken } from "wagmi";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { InfoTooltip } from "src/ui/base/Tooltip/InfoTooltip";
-import { parseBigInt } from "src/base/bigint/parseBigInt";
+import { parseUnits } from "src/base/bigint/parseBigInt";
 import { PreviewRow } from "src/ui/loans/previews/PreviewRow";
 import { formatUnits } from "viem";
 import { calculateValueToShort } from "src/shorts/calculateValueToShort";
@@ -33,7 +33,7 @@ export function TransactionPreview({
 
   const borrowAmountBigInt =
     borrowTokenData &&
-    parseBigInt(borrowAmount.toString(), borrowTokenData.decimals);
+    parseUnits(borrowAmount.toString(), borrowTokenData.decimals);
 
   const { formattedBorrowAmount } = getTotalBorrow(
     currentDebt,
@@ -43,7 +43,7 @@ export function TransactionPreview({
 
   const borrowBigInt =
     borrowTokenData &&
-    parseBigInt(borrowAmount.toString(), borrowTokenData.decimals);
+    parseUnits(borrowAmount.toString(), borrowTokenData.decimals);
 
   const valueToShort = borrowBigInt
     ? calculateValueToShort(borrowBigInt, borrowTokenData.decimals)

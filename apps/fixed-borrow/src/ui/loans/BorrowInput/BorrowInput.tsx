@@ -4,7 +4,7 @@ import { Address, useAccount, useBalance, useToken } from "wagmi";
 import { NumericInput } from "src/ui/base/NumericInput/NumericInput";
 import { AssetBadge } from "src/ui/token/AssetBadge";
 import { HyperdriveGoerliAddresses } from "@hyperdrive/core";
-import { parseBigInt } from "src/base/bigint/parseBigInt";
+import { parseUnits } from "src/base/bigint/parseBigInt";
 import { ApproveAllowanceButton } from "src/ui/token/ApproveAllowanceButton";
 import { SparkGoerliAddresses } from "@hyperdrive/spark";
 import { ApproveDelegationButton } from "src/ui/loans/ApproveDelegationButton/ApproveDelegationButton";
@@ -50,14 +50,14 @@ export function BorrowInput({
       token in order to take out the loan on your behalf */}
       <ApproveDelegationButton
         variableDebtTokenAddress={SparkGoerliAddresses.DAI_variableDebtToken}
-        amount={parseBigInt(value || "0", tokenMetadata?.decimals)}
+        amount={parseUnits(value || "0", tokenMetadata?.decimals)}
         delegatee={HyperdriveGoerliAddresses.aaveFixedBorrowAction}
       />
       {/* The action contract must be able to spend the asset you're borrowing
       in order to open a Hyperdrive short on your behalf */}
       <ApproveAllowanceButton
         tokenAddress={tokenAddress}
-        amount={parseBigInt(value || "0", tokenMetadata?.decimals)}
+        amount={parseUnits(value || "0", tokenMetadata?.decimals)}
         spender={HyperdriveGoerliAddresses.aaveFixedBorrowAction}
       />
     </div>
