@@ -1,7 +1,7 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { SparkGoerliAddresses } from "@hyperdrive/spark";
 import { Fragment, ReactElement } from "react";
-import { formatUnits } from "src/base/bigint/formatBigInt";
+import { formatUnits } from "viem";
 import { Button } from "src/ui/base/Button/Button";
 import { Well } from "src/ui/base/Well/Well";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { formatUnits } from "src/base/bigint/formatBigInt";
+import { formatUnits } from "viem";
 import { parseBigInt } from "src/base/bigint/parseBigInt";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 

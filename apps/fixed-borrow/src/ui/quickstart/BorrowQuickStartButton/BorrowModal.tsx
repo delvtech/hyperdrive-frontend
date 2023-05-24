@@ -1,6 +1,6 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, ReactElement } from "react";
-import { formatUnits } from "src/base/bigint/formatBigInt";
+import { formatUnits } from "viem";
 import { Button } from "src/ui/base/Button/Button";
 import { Well } from "src/ui/base/Well/Well";
 import { BorrowButton } from "src/ui/loans/BorrowButton/BorrowButton";

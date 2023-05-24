@@ -1,7 +1,7 @@
 import { ReactElement, ReactNode } from "react";
 import { Address, useAccount, useToken } from "wagmi";
 import { SortableGridTable } from "src/ui/base/tables/SortableGridTable";
-import { formatUnits } from "src/base/bigint/formatBigInt";
+import { formatUnits } from "viem";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { AssetIcon } from "src/ui/token/AssetIcon";
 import { DebtDetailsSection } from "./DebtDetailsSection";

@@ -5,7 +5,7 @@ import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { InfoTooltip } from "src/ui/base/Tooltip/InfoTooltip";
 import { parseBigInt } from "src/base/bigint/parseBigInt";
 import { PreviewRow } from "src/ui/loans/previews/PreviewRow";
-import { formatUnits } from "src/base/bigint/formatBigInt";
+import { formatUnits } from "viem";
 import { calculateValueToShort } from "src/shorts/calculateValueToShort";
 import { useOpenShortPreview } from "src/ui/shorts/hooks/useOpenShortPreview";
 import { HyperdriveGoerliAddresses } from "@hyperdrive/core";

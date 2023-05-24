@@ -4,7 +4,7 @@ import { Address, useAccount, useToken } from "wagmi";
 import { useUserAccountData } from "src/ui/loans/hooks/useUserAccountData";
 import Skeleton from "react-loading-skeleton";
 import { PreviewRow } from "src/ui/loans/previews/PreviewRow";
-import { formatUnits } from "src/base/bigint/formatBigInt";
+import { formatUnits } from "viem";
 import { NETWORK_BASE_TOKEN_DECIMALS } from "src/pools/networkBaseToken";
 import { useUserCurrentDebt } from "src/ui/loans/hooks/useUserCurrentDebt";
 import { formatUSD } from "src/ui/base/formatting/formatUSD";

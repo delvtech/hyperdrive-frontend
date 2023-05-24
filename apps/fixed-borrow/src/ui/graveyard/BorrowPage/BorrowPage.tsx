@@ -3,7 +3,7 @@ import { ReactElement } from "react";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { HyperdriveGoerliAddresses } from "@hyperdrive/core";
 import { LoanCard } from "src/ui/graveyard/LoanCard/LoanCard";
-import { formatUnits } from "src/base/bigint/formatBigInt";
+import { formatUnits } from "viem";
 
 console.log(SparkGoerliAddresses);
 console.log(HyperdriveGoerliAddresses);

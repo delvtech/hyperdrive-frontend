@@ -1,5 +1,5 @@
 import { parseBigInt } from "src/base/bigint/parseBigInt";
-import { formatUnits } from "src/base/bigint/formatBigInt";
+import { formatUnits } from "viem";
 
 export function calculateValueToShort(
   debtAmountInput: bigint,

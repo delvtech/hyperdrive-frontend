@@ -1,6 +1,6 @@
 import { ethers } from "ethers";
 import { ReactElement } from "react";
-import { formatUnits } from "src/base/bigint/formatBigInt";
+import { formatUnits } from "viem";
 import { Button } from "src/ui/base/Button/Button";
 import { useApproveDelegation } from "src/ui/loans/hooks/useApproveDelegation";
 import { useVariableDebtTokenAllowance } from "src/ui/loans/hooks/useVariableDebtTokenAllowance";
