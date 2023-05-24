@@ -1,5 +1,5 @@
 import { SparkGoerliAddresses } from "@hyperdrive/spark";
-import { parseUnits } from "src/base/bigint/parseBigInt";
+import { parseUnits } from "viem";
 import { BorrowQuickStartButton } from "src/ui/quickstart/BorrowQuickStartButton/BorrowQuickStartButton";
 import { SupplyQuickStartButton } from "src/ui/quickstart/SupplyQuickStartButton/SupplyQuickStartButton";
 import { MintQuickStartButton } from "src/ui/quickstart/MintQuickStartButton/MintQuickStartButton";

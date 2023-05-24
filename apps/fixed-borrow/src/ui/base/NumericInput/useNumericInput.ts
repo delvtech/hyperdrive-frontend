@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { formatUnits } from "viem";
-import { parseUnits } from "src/base/bigint/parseBigInt";
+import { formatUnits, parseUnits } from "viem";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 
 interface UseNumericInputResult {

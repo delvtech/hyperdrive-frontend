@@ -1,7 +1,7 @@
 import { ReactElement, ReactNode } from "react";
 import { Address, useAccount, useToken } from "wagmi";
 import { SortableGridTable } from "src/ui/base/tables/SortableGridTable";
-import { formatUnits } from "viem";
+import { formatUnits, parseUnits } from "viem";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { AssetIcon } from "src/ui/token/AssetIcon";
 import { DebtDetailsSection } from "./DebtDetailsSection";
@@ -12,7 +12,6 @@ import { useAaveOracleAssetPrice } from "src/ui/oracles/useAaveOracleAssetPrice"
 import { NETWORK_BASE_TOKEN_DECIMALS } from "src/pools/networkBaseToken";
 import { useTotalCoverage } from "src/ui/coverage/hooks/useTotalFixedRateCoverage";
 import classNames from "classnames";
-import { parseUnits } from "src/base/bigint/parseBigInt";
 
 export function CoverageTable(): ReactElement {
   const { address: account } = useAccount();

@@ -4,7 +4,7 @@ import { Address, useAccount, useBalance, useToken } from "wagmi";
 import { NumericInput } from "src/ui/base/NumericInput/NumericInput";
 import { AssetBadge } from "src/ui/token/AssetBadge";
 import { HyperdriveGoerliAddresses } from "@hyperdrive/core";
-import { parseUnits } from "src/base/bigint/parseBigInt";
+import { parseUnits } from "viem";
 import { ApproveAllowanceButton } from "src/ui/token/ApproveAllowanceButton";
 import { SparkGoerliAddresses } from "@hyperdrive/spark";
 import { ApproveDelegationButton } from "src/ui/loans/ApproveDelegationButton/ApproveDelegationButton";

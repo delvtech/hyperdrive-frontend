@@ -3,7 +3,7 @@ import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { HyperdriveGoerliAddresses } from "@hyperdrive/core";
 import { SparkGoerliAddresses } from "@hyperdrive/spark";
 import { ReactElement } from "react";
-import { parseUnits } from "src/base/bigint/parseBigInt";
+import { parseUnits } from "viem";
 import { Banner } from "src/ui/base/Banner/Banner";
 import { InfoDisclosure } from "src/ui/base/InfoDisclosure/InfoDisclosure";
 import { Well } from "src/ui/base/Well/Well";

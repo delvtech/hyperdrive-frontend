@@ -11,7 +11,7 @@ import { TransactionPreview } from "src/ui/loans/previews/TransactionPreview";
 import { useToken } from "wagmi";
 import { useNumericInput } from "src/ui/base/NumericInput/useNumericInput";
 import { calculateValueToShort } from "src/shorts/calculateValueToShort";
-import { parseUnits } from "src/base/bigint/parseBigInt";
+import { parseUnits } from "viem";
 
 interface LoanCardProps {
   supplyTokenAddress: `0x${string}`;
