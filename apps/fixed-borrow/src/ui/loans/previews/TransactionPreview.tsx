@@ -3,9 +3,8 @@ import { Well } from "src/ui/base/Well/Well";
 import { useAccount, Address, useToken } from "wagmi";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { InfoTooltip } from "src/ui/base/Tooltip/InfoTooltip";
-import { parseBigInt } from "src/base/bigint/parseBigInt";
+import { parseUnits, formatUnits } from "viem";
 import { PreviewRow } from "src/ui/loans/previews/PreviewRow";
-import { formatBigInt } from "src/base/bigint/formatBigInt";
 import { calculateValueToShort } from "src/shorts/calculateValueToShort";
 import { useOpenShortPreview } from "src/ui/shorts/hooks/useOpenShortPreview";
 import { HyperdriveGoerliAddresses } from "@hyperdrive/core";
@@ -33,7 +32,10 @@ export function TransactionPreview({
 
   const borrowAmountBigInt =
     borrowTokenData &&
-    parseBigInt(borrowAmount.toString(), borrowTokenData.decimals);
+    parseUnits(
+      borrowAmount.toString() as `${number}`,
+      borrowTokenData.decimals,
+    );
 
   const { formattedBorrowAmount } = getTotalBorrow(
     currentDebt,
@@ -43,7 +45,10 @@ export function TransactionPreview({
 
   const borrowBigInt =
     borrowTokenData &&
-    parseBigInt(borrowAmount.toString(), borrowTokenData.decimals);
+    parseUnits(
+      borrowAmount.toString() as `${number}`,
+      borrowTokenData.decimals,
+    );
 
   const valueToShort = borrowBigInt
     ? calculateValueToShort(borrowBigInt, borrowTokenData.decimals)
@@ -85,7 +90,7 @@ export function TransactionPreview({
           }
           value={
             openShortPreview && borrowTokenData
-              ? `${formatBigInt(openShortPreview, borrowTokenData.decimals)} ${
+              ? `${formatUnits(openShortPreview, borrowTokenData.decimals)} ${
                   borrowTokenData.symbol
                 }`
               : `0 ${borrowTokenData?.symbol}`
@@ -135,6 +140,6 @@ function getTotalBorrow(
   const amount = borrowAmount + currentDebt;
   return {
     amount: amount,
-    formattedBorrowAmount: formatBigInt(borrowAmount, borrowTokenDecimals),
+    formattedBorrowAmount: formatUnits(borrowAmount, borrowTokenDecimals),
   };
 }

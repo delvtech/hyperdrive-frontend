@@ -1,7 +1,7 @@
 import { SparkGoerliAddresses } from "@hyperdrive/spark";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MintButton } from "src/ui/faucet/MintButton";
-import { parseBigInt } from "src/base/bigint/parseBigInt";
+import { parseUnits } from "viem";
 import { ReactElement } from "react";
 
 interface AppHeaderProps {}

@@ -1,6 +1,6 @@
 import { ethers } from "ethers";
 import { ReactElement } from "react";
-import { formatBigInt } from "src/base/bigint/formatBigInt";
+import { formatUnits } from "viem";
 import { Button } from "src/ui/base/Button/Button";
 import { useApproveDelegation } from "src/ui/loans/hooks/useApproveDelegation";
 import { useVariableDebtTokenAllowance } from "src/ui/loans/hooks/useVariableDebtTokenAllowance";
@@ -46,7 +46,7 @@ export function ApproveDelegationButton({
       disabled={!approveDelegation}
       onClick={() => approveDelegation?.()}
     >
-      <span title={`Current allowance: ${formatBigInt(allowance || 0n)}`}>
+      <span title={`Current allowance: ${formatUnits(allowance || 0n, 18)}`}>
         Approve {token?.symbol}
       </span>
     </Button>

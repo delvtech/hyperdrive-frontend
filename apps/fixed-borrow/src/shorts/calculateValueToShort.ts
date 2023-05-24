@@ -1,16 +1,15 @@
-import { parseBigInt } from "src/base/bigint/parseBigInt";
-import { formatBigInt } from "src/base/bigint/formatBigInt";
+import { parseUnits, formatUnits } from "viem";
 
 export function calculateValueToShort(
   debtAmountInput: bigint,
   debtTokenDecimals: number,
 ): { shortAmount: bigint; formattedShortAmount: string } {
-  const multiplier = parseBigInt("1.25", debtTokenDecimals);
+  const multiplier = parseUnits("1.25", debtTokenDecimals);
   const valueToShort =
     (debtAmountInput * multiplier) / BigInt(10 ** debtTokenDecimals);
 
   return {
     shortAmount: valueToShort,
-    formattedShortAmount: formatBigInt(valueToShort, debtTokenDecimals),
+    formattedShortAmount: formatUnits(valueToShort, debtTokenDecimals),
   };
 }

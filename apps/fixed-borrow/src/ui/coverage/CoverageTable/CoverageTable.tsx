@@ -1,7 +1,7 @@
 import { ReactElement, ReactNode } from "react";
 import { Address, useAccount, useToken } from "wagmi";
 import { SortableGridTable } from "src/ui/base/tables/SortableGridTable";
-import { formatBigInt } from "src/base/bigint/formatBigInt";
+import { formatUnits, parseUnits } from "viem";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { AssetIcon } from "src/ui/token/AssetIcon";
 import { DebtDetailsSection } from "./DebtDetailsSection";
@@ -11,6 +11,7 @@ import { SparkGoerliAddresses } from "@hyperdrive/spark";
 import { useAaveOracleAssetPrice } from "src/ui/oracles/useAaveOracleAssetPrice";
 import { NETWORK_BASE_TOKEN_DECIMALS } from "src/pools/networkBaseToken";
 import { useTotalCoverage } from "src/ui/coverage/hooks/useTotalFixedRateCoverage";
+import classNames from "classnames";
 
 export function CoverageTable(): ReactElement {
   const { address: account } = useAccount();
@@ -65,7 +66,8 @@ export function CoverageTable(): ReactElement {
         },
       ]}
       rows={
-        currentDebt
+        // if the user has less than 1 dollar of debt, consider it to be dust
+        currentDebt && currentDebt > parseUnits("1", 18)
           ? [
               {
                 detailsElement: <DebtDetailsSection />,
@@ -82,6 +84,7 @@ export function CoverageTable(): ReactElement {
                   />,
                   <AmountCell
                     key="fixedRateDebt"
+                    variant={!totalCoverage?.amount ? "pinkSlip" : undefined}
                     amount={totalCoverage?.amount || 0n}
                     secondaryText={`${totalCoverage?.rate || 0 * 100}% APR`}
                     tokenAddress={SparkGoerliAddresses.DAI_token}
@@ -102,8 +105,8 @@ function formatDebtValueLabel(
   price: bigint,
 ) {
   const valueOfDebt =
-    +formatBigInt(currentDebt, debtTokenDecimals) *
-    +formatBigInt(price, NETWORK_BASE_TOKEN_DECIMALS);
+    +formatUnits(currentDebt, debtTokenDecimals) *
+    +formatUnits(price, NETWORK_BASE_TOKEN_DECIMALS);
 
   return `$${formatBalance(valueOfDebt)}`;
 }
@@ -139,9 +142,7 @@ function BorrowedAssetCell({
           {tokenMetadata?.symbol}
         </span>
         <span className="leading-sm text-secondaryText">
-          {price
-            ? `$${formatBigInt(price, NETWORK_BASE_TOKEN_DECIMALS)}`
-            : null}
+          {price ? `$${formatUnits(price, NETWORK_BASE_TOKEN_DECIMALS)}` : null}
         </span>
       </div>
     </div>
@@ -152,18 +153,25 @@ function AmountCell({
   amount,
   tokenAddress,
   secondaryText,
+  variant,
 }: {
   amount: bigint;
   tokenAddress: Address;
   secondaryText: ReactNode;
+  variant?: "pinkSlip";
 }): ReactElement {
   const { data: tokenMetadata } = useToken({ address: tokenAddress });
-  const amountLabel = formatBalance(
-    formatBigInt(amount, tokenMetadata?.decimals),
-  );
+  const amountLabel = tokenMetadata?.decimals
+    ? formatBalance(formatUnits(amount, tokenMetadata?.decimals))
+    : null;
   return (
     <div className="flex flex-col">
-      <span className="inline-flex items-center gap-1 text-h6 text-white">
+      <span
+        className={classNames("inline-flex items-center gap-1 text-h6", {
+          "text-white": !variant,
+          "text-pinkSlip": variant === "pinkSlip",
+        })}
+      >
         {amountLabel} {tokenMetadata?.symbol}
       </span>
       <span className="flex leading-sm text-secondaryText">

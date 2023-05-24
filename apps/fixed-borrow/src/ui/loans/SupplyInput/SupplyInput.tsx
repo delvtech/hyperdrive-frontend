@@ -9,7 +9,7 @@ import { HyperdriveGoerliAddresses } from "@hyperdrive/core";
 interface SupplyInputProps {
   tokenAddress: Address;
   value?: string;
-  onChange?: (newAmount: string) => void;
+  onChange?: (newAmount: `${number}`) => void;
 }
 
 export function SupplyInput({
@@ -36,7 +36,7 @@ export function SupplyInput({
     <div className="flex flex-col gap-4">
       <NumericInput
         value={value}
-        maxValue={balanceOf?.formatted}
+        maxValue={balanceOf?.formatted as `${number}`}
         primaryLabel="Supply"
         icon={<AssetBadge address={tokenAddress} />}
         placeholderText="0"

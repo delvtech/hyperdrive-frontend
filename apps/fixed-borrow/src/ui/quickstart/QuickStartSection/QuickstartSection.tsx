@@ -1,6 +1,5 @@
 import { SparkGoerliAddresses } from "@hyperdrive/spark";
-import { parseBigInt } from "src/base/bigint/parseBigInt";
-import { StatWell } from "src/ui/base/StatWell/StatWell";
+import { parseUnits } from "viem";
 import { BorrowQuickStartButton } from "src/ui/quickstart/BorrowQuickStartButton/BorrowQuickStartButton";
 import { SupplyQuickStartButton } from "src/ui/quickstart/SupplyQuickStartButton/SupplyQuickStartButton";
 import { MintQuickStartButton } from "src/ui/quickstart/MintQuickStartButton/MintQuickStartButton";
@@ -19,7 +18,7 @@ export function QuickstartSection(): ReactElement {
           <div>
             <MintQuickStartButton
               tokenAddress={SparkGoerliAddresses.wstETH_token}
-              amount={parseBigInt("10", 18)}
+              amount={parseUnits("10", 18)}
               label={"Step 1"}
               description={"Mint Collateral"}
             />
@@ -29,7 +28,7 @@ export function QuickstartSection(): ReactElement {
               label={"Step 2"}
               stat={"Supply Collateral on Spark"}
               tokenAddress={SparkGoerliAddresses.wstETH_token}
-              amount={parseBigInt("10", 18)}
+              amount={parseUnits("10", 18)}
             />
           </div>
         </div>
@@ -39,7 +38,7 @@ export function QuickstartSection(): ReactElement {
               label={"Step 3"}
               stat={"Borrow DAI on Spark"}
               tokenAddress={SparkGoerliAddresses.DAI_token}
-              amount={parseBigInt("10", 18)}
+              amount={parseUnits("10", 18)}
             />
           </div>
           <div>
@@ -53,7 +52,7 @@ export function QuickstartSection(): ReactElement {
 
         <MintQuickStartButton
           tokenAddress={SparkGoerliAddresses.DAI_token}
-          amount={parseBigInt("10000", 18)}
+          amount={parseUnits("10000", 18)}
           label={"Just in case"}
           description={"Mint DAI"}
         />

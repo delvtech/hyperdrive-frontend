@@ -11,7 +11,7 @@ import { TransactionPreview } from "src/ui/loans/previews/TransactionPreview";
 import { useToken } from "wagmi";
 import { useNumericInput } from "src/ui/base/NumericInput/useNumericInput";
 import { calculateValueToShort } from "src/shorts/calculateValueToShort";
-import { parseBigInt } from "src/base/bigint/parseBigInt";
+import { parseUnits } from "viem";
 
 interface LoanCardProps {
   supplyTokenAddress: `0x${string}`;
@@ -20,7 +20,7 @@ interface LoanCardProps {
 
 // The same buffer that's used in the contract tests:
 // https://github.com/delvtech/hyperdrive/blob/main/test/integrations/AaveFixedBorrow.t.sol#L104
-const MAX_DEPOSIT_BUFFER = parseBigInt("1.1", 18);
+const MAX_DEPOSIT_BUFFER = parseUnits("1.1", 18);
 
 export function LoanCard({
   supplyTokenAddress,

@@ -4,7 +4,7 @@ import { Address, useAccount, useBalance, useToken } from "wagmi";
 import { NumericInput } from "src/ui/base/NumericInput/NumericInput";
 import { AssetBadge } from "src/ui/token/AssetBadge";
 import { HyperdriveGoerliAddresses } from "@hyperdrive/core";
-import { parseBigInt } from "src/base/bigint/parseBigInt";
+import { parseUnits } from "viem";
 import { ApproveAllowanceButton } from "src/ui/token/ApproveAllowanceButton";
 import { SparkGoerliAddresses } from "@hyperdrive/spark";
 import { ApproveDelegationButton } from "src/ui/loans/ApproveDelegationButton/ApproveDelegationButton";
@@ -12,7 +12,7 @@ import { ApproveDelegationButton } from "src/ui/loans/ApproveDelegationButton/Ap
 interface BorrowInputProps {
   tokenAddress: Address;
   value?: string;
-  onChange?: (newAmount: string) => void;
+  onChange?: (newAmount: `${number}`) => void;
 }
 
 export function BorrowInput({
@@ -35,11 +35,15 @@ export function BorrowInput({
       }`
     : undefined;
 
+  const amount = parseUnits(
+    (value as `${number}`) || "0",
+    tokenMetadata?.decimals || 18,
+  );
   return (
     <div className="flex flex-col gap-4">
       <NumericInput
         value={value}
-        maxValue={balanceOf?.formatted}
+        maxValue={balanceOf?.formatted as `${number}`}
         primaryLabel="Borrow"
         icon={<AssetBadge address={tokenAddress} />}
         placeholderText="0"
@@ -50,14 +54,14 @@ export function BorrowInput({
       token in order to take out the loan on your behalf */}
       <ApproveDelegationButton
         variableDebtTokenAddress={SparkGoerliAddresses.DAI_variableDebtToken}
-        amount={parseBigInt(value || "0", tokenMetadata?.decimals)}
+        amount={amount}
         delegatee={HyperdriveGoerliAddresses.aaveFixedBorrowAction}
       />
       {/* The action contract must be able to spend the asset you're borrowing
       in order to open a Hyperdrive short on your behalf */}
       <ApproveAllowanceButton
         tokenAddress={tokenAddress}
-        amount={parseBigInt(value || "0", tokenMetadata?.decimals)}
+        amount={amount}
         spender={HyperdriveGoerliAddresses.aaveFixedBorrowAction}
       />
     </div>
