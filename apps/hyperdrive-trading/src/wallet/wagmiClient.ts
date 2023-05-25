@@ -1,6 +1,6 @@
 import { getDefaultWallets } from "@rainbow-me/rainbowkit";
-import { goerli } from "@wagmi/chains";
 import { configureChains, createConfig } from "wagmi";
+import { goerli } from "wagmi/chains";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 
 const ALCHEMY_GOERLI_RPC_KEY = import.meta.env.VITE_ALCHEMY_GOERLI_RPC_KEY;
