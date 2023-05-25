@@ -1,3 +1,4 @@
+import { HyperdriveGoerliAddresses } from "@hyperdrive/core";
 import { HyperdriveConfig, Protocol, Token } from "src/config/HyperdriveConfig";
 
 /* Supported Protocols */
@@ -23,7 +24,7 @@ export const goerliHyperdriveConfig: HyperdriveConfig<
   markets: [
     {
       name: "Maker DSR",
-      address: "0x8C9Ccd26fFB734658171EE2B0C6d087e72752c20",
+      address: HyperdriveGoerliAddresses.makerDsrHyperdrive,
       baseToken: daiBaseToken,
       protocol: MakerProtocol,
       termLength: 12,

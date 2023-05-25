@@ -48,11 +48,6 @@ export function Navbar(): ReactElement {
                   <p>Trade</p>
                 </Link>
               </li>
-              <li className="hover:bg-hyper-blue-400">
-                <Link className="font-akira" to="/portfolio">
-                  <p>Portfolio</p>
-                </Link>
-              </li>
             </ul>
           </div>
         </div>
@@ -97,19 +92,6 @@ export function Navbar(): ReactElement {
             )}
           >
             Trade
-          </Link>
-          <Link
-            to="/portfolio"
-            className={classNames(
-              "border-hyper-green font-akira transition duration-200 hover:border-hyper-green hover:text-hyper-blue-100",
-              {
-                "border-b-2 font-bold text-hyper-blue-100":
-                  pathname.startsWith("/portfolio"),
-                "text-hyper-blue-200": !pathname.startsWith("/portfolio"),
-              },
-            )}
-          >
-            Portfolio
           </Link>
         </div>
       </div>
