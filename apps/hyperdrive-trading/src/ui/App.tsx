@@ -10,7 +10,6 @@ import {
 } from "react-router-dom";
 import { useConfig } from "src/config/hooks/useConfig";
 import { Markets } from "src/pages/Markets";
-import { Portfolio } from "src/pages/Portfolio";
 import { Trade } from "src/pages/Trade";
 import { wagmiChains, wagmiConfig } from "src/wallet/wagmiClient";
 import { WagmiConfig } from "wagmi";
@@ -82,10 +81,6 @@ export function App(): ReactElement {
                 return redirect(`/trade/${config.markets[0].address}`);
               }
             },
-          },
-          {
-            path: "/portfolio",
-            element: <Portfolio />,
           },
         ],
       },

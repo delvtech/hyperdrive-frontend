@@ -39,6 +39,7 @@ function createOpenOrderRow(position: Position, positionDecimals: number): Row {
   return {
     cells: [
       <span
+        key="type"
         className={classNames("font-bold", {
           "text-hyper-green": position.type === "Long",
           "text-hyper-red": position.type === "Short",
@@ -46,11 +47,11 @@ function createOpenOrderRow(position: Position, positionDecimals: number): Row {
       >
         {position.type}
       </span>,
-      <span>
+      <span key="amount">
         {formatBalance(formatBigInt(position.amount, positionDecimals))}
       </span>,
-      <span>{position.currencyValue}</span>,
-      <span>{position.expiryDate.toLocaleDateString()}</span>,
+      <span key="value">{position.currencyValue}</span>,
+      <span key="expiration">{position.expiryDate.toLocaleDateString()}</span>,
     ],
   };
 }
