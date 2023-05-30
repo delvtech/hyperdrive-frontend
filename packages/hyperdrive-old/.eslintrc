@@ -1,5 +1,0 @@
-{
-  "root": true,
-  "extends": ["@hyperdrive/eslint-config"],
-  "ignorePatterns": ["src/types/*"]
-}
