@@ -26,7 +26,12 @@ function useRpcUrlFromPublicClient() {
   return chain.rpcUrls.default.http[0];
 }
 
-/** Hook that fetches all open and closed positions for an account. */
+/** Hook that fetches all open and closed positions for an account.
+ *
+ * @deprecated This needs to be refactored to use the latest hyperdrive
+ * contracts, which have specific events for finding which tokens the account
+ * has
+ */
 export function usePositions(
   account: Address | undefined,
   market: HyperdriveMarket,
