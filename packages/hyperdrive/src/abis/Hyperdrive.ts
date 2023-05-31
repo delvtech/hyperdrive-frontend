@@ -1,105 +1,5 @@
 export const HyperdriveABI = [
   {
-    inputs: [
-      {
-        components: [
-          {
-            internalType: "contract IERC20",
-            name: "baseToken",
-            type: "address",
-          },
-          {
-            internalType: "uint256",
-            name: "initialSharePrice",
-            type: "uint256",
-          },
-          {
-            internalType: "uint256",
-            name: "positionDuration",
-            type: "uint256",
-          },
-          {
-            internalType: "uint256",
-            name: "checkpointDuration",
-            type: "uint256",
-          },
-          {
-            internalType: "uint256",
-            name: "timeStretch",
-            type: "uint256",
-          },
-          {
-            internalType: "address",
-            name: "governance",
-            type: "address",
-          },
-          {
-            internalType: "address",
-            name: "feeCollector",
-            type: "address",
-          },
-          {
-            components: [
-              {
-                internalType: "uint256",
-                name: "curve",
-                type: "uint256",
-              },
-              {
-                internalType: "uint256",
-                name: "flat",
-                type: "uint256",
-              },
-              {
-                internalType: "uint256",
-                name: "governance",
-                type: "uint256",
-              },
-            ],
-            internalType: "struct IHyperdrive.Fees",
-            name: "fees",
-            type: "tuple",
-          },
-          {
-            internalType: "uint256",
-            name: "oracleSize",
-            type: "uint256",
-          },
-          {
-            internalType: "uint256",
-            name: "updateGap",
-            type: "uint256",
-          },
-        ],
-        internalType: "struct IHyperdrive.PoolConfig",
-        name: "_config",
-        type: "tuple",
-      },
-      {
-        internalType: "address",
-        name: "_dataProvider",
-        type: "address",
-      },
-      {
-        internalType: "bytes32",
-        name: "_linkerCodeHash",
-        type: "bytes32",
-      },
-      {
-        internalType: "address",
-        name: "_linkerFactory",
-        type: "address",
-      },
-      {
-        internalType: "contract DsrManager",
-        name: "_dsrManager",
-        type: "address",
-      },
-    ],
-    stateMutability: "nonpayable",
-    type: "constructor",
-  },
-  {
     inputs: [],
     name: "BaseBufferExceedsShareReserves",
     type: "error",
@@ -141,11 +41,6 @@ export const HyperdriveABI = [
   },
   {
     inputs: [],
-    name: "InvalidBaseToken",
-    type: "error",
-  },
-  {
-    inputs: [],
     name: "InvalidCheckpointDuration",
     type: "error",
   },
@@ -162,11 +57,6 @@ export const HyperdriveABI = [
   {
     inputs: [],
     name: "InvalidFeeAmounts",
-    type: "error",
-  },
-  {
-    inputs: [],
-    name: "InvalidInitialSharePrice",
     type: "error",
   },
   {
@@ -211,22 +101,12 @@ export const HyperdriveABI = [
   },
   {
     inputs: [],
-    name: "TransferFailed",
-    type: "error",
-  },
-  {
-    inputs: [],
     name: "Unauthorized",
     type: "error",
   },
   {
     inputs: [],
     name: "UnexpectedSuccess",
-    type: "error",
-  },
-  {
-    inputs: [],
-    name: "UnsupportedToken",
     type: "error",
   },
   {

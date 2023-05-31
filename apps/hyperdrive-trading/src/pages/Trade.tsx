@@ -72,8 +72,8 @@ export function Trade(): ReactElement {
             />
             <Stat className="hidden lg:block" label="Liquidity" value="$100M" />
             <Stat className="hidden xl:block" label="Long APR" value="1.50%" />
-            <Stat className="hidden xl:block" label="Short APR" value="1.75%" />
-            <Stat className="hidden xl:block" label="LP APR" value="1.60%" />
+            <Stat className="hidden xl:block" label="Short APY" value="1.75%" />
+            <Stat className="hidden xl:block" label="LP APY" value="1.60%" />
             <Stat
               className="hidden lg:block"
               label="Volume (24H)"
