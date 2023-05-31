@@ -1,5 +1,105 @@
 export const HyperdriveABI = [
   {
+    inputs: [
+      {
+        components: [
+          {
+            internalType: "contract IERC20",
+            name: "baseToken",
+            type: "address",
+          },
+          {
+            internalType: "uint256",
+            name: "initialSharePrice",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "positionDuration",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "checkpointDuration",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "timeStretch",
+            type: "uint256",
+          },
+          {
+            internalType: "address",
+            name: "governance",
+            type: "address",
+          },
+          {
+            internalType: "address",
+            name: "feeCollector",
+            type: "address",
+          },
+          {
+            components: [
+              {
+                internalType: "uint256",
+                name: "curve",
+                type: "uint256",
+              },
+              {
+                internalType: "uint256",
+                name: "flat",
+                type: "uint256",
+              },
+              {
+                internalType: "uint256",
+                name: "governance",
+                type: "uint256",
+              },
+            ],
+            internalType: "struct IHyperdrive.Fees",
+            name: "fees",
+            type: "tuple",
+          },
+          {
+            internalType: "uint256",
+            name: "oracleSize",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "updateGap",
+            type: "uint256",
+          },
+        ],
+        internalType: "struct IHyperdrive.PoolConfig",
+        name: "_config",
+        type: "tuple",
+      },
+      {
+        internalType: "address",
+        name: "_dataProvider",
+        type: "address",
+      },
+      {
+        internalType: "bytes32",
+        name: "_linkerCodeHash",
+        type: "bytes32",
+      },
+      {
+        internalType: "address",
+        name: "_linkerFactory",
+        type: "address",
+      },
+      {
+        internalType: "contract DsrManager",
+        name: "_dsrManager",
+        type: "address",
+      },
+    ],
+    stateMutability: "nonpayable",
+    type: "constructor",
+  },
+  {
     inputs: [],
     name: "BaseBufferExceedsShareReserves",
     type: "error",
@@ -41,17 +141,37 @@ export const HyperdriveABI = [
   },
   {
     inputs: [],
+    name: "InvalidBaseToken",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "InvalidCheckpointDuration",
+    type: "error",
+  },
+  {
+    inputs: [],
     name: "InvalidCheckpointTime",
     type: "error",
   },
   {
     inputs: [],
-    name: "InvalidCheckpointsPerTerm",
+    name: "InvalidERC20Bridge",
     type: "error",
   },
   {
     inputs: [],
-    name: "InvalidERC20Bridge",
+    name: "InvalidFeeAmounts",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "InvalidInitialSharePrice",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "InvalidPositionDuration",
     type: "error",
   },
   {
@@ -76,6 +196,11 @@ export const HyperdriveABI = [
   },
   {
     inputs: [],
+    name: "Paused",
+    type: "error",
+  },
+  {
+    inputs: [],
     name: "PoolAlreadyInitialized",
     type: "error",
   },
@@ -86,8 +211,53 @@ export const HyperdriveABI = [
   },
   {
     inputs: [],
+    name: "TransferFailed",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "Unauthorized",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "UnexpectedSuccess",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "UnsupportedToken",
+    type: "error",
+  },
+  {
+    inputs: [],
     name: "ZeroAmount",
     type: "error",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: "address",
+        name: "provider",
+        type: "address",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "lpAmount",
+        type: "uint256",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "baseAmount",
+        type: "uint256",
+      },
+    ],
+    name: "AddLiquidity",
+    type: "event",
   },
   {
     anonymous: false,
@@ -145,6 +315,217 @@ export const HyperdriveABI = [
       {
         indexed: true,
         internalType: "address",
+        name: "trader",
+        type: "address",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "maturityTime",
+        type: "uint256",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "baseAmount",
+        type: "uint256",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "bondAmount",
+        type: "uint256",
+      },
+    ],
+    name: "CloseLong",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: "address",
+        name: "trader",
+        type: "address",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "maturityTime",
+        type: "uint256",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "baseAmount",
+        type: "uint256",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "bondAmount",
+        type: "uint256",
+      },
+    ],
+    name: "CloseShort",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: "address",
+        name: "provider",
+        type: "address",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "lpAmount",
+        type: "uint256",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "baseAmount",
+        type: "uint256",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "apr",
+        type: "uint256",
+      },
+    ],
+    name: "Initialize",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: "address",
+        name: "trader",
+        type: "address",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "maturityTime",
+        type: "uint256",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "baseAmount",
+        type: "uint256",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "bondAmount",
+        type: "uint256",
+      },
+    ],
+    name: "OpenLong",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: "address",
+        name: "trader",
+        type: "address",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "maturityTime",
+        type: "uint256",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "baseAmount",
+        type: "uint256",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "bondAmount",
+        type: "uint256",
+      },
+    ],
+    name: "OpenShort",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: "address",
+        name: "provider",
+        type: "address",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "withdrawalShareAmount",
+        type: "uint256",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "baseAmount",
+        type: "uint256",
+      },
+    ],
+    name: "RedeemWithdrawalShares",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: "address",
+        name: "provider",
+        type: "address",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "lpAmount",
+        type: "uint256",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "baseAmount",
+        type: "uint256",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "withdrawalShareAmount",
+        type: "uint256",
+      },
+    ],
+    name: "RemoveLiquidity",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: "address",
         name: "operator",
         type: "address",
       },
@@ -175,6 +556,10 @@ export const HyperdriveABI = [
     ],
     name: "TransferSingle",
     type: "event",
+  },
+  {
+    stateMutability: "nonpayable",
+    type: "fallback",
   },
   {
     inputs: [],
@@ -244,43 +629,6 @@ export const HyperdriveABI = [
   {
     inputs: [
       {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-      {
-        internalType: "address",
-        name: "",
-        type: "address",
-      },
-    ],
-    name: "balanceOf",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "baseToken",
-    outputs: [
-      {
-        internalType: "contract IERC20",
-        name: "",
-        type: "address",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
         internalType: "address",
         name: "from",
         type: "address",
@@ -317,40 +665,6 @@ export const HyperdriveABI = [
     name: "checkpoint",
     outputs: [],
     stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-    ],
-    name: "checkpoints",
-    outputs: [
-      {
-        internalType: "uint128",
-        name: "sharePrice",
-        type: "uint128",
-      },
-      {
-        internalType: "uint128",
-        name: "longSharePrice",
-        type: "uint128",
-      },
-      {
-        internalType: "uint128",
-        name: "longBaseVolume",
-        type: "uint128",
-      },
-      {
-        internalType: "uint128",
-        name: "shortBaseVolume",
-        type: "uint128",
-      },
-    ],
-    stateMutability: "view",
     type: "function",
   },
   {
@@ -432,7 +746,13 @@ export const HyperdriveABI = [
     type: "function",
   },
   {
-    inputs: [],
+    inputs: [
+      {
+        internalType: "bool",
+        name: "asUnderlying",
+        type: "bool",
+      },
+    ],
     name: "collectGovernanceFee",
     outputs: [
       {
@@ -442,146 +762,6 @@ export const HyperdriveABI = [
       },
     ],
     stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "factory",
-    outputs: [
-      {
-        internalType: "address",
-        name: "",
-        type: "address",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "getPoolConfiguration",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "initialSharePrice_",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "positionDuration_",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "checkpointDuration_",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "timeStretch_",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "flatFee_",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "curveFee_",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "governanceFee_",
-        type: "uint256",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "getPoolInfo",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "shareReserves_",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "bondReserves_",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "lpTotalSupply",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "sharePrice",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "longsOutstanding_",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "longAverageMaturityTime_",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "longBaseVolume_",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "shortsOutstanding_",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "shortAverageMaturityTime_",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "shortBaseVolume_",
-        type: "uint256",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "governance",
-    outputs: [
-      {
-        internalType: "address",
-        name: "",
-        type: "address",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "governanceFeesAccrued",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-    ],
-    stateMutability: "view",
     type: "function",
   },
   {
@@ -610,81 +790,6 @@ export const HyperdriveABI = [
     name: "initialize",
     outputs: [],
     stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "address",
-        name: "",
-        type: "address",
-      },
-      {
-        internalType: "address",
-        name: "",
-        type: "address",
-      },
-    ],
-    name: "isApprovedForAll",
-    outputs: [
-      {
-        internalType: "bool",
-        name: "",
-        type: "bool",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "linkerCodeHash",
-    outputs: [
-      {
-        internalType: "bytes32",
-        name: "",
-        type: "bytes32",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "uint256",
-        name: "id",
-        type: "uint256",
-      },
-    ],
-    name: "name",
-    outputs: [
-      {
-        internalType: "string",
-        name: "",
-        type: "string",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "address",
-        name: "",
-        type: "address",
-      },
-    ],
-    name: "nonces",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-    ],
-    stateMutability: "view",
     type: "function",
   },
   {
@@ -758,30 +863,14 @@ export const HyperdriveABI = [
   {
     inputs: [
       {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-      {
-        internalType: "address",
-        name: "",
-        type: "address",
-      },
-      {
-        internalType: "address",
-        name: "",
-        type: "address",
+        internalType: "bool",
+        name: "status",
+        type: "bool",
       },
     ],
-    name: "perTokenApprovals",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-    ],
-    stateMutability: "view",
+    name: "pause",
+    outputs: [],
+    stateMutability: "nonpayable",
     type: "function",
   },
   {
@@ -836,7 +925,7 @@ export const HyperdriveABI = [
       },
       {
         internalType: "uint256",
-        name: "_minOutput",
+        name: "_minOutputPerShare",
         type: "uint256",
       },
       {
@@ -854,7 +943,12 @@ export const HyperdriveABI = [
     outputs: [
       {
         internalType: "uint256",
-        name: "_proceeds",
+        name: "",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "",
         type: "uint256",
       },
     ],
@@ -972,39 +1066,32 @@ export const HyperdriveABI = [
   {
     inputs: [
       {
-        internalType: "uint256",
-        name: "id",
-        type: "uint256",
+        internalType: "address",
+        name: "who",
+        type: "address",
       },
     ],
-    name: "symbol",
-    outputs: [
-      {
-        internalType: "string",
-        name: "",
-        type: "string",
-      },
-    ],
-    stateMutability: "view",
+    name: "setGovernance",
+    outputs: [],
+    stateMutability: "nonpayable",
     type: "function",
   },
   {
     inputs: [
       {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
+        internalType: "address",
+        name: "who",
+        type: "address",
       },
-    ],
-    name: "totalSupply",
-    outputs: [
       {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
+        internalType: "bool",
+        name: "status",
+        type: "bool",
       },
     ],
-    stateMutability: "view",
+    name: "setPauser",
+    outputs: [],
+    stateMutability: "nonpayable",
     type: "function",
   },
   {
@@ -1066,29 +1153,6 @@ export const HyperdriveABI = [
     name: "transferFromBridge",
     outputs: [],
     stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "withdrawPool",
-    outputs: [
-      {
-        internalType: "uint128",
-        name: "withdrawalSharesReadyToWithdraw",
-        type: "uint128",
-      },
-      {
-        internalType: "uint128",
-        name: "capital",
-        type: "uint128",
-      },
-      {
-        internalType: "uint128",
-        name: "interest",
-        type: "uint128",
-      },
-    ],
-    stateMutability: "view",
     type: "function",
   },
 ] as const;
