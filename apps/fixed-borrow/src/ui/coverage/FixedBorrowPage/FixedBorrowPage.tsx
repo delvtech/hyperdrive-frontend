@@ -20,7 +20,7 @@ export function FixedBorrowPage(): ReactElement {
   );
   const { shorts } = useShorts({
     account,
-    hyperdriveMarket: HyperdriveGoerliAddresses.makerDsrHyperdrive,
+    hyperdriveMarket: HyperdriveGoerliAddresses.dsrHyperdrive,
   });
 
   // TODO: Use a more robust way of calculating hasUncoveredDebt

@@ -20,7 +20,7 @@ export function useTotalCoverage(): {
   const { shorts: totalCoverage, shortsStatus: totalCoverageStatus } =
     useShorts({
       account,
-      hyperdriveMarket: HyperdriveGoerliAddresses.makerDsrHyperdrive,
+      hyperdriveMarket: HyperdriveGoerliAddresses.dsrHyperdrive,
       select: (shorts) => {
         if (!shorts.length) {
           return {

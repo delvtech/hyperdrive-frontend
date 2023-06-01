@@ -8,13 +8,13 @@ import {
   redirect,
   RouterProvider,
 } from "react-router-dom";
-import { useConfig } from "src/config/hooks/useConfig";
 import { Markets } from "src/pages/Markets";
 import { Trade } from "src/pages/Trade";
+import { Navbar } from "src/ui/base/components/Navbar";
+import { useLocalStorage } from "src/ui/base/hooks/useLocalStorage";
+import { useAppConfig } from "src/ui/config/useAppConfig";
 import { wagmiChains, wagmiConfig } from "src/wallet/wagmiClient";
 import { WagmiConfig } from "wagmi";
-import { Navbar } from "./base/components/Navbar";
-import { useLocalStorage } from "./base/hooks/useLocalStorage";
 
 const LASTED_VIEWED_MARKET_KEY = "last-viewed-market";
 
@@ -30,7 +30,7 @@ function BaseLayout(): ReactElement {
 const queryClient = new QueryClient();
 
 export function App(): ReactElement {
-  const config = useConfig();
+  const config = useAppConfig();
 
   const [lastViewedMarket, setLastViewedMarket] = useLocalStorage<
     string | undefined
