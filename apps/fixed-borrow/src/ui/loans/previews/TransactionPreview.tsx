@@ -55,7 +55,7 @@ export function TransactionPreview({
     : undefined;
 
   const { openShortPreview } = useOpenShortPreview({
-    hyperdrivePool: HyperdriveGoerliAddresses.makerDsrHyperdrive,
+    hyperdrivePool: HyperdriveGoerliAddresses.dsrHyperdrive,
     bondAmount: valueToShort ? valueToShort.shortAmount : undefined,
     maxDeposit: valueToShort ? valueToShort.shortAmount : undefined,
     destination: account,

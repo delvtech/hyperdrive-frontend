@@ -2,8 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Address, useAccount, usePublicClient } from "wagmi";
 import { HyperdriveABI, HyperdriveGoerliAddresses } from "@hyperdrive/core";
 
-const makerDsrHyperdriveAddress =
-  HyperdriveGoerliAddresses.makerDsrHyperdrive as Address;
+const dsrHyperdriveAddress = HyperdriveGoerliAddresses.dsrHyperdrive as Address;
 
 interface UseOpenShortPreviewOptions {
   hyperdrivePool: Address;
@@ -35,7 +34,7 @@ export function useOpenShortPreview({
   const { data, status } = useQuery({
     queryKey: [
       "preview-open-short",
-      makerDsrHyperdriveAddress,
+      dsrHyperdriveAddress,
       {
         bondAmount: bondAmount?.toString(),
         maxDeposit: maxDeposit?.toString(),

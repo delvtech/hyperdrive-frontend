@@ -24,7 +24,7 @@ export const goerliHyperdriveConfig: HyperdriveConfig<
   markets: [
     {
       name: "Maker DSR",
-      address: HyperdriveGoerliAddresses.makerDsrHyperdrive,
+      address: HyperdriveGoerliAddresses.dsrHyperdrive,
       baseToken: daiBaseToken,
       protocol: MakerProtocol,
       termLength: 12,
