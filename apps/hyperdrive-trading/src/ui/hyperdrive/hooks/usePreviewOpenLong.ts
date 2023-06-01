@@ -39,11 +39,12 @@ export function usePreviewOpenLong({
   const { data, status } = useQuery({
     queryKey: [
       "preview-open-long",
-      market.address,
-      baseAmount?.toString(),
-      bondAmountOut?.toString(),
-      destination?.toString(),
-      ,
+      {
+        market: market.address,
+        baseAmount: baseAmount?.toString(),
+        boundAmountOut: bondAmountOut?.toString(),
+        destination: destination?.toString(),
+      },
     ],
     enabled: queryEnabled,
     queryFn: queryEnabled

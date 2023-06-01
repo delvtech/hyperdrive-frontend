@@ -6,7 +6,7 @@ export function useHyperdrivePoolConfig(marketAddress: Address) {
   const { data: poolConfig, status: poolConfigStatus } = useContractRead({
     address: marketAddress,
     abi: HyperdriveABI,
-    functionName: "getPoolConfiguration",
+    functionName: "getPoolConfig",
   });
 
   return { poolConfig, poolConfigStatus };
