@@ -6,7 +6,7 @@ import { HyperdriveConfig } from "src/config/HyperdriveConfig";
 import { getHyperdriveConfig } from "src/config/utils/getHyperdriveConfig";
 import { useChainId } from "wagmi";
 
-export function useConfig(): HyperdriveConfig {
+export function useAppConfig(): HyperdriveConfig {
   const chainId = useChainId();
   if (!supportedChainIds.includes(chainId as SupportedChainId)) {
     // This should never happen with a properly configured wagmi config
