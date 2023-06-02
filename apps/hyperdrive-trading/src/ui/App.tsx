@@ -51,14 +51,14 @@ export function App(): ReactElement {
               }
               // we fall back to the first market in the config
               // this should rarely happen
-              return redirect(`/trade/${appConfig?.markets[0].address}`);
+              return redirect(`/trade/${appConfig?.hyperdrives[0].address}`);
             },
           },
           {
             path: "/trade/:address",
             element: <Trade />,
             loader: ({ params }) => {
-              const market = appConfig?.markets.find(
+              const market = appConfig?.hyperdrives.find(
                 (market) => market.address === params.address,
               );
 
@@ -71,7 +71,7 @@ export function App(): ReactElement {
                 }
                 // we fall back to the first market in the config
                 // this should rarely happen
-                return redirect(`/trade/${appConfig?.markets[0].address}`);
+                return redirect(`/trade/${appConfig?.hyperdrives[0].address}`);
               }
             },
           },

@@ -3,7 +3,7 @@ import { ReactElement, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { useMarketRowData } from "src/ui/markets/hooks/useMarketRowData";
-import { ProtocolLabel } from "src/ui/protocol/components/ProtocolLabel";
+import { YieldSourceLabel } from "src/ui/protocol/components/ProtocolLabel";
 
 const ALL_PROTOCOLS_KEY = "All Markets";
 const ALL_TERM_LENGTHS_KEY = 0;
@@ -11,9 +11,13 @@ const ALL_TERM_LENGTHS_KEY = 0;
 export function MarketsTableMini(): ReactElement {
   const { appConfig } = useAppConfig();
 
-  const allProtocols = appConfig?.markets.map((market) => market.yieldSource);
+  const allProtocols = appConfig?.hyperdrives.map(
+    (market) => appConfig.yieldSources[market.yieldSource],
+  );
   const protocols = uniqBy(allProtocols, (protocol) => protocol.name);
-  const allTermLengths = appConfig?.markets.map((market) => market.termLength);
+  const allTermLengths = appConfig?.hyperdrives.map(
+    (market) => market.termLength,
+  );
   const termLengths = uniqBy(allTermLengths, (termLength) => termLength);
 
   const [protocolFilter, setSelectedProtocolFilter] =
@@ -22,7 +26,9 @@ export function MarketsTableMini(): ReactElement {
     useState<number>(ALL_TERM_LENGTHS_KEY);
 
   // TODO: no loading state for now
-  const { data: marketsRowData = [] } = useMarketRowData(appConfig?.markets);
+  const { data: marketsRowData = [] } = useMarketRowData(
+    appConfig?.hyperdrives,
+  );
 
   const filteredMarkets = useMemo(() => {
     const marketFilteredByTermLength = termLengthFilter
@@ -34,8 +40,7 @@ export function MarketsTableMini(): ReactElement {
 
     if (protocolFilter !== ALL_PROTOCOLS_KEY) {
       return marketFilteredByTermLength.filter(
-        (marketRowData) =>
-          marketRowData.market.yieldSource.name === protocolFilter,
+        (marketRowData) => marketRowData.market.yieldSource === protocolFilter,
       );
     }
 
@@ -114,11 +119,11 @@ export function MarketsTableMini(): ReactElement {
                 <h5 className="font-bold">{market.name}</h5>
               </div>
               <div className="flex">
-                <p className="mr-auto text-hyper-blue-200">Protocol</p>
+                <p className="mr-auto text-hyper-blue-200">Yield Source</p>
                 <p>
-                  <ProtocolLabel
+                  <YieldSourceLabel
                     className="font-dm-sans font-semibold"
-                    protocol={market.yieldSource}
+                    yieldSource={appConfig?.yieldSources[market.yieldSource]}
                   />
                 </p>
               </div>
@@ -131,7 +136,7 @@ export function MarketsTableMini(): ReactElement {
                 <p className="font-semibold">$100M</p>
               </div>
               <div className="flex">
-                <p className="mr-auto text-hyper-blue-200">MSI</p>
+                <p className="mr-auto text-hyper-blue-200">Fixed Rate</p>
                 <p className="font-semibold">1.25%</p>
               </div>
             </Link>

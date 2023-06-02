@@ -1,11 +1,6 @@
 import { HyperdriveGoerliAddresses } from "@hyperdrive/core";
-import { AppConfig, Token, YieldSource } from "src/appconfig/types";
-
-/* Supported Protocols */
-const MakerProtocol: YieldSource = {
-  name: "Maker",
-  iconUrl: "https://cryptologos.cc/logos/maker-mkr-logo.png?v=024",
-};
+import { AppConfig, Token } from "src/appconfig/types";
+import { makerDSR } from "src/appconfig/yieldSources/yieldSources";
 
 const daiBaseToken: Token = {
   name: "DAI",
@@ -18,13 +13,16 @@ const daiBaseToken: Token = {
 
 export const goerliAppConfig: AppConfig = {
   chainId: 5,
-  markets: [
+  hyperdrives: [
     {
-      name: "Maker DSR",
+      name: "Dai Savings Rate",
       address: HyperdriveGoerliAddresses.dsrHyperdrive,
       baseToken: daiBaseToken,
-      yieldSource: MakerProtocol,
+      yieldSource: "Maker DSR",
       termLength: 12,
     },
   ],
+  yieldSources: {
+    "Maker DSR": makerDSR,
+  },
 };

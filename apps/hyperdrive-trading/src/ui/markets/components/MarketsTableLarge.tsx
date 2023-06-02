@@ -1,11 +1,10 @@
-/* eslint-disable react/jsx-key */
 import uniqBy from "lodash.uniqby";
 import { ReactElement, useMemo, useState } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Row, SortableGridTable } from "src/ui/base/tables/SortableGridTable";
 import { useMarketRowData } from "src/ui/markets/hooks/useMarketRowData";
 import { MarketTableRowData } from "src/ui/markets/types";
-import { ProtocolLabel } from "src/ui/protocol/components/ProtocolLabel";
+import { YieldSourceLabel } from "src/ui/protocol/components/ProtocolLabel";
 
 const ALL_PROTOCOLS_KEY = "All Markets";
 const ALL_TERM_LENGTHS_KEY = 0;
@@ -13,9 +12,11 @@ const ALL_TERM_LENGTHS_KEY = 0;
 export function MarketsTableLarge(): ReactElement {
   const { appConfig: config } = useAppConfig();
 
-  const allProtocols = config?.markets.map((market) => market.yieldSource);
+  const allProtocols = config?.hyperdrives.map(
+    (market) => config?.yieldSources[market.yieldSource],
+  );
   const protocols = uniqBy(allProtocols, (protocol) => protocol.name);
-  const allTermLengths = config?.markets.map((market) => market.termLength);
+  const allTermLengths = config?.hyperdrives.map((market) => market.termLength);
   const termLengths = uniqBy(allTermLengths, (termLength) => termLength);
 
   const [protocolFilter, setSelectedProtocolFilter] =
@@ -24,7 +25,7 @@ export function MarketsTableLarge(): ReactElement {
     useState<number>(ALL_TERM_LENGTHS_KEY);
 
   // TODO: no loading state for now
-  const { data: marketsRowData = [] } = useMarketRowData(config?.markets);
+  const { data: marketsRowData = [] } = useMarketRowData(config?.hyperdrives);
 
   const filteredMarkets = useMemo(() => {
     const marketFilteredByTermLength = termLengthFilter
@@ -36,8 +37,7 @@ export function MarketsTableLarge(): ReactElement {
 
     if (protocolFilter !== ALL_PROTOCOLS_KEY) {
       return marketFilteredByTermLength.filter(
-        (marketRowData) =>
-          marketRowData.market.yieldSource.name === protocolFilter,
+        (marketRowData) => marketRowData.market.yieldSource === protocolFilter,
       );
     }
 
@@ -91,7 +91,6 @@ export function MarketsTableLarge(): ReactElement {
             </p>
             <select
               onChange={(event) => {
-                console.log(event.currentTarget.value);
                 if (event.currentTarget.value === "none") {
                   setSelectedTermLengthFilter(ALL_TERM_LENGTHS_KEY);
                 } else {
@@ -134,7 +133,7 @@ export function MarketsTableLarge(): ReactElement {
               sortKey: "liquidity",
             },
             {
-              cell: "MSI",
+              cell: "Fixed Rate",
               sortKey: "longAPR",
             },
           ]}
@@ -147,21 +146,27 @@ export function MarketsTableLarge(): ReactElement {
   );
 }
 
-function createMarketRow({ market }: MarketTableRowData): Row {
+function createMarketRow({ market, yieldSource }: MarketTableRowData): Row {
   return {
     href: `/trade/${market.address}`,
     cells: [
-      <span className="font-bold">
+      <span key="name" className="font-bold">
         <p>{market.name}</p>
-        <ProtocolLabel
+        <YieldSourceLabel
           className="font-dm-sans font-normal"
-          protocol={market.yieldSource}
+          yieldSource={yieldSource}
         />
       </span>,
-      <p className="font-semibold">{market.termLength} months</p>,
+      <p key="term" className="font-semibold">
+        {market.termLength} months
+      </p>,
 
-      <span className="font-semibold">$100M</span>,
-      <span className="font-semibold">1.25%</span>,
+      <span key="liquidity" className="font-semibold">
+        $100M
+      </span>,
+      <span key="apy" className="font-semibold">
+        1.25%
+      </span>,
     ],
   };
 }

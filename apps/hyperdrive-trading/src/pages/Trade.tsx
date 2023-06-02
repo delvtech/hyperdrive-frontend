@@ -5,10 +5,11 @@ import {
 import { ReactElement, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Stat } from "src/ui/base/components/Stat";
 import { MarketsTable } from "src/ui/markets/components/MarketsTable";
 import { PositionsTable } from "src/ui/orders/components/PositionsTable";
-import { ProtocolLabel } from "src/ui/protocol/components/ProtocolLabel";
+import { YieldSourceLabel } from "src/ui/protocol/components/ProtocolLabel";
 import { PositionForm } from "src/ui/trading/components/PositionForm";
 import { TradingChart } from "src/ui/trading/components/TradingChart";
 
@@ -17,6 +18,8 @@ const MARKETS_MODAL_KEY = "MARKETS_MODAL";
 export function Trade(): ReactElement {
   // Safe to cast this variable because router configs this page is rendered with a valid market
   const market = useLoaderData() as Hyperdrive;
+  const { appConfig } = useAppConfig();
+  const yieldSource = appConfig?.yieldSources[market.yieldSource];
   const [tradeModalOpen, setTradeModalOpen] = useState(false);
 
   return (
@@ -42,7 +45,7 @@ export function Trade(): ReactElement {
         <div className="flex w-full gap-x-8">
           <Stat
             label="Protocol"
-            value={<ProtocolLabel protocol={market.yieldSource} />}
+            value={<YieldSourceLabel yieldSource={yieldSource} />}
           />
           <Stat label="Liquidity" value="$100M" />
           <Stat label="Volume" value="$4.4M" />
@@ -68,7 +71,7 @@ export function Trade(): ReactElement {
           <div className="flex gap-x-16">
             <Stat
               label="Protocol"
-              value={<ProtocolLabel protocol={market.yieldSource} />}
+              value={<YieldSourceLabel yieldSource={yieldSource} />}
             />
             <Stat className="hidden lg:block" label="Liquidity" value="$100M" />
             <Stat className="hidden xl:block" label="Long APR" value="1.50%" />

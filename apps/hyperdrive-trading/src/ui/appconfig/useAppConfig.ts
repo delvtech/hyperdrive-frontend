@@ -34,5 +34,5 @@ async function getLocalAppConfig(): Promise<AppConfig> {
     res.json(),
   );
   console.log(addresses);
-  return { chainId: 31337, markets: [] } as AppConfig;
+  return { chainId: 31337, hyperdrives: [], yieldSources: {} } as AppConfig;
 }

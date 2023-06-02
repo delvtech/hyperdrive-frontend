@@ -1,16 +1,16 @@
 import classNames from "classnames";
 import { ReactElement } from "react";
-import { YieldSource } from "src/appconfig/types";
+import { YieldSource } from "src/appconfig/yieldSources/yieldSources";
 
-interface ProtocolLabelProps {
-  protocol: YieldSource;
+interface YieldSourceLabelProps {
+  yieldSource: YieldSource | undefined;
   className?: string;
 }
 
-export function ProtocolLabel({
-  protocol,
+export function YieldSourceLabel({
+  yieldSource,
   className,
-}: ProtocolLabelProps): ReactElement {
+}: YieldSourceLabelProps): ReactElement {
   return (
     <span
       className={classNames(
@@ -18,8 +18,8 @@ export function ProtocolLabel({
         "flex items-center gap-x-2 font-dm-sans",
       )}
     >
-      <img className="h-4" src={protocol.iconUrl} />
-      {protocol.name}
+      <img className="h-4" src={yieldSource?.iconUrl} />
+      {yieldSource?.protocol}
     </span>
   );
 }
