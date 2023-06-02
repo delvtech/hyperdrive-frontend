@@ -1,5 +1,5 @@
 import { useQuery, UseQueryResult } from "@tanstack/react-query";
-import { HyperdriveMarket } from "src/appconfig/HyperdriveConfig";
+import { HyperdriveMarket } from "src/appconfig/types";
 import { MarketStatistics, MarketTableRowData } from "src/ui/markets/types";
 
 // TODO: stubbed function for now

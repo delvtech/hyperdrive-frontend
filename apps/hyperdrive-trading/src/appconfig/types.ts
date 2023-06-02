@@ -5,7 +5,7 @@ export interface Protocol {
   iconUrl?: string;
 }
 
-export interface HyperdriveConfig<
+export interface AppConfig<
   Protocols extends readonly Protocol[] = readonly Protocol[],
 > {
   /**

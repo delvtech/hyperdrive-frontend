@@ -1,9 +1,5 @@
 import { HyperdriveGoerliAddresses } from "@hyperdrive/core";
-import {
-  HyperdriveConfig,
-  Protocol,
-  Token,
-} from "src/appconfig/HyperdriveConfig";
+import { AppConfig, Protocol, Token } from "src/appconfig/types";
 
 /* Supported Protocols */
 const MakerProtocol: Protocol = {
@@ -21,9 +17,7 @@ const daiBaseToken: Token = {
     "https://cryptologos.cc/logos/multi-collateral-dai-dai-logo.png?v=024",
 };
 
-export const goerliHyperdriveConfig: HyperdriveConfig<
-  typeof supportedProtocols
-> = {
+export const goerliAppConfig: AppConfig<typeof supportedProtocols> = {
   chainId: 5,
   markets: [
     {

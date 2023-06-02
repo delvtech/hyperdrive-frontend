@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { HyperdriveMarket } from "src/appconfig/HyperdriveConfig";
+import { HyperdriveMarket } from "src/appconfig/types";
 import { Pill } from "src/ui/base/components/Pill";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { formatBigInt } from "src/ui/base/formatting/formatBigInt";

@@ -1,5 +1,5 @@
 import { ChangeEvent, ReactElement } from "react";
-import { Token } from "src/appconfig/HyperdriveConfig";
+import { Token } from "src/appconfig/types";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 
 interface TokenInputProps {

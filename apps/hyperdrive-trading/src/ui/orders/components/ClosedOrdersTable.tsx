@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-key */
 import classNames from "classnames";
 import { ReactElement } from "react";
-import { HyperdriveMarket } from "src/appconfig/HyperdriveConfig";
+import { HyperdriveMarket } from "src/appconfig/types";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { formatBigInt } from "src/ui/base/formatting/formatBigInt";
 import { Row, SortableGridTable } from "src/ui/base/tables/SortableGridTable";

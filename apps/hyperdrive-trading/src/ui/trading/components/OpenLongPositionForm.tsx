@@ -1,7 +1,7 @@
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { ethers } from "ethers";
 import { ReactElement } from "react";
-import { HyperdriveMarket } from "src/appconfig/HyperdriveConfig";
+import { HyperdriveMarket } from "src/appconfig/types";
 import { parseUnits } from "src/base/parseUnits";
 import { Button } from "src/ui/base/components/Button";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";

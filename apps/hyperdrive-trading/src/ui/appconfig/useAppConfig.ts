@@ -1,17 +1,17 @@
 import { useQuery } from "@tanstack/react-query";
-import { goerliHyperdriveConfig } from "src/appconfig/chains/goerli";
-import { HyperdriveConfig } from "src/appconfig/HyperdriveConfig";
+import { goerliAppConfig } from "src/appconfig/chains/goerli";
 import {
   SupportedChainId,
   supportedChainIds,
 } from "src/appconfig/supportedChains";
+import { AppConfig } from "src/appconfig/types";
 import { useChainId } from "wagmi";
 
 const LOCALHOST_ADDRESSES_URL = import.meta.env.VITE_LOCALHOST_ADDRESSES_URL;
 // const LOCALHOST_ADDRESSES_URL = '/localAddresses'
 
 export function useAppConfig(): {
-  appConfig: HyperdriveConfig | undefined;
+  appConfig: AppConfig | undefined;
   appConfigStatus: "idle" | "error" | "loading" | "success";
 } {
   const chainId = useChainId();
@@ -27,7 +27,7 @@ export function useAppConfig(): {
     queryFn: async () => {
       switch (chainId as SupportedChainId) {
         case 5:
-          return goerliHyperdriveConfig;
+          return goerliAppConfig;
         case 31337:
           return getLocalAddresses();
       }
@@ -37,7 +37,7 @@ export function useAppConfig(): {
   return { appConfig, appConfigStatus };
 }
 
-async function getLocalAddresses(): Promise<HyperdriveConfig> {
+async function getLocalAddresses(): Promise<AppConfig> {
   const addresses = await fetch(LOCALHOST_ADDRESSES_URL);
   console.log(addresses);
   return null as any;
