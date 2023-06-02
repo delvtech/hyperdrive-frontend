@@ -1,4 +1,4 @@
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 import { HyperdriveMarket } from "src/config/HyperdriveConfig";
 import { QueryStatusType } from "src/ui/base/types";
 

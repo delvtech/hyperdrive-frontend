@@ -1,12 +1,19 @@
+import { useQuery } from "@tanstack/react-query";
+import { goerliHyperdriveConfig } from "src/config/chains/goerli";
 import {
   SupportedChainId,
   supportedChainIds,
 } from "src/config/hyperdrive.config";
 import { HyperdriveConfig } from "src/config/HyperdriveConfig";
-import { getHyperdriveConfig } from "src/config/utils/getHyperdriveConfig";
 import { useChainId } from "wagmi";
 
-export function useAppConfig(): HyperdriveConfig {
+const LOCALHOST_ADDRESSES_URL = import.meta.env.VITE_LOCALHOST_ADDRESSES_URL;
+// const LOCALHOST_ADDRESSES_URL = '/localAddresses'
+
+export function useAppConfig(): {
+  appConfig: HyperdriveConfig | undefined;
+  appConfigStatus: "idle" | "error" | "loading" | "success";
+} {
   const chainId = useChainId();
   if (!supportedChainIds.includes(chainId as SupportedChainId)) {
     // This should never happen with a properly configured wagmi config
@@ -14,5 +21,24 @@ export function useAppConfig(): HyperdriveConfig {
       `Cannot fetch hyperdrive config with chain id: ${chainId}.`,
     );
   }
-  return getHyperdriveConfig(chainId as SupportedChainId);
+
+  const { data: appConfig, status: appConfigStatus } = useQuery({
+    queryKey: ["app-config", { chainId }],
+    queryFn: async () => {
+      switch (chainId as SupportedChainId) {
+        case 5:
+          return goerliHyperdriveConfig;
+        case 31337:
+          return getLocalAddresses();
+      }
+    },
+  });
+
+  return { appConfig, appConfigStatus };
+}
+
+async function getLocalAddresses(): Promise<HyperdriveConfig> {
+  const addresses = await fetch(LOCALHOST_ADDRESSES_URL);
+  console.log(addresses);
+  return null as any;
 }

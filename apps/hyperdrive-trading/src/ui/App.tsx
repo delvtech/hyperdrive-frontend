@@ -1,7 +1,4 @@
-import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { ReactElement, useMemo } from "react";
-import { Toaster } from "react-hot-toast";
-import { QueryClient, QueryClientProvider } from "react-query";
 import {
   createBrowserRouter,
   Outlet,
@@ -13,8 +10,6 @@ import { Trade } from "src/pages/Trade";
 import { Navbar } from "src/ui/base/components/Navbar";
 import { useLocalStorage } from "src/ui/base/hooks/useLocalStorage";
 import { useAppConfig } from "src/ui/config/useAppConfig";
-import { wagmiChains, wagmiConfig } from "src/wallet/wagmiClient";
-import { WagmiConfig } from "wagmi";
 
 const LASTED_VIEWED_MARKET_KEY = "last-viewed-market";
 
@@ -27,10 +22,8 @@ function BaseLayout(): ReactElement {
   );
 }
 
-const queryClient = new QueryClient();
-
 export function App(): ReactElement {
-  const config = useAppConfig();
+  const { appConfig } = useAppConfig();
 
   const [lastViewedMarket, setLastViewedMarket] = useLocalStorage<
     string | undefined
@@ -58,14 +51,14 @@ export function App(): ReactElement {
               }
               // we fall back to the first market in the config
               // this should rarely happen
-              return redirect(`/trade/${config.markets[0].address}`);
+              return redirect(`/trade/${appConfig?.markets[0].address}`);
             },
           },
           {
             path: "/trade/:address",
             element: <Trade />,
             loader: ({ params }) => {
-              const market = config.markets.find(
+              const market = appConfig?.markets.find(
                 (market) => market.address === params.address,
               );
 
@@ -78,7 +71,7 @@ export function App(): ReactElement {
                 }
                 // we fall back to the first market in the config
                 // this should rarely happen
-                return redirect(`/trade/${config.markets[0].address}`);
+                return redirect(`/trade/${appConfig?.markets[0].address}`);
               }
             },
           },
@@ -86,18 +79,11 @@ export function App(): ReactElement {
       },
     ]);
     /* eslint-disable-next-line  react-hooks/exhaustive-deps */
-  }, [config]);
+  }, [appConfig]);
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <Toaster position="bottom-left" reverseOrder={false} />
-      <WagmiConfig config={wagmiConfig}>
-        <RainbowKitProvider chains={wagmiChains}>
-          <div className="flex h-full min-h-screen flex-col bg-gradient-to-b from-base-200 to-base-300">
-            <RouterProvider router={router} />
-          </div>
-        </RainbowKitProvider>
-      </WagmiConfig>
-    </QueryClientProvider>
+    <div className="flex h-full min-h-screen flex-col bg-gradient-to-b from-base-200 to-base-300">
+      <RouterProvider router={router} />
+    </div>
   );
 }

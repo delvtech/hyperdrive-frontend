@@ -1,6 +1,6 @@
 import { HyperdriveABI } from "@hyperdrive/core";
+import { useQuery, UseQueryResult } from "@tanstack/react-query";
 import { BigNumber, constants, Contract, providers } from "ethers";
-import { useQuery, UseQueryResult } from "react-query";
 import { HyperdriveMarket } from "src/config/HyperdriveConfig";
 import { MultiToken, Position } from "src/ui/hyperdrive/types";
 import {
