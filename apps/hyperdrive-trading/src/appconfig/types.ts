@@ -19,7 +19,7 @@ export interface Token extends ContractConfig {
 }
 
 /**
- * Hyperdrive market interface
+ * The appconfig a hyperdrive instance
  */
 export interface Hyperdrive extends ContractConfig {
   baseToken: Token;
