@@ -1,14 +1,5 @@
 import { DSRHyperdriveABI } from "src/abis/DSRHyperdrive";
-import { HyperdriveABI } from "src/abis/Hyperdrive";
-import { isHyperdriveShort } from "src/pools/assetId";
-import {
-  PublicClient,
-  decodeEventLog,
-  zeroAddress,
-  Address,
-  Transport,
-  Chain,
-} from "viem";
+import { PublicClient, decodeEventLog, Address, Transport, Chain } from "viem";
 
 interface GetShortsOptions {
   account: Address;
@@ -45,5 +36,6 @@ export async function getShorts({
     }),
   );
 
-  return mintEvents.map((short) => short.args.id as bigint);
+  // TODO: Can remove any once the assetId field exists on the event
+  return mintEvents.map((short) => (short.args as any).assetId as bigint);
 }
