@@ -19,6 +19,10 @@ export function useAppConfig(): {
           return goerliAppConfig;
         case 31337:
           return getLocalAppConfig(publicClient);
+        default:
+          throw new Error(
+            `No app config found for the currently connected chain: ${chainId}`,
+          );
       }
     },
     // The config never changes, so it can be cached forever
