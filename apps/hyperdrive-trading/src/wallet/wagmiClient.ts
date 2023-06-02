@@ -2,9 +2,13 @@ import { getDefaultWallets } from "@rainbow-me/rainbowkit";
 // Something very strange is happening with the types, where if you don't import
 // Chain from wagmi then the return type of createConfig cannot be inferred.
 import { Chain, configureChains, createConfig } from "wagmi";
-import { goerli } from "wagmi/chains";
+import { foundry, goerli } from "wagmi/chains";
 import { alchemyProvider } from "wagmi/providers/alchemy";
-const ALCHEMY_GOERLI_RPC_KEY = import.meta.env.VITE_ALCHEMY_GOERLI_RPC_KEY;
+import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
+const {
+  VITE_ALCHEMY_GOERLI_RPC_KEY: ALCHEMY_GOERLI_RPC_KEY,
+  VITE_LOCALHOST_NODE_RPC_URL: LOCALHOST_NODE_RPC_URL,
+} = import.meta.env;
 
 // Hack: An unused reference so that eslint doesn't automatically fixup the
 // Chain import.
@@ -15,8 +19,15 @@ if (!ALCHEMY_GOERLI_RPC_KEY) {
 }
 
 const { chains, publicClient, webSocketPublicClient } = configureChains(
-  [goerli],
-  [alchemyProvider({ apiKey: ALCHEMY_GOERLI_RPC_KEY })],
+  [goerli, foundry],
+  [
+    alchemyProvider({ apiKey: ALCHEMY_GOERLI_RPC_KEY }),
+    jsonRpcProvider({
+      rpc: () => ({
+        http: LOCALHOST_NODE_RPC_URL,
+      }),
+    }),
+  ],
 );
 
 export const wagmiChains = chains;
