@@ -2,10 +2,15 @@
 export { HyperdriveGoerliAddresses } from "src/addresses/goerli";
 
 /** ABIs */
-export { HyperdriveABI } from "src/abis/Hyperdrive";
 export { AaveFixedBorrowActionABI } from "src/abis/AaveFixedBorrrowAction";
 export { ERC20_ABI } from "src/abis/ERC20";
 export { HyperdriveMath } from "src/abis/HyperdriveMath";
+
+// TODO: Contracts team to supply a single ABI for the hyperdrive pool soon.
+// Use HyperdriveABI for read methods, eg: getPoolConfig
+export { HyperdriveABI } from "src/abis/Hyperdrive";
+// Use DSRHyperdriveABI for events, eg: "OpenLong"
+export { DSRHyperdriveABI } from "src/abis/DSRHyperdrive";
 
 /** Functions */
 export { getShorts } from "src/pools/shorts/getShorts";

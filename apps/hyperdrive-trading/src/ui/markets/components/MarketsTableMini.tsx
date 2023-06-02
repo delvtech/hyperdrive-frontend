@@ -1,22 +1,19 @@
 import uniqBy from "lodash.uniqby";
 import { ReactElement, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { SupportedChainId } from "src/config/hyperdrive.config";
-import { getHyperdriveConfig } from "src/config/utils/getHyperdriveConfig";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { useMarketRowData } from "src/ui/markets/hooks/useMarketRowData";
 import { ProtocolLabel } from "src/ui/protocol/components/ProtocolLabel";
-import { useChainId } from "wagmi";
 
 const ALL_PROTOCOLS_KEY = "All Markets";
 const ALL_TERM_LENGTHS_KEY = 0;
 
 export function MarketsTableMini(): ReactElement {
-  const chainId = useChainId();
-  const config = getHyperdriveConfig(chainId as SupportedChainId);
+  const { appConfig } = useAppConfig();
 
-  const allProtocols = config.markets.map((market) => market.protocol);
+  const allProtocols = appConfig?.markets.map((market) => market.protocol);
   const protocols = uniqBy(allProtocols, (protocol) => protocol.name);
-  const allTermLengths = config.markets.map((market) => market.termLength);
+  const allTermLengths = appConfig?.markets.map((market) => market.termLength);
   const termLengths = uniqBy(allTermLengths, (termLength) => termLength);
 
   const [protocolFilter, setSelectedProtocolFilter] =
@@ -25,7 +22,7 @@ export function MarketsTableMini(): ReactElement {
     useState<number>(ALL_TERM_LENGTHS_KEY);
 
   // TODO: no loading state for now
-  const { data: marketsRowData = [] } = useMarketRowData(config.markets);
+  const { data: marketsRowData = [] } = useMarketRowData(appConfig?.markets);
 
   const filteredMarkets = useMemo(() => {
     const marketFilteredByTermLength = termLengthFilter

@@ -1,5 +1,5 @@
 import { ReactElement, useState } from "react";
-import { HyperdriveMarket } from "src/config/HyperdriveConfig";
+import { HyperdriveMarket } from "src/appconfig/types";
 import { OpenOrdersTable } from "src/ui/orders/components/OpenOrdersTable";
 import { match } from "ts-pattern";
 import { ClosedOrdersTable } from "./ClosedOrdersTable";

@@ -4,7 +4,7 @@ import {
 } from "@heroicons/react/20/solid";
 import { ReactElement, useState } from "react";
 import { useLoaderData } from "react-router-dom";
-import { HyperdriveMarket } from "src/config/HyperdriveConfig";
+import { HyperdriveMarket } from "src/appconfig/types";
 import { Stat } from "src/ui/base/components/Stat";
 import { MarketsTable } from "src/ui/markets/components/MarketsTable";
 import { PositionsTable } from "src/ui/orders/components/PositionsTable";

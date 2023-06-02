@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { HyperdriveMarket } from "src/config/HyperdriveConfig";
+import { HyperdriveMarket } from "src/appconfig/types";
 import { OrderType } from "src/ui/hyperdrive/types";
 import { OpenLongPositionForm } from "src/ui/trading/components/OpenLongPositionForm";
 import { match } from "ts-pattern";

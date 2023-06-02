@@ -27,7 +27,7 @@ export function useShorts<SelectResult = bigint[]>({
       ? () =>
           getShorts({
             account,
-            hyperdriveMarket,
+            hyperdriveAddress: hyperdriveMarket,
             // Casting as any since wagmi and viem are being silly and don't
             // agree on the type of PublicClient in ways that don't seem to
             // matter in any practical way.

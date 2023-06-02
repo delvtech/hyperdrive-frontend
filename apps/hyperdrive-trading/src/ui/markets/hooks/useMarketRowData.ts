@@ -1,5 +1,5 @@
-import { useQuery, UseQueryResult } from "react-query";
-import { HyperdriveMarket } from "src/config/HyperdriveConfig";
+import { useQuery, UseQueryResult } from "@tanstack/react-query";
+import { HyperdriveMarket } from "src/appconfig/types";
 import { MarketStatistics, MarketTableRowData } from "src/ui/markets/types";
 
 // TODO: stubbed function for now
@@ -17,20 +17,24 @@ function getMarketStatistics(
 }
 
 export function useMarketRowData(
-  markets: HyperdriveMarket[],
+  markets: HyperdriveMarket[] | undefined,
 ): UseQueryResult<MarketTableRowData[]> {
+  const queryEnabled = !!markets;
   return useQuery<MarketTableRowData[]>({
     queryKey: markets,
-    queryFn: async () => {
-      return await Promise.all(
-        markets.map(async (market) => {
-          const stats = await getMarketStatistics(market);
-          return {
-            market,
-            ...stats,
-          };
-        }),
-      );
-    },
+    enabled: queryEnabled,
+    queryFn: queryEnabled
+      ? async () => {
+          return await Promise.all(
+            markets.map(async (market) => {
+              const stats = await getMarketStatistics(market);
+              return {
+                market,
+                ...stats,
+              };
+            }),
+          );
+        }
+      : undefined,
   });
 }

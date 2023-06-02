@@ -1,6 +1,6 @@
 import { ChartOptions, createChart, IChartApi } from "lightweight-charts";
 import { ReactElement, useEffect, useRef, useState } from "react";
-import { HyperdriveMarket } from "src/config/HyperdriveConfig";
+import { HyperdriveMarket } from "src/appconfig/types";
 import { useHistoricalVolume } from "src/ui/hyperdrive/hooks/useHistoricalVolume";
 
 interface TradingChartProps {

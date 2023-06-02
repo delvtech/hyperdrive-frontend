@@ -1,6 +1,6 @@
 import { HyperdriveABI } from "@hyperdrive/core";
-import { useQuery } from "react-query";
-import { HyperdriveMarket } from "src/config/HyperdriveConfig";
+import { useQuery } from "@tanstack/react-query";
+import { HyperdriveMarket } from "src/appconfig/types";
 import { Address, useAccount, usePublicClient } from "wagmi";
 
 interface UsePreviewOpenLongOptions {
