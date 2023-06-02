@@ -1,4 +1,4 @@
-import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
+import { darkTheme, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import "@rainbow-me/rainbowkit/styles.css";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -18,7 +18,11 @@ root.render(
   <QueryClientProvider client={queryClient}>
     <Toaster position="bottom-left" reverseOrder={false} />
     <WagmiConfig config={wagmiConfig}>
-      <RainbowKitProvider chains={wagmiChains}>
+      <RainbowKitProvider
+        chains={wagmiChains}
+        showRecentTransactions
+        theme={darkTheme()}
+      >
         <App />
       </RainbowKitProvider>
     </WagmiConfig>
