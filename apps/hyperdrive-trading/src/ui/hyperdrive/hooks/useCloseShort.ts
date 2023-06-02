@@ -2,7 +2,7 @@ import { HyperdriveABI } from "@hyperdrive/core";
 import { useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { HyperdriveMarket } from "src/appconfig/types";
+import { Hyperdrive } from "src/appconfig/types";
 import { QueryStatusType } from "src/ui/base/types";
 import { getAssetTimestampFromTokenId } from "src/ui/hyperdrive/utils";
 import { makeNewPositionToast } from "src/ui/trading/toast/makeNewPositionToast";
@@ -14,7 +14,7 @@ import {
 } from "wagmi";
 
 interface UseCloseShortOptions {
-  market: HyperdriveMarket;
+  market: Hyperdrive;
   tokenID: bigint | undefined;
   shortAmountIn: bigint | undefined;
   minBaseAmountOut: bigint | undefined;

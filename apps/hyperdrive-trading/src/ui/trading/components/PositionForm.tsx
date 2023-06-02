@@ -6,14 +6,14 @@ import {
 } from "@heroicons/react/20/solid";
 import classNames from "classnames";
 import { PropsWithChildren, ReactElement, useState } from "react";
-import { HyperdriveMarket } from "src/appconfig/types";
+import { Hyperdrive } from "src/appconfig/types";
 import { OrderType, PositionType } from "src/ui/hyperdrive/types";
 import { LongPositionForm } from "src/ui/trading/components/LongPositionForm";
 import { ShortPositionForm } from "src/ui/trading/components/ShortPositionForm";
 import { match } from "ts-pattern";
 
 interface PositionFormProps {
-  market: HyperdriveMarket;
+  market: Hyperdrive;
   handleClose?: () => void;
 }
 

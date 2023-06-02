@@ -4,7 +4,7 @@ import {
 } from "@heroicons/react/20/solid";
 import { ReactElement, useState } from "react";
 import { useLoaderData } from "react-router-dom";
-import { HyperdriveMarket } from "src/appconfig/types";
+import { Hyperdrive } from "src/appconfig/types";
 import { Stat } from "src/ui/base/components/Stat";
 import { MarketsTable } from "src/ui/markets/components/MarketsTable";
 import { PositionsTable } from "src/ui/orders/components/PositionsTable";
@@ -16,7 +16,7 @@ const MARKETS_MODAL_KEY = "MARKETS_MODAL";
 
 export function Trade(): ReactElement {
   // Safe to cast this variable because router configs this page is rendered with a valid market
-  const market = useLoaderData() as HyperdriveMarket;
+  const market = useLoaderData() as Hyperdrive;
   const [tradeModalOpen, setTradeModalOpen] = useState(false);
 
   return (
@@ -42,7 +42,7 @@ export function Trade(): ReactElement {
         <div className="flex w-full gap-x-8">
           <Stat
             label="Protocol"
-            value={<ProtocolLabel protocol={market.protocol} />}
+            value={<ProtocolLabel protocol={market.yieldSource} />}
           />
           <Stat label="Liquidity" value="$100M" />
           <Stat label="Volume" value="$4.4M" />
@@ -68,7 +68,7 @@ export function Trade(): ReactElement {
           <div className="flex gap-x-16">
             <Stat
               label="Protocol"
-              value={<ProtocolLabel protocol={market.protocol} />}
+              value={<ProtocolLabel protocol={market.yieldSource} />}
             />
             <Stat className="hidden lg:block" label="Liquidity" value="$100M" />
             <Stat className="hidden xl:block" label="Long APR" value="1.50%" />

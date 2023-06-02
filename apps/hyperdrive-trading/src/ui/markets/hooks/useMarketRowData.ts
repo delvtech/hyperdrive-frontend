@@ -1,12 +1,12 @@
 import { useQuery, UseQueryResult } from "@tanstack/react-query";
-import { HyperdriveMarket } from "src/appconfig/types";
+import { Hyperdrive } from "src/appconfig/types";
 import { MarketStatistics, MarketTableRowData } from "src/ui/markets/types";
 
 // TODO: stubbed function for now
 // ideally fetched from an api
 function getMarketStatistics(
   /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
-  market: HyperdriveMarket,
+  market: Hyperdrive,
 ): Promise<MarketStatistics> {
   return Promise.resolve({
     liquidity: "$100M",
@@ -17,7 +17,7 @@ function getMarketStatistics(
 }
 
 export function useMarketRowData(
-  markets: HyperdriveMarket[] | undefined,
+  markets: Hyperdrive[] | undefined,
 ): UseQueryResult<MarketTableRowData[]> {
   const queryEnabled = !!markets;
   return useQuery<MarketTableRowData[]>({

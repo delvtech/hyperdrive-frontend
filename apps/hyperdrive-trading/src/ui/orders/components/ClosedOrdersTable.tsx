@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-key */
 import classNames from "classnames";
 import { ReactElement } from "react";
-import { HyperdriveMarket } from "src/appconfig/types";
+import { Hyperdrive } from "src/appconfig/types";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { formatBigInt } from "src/ui/base/formatting/formatBigInt";
 import { Row, SortableGridTable } from "src/ui/base/tables/SortableGridTable";
@@ -10,7 +10,7 @@ import { Position } from "src/ui/hyperdrive/types";
 import { useAccount } from "wagmi";
 
 interface ClosedOrdersTableProps {
-  market: HyperdriveMarket;
+  market: Hyperdrive;
 }
 
 export function ClosedOrdersTable({

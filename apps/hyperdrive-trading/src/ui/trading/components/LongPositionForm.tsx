@@ -1,12 +1,12 @@
 import { ReactElement } from "react";
-import { HyperdriveMarket } from "src/appconfig/types";
+import { Hyperdrive } from "src/appconfig/types";
 import { OrderType } from "src/ui/hyperdrive/types";
 import { OpenLongPositionForm } from "src/ui/trading/components/OpenLongPositionForm";
 import { match } from "ts-pattern";
 import { CloseLongPositionForm } from "./CloseLongPositionForm";
 
 interface LongPositionFormProps {
-  market: HyperdriveMarket;
+  market: Hyperdrive;
   order: OrderType;
 }
 

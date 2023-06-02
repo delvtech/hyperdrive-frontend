@@ -1,11 +1,11 @@
 import { ReactElement } from "react";
-import { HyperdriveMarket } from "src/appconfig/types";
+import { Hyperdrive } from "src/appconfig/types";
 import { Pill } from "src/ui/base/components/Pill";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { formatBigInt } from "src/ui/base/formatting/formatBigInt";
 
 interface LongPositionOverviewWellProps {
-  market: HyperdriveMarket;
+  market: Hyperdrive;
   costBasis?: bigint;
   claimableAtMaturity: bigint;
   expiryDate: Date;

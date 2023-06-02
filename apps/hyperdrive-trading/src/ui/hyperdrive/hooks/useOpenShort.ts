@@ -2,7 +2,7 @@ import { HyperdriveABI } from "@hyperdrive/core";
 import { useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { HyperdriveMarket } from "src/appconfig/types";
+import { Hyperdrive } from "src/appconfig/types";
 import { QueryStatusType } from "src/ui/base/types";
 import { makeNewPositionToast } from "src/ui/trading/toast/makeNewPositionToast";
 import {
@@ -13,7 +13,7 @@ import {
 } from "wagmi";
 
 interface UseOpenShortOptions {
-  market: HyperdriveMarket;
+  market: Hyperdrive;
   amountBondShorts: bigint | undefined;
   maxBaseAmountIn: bigint | undefined;
   destination: Address | undefined;

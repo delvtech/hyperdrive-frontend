@@ -1,9 +1,9 @@
 import classNames from "classnames";
 import { ReactElement } from "react";
-import { Protocol } from "src/appconfig/types";
+import { YieldSource } from "src/appconfig/types";
 
 interface ProtocolLabelProps {
-  protocol: Protocol;
+  protocol: YieldSource;
   className?: string;
 }
 

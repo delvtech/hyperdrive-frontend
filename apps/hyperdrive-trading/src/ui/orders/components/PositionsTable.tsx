@@ -1,11 +1,11 @@
 import { ReactElement, useState } from "react";
-import { HyperdriveMarket } from "src/appconfig/types";
+import { Hyperdrive } from "src/appconfig/types";
 import { OpenOrdersTable } from "src/ui/orders/components/OpenOrdersTable";
 import { match } from "ts-pattern";
 import { ClosedOrdersTable } from "./ClosedOrdersTable";
 
 interface PositionsTableProps {
-  market: HyperdriveMarket;
+  market: Hyperdrive;
 }
 
 type SelectedTable = "Open" | "Closed" | "Recent";

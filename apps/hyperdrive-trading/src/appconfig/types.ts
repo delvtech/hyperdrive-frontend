@@ -1,18 +1,16 @@
 import { Address } from "wagmi";
 
-export interface Protocol {
+export interface YieldSource {
   name: string;
   iconUrl?: string;
 }
 
-export interface AppConfig<
-  Protocols extends readonly Protocol[] = readonly Protocol[],
-> {
+export interface AppConfig {
   /**
    * The chain id where the contracts are deployed
    */
   chainId: number;
-  markets: HyperdriveMarket<Protocols[number]>[];
+  markets: YieldSource[];
 }
 
 export interface ContractConfig {
@@ -37,10 +35,10 @@ export interface Token extends ContractConfig {
 /**
  * Hyperdrive market interface
  */
-export interface HyperdriveMarket<P extends Protocol = Protocol>
+export interface Hyperdrive<Y extends YieldSource = YieldSource>
   extends ContractConfig {
   baseToken: Token;
   name: string;
-  protocol: P;
+  yieldSource: Y;
   termLength: number;
 }

@@ -13,7 +13,7 @@ const ALL_TERM_LENGTHS_KEY = 0;
 export function MarketsTableLarge(): ReactElement {
   const { appConfig: config } = useAppConfig();
 
-  const allProtocols = config?.markets.map((market) => market.protocol);
+  const allProtocols = config?.markets.map((market) => market.yieldSource);
   const protocols = uniqBy(allProtocols, (protocol) => protocol.name);
   const allTermLengths = config?.markets.map((market) => market.termLength);
   const termLengths = uniqBy(allTermLengths, (termLength) => termLength);
@@ -37,7 +37,7 @@ export function MarketsTableLarge(): ReactElement {
     if (protocolFilter !== ALL_PROTOCOLS_KEY) {
       return marketFilteredByTermLength.filter(
         (marketRowData) =>
-          marketRowData.market.protocol.name === protocolFilter,
+          marketRowData.market.yieldSource.name === protocolFilter,
       );
     }
 
@@ -155,7 +155,7 @@ function createMarketRow({ market }: MarketTableRowData): Row {
         <p>{market.name}</p>
         <ProtocolLabel
           className="font-dm-sans font-normal"
-          protocol={market.protocol}
+          protocol={market.yieldSource}
         />
       </span>,
       <p className="font-semibold">{market.termLength} months</p>,

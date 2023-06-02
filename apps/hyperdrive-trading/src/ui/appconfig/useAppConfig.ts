@@ -30,7 +30,9 @@ export function useAppConfig(): {
 
 // TODO: Move this to src/appconfig/chains/local.ts
 async function getLocalAppConfig(): Promise<AppConfig> {
-  const addresses = await fetch(LOCALHOST_ADDRESSES_URL);
+  const addresses = await fetch(LOCALHOST_ADDRESSES_URL).then((res) =>
+    res.json(),
+  );
   console.log(addresses);
   return { chainId: 31337, markets: [] } as AppConfig;
 }

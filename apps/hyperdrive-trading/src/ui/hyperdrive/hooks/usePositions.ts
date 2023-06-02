@@ -1,7 +1,7 @@
 import { HyperdriveABI } from "@hyperdrive/core";
 import { useQuery, UseQueryResult } from "@tanstack/react-query";
 import { BigNumber, constants, Contract, providers } from "ethers";
-import { HyperdriveMarket } from "src/appconfig/types";
+import { Hyperdrive } from "src/appconfig/types";
 import { MultiToken, Position } from "src/ui/hyperdrive/types";
 import {
   getAssetPrefixFromTokenId,
@@ -34,7 +34,7 @@ function useRpcUrlFromPublicClient() {
  */
 export function usePositions(
   account: Address | undefined,
-  market: HyperdriveMarket,
+  market: Hyperdrive,
 ): UseQueryResult<UsePositionsResult> {
   // TODO: code debt to support ethers
   const rpcUrl = useRpcUrlFromPublicClient();

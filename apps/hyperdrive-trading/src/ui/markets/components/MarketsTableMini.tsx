@@ -11,7 +11,7 @@ const ALL_TERM_LENGTHS_KEY = 0;
 export function MarketsTableMini(): ReactElement {
   const { appConfig } = useAppConfig();
 
-  const allProtocols = appConfig?.markets.map((market) => market.protocol);
+  const allProtocols = appConfig?.markets.map((market) => market.yieldSource);
   const protocols = uniqBy(allProtocols, (protocol) => protocol.name);
   const allTermLengths = appConfig?.markets.map((market) => market.termLength);
   const termLengths = uniqBy(allTermLengths, (termLength) => termLength);
@@ -35,7 +35,7 @@ export function MarketsTableMini(): ReactElement {
     if (protocolFilter !== ALL_PROTOCOLS_KEY) {
       return marketFilteredByTermLength.filter(
         (marketRowData) =>
-          marketRowData.market.protocol.name === protocolFilter,
+          marketRowData.market.yieldSource.name === protocolFilter,
       );
     }
 
@@ -118,7 +118,7 @@ export function MarketsTableMini(): ReactElement {
                 <p>
                   <ProtocolLabel
                     className="font-dm-sans font-semibold"
-                    protocol={market.protocol}
+                    protocol={market.yieldSource}
                   />
                 </p>
               </div>

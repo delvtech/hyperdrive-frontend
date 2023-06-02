@@ -1,12 +1,12 @@
 import { ReactElement } from "react";
-import { HyperdriveMarket } from "src/appconfig/types";
+import { Hyperdrive } from "src/appconfig/types";
 import { OrderType } from "src/ui/hyperdrive/types";
 import { OpenShortPositionForm } from "src/ui/trading/components/OpenShortPositionForm";
 import { match } from "ts-pattern";
 import { CloseShortPositionForm } from "./CloseShortPositionForm";
 
 interface ShortPositionFormProps {
-  market: HyperdriveMarket;
+  market: Hyperdrive;
   order: OrderType;
 }
 

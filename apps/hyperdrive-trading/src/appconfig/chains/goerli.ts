@@ -1,12 +1,11 @@
 import { HyperdriveGoerliAddresses } from "@hyperdrive/core";
-import { AppConfig, Protocol, Token } from "src/appconfig/types";
+import { AppConfig, Token, YieldSource } from "src/appconfig/types";
 
 /* Supported Protocols */
-const MakerProtocol: Protocol = {
+const MakerProtocol: YieldSource = {
   name: "Maker",
   iconUrl: "https://cryptologos.cc/logos/maker-mkr-logo.png?v=024",
 };
-const supportedProtocols: readonly Protocol[] = [MakerProtocol] as const;
 
 const daiBaseToken: Token = {
   name: "DAI",
@@ -17,14 +16,14 @@ const daiBaseToken: Token = {
     "https://cryptologos.cc/logos/multi-collateral-dai-dai-logo.png?v=024",
 };
 
-export const goerliAppConfig: AppConfig<typeof supportedProtocols> = {
+export const goerliAppConfig: AppConfig = {
   chainId: 5,
   markets: [
     {
       name: "Maker DSR",
       address: HyperdriveGoerliAddresses.dsrHyperdrive,
       baseToken: daiBaseToken,
-      protocol: MakerProtocol,
+      yieldSource: MakerProtocol,
       termLength: 12,
     },
   ],

@@ -1,6 +1,6 @@
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { ReactElement, useState } from "react";
-import { HyperdriveMarket } from "src/appconfig/types";
+import { Hyperdrive } from "src/appconfig/types";
 import { Button } from "src/ui/base/components/Button";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { formatBigInt } from "src/ui/base/formatting/formatBigInt";
@@ -14,7 +14,7 @@ import { useAccount } from "wagmi";
 import { ShortPositionOverviewWell } from "./ShortPositionOverviewWell";
 
 interface CloseShortPositionFormProps {
-  market: HyperdriveMarket;
+  market: Hyperdrive;
 }
 
 export function CloseShortPositionForm({

@@ -1,7 +1,7 @@
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { constants, ethers } from "ethers";
 import { ReactElement } from "react";
-import { HyperdriveMarket } from "src/appconfig/types";
+import { Hyperdrive } from "src/appconfig/types";
 import { Button } from "src/ui/base/components/Button";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { useOpenShort } from "src/ui/hyperdrive/hooks/useOpenShort";
@@ -13,7 +13,7 @@ import { useAccount, useBalance } from "wagmi";
 import { ShortPositionOverviewWell } from "./ShortPositionOverviewWell";
 
 interface OpenShortPositionFormProps {
-  market: HyperdriveMarket;
+  market: Hyperdrive;
 }
 
 export function OpenShortPositionForm({

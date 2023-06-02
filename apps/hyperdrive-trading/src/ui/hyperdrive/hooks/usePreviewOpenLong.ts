@@ -1,10 +1,10 @@
 import { HyperdriveABI } from "@hyperdrive/core";
 import { useQuery } from "@tanstack/react-query";
-import { HyperdriveMarket } from "src/appconfig/types";
+import { Hyperdrive } from "src/appconfig/types";
 import { Address, useAccount, usePublicClient } from "wagmi";
 
 interface UsePreviewOpenLongOptions {
-  market: HyperdriveMarket;
+  market: Hyperdrive;
   baseAmount: bigint | undefined;
   bondAmountOut: bigint | undefined;
   destination: Address | undefined;

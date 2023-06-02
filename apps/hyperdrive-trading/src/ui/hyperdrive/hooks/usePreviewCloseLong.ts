@@ -1,11 +1,11 @@
 import { HyperdriveABI } from "@hyperdrive/core";
 import { useQuery } from "@tanstack/react-query";
-import { HyperdriveMarket } from "src/appconfig/types";
+import { Hyperdrive } from "src/appconfig/types";
 import { QueryStatusType } from "src/ui/base/types";
 import { Address, useAccount, usePublicClient } from "wagmi";
 
 interface UsePreviewCloseLongOptions {
-  market: HyperdriveMarket;
+  market: Hyperdrive;
   tokenID: bigint | undefined;
   bondAmountIn: bigint | undefined;
   minBaseAmountOut: bigint | undefined;

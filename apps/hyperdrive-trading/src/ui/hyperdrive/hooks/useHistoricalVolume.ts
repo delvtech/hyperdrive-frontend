@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { HyperdriveMarket } from "src/appconfig/types";
+import { Hyperdrive } from "src/appconfig/types";
 import { QueryStatusType } from "src/ui/base/types";
 
 /** Type fetched from the API */
@@ -20,7 +20,7 @@ interface UseHistoricalVolumeResult {
 }
 
 export function useHistoricalVolume(
-  market: HyperdriveMarket,
+  market: Hyperdrive,
 ): UseHistoricalVolumeResult {
   const { data, status } = useQuery({
     queryKey: ["historical-volume", market.address],

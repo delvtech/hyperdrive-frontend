@@ -1,7 +1,7 @@
-import { HyperdriveMarket } from "src/appconfig/types";
+import { Hyperdrive } from "src/appconfig/types";
 
 export interface MarketTableRowData {
-  market: HyperdriveMarket;
+  market: Hyperdrive;
   liquidity: string;
   longAPR: string;
   shortAPR: string;
