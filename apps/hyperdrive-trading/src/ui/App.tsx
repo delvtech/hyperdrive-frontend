@@ -7,9 +7,9 @@ import {
 } from "react-router-dom";
 import { Markets } from "src/pages/Markets";
 import { Trade } from "src/pages/Trade";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Navbar } from "src/ui/base/components/Navbar";
 import { useLocalStorage } from "src/ui/base/hooks/useLocalStorage";
-import { useAppConfig } from "src/ui/config/useAppConfig";
 
 const LASTED_VIEWED_MARKET_KEY = "last-viewed-market";
 

@@ -1,5 +1,9 @@
 import { HyperdriveGoerliAddresses } from "@hyperdrive/core";
-import { HyperdriveConfig, Protocol, Token } from "src/config/HyperdriveConfig";
+import {
+  HyperdriveConfig,
+  Protocol,
+  Token,
+} from "src/appconfig/HyperdriveConfig";
 
 /* Supported Protocols */
 const MakerProtocol: Protocol = {

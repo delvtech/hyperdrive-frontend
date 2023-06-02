@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { ReactElement } from "react";
-import { Protocol } from "src/config/HyperdriveConfig";
+import { Protocol } from "src/appconfig/HyperdriveConfig";
 
 interface ProtocolLabelProps {
   protocol: Protocol;

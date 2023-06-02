@@ -1,10 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
-import { goerliHyperdriveConfig } from "src/config/chains/goerli";
+import { goerliHyperdriveConfig } from "src/appconfig/chains/goerli";
+import { HyperdriveConfig } from "src/appconfig/HyperdriveConfig";
 import {
   SupportedChainId,
   supportedChainIds,
-} from "src/config/hyperdrive.config";
-import { HyperdriveConfig } from "src/config/HyperdriveConfig";
+} from "src/appconfig/supportedChains";
 import { useChainId } from "wagmi";
 
 const LOCALHOST_ADDRESSES_URL = import.meta.env.VITE_LOCALHOST_ADDRESSES_URL;

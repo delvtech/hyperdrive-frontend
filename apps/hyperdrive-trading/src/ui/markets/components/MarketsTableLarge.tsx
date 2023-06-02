@@ -1,8 +1,8 @@
 /* eslint-disable react/jsx-key */
 import uniqBy from "lodash.uniqby";
 import { ReactElement, useMemo, useState } from "react";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Row, SortableGridTable } from "src/ui/base/tables/SortableGridTable";
-import { useAppConfig } from "src/ui/config/useAppConfig";
 import { useMarketRowData } from "src/ui/markets/hooks/useMarketRowData";
 import { MarketTableRowData } from "src/ui/markets/types";
 import { ProtocolLabel } from "src/ui/protocol/components/ProtocolLabel";

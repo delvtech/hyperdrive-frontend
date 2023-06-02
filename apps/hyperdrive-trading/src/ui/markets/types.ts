@@ -1,4 +1,4 @@
-import { HyperdriveMarket } from "src/config/HyperdriveConfig";
+import { HyperdriveMarket } from "src/appconfig/HyperdriveConfig";
 
 export interface MarketTableRowData {
   market: HyperdriveMarket;

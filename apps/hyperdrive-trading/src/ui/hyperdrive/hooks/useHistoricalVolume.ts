@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { HyperdriveMarket } from "src/config/HyperdriveConfig";
+import { HyperdriveMarket } from "src/appconfig/HyperdriveConfig";
 import { QueryStatusType } from "src/ui/base/types";
 
 /** Type fetched from the API */

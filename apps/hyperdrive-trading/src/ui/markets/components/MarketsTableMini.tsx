@@ -1,7 +1,7 @@
 import uniqBy from "lodash.uniqby";
 import { ReactElement, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { useAppConfig } from "src/ui/config/useAppConfig";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { useMarketRowData } from "src/ui/markets/hooks/useMarketRowData";
 import { ProtocolLabel } from "src/ui/protocol/components/ProtocolLabel";
 
