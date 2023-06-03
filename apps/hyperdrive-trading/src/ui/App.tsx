@@ -24,6 +24,10 @@ function BaseLayout(): ReactElement {
 
 export function App(): ReactElement {
   const { appConfig } = useAppConfig();
+  if (appConfig) {
+    // eslint-disable-next-line no-console
+    console.log("appConfig", appConfig);
+  }
 
   const [lastViewedMarket, setLastViewedMarket] = useLocalStorage<
     string | undefined
