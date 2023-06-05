@@ -1,10 +1,11 @@
+import { AddressesJson, HyperdriveGoerliAddresses } from "@hyperdrive/core";
 import { useQuery } from "@tanstack/react-query";
-import { goerliAppConfig } from "src/appconfig/chains/goerli";
-import { getLocalAppConfig } from "src/appconfig/chains/local";
-import { SupportedChainId } from "src/appconfig/supportedChains";
+import { SupportedChainId } from "src/appconfig/chains/supportedChains";
+import { getAppConfig } from "src/appconfig/getAppConfig";
 import { AppConfig } from "src/appconfig/types";
 import { useChainId, usePublicClient } from "wagmi";
 
+const LOCALHOST_ADDRESSES_URL = import.meta.env.VITE_LOCALHOST_ADDRESSES_URL;
 export function useAppConfig(): {
   appConfig: AppConfig | undefined;
   appConfigStatus: "idle" | "error" | "loading" | "success";
@@ -16,9 +17,12 @@ export function useAppConfig(): {
     queryFn: async () => {
       switch (chainId as SupportedChainId) {
         case 5:
-          return goerliAppConfig;
+          return getAppConfig(HyperdriveGoerliAddresses, publicClient);
+
         case 31337:
-          return getLocalAppConfig(publicClient);
+          const localAddresses = await fetchLocalAddresses();
+          return getAppConfig(localAddresses, publicClient);
+
         default:
           throw new Error(
             `No app config found for the currently connected chain: ${chainId}`,
@@ -30,4 +34,10 @@ export function useAppConfig(): {
   });
 
   return { appConfig, appConfigStatus };
+}
+
+async function fetchLocalAddresses() {
+  return await fetch(LOCALHOST_ADDRESSES_URL).then(
+    (res) => res.json() as Promise<AddressesJson>,
+  );
 }
