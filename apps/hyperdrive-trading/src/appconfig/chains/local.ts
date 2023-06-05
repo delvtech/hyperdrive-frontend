@@ -6,6 +6,7 @@ import { PublicClient } from "wagmi";
 
 const LOCALHOST_ADDRESSES_URL = import.meta.env.VITE_LOCALHOST_ADDRESSES_URL;
 
+// The shape of the addresses file at LOCALHOST_ADDRESSES_URL
 interface LocalHyperdriveAddresses {
   dsrHyperdrive: Address;
 }
@@ -19,7 +20,6 @@ export async function getLocalAppConfig(
 
   const hyperdrives: Hyperdrive[] = [];
 
-  // Add a hyperdrive for each known hyperdrive address given in the address file
   if (addresses.dsrHyperdrive) {
     const dsrHyperdrive = await getDSRHyperdrive(
       publicClient,
@@ -34,7 +34,7 @@ export async function getLocalAppConfig(
     yieldSources: {
       "Maker DSR": makerDSR,
     },
-  } as AppConfig;
+  };
 }
 
 async function getDSRHyperdrive(
@@ -47,7 +47,7 @@ async function getDSRHyperdrive(
     address: dsrHyperdriveAddress,
   });
 
-  const baseToken: Token = {
+  const daiToken: Token = {
     address: daiTokenAddress,
     name: "DAI",
     decimals: 18,
@@ -64,7 +64,7 @@ async function getDSRHyperdrive(
 
   return {
     address: dsrHyperdriveAddress,
-    baseToken,
+    baseToken: daiToken,
     termLength: Number(poolConfig.positionDuration),
     name: "Dai Savings Rate",
     yieldSource: "Maker DSR",
