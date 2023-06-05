@@ -1,4 +1,4 @@
-import { HyperdriveABI } from "@hyperdrive/core";
+import { AddressesJson, HyperdriveABI } from "@hyperdrive/core";
 import { AppConfig, Hyperdrive, Token } from "src/appconfig/types";
 import { makerDSR } from "src/appconfig/yieldSources/yieldSources";
 import { Address } from "viem";
@@ -6,16 +6,11 @@ import { PublicClient } from "wagmi";
 
 const LOCALHOST_ADDRESSES_URL = import.meta.env.VITE_LOCALHOST_ADDRESSES_URL;
 
-// The shape of the addresses file at LOCALHOST_ADDRESSES_URL
-interface LocalHyperdriveAddresses {
-  dsrHyperdrive: Address;
-}
-
 export async function getLocalAppConfig(
   publicClient: PublicClient,
 ): Promise<AppConfig> {
   const addresses = await fetch(LOCALHOST_ADDRESSES_URL).then(
-    (res) => res.json() as Promise<LocalHyperdriveAddresses>,
+    (res) => res.json() as Promise<AddressesJson>,
   );
 
   const hyperdrives: Hyperdrive[] = [];

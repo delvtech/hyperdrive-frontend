@@ -1,4 +1,5 @@
 /** Address lists */
+export type { AddressesJson } from "src/addresses/types";
 export { HyperdriveGoerliAddresses } from "src/addresses/goerli";
 
 /** ABIs */
