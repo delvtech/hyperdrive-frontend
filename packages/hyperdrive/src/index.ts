@@ -1,8 +1,8 @@
 /** Address lists */
+export type { AddressesJson } from "src/addresses/types";
 export { HyperdriveGoerliAddresses } from "src/addresses/goerli";
 
 /** ABIs */
-export { AaveFixedBorrowActionABI } from "src/abis/AaveFixedBorrrowAction";
 export { ERC20_ABI } from "src/abis/ERC20";
 export { HyperdriveMath } from "src/abis/HyperdriveMath";
 

@@ -11,3 +11,7 @@ export const makerDSR: YieldSource = {
   protocol: "Maker",
   iconUrl: "https://cryptologos.cc/logos/maker-mkr-logo.png?v=024",
 };
+
+export const yieldSources: Record<string, YieldSource> = {
+  "Maker DSR": makerDSR,
+};
