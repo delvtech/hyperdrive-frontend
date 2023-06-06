@@ -13,6 +13,7 @@ export async function getDSRHyperdrive(
     address: dsrHyperdriveAddress,
   });
 
+  // Time in seconds
   const { positionDuration } = await publicClient.readContract({
     abi: HyperdriveABI,
     functionName: "getPoolConfig",
@@ -21,7 +22,7 @@ export async function getDSRHyperdrive(
 
   return {
     address: dsrHyperdriveAddress,
-    termLength: Number(positionDuration),
+    termLengthMS: Number(positionDuration) * 1000,
     name: "Dai Savings Rate",
     yieldSource: "Maker DSR",
     baseToken: {

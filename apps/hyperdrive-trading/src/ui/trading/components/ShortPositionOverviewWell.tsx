@@ -1,5 +1,6 @@
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
+import { convertMillisecondsToMonths } from "src/base/covertMillisecondsToMonths";
 import { Pill } from "src/ui/base/components/Pill";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { formatBigInt } from "src/ui/base/formatting/formatBigInt";
@@ -54,7 +55,7 @@ export function ShortPositionOverviewWell({
         <div className="flex">
           <p className="mr-auto">Term Length</p>
           <p className="font-semibold tracking-wide">
-            {market.termLength} months
+            {convertMillisecondsToMonths(market.termLengthMS)} months
           </p>
         </div>
 
