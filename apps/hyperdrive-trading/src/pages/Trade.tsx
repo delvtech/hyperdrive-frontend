@@ -2,16 +2,27 @@ import {
   ChevronDownIcon,
   InformationCircleIcon,
 } from "@heroicons/react/20/solid";
+import { ERC20MintableABI } from "@hyperdrive/core";
+import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { ReactElement, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
+import { parseUnits } from "src/base/parseUnits";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import { Button } from "src/ui/base/components/Button";
 import { Stat } from "src/ui/base/components/Stat";
 import { MarketsTable } from "src/ui/markets/components/MarketsTable";
 import { PositionsTable } from "src/ui/orders/components/PositionsTable";
 import { YieldSourceLabel } from "src/ui/protocol/components/ProtocolLabel";
 import { PositionForm } from "src/ui/trading/components/PositionForm";
 import { TradingChart } from "src/ui/trading/components/TradingChart";
+import { Address } from "viem";
+import {
+  useAccount,
+  useChainId,
+  useContractWrite,
+  usePrepareContractWrite,
+} from "wagmi";
 
 const MARKETS_MODAL_KEY = "MARKETS_MODAL";
 
@@ -19,8 +30,17 @@ export function Trade(): ReactElement {
   // Safe to cast this variable because router configs this page is rendered with a valid market
   const market = useLoaderData() as Hyperdrive;
   const { appConfig } = useAppConfig();
+  const { address: account } = useAccount();
+  const chainId = useChainId();
+
   const yieldSource = appConfig?.yieldSources[market.yieldSource];
   const [tradeModalOpen, setTradeModalOpen] = useState(false);
+
+  const { mint } = useMintBaseToken({
+    amount: parseUnits("100", 18),
+    baseToken: market.baseToken.address,
+    destination: account,
+  });
 
   return (
     <div className="grid h-[calc(100vh_-_64px)] grid-rows-[157px_1fr] overflow-hidden border-t border-hyper-blue-300 md:grid-cols-[365px_1fr] md:grid-rows-1 lg:grid-cols-[447px_1fr]">
@@ -68,7 +88,13 @@ export function Trade(): ReactElement {
             {market.name} <ChevronDownIcon className="h-8" />
           </label>
 
-          <div className="flex gap-x-16">
+          <div className="flex items-center gap-x-16">
+            {chainId === 31337 ? (
+              <Button disabled={!mint} variant="Work" onClick={() => mint?.()}>
+                Mint Tokens
+              </Button>
+            ) : undefined}
+
             <Stat
               label="Protocol"
               value={<YieldSourceLabel yieldSource={yieldSource} />}
@@ -101,26 +127,6 @@ export function Trade(): ReactElement {
         <div className="h-[calc(100%_-_64px)] md:h-auto">
           <PositionsTable market={market} />
         </div>
-
-        {/* <div className="flex flex-col overflow-hidden py-4">
-          <div className="flex w-full flex-wrap gap-2 py-2 px-8">
-            <Button active={true} variant="Future" onClick={() => {}}>
-              Open
-            </Button>
-            <Button disabled variant="Future" onClick={() => {}}>
-              Closed
-            </Button>
-            <Button disabled variant="Future" onClick={() => {}}>
-              Recent Trades
-            </Button>
-          </div>
-
-          <div className="row-span-1 flex h-[calc(100%_-_64px)] flex-col gap-y-4 px-4 pt-4 text-hyper-blue-100 md:h-auto">
-            <div className="overflow-scroll">
-              <OpenOrdersTable market={market} />
-            </div>
-          </div>
-        </div> */}
       </div>
 
       {/* Mobile only */}
@@ -144,4 +150,38 @@ export function Trade(): ReactElement {
       </label>
     </div>
   );
+}
+function useMintBaseToken({
+  baseToken,
+  destination,
+  amount,
+}: {
+  baseToken: Address;
+  destination: Address | undefined;
+  amount: bigint;
+}) {
+  const addRecentTransaction = useAddRecentTransaction();
+  const chainId = useChainId();
+
+  const isEnabled = !!destination && !!amount && chainId === 31337;
+
+  const { config } = usePrepareContractWrite({
+    address: baseToken,
+    abi: ERC20MintableABI,
+    functionName: "mint",
+    enabled: isEnabled,
+    args: isEnabled ? [destination, amount] : undefined,
+  });
+
+  const { write: mint } = useContractWrite({
+    ...config,
+    onSuccess: (result) => {
+      addRecentTransaction({
+        hash: result.hash,
+        description: `Mint tokens`,
+      });
+    },
+  });
+
+  return { mint };
 }
