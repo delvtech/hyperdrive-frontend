@@ -2,6 +2,7 @@ import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { ethers } from "ethers";
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
+import { convertMillisecondsToMonths } from "src/base/covertMillisecondsToMonths";
 import { parseUnits } from "src/base/parseUnits";
 import { Button } from "src/ui/base/components/Button";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
@@ -71,7 +72,9 @@ export function OpenLongPositionForm({
 
   const current = new Date();
   const expiryDate = new Date(
-    current.setMonth(current.getMonth() + market.termLength),
+    current.setMonth(
+      current.getMonth() + convertMillisecondsToMonths(market.termLengthMS),
+    ),
   );
 
   return (

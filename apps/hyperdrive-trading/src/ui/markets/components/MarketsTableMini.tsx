@@ -1,6 +1,7 @@
 import uniqBy from "lodash.uniqby";
 import { ReactElement, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+import { convertMillisecondsToMonths } from "src/base/covertMillisecondsToMonths";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { useMarketRowData } from "src/ui/markets/hooks/useMarketRowData";
 import { YieldSourceLabel } from "src/ui/protocol/components/ProtocolLabel";
@@ -16,7 +17,7 @@ export function MarketsTableMini(): ReactElement {
   );
   const protocols = uniqBy(allProtocols, (protocol) => protocol.name);
   const allTermLengths = appConfig?.hyperdrives.map(
-    (market) => market.termLength,
+    (market) => market.termLengthMS,
   );
   const termLengths = uniqBy(allTermLengths, (termLength) => termLength);
 
@@ -34,7 +35,7 @@ export function MarketsTableMini(): ReactElement {
     const marketFilteredByTermLength = termLengthFilter
       ? marketsRowData.filter(
           (marketRowData) =>
-            marketRowData.market.termLength === termLengthFilter,
+            marketRowData.market.termLengthMS === termLengthFilter,
         )
       : marketsRowData;
 
@@ -129,7 +130,9 @@ export function MarketsTableMini(): ReactElement {
               </div>
               <div className="flex">
                 <p className="mr-auto text-hyper-blue-200">Term Length</p>
-                <p className="font-semibold">{market.termLength} months</p>
+                <p className="font-semibold">
+                  {convertMillisecondsToMonths(market.termLengthMS)} months
+                </p>
               </div>
               <div className="flex">
                 <p className="mr-auto text-hyper-blue-200">Liquidity</p>

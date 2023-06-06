@@ -1,5 +1,6 @@
 import uniqBy from "lodash.uniqby";
 import { ReactElement, useMemo, useState } from "react";
+import { convertMillisecondsToMonths } from "src/base/covertMillisecondsToMonths";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Row, SortableGridTable } from "src/ui/base/tables/SortableGridTable";
 import { useMarketRowData } from "src/ui/markets/hooks/useMarketRowData";
@@ -16,7 +17,9 @@ export function MarketsTableLarge(): ReactElement {
     (market) => config?.yieldSources[market.yieldSource],
   );
   const protocols = uniqBy(allProtocols, (protocol) => protocol.name);
-  const allTermLengths = config?.hyperdrives.map((market) => market.termLength);
+  const allTermLengths = config?.hyperdrives.map(
+    (market) => market.termLengthMS,
+  );
   const termLengths = uniqBy(allTermLengths, (termLength) => termLength);
 
   const [protocolFilter, setSelectedProtocolFilter] =
@@ -31,7 +34,7 @@ export function MarketsTableLarge(): ReactElement {
     const marketFilteredByTermLength = termLengthFilter
       ? marketsRowData.filter(
           (marketRowData) =>
-            marketRowData.market.termLength === termLengthFilter,
+            marketRowData.market.termLengthMS === termLengthFilter,
         )
       : marketsRowData;
 
@@ -158,7 +161,7 @@ function createMarketRow({ market, yieldSource }: MarketTableRowData): Row {
         />
       </span>,
       <p key="term" className="font-semibold">
-        {market.termLength} months
+        {convertMillisecondsToMonths(market.termLengthMS)} months
       </p>,
 
       <span key="liquidity" className="font-semibold">

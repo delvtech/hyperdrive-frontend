@@ -25,5 +25,5 @@ export interface Hyperdrive extends ContractConfig {
   baseToken: Token;
   name: string;
   yieldSource: string;
-  termLength: number;
+  termLengthMS: number;
 }
