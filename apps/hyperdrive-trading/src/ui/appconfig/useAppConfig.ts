@@ -1,8 +1,9 @@
-import { AddressesJson, HyperdriveGoerliAddresses } from "@hyperdrive/core";
+import { HyperdriveGoerliAddresses } from "@hyperdrive/core";
 import { useQuery } from "@tanstack/react-query";
 import { SupportedChainId } from "src/appconfig/chains/supportedChains";
 import { getAppConfig } from "src/appconfig/getAppConfig";
 import { AppConfig } from "src/appconfig/types";
+import { Address, zeroAddress } from "viem";
 import { useChainId, usePublicClient } from "wagmi";
 
 const LOCALHOST_ADDRESSES_URL = import.meta.env.VITE_LOCALHOST_ADDRESSES_URL;
@@ -21,7 +22,16 @@ export function useAppConfig(): {
 
         case 31337:
           const localAddresses = await fetchLocalAddresses();
-          return getAppConfig(localAddresses, publicClient);
+          return getAppConfig(
+            // TODO: This is a temporary "cross-walk" object to use until SC
+            // team unifies the shape of the addresses.json file across the
+            // different chains.
+            {
+              dsrHyperdrive: localAddresses.hyperdrive,
+              mockHyperdriveMath: zeroAddress, // TODO: SC team to deploy math library to localnet
+            },
+            publicClient,
+          );
 
         default:
           throw new Error(
@@ -38,6 +48,16 @@ export function useAppConfig(): {
 
 async function fetchLocalAddresses() {
   return await fetch(LOCALHOST_ADDRESSES_URL).then(
-    (res) => res.json() as Promise<AddressesJson>,
+    (res) => res.json() as Promise<LocalAddressesJson>,
   );
+}
+
+/**
+ * TODO: This is a temporary interface to hold us over until the goerli
+ * addresses.json file and the local one (see Docker image in infra repo) share
+ * the same shape. Smart Contract team will implement this.
+ */
+interface LocalAddressesJson {
+  baseToken: Address;
+  hyperdrive: Address;
 }
