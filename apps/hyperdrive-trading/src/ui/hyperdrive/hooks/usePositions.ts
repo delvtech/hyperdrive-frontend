@@ -2,6 +2,7 @@ import { HyperdriveABI } from "@hyperdrive/core";
 import { useQuery, UseQueryResult } from "@tanstack/react-query";
 import { BigNumber, constants, Contract, providers } from "ethers";
 import { Hyperdrive } from "src/appconfig/types";
+import { wagmiChains } from "src/network/wagmiClient";
 import { MultiToken, Position } from "src/ui/hyperdrive/types";
 import {
   getAssetPrefixFromTokenId,
@@ -9,7 +10,6 @@ import {
   LONG_PREFIX_ID,
   SHORT_PREFIX_ID,
 } from "src/ui/hyperdrive/utils";
-import { wagmiChains } from "src/wallet/wagmiClient";
 import { Address, useChainId } from "wagmi";
 
 interface UsePositionsResult {
