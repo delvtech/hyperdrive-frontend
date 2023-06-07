@@ -33,6 +33,6 @@
     "access": "public"
   },
   "dependencies": {
-    "viem": "^0.3.33"
+    "viem": "^1.0.0"
   }
 }

@@ -40,7 +40,7 @@
     "react-hot-toast": "^2.4.0",
     "react-router-dom": "^6.8.1",
     "ts-pattern": "^4.2.2",
-    "viem": "^0.3.24",
+    "viem": "^1.0.0",
     "wagmi": "^1.0.6"
   },
   "devDependencies": {
