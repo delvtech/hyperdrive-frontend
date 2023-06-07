@@ -15,4 +15,5 @@ export { HyperdriveABI } from "src/abis/Hyperdrive";
 export { DSRHyperdriveABI } from "src/abis/DSRHyperdrive";
 
 /** Functions */
+export { getLongs } from "src/pools/longs/getLongs";
 export { getShorts } from "src/pools/shorts/getShorts";

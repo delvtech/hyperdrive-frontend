@@ -321,6 +321,12 @@ export const DSRHyperdriveABI = [
       {
         indexed: false,
         internalType: "uint256",
+        name: "assetId",
+        type: "uint256",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
         name: "maturityTime",
         type: "uint256",
       },
@@ -348,6 +354,12 @@ export const DSRHyperdriveABI = [
         internalType: "address",
         name: "trader",
         type: "address",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "assetId",
+        type: "uint256",
       },
       {
         indexed: false,
@@ -414,6 +426,12 @@ export const DSRHyperdriveABI = [
       {
         indexed: false,
         internalType: "uint256",
+        name: "assetId",
+        type: "uint256",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
         name: "maturityTime",
         type: "uint256",
       },
@@ -441,6 +459,12 @@ export const DSRHyperdriveABI = [
         internalType: "address",
         name: "trader",
         type: "address",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "assetId",
+        type: "uint256",
       },
       {
         indexed: false,
@@ -853,7 +877,12 @@ export const DSRHyperdriveABI = [
     outputs: [
       {
         internalType: "uint256",
-        name: "",
+        name: "maturityTime",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "traderDeposit",
         type: "uint256",
       },
     ],
