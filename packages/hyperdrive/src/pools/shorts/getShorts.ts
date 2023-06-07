@@ -36,6 +36,5 @@ export async function getShorts({
     }),
   );
 
-  // TODO: Can remove any once the assetId field exists on the event
-  return mintEvents.map((short) => (short.args as any).assetId as bigint);
+  return mintEvents.map((short) => short.args.assetId);
 }

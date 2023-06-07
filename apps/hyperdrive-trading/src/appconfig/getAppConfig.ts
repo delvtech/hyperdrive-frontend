@@ -17,7 +17,7 @@ export async function getAppConfig(
   if (addresses.dsrHyperdrive) {
     const dsrHyperdrive = await getDSRHyperdrive(
       addresses.dsrHyperdrive,
-      publicClient,
+      publicClient as any,
     );
     hyperdrives.push(dsrHyperdrive);
   }
