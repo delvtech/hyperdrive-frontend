@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { SupportedChainId } from "src/appconfig/chains/supportedChains";
 import { getAppConfig } from "src/appconfig/getAppConfig";
 import { AppConfig } from "src/appconfig/types";
-import { Address, zeroAddress } from "viem";
+import { Address } from "viem";
 import { useChainId, usePublicClient } from "wagmi";
 
 const LOCALHOST_ADDRESSES_URL = import.meta.env.VITE_LOCALHOST_ADDRESSES_URL;
@@ -27,8 +27,8 @@ export function useAppConfig(): {
             // team unifies the shape of the addresses.json file across the
             // different chains.
             {
-              dsrHyperdrive: localAddresses.hyperdrive,
-              mockHyperdriveMath: zeroAddress, // TODO: SC team to deploy math library to localnet
+              dsrHyperdrive: localAddresses.mockHyperdrive,
+              mockHyperdriveMath: localAddresses.mockHyperdriveMath,
             },
             publicClient,
           );
@@ -59,5 +59,6 @@ async function fetchLocalAddresses() {
  */
 interface LocalAddressesJson {
   baseToken: Address;
-  hyperdrive: Address;
+  mockHyperdrive: Address;
+  mockHyperdriveMath: Address;
 }
