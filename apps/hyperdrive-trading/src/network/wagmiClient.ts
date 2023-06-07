@@ -33,7 +33,7 @@ const { chains, publicClient, webSocketPublicClient } = configureChains(
 export const wagmiChains = chains;
 
 const { connectors } = getDefaultWallets({
-  appName: "Hyperdrive Prototype UI",
+  appName: "Hyperdrive",
   chains,
 });
 
