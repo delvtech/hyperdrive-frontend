@@ -1,19 +1,10 @@
 import { QueryObserverOptions } from "@tanstack/query-core";
 import groupBy from "lodash.groupby";
 import mapValues from "lodash.mapvalues";
-import sumBy from "lodash.sumby";
-import { DSRHyperdriveABI } from "src/abis/DSRHyperdrive";
 import { sumBigInt } from "src/base/sumBy";
 import { decodeAssetId } from "src/pools/assetId";
 import { getTransferSingleEvents } from "src/pools/getTransferSingleEvents";
-import {
-  PublicClient,
-  decodeEventLog,
-  Address,
-  Transport,
-  Chain,
-  zeroAddress,
-} from "viem";
+import { PublicClient, Address, Transport, Chain } from "viem";
 
 export interface GetOpenLongsOptions {
   account: Address;
