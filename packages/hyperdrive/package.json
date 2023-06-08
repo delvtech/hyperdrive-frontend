@@ -33,6 +33,7 @@
     "access": "public"
   },
   "dependencies": {
+    "@tanstack/query-core": "^4.29.11",
     "viem": "^1.0.0"
   }
 }

@@ -1,10 +1,20 @@
+import { QueryObserverOptions } from "@tanstack/query-core";
 import { DSRHyperdriveABI } from "src/abis/DSRHyperdrive";
 import { PublicClient, decodeEventLog, Address, Transport, Chain } from "viem";
 
-interface GetLongsOptions {
+export interface GetLongsOptions {
   account: Address;
   hyperdriveAddress: Address;
   publicClient: PublicClient<Transport, Chain>;
+}
+
+interface OpenLong {
+  assetId: bigint;
+  baseAmount: bigint;
+  bondAmount: bigint;
+  maturityTime: bigint;
+  trader: Address;
+  transactionHash: Address | null;
 }
 
 /**
@@ -14,7 +24,7 @@ export async function getLongs({
   account,
   hyperdriveAddress,
   publicClient,
-}: GetLongsOptions): Promise<bigint[]> {
+}: GetLongsOptions): Promise<OpenLong[]> {
   const openLongEventLogs = await publicClient.getFilterLogs({
     filter: await publicClient.createContractEventFilter({
       abi: DSRHyperdriveABI,
@@ -30,12 +40,44 @@ export async function getLongs({
 
   return openLongEventLogs.map((log) => {
     const {
-      args: { assetId },
+      args: { assetId, baseAmount, bondAmount, maturityTime, trader },
     } = decodeEventLog({
       abi: DSRHyperdriveABI,
       ...log,
     });
 
-    return assetId;
+    return {
+      assetId,
+      baseAmount,
+      bondAmount,
+      maturityTime,
+      trader,
+      transactionHash: log.transactionHash,
+    };
   });
+}
+
+/**
+ * A query wrapper for consumers who want easy caching via @tanstack/query
+ *
+ * TODO: Piloting this idea here for now as proof-of-concept. Ultimately
+ * @hyperdrive/core should not know about caching and just be pure hyperdrive
+ * bindings. If this works well in practice we can move this to a
+ * @hypedrive/queries package, where it could possibly even be codegened.
+ */
+export function getLongsQuery({
+  hyperdriveAddress,
+  publicClient,
+  account,
+}: Partial<GetLongsOptions>): QueryObserverOptions<
+  Awaited<ReturnType<typeof getLongs>>
+> {
+  const queryEnabled = !!account && !!hyperdriveAddress && !!publicClient;
+  return {
+    enabled: queryEnabled,
+    queryKey: ["longs", { hyperdriveAddress, account }],
+    queryFn: queryEnabled
+      ? () => getLongs({ account, hyperdriveAddress, publicClient })
+      : undefined,
+  };
 }
