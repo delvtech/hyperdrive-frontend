@@ -125,7 +125,7 @@ export function Trade(): ReactElement {
         </div>
 
         <div className="h-[calc(100%_-_64px)] md:h-auto">
-          <PositionsTable market={market} />
+          <PositionsTable hyperdrive={market} />
         </div>
       </div>
 

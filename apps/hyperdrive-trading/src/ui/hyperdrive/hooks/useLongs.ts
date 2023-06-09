@@ -1,4 +1,4 @@
-import { getLongsQuery, OpenLong } from "@hyperdrive/core";
+import { getLongsQuery, Long } from "@hyperdrive/core";
 import { useQuery } from "@tanstack/react-query";
 import { Address } from "viem";
 import { usePublicClient } from "wagmi";
@@ -9,7 +9,7 @@ interface UseLongsOptions {
 }
 
 export function useLongs({ account, hyperdriveAddress }: UseLongsOptions): {
-  longs: OpenLong[] | undefined;
+  longs: Long[] | undefined;
   longsStatus: "error" | "success" | "loading";
 } {
   const publicClient = usePublicClient();

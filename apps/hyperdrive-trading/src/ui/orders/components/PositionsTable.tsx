@@ -1,16 +1,18 @@
 import { ReactElement, useState } from "react";
 import { Hyperdrive } from "src/appconfig/types";
-import { OpenOrdersTable } from "src/ui/orders/components/OpenOrdersTable";
+import { OpenOrdersTable } from "src/ui/orders/OpenOrdersTable/OpenOrdersTable";
 import { match } from "ts-pattern";
 import { ClosedOrdersTable } from "./ClosedOrdersTable";
 
 interface PositionsTableProps {
-  market: Hyperdrive;
+  hyperdrive: Hyperdrive;
 }
 
 type SelectedTable = "Open" | "Closed" | "Recent";
 
-export function PositionsTable({ market }: PositionsTableProps): ReactElement {
+export function PositionsTable({
+  hyperdrive,
+}: PositionsTableProps): ReactElement {
   const [selectedTable, setSelectedTable] = useState<SelectedTable>("Open");
 
   return (
@@ -30,8 +32,8 @@ export function PositionsTable({ market }: PositionsTableProps): ReactElement {
       <div className="flex-col gap-y-4 px-4 pt-4">
         <div className="overflow-scroll">
           {match(selectedTable)
-            .with("Open", () => <OpenOrdersTable market={market} />)
-            .with("Closed", () => <ClosedOrdersTable market={market} />)
+            .with("Open", () => <OpenOrdersTable hyperdrive={hyperdrive} />)
+            .with("Closed", () => <ClosedOrdersTable market={hyperdrive} />)
             .with("Recent", () => <></>)
             .exhaustive()}
         </div>
