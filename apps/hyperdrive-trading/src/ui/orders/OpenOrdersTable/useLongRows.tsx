@@ -55,13 +55,43 @@ function createLongRow({
         {new Date(long.maturity).toLocaleDateString()}
       </span>,
       <span key="close-long">
-        <Button size="sm" onClick={() => {}}>
+        <Button
+          size="sm"
+          onClick={() => (window as any).closeLongModal.showModal()}
+        >
           <XMarkIcon
             className="w-6 text-white opacity-70 hover:opacity-100 focus:opacity-100"
             title="Close position"
           />
         </Button>
+        <CloseLongModal long={long} />
       </span>,
     ],
   };
+}
+
+interface CloseLongModalProps {
+  long: Long;
+}
+
+function CloseLongModal({ long }: CloseLongModalProps) {
+  return (
+    <dialog id="closeLongModal" className="modal">
+      <form method="dialog" className="modal-box">
+        <button className="daisy-btn daisy-btn-sm daisy-btn-circle daisy-btn-ghost absolute right-4 top-4">
+          <XMarkIcon
+            className="w-6 text-white opacity-70 hover:opacity-100 focus:opacity-100"
+            title="Close position"
+          />
+        </button>
+        <h3 className="text-lg font-bold">Hello!</h3>
+        <p className="py-4">Press ESC key or click outside to close</p>
+      </form>
+      <form method="dialog" className="modal-backdrop">
+        <Button onClick={() => (window as any).closeLongModal.close()}>
+          close
+        </Button>
+      </form>
+    </dialog>
+  );
 }

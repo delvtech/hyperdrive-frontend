@@ -34,7 +34,10 @@ interface UseCloseShortResult {
   closeShortTransactionStatus: QueryStatusType;
 }
 
-export function useCloseShort({
+/**
+ * @deprecated use useCloseShort
+ */
+export function useCloseShortOld({
   market,
   tokenID,
   shortAmountIn,

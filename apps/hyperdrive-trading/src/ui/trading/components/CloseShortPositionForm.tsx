@@ -5,7 +5,7 @@ import { Button } from "src/ui/base/components/Button";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { formatBigInt } from "src/ui/base/formatting/formatBigInt";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
-import { useCloseShort } from "src/ui/hyperdrive/hooks/useCloseShort";
+import { useCloseShortOld } from "src/ui/hyperdrive/hooks/useCloseShortOld";
 import { usePositions } from "src/ui/hyperdrive/hooks/usePositions";
 import { usePreviewCloseShort } from "src/ui/hyperdrive/hooks/usePreviewCloseShort";
 import { Position } from "src/ui/hyperdrive/types";
@@ -41,7 +41,7 @@ export function CloseShortPositionForm({
   });
 
   const { closeShort, closeShortStatus, closeShortTransactionStatus } =
-    useCloseShort({
+    useCloseShortOld({
       market,
       tokenID: selectedShort?.id,
       shortAmountIn: amountAsBigInt,
