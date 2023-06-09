@@ -2,57 +2,57 @@
  * This is a TypeScript port of the AssetId contract, which provides utils for
  * encoding and decoding the token ids of the Hyperdrive contract, which is a
  * multi-token contract.
- * @see github.com/delvtech/hyperdrive/blob/main/contracts/src/libraries/AssetId.sol
+ * @see https://github.com/delvtech/hyperdrive/blob/main/contracts/src/libraries/AssetId.sol
  */
 
-export const LP_ASSET_ID_PREFIX = 0;
-export const LONG_ASSET_ID_PREFIX = 1;
-export const SHORT_ASSET_ID_PREFIX = 2;
-export const WITHDRAWAL_SHARE_ASSET_ID_PREFIX = 3;
+import { Hash } from "viem";
 
-export type AssetIdPrefix =
-  | typeof LP_ASSET_ID_PREFIX
-  | typeof LONG_ASSET_ID_PREFIX
-  | typeof SHORT_ASSET_ID_PREFIX
-  | typeof WITHDRAWAL_SHARE_ASSET_ID_PREFIX;
+export type AssetType = "LP" | "LONG" | "SHORT" | "WITHDRAWAL_SHARE";
 
-// Encodes a prefix and a timestamp into an asset ID. Asset IDs are
-// used so that LP, long, and short tokens can all be represented in a
-// single MultiToken instance. The zero asset ID indicates the LP
-// token.
-// _prefix: A one byte prefix that specifies the asset type.
-// _timestamp: A timestamp associated with the asset.
-// Returns: The asset ID.
-export function encodeAssetId(
-  assetPrefix: AssetIdPrefix,
-  timestamp: bigint,
-): bigint {
-  // [identifier: 8 bits][timestamp: 248 bits]
-  if (
-    timestamp >
-    0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffn
-  ) {
-    throw new Error("InvalidTimestamp");
-  }
-  return (BigInt(assetPrefix) << 248n) | timestamp;
-}
-
-// Decodes an encoded asset ID into it's constituent parts of an
-// identifier, data and a timestamp.
-// _id: The asset ID.
-// Returns: _prefix: A one byte prefix that specifies the asset type.
-// _timestamp: A timestamp associated with the asset.
-export function decodeAssetId(assetId: bigint): {
-  assetIdPrefix: AssetIdPrefix;
-  timestamp: bigint;
+/**
+ * Decodes an encoded asset ID into it's constituent parts: an assetType and
+ * timestamp.
+ * example input from event.data:
+ */
+export function decodeAssetId(assetId: Hash): {
+  assetType: AssetType;
+  timestamp: number;
 } {
-  // [identifier: 8 bits][timestamp: 248 bits]
-  const assetIdPrefix = Number(assetId >> 248n) as AssetIdPrefix;
-  const timestamp =
-    assetId & 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffn;
-  return { assetIdPrefix, timestamp };
+  // Remove the leading "0x"
+  const cleanId = assetId.slice(2);
+
+  // 2 hexadecimal digits (8 bits) = identifier
+  const identifier = Number(cleanId.slice(0, 2));
+  const assetType = parseAssetType(identifier);
+
+  // 62 hexadecimal digits (248 bits) = timestamp
+  const timestamp = cleanId.slice(2, 64);
+  const timestampMS = parseInt(timestamp, 16) * 1000;
+
+  return {
+    assetType,
+
+    // NOTE: LP tokens won't have a timestamp, we'll see what happens when we
+    // get to that
+    timestamp: timestampMS,
+  };
 }
 
-export function isHyperdriveShort(assetId: bigint): boolean {
-  return decodeAssetId(assetId).assetIdPrefix === SHORT_ASSET_ID_PREFIX;
+function parseAssetType(identifier: number): AssetType {
+  if (identifier === 0) {
+    return "LP";
+  }
+  if (identifier === 1) {
+    return "LONG";
+  }
+  if (identifier === 2) {
+    return "SHORT";
+  }
+  if (identifier === 3) {
+    return "WITHDRAWAL_SHARE";
+  }
+
+  throw Error(
+    `parseAssetType(${identifier}) did not match a valid asset type.`,
+  );
 }
