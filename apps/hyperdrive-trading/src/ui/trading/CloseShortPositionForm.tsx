@@ -9,9 +9,9 @@ import { useCloseShortOld } from "src/ui/hyperdrive/hooks/useCloseShortOld";
 import { usePositions } from "src/ui/hyperdrive/hooks/usePositions";
 import { usePreviewCloseShort } from "src/ui/hyperdrive/hooks/usePreviewCloseShort";
 import { Position } from "src/ui/hyperdrive/types";
-import { TokenInput } from "src/ui/token/components/TokenInput";
+import { TokenInput } from "src/ui/token/TokenInput";
+import { ShortPositionOverviewWell } from "src/ui/trading/ShortPositionOverviewWell";
 import { useAccount } from "wagmi";
-import { ShortPositionOverviewWell } from "./ShortPositionOverviewWell";
 
 interface CloseShortPositionFormProps {
   market: Hyperdrive;
@@ -73,7 +73,7 @@ export function CloseShortPositionForm({
               setSelectedShort(foundPosition ?? null);
             }
           }}
-          className="select w-full border-hyper-blue-200 bg-base-100 text-hyper-blue-100"
+          className="daisy-select w-full border-hyper-blue-200 bg-base-100 text-hyper-blue-100"
           defaultValue="none"
         >
           <option value="none">None selected</option>;

@@ -8,8 +8,8 @@ import classNames from "classnames";
 import { PropsWithChildren, ReactElement, useState } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { PositionType } from "src/ui/hyperdrive/types";
-import { OpenLongPositionForm } from "src/ui/trading/components/OpenLongPositionForm";
-import { OpenShortPositionForm } from "src/ui/trading/components/OpenShortPositionForm";
+import { OpenLongPositionForm } from "src/ui/trading/OpenLongPositionForm";
+import { OpenShortPositionForm } from "src/ui/trading/OpenShortPositionForm";
 import { match } from "ts-pattern";
 
 interface PositionFormProps {
@@ -42,7 +42,7 @@ export function PositionForm({
 
       {/* Position button group */}
       <div className="space-y-4">
-        <div className="rounded-xs btn-group w-full border-hyper-blue-100">
+        <div className="rounded-xs daisy-btn-group w-full border-hyper-blue-100">
           <PositionFormButton
             onClick={() => setPosition("Long")}
             active={position === "Long"}
@@ -94,7 +94,7 @@ function PositionFormButton({
           "bg-hyper-blue-400": active,
           "hover:bg-hyper-blue-400": !active,
         },
-        "border-1 btn flex-1 rounded-sm border-hyper-blue-400 bg-base-200 font-dm-sans normal-case",
+        "border-1 daisy-btn flex-1 rounded-sm border-hyper-blue-400 bg-base-200 font-dm-sans normal-case",
       )}
     >
       {children}

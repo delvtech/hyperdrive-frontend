@@ -7,9 +7,9 @@ import { Button } from "src/ui/base/components/Button";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { useOpenShort } from "src/ui/hyperdrive/hooks/useOpenShort";
 import { usePreviewOpenShort } from "src/ui/hyperdrive/hooks/usePreviewOpenShort";
-import { TokenInput } from "src/ui/token/components/TokenInput";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenApproval } from "src/ui/token/hooks/useTokenApproval";
+import { TokenInput } from "src/ui/token/TokenInput";
 import { useAccount, useBalance } from "wagmi";
 import { ShortPositionOverviewWell } from "./ShortPositionOverviewWell";
 

@@ -2,9 +2,12 @@
 import classNames from "classnames";
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
+import {
+  Row,
+  SortableGridTable,
+} from "src/ui/base/components/tables/SortableGridTable";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { formatBigInt } from "src/ui/base/formatting/formatBigInt";
-import { Row, SortableGridTable } from "src/ui/base/tables/SortableGridTable";
 import { usePositions } from "src/ui/hyperdrive/hooks/usePositions";
 import { Position } from "src/ui/hyperdrive/types";
 import { useAccount } from "wagmi";

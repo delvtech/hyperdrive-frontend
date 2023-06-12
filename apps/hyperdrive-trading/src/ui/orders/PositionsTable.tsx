@@ -8,7 +8,7 @@ interface PositionsTableProps {
   hyperdrive: Hyperdrive;
 }
 
-type SelectedTable = "Open" | "Closed" | "Recent";
+type SelectedTable = "Open" | "Closed";
 
 export function PositionsTable({
   hyperdrive,
@@ -18,14 +18,14 @@ export function PositionsTable({
   return (
     <div className="flex flex-col overflow-hidden py-4">
       <div className="flex w-full flex-wrap gap-2 py-2 px-8">
-        <button className="btn" onClick={() => setSelectedTable("Open")}>
+        <button className="daisy-btn" onClick={() => setSelectedTable("Open")}>
           Open
         </button>
-        <button className="btn" onClick={() => setSelectedTable("Closed")}>
+        <button
+          className="daisy-btn"
+          onClick={() => setSelectedTable("Closed")}
+        >
           Closed
-        </button>
-        <button className="btn" onClick={() => setSelectedTable("Recent")}>
-          Recent Trades
         </button>
       </div>
 
@@ -34,7 +34,6 @@ export function PositionsTable({
           {match(selectedTable)
             .with("Open", () => <OpenOrdersTable hyperdrive={hyperdrive} />)
             .with("Closed", () => <ClosedOrdersTable market={hyperdrive} />)
-            .with("Recent", () => <></>)
             .exhaustive()}
         </div>
       </div>

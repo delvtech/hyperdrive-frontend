@@ -1,22 +1,26 @@
 import uniqBy from "lodash.uniqby";
 import { ReactElement, useMemo, useState } from "react";
-import { Link } from "react-router-dom";
 import { convertMillisecondsToMonths } from "src/base/covertMillisecondsToMonths";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import {
+  Row,
+  SortableGridTable,
+} from "src/ui/base/components/tables/SortableGridTable";
 import { useMarketRowData } from "src/ui/markets/hooks/useMarketRowData";
-import { YieldSourceLabel } from "src/ui/protocol/components/ProtocolLabel";
+import { MarketTableRowData } from "src/ui/markets/types";
+import { YieldSourceLabel } from "src/ui/protocol/ProtocolLabel";
 
 const ALL_PROTOCOLS_KEY = "All Markets";
 const ALL_TERM_LENGTHS_KEY = 0;
 
-export function MarketsTableMini(): ReactElement {
-  const { appConfig } = useAppConfig();
+export function MarketsTableLarge(): ReactElement {
+  const { appConfig: config } = useAppConfig();
 
-  const allProtocols = appConfig?.hyperdrives.map(
-    (market) => appConfig.yieldSources[market.yieldSource],
+  const allProtocols = config?.hyperdrives.map(
+    (market) => config?.yieldSources[market.yieldSource],
   );
   const protocols = uniqBy(allProtocols, (protocol) => protocol.name);
-  const allTermLengths = appConfig?.hyperdrives.map(
+  const allTermLengths = config?.hyperdrives.map(
     (market) => market.termLengthMS,
   );
   const termLengths = uniqBy(allTermLengths, (termLength) => termLength);
@@ -27,9 +31,7 @@ export function MarketsTableMini(): ReactElement {
     useState<number>(ALL_TERM_LENGTHS_KEY);
 
   // TODO: no loading state for now
-  const { data: marketsRowData = [] } = useMarketRowData(
-    appConfig?.hyperdrives,
-  );
+  const { data: marketsRowData = [] } = useMarketRowData(config?.hyperdrives);
 
   const filteredMarkets = useMemo(() => {
     const marketFilteredByTermLength = termLengthFilter
@@ -52,8 +54,19 @@ export function MarketsTableMini(): ReactElement {
     <div className="space-y-8 rounded-sm bg-base-100 px-8 py-10">
       <div className="space-y-4">
         {/* Markets search and protocol filter row */}
-        <div className="flex flex-wrap items-center gap-6 px-4">
-          {/* Protocol filter button group */}
+        <div className="flex items-end gap-6">
+          {/* Markets search input, disabled for now */}
+          <div className="mr-auto hidden flex-col gap-y-2  lg:flex">
+            <div className="flex items-center gap-x-1">
+              <p className="font-medium text-hyper-blue-300">Search Markets</p>
+            </div>
+
+            <input
+              className="daisy-input w-[250px] rounded-sm border bg-base-300 p-2 font-dm-sans text-[1rem] font-medium text-hyper-blue-100 placeholder:text-hyper-blue-300"
+              placeholder="Maker DSR"
+            />
+          </div>
+
           <div className="flex flex-col gap-y-2">
             <p className="font-medium text-hyper-blue-300">
               Filter by protocol
@@ -67,7 +80,7 @@ export function MarketsTableMini(): ReactElement {
                 }
               }}
               defaultValue="none"
-              className="select w-[10rem] rounded-sm bg-base-300 font-dm-sans text-[1rem]"
+              className="daisy-select w-[20rem] rounded-sm bg-base-300 font-dm-sans text-[1rem]"
             >
               <option value="none">All protocols</option>
               {protocols.map((protocol) => (
@@ -91,7 +104,7 @@ export function MarketsTableMini(): ReactElement {
                 }
               }}
               defaultValue="none"
-              className="select w-[12rem] rounded-sm bg-base-300 font-dm-sans text-[1rem]"
+              className="daisy-select w-[12rem] rounded-sm bg-base-300 font-dm-sans text-[1rem]"
             >
               <option value="none">All term lengths</option>
               {termLengths
@@ -108,44 +121,58 @@ export function MarketsTableMini(): ReactElement {
       </div>
 
       {/* Markets sortable table */}
-      <div className="flex flex-col gap-y-8">
-        {filteredMarkets.map(({ market }) => {
-          return (
-            <Link
-              to={`/trade/${market.address}`}
-              key={market.address}
-              className="flex flex-col p-4 font-dm-sans text-hyper-blue-100 hover:bg-base-300"
-            >
-              <div className="flex">
-                <h5 className="font-bold">{market.name}</h5>
-              </div>
-              <div className="flex">
-                <p className="mr-auto text-hyper-blue-200">Yield Source</p>
-                <p>
-                  <YieldSourceLabel
-                    className="font-dm-sans font-semibold"
-                    yieldSource={appConfig?.yieldSources[market.yieldSource]}
-                  />
-                </p>
-              </div>
-              <div className="flex">
-                <p className="mr-auto text-hyper-blue-200">Term Length</p>
-                <p className="font-semibold">
-                  {convertMillisecondsToMonths(market.termLengthMS)} months
-                </p>
-              </div>
-              <div className="flex">
-                <p className="mr-auto text-hyper-blue-200">Liquidity</p>
-                <p className="font-semibold">$100M</p>
-              </div>
-              <div className="flex">
-                <p className="mr-auto text-hyper-blue-200">Fixed Rate</p>
-                <p className="font-semibold">1.25%</p>
-              </div>
-            </Link>
-          );
-        })}
+      <div>
+        <SortableGridTable
+          headingRowClassName="grid-cols-[2fr_1fr_1fr_1fr] bg-base-100 text-hyper-blue-200 font-dm-sans [&>*]:p-5 bg-opacity-100"
+          bodyRowClassName="grid-cols-[2fr_1fr_1fr_1fr] bg-transparent text-hyper-blue-100 font-dm-sans [&>*]:p-5"
+          cols={[
+            {
+              cell: "Name",
+              sortKey: "name",
+            },
+            {
+              cell: "Term Length",
+              sortKey: "termLength",
+            },
+            {
+              cell: "Liquidity",
+              sortKey: "liquidity",
+            },
+            {
+              cell: "Fixed Rate",
+              sortKey: "longAPR",
+            },
+          ]}
+          rows={filteredMarkets.map((marketRowData) =>
+            createMarketRow(marketRowData),
+          )}
+        />
       </div>
     </div>
   );
+}
+
+function createMarketRow({ market, yieldSource }: MarketTableRowData): Row {
+  return {
+    href: `/trade/${market.address}`,
+    cells: [
+      <span key="name" className="font-bold">
+        <p>{market.name}</p>
+        <YieldSourceLabel
+          className="font-dm-sans font-normal"
+          yieldSource={yieldSource}
+        />
+      </span>,
+      <p key="term" className="font-semibold">
+        {convertMillisecondsToMonths(market.termLengthMS)} months
+      </p>,
+
+      <span key="liquidity" className="font-semibold">
+        $100M
+      </span>,
+      <span key="apy" className="font-semibold">
+        1.25%
+      </span>,
+    ],
+  };
 }

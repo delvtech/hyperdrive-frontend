@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
-import { MarketsTableLarge } from "src/ui/markets/components/MarketsTableLarge";
-import { MarketsTableMini } from "src/ui/markets/components/MarketsTableMini";
+import { MarketsTableLarge } from "src/ui/markets/MarketsTableLarge";
+import { MarketsTableMini } from "src/ui/markets/MarketsTableMini";
 
 export function MarketsTable(): ReactElement {
   return (

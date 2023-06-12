@@ -1,6 +1,6 @@
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/20/solid";
 import { ReactElement } from "react";
-import { MarketsTable } from "src/ui/markets/components/MarketsTable";
+import { MarketsTable } from "src/ui/markets/MarketsTable";
 
 export function Markets(): ReactElement {
   return (
