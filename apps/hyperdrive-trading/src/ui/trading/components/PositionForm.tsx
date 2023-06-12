@@ -7,9 +7,9 @@ import {
 import classNames from "classnames";
 import { PropsWithChildren, ReactElement, useState } from "react";
 import { Hyperdrive } from "src/appconfig/types";
-import { OrderType, PositionType } from "src/ui/hyperdrive/types";
-import { LongPositionForm } from "src/ui/trading/components/LongPositionForm";
-import { ShortPositionForm } from "src/ui/trading/components/ShortPositionForm";
+import { PositionType } from "src/ui/hyperdrive/types";
+import { OpenLongPositionForm } from "src/ui/trading/components/OpenLongPositionForm";
+import { OpenShortPositionForm } from "src/ui/trading/components/OpenShortPositionForm";
 import { match } from "ts-pattern";
 
 interface PositionFormProps {
@@ -22,7 +22,6 @@ export function PositionForm({
   handleClose,
 }: PositionFormProps): ReactElement {
   const [position, setPosition] = useState<PositionType>("Long");
-  const [order, setOrder] = useState<OrderType>("Open");
 
   return (
     <div className="flex flex-col gap-y-10">
@@ -66,29 +65,11 @@ export function PositionForm({
             LP
           </PositionFormButton>
         </div>
-
-        {/* Order button group */}
-        <div className="rounded-xs btn-group w-full border-hyper-blue-100">
-          <PositionFormButton
-            onClick={() => setOrder("Open")}
-            active={order === "Open"}
-          >
-            Open
-          </PositionFormButton>
-          <PositionFormButton
-            onClick={() => setOrder("Close")}
-            active={order === "Close"}
-          >
-            Close
-          </PositionFormButton>
-        </div>
       </div>
 
       {match(position)
-        .with("Long", () => <LongPositionForm market={market} order={order} />)
-        .with("Short", () => (
-          <ShortPositionForm market={market} order={order} />
-        ))
+        .with("Long", () => <OpenLongPositionForm market={market} />)
+        .with("Short", () => <OpenShortPositionForm market={market} />)
         .with("LP", () => <div></div>)
         .exhaustive()}
     </div>
