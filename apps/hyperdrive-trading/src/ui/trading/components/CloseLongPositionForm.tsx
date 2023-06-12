@@ -35,26 +35,29 @@ export function CloseLongPositionForm({
   });
 
   const { baseAmountOut, previewCloseLongStatus } = usePreviewCloseLong({
-    market,
+    hyperdriveAddress: market,
     tokenID: selectedLong?.id,
     bondAmountIn: amountAsBigInt,
     minBaseAmountOut: 1n, // TODO: slippage
     destination: account,
   });
 
-  const { closeLong, closeLongStatus, closeLongTransactionStatus } =
-    useCloseLong({
-      market,
-      tokenID: selectedLong?.id,
-      bondAmountIn: amountAsBigInt,
-      minBaseAmountOut: 1n, // TODO: slippage
-      destination: account,
-      enabled: previewCloseLongStatus === "success",
-      onExecuted: () => {
-        // reset local state after successful transaction
-        setAmount(undefined);
-      },
-    });
+  const {
+    closeLong,
+    isPendingWalletAction: closeLongStatus,
+    closeLongTransactionStatus,
+  } = useCloseLong({
+    hyperdriveAddress: market,
+    tokenID: selectedLong?.id,
+    bondAmountIn: amountAsBigInt,
+    minBaseAmountOut: 1n, // TODO: slippage
+    destination: account,
+    enabled: previewCloseLongStatus === "success",
+    onExecuted: () => {
+      // reset local state after successful transaction
+      setAmount(undefined);
+    },
+  });
 
   return (
     <>

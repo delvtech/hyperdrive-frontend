@@ -3,8 +3,11 @@ import { Long } from "@hyperdrive/core";
 import { Button } from "src/ui/base/components/Button";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { Row } from "src/ui/base/tables/SortableGridTable";
+import { useCloseLong } from "src/ui/hyperdrive/hooks/useCloseLong";
 import { useLongs } from "src/ui/hyperdrive/hooks/useLongs";
-import { Address, formatUnits } from "viem";
+import { usePreviewCloseLong } from "src/ui/hyperdrive/hooks/usePreviewCloseLong";
+import { Address, formatUnits, parseUnits } from "viem";
+import { useAccount } from "wagmi";
 
 interface UseLongRowsOptions {
   account: Address | undefined;
@@ -75,6 +78,22 @@ interface CloseLongModalProps {
 }
 
 function CloseLongModal({ long }: CloseLongModalProps) {
+  const { address: account } = useAccount();
+  const { baseAmountOut, previewCloseLongStatus } = usePreviewCloseLong({
+    long,
+    bondAmountIn: long.amount,
+    minBaseAmountOut: 1n, // TODO: slippage
+    destination: account,
+  });
+
+  const { closeLong, isPendingWalletAction } = useCloseLong({
+    long,
+    bondAmountIn: long.amount,
+    minBaseAmountOut: parseUnits("1", 18), // TODO: slippage
+    destination: account,
+    enabled: previewCloseLongStatus === "success",
+  });
+
   return (
     <dialog id="closeLongModal" className="modal">
       <form method="dialog" className="modal-box">
@@ -84,8 +103,18 @@ function CloseLongModal({ long }: CloseLongModalProps) {
             title="Close position"
           />
         </button>
-        <h3 className="text-lg font-bold">Hello!</h3>
-        <p className="py-4">Press ESC key or click outside to close</p>
+        <h3 className="text-lg font-bold">Close position</h3>
+        <p className="py-4">Close long position...</p>
+        Amount you receive: {formatUnits(baseAmountOut || 0n, 18)}
+        <Button
+          disabled={!closeLong || !!isPendingWalletAction}
+          onClick={(e) => {
+            e.preventDefault();
+            return closeLong?.();
+          }}
+        >
+          Close Long
+        </Button>
       </form>
       <form method="dialog" className="modal-backdrop">
         <Button onClick={() => (window as any).closeLongModal.close()}>
