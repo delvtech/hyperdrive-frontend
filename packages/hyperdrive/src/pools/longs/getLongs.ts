@@ -4,14 +4,7 @@ import mapValues from "lodash.mapvalues";
 import { sumBigInt } from "src/base/sumBy";
 import { decodeAssetId } from "src/pools/assetId";
 import { getTransferSingleEvents } from "src/pools/getTransferSingleEvents";
-import {
-  PublicClient,
-  decodeEventLog,
-  Address,
-  Transport,
-  Chain,
-  zeroAddress,
-} from "viem";
+import { PublicClient, Address, Transport, Chain } from "viem";
 
 export interface GetOpenLongsOptions {
   account: Address;
@@ -91,7 +84,7 @@ export async function getOpenLongs({
     return long;
   });
 
-  return Object.values(openLongsById);
+  return Object.values(openLongsById).filter((long) => long.amount);
 }
 
 /**
