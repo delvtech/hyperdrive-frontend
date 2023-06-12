@@ -8,7 +8,7 @@ export function Navbar(): ReactElement {
   const { pathname } = useLocation();
 
   return (
-    <div className="navbar grid grid-cols-3 items-center bg-base-100 px-8">
+    <div className="daisy-navbar grid grid-cols-3 items-center bg-base-100 px-8">
       {/* Navbar start */}
       <div className="justify-self-start">
         {/* Renders in desktop */}
@@ -24,16 +24,16 @@ export function Navbar(): ReactElement {
         {/* Renders in mobile */}
         <div className="flex items-center gap-x-2 lg:hidden">
           {/* Menu dropdown */}
-          <div className="dropdown text-hyper-blue-100">
+          <div className="daisy-dropdown text-hyper-blue-100">
             <label
               tabIndex={0}
-              className="btn-ghost btn p-0 font-akira lg:hidden"
+              className="daisy-btn-ghost daisy-btn p-0 font-akira lg:hidden"
             >
               <Bars3BottomLeftIcon className="w-6 stroke-hyper-blue-100" />
             </label>
             <ul
               tabIndex={0}
-              className="dropdown-content menu rounded-box menu-compact mt-3 w-52 bg-base-100 p-2 shadow"
+              className="daisy-dropdown-content daisy-menu rounded-box daisy-menu-compact mt-3 w-52 bg-base-100 p-2 shadow"
             >
               <li className="hover:bg-hyper-blue-400">
                 <Link className="font-akira" to="/markets">

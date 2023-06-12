@@ -73,7 +73,7 @@ export function CloseShortPositionForm({
               setSelectedShort(foundPosition ?? null);
             }
           }}
-          className="select w-full border-hyper-blue-200 bg-base-100 text-hyper-blue-100"
+          className="daisy-select w-full border-hyper-blue-200 bg-base-100 text-hyper-blue-100"
           defaultValue="none"
         >
           <option value="none">None selected</option>;

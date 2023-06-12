@@ -49,7 +49,7 @@ export function Trade(): ReactElement {
         <div className="flex">
           <label
             htmlFor={MARKETS_MODAL_KEY}
-            className="btn mr-auto gap-x-2 rounded-sm bg-base-300 text-h4 normal-case"
+            className="daisy-btn mr-auto gap-x-2 rounded-sm bg-base-300 text-h4 normal-case"
           >
             {market.name} <ChevronDownIcon className="h-8" />
           </label>
@@ -83,7 +83,7 @@ export function Trade(): ReactElement {
         <div className="hidden items-center justify-start gap-x-20 border-b border-hyper-blue-300 px-8 py-4 md:flex">
           <label
             htmlFor={MARKETS_MODAL_KEY}
-            className="btn gap-x-2 rounded-sm bg-base-300 text-h4 normal-case"
+            className="daisy-btn gap-x-2 rounded-sm bg-base-300 text-h4 normal-case"
           >
             {market.name} <ChevronDownIcon className="h-8" />
           </label>
@@ -140,8 +140,15 @@ export function Trade(): ReactElement {
       )}
 
       {/* Markets modal */}
-      <input type="checkbox" id={MARKETS_MODAL_KEY} className="modal-toggle" />
-      <label htmlFor={MARKETS_MODAL_KEY} className="modal cursor-pointer px-8">
+      <input
+        type="checkbox"
+        id={MARKETS_MODAL_KEY}
+        className="daisy-modal-toggle"
+      />
+      <label
+        htmlFor={MARKETS_MODAL_KEY}
+        className="daisy-modal cursor-pointer px-8"
+      >
         <div className="flex max-h-[70vh] flex-col items-center overflow-auto rounded bg-base-100 p-4">
           <h3 className="font-akira">Markets</h3>
 

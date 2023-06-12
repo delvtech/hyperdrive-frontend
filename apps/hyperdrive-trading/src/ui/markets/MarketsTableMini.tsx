@@ -67,7 +67,7 @@ export function MarketsTableMini(): ReactElement {
                 }
               }}
               defaultValue="none"
-              className="select w-[10rem] rounded-sm bg-base-300 font-dm-sans text-[1rem]"
+              className="daisy-select w-[10rem] rounded-sm bg-base-300 font-dm-sans text-[1rem]"
             >
               <option value="none">All protocols</option>
               {protocols.map((protocol) => (
@@ -91,7 +91,7 @@ export function MarketsTableMini(): ReactElement {
                 }
               }}
               defaultValue="none"
-              className="select w-[12rem] rounded-sm bg-base-300 font-dm-sans text-[1rem]"
+              className="daisy-select w-[12rem] rounded-sm bg-base-300 font-dm-sans text-[1rem]"
             >
               <option value="none">All term lengths</option>
               {termLengths

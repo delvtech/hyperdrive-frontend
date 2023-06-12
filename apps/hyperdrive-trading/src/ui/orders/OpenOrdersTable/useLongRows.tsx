@@ -95,9 +95,9 @@ function CloseLongModal({ long }: CloseLongModalProps) {
   });
 
   return (
-    <dialog id="closeLongModal" className="modal">
-      <form method="dialog" className="modal-box">
-        <button className="daisy-btn daisy-btn-sm daisy-btn-circle daisy-btn-ghost absolute right-4 top-4">
+    <dialog id="closeLongModal" className="daisy-modal">
+      <form method="dialog" className="daisy-modal-box">
+        <button className="daisy-btn-ghost daisy-btn-sm daisy-btn-circle daisy-btn absolute right-4 top-4">
           <XMarkIcon
             className="w-6 text-white opacity-70 hover:opacity-100 focus:opacity-100"
             title="Close position"
@@ -116,7 +116,7 @@ function CloseLongModal({ long }: CloseLongModalProps) {
           Close Long
         </Button>
       </form>
-      <form method="dialog" className="modal-backdrop">
+      <form method="dialog" className="daisy-modal-backdrop">
         <Button onClick={() => (window as any).closeLongModal.close()}>
           close
         </Button>

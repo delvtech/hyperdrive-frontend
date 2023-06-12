@@ -18,10 +18,13 @@ export function PositionsTable({
   return (
     <div className="flex flex-col overflow-hidden py-4">
       <div className="flex w-full flex-wrap gap-2 py-2 px-8">
-        <button className="btn" onClick={() => setSelectedTable("Open")}>
+        <button className="daisy-btn" onClick={() => setSelectedTable("Open")}>
           Open
         </button>
-        <button className="btn" onClick={() => setSelectedTable("Closed")}>
+        <button
+          className="daisy-btn"
+          onClick={() => setSelectedTable("Closed")}
+        >
           Closed
         </button>
       </div>

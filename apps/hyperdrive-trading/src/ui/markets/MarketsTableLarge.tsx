@@ -62,7 +62,7 @@ export function MarketsTableLarge(): ReactElement {
             </div>
 
             <input
-              className="input w-[250px] rounded-sm border bg-base-300 p-2 font-dm-sans text-[1rem] font-medium text-hyper-blue-100 placeholder:text-hyper-blue-300"
+              className="daisy-input w-[250px] rounded-sm border bg-base-300 p-2 font-dm-sans text-[1rem] font-medium text-hyper-blue-100 placeholder:text-hyper-blue-300"
               placeholder="Maker DSR"
             />
           </div>
@@ -80,7 +80,7 @@ export function MarketsTableLarge(): ReactElement {
                 }
               }}
               defaultValue="none"
-              className="select w-[20rem] rounded-sm bg-base-300 font-dm-sans text-[1rem]"
+              className="daisy-select w-[20rem] rounded-sm bg-base-300 font-dm-sans text-[1rem]"
             >
               <option value="none">All protocols</option>
               {protocols.map((protocol) => (
@@ -104,7 +104,7 @@ export function MarketsTableLarge(): ReactElement {
                 }
               }}
               defaultValue="none"
-              className="select w-[12rem] rounded-sm bg-base-300 font-dm-sans text-[1rem]"
+              className="daisy-select w-[12rem] rounded-sm bg-base-300 font-dm-sans text-[1rem]"
             >
               <option value="none">All term lengths</option>
               {termLengths
