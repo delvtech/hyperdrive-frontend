@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-key */
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
-import { SortableGridTable } from "src/ui/base/tables/SortableGridTable";
+import { SortableGridTable } from "src/ui/base/components/tables/SortableGridTable";
 import { useLongRows } from "src/ui/orders/OpenOrdersTable/useLongRows";
 import { useAccount } from "wagmi";
 

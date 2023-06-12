@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { OrderType } from "src/ui/hyperdrive/types";
-import { OpenShortPositionForm } from "src/ui/trading/components/OpenShortPositionForm";
+import { OpenShortPositionForm } from "src/ui/trading/OpenShortPositionForm";
 import { match } from "ts-pattern";
 import { CloseShortPositionForm } from "./CloseShortPositionForm";
 

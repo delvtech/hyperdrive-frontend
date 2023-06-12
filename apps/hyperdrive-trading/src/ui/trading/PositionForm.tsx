@@ -8,8 +8,8 @@ import classNames from "classnames";
 import { PropsWithChildren, ReactElement, useState } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { PositionType } from "src/ui/hyperdrive/types";
-import { OpenLongPositionForm } from "src/ui/trading/components/OpenLongPositionForm";
-import { OpenShortPositionForm } from "src/ui/trading/components/OpenShortPositionForm";
+import { OpenLongPositionForm } from "src/ui/trading/OpenLongPositionForm";
+import { OpenShortPositionForm } from "src/ui/trading/OpenShortPositionForm";
 import { match } from "ts-pattern";
 
 interface PositionFormProps {

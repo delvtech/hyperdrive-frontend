@@ -1,10 +1,10 @@
 import classNames from "classnames";
 import { ReactElement, ReactNode, useState } from "react";
+import { GridTableHeader } from "src/ui/base/components/tables/GridTableHeader";
+import { GridTableRow } from "src/ui/base/components/tables/GridTableRow";
+import { GridTableRowLink } from "src/ui/base/components/tables/GridTableRowLink";
 import { SortDirectionStatus } from "src/ui/base/sorting/SortDirectionStatus";
 import { SortDirection } from "src/ui/base/sorting/types";
-import { GridTableHeader } from "src/ui/base/tables/GridTableHeader";
-import { GridTableRow } from "src/ui/base/tables/GridTableRow";
-import { GridTableRowLink } from "src/ui/base/tables/GridTableRowLink";
 import { UrlObject } from "url";
 
 interface SortableGridTableProps<K extends string> {

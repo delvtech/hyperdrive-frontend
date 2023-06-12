@@ -1,8 +1,8 @@
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import { Long } from "@hyperdrive/core";
 import { Button } from "src/ui/base/components/Button";
+import { Row } from "src/ui/base/components/tables/SortableGridTable";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { Row } from "src/ui/base/tables/SortableGridTable";
 import { useCloseLong } from "src/ui/hyperdrive/hooks/useCloseLong";
 import { useLongs } from "src/ui/hyperdrive/hooks/useLongs";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/hooks/usePreviewCloseLong";

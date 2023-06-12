@@ -8,10 +8,10 @@ import { Button } from "src/ui/base/components/Button";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { useOpenLong } from "src/ui/hyperdrive/hooks/useOpenLong";
 import { usePreviewOpenLong } from "src/ui/hyperdrive/hooks/usePreviewOpenLong";
-import { TokenInput } from "src/ui/token/components/TokenInput";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenApproval } from "src/ui/token/hooks/useTokenApproval";
-import { LongPositionOverviewWell } from "src/ui/trading/components/LongPositionOverviewWell";
+import { TokenInput } from "src/ui/token/TokenInput";
+import { LongPositionOverviewWell } from "src/ui/trading/LongPositionOverviewWell";
 import { useAccount, useBalance } from "wagmi";
 
 interface OpenLongPositionFormProps {

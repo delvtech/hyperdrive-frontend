@@ -11,11 +11,11 @@ import { parseUnits } from "src/base/parseUnits";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Button } from "src/ui/base/components/Button";
 import { Stat } from "src/ui/base/components/Stat";
-import { MarketsTable } from "src/ui/markets/components/MarketsTable";
-import { PositionsTable } from "src/ui/orders/components/PositionsTable";
-import { YieldSourceLabel } from "src/ui/protocol/components/ProtocolLabel";
-import { PositionForm } from "src/ui/trading/components/PositionForm";
-import { TradingChart } from "src/ui/trading/components/TradingChart";
+import { MarketsTable } from "src/ui/markets/MarketsTable";
+import { PositionsTable } from "src/ui/orders/PositionsTable";
+import { YieldSourceLabel } from "src/ui/protocol/ProtocolLabel";
+import { PositionForm } from "src/ui/trading/PositionForm";
+import { TradingChart } from "src/ui/trading/TradingChart";
 import { Address } from "viem";
 import {
   useAccount,
