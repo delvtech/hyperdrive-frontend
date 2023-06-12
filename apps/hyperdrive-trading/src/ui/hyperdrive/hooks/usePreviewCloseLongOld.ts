@@ -1,10 +1,12 @@
-import { DSRHyperdriveABI, Long } from "@hyperdrive/core";
+import { HyperdriveABI } from "@hyperdrive/core";
 import { useQuery } from "@tanstack/react-query";
+import { Hyperdrive } from "src/appconfig/types";
 import { QueryStatusType } from "src/ui/base/types";
 import { Address, useAccount, usePublicClient } from "wagmi";
 
 interface UsePreviewCloseLongOptions {
-  long: Long;
+  market: Hyperdrive;
+  tokenID: bigint | undefined;
   bondAmountIn: bigint | undefined;
   minBaseAmountOut: bigint | undefined;
   destination: Address | undefined;
@@ -17,8 +19,12 @@ interface UsePreviewCloseLongResult {
   baseAmountOut: bigint | undefined;
 }
 
+/**
+ * @deprecated use usePreviewCloseLong
+ */
 export function usePreviewCloseLong({
-  long,
+  market,
+  tokenID,
   bondAmountIn,
   minBaseAmountOut,
   destination,
@@ -29,7 +35,7 @@ export function usePreviewCloseLong({
   const { address: account } = useAccount();
 
   const queryEnabled =
-    !!long &&
+    !!tokenID &&
     !!bondAmountIn &&
     !!minBaseAmountOut &&
     !!destination &&
@@ -40,7 +46,7 @@ export function usePreviewCloseLong({
   const { data, status } = useQuery({
     queryKey: [
       "preview-close-long",
-      long.hyperdriveAddress,
+      market.address,
       bondAmountIn?.toString(),
       minBaseAmountOut?.toString(),
       destination?.toString(),
@@ -49,12 +55,12 @@ export function usePreviewCloseLong({
     queryFn: queryEnabled
       ? async () => {
           const { result } = await publicClient.simulateContract({
-            abi: DSRHyperdriveABI,
-            address: long.hyperdriveAddress,
+            abi: HyperdriveABI,
+            address: market.address,
             account,
             functionName: "closeLong",
             args: [
-              BigInt(long.maturity / 1000),
+              tokenID,
               bondAmountIn,
               minBaseAmountOut,
               destination,

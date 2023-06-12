@@ -29,7 +29,7 @@
     "@tanstack/react-query": "^4.29.12",
     "buffer": "^6.0.3",
     "classnames": "^2.3.2",
-    "daisyui": "^2.50.1",
+    "daisyui": "^3.0.22",
     "ethers": "^5.7.2",
     "gud-type": "^1.0.4",
     "lightweight-charts": "^4.0.1",

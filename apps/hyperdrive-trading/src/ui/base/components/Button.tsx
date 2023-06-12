@@ -4,7 +4,7 @@ import { PropsWithChildren, ReactElement } from "react";
 type ButtonVariant = "Future" | "Work" | "Crimson" | "Emerald";
 
 interface ButtonProps {
-  onClick: () => void;
+  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
   disabled?: boolean;
   active?: boolean;
   size?: "sm" | "md" | "lg";

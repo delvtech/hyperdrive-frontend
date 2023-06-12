@@ -1,16 +1,9 @@
 import { HyperdriveABI } from "@hyperdrive/core";
-import { useQueryClient } from "@tanstack/react-query";
-import { useState } from "react";
-import toast from "react-hot-toast";
+import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { Hyperdrive } from "src/appconfig/types";
 import { QueryStatusType } from "src/ui/base/types";
-import { makeNewPositionToast } from "src/ui/trading/toast/makeNewPositionToast";
-import {
-  Address,
-  useContractWrite,
-  usePrepareContractWrite,
-  useWaitForTransaction,
-} from "wagmi";
+import { useWaitForTransactionThenInvalidateCache } from "src/ui/network/useWaitForTransactionThenInvalidateCache/useWaitForTransactionThenInvalidateCache";
+import { Address, useContractWrite, usePrepareContractWrite } from "wagmi";
 
 interface UseOpenLongOptions {
   market: Hyperdrive;
@@ -38,11 +31,6 @@ export function useOpenLong({
   enabled,
   onExecuted,
 }: UseOpenLongOptions): UseOpenLongResult {
-  const queryClient = useQueryClient();
-
-  // state to store transaction hash
-  const [hash, setHash] = useState<Address | undefined>(undefined);
-
   const queryEnabled =
     !!baseAmount && !!bondAmountOut && !!destination && enabled;
 
@@ -58,50 +46,20 @@ export function useOpenLong({
     gas: 500_000n,
   });
 
-  const { status: txnStatus } = useWaitForTransaction({
-    hash,
+  const addRecentTransaction = useAddRecentTransaction();
+  const {
+    write: openLong,
+    status,
+    data,
+  } = useContractWrite({
+    ...config,
     onSuccess: (data) => {
-      toast.remove(data.transactionHash);
-      setHash(undefined);
-      // TODO: could be smarter about this in the future
-      queryClient.invalidateQueries();
-      toast.custom(
-        () =>
-          makeNewPositionToast({
-            order: "Open",
-            position: "Long",
-            hash: data.transactionHash,
-            status: "Executed",
-          }),
-        {
-          duration: 3000,
-        },
-      );
-      onExecuted?.();
+      addRecentTransaction({ hash: data.hash, description: "Open Long" });
     },
   });
 
-  const { write: openLong, status } = useContractWrite({
-    ...config,
-    onSettled: (data) => {
-      if (data) {
-        setHash(data.hash);
-        toast.custom(
-          () =>
-            makeNewPositionToast({
-              order: "Open",
-              position: "Long",
-              hash: data.hash,
-            }),
-          {
-            // setting id of toast to the transaction hash
-            id: data.hash,
-            // toast will programmatically be removed
-            duration: Infinity,
-          },
-        );
-      }
-    },
+  const { status: txnStatus } = useWaitForTransactionThenInvalidateCache({
+    hash: data?.hash,
   });
 
   return {
