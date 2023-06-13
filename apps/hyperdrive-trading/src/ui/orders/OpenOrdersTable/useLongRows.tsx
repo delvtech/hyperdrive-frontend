@@ -58,13 +58,12 @@ function createLongRow({
       <span key="size">
         {formatBalance(formatUnits(long.amount, baseDecimals), 4)}
       </span>,
-      <span key="value" className="inline-flex items-center gap-1">
-        {`${formatBalance(
-          formatUnits(long.amount * BigInt(1), baseDecimals),
-          2,
-        )}`}{" "}
-        {baseSymbol}
-      </span>,
+      <ValueCell
+        key="value"
+        long={long}
+        baseDecimals={baseDecimals}
+        baseSymbol={baseSymbol}
+      />,
       <span key="maturity">
         {new Date(long.maturity).toLocaleDateString()}
       </span>,
@@ -78,29 +77,67 @@ function createLongRow({
             title="Close long position"
           />
         </Button>
-        <CloseLongModal long={long} />
+        <CloseLongModal
+          long={long}
+          baseDecimals={baseDecimals}
+          baseSymbol={baseSymbol}
+        />
       </span>,
     ],
   };
 }
 
-interface CloseLongModalProps {
+function ValueCell({
+  baseDecimals,
+  baseSymbol,
+  long,
+}: {
   long: Long;
+  baseDecimals: number;
+  baseSymbol: string;
+}) {
+  const { address: account } = useAccount();
+  const { baseAmountOut } = usePreviewCloseLong({
+    hyperdriveAddress: long.hyperdriveAddress,
+    maturityTime: long.maturity / 1000,
+    bondAmountIn: long.amount,
+    minBaseAmountOut: parseUnits("1", 18), // TODO: slippage
+    destination: account,
+  });
+  return (
+    <span className="inline-flex items-center gap-1">
+      {baseAmountOut !== undefined
+        ? `${formatBalance(formatUnits(baseAmountOut, baseDecimals), 2)}`
+        : null}{" "}
+      {baseSymbol}
+    </span>
+  );
 }
 
-function CloseLongModal({ long }: CloseLongModalProps) {
+interface CloseLongModalProps {
+  long: Long;
+  baseDecimals: number;
+  baseSymbol: string;
+}
+
+function CloseLongModal({
+  long,
+  baseDecimals,
+  baseSymbol,
+}: CloseLongModalProps) {
   const { address: account } = useAccount();
   const { baseAmountOut, previewCloseLongStatus } = usePreviewCloseLong({
-    long,
+    hyperdriveAddress: long.hyperdriveAddress,
+    maturityTime: long.maturity / 1000,
     bondAmountIn: long.amount,
-    minBaseAmountOut: 1n, // TODO: slippage
+    minBaseAmountOut: parseUnits("1", baseDecimals), // TODO: slippage
     destination: account,
   });
 
   const { closeLong, isPendingWalletAction } = useCloseLong({
     long,
     bondAmountIn: long.amount,
-    minBaseAmountOut: parseUnits("1", 18), // TODO: slippage
+    minBaseAmountOut: parseUnits("1", baseDecimals), // TODO: slippage
     destination: account,
     enabled: previewCloseLongStatus === "success",
   });
@@ -116,7 +153,11 @@ function CloseLongModal({ long }: CloseLongModalProps) {
         </button>
         <h3 className="text-lg font-bold">Close position</h3>
         <p className="py-4">Close long position...</p>
-        Amount you receive: {formatUnits(baseAmountOut || 0n, 18)}
+        Amount you receive:{" "}
+        {baseAmountOut
+          ? `${formatBalance(formatUnits(baseAmountOut, baseDecimals), 2)}`
+          : "-"}{" "}
+        {baseSymbol}
         <Button
           disabled={!closeLong || !!isPendingWalletAction}
           onClick={(e) => {

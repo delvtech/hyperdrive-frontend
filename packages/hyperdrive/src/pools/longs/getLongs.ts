@@ -16,6 +16,9 @@ interface Long {
   hyperdriveAddress: Address;
   assetId: bigint;
   amount: bigint;
+  /**
+   * Time in milliseconds when this long will mature
+   */
   maturity: number;
 }
 
