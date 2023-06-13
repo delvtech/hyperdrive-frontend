@@ -1,5 +1,6 @@
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import { Long } from "@hyperdrive/core";
+import { Hyperdrive } from "src/appconfig/types";
 import { Button } from "src/ui/base/components/Button";
 import { Row } from "src/ui/base/components/tables/SortableGridTable";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -9,52 +10,61 @@ import { usePreviewCloseLong } from "src/ui/hyperdrive/hooks/usePreviewCloseLong
 import { Address, formatUnits, parseUnits } from "viem";
 import { useAccount } from "wagmi";
 
-interface UseLongRowsOptions {
+interface UseOpenLongRowsOptions {
   account: Address | undefined;
-  hyperdriveAddress: Address | undefined;
+  hyperdrive: Hyperdrive | undefined;
 }
 
-export function useLongRows({
+export function useOpenLongRows({
   account,
-  hyperdriveAddress,
-}: UseLongRowsOptions): {
-  longRows: Row[] | undefined;
-  longRowsStatus: "error" | "success" | "loading";
+  hyperdrive,
+}: UseOpenLongRowsOptions): {
+  openLongRows: Row[] | undefined;
+  openLongRowsStatus: "error" | "success" | "loading";
 } {
-  const { longs = [] } = useLongs({ account, hyperdriveAddress });
+  const { longs = [], longsStatus } = useLongs({
+    account,
+    hyperdriveAddress: hyperdrive?.address,
+  });
 
-  const rows = longs.map((long) =>
-    // TODO: Look up price and decimals of baseAsset of the hyperdrive pool
-    createLongRow({ long, baseDecimals: 18, baseAssetPrice: 1 }),
-  );
+  const rows = hyperdrive
+    ? longs.map((long) =>
+        createLongRow({
+          hyperdrive,
+          long,
+        }),
+      )
+    : [];
 
-  return { longRows: rows, longRowsStatus: "success" };
+  return { openLongRows: rows, openLongRowsStatus: longsStatus };
 }
 
 function createLongRow({
   long,
-  baseDecimals,
-  baseAssetPrice,
+  hyperdrive,
 }: {
+  hyperdrive: Hyperdrive;
   long: Long;
-  baseDecimals: number;
-  baseAssetPrice: number;
 }): Row {
+  const {
+    baseToken: { decimals: baseDecimals, symbol: baseSymbol },
+  } = hyperdrive;
   return {
     cells: [
       <span key="type" className={"font-bold text-hyper-green"}>
         Long
       </span>,
-      <span key="amount">
+      <span key="size">
         {formatBalance(formatUnits(long.amount, baseDecimals), 4)}
       </span>,
-      <span key="value">
-        {`$${formatBalance(
-          formatUnits(long.amount * BigInt(baseAssetPrice), baseDecimals),
+      <span key="value" className="inline-flex items-center gap-1">
+        {`${formatBalance(
+          formatUnits(long.amount * BigInt(1), baseDecimals),
           2,
-        )}`}
+        )}`}{" "}
+        {baseSymbol}
       </span>,
-      <span key="expiration">
+      <span key="maturity">
         {new Date(long.maturity).toLocaleDateString()}
       </span>,
       <span key="close-long">
@@ -64,7 +74,7 @@ function createLongRow({
         >
           <XMarkIcon
             className="w-6 text-white opacity-70 hover:opacity-100 focus:opacity-100"
-            title="Close position"
+            title="Close long position"
           />
         </Button>
         <CloseLongModal long={long} />
@@ -109,6 +119,8 @@ function CloseLongModal({ long }: CloseLongModalProps) {
         <Button
           disabled={!closeLong || !!isPendingWalletAction}
           onClick={(e) => {
+            // preventDefault since we don't want to close the modal while the
+            // tx is temporarily pending the user's signature in their wallet.
             e.preventDefault();
             return closeLong?.();
           }}

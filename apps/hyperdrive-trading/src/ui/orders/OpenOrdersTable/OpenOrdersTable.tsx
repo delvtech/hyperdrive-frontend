@@ -2,7 +2,7 @@
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { SortableGridTable } from "src/ui/base/components/tables/SortableGridTable";
-import { useLongRows } from "src/ui/orders/OpenOrdersTable/useLongRows";
+import { useOpenLongRows } from "src/ui/orders/OpenOrdersTable/useLongRows";
 import { useAccount } from "wagmi";
 
 interface OpenOrdersTableProps {
@@ -14,9 +14,9 @@ export function OpenOrdersTable({
 }: OpenOrdersTableProps): ReactElement {
   const { address: account } = useAccount();
 
-  const { longRows = [] } = useLongRows({
+  const { openLongRows: longRows = [] } = useOpenLongRows({
     account,
-    hyperdriveAddress: hyperdrive.address,
+    hyperdrive,
   });
 
   const allRows = [...longRows];
