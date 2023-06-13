@@ -1,10 +1,14 @@
-import { DSRHyperdriveABI, Long } from "@hyperdrive/core";
-import { useQuery } from "@tanstack/react-query";
-import { QueryStatusType } from "src/ui/base/types";
+import { DSRHyperdriveABI } from "@hyperdrive/core";
+import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { Address, useAccount, usePublicClient } from "wagmi";
 
 interface UsePreviewCloseLongOptions {
-  long: Long;
+  hyperdriveAddress: Address | undefined;
+
+  /**
+   * Time in seconds, as the contracts require
+   */
+  maturityTime: number | undefined;
   bondAmountIn: bigint | undefined;
   minBaseAmountOut: bigint | undefined;
   destination: Address | undefined;
@@ -13,12 +17,13 @@ interface UsePreviewCloseLongOptions {
 }
 
 interface UsePreviewCloseLongResult {
-  previewCloseLongStatus: QueryStatusType;
   baseAmountOut: bigint | undefined;
+  previewCloseLongStatus: QueryStatus;
 }
 
 export function usePreviewCloseLong({
-  long,
+  hyperdriveAddress,
+  maturityTime,
   bondAmountIn,
   minBaseAmountOut,
   destination,
@@ -29,7 +34,8 @@ export function usePreviewCloseLong({
   const { address: account } = useAccount();
 
   const queryEnabled =
-    !!long &&
+    !!hyperdriveAddress &&
+    !!maturityTime &&
     !!bondAmountIn &&
     !!minBaseAmountOut &&
     !!destination &&
@@ -40,7 +46,7 @@ export function usePreviewCloseLong({
   const { data, status } = useQuery({
     queryKey: [
       "preview-close-long",
-      long.hyperdriveAddress,
+      hyperdriveAddress,
       bondAmountIn?.toString(),
       minBaseAmountOut?.toString(),
       destination?.toString(),
@@ -48,13 +54,14 @@ export function usePreviewCloseLong({
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? async () => {
+          // TODO: Refactor this to the math library instead
           const { result } = await publicClient.simulateContract({
             abi: DSRHyperdriveABI,
-            address: long.hyperdriveAddress,
+            address: hyperdriveAddress,
             account,
             functionName: "closeLong",
             args: [
-              BigInt(long.maturity / 1000),
+              BigInt(maturityTime),
               bondAmountIn,
               minBaseAmountOut,
               destination,

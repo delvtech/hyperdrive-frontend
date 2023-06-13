@@ -15,11 +15,8 @@ export { HyperdriveABI } from "src/abis/Hyperdrive";
 export { DSRHyperdriveABI } from "src/abis/DSRHyperdrive";
 
 /** Functions */
-export {
-  getOpenLongs as getLongs,
-  getLongsQuery,
-} from "src/pools/longs/getLongs";
-export type { GetOpenLongsOptions as GetLongsOptions } from "src/pools/longs/getLongs";
+export { getOpenLongs, getOpenLongsQuery } from "src/pools/longs/getLongs";
+export type { GetOpenLongsOptions } from "src/pools/longs/getLongs";
 
 export { getShorts } from "src/pools/shorts/getShorts";
 export { getTransferSingleEvents } from "src/pools/getTransferSingleEvents";
