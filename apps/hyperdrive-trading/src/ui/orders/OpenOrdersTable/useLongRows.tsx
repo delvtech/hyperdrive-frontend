@@ -5,7 +5,7 @@ import { Button } from "src/ui/base/components/Button";
 import { Row } from "src/ui/base/components/tables/SortableGridTable";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useCloseLong } from "src/ui/hyperdrive/hooks/useCloseLong";
-import { useLongs } from "src/ui/hyperdrive/hooks/useLongs";
+import { useOpenLongs } from "src/ui/hyperdrive/hooks/useLongs";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/hooks/usePreviewCloseLong";
 import { Address, formatUnits, parseUnits } from "viem";
 import { useAccount } from "wagmi";
@@ -22,13 +22,13 @@ export function useOpenLongRows({
   openLongRows: Row[] | undefined;
   openLongRowsStatus: "error" | "success" | "loading";
 } {
-  const { longs = [], longsStatus } = useLongs({
+  const { openLongs = [], openLongsStatus } = useOpenLongs({
     account,
     hyperdriveAddress: hyperdrive?.address,
   });
 
   const rows = hyperdrive
-    ? longs.map((long) =>
+    ? openLongs.map((long) =>
         createLongRow({
           hyperdrive,
           long,
@@ -36,7 +36,7 @@ export function useOpenLongRows({
       )
     : [];
 
-  return { openLongRows: rows, openLongRowsStatus: longsStatus };
+  return { openLongRows: rows, openLongRowsStatus: openLongsStatus };
 }
 
 function createLongRow({
@@ -49,6 +49,7 @@ function createLongRow({
   const {
     baseToken: { decimals: baseDecimals, symbol: baseSymbol },
   } = hyperdrive;
+
   return {
     cells: [
       <span key="type" className={"font-bold text-hyper-green"}>

@@ -95,7 +95,7 @@ export async function getOpenLongs({
  * bindings. If this works well in practice we can move this to a
  * @hyperdrive/queries package.
  */
-export function getLongsQuery({
+export function getOpenLongsQuery({
   hyperdriveAddress,
   publicClient,
   account,
