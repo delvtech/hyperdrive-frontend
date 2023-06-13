@@ -16,7 +16,7 @@ export type AssetType = "LP" | "LONG" | "SHORT" | "WITHDRAWAL_SHARE";
  */
 export function decodeAssetId(assetId: Hash): {
   assetType: AssetType;
-  timestamp: number;
+  timestamp: bigint;
 } {
   // Remove the leading "0x"
   const cleanId = assetId.slice(2);
@@ -25,16 +25,16 @@ export function decodeAssetId(assetId: Hash): {
   const identifier = Number(cleanId.slice(0, 2));
   const assetType = parseAssetType(identifier);
 
-  // 62 hexadecimal digits (248 bits) = timestamp
-  const timestamp = cleanId.slice(2, 64);
-  const timestampMS = parseInt(timestamp, 16) * 1000;
+  // 62 hexadecimal digits (248 bits) = timestamp (in seconds)
+  const timestampPart = cleanId.slice(2, 64);
+  const timestamp = BigInt(parseInt(timestampPart, 16));
 
   return {
     assetType,
 
     // NOTE: LP tokens won't have a timestamp, we'll see what happens when we
     // get to that
-    timestamp: timestampMS,
+    timestamp,
   };
 }
 

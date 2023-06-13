@@ -2,7 +2,7 @@
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { SortableGridTable } from "src/ui/base/components/tables/SortableGridTable";
-import { useOpenLongRows } from "src/ui/orders/OpenOrdersTable/useLongRows";
+import { useOpenLongRows } from "src/ui/orders/OpenOrdersTable/useOpenLongRows";
 import { useAccount } from "wagmi";
 
 interface OpenOrdersTableProps {

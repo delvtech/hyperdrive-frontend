@@ -34,7 +34,7 @@ export function useCloseLong({
     enabled: queryEnabled,
     args: queryEnabled
       ? [
-          BigInt(long.maturity / 1000),
+          long.maturity,
           bondAmountIn,
           minBaseAmountOut,
           destination,

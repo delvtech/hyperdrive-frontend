@@ -17,9 +17,9 @@ interface Long {
   assetId: bigint;
   amount: bigint;
   /**
-   * Time in milliseconds when this long will mature
+   * Time in seconds when this long will mature
    */
-  maturity: number;
+  maturity: bigint;
 }
 
 export async function getOpenLongs({
