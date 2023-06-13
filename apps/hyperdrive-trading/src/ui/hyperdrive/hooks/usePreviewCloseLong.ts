@@ -8,7 +8,7 @@ interface UsePreviewCloseLongOptions {
   /**
    * Time in seconds, as the contracts require
    */
-  maturityTime: number | undefined;
+  maturityTime: bigint | undefined;
   bondAmountIn: bigint | undefined;
   minBaseAmountOut: bigint | undefined;
   destination: Address | undefined;

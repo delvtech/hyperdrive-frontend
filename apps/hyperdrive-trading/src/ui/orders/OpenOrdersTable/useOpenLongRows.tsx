@@ -27,19 +27,19 @@ export function useOpenLongRows({
     hyperdriveAddress: hyperdrive?.address,
   });
 
-  const rows = hyperdrive
+  const openLongRows = hyperdrive
     ? openLongs.map((long) =>
-        createLongRow({
+        createOpenLongRow({
           hyperdrive,
           long,
         }),
       )
     : [];
 
-  return { openLongRows: rows, openLongRowsStatus: openLongsStatus };
+  return { openLongRows, openLongRowsStatus: openLongsStatus };
 }
 
-function createLongRow({
+function createOpenLongRow({
   long,
   hyperdrive,
 }: {
@@ -65,7 +65,7 @@ function createLongRow({
         baseSymbol={baseSymbol}
       />,
       <span key="maturity">
-        {new Date(long.maturity).toLocaleDateString()}
+        {new Date(Number(long.maturity * 1000n)).toLocaleDateString()}
       </span>,
       <span key="close-long">
         <Button
@@ -99,7 +99,7 @@ function ValueCell({
   const { address: account } = useAccount();
   const { baseAmountOut } = usePreviewCloseLong({
     hyperdriveAddress: long.hyperdriveAddress,
-    maturityTime: long.maturity / 1000,
+    maturityTime: long.maturity,
     bondAmountIn: long.amount,
     minBaseAmountOut: parseUnits("1", 18), // TODO: slippage
     destination: account,
@@ -128,7 +128,7 @@ function CloseLongModal({
   const { address: account } = useAccount();
   const { baseAmountOut, previewCloseLongStatus } = usePreviewCloseLong({
     hyperdriveAddress: long.hyperdriveAddress,
-    maturityTime: long.maturity / 1000,
+    maturityTime: long.maturity,
     bondAmountIn: long.amount,
     minBaseAmountOut: parseUnits("1", baseDecimals), // TODO: slippage
     destination: account,
