@@ -46,7 +46,6 @@ function createOpenLongRow({
   hyperdrive: Hyperdrive;
   long: Long;
 }): Row {
-  console.log("longasdfasdf", long);
   const {
     baseToken: { decimals: baseDecimals, symbol: baseSymbol },
   } = hyperdrive;
