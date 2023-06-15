@@ -1,8 +1,8 @@
+import assertNever from "assert-never";
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { OrderType } from "src/ui/hyperdrive/types";
 import { OpenShortPositionForm } from "src/ui/trading/OpenShortPositionForm";
-import { match } from "ts-pattern";
 import { CloseShortPositionForm } from "./CloseShortPositionForm";
 
 interface ShortPositionFormProps {
@@ -14,8 +14,12 @@ export function ShortPositionForm({
   order,
   market,
 }: ShortPositionFormProps): ReactElement {
-  return match(order)
-    .with("Open", () => <OpenShortPositionForm market={market} />)
-    .with("Close", () => <CloseShortPositionForm market={market} />)
-    .exhaustive();
+  switch (order) {
+    case "Open":
+      return <OpenShortPositionForm market={market} />;
+    case "Close":
+      return <CloseShortPositionForm market={market} />;
+    default:
+      assertNever(order);
+  }
 }

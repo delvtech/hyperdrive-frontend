@@ -18,7 +18,9 @@ module.exports = {
      */
     "prettier",
   ],
+  plugins: ["unicorn"],
   rules: {
+    "unicorn/no-array-reduce": ["error", { allowSimpleOperations: true }], // disallow reduce unless for basic math, see: https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-array-reduce.md
     "@typescript-eslint/explicit-module-boundary-types": "error", // exported functions must have return types
     "@typescript-eslint/no-empty-function": "off", // empty arrow functions are fine for noops when passed to components
     "@typescript-eslint/no-empty-interface": "off", // empty interfaces for component props should be allowed
