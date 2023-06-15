@@ -70,7 +70,7 @@ export function OpenLongPositionForm({
   });
 
   return (
-    <>
+    <div className="flex flex-col gap-10">
       {/* You Pay Section */}
       <div className="space-y-4 font-rubik text-hyper-blue-100">
         <h5>You Pay</h5>
@@ -136,6 +136,6 @@ export function OpenLongPositionForm({
           <h5>Connect wallet</h5>
         </Button>
       )}
-    </>
+    </div>
   );
 }

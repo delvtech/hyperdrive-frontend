@@ -2,7 +2,6 @@ import { XMarkIcon } from "@heroicons/react/24/solid";
 import { Long } from "@hyperdrive/core";
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
-import { Button } from "src/ui/base/components/Button";
 import { CloseLongForm } from "src/ui/trading/CloseLongForm";
 
 export interface CloseLongModalProps {
@@ -36,7 +35,8 @@ export function CloseLongModal({
         />
       </form>
       <form method="dialog" className="daisy-modal-backdrop">
-        <Button onClick={() => (window as any)[modalId].close()}>close</Button>
+        {/* use vanilla button here since it's not to be shown to the user */}
+        <button onClick={() => (window as any)[modalId].close()} />
       </form>
     </dialog>
   );

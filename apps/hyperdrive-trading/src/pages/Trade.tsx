@@ -45,7 +45,7 @@ export function Trade(): ReactElement {
   return (
     <div className="grid h-[calc(100vh_-_64px)] grid-rows-[157px_1fr] overflow-hidden  md:grid-cols-[365px_1fr] md:grid-rows-1 lg:grid-cols-[447px_1fr]">
       {/* Market information row - mobile only */}
-      <div className="flex h-fit flex-col gap-4 bg-base-100 px-8 pb-4 pt-6 md:hidden">
+      <div className="flex h-fit flex-col gap-4 px-8 pb-4 pt-6 md:hidden">
         <div className="flex">
           <label
             htmlFor={MARKETS_MODAL_KEY}
@@ -74,7 +74,7 @@ export function Trade(): ReactElement {
       </div>
 
       {/* Position form column */}
-      <div className="md:basis=[447px] hidden w-full shrink-0 flex-col bg-base-100 px-8 py-6 md:flex md:max-w-md">
+      <div className="md:basis=[447px] hidden w-full shrink-0 flex-col px-8 py-6 md:flex md:max-w-md">
         <PositionForm market={market} />
       </div>
 
