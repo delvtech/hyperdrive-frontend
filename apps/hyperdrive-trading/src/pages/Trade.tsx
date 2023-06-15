@@ -43,9 +43,9 @@ export function Trade(): ReactElement {
   });
 
   return (
-    <div className="grid h-[calc(100vh_-_64px)] grid-rows-[157px_1fr] overflow-hidden border-t border-hyper-blue-300 md:grid-cols-[365px_1fr] md:grid-rows-1 lg:grid-cols-[447px_1fr]">
+    <div className="grid h-[calc(100vh_-_64px)] grid-rows-[157px_1fr] overflow-hidden  md:grid-cols-[365px_1fr] md:grid-rows-1 lg:grid-cols-[447px_1fr]">
       {/* Market information row - mobile only */}
-      <div className="flex h-fit flex-col gap-4 border-b border-hyper-blue-300 bg-base-100 px-8 pb-4 pt-6 md:hidden">
+      <div className="flex h-fit flex-col gap-4 bg-base-100 px-8 pb-4 pt-6 md:hidden">
         <div className="flex">
           <label
             htmlFor={MARKETS_MODAL_KEY}
@@ -74,13 +74,13 @@ export function Trade(): ReactElement {
       </div>
 
       {/* Position form column */}
-      <div className="md:basis=[447px] hidden w-full shrink-0 flex-col border-r border-b border-hyper-blue-300 bg-base-100 px-8 py-6 md:flex md:max-w-md">
+      <div className="md:basis=[447px] hidden w-full shrink-0 flex-col bg-base-100 px-8 py-6 md:flex md:max-w-md">
         <PositionForm market={market} />
       </div>
 
       {/* Chart column */}
       <div className="flex h-full flex-col overflow-hidden bg-base-100">
-        <div className="hidden items-center justify-start gap-x-20 border-b border-hyper-blue-300 px-8 py-4 md:flex">
+        <div className="hidden items-center justify-start gap-x-20 px-8 py-4 md:flex">
           <label
             htmlFor={MARKETS_MODAL_KEY}
             className="daisy-btn gap-x-2 rounded-sm bg-base-300 text-h4 normal-case"
@@ -111,7 +111,7 @@ export function Trade(): ReactElement {
           </div>
         </div>
 
-        <div className="border-b border-hyper-blue-300 px-8 py-4">
+        <div className="px-8 py-4">
           <div className="flex items-center gap-x-2">
             <h6 className="font-dm-sans font-bold text-hyper-blue-100">
               Market Sentiment Indicator
