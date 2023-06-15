@@ -24,12 +24,9 @@ export function PositionForm({
   const [position, setPosition] = useState<PositionType>("Long");
 
   return (
-    <div className="flex flex-col gap-y-10">
+    <div className="flex flex-col">
       {/* Header */}
-      <div className="flex items-center">
-        <h3 className="text-xl mr-auto font-akira font-bold text-hyper-blue-100">
-          Trade
-        </h3>
+      <div className="flex items-center justify-end">
         {handleClose && (
           <div>
             <XMarkIcon
@@ -41,30 +38,28 @@ export function PositionForm({
       </div>
 
       {/* Position button group */}
-      <div className="space-y-4">
-        <div className="rounded-xs daisy-btn-group w-full border-hyper-blue-100">
-          <PositionFormButton
-            onClick={() => setPosition("Long")}
-            active={position === "Long"}
-          >
-            <ArrowTrendingUpIcon className="mr-1 w-5" />
-            Long
-          </PositionFormButton>
-          <PositionFormButton
-            onClick={() => setPosition("Short")}
-            active={position === "Short"}
-          >
-            <ArrowTrendingDownIcon className="mr-1 w-5" />
-            Short
-          </PositionFormButton>
-          <PositionFormButton
-            onClick={() => setPosition("LP")}
-            active={position === "LP"}
-          >
-            <CircleStackIcon className="mr-1 w-4" />
-            LP
-          </PositionFormButton>
-        </div>
+      <div className="daisy-join mb-8 mt-2 w-full">
+        <PositionFormButton
+          onClick={() => setPosition("Long")}
+          active={position === "Long"}
+        >
+          <ArrowTrendingUpIcon className="mr-1 w-5" />
+          Long
+        </PositionFormButton>
+        <PositionFormButton
+          onClick={() => setPosition("Short")}
+          active={position === "Short"}
+        >
+          <ArrowTrendingDownIcon className="mr-1 w-5" />
+          Short
+        </PositionFormButton>
+        <PositionFormButton
+          onClick={() => setPosition("LP")}
+          active={position === "LP"}
+        >
+          <CircleStackIcon className="mr-1 w-4" />
+          LP
+        </PositionFormButton>
       </div>
 
       {match(position)
@@ -90,11 +85,10 @@ function PositionFormButton({
     <button
       onClick={onClick}
       className={classNames(
+        "daisy-btn-ghost daisy-join-item daisy-btn flex-1",
         {
-          "bg-hyper-blue-400": active,
-          "hover:bg-hyper-blue-400": !active,
+          "daisy-btn-active": active,
         },
-        "border-1 daisy-btn flex-1 rounded-sm border-hyper-blue-400 bg-base-200 font-dm-sans normal-case",
       )}
     >
       {children}
