@@ -4,13 +4,13 @@ import {
   CircleStackIcon,
   XMarkIcon,
 } from "@heroicons/react/20/solid";
+import assertNever from "assert-never";
 import classNames from "classnames";
 import { PropsWithChildren, ReactElement, useState } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { PositionType } from "src/ui/hyperdrive/types";
 import { OpenLongPositionForm } from "src/ui/trading/OpenLongPositionForm";
 import { OpenShortPositionForm } from "src/ui/trading/OpenShortPositionForm";
-import { match } from "ts-pattern";
 
 interface PositionFormProps {
   market: Hyperdrive;
@@ -62,11 +62,18 @@ export function PositionForm({
         </PositionFormButton>
       </div>
 
-      {match(position)
-        .with("Long", () => <OpenLongPositionForm market={market} />)
-        .with("Short", () => <OpenShortPositionForm market={market} />)
-        .with("LP", () => <div></div>)
-        .exhaustive()}
+      {(() => {
+        switch (position) {
+          case "Long":
+            return <OpenLongPositionForm market={market} />;
+          case "Short":
+            return <OpenShortPositionForm market={market} />;
+          case "LP":
+            return <div></div>;
+          default:
+            assertNever(position);
+        }
+      })()}
     </div>
   );
 }

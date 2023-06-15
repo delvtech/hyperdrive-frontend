@@ -1,8 +1,8 @@
+import assertNever from "assert-never";
 import classNames from "classnames";
 import { ReactElement, useState } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { OpenOrdersTable } from "src/ui/orders/OpenOrdersTable/OpenOrdersTable";
-import { match } from "ts-pattern";
 import { ClosedOrdersTable } from "./ClosedOrdersTable";
 
 interface PositionsTableProps {
@@ -39,10 +39,16 @@ export function PositionsTable({
 
       <div className="flex-col gap-y-4  pt-4">
         <div className="overflow-scroll">
-          {match(selectedTable)
-            .with("Open", () => <OpenOrdersTable hyperdrive={hyperdrive} />)
-            .with("Closed", () => <ClosedOrdersTable market={hyperdrive} />)
-            .exhaustive()}
+          {(() => {
+            switch (selectedTable) {
+              case "Open":
+                return <OpenOrdersTable hyperdrive={hyperdrive} />;
+              case "Closed":
+                return <ClosedOrdersTable market={hyperdrive} />;
+              default:
+                assertNever(selectedTable);
+            }
+          })()}
         </div>
       </div>
     </div>
