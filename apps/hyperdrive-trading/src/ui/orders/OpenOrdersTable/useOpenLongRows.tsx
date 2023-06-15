@@ -50,6 +50,7 @@ function createOpenLongRow({
     baseToken: { decimals: baseDecimals, symbol: baseSymbol },
   } = hyperdrive;
 
+  const modalId = `${long.assetId}`;
   return {
     cells: [
       <span key="type" className={"font-bold text-hyper-green"}>
@@ -68,16 +69,14 @@ function createOpenLongRow({
         {new Date(Number(long.maturity * 1000n)).toLocaleDateString()}
       </span>,
       <span key="close-long">
-        <Button
-          size="sm"
-          onClick={() => (window as any).closeLongModal.showModal()}
-        >
+        <Button size="sm" onClick={() => (window as any)[modalId].showModal()}>
           <XMarkIcon
             className="w-6 text-white opacity-70 hover:opacity-100 focus:opacity-100"
             title="Close long position"
           />
         </Button>
         <CloseLongModal
+          id={modalId}
           long={long}
           baseDecimals={baseDecimals}
           baseSymbol={baseSymbol}
@@ -115,12 +114,14 @@ function ValueCell({
 }
 
 interface CloseLongModalProps {
+  id: string;
   long: Long;
   baseDecimals: number;
   baseSymbol: string;
 }
 
 function CloseLongModal({
+  id,
   long,
   baseDecimals,
   baseSymbol,
@@ -143,7 +144,7 @@ function CloseLongModal({
   });
 
   return (
-    <dialog id="closeLongModal" className="daisy-modal">
+    <dialog id={id} className="daisy-modal">
       <form method="dialog" className="daisy-modal-box">
         <button className="daisy-btn-ghost daisy-btn-sm daisy-btn-circle daisy-btn absolute right-4 top-4">
           <XMarkIcon
@@ -171,9 +172,7 @@ function CloseLongModal({
         </Button>
       </form>
       <form method="dialog" className="daisy-modal-backdrop">
-        <Button onClick={() => (window as any).closeLongModal.close()}>
-          close
-        </Button>
+        <Button onClick={() => (window as any)[id].close()}>close</Button>
       </form>
     </dialog>
   );
