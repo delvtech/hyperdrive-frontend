@@ -41,7 +41,7 @@ export function LongPositionOverviewWell({
           <p className="mr-auto">Claimable at Maturity</p>
           <p className="font-semibold tracking-wide">
             {formatBalance(
-              formatBigInt(long.amount, hyperdrive.baseToken.decimals),
+              formatBigInt(long.bondAmount, hyperdrive.baseToken.decimals),
               4,
               false,
             )}{" "}

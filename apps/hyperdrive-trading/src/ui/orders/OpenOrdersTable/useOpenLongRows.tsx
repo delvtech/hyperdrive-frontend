@@ -58,7 +58,7 @@ function createOpenLongRow({
         Long
       </span>,
       <span key="size">
-        {formatBalance(formatUnits(long.amount, baseDecimals), 4)}
+        {formatBalance(formatUnits(long.bondAmount, baseDecimals), 4)}
       </span>,
       <ValueCell
         key="value"
@@ -96,7 +96,7 @@ function ValueCell({
   const { baseAmountOut } = usePreviewCloseLong({
     hyperdriveAddress: long.hyperdriveAddress,
     maturityTime: long.maturity,
-    bondAmountIn: long.amount,
+    bondAmountIn: long.bondAmount,
     minBaseAmountOut: parseUnits("1", 18), // TODO: slippage
     destination: account,
   });
