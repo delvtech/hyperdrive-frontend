@@ -6,7 +6,7 @@ import { PublicClient, Address, Transport, Chain } from "viem";
 import { ClosedLong, Long } from "./types";
 import { getCloseLongEvents } from "src/pools/longs/getCloseLongEvents";
 
-export interface GetCloseLongsOptions {
+export interface GetClosedLongsOptions {
   traderAddress: Address;
   hyperdriveAddress: Address;
   publicClient: PublicClient<Transport, Chain>;
@@ -16,16 +16,16 @@ export async function getClosedLongs({
   traderAddress,
   hyperdriveAddress,
   publicClient,
-}: GetCloseLongsOptions): Promise<Long[]> {
-  const longsClosed = await getCloseLongEvents({
+}: GetClosedLongsOptions): Promise<ClosedLong[]> {
+  const closedLongs = await getCloseLongEvents({
     args: { traderAddress },
     hyperdriveAddress,
     publicClient,
   });
 
   // users may close a long position in parts, so we need to sum the events
-  const longsClosedById = mapValues(
-    groupBy(longsClosed, (event) => event.eventData.assetId),
+  const closedLongsById = mapValues(
+    groupBy(closedLongs, (event) => event.eventData.assetId),
     (events): ClosedLong => {
       const { assetId, maturityTime } = events[0].eventData;
       return {
@@ -42,7 +42,7 @@ export async function getClosedLongs({
     },
   );
 
-  return Object.values(longsClosedById).filter((long) => long.bondAmount);
+  return Object.values(closedLongsById).filter((long) => long.bondAmount);
 }
 
 /**
@@ -57,7 +57,7 @@ export function getCloseLongsQuery({
   hyperdriveAddress,
   publicClient,
   traderAddress: account,
-}: Partial<GetCloseLongsOptions>): QueryObserverOptions<
+}: Partial<GetClosedLongsOptions>): QueryObserverOptions<
   Awaited<ReturnType<typeof getClosedLongs>>
 > {
   const queryEnabled = !!account && !!hyperdriveAddress && !!publicClient;
