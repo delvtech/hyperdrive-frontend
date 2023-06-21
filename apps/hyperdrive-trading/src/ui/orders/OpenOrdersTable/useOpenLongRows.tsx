@@ -4,7 +4,7 @@ import { Hyperdrive } from "src/appconfig/types";
 import { Button } from "src/ui/base/components/Button";
 import { Row } from "src/ui/base/components/tables/SortableGridTable";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { useOpenLongs } from "src/ui/hyperdrive/hooks/useLongs";
+import { useOpenLongs } from "src/ui/hyperdrive/hooks/useOpenLongs";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/hooks/usePreviewCloseLong";
 import { CloseLongModal } from "src/ui/orders/OpenOrdersTable/CloseLongModal";
 import { Address, formatUnits, parseUnits } from "viem";

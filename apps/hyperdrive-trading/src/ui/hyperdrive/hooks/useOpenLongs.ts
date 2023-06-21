@@ -3,12 +3,15 @@ import { useQuery } from "@tanstack/react-query";
 import { Address } from "viem";
 import { usePublicClient } from "wagmi";
 
-interface UseLongsOptions {
+interface UseOpenLongsOptions {
   account: Address | undefined;
   hyperdriveAddress: Address | undefined;
 }
 
-export function useOpenLongs({ account, hyperdriveAddress }: UseLongsOptions): {
+export function useOpenLongs({
+  account,
+  hyperdriveAddress,
+}: UseOpenLongsOptions): {
   openLongs: Long[] | undefined;
   openLongsStatus: "error" | "success" | "loading";
 } {
