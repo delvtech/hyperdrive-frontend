@@ -37,7 +37,7 @@ export function Trade(): ReactElement {
   const [tradeModalOpen, setTradeModalOpen] = useState(false);
 
   const { mint } = useMintBaseToken({
-    amount: parseUnits("100", 18),
+    amount: parseUnits("100", market.baseToken.decimals),
     baseToken: market.baseToken.address,
     destination: account,
   });

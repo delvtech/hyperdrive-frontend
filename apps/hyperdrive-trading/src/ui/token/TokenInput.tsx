@@ -1,4 +1,4 @@
-import { ChangeEvent, ReactElement } from "react";
+import { ReactElement } from "react";
 import { Token } from "src/appconfig/types";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 
@@ -21,10 +21,6 @@ export function TokenInput({
   disabled = false,
   autoFocus = false,
 }: TokenInputProps): ReactElement {
-  const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
-    onChange(event.target.value);
-  };
-
   return (
     <div className="flex flex-col gap-y-2 rounded border border-hyper-blue-300 bg-base-200 p-4 font-dm-sans">
       <div className="flex gap-x-4">
@@ -34,7 +30,7 @@ export function TokenInput({
           max={maxValue}
           min="0"
           name="Base Token Input"
-          onChange={handleOnChange}
+          onChange={(event) => onChange(event.target.value)}
           placeholder="0"
           type="number"
           value={value}
@@ -44,8 +40,6 @@ export function TokenInput({
         <div className="flex min-w-fit items-center gap-x-2">
           {token.iconUrl && <img className="h-6" src={token.iconUrl} />}
           <h4 className="font-semibold uppercase">{token.symbol}</h4>
-          {/* TODO: support multiple token input options */}
-          {/* <ChevronDownIcon className="w-6 h-6 stroke-hyper-blue-100 fill-hyper-blue-100" /> */}
         </div>
       </div>
 
