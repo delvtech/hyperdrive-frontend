@@ -13,4 +13,5 @@ export interface Long {
 export interface ClosedLong extends Long {
   // A closed long will include the baseAmount that was redeemed
   baseAmount: bigint;
+  closedTimestamp: bigint;
 }

@@ -69,14 +69,17 @@ export async function getOpenLongs({
     },
   );
 
-  const openLongsById = mapValues(longsMintedOrReceivedById, (long, key) => {
-    const matchingExit = longsRedeemedOrSentById[key];
-    if (matchingExit) {
-      const newAmount = long.bondAmount - matchingExit.bondAmount;
-      return { ...long, amount: newAmount };
-    }
-    return long;
-  });
+  const openLongsById = mapValues(
+    longsMintedOrReceivedById,
+    (long, key): Long => {
+      const matchingExit = longsRedeemedOrSentById[key];
+      if (matchingExit) {
+        const newBondAmount = long.bondAmount - matchingExit.bondAmount;
+        return { ...long, bondAmount: newBondAmount };
+      }
+      return long;
+    },
+  );
 
   return Object.values(openLongsById).filter((long) => long.bondAmount);
 }

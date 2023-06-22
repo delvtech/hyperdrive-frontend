@@ -3,7 +3,7 @@ import groupBy from "lodash.groupby";
 import mapValues from "lodash.mapvalues";
 import { sumBigInt } from "src/base/sumBy";
 import { PublicClient, Address, Transport, Chain } from "viem";
-import { ClosedLong, Long } from "./types";
+import { ClosedLong } from "./types";
 import { getCloseLongEvents } from "src/pools/longs/getCloseLongEvents";
 
 export interface GetClosedLongsOptions {
@@ -23,26 +23,27 @@ export async function getClosedLongs({
     publicClient,
   });
 
-  // users may close a long position in parts, so we need to sum the events
-  const closedLongsById = mapValues(
-    groupBy(closedLongs, (event) => event.eventData.assetId),
-    (events): ClosedLong => {
-      const { assetId, maturityTime } = events[0].eventData;
+  const closedLongsById = await Promise.all(
+    closedLongs.map(async (event) => {
+      const {
+        eventData: { assetId, maturityTime },
+      } = event;
       return {
         hyperdriveAddress,
         assetId,
         maturity: maturityTime,
-        bondAmount: sumBigInt(
-          events.map((event) => event.eventData.bondAmount),
-        ),
-        baseAmount: sumBigInt(
-          events.map((event) => event.eventData.baseAmount),
-        ),
+        bondAmount: event.eventData.bondAmount,
+        baseAmount: event.eventData.baseAmount,
+        closedTimestamp: (
+          await publicClient.getBlock({
+            blockNumber: event.eventLog.blockNumber as bigint,
+          })
+        ).timestamp,
       };
-    },
+    }),
   );
 
-  return Object.values(closedLongsById).filter((long) => long.bondAmount);
+  return await Promise.all([...Object.values(closedLongsById)]);
 }
 
 /**
