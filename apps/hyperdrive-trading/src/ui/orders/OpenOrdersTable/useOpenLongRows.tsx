@@ -4,7 +4,7 @@ import { Hyperdrive } from "src/appconfig/types";
 import { Button } from "src/ui/base/components/Button";
 import { Row } from "src/ui/base/components/tables/SortableGridTable";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { useOpenLongs } from "src/ui/hyperdrive/hooks/useLongs";
+import { useOpenLongs } from "src/ui/hyperdrive/hooks/useOpenLongs";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/hooks/usePreviewCloseLong";
 import { CloseLongModal } from "src/ui/orders/OpenOrdersTable/CloseLongModal";
 import { Address, formatUnits, parseUnits } from "viem";
@@ -26,6 +26,7 @@ export function useOpenLongRows({
     account,
     hyperdriveAddress: hyperdrive?.address,
   });
+  console.log("openLongs", openLongs);
 
   const openLongRows = hyperdrive
     ? openLongs.map((long) =>
@@ -58,7 +59,7 @@ function createOpenLongRow({
         Long
       </span>,
       <span key="size">
-        {formatBalance(formatUnits(long.amount, baseDecimals), 4)}
+        {formatBalance(formatUnits(long.bondAmount, baseDecimals), 4)}
       </span>,
       <ValueCell
         key="value"
@@ -96,7 +97,7 @@ function ValueCell({
   const { baseAmountOut } = usePreviewCloseLong({
     hyperdriveAddress: long.hyperdriveAddress,
     maturityTime: long.maturity,
-    bondAmountIn: long.amount,
+    bondAmountIn: long.bondAmount,
     minBaseAmountOut: parseUnits("1", 18), // TODO: slippage
     destination: account,
   });

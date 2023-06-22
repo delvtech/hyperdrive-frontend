@@ -88,7 +88,7 @@ export function OpenLongPositionForm({
         <LongPositionOverviewWell
           hyperdrive={market}
           long={{
-            amount: longAmountOut || 0n,
+            bondAmount: longAmountOut || 0n,
             assetId: 0n,
             hyperdriveAddress: market.address,
             maturity: BigInt(

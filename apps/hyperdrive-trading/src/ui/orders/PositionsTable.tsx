@@ -2,8 +2,8 @@ import assertNever from "assert-never";
 import classNames from "classnames";
 import { ReactElement, useState } from "react";
 import { Hyperdrive } from "src/appconfig/types";
+import { ClosedOrdersTable } from "src/ui/orders/ClosedOrdersTable/ClosedOrdersTable";
 import { OpenOrdersTable } from "src/ui/orders/OpenOrdersTable/OpenOrdersTable";
-import { ClosedOrdersTable } from "./ClosedOrdersTable";
 
 interface PositionsTableProps {
   hyperdrive: Hyperdrive;
@@ -37,14 +37,15 @@ export function PositionsTable({
         </button>
       </div>
 
-      <div className="flex-col gap-y-4  pt-4">
-        <div className="overflow-scroll">
+      <div className="flex-col gap-y-4 pt-4">
+        {/* TODO: Hack to make the div scrollable, use a calculated height instead */}
+        <div className="h-72 overflow-scroll">
           {(() => {
             switch (selectedTable) {
               case "Open":
                 return <OpenOrdersTable hyperdrive={hyperdrive} />;
               case "Closed":
-                return <ClosedOrdersTable market={hyperdrive} />;
+                return <ClosedOrdersTable hyperdrive={hyperdrive} />;
               default:
                 assertNever(selectedTable);
             }

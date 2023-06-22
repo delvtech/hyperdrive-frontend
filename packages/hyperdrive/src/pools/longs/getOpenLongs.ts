@@ -4,22 +4,13 @@ import mapValues from "lodash.mapvalues";
 import { sumBigInt } from "src/base/sumBy";
 import { decodeAssetId } from "src/pools/assetId";
 import { getTransferSingleEvents } from "src/pools/getTransferSingleEvents";
+import { Long } from "src/pools/longs/types";
 import { PublicClient, Address, Transport, Chain } from "viem";
 
 export interface GetOpenLongsOptions {
   account: Address;
   hyperdriveAddress: Address;
   publicClient: PublicClient<Transport, Chain>;
-}
-
-interface Long {
-  hyperdriveAddress: Address;
-  assetId: bigint;
-  amount: bigint;
-  /**
-   * Time in seconds when this long will mature
-   */
-  maturity: bigint;
 }
 
 export async function getOpenLongs({
@@ -47,7 +38,7 @@ export async function getOpenLongs({
       return {
         hyperdriveAddress,
         assetId,
-        amount: sumBigInt(events.map((event) => event.eventData.value)),
+        bondAmount: sumBigInt(events.map((event) => event.eventData.value)),
         maturity: decodeAssetId(events[0].eventLog.data).timestamp,
       };
     },
@@ -72,22 +63,25 @@ export async function getOpenLongs({
       return {
         hyperdriveAddress,
         assetId,
-        amount: sumBigInt(events.map((event) => event.eventData.value)),
+        bondAmount: sumBigInt(events.map((event) => event.eventData.value)),
         maturity: decodeAssetId(events[0].eventLog.data).timestamp,
       };
     },
   );
 
-  const openLongsById = mapValues(longsMintedOrReceivedById, (long, key) => {
-    const matchingExit = longsRedeemedOrSentById[key];
-    if (matchingExit) {
-      const newAmount = long.amount - matchingExit.amount;
-      return { ...long, amount: newAmount };
-    }
-    return long;
-  });
+  const openLongsById = mapValues(
+    longsMintedOrReceivedById,
+    (long, key): Long => {
+      const matchingExit = longsRedeemedOrSentById[key];
+      if (matchingExit) {
+        const newBondAmount = long.bondAmount - matchingExit.bondAmount;
+        return { ...long, bondAmount: newBondAmount };
+      }
+      return long;
+    },
+  );
 
-  return Object.values(openLongsById).filter((long) => long.amount);
+  return Object.values(openLongsById).filter((long) => long.bondAmount);
 }
 
 /**
@@ -108,7 +102,7 @@ export function getOpenLongsQuery({
   const queryEnabled = !!account && !!hyperdriveAddress && !!publicClient;
   return {
     enabled: queryEnabled,
-    queryKey: ["longs", { hyperdriveAddress, account }],
+    queryKey: ["open-longs", { hyperdriveAddress, account }],
     queryFn: queryEnabled
       ? () => getOpenLongs({ account, hyperdriveAddress, publicClient })
       : undefined,

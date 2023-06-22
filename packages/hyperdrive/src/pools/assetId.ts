@@ -12,7 +12,6 @@ export type AssetType = "LP" | "LONG" | "SHORT" | "WITHDRAWAL_SHARE";
 /**
  * Decodes an encoded asset ID into it's constituent parts: an assetType and
  * timestamp.
- * example input from event.data:
  */
 export function decodeAssetId(assetId: Hash): {
   assetType: AssetType;
