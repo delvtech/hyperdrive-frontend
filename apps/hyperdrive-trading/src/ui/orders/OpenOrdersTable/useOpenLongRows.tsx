@@ -26,6 +26,7 @@ export function useOpenLongRows({
     account,
     hyperdriveAddress: hyperdrive?.address,
   });
+  console.log("openLongs", openLongs);
 
   const openLongRows = hyperdrive
     ? openLongs.map((long) =>

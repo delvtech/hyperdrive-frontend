@@ -43,7 +43,7 @@ export function CloseLongForm({
 
   const { closeLong, isPendingWalletAction } = useCloseLong({
     long,
-    bondAmountIn: long.bondAmount,
+    bondAmountIn: amountAsBigInt,
     minBaseAmountOut: parseUnits("1", baseDecimals),
     destination: account,
     enabled: previewCloseLongStatus === "success",
