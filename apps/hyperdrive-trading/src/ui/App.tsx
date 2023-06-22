@@ -8,7 +8,6 @@ import {
 import { Markets } from "src/pages/Markets";
 import { Trade } from "src/pages/Trade";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
-import { Navbar } from "src/ui/base/components/Navbar";
 import { useLocalStorage } from "src/ui/base/hooks/useLocalStorage";
 
 const LASTED_VIEWED_MARKET_KEY = "last-viewed-market";
@@ -16,7 +15,6 @@ const LASTED_VIEWED_MARKET_KEY = "last-viewed-market";
 function BaseLayout(): ReactElement {
   return (
     <div className="flex h-full min-h-screen flex-col bg-gradient-to-b from-base-200 to-base-300">
-      <Navbar />
       <Outlet />
     </div>
   );
@@ -69,14 +67,11 @@ export function App(): ReactElement {
               if (market) {
                 setLastViewedMarket(market.address);
                 return market;
-              } else {
-                if (lastViewedMarket) {
-                  return redirect(`/trade/${lastViewedMarket}`);
-                }
-                // we fall back to the first market in the config
-                // this should rarely happen
-                return redirect(`/trade/${appConfig?.hyperdrives[0].address}`);
               }
+
+              // we fall back to the first market in the config
+              // this should rarely happen
+              return redirect(`/trade/${appConfig?.hyperdrives[0].address}`);
             },
           },
         ],
