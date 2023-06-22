@@ -19,7 +19,6 @@ export function OpenOrdersTable({
     hyperdrive,
   });
 
-  console.log("longRows", longRows);
   // TODO: Add useOpenShortRows hook
 
   const allRows = [...longRows];
