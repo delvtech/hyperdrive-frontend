@@ -26,14 +26,14 @@ export async function getClosedLongs({
   const closedLongsById = await Promise.all(
     closedLongs.map(async (event) => {
       const {
-        eventData: { assetId, maturityTime },
+        eventData: { assetId, maturityTime, baseAmount, bondAmount },
       } = event;
       return {
         hyperdriveAddress,
         assetId,
         maturity: maturityTime,
-        bondAmount: event.eventData.bondAmount,
-        baseAmount: event.eventData.baseAmount,
+        bondAmount,
+        baseAmount,
         closedTimestamp: (
           await publicClient.getBlock({
             blockNumber: event.eventLog.blockNumber as bigint,
