@@ -7,9 +7,7 @@ interface PositionsTableProps {
   hyperdrive: Hyperdrive;
 }
 
-export function PositionsTable({
-  hyperdrive,
-}: PositionsTableProps): ReactElement {
+export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
   return (
     <div className="flex flex-col gap-24 p-8">
       <div className="flex flex-col gap-2">

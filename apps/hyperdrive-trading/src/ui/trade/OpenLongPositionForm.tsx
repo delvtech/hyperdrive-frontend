@@ -10,7 +10,7 @@ import { usePreviewOpenLong } from "src/ui/hyperdrive/hooks/usePreviewOpenLong";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenApproval } from "src/ui/token/hooks/useTokenApproval";
 import { TokenInput } from "src/ui/token/TokenInput";
-import { LongPositionOverviewWell } from "src/ui/trading/LongPositionOverviewWell";
+import { LongPositionOverviewWell } from "src/ui/trade/LongPositionOverviewWell";
 import { useAccount, useBalance } from "wagmi";
 
 interface OpenLongPositionFormProps {

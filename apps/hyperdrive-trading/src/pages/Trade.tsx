@@ -7,9 +7,9 @@ import { parseUnits } from "src/base/parseUnits";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Button } from "src/ui/base/components/Button";
 import { Stat } from "src/ui/base/components/Stat";
-import { PositionsTable } from "src/ui/orders/PositionsTable";
 import { YieldSourceLabel } from "src/ui/protocol/ProtocolLabel";
-import { PositionForm } from "src/ui/trading/PositionForm";
+import { PositionForm } from "src/ui/trade/PositionForm";
+import { TradeBody } from "src/ui/trade/TradeBody";
 import { Address } from "viem";
 import {
   useAccount,
@@ -62,17 +62,16 @@ export function Trade(): ReactElement {
                 label="Protocol"
                 value={<YieldSourceLabel yieldSource={yieldSource} />}
               />
-              <Stat label="APR" value="1.50%" />
               <Stat label="Liquidity" value="$100M" />
+              <Stat label="Long APR" value="1.50%" />
               <Stat label="LP APY" value="1.60%" />
               <Stat label="Volume (24h)" value="$4.4M" />
-              <Stat label="Fees (24h)" value="$1.4k" />
             </div>
           </div>
         </div>
 
-        <div className="h-auto">
-          <PositionsTable hyperdrive={market} />
+        <div className="overflow-hidden">
+          <TradeBody hyperdrive={market} />
         </div>
       </div>
     </div>

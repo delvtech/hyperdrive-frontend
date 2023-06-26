@@ -10,8 +10,8 @@ import { PropsWithChildren, ReactElement, useState } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { PositionType } from "src/ui/hyperdrive/types";
 import { MarketsTableLarge } from "src/ui/markets/MarketsTableLarge";
-import { OpenLongPositionForm } from "src/ui/trading/OpenLongPositionForm";
-import { OpenShortPositionForm } from "src/ui/trading/OpenShortPositionForm";
+import { OpenLongPositionForm } from "src/ui/trade/OpenLongPositionForm";
+import { OpenShortPositionForm } from "src/ui/trade/OpenShortPositionForm";
 
 interface PositionFormProps {
   market: Hyperdrive;

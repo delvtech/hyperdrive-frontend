@@ -10,7 +10,7 @@ import { usePositions } from "src/ui/hyperdrive/hooks/usePositions";
 import { usePreviewCloseShort } from "src/ui/hyperdrive/hooks/usePreviewCloseShort";
 import { Position } from "src/ui/hyperdrive/types";
 import { TokenInput } from "src/ui/token/TokenInput";
-import { ShortPositionOverviewWell } from "src/ui/trading/ShortPositionOverviewWell";
+import { ShortPositionOverviewWell } from "src/ui/trade/ShortPositionOverviewWell";
 import { useAccount } from "wagmi";
 
 interface CloseShortPositionFormProps {
