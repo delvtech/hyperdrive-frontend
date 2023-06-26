@@ -71,7 +71,16 @@ module.exports = {
   },
   plugins: [require("daisyui")],
   daisyui: {
-    themes: ["night"],
+    themes: [
+      {
+        night: {
+          // eslint-disable-next-line @typescript-eslint/no-var-requires
+          ...require("daisyui/src/theming/themes")["[data-theme=night]"],
+          primary: "#F4B1FF",
+          "base-100": "#30305A",
+        },
+      },
+    ],
     prefix: "daisy-",
   },
 };

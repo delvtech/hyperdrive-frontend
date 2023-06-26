@@ -22,15 +22,15 @@ export function TradeSideBar({ market }: TradeSideBarProps): ReactElement {
   const [position, setPosition] = useState<PositionType>("Long");
 
   return (
-    <div className="flex flex-col">
-      <h4 className="mb-8 whitespace-nowrap font-akira text-h4 uppercase text-hyper-pink">
+    <div className="flex flex-col gap-8">
+      <h4 className="whitespace-nowrap font-akira text-h4 uppercase text-primary">
         Hyperdrive
       </h4>
 
-      <div className="flex w-full justify-between gap-4">
+      <div className="flex w-full justify-between">
         <label
           htmlFor={MARKETS_MODAL_KEY}
-          className="daisy-btn-lg daisy-btn w-full justify-between rounded-sm bg-base-300 "
+          className="daisy-btn-lg daisy-btn w-full justify-between"
         >
           <span className="text-h6 normal-case">{market.name} </span>
           <span className="inline-flex items-center gap-2 text-sm">
@@ -40,7 +40,7 @@ export function TradeSideBar({ market }: TradeSideBarProps): ReactElement {
       </div>
 
       {/* Position button group */}
-      <div className="daisy-join mb-8 mt-2 w-full">
+      <div className="daisy-join w-full">
         <PositionFormButton
           onClick={() => setPosition("Long")}
           active={position === "Long"}
