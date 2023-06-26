@@ -13,12 +13,12 @@ import { MarketsTableLarge } from "src/ui/markets/MarketsTableLarge";
 import { OpenLongPositionForm } from "src/ui/trade/OpenLongPositionForm";
 import { OpenShortPositionForm } from "src/ui/trade/OpenShortForm/OpenShortForm";
 
-interface PositionFormProps {
+interface TradeSideBarProps {
   market: Hyperdrive;
 }
 
 const MARKETS_MODAL_KEY = "MARKETS_MODAL";
-export function PositionForm({ market }: PositionFormProps): ReactElement {
+export function TradeSideBar({ market }: TradeSideBarProps): ReactElement {
   const [position, setPosition] = useState<PositionType>("Long");
 
   return (

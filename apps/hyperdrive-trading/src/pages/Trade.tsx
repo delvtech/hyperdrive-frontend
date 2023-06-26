@@ -1,5 +1,4 @@
-import { ERC20MintableABI } from "@hyperdrive/core";
-import { ConnectButton, useAddRecentTransaction } from "@rainbow-me/rainbowkit";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { ReactElement } from "react";
 import { useLoaderData } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
@@ -8,15 +7,10 @@ import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Button } from "src/ui/base/components/Button";
 import { Stat } from "src/ui/base/components/Stat";
 import { YieldSourceLabel } from "src/ui/protocol/ProtocolLabel";
-import { PositionForm } from "src/ui/trade/PositionForm";
+import { useMintBaseToken } from "src/ui/token/hooks/useMintBaseToken";
 import { TradeBody } from "src/ui/trade/TradeBody";
-import { Address } from "viem";
-import {
-  useAccount,
-  useChainId,
-  useContractWrite,
-  usePrepareContractWrite,
-} from "wagmi";
+import { TradeSideBar } from "src/ui/trade/TradeSideBar";
+import { useAccount, useChainId } from "wagmi";
 
 export function Trade(): ReactElement {
   // Safe to cast this variable because router configs this page is rendered with a valid market
@@ -37,7 +31,7 @@ export function Trade(): ReactElement {
     <div className="grid h-full grid-cols-[450px_1fr]">
       {/* Sidebar */}
       <div className="flex h-full shrink-0 flex-col px-8 py-6">
-        <PositionForm market={market} />
+        <TradeSideBar market={market} />
       </div>
 
       {/* Content column */}
@@ -70,44 +64,8 @@ export function Trade(): ReactElement {
           </div>
         </div>
 
-        <div className="overflow-hidden">
-          <TradeBody hyperdrive={market} />
-        </div>
+        <TradeBody hyperdrive={market} />
       </div>
     </div>
   );
-}
-function useMintBaseToken({
-  baseToken,
-  destination,
-  amount,
-}: {
-  baseToken: Address;
-  destination: Address | undefined;
-  amount: bigint;
-}) {
-  const addRecentTransaction = useAddRecentTransaction();
-  const chainId = useChainId();
-
-  const isEnabled = !!destination && !!amount && chainId === 31337;
-
-  const { config } = usePrepareContractWrite({
-    address: baseToken,
-    abi: ERC20MintableABI,
-    functionName: "mint",
-    enabled: isEnabled,
-    args: isEnabled ? [destination, amount] : undefined,
-  });
-
-  const { write: mint } = useContractWrite({
-    ...config,
-    onSuccess: (result) => {
-      addRecentTransaction({
-        hash: result.hash,
-        description: `Mint tokens`,
-      });
-    },
-  });
-
-  return { mint };
 }
