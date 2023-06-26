@@ -62,10 +62,11 @@ export function Trade(): ReactElement {
                 label="Protocol"
                 value={<YieldSourceLabel yieldSource={yieldSource} />}
               />
+              <Stat label="APR" value="1.50%" />
               <Stat label="Liquidity" value="$100M" />
-              <Stat label="Long APR" value="1.50%" />
               <Stat label="LP APY" value="1.60%" />
               <Stat label="Volume (24h)" value="$4.4M" />
+              <Stat label="Fees (24h)" value="$1.4k" />
             </div>
           </div>
         </div>
