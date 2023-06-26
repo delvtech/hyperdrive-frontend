@@ -6,7 +6,7 @@ import { Row } from "src/ui/base/components/tables/SortableGridTable";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useOpenLongs } from "src/ui/hyperdrive/hooks/useOpenLongs";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/hooks/usePreviewCloseLong";
-import { CloseLongModal } from "src/ui/orders/OpenOrdersTable/CloseLongModal";
+import { CloseLongModal } from "src/ui/trade/OpenOrdersTable/CloseLongModal";
 import { Address, formatUnits, parseUnits } from "viem";
 import { useAccount } from "wagmi";
 

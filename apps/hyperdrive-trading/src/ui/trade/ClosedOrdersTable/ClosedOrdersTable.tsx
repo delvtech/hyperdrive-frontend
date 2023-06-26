@@ -2,7 +2,7 @@
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { SortableGridTable } from "src/ui/base/components/tables/SortableGridTable";
-import { useClosedLongRows } from "src/ui/orders/ClosedOrdersTable/useClosedLongRows";
+import { useClosedLongRows } from "src/ui/trade/ClosedOrdersTable/useClosedLongRows";
 import { useAccount } from "wagmi";
 
 interface ClosedOrdersTableProps {
