@@ -14,7 +14,7 @@ const LASTED_VIEWED_MARKET_KEY = "last-viewed-market";
 
 function BaseLayout(): ReactElement {
   return (
-    <div className="flex h-full min-h-screen flex-col bg-gradient-to-b from-base-200 to-base-300">
+    <div className="flex h-full flex-col bg-gradient-to-b from-base-200 to-base-300">
       <Outlet />
     </div>
   );
@@ -81,7 +81,7 @@ export function App(): ReactElement {
   }, [appConfig]);
 
   return (
-    <div className="flex h-full min-h-screen flex-col bg-gradient-to-b from-base-200 to-base-300">
+    <div className="flex h-full flex-col bg-gradient-to-b from-base-200 to-base-300">
       <RouterProvider router={router} />
     </div>
   );

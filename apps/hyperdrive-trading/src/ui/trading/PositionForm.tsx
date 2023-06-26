@@ -1,40 +1,42 @@
 import {
   ArrowTrendingDownIcon,
   ArrowTrendingUpIcon,
+  ChevronDownIcon,
   CircleStackIcon,
-  XMarkIcon,
 } from "@heroicons/react/20/solid";
 import assertNever from "assert-never";
 import classNames from "classnames";
 import { PropsWithChildren, ReactElement, useState } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { PositionType } from "src/ui/hyperdrive/types";
+import { MarketsTableLarge } from "src/ui/markets/MarketsTableLarge";
 import { OpenLongPositionForm } from "src/ui/trading/OpenLongPositionForm";
 import { OpenShortPositionForm } from "src/ui/trading/OpenShortPositionForm";
 
 interface PositionFormProps {
   market: Hyperdrive;
-  handleClose?: () => void;
 }
 
-export function PositionForm({
-  market,
-  handleClose,
-}: PositionFormProps): ReactElement {
+const MARKETS_MODAL_KEY = "MARKETS_MODAL";
+export function PositionForm({ market }: PositionFormProps): ReactElement {
   const [position, setPosition] = useState<PositionType>("Long");
 
   return (
     <div className="flex flex-col">
-      {/* Header */}
-      <div className="flex items-center justify-end">
-        {handleClose && (
-          <div>
-            <XMarkIcon
-              className="h-6 cursor-pointer stroke-hyper-blue-100 stroke-2  hover:opacity-50"
-              onClick={handleClose}
-            />
-          </div>
-        )}
+      <h4 className="mb-8 whitespace-nowrap font-akira text-h4 uppercase text-hyper-pink">
+        Hyperdrive
+      </h4>
+
+      <div className="flex w-full justify-between gap-4">
+        <label
+          htmlFor={MARKETS_MODAL_KEY}
+          className="daisy-btn-lg daisy-btn w-full justify-between rounded-sm bg-base-300 "
+        >
+          <span className="text-h6 normal-case">{market.name} </span>
+          <span className="inline-flex items-center gap-2 text-sm">
+            Select market <ChevronDownIcon className="h-8" />
+          </span>
+        </label>
       </div>
 
       {/* Position button group */}
@@ -74,6 +76,22 @@ export function PositionForm({
             assertNever(position);
         }
       })()}
+      {/* Markets modal */}
+      <input
+        type="checkbox"
+        id={MARKETS_MODAL_KEY}
+        className="daisy-modal-toggle"
+      />
+      <label
+        htmlFor={MARKETS_MODAL_KEY}
+        className="daisy-modal cursor-pointer px-8"
+      >
+        <div className="flex max-h-[70vh] flex-col items-center overflow-auto rounded bg-base-100 p-4">
+          <h3 className="font-akira">Markets</h3>
+
+          <MarketsTableLarge />
+        </div>
+      </label>
     </div>
   );
 }
