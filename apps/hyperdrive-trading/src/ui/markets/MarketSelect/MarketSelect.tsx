@@ -15,9 +15,8 @@ export function MarketSelect({
       <div className="flex w-full justify-between">
         <label
           htmlFor={MARKETS_MODAL_KEY}
-          className="daisy-btn-lg daisy-btn w-full justify-between"
+          className="daisy-btn-ghost daisy-btn-lg daisy-btn w-full justify-between"
         >
-          <span className="text-h6 normal-case">{markets[0].name} </span>
           <span className="inline-flex items-center gap-2 text-sm">
             Select market <ChevronDownIcon className="h-8" />
           </span>

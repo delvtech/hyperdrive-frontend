@@ -6,21 +6,23 @@ import { ClosedOrdersTable } from "src/ui/trade/ClosedOrdersTable/ClosedOrdersTa
 import { OpenOrdersTable } from "src/ui/trade/OpenOrdersTable/OpenOrdersTable";
 
 type TabId = "Open" | "Closed";
-export function OrdersSection({
+export function PositionsSection({
   hyperdrive,
 }: {
   hyperdrive: Hyperdrive;
 }): ReactElement {
   const [activeTab, setActiveTab] = useState<TabId>("Open");
   return (
-    <>
+    <div>
       <div className="flex w-full items-center justify-between border-b border-base-500">
-        <span className="text-h5 font-semibold">Your Positions</span>
+        <span className="font-rubik text-h5 text-hyper-blue-200">
+          Your Positions
+        </span>
         <div className="daisy-tabs">
           <a
             onClick={() => setActiveTab("Open")}
             className={classNames(
-              "daisy-tab-lifted daisy-tab daisy-tab-lg font-semibold ",
+              "daisy-tab-lifted daisy-tab daisy-tab-lg font-rubik",
               {
                 "daisy-tab-active": activeTab === "Open",
               },
@@ -31,7 +33,7 @@ export function OrdersSection({
           <a
             onClick={() => setActiveTab("Closed")}
             className={classNames(
-              "daisy-tab-lifted daisy-tab daisy-tab-lg font-semibold ",
+              "daisy-tab-lifted daisy-tab daisy-tab-lg font-rubik",
               {
                 "daisy-tab-active": activeTab === "Closed",
               },
@@ -42,7 +44,7 @@ export function OrdersSection({
         </div>
       </div>
 
-      <div className="mt-2 mb-24 flex flex-col gap-2">
+      <div className="flex flex-col gap-2">
         {(() => {
           switch (activeTab) {
             case "Open":
@@ -54,6 +56,6 @@ export function OrdersSection({
           }
         })()}
       </div>
-    </>
+    </div>
   );
 }
