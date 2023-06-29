@@ -27,7 +27,7 @@ export function OpenLongModalButton({
             <p className="text-body">
               Get fixed rate yield on your DAI holdings
             </p>
-            <div className="daisy-btn-success daisy-btn-outline daisy-btn-sm daisy-btn mt-2 justify-between gap-0 border-success normal-case">
+            <div className="daisy-btn-success daisy-btn-sm daisy-btn mt-2 justify-between gap-0 border-success normal-case">
               <span className="ml-4 flex-1 text-center">Long</span>
               <ChevronRightIcon className="h-3 text-right" />
             </div>

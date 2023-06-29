@@ -29,9 +29,8 @@ export function Well({
     "hover:bg-warning/10 hover:ring-1":
       isInteractive && variant === "secondary",
 
-    "bg-hyper-pink/5 ring-hyper-pink": variant === "accent",
-    "hover:bg-hyper-pink/10 hover:ring-1":
-      isInteractive && variant === "accent",
+    "bg-primary/5 ring-primary": variant === "accent",
+    "hover:bg-primary/10 hover:ring-1": isInteractive && variant === "accent",
   });
 
   if (onClick || interactive) {

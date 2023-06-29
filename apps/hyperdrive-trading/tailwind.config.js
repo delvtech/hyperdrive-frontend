@@ -35,10 +35,6 @@ module.exports = {
         "base-300": "#212140",
         "base-400": "#1F1F3D",
         "base-500": "#30305a",
-        "hyper-red": "#E66E65",
-        "hyper-green": "#61E4A3", // @deprecated: use success from daisy theme
-        "hyper-pink": "#F4B1FF",
-        "hyper-orange": "#FF9031", // @deprecated: use warning from daisy theme
         "hyper-blue-100": "#D6D5F6",
         "hyper-blue-200": "#8D96C4",
         "hyper-blue-300": "#7680B8",
@@ -81,6 +77,7 @@ module.exports = {
           primary: "#F4B1FF",
           success: "#61E4A3",
           warning: "#FF9031",
+          error: "#E66E65",
           "base-100": "#30305A",
         },
       },

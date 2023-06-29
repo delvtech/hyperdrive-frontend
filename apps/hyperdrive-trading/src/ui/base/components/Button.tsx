@@ -48,8 +48,7 @@ export function Button({
             "border border-hyper-blue-300 bg-base-300 font-quantico text-hyper-blue-100":
               variant === "Future",
             "hover:bg-hyper-blue-400": variant === "Future" && !disabled,
-            "border-hyper-pink hover:bg-base-300":
-              variant === "Future" && active,
+            "border-primary hover:bg-base-300": variant === "Future" && active,
           },
 
           // Work Variant
@@ -59,7 +58,7 @@ export function Button({
 
           // Crimson Variant
           ...{
-            "bg-hyper-red font-quantico text-base-300": variant === "Crimson",
+            "bg-error font-quantico text-base-300": variant === "Crimson",
           },
 
           // Emerald Variant
