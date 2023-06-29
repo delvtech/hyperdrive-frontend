@@ -25,8 +25,8 @@ export function Well({
     "bg-success/5 ring-success": variant === "primary",
     "hover:bg-success/10 hover:ring-1": isInteractive && variant === "primary",
 
-    "bg-hyper-orange/5 ring-hyper-orange": variant === "secondary",
-    "hover:bg-hyper-orange/10 hover:ring-1":
+    "bg-warning/5 ring-warning": variant === "secondary",
+    "hover:bg-warning/10 hover:ring-1":
       isInteractive && variant === "secondary",
 
     "bg-hyper-pink/5 ring-hyper-pink": variant === "accent",

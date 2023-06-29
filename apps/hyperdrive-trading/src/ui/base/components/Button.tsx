@@ -54,7 +54,7 @@ export function Button({
 
           // Work Variant
           ...{
-            "bg-hyper-orange font-quantico text-base-300": variant === "Work",
+            "bg-warning font-quantico text-base-300": variant === "Work",
           },
 
           // Crimson Variant

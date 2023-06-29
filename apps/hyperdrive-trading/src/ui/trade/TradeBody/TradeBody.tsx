@@ -68,14 +68,14 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
 
           <Well interactive variant="secondary">
             <div className="flex w-44 flex-col gap-2 py-4 text-center">
-              <BoltIcon className="mb-2 h-16 text-hyper-orange" />
-              <p className="font-rubik text-h5 font-thin text-hyper-orange">
+              <BoltIcon className="mb-2 h-16 text-warning" />
+              <p className="font-rubik text-h5 font-thin text-warning">
                 Open a short
               </p>
               <p className="text-body">
                 Gain leveraged exposure to the DAI Savings Rate (DSR)
               </p>
-              <div className="daisy-btn-outline daisy-btn-sm daisy-btn mt-2 justify-between gap-0 normal-case">
+              <div className="daisy-btn-warning daisy-btn-outline daisy-btn-sm daisy-btn mt-2 justify-between gap-0 normal-case">
                 <span className="ml-4 flex-1 text-center">Short</span>
                 <ChevronRightIcon className="h-3 text-right" />
               </div>
