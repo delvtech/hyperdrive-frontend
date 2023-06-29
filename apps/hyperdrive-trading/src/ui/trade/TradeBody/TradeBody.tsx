@@ -1,3 +1,9 @@
+import {
+  BoltIcon,
+  ChevronRightIcon,
+  CircleStackIcon,
+  PlusCircleIcon,
+} from "@heroicons/react/24/outline";
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -85,12 +91,22 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
             {({ showModal }) => (
               <Well interactive variant="primary" onClick={() => showModal()}>
                 <div className="flex w-44 flex-col gap-2 py-4 text-center">
+                  <PlusCircleIcon className="mb-2 h-16 text-hyper-green" />
                   <p className="font-rubik text-h5 font-thin text-hyper-green">
                     Open a long
                   </p>
                   <p className="text-body">
                     Get fixed rate yield on your DAI holdings
                   </p>
+                  <Button
+                    size="sm"
+                    className="mt-2 justify-between gap-0"
+                    variant="Emerald"
+                    onClick={() => showModal()}
+                  >
+                    <span className="flex-1 text-center">Long</span>
+                    <ChevronRightIcon className="h-3 text-right" />
+                  </Button>
                 </div>
               </Well>
             )}
@@ -98,23 +114,43 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
 
           <Well interactive variant="secondary">
             <div className="flex w-44 flex-col gap-2 py-4 text-center">
+              <BoltIcon className="mb-2 h-16 text-hyper-orange" />
               <p className="font-rubik text-h5 font-thin text-hyper-orange">
                 Open a short
               </p>
               <p className="text-body">
                 Gain leveraged exposure to the DAI Savings Rate
               </p>
+              <Button
+                size="sm"
+                className="mt-2 justify-between gap-0"
+                variant="Crimson"
+                onClick={() => {}}
+              >
+                <span className="flex-1 text-center">Short</span>
+                <ChevronRightIcon className="h-3 text-right" />
+              </Button>
             </div>
           </Well>
 
           <Well interactive variant="accent">
             <div className="flex w-44 flex-col gap-2 py-4 text-center">
+              <CircleStackIcon className="mb-2 h-16 text-hyper-pink" />
               <p className="font-rubik text-h5 font-thin text-hyper-pink">
                 Add liquidity
               </p>
               <p className="text-body">
                 Earn trading fees when users open longs or shorts
               </p>
+              <Button
+                size="sm"
+                className="mt-2 justify-between gap-0"
+                variant="Future"
+                onClick={() => {}}
+              >
+                <span className="flex-1 text-center">LP</span>
+                <ChevronRightIcon className="h-3 text-right" />
+              </Button>
             </div>
           </Well>
         </div>
