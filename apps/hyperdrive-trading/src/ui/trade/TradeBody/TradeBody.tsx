@@ -11,10 +11,10 @@ import { Stat } from "src/ui/base/components/Stat";
 import { Well } from "src/ui/base/components/Well/Well";
 import { MarketSelect } from "src/ui/markets/MarketSelect/MarketSelect";
 import { FAQ } from "src/ui/onboarding/FAQ/FAQ";
+import { PositionsSection } from "src/ui/portfolio/PositionsSection/PositionsSection";
 import { YieldSourceLabel } from "src/ui/protocol/ProtocolLabel";
 import { useMintBaseToken } from "src/ui/token/hooks/useMintBaseToken";
 import { OpenLongModalButton } from "src/ui/trade/OpenLongModalButton/OpenLongModalButton";
-import { PositionsSection } from "src/ui/trade/PositionsSection/PositionsSection";
 import { parseUnits } from "viem";
 import { useAccount, useChainId } from "wagmi";
 
