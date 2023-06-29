@@ -10,16 +10,14 @@ import { usePreviewOpenLong } from "src/ui/hyperdrive/hooks/usePreviewOpenLong";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenApproval } from "src/ui/token/hooks/useTokenApproval";
 import { TokenInput } from "src/ui/token/TokenInput";
-import { LongPositionOverviewWell } from "src/ui/trade/LongPositionOverviewWell";
+import { OpenLongPreview } from "src/ui/trade/OpenLongPreview/OpenLongPreview";
 import { useAccount, useBalance } from "wagmi";
 
-interface OpenLongPositionFormProps {
+interface OpenLongFormProps {
   market: Hyperdrive;
 }
 
-export function OpenLongPositionForm({
-  market,
-}: OpenLongPositionFormProps): ReactElement {
+export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
   const { address: account } = useAccount();
   const { openConnectModal } = useConnectModal();
 
@@ -85,7 +83,7 @@ export function OpenLongPositionForm({
       {/* New Position Section */}
       <div className="space-y-4 font-rubik text-hyper-blue-100">
         <h5>Position preview</h5>
-        <LongPositionOverviewWell
+        <OpenLongPreview
           hyperdrive={market}
           long={{
             bondAmount: longAmountOut || 0n,

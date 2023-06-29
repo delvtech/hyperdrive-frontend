@@ -9,8 +9,8 @@ interface PillProps extends PropsWithChildren {
 type PillVariant = "Green" | "Red";
 
 const PillVariantStyles: Record<PillVariant, string> = {
-  Green: "text-hyper-green bg-hyper-blue-400",
-  Red: "text-hyper-red bg-base-500",
+  Green: "text-success bg-hyper-blue-400",
+  Red: "text-error bg-base-500",
 };
 
 export function Pill({

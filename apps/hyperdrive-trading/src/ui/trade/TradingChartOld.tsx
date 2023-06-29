@@ -7,7 +7,7 @@ interface TradingChartProps {
   market: Hyperdrive;
 }
 
-export function TradingChart({ market }: TradingChartProps): ReactElement {
+export function TradingChartOld({ market }: TradingChartProps): ReactElement {
   // used to prevent page crash from vite hot-reloading
   const [isChartRendered, setIsChartRendered] = useState(false);
   const { data: volumeData } = useHistoricalVolume(market);

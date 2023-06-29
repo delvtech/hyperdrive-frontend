@@ -17,7 +17,7 @@ export function Markets(): ReactElement {
           </h5>
         </div>
 
-        <button className="flex items-center gap-x-1 rounded bg-gradient-to-r from-hyper-pink via-[#afd5ff] to-hyper-green px-4 py-2 font-dm-sans font-bold text-base-100">
+        <button className="flex items-center gap-x-1 rounded bg-gradient-to-r from-primary via-[#afd5ff] to-success px-4 py-2 font-dm-sans font-bold text-base-100">
           <ArrowTopRightOnSquareIcon className="w-4" />
           <p>Learn more</p>
         </button>

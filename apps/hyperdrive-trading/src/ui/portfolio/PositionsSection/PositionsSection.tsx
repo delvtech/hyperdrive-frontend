@@ -2,8 +2,8 @@ import assertNever from "assert-never";
 import classNames from "classnames";
 import { ReactElement, useState } from "react";
 import { Hyperdrive } from "src/appconfig/types";
-import { ClosedOrdersTable } from "src/ui/trade/ClosedOrdersTable/ClosedOrdersTable";
-import { OpenOrdersTable } from "src/ui/trade/OpenOrdersTable/OpenOrdersTable";
+import { ClosedOrdersTable } from "src/ui/portfolio/ClosedOrdersTable/ClosedOrdersTable";
+import { OpenOrdersTable } from "src/ui/portfolio/OpenOrdersTable/OpenOrdersTable";
 
 type TabId = "Open" | "Closed";
 export function PositionsSection({

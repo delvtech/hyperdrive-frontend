@@ -6,15 +6,15 @@ import { Pill } from "src/ui/base/components/Pill";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { formatBigInt } from "src/ui/base/formatting/formatBigInt";
 
-interface LongPositionOverviewWellProps {
+interface OpenLongPreviewProps {
   hyperdrive: Hyperdrive;
   long: Long;
 }
 
-export function LongPositionOverviewWell({
+export function OpenLongPreview({
   hyperdrive,
   long,
-}: LongPositionOverviewWellProps): ReactElement {
+}: OpenLongPreviewProps): ReactElement {
   return (
     <div className="flex flex-col gap-y-4 rounded border border-hyper-blue-300 bg-transparent p-4">
       <div className="flex items-center">

@@ -48,23 +48,22 @@ export function Button({
             "border border-hyper-blue-300 bg-base-300 font-quantico text-hyper-blue-100":
               variant === "Future",
             "hover:bg-hyper-blue-400": variant === "Future" && !disabled,
-            "border-hyper-pink hover:bg-base-300":
-              variant === "Future" && active,
+            "border-primary hover:bg-base-300": variant === "Future" && active,
           },
 
           // Work Variant
           ...{
-            "bg-hyper-orange font-quantico text-base-300": variant === "Work",
+            "bg-warning font-quantico text-base-300": variant === "Work",
           },
 
           // Crimson Variant
           ...{
-            "bg-hyper-red font-quantico text-base-300": variant === "Crimson",
+            "bg-error font-quantico text-base-300": variant === "Crimson",
           },
 
           // Emerald Variant
           ...{
-            "bg-hyper-green font-quantico text-base-300": variant === "Emerald",
+            "bg-success font-quantico text-base-300": variant === "Emerald",
           },
         },
       )}

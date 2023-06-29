@@ -10,7 +10,7 @@ import { usePreviewOpenShort } from "src/ui/hyperdrive/hooks/usePreviewOpenShort
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenApproval } from "src/ui/token/hooks/useTokenApproval";
 import { TokenInput } from "src/ui/token/TokenInput";
-import { ShortPositionOverviewWell } from "src/ui/trade/ShortPositionOverviewWell";
+import { OpenShortPreview } from "src/ui/trade/OpenShortPreview/OpenShortPreview";
 import { useAccount, useBalance } from "wagmi";
 
 interface OpenShortPositionFormProps {
@@ -146,7 +146,7 @@ export function OpenShortPositionForm({
       {/* New Position Section */}
       <div className="space-y-4 font-rubik text-hyper-blue-100">
         <h5>Position preview</h5>
-        <ShortPositionOverviewWell
+        <OpenShortPreview
           market={market}
           costBasis={baseAmountIn ?? 0n}
           amountShort={amountAsBigInt ?? 0n}

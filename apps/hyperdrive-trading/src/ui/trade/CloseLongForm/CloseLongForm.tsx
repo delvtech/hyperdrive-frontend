@@ -13,7 +13,7 @@ import { TokenInput } from "src/ui/token/TokenInput";
 import { parseUnits } from "viem";
 import { useAccount } from "wagmi";
 
-interface CloseLongPositionFormProps {
+interface CloseLongFormProps {
   hyperdrive: Hyperdrive;
   long: Long;
   onCloseLong?: (e: MouseEvent<HTMLButtonElement>) => void;
@@ -23,7 +23,7 @@ export function CloseLongForm({
   hyperdrive,
   long,
   onCloseLong,
-}: CloseLongPositionFormProps): ReactElement {
+}: CloseLongFormProps): ReactElement {
   const { decimals: baseDecimals, symbol: baseSymbol } = hyperdrive.baseToken;
 
   const { address: account } = useAccount();
