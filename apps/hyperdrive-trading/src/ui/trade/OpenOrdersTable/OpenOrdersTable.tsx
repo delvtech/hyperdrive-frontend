@@ -28,7 +28,7 @@ export function OpenOrdersTable({
       headingRowClassName="grid-cols-4 text-hyper-blue-200 font-dm-sans text-md [&>*]:p-2"
       bodyRowClassName="grid-cols-4 text-hyper-blue-100 font-dm-sans [&>*]:p-2 items-center"
       // Blank col added for actions
-      cols={["Position", "Size", "Value", "Matures on", ""]}
+      cols={["Position", "Balance", "Value", "Matures on", ""]}
       rows={allRows}
     />
   );

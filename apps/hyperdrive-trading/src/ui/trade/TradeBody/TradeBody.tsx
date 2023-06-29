@@ -103,7 +103,6 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
                     size="sm"
                     className="mt-2 justify-between gap-0"
                     variant="Emerald"
-                    onClick={() => showModal()}
                   >
                     <span className="flex-1 text-center">Long</span>
                     <ChevronRightIcon className="h-3 text-right" />
