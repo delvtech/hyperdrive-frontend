@@ -3,6 +3,7 @@ import { Hyperdrive } from "src/appconfig/types";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Button } from "src/ui/base/components/Button";
 import { Disclosure } from "src/ui/base/components/Disclosure/Disclosure";
+import { Modal } from "src/ui/base/components/Modal/Modal";
 import { Stat } from "src/ui/base/components/Stat";
 import { Well } from "src/ui/base/components/Well/Well";
 import { MarketSelect } from "src/ui/markets/MarketSelect/MarketSelect";
@@ -16,7 +17,7 @@ import { useAccount, useChainId } from "wagmi";
 interface PositionsTableProps {
   hyperdrive: Hyperdrive;
 }
-const OPEN_LONG_MODAL_ID = "open-long-modal";
+const OPEN_LONG_MODAL_ID = "openLongModal";
 
 export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
   const { appConfig } = useAppConfig();
@@ -34,28 +35,39 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
       {/* Name and Stats */}
       <div className="flex w-full flex-col gap-6">
         <div className="flex flex-wrap items-center gap-8">
-          <span className="shrink-0 font-rubik text-h3 font-semibold">
+          <p className="flex shrink-0 flex-col font-rubik text-h3 font-semibold">
+            <YieldSourceLabel
+              yieldSource={yieldSource}
+              className="text-h6 font-normal text-hyper-blue-200"
+            />
             {hyperdrive.name}
-          </span>
-          <div className="flex items-center">
+          </p>
+          <div className="flex items-center gap-8">
             <MarketSelect markets={[hyperdrive]} />
+            {chainId === 31337 ? (
+              <Button disabled={!mint} variant="Work" onClick={() => mint?.()}>
+                Mint Tokens
+              </Button>
+            ) : undefined}
           </div>
-          {chainId === 31337 ? (
-            <Button disabled={!mint} variant="Work" onClick={() => mint?.()}>
-              Mint Tokens
-            </Button>
-          ) : undefined}
         </div>
         <div className="flex w-full flex-wrap items-center justify-start gap-16">
           <Stat
-            label="Protocol"
-            value={<YieldSourceLabel yieldSource={yieldSource} />}
+            label="Token"
+            value={
+              <span className="flex items-center gap-1.5">
+                {hyperdrive.baseToken.iconUrl && (
+                  <img className="h-4" src={hyperdrive.baseToken.iconUrl} />
+                )}
+                {hyperdrive.baseToken.symbol}
+              </span>
+            }
           />
-          <Stat label="Liquidity" value="$100M" />
           <Stat label="Fixed Rate" value="1.50%" />
-          <Stat label="Dai Savings Rate" value="1.60%" />
+          <Stat label="Dai Savings Rate" value="3.49%" />
           <Stat label="LP APY" value="1.60%" />
           <Stat label="Volume (24h)" value="$4.4M" />
+          <Stat label="Liquidity" value="$100M" />
         </div>
       </div>
 
@@ -66,32 +78,27 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
           </span>
         </div>
         <div className="flex flex-wrap gap-10 ">
-          <Well
-            interactive
-            variant="primary"
-            onClick={() => {
-              (window as any)[OPEN_LONG_MODAL_ID].showModal();
-            }}
+          <Modal
+            modalId={OPEN_LONG_MODAL_ID}
+            modalContent={<OpenLongPositionForm market={hyperdrive} />}
           >
-            <div className="flex w-44 flex-col gap-2 py-4 text-center">
-              <p className="font-rubik text-h5 text-hyper-green">Open a long</p>
-              <p className="text-body">
-                Get fixed rate yield on your DAI holdings
-              </p>
-            </div>
-          </Well>
-          <dialog id={OPEN_LONG_MODAL_ID} className="daisy-modal">
-            <form method="dialog" className="daisy-modal-box bg-base-300">
-              <OpenLongPositionForm market={hyperdrive} />
-            </form>
-            <form method="dialog" className="daisy-modal-backdrop">
-              <button>close</button>
-            </form>
-          </dialog>
+            {({ showModal }) => (
+              <Well interactive variant="primary" onClick={() => showModal()}>
+                <div className="flex w-44 flex-col gap-2 py-4 text-center">
+                  <p className="font-rubik text-h5 font-thin text-hyper-green">
+                    Open a long
+                  </p>
+                  <p className="text-body">
+                    Get fixed rate yield on your DAI holdings
+                  </p>
+                </div>
+              </Well>
+            )}
+          </Modal>
 
           <Well interactive variant="secondary">
             <div className="flex w-44 flex-col gap-2 py-4 text-center">
-              <p className="font-rubik text-h5 text-hyper-orange">
+              <p className="font-rubik text-h5 font-thin text-hyper-orange">
                 Open a short
               </p>
               <p className="text-body">
@@ -102,7 +109,7 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
 
           <Well interactive variant="accent">
             <div className="flex w-44 flex-col gap-2 py-4 text-center">
-              <p className="font-rubik text-h5 text-hyper-pink">
+              <p className="font-rubik text-h5 font-thin text-hyper-pink">
                 Add liquidity
               </p>
               <p className="text-body">
