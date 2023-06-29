@@ -104,7 +104,7 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
                     className="mt-2 justify-between gap-0"
                     variant="Emerald"
                   >
-                    <span className="flex-1 text-center">Long</span>
+                    <span className="ml-4 flex-1 text-center">Long</span>
                     <ChevronRightIcon className="h-3 text-right" />
                   </Button>
                 </div>
@@ -127,7 +127,7 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
                 variant="Crimson"
                 onClick={() => {}}
               >
-                <span className="flex-1 text-center">Short</span>
+                <span className="ml-4 flex-1 text-center">Short</span>
                 <ChevronRightIcon className="h-3 text-right" />
               </Button>
             </div>
@@ -148,7 +148,7 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
                 variant="Future"
                 onClick={() => {}}
               >
-                <span className="flex-1 text-center">LP</span>
+                <span className="ml-4 flex-1 text-center">LP</span>
                 <ChevronRightIcon className="h-3 text-right" />
               </Button>
             </div>
@@ -158,58 +158,60 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
 
       <PositionsSection hyperdrive={hyperdrive} />
 
-      <div className="flex flex-col gap-6 pb-12">
-        <div className="flex w-full items-center justify-between border-base-500">
-          <span className="pb-2 font-rubik text-h5 text-hyper-blue-200">
-            FAQ
-          </span>
-        </div>
-        <Disclosure
-          title={<span className="text-h6 font-semibold">What is a long?</span>}
-          description={
-            <p>
-              The Dai Savings Rate (DSR) is a feature within the MakerDAO system
-              that allows Dai stablecoin holders to earn interest on their
-              holdings when they lock it into a DSR smart contract. The interest
-              rate is variable, set by the MakerDAO community, and users can
-              withdraw their Dai plus earned interest at any time, similar to a
-              traditional savings account but operating on the blockchain.
-            </p>
-          }
-        />
-        <Disclosure
-          title={
-            <span className="text-h6 font-semibold">What is a short?</span>
-          }
-          description={
-            <p>
-              The Dai Savings Rate (DSR) is a feature within the MakerDAO system
-              that allows Dai stablecoin holders to earn interest on their
-              holdings when they lock it into a DSR smart contract. The interest
-              rate is variable, set by the MakerDAO community, and users can
-              withdraw their Dai plus earned interest at any time, similar to a
-              traditional savings account but operating on the blockchain.
-            </p>
-          }
-        />
-        <Disclosure
-          title={
-            <span className="text-h6 font-semibold">
-              What is the Dai Savings Rate?
-            </span>
-          }
-          description={
-            <p>
-              The Dai Savings Rate (DSR) is a feature within the MakerDAO system
-              that allows Dai stablecoin holders to earn interest on their
-              holdings when they lock it into a DSR smart contract. The interest
-              rate is variable, set by the MakerDAO community, and users can
-              withdraw their Dai plus earned interest at any time, similar to a
-              traditional savings account but operating on the blockchain.
-            </p>
-          }
-        />
+      <FAQ />
+    </div>
+  );
+}
+
+function FAQ() {
+  return (
+    <div className="flex flex-col gap-6 pb-12">
+      <div className="flex w-full items-center justify-between border-base-500">
+        <span className="pb-2 font-rubik text-h5 text-hyper-blue-200">FAQ</span>
       </div>
+      <Disclosure
+        title={<span className="text-h6 font-semibold">What is a long?</span>}
+        description={
+          <p>
+            The Dai Savings Rate (DSR) is a feature within the MakerDAO system
+            that allows Dai stablecoin holders to earn interest on their
+            holdings when they lock it into a DSR smart contract. The interest
+            rate is variable, set by the MakerDAO community, and users can
+            withdraw their Dai plus earned interest at any time, similar to a
+            traditional savings account but operating on the blockchain.
+          </p>
+        }
+      />
+      <Disclosure
+        title={<span className="text-h6 font-semibold">What is a short?</span>}
+        description={
+          <p>
+            The Dai Savings Rate (DSR) is a feature within the MakerDAO system
+            that allows Dai stablecoin holders to earn interest on their
+            holdings when they lock it into a DSR smart contract. The interest
+            rate is variable, set by the MakerDAO community, and users can
+            withdraw their Dai plus earned interest at any time, similar to a
+            traditional savings account but operating on the blockchain.
+          </p>
+        }
+      />
+      <Disclosure
+        title={
+          <span className="text-h6 font-semibold">
+            What is the Dai Savings Rate?
+          </span>
+        }
+        description={
+          <p>
+            The Dai Savings Rate (DSR) is a feature within the MakerDAO system
+            that allows Dai stablecoin holders to earn interest on their
+            holdings when they lock it into a DSR smart contract. The interest
+            rate is variable, set by the MakerDAO community, and users can
+            withdraw their Dai plus earned interest at any time, similar to a
+            traditional savings account but operating on the blockchain.
+          </p>
+        }
+      />
     </div>
   );
 }
