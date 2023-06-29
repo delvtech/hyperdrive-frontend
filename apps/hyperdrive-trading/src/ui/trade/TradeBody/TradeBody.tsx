@@ -7,9 +7,9 @@ import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Button } from "src/ui/base/components/Button";
-import { Stat } from "src/ui/base/components/Stat";
 import { Well } from "src/ui/base/components/Well/Well";
 import { MarketSelect } from "src/ui/markets/MarketSelect/MarketSelect";
+import { MarketStats } from "src/ui/markets/MarketStats/MarketStats";
 import { FAQ } from "src/ui/onboarding/FAQ/FAQ";
 import { PositionsSection } from "src/ui/portfolio/PositionsSection/PositionsSection";
 import { YieldSourceLabel } from "src/ui/protocol/ProtocolLabel";
@@ -54,25 +54,7 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
             ) : undefined}
           </div>
         </div>
-        <div className="flex w-full flex-wrap items-center justify-start gap-16">
-          <Stat
-            label="Token"
-            value={
-              <span className="flex items-center gap-1.5">
-                {hyperdrive.baseToken.iconUrl && (
-                  <img className="h-4" src={hyperdrive.baseToken.iconUrl} />
-                )}
-                {hyperdrive.baseToken.symbol}
-              </span>
-            }
-          />
-          <Stat label="Term" value="1 year" />
-          <Stat label="Fixed Rate" value="1.50% APR" />
-          <Stat label="DSR APY" value="3.49%" />
-          <Stat label="LP APY" value="1.60%" />
-          <Stat label="Volume (24h)" value="$4.4M" />
-          <Stat label="Liquidity" value="$100M" />
-        </div>
+        <MarketStats hyperdrive={hyperdrive} />
       </div>
 
       <div>

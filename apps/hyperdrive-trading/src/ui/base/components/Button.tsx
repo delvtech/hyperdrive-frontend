@@ -64,7 +64,7 @@ export function Button({
 
           // Emerald Variant
           ...{
-            "bg-hyper-green font-quantico text-base-300": variant === "Emerald",
+            "bg-success font-quantico text-base-300": variant === "Emerald",
           },
         },
       )}

@@ -54,7 +54,7 @@ function createOpenLongRow({
 
   return {
     cells: [
-      <span key="type" className={"font-bold text-hyper-green"}>
+      <span key="type" className={"font-bold text-success"}>
         Long
       </span>,
       <span key="size">

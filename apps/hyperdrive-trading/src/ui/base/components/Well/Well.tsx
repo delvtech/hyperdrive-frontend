@@ -22,9 +22,8 @@ export function Well({
     "w-full": block,
     "hover:cursor-pointer hover:ring-opacity-50": isInteractive,
 
-    "bg-hyper-green/5 ring-hyper-green": variant === "primary",
-    "hover:bg-hyper-green/10 hover:ring-1":
-      isInteractive && variant === "primary",
+    "bg-success/5 ring-success": variant === "primary",
+    "hover:bg-success/10 hover:ring-1": isInteractive && variant === "primary",
 
     "bg-hyper-orange/5 ring-hyper-orange": variant === "secondary",
     "hover:bg-hyper-orange/10 hover:ring-1":
