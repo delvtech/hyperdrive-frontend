@@ -2,7 +2,7 @@ import { XMarkIcon } from "@heroicons/react/24/solid";
 import { Long } from "@hyperdrive/core";
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
-import { CloseLongForm } from "src/ui/trading/CloseLongForm";
+import { CloseLongForm } from "src/ui/trade/CloseLongForm";
 
 export interface CloseLongModalProps {
   modalId: string;

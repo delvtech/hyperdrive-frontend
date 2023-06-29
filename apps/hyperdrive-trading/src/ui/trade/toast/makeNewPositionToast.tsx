@@ -12,6 +12,9 @@ interface MakeNewPositionToastOptions {
   status?: Status;
 }
 
+/**
+ * @deprecated Don't use toasts to notify of positions, use RainbowKit instead
+ */
 export function makeNewPositionToast({
   order,
   position,

@@ -13,10 +13,7 @@ export function YieldSourceLabel({
 }: YieldSourceLabelProps): ReactElement {
   return (
     <span
-      className={classNames(
-        className,
-        "flex items-center gap-x-2 font-dm-sans",
-      )}
+      className={classNames(className, "flex items-center gap-x-2 font-rubik")}
     >
       <img className="h-4" src={yieldSource?.iconUrl} />
       {yieldSource?.protocol}

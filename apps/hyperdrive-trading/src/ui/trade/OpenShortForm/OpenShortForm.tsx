@@ -10,8 +10,8 @@ import { usePreviewOpenShort } from "src/ui/hyperdrive/hooks/usePreviewOpenShort
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenApproval } from "src/ui/token/hooks/useTokenApproval";
 import { TokenInput } from "src/ui/token/TokenInput";
+import { ShortPositionOverviewWell } from "src/ui/trade/ShortPositionOverviewWell";
 import { useAccount, useBalance } from "wagmi";
-import { ShortPositionOverviewWell } from "./ShortPositionOverviewWell";
 
 interface OpenShortPositionFormProps {
   market: Hyperdrive;

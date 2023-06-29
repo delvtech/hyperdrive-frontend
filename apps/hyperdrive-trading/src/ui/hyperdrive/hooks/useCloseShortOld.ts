@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 import { Hyperdrive } from "src/appconfig/types";
 import { QueryStatusType } from "src/ui/base/types";
 import { getAssetTimestampFromTokenId } from "src/ui/hyperdrive/utils";
-import { makeNewPositionToast } from "src/ui/trading/toast/makeNewPositionToast";
+import { makeNewPositionToast } from "src/ui/trade/toast/makeNewPositionToast";
 import {
   Address,
   useContractWrite,

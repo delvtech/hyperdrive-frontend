@@ -71,7 +71,18 @@ module.exports = {
   },
   plugins: [require("daisyui")],
   daisyui: {
-    themes: ["night"],
+    themes: [
+      {
+        night: {
+          // eslint-disable-next-line @typescript-eslint/no-var-requires
+          ...require("daisyui/src/theming/themes")["[data-theme=night]"],
+          // TODO: Actually make a Hyperdrive theme for Daisy and stick to it
+          // instead of using custom tailwind colors everywhere.
+          primary: "#F4B1FF",
+          "base-100": "#30305A",
+        },
+      },
+    ],
     prefix: "daisy-",
   },
 };

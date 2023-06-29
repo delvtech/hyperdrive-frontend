@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import { Markets } from "src/pages/Markets";
 import { Trade } from "src/pages/Trade";
+import { Navbar } from "src/ui/app/Navbar/Navbar";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { useLocalStorage } from "src/ui/base/hooks/useLocalStorage";
 
@@ -14,7 +15,8 @@ const LASTED_VIEWED_MARKET_KEY = "last-viewed-market";
 
 function BaseLayout(): ReactElement {
   return (
-    <div className="flex h-full flex-col bg-gradient-to-b from-base-200 to-base-300">
+    <div className="flex h-full flex-col bg-base-100">
+      <Navbar />
       <Outlet />
     </div>
   );
@@ -81,7 +83,7 @@ export function App(): ReactElement {
   }, [appConfig]);
 
   return (
-    <div className="flex h-full flex-col bg-gradient-to-b from-base-200 to-base-300">
+    <div className="flex h-full flex-col overflow-auto bg-base-100">
       <RouterProvider router={router} />
     </div>
   );
