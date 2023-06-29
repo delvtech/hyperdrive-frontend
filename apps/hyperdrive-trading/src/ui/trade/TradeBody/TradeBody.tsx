@@ -69,8 +69,9 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
               </span>
             }
           />
+          <Stat label="Term" value="1 year" />
           <Stat label="Fixed Rate" value="1.50%" />
-          <Stat label="Dai Savings Rate" value="3.49%" />
+          <Stat label="DSR APY" value="3.49%" />
           <Stat label="LP APY" value="1.60%" />
           <Stat label="Volume (24h)" value="$4.4M" />
           <Stat label="Liquidity" value="$100M" />
@@ -119,7 +120,7 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
                 Open a short
               </p>
               <p className="text-body">
-                Gain leveraged exposure to the DAI Savings Rate
+                Gain leveraged exposure to the DAI Savings Rate (DSR)
               </p>
               <Button
                 size="sm"
