@@ -93,15 +93,10 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
               <p className="text-body">
                 Gain leveraged exposure to the DAI Savings Rate (DSR)
               </p>
-              <Button
-                size="sm"
-                className="mt-2 justify-between gap-0"
-                variant="Crimson"
-                onClick={() => {}}
-              >
+              <div className="daisy-btn-outline daisy-btn-sm daisy-btn mt-2 justify-between gap-0 normal-case">
                 <span className="ml-4 flex-1 text-center">Short</span>
                 <ChevronRightIcon className="h-3 text-right" />
-              </Button>
+              </div>
             </div>
           </Well>
 
@@ -114,15 +109,10 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
               <p className="text-body">
                 Earn trading fees when users open longs or shorts
               </p>
-              <Button
-                size="sm"
-                className="mt-2 justify-between gap-0"
-                variant="Future"
-                onClick={() => {}}
-              >
-                <span className="ml-4 flex-1 text-center">LP</span>
+              <div className="daisy-btn-outline daisy-btn-sm daisy-btn mt-2 justify-between gap-0 normal-case">
+                <span className="ml-4 flex-1 text-center">Add LP</span>
                 <ChevronRightIcon className="h-3 text-right" />
-              </Button>
+              </div>
             </div>
           </Well>
         </div>

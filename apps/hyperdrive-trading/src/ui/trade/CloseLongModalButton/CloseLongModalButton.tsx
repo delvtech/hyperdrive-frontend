@@ -2,18 +2,18 @@ import { XMarkIcon } from "@heroicons/react/24/solid";
 import { Long } from "@hyperdrive/core";
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
-import { CloseLongForm } from "src/ui/trade/CloseLongForm";
+import { CloseLongForm } from "src/ui/trade/CloseLongForm/CloseLongForm";
 
-export interface CloseLongModalProps {
+export interface CloseLongModalButtonProps {
   modalId: string;
   hyperdrive: Hyperdrive;
   long: Long;
 }
-export function CloseLongModal({
+export function CloseLongModalButton({
   modalId,
   long,
   hyperdrive,
-}: CloseLongModalProps): ReactElement {
+}: CloseLongModalButtonProps): ReactElement {
   function closeModal() {
     (window as any)[modalId].close();
   }

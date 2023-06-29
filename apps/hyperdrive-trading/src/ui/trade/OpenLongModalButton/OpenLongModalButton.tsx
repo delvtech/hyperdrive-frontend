@@ -1,7 +1,6 @@
 import { ChevronRightIcon, PlusCircleIcon } from "@heroicons/react/24/outline";
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
-import { Button } from "src/ui/base/components/Button";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { Well } from "src/ui/base/components/Well/Well";
 import { OpenLongForm } from "src/ui/trade/OpenLongForm/OpenLongForm";
@@ -28,14 +27,10 @@ export function OpenLongModalButton({
             <p className="text-body">
               Get fixed rate yield on your DAI holdings
             </p>
-            <Button
-              size="sm"
-              className="mt-2 justify-between gap-0"
-              variant="Emerald"
-            >
+            <div className="daisy-btn-outline daisy-btn-sm daisy-btn mt-2 justify-between gap-0 normal-case">
               <span className="ml-4 flex-1 text-center">Long</span>
               <ChevronRightIcon className="h-3 text-right" />
-            </Button>
+            </div>
           </div>
         </Well>
       )}
