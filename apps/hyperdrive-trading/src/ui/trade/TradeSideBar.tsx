@@ -9,7 +9,7 @@ import { PropsWithChildren, ReactElement, useState } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { PositionType } from "src/ui/hyperdrive/types";
 import { MarketSelect } from "src/ui/markets/MarketSelect/MarketSelect";
-import { OpenLongPositionForm } from "src/ui/trade/OpenLongPositionForm";
+import { OpenLongForm } from "src/ui/trade/OpenLongForm/OpenLongForm";
 import { OpenShortPositionForm } from "src/ui/trade/OpenShortForm/OpenShortForm";
 
 interface TradeSideBarProps {
@@ -55,7 +55,7 @@ export function TradeSideBar({ market }: TradeSideBarProps): ReactElement {
       {(() => {
         switch (position) {
           case "Long":
-            return <OpenLongPositionForm market={market} />;
+            return <OpenLongForm market={market} />;
           case "Short":
             return <OpenShortPositionForm market={market} />;
           case "LP":

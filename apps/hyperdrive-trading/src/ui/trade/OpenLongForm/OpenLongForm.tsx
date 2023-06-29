@@ -13,13 +13,11 @@ import { TokenInput } from "src/ui/token/TokenInput";
 import { LongPositionOverviewWell } from "src/ui/trade/LongPositionOverviewWell";
 import { useAccount, useBalance } from "wagmi";
 
-interface OpenLongPositionFormProps {
+interface OpenLongFormProps {
   market: Hyperdrive;
 }
 
-export function OpenLongPositionForm({
-  market,
-}: OpenLongPositionFormProps): ReactElement {
+export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
   const { address: account } = useAccount();
   const { openConnectModal } = useConnectModal();
 
