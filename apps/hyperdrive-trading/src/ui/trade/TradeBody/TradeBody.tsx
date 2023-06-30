@@ -1,8 +1,4 @@
-import {
-  BoltIcon,
-  ChevronRightIcon,
-  CircleStackIcon,
-} from "@heroicons/react/24/outline";
+import { ChevronRightIcon, CircleStackIcon } from "@heroicons/react/24/outline";
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -14,6 +10,7 @@ import { PositionsSection } from "src/ui/portfolio/PositionsSection/PositionsSec
 import { YieldSourceLabel } from "src/ui/protocol/ProtocolLabel";
 import { useMintBaseToken } from "src/ui/token/hooks/useMintBaseToken";
 import { OpenLongModalButton } from "src/ui/trade/OpenLongModalButton/OpenLongModalButton";
+import { OpenShortModalButton } from "src/ui/trade/OpenShortModalButton/OpenShortModalButton";
 import { parseUnits } from "viem";
 import { useAccount, useChainId } from "wagmi";
 
@@ -66,21 +63,7 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
         <div className="flex flex-wrap gap-10 ">
           <OpenLongModalButton hyperdrive={hyperdrive} />
 
-          <Well interactive variant="accent">
-            <div className="flex w-52 flex-col gap-2 py-4 text-center">
-              <BoltIcon className="mb-2 h-16 text-accent" />
-              <p className="font-lato text-h5 font-light text-accent">
-                Open a short
-              </p>
-              <p className="font-light ">
-                Maximize your exposure to the DAI Savings Rate (DSR)
-              </p>
-              <div className="daisy-btn-accent daisy-btn-sm daisy-btn mt-2 justify-between gap-0 normal-case">
-                <span className="ml-4 flex-1 text-center">Short</span>
-                <ChevronRightIcon className="h-3 text-right" />
-              </div>
-            </div>
-          </Well>
+          <OpenShortModalButton hyperdrive={hyperdrive} />
 
           <Well interactive variant="primary">
             <div className="flex w-52 flex-col gap-2 py-4 text-center">

@@ -17,7 +17,7 @@ interface OpenShortPositionFormProps {
   market: Hyperdrive;
 }
 
-export function OpenShortPositionForm({
+export function OpenShortForm({
   market,
 }: OpenShortPositionFormProps): ReactElement {
   const { address: account } = useAccount();
