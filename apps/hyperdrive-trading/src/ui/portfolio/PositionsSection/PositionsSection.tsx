@@ -14,7 +14,7 @@ export function PositionsSection({
   const [activeTab, setActiveTab] = useState<TabId>("Open");
   return (
     <div>
-      <div className="flex w-full items-center justify-between border-b border-neutral-content/30">
+      <div className="mb-2 flex w-full items-center justify-between border-b border-neutral-content/30">
         <span className="text-h5 font-thin text-neutral-content">
           Your Positions
         </span>
@@ -39,7 +39,7 @@ export function PositionsSection({
         </div>
       </div>
 
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col">
         {(() => {
           switch (activeTab) {
             case "Open":
