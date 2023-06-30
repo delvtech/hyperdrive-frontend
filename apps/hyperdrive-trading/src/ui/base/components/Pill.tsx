@@ -9,8 +9,8 @@ interface PillProps extends PropsWithChildren {
 type PillVariant = "Green" | "Red";
 
 const PillVariantStyles: Record<PillVariant, string> = {
-  Green: "text-success bg-hyper-blue-400",
-  Red: "text-error bg-base-500",
+  Green: "text-success bg-base-100",
+  Red: "text-error bg-base-100",
 };
 
 export function Pill({
@@ -21,7 +21,7 @@ export function Pill({
   return (
     <span
       className={classNames(
-        "flex items-center whitespace-nowrap rounded px-3 py-0.5 font-quantico font-bold",
+        "flex items-center whitespace-nowrap rounded px-3 py-0.5 font-bold",
         PillVariantStyles[variant],
         className,
       )}

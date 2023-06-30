@@ -22,15 +22,15 @@ export function Well({
     "w-full": block,
     "hover:cursor-pointer hover:ring-opacity-50": isInteractive,
 
-    "bg-success/5 ring-success": variant === "primary",
-    "hover:bg-success/10 hover:ring-1": isInteractive && variant === "primary",
+    "bg-primary/5 ring-primary": variant === "primary",
+    "hover:bg-primary/10 hover:ring-1": isInteractive && variant === "primary",
 
-    "bg-warning/5 ring-warning": variant === "secondary",
-    "hover:bg-warning/10 hover:ring-1":
+    "bg-secondary/5 ring-secondary": variant === "secondary",
+    "hover:bg-secondary/10 hover:ring-1":
       isInteractive && variant === "secondary",
 
-    "bg-primary/5 ring-primary": variant === "accent",
-    "hover:bg-primary/10 hover:ring-1": isInteractive && variant === "accent",
+    "bg-accent/5 ring-accent": variant === "accent",
+    "hover:bg-accent/10 hover:ring-1": isInteractive && variant === "accent",
   });
 
   if (onClick || interactive) {

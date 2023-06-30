@@ -22,11 +22,11 @@ export function TokenInput({
   autoFocus = false,
 }: TokenInputProps): ReactElement {
   return (
-    <div className="flex flex-col gap-y-2 rounded border border-hyper-blue-300 bg-base-200 p-4 font-dm-sans">
+    <div className="font-dm-sans flex flex-col gap-y-2 rounded border border-neutral-content bg-base-100 p-4">
       <div className="flex gap-x-4">
         <input
           autoFocus={autoFocus}
-          className="w-full bg-transparent text-h4 font-semibold outline-hyper-blue-200 placeholder:text-hyper-blue-200 focus:outline-dashed"
+          className="w-full bg-transparent text-h4 font-semibold outline-neutral-content placeholder:text-neutral-content focus:outline-dashed"
           max={maxValue}
           min="0"
           name="Base Token Input"
@@ -44,11 +44,11 @@ export function TokenInput({
       </div>
 
       {showBalance && (
-        <div className="flex text-hyper-blue-200">
+        <div className="flex text-neutral-content">
           {maxValue && (
             <span
               onClick={() => onChange(maxValue)}
-              className="mr-auto cursor-pointer underline hover:text-hyper-blue-400"
+              className="mr-auto cursor-pointer underline hover:no-underline"
             >
               Max
             </span>

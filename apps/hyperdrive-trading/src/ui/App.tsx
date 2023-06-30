@@ -15,7 +15,7 @@ const LASTED_VIEWED_MARKET_KEY = "last-viewed-market";
 
 function BaseLayout(): ReactElement {
   return (
-    <div className="flex h-full flex-col bg-base-100">
+    <div className="flex h-full flex-col">
       <Navbar />
       <Outlet />
     </div>

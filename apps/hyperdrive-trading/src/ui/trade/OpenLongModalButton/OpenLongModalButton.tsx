@@ -18,16 +18,12 @@ export function OpenLongModalButton({
       modalContent={<OpenLongForm market={hyperdrive} />}
     >
       {({ showModal }) => (
-        <Well interactive variant="primary" onClick={() => showModal()}>
+        <Well interactive variant="secondary" onClick={() => showModal()}>
           <div className="flex w-44 flex-col gap-2 py-4 text-center">
-            <PlusCircleIcon className="mb-2 h-16 text-success" />
-            <p className="font-rubik text-h5 font-thin text-success">
-              Open a long
-            </p>
-            <p className="text-body">
-              Get fixed rate yield on your DAI holdings
-            </p>
-            <div className="daisy-btn-success daisy-btn-sm daisy-btn mt-2 justify-between gap-0 border-success normal-case">
+            <PlusCircleIcon className="mb-2 h-16 text-secondary" />
+            <p className="text-h5 font-thin text-secondary">Open a long</p>
+            <p>Earn a simple fixed rate on your DAI holdings</p>
+            <div className="daisy-btn-secondary daisy-btn-sm daisy-btn mt-2 justify-between gap-0 border-secondary normal-case">
               <span className="ml-4 flex-1 text-center">Long</span>
               <ChevronRightIcon className="h-3 text-right" />
             </div>

@@ -10,7 +10,7 @@ export function Disclosure({
   description,
 }: DisclosureProps): ReactElement {
   return (
-    <div className="daisy-collapse daisy-collapse-plus border border-base-500">
+    <div className="daisy-collapse daisy-collapse-plus border border-neutral-content/30">
       <input type="checkbox" />
       <div className="text-xl daisy-collapse-title font-medium">{title}</div>
       <div className="daisy-collapse-content">{description}</div>

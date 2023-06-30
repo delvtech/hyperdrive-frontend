@@ -24,8 +24,8 @@ export function ClosedOrdersTable({
 
   return (
     <SortableGridTable
-      headingRowClassName="grid-cols-5 text-hyper-blue-200 font-dm-sans text-md [&>*]:p-2"
-      bodyRowClassName="grid-cols-5 text-hyper-blue-100 font-dm-sans [&>*]:p-2 items-center"
+      headingRowClassName="grid-cols-5 text-neutral-content font-dm-sans text-md [&>*]:p-2"
+      bodyRowClassName="grid-cols-5 text-base-content font-dm-sans [&>*]:p-2 items-center"
       cols={["Position", "Balance", "Value", "Matures on", "Closed on"]}
       rows={allRows}
     />

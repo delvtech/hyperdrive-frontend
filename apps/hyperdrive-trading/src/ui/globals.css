@@ -8,40 +8,13 @@ body,
 #root,
 div[data-rk] {
   height: 100%;
+  font-family: "Rubik";
 }
 
 /* Custom fonts */
 @font-face {
   font-family: "Akira";
   src: url(/fonts/Akira.otf);
-}
-
-@font-face {
-  font-family: "Quantico";
-  src: url(/fonts/Quantico/Quantico-Regular.ttf);
-  font-style: normal;
-  font-weight: normal;
-}
-
-@font-face {
-  font-family: "Quantico";
-  src: url(/fonts/Quantico/Quantico-Bold.ttf);
-  font-style: normal;
-  font-weight: bold;
-}
-
-@font-face {
-  font-family: "Quantico";
-  src: url(/fonts/Quantico/Quantico-Italic.ttf);
-  font-style: italic;
-  font-weight: normal;
-}
-
-@font-face {
-  font-family: "Quantico";
-  src: url(/fonts/Quantico/Quantico-BoldItalic.ttf);
-  font-style: italic;
-  font-weight: bold;
 }
 
 @tailwind base;

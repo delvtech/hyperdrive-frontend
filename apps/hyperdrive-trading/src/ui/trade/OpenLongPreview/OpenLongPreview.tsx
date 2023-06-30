@@ -16,7 +16,7 @@ export function OpenLongPreview({
   long,
 }: OpenLongPreviewProps): ReactElement {
   return (
-    <div className="flex flex-col gap-y-4 rounded border border-hyper-blue-300 bg-transparent p-4">
+    <div className="flex flex-col gap-y-4 rounded border border-neutral-content bg-transparent p-4">
       <div className="flex items-center">
         <h5 className="mr-4 font-bold">{hyperdrive.name}</h5>
         <Pill className="h-6">Long</Pill>
