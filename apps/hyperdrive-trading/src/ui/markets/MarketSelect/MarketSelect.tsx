@@ -33,7 +33,7 @@ export function MarketSelect({
         className="daisy-modal cursor-pointer px-8"
       >
         <div className="flex max-h-[70vh] flex-col items-center overflow-auto rounded bg-base-100 p-4">
-          <h3 className="font-akira">Markets</h3>
+          <h3 className="font-lato">Markets</h3>
 
           <MarketsTableLarge />
         </div>

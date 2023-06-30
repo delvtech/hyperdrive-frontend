@@ -24,7 +24,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        akira: ["Akira", "sans-serif"], // akira for wordmark Hyperdrive
+        lato: ["Lato"], // for headers
       },
       colors: {
         "base-300": "#212140",

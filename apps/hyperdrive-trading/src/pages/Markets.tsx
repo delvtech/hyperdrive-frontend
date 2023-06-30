@@ -7,7 +7,7 @@ export function Markets(): ReactElement {
     <div className="mx-auto flex w-full max-w-[90rem] flex-col gap-y-20 px-[3vw] py-[5vh]">
       <div className="space-y-8">
         <div>
-          <h2 className="font-akira text-h3 font-bold leading-h3 sm:text-h2 sm:leading-h2">
+          <h2 className="font-lato text-h3 font-bold leading-h3 sm:text-h2 sm:leading-h2">
             Markets
           </h2>
           <h5 className=" max-w-2xl text-h6 font-medium leading-h6 text-neutral-content sm:text-h5 sm:leading-h5">

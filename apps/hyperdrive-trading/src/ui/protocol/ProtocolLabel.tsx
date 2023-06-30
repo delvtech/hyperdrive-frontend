@@ -4,17 +4,17 @@ import { YieldSource } from "src/appconfig/yieldSources/yieldSources";
 
 interface YieldSourceLabelProps {
   yieldSource: YieldSource | undefined;
-  className?: string;
 }
 
 export function YieldSourceLabel({
   yieldSource,
-  className,
 }: YieldSourceLabelProps): ReactElement {
   return (
-    <span className={classNames(className, "flex items-center gap-x-2 ")}>
+    <span className={classNames("flex items-center gap-x-2")}>
       <img className="h-4" src={yieldSource?.iconUrl} />
-      {yieldSource?.protocol}
+      <span className="font-lato text-h6 font-normal text-neutral-content">
+        {yieldSource?.protocol}
+      </span>
     </span>
   );
 }

@@ -158,7 +158,7 @@ function createMarketRow({ market, yieldSource }: MarketTableRowData): Row {
     cells: [
       <span key="name" className="font-bold">
         <p>{market.name}</p>
-        <YieldSourceLabel className=" font-normal" yieldSource={yieldSource} />
+        <YieldSourceLabel yieldSource={yieldSource} />
       </span>,
       <p key="term" className="font-semibold">
         {convertMillisecondsToMonths(market.termLengthMS)} months

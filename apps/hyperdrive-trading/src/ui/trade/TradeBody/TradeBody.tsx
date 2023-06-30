@@ -38,10 +38,7 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
       <div className="flex w-full flex-col gap-6">
         <div className="flex flex-wrap items-center gap-8">
           <p className="flex shrink-0 flex-col text-h3 font-semibold">
-            <YieldSourceLabel
-              yieldSource={yieldSource}
-              className="text-h6 font-normal text-neutral-content"
-            />
+            <YieldSourceLabel yieldSource={yieldSource} />
             {hyperdrive.name}
           </p>
           <div className="flex items-center gap-8">
@@ -62,7 +59,7 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
 
       <div>
         <div className="mb-8 flex w-full items-center justify-between border-b border-neutral-content/30">
-          <span className="pb-2 text-h5 font-thin text-neutral-content">
+          <span className="pb-2 font-lato text-h5 font-light text-neutral-content">
             Hyperdrive Actions
           </span>
         </div>
@@ -70,10 +67,14 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
           <OpenLongModalButton hyperdrive={hyperdrive} />
 
           <Well interactive variant="accent">
-            <div className="flex w-44 flex-col gap-2 py-4 text-center">
+            <div className="flex w-52 flex-col gap-2 py-4 text-center">
               <BoltIcon className="mb-2 h-16 text-accent" />
-              <p className="text-h5 font-thin text-accent">Open a short</p>
-              <p>Leverage exposure to the DAI Savings Rate</p>
+              <p className="font-lato text-h5 font-light text-accent">
+                Open a short
+              </p>
+              <p className="font-light ">
+                Maximize your exposure to the DAI Savings Rate (DSR)
+              </p>
               <div className="daisy-btn-accent daisy-btn-sm daisy-btn mt-2 justify-between gap-0 normal-case">
                 <span className="ml-4 flex-1 text-center">Short</span>
                 <ChevronRightIcon className="h-3 text-right" />
@@ -82,10 +83,14 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
           </Well>
 
           <Well interactive variant="primary">
-            <div className="flex w-44 flex-col gap-2 py-4 text-center">
+            <div className="flex w-52 flex-col gap-2 py-4 text-center">
               <CircleStackIcon className="mb-2 h-16 text-primary" />
-              <p className="text-h5 font-thin text-primary">Add liquidity</p>
-              <p>Earn fees when users open longs or shorts</p>
+              <p className="font-lato text-h5 font-light text-primary">
+                Add liquidity
+              </p>
+              <p className="font-light">
+                Earn trading fees when users open longs or shorts
+              </p>
               <div className="daisy-btn-primary daisy-btn-sm daisy-btn mt-2 justify-between gap-0 normal-case">
                 <span className="ml-4 flex-1 text-center">Add LP</span>
                 <ChevronRightIcon className="h-3 text-right" />

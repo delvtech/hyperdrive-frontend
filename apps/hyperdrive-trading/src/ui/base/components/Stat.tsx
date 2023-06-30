@@ -9,7 +9,9 @@ interface StatProps {
 export function Stat({ label, value, className }: StatProps): ReactElement {
   return (
     <div className={className}>
-      <p className="mb-1 whitespace-nowrap text-neutral-content">{label}</p>
+      <p className="mb-1 whitespace-nowrap font-light text-neutral-content">
+        {label}
+      </p>
       <p className="whitespace-nowrap text-base-content">{value}</p>
     </div>
   );
