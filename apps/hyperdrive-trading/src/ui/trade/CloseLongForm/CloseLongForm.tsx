@@ -53,7 +53,7 @@ export function CloseLongForm({
     <div className="flex flex-col gap-6">
       {/* Amount to close section */}
       {long && (
-        <div className="space-y-4 font-rubik text-hyper-blue-100">
+        <div className="space-y-4 text-base-content">
           <h5>Amount to close</h5>
           <TokenInput
             token={{
@@ -71,7 +71,7 @@ export function CloseLongForm({
 
       {/* You receive Section */}
       {long && (
-        <div className="space-y-4 text-center font-rubik text-hyper-blue-100">
+        <div className="space-y-4 text-center text-base-content">
           <Stat
             label={"You receive"}
             value={

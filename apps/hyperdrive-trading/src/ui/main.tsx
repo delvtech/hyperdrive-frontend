@@ -6,7 +6,7 @@ import { createRoot } from "react-dom/client";
 import { Toaster } from "react-hot-toast";
 import { queryClient } from "src/network/queryClient";
 import { wagmiChains, wagmiConfig } from "src/network/wagmiClient";
-import { App } from "src/ui/App";
+import { App } from "src/ui/app/App/App";
 import "src/ui/globals.css";
 import { WagmiConfig } from "wagmi";
 

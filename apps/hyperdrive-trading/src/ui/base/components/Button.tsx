@@ -1,12 +1,11 @@
 import classNames from "classnames";
 import { PropsWithChildren, ReactElement } from "react";
 
-type ButtonVariant = "Future" | "Work" | "Crimson" | "Emerald";
+type ButtonVariant = "Work" | "Crimson" | "Emerald";
 
 interface ButtonProps {
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
   disabled?: boolean;
-  active?: boolean;
   size?: "sm" | "md" | "lg";
   block?: boolean;
   variant?: ButtonVariant;
@@ -16,7 +15,6 @@ interface ButtonProps {
 export function Button({
   onClick,
   disabled = false,
-  active = false,
   size = "md",
   block,
   variant,
@@ -40,30 +38,22 @@ export function Button({
 
           // No Variant
           ...{
-            "border border-transparent  text-white ": !variant,
-          },
-
-          // Future Variant
-          ...{
-            "border border-hyper-blue-300 bg-base-300 font-quantico text-hyper-blue-100":
-              variant === "Future",
-            "hover:bg-hyper-blue-400": variant === "Future" && !disabled,
-            "border-primary hover:bg-base-300": variant === "Future" && active,
+            "border border-transparent  text-base-content": !variant,
           },
 
           // Work Variant
           ...{
-            "bg-warning font-quantico text-base-300": variant === "Work",
+            "bg-warning text-base-300": variant === "Work",
           },
 
           // Crimson Variant
           ...{
-            "bg-error font-quantico text-base-300": variant === "Crimson",
+            "bg-error text-base-300": variant === "Crimson",
           },
 
           // Emerald Variant
           ...{
-            "bg-success font-quantico text-base-300": variant === "Emerald",
+            "bg-success text-base-300": variant === "Emerald",
           },
         },
       )}

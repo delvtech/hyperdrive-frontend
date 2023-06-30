@@ -24,22 +24,11 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        akira: ["Akira", "sans-serif"],
-        quantico: ["Quantico"],
-        rubik: ["Rubik", "sans-serif"],
-        "dm-sans": ["DM Sans", "sans-serif"],
+        lato: ["Lato"], // for headers
       },
       colors: {
-        "base-100": "#151427",
-        "base-200": "#1A1A33",
         "base-300": "#212140",
-        "base-400": "#1F1F3D",
-        "base-500": "#30305a",
-        "hyper-blue-100": "#D6D5F6",
-        "hyper-blue-200": "#8D96C4",
-        "hyper-blue-300": "#7680B8",
         "hyper-blue-400": "#425079",
-        "section-text": "#8C8CC4",
       },
     },
     fontSize: {
@@ -72,13 +61,19 @@ module.exports = {
         night: {
           // eslint-disable-next-line @typescript-eslint/no-var-requires
           ...require("daisyui/src/theming/themes")["[data-theme=night]"],
-          // TODO: Actually make a Hyperdrive theme for Daisy and stick to it
-          // instead of using custom tailwind colors everywhere.
           primary: "#F4B1FF",
+          secondary: "#8ABBFF",
+          accent: "#D4F17E",
+
           success: "#61E4A3",
           warning: "#FF9031",
           error: "#E66E65",
-          "base-100": "#30305A",
+
+          "base-100": "#151427",
+          "base-content": "#D6D5F6",
+
+          neutral: "#425079",
+          "neutral-content": "#9aa1cb",
         },
       },
     ],

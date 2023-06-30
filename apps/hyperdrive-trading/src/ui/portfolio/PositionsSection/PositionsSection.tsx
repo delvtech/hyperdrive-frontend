@@ -14,37 +14,32 @@ export function PositionsSection({
   const [activeTab, setActiveTab] = useState<TabId>("Open");
   return (
     <div>
-      <div className="flex w-full items-center justify-between border-b border-base-500">
-        <span className="font-rubik text-h5 text-hyper-blue-200">
+      <div className="mb-2 flex w-full items-center justify-between border-b border-neutral-content/30">
+        <span className="text-h5 font-thin text-neutral-content">
           Your Positions
         </span>
         <div className="daisy-tabs">
           <a
             onClick={() => setActiveTab("Open")}
-            className={classNames(
-              "daisy-tab-lifted daisy-tab daisy-tab-lg font-rubik",
-              {
-                "daisy-tab-active": activeTab === "Open",
-              },
-            )}
+            className={classNames("daisy-tab-lifted daisy-tab daisy-tab-lg", {
+              "daisy-tab-active !bg-neutral-content/30": activeTab === "Open",
+            })}
           >
             Open
           </a>
           <a
             onClick={() => setActiveTab("Closed")}
-            className={classNames(
-              "daisy-tab-lifted daisy-tab daisy-tab-lg font-rubik",
-              {
-                "daisy-tab-active": activeTab === "Closed",
-              },
-            )}
+            className={classNames("daisy-tab-lifted daisy-tab daisy-tab-lg", {
+              "daisy-tab-active  !bg-neutral-content/30":
+                activeTab === "Closed",
+            })}
           >
             Closed
           </a>
         </div>
       </div>
 
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col">
         {(() => {
           switch (activeTab) {
             case "Open":

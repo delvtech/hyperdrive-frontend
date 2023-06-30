@@ -4,13 +4,13 @@ import { Disclosure } from "src/ui/base/components/Disclosure/Disclosure";
 export function FAQ(): ReactElement {
   return (
     <div className="flex flex-col gap-6 pb-12">
-      <div className="flex w-full items-center justify-between border-base-500">
-        <span className="pb-2 font-rubik text-h5 text-hyper-blue-200">FAQ</span>
+      <div className="flex w-full items-center justify-between border-base-100">
+        <span className="pb-2 text-h5 font-thin text-neutral-content">FAQ</span>
       </div>
       <Disclosure
-        title={<span className="text-h6 font-semibold">What is a long?</span>}
+        title={<span className="text-h6">What is a long?</span>}
         description={
-          <p>
+          <p className="text-neutral-content">
             The Dai Savings Rate (DSR) is a feature within the MakerDAO system
             that allows Dai stablecoin holders to earn interest on their
             holdings when they lock it into a DSR smart contract. The interest
@@ -21,9 +21,9 @@ export function FAQ(): ReactElement {
         }
       />
       <Disclosure
-        title={<span className="text-h6 font-semibold">What is a short?</span>}
+        title={<span className="text-h6">What is a short?</span>}
         description={
-          <p>
+          <p className="text-neutral-content">
             The Dai Savings Rate (DSR) is a feature within the MakerDAO system
             that allows Dai stablecoin holders to earn interest on their
             holdings when they lock it into a DSR smart contract. The interest
@@ -34,13 +34,9 @@ export function FAQ(): ReactElement {
         }
       />
       <Disclosure
-        title={
-          <span className="text-h6 font-semibold">
-            What is the Dai Savings Rate?
-          </span>
-        }
+        title={<span className="text-h6 ">What is the Dai Savings Rate?</span>}
         description={
-          <p>
+          <p className="text-neutral-content">
             The Dai Savings Rate (DSR) is a feature within the MakerDAO system
             that allows Dai stablecoin holders to earn interest on their
             holdings when they lock it into a DSR smart contract. The interest

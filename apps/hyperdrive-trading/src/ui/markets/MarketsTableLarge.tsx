@@ -58,17 +58,17 @@ export function MarketsTableLarge(): ReactElement {
           {/* Markets search input, disabled for now */}
           <div className="mr-auto hidden flex-col gap-y-2  lg:flex">
             <div className="flex items-center gap-x-1">
-              <p className="font-medium text-hyper-blue-300">Search Markets</p>
+              <p className="font-medium text-neutral-content">Search Markets</p>
             </div>
 
             <input
-              className="daisy-input w-[250px] rounded-sm border bg-base-300 p-2 font-dm-sans text-[1rem] font-medium text-hyper-blue-100 placeholder:text-hyper-blue-300"
+              className=" daisy-input w-[250px] rounded-sm border bg-base-300 p-2 text-[1rem] font-medium text-base-content placeholder:text-neutral-content"
               placeholder="Maker DSR"
             />
           </div>
 
           <div className="flex flex-col gap-y-2">
-            <p className="font-medium text-hyper-blue-300">
+            <p className="font-medium text-neutral-content">
               Filter by protocol
             </p>
             <select
@@ -80,7 +80,7 @@ export function MarketsTableLarge(): ReactElement {
                 }
               }}
               defaultValue="none"
-              className="daisy-select w-[20rem] rounded-sm bg-base-300 font-dm-sans text-[1rem]"
+              className=" daisy-select w-[20rem] rounded-sm bg-base-300 text-[1rem]"
             >
               <option value="none">All protocols</option>
               {protocols.map((protocol) => (
@@ -92,7 +92,7 @@ export function MarketsTableLarge(): ReactElement {
           </div>
 
           <div className="flex flex-col gap-y-2">
-            <p className="font-medium text-hyper-blue-300">
+            <p className="font-medium text-neutral-content">
               Select term length
             </p>
             <select
@@ -104,7 +104,7 @@ export function MarketsTableLarge(): ReactElement {
                 }
               }}
               defaultValue="none"
-              className="daisy-select w-[12rem] rounded-sm bg-base-300 font-dm-sans text-[1rem]"
+              className=" daisy-select w-[12rem] rounded-sm bg-base-300 text-[1rem]"
             >
               <option value="none">All term lengths</option>
               {termLengths
@@ -123,8 +123,8 @@ export function MarketsTableLarge(): ReactElement {
       {/* Markets sortable table */}
       <div>
         <SortableGridTable
-          headingRowClassName="grid-cols-[2fr_1fr_1fr_1fr] bg-base-100 text-hyper-blue-200 font-dm-sans [&>*]:p-5 bg-opacity-100"
-          bodyRowClassName="grid-cols-[2fr_1fr_1fr_1fr] bg-transparent text-hyper-blue-100 font-dm-sans [&>*]:p-5"
+          headingRowClassName="grid-cols-[2fr_1fr_1fr_1fr] bg-base-100 text-neutral-content  [&>*]:p-5 bg-opacity-100"
+          bodyRowClassName="grid-cols-[2fr_1fr_1fr_1fr] bg-transparent text-base-content  [&>*]:p-5"
           cols={[
             {
               cell: "Name",
@@ -158,10 +158,7 @@ function createMarketRow({ market, yieldSource }: MarketTableRowData): Row {
     cells: [
       <span key="name" className="font-bold">
         <p>{market.name}</p>
-        <YieldSourceLabel
-          className="font-dm-sans font-normal"
-          yieldSource={yieldSource}
-        />
+        <YieldSourceLabel yieldSource={yieldSource} />
       </span>,
       <p key="term" className="font-semibold">
         {convertMillisecondsToMonths(market.termLengthMS)} months

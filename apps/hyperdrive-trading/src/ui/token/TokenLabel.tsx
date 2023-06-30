@@ -13,12 +13,7 @@ export function TokenLabel({
   // TODO: autocomplete token string from config
   // TODO: get token image from config
   return (
-    <span
-      className={classNames(
-        "flex items-center gap-x-2 font-dm-sans",
-        className,
-      )}
-    >
+    <span className={classNames("flex items-center gap-x-2 ", className)}>
       <img
         className="h-4"
         src="https://cryptologos.cc/logos/multi-collateral-dai-dai-logo.png?v=024"

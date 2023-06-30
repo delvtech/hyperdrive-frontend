@@ -19,10 +19,10 @@ export function OpenShortPreview({
   expiryDate,
 }: OpenShortPreviewProps): ReactElement {
   return (
-    <div className="flex flex-col gap-y-4 rounded border border-hyper-blue-300 bg-transparent p-4">
+    <div className="flex flex-col gap-y-4 rounded border border-neutral-content bg-transparent p-4">
       <div className="flex items-center">
         <h5 className="mr-4 font-bold">{market.name}</h5>
-        <Pill variant="Red" className="h-6 text-hyper-blue-100">
+        <Pill variant="Red" className="h-6 text-base-content">
           Short
         </Pill>
       </div>
