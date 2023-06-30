@@ -62,7 +62,7 @@ module.exports = {
           // eslint-disable-next-line @typescript-eslint/no-var-requires
           ...require("daisyui/src/theming/themes")["[data-theme=night]"],
           primary: "#F4B1FF",
-          secondary: "#68C1EE",
+          secondary: "#8ABBFF",
           accent: "#D4F17E",
 
           success: "#61E4A3",

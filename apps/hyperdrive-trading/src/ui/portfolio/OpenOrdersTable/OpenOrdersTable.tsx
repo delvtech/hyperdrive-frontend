@@ -25,8 +25,8 @@ export function OpenOrdersTable({
 
   return (
     <SortableGridTable
-      headingRowClassName="grid-cols-4 text-neutral-content font-dm-sans text-md [&>*]:p-2"
-      bodyRowClassName="grid-cols-4 text-base-content font-dm-sans [&>*]:p-2 items-center"
+      headingRowClassName="grid-cols-4 text-neutral-content  text-md [&>*]:p-2"
+      bodyRowClassName="grid-cols-4 text-base-content  [&>*]:p-2 items-center"
       // Blank col added for actions
       cols={["Position", "Balance", "Value", "Matures on", ""]}
       rows={allRows}

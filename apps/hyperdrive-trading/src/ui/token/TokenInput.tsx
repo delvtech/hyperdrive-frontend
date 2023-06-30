@@ -22,7 +22,7 @@ export function TokenInput({
   autoFocus = false,
 }: TokenInputProps): ReactElement {
   return (
-    <div className="font-dm-sans flex flex-col gap-y-2 rounded border border-neutral-content bg-base-100 p-4">
+    <div className=" flex flex-col gap-y-2 rounded border border-neutral-content bg-base-100 p-4">
       <div className="flex gap-x-4">
         <input
           autoFocus={autoFocus}
