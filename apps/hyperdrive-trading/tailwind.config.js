@@ -73,7 +73,7 @@ module.exports = {
           "base-content": "#D6D5F6",
 
           neutral: "#425079",
-          "neutral-content": "#8992c2",
+          "neutral-content": "#9aa1cb",
         },
       },
     ],
