@@ -3,7 +3,6 @@ import { ethers } from "ethers";
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { parseUnits } from "src/base/parseUnits";
-import { Button } from "src/ui/base/components/Button";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { useOpenLong } from "src/ui/hyperdrive/hooks/useOpenLong";
 import { usePreviewOpenLong } from "src/ui/hyperdrive/hooks/usePreviewOpenLong";
@@ -99,40 +98,34 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
       {account ? (
         needsApproval ? (
           // Approval button
-          <Button
+          <button
             disabled={!approve}
-            variant="Work"
-            size="lg"
-            block
+            className="daisy-btn-warning daisy-btn"
             onClick={() => approve?.()}
           >
             <h5>Approve {market.baseToken.symbol}</h5>
-          </Button>
+          </button>
         ) : (
           // Trade button
-          <Button
+          <button
             disabled={
               !openLong ||
               openLongTransactionStatus === "loading" ||
               openLongStatus === "loading"
             }
-            variant="Emerald"
-            size="lg"
-            block
+            className="daisy-btn-secondary daisy-btn"
             onClick={() => openLong?.()}
           >
             <h5>Open Long</h5>
-          </Button>
+          </button>
         )
       ) : (
-        <Button
-          variant="Emerald"
-          size="lg"
-          block
+        <button
+          className="daisy-btn-secondary daisy-btn"
           onClick={() => openConnectModal?.()}
         >
           <h5>Connect wallet</h5>
-        </Button>
+        </button>
       )}
     </div>
   );
