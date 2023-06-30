@@ -69,7 +69,7 @@ function createOpenLongRow({
       <span key="maturity">
         {new Date(Number(long.maturity * 1000n)).toLocaleDateString()}
       </span>,
-      <span key="close-long">
+      <span key="close-long" className="flex justify-end">
         <Button size="sm" onClick={() => (window as any)[modalId].showModal()}>
           <XMarkIcon
             className="w-6 text-white opacity-70 hover:opacity-100 focus:opacity-100"
