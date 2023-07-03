@@ -1,9 +1,8 @@
-import { useConnectModal } from "@rainbow-me/rainbowkit";
+import { ConnectButton, useConnectModal } from "@rainbow-me/rainbowkit";
 import { constants, ethers } from "ethers";
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { convertMillisecondsToMonths } from "src/base/covertMillisecondsToMonths";
-import { Button } from "src/ui/base/components/Button";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { useOpenShort } from "src/ui/hyperdrive/hooks/useOpenShort";
 import { usePreviewOpenShort } from "src/ui/hyperdrive/hooks/usePreviewOpenShort";
@@ -17,7 +16,7 @@ interface OpenShortPositionFormProps {
   market: Hyperdrive;
 }
 
-export function OpenShortPositionForm({
+export function OpenShortForm({
   market,
 }: OpenShortPositionFormProps): ReactElement {
   const { address: account } = useAccount();
@@ -74,53 +73,35 @@ export function OpenShortPositionForm({
 
   const openShortButton = () => {
     if (!account) {
+      return <ConnectButton />;
+    }
+
+    if (needsApproval) {
       return (
-        <Button
-          variant="Crimson"
-          size="lg"
-          block
-          onClick={() => openConnectModal?.()}
+        <button
+          disabled={!approve}
+          className="daisy-btn-warning daisy-btn"
+          onClick={() => approve?.()}
         >
-          <h5>Connect wallet</h5>
-        </Button>
+          Approve {market.baseToken.symbol}
+        </button>
       );
     }
 
-    if (hasEnoughBalance === true) {
-      if (needsApproval) {
-        return (
-          <Button
-            disabled={!approve}
-            variant="Work"
-            onClick={() => approve?.()}
-          >
-            <h5>Approve {market.baseToken.symbol}</h5>
-          </Button>
-        );
-      } else {
-        return (
-          <Button
-            disabled={
-              !openShort ||
-              openShortTransactionStatus === "loading" ||
-              openShortSubmittedStatus === "loading"
-            }
-            variant="Crimson"
-            size="lg"
-            block
-            onClick={() => openShort?.()}
-          >
-            <h5>Open Short</h5>
-          </Button>
-        );
-      }
-    } else {
-      return (
-        <Button variant="Crimson" size="lg" block onClick={() => {}}>
-          <h5>Not enough {market.baseToken.symbol}</h5>
-        </Button>
-      );
-    }
+    return (
+      <button
+        disabled={
+          !hasEnoughBalance ||
+          !openShort ||
+          openShortTransactionStatus === "loading" ||
+          openShortSubmittedStatus === "loading"
+        }
+        className="daisy-btn-accent daisy-btn"
+        onClick={() => openShort?.()}
+      >
+        <h5>Open Short</h5>
+      </button>
+    );
   };
 
   const current = new Date();

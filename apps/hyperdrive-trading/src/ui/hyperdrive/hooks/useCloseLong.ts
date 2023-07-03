@@ -25,7 +25,11 @@ export function useCloseLong({
   enabled = true,
 }: UseCloseLongOptions): UseCloseLongResult {
   const queryEnabled =
-    !!long && !!bondAmountIn && !!minBaseAmountOut && !!destination && enabled;
+    !!long &&
+    !!bondAmountIn &&
+    minBaseAmountOut !== undefined && // check undefined since 0 is valid
+    !!destination &&
+    enabled;
 
   const { config } = usePrepareContractWrite({
     abi: HyperdriveABI,

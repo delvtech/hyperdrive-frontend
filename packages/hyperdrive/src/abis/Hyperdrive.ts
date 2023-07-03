@@ -5,6 +5,360 @@ export const HyperdriveABI = [
       {
         indexed: true,
         internalType: "address",
+        name: "trader",
+        type: "address",
+      },
+      {
+        indexed: true,
+        internalType: "uint256",
+        name: "assetId",
+        type: "uint256",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "maturityTime",
+        type: "uint256",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "baseAmount",
+        type: "uint256",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "bondAmount",
+        type: "uint256",
+      },
+    ],
+    name: "CloseLong",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: "address",
+        name: "trader",
+        type: "address",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "assetId",
+        type: "uint256",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "maturityTime",
+        type: "uint256",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "baseAmount",
+        type: "uint256",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "bondAmount",
+        type: "uint256",
+      },
+    ],
+    name: "CloseShort",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: "address",
+        name: "trader",
+        type: "address",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "assetId",
+        type: "uint256",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "maturityTime",
+        type: "uint256",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "baseAmount",
+        type: "uint256",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "bondAmount",
+        type: "uint256",
+      },
+    ],
+    name: "OpenShort",
+    type: "event",
+  },
+  {
+    inputs: [],
+    name: "AlreadyClosed",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "ApprovalFailed",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "BaseBufferExceedsShareReserves",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "BatchInputLengthMismatch",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "BelowMinimumContribution",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "BondMatured",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "BondNotMatured",
+    type: "error",
+  },
+  {
+    inputs: [
+      {
+        internalType: "bytes4",
+        name: "underlyingError",
+        type: "bytes4",
+      },
+    ],
+    name: "CallFailed",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "ExpiredDeadline",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "FixedPointMath_AddOverflow",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "FixedPointMath_InvalidExponent",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "FixedPointMath_NegativeInput",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "FixedPointMath_NegativeOrZeroInput",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "FixedPointMath_SubOverflow",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "InsufficientPrice",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "InvalidApr",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "InvalidBaseToken",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "InvalidCheckpointDuration",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "InvalidCheckpointTime",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "InvalidContribution",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "InvalidERC20Bridge",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "InvalidFeeAmounts",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "InvalidInitialSharePrice",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "InvalidMaturityTime",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "InvalidPositionDuration",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "InvalidSignature",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "InvalidTimestamp",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "InvalidToken",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "MintPercentTooHigh",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "NegativeInterest",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "NoAssetsToWithdraw",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "NotPayable",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "OutputLimit",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "Paused",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "PoolAlreadyInitialized",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "QueryOutOfRange",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "RestrictedZeroAddress",
+    type: "error",
+  },
+  {
+    inputs: [
+      {
+        internalType: "bytes",
+        name: "data",
+        type: "bytes",
+      },
+    ],
+    name: "ReturnData",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "TransferFailed",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "Unauthorized",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "UnexpectedAssetId",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "UnexpectedSender",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "UnexpectedSuccess",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "UnsupportedToken",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "ZeroAmount",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "ZeroLpTotalSupply",
+    type: "error",
+  },
+
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: "address",
         name: "owner",
         type: "address",
       },

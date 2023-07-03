@@ -1,5 +1,5 @@
 import { QueryObserverOptions } from "@tanstack/query-core";
-import { DSRHyperdriveABI } from "src/abis/DSRHyperdrive";
+import { HyperdriveABI } from "src/abis/Hyperdrive";
 import {
   PublicClient,
   decodeEventLog,
@@ -21,11 +21,11 @@ interface GetTransferSingleEvents {
 
 interface TransferSingleEvent {
   eventData: DecodeEventLogReturnType<
-    typeof DSRHyperdriveABI,
+    typeof HyperdriveABI,
     "TransferSingle"
   >["args"];
   eventLog: GetFilterLogsReturnType<
-    typeof DSRHyperdriveABI,
+    typeof HyperdriveABI,
     "TransferSingle"
   >[number];
 }
@@ -39,7 +39,7 @@ export async function getTransferSingleEvents({
 }: GetTransferSingleEvents): Promise<TransferSingleEvent[]> {
   const transferSingleLogs = await publicClient.getFilterLogs({
     filter: await publicClient.createContractEventFilter({
-      abi: DSRHyperdriveABI,
+      abi: HyperdriveABI,
       address: hyperdriveAddress,
       eventName: "TransferSingle",
       args: { from: fromAddress, to: toAddress },
@@ -50,7 +50,7 @@ export async function getTransferSingleEvents({
 
   return transferSingleLogs.map((log) => ({
     eventData: decodeEventLog({
-      abi: DSRHyperdriveABI,
+      abi: HyperdriveABI,
       data: log.data,
       topics: log.topics,
       eventName: "TransferSingle",

@@ -1,4 +1,4 @@
-import { ReactElement, useMemo } from "react";
+import { ReactElement } from "react";
 import {
   createBrowserRouter,
   Outlet,
@@ -9,7 +9,6 @@ import { Markets } from "src/pages/Markets";
 import { Trade } from "src/pages/Trade";
 import { Navbar } from "src/ui/app/Navbar/Navbar";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
-import { useLocalStorage } from "src/ui/base/hooks/useLocalStorage";
 
 const LASTED_VIEWED_MARKET_KEY = "last-viewed-market";
 
@@ -22,65 +21,56 @@ function BaseLayout(): ReactElement {
   );
 }
 
-export function App(): ReactElement {
+export function App(): ReactElement | null {
   const { appConfig } = useAppConfig();
   if (appConfig) {
     // eslint-disable-next-line no-console
     console.log("appConfig", appConfig);
   }
 
-  const [lastViewedMarket, setLastViewedMarket] = useLocalStorage<
-    string | undefined
-  >(LASTED_VIEWED_MARKET_KEY, undefined);
+  if (!appConfig) {
+    return null;
+  }
 
-  const router = useMemo(() => {
-    return createBrowserRouter([
-      {
-        path: "/",
-        element: <BaseLayout />,
-        children: [
-          {
-            path: "/",
-            element: <Markets />,
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <BaseLayout />,
+      children: [
+        {
+          path: "/",
+          element: <Markets />,
+        },
+        {
+          path: "markets",
+          element: <Markets />,
+        },
+        {
+          path: "/trade",
+          loader: () => {
+            return redirect(`/trade/${appConfig?.hyperdrives[0].address}`);
           },
-          {
-            path: "markets",
-            element: <Markets />,
-          },
-          {
-            path: "/trade",
-            loader: () => {
-              if (lastViewedMarket) {
-                return redirect(`/trade/${lastViewedMarket}`);
-              }
-              // we fall back to the first market in the config
-              // this should rarely happen
-              return redirect(`/trade/${appConfig?.hyperdrives[0].address}`);
-            },
-          },
-          {
-            path: "/trade/:address",
-            element: <Trade />,
-            loader: ({ params }) => {
-              const market = appConfig?.hyperdrives.find(
-                (market) => market.address === params.address,
-              );
+        },
+        {
+          path: "/trade/:address",
+          element: <Trade />,
+          loader: ({ params }) => {
+            const market = appConfig?.hyperdrives.find(
+              (market) => market.address === params.address,
+            );
 
-              if (market) {
-                setLastViewedMarket(market.address);
-                return market;
-              }
+            if (market) {
+              return market;
+            }
 
-              // we fall back to the first market in the config
-              // this should rarely happen
-              return redirect(`/trade/${appConfig?.hyperdrives[0].address}`);
-            },
+            // we fall back to the first market in the config
+            // this should rarely happen
+            return redirect(`/trade/${appConfig?.hyperdrives[0].address}`);
           },
-        ],
-      },
-    ]);
-    /* eslint-disable-next-line  react-hooks/exhaustive-deps */
-  }, [appConfig]);
+        },
+      ],
+    },
+  ]);
 
   return (
     <div className="flex h-full flex-col overflow-auto bg-base-100">

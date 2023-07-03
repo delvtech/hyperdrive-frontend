@@ -102,7 +102,11 @@ export function getOpenLongsQuery({
   const queryEnabled = !!account && !!hyperdriveAddress && !!publicClient;
   return {
     enabled: queryEnabled,
-    queryKey: ["open-longs", { hyperdriveAddress, account }],
+    queryKey: [
+      "@hyperdrive/core",
+      "open-longs",
+      { hyperdriveAddress, account },
+    ],
     queryFn: queryEnabled
       ? () => getOpenLongs({ account, hyperdriveAddress, publicClient })
       : undefined,

@@ -1,4 +1,4 @@
-import { DSRHyperdriveABI } from "src/abis/DSRHyperdrive";
+import { HyperdriveABI } from "src/abis/Hyperdrive";
 import { PublicClient, decodeEventLog, Address, Transport, Chain } from "viem";
 
 interface GetShortsOptions {
@@ -14,7 +14,7 @@ export async function getShorts({
   publicClient,
 }: GetShortsOptions): Promise<bigint[]> {
   const openShortFilter = await publicClient.createContractEventFilter({
-    abi: DSRHyperdriveABI,
+    abi: HyperdriveABI,
     address: hyperdriveAddress,
     eventName: "OpenShort",
     args: { trader: account },
@@ -29,7 +29,7 @@ export async function getShorts({
 
   const mintEvents = openShortFilterLogs.map((log) =>
     decodeEventLog({
-      abi: DSRHyperdriveABI,
+      abi: HyperdriveABI,
       data: log.data,
       topics: log.topics,
       eventName: "OpenShort",
