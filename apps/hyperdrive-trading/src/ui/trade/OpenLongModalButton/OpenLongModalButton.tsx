@@ -27,6 +27,9 @@ export function OpenLongModalButton({
             <p className="font-light">
               Earn the fixed rate on your current DAI holdings
             </p>
+            {/* Using a div styled as a button here just as a visual cue. Don't
+            use a real button here since the Well is interactive already, and
+            doing so would create invalid dom nesting of buttons. */}
             <div className="daisy-btn-secondary daisy-btn-sm daisy-btn mt-2 justify-between gap-0 border-secondary normal-case">
               <span className="ml-4 flex-1 text-center">Long</span>
               <ChevronRightIcon className="h-3 text-right" />
