@@ -37,14 +37,14 @@ export function CloseLongForm({
     hyperdriveAddress: long.hyperdriveAddress,
     maturityTime: long.maturity,
     bondAmountIn: amountAsBigInt,
-    minBaseAmountOut: parseUnits("0.01", baseDecimals),
+    minBaseAmountOut: parseUnits("0", baseDecimals),
     destination: account,
   });
 
   const { closeLong, isPendingWalletAction } = useCloseLong({
     long,
     bondAmountIn: amountAsBigInt,
-    minBaseAmountOut: parseUnits("1", baseDecimals),
+    minBaseAmountOut: parseUnits("0", baseDecimals),
     destination: account,
     enabled: previewCloseLongStatus === "success",
   });

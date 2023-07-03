@@ -25,7 +25,7 @@ export function OpenLongModalButton({
               Open a long
             </p>
             <p className="font-light">
-              Earn fixed rate yield on your existing DAI holdings
+              Earn the fixed rate on your current DAI holdings
             </p>
             <div className="daisy-btn-secondary daisy-btn-sm daisy-btn mt-2 justify-between gap-0 border-secondary normal-case">
               <span className="ml-4 flex-1 text-center">Long</span>

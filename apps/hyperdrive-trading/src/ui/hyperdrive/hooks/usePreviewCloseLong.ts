@@ -1,4 +1,4 @@
-import { DSRHyperdriveABI } from "@hyperdrive/core";
+import { HyperdriveABI } from "@hyperdrive/core";
 import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { Address, useAccount, usePublicClient } from "wagmi";
 
@@ -37,7 +37,7 @@ export function usePreviewCloseLong({
     !!hyperdriveAddress &&
     !!maturityTime &&
     !!bondAmountIn &&
-    !!minBaseAmountOut &&
+    minBaseAmountOut !== undefined && // check undefined since 0 is valid
     !!destination &&
     !!publicClient &&
     !!account &&
@@ -56,7 +56,7 @@ export function usePreviewCloseLong({
       ? async () => {
           // TODO: Refactor this to the math library instead
           const { result } = await publicClient.simulateContract({
-            abi: DSRHyperdriveABI,
+            abi: HyperdriveABI,
             address: hyperdriveAddress,
             account,
             functionName: "closeLong",
