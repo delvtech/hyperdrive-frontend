@@ -11,8 +11,6 @@ export { HyperdriveMath } from "src/abis/HyperdriveMath";
 // TODO: Contracts team to supply a single ABI for the hyperdrive pool soon.
 // Use HyperdriveABI for read methods, eg: getPoolConfig
 export { HyperdriveABI } from "src/abis/Hyperdrive";
-// Use DSRHyperdriveABI for events, eg: "OpenLong"
-export { DSRHyperdriveABI } from "src/abis/DSRHyperdrive";
 
 /** Functions */
 export { getOpenLongs, getOpenLongsQuery } from "src/pools/longs/getOpenLongs";

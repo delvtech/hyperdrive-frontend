@@ -1,3 +1,10 @@
+/**
+ * @deprecated The complete Hyperdrive ABI is being consolidated under
+ * Hyperdrive.ts by the smart contracts team soon. Use that instead.
+ *
+ * Preserving this for now in case we need to pull things over ourselves in the
+ * meantime.
+ */
 export const DSRHyperdriveABI = [
   {
     inputs: [

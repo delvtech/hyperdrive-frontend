@@ -1,4 +1,4 @@
-import { DSRHyperdriveABI } from "src/abis/DSRHyperdrive";
+import { HyperdriveABI } from "src/abis/Hyperdrive";
 import {
   PublicClient,
   Address,
@@ -11,13 +11,10 @@ import {
 } from "viem";
 interface CloseLongEvent {
   eventData: DecodeEventLogReturnType<
-    typeof DSRHyperdriveABI,
+    typeof HyperdriveABI,
     "CloseLong"
   >["args"];
-  eventLog: GetFilterLogsReturnType<
-    typeof DSRHyperdriveABI,
-    "CloseLong"
-  >[number];
+  eventLog: GetFilterLogsReturnType<typeof HyperdriveABI, "CloseLong">[number];
 }
 interface GetCloseLongEventsOptions {
   args: { traderAddress?: Address };
@@ -34,9 +31,9 @@ export async function getCloseLongEvents({
   hyperdriveAddress,
   publicClient,
 }: GetCloseLongEventsOptions): Promise<CloseLongEvent[]> {
-  const transferSingleLogs = await publicClient.getFilterLogs({
+  const closeLongLogs = await publicClient.getFilterLogs({
     filter: await publicClient.createContractEventFilter({
-      abi: DSRHyperdriveABI,
+      abi: HyperdriveABI,
       address: hyperdriveAddress,
       eventName: "CloseLong",
       args: { trader: traderAddress },
@@ -45,10 +42,10 @@ export async function getCloseLongEvents({
     }),
   });
 
-  return transferSingleLogs.map((log) => ({
+  return closeLongLogs.map((log) => ({
     // This is a typesafe copy of eventLog.args
     eventData: decodeEventLog({
-      abi: DSRHyperdriveABI,
+      abi: HyperdriveABI,
       data: log.data,
       topics: log.topics,
       eventName: "CloseLong",

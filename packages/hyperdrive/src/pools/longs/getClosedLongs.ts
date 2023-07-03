@@ -1,7 +1,4 @@
 import { QueryObserverOptions } from "@tanstack/query-core";
-import groupBy from "lodash.groupby";
-import mapValues from "lodash.mapvalues";
-import { sumBigInt } from "src/base/sumBy";
 import { PublicClient, Address, Transport, Chain } from "viem";
 import { ClosedLong } from "./types";
 import { getCloseLongEvents } from "src/pools/longs/getCloseLongEvents";
@@ -64,7 +61,11 @@ export function getCloseLongsQuery({
   const queryEnabled = !!account && !!hyperdriveAddress && !!publicClient;
   return {
     enabled: queryEnabled,
-    queryKey: ["closed-longs", { hyperdriveAddress, account }],
+    queryKey: [
+      "@hyperdrive/core",
+      "closed-longs",
+      { hyperdriveAddress, account },
+    ],
     queryFn: queryEnabled
       ? () =>
           getClosedLongs({
