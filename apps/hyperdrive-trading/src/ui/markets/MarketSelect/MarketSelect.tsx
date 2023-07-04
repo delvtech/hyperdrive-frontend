@@ -5,6 +5,7 @@ import { MarketsTableLarge } from "src/ui/markets/MarketsTableLarge";
 
 const MARKETS_MODAL_KEY = "MARKETS_MODAL";
 
+// TODO: Refactor to new Modal component
 export function MarketSelect({
   markets,
 }: {
@@ -12,13 +13,13 @@ export function MarketSelect({
 }): ReactElement {
   return (
     <>
-      <div className="flex w-full justify-between">
+      <div className="flex justify-between">
         <label
           htmlFor={MARKETS_MODAL_KEY}
-          className="daisy-btn-outline glass daisy-btn-xs daisy-btn w-full justify-between"
+          className="glass daisy-btn-xs daisy-btn w-full justify-between"
         >
           <span className="inline-flex items-center gap-2 text-sm">
-            Select market <ChevronDownIcon className="h-6" />
+            Select market <ChevronDownIcon className="h-5" />
           </span>
         </label>
       </div>
