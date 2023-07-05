@@ -12,7 +12,7 @@ export function Stat({ label, value, className }: StatProps): ReactElement {
       <p className="mb-1 whitespace-nowrap font-light text-neutral-content">
         {label}
       </p>
-      <p className="whitespace-nowrap text-base-content">{value}</p>
+      <div className="whitespace-nowrap text-base-content">{value}</div>
     </div>
   );
 }

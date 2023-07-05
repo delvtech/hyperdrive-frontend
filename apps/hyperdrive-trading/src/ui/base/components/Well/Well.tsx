@@ -14,7 +14,7 @@ export function Well({
   interactive,
   children,
   block,
-  variant = "primary",
+  variant,
   onClick,
 }: PropsWithChildren<WellProps>): ReactElement {
   const isInteractive = !disabled && (interactive || onClick);
@@ -22,15 +22,20 @@ export function Well({
     "w-full": block,
     "hover:cursor-pointer hover:ring-opacity-50": isInteractive,
 
-    "bg-primary/5 ring-primary": variant === "primary",
-    "hover:bg-primary/10 hover:ring-1": isInteractive && variant === "primary",
+    "bg-base-300/50": !variant,
+    "hover:ring-neutral-content hover:ring-1": isInteractive && !variant,
 
-    "bg-secondary/5 ring-secondary": variant === "secondary",
-    "hover:bg-secondary/10 hover:ring-1":
+    "bg-primary/5 ring-primary/20 ring-1": variant === "primary",
+    "hover:bg-primary/10 hover:ring-primary/50":
+      isInteractive && variant === "primary",
+
+    "bg-secondary/5 ring-secondary/20 ring-1": variant === "secondary",
+    "hover:bg-secondary/10 hover:ring-secondary/50":
       isInteractive && variant === "secondary",
 
-    "bg-accent/5 ring-accent": variant === "accent",
-    "hover:bg-accent/10 hover:ring-1": isInteractive && variant === "accent",
+    "bg-accent/5 ring-accent/20 ring-1": variant === "accent",
+    "hover:bg-accent/10 hover:ring-accent/50":
+      isInteractive && variant === "accent",
   });
 
   if (onClick || interactive) {

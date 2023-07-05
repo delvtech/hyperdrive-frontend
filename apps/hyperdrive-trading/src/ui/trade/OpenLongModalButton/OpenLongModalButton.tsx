@@ -1,4 +1,4 @@
-import { ChevronRightIcon, PlusCircleIcon } from "@heroicons/react/24/outline";
+import { ChevronRightIcon, ClockIcon } from "@heroicons/react/24/outline";
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { Modal } from "src/ui/base/components/Modal/Modal";
@@ -20,7 +20,7 @@ export function OpenLongModalButton({
       {({ showModal }) => (
         <Well interactive variant="secondary" onClick={() => showModal()}>
           <div className="flex w-52 flex-col gap-2 py-4 text-center">
-            <PlusCircleIcon className="mb-2 h-16 text-secondary" />
+            <ClockIcon className="mb-2 h-16 text-secondary" />
             <p className="font-lato text-h5 font-light text-secondary">
               Open a long
             </p>
