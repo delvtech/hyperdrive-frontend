@@ -21,7 +21,7 @@ export {
 } from "src/amm/longs/getClosedLongs";
 export type { GetClosedLongsOptions as GetCloseLongsOptions } from "src/amm/longs/getClosedLongs";
 
-export { getShorts } from "src/amm/shorts/getShorts";
+export { getShorts } from "src/amm/shorts/getShortsOld";
 export { getTransferSingleEvents } from "src/amm/getTransferSingleEvents";
 
 export type { Long, ClosedLong } from "src/amm/longs/types";

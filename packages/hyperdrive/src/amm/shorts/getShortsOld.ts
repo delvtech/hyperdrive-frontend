@@ -7,7 +7,9 @@ interface GetShortsOptions {
   publicClient: PublicClient<Transport, Chain>;
 }
 
-/** Fetches all open and closed shorts for an account. */
+/** Fetches all open and closed shorts for an account.
+ * @deprecated use getOpenShorts instead
+ */
 export async function getShorts({
   account,
   hyperdriveAddress,
