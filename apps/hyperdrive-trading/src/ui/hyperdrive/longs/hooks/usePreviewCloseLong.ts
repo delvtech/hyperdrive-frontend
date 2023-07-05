@@ -61,7 +61,7 @@ export function usePreviewCloseLong({
             account,
             functionName: "closeLong",
             args: [
-              BigInt(maturityTime),
+              maturityTime,
               bondAmountIn,
               minBaseAmountOut,
               destination,

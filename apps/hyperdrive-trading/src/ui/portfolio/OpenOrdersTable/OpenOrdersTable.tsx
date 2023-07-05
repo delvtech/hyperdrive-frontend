@@ -3,6 +3,7 @@ import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { SortableGridTable } from "src/ui/base/components/tables/SortableGridTable";
 import { useOpenLongRows } from "src/ui/portfolio/OpenOrdersTable/useOpenLongRows";
+import { useOpenShortRows } from "src/ui/portfolio/OpenOrdersTable/useOpenShortRows";
 import { useAccount } from "wagmi";
 
 interface OpenOrdersTableProps {
@@ -18,10 +19,12 @@ export function OpenOrdersTable({
     account,
     hyperdrive,
   });
+  const { openShortRows: shortRows = [] } = useOpenShortRows({
+    account,
+    hyperdrive,
+  });
 
-  // TODO: Add useOpenShortRows hook
-
-  const allRows = [...longRows];
+  const allRows = [...longRows, ...shortRows];
 
   return (
     <SortableGridTable
