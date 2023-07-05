@@ -1,4 +1,4 @@
-# DELV frontend development style guide
+# Coding style for DELV frontend developers
 
 ## Introduction
 
@@ -97,7 +97,7 @@ consistent line height that aligns with our design system.
 By following this rule, we ensure a consistent typographic hierarchy across the
 application, leading to a more visually cohesive user interface.
 
-### **4. Always use sentence-case text**
+### **4. Sentence case for labels**
 
 Sentence case offers ease in reading and writing. In contrast, title case can
 create ambiguity over which words require capitalization, and all-caps text can
