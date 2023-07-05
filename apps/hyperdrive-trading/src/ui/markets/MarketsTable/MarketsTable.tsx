@@ -6,14 +6,16 @@ import {
   Row,
   SortableGridTable,
 } from "src/ui/base/components/tables/SortableGridTable";
-import { useMarketRowData } from "src/ui/markets/hooks/useMarketRowData";
-import { MarketTableRowData } from "src/ui/markets/types";
-import { YieldSourceLabel } from "src/ui/protocol/ProtocolLabel";
+import {
+  MarketTableRowData,
+  useMarketRowData,
+} from "src/ui/markets/MarketsTable/useMarketRowData";
+import { YieldSourceLabel } from "src/ui/markets/YieldSourceLabel/YieldSourceLabel";
 
 const ALL_PROTOCOLS_KEY = "All Markets";
 const ALL_TERM_LENGTHS_KEY = 0;
 
-export function MarketsTableLarge(): ReactElement {
+export function MarketsTable(): ReactElement {
   const { appConfig: config } = useAppConfig();
 
   const allProtocols = config?.hyperdrives.map(

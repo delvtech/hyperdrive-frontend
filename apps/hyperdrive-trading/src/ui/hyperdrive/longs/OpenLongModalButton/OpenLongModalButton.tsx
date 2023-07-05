@@ -3,7 +3,7 @@ import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { Well } from "src/ui/base/components/Well/Well";
-import { OpenLongForm } from "src/ui/trade/OpenLongForm/OpenLongForm";
+import { OpenLongForm } from "src/ui/hyperdrive/longs/OpenLongForm/OpenLongForm";
 
 const OPEN_LONG_MODAL_ID = "openLongModal";
 

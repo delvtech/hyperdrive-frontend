@@ -5,14 +5,14 @@ import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Stat } from "src/ui/base/components/Stat";
 import { Well } from "src/ui/base/components/Well/Well";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { OpenLongModalButton } from "src/ui/hyperdrive/longs/OpenLongModalButton/OpenLongModalButton";
+import { OpenShortModalButton } from "src/ui/hyperdrive/shorts/OpenShortModalButton/OpenShortModalButton";
 import { MarketSelect } from "src/ui/markets/MarketSelect/MarketSelect";
 import { MarketStats } from "src/ui/markets/MarketStats/MarketStats";
+import { YieldSourceLabel } from "src/ui/markets/YieldSourceLabel/YieldSourceLabel";
 import { FAQ } from "src/ui/onboarding/FAQ/FAQ";
 import { PositionsSection } from "src/ui/portfolio/PositionsSection/PositionsSection";
-import { YieldSourceLabel } from "src/ui/protocol/ProtocolLabel";
 import { useMintBaseToken } from "src/ui/token/hooks/useMintBaseToken";
-import { OpenLongModalButton } from "src/ui/trade/OpenLongModalButton/OpenLongModalButton";
-import { OpenShortModalButton } from "src/ui/trade/OpenShortModalButton/OpenShortModalButton";
 import { parseUnits } from "viem";
 import { useAccount, useBalance, useChainId } from "wagmi";
 

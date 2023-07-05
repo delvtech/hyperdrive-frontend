@@ -12,7 +12,10 @@ export { HyperdriveMath } from "src/abis/HyperdriveMath";
 // Use HyperdriveABI for read methods, eg: getPoolConfig
 export { HyperdriveABI } from "src/abis/Hyperdrive";
 
-/** Functions */
+// AMM
+export { getTransferSingleEvents } from "src/amm/events/getTransferSingleEvents";
+
+/** Longs */
 export { getOpenLongs, getOpenLongsQuery } from "src/amm/longs/getOpenLongs";
 export type { GetOpenLongsOptions } from "src/amm/longs/getOpenLongs";
 export {
@@ -20,8 +23,11 @@ export {
   getCloseLongsQuery,
 } from "src/amm/longs/getClosedLongs";
 export type { GetClosedLongsOptions as GetCloseLongsOptions } from "src/amm/longs/getClosedLongs";
-
-export { getShorts } from "src/amm/shorts/getShortsOld";
-export { getTransferSingleEvents } from "src/amm/getTransferSingleEvents";
-
 export type { Long, ClosedLong } from "src/amm/longs/types";
+
+// Shorts
+export {
+  getOpenShorts,
+  getOpenShortsQuery,
+} from "src/amm/shorts/getOpenShorts";
+export { getShorts } from "src/amm/shorts/getShortsOld";

@@ -4,12 +4,12 @@ import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { convertMillisecondsToMonths } from "src/base/covertMillisecondsToMonths";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
-import { useOpenShort } from "src/ui/hyperdrive/hooks/useOpenShort";
-import { usePreviewOpenShort } from "src/ui/hyperdrive/hooks/usePreviewOpenShort";
+import { useOpenShort } from "src/ui/hyperdrive/shorts/hooks/useOpenShort";
+import { usePreviewOpenShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewOpenShort";
+import { OpenShortPreview } from "src/ui/hyperdrive/shorts/OpenShortPreview/OpenShortPreview";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenApproval } from "src/ui/token/hooks/useTokenApproval";
 import { TokenInput } from "src/ui/token/TokenInput";
-import { OpenShortPreview } from "src/ui/trade/OpenShortPreview/OpenShortPreview";
 import { useAccount, useBalance } from "wagmi";
 
 interface OpenShortPositionFormProps {

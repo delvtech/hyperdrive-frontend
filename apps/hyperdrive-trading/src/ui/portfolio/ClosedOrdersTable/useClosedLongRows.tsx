@@ -2,7 +2,7 @@ import { ClosedLong } from "@hyperdrive/core";
 import { Hyperdrive } from "src/appconfig/types";
 import { Row } from "src/ui/base/components/tables/SortableGridTable";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { useClosedLongs } from "src/ui/hyperdrive/hooks/useClosedLongs";
+import { useClosedLongs } from "src/ui/hyperdrive/longs/hooks/useClosedLongs";
 import { Address, formatUnits } from "viem";
 
 interface UseClosedLongRowsOptions {
