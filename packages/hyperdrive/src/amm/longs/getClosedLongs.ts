@@ -1,7 +1,7 @@
 import { QueryObserverOptions } from "@tanstack/query-core";
 import { PublicClient, Address, Transport, Chain } from "viem";
 import { ClosedLong } from "./types";
-import { getCloseLongEvents } from "src/pools/longs/getCloseLongEvents";
+import { getCloseLongEvents } from "src/amm/longs/getCloseLongEvents";
 
 export interface GetClosedLongsOptions {
   traderAddress: Address;

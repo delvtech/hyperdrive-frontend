@@ -13,15 +13,15 @@ export { HyperdriveMath } from "src/abis/HyperdriveMath";
 export { HyperdriveABI } from "src/abis/Hyperdrive";
 
 /** Functions */
-export { getOpenLongs, getOpenLongsQuery } from "src/pools/longs/getOpenLongs";
-export type { GetOpenLongsOptions } from "src/pools/longs/getOpenLongs";
+export { getOpenLongs, getOpenLongsQuery } from "src/amm/longs/getOpenLongs";
+export type { GetOpenLongsOptions } from "src/amm/longs/getOpenLongs";
 export {
   getClosedLongs,
   getCloseLongsQuery,
-} from "src/pools/longs/getClosedLongs";
-export type { GetClosedLongsOptions as GetCloseLongsOptions } from "src/pools/longs/getClosedLongs";
+} from "src/amm/longs/getClosedLongs";
+export type { GetClosedLongsOptions as GetCloseLongsOptions } from "src/amm/longs/getClosedLongs";
 
-export { getShorts } from "src/pools/shorts/getShorts";
-export { getTransferSingleEvents } from "src/pools/getTransferSingleEvents";
+export { getShorts } from "src/amm/shorts/getShorts";
+export { getTransferSingleEvents } from "src/amm/getTransferSingleEvents";
 
-export type { Long, ClosedLong } from "src/pools/longs/types";
+export type { Long, ClosedLong } from "src/amm/longs/types";

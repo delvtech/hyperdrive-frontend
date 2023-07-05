@@ -2,9 +2,9 @@ import { QueryObserverOptions } from "@tanstack/query-core";
 import groupBy from "lodash.groupby";
 import mapValues from "lodash.mapvalues";
 import { sumBigInt } from "src/base/sumBy";
-import { decodeAssetId } from "src/pools/assetId";
-import { getTransferSingleEvents } from "src/pools/getTransferSingleEvents";
-import { Long } from "src/pools/longs/types";
+import { decodeAssetId } from "src/amm/assetId";
+import { getTransferSingleEvents } from "src/amm/getTransferSingleEvents";
+import { Long } from "src/amm/longs/types";
 import { PublicClient, Address, Transport, Chain } from "viem";
 
 export interface GetOpenLongsOptions {
