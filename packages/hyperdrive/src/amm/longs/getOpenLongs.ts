@@ -2,7 +2,7 @@ import { QueryObserverOptions } from "@tanstack/query-core";
 import groupBy from "lodash.groupby";
 import mapValues from "lodash.mapvalues";
 import { sumBigInt } from "src/base/sumBy";
-import { decodeAssetId } from "src/amm/assetId";
+import { decodeAssetFromTransferSingleEventData } from "src/amm/assetId";
 import { getTransferSingleEvents } from "src/amm/getTransferSingleEvents";
 import { Long } from "src/amm/longs/types";
 import { PublicClient, Address, Transport, Chain } from "viem";
@@ -28,7 +28,8 @@ export async function getOpenLongs({
     })
   ).filter(
     (transferSingleEvent) =>
-      decodeAssetId(transferSingleEvent.eventLog.data).assetType === "LONG",
+      decodeAssetFromTransferSingleEventData(transferSingleEvent.eventLog.data)
+        .assetType === "LONG",
   );
 
   const longsMintedOrReceivedById = mapValues(
@@ -39,7 +40,9 @@ export async function getOpenLongs({
         hyperdriveAddress,
         assetId,
         bondAmount: sumBigInt(events.map((event) => event.eventData.value)),
-        maturity: decodeAssetId(events[0].eventLog.data).timestamp,
+        maturity: decodeAssetFromTransferSingleEventData(
+          events[0].eventLog.data,
+        ).timestamp,
       };
     },
   );
@@ -54,7 +57,8 @@ export async function getOpenLongs({
     })
   ).filter(
     (transferSingleEvent) =>
-      decodeAssetId(transferSingleEvent.eventLog.data).assetType === "LONG",
+      decodeAssetFromTransferSingleEventData(transferSingleEvent.eventLog.data)
+        .assetType === "LONG",
   );
   const longsRedeemedOrSentById = mapValues(
     groupBy(longsRedeemedOrSent, (event) => event.eventData.id),
@@ -64,7 +68,9 @@ export async function getOpenLongs({
         hyperdriveAddress,
         assetId,
         bondAmount: sumBigInt(events.map((event) => event.eventData.value)),
-        maturity: decodeAssetId(events[0].eventLog.data).timestamp,
+        maturity: decodeAssetFromTransferSingleEventData(
+          events[0].eventLog.data,
+        ).timestamp,
       };
     },
   );

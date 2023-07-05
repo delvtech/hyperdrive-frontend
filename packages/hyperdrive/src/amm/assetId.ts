@@ -13,19 +13,19 @@ export type AssetType = "LP" | "LONG" | "SHORT" | "WITHDRAWAL_SHARE";
  * Decodes an encoded asset ID into it's constituent parts: an assetType and
  * timestamp.
  */
-export function decodeAssetId(assetId: Hash): {
+export function decodeAssetFromTransferSingleEventData(eventData: Hash): {
   assetType: AssetType;
   timestamp: bigint;
 } {
   // Remove the leading "0x"
-  const cleanId = assetId.slice(2);
+  const cleanEventData = eventData.slice(2);
 
   // 2 hexadecimal digits (8 bits) = identifier
-  const identifier = Number(cleanId.slice(0, 2));
+  const identifier = Number(cleanEventData.slice(0, 2));
   const assetType = parseAssetType(identifier);
 
   // 62 hexadecimal digits (248 bits) = timestamp (in seconds)
-  const timestampPart = cleanId.slice(2, 64);
+  const timestampPart = cleanEventData.slice(2, 64);
   const timestamp = BigInt(parseInt(timestampPart, 16));
 
   return {
