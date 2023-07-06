@@ -2,26 +2,22 @@
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { SortableGridTable } from "src/ui/base/components/tables/SortableGridTable";
-import { useOpenLongRows } from "src/ui/portfolio/OpenOrdersTable/useOpenLongRows";
+import { useOpenShortRows } from "src/ui/portfolio/OpenShortsTable/useOpenShortRows";
 import { useAccount } from "wagmi";
 
 interface OpenOrdersTableProps {
   hyperdrive: Hyperdrive;
 }
 
-export function OpenOrdersTable({
+export function OpenShortsTable({
   hyperdrive,
 }: OpenOrdersTableProps): ReactElement {
   const { address: account } = useAccount();
 
-  const { openLongRows: longRows = [] } = useOpenLongRows({
+  const { openShortRows = [] } = useOpenShortRows({
     account,
     hyperdrive,
   });
-
-  // TODO: Add useOpenShortRows hook
-
-  const allRows = [...longRows];
 
   return (
     <SortableGridTable
@@ -29,7 +25,7 @@ export function OpenOrdersTable({
       bodyRowClassName="grid-cols-4 text-base-content items-center text-h6 even:bg-base-300/50 h-16"
       // Blank col added for actions
       cols={["Position", "Balance", "Value", "Matures on", ""]}
-      rows={allRows}
+      rows={openShortRows}
     />
   );
 }

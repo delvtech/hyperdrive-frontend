@@ -10,8 +10,8 @@ import { Hash } from "viem";
 export type AssetType = "LP" | "LONG" | "SHORT" | "WITHDRAWAL_SHARE";
 
 /**
- * Decodes an encoded asset ID into it's constituent parts: an assetType and
- * timestamp.
+ * Decodes a TransferSingle event.data into it's constituent parts: an assetType
+ * and timestamp (if it exists).
  */
 export function decodeAssetFromTransferSingleEventData(eventData: Hash): {
   assetType: AssetType;

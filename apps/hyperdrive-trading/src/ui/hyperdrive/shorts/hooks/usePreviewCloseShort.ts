@@ -1,13 +1,11 @@
 import { HyperdriveABI } from "@hyperdrive/core";
 import { useQuery } from "@tanstack/react-query";
-import { Hyperdrive } from "src/appconfig/types";
 import { QueryStatusType } from "src/ui/base/types";
-import { getAssetTimestampFromTokenId } from "src/ui/hyperdrive/utils";
 import { Address, useAccount, usePublicClient } from "wagmi";
 
 interface UsePreviewCloseShortOptions {
-  market: Hyperdrive;
-  tokenID: bigint | undefined;
+  hyperdriveAddress: Address;
+  maturityTime: bigint | undefined;
   shortAmountIn: bigint | undefined;
   minBaseAmountOut: bigint | undefined;
   destination: Address | undefined;
@@ -21,8 +19,8 @@ interface UsePreviewCloseShortResult {
 }
 
 export function usePreviewCloseShort({
-  market,
-  tokenID,
+  hyperdriveAddress,
+  maturityTime,
   shortAmountIn,
   minBaseAmountOut,
   destination,
@@ -33,7 +31,7 @@ export function usePreviewCloseShort({
   const { address: account } = useAccount();
 
   const queryEnabled =
-    !!tokenID &&
+    !!maturityTime &&
     !!shortAmountIn &&
     !!minBaseAmountOut &&
     !!destination &&
@@ -44,7 +42,7 @@ export function usePreviewCloseShort({
   const { data, status } = useQuery({
     queryKey: [
       "preview-close-short",
-      market.address,
+      hyperdriveAddress,
       shortAmountIn?.toString(),
       minBaseAmountOut?.toString(),
       destination?.toString(),
@@ -54,11 +52,11 @@ export function usePreviewCloseShort({
       ? async () => {
           const { result } = await publicClient.simulateContract({
             abi: HyperdriveABI,
-            address: market.address,
+            address: hyperdriveAddress,
             account,
             functionName: "closeShort",
             args: [
-              BigInt(getAssetTimestampFromTokenId(tokenID)),
+              maturityTime,
               shortAmountIn,
               minBaseAmountOut,
               destination,
