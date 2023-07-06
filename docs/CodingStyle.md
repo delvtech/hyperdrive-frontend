@@ -33,6 +33,8 @@ additional thought from developers.
   comments.
 - Keep pull requests small to expedite reviews and maintain clean abstractions.
 - Do a pair review for large, unsplittable PRs.
+- Squash and merge PRs.
+- Rebase to avoid merge commits in PRs.
 
 ## Coding style
 
@@ -103,3 +105,5 @@ Sentence case offers ease in reading and writing. In contrast, title case can
 create ambiguity over which words require capitalization, and all-caps text can
 drastically reduce reading speed. Therefore, it's preferable to capitalize only
 the first word, for instance, 'View all' instead of 'View All'.
+
+Note: Proper nouns should still be capitalized, e.g.: "Dai Savings Rate"
