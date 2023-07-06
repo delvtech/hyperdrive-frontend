@@ -1,6 +1,6 @@
-export function convertMillisecondsToDays(ms: number): number {
-  const millisecondsInOneDay = 24 * 60 * 60 * 1000; // Number of milliseconds in a day
-  const days = Math.floor(ms / millisecondsInOneDay); // Calculate the number of whole days
+const MILLISECONDS_PER_DAY = 24 * 60 * 60 * 1000;
 
+export function convertMillisecondsToDays(ms: number): number {
+  const days = Math.floor(ms / MILLISECONDS_PER_DAY); // Calculate the number of whole days
   return days;
 }
