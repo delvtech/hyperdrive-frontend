@@ -29,14 +29,13 @@ export function PositionsSection({
     <div>
       <div className="mb-2 flex w-full items-center justify-between border-b border-neutral-content/30">
         <span className="text-h5 font-thin text-neutral-content">
-          Your Positions
+          Your positions
         </span>
         <div className="daisy-tabs">
           <a
             onClick={() => setActivePositionTab("Longs")}
-            className={classNames("daisy-tab-lifted daisy-tab daisy-tab-lg", {
-              "daisy-tab-active !bg-secondary/30":
-                activePositionTab === "Longs",
+            className={classNames("daisy-tab-lifted daisy-tab daisy-tab-lg ", {
+              "daisy-tab-active glass": activePositionTab === "Longs",
             })}
           >
             Longs
@@ -44,8 +43,7 @@ export function PositionsSection({
           <a
             onClick={() => setActivePositionTab("Shorts")}
             className={classNames("daisy-tab-lifted daisy-tab daisy-tab-lg", {
-              "daisy-tab-active  !bg-neutral-content/30":
-                activePositionTab === "Shorts",
+              "daisy-tab-active glass": activePositionTab === "Shorts",
             })}
           >
             Shorts
@@ -53,8 +51,7 @@ export function PositionsSection({
           <a
             onClick={() => setActivePositionTab("LP")}
             className={classNames("daisy-tab-lifted daisy-tab daisy-tab-lg", {
-              "daisy-tab-active  !bg-neutral-content/30":
-                activePositionTab === "LP",
+              "daisy-tab-active glass": activePositionTab === "LP",
             })}
           >
             LP
