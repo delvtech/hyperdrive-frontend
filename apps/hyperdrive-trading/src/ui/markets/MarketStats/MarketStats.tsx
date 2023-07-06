@@ -1,5 +1,6 @@
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
+import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { Stat } from "src/ui/base/components/Stat";
 
 export function MarketStats({
@@ -7,6 +8,8 @@ export function MarketStats({
 }: {
   hyperdrive: Hyperdrive;
 }): ReactElement {
+  const formattedTermLength = formatTermLength(hyperdrive.termLengthMS);
+
   return (
     <div className="flex w-full flex-wrap items-center justify-start gap-16">
       <Stat
@@ -20,7 +23,7 @@ export function MarketStats({
           </span>
         }
       />
-      <Stat label="Term" value="1 year" />
+      <Stat label="Term" value={formattedTermLength} />
       <Stat label="Fixed Rate" value="1.50% APR" />
       <Stat label="DSR APY" value="3.49%" />
       <Stat label="LP APY" value="1.60%" />
@@ -28,4 +31,9 @@ export function MarketStats({
       <Stat label="Liquidity" value="$100M" />
     </div>
   );
+}
+
+function formatTermLength(termLengthMS: number) {
+  const numDays = convertMillisecondsToDays(termLengthMS);
+  return `${numDays} days`;
 }
