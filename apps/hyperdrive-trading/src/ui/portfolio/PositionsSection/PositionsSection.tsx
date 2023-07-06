@@ -3,12 +3,13 @@ import classNames from "classnames";
 import { ReactElement, useState } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { Well } from "src/ui/base/components/Well/Well";
-import { ClosedOrdersTable } from "src/ui/portfolio/ClosedOrdersTable/ClosedOrdersTable";
+import { ClosedLongsTable } from "src/ui/portfolio/ClosedLongsTable/ClosedLongsTable";
+import { OpenLongsTable } from "src/ui/portfolio/OpenLongsTable/OpenLongsTable";
 import {
   OpenOrClosedTab,
   OpenOrClosedTabs,
 } from "src/ui/portfolio/OpenOrClosedTabs/OpenOrClosedTabs";
-import { OpenOrdersTable } from "src/ui/portfolio/OpenOrdersTable/OpenOrdersTable";
+import { OpenShortsTable } from "src/ui/portfolio/OpenShortsTable/OpenShortsTable";
 
 type PositionTab = "Longs" | "Shorts" | "LP";
 
@@ -69,14 +70,21 @@ export function PositionsSection({
 
         {(() => {
           switch (activePositionTab) {
-            case "Longs":
-              return <OpenOrdersTable hyperdrive={hyperdrive} />;
-            case "Shorts":
-              return <ClosedOrdersTable hyperdrive={hyperdrive} />;
-            case "LP":
-              {
-                /* TODO: Wire this up */
+            case "Longs": {
+              if (activeOpenOrClosedTab === "Open") {
+                return <OpenLongsTable hyperdrive={hyperdrive} />;
               }
+              return <ClosedLongsTable hyperdrive={hyperdrive} />;
+            }
+            case "Shorts": {
+              if (activeOpenOrClosedTab === "Open") {
+                return <OpenShortsTable hyperdrive={hyperdrive} />;
+              }
+              // TODO: Wire this up
+              return <ClosedLongsTable hyperdrive={hyperdrive} />;
+            }
+            case "LP":
+              /* TODO: Wire this up */
               return <Well>Under construction</Well>;
             default:
               assertNever(activePositionTab);
