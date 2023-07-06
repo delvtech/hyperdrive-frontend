@@ -4,9 +4,9 @@ import { Hyperdrive } from "src/appconfig/types";
 import { Button } from "src/ui/base/components/Button";
 import { Row } from "src/ui/base/components/tables/SortableGridTable";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { useOpenLongs } from "src/ui/hyperdrive/hooks/useOpenLongs";
-import { usePreviewCloseLong } from "src/ui/hyperdrive/hooks/usePreviewCloseLong";
-import { CloseLongModalButton } from "src/ui/trade/CloseLongModalButton/CloseLongModalButton";
+import { CloseLongModalButton } from "src/ui/hyperdrive/longs/CloseLongModalButton/CloseLongModalButton";
+import { useOpenLongs } from "src/ui/hyperdrive/longs/hooks/useOpenLongs";
+import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
 import { Address, formatUnits, parseUnits } from "viem";
 import { useAccount } from "wagmi";
 

@@ -2,7 +2,16 @@ import { useQuery, UseQueryResult } from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
 import { YieldSource } from "src/appconfig/yieldSources/yieldSources";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
-import { MarketStatistics, MarketTableRowData } from "src/ui/markets/types";
+
+export interface MarketTableRowData {
+  market: Hyperdrive;
+  yieldSource: YieldSource;
+  liquidity: string;
+  longAPR: string;
+  shortAPR: string;
+  lpAPR: string;
+}
+export type MarketStatistics = Omit<MarketTableRowData, "market">;
 
 // TODO: stubbed function for now
 // ideally fetched from an api

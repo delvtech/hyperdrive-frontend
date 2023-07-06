@@ -3,7 +3,7 @@ import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { Well } from "src/ui/base/components/Well/Well";
-import { OpenShortForm } from "src/ui/trade/OpenShortForm/OpenShortForm";
+import { OpenShortForm } from "src/ui/hyperdrive/shorts/OpenShortForm/OpenShortForm";
 
 const OPEN_SHORT_MODAL_ID = "openShortModal";
 export function OpenShortModalButton({

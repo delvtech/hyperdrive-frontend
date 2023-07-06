@@ -4,12 +4,12 @@ import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { parseUnits } from "src/base/parseUnits";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
-import { useOpenLong } from "src/ui/hyperdrive/hooks/useOpenLong";
-import { usePreviewOpenLong } from "src/ui/hyperdrive/hooks/usePreviewOpenLong";
+import { useOpenLong } from "src/ui/hyperdrive/longs/hooks/useOpenLong";
+import { usePreviewOpenLong } from "src/ui/hyperdrive/longs/hooks/usePreviewOpenLong";
+import { OpenLongPreview } from "src/ui/hyperdrive/longs/OpenLongPreview/OpenLongPreview";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenApproval } from "src/ui/token/hooks/useTokenApproval";
 import { TokenInput } from "src/ui/token/TokenInput";
-import { OpenLongPreview } from "src/ui/trade/OpenLongPreview/OpenLongPreview";
 import { useAccount, useBalance } from "wagmi";
 
 interface OpenLongFormProps {

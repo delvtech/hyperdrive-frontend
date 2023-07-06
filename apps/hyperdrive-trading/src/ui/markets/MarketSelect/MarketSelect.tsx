@@ -1,7 +1,7 @@
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
-import { MarketsTableLarge } from "src/ui/markets/MarketsTableLarge";
+import { MarketsTable } from "src/ui/markets/MarketsTable/MarketsTable";
 
 const MARKETS_MODAL_KEY = "MARKETS_MODAL";
 
@@ -36,7 +36,7 @@ export function MarketSelect({
         <div className="flex max-h-[70vh] flex-col items-center overflow-auto rounded bg-base-100 p-4">
           <h3 className="font-lato">Markets</h3>
 
-          <MarketsTableLarge />
+          <MarketsTable />
         </div>
       </label>
     </>
