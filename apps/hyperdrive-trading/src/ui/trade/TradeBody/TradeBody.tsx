@@ -20,7 +20,7 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
   const yieldSource = appConfig?.yieldSources[hyperdrive.yieldSource];
 
   return (
-    <div className="flex max-w-[840px] flex-col gap-16 ">
+    <div className="flex max-w-4xl flex-col gap-16 ">
       {/* Name w/ market select */}
       <div className="flex w-full flex-col gap-6">
         <div className="flex flex-wrap items-start justify-between">
