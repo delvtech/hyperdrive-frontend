@@ -23,7 +23,6 @@ export function useOpenShorts({
       publicClient: publicClient as any,
     }),
   );
-  console.log("openShorts", openShorts);
 
   return { openShorts, openShortsStatus };
 }
