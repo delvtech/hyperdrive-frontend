@@ -45,7 +45,7 @@ export async function getFixedAPR({
   // 0.049999999999999996 * 100 = 5, we just take the first 4 characters after
   // the decimal, and format those to a percent, eg: 0.0499 * 100 = 4.99.
   const truncatedAPR = +formatUnits(apr, 18).slice(0, 6);
-  const formatted = `${100 * truncatedAPR}`;
+  const formatted = `${(100 * truncatedAPR).toFixed(2)}`;
 
   return {
     apr,
