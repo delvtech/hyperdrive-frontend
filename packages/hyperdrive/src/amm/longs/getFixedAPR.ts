@@ -13,7 +13,7 @@ export async function getFixedAPR({
   hyperdriveAddress,
   hyperdriveMathAddress,
   publicClient,
-}: GetFixedAPROptions): Promise<bigint> {
+}: GetFixedAPROptions): Promise<{ apr: bigint; formatted: string }> {
   // TODO: Move to own method
   const poolConfig = await publicClient.readContract({
     address: hyperdriveAddress,
@@ -41,23 +41,26 @@ export async function getFixedAPR({
     ],
   });
 
-  return apr;
+  // Truncate this so that 4.99% does not round to 5% due to precision
+  // errors where 18 decimal numbers (from solidity) get rounded to 16
+  // decimals in typescript.
+  const formatted = `${100 * +formatUnits(apr, 18).slice(0, 6)}`;
+
+  return {
+    apr,
+    formatted,
+  };
 }
 
 /**
- * A query wrapper for consumers who want easy caching via @tanstack/query
- *
- * TODO: Piloting this idea here for now as proof-of-concept. Ultimately
- * @hyperdrive/core should not know about caching and just be pure hyperdrive
- * bindings. If this works well in practice we can move this to a
- * @hyperdrive/queries package.
+ * TODO: Move this to its own @hyperdrive/queries package eventually.
  */
 export function getFixedAPRQuery({
   hyperdriveAddress,
   hyperdriveMathAddress,
   publicClient,
 }: Partial<GetFixedAPROptions>): QueryObserverOptions<
-  Awaited<{ apr: bigint; formatted: string }>
+  Awaited<ReturnType<typeof getFixedAPR>>
 > {
   const queryEnabled =
     !!hyperdriveAddress && !!publicClient && !!hyperdriveMathAddress;
@@ -70,23 +73,12 @@ export function getFixedAPRQuery({
       { hyperdriveAddress, hyperdriveMathAddress },
     ],
     queryFn: queryEnabled
-      ? async () => {
-          const aprBigInt = await getFixedAPR({
+      ? async () =>
+          getFixedAPR({
             hyperdriveAddress,
             hyperdriveMathAddress,
             publicClient,
-          });
-
-          // Truncate this so that 4.99% does not round to 5% due to precision
-          // errors where 18 decimal numbers (from solidity) get rounded to 16
-          // decimals in typescript.
-          const formatted = `${100 * +formatUnits(aprBigInt, 18).slice(0, 6)}`;
-
-          return {
-            apr: aprBigInt,
-            formatted,
-          };
-        }
+          })
       : undefined,
   };
 }
