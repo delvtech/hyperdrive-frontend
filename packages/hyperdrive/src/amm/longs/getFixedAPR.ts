@@ -1,4 +1,4 @@
-import { PublicClient, Address, Transport, Chain } from "viem";
+import { PublicClient, Address, Transport, Chain, formatUnits } from "viem";
 import { HyperdriveMathABI } from "src/abis/HyperdriveMath";
 import { HyperdriveABI } from "src/abis/Hyperdrive";
 import { QueryObserverOptions } from "@tanstack/query-core";
@@ -34,7 +34,7 @@ export async function getFixedAPR({
     functionName: "calculateAPRFromReserves",
     args: [
       poolInfo.shareReserves,
-      poolInfo.shareReserves,
+      poolInfo.bondReserves,
       poolConfig.initialSharePrice,
       poolConfig.positionDuration,
       poolConfig.timeStretch,
@@ -57,25 +57,36 @@ export function getFixedAPRQuery({
   hyperdriveMathAddress,
   publicClient,
 }: Partial<GetFixedAPROptions>): QueryObserverOptions<
-  Awaited<ReturnType<typeof getFixedAPR>>
+  Awaited<{ apr: bigint; formatted: string }>
 > {
   const queryEnabled =
     !!hyperdriveAddress && !!publicClient && !!hyperdriveMathAddress;
 
   return {
-    enabled: queryEnabled!,
+    enabled: queryEnabled,
     queryKey: [
       "@hyperdrive/core",
       "calculateAPR",
       { hyperdriveAddress, hyperdriveMathAddress },
     ],
     queryFn: queryEnabled
-      ? () =>
-          getFixedAPR({
+      ? async () => {
+          const aprBigInt = await getFixedAPR({
             hyperdriveAddress,
             hyperdriveMathAddress,
             publicClient,
-          })
+          });
+
+          // Truncate this so that 4.99% does not round to 5% due to precision
+          // errors where 18 decimal numbers (from solidity) get rounded to 16
+          // decimals in typescript.
+          const formatted = `${100 * +formatUnits(aprBigInt, 18).slice(0, 6)}`;
+
+          return {
+            apr: aprBigInt,
+            formatted,
+          };
+        }
       : undefined,
   };
 }
