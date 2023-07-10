@@ -41,10 +41,11 @@ export async function getFixedAPR({
     ],
   });
 
-  // Truncate this so that 4.99% does not round to 5% due to precision
-  // errors where 18 decimal numbers (from solidity) get rounded to 16
-  // decimals in typescript.
-  const formatted = `${100 * +formatUnits(apr, 18).slice(0, 6)}`;
+  // APR is stored in 18 decimals, so to avoid rounding errors, eg:
+  // 0.049999999999999996 * 100 = 5, we just take the first 4 characters after
+  // the decimal, and format those to a percent, eg: 0.0499 * 100 = 4.99.
+  const truncatedAPR = +formatUnits(apr, 18).slice(0, 6);
+  const formatted = `${100 * truncatedAPR}`;
 
   return {
     apr,
