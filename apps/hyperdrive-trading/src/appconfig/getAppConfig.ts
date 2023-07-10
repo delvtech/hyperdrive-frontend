@@ -1,6 +1,6 @@
 import { AddressesJson } from "@hyperdrive/core";
 import { getDSRHyperdrive } from "src/appconfig/hyperdrives/dsrHyperdrive";
-import { AppConfig, Hyperdrive } from "src/appconfig/types";
+import { AppConfig } from "src/appconfig/types";
 import { yieldSources } from "src/appconfig/yieldSources/yieldSources";
 import { PublicClient } from "wagmi";
 
@@ -12,19 +12,20 @@ export async function getAppConfig(
   addresses: AddressesJson,
   publicClient: PublicClient,
 ): Promise<AppConfig> {
-  const hyperdrives: Hyperdrive[] = [];
+  const config: AppConfig = {
+    chainId: await publicClient.getChainId(),
+    hyperdriveMath: addresses.mockHyperdriveMath,
+    hyperdrives: [],
+    yieldSources,
+  };
 
   if (addresses.dsrHyperdrive) {
     const dsrHyperdrive = await getDSRHyperdrive(
       addresses.dsrHyperdrive,
       publicClient as any,
     );
-    hyperdrives.push(dsrHyperdrive);
+    config.hyperdrives.push(dsrHyperdrive);
   }
 
-  return {
-    chainId: await publicClient.getChainId(),
-    hyperdrives,
-    yieldSources,
-  };
+  return config;
 }
