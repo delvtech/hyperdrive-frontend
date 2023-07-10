@@ -4,7 +4,6 @@ import { HyperdriveABI } from "src/abis/Hyperdrive";
 import { QueryObserverOptions } from "@tanstack/query-core";
 
 export interface GetFixedAPROptions {
-  traderAddress: Address;
   hyperdriveAddress: Address;
   hyperdriveMathAddress: Address;
   publicClient: PublicClient<Transport, Chain>;
@@ -57,27 +56,22 @@ export function getFixedAPRQuery({
   hyperdriveAddress,
   hyperdriveMathAddress,
   publicClient,
-  traderAddress: account,
 }: Partial<GetFixedAPROptions>): QueryObserverOptions<
   Awaited<ReturnType<typeof getFixedAPR>>
 > {
   const queryEnabled =
-    !!account &&
-    !!hyperdriveAddress &&
-    !!publicClient &&
-    !!hyperdriveMathAddress;
+    !!hyperdriveAddress && !!publicClient && !!hyperdriveMathAddress;
 
   return {
-    enabled: queryEnabled,
+    enabled: queryEnabled!,
     queryKey: [
       "@hyperdrive/core",
       "calculateAPR",
-      { hyperdriveAddress, hyperdriveMathAddress, account },
+      { hyperdriveAddress, hyperdriveMathAddress },
     ],
     queryFn: queryEnabled
       ? () =>
           getFixedAPR({
-            traderAddress: account,
             hyperdriveAddress,
             hyperdriveMathAddress,
             publicClient,
