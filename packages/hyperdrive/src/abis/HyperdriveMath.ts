@@ -1,4 +1,4 @@
-export const HyperdriveMath = [
+export const HyperdriveMathABI = [
   {
     inputs: [],
     name: "FixedPointMath_AddOverflow",

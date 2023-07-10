@@ -1,3 +1,7 @@
+/**
+ *
+ * @deprecated use from viem instead
+ */
 export function formatBigInt(bigInt: bigint, decimals = 18): string {
   const bigIntString = bigInt.toString();
   const whole = bigIntString.slice(0, bigIntString.length - decimals);
