@@ -21,8 +21,8 @@ export function OpenShortsTable({
 
   return (
     <SortableGridTable
-      headingRowClassName="grid-cols-4 text-neutral-content"
-      bodyRowClassName="grid-cols-4 text-base-content items-center text-h6 even:bg-accent/5 h-16"
+      headingRowClassName="grid-cols-4 text-neutral-content mx-2"
+      bodyRowClassName="grid-cols-4 text-base-content items-center text-sm md:text-h6 even:bg-secondary/5 h-16 mx-2"
       // Blank col added for actions
       cols={["Position", "Balance", "Value", "Matures on", ""]}
       rows={openShortRows}

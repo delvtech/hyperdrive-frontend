@@ -14,25 +14,34 @@ export function PositionTabs({
     <div className="daisy-tabs">
       <button
         onClick={() => setActivePositionTab("Longs")}
-        className={classNames("daisy-tab-lifted daisy-tab daisy-tab-lg", {
-          "daisy-tab-active glass": activePositionTab === "Longs",
-        })}
+        className={classNames(
+          "daisy-tab-lifted daisy-tab daisy-tab-sm md:daisy-tab-lg",
+          {
+            "daisy-tab-active glass": activePositionTab === "Longs",
+          },
+        )}
       >
         Longs
       </button>
       <button
         onClick={() => setActivePositionTab("Shorts")}
-        className={classNames("daisy-tab-lifted daisy-tab daisy-tab-lg", {
-          "daisy-tab-active glass": activePositionTab === "Shorts",
-        })}
+        className={classNames(
+          "daisy-tab-lifted daisy-tab daisy-tab-sm md:daisy-tab-lg",
+          {
+            "daisy-tab-active glass": activePositionTab === "Shorts",
+          },
+        )}
       >
         Shorts
       </button>
       <button
         onClick={() => setActivePositionTab("LP")}
-        className={classNames("daisy-tab-lifted daisy-tab daisy-tab-lg", {
-          "daisy-tab-active glass": activePositionTab === "LP",
-        })}
+        className={classNames(
+          "daisy-tab-lifted daisy-tab daisy-tab-sm md:daisy-tab-lg",
+          {
+            "daisy-tab-active glass": activePositionTab === "LP",
+          },
+        )}
       >
         LP
       </button>
