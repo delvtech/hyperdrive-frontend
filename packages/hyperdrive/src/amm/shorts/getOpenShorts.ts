@@ -58,7 +58,7 @@ export async function getOpenShorts({
   ).filter(
     (transferSingleEvent) =>
       decodeAssetFromTransferSingleEventData(transferSingleEvent.eventLog.data)
-        .assetType === "LONG",
+        .assetType === "SHORT",
   );
   const shortsRedeemedOrSentById = mapValues(
     groupBy(shortsRedeemedOrSent, (event) => event.eventData.id),
