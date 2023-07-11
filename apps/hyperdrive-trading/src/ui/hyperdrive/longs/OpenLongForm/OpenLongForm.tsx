@@ -60,10 +60,6 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
     bondAmountOut: BigInt(1),
     destination: account,
     enabled: openLongPreviewStatus === "success" && !needsApproval,
-    onExecuted: () => {
-      // reset local state after successful transaction
-      setAmount(undefined);
-    },
   });
 
   return (
