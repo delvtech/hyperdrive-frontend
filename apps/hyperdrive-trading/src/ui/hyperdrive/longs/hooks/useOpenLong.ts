@@ -13,7 +13,6 @@ interface UseOpenLongOptions {
   asUnderlying?: boolean;
   enabled?: boolean;
   /** Callback to be invoked when the transaction is finalized */
-  onExecuted?: () => void;
 }
 
 interface UseOpenLongResult {
@@ -29,7 +28,6 @@ export function useOpenLong({
   bondAmountOut,
   asUnderlying = true,
   enabled,
-  onExecuted,
 }: UseOpenLongOptions): UseOpenLongResult {
   const queryEnabled =
     !!baseAmount && !!bondAmountOut && !!destination && enabled;

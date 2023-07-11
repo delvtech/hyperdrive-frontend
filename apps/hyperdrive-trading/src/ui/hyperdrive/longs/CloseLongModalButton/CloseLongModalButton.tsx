@@ -1,7 +1,9 @@
+import { EllipsisHorizontalIcon } from "@heroicons/react/20/solid";
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import { Long } from "@hyperdrive/core";
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
+import { Modal } from "src/ui/base/components/Modal/Modal";
 import { CloseLongForm } from "src/ui/hyperdrive/longs/CloseLongForm/CloseLongForm";
 
 export interface CloseLongModalButtonProps {
@@ -19,38 +21,49 @@ export function CloseLongModalButton({
   }
 
   return (
-    <dialog id={modalId} className="daisy-modal">
-      <form method="dialog" className="daisy-modal-box">
-        <button
-          className="daisy-btn-ghost daisy-btn-sm daisy-btn-circle daisy-btn absolute right-4 top-4"
-          onClick={(e) => {
-            // clicking this button for some reason triggers the form validation
-            // in the CloseLongForm. Preventing default here is a band-aid until
-            // we figure out what's going on.
-            e.preventDefault();
-            closeModal();
-          }}
-        >
-          <XMarkIcon
-            className="w-6 text-white opacity-70 hover:opacity-100 focus:opacity-100"
-            title="Close position"
+    <Modal
+      modalId={modalId}
+      modalContent={
+        <div>
+          <button
+            className="daisy-btn-ghost daisy-btn-sm daisy-btn-circle daisy-btn absolute right-4 top-4"
+            onClick={closeModal}
+          >
+            <XMarkIcon
+              className="w-6 text-white opacity-70 hover:opacity-100 focus:opacity-100"
+              title="Close position"
+            />
+          </button>
+          <h3 className="text-h6 font-thin text-base-content">
+            Close position
+          </h3>
+          <CloseLongForm
+            hyperdrive={hyperdrive}
+            long={long}
+            onCloseLong={(e) => {
+              // preventDefault since we don't want to close the modal while the
+              // tx is temporarily pending the user's signature in their wallet.
+              e.preventDefault();
+            }}
           />
-        </button>
-        <h3 className="text-lg font-bold">Close position</h3>
-        <CloseLongForm
-          hyperdrive={hyperdrive}
-          long={long}
-          onCloseLong={(e) => {
-            // preventDefault since we don't want to close the modal while the
-            // tx is temporarily pending the user's signature in their wallet.
-            e.preventDefault();
-          }}
-        />
-      </form>
-      <form method="dialog" className="daisy-modal-backdrop">
-        {/* use vanilla button here since it's not to be shown to the user */}
-        <button onClick={closeModal} />
-      </form>
-    </dialog>
+        </div>
+      }
+    >
+      {({ showModal }) => (
+        <span className="daisy-dropdown">
+          <label tabIndex={0} className="btn cursor-pointer  ">
+            <EllipsisHorizontalIcon width={25} height={25} />
+          </label>
+          <ul
+            tabIndex={0}
+            className="menu daisy-dropdown-content absolute right-0 top-4   rounded-md bg-base-300 p-3 shadow"
+          >
+            <li className="my-1 flex w-32 cursor-pointer justify-center">
+              <button onClick={showModal}>Close Position</button>
+            </li>
+          </ul>
+        </span>
+      )}
+    </Modal>
   );
 }
