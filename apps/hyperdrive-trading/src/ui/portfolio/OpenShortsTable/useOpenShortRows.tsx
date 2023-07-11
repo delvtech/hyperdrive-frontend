@@ -1,10 +1,8 @@
-import { XMarkIcon } from "@heroicons/react/24/solid";
 import { Short } from "@hyperdrive/core";
 import { Hyperdrive } from "src/appconfig/types";
-import { Button } from "src/ui/base/components/Button";
 import { Row } from "src/ui/base/components/tables/SortableGridTable";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { CloseLongModalButton } from "src/ui/hyperdrive/longs/CloseLongModalButton/CloseLongModalButton";
+import { CloseShortModalButton } from "src/ui/hyperdrive/shorts/CloseShortModalButton/CloseShortModalButton";
 import { useOpenShorts } from "src/ui/hyperdrive/shorts/hooks/useOpenShorts";
 import { usePreviewCloseShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewCloseShort";
 import { Address, formatUnits, parseUnits } from "viem";
@@ -74,17 +72,10 @@ function createOpenShortRow({
         {new Date(Number(short.maturity * 1000n)).toLocaleDateString()}
       </span>,
       <span key="close-short" className="flex justify-end">
-        <Button size="sm" onClick={() => (window as any)[modalId].showModal()}>
-          <XMarkIcon
-            className="w-6 text-white opacity-70 hover:opacity-100 focus:opacity-100"
-            title="Close short"
-          />
-        </Button>
-
-        <CloseLongModalButton
+        <CloseShortModalButton
           modalId={modalId}
           hyperdrive={hyperdrive}
-          long={short}
+          short={short}
         />
       </span>,
     ],
