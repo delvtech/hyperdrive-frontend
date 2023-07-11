@@ -2,7 +2,9 @@ import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { Stat } from "src/ui/base/components/Stat";
+import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useCurrentFixedAPR } from "src/ui/hyperdrive/longs/hooks/useCurrentFixedAPR";
+import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
 
 export function MarketStats({
   hyperdrive,
@@ -12,6 +14,7 @@ export function MarketStats({
   const formattedTermLength = formatTermLength(hyperdrive.termLengthMS);
 
   const { fixedAPR } = useCurrentFixedAPR(hyperdrive);
+  const { longPrice } = useCurrentLongPrice(hyperdrive);
 
   return (
     <div className="flex w-full flex-wrap items-center justify-start gap-16">
@@ -28,7 +31,12 @@ export function MarketStats({
       />
       <Stat label="Term" value={formattedTermLength} />
       <Stat label="Fixed rate" value={`${fixedAPR?.formatted}% APR`} />
-      <Stat label="Bond price" value={"0.98 DAI"} />
+      <Stat
+        label="Bond price"
+        value={`${formatBalance(longPrice?.formatted || "0", 2)} ${
+          hyperdrive.baseToken.symbol
+        }`}
+      />
       <Stat label="DSR APY" value="3.49%" />
       <Stat label="LP APY" value="1.60%" />
       <Stat label="Volume (24h)" value="$4.4M" />
