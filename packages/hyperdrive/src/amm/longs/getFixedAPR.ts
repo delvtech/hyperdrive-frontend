@@ -71,7 +71,7 @@ function formatAPR(apr: bigint) {
 /**
  * TODO: Move this to its own @hyperdrive/queries package eventually.
  */
-export function getFixedAPRQuery({
+export function getCurrentFixedAPRQuery({
   hyperdriveAddress,
   hyperdriveMathAddress,
   publicClient,
