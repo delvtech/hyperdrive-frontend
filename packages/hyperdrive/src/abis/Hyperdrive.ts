@@ -946,7 +946,12 @@ export const HyperdriveABI = [
     outputs: [
       {
         internalType: "uint256",
-        name: "",
+        name: "maturityTime",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "traderDeposit",
         type: "uint256",
       },
     ],
