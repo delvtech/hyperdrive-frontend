@@ -23,8 +23,8 @@ export function OpenShortModalButton({
             <p className="font-lato text-h5 font-light text-accent">
               Open a short
             </p>
-            <p className="font-light ">
-              Maximize your exposure to the DAI Savings Rate (DSR)
+            <p className="font-light">
+              Earn yield by shorting the current bond price
             </p>
             {/* Using a div styled as a button here just as a visual cue. Don't
             use a real button here since the Well is interactive already, and
