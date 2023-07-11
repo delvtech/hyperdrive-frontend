@@ -1,7 +1,5 @@
-import { XMarkIcon } from "@heroicons/react/24/solid";
 import { Long } from "@hyperdrive/core";
 import { Hyperdrive } from "src/appconfig/types";
-import { Button } from "src/ui/base/components/Button";
 import { Row } from "src/ui/base/components/tables/SortableGridTable";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { CloseLongModalButton } from "src/ui/hyperdrive/longs/CloseLongModalButton/CloseLongModalButton";
@@ -70,13 +68,6 @@ function createOpenLongRow({
         {new Date(Number(long.maturity * 1000n)).toLocaleDateString()}
       </span>,
       <span key="close-long" className="flex justify-end">
-        <Button size="sm" onClick={() => (window as any)[modalId].showModal()}>
-          <XMarkIcon
-            className="w-6 text-white opacity-70 hover:opacity-100 focus:opacity-100"
-            title="Close long position"
-          />
-        </Button>
-
         <CloseLongModalButton
           modalId={modalId}
           hyperdrive={hyperdrive}

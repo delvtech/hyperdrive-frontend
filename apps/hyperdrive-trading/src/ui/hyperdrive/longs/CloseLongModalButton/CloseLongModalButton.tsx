@@ -48,8 +48,11 @@ export function CloseLongModalButton({
         </div>
       }
     >
-      {() => (
-        <button className="daisy-btn-ghost daisy-btn-sm daisy-btn-circle daisy-btn absolute right-4 top-4">
+      {({ showModal }) => (
+        <button
+          className="daisy-btn-ghost daisy-btn-sm daisy-btn-circle daisy-btn"
+          onClick={showModal}
+        >
           <XMarkIcon
             className="w-6 text-white opacity-70 hover:opacity-100 focus:opacity-100"
             title="Close position"
