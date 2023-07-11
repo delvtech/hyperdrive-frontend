@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { formatBigInt } from "src/ui/base/formatting/formatBigInt";
-import { parseBigInt } from "src/ui/base/formatting/parseBigInt";
+import { formatUnits, parseUnits } from "viem";
 
 interface UseNumericInputResult {
   amount: string | undefined;
@@ -16,15 +15,17 @@ interface UseNumericInputProps {
 }
 
 export function useNumericInput({
-  decimals,
+  decimals = 0,
   formatCommas = false,
 }: UseNumericInputProps): UseNumericInputResult {
   const [amount, setAmount] = useState<string | undefined>();
-  const amountAsBigInt = amount ? parseBigInt(amount, decimals) : undefined;
+  const amountAsBigInt = amount
+    ? parseUnits(amount as `${number}`, decimals)
+    : undefined;
 
   const formattedAmount = amountAsBigInt
     ? formatBalance(
-        formatBigInt(amountAsBigInt, decimals),
+        formatUnits(amountAsBigInt, decimals),
         undefined,
         formatCommas,
       )

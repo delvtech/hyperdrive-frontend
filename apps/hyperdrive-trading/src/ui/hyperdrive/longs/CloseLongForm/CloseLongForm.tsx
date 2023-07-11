@@ -5,12 +5,11 @@ import { Hyperdrive } from "src/appconfig/types";
 import { Button } from "src/ui/base/components/Button";
 import { Stat } from "src/ui/base/components/Stat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { formatBigInt } from "src/ui/base/formatting/formatBigInt";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { useCloseLong } from "src/ui/hyperdrive/longs/hooks/useCloseLong";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
 import { TokenInput } from "src/ui/token/TokenInput";
-import { parseUnits } from "viem";
+import { formatUnits, parseUnits } from "viem";
 import { useAccount } from "wagmi";
 
 interface CloseLongFormProps {
@@ -63,7 +62,7 @@ export function CloseLongForm({
               address: "0x00",
             }}
             value={amount ?? ""}
-            maxValue={long ? formatBigInt(long.bondAmount, baseDecimals) : ""}
+            maxValue={long ? formatUnits(long.bondAmount, baseDecimals) : ""}
             onChange={(newAmount) => setAmount(newAmount)}
           />
         </div>
@@ -77,7 +76,7 @@ export function CloseLongForm({
             value={
               baseAmountOut
                 ? `${formatBalance(
-                    formatBigInt(baseAmountOut, baseDecimals),
+                    formatUnits(baseAmountOut, baseDecimals),
                     8,
                   )} ${baseSymbol}`
                 : ""
