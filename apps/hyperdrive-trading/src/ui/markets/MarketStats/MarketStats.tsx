@@ -14,7 +14,7 @@ export function MarketStats({
   const { fixedAPR } = useFixedAPR(hyperdrive);
 
   return (
-    <div className="flex w-full flex-wrap items-center justify-start gap-16">
+    <div className="flex w-full flex-wrap items-center justify-center gap-16  md:justify-start">
       <Stat
         label="Token"
         value={
