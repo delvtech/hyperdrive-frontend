@@ -67,22 +67,21 @@ function createOpenLongRow({
       <span key="maturity">
         {new Date(Number(long.maturity * 1000n)).toLocaleDateString()}
       </span>,
-      <div key="close-long" className="daisy-dropdown relative">
+      <span key="close-long" className="daisy-dropdown relative">
         <label
           tabIndex={0}
-          className="btn absolute right-5 top-0 cursor-pointer "
+          className="btn absolute right-5 top-0 cursor-pointer  "
         >
-          <EllipsisHorizontalIcon width={30} height={30} />
+          <EllipsisHorizontalIcon width={25} height={25} />
         </label>
         <ul
           tabIndex={0}
-          className="menu daisy-dropdown-content absolute right-0 top-8 z-50  overflow-visible rounded-md bg-base-300 p-3 shadow"
+          className="menu daisy-dropdown-content absolute right-0 top-8   rounded-md bg-base-300 p-3 shadow"
         >
-          <li
-            onClick={() => (window as any)[modalId].showModal()}
-            className="my-1 cursor-pointer"
-          >
-            <a>Close Long</a>
+          <li className="my-1 cursor-pointer">
+            <button onClick={() => (window as any)[modalId].showModal()}>
+              Close Long
+            </button>
           </li>
         </ul>
         <CloseLongModalButton
@@ -90,7 +89,7 @@ function createOpenLongRow({
           hyperdrive={hyperdrive}
           long={long}
         />
-      </div>,
+      </span>,
       ,
     ],
   };
