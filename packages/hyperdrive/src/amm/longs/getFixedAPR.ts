@@ -68,6 +68,13 @@ function formatAPR(apr: bigint) {
   return formatted;
 }
 
+interface GetCurrentFixedAPRQueryOptions {
+  hyperdriveAddress: Address | undefined;
+  hyperdriveMathAddress: Address | undefined;
+  publicClient: PublicClient<Transport, Chain>;
+  queryClient: QueryClient;
+}
+
 /**
  * TODO: Move this to its own @hyperdrive/queries package eventually.
  */
@@ -76,12 +83,9 @@ export function getCurrentFixedAPRQuery({
   hyperdriveMathAddress,
   publicClient,
   queryClient,
-}: {
-  hyperdriveAddress: Address;
-  hyperdriveMathAddress: Address;
-  publicClient: PublicClient<Transport, Chain>;
-  queryClient: QueryClient;
-}): QueryObserverOptions<Awaited<ReturnType<typeof getFixedAPR>>> {
+}: GetCurrentFixedAPRQueryOptions): QueryObserverOptions<
+  Awaited<ReturnType<typeof getFixedAPR>>
+> {
   const queryEnabled =
     !!hyperdriveAddress && !!publicClient && !!hyperdriveMathAddress;
 
