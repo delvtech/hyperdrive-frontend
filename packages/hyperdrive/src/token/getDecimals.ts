@@ -30,12 +30,11 @@ export function getDecimalsQuery({
     enabled: queryEnabled,
     queryKey: ["@hyperdrive/core", "getDecimals", { tokenAddress }],
     queryFn: queryEnabled
-      ? async () => {
-          return getDecimals({
+      ? () =>
+          getDecimals({
             publicClient,
             tokenAddress,
-          });
-        }
+          })
       : undefined,
     // Decimals will never change, so it can be cached forever
     staleTime: Infinity,

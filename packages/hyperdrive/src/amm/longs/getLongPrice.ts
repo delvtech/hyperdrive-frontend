@@ -3,7 +3,7 @@ import { PublicClient, Address, Transport, Chain, formatUnits } from "viem";
 import { HyperdriveMathABI } from "src/abis/HyperdriveMath";
 import { getPoolConfigQuery } from "src/amm/getPoolConfig";
 import { getPoolInfoQuery } from "src/amm/getPoolInfo";
-import { getDecimals, getDecimalsQuery } from "src/token/getDecimals";
+import { getDecimalsQuery } from "src/token/getDecimals";
 
 export interface GetLongPriceOptions {
   hyperdriveMathAddress: Address;
@@ -59,14 +59,9 @@ export async function getLongPrice({
 }
 
 /**
- * A query wrapper for consumers who want easy caching via @tanstack/query
- *
- * TODO: Piloting this idea here for now as proof-of-concept. Ultimately
- * @hyperdrive/core should not know about caching and just be pure hyperdrive
- * bindings. If this works well in practice we can move this to a
- * @hyperdrive/queries package.
+ * TODO: move this to a @hyperdrive/queries package.
  */
-interface GetLongPriceQueryOptions {
+interface GetCurrentLongPriceQueryOptions {
   hyperdriveAddress: Address | undefined;
   hyperdriveMathAddress: Address | undefined;
   publicClient: PublicClient<Transport, Chain>;
@@ -81,7 +76,7 @@ export function getCurrentLongPriceQuery({
   hyperdriveMathAddress,
   publicClient,
   queryClient,
-}: GetLongPriceQueryOptions): QueryObserverOptions<
+}: GetCurrentLongPriceQueryOptions): QueryObserverOptions<
   Awaited<ReturnType<typeof getLongPrice>>
 > {
   const queryEnabled =
