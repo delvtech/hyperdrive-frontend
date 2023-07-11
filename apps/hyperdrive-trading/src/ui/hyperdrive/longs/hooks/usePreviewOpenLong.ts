@@ -37,8 +37,7 @@ export function usePreviewOpenLong({
     !!account &&
     enabled;
 
-  const requiresEth =
-    asUnderlying === true && market.baseToken.address === ZERO_ADDRESS;
+  const requiresEth = asUnderlying && market.baseToken.address === ZERO_ADDRESS;
 
   const { data, status } = useQuery({
     queryKey: [

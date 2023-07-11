@@ -35,8 +35,7 @@ export function useOpenLong({
   const queryEnabled =
     !!baseAmount && !!bondAmountOut && !!destination && enabled;
 
-  const requiresEth =
-    asUnderlying === true && market.baseToken.address === ZERO_ADDRESS;
+  const requiresEth = asUnderlying && market.baseToken.address === ZERO_ADDRESS;
 
   const { config } = usePrepareContractWrite({
     abi: HyperdriveABI,
