@@ -8,7 +8,8 @@ interface GetShortsOptions {
 }
 
 /** Fetches all open and closed shorts for an account.
- * @deprecated use getOpenShorts instead
+ * @deprecated use getOpenShorts instead. This is currently only being used by
+ * fixed-borrow.
  */
 export async function getShorts({
   account,

@@ -1,6 +1,5 @@
 import { HyperdriveABI } from "@hyperdrive/core";
-import { useQuery } from "@tanstack/react-query";
-import { QueryStatusType } from "src/ui/base/types";
+import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { Address, useAccount, usePublicClient } from "wagmi";
 
 interface UsePreviewCloseShortOptions {
@@ -14,7 +13,7 @@ interface UsePreviewCloseShortOptions {
 }
 
 interface UsePreviewCloseShortResult {
-  previewCloseShortStatus: QueryStatusType;
+  previewCloseShortStatus: QueryStatus;
   baseAmountOut: bigint | undefined;
 }
 

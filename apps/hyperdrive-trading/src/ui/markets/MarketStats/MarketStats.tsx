@@ -2,7 +2,7 @@ import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { Stat } from "src/ui/base/components/Stat";
-import { useFixedAPR } from "src/ui/hyperdrive/longs/hooks/useFixedAPR";
+import { useCurrentFixedAPR } from "src/ui/hyperdrive/longs/hooks/useCurrentFixedAPR";
 
 export function MarketStats({
   hyperdrive,
@@ -11,7 +11,7 @@ export function MarketStats({
 }): ReactElement {
   const formattedTermLength = formatTermLength(hyperdrive.termLengthMS);
 
-  const { fixedAPR } = useFixedAPR(hyperdrive);
+  const { fixedAPR } = useCurrentFixedAPR(hyperdrive);
 
   return (
     <div className="flex w-full flex-wrap items-center justify-center gap-16  md:justify-start">

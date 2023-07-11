@@ -1,6 +1,7 @@
 import { HyperdriveABI } from "@hyperdrive/core";
 import { useQuery } from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
+import { ZERO_ADDRESS } from "src/base/constants";
 import { Address, useAccount, usePublicClient } from "wagmi";
 
 interface UsePreviewOpenLongOptions {
@@ -36,6 +37,8 @@ export function usePreviewOpenLong({
     !!account &&
     enabled;
 
+  const requiresEth = asUnderlying && market.baseToken.address === ZERO_ADDRESS;
+
   const { data, status } = useQuery({
     queryKey: [
       "preview-open-long",
@@ -55,6 +58,9 @@ export function usePreviewOpenLong({
             account,
             functionName: "openLong",
             args: [baseAmount, bondAmountOut, destination, asUnderlying],
+            // Used when ETH is the base asset (e.g. StethHyperdrive) and
+            // asUnderlying is true.
+            value: requiresEth && baseAmount ? baseAmount : 0n,
           });
 
           return result;

@@ -1,6 +1,7 @@
 import { HyperdriveABI } from "@hyperdrive/core";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { Hyperdrive } from "src/appconfig/types";
+import { ZERO_ADDRESS } from "src/base/constants";
 import { QueryStatusType } from "src/ui/base/types";
 import { useWaitForTransactionThenInvalidateCache } from "src/ui/network/useWaitForTransactionThenInvalidateCache/useWaitForTransactionThenInvalidateCache";
 import { Address, useContractWrite, usePrepareContractWrite } from "wagmi";
@@ -13,7 +14,6 @@ interface UseOpenLongOptions {
   asUnderlying?: boolean;
   enabled?: boolean;
   /** Callback to be invoked when the transaction is finalized */
-  onExecuted?: () => void;
 }
 
 interface UseOpenLongResult {
@@ -29,10 +29,11 @@ export function useOpenLong({
   bondAmountOut,
   asUnderlying = true,
   enabled,
-  onExecuted,
 }: UseOpenLongOptions): UseOpenLongResult {
   const queryEnabled =
     !!baseAmount && !!bondAmountOut && !!destination && enabled;
+
+  const requiresEth = asUnderlying && market.baseToken.address === ZERO_ADDRESS;
 
   const { config } = usePrepareContractWrite({
     abi: HyperdriveABI,
@@ -44,6 +45,9 @@ export function useOpenLong({
       : undefined,
     // TODO: better gas optimization
     gas: 500_000n,
+    // Used when ETH is the base asset (e.g. StethHyperdrive) and
+    // asUnderlying is true.
+    value: requiresEth && baseAmount ? baseAmount : 0n,
   });
 
   const addRecentTransaction = useAddRecentTransaction();

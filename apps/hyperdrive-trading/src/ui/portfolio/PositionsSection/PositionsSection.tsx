@@ -1,6 +1,7 @@
 import assertNever from "assert-never";
 import classNames from "classnames";
-import { ReactElement, useState } from "react";
+import { ReactElement, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
 import { Well } from "src/ui/base/components/Well/Well";
 import { ClosedLongsTable } from "src/ui/portfolio/ClosedLongsTable/ClosedLongsTable";
@@ -18,13 +19,36 @@ export function PositionsSection({
 }: {
   hyperdrive: Hyperdrive;
 }): ReactElement {
-  // TODO: Move this state into router
-  const [activePositionTab, setActivePositionTab] =
-    useState<PositionTab>("Longs");
+  const [searchParams, setSearchParams] = useSearchParams();
 
-  // TODO: Move this state into router
-  const [activeOpenOrClosedTab, setActiveOpenOrClosedTab] =
-    useState<OpenOrClosedTab>("Open");
+  const activePositionTab =
+    (searchParams.get("position") as PositionTab) || "Longs";
+  const activeOpenOrClosedTab =
+    (searchParams.get("openOrClosed") as OpenOrClosedTab) || "Open";
+
+  // Run effect when mounted to set the search params to the default
+  useEffect(() => {
+    setSearchParams({
+      position: activePositionTab,
+      openOrClosed: activeOpenOrClosedTab,
+    });
+  }, []);
+
+  const handleChangeTab = (position: PositionTab) => {
+    setSearchParams({
+      ...searchParams,
+      position,
+      openOrClosed: activeOpenOrClosedTab,
+    });
+  };
+
+  const handleChangeOpenOrClosedTab = (openOrClosed: OpenOrClosedTab) => {
+    setSearchParams({
+      ...searchParams,
+      position: activePositionTab,
+      openOrClosed,
+    });
+  };
 
   return (
     <div>
@@ -33,29 +57,29 @@ export function PositionsSection({
           Your positions
         </h2>
         <PositionTabs
-          setActivePositionTab={setActivePositionTab}
+          setActivePositionTab={handleChangeTab}
           activePositionTab={activePositionTab}
         />
 
         <div className="daisy-tabs-boxed">
-          <a
-            onClick={() => setActiveOpenOrClosedTab("Open")}
+          <button
+            onClick={() => handleChangeOpenOrClosedTab("Open")}
             className={classNames("daisy-tab", {
               "daisy-tab-active !bg-base-300 !text-white":
                 activeOpenOrClosedTab === "Open",
             })}
           >
             Open
-          </a>
-          <a
-            onClick={() => setActiveOpenOrClosedTab("Closed")}
+          </button>
+          <button
+            onClick={() => handleChangeOpenOrClosedTab("Closed")}
             className={classNames("daisy-tab", {
               "daisy-tab-active !bg-base-300 !text-white":
                 activeOpenOrClosedTab === "Closed",
             })}
           >
             Closed
-          </a>
+          </button>
         </div>
       </div>
 

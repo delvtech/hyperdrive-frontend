@@ -1,7 +1,6 @@
 import { ERC20MintableABI } from "@hyperdrive/core";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
-import { formatBigInt } from "src/ui/base/formatting/formatBigInt";
-import { Address } from "viem";
+import { Address, formatUnits } from "viem";
 import {
   useChainId,
   useContractWrite,
@@ -40,7 +39,7 @@ export function useMintBaseToken({
     onSuccess: (result) => {
       addRecentTransaction({
         hash: result.hash,
-        description: `Mint ${formatBigInt(amount, data?.decimals)} ${
+        description: `Mint ${formatUnits(amount, data?.decimals || 0)} ${
           data?.symbol
         }`,
       });
