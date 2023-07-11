@@ -1,11 +1,13 @@
 import { QueryClient, QueryObserverOptions } from "@tanstack/query-core";
-import { PublicClient, Address, Transport, Chain } from "viem";
+import { PublicClient, Address, Transport, Chain, formatUnits } from "viem";
 import { HyperdriveMathABI } from "src/abis/HyperdriveMath";
 import { getPoolConfigQuery } from "src/amm/getPoolConfig";
 import { getPoolInfoQuery } from "src/amm/getPoolInfo";
+import { getDecimals, getDecimalsQuery } from "src/token/getDecimals";
 
 export interface GetLongPriceOptions {
   hyperdriveMathAddress: Address;
+  baseDecimals: number;
   /**
    * Comes from getPoolInfo
    */
@@ -31,6 +33,7 @@ export interface GetLongPriceOptions {
 
 interface GetLongPriceResult {
   price: bigint;
+  formatted: string;
 }
 
 export async function getLongPrice({
@@ -39,6 +42,7 @@ export async function getLongPrice({
   shareReserves,
   bondReserves,
   initialSharePrice,
+  baseDecimals,
   timeStretch,
 }: GetLongPriceOptions): Promise<GetLongPriceResult> {
   const price = await publicClient.readContract({
@@ -50,6 +54,7 @@ export async function getLongPrice({
 
   return {
     price,
+    formatted: formatUnits(price, baseDecimals),
   };
 }
 
@@ -91,13 +96,24 @@ export function getCurrentLongPriceQuery({
     ],
     queryFn: queryEnabled
       ? async () => {
-          const { initialSharePrice, positionDuration, timeStretch } =
-            await queryClient.fetchQuery(
-              getPoolConfigQuery({
-                publicClient,
-                hyperdriveAddress,
-              }),
-            );
+          const {
+            initialSharePrice,
+            positionDuration,
+            timeStretch,
+            baseToken,
+          } = await queryClient.fetchQuery(
+            getPoolConfigQuery({
+              publicClient,
+              hyperdriveAddress,
+            }),
+          );
+
+          const baseDecimals = await queryClient.fetchQuery(
+            getDecimalsQuery({
+              publicClient,
+              tokenAddress: baseToken,
+            }),
+          );
 
           const { bondReserves, shareReserves } = await queryClient.fetchQuery(
             getPoolInfoQuery({
@@ -114,6 +130,7 @@ export function getCurrentLongPriceQuery({
             shareReserves,
             initialSharePrice,
             timeStretch,
+            baseDecimals,
           });
         }
       : undefined,

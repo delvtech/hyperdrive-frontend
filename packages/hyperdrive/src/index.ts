@@ -15,6 +15,10 @@ export { getTransferSingleEvents } from "src/amm/events/getTransferSingleEvents"
 export { getCurrentFixedAPRQuery } from "src/amm/getFixedAPR";
 
 // Longs
+export {
+  getLongPrice,
+  getCurrentLongPriceQuery,
+} from "src/amm/longs/getLongPrice";
 export { getOpenLongs, getOpenLongsQuery } from "src/amm/longs/getOpenLongs";
 export type { GetOpenLongsOptions } from "src/amm/longs/getOpenLongs";
 export {
