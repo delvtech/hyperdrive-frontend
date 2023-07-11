@@ -27,7 +27,8 @@ export function MarketStats({
         }
       />
       <Stat label="Term" value={formattedTermLength} />
-      <Stat label="Fixed Rate" value={`${fixedAPR?.formatted}% APR`} />
+      <Stat label="Fixed rate" value={`${fixedAPR?.formatted}% APR`} />
+      <Stat label="Bond price" value={"0.98 DAI"} />
       <Stat label="DSR APY" value="3.49%" />
       <Stat label="LP APY" value="1.60%" />
       <Stat label="Volume (24h)" value="$4.4M" />
