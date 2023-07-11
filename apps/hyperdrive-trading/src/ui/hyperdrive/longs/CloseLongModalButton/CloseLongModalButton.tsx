@@ -50,7 +50,7 @@ export function CloseLongModalButton({
       }
     >
       {({ showModal }) => (
-        <span className="daisy-dropdown ">
+        <span className="daisy-dropdown">
           <label tabIndex={0} className="btn cursor-pointer  ">
             <EllipsisHorizontalIcon width={25} height={25} />
           </label>
