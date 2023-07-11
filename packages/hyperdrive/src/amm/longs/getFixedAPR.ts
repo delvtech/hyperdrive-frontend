@@ -2,6 +2,7 @@ import { PublicClient, Address, Transport, Chain, formatUnits } from "viem";
 import { HyperdriveMathABI } from "src/abis/HyperdriveMath";
 import { HyperdriveABI } from "src/abis/Hyperdrive";
 import { QueryObserverOptions } from "@tanstack/query-core";
+import { getPoolConfig } from "src/amm/getPoolConfig";
 
 export interface GetFixedAPROptions {
   hyperdriveAddress: Address;
@@ -14,12 +15,7 @@ export async function getFixedAPR({
   hyperdriveMathAddress,
   publicClient,
 }: GetFixedAPROptions): Promise<{ apr: bigint; formatted: string }> {
-  // TODO: Move to own method
-  const poolConfig = await publicClient.readContract({
-    address: hyperdriveAddress,
-    abi: HyperdriveABI,
-    functionName: "getPoolConfig",
-  });
+  const poolConfig = await getPoolConfig({ publicClient, hyperdriveAddress });
 
   // TODO: Move to own method
   const poolInfo = await publicClient.readContract({
