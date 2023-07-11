@@ -1,50 +1,48 @@
 import {
   PublicClient,
-  Address,
   Transport,
   Chain,
+  Address,
   ContractFunctionResult,
 } from "viem";
 import { HyperdriveABI } from "src/abis/Hyperdrive";
 import { QueryObserverOptions } from "@tanstack/query-core";
 
-interface GetPoolConfigOptions {
+interface GetPoolInfoOptions {
   hyperdriveAddress: Address;
   publicClient: PublicClient<Transport, Chain>;
 }
 
-export async function getPoolConfig({
+export async function getPoolInfo({
   publicClient,
   hyperdriveAddress,
-}: GetPoolConfigOptions): Promise<
-  ContractFunctionResult<typeof HyperdriveABI, "getPoolConfig">
+}: GetPoolInfoOptions): Promise<
+  ContractFunctionResult<typeof HyperdriveABI, "getPoolInfo">
 > {
-  return await publicClient.readContract({
+  return publicClient.readContract({
     address: hyperdriveAddress,
     abi: HyperdriveABI,
-    functionName: "getPoolConfig",
+    functionName: "getPoolInfo",
   });
 }
 
-export function getPoolConfigQuery({
+export function getPoolInfoQuery({
   hyperdriveAddress,
   publicClient,
-}: Partial<GetPoolConfigOptions>): QueryObserverOptions<
-  Awaited<ReturnType<typeof getPoolConfig>>
+}: Partial<GetPoolInfoOptions>): QueryObserverOptions<
+  Awaited<ReturnType<typeof getPoolInfo>>
 > {
   const queryEnabled = !!hyperdriveAddress && !!publicClient;
 
   return {
     enabled: queryEnabled,
-    queryKey: ["@hyperdrive/core", "getPoolConfig", { hyperdriveAddress }],
+    queryKey: ["@hyperdrive/core", "getPoolInfo", { hyperdriveAddress }],
     queryFn: queryEnabled
       ? async () =>
-          getPoolConfig({
+          getPoolInfo({
             hyperdriveAddress,
             publicClient,
           })
       : undefined,
-    // pool config is static constants, so it never needs to be refreshed
-    staleTime: Infinity,
   };
 }
