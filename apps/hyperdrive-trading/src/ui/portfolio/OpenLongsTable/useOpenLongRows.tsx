@@ -3,6 +3,7 @@ import { Long } from "@hyperdrive/core";
 import { Hyperdrive } from "src/appconfig/types";
 import { Row } from "src/ui/base/components/tables/SortableGridTable";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { CloseLongModalButton } from "src/ui/hyperdrive/longs/CloseLongModalButton/CloseLongModalButton";
 import { useOpenLongs } from "src/ui/hyperdrive/longs/hooks/useOpenLongs";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
 import { Address, formatUnits, parseUnits } from "viem";
@@ -77,10 +78,18 @@ function createOpenLongRow({
           tabIndex={0}
           className="menu daisy-dropdown-content absolute right-0 top-8 z-50  overflow-visible rounded-md bg-base-300 p-3 shadow"
         >
-          <li className="my-1 cursor-pointer">
+          <li
+            onClick={() => (window as any)[modalId].showModal()}
+            className="my-1 cursor-pointer"
+          >
             <a>Close Long</a>
           </li>
         </ul>
+        <CloseLongModalButton
+          modalId={modalId}
+          hyperdrive={hyperdrive}
+          long={long}
+        />
       </div>,
       ,
     ],
