@@ -1,3 +1,4 @@
+import { EllipsisHorizontalIcon } from "@heroicons/react/20/solid";
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import { Long } from "@hyperdrive/core";
 import { ReactElement } from "react";
@@ -49,15 +50,19 @@ export function CloseLongModalButton({
       }
     >
       {({ showModal }) => (
-        <button
-          className="daisy-btn-ghost daisy-btn-sm daisy-btn-circle daisy-btn"
-          onClick={showModal}
-        >
-          <XMarkIcon
-            className="w-6 text-white opacity-70 hover:opacity-100 focus:opacity-100"
-            title="Close position"
-          />
-        </button>
+        <span className="daisy-dropdown ">
+          <label tabIndex={0} className="btn cursor-pointer  ">
+            <EllipsisHorizontalIcon width={25} height={25} />
+          </label>
+          <ul
+            tabIndex={0}
+            className="menu daisy-dropdown-content absolute right-0 top-4   rounded-md bg-base-300 p-3 shadow"
+          >
+            <li className="my-1 flex w-32 cursor-pointer justify-center">
+              <button onClick={showModal}>Close Position</button>
+            </li>
+          </ul>
+        </span>
       )}
     </Modal>
   );
