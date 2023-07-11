@@ -4,7 +4,7 @@ import { Hyperdrive } from "src/appconfig/types";
 import { convertMillisecondsToMonths } from "src/base/covertMillisecondsToMonths";
 import { Pill } from "src/ui/base/components/Pill";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { formatBigInt } from "src/ui/base/formatting/formatBigInt";
+import { formatUnits } from "viem";
 
 interface OpenLongPreviewProps {
   hyperdrive: Hyperdrive;
@@ -41,7 +41,7 @@ export function OpenLongPreview({
           <p className="mr-auto">Claimable at Maturity</p>
           <p className="font-semibold tracking-wide">
             {formatBalance(
-              formatBigInt(long.bondAmount, hyperdrive.baseToken.decimals),
+              formatUnits(long.bondAmount, hyperdrive.baseToken.decimals),
               4,
               false,
             )}{" "}

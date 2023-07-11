@@ -32,6 +32,7 @@ export function useOpenShort({
     // the DSR, which has a variable gas cost.
     // TODO: Get the estimateGas value then multiply it by some constant instead
     gas: 500_000n,
+    value: 0n,
   });
 
   const { write: openShort, status } = useContractWrite(config);

@@ -45,12 +45,15 @@ export function useOpenShortPreview({
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? async () => {
-          const { result: short } = await publicClient.simulateContract({
+          const {
+            result: [short],
+          } = await publicClient.simulateContract({
             abi: HyperdriveABI,
             address: hyperdrivePool,
             functionName: "openShort",
             account,
             args: [bondAmount, maxDeposit, destination, asUnderlying],
+            value: 0n,
           });
           return short;
         }

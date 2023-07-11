@@ -1,6 +1,7 @@
 import { HyperdriveABI } from "@hyperdrive/core";
 import { useQuery } from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
+import { ZERO_ADDRESS } from "src/base/constants";
 import { QueryStatusType } from "src/ui/base/types";
 import { Address, useAccount, usePublicClient } from "wagmi";
 
@@ -37,6 +38,8 @@ export function usePreviewOpenShort({
     !!account &&
     enabled;
 
+  const requiresEth = asUnderlying && market.baseToken.address === ZERO_ADDRESS;
+
   const { data, status } = useQuery({
     queryKey: [
       "preview-open-short",
@@ -59,9 +62,12 @@ export function usePreviewOpenShort({
               destination,
               asUnderlying,
             ],
+            // Used when ETH is the base asset (e.g. StethHyperdrive) and
+            // asUnderlying is true.
+            value: requiresEth && maxBaseAmountIn ? maxBaseAmountIn : 0n,
           });
 
-          return result;
+          return result[1];
         }
       : undefined,
   });

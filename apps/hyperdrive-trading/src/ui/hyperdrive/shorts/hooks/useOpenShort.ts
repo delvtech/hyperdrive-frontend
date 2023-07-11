@@ -3,6 +3,7 @@ import { useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { Hyperdrive } from "src/appconfig/types";
+import { ZERO_ADDRESS } from "src/base/constants";
 import { QueryStatusType } from "src/ui/base/types";
 import { makeNewPositionToast } from "src/ui/trade/toast/makeNewPositionToast";
 import {
@@ -46,6 +47,8 @@ export function useOpenShort({
   const queryEnabled =
     !!amountBondShorts && !!maxBaseAmountIn && !!destination && enabled;
 
+  const requiresEth = asUnderlying && market.baseToken.address === ZERO_ADDRESS;
+
   const { config } = usePrepareContractWrite({
     abi: HyperdriveABI,
     address: market.address,
@@ -56,6 +59,9 @@ export function useOpenShort({
       : undefined,
     // TODO: better gas optimization
     gas: 500_000n,
+    // Used when ETH is the base asset (e.g. StethHyperdrive) and
+    // asUnderlying is true.
+    value: requiresEth && maxBaseAmountIn ? maxBaseAmountIn : 0n,
   });
 
   const { status: txnStatus } = useWaitForTransaction({

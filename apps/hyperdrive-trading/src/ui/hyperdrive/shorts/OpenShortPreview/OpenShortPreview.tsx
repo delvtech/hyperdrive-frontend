@@ -3,7 +3,7 @@ import { Hyperdrive } from "src/appconfig/types";
 import { convertMillisecondsToMonths } from "src/base/covertMillisecondsToMonths";
 import { Pill } from "src/ui/base/components/Pill";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { formatBigInt } from "src/ui/base/formatting/formatBigInt";
+import { formatUnits } from "viem";
 
 interface OpenShortPreviewProps {
   market: Hyperdrive;
@@ -33,7 +33,7 @@ export function OpenShortPreview({
             <p className="mr-auto">Cost Basis</p>
             <p className="font-semibold tracking-wide">
               {formatBalance(
-                formatBigInt(costBasis, market.baseToken.decimals),
+                formatUnits(costBasis, market.baseToken.decimals),
                 6,
                 false,
               )}{" "}
@@ -46,7 +46,7 @@ export function OpenShortPreview({
           <p className="mr-auto">Amount</p>
           <p className="font-semibold tracking-wide">
             {formatBalance(
-              formatBigInt(amountShort, market.baseToken.decimals),
+              formatUnits(amountShort, market.baseToken.decimals),
               6,
             )}
           </p>

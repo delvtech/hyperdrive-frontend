@@ -116,6 +116,11 @@ export const HyperdriveMathABI = [
       },
       {
         internalType: "uint256",
+        name: "_openSharePrice",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
         name: "_closeSharePrice",
         type: "uint256",
       },
@@ -219,11 +224,6 @@ export const HyperdriveMathABI = [
       },
       {
         internalType: "uint256",
-        name: "_sharePrice",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
         name: "_initialSharePrice",
         type: "uint256",
       },
@@ -258,17 +258,22 @@ export const HyperdriveMathABI = [
     inputs: [
       {
         internalType: "uint256",
-        name: "_positionsOutstanding",
+        name: "_shareReserves",
         type: "uint256",
       },
       {
         internalType: "uint256",
-        name: "_baseVolume",
+        name: "_bondReserves",
         type: "uint256",
       },
       {
         internalType: "uint256",
-        name: "_averageTimeRemaining",
+        name: "_longsOutstanding",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_timeStretch",
         type: "uint256",
       },
       {
@@ -276,8 +281,74 @@ export const HyperdriveMathABI = [
         name: "_sharePrice",
         type: "uint256",
       },
+      {
+        internalType: "uint256",
+        name: "_initialSharePrice",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_maxIterations",
+        type: "uint256",
+      },
     ],
-    name: "calculateLpAllocationAdjustment",
+    name: "calculateMaxLong",
+    outputs: [
+      {
+        components: [
+          {
+            internalType: "uint256",
+            name: "baseAmount",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "bondAmount",
+            type: "uint256",
+          },
+        ],
+        internalType: "struct HyperdriveMath.MaxLongResult",
+        name: "",
+        type: "tuple",
+      },
+    ],
+    stateMutability: "pure",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "_shareReserves",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_bondReserves",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_longsOutstanding",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_timeStretch",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_sharePrice",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_initialSharePrice",
+        type: "uint256",
+      },
+    ],
+    name: "calculateMaxShort",
     outputs: [
       {
         internalType: "uint256",
@@ -303,11 +374,6 @@ export const HyperdriveMathABI = [
       {
         internalType: "uint256",
         name: "_amountIn",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "_normalizedTimeRemaining",
         type: "uint256",
       },
       {
@@ -333,16 +399,6 @@ export const HyperdriveMathABI = [
         name: "",
         type: "uint256",
       },
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
     ],
     stateMutability: "pure",
     type: "function",
@@ -366,11 +422,6 @@ export const HyperdriveMathABI = [
       },
       {
         internalType: "uint256",
-        name: "_normalizedTimeRemaining",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
         name: "_timeStretch",
         type: "uint256",
       },
@@ -386,55 +437,6 @@ export const HyperdriveMathABI = [
       },
     ],
     name: "calculateOpenShort",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-    ],
-    stateMutability: "pure",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "uint256",
-        name: "_shares",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "_shareReserves",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "_lpTotalSupply",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "_longsOutstanding",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "_sharePrice",
-        type: "uint256",
-      },
-    ],
-    name: "calculateOutForLpSharesIn",
     outputs: [
       {
         internalType: "uint256",
@@ -482,11 +484,6 @@ export const HyperdriveMathABI = [
           {
             internalType: "uint256",
             name: "longAverageTimeRemaining",
-            type: "uint256",
-          },
-          {
-            internalType: "uint256",
-            name: "longBaseVolume",
             type: "uint256",
           },
           {
@@ -609,11 +606,6 @@ export const HyperdriveMathABI = [
       {
         internalType: "uint256",
         name: "_initialSharePrice",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "_normalizedTimeRemaining",
         type: "uint256",
       },
       {
