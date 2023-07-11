@@ -1,15 +1,12 @@
-import { XMarkIcon } from "@heroicons/react/24/solid";
+import { EllipsisHorizontalIcon } from "@heroicons/react/20/solid";
 import { Long } from "@hyperdrive/core";
 import { Hyperdrive } from "src/appconfig/types";
-import { Button } from "src/ui/base/components/Button";
 import { Row } from "src/ui/base/components/tables/SortableGridTable";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { CloseLongModalButton } from "src/ui/hyperdrive/longs/CloseLongModalButton/CloseLongModalButton";
 import { useOpenLongs } from "src/ui/hyperdrive/longs/hooks/useOpenLongs";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
 import { Address, formatUnits, parseUnits } from "viem";
 import { useAccount } from "wagmi";
-
 interface UseOpenLongRowsOptions {
   account: Address | undefined;
   hyperdrive: Hyperdrive | undefined;
@@ -69,20 +66,23 @@ function createOpenLongRow({
       <span key="maturity">
         {new Date(Number(long.maturity * 1000n)).toLocaleDateString()}
       </span>,
-      <span key="close-long" className="flex justify-end">
-        <Button size="sm" onClick={() => (window as any)[modalId].showModal()}>
-          <XMarkIcon
-            className="w-6 text-white opacity-70 hover:opacity-100 focus:opacity-100"
-            title="Close long position"
-          />
-        </Button>
-
-        <CloseLongModalButton
-          modalId={modalId}
-          hyperdrive={hyperdrive}
-          long={long}
-        />
-      </span>,
+      <div key="close-long" className="daisy-dropdown relative">
+        <label
+          tabIndex={0}
+          className="btn absolute right-5 top-0 cursor-pointer "
+        >
+          <EllipsisHorizontalIcon width={30} height={30} />
+        </label>
+        <ul
+          tabIndex={0}
+          className="menu daisy-dropdown-content absolute right-0 top-8 z-50  overflow-visible rounded-md bg-base-300 p-3 shadow"
+        >
+          <li className="my-1 cursor-pointer">
+            <a>Close Long</a>
+          </li>
+        </ul>
+      </div>,
+      ,
     ],
   };
 }
