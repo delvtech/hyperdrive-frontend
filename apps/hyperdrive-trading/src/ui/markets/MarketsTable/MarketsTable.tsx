@@ -56,7 +56,7 @@ export function MarketsTable(): ReactElement {
     <div className="space-y-8 rounded-sm bg-base-100 px-8 py-10">
       <div className="space-y-4">
         {/* Markets search and protocol filter row */}
-        <div className="flex items-end gap-6">
+        <div className="flex flex-col items-start gap-6 md:flex-row md:items-end">
           {/* Markets search input, disabled for now */}
           <div className="mr-auto hidden flex-col gap-y-2  lg:flex">
             <div className="flex items-center gap-x-1">
