@@ -52,19 +52,16 @@ export function PositionsSection({
 
   return (
     <div>
-      <div className="mb-4 flex w-full items-center justify-between border-b border-neutral-content/30">
-        <h2 className="text-h5 font-thin leading-h5 text-neutral-content">
-          Your positions
-        </h2>
+      <div className="mb-4 flex w-full items-end justify-between border-b border-neutral-content/30">
         <PositionTabs
           setActivePositionTab={handleChangeTab}
           activePositionTab={activePositionTab}
         />
 
-        <div className="daisy-tabs-boxed">
+        <div className="daisy-tabs-boxed mb-1">
           <button
             onClick={() => handleChangeOpenOrClosedTab("Open")}
-            className={classNames("daisy-tab", {
+            className={classNames("daisy-tab text-sm", {
               "daisy-tab-active !bg-base-300 !text-white":
                 activeOpenOrClosedTab === "Open",
             })}
@@ -73,7 +70,7 @@ export function PositionsSection({
           </button>
           <button
             onClick={() => handleChangeOpenOrClosedTab("Closed")}
-            className={classNames("daisy-tab", {
+            className={classNames("daisy-tab text-sm", {
               "daisy-tab-active !bg-base-300 !text-white":
                 activeOpenOrClosedTab === "Closed",
             })}
