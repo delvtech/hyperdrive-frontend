@@ -8,7 +8,7 @@ export function Trade(): ReactElement {
   const market = useLoaderData() as Hyperdrive;
 
   return (
-    <div className="flex h-full justify-center bg-base-100 py-8">
+    <div className="flex h-full justify-center bg-base-100 py-8 px-4">
       <TradeBody hyperdrive={market} />
     </div>
   );
