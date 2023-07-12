@@ -40,4 +40,4 @@ export {
 } from "src/amm/shorts/getClosedShorts";
 
 // LP Shares
-export { getLP, getLPQuery } from "src/amm/lp/getLP";
+export { getLpPosition, getLpPositionQuery } from "src/amm/lp/getLpPosition";
