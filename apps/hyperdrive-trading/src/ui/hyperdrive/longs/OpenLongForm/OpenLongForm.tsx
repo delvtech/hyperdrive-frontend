@@ -112,7 +112,7 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
             className="daisy-btn-secondary daisy-btn"
             onClick={() => openLong?.()}
           >
-            <h5>Open Long</h5>
+            Open long
           </button>
         )
       ) : (
