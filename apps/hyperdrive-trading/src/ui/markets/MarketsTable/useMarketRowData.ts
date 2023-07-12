@@ -1,17 +1,19 @@
+import { getLiquidity } from "@hyperdrive/core";
 import { useQuery, UseQueryResult } from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
 import { YieldSource } from "src/appconfig/yieldSources/yieldSources";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import { Chain, PublicClient, Transport } from "viem";
 
 export interface MarketTableRowData {
   market: Hyperdrive;
-  yieldSource: YieldSource;
   liquidity: string;
+  yieldSource: YieldSource;
   longAPR: string;
   shortAPR: string;
   lpAPR: string;
 }
-export type MarketStatistics = Omit<MarketTableRowData, "market">;
+export type MarketStatistics = Omit<MarketTableRowData, "market" | "liquidity">;
 
 // TODO: stubbed function for now
 // ideally fetched from an api
@@ -21,7 +23,6 @@ function getMarketStatistics(
 ): Promise<MarketStatistics> {
   return Promise.resolve({
     yieldSource,
-    liquidity: "$100M",
     longAPR: "1.25%",
     shortAPR: "1.25%",
     lpAPR: "1.25%",
@@ -30,6 +31,7 @@ function getMarketStatistics(
 
 export function useMarketRowData(
   hyperdrives: Hyperdrive[] | undefined,
+  publicClient: PublicClient<Transport, Chain>,
 ): UseQueryResult<MarketTableRowData[]> {
   const { appConfig } = useAppConfig();
   const queryEnabled = !!hyperdrives && !!appConfig;
@@ -45,8 +47,13 @@ export function useMarketRowData(
                 hyperdrive,
                 appConfig.yieldSources[hyperdrive.yieldSource],
               );
+              const { marketLiquidity } = await getLiquidity(
+                hyperdrive.address,
+                publicClient,
+              );
               return {
                 market: hyperdrive,
+                liquidity: marketLiquidity,
                 ...stats,
               };
             }),

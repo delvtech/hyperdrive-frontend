@@ -6,17 +6,20 @@ import {
   Row,
   SortableGridTable,
 } from "src/ui/base/components/tables/SortableGridTable";
+import { formatUSD } from "src/ui/base/formatting/formatUSD";
 import {
   MarketTableRowData,
   useMarketRowData,
 } from "src/ui/markets/MarketsTable/useMarketRowData";
 import { YieldSourceLabel } from "src/ui/markets/YieldSourceLabel/YieldSourceLabel";
+import { usePublicClient } from "wagmi";
 
 const ALL_PROTOCOLS_KEY = "All Markets";
 const ALL_TERM_LENGTHS_KEY = 0;
 
 export function MarketsTable(): ReactElement {
   const { appConfig: config } = useAppConfig();
+  const publicClient = usePublicClient();
 
   const allProtocols = config?.hyperdrives.map(
     (market) => config?.yieldSources[market.yieldSource],
@@ -33,7 +36,10 @@ export function MarketsTable(): ReactElement {
     useState<number>(ALL_TERM_LENGTHS_KEY);
 
   // TODO: no loading state for now
-  const { data: marketsRowData = [] } = useMarketRowData(config?.hyperdrives);
+  const { data: marketsRowData = [] } = useMarketRowData(
+    config?.hyperdrives,
+    publicClient as any,
+  );
 
   const filteredMarkets = useMemo(() => {
     const marketFilteredByTermLength = termLengthFilter
@@ -154,7 +160,11 @@ export function MarketsTable(): ReactElement {
   );
 }
 
-function createMarketRow({ market, yieldSource }: MarketTableRowData): Row {
+function createMarketRow({
+  market,
+  yieldSource,
+  liquidity,
+}: MarketTableRowData): Row {
   return {
     href: `/trade/${market.address}`,
     cells: [
@@ -167,7 +177,7 @@ function createMarketRow({ market, yieldSource }: MarketTableRowData): Row {
       </p>,
 
       <span key="liquidity" className="font-semibold">
-        $100M
+        {liquidity && formatUSD(liquidity)}
       </span>,
       <span key="apy" className="font-semibold">
         1.25%
