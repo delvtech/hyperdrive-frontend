@@ -5,6 +5,7 @@ import { useSearchParams } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
 import { Well } from "src/ui/base/components/Well/Well";
 import { ClosedLongsTable } from "src/ui/portfolio/ClosedLongsTable/ClosedLongsTable";
+import { ClosedShortsTable } from "src/ui/portfolio/ClosedShortsTable/ClosedShortsTable";
 import { OpenLongsTable } from "src/ui/portfolio/OpenLongsTable/OpenLongsTable";
 import { OpenShortsTable } from "src/ui/portfolio/OpenShortsTable/OpenShortsTable";
 import {
@@ -94,8 +95,7 @@ export function PositionsSection({
                 if (activeOpenOrClosedTab === "Open") {
                   return <OpenShortsTable hyperdrive={hyperdrive} />;
                 }
-                // TODO: Wire this up
-                return <ClosedLongsTable hyperdrive={hyperdrive} />;
+                return <ClosedShortsTable hyperdrive={hyperdrive} />;
               }
               case "LP":
                 /* TODO: Wire this up */

@@ -8,6 +8,9 @@ interface UseOpenLongsOptions {
   hyperdriveAddress: Address | undefined;
 }
 
+/**
+ * Returns the list of longs that the account currently has open.
+ */
 export function useOpenLongs({
   account,
   hyperdriveAddress,
