@@ -34,7 +34,7 @@ export function CloseShortForm({
     hyperdriveAddress: short.hyperdriveAddress,
     maturityTime: short.maturity,
     shortAmountIn: amountAsBigInt,
-    minBaseAmountOut: parseUnits("0", baseDecimals),
+    minBaseAmountOut: 0n,
     destination: account,
   });
 
