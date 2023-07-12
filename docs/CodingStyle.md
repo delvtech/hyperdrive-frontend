@@ -31,10 +31,10 @@ additional thought from developers.
   the codebase easier to read and search.
 - If code review introduces confusion over a piece of code, add clarifying
   comments.
+- Rebase to avoid merge commits in branches and PRs.
 - Keep pull requests small to expedite reviews and maintain clean abstractions.
 - Do a pair review for large, unsplittable PRs.
-- Squash and merge PRs.
-- Rebase to avoid merge commits in PRs.
+- Author, not reviewer, should squash and merge PR after it's been approved.
 
 ## Coding style
 
