@@ -46,22 +46,22 @@ export async function getClosedShorts({
 export function getClosedShortsQuery({
   hyperdriveAddress,
   publicClient,
-  traderAddress: account,
+  traderAddress,
 }: Partial<GetClosedShortsOptions>): QueryObserverOptions<
   Awaited<ReturnType<typeof getClosedShorts>>
 > {
-  const queryEnabled = !!account && !!hyperdriveAddress && !!publicClient;
+  const queryEnabled = !!traderAddress && !!hyperdriveAddress && !!publicClient;
   return {
     enabled: queryEnabled,
     queryKey: [
       "@hyperdrive/core",
       "closed-shorts",
-      { hyperdriveAddress, account },
+      { hyperdriveAddress, traderAddress },
     ],
     queryFn: queryEnabled
       ? () =>
           getClosedShorts({
-            traderAddress: account,
+            traderAddress,
             hyperdriveAddress,
             publicClient,
           })
