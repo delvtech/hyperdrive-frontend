@@ -4,6 +4,7 @@ import { Short } from "@hyperdrive/core";
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { Modal } from "src/ui/base/components/Modal/Modal";
+import { CloseShortForm } from "src/ui/hyperdrive/shorts/CloseShortForm/CloseShortForm";
 
 export interface CloseShortModalButtonProps {
   modalId: string;
@@ -36,16 +37,15 @@ export function CloseShortModalButton({
           <h3 className="text-h6 font-thin text-base-content">
             Close position
           </h3>
-          {/* TODO: implement this component
-           <CloseShortForm
+          <CloseShortForm
             hyperdrive={hyperdrive}
-            long={short}
-            onCloseLong={(e) => {
+            short={short}
+            onCloseShort={(e) => {
               // preventDefault since we don't want to close the modal while the
               // tx is temporarily pending the user's signature in their wallet.
               e.preventDefault();
             }}
-          /> */}
+          />
         </div>
       }
     >

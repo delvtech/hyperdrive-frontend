@@ -32,7 +32,7 @@ export function usePreviewCloseShort({
   const queryEnabled =
     !!maturityTime &&
     !!shortAmountIn &&
-    !!minBaseAmountOut &&
+    minBaseAmountOut !== undefined && // check against undefined explicitly, because base amount of 0 is valid
     !!destination &&
     !!publicClient &&
     !!account &&
@@ -49,6 +49,7 @@ export function usePreviewCloseShort({
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? async () => {
+          // TODO: Move this to @hyperdrive/queries and use the math contract for this calc instead
           const { result } = await publicClient.simulateContract({
             abi: HyperdriveABI,
             address: hyperdriveAddress,
