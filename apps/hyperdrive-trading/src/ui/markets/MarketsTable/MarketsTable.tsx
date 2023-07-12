@@ -53,7 +53,7 @@ export function MarketsTable(): ReactElement {
   }, [marketsRowData, protocolFilter, termLengthFilter]);
 
   return (
-    <div className="space-y-8 rounded-sm bg-base-100 px-8 py-10">
+    <div className="flex flex-col space-y-8 rounded-sm bg-base-100 py-10">
       <div className="space-y-4">
         {/* Markets search and protocol filter row */}
         <div className="flex flex-col items-start gap-6 md:flex-row md:items-end">
