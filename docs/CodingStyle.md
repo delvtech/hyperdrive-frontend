@@ -29,6 +29,10 @@ additional thought from developers.
   historical versions.
 - Avoid abbreviations (some exceptions exist, eg: LP, TVL, some others) to keep
   the codebase easier to read and search.
+- Always treat acronyms and abbreviations as words when considering
+  capitalization. For example:
+    - Instead of `LongAPRStat`, use `LongAprStat`
+    - Instead of `baseAPIURL`, use `baseApiUrl`
 - If code review introduces confusion over a piece of code, add clarifying
   comments.
 - Rebase to avoid merge commits in branches and PRs.
@@ -61,16 +65,16 @@ based on various factors like state, props, etc. This way, we can reduce code
 complexity while achieving the same results.
 
 ```typescript
-import classNames from "classnames";
+import classNames from 'classnames'
 
 // Use classNames for a cleaner, more readable approach
-const buttonClass = classNames("daisy-btn", {
-  "daisy-btn-primary": isPrimary,
-  "daisy-btn-disabled": isDisabled,
-});
+const buttonClass = classNames('daisy-btn', {
+  'daisy-btn-primary': isPrimary,
+  'daisy-btn-disabled': isDisabled,
+})
 
 // Render the element
-<button className={buttonClass}>Click Me</button>;
+;<button className={buttonClass}>Click Me</button>
 ```
 
 ### **3. Avoid use of `line-height`**
