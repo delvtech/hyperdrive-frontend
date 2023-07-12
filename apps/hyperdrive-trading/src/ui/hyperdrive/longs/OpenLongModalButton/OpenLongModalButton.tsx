@@ -25,7 +25,7 @@ export function OpenLongModalButton({
               Open a long
             </p>
             <p className="font-light">
-              Earn the fixed rate on your current DAI holdings
+              Lock in the fixed rate by buying bonds with your DAI
             </p>
             {/* Using a div styled as a button here just as a visual cue. Don't
             use a real button here since the Well is interactive already, and

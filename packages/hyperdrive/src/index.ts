@@ -12,8 +12,13 @@ export { HyperdriveABI } from "src/abis/Hyperdrive";
 export { getPoolConfig, getPoolConfigQuery } from "src/amm/getPoolConfig";
 export { getPoolInfo, getPoolInfoQuery } from "src/amm/getPoolInfo";
 export { getTransferSingleEvents } from "src/amm/events/getTransferSingleEvents";
+export { getCurrentFixedAPRQuery } from "src/amm/getFixedAPR";
 
 // Longs
+export {
+  getLongPrice,
+  getCurrentLongPriceQuery,
+} from "src/amm/longs/getLongPrice";
 export { getOpenLongs, getOpenLongsQuery } from "src/amm/longs/getOpenLongs";
 export type { GetOpenLongsOptions } from "src/amm/longs/getOpenLongs";
 export {
@@ -22,7 +27,6 @@ export {
 } from "src/amm/longs/getClosedLongs";
 export type { GetClosedLongsOptions as GetCloseLongsOptions } from "src/amm/longs/getClosedLongs";
 export type { Long, ClosedLong } from "src/amm/longs/types";
-export { getCurrentFixedAPRQuery } from "src/amm/longs/getFixedAPR";
 
 // Shorts
 export {
