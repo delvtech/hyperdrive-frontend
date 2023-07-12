@@ -62,7 +62,7 @@ export function CloseShortModalButton({
             className="daisy-dropdown-content daisy-menu rounded-md bg-base-300 shadow"
           >
             <li className="my-1 flex cursor-pointer justify-center">
-              <button onClick={showModal}>Close Position</button>
+              <button onClick={showModal}>Close position</button>
             </li>
           </ul>
         </span>
