@@ -65,7 +65,7 @@ based on various factors like state, props, etc. This way, we can reduce code
 complexity while achieving the same results.
 
 ```typescript
-import classNames from "classnames"
+import classNames from "classnames";
 
 // Use classNames for a cleaner, more readable approach
 const buttonClass = classNames("daisy-btn", {
