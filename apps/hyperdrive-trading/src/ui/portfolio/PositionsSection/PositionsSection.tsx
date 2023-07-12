@@ -52,13 +52,13 @@ export function PositionsSection({
 
   return (
     <div>
-      <div className=" mb-4 flex w-full items-end justify-between border-b border-neutral-content/30">
+      <div className="mb-4 flex w-full items-end justify-between border-b border-neutral-content/30">
         <PositionTabs
           setActivePositionTab={handleChangeTab}
           activePositionTab={activePositionTab}
         />
 
-        <div className="daisy-tabs-boxed  mb-1">
+        <div className="daisy-tabs-boxed mb-1">
           <button
             onClick={() => handleChangeOpenOrClosedTab("Open")}
             className={classNames("daisy-tab text-sm", {

@@ -17,7 +17,7 @@ export function MarketStats({
   const { longPrice } = useCurrentLongPrice(hyperdrive);
 
   return (
-    <div className="flex w-full flex-wrap items-center justify-center gap-16  md:justify-start">
+    <div className="flex w-full flex-wrap items-center justify-center gap-16 md:justify-start">
       <Stat
         label="Token"
         value={

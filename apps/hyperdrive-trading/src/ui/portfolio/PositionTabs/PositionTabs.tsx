@@ -11,7 +11,7 @@ export function PositionTabs({
   activePositionTab: PositionTab;
 }): ReactElement {
   return (
-    <div className="daisy-tabs ">
+    <div className="daisy-tabs">
       <button
         onClick={() => setActivePositionTab("Longs")}
         className={classNames(
