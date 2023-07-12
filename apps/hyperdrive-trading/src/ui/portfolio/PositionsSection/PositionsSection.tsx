@@ -52,10 +52,7 @@ export function PositionsSection({
 
   return (
     <div>
-      <div className=" mb-4 flex w-full items-center justify-between border-b border-neutral-content/30">
-        {/* <h2 className="text-sm font-thin leading-h5 text-neutral-content md:text-h5">
-          Your positions
-        </h2> */}
+      <div className=" mb-4 flex w-full items-end justify-between border-b border-neutral-content/30">
         <PositionTabs
           setActivePositionTab={handleChangeTab}
           activePositionTab={activePositionTab}

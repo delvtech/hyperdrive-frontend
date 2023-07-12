@@ -29,7 +29,9 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
               <YieldSourceLabel yieldSource={yieldSource} />
               <MarketSelect markets={[hyperdrive]} />
             </div>
-            <p className="text-h3 font-semibold">{hyperdrive.name}</p>
+            <p className="my-2 text-h3 font-semibold md:my-0">
+              {hyperdrive.name}
+            </p>
           </div>
           <YourBalanceWell token={hyperdrive.baseToken} />
         </div>

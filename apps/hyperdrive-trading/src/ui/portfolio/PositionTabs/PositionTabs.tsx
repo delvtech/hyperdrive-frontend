@@ -11,11 +11,11 @@ export function PositionTabs({
   activePositionTab: PositionTab;
 }): ReactElement {
   return (
-    <div className="daisy-tabs">
+    <div className="daisy-tabs ">
       <button
         onClick={() => setActivePositionTab("Longs")}
         className={classNames(
-          "daisy-tab-lifted daisy-tab daisy-tab-sm md:daisy-tab-lg",
+          "daisy-tab-lifted daisy-tab daisy-tab-sm border-b-base-100 md:daisy-tab-lg",
           {
             "daisy-tab-active glass": activePositionTab === "Longs",
           },
@@ -26,7 +26,7 @@ export function PositionTabs({
       <button
         onClick={() => setActivePositionTab("Shorts")}
         className={classNames(
-          "daisy-tab-lifted daisy-tab daisy-tab-sm md:daisy-tab-lg",
+          "daisy-tab-lifted daisy-tab daisy-tab-sm border-b-base-100 md:daisy-tab-lg",
           {
             "daisy-tab-active glass": activePositionTab === "Shorts",
           },
@@ -37,7 +37,7 @@ export function PositionTabs({
       <button
         onClick={() => setActivePositionTab("LP")}
         className={classNames(
-          "daisy-tab-lifted daisy-tab daisy-tab-sm md:daisy-tab-lg",
+          "daisy-tab-lifted daisy-tab daisy-tab-sm border-b-base-100 md:daisy-tab-lg",
           {
             "daisy-tab-active glass": activePositionTab === "LP",
           },
