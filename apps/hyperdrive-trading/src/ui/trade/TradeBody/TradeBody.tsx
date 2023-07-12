@@ -23,13 +23,15 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
     <div className="flex max-w-5xl flex-col gap-16 ">
       {/* Name w/ market select */}
       <div className="flex w-full flex-col gap-6">
-        <div className="flex flex-wrap items-start justify-between">
+        <div className="flex flex-wrap items-start justify-center md:justify-between">
           <div className="flex shrink-0 flex-col">
             <div className="flex flex-1 justify-between">
               <YieldSourceLabel yieldSource={yieldSource} />
               <MarketSelect markets={[hyperdrive]} />
             </div>
-            <p className="text-h3 font-semibold">{hyperdrive.name}</p>
+            <p className="my-2 text-h3 font-semibold md:my-0">
+              {hyperdrive.name}
+            </p>
           </div>
           <YourBalanceWell token={hyperdrive.baseToken} />
         </div>
