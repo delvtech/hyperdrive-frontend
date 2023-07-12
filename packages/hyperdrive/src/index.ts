@@ -38,3 +38,6 @@ export {
   getClosedShorts,
   getClosedShortsQuery,
 } from "src/amm/shorts/getClosedShorts";
+
+// LP Shares
+export { getLP, getLPQuery } from "src/amm/lp/getLP";
