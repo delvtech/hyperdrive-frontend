@@ -5,7 +5,7 @@ import { Modal } from "src/ui/base/components/Modal/Modal";
 import { Well } from "src/ui/base/components/Well/Well";
 import { AddLiquidityForm } from "src/ui/hyperdrive/lp/AddLiquidityForm/AddLiquidityForm";
 
-const ADD_LIQUIDITY_MODAL_ID = "openLongModal";
+const ADD_LIQUIDITY_MODAL_ID = "addLpModal";
 
 export function AddLiquidityModalButton({
   hyperdrive,
