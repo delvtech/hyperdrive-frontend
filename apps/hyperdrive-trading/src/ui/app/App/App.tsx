@@ -5,12 +5,9 @@ import {
   redirect,
   RouterProvider,
 } from "react-router-dom";
-import { Markets } from "src/pages/Markets";
 import { Trade } from "src/pages/Trade";
 import { Navbar } from "src/ui/app/Navbar/Navbar";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
-
-const LASTED_VIEWED_MARKET_KEY = "last-viewed-market";
 
 function BaseLayout(): ReactElement {
   return (
@@ -39,14 +36,6 @@ export function App(): ReactElement | null {
       children: [
         {
           path: "/",
-          element: <Markets />,
-        },
-        {
-          path: "markets",
-          element: <Markets />,
-        },
-        {
-          path: "/trade",
           loader: () => {
             return redirect(`/trade/${appConfig?.hyperdrives[0].address}`);
           },
