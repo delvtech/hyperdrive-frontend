@@ -34,6 +34,9 @@ export {
   getOpenShortsQuery,
 } from "src/amm/shorts/getOpenShorts";
 export { getShorts } from "src/amm/shorts/getShortsOld";
+
+// Liquidity
+export { getLiquidity } from "src/amm/liquidity/getLiquidity";
 export {
   getClosedShorts,
   getClosedShortsQuery,

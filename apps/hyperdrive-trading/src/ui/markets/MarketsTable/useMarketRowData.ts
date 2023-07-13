@@ -1,17 +1,19 @@
+import { getLiquidity } from "@hyperdrive/core";
 import { useQuery, UseQueryResult } from "@tanstack/react-query";
-import { Hyperdrive } from "src/appconfig/types";
+import { AppConfig, Hyperdrive } from "src/appconfig/types";
 import { YieldSource } from "src/appconfig/yieldSources/yieldSources";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import { Chain, PublicClient, Transport } from "viem";
 
 export interface MarketTableRowData {
   market: Hyperdrive;
-  yieldSource: YieldSource;
   liquidity: string;
+  yieldSource: YieldSource;
   longAPR: string;
   shortAPR: string;
   lpAPR: string;
 }
-export type MarketStatistics = Omit<MarketTableRowData, "market">;
+export type MarketStatistics = Omit<MarketTableRowData, "market" | "liquidity">;
 
 // TODO: stubbed function for now
 // ideally fetched from an api
@@ -21,15 +23,42 @@ function getMarketStatistics(
 ): Promise<MarketStatistics> {
   return Promise.resolve({
     yieldSource,
-    liquidity: "$100M",
     longAPR: "1.25%",
     shortAPR: "1.25%",
     lpAPR: "1.25%",
   });
 }
 
+async function fetchMarketRowData(
+  hyperdrives: Hyperdrive[],
+  publicClient: PublicClient<Transport, Chain>,
+  appConfig: AppConfig,
+) {
+  return await Promise.all(
+    hyperdrives.map(async (hyperdrive) => {
+      const statsPromise = getMarketStatistics(
+        hyperdrive,
+        appConfig.yieldSources[hyperdrive.yieldSource],
+      );
+      const liquidityPromise = getLiquidity(hyperdrive.address, publicClient);
+
+      const [stats, { marketLiquidity }] = await Promise.all([
+        statsPromise,
+        liquidityPromise,
+      ]);
+
+      return {
+        market: hyperdrive,
+        liquidity: marketLiquidity,
+        ...stats,
+      };
+    }),
+  );
+}
+
 export function useMarketRowData(
   hyperdrives: Hyperdrive[] | undefined,
+  publicClient: PublicClient<Transport, Chain>,
 ): UseQueryResult<MarketTableRowData[]> {
   const { appConfig } = useAppConfig();
   const queryEnabled = !!hyperdrives && !!appConfig;
@@ -38,20 +67,7 @@ export function useMarketRowData(
     queryKey: hyperdrives,
     enabled: queryEnabled,
     queryFn: queryEnabled
-      ? async () => {
-          return await Promise.all(
-            hyperdrives.map(async (hyperdrive) => {
-              const stats = await getMarketStatistics(
-                hyperdrive,
-                appConfig.yieldSources[hyperdrive.yieldSource],
-              );
-              return {
-                market: hyperdrive,
-                ...stats,
-              };
-            }),
-          );
-        }
+      ? () => fetchMarketRowData(hyperdrives, publicClient, appConfig)
       : undefined,
   });
 }
