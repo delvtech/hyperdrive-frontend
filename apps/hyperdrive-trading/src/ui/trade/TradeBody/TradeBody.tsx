@@ -46,7 +46,7 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
 
           <OpenShortModalButton hyperdrive={hyperdrive} />
 
-          <AddLiquidityModalButton />
+          <AddLiquidityModalButton hyperdrive={hyperdrive} />
         </div>
       </div>
 
