@@ -164,6 +164,7 @@ function createMarketRow({
   yieldSource,
   liquidity,
 }: MarketTableRowData): Row {
+  const formattedLiquidity = liquidity && parseInt(liquidity).toLocaleString();
   return {
     href: `/trade/${market.address}`,
     cells: [
@@ -175,8 +176,12 @@ function createMarketRow({
         {convertMillisecondsToMonths(market.termLengthMS)} months
       </p>,
 
-      <span key="liquidity" className="font-semibold">
-        {liquidity && `DAI ${Math.round(parseInt(liquidity))}`}
+      <span
+        key="liquidity"
+        className="flex flex-row items-center justify-start font-semibold"
+      >
+        <img className="mr-1 h-4" src={market.baseToken.iconUrl} />
+        {formattedLiquidity}
       </span>,
       <span key="apy" className="font-semibold">
         1.25%
