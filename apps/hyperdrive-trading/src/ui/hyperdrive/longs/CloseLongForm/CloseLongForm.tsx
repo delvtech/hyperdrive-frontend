@@ -1,5 +1,5 @@
 import { Long } from "@hyperdrive/core";
-import { ConnectButton, useConnectModal } from "@rainbow-me/rainbowkit";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { Stat } from "src/ui/base/components/Stat";
@@ -25,7 +25,6 @@ export function CloseLongForm({
   const { decimals: baseDecimals, symbol: baseSymbol } = hyperdrive.baseToken;
 
   const { address: account } = useAccount();
-  const { openConnectModal } = useConnectModal();
 
   const { amount, amountAsBigInt, setAmount } = useNumericInput({
     decimals: baseDecimals,
@@ -87,6 +86,7 @@ export function CloseLongForm({
       {account ? (
         <button
           className="daisy-btn-secondary daisy-btn w-full"
+          disabled={!closeLong || isPendingWalletAction}
           onClick={(e) => {
             closeLong?.();
 
