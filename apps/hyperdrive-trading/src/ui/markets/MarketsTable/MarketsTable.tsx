@@ -6,7 +6,6 @@ import {
   Row,
   SortableGridTable,
 } from "src/ui/base/components/tables/SortableGridTable";
-import { formatUSD } from "src/ui/base/formatting/formatUSD";
 import {
   MarketTableRowData,
   useMarketRowData,
@@ -177,7 +176,7 @@ function createMarketRow({
       </p>,
 
       <span key="liquidity" className="font-semibold">
-        {liquidity && formatUSD(liquidity)}
+        {liquidity && `ETH ${Math.round(parseInt(liquidity))}`}
       </span>,
       <span key="apy" className="font-semibold">
         1.25%
