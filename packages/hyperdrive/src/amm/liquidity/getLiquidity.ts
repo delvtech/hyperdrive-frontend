@@ -1,10 +1,15 @@
 import { Address, Chain, PublicClient, Transport, formatUnits } from "viem";
 
-// eslint-disable-next-line no-restricted-imports
-import { getPoolInfo } from "../getPoolInfo";
+import { getPoolInfo } from "src/amm/getPoolInfo";
 
-// This function retrieves the market liquidity by using the following formula:
-// marketLiquidity = sharePrice * shareReserves - longsOutstanding
+/**
+ * This function retrieves the market liquidity by using the following formula:
+ * marketLiquidity = sharePrice * shareReserves - longsOutstanding
+ *
+ * @param hyperdriveAddress - The address of the hyperdrive
+ * @param publicClient - The public client
+ * @returns Promise that resolves with an object containing the market liquidity
+ */
 export async function getLiquidity(
   hyperdriveAddress: Address,
   publicClient: PublicClient<Transport, Chain>,
