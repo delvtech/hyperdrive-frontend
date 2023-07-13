@@ -74,6 +74,8 @@ module.exports = {
 
           neutral: "#425079",
           "neutral-content": "#9aa1cb",
+
+          "--btn-text-case": "none", // set default text transform for buttons
         },
       },
     ],
