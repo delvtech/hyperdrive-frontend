@@ -1,6 +1,6 @@
 import { getLiquidity } from "@hyperdrive/core";
 import { useQuery, UseQueryResult } from "@tanstack/react-query";
-import { Hyperdrive } from "src/appconfig/types";
+import { AppConfig, Hyperdrive } from "src/appconfig/types";
 import { YieldSource } from "src/appconfig/yieldSources/yieldSources";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Chain, PublicClient, Transport } from "viem";
@@ -29,6 +29,33 @@ function getMarketStatistics(
   });
 }
 
+async function fetchMarketRowData(
+  hyperdrives: Hyperdrive[],
+  publicClient: PublicClient<Transport, Chain>,
+  appConfig: AppConfig,
+) {
+  return await Promise.all(
+    hyperdrives.map(async (hyperdrive) => {
+      const statsPromise = getMarketStatistics(
+        hyperdrive,
+        appConfig.yieldSources[hyperdrive.yieldSource],
+      );
+      const liquidityPromise = getLiquidity(hyperdrive.address, publicClient);
+
+      const [stats, { marketLiquidity }] = await Promise.all([
+        statsPromise,
+        liquidityPromise,
+      ]);
+
+      return {
+        market: hyperdrive,
+        liquidity: marketLiquidity,
+        ...stats,
+      };
+    }),
+  );
+}
+
 export function useMarketRowData(
   hyperdrives: Hyperdrive[] | undefined,
   publicClient: PublicClient<Transport, Chain>,
@@ -40,25 +67,7 @@ export function useMarketRowData(
     queryKey: hyperdrives,
     enabled: queryEnabled,
     queryFn: queryEnabled
-      ? async () => {
-          return await Promise.all(
-            hyperdrives.map(async (hyperdrive) => {
-              const stats = await getMarketStatistics(
-                hyperdrive,
-                appConfig.yieldSources[hyperdrive.yieldSource],
-              );
-              const { marketLiquidity } = await getLiquidity(
-                hyperdrive.address,
-                publicClient,
-              );
-              return {
-                market: hyperdrive,
-                liquidity: marketLiquidity,
-                ...stats,
-              };
-            }),
-          );
-        }
+      ? () => fetchMarketRowData(hyperdrives, publicClient, appConfig)
       : undefined,
   });
 }
