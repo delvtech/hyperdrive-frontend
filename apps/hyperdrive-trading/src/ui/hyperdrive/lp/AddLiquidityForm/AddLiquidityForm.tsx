@@ -113,7 +113,7 @@ export function AddLiquidityForm({
               addLiquidityTransactionStatus === "loading" ||
               addLiquidityStatus === "loading"
             }
-            className="daisy-btn-secondary daisy-btn"
+            className="daisy-btn-primary daisy-btn"
             onClick={() => addLiquidity?.()}
           >
             <h5>Add Liquidity</h5>
@@ -121,7 +121,7 @@ export function AddLiquidityForm({
         )
       ) : (
         <button
-          className="daisy-btn-secondary daisy-btn"
+          className="daisy-btn-primary daisy-btn"
           onClick={() => openConnectModal?.()}
         >
           <h5>Connect wallet</h5>
