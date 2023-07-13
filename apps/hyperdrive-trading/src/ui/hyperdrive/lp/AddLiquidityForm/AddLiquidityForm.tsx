@@ -4,19 +4,21 @@ import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { parseUnits } from "src/base/parseUnits";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
-import { useOpenLong } from "src/ui/hyperdrive/longs/hooks/useOpenLong";
-import { usePreviewOpenLong } from "src/ui/hyperdrive/longs/hooks/usePreviewOpenLong";
-import { OpenLongPreview } from "src/ui/hyperdrive/longs/OpenLongPreview/OpenLongPreview";
+import { AddLiquidityPreview } from "src/ui/hyperdrive/lp/AddLiquidityPreview/AddLiquidityPreview";
+import { useAddLiquidity } from "src/ui/hyperdrive/lp/hooks/useAddLiquidity";
+import { usePreviewAddLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewAddLP";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenApproval } from "src/ui/token/hooks/useTokenApproval";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { useAccount, useBalance } from "wagmi";
 
-interface OpenLongFormProps {
+interface AddLiquidityFormProps {
   market: Hyperdrive;
 }
 
-export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
+export function AddLiquidityForm({
+  market,
+}: AddLiquidityFormProps): ReactElement {
   const { address: account } = useAccount();
   const { openConnectModal } = useConnectModal();
 
@@ -45,28 +47,33 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
     ? amountAsBigInt && amountAsBigInt > tokenAllowance
     : true;
 
-  const { longAmountOut, status: openLongPreviewStatus } = usePreviewOpenLong({
-    market,
-    baseAmount: amountAsBigInt,
-    bondAmountOut: parseUnits("1", market.baseToken.decimals), // todo add slippage control
-    destination: account,
-    enabled: !needsApproval,
-  });
+  const { lpSharesOut, status: addLiquidityPreviewStatus } =
+    usePreviewAddLiquidity({
+      market,
+      contribution: amountAsBigInt,
+      // TODO: Add slippage control
+      minAPR: parseUnits("0", market.baseToken.decimals),
+      maxAPR: parseUnits("999", market.baseToken.decimals),
+      destination: account,
+      enabled: !needsApproval,
+    });
 
-  const { openLong, openLongTransactionStatus, openLongStatus } = useOpenLong({
-    market,
-    baseAmount: amountAsBigInt,
-    // TODO: handle slippage
-    bondAmountOut: BigInt(1),
-    destination: account,
-    enabled: openLongPreviewStatus === "success" && !needsApproval,
-  });
+  const { addLiquidity, addLiquidityTransactionStatus, addLiquidityStatus } =
+    useAddLiquidity({
+      market,
+      contribution: amountAsBigInt,
+      // TODO: Add slippage control
+      minAPR: parseUnits("0", market.baseToken.decimals),
+      maxAPR: parseUnits("999", market.baseToken.decimals),
+      destination: account,
+      enabled: addLiquidityPreviewStatus === "success" && !needsApproval,
+    });
 
   return (
     <div className="flex flex-col gap-10">
-      {/* You Pay Section */}
+      {/* Amount Section */}
       <div className="space-y-4 text-base-content">
-        <h5>You Pay</h5>
+        <h5>Amount to add</h5>
         <TokenInput
           token={market.baseToken}
           value={amount ?? ""}
@@ -78,15 +85,12 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
       {/* New Position Section */}
       <div className="space-y-4 text-base-content">
         <h5>Position preview</h5>
-        <OpenLongPreview
+        <AddLiquidityPreview
           hyperdrive={market}
-          long={{
-            bondAmount: longAmountOut || 0n,
+          lpPosition={{
+            lpShares: lpSharesOut || 0n,
             assetId: 0n,
             hyperdriveAddress: market.address,
-            maturity: BigInt(
-              Math.round((Date.now() + market.termLengthMS) / 1000),
-            ),
           }}
         />
       </div>
@@ -105,19 +109,19 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
           // Trade button
           <button
             disabled={
-              !openLong ||
-              openLongTransactionStatus === "loading" ||
-              openLongStatus === "loading"
+              !addLiquidity ||
+              addLiquidityTransactionStatus === "loading" ||
+              addLiquidityStatus === "loading"
             }
-            className="daisy-btn-secondary daisy-btn"
-            onClick={() => openLong?.()}
+            className="daisy-btn-primary daisy-btn"
+            onClick={() => addLiquidity?.()}
           >
-            Open long
+            <h5>Add Liquidity</h5>
           </button>
         )
       ) : (
         <button
-          className="daisy-btn-secondary daisy-btn"
+          className="daisy-btn-primary daisy-btn"
           onClick={() => openConnectModal?.()}
         >
           <h5>Connect wallet</h5>

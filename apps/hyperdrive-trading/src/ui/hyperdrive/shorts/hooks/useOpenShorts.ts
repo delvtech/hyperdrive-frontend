@@ -8,6 +8,9 @@ interface UseOpenShortsOptions {
   hyperdriveAddress: Address | undefined;
 }
 
+/**
+ * Returns the list of shorts that the account currently has open.
+ */
 export function useOpenShorts({
   account,
   hyperdriveAddress,

@@ -37,3 +37,10 @@ export { getShorts } from "src/amm/shorts/getShortsOld";
 
 // Liquidity
 export { getLiquidity } from "src/amm/liquidity/getLiquidity";
+export {
+  getClosedShorts,
+  getClosedShortsQuery,
+} from "src/amm/shorts/getClosedShorts";
+
+// LP Shares
+export { getLpPosition, getLpPositionQuery } from "src/amm/lp/getLpPosition";

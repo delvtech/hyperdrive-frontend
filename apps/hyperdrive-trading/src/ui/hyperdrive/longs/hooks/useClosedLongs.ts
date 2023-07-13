@@ -8,6 +8,9 @@ interface UseClosedLongsOptions {
   hyperdriveAddress: Address | undefined;
 }
 
+/**
+ * Returns the list of longs that the account has closed out of
+ */
 export function useClosedLongs({
   account,
   hyperdriveAddress,
