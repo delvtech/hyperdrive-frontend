@@ -176,7 +176,7 @@ function createMarketRow({
       </p>,
 
       <span key="liquidity" className="font-semibold">
-        {liquidity && `ETH ${Math.round(parseInt(liquidity))}`}
+        {liquidity && `DAI ${Math.round(parseInt(liquidity))}`}
       </span>,
       <span key="apy" className="font-semibold">
         1.25%

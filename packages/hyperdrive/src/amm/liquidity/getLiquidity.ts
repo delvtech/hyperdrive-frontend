@@ -11,6 +11,14 @@ export async function getLiquidity(
     hyperdriveAddress,
     publicClient,
   });
-  const marketLiquidity = formatUnits(poolInfo.shareReserves, 18);
-  return { marketLiquidity };
+  console.log(poolInfo);
+  const sharePrice = formatUnits(poolInfo.sharePrice, 18);
+  const shareReserves = formatUnits(poolInfo.shareReserves, 18);
+  const longsOutstanding = formatUnits(poolInfo.longsOutstanding, 18);
+  console.log(sharePrice, shareReserves, longsOutstanding);
+  const totalLiquidity = parseFloat(sharePrice) * parseFloat(shareReserves);
+  const minusLongs = totalLiquidity - parseFloat(longsOutstanding);
+  console.log(minusLongs, "minusLongs");
+
+  return { marketLiquidity: minusLongs.toString() };
 }
