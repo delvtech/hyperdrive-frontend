@@ -62,8 +62,8 @@ export function MarketsTable(): ReactElement {
       {/* Markets sortable table */}
       <div>
         <SortableGridTable
-          headingRowClassName="grid-cols-[1.5fr_1fr_1fr_1fr] md:grid-cols-[2fr_1fr_1fr_1fr] bg-base-100 text-neutral-content text-[10px] [&>*]:p-5 bg-opacity-100"
-          bodyRowClassName="grid-cols-[1.5fr_1fr_1fr_1fr] md:grid-cols-[2fr_1fr_1fr_1fr] bg-transparent text-base-content text-[8px] md:text-md [&>*]:p-5"
+          headingRowClassName="grid-cols-[1.5fr_1fr_1fr_1fr] md:grid-cols-[2fr_1fr_1fr_1fr] bg-base-100 text-neutral-content text-[10px]  bg-opacity-100"
+          bodyRowClassName="grid-cols-[1.5fr_1fr_1fr_1fr] md:grid-cols-[2fr_1fr_1fr_1fr] bg-transparent text-base-content text-[8px] md:text-md "
           cols={[
             {
               cell: "Name",

@@ -33,8 +33,8 @@ export function MarketSelect({
         htmlFor={MARKETS_MODAL_KEY}
         className="daisy-modal flex cursor-pointer items-center justify-center px-8"
       >
-        <div className="flex max-h-[70vh] flex-col items-center overflow-auto rounded bg-base-100 p-4">
-          <h3 className="font-lato">Markets</h3>
+        <div className="no-scrollbar flex max-h-[70vh] flex-col items-center overflow-auto rounded bg-base-100 p-4">
+          <h3 className="mb-4 font-lato">Markets</h3>
 
           <MarketsTable />
         </div>
