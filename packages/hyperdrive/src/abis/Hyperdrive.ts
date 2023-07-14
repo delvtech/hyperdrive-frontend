@@ -26,6 +26,11 @@ export const HyperdriveABI = [
   },
   {
     inputs: [],
+    name: "BelowMinimumShareReserves",
+    type: "error",
+  },
+  {
+    inputs: [],
     name: "BondMatured",
     type: "error",
   },
@@ -127,7 +132,17 @@ export const HyperdriveABI = [
   },
   {
     inputs: [],
+    name: "InvalidMinimumShareReserves",
+    type: "error",
+  },
+  {
+    inputs: [],
     name: "InvalidPositionDuration",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "InvalidShareReserves",
     type: "error",
   },
   {
@@ -633,7 +648,7 @@ export const HyperdriveABI = [
     outputs: [
       {
         internalType: "uint256",
-        name: "",
+        name: "lpShares",
         type: "uint256",
       },
     ],
@@ -863,6 +878,11 @@ export const HyperdriveABI = [
           },
           {
             internalType: "uint256",
+            name: "minimumShareReserves",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
             name: "positionDuration",
             type: "uint256",
           },
@@ -1021,7 +1041,13 @@ export const HyperdriveABI = [
       },
     ],
     name: "initialize",
-    outputs: [],
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "lpShares",
+        type: "uint256",
+      },
+    ],
     stateMutability: "payable",
     type: "function",
   },
@@ -1146,7 +1172,12 @@ export const HyperdriveABI = [
     outputs: [
       {
         internalType: "uint256",
-        name: "",
+        name: "maturityTime",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "bondProceeds",
         type: "uint256",
       },
     ],
@@ -1343,12 +1374,12 @@ export const HyperdriveABI = [
     outputs: [
       {
         internalType: "uint256",
-        name: "",
+        name: "baseProceeds",
         type: "uint256",
       },
       {
         internalType: "uint256",
-        name: "",
+        name: "withdrawalShares",
         type: "uint256",
       },
     ],
