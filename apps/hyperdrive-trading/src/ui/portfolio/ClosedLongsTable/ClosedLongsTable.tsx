@@ -22,7 +22,7 @@ export function ClosedLongsTable({
     <SortableGridTable
       headingRowClassName="grid-cols-5 text-neutral-content"
       bodyRowClassName="grid-cols-4 text-base-content items-center text-sm md:text-h6 even:bg-secondary/5 h-16 "
-      cols={["Position", "Balance", "Value", "Matures on", "Closed on"]}
+      cols={["Position", "Bonds", "Value", "Matures on", "Closed on"]}
       rows={closedLongRows}
     />
   );

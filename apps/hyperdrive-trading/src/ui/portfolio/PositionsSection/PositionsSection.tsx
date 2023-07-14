@@ -55,7 +55,7 @@ export function PositionsSection({
     <div>
       <div className="mb-4 flex w-full items-end justify-between border-b border-neutral-content/30">
         <PositionTabs
-          setActivePositionTab={handleChangeTab}
+          onTabClick={handleChangeTab}
           activePositionTab={activePositionTab}
         />
 

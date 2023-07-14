@@ -4,16 +4,16 @@ import { ReactElement } from "react";
 export type PositionTab = "Longs" | "Shorts" | "LP";
 
 export function PositionTabs({
-  setActivePositionTab,
+  onTabClick,
   activePositionTab,
 }: {
-  setActivePositionTab: (openOrClosedTab: PositionTab) => void;
+  onTabClick: (openOrClosedTab: PositionTab) => void;
   activePositionTab: PositionTab;
 }): ReactElement {
   return (
     <div className="daisy-tabs">
       <button
-        onClick={() => setActivePositionTab("Longs")}
+        onClick={() => onTabClick("Longs")}
         className={classNames(
           "daisy-tab-lifted daisy-tab daisy-tab-sm border-b-base-100 md:daisy-tab-lg",
           {
@@ -24,7 +24,7 @@ export function PositionTabs({
         Longs
       </button>
       <button
-        onClick={() => setActivePositionTab("Shorts")}
+        onClick={() => onTabClick("Shorts")}
         className={classNames(
           "daisy-tab-lifted daisy-tab daisy-tab-sm border-b-base-100 md:daisy-tab-lg",
           {
@@ -35,7 +35,7 @@ export function PositionTabs({
         Shorts
       </button>
       <button
-        onClick={() => setActivePositionTab("LP")}
+        onClick={() => onTabClick("LP")}
         className={classNames(
           "daisy-tab-lifted daisy-tab daisy-tab-sm border-b-base-100 md:daisy-tab-lg",
           {
