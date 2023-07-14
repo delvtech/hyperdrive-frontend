@@ -67,5 +67,5 @@ export function usePreviewOpenLong({
         }
       : undefined,
   });
-  return { longAmountOut: data, status };
+  return { longAmountOut: data?.[1], status };
 }
