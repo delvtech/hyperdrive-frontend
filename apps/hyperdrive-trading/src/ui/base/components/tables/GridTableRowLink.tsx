@@ -19,7 +19,7 @@ export function GridTableRowLink({
     <Link
       to={href}
       className={classNames(
-        "grid auto-cols-fr grid-flow-col text-sm transition-all last:rounded-b-lg odd:bg-base-100 hover:bg-base-300 md:text-h6  [&>*]:text-ellipsis [&>*]:p-4",
+        "grid auto-cols-fr grid-flow-col text-sm transition-all last:rounded-b-lg odd:bg-base-100 hover:bg-base-300 md:text-h6 [&>*]:text-ellipsis [&>*]:p-4",
         className,
       )}
     >
