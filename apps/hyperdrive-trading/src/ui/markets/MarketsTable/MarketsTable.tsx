@@ -58,75 +58,7 @@ export function MarketsTable(): ReactElement {
   }, [marketsRowData, protocolFilter, termLengthFilter]);
 
   return (
-    <div className="flex flex-col space-y-8 rounded-sm bg-base-100 py-10">
-      <div className="space-y-4">
-        {/* Markets search and protocol filter row */}
-        <div className="flex flex-col items-start gap-6 md:flex-row md:items-end">
-          {/* Markets search input, disabled for now */}
-          <div className="mr-auto hidden flex-col gap-y-2  lg:flex">
-            <div className="flex items-center gap-x-1">
-              <p className="font-medium text-neutral-content">Search Markets</p>
-            </div>
-
-            <input
-              className=" daisy-input w-[250px] rounded-sm border bg-base-300 p-2 text-[1rem] font-medium text-base-content placeholder:text-neutral-content"
-              placeholder="Maker DSR"
-            />
-          </div>
-
-          <div className="flex flex-col gap-y-2">
-            <p className="font-medium text-neutral-content">
-              Filter by protocol
-            </p>
-            <select
-              onChange={(event) => {
-                if (event.currentTarget.value === "none") {
-                  setSelectedProtocolFilter(ALL_PROTOCOLS_KEY);
-                } else {
-                  setSelectedProtocolFilter(event.currentTarget.value);
-                }
-              }}
-              defaultValue="none"
-              className=" daisy-select w-[20rem] rounded-sm bg-base-300 text-[1rem]"
-            >
-              <option value="none">All protocols</option>
-              {protocols.map((protocol) => (
-                <option key={protocol.name} value={protocol.name}>
-                  {protocol.name}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          <div className="flex flex-col gap-y-2">
-            <p className="font-medium text-neutral-content">
-              Select term length
-            </p>
-            <select
-              onChange={(event) => {
-                if (event.currentTarget.value === "none") {
-                  setSelectedTermLengthFilter(ALL_TERM_LENGTHS_KEY);
-                } else {
-                  setSelectedTermLengthFilter(+event.currentTarget.value);
-                }
-              }}
-              defaultValue="none"
-              className=" daisy-select w-[12rem] rounded-sm bg-base-300 text-[1rem]"
-            >
-              <option value="none">All term lengths</option>
-              {termLengths
-                .slice()
-                .sort((a, b) => a - b)
-                .map((termLength) => (
-                  <option key={termLength} value={termLength}>
-                    {termLength} months
-                  </option>
-                ))}
-            </select>
-          </div>
-        </div>
-      </div>
-
+    <div className="flex flex-col space-y-8 rounded-sm bg-base-100 ">
       {/* Markets sortable table */}
       <div>
         <SortableGridTable
