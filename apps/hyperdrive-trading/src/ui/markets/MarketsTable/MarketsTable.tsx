@@ -58,7 +58,7 @@ export function MarketsTable(): ReactElement {
   }, [marketsRowData, protocolFilter, termLengthFilter]);
 
   return (
-    <div className="flex flex-col space-y-8 rounded-sm bg-base-100 ">
+    <div className="flex flex-col space-y-8 overflow-x-auto rounded-sm bg-base-100">
       {/* Markets sortable table */}
       <div>
         <SortableGridTable
