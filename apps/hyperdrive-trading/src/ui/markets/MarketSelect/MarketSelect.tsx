@@ -7,7 +7,9 @@ const MARKETS_MODAL_KEY = "MARKETS_MODAL";
 export function MarketSelect(): ReactElement {
   return (
     <Modal
-      className={{ form: "w-[90vw] max-w-[90vw] md:w-[70vw] md:max-w-[70vw]" }}
+      className={{
+        form: "w-[90vw] max-w-[90vw] p-0 md:w-[70vw] md:max-w-[70vw] md:p-4",
+      }}
       modalId={MARKETS_MODAL_KEY}
       modalContent={<MarketsModalContent />}
     >
@@ -28,7 +30,7 @@ export function MarketSelect(): ReactElement {
 
 function MarketsModalContent() {
   return (
-    <div className="no-scrollbar flex max-h-[70vh] flex-col items-center overflow-auto rounded bg-base-300 p-4">
+    <div className="no-scrollbar flex max-h-[70vh] flex-col items-center overflow-auto rounded bg-base-300 p-1 md:p-4">
       <h3 className="mb-4 font-lato">Markets</h3>
 
       <MarketsTable />
