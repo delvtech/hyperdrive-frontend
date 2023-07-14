@@ -1,17 +1,10 @@
-import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { ReactElement } from "react";
-import { Hyperdrive } from "src/appconfig/types";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { MarketsTable } from "src/ui/markets/MarketsTable/MarketsTable";
 
 const MARKETS_MODAL_KEY = "MARKETS_MODAL";
 
-// TODO: Refactor to new Modal component
-export function MarketSelect({
-  markets,
-}: {
-  markets: Hyperdrive[];
-}): ReactElement {
+export function MarketSelect(): ReactElement {
   return (
     <Modal
       className={{ form: "w-[90vw] max-w-[90vw] md:w-[70vw] md:max-w-[70vw]" }}
@@ -20,12 +13,12 @@ export function MarketSelect({
     >
       {({ showModal }) => (
         <label
-          onClick={() => showModal()}
+          onClick={showModal}
           htmlFor={MARKETS_MODAL_KEY}
-          className="glass daisy-btn-xs daisy-btn w-[150px]"
+          className="glass daisy-btn-xs daisy-btn w-auto px-4 "
         >
-          <span className="inline-flex items-center gap-2 text-sm">
-            Select market <ChevronDownIcon className="h-5" />
+          <span className="inline-flex items-center text-sm">
+            Select market
           </span>
         </label>
       )}
