@@ -1,16 +1,10 @@
 import { ReactElement, ReactNode, useRef } from "react";
 
-interface ModalClassNames {
-  dialog?: string;
-  form?: string;
-  backdrop?: string;
-}
-
 interface ModalProps {
   modalId: string;
   modalContent: ReactNode;
   children: (options: ModalChildrenOptions) => ReactNode;
-  className?: ModalClassNames; // Use ModalClassNames here
+  className?: string;
 }
 
 interface ModalChildrenOptions {
@@ -21,7 +15,7 @@ export function Modal({
   modalId,
   modalContent,
   children,
-  className = {}, // Default is an empty object if no classes are provided
+  className = "", // Default is an empty string if no classes are provided
 }: ModalProps): ReactElement {
   const modalRef = useRef<HTMLDialogElement>(null);
   const showModal = () => modalRef.current?.showModal();
@@ -30,21 +24,14 @@ export function Modal({
     <>
       {children({ showModal })}
 
-      <dialog
-        id={modalId}
-        className={`daisy-modal ${className.dialog || ""}`}
-        ref={modalRef}
-      >
+      <dialog id={modalId} className={`daisy-modal`} ref={modalRef}>
         <form
           method="dialog"
-          className={`daisy-modal-box bg-base-300 ${className.form || ""}`}
+          className={`daisy-modal-box bg-base-300 ${className}`}
         >
           {modalContent}
         </form>
-        <form
-          method="dialog"
-          className={`daisy-modal-backdrop ${className.backdrop || ""}`}
-        >
+        <form method="dialog" className={`daisy-modal-backdrop`}>
           <button>close</button>
         </form>
       </dialog>
