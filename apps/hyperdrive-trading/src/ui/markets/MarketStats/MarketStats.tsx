@@ -15,7 +15,6 @@ export function MarketStats({
   const formattedTermLength = formatTermLength(hyperdrive.termLengthMS);
 
   const { data: liquidity } = useLiquidity(hyperdrive.address);
-
   const { fixedAPR } = useCurrentFixedAPR(hyperdrive);
   const { longPrice } = useCurrentLongPrice(hyperdrive);
 
@@ -48,7 +47,7 @@ export function MarketStats({
         value={
           <FormattedLiquidity
             iconUrl={hyperdrive.baseToken.iconUrl as string}
-            liquidity={liquidity.marketLiquidity}
+            liquidity={liquidity?.marketLiquidity || "0"}
           />
         }
       />
