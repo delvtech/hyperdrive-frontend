@@ -10,7 +10,7 @@ import { QueryObserverOptions } from "@tanstack/query-core";
 
 interface GetPoolInfoOptions {
   hyperdriveAddress: Address;
-  publicClient: PublicClient<Transport, Chain>;
+  publicClient: PublicClient;
 }
 
 export async function getPoolInfo({

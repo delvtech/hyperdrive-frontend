@@ -12,7 +12,7 @@ import { getPoolInfo } from "src/amm/getPoolInfo";
  */
 export async function getLiquidity(
   hyperdriveAddress: Address,
-  publicClient: PublicClient<Transport, Chain>,
+  publicClient: PublicClient,
 ): Promise<{ marketLiquidity: string }> {
   const poolInfo = await getPoolInfo({
     hyperdriveAddress,
