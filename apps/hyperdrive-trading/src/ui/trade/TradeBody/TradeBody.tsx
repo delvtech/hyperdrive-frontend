@@ -27,7 +27,7 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
           <div className="flex shrink-0 flex-col">
             <div className="flex flex-1 justify-between">
               <YieldSourceLabel yieldSource={yieldSource} />
-              <MarketSelect markets={[hyperdrive]} />
+              <MarketSelect />
             </div>
             <p className="my-2 text-h3 font-semibold md:my-0">
               {hyperdrive.name}

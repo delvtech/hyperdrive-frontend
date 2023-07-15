@@ -15,7 +15,7 @@ export function GridTableHeader({
   return (
     <div
       className={classNames(
-        "grid auto-cols-fr grid-flow-col items-center rounded-t-md bg-base-100 text-sm font-light md:text-lg [&>*]:overflow-hidden [&>*]:text-ellipsis [&>*]:p-4",
+        "grid auto-cols-fr grid-flow-col items-center rounded-t-md bg-base-100 text-sm font-light md:text-lg [&>*]:text-ellipsis [&>*]:px-4",
         className,
       )}
     >

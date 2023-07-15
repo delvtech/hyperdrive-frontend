@@ -12,7 +12,7 @@ export function YieldSourceLabel({
   return (
     <span className={classNames("flex items-center gap-x-2")}>
       <img className="h-4" src={yieldSource?.iconUrl} />
-      <span className="text-h6 font-normal text-neutral-content">
+      <span className="font-normal text-neutral-content md:text-h6">
         {yieldSource?.protocol}
       </span>
     </span>
