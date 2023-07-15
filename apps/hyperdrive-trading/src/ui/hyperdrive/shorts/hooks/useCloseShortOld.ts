@@ -1,11 +1,8 @@
 import { HyperdriveABI } from "@hyperdrive/core";
-import { useQueryClient } from "@tanstack/react-query";
+import { MutationStatus, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
-import toast from "react-hot-toast";
 import { Hyperdrive } from "src/appconfig/types";
-import { QueryStatusType } from "src/ui/base/types";
 import { getAssetTimestampFromTokenId } from "src/ui/hyperdrive/utils";
-import { makeNewPositionToast } from "src/ui/trade/toast/makeNewPositionToast";
 import {
   Address,
   useContractWrite,
@@ -29,9 +26,9 @@ interface UseCloseShortResult {
   /** Function to close short */
   closeShort: (() => void) | undefined;
   /** Status of close short invocation */
-  closeShortStatus: QueryStatusType;
+  closeShortStatus: MutationStatus;
   /** Status of close short transaction */
-  closeShortTransactionStatus: QueryStatusType;
+  closeShortTransactionStatus: MutationStatus;
 }
 
 /**
@@ -79,23 +76,9 @@ export function useCloseShortOld({
 
   const { status: txnStatus } = useWaitForTransaction({
     hash,
-    onSuccess: (data) => {
-      toast.remove(data.transactionHash);
+    onSuccess: () => {
       setHash(undefined);
-      // TODO: could be smarter about this in the future
       queryClient.invalidateQueries();
-      toast.custom(
-        () =>
-          makeNewPositionToast({
-            order: "Close",
-            position: "Short",
-            hash: data.transactionHash,
-            status: "Executed",
-          }),
-        {
-          duration: 3000,
-        },
-      );
       onExecuted?.();
     },
   });
@@ -105,19 +88,6 @@ export function useCloseShortOld({
     onSettled: (data) => {
       if (data) {
         setHash(data.hash);
-        toast.custom(
-          () =>
-            makeNewPositionToast({
-              order: "Close",
-              position: "Short",
-              hash: data.hash,
-            }),
-          {
-            id: data.hash,
-            // toast will programmatically be removed
-            duration: Infinity,
-          },
-        );
       }
     },
   });

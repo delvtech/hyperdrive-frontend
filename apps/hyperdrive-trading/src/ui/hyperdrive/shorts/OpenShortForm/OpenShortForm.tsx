@@ -1,4 +1,4 @@
-import { ConnectButton, useConnectModal } from "@rainbow-me/rainbowkit";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { constants, ethers } from "ethers";
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
@@ -20,7 +20,6 @@ export function OpenShortForm({
   market,
 }: OpenShortPositionFormProps): ReactElement {
   const { address: account } = useAccount();
-  const { openConnectModal } = useConnectModal();
 
   const { data: baseTokenBalance } = useBalance({
     address: account,

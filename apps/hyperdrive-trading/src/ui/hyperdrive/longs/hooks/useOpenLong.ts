@@ -1,8 +1,8 @@
 import { HyperdriveABI } from "@hyperdrive/core";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
+import { MutationStatus } from "@tanstack/query-core";
 import { Hyperdrive } from "src/appconfig/types";
 import { ZERO_ADDRESS } from "src/base/constants";
-import { QueryStatusType } from "src/ui/base/types";
 import { useWaitForTransactionThenInvalidateCache } from "src/ui/network/useWaitForTransactionThenInvalidateCache/useWaitForTransactionThenInvalidateCache";
 import { Address, useContractWrite, usePrepareContractWrite } from "wagmi";
 
@@ -18,8 +18,8 @@ interface UseOpenLongOptions {
 
 interface UseOpenLongResult {
   openLong: (() => void) | undefined;
-  openLongStatus: QueryStatusType;
-  openLongTransactionStatus: QueryStatusType;
+  openLongStatus: MutationStatus;
+  openLongTransactionStatus: MutationStatus;
 }
 
 export function useOpenLong({
