@@ -1,6 +1,5 @@
-import { useQuery } from "@tanstack/react-query";
+import { MutationStatus, useQuery } from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
-import { QueryStatusType } from "src/ui/base/types";
 
 /** Type fetched from the API */
 interface VolumeData {
@@ -16,7 +15,7 @@ interface Volume {
 
 interface UseHistoricalVolumeResult {
   data?: Volume[];
-  status: QueryStatusType;
+  status: MutationStatus;
 }
 
 export function useHistoricalVolume(

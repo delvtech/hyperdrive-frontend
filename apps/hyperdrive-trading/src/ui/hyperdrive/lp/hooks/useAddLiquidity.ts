@@ -1,8 +1,8 @@
 import { HyperdriveABI } from "@hyperdrive/core";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
+import { MutationStatus } from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
 import { ZERO_ADDRESS } from "src/base/constants";
-import { QueryStatusType } from "src/ui/base/types";
 import { useWaitForTransactionThenInvalidateCache } from "src/ui/network/useWaitForTransactionThenInvalidateCache/useWaitForTransactionThenInvalidateCache";
 import { Address, useContractWrite, usePrepareContractWrite } from "wagmi";
 
@@ -18,8 +18,8 @@ interface UseAddLiquidityOptions {
 
 interface UseAddLiquidityResult {
   addLiquidity: (() => void) | undefined;
-  addLiquidityStatus: QueryStatusType;
-  addLiquidityTransactionStatus: QueryStatusType;
+  addLiquidityStatus: MutationStatus;
+  addLiquidityTransactionStatus: MutationStatus;
 }
 
 export function useAddLiquidity({

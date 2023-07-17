@@ -1,11 +1,9 @@
 import { HyperdriveABI } from "@hyperdrive/core";
-import { useQueryClient } from "@tanstack/react-query";
+import { MutationStatus, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { Hyperdrive } from "src/appconfig/types";
 import { ZERO_ADDRESS } from "src/base/constants";
-import { QueryStatusType } from "src/ui/base/types";
-import { makeNewPositionToast } from "src/ui/trade/toast/makeNewPositionToast";
 import {
   Address,
   useContractWrite,
@@ -26,8 +24,8 @@ interface UseOpenShortOptions {
 
 interface UseOpenShortResult {
   openShort: (() => void) | undefined;
-  openShortSubmittedStatus: QueryStatusType;
-  openShortTransactionStatus: QueryStatusType;
+  openShortSubmittedStatus: MutationStatus;
+  openShortTransactionStatus: MutationStatus;
 }
 
 export function useOpenShort({
@@ -69,20 +67,7 @@ export function useOpenShort({
     onSuccess: (data) => {
       toast.remove(data.transactionHash);
       setHash(undefined);
-      // TODO: could be smarter about this in the future
       queryClient.invalidateQueries();
-      toast.custom(
-        () =>
-          makeNewPositionToast({
-            order: "Open",
-            position: "Long",
-            hash: data.transactionHash,
-            status: "Executed",
-          }),
-        {
-          duration: 3000,
-        },
-      );
       onExecuted?.();
     },
   });
@@ -92,20 +77,6 @@ export function useOpenShort({
     onSettled: (data) => {
       if (data) {
         setHash(data.hash);
-        toast.custom(
-          () =>
-            makeNewPositionToast({
-              order: "Open",
-              position: "Short",
-              hash: data.hash,
-            }),
-          {
-            // setting id of toast to the transaction hash
-            id: data.hash,
-            // toast will programmatically be removed
-            duration: Infinity,
-          },
-        );
       }
     },
   });
