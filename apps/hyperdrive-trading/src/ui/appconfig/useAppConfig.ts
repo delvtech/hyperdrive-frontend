@@ -1,5 +1,6 @@
 import { HyperdriveGoerliAddresses } from "@hyperdrive/core";
 import { useQuery } from "@tanstack/react-query";
+import assertNever from "assert-never";
 import { SupportedChainId } from "src/appconfig/chains/supportedChains";
 import { getAppConfig } from "src/appconfig/getAppConfig";
 import { AppConfig } from "src/appconfig/types";
@@ -11,12 +12,12 @@ export function useAppConfig(): {
   appConfig: AppConfig | undefined;
   appConfigStatus: "idle" | "error" | "loading" | "success";
 } {
-  const chainId = useChainId();
+  const chainId = useChainId() as SupportedChainId;
   const publicClient = usePublicClient();
   const { data: appConfig, status: appConfigStatus } = useQuery({
     queryKey: ["app-config", { chainId }],
     queryFn: async () => {
-      switch (chainId as SupportedChainId) {
+      switch (chainId) {
         case 5:
           return getAppConfig(HyperdriveGoerliAddresses, publicClient);
 
@@ -34,9 +35,7 @@ export function useAppConfig(): {
           );
 
         default:
-          throw new Error(
-            `No app config found for the currently connected chain: ${chainId}`,
-          );
+          assertNever(chainId);
       }
     },
     // The config never changes, so it can be cached forever
