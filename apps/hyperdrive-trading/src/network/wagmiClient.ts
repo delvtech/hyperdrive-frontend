@@ -8,6 +8,7 @@ import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
 const {
   VITE_ALCHEMY_GOERLI_RPC_KEY: ALCHEMY_GOERLI_RPC_KEY,
   VITE_LOCALHOST_NODE_RPC_URL: LOCALHOST_NODE_RPC_URL,
+  VITE_WALLET_CONNECT_PROJECT_ID: PROJECT_ID,
 } = import.meta.env;
 
 // Hack: An unused reference so that eslint doesn't automatically fixup the
@@ -34,6 +35,7 @@ export const wagmiChains = chains;
 
 const { connectors } = getDefaultWallets({
   appName: "Hyperdrive",
+  projectId: PROJECT_ID,
   chains,
 });
 
