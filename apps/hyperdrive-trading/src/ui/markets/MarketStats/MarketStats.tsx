@@ -19,7 +19,7 @@ export function MarketStats({
   return (
     <div className="flex w-full flex-wrap items-center justify-center gap-16 md:justify-start">
       <Stat
-        label="Token"
+        label="Asset"
         value={
           <span className="flex items-center gap-1.5">
             {hyperdrive.baseToken.iconUrl && (
