@@ -3,7 +3,7 @@ import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
 import { queryClient } from "src/network/queryClient";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
-import { usePublicClient } from "wagmi";
+import { PublicClient, usePublicClient } from "wagmi";
 
 export function useCurrentLongPrice(hyperdrive: Hyperdrive): {
   longPrice: GetLongPriceResult | undefined;
@@ -16,7 +16,7 @@ export function useCurrentLongPrice(hyperdrive: Hyperdrive): {
     getCurrentLongPriceQuery({
       hyperdriveAddress: hyperdrive.address,
       hyperdriveMathAddress: appConfig?.hyperdriveMath,
-      publicClient: publicClient as any,
+      publicClient: publicClient as PublicClient,
       queryClient,
     }),
   );

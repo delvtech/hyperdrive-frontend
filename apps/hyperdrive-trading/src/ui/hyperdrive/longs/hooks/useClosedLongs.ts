@@ -1,7 +1,7 @@
 import { ClosedLong, getCloseLongsQuery } from "@hyperdrive/core";
 import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { Address } from "viem";
-import { usePublicClient } from "wagmi";
+import { PublicClient, usePublicClient } from "wagmi";
 
 interface UseClosedLongsOptions {
   account: Address | undefined;
@@ -23,7 +23,7 @@ export function useClosedLongs({
     getCloseLongsQuery({
       traderAddress: account,
       hyperdriveAddress,
-      publicClient: publicClient as any,
+      publicClient: publicClient as PublicClient,
     }),
   );
 
