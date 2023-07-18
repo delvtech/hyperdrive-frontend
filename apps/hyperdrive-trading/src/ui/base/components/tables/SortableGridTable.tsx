@@ -117,6 +117,9 @@ export function SortableGridTable<K extends string>({
 
       {rows.length
         ? rows.map((row, i) => {
+            if (!row) {
+              return;
+            }
             // is row options object
             if ("cells" in row) {
               if (row.href) {
@@ -170,7 +173,8 @@ export type Row =
       cells: ReactNode[];
       className?: string;
       href?: string | UrlObject;
-    };
+    }
+  | undefined;
 
 export interface SortOptions<K extends string> {
   key?: K;
