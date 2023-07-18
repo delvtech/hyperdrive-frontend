@@ -1,4 +1,3 @@
-import { LpPosition } from "@hyperdrive/core";
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { Pill } from "src/ui/base/components/Pill";
@@ -7,12 +6,12 @@ import { formatUnits } from "viem";
 
 interface AddLiquidityPreviewProps {
   hyperdrive: Hyperdrive;
-  lpPosition: LpPosition;
+  lpShares: bigint;
 }
 
 export function AddLiquidityPreview({
   hyperdrive,
-  lpPosition,
+  lpShares,
 }: AddLiquidityPreviewProps): ReactElement {
   return (
     <div className="flex flex-col gap-y-4 rounded border border-neutral-content bg-transparent p-4">
@@ -26,7 +25,7 @@ export function AddLiquidityPreview({
           <p className="mr-auto">LP Shares Received</p>
           <p className="font-semibold tracking-wide">
             {formatBalance(
-              formatUnits(lpPosition.lpShares, hyperdrive.baseToken.decimals),
+              formatUnits(lpShares, hyperdrive.baseToken.decimals),
               4,
               false,
             )}{" "}
