@@ -24,7 +24,7 @@ export function usePreviewRemoveLiquidity({
   minBaseAmountOut,
   destination,
   asUnderlying = true,
-  enabled,
+  enabled = true,
 }: UsePreviewRemoveLiquidityOptions): UsePreviewRemoveLiquidityResult {
   const publicClient = usePublicClient();
   const { address: account } = useAccount();
