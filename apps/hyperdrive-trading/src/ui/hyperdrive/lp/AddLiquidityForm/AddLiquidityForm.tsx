@@ -6,7 +6,7 @@ import { parseUnits } from "src/base/parseUnits";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { AddLiquidityPreview } from "src/ui/hyperdrive/lp/AddLiquidityPreview/AddLiquidityPreview";
 import { useAddLiquidity } from "src/ui/hyperdrive/lp/hooks/useAddLiquidity";
-import { usePreviewAddLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewAddLP";
+import { usePreviewAddLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewAddLiquidity";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenApproval } from "src/ui/token/hooks/useTokenApproval";
 import { TokenInput } from "src/ui/token/TokenInput";
