@@ -58,7 +58,7 @@ export type { GetLpSharesOptions } from "src/amm/lp/getLpShares";
 
 // Withdraw Shares
 export {
-  getWithdrawShares,
-  getWithdrawSharesQuery,
-} from "src/amm/lp/getWithdrawShares";
-export type { GetWithdrawSharesOptions } from "src/amm/lp/getWithdrawShares";
+  getWithdrawalShares,
+  getWithdrawalSharesQuery,
+} from "src/amm/lp/getWithdrawalShares";
+export type { GetWithdrawalSharesOptions } from "src/amm/lp/getWithdrawalShares";

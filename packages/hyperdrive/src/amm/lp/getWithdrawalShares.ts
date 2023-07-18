@@ -3,17 +3,17 @@ import { HyperdriveABI } from "src/abis/Hyperdrive";
 import { WITHDRAW_SHARES_ASSET_ID } from "./constants";
 import { QueryObserverOptions } from "@tanstack/query-core";
 
-export interface GetWithdrawSharesOptions {
+export interface GetWithdrawalSharesOptions {
   account: Address;
   hyperdriveAddress: Address;
   publicClient: PublicClient<Transport, Chain>;
 }
 
-export async function getWithdrawShares({
+export async function getWithdrawalShares({
   account,
   hyperdriveAddress,
   publicClient,
-}: GetWithdrawSharesOptions): Promise<bigint> {
+}: GetWithdrawalSharesOptions): Promise<bigint> {
   return publicClient.readContract({
     address: hyperdriveAddress,
     abi: HyperdriveABI,
@@ -30,23 +30,23 @@ export async function getWithdrawShares({
  * bindings. If this works well in practice we can move this to a
  * @hyperdrive/queries package.
  */
-export function getWithdrawSharesQuery({
+export function getWithdrawalSharesQuery({
   account,
   hyperdriveAddress,
   publicClient,
-}: Partial<GetWithdrawSharesOptions>): QueryObserverOptions<
-  Awaited<ReturnType<typeof getWithdrawShares>>
+}: Partial<GetWithdrawalSharesOptions>): QueryObserverOptions<
+  Awaited<ReturnType<typeof getWithdrawalShares>>
 > {
   const queryEnabled = !!account && !!hyperdriveAddress && !!publicClient;
   return {
     enabled: queryEnabled,
     queryKey: [
       "@hyperdrive/core",
-      "withdraw-shares",
+      "withdrawal-shares",
       { hyperdriveAddress, account },
     ],
     queryFn: queryEnabled
-      ? () => getWithdrawShares({ account, hyperdriveAddress, publicClient })
+      ? () => getWithdrawalShares({ account, hyperdriveAddress, publicClient })
       : undefined,
   };
 }
