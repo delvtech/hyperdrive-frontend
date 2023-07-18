@@ -38,14 +38,22 @@ interface GetLiquidityQueryOptions {
 
 type GetLiquidityReturnType = Awaited<ReturnType<typeof getLiquidity>>;
 
+/**
+ * TODO: Move this to its own @hyperdrive/queries package eventually.
+ */
 export function getLiquidityQuery({
   hyperdriveAddress,
   publicClient,
 }: GetLiquidityQueryOptions): QueryObserverOptions<GetLiquidityReturnType> {
+  const queryEnabled = !!hyperdriveAddress;
+
   return {
+    enabled: queryEnabled,
     queryKey: makeQueryKey("get-liquidity", {
       hyperdriveAddress,
     }),
-    queryFn: () => getLiquidity(hyperdriveAddress as Address, publicClient),
+    queryFn: queryEnabled
+      ? () => getLiquidity(hyperdriveAddress, publicClient)
+      : undefined,
   };
 }
