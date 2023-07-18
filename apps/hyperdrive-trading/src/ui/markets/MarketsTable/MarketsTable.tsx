@@ -6,6 +6,7 @@ import {
   Row,
   SortableGridTable,
 } from "src/ui/base/components/tables/SortableGridTable";
+import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import {
   MarketTableRowData,
   useMarketRowData,
@@ -96,7 +97,6 @@ function createMarketRow({
   yieldSource,
   liquidity,
 }: MarketTableRowData): Row {
-  const formattedLiquidity = liquidity && parseInt(liquidity).toLocaleString();
   return {
     href: `/trade/${market.address}`,
     cells: [
@@ -113,7 +113,7 @@ function createMarketRow({
         className="flex flex-row items-center justify-start font-semibold"
       >
         <img className="mr-1 h-4" src={market.baseToken.iconUrl} />
-        {formattedLiquidity}
+        {formatBalance(liquidity)}
       </span>,
       <span key="apy" className="font-semibold">
         1.25%
