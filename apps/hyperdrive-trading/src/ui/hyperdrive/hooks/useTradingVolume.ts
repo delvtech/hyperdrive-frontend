@@ -4,12 +4,12 @@ import { Address } from "viem";
 
 import { usePublicClient } from "wagmi";
 type GetTradingVolumeResponse = {
-  tradingVolume: string;
+  tradingVolume: string | undefined;
 };
 export function useTradingVolume(
   hyperdriveAddress: Address,
   currentBlockNumber: bigint,
-): { tradingVolume: string | unknown } {
+): GetTradingVolumeResponse {
   const publicClient = usePublicClient() as any;
 
   const { data: tradingVolume } = useQuery(

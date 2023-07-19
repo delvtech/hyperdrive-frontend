@@ -19,7 +19,7 @@ export function MarketStats({
   const { tradingVolume } = useTradingVolume(
     hyperdrive.address,
     currentBlockNumber as bigint,
-  ) as { tradingVolume: string };
+  );
 
   const { data: liquidity } = useLiquidity(hyperdrive.address);
   const { fixedAPR } = useCurrentFixedAPR(hyperdrive);
