@@ -1,7 +1,7 @@
 import { getOpenShortsQuery, Short } from "@hyperdrive/core";
 import { useQuery } from "@tanstack/react-query";
 import { Address } from "viem";
-import { usePublicClient } from "wagmi";
+import { PublicClient, usePublicClient } from "wagmi";
 
 interface UseOpenShortsOptions {
   account: Address | undefined;
@@ -23,7 +23,7 @@ export function useOpenShorts({
     getOpenShortsQuery({
       account,
       hyperdriveAddress,
-      publicClient: publicClient as any,
+      publicClient: publicClient as PublicClient,
     }),
   );
 

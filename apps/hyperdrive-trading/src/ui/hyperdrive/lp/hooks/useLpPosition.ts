@@ -1,7 +1,7 @@
 import { getLpPositionQuery, LpPosition } from "@hyperdrive/core";
 import { useQuery } from "@tanstack/react-query";
 import { Address } from "viem";
-import { usePublicClient } from "wagmi";
+import { PublicClient, usePublicClient } from "wagmi";
 
 interface UseLpPositionOptions {
   account: Address | undefined;
@@ -20,7 +20,7 @@ export function useLpPosition({
     getLpPositionQuery({
       account,
       hyperdriveAddress,
-      publicClient: publicClient as any,
+      publicClient: publicClient as PublicClient,
     }),
   );
 

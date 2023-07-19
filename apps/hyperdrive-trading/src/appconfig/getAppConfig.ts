@@ -22,7 +22,7 @@ export async function getAppConfig(
   if (addresses.dsrHyperdrive) {
     const dsrHyperdrive = await getDSRHyperdrive(
       addresses.dsrHyperdrive,
-      publicClient as any,
+      publicClient as PublicClient,
     );
     config.hyperdrives.push(dsrHyperdrive);
   }
