@@ -24,7 +24,7 @@ interface OpenLongEvent {
 }
 
 /**
- * Calculates the total trading volume based on long and short events.
+ * Calculates the total trading volume based on long and short bond amounts.
  *
  * @param hyperdriveAddress - Address of hyperdrive.
  * @param publicClient - Client to fetch data.

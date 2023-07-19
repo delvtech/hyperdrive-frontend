@@ -10,7 +10,7 @@ export function useTradingVolume(
   hyperdriveAddress: Address,
   currentBlockNumber: bigint,
 ): GetTradingVolumeResponse {
-  const publicClient = usePublicClient() as any;
+  const publicClient = usePublicClient();
 
   const { data: tradingVolume } = useQuery(
     getTradingVolumeQuery({
