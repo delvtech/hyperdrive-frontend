@@ -1,5 +1,6 @@
 import { Address, Chain, PublicClient, Transport, formatUnits } from "viem";
 
+import { QueryObserverOptions } from "@tanstack/query-core";
 import { getPoolInfo } from "src/amm/getPoolInfo";
 
 /**
@@ -28,4 +29,21 @@ export async function getLiquidity(
   const marketLiquidity = sharePrice * shareReserves - longsOutstanding;
 
   return { marketLiquidity: marketLiquidity.toString() };
+}
+
+interface GetLiquidityQueryOptions {
+  hyperdriveAddress: Address | undefined;
+  publicClient: PublicClient<Transport, Chain>;
+}
+
+type GetLiquidityReturnType = Awaited<ReturnType<typeof getLiquidity>>;
+
+export function getLiquidityQuery({
+  hyperdriveAddress,
+  publicClient,
+}: GetLiquidityQueryOptions): QueryObserverOptions<GetLiquidityReturnType> {
+  return {
+    queryKey: ["liquidity", { hyperdriveAddress, publicClient }],
+    queryFn: () => getLiquidity(hyperdriveAddress as Address, publicClient),
+  };
 }

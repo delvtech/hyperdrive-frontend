@@ -1,8 +1,7 @@
 import { HyperdriveABI } from "@hyperdrive/core";
-import { useQuery } from "@tanstack/react-query";
+import { MutationStatus, useQuery } from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
 import { ZERO_ADDRESS } from "src/base/constants";
-import { QueryStatusType } from "src/ui/base/types";
 import { Address, useAccount, usePublicClient } from "wagmi";
 
 interface UsePreviewOpenShortOptions {
@@ -15,7 +14,7 @@ interface UsePreviewOpenShortOptions {
 }
 
 interface UsePreviewOpenShortResult {
-  status: QueryStatusType;
+  status: MutationStatus;
   baseAmountIn: bigint | undefined;
 }
 

@@ -4,6 +4,7 @@ import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { Stat } from "src/ui/base/components/Stat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useCurrentFixedAPR } from "src/ui/hyperdrive/hooks/useCurrentFixedAPR";
+import { useLiquidity } from "src/ui/hyperdrive/hooks/useLiquidity";
 import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
 
 export function MarketStats({
@@ -13,13 +14,14 @@ export function MarketStats({
 }): ReactElement {
   const formattedTermLength = formatTermLength(hyperdrive.termLengthMS);
 
+  const { data: liquidity } = useLiquidity(hyperdrive.address);
   const { fixedAPR } = useCurrentFixedAPR(hyperdrive);
   const { longPrice } = useCurrentLongPrice(hyperdrive);
 
   return (
     <div className="flex w-full flex-wrap items-center justify-center gap-16 md:justify-start">
       <Stat
-        label="Token"
+        label="Asset"
         value={
           <span className="flex items-center gap-1.5">
             {hyperdrive.baseToken.iconUrl && (
@@ -40,7 +42,15 @@ export function MarketStats({
       <Stat label="DSR APY" value="3.49%" />
       <Stat label="LP APY" value="1.60%" />
       <Stat label="Volume (24h)" value="$4.4M" />
-      <Stat label="Liquidity" value="$100M" />
+      <Stat
+        label="Liquidity"
+        value={
+          <FormattedLiquidity
+            iconUrl={hyperdrive.baseToken.iconUrl as string}
+            liquidity={liquidity?.marketLiquidity || "0"}
+          />
+        }
+      />
     </div>
   );
 }
@@ -48,4 +58,19 @@ export function MarketStats({
 function formatTermLength(termLengthMS: number) {
   const numDays = convertMillisecondsToDays(termLengthMS);
   return `${numDays} days`;
+}
+
+function FormattedLiquidity({
+  liquidity,
+  iconUrl,
+}: {
+  liquidity: string;
+  iconUrl: string;
+}) {
+  return (
+    <span className="flex flex-row items-center justify-start font-semibold">
+      <img className="mr-1 h-4" src={iconUrl} />
+      {parseInt(liquidity).toLocaleString()}
+    </span>
+  );
 }

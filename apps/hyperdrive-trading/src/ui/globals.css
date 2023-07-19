@@ -7,7 +7,6 @@ html,
 body,
 #root,
 div[data-rk] {
-  height: 100%;
   font-family: "Open Sans";
 }
 
