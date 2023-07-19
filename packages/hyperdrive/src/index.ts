@@ -45,5 +45,11 @@ export {
   getClosedShortsQuery,
 } from "src/amm/shorts/getClosedShorts";
 
+// Trading Volume
+export {
+  getTradingVolume,
+  getTradingVolumeQuery,
+} from "src/amm/volume/getTradingVolume";
+
 // LP Shares
 export { getLpPosition, getLpPositionQuery } from "src/amm/lp/getLpPosition";

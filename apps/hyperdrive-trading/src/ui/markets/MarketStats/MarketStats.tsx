@@ -5,15 +5,21 @@ import { Stat } from "src/ui/base/components/Stat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useCurrentFixedAPR } from "src/ui/hyperdrive/hooks/useCurrentFixedAPR";
 import { useLiquidity } from "src/ui/hyperdrive/hooks/useLiquidity";
+import { useTradingVolume } from "src/ui/hyperdrive/hooks/useTradingVolume";
 import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
-
+import { useBlockNumber } from "wagmi";
 export function MarketStats({
   hyperdrive,
 }: {
   hyperdrive: Hyperdrive;
 }): ReactElement {
   const formattedTermLength = formatTermLength(hyperdrive.termLengthMS);
+  const { data: currentBlockNumber } = useBlockNumber();
 
+  const { tradingVolume } = useTradingVolume(
+    hyperdrive.address,
+    currentBlockNumber as bigint,
+  );
   const { data: liquidity } = useLiquidity(hyperdrive.address);
   const { fixedAPR } = useCurrentFixedAPR(hyperdrive);
   const { longPrice } = useCurrentLongPrice(hyperdrive);
