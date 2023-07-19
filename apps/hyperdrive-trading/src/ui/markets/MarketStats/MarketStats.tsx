@@ -19,7 +19,8 @@ export function MarketStats({
   const { tradingVolume } = useTradingVolume(
     hyperdrive.address,
     currentBlockNumber as bigint,
-  );
+  ) as { tradingVolume: string };
+
   const { data: liquidity } = useLiquidity(hyperdrive.address);
   const { fixedAPR } = useCurrentFixedAPR(hyperdrive);
   const { longPrice } = useCurrentLongPrice(hyperdrive);
@@ -47,13 +48,21 @@ export function MarketStats({
       />
       <Stat label="DSR APY" value="3.49%" />
       <Stat label="LP APY" value="1.60%" />
-      <Stat label="Volume (24h)" value="$4.4M" />
+      <Stat
+        label="Volume (24h)"
+        value={
+          <FormattedDaiValue
+            iconUrl={hyperdrive.baseToken.iconUrl as string}
+            value={tradingVolume || "0"}
+          />
+        }
+      />
       <Stat
         label="Liquidity"
         value={
-          <FormattedLiquidity
+          <FormattedDaiValue
             iconUrl={hyperdrive.baseToken.iconUrl as string}
-            liquidity={liquidity?.marketLiquidity || "0"}
+            value={liquidity?.marketLiquidity || "0"}
           />
         }
       />
@@ -66,17 +75,17 @@ function formatTermLength(termLengthMS: number) {
   return `${numDays} days`;
 }
 
-function FormattedLiquidity({
-  liquidity,
+function FormattedDaiValue({
+  value,
   iconUrl,
 }: {
-  liquidity: string;
+  value: string;
   iconUrl: string;
 }) {
   return (
     <span className="flex flex-row items-center justify-start font-semibold">
       <img className="mr-1 h-4" src={iconUrl} />
-      {parseInt(liquidity).toLocaleString()}
+      {parseInt(value).toLocaleString()}
     </span>
   );
 }

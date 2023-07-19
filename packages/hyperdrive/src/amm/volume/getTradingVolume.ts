@@ -26,15 +26,17 @@ export async function getTradingVolume(
     publicClient,
   });
   const longEventAmounts = longEvents.map((event) =>
-    formatUnits(event.eventData.bondAmount, 18),
+    parseInt(formatUnits(event.eventData.bondAmount, 18)),
   );
 
   const shortEventAmounts = shortEvents.map((event) =>
-    formatUnits(event.eventData.bondAmount, 18),
+    parseInt(formatUnits(event.eventData.bondAmount, 18)),
   );
-  console.log(longEventAmounts, "longEventAmounts");
-  console.log(shortEventAmounts, "shortEventAmounts");
-  return "0";
+  const summedLongs = longEventAmounts.reduce((a, b) => a + b, 0);
+  const summedShorts = shortEventAmounts.reduce((a, b) => a + b, 0);
+  const totalVolume = summedLongs + summedShorts;
+
+  return totalVolume.toString();
 }
 
 export function getTradingVolumeQuery({
