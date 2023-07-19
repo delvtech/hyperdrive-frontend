@@ -1,14 +1,27 @@
 import { getLiquidityQuery } from "@hyperdrive/core";
-import { useQuery, UseQueryResult } from "@tanstack/react-query";
+import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { Address, usePublicClient } from "wagmi";
 
-export type GetLiquidityResponse = {
-  marketLiquidity: string;
-};
+export function useLiquidity(hyperdriveAddress: Address): {
+  liquidity:
+    | {
+        liquidity: bigint;
+        formatted: string;
+      }
+    | undefined;
+  liquidityStatus: QueryStatus;
+} {
+  const publicClient = usePublicClient();
 
-export function useLiquidity(
-  hyperdriveAddress: Address,
-): UseQueryResult<GetLiquidityResponse> {
-  const publicClient = usePublicClient() as any;
-  return useQuery(getLiquidityQuery({ hyperdriveAddress, publicClient }));
+  const { data, status } = useQuery(
+    getLiquidityQuery({
+      hyperdriveAddress,
+      publicClient: publicClient as any,
+    }),
+  );
+
+  return {
+    liquidity: data,
+    liquidityStatus: status,
+  };
 }
