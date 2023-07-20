@@ -35,7 +35,7 @@ export async function getTradingVolume(
   hyperdriveAddress: Address,
   publicClient: PublicClient<Transport, Chain>,
   currentBlockNumber: bigint,
-): Promise<string> {
+): Promise<{ volume: bigint; formatted: string }> {
   // 7137 is the average number of blocks in 24h
   let blockNumber24hAgo = currentBlockNumber - 7137n;
   // If the block number 24h ago is negative, set it to 0. Useful for anvil because blocknumbers are low. Should remove this for mainnet
@@ -58,8 +58,9 @@ export async function getTradingVolume(
 
   const totalVolume =
     calculateTotalAmount(longEvents) + calculateTotalAmount(shortEvents);
+  const formattedTotalVolume = formatUnits(totalVolume, 18);
 
-  return totalVolume.toString();
+  return { formatted: formattedTotalVolume.toString(), volume: totalVolume };
 }
 
 export function getTradingVolumeQuery({
@@ -75,14 +76,15 @@ export function getTradingVolumeQuery({
     queryKey: ["tradingVolume", { hyperdriveAddress, publicClient }],
     queryFn: () =>
       getTradingVolume(hyperdriveAddress, publicClient, currentBlockNumber),
-    enabled: !!hyperdriveAddress && !!publicClient && !!currentBlockNumber,
+    enabled: !!currentBlockNumber,
   };
 }
 
 function calculateTotalAmount(
   events: OpenShortEvent[] | OpenLongEvent[],
-): number {
-  return events
-    .map((event) => parseInt(formatUnits(event.eventData.bondAmount, 18)))
-    .reduce((a, b) => a + b, 0);
+): bigint {
+  return events.reduce(
+    (total, event) => total + event.eventData.bondAmount,
+    0n,
+  );
 }

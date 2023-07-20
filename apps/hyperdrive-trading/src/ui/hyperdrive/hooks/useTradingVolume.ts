@@ -20,5 +20,5 @@ export function useTradingVolume(
     }),
   );
 
-  return { tradingVolume };
+  return { tradingVolume: tradingVolume?.formatted };
 }

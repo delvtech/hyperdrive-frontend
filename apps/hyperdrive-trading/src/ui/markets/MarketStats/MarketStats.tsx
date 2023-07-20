@@ -85,7 +85,7 @@ function FormattedDaiValue({
   return (
     <span className="flex flex-row items-center justify-start font-semibold">
       <img className="mr-1 h-4" src={iconUrl} />
-      {parseInt(value).toLocaleString()}
+      {formatBalance(value, 0)}
     </span>
   );
 }
