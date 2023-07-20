@@ -7,6 +7,7 @@ import {
 } from "viem";
 import { HyperdriveABI } from "src/abis/Hyperdrive";
 import { QueryObserverOptions } from "@tanstack/query-core";
+import { makeQueryKey } from "src/makeQueryKey";
 
 interface GetPoolInfoOptions {
   hyperdriveAddress: Address;
@@ -36,7 +37,7 @@ export function getPoolInfoQuery({
 
   return {
     enabled: queryEnabled,
-    queryKey: ["@hyperdrive/core", "getPoolInfo", { hyperdriveAddress }],
+    queryKey: makeQueryKey("getPoolInfo", { hyperdriveAddress }),
     queryFn: queryEnabled
       ? async () =>
           getPoolInfo({

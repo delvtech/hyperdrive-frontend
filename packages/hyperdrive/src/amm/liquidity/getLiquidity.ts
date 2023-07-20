@@ -1,4 +1,5 @@
 import { Address, Chain, PublicClient, Transport, formatUnits } from "viem";
+import { makeQueryKey } from "src/makeQueryKey";
 
 import { QueryObserverOptions } from "@tanstack/query-core";
 import { getPoolInfo } from "src/amm/getPoolInfo";
@@ -43,7 +44,9 @@ export function getLiquidityQuery({
   publicClient,
 }: GetLiquidityQueryOptions): QueryObserverOptions<GetLiquidityReturnType> {
   return {
-    queryKey: ["liquidity", { hyperdriveAddress, publicClient }],
+    queryKey: makeQueryKey("get-liquidity", {
+      hyperdriveAddress,
+    }),
     queryFn: () => getLiquidity(hyperdriveAddress as Address, publicClient),
   };
 }

@@ -1,7 +1,7 @@
 import { QueryObserverOptions } from "@tanstack/query-core";
 import groupBy from "lodash.groupby";
 import mapValues from "lodash.mapvalues";
-import { sumBigInt } from "src/base/sumBy";
+import { sumBigInt } from "src/base/sumBigInt";
 import { decodeAssetFromTransferSingleEventData } from "src/amm/events/decodeAssetFromTransferSingleEventData";
 import { getTransferSingleEvents } from "src/amm/events/getTransferSingleEvents";
 import { PublicClient, Address, Transport, Chain } from "viem";

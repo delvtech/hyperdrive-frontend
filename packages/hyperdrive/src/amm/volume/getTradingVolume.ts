@@ -2,6 +2,7 @@ import { QueryObserverOptions } from "@tanstack/query-core";
 import { HyperdriveABI } from "src/abis/Hyperdrive";
 import { getOpenLongEvents } from "src/amm/longs/getOpenLongEvents";
 import { getOpenShortEvents } from "src/amm/shorts/getOpenShortEvents";
+import { sumBigInt } from "src/base/sumBigInt";
 import {
   Address,
   Chain,
@@ -83,8 +84,5 @@ export function getTradingVolumeQuery({
 function calculateTotalAmount(
   events: OpenShortEvent[] | OpenLongEvent[],
 ): bigint {
-  return events.reduce(
-    (total, event) => total + event.eventData.bondAmount,
-    0n,
-  );
+  return sumBigInt(events.map((event) => event.eventData.bondAmount));
 }
