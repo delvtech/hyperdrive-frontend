@@ -1,32 +1,25 @@
-import { QueryObserverOptions } from "@tanstack/query-core";
 import { PublicClient, Address, Transport, Chain } from "viem";
-import { LpPosition } from "src/amm/lp/types";
 import { HyperdriveABI } from "src/abis/Hyperdrive";
 import { LP_ASSET_ID } from "./constants";
+import { QueryObserverOptions } from "@tanstack/query-core";
 
-export interface GetLpPositionOptions {
+export interface GetLpSharesOptions {
   account: Address;
   hyperdriveAddress: Address;
   publicClient: PublicClient<Transport, Chain>;
 }
 
-export async function getLpPosition({
+export async function getLpShares({
   account,
   hyperdriveAddress,
   publicClient,
-}: GetLpPositionOptions): Promise<LpPosition> {
-  const lpShares = await publicClient.readContract({
+}: GetLpSharesOptions): Promise<bigint> {
+  return publicClient.readContract({
     address: hyperdriveAddress,
     abi: HyperdriveABI,
     functionName: "balanceOf",
     args: [LP_ASSET_ID, account],
   });
-
-  return {
-    hyperdriveAddress,
-    assetId: LP_ASSET_ID,
-    lpShares: lpShares,
-  };
 }
 
 /**
@@ -37,19 +30,19 @@ export async function getLpPosition({
  * bindings. If this works well in practice we can move this to a
  * @hyperdrive/queries package.
  */
-export function getLpPositionQuery({
+export function getLpSharesQuery({
+  account,
   hyperdriveAddress,
   publicClient,
-  account,
-}: Partial<GetLpPositionOptions>): QueryObserverOptions<
-  Awaited<ReturnType<typeof getLpPosition>>
+}: Partial<GetLpSharesOptions>): QueryObserverOptions<
+  Awaited<ReturnType<typeof getLpShares>>
 > {
   const queryEnabled = !!account && !!hyperdriveAddress && !!publicClient;
   return {
     enabled: queryEnabled,
     queryKey: ["@hyperdrive/core", "lp-shares", { hyperdriveAddress, account }],
     queryFn: queryEnabled
-      ? () => getLpPosition({ account, hyperdriveAddress, publicClient })
+      ? () => getLpShares({ account, hyperdriveAddress, publicClient })
       : undefined,
   };
 }

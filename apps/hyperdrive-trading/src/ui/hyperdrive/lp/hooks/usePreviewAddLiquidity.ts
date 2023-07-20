@@ -26,7 +26,7 @@ export function usePreviewAddLiquidity({
   minAPR,
   maxAPR,
   asUnderlying = true,
-  enabled,
+  enabled = true,
 }: UsePreviewAddLiquidityOptions): UsePreviewAddLiquidityResult {
   const publicClient = usePublicClient();
   const { address: account } = useAccount();

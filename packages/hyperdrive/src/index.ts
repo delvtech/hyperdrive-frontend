@@ -52,4 +52,13 @@ export {
 } from "src/amm/volume/getTradingVolume";
 
 // LP Shares
-export { getLpPosition, getLpPositionQuery } from "src/amm/lp/getLpPosition";
+export { LP_ASSET_ID, WITHDRAW_SHARES_ASSET_ID } from "src/amm/lp/constants";
+export { getLpShares, getLpSharesQuery } from "src/amm/lp/getLpShares";
+export type { GetLpSharesOptions } from "src/amm/lp/getLpShares";
+
+// Withdraw Shares
+export {
+  getWithdrawalShares,
+  getWithdrawalSharesQuery,
+} from "src/amm/lp/getWithdrawalShares";
+export type { GetWithdrawalSharesOptions } from "src/amm/lp/getWithdrawalShares";
