@@ -3,6 +3,12 @@ import { makeQueryKey } from "src/makeQueryKey";
 
 import { QueryObserverOptions } from "@tanstack/query-core";
 import { getPoolInfo } from "src/amm/getPoolInfo";
+import { multiplyBigInt } from "src/base/multiplyBigInt";
+
+interface GetLiquidityResult {
+  liquidity: bigint;
+  formatted: string;
+}
 
 /**
  * This function retrieves the market liquidity by using the following formula:
@@ -10,26 +16,20 @@ import { getPoolInfo } from "src/amm/getPoolInfo";
  *
  * @param hyperdriveAddress - The address of the hyperdrive
  * @param publicClient - The public client
- * @returns Promise that resolves with an object containing the market liquidity
  */
 export async function getLiquidity(
   hyperdriveAddress: Address,
   publicClient: PublicClient<Transport, Chain>,
-): Promise<{ marketLiquidity: string }> {
-  const poolInfo = await getPoolInfo({
+): Promise<GetLiquidityResult> {
+  const { sharePrice, shareReserves, longsOutstanding } = await getPoolInfo({
     hyperdriveAddress,
     publicClient,
   });
 
-  const sharePrice = parseFloat(formatUnits(poolInfo.sharePrice, 18));
-  const shareReserves = parseFloat(formatUnits(poolInfo.shareReserves, 18));
-  const longsOutstanding = parseFloat(
-    formatUnits(poolInfo.longsOutstanding, 18),
-  );
+  const liquidity =
+    multiplyBigInt([sharePrice, shareReserves], 18) - longsOutstanding;
 
-  const marketLiquidity = sharePrice * shareReserves - longsOutstanding;
-
-  return { marketLiquidity: marketLiquidity.toString() };
+  return { liquidity, formatted: formatUnits(liquidity, 18) };
 }
 
 interface GetLiquidityQueryOptions {
@@ -39,14 +39,22 @@ interface GetLiquidityQueryOptions {
 
 type GetLiquidityReturnType = Awaited<ReturnType<typeof getLiquidity>>;
 
+/**
+ * TODO: Move this to its own @hyperdrive/queries package eventually.
+ */
 export function getLiquidityQuery({
   hyperdriveAddress,
   publicClient,
 }: GetLiquidityQueryOptions): QueryObserverOptions<GetLiquidityReturnType> {
+  const queryEnabled = !!hyperdriveAddress;
+
   return {
+    enabled: queryEnabled,
     queryKey: makeQueryKey("get-liquidity", {
       hyperdriveAddress,
     }),
-    queryFn: () => getLiquidity(hyperdriveAddress as Address, publicClient),
+    queryFn: queryEnabled
+      ? () => getLiquidity(hyperdriveAddress, publicClient)
+      : undefined,
   };
 }

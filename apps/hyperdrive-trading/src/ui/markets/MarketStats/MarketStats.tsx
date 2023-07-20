@@ -21,7 +21,7 @@ export function MarketStats({
     currentBlockNumber as bigint,
   );
 
-  const { data: liquidity } = useLiquidity(hyperdrive.address);
+  const { liquidity } = useLiquidity(hyperdrive.address);
   const { fixedAPR } = useCurrentFixedAPR(hyperdrive);
   const { longPrice } = useCurrentLongPrice(hyperdrive);
 
@@ -62,7 +62,7 @@ export function MarketStats({
         value={
           <FormattedDaiValue
             iconUrl={hyperdrive.baseToken.iconUrl as string}
-            value={liquidity?.marketLiquidity || "0"}
+            value={liquidity?.formatted || "0"}
           />
         }
       />

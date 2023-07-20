@@ -36,10 +36,7 @@ export {
 export { getShorts } from "src/amm/shorts/getShortsOld";
 
 // Liquidity
-export {
-  getLiquidity,
-  getLiquidityQuery,
-} from "src/amm/liquidity/getLiquidity";
+export { getLiquidity, getLiquidityQuery } from "src/amm/getLiquidity";
 export {
   getClosedShorts,
   getClosedShortsQuery,
@@ -62,3 +59,7 @@ export {
   getWithdrawalSharesQuery,
 } from "src/amm/lp/getWithdrawalShares";
 export type { GetWithdrawalSharesOptions } from "src/amm/lp/getWithdrawalShares";
+
+// Utils
+export { sumBigInt } from "src/base/sumBigInt";
+export { multiplyBigInt } from "src/base/multiplyBigInt";

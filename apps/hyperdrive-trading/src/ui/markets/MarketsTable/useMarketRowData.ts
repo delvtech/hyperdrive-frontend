@@ -42,14 +42,14 @@ async function fetchMarketRowData(
       );
       const liquidityPromise = getLiquidity(hyperdrive.address, publicClient);
 
-      const [stats, { marketLiquidity }] = await Promise.all([
+      const [stats, liquidity] = await Promise.all([
         statsPromise,
         liquidityPromise,
       ]);
 
       return {
         market: hyperdrive,
-        liquidity: marketLiquidity,
+        liquidity: liquidity.formatted,
         ...stats,
       };
     }),
