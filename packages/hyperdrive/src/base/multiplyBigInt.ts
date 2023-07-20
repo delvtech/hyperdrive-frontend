@@ -2,7 +2,6 @@
  * Multiply an array of bigints together and preserve the correct scaling for
  * decimals.
  *
- * @param options - The options to use.
  * @param list - The bigints to multiply.
  * @param decimals - The number of decimal places the bigints are scaled
  * to. If a value in `values` has a `decimals` property, that value will be used
