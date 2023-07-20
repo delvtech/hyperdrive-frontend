@@ -1,5 +1,6 @@
 import { QueryObserverOptions } from "@tanstack/query-core";
 import { ERC20MintableABI } from "src/abis/ERC20Mintable";
+import { makeQueryKey } from "src/makeQueryKey";
 import { Address, Chain, PublicClient, Transport } from "viem";
 
 interface GetDecimalsOptions {
@@ -28,7 +29,7 @@ export function getDecimalsQuery({
 
   return {
     enabled: queryEnabled,
-    queryKey: ["@hyperdrive/core", "getDecimals", { tokenAddress }],
+    queryKey: makeQueryKey("getDecimals", { tokenAddress }),
     queryFn: queryEnabled
       ? () =>
           getDecimals({

@@ -2,6 +2,7 @@ import { QueryObserverOptions } from "@tanstack/query-core";
 import { PublicClient, Address, Transport, Chain } from "viem";
 import { ClosedLong } from "./types";
 import { getCloseLongEvents } from "src/amm/longs/getCloseLongEvents";
+import { makeQueryKey } from "src/makeQueryKey";
 
 export interface GetClosedLongsOptions {
   traderAddress: Address;
@@ -61,11 +62,7 @@ export function getCloseLongsQuery({
   const queryEnabled = !!account && !!hyperdriveAddress && !!publicClient;
   return {
     enabled: queryEnabled,
-    queryKey: [
-      "@hyperdrive/core",
-      "closed-longs",
-      { hyperdriveAddress, account },
-    ],
+    queryKey: makeQueryKey("closed-longs", { hyperdriveAddress, account }),
     queryFn: queryEnabled
       ? () =>
           getClosedLongs({
