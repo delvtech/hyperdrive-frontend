@@ -2,10 +2,10 @@
  * Multiply an array of bigints together and preserve the correct scaling for
  * decimals.
  *
- * @param list - The bigints to multiply. Can be a bigint or an object with a
+ * @param values - The bigints to multiply. Can be a bigint or an object with a
  * bigint `value` and a `decimals` property.
  * @param decimals - The number of decimal places the bigints are scaled
- * to. If a value in the `list` has a `decimals` property, that value will be
+ * to. If a value in the `values` has a `decimals` property, that value will be
  * used instead. This is also the number of decimal places used for the result.
  *
  * @example
@@ -31,7 +31,7 @@
  * ```
  */
 export function multiplyBigInt(
-  list: (
+  values: (
     | bigint
     | {
         value: bigint;
@@ -40,45 +40,45 @@ export function multiplyBigInt(
   )[],
   decimals: number,
 ): bigint {
-  if (list.length === 0) {
+  if (values.length === 0) {
     return 0n;
   }
 
-  let totalValue: bigint;
-  let totalDecimals: number;
+  let productValue: bigint;
+  let productDecimals: number;
 
   // Initialize the total value and decimals to the first value in the array.
-  if (typeof list[0] === "bigint") {
-    totalValue = list[0];
-    totalDecimals = decimals;
+  if (typeof values[0] === "bigint") {
+    productValue = values[0];
+    productDecimals = decimals;
   } else {
-    totalValue = list[0].value;
-    totalDecimals = list[0].decimals;
+    productValue = values[0].value;
+    productDecimals = values[0].decimals;
   }
 
   // Multiply the total value by each subsequent value in the array. And add the
   // decimals together.
-  for (const value of list.slice(1)) {
+  for (const value of values.slice(1)) {
     if (typeof value === "bigint") {
-      totalValue *= value;
-      totalDecimals += decimals;
+      productValue *= value;
+      productDecimals += decimals;
     } else {
-      totalValue *= value.value;
-      totalDecimals += value.decimals;
+      productValue *= value.value;
+      productDecimals += value.decimals;
     }
   }
 
   // If the total decimals is less than the desired decimals, return 0.
-  if (totalDecimals < decimals) {
+  if (productDecimals < decimals) {
     return 0n;
   }
 
   // If the total decimals is the same as the desired decimals, avoid doing any
   // extra work and return the total value.
-  if (totalDecimals === decimals) {
-    return totalValue;
+  if (productDecimals === decimals) {
+    return productValue;
   }
 
   // Remove the extra decimal places.
-  return totalValue / 10n ** BigInt(totalDecimals - decimals);
+  return productValue / 10n ** BigInt(productDecimals - decimals);
 }
