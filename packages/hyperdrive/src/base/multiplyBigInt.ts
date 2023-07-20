@@ -2,10 +2,11 @@
  * Multiply an array of bigints together and preserve the correct scaling for
  * decimals.
  *
- * @param list - The bigints to multiply.
+ * @param list - The bigints to multiply. Can be a bigint or an object with a
+ * bigint `value` and a `decimals` property.
  * @param decimals - The number of decimal places the bigints are scaled
- * to. If a value in `values` has a `decimals` property, that value will be used
- * instead. This is also the number of decimal places the result is scaled to.
+ * to. If a value in the `list` has a `decimals` property, that value will be
+ * used instead. This is also the number of decimal places used for the result.
  *
  * @example
  *
