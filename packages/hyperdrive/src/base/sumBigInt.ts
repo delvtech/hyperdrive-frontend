@@ -1,3 +1,3 @@
-export function sumBigInt(list: bigint[]): bigint {
-  return list.reduce((prev, current) => prev + current, 0n);
+export function sumBigInt(values: bigint[]): bigint {
+  return values.reduce((prev, current) => prev + current, 0n);
 }
