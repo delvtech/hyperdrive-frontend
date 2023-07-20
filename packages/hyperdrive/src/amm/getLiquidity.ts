@@ -3,6 +3,7 @@ import { makeQueryKey } from "src/makeQueryKey";
 
 import { QueryObserverOptions } from "@tanstack/query-core";
 import { getPoolInfo } from "src/amm/getPoolInfo";
+import { multiplyBigInt } from "src/base/multiplyBigInt";
 
 interface GetLiquidityResult {
   liquidity: bigint;
@@ -26,7 +27,7 @@ export async function getLiquidity(
   });
 
   const liquidity =
-    (sharePrice * shareReserves) / 10n ** 18n - longsOutstanding;
+    multiplyBigInt([sharePrice, shareReserves], 18) - longsOutstanding;
 
   return { liquidity, formatted: formatUnits(liquidity, 18) };
 }

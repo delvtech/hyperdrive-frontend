@@ -59,3 +59,7 @@ export {
   getWithdrawalSharesQuery,
 } from "src/amm/lp/getWithdrawalShares";
 export type { GetWithdrawalSharesOptions } from "src/amm/lp/getWithdrawalShares";
+
+// Utils
+export { sumBigInt } from "src/base/sumBigInt";
+export { multiplyBigInt } from "src/base/multiplyBigInt";
