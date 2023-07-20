@@ -5,14 +5,21 @@ import { Stat } from "src/ui/base/components/Stat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useCurrentFixedAPR } from "src/ui/hyperdrive/hooks/useCurrentFixedAPR";
 import { useLiquidity } from "src/ui/hyperdrive/hooks/useLiquidity";
+import { useTradingVolume } from "src/ui/hyperdrive/hooks/useTradingVolume";
 import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
-
+import { useBlockNumber } from "wagmi";
 export function MarketStats({
   hyperdrive,
 }: {
   hyperdrive: Hyperdrive;
 }): ReactElement {
   const formattedTermLength = formatTermLength(hyperdrive.termLengthMS);
+  const { data: currentBlockNumber } = useBlockNumber();
+
+  const { tradingVolume } = useTradingVolume(
+    hyperdrive.address,
+    currentBlockNumber as bigint,
+  );
 
   const { data: liquidity } = useLiquidity(hyperdrive.address);
   const { fixedAPR } = useCurrentFixedAPR(hyperdrive);
@@ -41,13 +48,21 @@ export function MarketStats({
       />
       <Stat label="DSR APY" value="3.49%" />
       <Stat label="LP APY" value="1.60%" />
-      <Stat label="Volume (24h)" value="$4.4M" />
+      <Stat
+        label="Volume (24h)"
+        value={
+          <FormattedDaiValue
+            iconUrl={hyperdrive.baseToken.iconUrl as string}
+            value={tradingVolume || "0"}
+          />
+        }
+      />
       <Stat
         label="Liquidity"
         value={
-          <FormattedLiquidity
+          <FormattedDaiValue
             iconUrl={hyperdrive.baseToken.iconUrl as string}
-            liquidity={liquidity?.marketLiquidity || "0"}
+            value={liquidity?.marketLiquidity || "0"}
           />
         }
       />
@@ -60,17 +75,17 @@ function formatTermLength(termLengthMS: number) {
   return `${numDays} days`;
 }
 
-function FormattedLiquidity({
-  liquidity,
+function FormattedDaiValue({
+  value,
   iconUrl,
 }: {
-  liquidity: string;
+  value: string;
   iconUrl: string;
 }) {
   return (
     <span className="flex flex-row items-center justify-start font-semibold">
       <img className="mr-1 h-4" src={iconUrl} />
-      {parseInt(liquidity).toLocaleString()}
+      {formatBalance(value, 0)}
     </span>
   );
 }
