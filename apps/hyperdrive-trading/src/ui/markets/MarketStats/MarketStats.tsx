@@ -37,34 +37,38 @@ export function MarketStats({
             {hyperdrive.baseToken.symbol}
           </span>
         }
-        description={StatDescriptions["Asset"]}
+        description={"The asset that is being used to back the bond."}
       />
       <Stat
         label="Term"
         value={formattedTermLength}
-        description={StatDescriptions["Term"]}
+        description={"The length of time that the bond will be locked."}
       />
       <Stat
         label="Fixed rate"
         value={`${fixedAPR?.formatted}% APR`}
-        description={StatDescriptions["Fixed rate"]}
+        description={"The fixed rate that the bond will be issued at."}
       />
       <Stat
         label="Bond price"
         value={`${formatBalance(longPrice?.formatted || "0", 2)} ${
           hyperdrive.baseToken.symbol
         }`}
-        description={StatDescriptions["Bond price"]}
+        description={"The price of the bond in the base asset."}
       />
       <Stat
         label="DSR APY"
         value="3.49%"
-        description={StatDescriptions["DSR APY"]}
+        description={
+          "DSR APY reflects the annualized return for holding DAI in the savings rate contract."
+        }
       />
       <Stat
         label="LP APY"
         value="1.60%"
-        description={StatDescriptions["LP APY"]}
+        description={
+          "LP APY indicates the annualized projected return for liquidity providers."
+        }
       />
       <Stat
         label="Volume (24h)"
@@ -74,7 +78,7 @@ export function MarketStats({
             value={tradingVolume || "0"}
           />
         }
-        description={StatDescriptions["Volume (24h)"]}
+        description={"The total trading volume in the last 24 hours."}
       />
       <Stat
         label="Liquidity"
@@ -84,7 +88,7 @@ export function MarketStats({
             value={liquidity?.formatted || "0"}
           />
         }
-        description={StatDescriptions["Liquidity"]}
+        description={"The total liquidity in the pool."}
       />
     </div>
   );
@@ -109,16 +113,3 @@ function FormattedDaiValue({
     </span>
   );
 }
-
-const StatDescriptions = {
-  Asset: "The asset that is being used to back the bond.",
-  Term: "The length of time that the bond will be locked.",
-  "Fixed rate": "The fixed rate that the bond will be issued at.",
-  "Bond price": "The price of the bond in the base asset.",
-  "DSR APY":
-    "DSR APY reflects the annualized return for holding DAI in the savings rate contract.",
-  "LP APY":
-    "LP APY indicates the annualized projected return for liquidity providers.",
-  "Volume (24h)": "The total trading volume in the last 24 hours.",
-  Liquidity: "The total liquidity in the pool.",
-};
