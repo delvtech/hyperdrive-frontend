@@ -112,11 +112,13 @@ function FormattedDaiValue({
 
 const StatDescriptions = {
   Asset: "The asset that is being used to back the bond.",
-  Term: "The length of time that the bond will be locked for.",
+  Term: "The length of time that the bond will be locked.",
   "Fixed rate": "The fixed rate that the bond will be issued at.",
   "Bond price": "The price of the bond in the base asset.",
-  "DSR APY": "The current DSR APY.",
-  "LP APY": "The current LP APY.",
+  "DSR APY":
+    "DSR APY reflects the annualized return for holding DAI in the savings rate contract.",
+  "LP APY":
+    "LP APY indicates the annualized projected return for liquidity providers.",
   "Volume (24h)": "The total trading volume in the last 24 hours.",
   Liquidity: "The total liquidity in the pool.",
 };

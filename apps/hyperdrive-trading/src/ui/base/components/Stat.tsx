@@ -17,7 +17,7 @@ export function Stat({
     <div className={className}>
       <p
         data-tip={description}
-        className="daisy-tooltip mb-1 whitespace-nowrap font-light text-neutral-content"
+        className="daisy-tooltip mb-1 font-light text-neutral-content"
       >
         {label}
       </p>
