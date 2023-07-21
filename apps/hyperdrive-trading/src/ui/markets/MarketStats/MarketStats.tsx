@@ -37,17 +37,35 @@ export function MarketStats({
             {hyperdrive.baseToken.symbol}
           </span>
         }
+        description={StatDescriptions["Asset"]}
       />
-      <Stat label="Term" value={formattedTermLength} />
-      <Stat label="Fixed rate" value={`${fixedAPR?.formatted}% APR`} />
+      <Stat
+        label="Term"
+        value={formattedTermLength}
+        description={StatDescriptions["Term"]}
+      />
+      <Stat
+        label="Fixed rate"
+        value={`${fixedAPR?.formatted}% APR`}
+        description={StatDescriptions["Fixed rate"]}
+      />
       <Stat
         label="Bond price"
         value={`${formatBalance(longPrice?.formatted || "0", 2)} ${
           hyperdrive.baseToken.symbol
         }`}
+        description={StatDescriptions["Bond price"]}
       />
-      <Stat label="DSR APY" value="3.49%" />
-      <Stat label="LP APY" value="1.60%" />
+      <Stat
+        label="DSR APY"
+        value="3.49%"
+        description={StatDescriptions["DSR APY"]}
+      />
+      <Stat
+        label="LP APY"
+        value="1.60%"
+        description={StatDescriptions["LP APY"]}
+      />
       <Stat
         label="Volume (24h)"
         value={
@@ -56,6 +74,7 @@ export function MarketStats({
             value={tradingVolume || "0"}
           />
         }
+        description={StatDescriptions["Volume (24h)"]}
       />
       <Stat
         label="Liquidity"
@@ -65,6 +84,7 @@ export function MarketStats({
             value={liquidity?.formatted || "0"}
           />
         }
+        description={StatDescriptions["Liquidity"]}
       />
     </div>
   );
@@ -89,3 +109,14 @@ function FormattedDaiValue({
     </span>
   );
 }
+
+const StatDescriptions = {
+  Asset: "The asset that is being used to back the bond.",
+  Term: "The length of time that the bond will be locked for.",
+  "Fixed rate": "The fixed rate that the bond will be issued at.",
+  "Bond price": "The price of the bond in the base asset.",
+  "DSR APY": "The current DSR APY.",
+  "LP APY": "The current LP APY.",
+  "Volume (24h)": "The total trading volume in the last 24 hours.",
+  Liquidity: "The total liquidity in the pool.",
+};
