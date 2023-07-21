@@ -11,12 +11,13 @@ export function FAQ(): ReactElement {
         title={<span className="text-h6">What is a long?</span>}
         description={
           <p className="text-neutral-content">
-            The Dai Savings Rate (DSR) is a feature within the MakerDAO system
-            that allows Dai stablecoin holders to earn interest on their
-            holdings when they lock it into a DSR smart contract. The interest
-            rate is variable, set by the MakerDAO community, and users can
-            withdraw their Dai plus earned interest at any time, similar to a
-            traditional savings account but operating on the blockchain.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
           </p>
         }
       />
@@ -24,25 +25,27 @@ export function FAQ(): ReactElement {
         title={<span className="text-h6">What is a short?</span>}
         description={
           <p className="text-neutral-content">
-            The Dai Savings Rate (DSR) is a feature within the MakerDAO system
-            that allows Dai stablecoin holders to earn interest on their
-            holdings when they lock it into a DSR smart contract. The interest
-            rate is variable, set by the MakerDAO community, and users can
-            withdraw their Dai plus earned interest at any time, similar to a
-            traditional savings account but operating on the blockchain.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
           </p>
         }
       />
       <Disclosure
-        title={<span className="text-h6 ">What is the Dai Savings Rate?</span>}
+        title={<span className="text-h6">How does LPing work?</span>}
         description={
           <p className="text-neutral-content">
-            The Dai Savings Rate (DSR) is a feature within the MakerDAO system
-            that allows Dai stablecoin holders to earn interest on their
-            holdings when they lock it into a DSR smart contract. The interest
-            rate is variable, set by the MakerDAO community, and users can
-            withdraw their Dai plus earned interest at any time, similar to a
-            traditional savings account but operating on the blockchain.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
           </p>
         }
       />
