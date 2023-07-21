@@ -4,6 +4,7 @@ import { HyperdriveMathABI } from "src/abis/HyperdriveMath";
 import { getPoolConfigQuery } from "src/amm/getPoolConfig";
 import { getPoolInfoQuery } from "src/amm/getPoolInfo";
 import { getDecimalsQuery } from "src/token/getDecimals";
+import { makeQueryKey } from "src/makeQueryKey";
 
 export interface GetLongPriceOptions {
   hyperdriveMathAddress: Address;
@@ -84,11 +85,10 @@ export function getCurrentLongPriceQuery({
 
   return {
     enabled: queryEnabled,
-    queryKey: [
-      "@hyperdrive/core",
-      "getLongPrice",
-      { hyperdriveAddress, hyperdriveMathAddress },
-    ],
+    queryKey: makeQueryKey("getLongPrice", {
+      hyperdriveAddress,
+      hyperdriveMathAddress,
+    }),
     queryFn: queryEnabled
       ? async () => {
           const {
