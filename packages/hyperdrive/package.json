@@ -14,7 +14,9 @@
   },
   "scripts": {
     "watch": "parcel watch",
-    "build": "parcel build"
+    "build": "parcel build",
+    "test": "vitest",
+    "test:run": "vitest run"
   },
   "devDependencies": {
     "@hyperdrive/eslint-config": "*",
