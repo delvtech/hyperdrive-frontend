@@ -52,7 +52,7 @@ export function MarketStats({
         label="Volume (24h)"
         value={
           <FormattedDaiValue
-            iconUrl={hyperdrive.baseToken.iconUrl as string}
+            symbol={hyperdrive.baseToken.symbol}
             value={tradingVolume || "0"}
           />
         }
@@ -61,7 +61,7 @@ export function MarketStats({
         label="Liquidity"
         value={
           <FormattedDaiValue
-            iconUrl={hyperdrive.baseToken.iconUrl as string}
+            symbol={hyperdrive.baseToken.symbol}
             value={liquidity?.formatted || "0"}
           />
         }
@@ -77,15 +77,15 @@ function formatTermLength(termLengthMS: number) {
 
 function FormattedDaiValue({
   value,
-  iconUrl,
+  symbol,
 }: {
   value: string;
-  iconUrl: string;
+  symbol: string;
 }) {
   return (
     <span className="flex flex-row items-center justify-start font-semibold">
-      <img className="mr-1 h-4" src={iconUrl} />
       {formatBalance(value, 0)}
+      <span className="ml-1">{symbol}</span>
     </span>
   );
 }
