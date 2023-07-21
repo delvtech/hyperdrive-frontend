@@ -6,6 +6,7 @@ import { decodeAssetFromTransferSingleEventData } from "src/amm/events/decodeAss
 import { getTransferSingleEvents } from "src/amm/events/getTransferSingleEvents";
 import { Long } from "src/amm/longs/types";
 import { PublicClient, Address, Transport, Chain } from "viem";
+import { makeQueryKey } from "src/makeQueryKey";
 
 export interface GetOpenLongsOptions {
   account: Address;
@@ -108,11 +109,7 @@ export function getOpenLongsQuery({
   const queryEnabled = !!account && !!hyperdriveAddress && !!publicClient;
   return {
     enabled: queryEnabled,
-    queryKey: [
-      "@hyperdrive/core",
-      "open-longs",
-      { hyperdriveAddress, account },
-    ],
+    queryKey: makeQueryKey("open-longs", { hyperdriveAddress, account }),
     queryFn: queryEnabled
       ? () => getOpenLongs({ account, hyperdriveAddress, publicClient })
       : undefined,

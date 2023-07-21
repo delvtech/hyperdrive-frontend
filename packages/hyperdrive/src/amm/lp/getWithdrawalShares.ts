@@ -2,6 +2,7 @@ import { PublicClient, Address, Transport, Chain } from "viem";
 import { HyperdriveABI } from "src/abis/Hyperdrive";
 import { WITHDRAW_SHARES_ASSET_ID } from "./constants";
 import { QueryObserverOptions } from "@tanstack/query-core";
+import { makeQueryKey } from "src/makeQueryKey";
 
 export interface GetWithdrawalSharesOptions {
   account: Address;
@@ -40,11 +41,7 @@ export function getWithdrawalSharesQuery({
   const queryEnabled = !!account && !!hyperdriveAddress && !!publicClient;
   return {
     enabled: queryEnabled,
-    queryKey: [
-      "@hyperdrive/core",
-      "withdrawal-shares",
-      { hyperdriveAddress, account },
-    ],
+    queryKey: makeQueryKey("withdrawal-shares", { hyperdriveAddress, account }),
     queryFn: queryEnabled
       ? () => getWithdrawalShares({ account, hyperdriveAddress, publicClient })
       : undefined,
