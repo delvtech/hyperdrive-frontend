@@ -4,6 +4,7 @@ import { ReactElement, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
 import { ClosedLongsTable } from "src/ui/portfolio/ClosedLongsTable/ClosedLongsTable";
+import { ClosedLpTable } from "src/ui/portfolio/ClosedLpTable/ClosedLpTable";
 import { ClosedShortsTable } from "src/ui/portfolio/ClosedShortsTable/ClosedShortsTable";
 import { OpenLongsTable } from "src/ui/portfolio/OpenLongsTable/OpenLongsTable";
 import { OpenLpPosition } from "src/ui/portfolio/OpenLpPosition/OpenLpPosition";
@@ -98,8 +99,10 @@ export function PositionsSection({
                 return <ClosedShortsTable hyperdrive={hyperdrive} />;
               }
               case "LP":
-                // return <Well>Under construction</Well>;
-                return <OpenLpPosition hyperdrive={hyperdrive} />;
+                if (activeOpenOrClosedTab === "Open") {
+                  return <OpenLpPosition hyperdrive={hyperdrive} />;
+                }
+                return <ClosedLpTable hyperdrive={hyperdrive} />;
               default:
                 assertNever(activePositionTab);
             }
