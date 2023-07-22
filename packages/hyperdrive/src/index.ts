@@ -34,13 +34,13 @@ export {
   getOpenShortsQuery,
 } from "src/amm/shorts/getOpenShorts";
 export { getShorts } from "src/amm/shorts/getShortsOld";
-
-// Liquidity
-export { getLiquidity, getLiquidityQuery } from "src/amm/getLiquidity";
 export {
   getClosedShorts,
   getClosedShortsQuery,
 } from "src/amm/shorts/getClosedShorts";
+
+// Liquidity
+export { getLiquidity, getLiquidityQuery } from "src/amm/getLiquidity";
 
 // Trading Volume
 export {
@@ -51,6 +51,11 @@ export {
 // LP Shares
 export { LP_ASSET_ID, WITHDRAW_SHARES_ASSET_ID } from "src/amm/lp/constants";
 export { getLpShares, getLpSharesQuery } from "src/amm/lp/getLpShares";
+export {
+  getClosedLpShares,
+  getClosedLpSharesQuery,
+} from "src/amm/lp/getClosedLpShares";
+export type { ClosedLpShares } from "src/amm/lp/getClosedLpShares";
 export type { GetLpSharesOptions } from "src/amm/lp/getLpShares";
 
 // Withdraw Shares
