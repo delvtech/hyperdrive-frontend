@@ -57,6 +57,11 @@ export const HyperdriveABI = [
   },
   {
     inputs: [],
+    name: "FeeTooHigh",
+    type: "error",
+  },
+  {
+    inputs: [],
     name: "FixedPointMath_AddOverflow",
     type: "error",
   },
@@ -162,6 +167,11 @@ export const HyperdriveABI = [
   },
   {
     inputs: [],
+    name: "MaxFeeTooHigh",
+    type: "error",
+  },
+  {
+    inputs: [],
     name: "MintPercentTooHigh",
     type: "error",
   },
@@ -173,6 +183,11 @@ export const HyperdriveABI = [
   {
     inputs: [],
     name: "NoAssetsToWithdraw",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "NonPayableInitialization",
     type: "error",
   },
   {
