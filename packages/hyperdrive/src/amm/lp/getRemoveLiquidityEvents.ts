@@ -34,7 +34,7 @@ export async function getRemoveLiquidityEvents({
   hyperdriveAddress,
   publicClient,
 }: GetRemoveLiquidityEventsOptions): Promise<CloseShortEvent[]> {
-  const closeShortLogs = await publicClient.getFilterLogs({
+  const closeLPLogs = await publicClient.getFilterLogs({
     filter: await publicClient.createContractEventFilter({
       abi: HyperdriveABI,
       address: hyperdriveAddress,
