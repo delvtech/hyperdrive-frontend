@@ -29,7 +29,7 @@ export function RemoveLiquidityForm({
     decimals: baseDecimals,
   });
 
-  const { baseAmountOut, previewRemoveLiquidityStatus } =
+  const { baseAmountOut, withdrawalSharesOut, previewRemoveLiquidityStatus } =
     usePreviewRemoveLiquidity({
       market: hyperdrive,
       lpSharesIn: amountAsBigInt,
@@ -68,12 +68,23 @@ export function RemoveLiquidityForm({
         <Stat
           label={"You receive"}
           value={
-            baseAmountOut
-              ? `${formatBalance(
+            <>
+              {baseAmountOut !== undefined &&
+                `${formatBalance(
                   formatUnits(baseAmountOut, baseDecimals),
                   8,
-                )} ${baseSymbol}`
-              : ""
+                )} ${baseSymbol}`}
+              {withdrawalSharesOut && (
+                <>
+                  <br />
+                  {formatBalance(
+                    formatUnits(withdrawalSharesOut, baseDecimals),
+                    8,
+                  )}{" "}
+                  Withdrawal shares
+                </>
+              )}
+            </>
           }
         />
       </div>
