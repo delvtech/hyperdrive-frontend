@@ -98,7 +98,7 @@ export function OpenShortForm({
         className="daisy-btn-accent daisy-btn"
         onClick={() => openShort?.()}
       >
-        <h5>Open Short</h5>
+        Open Short
       </button>
     );
   };
@@ -111,7 +111,7 @@ export function OpenShortForm({
   );
 
   return (
-    <>
+    <div className="flex flex-col gap-10">
       {/* You Pay Section */}
       <div className="space-y-4 text-base-content">
         <h5>Amount to short</h5>
@@ -135,6 +135,6 @@ export function OpenShortForm({
       </div>
 
       {openShortButton()}
-    </>
+    </div>
   );
 }
