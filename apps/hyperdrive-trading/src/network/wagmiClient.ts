@@ -3,17 +3,12 @@ import { Chain, ChainProviderFn, configureChains, createConfig } from "wagmi";
 import { foundry } from "wagmi/chains";
 import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
 const {
-  VITE_ALCHEMY_GOERLI_RPC_KEY: ALCHEMY_GOERLI_RPC_KEY,
   VITE_LOCALHOST_NODE_RPC_URL: LOCALHOST_NODE_RPC_URL,
   VITE_CUSTOM_CHAIN_NODE_RPC_URL: CUSTOM_CHAIN_NODE_RPC_URL,
   VITE_CUSTOM_CHAIN_ADDRESSES_URL: CUSTOM_CHAIN_NODE_ADDRESSES_URL,
   VITE_CUSTOM_CHAIN_CHAIN_ID: CUSTOM_CHAIN_CHAIN_ID,
   VITE_WALLET_CONNECT_PROJECT_ID: PROJECT_ID,
 } = import.meta.env;
-
-if (!ALCHEMY_GOERLI_RPC_KEY) {
-  throw new Error("Provide an ALCHEMY_GOERLI_RPC_KEY variable in .env");
-}
 
 const chainsToConfigure: Chain[] = [];
 const providersToConfigure: ChainProviderFn[] = [];
