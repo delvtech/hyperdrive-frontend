@@ -12,7 +12,8 @@ import {
   useMarketRowData,
 } from "src/ui/markets/MarketsTable/useMarketRowData";
 import { YieldSourceLabel } from "src/ui/markets/YieldSourceLabel/YieldSourceLabel";
-import { PublicClient, usePublicClient } from "wagmi";
+import { PublicClient } from "viem";
+import { usePublicClient } from "wagmi";
 
 const ALL_PROTOCOLS_KEY = "All Markets";
 const ALL_TERM_LENGTHS_KEY = 0;

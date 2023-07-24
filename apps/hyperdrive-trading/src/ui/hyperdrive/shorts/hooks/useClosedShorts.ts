@@ -1,7 +1,7 @@
 import { ClosedShort, getClosedShortsQuery } from "@hyperdrive/core";
 import { QueryStatus, useQuery } from "@tanstack/react-query";
-import { Address } from "viem";
-import { PublicClient, usePublicClient } from "wagmi";
+import { Address, PublicClient } from "viem";
+import { usePublicClient } from "wagmi";
 
 interface UseClosedShortsOptions {
   account: Address | undefined;
