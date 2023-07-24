@@ -107,7 +107,7 @@ export function RedeemWithdrawalSharesForm({
             onRedeemWithdrawalShares?.(e);
           }}
         >
-          Remove liquidity
+          Redeem withdrawal shares
         </button>
       ) : (
         <ConnectButton />
