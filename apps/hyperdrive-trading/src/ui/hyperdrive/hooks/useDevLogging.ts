@@ -7,12 +7,14 @@ import { formatUnits } from "viem";
 export function useDevLogging(market: Hyperdrive): void {
   const { poolConfig } = useHyperdrivePoolConfig(market.address);
   useEffect(() => {
-    console.log("Pool Config:");
-    console.table(
-      poolConfig
-        ? bigIntsToString(poolConfig, market.baseToken.decimals)
-        : undefined,
-    );
+    if (import.meta.env.DEV) {
+      console.log("Pool Config:");
+      console.table(
+        poolConfig
+          ? bigIntsToString(poolConfig, market.baseToken.decimals)
+          : undefined,
+      );
+    }
   }, [poolConfig, market.baseToken.decimals]);
 
   const { poolInfo } = useHyperdrivePoolInfo(market.address);
