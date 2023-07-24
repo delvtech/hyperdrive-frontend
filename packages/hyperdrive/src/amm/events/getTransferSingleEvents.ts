@@ -4,8 +4,6 @@ import {
   PublicClient,
   decodeEventLog,
   Address,
-  Transport,
-  Chain,
   BlockTag,
   GetFilterLogsReturnType,
   DecodeEventLogReturnType,
@@ -16,7 +14,7 @@ interface GetTransferSingleEvents {
   fromBlock?: bigint;
   toBlock?: bigint | BlockTag;
   hyperdriveAddress: Address;
-  publicClient: PublicClient<Transport, Chain>;
+  publicClient: PublicClient;
 }
 
 interface TransferSingleEvent {
