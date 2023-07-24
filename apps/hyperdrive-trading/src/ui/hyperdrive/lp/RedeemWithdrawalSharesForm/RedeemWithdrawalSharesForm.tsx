@@ -4,23 +4,23 @@ import { Hyperdrive } from "src/appconfig/types";
 import { Stat } from "src/ui/base/components/Stat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
-import { usePreviewRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewRemoveLiquidity";
-import { useRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/useRemoveLiquidity";
+import { usePreviewRedeemWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/usePreviewRedeemWithdrawalShares";
+import { useRedeemWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useRedeemWithdrawalShares";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
 
-interface RemoveLiquidityFormProps {
+interface RedeemWithdrawalSharesFormProps {
   hyperdrive: Hyperdrive;
-  lpShares: bigint;
-  onRemoveLiquidity?: (e: MouseEvent<HTMLButtonElement>) => void;
+  withdrawalShares: bigint;
+  onRedeemWithdrawalShares?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 
-export function RemoveLiquidityForm({
+export function RedeemWithdrawalSharesForm({
   hyperdrive,
-  lpShares,
-  onRemoveLiquidity,
-}: RemoveLiquidityFormProps): ReactElement {
+  withdrawalShares,
+  onRedeemWithdrawalShares,
+}: RedeemWithdrawalSharesFormProps): ReactElement {
   const { decimals: baseDecimals, symbol: baseSymbol } = hyperdrive.baseToken;
 
   const { address: account } = useAccount();
@@ -29,36 +29,49 @@ export function RemoveLiquidityForm({
     decimals: baseDecimals,
   });
 
-  const { baseAmountOut, withdrawalSharesOut, previewRemoveLiquidityStatus } =
-    usePreviewRemoveLiquidity({
+  const { sharesRedeemed: maxRedeemableShares } =
+    usePreviewRedeemWithdrawalShares({
       market: hyperdrive,
-      lpSharesIn: amountAsBigInt,
-      minBaseAmountOut: 0n,
+      withdrawalSharesIn: withdrawalShares,
+      minBaseAmountOutPerShare: 0n,
       destination: account,
     });
 
-  const { removeLiquidity, removeLiquidityStatus } = useRemoveLiquidity({
-    market: hyperdrive,
-    lpSharesIn: amountAsBigInt,
-    minBaseAmountOut: 0n,
-    destination: account,
-    enabled: previewRemoveLiquidityStatus === "success",
-  });
+  const { baseAmountOut, previewRedeemWithdrawalSharesStatus } =
+    usePreviewRedeemWithdrawalShares({
+      market: hyperdrive,
+      withdrawalSharesIn: amountAsBigInt,
+      minBaseAmountOutPerShare: 0n,
+      destination: account,
+    });
+
+  const { redeemWithdrawalShares, redeemWithdrawalSharesStatus } =
+    useRedeemWithdrawalShares({
+      market: hyperdrive,
+      withdrawalSharesIn: amountAsBigInt,
+      minBaseAmountOutPerShare: 0n,
+      destination: account,
+      enabled: previewRedeemWithdrawalSharesStatus === "success",
+    });
 
   return (
     <div className="flex flex-col gap-6">
       {/* Amount to close section */}
       <div className="space-y-4 text-base-content">
-        <h5>Amount to remove</h5>
+        <h5>Amount to redeem</h5>
         <TokenInput
           token={{
-            name: "Hyperdrive LP",
-            symbol: "LP",
+            name: "Hyperdrive Withdrawal Shares",
+            // TODO: What should the symbol be?
+            symbol: "Shares",
             decimals: baseDecimals,
             address: "0x00",
           }}
           value={amount ?? ""}
-          maxValue={formatUnits(lpShares, baseDecimals)}
+          maxValue={formatUnits(
+            maxRedeemableShares ?? withdrawalShares,
+            baseDecimals,
+          )}
           onChange={(newAmount) => setAmount(newAmount)}
         />
       </div>
@@ -68,23 +81,12 @@ export function RemoveLiquidityForm({
         <Stat
           label={"You receive"}
           value={
-            <>
-              {baseAmountOut !== undefined &&
-                `${formatBalance(
+            baseAmountOut
+              ? `${formatBalance(
                   formatUnits(baseAmountOut, baseDecimals),
                   8,
-                )} ${baseSymbol}`}
-              {withdrawalSharesOut && (
-                <>
-                  <br />
-                  {formatBalance(
-                    formatUnits(withdrawalSharesOut, baseDecimals),
-                    8,
-                  )}{" "}
-                  Withdrawal shares
-                </>
-              )}
-            </>
+                )} ${baseSymbol}`
+              : ""
           }
         />
       </div>
@@ -92,17 +94,20 @@ export function RemoveLiquidityForm({
       {account ? (
         <button
           className="daisy-btn-primary daisy-btn"
-          disabled={!removeLiquidity || removeLiquidityStatus === "loading"}
+          disabled={
+            !redeemWithdrawalShares ||
+            redeemWithdrawalSharesStatus === "loading"
+          }
           onClick={(e) => {
-            removeLiquidity?.();
+            redeemWithdrawalShares?.();
 
             // useful if this is rendered in a modal for example and you want to
             // call e.preventDefault() to prevent the modal from closing right
             // away when the user clicks.
-            onRemoveLiquidity?.(e);
+            onRedeemWithdrawalShares?.(e);
           }}
         >
-          Remove liquidity
+          Redeem withdrawal shares
         </button>
       ) : (
         <ConnectButton />

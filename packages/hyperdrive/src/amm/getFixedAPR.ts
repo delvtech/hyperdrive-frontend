@@ -1,4 +1,4 @@
-import { PublicClient, Address, Transport, Chain, formatUnits } from "viem";
+import { PublicClient, Address, formatUnits } from "viem";
 import { HyperdriveMathABI } from "src/abis/HyperdriveMath";
 import { QueryClient, QueryObserverOptions } from "@tanstack/query-core";
 import { getPoolConfigQuery } from "src/amm/getPoolConfig";
@@ -27,7 +27,7 @@ export interface GetFixedAPROptions {
    * Comes from getPoolConfig
    */
   timeStretch: bigint;
-  publicClient: PublicClient<Transport, Chain>;
+  publicClient: PublicClient;
 }
 
 export async function getFixedAPR({
@@ -72,7 +72,7 @@ function formatAPR(apr: bigint) {
 interface GetCurrentFixedAPRQueryOptions {
   hyperdriveAddress: Address | undefined;
   hyperdriveMathAddress: Address | undefined;
-  publicClient: PublicClient<Transport, Chain>;
+  publicClient: PublicClient;
   queryClient: QueryClient;
 }
 

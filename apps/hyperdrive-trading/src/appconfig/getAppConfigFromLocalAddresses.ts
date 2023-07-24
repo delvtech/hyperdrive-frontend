@@ -2,7 +2,7 @@ import { LocalAddressesJson } from "src/addresses/LocalAddressesJson";
 import { getMockHyperdrive } from "src/appconfig/hyperdrives/getMockHyperdrive";
 import { AppConfig } from "src/appconfig/types";
 import { yieldSources } from "src/appconfig/yieldSources/yieldSources";
-import { PublicClient } from "wagmi";
+import { PublicClient } from "viem";
 
 /**
  * Retrieves the application config, including hyperdrives and yield sources,
@@ -16,10 +16,7 @@ export async function getAppConfigFromLocalAddresses(
     chainId: await publicClient.getChainId(),
     hyperdriveMath: addresses.mockHyperdriveMath,
     hyperdrives: [
-      await getMockHyperdrive(
-        addresses.mockHyperdrive,
-        publicClient as PublicClient,
-      ),
+      await getMockHyperdrive(addresses.mockHyperdrive, publicClient),
     ],
     yieldSources,
   };

@@ -1,6 +1,6 @@
 import { getTradingVolumeQuery } from "@hyperdrive/core";
 import { useQuery } from "@tanstack/react-query";
-import { Address } from "viem";
+import { Address, PublicClient } from "viem";
 
 import { usePublicClient } from "wagmi";
 type GetTradingVolumeResponse = {
@@ -15,7 +15,7 @@ export function useTradingVolume(
   const { data: tradingVolume } = useQuery(
     getTradingVolumeQuery({
       hyperdriveAddress,
-      publicClient,
+      publicClient: publicClient as PublicClient,
       currentBlockNumber,
     }),
   );

@@ -3,7 +3,7 @@ import { useQuery, UseQueryResult } from "@tanstack/react-query";
 import { AppConfig, Hyperdrive } from "src/appconfig/types";
 import { YieldSource } from "src/appconfig/yieldSources/yieldSources";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
-import { Chain, PublicClient, Transport } from "viem";
+import { PublicClient } from "viem";
 
 export interface MarketTableRowData {
   market: Hyperdrive;
@@ -31,7 +31,7 @@ function getMarketStatistics(
 
 async function fetchMarketRowData(
   hyperdrives: Hyperdrive[],
-  publicClient: PublicClient<Transport, Chain>,
+  publicClient: PublicClient,
   appConfig: AppConfig,
 ) {
   return await Promise.all(
@@ -58,7 +58,7 @@ async function fetchMarketRowData(
 
 export function useMarketRowData(
   hyperdrives: Hyperdrive[] | undefined,
-  publicClient: PublicClient<Transport, Chain>,
+  publicClient: PublicClient,
 ): UseQueryResult<MarketTableRowData[]> {
   const { appConfig } = useAppConfig();
   const queryEnabled = !!hyperdrives && !!appConfig;
