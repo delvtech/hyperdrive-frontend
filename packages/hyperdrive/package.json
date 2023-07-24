@@ -14,7 +14,7 @@
   },
   "scripts": {
     "watch": "parcel watch",
-    "build": "parcel build",
+    "build": "parcel build --no-cache",
     "test": "vitest",
     "test:run": "vitest run"
   },

@@ -23,14 +23,6 @@ export async function getLpShares({
   });
 }
 
-/**
- * A query wrapper for consumers who want easy caching via @tanstack/query
- *
- * TODO: Piloting this idea here for now as proof-of-concept. Ultimately
- * @hyperdrive/core should not know about caching and just be pure hyperdrive
- * bindings. If this works well in practice we can move this to a
- * @hyperdrive/queries package.
- */
 export function getLpSharesQuery({
   account,
   hyperdriveAddress,

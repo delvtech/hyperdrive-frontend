@@ -25,7 +25,7 @@ export function OpenLongModalButton({
               Open a long
             </p>
             <p className="font-light">
-              Lock in the fixed rate by buying bonds with your DAI
+              Secure a fixed rate by purchasing bonds
             </p>
             {/* Using a div styled as a button here just as a visual cue. Don't
             use a real button here since the Well is interactive already, and

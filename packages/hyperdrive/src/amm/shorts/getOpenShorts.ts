@@ -6,6 +6,7 @@ import { decodeAssetFromTransferSingleEventData } from "src/amm/events/decodeAss
 import { getTransferSingleEvents } from "src/amm/events/getTransferSingleEvents";
 import { PublicClient, Address, Transport, Chain } from "viem";
 import { Short } from "src/amm/shorts/types";
+import { makeQueryKey } from "src/makeQueryKey";
 
 export interface GetOpenShortsOptions {
   account: Address;
@@ -90,14 +91,6 @@ export async function getOpenShorts({
   return Object.values(openShortsById).filter((short) => short.bondAmount);
 }
 
-/**
- * A query wrapper for consumers who want easy caching via @tanstack/query
- *
- * TODO: Piloting this idea here for now as proof-of-concept. Ultimately
- * @hyperdrive/core should not know about caching and just be pure hyperdrive
- * bindings. If this works well in practice we can move this to a
- * @hyperdrive/queries package.
- */
 export function getOpenShortsQuery({
   hyperdriveAddress,
   publicClient,
@@ -108,11 +101,7 @@ export function getOpenShortsQuery({
   const queryEnabled = !!account && !!hyperdriveAddress && !!publicClient;
   return {
     enabled: queryEnabled,
-    queryKey: [
-      "@hyperdrive/core",
-      "open-shorts",
-      { hyperdriveAddress, account },
-    ],
+    queryKey: makeQueryKey("open-shorts", { hyperdriveAddress, account }),
     queryFn: queryEnabled
       ? () => getOpenShorts({ account, hyperdriveAddress, publicClient })
       : undefined,

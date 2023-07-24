@@ -3,6 +3,8 @@ import { Hyperdrive } from "src/appconfig/types";
 import { SortableGridTable } from "src/ui/base/components/tables/SortableGridTable";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useLpShares } from "src/ui/hyperdrive/lp/hooks/useLpShares";
+import { usePreviewRedeemWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/usePreviewRedeemWithdrawalShares";
+import { usePreviewRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewRemoveLiquidity";
 import { useWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useWithdrawalShares";
 import { RemoveLiquidityModalButton } from "src/ui/hyperdrive/lp/RemoveLiquidityModalButton/RemoveLiquidityModalButton";
 import { formatUnits } from "viem";
@@ -27,6 +29,21 @@ export function OpenLpPosition({
     account,
   });
 
+  const { baseAmountOut: lpBaseWithdrawable } = usePreviewRemoveLiquidity({
+    market: hyperdrive,
+    lpSharesIn: lpShares,
+    minBaseAmountOut: 1n, // TODO: slippage,
+    destination: account,
+  });
+
+  const { baseAmountOut: withdrawalSharesBaseWithdrawable } =
+    usePreviewRedeemWithdrawalShares({
+      market: hyperdrive,
+      withdrawalSharesIn: withdrawalShares,
+      minBaseAmountOutPerShare: 1n, // TODO: slippage,
+      destination: account,
+    });
+
   return (
     <SortableGridTable
       headingRowClassName="grid-cols-4 text-start text-neutral-content"
@@ -46,7 +63,17 @@ export function OpenLpPosition({
                 ),
               ),
               "TODO",
-              "TODO",
+              <span key="withdrawable">
+                {lpBaseWithdrawable !== undefined
+                  ? formatBalance(
+                      formatUnits(
+                        lpBaseWithdrawable,
+                        hyperdrive.baseToken.decimals,
+                      ),
+                    )
+                  : undefined}{" "}
+                {hyperdrive.baseToken.symbol}
+              </span>,
               <span key="remove-liquidity" className="flex justify-end">
                 <RemoveLiquidityModalButton
                   modalId="remove-liquidity-modal"
@@ -69,7 +96,17 @@ export function OpenLpPosition({
                 ),
               ),
               "TODO",
-              "TODO",
+              <span key="withdrawable">
+                {withdrawalSharesBaseWithdrawable !== undefined
+                  ? formatBalance(
+                      formatUnits(
+                        withdrawalSharesBaseWithdrawable,
+                        hyperdrive.baseToken.decimals,
+                      ),
+                    )
+                  : undefined}{" "}
+                {hyperdrive.baseToken.symbol}
+              </span>,
               <span key="redeem-withdraw-shares" className="flex justify-end">
                 TODO
               </span>,
