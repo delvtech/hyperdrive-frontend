@@ -45,7 +45,7 @@ export async function getRemoveLiquidityEvents({
     }),
   });
 
-  return closeShortLogs.map((log) => ({
+  return closeLPLogs.map((log) => ({
     // This is a typesafe copy of eventLog.args
     eventData: decodeEventLog({
       abi: HyperdriveABI,
