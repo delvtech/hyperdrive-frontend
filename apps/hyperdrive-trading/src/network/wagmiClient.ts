@@ -1,4 +1,5 @@
 import { getDefaultWallets } from "@rainbow-me/rainbowkit";
+import { cloudChain, cloudChainRpcProvider } from "src/network/cloudChain";
 import { Chain, ChainProviderFn, configureChains, createConfig } from "wagmi";
 import { foundry } from "wagmi/chains";
 import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
@@ -13,6 +14,7 @@ const {
 const chainsToConfigure: Chain[] = [];
 const providersToConfigure: ChainProviderFn[] = [];
 
+// Localhost devnet
 if (VITE_LOCALHOST_NODE_RPC_URL) {
   chainsToConfigure.push(foundry);
   providersToConfigure.push(
@@ -24,33 +26,14 @@ if (VITE_LOCALHOST_NODE_RPC_URL) {
   );
 }
 
+// CloudChain (if proper env is set)
 if (
   VITE_CUSTOM_CHAIN_NODE_RPC_URL &&
   VITE_CUSTOM_CHAIN_CHAIN_ID &&
   VITE_CUSTOM_CHAIN_ADDRESSES_URL
 ) {
-  chainsToConfigure.push({
-    id: +VITE_CUSTOM_CHAIN_CHAIN_ID,
-    name: "☁️ \u00A0 Chain",
-    network: "custom-chain",
-    nativeCurrency: {
-      decimals: 18,
-      name: "Ether",
-      symbol: "ETH",
-    },
-    rpcUrls: {
-      public: { http: [VITE_CUSTOM_CHAIN_NODE_RPC_URL] },
-      default: { http: [VITE_CUSTOM_CHAIN_NODE_RPC_URL] },
-    },
-  });
-
-  providersToConfigure.push(
-    jsonRpcProvider({
-      rpc: () => ({
-        http: VITE_CUSTOM_CHAIN_NODE_RPC_URL,
-      }),
-    }),
-  );
+  chainsToConfigure.push(cloudChain);
+  providersToConfigure.push(cloudChainRpcProvider);
 }
 
 const { chains, publicClient, webSocketPublicClient } = configureChains(
