@@ -14,7 +14,9 @@
   },
   "scripts": {
     "watch": "parcel watch",
-    "build": "tsc --noEmit && parcel build --no-cache"
+    "build": "tsc --noEmit && parcel build --no-cache",
+    "test": "vitest",
+    "test:run": "vitest run"
   },
   "devDependencies": {
     "@hyperdrive/eslint-config": "*",
