@@ -1,12 +1,12 @@
 import { QueryObserverOptions } from "@tanstack/query-core";
-import { PublicClient, Address, Transport, Chain } from "viem";
+import { PublicClient, Address } from "viem";
 import { makeQueryKey } from "src/makeQueryKey";
 import { getRemoveLiquidityEvents } from "src/amm/lp/getRemoveLiquidityEvents";
 
 export interface GetClosedLpSharesOptions {
   providerAddress: Address;
   hyperdriveAddress: Address;
-  publicClient: PublicClient<Transport, Chain>;
+  publicClient: PublicClient;
 }
 
 export interface ClosedLpShares {

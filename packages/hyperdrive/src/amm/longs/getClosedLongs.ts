@@ -1,5 +1,5 @@
 import { QueryObserverOptions } from "@tanstack/query-core";
-import { PublicClient, Address, Transport, Chain } from "viem";
+import { PublicClient, Address } from "viem";
 import { ClosedLong } from "./types";
 import { getCloseLongEvents } from "src/amm/longs/getCloseLongEvents";
 import { makeQueryKey } from "src/makeQueryKey";
@@ -7,7 +7,7 @@ import { makeQueryKey } from "src/makeQueryKey";
 export interface GetClosedLongsOptions {
   traderAddress: Address;
   hyperdriveAddress: Address;
-  publicClient: PublicClient<Transport, Chain>;
+  publicClient: PublicClient;
 }
 
 export async function getClosedLongs({

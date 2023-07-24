@@ -3,8 +3,6 @@ import {
   PublicClient,
   Address,
   decodeEventLog,
-  Transport,
-  Chain,
   DecodeEventLogReturnType,
   GetFilterLogsReturnType,
   BlockTag,
@@ -20,7 +18,7 @@ interface GetOpenShortEventsOptions {
   fromBlock?: bigint;
   toBlock?: bigint | BlockTag;
   hyperdriveAddress: Address;
-  publicClient: PublicClient<Transport, Chain>;
+  publicClient: PublicClient;
 }
 
 export async function getOpenShortEvents({

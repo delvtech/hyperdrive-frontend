@@ -5,11 +5,9 @@ import { getOpenShortEvents } from "src/amm/shorts/getOpenShortEvents";
 import { sumBigInt } from "src/base/sumBigInt";
 import {
   Address,
-  Chain,
   DecodeEventLogReturnType,
   GetFilterLogsReturnType,
   PublicClient,
-  Transport,
   formatUnits,
 } from "viem";
 interface OpenShortEvent {
@@ -34,7 +32,7 @@ interface OpenLongEvent {
  */
 export async function getTradingVolume(
   hyperdriveAddress: Address,
-  publicClient: PublicClient<Transport, Chain>,
+  publicClient: PublicClient,
   currentBlockNumber: bigint,
 ): Promise<{ volume: bigint; formatted: string }> {
   // 7137 is the average number of blocks in 24h
@@ -70,7 +68,7 @@ export function getTradingVolumeQuery({
   currentBlockNumber,
 }: {
   hyperdriveAddress: Address;
-  publicClient: PublicClient<Transport, Chain>;
+  publicClient: PublicClient;
   currentBlockNumber: bigint;
 }): QueryObserverOptions<Awaited<ReturnType<typeof getTradingVolume>>> {
   return {

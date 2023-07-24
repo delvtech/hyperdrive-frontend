@@ -1,5 +1,5 @@
 import { QueryClient, QueryObserverOptions } from "@tanstack/query-core";
-import { PublicClient, Address, Transport, Chain, formatUnits } from "viem";
+import { PublicClient, Address, formatUnits } from "viem";
 import { HyperdriveMathABI } from "src/abis/HyperdriveMath";
 import { getPoolConfigQuery } from "src/amm/getPoolConfig";
 import { getPoolInfoQuery } from "src/amm/getPoolInfo";
@@ -29,7 +29,7 @@ export interface GetLongPriceOptions {
    * Comes from getPoolConfig
    */
   timeStretch: bigint;
-  publicClient: PublicClient<Transport, Chain>;
+  publicClient: PublicClient;
 }
 
 interface GetLongPriceResult {
@@ -65,7 +65,7 @@ export async function getLongPrice({
 interface GetCurrentLongPriceQueryOptions {
   hyperdriveAddress: Address | undefined;
   hyperdriveMathAddress: Address | undefined;
-  publicClient: PublicClient<Transport, Chain>;
+  publicClient: PublicClient;
   queryClient: QueryClient;
 }
 
