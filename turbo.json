@@ -16,6 +16,14 @@
       "cache": false
     },
     "format": { "outputs": [] },
-    "format:check": { "outputs": [] }
+    "format:check": { "outputs": [] },
+    "test": {
+      "dependsOn": ["build"],
+      "inputs": ["test/**/*.ts", "test/**/*.tsx"]
+    },
+    "test:run": {
+      "dependsOn": ["build"],
+      "inputs": ["test/**/*.ts", "test/**/*.tsx"]
+    }
   }
 }

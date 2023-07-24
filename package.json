@@ -12,8 +12,8 @@
     "dev": "turbo run dev --parallel --filter=./apps/*",
     "lint": "turbo run lint",
     "lint:packages": "turbo run lint --filter=./packages/*",
-    "test": "yarn workspace @hyperdrive/core run test",
-    "test:run": "yarn workspace @hyperdrive/core run test:run",
+    "test": "turbo run test --filter=./packages/*",
+    "test:run": "turbo run test:run --filter=./packages/*",
     "format": "turbo run format",
     "format:check": "turbo run format:check",
     "postinstall": "husky install"

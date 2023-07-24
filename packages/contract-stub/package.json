@@ -14,8 +14,6 @@
   "scripts": {
     "watch": "parcel watch",
     "build": "parcel build",
-    "test": "vitest run",
-    "test:watch": "vitest",
     "build:typechain": "typechain --target=ethers-v5 src/abis/* --out-dir src/types"
   },
   "dependencies": {
