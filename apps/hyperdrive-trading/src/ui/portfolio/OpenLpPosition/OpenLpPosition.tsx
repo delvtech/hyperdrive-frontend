@@ -87,7 +87,7 @@ export function OpenLpPosition({
 
         withdrawalShares
           ? [
-              <span key="type" className="font-semibold uppercase text-primary">
+              <span key="type" className="font-semibold uppercase">
                 Pending withdrawal
               </span>,
               formatBalance(
