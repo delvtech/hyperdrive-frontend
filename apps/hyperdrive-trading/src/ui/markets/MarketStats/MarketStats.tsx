@@ -64,13 +64,6 @@ export function MarketStats({
         }
       />
       <Stat
-        label="LP APY"
-        value="1.60%"
-        description={
-          "LP APY indicates the annualized projected return for liquidity providers."
-        }
-      />
-      <Stat
         label="Volume (24h)"
         value={
           <FormattedDaiValue
