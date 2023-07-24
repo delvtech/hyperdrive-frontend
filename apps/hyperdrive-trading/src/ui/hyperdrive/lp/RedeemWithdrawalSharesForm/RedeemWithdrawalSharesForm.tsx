@@ -63,7 +63,7 @@ export function RedeemWithdrawalSharesForm({
           token={{
             name: "Hyperdrive Withdrawal Shares",
             // TODO: What should the symbol be?
-            symbol: "Withdrawal Shares",
+            symbol: "WS",
             decimals: baseDecimals,
             address: "0x00",
           }}
