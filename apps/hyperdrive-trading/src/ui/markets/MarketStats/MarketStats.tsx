@@ -88,7 +88,9 @@ export function MarketStats({
             value={liquidity?.formatted || "0"}
           />
         }
-        description={"The total liquidity in the pool."}
+        description={
+          "The total liquidity in the pool available for market making"
+        }
       />
     </div>
   );
