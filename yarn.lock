@@ -1813,10 +1813,10 @@
     qrcode "1.5.0"
     react-remove-scroll "2.5.4"
 
-"@rainbow-me/rainbowkit@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@rainbow-me/rainbowkit/-/rainbowkit-1.0.6.tgz#6c840eaf6019e9eb6841565880f6ea8090f1e9f5"
-  integrity sha512-b6r1wrSUTJiysp2yZg9i6+Dxobwz9jKiLyQdoOFcNvQK1UsviGK9HMeMFSbxDDATueqtmnDSR8jZaUr2/uWPUA==
+"@rainbow-me/rainbowkit@^1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@rainbow-me/rainbowkit/-/rainbowkit-1.0.7.tgz#07f946b037166a3a84e7384e06855a2926fac8ba"
+  integrity sha512-cZZgPqpkeQEmKX5As3+WnKFF7PejDFVbc4bF9t6zC52nMFjSQUAnv2AttzyR4sP4pp2BSE1nVpTvygZGJ4f1Xg==
   dependencies:
     "@vanilla-extract/css" "1.9.1"
     "@vanilla-extract/dynamic" "2.0.2"

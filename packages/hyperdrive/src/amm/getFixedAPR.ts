@@ -3,6 +3,7 @@ import { HyperdriveMathABI } from "src/abis/HyperdriveMath";
 import { QueryClient, QueryObserverOptions } from "@tanstack/query-core";
 import { getPoolConfigQuery } from "src/amm/getPoolConfig";
 import { getPoolInfoQuery } from "src/amm/getPoolInfo";
+import { makeQueryKey } from "src/makeQueryKey";
 
 export interface GetFixedAPROptions {
   hyperdriveMathAddress: Address;
@@ -91,11 +92,10 @@ export function getCurrentFixedAPRQuery({
 
   return {
     enabled: queryEnabled,
-    queryKey: [
-      "@hyperdrive/core",
-      "calculateAPR",
-      { hyperdriveAddress, hyperdriveMathAddress },
-    ],
+    queryKey: makeQueryKey("calculateAPR", {
+      hyperdriveAddress,
+      hyperdriveMathAddress,
+    }),
     queryFn: queryEnabled
       ? async () => {
           const { initialSharePrice, positionDuration, timeStretch } =
