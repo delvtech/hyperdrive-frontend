@@ -1,4 +1,4 @@
-import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { constants, ethers } from "ethers";
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
@@ -20,7 +20,7 @@ export function OpenShortForm({
   market,
 }: OpenShortPositionFormProps): ReactElement {
   const { address: account } = useAccount();
-
+  const { openConnectModal } = useConnectModal();
   const { data: baseTokenBalance } = useBalance({
     address: account,
     token: market.baseToken.address,
@@ -70,39 +70,6 @@ export function OpenShortForm({
       },
     });
 
-  const openShortButton = () => {
-    if (!account) {
-      return <ConnectButton />;
-    }
-
-    if (needsApproval) {
-      return (
-        <button
-          disabled={!approve}
-          className="daisy-btn-warning daisy-btn"
-          onClick={() => approve?.()}
-        >
-          Approve {market.baseToken.symbol}
-        </button>
-      );
-    }
-
-    return (
-      <button
-        disabled={
-          !hasEnoughBalance ||
-          !openShort ||
-          openShortTransactionStatus === "loading" ||
-          openShortSubmittedStatus === "loading"
-        }
-        className="daisy-btn-accent daisy-btn"
-        onClick={() => openShort?.()}
-      >
-        Open Short
-      </button>
-    );
-  };
-
   const current = new Date();
   const expiryDate = new Date(
     current.setMonth(
@@ -134,7 +101,39 @@ export function OpenShortForm({
         />
       </div>
 
-      {openShortButton()}
+      {account ? (
+        needsApproval ? (
+          // Approval button
+          <button
+            disabled={!approve}
+            className="daisy-btn-warning daisy-btn"
+            onClick={() => approve?.()}
+          >
+            <h5>Approve {market.baseToken.symbol}</h5>
+          </button>
+        ) : (
+          // Trade button
+          <button
+            disabled={
+              !hasEnoughBalance ||
+              !openShort ||
+              openShortTransactionStatus === "loading" ||
+              openShortSubmittedStatus === "loading"
+            }
+            className="daisy-btn-accent daisy-btn"
+            onClick={() => openShort?.()}
+          >
+            Open Short
+          </button>
+        )
+      ) : (
+        <button
+          className="daisy-btn-secondary daisy-btn"
+          onClick={() => openConnectModal?.()}
+        >
+          <h5>Connect wallet</h5>
+        </button>
+      )}
     </div>
   );
 }
