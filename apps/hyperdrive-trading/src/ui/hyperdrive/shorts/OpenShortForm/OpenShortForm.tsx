@@ -1,7 +1,7 @@
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { constants, ethers } from "ethers";
 import { ReactElement } from "react";
-import { Hyperdrive } from "src/appconfig/types";
+import { Hyperdrive, Token } from "src/appconfig/types";
 import { convertMillisecondsToMonths } from "src/base/covertMillisecondsToMonths";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { useOpenShort } from "src/ui/hyperdrive/shorts/hooks/useOpenShort";
@@ -76,14 +76,19 @@ export function OpenShortForm({
       current.getMonth() + convertMillisecondsToMonths(market.termLengthMS),
     ),
   );
-
+  const shortToken = {
+    symbol: "Shares",
+    address: "0x0",
+    decimals: 18,
+    name: "Shares",
+  } as Token;
   return (
     <div className="flex flex-col gap-10">
       {/* You Pay Section */}
       <div className="space-y-4 text-base-content">
         <h5>Amount to short</h5>
         <TokenInput
-          token={market.baseToken}
+          token={shortToken}
           value={amount ?? ""}
           onChange={(newAmount) => setAmount(newAmount)}
           showBalance={false}
