@@ -62,7 +62,7 @@ export const wagmiChains = chains;
 
 const { connectors } = getDefaultWallets({
   appName: "Hyperdrive",
-  projectId: PROJECT_ID,
+  projectId: PROJECT_ID || undefined,
   chains,
 });
 
