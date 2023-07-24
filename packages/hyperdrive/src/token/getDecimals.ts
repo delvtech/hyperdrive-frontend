@@ -1,11 +1,11 @@
 import { QueryObserverOptions } from "@tanstack/query-core";
 import { ERC20MintableABI } from "src/abis/ERC20Mintable";
 import { makeQueryKey } from "src/makeQueryKey";
-import { Address, Chain, PublicClient, Transport } from "viem";
+import { Address, PublicClient } from "viem";
 
 interface GetDecimalsOptions {
   tokenAddress: Address;
-  publicClient: PublicClient<Transport, Chain>;
+  publicClient: PublicClient;
 }
 
 export async function getDecimals({

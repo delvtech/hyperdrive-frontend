@@ -1,17 +1,11 @@
-import {
-  PublicClient,
-  Address,
-  Transport,
-  Chain,
-  ContractFunctionResult,
-} from "viem";
+import { PublicClient, Address, ContractFunctionResult } from "viem";
 import { HyperdriveABI } from "src/abis/Hyperdrive";
 import { QueryObserverOptions } from "@tanstack/query-core";
 import { makeQueryKey } from "src/makeQueryKey";
 
 interface GetPoolConfigOptions {
   hyperdriveAddress: Address;
-  publicClient: PublicClient<Transport, Chain>;
+  publicClient: PublicClient;
 }
 
 export async function getPoolConfig({

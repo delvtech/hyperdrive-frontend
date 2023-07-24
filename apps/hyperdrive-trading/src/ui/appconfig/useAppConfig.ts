@@ -4,6 +4,7 @@ import { LocalAddressesJson } from "src/addresses/LocalAddressesJson";
 import { SupportedChainId } from "src/appconfig/chains/supportedChains";
 import { getAppConfigFromLocalAddresses } from "src/appconfig/getAppConfigFromLocalAddresses";
 import { AppConfig } from "src/appconfig/types";
+import { PublicClient } from "viem";
 import { useChainId, usePublicClient } from "wagmi";
 
 const LOCALHOST_ADDRESSES_URL = import.meta.env.VITE_LOCALHOST_ADDRESSES_URL;
@@ -23,13 +24,19 @@ export function useAppConfig(): {
       switch (chainId) {
         case 31337: {
           const addresses = await fetchLocalhostAddresses();
-          return getAppConfigFromLocalAddresses(addresses, publicClient);
+          return getAppConfigFromLocalAddresses(
+            addresses,
+            publicClient as PublicClient,
+          );
         }
         case 42069: {
           const addresses = await fetchCustomChainAddresses();
           // The custom chain is curently deployed using the same contracts as
           // the local devnet, so we can get the appConfig in the same way
-          return getAppConfigFromLocalAddresses(addresses, publicClient);
+          return getAppConfigFromLocalAddresses(
+            addresses,
+            publicClient as PublicClient,
+          );
         }
 
         default:

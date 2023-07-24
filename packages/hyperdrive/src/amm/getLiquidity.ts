@@ -1,4 +1,4 @@
-import { Address, Chain, PublicClient, Transport, formatUnits } from "viem";
+import { Address, PublicClient, formatUnits } from "viem";
 import { makeQueryKey } from "src/makeQueryKey";
 
 import { QueryObserverOptions } from "@tanstack/query-core";
@@ -19,7 +19,7 @@ interface GetLiquidityResult {
  */
 export async function getLiquidity(
   hyperdriveAddress: Address,
-  publicClient: PublicClient<Transport, Chain>,
+  publicClient: PublicClient,
 ): Promise<GetLiquidityResult> {
   const { sharePrice, shareReserves, longsOutstanding } = await getPoolInfo({
     hyperdriveAddress,
@@ -34,7 +34,7 @@ export async function getLiquidity(
 
 interface GetLiquidityQueryOptions {
   hyperdriveAddress: Address | undefined;
-  publicClient: PublicClient<Transport, Chain>;
+  publicClient: PublicClient;
 }
 
 type GetLiquidityReturnType = Awaited<ReturnType<typeof getLiquidity>>;

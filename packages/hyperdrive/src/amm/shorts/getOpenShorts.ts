@@ -4,14 +4,14 @@ import mapValues from "lodash.mapvalues";
 import { sumBigInt } from "src/base/sumBigInt";
 import { decodeAssetFromTransferSingleEventData } from "src/amm/events/decodeAssetFromTransferSingleEventData";
 import { getTransferSingleEvents } from "src/amm/events/getTransferSingleEvents";
-import { PublicClient, Address, Transport, Chain } from "viem";
+import { PublicClient, Address } from "viem";
 import { Short } from "src/amm/shorts/types";
 import { makeQueryKey } from "src/makeQueryKey";
 
 export interface GetOpenShortsOptions {
   account: Address;
   hyperdriveAddress: Address;
-  publicClient: PublicClient<Transport, Chain>;
+  publicClient: PublicClient;
 }
 
 export async function getOpenShorts({

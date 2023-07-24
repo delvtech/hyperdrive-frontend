@@ -1,4 +1,4 @@
-import { PublicClient, Address, Transport, Chain } from "viem";
+import { PublicClient, Address } from "viem";
 import { HyperdriveABI } from "src/abis/Hyperdrive";
 import { WITHDRAW_SHARES_ASSET_ID } from "./constants";
 import { QueryObserverOptions } from "@tanstack/query-core";
@@ -7,7 +7,7 @@ import { makeQueryKey } from "src/makeQueryKey";
 export interface GetWithdrawalSharesOptions {
   account: Address;
   hyperdriveAddress: Address;
-  publicClient: PublicClient<Transport, Chain>;
+  publicClient: PublicClient;
 }
 
 export async function getWithdrawalShares({

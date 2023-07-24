@@ -1,10 +1,10 @@
 import { HyperdriveABI } from "src/abis/Hyperdrive";
-import { PublicClient, decodeEventLog, Address, Transport, Chain } from "viem";
+import { PublicClient, decodeEventLog, Address } from "viem";
 
 interface GetShortsOptions {
   account: Address;
   hyperdriveAddress: Address;
-  publicClient: PublicClient<Transport, Chain>;
+  publicClient: PublicClient;
 }
 
 /** Fetches all open and closed shorts for an account.
