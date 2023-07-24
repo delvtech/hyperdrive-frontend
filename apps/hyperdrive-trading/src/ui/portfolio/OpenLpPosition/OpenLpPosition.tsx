@@ -6,6 +6,7 @@ import { useLpShares } from "src/ui/hyperdrive/lp/hooks/useLpShares";
 import { usePreviewRedeemWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/usePreviewRedeemWithdrawalShares";
 import { usePreviewRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewRemoveLiquidity";
 import { useWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useWithdrawalShares";
+import { RedeemWithdrawalSharesModalButton } from "src/ui/hyperdrive/lp/RedeemWithdrawalSharesModalButton/RedeemWithdrawalSharesModalButton";
 import { RemoveLiquidityModalButton } from "src/ui/hyperdrive/lp/RemoveLiquidityModalButton/RemoveLiquidityModalButton";
 import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
@@ -108,7 +109,11 @@ export function OpenLpPosition({
                 {hyperdrive.baseToken.symbol}
               </span>,
               <span key="redeem-withdraw-shares" className="flex justify-end">
-                TODO
+                <RedeemWithdrawalSharesModalButton
+                  modalId="redeem-withdrawal-shares-modal"
+                  hyperdrive={hyperdrive}
+                  withdrawalShares={withdrawalShares}
+                />
               </span>,
             ]
           : undefined,
