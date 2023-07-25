@@ -1,10 +1,13 @@
+import { multiplyBigInt } from "@hyperdrive/core";
 import { ReactElement } from "react";
+import Skeleton from "react-loading-skeleton";
 import { Hyperdrive } from "src/appconfig/types";
 import {
   Row,
   SortableGridTable,
 } from "src/ui/base/components/tables/SortableGridTable";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { useHyperdrivePoolInfo } from "src/ui/hyperdrive/hooks/useHyperdrivePoolInfo";
 import { useLpShares } from "src/ui/hyperdrive/lp/hooks/useLpShares";
 import { usePreviewRedeemWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/usePreviewRedeemWithdrawalShares";
 import { usePreviewRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewRemoveLiquidity";
@@ -48,6 +51,8 @@ export function OpenLpPosition({
       destination: account,
     });
 
+  const { poolInfo } = useHyperdrivePoolInfo(hyperdrive.address);
+
   const rows: Row[] = [];
   if (lpShares) {
     rows.push([
@@ -57,14 +62,29 @@ export function OpenLpPosition({
       formatBalance(
         formatUnits(lpShares, (hyperdrive as Hyperdrive).baseToken.decimals),
       ),
-      "TODO",
+      <span key="value">
+        {!!poolInfo ? (
+          `${formatBalance(
+            formatUnits(
+              multiplyBigInt(
+                [lpShares, poolInfo.sharePrice],
+                hyperdrive.baseToken.decimals,
+              ),
+              hyperdrive.baseToken.decimals,
+            ),
+          )} ${hyperdrive.baseToken.symbol}`
+        ) : (
+          <Skeleton />
+        )}
+      </span>,
       <span key="withdrawable">
-        {lpBaseWithdrawable !== undefined
-          ? formatBalance(
-              formatUnits(lpBaseWithdrawable, hyperdrive.baseToken.decimals),
-            )
-          : undefined}{" "}
-        {hyperdrive.baseToken.symbol}
+        {lpBaseWithdrawable !== undefined ? (
+          `${formatBalance(
+            formatUnits(lpBaseWithdrawable, hyperdrive.baseToken.decimals),
+          )} ${hyperdrive.baseToken.symbol}`
+        ) : (
+          <Skeleton />
+        )}
       </span>,
       <span key="remove-liquidity" className="flex justify-end">
         <RemoveLiquidityModalButton
@@ -87,17 +107,32 @@ export function OpenLpPosition({
           (hyperdrive as Hyperdrive).baseToken.decimals,
         ),
       ),
-      "TODO",
-      <span key="withdrawable">
-        {withdrawalSharesBaseWithdrawable !== undefined
-          ? formatBalance(
-              formatUnits(
-                withdrawalSharesBaseWithdrawable,
+      <span key="value">
+        {!!poolInfo ? (
+          `${formatBalance(
+            formatUnits(
+              multiplyBigInt(
+                [withdrawalShares, poolInfo.sharePrice],
                 hyperdrive.baseToken.decimals,
               ),
-            )
-          : undefined}{" "}
-        {hyperdrive.baseToken.symbol}
+              hyperdrive.baseToken.decimals,
+            ),
+          )} ${hyperdrive.baseToken.symbol}`
+        ) : (
+          <Skeleton />
+        )}
+      </span>,
+      <span key="withdrawable">
+        {withdrawalSharesBaseWithdrawable !== undefined ? (
+          `${formatBalance(
+            formatUnits(
+              withdrawalSharesBaseWithdrawable,
+              hyperdrive.baseToken.decimals,
+            ),
+          )} ${hyperdrive.baseToken.symbol}`
+        ) : (
+          <Skeleton />
+        )}
       </span>,
       <span key="redeem-withdraw-shares" className="flex justify-end">
         <RedeemWithdrawalSharesModalButton
@@ -111,8 +146,8 @@ export function OpenLpPosition({
 
   return (
     <SortableGridTable
-      headingRowClassName="grid-cols-4 text-start text-neutral-content"
-      bodyRowClassName="grid-cols-4 text-base-content items-center text-sm md:text-h6 even:bg-secondary/5 h-16"
+      headingRowClassName="grid-cols-[3fr_4fr_4fr_4fr_1fr] text-start text-neutral-content"
+      bodyRowClassName="grid-cols-[3fr_4fr_4fr_4fr_1fr] text-base-content items-center text-sm md:text-h6 even:bg-secondary/5 h-16"
       // Blank col added for actions
       cols={["Position", "Shares", "Value", "Withdrawable", ""]}
       rows={rows}
