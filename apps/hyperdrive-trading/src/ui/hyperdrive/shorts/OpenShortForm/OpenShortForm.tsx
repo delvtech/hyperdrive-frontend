@@ -76,11 +76,11 @@ export function OpenShortForm({
       current.getMonth() + convertMillisecondsToMonths(market.termLengthMS),
     ),
   );
-  const shortToken = {
-    symbol: "Shares",
+  const bondToken = {
+    symbol: "Bonds",
     address: "0x0",
     decimals: 18,
-    name: "Shares",
+    name: "Bonds",
   } as Token;
   return (
     <div className="flex flex-col gap-10">
@@ -88,7 +88,7 @@ export function OpenShortForm({
       <div className="space-y-4 text-base-content">
         <h5>Amount to short</h5>
         <TokenInput
-          token={shortToken}
+          token={bondToken}
           value={amount ?? ""}
           onChange={(newAmount) => setAmount(newAmount)}
           showBalance={false}
