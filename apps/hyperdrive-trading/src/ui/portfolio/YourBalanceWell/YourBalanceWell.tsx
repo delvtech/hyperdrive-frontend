@@ -15,7 +15,7 @@ export function YourBalanceWell({ token }: { token: Token }): ReactElement {
   });
   const chainId = useChainId();
   const { mint } = useMintBaseToken({
-    amount: parseUnits("100", token.decimals),
+    amount: parseUnits("1000000", token.decimals),
     baseToken: token.address,
     destination: account,
   });
