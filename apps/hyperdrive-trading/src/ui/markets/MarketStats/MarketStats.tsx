@@ -57,13 +57,6 @@ export function MarketStats({
         description={"The price of the bond in the base asset."}
       />
       <Stat
-        label="DSR APY"
-        value="3.49%"
-        description={
-          "DSR APY reflects the annualized return for holding DAI in the savings rate contract."
-        }
-      />
-      <Stat
         label="Volume (24h)"
         value={
           <FormattedDaiValue
