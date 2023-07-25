@@ -10,7 +10,7 @@ import { useTradingVolume } from "src/ui/hyperdrive/hooks/useTradingVolume";
 import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
 import { useVaultRate } from "src/ui/vaults/useVaultRate";
 import { formatUnits } from "viem";
-import { useBlockNumber } from "wagmi";
+import { useBlockNumber, useChainId } from "wagmi";
 export function MarketStats({
   hyperdrive,
 }: {
@@ -19,6 +19,7 @@ export function MarketStats({
   const formattedTermLength = formatTermLength(hyperdrive.termLengthMS);
   const { data: currentBlockNumber } = useBlockNumber();
 
+  const chainId = useChainId();
   const { tradingVolume } = useTradingVolume(
     hyperdrive.address,
     currentBlockNumber as bigint,
@@ -64,11 +65,18 @@ export function MarketStats({
         }`}
         description={"The price of the bond in the base asset."}
       />
-      <Stat
-        label="Vault rate"
-        value={`${vaultRate?.formatted || "0"}% APY`}
-        description={"The variable rate being earned by the underlying vault."}
-      />
+      {/* TODO: This will only work on cloudchain for now. Remove this condition
+      once we can dynamically source the underlying 4626 vault address from the
+      hyperdrive instance. */}
+      {chainId === +import.meta.env.VITE_CUSTOM_CHAIN_CHAIN_ID ? (
+        <Stat
+          label="Vault rate"
+          value={`${vaultRate?.formatted || "0"}% APY`}
+          description={
+            "The variable rate being earned by the underlying vault."
+          }
+        />
+      ) : undefined}
       <Stat
         label="LP share price"
         value={`${formatBalance(
