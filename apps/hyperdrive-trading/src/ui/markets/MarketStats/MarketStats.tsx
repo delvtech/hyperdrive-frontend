@@ -8,6 +8,7 @@ import { useHyperdrivePoolInfo } from "src/ui/hyperdrive/hooks/useHyperdrivePool
 import { useLiquidity } from "src/ui/hyperdrive/hooks/useLiquidity";
 import { useTradingVolume } from "src/ui/hyperdrive/hooks/useTradingVolume";
 import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
+import { useVaultRate } from "src/ui/vaults/useVaultRate";
 import { formatUnits } from "viem";
 import { useBlockNumber } from "wagmi";
 export function MarketStats({
@@ -27,6 +28,10 @@ export function MarketStats({
   const { poolInfo } = useHyperdrivePoolInfo(hyperdrive.address);
   const { fixedAPR } = useCurrentFixedAPR(hyperdrive);
   const { longPrice } = useCurrentLongPrice(hyperdrive);
+  const { vaultRate } = useVaultRate({
+    // TODO: temporary for now until this available via addresses.json
+    vaultAddress: "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+  });
 
   return (
     <div className="flex w-full flex-wrap items-center justify-center gap-16 md:justify-start">
@@ -58,6 +63,11 @@ export function MarketStats({
           hyperdrive.baseToken.symbol
         }`}
         description={"The price of the bond in the base asset."}
+      />
+      <Stat
+        label="Vault rate"
+        value={`${vaultRate?.formatted || "0"}% APY`}
+        description={"The variable rate being earned by the underlying vault."}
       />
       <Stat
         label="LP share price"
