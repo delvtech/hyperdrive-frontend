@@ -1,6 +1,9 @@
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
-import { SortableGridTable } from "src/ui/base/components/tables/SortableGridTable";
+import {
+  Row,
+  SortableGridTable,
+} from "src/ui/base/components/tables/SortableGridTable";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useLpShares } from "src/ui/hyperdrive/lp/hooks/useLpShares";
 import { usePreviewRedeemWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/usePreviewRedeemWithdrawalShares";
@@ -45,79 +48,74 @@ export function OpenLpPosition({
       destination: account,
     });
 
+  const rows: Row[] = [];
+  if (lpShares) {
+    rows.push([
+      <span key="type" className="font-semibold uppercase text-primary">
+        LP
+      </span>,
+      formatBalance(
+        formatUnits(lpShares, (hyperdrive as Hyperdrive).baseToken.decimals),
+      ),
+      "TODO",
+      <span key="withdrawable">
+        {lpBaseWithdrawable !== undefined
+          ? formatBalance(
+              formatUnits(lpBaseWithdrawable, hyperdrive.baseToken.decimals),
+            )
+          : undefined}{" "}
+        {hyperdrive.baseToken.symbol}
+      </span>,
+      <span key="remove-liquidity" className="flex justify-end">
+        <RemoveLiquidityModalButton
+          modalId="remove-liquidity-modal"
+          hyperdrive={hyperdrive}
+          lpShares={lpShares}
+        />
+      </span>,
+    ]);
+  }
+
+  if (withdrawalShares) {
+    rows.push([
+      <span key="type" className="font-semibold uppercase">
+        Pending withdrawal
+      </span>,
+      formatBalance(
+        formatUnits(
+          withdrawalShares,
+          (hyperdrive as Hyperdrive).baseToken.decimals,
+        ),
+      ),
+      "TODO",
+      <span key="withdrawable">
+        {withdrawalSharesBaseWithdrawable !== undefined
+          ? formatBalance(
+              formatUnits(
+                withdrawalSharesBaseWithdrawable,
+                hyperdrive.baseToken.decimals,
+              ),
+            )
+          : undefined}{" "}
+        {hyperdrive.baseToken.symbol}
+      </span>,
+      <span key="redeem-withdraw-shares" className="flex justify-end">
+        <RedeemWithdrawalSharesModalButton
+          modalId="redeem-withdrawal-shares-modal"
+          hyperdrive={hyperdrive}
+          withdrawalShares={withdrawalShares}
+        />
+      </span>,
+    ]);
+  }
+
   return (
     <SortableGridTable
       headingRowClassName="grid-cols-4 text-start text-neutral-content"
       bodyRowClassName="grid-cols-4 text-base-content items-center text-sm md:text-h6 even:bg-secondary/5 h-16"
       // Blank col added for actions
       cols={["Position", "Shares", "Value", "Withdrawable", ""]}
-      rows={[
-        lpShares
-          ? [
-              <span key="type" className="font-semibold uppercase text-primary">
-                LP
-              </span>,
-              formatBalance(
-                formatUnits(
-                  lpShares,
-                  (hyperdrive as Hyperdrive).baseToken.decimals,
-                ),
-              ),
-              "TODO",
-              <span key="withdrawable">
-                {lpBaseWithdrawable !== undefined
-                  ? formatBalance(
-                      formatUnits(
-                        lpBaseWithdrawable,
-                        hyperdrive.baseToken.decimals,
-                      ),
-                    )
-                  : undefined}{" "}
-                {hyperdrive.baseToken.symbol}
-              </span>,
-              <span key="remove-liquidity" className="flex justify-end">
-                <RemoveLiquidityModalButton
-                  modalId="remove-liquidity-modal"
-                  hyperdrive={hyperdrive}
-                  lpShares={lpShares}
-                />
-              </span>,
-            ]
-          : undefined,
-
-        withdrawalShares
-          ? [
-              <span key="type" className="font-semibold uppercase">
-                Pending withdrawal
-              </span>,
-              formatBalance(
-                formatUnits(
-                  withdrawalShares,
-                  (hyperdrive as Hyperdrive).baseToken.decimals,
-                ),
-              ),
-              "TODO",
-              <span key="withdrawable">
-                {withdrawalSharesBaseWithdrawable !== undefined
-                  ? formatBalance(
-                      formatUnits(
-                        withdrawalSharesBaseWithdrawable,
-                        hyperdrive.baseToken.decimals,
-                      ),
-                    )
-                  : undefined}{" "}
-                {hyperdrive.baseToken.symbol}
-              </span>,
-              <span key="redeem-withdraw-shares" className="flex justify-end">
-                <RedeemWithdrawalSharesModalButton
-                  modalId="redeem-withdrawal-shares-modal"
-                  hyperdrive={hyperdrive}
-                  withdrawalShares={withdrawalShares}
-                />
-              </span>,
-            ]
-          : undefined,
-      ]}
+      rows={rows}
     />
   );
 }
