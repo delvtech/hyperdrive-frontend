@@ -8,8 +8,9 @@ import { useHyperdrivePoolInfo } from "src/ui/hyperdrive/hooks/useHyperdrivePool
 import { useLiquidity } from "src/ui/hyperdrive/hooks/useLiquidity";
 import { useTradingVolume } from "src/ui/hyperdrive/hooks/useTradingVolume";
 import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
+import { useVaultRate } from "src/ui/vaults/useVaultRate";
 import { formatUnits } from "viem";
-import { useBlockNumber } from "wagmi";
+import { useBlockNumber, useChainId } from "wagmi";
 export function MarketStats({
   hyperdrive,
 }: {
@@ -18,6 +19,7 @@ export function MarketStats({
   const formattedTermLength = formatTermLength(hyperdrive.termLengthMS);
   const { data: currentBlockNumber } = useBlockNumber();
 
+  const chainId = useChainId();
   const { tradingVolume } = useTradingVolume(
     hyperdrive.address,
     currentBlockNumber as bigint,
@@ -27,6 +29,10 @@ export function MarketStats({
   const { poolInfo } = useHyperdrivePoolInfo(hyperdrive.address);
   const { fixedAPR } = useCurrentFixedAPR(hyperdrive);
   const { longPrice } = useCurrentLongPrice(hyperdrive);
+  const { vaultRate } = useVaultRate({
+    // TODO: temporary for now until this available via addresses.json
+    vaultAddress: "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+  });
 
   return (
     <div className="flex w-full flex-wrap items-center justify-center gap-16 md:justify-start">
@@ -59,6 +65,18 @@ export function MarketStats({
         }`}
         description={"The price of the bond in the base asset."}
       />
+      {/* TODO: This will only work on cloudchain for now. Remove this condition
+      once we can dynamically source the underlying 4626 vault address from the
+      hyperdrive instance. */}
+      {chainId === +import.meta.env.VITE_CUSTOM_CHAIN_CHAIN_ID ? (
+        <Stat
+          label="Vault rate"
+          value={`${vaultRate?.formatted || "0"}% APY`}
+          description={
+            "The variable rate being earned by the underlying vault."
+          }
+        />
+      ) : undefined}
       <Stat
         label="LP share price"
         value={`${formatBalance(

@@ -1,9 +1,10 @@
-import { PublicClient, Address, formatUnits } from "viem";
+import { PublicClient, Address } from "viem";
 import { HyperdriveMathABI } from "src/abis/HyperdriveMath";
 import { QueryClient, QueryObserverOptions } from "@tanstack/query-core";
 import { getPoolConfigQuery } from "src/amm/getPoolConfig";
 import { getPoolInfoQuery } from "src/amm/getPoolInfo";
 import { makeQueryKey } from "src/makeQueryKey";
+import { formatRate } from "src/base/formatRate";
 
 export interface GetFixedAPROptions {
   hyperdriveMathAddress: Address;
@@ -52,21 +53,12 @@ export async function getFixedAPR({
     ],
   });
 
-  const formatted = formatAPR(apr);
+  const formatted = formatRate(apr);
 
   return {
     apr,
     formatted,
   };
-}
-
-function formatAPR(apr: bigint) {
-  // APR is stored in 18 decimals, so to avoid rounding errors, eg:
-  // 0.049999999999999996 * 100 = 5, we just take the first 4 characters after
-  // the decimal, and format those to a percent, eg: 0.0499 * 100 = 4.99.
-  const truncatedAPR = +formatUnits(apr, 18).slice(0, 6);
-  const formatted = `${(100 * truncatedAPR).toFixed(2)}`;
-  return formatted;
 }
 
 interface GetCurrentFixedAPRQueryOptions {

@@ -4,24 +4,29 @@ import { Address, PublicClient } from "viem";
 import { erc20ABI } from "wagmi";
 
 export async function getMockHyperdrive(
-  dsrHyperdriveAddress: Address,
+  hyperdriveAddress: Address,
   publicClient: PublicClient,
 ): Promise<Hyperdrive> {
   const baseToken = await publicClient.readContract({
     abi: HyperdriveABI,
     functionName: "baseToken",
-    address: dsrHyperdriveAddress,
+    address: hyperdriveAddress,
   });
 
   // Time in seconds
   const { positionDuration } = await publicClient.readContract({
     abi: HyperdriveABI,
     functionName: "getPoolConfig",
-    address: dsrHyperdriveAddress,
+    address: hyperdriveAddress,
   });
 
+  const {} = await publicClient.readContract({
+    abi: HyperdriveABI,
+    functionName: "getPoolConfig",
+    address: hyperdriveAddress,
+  });
   return {
-    address: dsrHyperdriveAddress,
+    address: hyperdriveAddress,
     termLengthMS: Number(positionDuration) * 1000,
     name: "Mock Yield Source",
     yieldSource: "Mock Yield Source",

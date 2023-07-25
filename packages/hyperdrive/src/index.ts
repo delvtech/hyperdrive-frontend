@@ -7,12 +7,16 @@ export { ERC20_ABI } from "src/abis/ERC20";
 export { ERC20MintableABI } from "src/abis/ERC20Mintable";
 export { HyperdriveMathABI } from "src/abis/HyperdriveMath";
 export { HyperdriveABI } from "src/abis/Hyperdrive";
+export { mockErc4626Abi } from "src/abis/MockErc4626";
 
 // AMM
 export { getPoolConfig, getPoolConfigQuery } from "src/amm/getPoolConfig";
 export { getPoolInfo, getPoolInfoQuery } from "src/amm/getPoolInfo";
 export { getTransferSingleEvents } from "src/amm/events/getTransferSingleEvents";
 export { getCurrentFixedAPRQuery } from "src/amm/getFixedAPR";
+
+// Vaults
+export { getVaultRateQuery } from "src/vaults/erc4626";
 
 // Longs
 export {
