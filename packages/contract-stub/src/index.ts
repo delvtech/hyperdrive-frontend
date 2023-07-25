@@ -1,1 +1,0 @@
-export { stubContract } from "./stubContract";
