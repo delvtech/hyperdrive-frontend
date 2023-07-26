@@ -5,7 +5,7 @@ interface UseTokenApprovalOptions {
   tokenAddress: Address;
   spender: Address | undefined;
   amount: bigint;
-  onSuccess: () => void;
+  onSuccess?: () => void;
 }
 
 export function useTokenApproval({
