@@ -10,6 +10,7 @@ interface UseTokenAllowanceOptions {
 interface useTokenAllowanceResult {
   tokenAllowance: bigint | undefined;
   status: "error" | "idle" | "loading" | "success";
+  refetch: () => void;
 }
 
 export function useTokenAllowance({
@@ -19,7 +20,7 @@ export function useTokenAllowance({
 }: UseTokenAllowanceOptions): useTokenAllowanceResult {
   const enabled = !!spender && !!account;
 
-  const { data, status } = useContractRead({
+  const { data, status, refetch } = useContractRead({
     enabled,
     address: tokenAddress,
     abi: ERC20_ABI,
@@ -27,5 +28,5 @@ export function useTokenAllowance({
     args: enabled ? [account, spender] : undefined,
   });
 
-  return { tokenAllowance: data, status };
+  return { tokenAllowance: data, status, refetch };
 }

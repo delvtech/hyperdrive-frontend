@@ -29,7 +29,7 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
     decimals: market.baseToken.decimals,
   });
 
-  const { tokenAllowance } = useTokenAllowance({
+  const { tokenAllowance, refetch } = useTokenAllowance({
     account,
     spender: market.address,
     tokenAddress: market.baseToken.address,
@@ -39,6 +39,9 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
     tokenAddress: market.baseToken.address,
     spender: market.address,
     amount: ethers.constants.MaxUint256.toBigInt(),
+    onSuccess: () => {
+      refetch();
+    },
   });
 
   const needsApproval = tokenAllowance

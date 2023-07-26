@@ -5,12 +5,14 @@ interface UseTokenApprovalOptions {
   tokenAddress: Address;
   spender: Address | undefined;
   amount: bigint;
+  onSuccess: () => void;
 }
 
 export function useTokenApproval({
   tokenAddress,
   spender,
   amount,
+  onSuccess,
 }: UseTokenApprovalOptions): { approve: (() => void) | undefined } {
   const enabled = !!spender;
 
@@ -22,7 +24,11 @@ export function useTokenApproval({
     args: enabled ? [spender, amount] : undefined,
   });
 
-  const { write: approve } = useContractWrite(approveConfig);
+  const { write: approve, isSuccess } = useContractWrite(approveConfig);
+
+  if (isSuccess && onSuccess) {
+    onSuccess();
+  }
 
   return { approve };
 }
