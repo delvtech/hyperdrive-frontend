@@ -1,6 +1,9 @@
 # Post Mortems on Common Bugs Found
 
 ## Format
+
+    ## Title - Date
+
     ---
 
     ### Authors
