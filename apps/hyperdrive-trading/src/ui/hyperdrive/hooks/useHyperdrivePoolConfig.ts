@@ -1,13 +1,17 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import { HyperdriveABI } from "@hyperdrive/core";
-import { Address, useContractRead } from "wagmi";
+import { getPoolConfigQuery, HyperdriveABI } from "@hyperdrive/core";
+import { QueryStatus, useQuery } from "@tanstack/react-query";
+import { ContractFunctionResult } from "viem";
+import { Address } from "wagmi";
 
-export function useHyperdrivePoolConfig(marketAddress: Address) {
-  const { data: poolConfig, status: poolConfigStatus } = useContractRead({
-    address: marketAddress,
-    abi: HyperdriveABI,
-    functionName: "getPoolConfig",
-  });
+export function useHyperdrivePoolConfig(hyperdriveAddress: Address): {
+  poolConfig:
+    | ContractFunctionResult<typeof HyperdriveABI, "getPoolConfig">
+    | undefined;
+  poolConfigStatus: QueryStatus;
+} {
+  const { data: poolConfig, status: poolConfigStatus } = useQuery(
+    getPoolConfigQuery({ hyperdriveAddress: hyperdriveAddress }),
+  );
 
   return { poolConfig, poolConfigStatus };
 }
