@@ -29,7 +29,7 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
     decimals: market.baseToken.decimals,
   });
 
-  const { tokenAllowance, refetch } = useTokenAllowance({
+  const { tokenAllowance } = useTokenAllowance({
     account,
     spender: market.address,
     tokenAddress: market.baseToken.address,
