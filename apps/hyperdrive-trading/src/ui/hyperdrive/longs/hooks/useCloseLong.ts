@@ -1,5 +1,7 @@
 import { HyperdriveABI, Long } from "@hyperdrive/core";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
+import { MutationStatus } from "@tanstack/react-query";
+import { useWaitForTransactionThenInvalidateCache } from "src/ui/network/useWaitForTransactionThenInvalidateCache/useWaitForTransactionThenInvalidateCache";
 import { Address, useContractWrite, usePrepareContractWrite } from "wagmi";
 
 interface UseCloseLongOptions {
@@ -14,6 +16,7 @@ interface UseCloseLongOptions {
 interface UseCloseLongResult {
   closeLong: (() => void) | undefined;
   isPendingWalletAction: boolean;
+  closeLongTransactionStatus: MutationStatus;
 }
 
 export function useCloseLong({
@@ -50,15 +53,23 @@ export function useCloseLong({
   });
 
   const addRecentTransaction = useAddRecentTransaction();
-  const { write: closeLong, status } = useContractWrite({
+  const {
+    write: closeLong,
+    status,
+    data,
+  } = useContractWrite({
     ...config,
     onSuccess: (data) => {
       addRecentTransaction({ hash: data.hash, description: "Close long" });
     },
   });
 
+  const { status: closeLongTransactionStatus } =
+    useWaitForTransactionThenInvalidateCache({ hash: data?.hash });
+
   return {
     closeLong,
     isPendingWalletAction: status === "loading",
+    closeLongTransactionStatus,
   };
 }

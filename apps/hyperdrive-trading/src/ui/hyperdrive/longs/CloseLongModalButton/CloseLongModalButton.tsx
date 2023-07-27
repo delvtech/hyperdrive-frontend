@@ -40,6 +40,7 @@ export function CloseLongModalButton({
           <CloseLongForm
             hyperdrive={hyperdrive}
             long={long}
+            onSuccess={closeModal}
             onCloseLong={(e) => {
               // preventDefault since we don't want to close the modal while the
               // tx is temporarily pending the user's signature in their wallet.
