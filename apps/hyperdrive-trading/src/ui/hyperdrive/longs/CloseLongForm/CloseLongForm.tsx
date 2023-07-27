@@ -14,14 +14,14 @@ import { useAccount } from "wagmi";
 interface CloseLongFormProps {
   hyperdrive: Hyperdrive;
   long: Long;
-  closeModal: () => void;
+  onSuccess: () => void;
   onCloseLong?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 
 export function CloseLongForm({
   hyperdrive,
   long,
-  closeModal,
+  onSuccess,
   onCloseLong,
 }: CloseLongFormProps): ReactElement {
   const { decimals: baseDecimals, symbol: baseSymbol } = hyperdrive.baseToken;
@@ -51,9 +51,9 @@ export function CloseLongForm({
 
   useEffect(() => {
     if (closeLongTransactionStatus === "success") {
-      closeModal();
+      onSuccess();
     }
-  }, [closeLongTransactionStatus, closeModal]);
+  }, [closeLongTransactionStatus, onSuccess]);
 
   return (
     <div className="flex flex-col gap-6">
