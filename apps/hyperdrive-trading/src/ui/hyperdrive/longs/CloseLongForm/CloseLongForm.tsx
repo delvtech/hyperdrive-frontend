@@ -106,9 +106,7 @@ export function CloseLongForm({
           }}
         >
           {closeLongTransactionStatus === "loading" ? (
-            <div className="flex items-center justify-center">
-              <span>Closing Position</span>
-            </div>
+            <span>Closing Position</span>
           ) : (
             <span>Close position</span>
           )}
