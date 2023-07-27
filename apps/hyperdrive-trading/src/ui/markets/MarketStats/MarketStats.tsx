@@ -62,7 +62,7 @@ export function MarketStats({
               {fixedAPR?.formatted || "0"}%
             </span>
           ) : (
-            <Skeleton className="opacity-50" enableAnimation />
+            <Skeleton className="opacity-50" />
           )
         }
         description={"The fixed rate that the bond will be issued at."}

@@ -24,7 +24,10 @@ root.render(
         showRecentTransactions
         theme={darkTheme()}
       >
-        <SkeletonTheme baseColor="#9aa1cb" highlightColor="#C8C7E6">
+        <SkeletonTheme
+          baseColor="hsl(var(--nc))"
+          highlightColor="hsl(var(--bc))"
+        >
           <App />
         </SkeletonTheme>
       </RainbowKitProvider>
