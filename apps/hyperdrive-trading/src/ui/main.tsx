@@ -4,6 +4,8 @@ import "@rainbow-me/rainbowkit/styles.css";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { createRoot } from "react-dom/client";
 import { Toaster } from "react-hot-toast";
+import { SkeletonTheme } from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 import { queryClient } from "src/network/queryClient";
 import { wagmiChains, wagmiConfig } from "src/network/wagmiClient";
 import { App } from "src/ui/app/App/App";
@@ -22,7 +24,9 @@ root.render(
         showRecentTransactions
         theme={darkTheme()}
       >
-        <App />
+        <SkeletonTheme baseColor="#9aa1cb" highlightColor="#C8C7E6">
+          <App />
+        </SkeletonTheme>
       </RainbowKitProvider>
     </WagmiConfig>
   </QueryClientProvider>,

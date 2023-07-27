@@ -1,4 +1,5 @@
 import { ReactElement } from "react";
+import Skeleton from "react-loading-skeleton";
 import { Hyperdrive } from "src/appconfig/types";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { Stat } from "src/ui/base/components/Stat";
@@ -55,7 +56,15 @@ export function MarketStats({
       />
       <Stat
         label="Fixed rate"
-        value={`${fixedAPR?.formatted}% APR`}
+        value={
+          fixedAPR ? (
+            <span className="flex items-center gap-1.5">
+              {fixedAPR?.formatted || "0"}%
+            </span>
+          ) : (
+            <Skeleton className="opacity-50" enableAnimation />
+          )
+        }
         description={"The fixed rate that the bond will be issued at."}
       />
       <Stat
