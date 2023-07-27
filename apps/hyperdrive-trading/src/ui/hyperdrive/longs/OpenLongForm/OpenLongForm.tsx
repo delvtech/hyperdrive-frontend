@@ -83,6 +83,7 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
           long={{
             bondAmount: longAmountOut || 0n,
             assetId: 0n,
+            baseAmountPaid: 0n,
             hyperdriveAddress: market.address,
             maturity: BigInt(
               Math.round((Date.now() + market.termLengthMS) / 1000),
