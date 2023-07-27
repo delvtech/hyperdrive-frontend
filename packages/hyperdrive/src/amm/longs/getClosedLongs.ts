@@ -32,6 +32,7 @@ export async function getClosedLongs({
         maturity: maturityTime,
         bondAmount,
         baseAmount,
+        baseAmountPaid: 0n, // TODO: Remove this
         closedTimestamp: (
           await publicClient.getBlock({
             blockNumber: event.eventLog.blockNumber as bigint,
@@ -41,7 +42,7 @@ export async function getClosedLongs({
     }),
   );
 
-  return await Promise.all([...Object.values(closedLongsById)]);
+  return Promise.all([...Object.values(closedLongsById)]);
 }
 
 /**

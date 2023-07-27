@@ -58,6 +58,10 @@ function createOpenLongRow({
       <span key="size">
         {formatBalance(formatUnits(long.bondAmount, baseDecimals), 4)}
       </span>,
+      <span key="amountPaid">
+        {formatBalance(formatUnits(long.baseAmountPaid, baseDecimals), 4)}{" "}
+        {`${baseSymbol}`}
+      </span>,
       <ValueCell
         key="value"
         long={long}
