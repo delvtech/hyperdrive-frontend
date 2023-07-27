@@ -106,7 +106,7 @@ export function CloseLongForm({
           }}
         >
           {closeLongTransactionStatus === "loading" ? (
-            <span>Closing Position</span>
+            <span>Closing position</span>
           ) : (
             <span>Close position</span>
           )}
