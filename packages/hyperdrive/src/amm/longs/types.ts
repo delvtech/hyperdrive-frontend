@@ -8,6 +8,8 @@ export interface Long {
    * Time in seconds when this long will mature
    */
   maturity: bigint;
+
+  baseAmountPaid: bigint;
 }
 
 export interface ClosedLong extends Long {

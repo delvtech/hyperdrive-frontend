@@ -7,6 +7,7 @@ import { getTransferSingleEvents } from "src/amm/events/getTransferSingleEvents"
 import { Long } from "src/amm/longs/types";
 import { PublicClient, Address } from "viem";
 import { makeQueryKey } from "src/makeQueryKey";
+import { getOpenLongEvents } from "src/amm/longs/getOpenLongEvents";
 
 export interface GetOpenLongsOptions {
   account: Address;
@@ -19,6 +20,21 @@ export async function getOpenLongs({
   hyperdriveAddress,
   publicClient,
 }: GetOpenLongsOptions): Promise<Long[]> {
+  const openLongEvents = await getOpenLongEvents({
+    hyperdriveAddress,
+    publicClient,
+  });
+
+  // Grouping these by maturity time because it's the easiest property to match
+  // on the TransferSingle events once we've decoded them. (We could figure out
+  // how to re-construct the assetId in the TransferSingle events, but it's not
+  // necessary for this) Due to the checkpointing, timestamps are unique so this
+  // is safe.
+  const totalBasePaidByMaturityTime = mapValues(
+    groupBy(openLongEvents, (event) => event.eventData.maturityTime.toString()),
+    (events) => sumBigInt(events.map((event) => event.eventData.baseAmount)),
+  );
+
   // get all the transfers where the user was the recipient,
   // ie: mints from the 0x address and transfers from other wallets
   const longsMintedOrReceived = (
@@ -37,13 +53,16 @@ export async function getOpenLongs({
     groupBy(longsMintedOrReceived, (event) => event.eventData.id),
     (events): Long => {
       const assetId = events[0].eventData.id;
+      const decoded = decodeAssetFromTransferSingleEventData(
+        events[0].eventLog.data,
+      );
       return {
         hyperdriveAddress,
         assetId,
         bondAmount: sumBigInt(events.map((event) => event.eventData.value)),
-        maturity: decodeAssetFromTransferSingleEventData(
-          events[0].eventLog.data,
-        ).timestamp,
+        baseAmountPaid:
+          totalBasePaidByMaturityTime[decoded.timestamp.toString()],
+        maturity: decoded.timestamp,
       };
     },
   );
@@ -65,13 +84,16 @@ export async function getOpenLongs({
     groupBy(longsRedeemedOrSent, (event) => event.eventData.id),
     (events): Long => {
       const assetId = events[0].eventData.id;
+      const decoded = decodeAssetFromTransferSingleEventData(
+        events[0].eventLog.data,
+      );
       return {
         hyperdriveAddress,
         assetId,
         bondAmount: sumBigInt(events.map((event) => event.eventData.value)),
-        maturity: decodeAssetFromTransferSingleEventData(
-          events[0].eventLog.data,
-        ).timestamp,
+        baseAmountPaid:
+          totalBasePaidByMaturityTime[decoded.timestamp.toString()],
+        maturity: decoded.timestamp,
       };
     },
   );
@@ -91,14 +113,6 @@ export async function getOpenLongs({
   return Object.values(openLongsById).filter((long) => long.bondAmount);
 }
 
-/**
- * A query wrapper for consumers who want easy caching via @tanstack/query
- *
- * TODO: Piloting this idea here for now as proof-of-concept. Ultimately
- * @hyperdrive/core should not know about caching and just be pure hyperdrive
- * bindings. If this works well in practice we can move this to a
- * @hyperdrive/queries package.
- */
 export function getOpenLongsQuery({
   hyperdriveAddress,
   publicClient,
