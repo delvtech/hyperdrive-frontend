@@ -7,11 +7,12 @@ import {
   GetFilterLogsReturnType,
   BlockTag,
 } from "viem";
-interface OpenLongEvent {
+export interface OpenLongEvent {
   eventData: DecodeEventLogReturnType<typeof HyperdriveABI, "OpenLong">["args"];
   eventLog: GetFilterLogsReturnType<typeof HyperdriveABI, "OpenLong">[number];
 }
 interface GetOpenLongEventsOptions {
+  traderAddress?: Address;
   fromBlock?: bigint;
   toBlock?: bigint | BlockTag;
   hyperdriveAddress: Address;
@@ -19,6 +20,7 @@ interface GetOpenLongEventsOptions {
 }
 
 export async function getOpenLongEvents({
+  traderAddress,
   fromBlock,
   toBlock = "latest",
   hyperdriveAddress,
@@ -29,6 +31,7 @@ export async function getOpenLongEvents({
       abi: HyperdriveABI,
       address: hyperdriveAddress,
       eventName: "OpenLong",
+      args: { trader: traderAddress },
       fromBlock,
       toBlock,
     }),
