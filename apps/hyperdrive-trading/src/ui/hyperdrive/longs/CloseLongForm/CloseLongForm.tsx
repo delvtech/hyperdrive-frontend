@@ -1,6 +1,6 @@
 import { Long } from "@hyperdrive/core";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import { MouseEvent, ReactElement } from "react";
+import { MouseEvent, ReactElement, useEffect } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { Stat } from "src/ui/base/components/Stat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -14,12 +14,14 @@ import { useAccount } from "wagmi";
 interface CloseLongFormProps {
   hyperdrive: Hyperdrive;
   long: Long;
+  closeModal: () => void;
   onCloseLong?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 
 export function CloseLongForm({
   hyperdrive,
   long,
+  closeModal,
   onCloseLong,
 }: CloseLongFormProps): ReactElement {
   const { decimals: baseDecimals, symbol: baseSymbol } = hyperdrive.baseToken;
@@ -38,13 +40,20 @@ export function CloseLongForm({
     destination: account,
   });
 
-  const { closeLong, isPendingWalletAction } = useCloseLong({
-    long,
-    bondAmountIn: amountAsBigInt,
-    minBaseAmountOut: parseUnits("0", baseDecimals),
-    destination: account,
-    enabled: previewCloseLongStatus === "success",
-  });
+  const { closeLong, isPendingWalletAction, closeLongTransactionStatus } =
+    useCloseLong({
+      long,
+      bondAmountIn: amountAsBigInt,
+      minBaseAmountOut: parseUnits("0", baseDecimals),
+      destination: account,
+      enabled: previewCloseLongStatus === "success",
+    });
+
+  useEffect(() => {
+    if (closeLongTransactionStatus === "success") {
+      closeModal();
+    }
+  }, [closeLongTransactionStatus, closeModal]);
 
   return (
     <div className="flex flex-col gap-6">
@@ -96,7 +105,13 @@ export function CloseLongForm({
             onCloseLong?.(e);
           }}
         >
-          <h5>Close Long</h5>
+          {closeLongTransactionStatus === "loading" ? (
+            <div className="flex items-center justify-center">
+              <span>Closing Position</span>
+            </div>
+          ) : (
+            <span>Close position</span>
+          )}
         </button>
       ) : (
         <ConnectButton />
