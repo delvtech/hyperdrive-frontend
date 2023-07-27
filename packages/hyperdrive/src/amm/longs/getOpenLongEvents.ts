@@ -12,7 +12,7 @@ export interface OpenLongEvent {
   eventLog: GetFilterLogsReturnType<typeof HyperdriveABI, "OpenLong">[number];
 }
 interface GetOpenLongEventsOptions {
-  traderAddress?: Address;
+  args?: { traderAddress?: Address };
   fromBlock?: bigint;
   toBlock?: bigint | BlockTag;
   hyperdriveAddress: Address;
@@ -20,7 +20,7 @@ interface GetOpenLongEventsOptions {
 }
 
 export async function getOpenLongEvents({
-  traderAddress,
+  args: { traderAddress } = {},
   fromBlock,
   toBlock = "latest",
   hyperdriveAddress,

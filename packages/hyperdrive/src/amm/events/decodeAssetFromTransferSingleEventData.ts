@@ -15,6 +15,9 @@ export type AssetType = "LP" | "LONG" | "SHORT" | "WITHDRAWAL_SHARE";
  */
 export function decodeAssetFromTransferSingleEventData(eventData: Hash): {
   assetType: AssetType;
+  /**
+   * in seconds
+   */
   timestamp: bigint;
 } {
   // Remove the leading "0x"
