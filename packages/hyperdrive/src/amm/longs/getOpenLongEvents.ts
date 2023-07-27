@@ -13,7 +13,7 @@ export interface OpenLongEvent {
 }
 interface GetOpenLongEventsOptions {
   args?: { traderAddress?: Address };
-  fromBlock?: bigint;
+  fromBlock?: bigint | BlockTag;
   toBlock?: bigint | BlockTag;
   hyperdriveAddress: Address;
   publicClient: PublicClient;
@@ -21,7 +21,7 @@ interface GetOpenLongEventsOptions {
 
 export async function getOpenLongEvents({
   args: { traderAddress } = {},
-  fromBlock,
+  fromBlock = "earliest",
   toBlock = "latest",
   hyperdriveAddress,
   publicClient,
