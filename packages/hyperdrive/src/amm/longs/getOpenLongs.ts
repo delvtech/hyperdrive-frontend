@@ -8,6 +8,7 @@ import { Long } from "src/amm/longs/types";
 import { PublicClient, Address } from "viem";
 import { makeQueryKey } from "src/makeQueryKey";
 import { getOpenLongEvents } from "src/amm/longs/getOpenLongEvents";
+import { getCloseLongEvents } from "src/amm/longs/getCloseLongEvents";
 
 export interface GetOpenLongsOptions {
   account: Address;
@@ -21,10 +22,10 @@ export async function getOpenLongs({
   publicClient,
 }: GetOpenLongsOptions): Promise<Long[]> {
   const openLongEvents = await getOpenLongEvents({
+    args: { traderAddress: account },
     hyperdriveAddress,
     publicClient,
   });
-
   // Grouping these by maturity time because it's the easiest property to match
   // on the TransferSingle events once we've decoded them. (We could figure out
   // how to re-construct the assetId in the TransferSingle events, but it's not
@@ -32,6 +33,23 @@ export async function getOpenLongs({
   // is safe.
   const totalBasePaidByMaturityTime = mapValues(
     groupBy(openLongEvents, (event) => event.eventData.maturityTime.toString()),
+    (events) => sumBigInt(events.map((event) => event.eventData.baseAmount)),
+  );
+
+  const closeLongEvents = await getCloseLongEvents({
+    args: { traderAddress: account },
+    hyperdriveAddress,
+    publicClient,
+  });
+  // Grouping these by maturity time because it's the easiest property to match
+  // on the TransferSingle events once we've decoded them. (We could figure out
+  // how to re-construct the assetId in the TransferSingle events, but it's not
+  // necessary for this) Due to the checkpointing, timestamps are unique so this
+  // is safe.
+  const totalBaseReceivedByMaturityTime = mapValues(
+    groupBy(closeLongEvents, (event) =>
+      event.eventData.maturityTime.toString(),
+    ),
     (events) => sumBigInt(events.map((event) => event.eventData.baseAmount)),
   );
 
@@ -92,7 +110,7 @@ export async function getOpenLongs({
         assetId,
         bondAmount: sumBigInt(events.map((event) => event.eventData.value)),
         baseAmountPaid:
-          totalBasePaidByMaturityTime[decoded.timestamp.toString()],
+          totalBaseReceivedByMaturityTime[decoded.timestamp.toString()],
         maturity: decoded.timestamp,
       };
     },
@@ -104,7 +122,13 @@ export async function getOpenLongs({
       const matchingExit = longsRedeemedOrSentById[key];
       if (matchingExit) {
         const newBondAmount = long.bondAmount - matchingExit.bondAmount;
-        return { ...long, bondAmount: newBondAmount };
+        const newBaseAmountPaid =
+          long.baseAmountPaid - matchingExit.baseAmountPaid;
+        return {
+          ...long,
+          bondAmount: newBondAmount,
+          baseAmountPaid: newBaseAmountPaid,
+        };
       }
       return long;
     },
@@ -123,7 +147,10 @@ export function getOpenLongsQuery({
   const queryEnabled = !!account && !!hyperdriveAddress && !!publicClient;
   return {
     enabled: queryEnabled,
-    queryKey: makeQueryKey("open-longs", { hyperdriveAddress, account }),
+    queryKey: makeQueryKey("open-longs", {
+      hyperdriveAddress,
+      account,
+    }),
     queryFn: queryEnabled
       ? () => getOpenLongs({ account, hyperdriveAddress, publicClient })
       : undefined,
