@@ -7,7 +7,7 @@
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.3;
     font-weight: 400;
-  
+
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -45,34 +45,34 @@
   body {
     @apply min-h-screen bg-midnight bg-gradient-to-br from-midnight via-midnight to-[#1E233D] bg-fixed text-body leading-body;
   }
-  
+
   [data-rk],
   #root {
     @apply min-h-screen;
   }
 
   h1 {
-    @apply text-h1 leading-h1
+    @apply text-h1 leading-h1;
   }
 
   h2 {
-    @apply text-h2 leading-h2
+    @apply text-h2 leading-h2;
   }
 
   h3 {
-    @apply text-h3 leading-h3
+    @apply text-h3 leading-h3;
   }
 
   h4 {
-    @apply text-h4 leading-h4
+    @apply text-h4 leading-h4;
   }
 
   h5 {
-    @apply text-h5 leading-h5
+    @apply text-h5 leading-h5;
   }
 
   h6 {
-    @apply text-h6 leading-h6
+    @apply text-h6 leading-h6;
   }
 }
 

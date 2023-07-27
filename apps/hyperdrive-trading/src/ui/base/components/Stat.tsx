@@ -17,7 +17,8 @@ export function Stat({
     <div className={className}>
       <p
         data-tip={description}
-        className="daisy-tooltip mb-1 font-light text-neutral-content"
+        // use before: to style the text inside the tooltip
+        className="daisy-tooltip mb-1 font-light text-neutral-content before:text-base-content"
       >
         {label}
       </p>
