@@ -3,13 +3,13 @@ import { useQuery } from "@tanstack/react-query";
 import { Address, PublicClient } from "viem";
 
 import { usePublicClient } from "wagmi";
-type GetTradingVolumeResponse = {
+type UseTradingVolumeResult = {
   tradingVolume: string | undefined;
 };
 export function useTradingVolume(
   hyperdriveAddress: Address,
   currentBlockNumber: bigint,
-): GetTradingVolumeResponse {
+): UseTradingVolumeResult {
   const publicClient = usePublicClient();
 
   const { data: tradingVolume } = useQuery(
