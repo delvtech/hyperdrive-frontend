@@ -1,3 +1,4 @@
+import { getMinOutputSlippage } from "@hyperdrive/core";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { ethers } from "ethers";
 import { ReactElement } from "react";
@@ -10,7 +11,6 @@ import { OpenLongPreview } from "src/ui/hyperdrive/longs/OpenLongPreview/OpenLon
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenApproval } from "src/ui/token/hooks/useTokenApproval";
 import { TokenInput } from "src/ui/token/TokenInput";
-import { formatUnits } from "viem";
 import { useAccount, useBalance } from "wagmi";
 
 interface OpenLongFormProps {
@@ -54,20 +54,18 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
     enabled: !needsApproval,
   });
 
-  const formattedPreviewAmount =
-    longAmountOut && formatUnits(longAmountOut, 18);
-
-  const minOutput = Number(formattedPreviewAmount) * (1 - 0.02);
-
-  const minOutputBigInt = minOutput && parseUnits(minOutput.toString(), 18);
+  const minOutput =
+    longAmountOut &&
+    getMinOutputSlippage({
+      previewAmount: longAmountOut,
+      slippageTolerance: 0.02,
+    });
 
   const { openLong, openLongTransactionStatus, openLongStatus } = useOpenLong({
     market,
     baseAmount: amountAsBigInt,
     // TODO: handle slippage
-    bondAmountOut: minOutputBigInt
-      ? minOutputBigInt
-      : parseUnits("1", market.baseToken.decimals),
+    bondAmountOut: parseUnits("1", market.baseToken.decimals),
     destination: account,
     enabled: openLongPreviewStatus === "success" && !needsApproval,
   });

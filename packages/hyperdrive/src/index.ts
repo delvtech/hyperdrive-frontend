@@ -72,3 +72,6 @@ export type { GetWithdrawalSharesOptions } from "src/amm/lp/getWithdrawalShares"
 // Utils
 export { sumBigInt } from "src/base/sumBigInt";
 export { multiplyBigInt } from "src/base/multiplyBigInt";
+
+// Slippage
+export { getMinOutputSlippage } from "src/amm/getSlippage";
