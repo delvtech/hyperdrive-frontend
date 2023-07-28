@@ -1,3 +1,4 @@
+import { parseUnits } from "src/base/parseUnits";
 import { formatUnits } from "viem";
 
 export function getMinOutputSlippage({
@@ -10,6 +11,6 @@ export function getMinOutputSlippage({
   const formattedPreviewAmount =
     previewAmount && formatUnits(previewAmount, 18);
   const minOutput = Number(formattedPreviewAmount) * (1 - slippageTolerance);
-  const minOutputBigint = BigInt(minOutput);
-  return minOutputBigint;
+
+  return parseUnits(minOutput.toString(), 18);
 }

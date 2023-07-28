@@ -60,12 +60,14 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
       previewAmount: longAmountOut,
       slippageTolerance: 0.02,
     });
+  // console.log(minOutput, "minOutput");
+  // console.log(amountAsBigInt, "amountAsBigInt");
 
   const { openLong, openLongTransactionStatus, openLongStatus } = useOpenLong({
     market,
     baseAmount: amountAsBigInt,
     // TODO: handle slippage
-    bondAmountOut: parseUnits("1", market.baseToken.decimals),
+    bondAmountOut: minOutput ?? parseUnits("1", market.baseToken.decimals),
     destination: account,
     enabled: openLongPreviewStatus === "success" && !needsApproval,
   });
