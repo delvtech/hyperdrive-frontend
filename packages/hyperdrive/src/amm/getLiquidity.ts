@@ -12,7 +12,7 @@ interface GetLiquidityResult {
 
 /**
  * This function retrieves the market liquidity by using the following formula:
- * marketLiquidity = sharePrice * shareReserves - longsOutstanding
+ * marketLiquidity = lpSharePrice * shareReserves - longsOutstanding
  *
  * @param hyperdriveAddress - The address of the hyperdrive
  * @param publicClient - The public client
@@ -21,13 +21,13 @@ export async function getLiquidity(
   hyperdriveAddress: Address,
   publicClient: PublicClient,
 ): Promise<GetLiquidityResult> {
-  const { sharePrice, shareReserves, longsOutstanding } = await getPoolInfo({
+  const { lpSharePrice, shareReserves, longsOutstanding } = await getPoolInfo({
     hyperdriveAddress,
     publicClient,
   });
 
   const liquidity =
-    multiplyBigInt([sharePrice, shareReserves], 18) - longsOutstanding;
+    multiplyBigInt([lpSharePrice, shareReserves], 18) - longsOutstanding;
 
   return { liquidity, formatted: formatUnits(liquidity, 18) };
 }

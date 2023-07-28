@@ -67,7 +67,7 @@ export function OpenLpPosition({
           `${formatBalance(
             formatUnits(
               multiplyBigInt(
-                [lpShares, poolInfo.sharePrice],
+                [lpShares, poolInfo.lpSharePrice],
                 hyperdrive.baseToken.decimals,
               ),
               hyperdrive.baseToken.decimals,
@@ -112,7 +112,7 @@ export function OpenLpPosition({
           `${formatBalance(
             formatUnits(
               multiplyBigInt(
-                [withdrawalShares, poolInfo.sharePrice],
+                [withdrawalShares, poolInfo.lpSharePrice],
                 hyperdrive.baseToken.decimals,
               ),
               hyperdrive.baseToken.decimals,
