@@ -35,24 +35,21 @@
 
     - [Reference Title 1](URL1)
 
-
-
-
-
-# Post Mortems
+## Post Mortems
 
 ## Incorrect Chain Id - 07/26/2023
 
 ---
 
 ### Authors
+
 Jack Burrus (Frontend Developer)
 
 ---
 
 ### Summary
 
-The hyperdrive config returns the wrong chain id.
+The browser was caching the response from localhost:80 for the address.json file. Despite being on the same docker container as someone else, the Hyperdrive address returned was different.
 
 ---
 
@@ -64,8 +61,7 @@ As a result, the useContract hooks are unable to read from the contract as it is
 
 ### Resolution
 
-In this case, Metamask was caching the chain id in the browser. The solution was to clear the cache and reload the page.
-
+Clearing the browser cache reset the address.json file and the correct Hyperdrive address was returned.
 
 ---
 
