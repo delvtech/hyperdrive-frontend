@@ -1,4 +1,5 @@
 import { ERC20_ABI } from "@hyperdrive/core";
+import { useWaitForTransactionThenInvalidateCache } from "src/ui/network/useWaitForTransactionThenInvalidateCache/useWaitForTransactionThenInvalidateCache";
 import { Address, useContractWrite, usePrepareContractWrite } from "wagmi";
 
 interface UseTokenApprovalOptions {
@@ -22,7 +23,11 @@ export function useTokenApproval({
     args: enabled ? [spender, amount] : undefined,
   });
 
-  const { write: approve } = useContractWrite(approveConfig);
+  const { write: approve, data } = useContractWrite(approveConfig);
+
+  useWaitForTransactionThenInvalidateCache({
+    hash: data?.hash,
+  });
 
   return { approve };
 }
