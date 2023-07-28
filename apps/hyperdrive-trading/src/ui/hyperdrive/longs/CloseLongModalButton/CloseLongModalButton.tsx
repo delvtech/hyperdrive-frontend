@@ -60,7 +60,7 @@ export function CloseLongModalButton({
           </label>
           <ul
             tabIndex={0}
-            className="daisy-dropdown-content daisy-menu rounded-md bg-base-300 shadow"
+            className="daisy-dropdown-content daisy-menu z-10 rounded-md bg-base-300 shadow"
           >
             <li className="my-1 flex cursor-pointer justify-center">
               <button onClick={showModal}>Close position</button>
