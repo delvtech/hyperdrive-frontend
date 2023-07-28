@@ -40,6 +40,6 @@
     "@types/lodash.mapvalues": "^4.6.7",
     "lodash.groupby": "^4.6.0",
     "lodash.mapvalues": "^4.6.0",
-    "viem": "^1.0.0"
+    "viem": "^1.4.2"
   }
 }
