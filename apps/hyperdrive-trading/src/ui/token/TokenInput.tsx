@@ -7,6 +7,7 @@ interface TokenInputProps {
   value: string;
   onChange: (newAmount: string) => void;
   maxValue?: string;
+  maxLabel?: string;
   showBalance?: boolean;
   disabled?: boolean;
   autoFocus?: boolean;
@@ -17,6 +18,7 @@ export function TokenInput({
   token,
   onChange,
   maxValue,
+  maxLabel = "Balance",
   showBalance = true,
   disabled = false,
   autoFocus = false,
@@ -53,7 +55,9 @@ export function TokenInput({
               Max
             </span>
           )}
-          <p>Balance: {formatBalance(maxValue ?? "0", 8)}</p>
+          <p>
+            {maxLabel}: {formatBalance(maxValue ?? "0", 8)}
+          </p>
         </div>
       )}
     </div>
