@@ -78,6 +78,7 @@ export function AddLiquidityForm({
           token={market.baseToken}
           value={amount ?? ""}
           maxValue={baseTokenBalance?.formatted}
+          maxLabel="Balance"
           onChange={(newAmount) => setAmount(newAmount)}
         />
       </div>

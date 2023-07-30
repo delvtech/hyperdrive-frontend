@@ -82,7 +82,6 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
           token={market.baseToken}
           value={amount ?? ""}
           maxValue={maxAmount}
-          maxLabel="Max"
           onChange={(newAmount) => setAmount(newAmount)}
         />
       </div>

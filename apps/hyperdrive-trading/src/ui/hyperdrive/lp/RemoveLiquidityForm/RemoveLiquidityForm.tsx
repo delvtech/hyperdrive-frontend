@@ -59,6 +59,7 @@ export function RemoveLiquidityForm({
           }}
           value={amount ?? ""}
           maxValue={formatUnits(lpShares, baseDecimals)}
+          maxLabel="Balance"
           onChange={(newAmount) => setAmount(newAmount)}
         />
       </div>
