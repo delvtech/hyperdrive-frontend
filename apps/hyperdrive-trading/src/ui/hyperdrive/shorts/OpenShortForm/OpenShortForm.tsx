@@ -91,7 +91,7 @@ export function OpenShortForm({
           token={bondToken}
           value={amount ?? ""}
           onChange={(newAmount) => setAmount(newAmount)}
-          showBalance={false}
+          showMax={false}
         />
       </div>
 
