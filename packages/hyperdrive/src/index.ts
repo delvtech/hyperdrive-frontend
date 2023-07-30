@@ -44,6 +44,8 @@ export {
   getClosedShorts,
   getClosedShortsQuery,
 } from "src/amm/shorts/getClosedShorts";
+export { getMaxShort, getMaxShortQuery } from "src/amm/shorts/getMaxShort";
+export type { GetMaxShortOptions } from "src/amm/shorts/getMaxShort";
 
 // Liquidity
 export { getLiquidity, getLiquidityQuery } from "src/amm/getLiquidity";
