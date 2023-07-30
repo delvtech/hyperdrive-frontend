@@ -31,6 +31,8 @@ export {
 } from "src/amm/longs/getClosedLongs";
 export type { GetClosedLongsOptions as GetCloseLongsOptions } from "src/amm/longs/getClosedLongs";
 export type { Long, ClosedLong } from "src/amm/longs/types";
+export { getMaxLong, getMaxLongQuery } from "src/amm/longs/getMaxLong";
+export type { GetMaxLongOptions } from "src/amm/longs/getMaxLong";
 
 // Shorts
 export {
@@ -42,6 +44,8 @@ export {
   getClosedShorts,
   getClosedShortsQuery,
 } from "src/amm/shorts/getClosedShorts";
+export { getMaxShort, getMaxShortQuery } from "src/amm/shorts/getMaxShort";
+export type { GetMaxShortOptions } from "src/amm/shorts/getMaxShort";
 
 // Liquidity
 export { getLiquidity, getLiquidityQuery } from "src/amm/getLiquidity";

@@ -4,6 +4,7 @@ import { ReactElement } from "react";
 import { Hyperdrive, Token } from "src/appconfig/types";
 import { convertMillisecondsToMonths } from "src/base/covertMillisecondsToMonths";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
+import { useMaxShort } from "src/ui/hyperdrive/shorts/hooks/useMaxShort";
 import { useOpenShort } from "src/ui/hyperdrive/shorts/hooks/useOpenShort";
 import { usePreviewOpenShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewOpenShort";
 import { OpenShortPreview } from "src/ui/hyperdrive/shorts/OpenShortPreview/OpenShortPreview";
@@ -25,6 +26,8 @@ export function OpenShortForm({
     address: account,
     token: market.baseToken.address,
   });
+
+  const { maxShort } = useMaxShort(market);
 
   const { amount, amountAsBigInt, setAmount } = useNumericInput({
     decimals: market.baseToken.decimals,
@@ -82,6 +85,7 @@ export function OpenShortForm({
     decimals: 18,
     name: "Bonds",
   } as Token;
+
   return (
     <div className="flex flex-col gap-10">
       {/* You Pay Section */}
@@ -90,8 +94,8 @@ export function OpenShortForm({
         <TokenInput
           token={bondToken}
           value={amount ?? ""}
+          maxValue={maxShort?.formatted}
           onChange={(newAmount) => setAmount(newAmount)}
-          showBalance={false}
         />
       </div>
 

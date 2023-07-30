@@ -70,6 +70,7 @@ export function CloseLongForm({
             }}
             value={amount ?? ""}
             maxValue={long ? formatUnits(long.bondAmount, baseDecimals) : ""}
+            maxLabel="Balance"
             onChange={(newAmount) => setAmount(newAmount)}
           />
         </div>

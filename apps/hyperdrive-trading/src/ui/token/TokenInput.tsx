@@ -7,7 +7,8 @@ interface TokenInputProps {
   value: string;
   onChange: (newAmount: string) => void;
   maxValue?: string;
-  showBalance?: boolean;
+  maxLabel?: string;
+  showMax?: boolean;
   disabled?: boolean;
   autoFocus?: boolean;
 }
@@ -17,7 +18,8 @@ export function TokenInput({
   token,
   onChange,
   maxValue,
-  showBalance = true,
+  maxLabel = "Max",
+  showMax = true,
   disabled = false,
   autoFocus = false,
 }: TokenInputProps): ReactElement {
@@ -43,7 +45,7 @@ export function TokenInput({
         </div>
       </div>
 
-      {showBalance && (
+      {showMax && maxValue !== undefined && (
         <div className="flex text-neutral-content">
           {maxValue && (
             <span
@@ -53,7 +55,9 @@ export function TokenInput({
               Max
             </span>
           )}
-          <p>Balance: {formatBalance(maxValue ?? "0", 8)}</p>
+          <p>
+            {maxLabel}: {formatBalance(maxValue ?? "0", 8)}
+          </p>
         </div>
       )}
     </div>

@@ -257,34 +257,46 @@ export const HyperdriveMathABI = [
   {
     inputs: [
       {
-        internalType: "uint256",
-        name: "_shareReserves",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "_bondReserves",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "_longsOutstanding",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "_timeStretch",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "_sharePrice",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "_initialSharePrice",
-        type: "uint256",
+        components: [
+          {
+            internalType: "uint256",
+            name: "shareReserves",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "bondReserves",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "longsOutstanding",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "timeStretch",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "sharePrice",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "initialSharePrice",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "minimumShareReserves",
+            type: "uint256",
+          },
+        ],
+        internalType: "struct HyperdriveMath.MaxTradeParams",
+        name: "_params",
+        type: "tuple",
       },
       {
         internalType: "uint256",
@@ -295,21 +307,14 @@ export const HyperdriveMathABI = [
     name: "calculateMaxLong",
     outputs: [
       {
-        components: [
-          {
-            internalType: "uint256",
-            name: "baseAmount",
-            type: "uint256",
-          },
-          {
-            internalType: "uint256",
-            name: "bondAmount",
-            type: "uint256",
-          },
-        ],
-        internalType: "struct HyperdriveMath.MaxLongResult",
+        internalType: "uint256",
         name: "",
-        type: "tuple",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
       },
     ],
     stateMutability: "pure",
@@ -318,34 +323,46 @@ export const HyperdriveMathABI = [
   {
     inputs: [
       {
-        internalType: "uint256",
-        name: "_shareReserves",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "_bondReserves",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "_longsOutstanding",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "_timeStretch",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "_sharePrice",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "_initialSharePrice",
-        type: "uint256",
+        components: [
+          {
+            internalType: "uint256",
+            name: "shareReserves",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "bondReserves",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "longsOutstanding",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "timeStretch",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "sharePrice",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "initialSharePrice",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "minimumShareReserves",
+            type: "uint256",
+          },
+        ],
+        internalType: "struct HyperdriveMath.MaxTradeParams",
+        name: "_params",
+        type: "tuple",
       },
     ],
     name: "calculateMaxShort",
@@ -469,6 +486,11 @@ export const HyperdriveMathABI = [
           {
             internalType: "uint256",
             name: "initialSharePrice",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "minimumShareReserves",
             type: "uint256",
           },
           {
