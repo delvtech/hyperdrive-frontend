@@ -3,8 +3,13 @@ import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { MutationStatus } from "@tanstack/query-core";
 import { Hyperdrive } from "src/appconfig/types";
 import { ZERO_ADDRESS } from "src/base/constants";
-import { useWaitForTransactionThenInvalidateCache } from "src/ui/network/useWaitForTransactionThenInvalidateCache/useWaitForTransactionThenInvalidateCache";
-import { Address, useContractWrite, usePrepareContractWrite } from "wagmi";
+import { queryClient } from "src/network/queryClient";
+import {
+  Address,
+  useContractWrite,
+  usePrepareContractWrite,
+  usePublicClient,
+} from "wagmi";
 
 interface UseOpenLongOptions {
   market: Hyperdrive;
@@ -19,7 +24,6 @@ interface UseOpenLongOptions {
 interface UseOpenLongResult {
   openLong: (() => void) | undefined;
   openLongStatus: MutationStatus;
-  openLongTransactionStatus: MutationStatus;
 }
 
 export function useOpenLong({
@@ -49,26 +53,24 @@ export function useOpenLong({
     // asUnderlying is true.
     value: requiresEth && baseAmount ? baseAmount : 0n,
   });
-
+  const publicClient = usePublicClient();
   const addRecentTransaction = useAddRecentTransaction();
-  const {
-    write: openLong,
-    status,
-    data,
-  } = useContractWrite({
+  const { write: openLong, status } = useContractWrite({
     ...config,
-    onSuccess: (data) => {
+    onSuccess: async (data) => {
       addRecentTransaction({ hash: data.hash, description: "Open Long" });
+      await publicClient.waitForTransactionReceipt({
+        hash: data.hash,
+        onReplaced() {
+          queryClient.invalidateQueries();
+        },
+      });
+      queryClient.invalidateQueries();
     },
-  });
-
-  const { status: txnStatus } = useWaitForTransactionThenInvalidateCache({
-    hash: data?.hash,
   });
 
   return {
     openLong,
     openLongStatus: status,
-    openLongTransactionStatus: txnStatus,
   };
 }
