@@ -61,6 +61,7 @@ export function CloseShortForm({
             }}
             value={amount ?? ""}
             maxValue={short ? formatUnits(short.bondAmount, baseDecimals) : ""}
+            maxLabel="Balance"
             onChange={(newAmount) => setAmount(newAmount)}
           />
         </div>

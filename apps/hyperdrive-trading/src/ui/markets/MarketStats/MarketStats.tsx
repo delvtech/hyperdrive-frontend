@@ -90,7 +90,7 @@ export function MarketStats({
         label="LP share price"
         value={`${formatBalance(
           formatUnits(
-            poolInfo?.sharePrice || 0n,
+            poolInfo?.lpSharePrice || 0n,
             hyperdrive.baseToken.decimals,
           ),
           2,

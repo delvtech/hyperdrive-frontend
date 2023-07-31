@@ -25,10 +25,10 @@
     "lint-staged": "^13.0.3",
     "prettier": "latest",
     "turbo": "latest",
-    "typescript": "^4.9.3"
+    "typescript": "^5.0.2"
   },
   "resolutions": {
-    "typescript": "^4.9.3"
+    "typescript": "^5.0.2"
   },
   "lint-staged": {
     "{apps,packages}/**/*.{gql,graphql,js,jsx,ts,tsx,json}": [

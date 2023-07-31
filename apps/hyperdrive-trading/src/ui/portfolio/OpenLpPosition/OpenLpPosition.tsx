@@ -67,7 +67,7 @@ export function OpenLpPosition({
           `${formatBalance(
             formatUnits(
               multiplyBigInt(
-                [lpShares, poolInfo.sharePrice],
+                [lpShares, poolInfo.lpSharePrice],
                 hyperdrive.baseToken.decimals,
               ),
               hyperdrive.baseToken.decimals,
@@ -112,7 +112,7 @@ export function OpenLpPosition({
           `${formatBalance(
             formatUnits(
               multiplyBigInt(
-                [withdrawalShares, poolInfo.sharePrice],
+                [withdrawalShares, poolInfo.lpSharePrice],
                 hyperdrive.baseToken.decimals,
               ),
               hyperdrive.baseToken.decimals,
@@ -146,8 +146,8 @@ export function OpenLpPosition({
 
   return (
     <SortableGridTable
-      headingRowClassName="grid-cols-[3fr_4fr_4fr_4fr_1fr] text-start text-neutral-content"
-      bodyRowClassName="grid-cols-[3fr_4fr_4fr_4fr_1fr] text-base-content items-center text-sm md:text-h6 even:bg-secondary/5 h-16"
+      headingRowClassName="grid-cols-[4fr_4fr_4fr_4fr_1fr] text-start text-neutral-content"
+      bodyRowClassName="grid-cols-[4fr_4fr_4fr_4fr_1fr] text-base-content items-center text-sm md:text-h6 even:bg-secondary/5 h-16"
       // Blank col added for actions
       cols={["Position", "Shares", "Value", "Withdrawable", ""]}
       rows={rows}

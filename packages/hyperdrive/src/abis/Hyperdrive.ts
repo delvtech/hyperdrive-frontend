@@ -877,6 +877,71 @@ export const HyperdriveABI = [
   },
   {
     inputs: [],
+    name: "getMarketState",
+    outputs: [
+      {
+        components: [
+          {
+            internalType: "uint128",
+            name: "shareReserves",
+            type: "uint128",
+          },
+          {
+            internalType: "uint128",
+            name: "bondReserves",
+            type: "uint128",
+          },
+          {
+            internalType: "uint128",
+            name: "longsOutstanding",
+            type: "uint128",
+          },
+          {
+            internalType: "uint128",
+            name: "shortsOutstanding",
+            type: "uint128",
+          },
+          {
+            internalType: "uint128",
+            name: "longAverageMaturityTime",
+            type: "uint128",
+          },
+          {
+            internalType: "uint128",
+            name: "longOpenSharePrice",
+            type: "uint128",
+          },
+          {
+            internalType: "uint128",
+            name: "shortAverageMaturityTime",
+            type: "uint128",
+          },
+          {
+            internalType: "uint128",
+            name: "shortBaseVolume",
+            type: "uint128",
+          },
+          {
+            internalType: "bool",
+            name: "isInitialized",
+            type: "bool",
+          },
+          {
+            internalType: "bool",
+            name: "isPaused",
+            type: "bool",
+          },
+        ],
+        internalType: "struct IHyperdrive.MarketState",
+        name: "",
+        type: "tuple",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
     name: "getPoolConfig",
     outputs: [
       {
@@ -1023,10 +1088,28 @@ export const HyperdriveABI = [
             name: "withdrawalSharesProceeds",
             type: "uint256",
           },
+          {
+            internalType: "uint256",
+            name: "lpSharePrice",
+            type: "uint256",
+          },
         ],
         internalType: "struct IHyperdrive.PoolInfo",
         name: "",
         type: "tuple",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "getUncollectedGovernanceFees",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
       },
     ],
     stateMutability: "view",
