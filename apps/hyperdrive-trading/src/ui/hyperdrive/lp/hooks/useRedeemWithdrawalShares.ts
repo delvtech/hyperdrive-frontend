@@ -2,9 +2,9 @@ import { HyperdriveABI } from "@hyperdrive/core";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { MutationStatus } from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
-import { useWaitForTransactionThenInvalidateCache } from "src/ui/network/useWaitForTransactionThenInvalidateCache/useWaitForTransactionThenInvalidateCache";
-import { Address, useContractWrite } from "wagmi";
-
+import { queryClient } from "src/network/queryClient";
+import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";
+import { Address, useContractWrite, usePublicClient } from "wagmi";
 interface UseRedeemWithdrawalSharesOptions {
   market: Hyperdrive;
   withdrawalSharesIn: bigint | undefined;
@@ -17,7 +17,6 @@ interface UseRedeemWithdrawalSharesOptions {
 interface UseRedeemWithdrawalSharesResult {
   redeemWithdrawalShares: (() => void) | undefined;
   redeemWithdrawalSharesStatus: MutationStatus;
-  redeemWithdrawalSharesTransactionStatus: MutationStatus;
 }
 
 export function useRedeemWithdrawalShares({
@@ -33,13 +32,9 @@ export function useRedeemWithdrawalShares({
     minBaseAmountOutPerShare !== undefined &&
     !!destination &&
     enabled;
-
+  const publicClient = usePublicClient();
   const addRecentTransaction = useAddRecentTransaction();
-  const {
-    write: redeemWithdrawalShares,
-    status,
-    data,
-  } = useContractWrite({
+  const { write: redeemWithdrawalShares, status } = useContractWrite({
     abi: HyperdriveABI,
     address: market.address,
     functionName: "redeemWithdrawalShares",
@@ -53,21 +48,21 @@ export function useRedeemWithdrawalShares({
       : undefined,
     // TODO: better gas optimization
     gas: 500_000n,
-    onSuccess: (data) => {
+    onSuccess: async (data) => {
       addRecentTransaction({
         hash: data.hash,
         description: "Remove Liquidity",
       });
+      await waitForTransactionAndInvalidateCache({
+        publicClient,
+        hash: data.hash,
+        queryClient,
+      });
     },
-  });
-
-  const { status: txnStatus } = useWaitForTransactionThenInvalidateCache({
-    hash: data?.hash,
   });
 
   return {
     redeemWithdrawalShares,
     redeemWithdrawalSharesStatus: status,
-    redeemWithdrawalSharesTransactionStatus: txnStatus,
   };
 }
