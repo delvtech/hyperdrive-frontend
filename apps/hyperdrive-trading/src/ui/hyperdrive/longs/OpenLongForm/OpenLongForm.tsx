@@ -64,7 +64,7 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
     enabled: !needsApproval,
   });
 
-  const { openLong, openLongTransactionStatus, openLongStatus } = useOpenLong({
+  const { openLong, openLongStatus } = useOpenLong({
     market,
     baseAmount: amountAsBigInt,
     // TODO: handle slippage
@@ -116,11 +116,7 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
         ) : (
           // Trade button
           <button
-            disabled={
-              !openLong ||
-              openLongTransactionStatus === "loading" ||
-              openLongStatus === "loading"
-            }
+            disabled={!openLong || openLongStatus === "loading"}
             className="daisy-btn-secondary daisy-btn"
             onClick={() => openLong?.()}
           >
