@@ -1,4 +1,4 @@
-import { Short } from "@hyperdrive/core";
+import { OpenShort } from "@hyperdrive/core";
 import { Hyperdrive } from "src/appconfig/types";
 import { Row } from "src/ui/base/components/tables/SortableGridTable";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -46,7 +46,7 @@ function createOpenShortRow({
   hyperdrive,
 }: {
   hyperdrive: Hyperdrive;
-  short: Short;
+  short: OpenShort;
 }): Row {
   const {
     baseToken: { decimals: baseDecimals, symbol: baseSymbol },
@@ -61,6 +61,10 @@ function createOpenShortRow({
       </span>,
       <span key="size">
         {formatBalance(formatUnits(short.bondAmount, baseDecimals), 4)}
+      </span>,
+      <span key="amountPaid">
+        {formatBalance(formatUnits(short.baseAmountPaid, baseDecimals), 4)}{" "}
+        {`${baseSymbol}`}
       </span>,
       <ValueCell
         key="value"
@@ -87,7 +91,7 @@ function ValueCell({
   baseSymbol,
   short,
 }: {
-  short: Short;
+  short: OpenShort;
   baseDecimals: number;
   baseSymbol: string;
 }) {

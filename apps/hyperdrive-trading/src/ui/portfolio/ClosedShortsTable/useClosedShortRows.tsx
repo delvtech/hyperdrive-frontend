@@ -60,7 +60,7 @@ function createClosedShortRow({
       </span>,
       <span key="value" className="inline-flex items-center gap-1 italic">
         {`${formatBalance(
-          formatUnits(short.baseAmount, baseDecimals),
+          formatUnits(short.baseAmountReceived, baseDecimals),
           2,
         )} ${baseSymbol}`}
       </span>,

@@ -31,7 +31,7 @@ export async function getClosedShorts({
         assetId,
         maturity: maturityTime,
         bondAmount,
-        baseAmount,
+        baseAmountReceived: baseAmount,
         closedTimestamp: (
           await publicClient.getBlock({
             blockNumber: event.eventLog.blockNumber as bigint,

@@ -10,8 +10,12 @@ export interface Short {
   maturity: bigint;
 }
 
+export interface OpenShort extends Short {
+  baseAmountPaid: bigint;
+  openedTimestamp: bigint;
+}
+
 export interface ClosedShort extends Short {
-  // A closed short will include the baseAmount that was redeemed
-  baseAmount: bigint;
+  baseAmountReceived: bigint;
   closedTimestamp: bigint;
 }

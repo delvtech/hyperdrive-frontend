@@ -39,6 +39,7 @@ export {
   getOpenShorts,
   getOpenShortsQuery,
 } from "src/amm/shorts/getOpenShorts";
+export type { ClosedShort, OpenShort, Short } from "src/amm/shorts/types";
 export { getShorts } from "src/amm/shorts/getShortsOld";
 export {
   getClosedShorts,
