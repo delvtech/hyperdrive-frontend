@@ -2,9 +2,8 @@ import { HyperdriveABI } from "@hyperdrive/core";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { MutationStatus } from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
-import { useWaitForTransactionThenInvalidateCache } from "src/ui/network/useWaitForTransactionThenInvalidateCache/useWaitForTransactionThenInvalidateCache";
-import { Address, useContractWrite } from "wagmi";
-
+import { queryClient } from "src/network/queryClient";
+import { Address, useContractWrite, usePublicClient } from "wagmi";
 interface UseRemoveLiquidityOptions {
   market: Hyperdrive;
   lpSharesIn: bigint | undefined;
@@ -17,7 +16,6 @@ interface UseRemoveLiquidityOptions {
 interface UseRemoveLiquidityResult {
   removeLiquidity: (() => void) | undefined;
   removeLiquidityStatus: MutationStatus;
-  removeLiquidityTransactionStatus: MutationStatus;
 }
 
 export function useRemoveLiquidity({
@@ -30,13 +28,9 @@ export function useRemoveLiquidity({
 }: UseRemoveLiquidityOptions): UseRemoveLiquidityResult {
   const queryEnabled =
     !!lpSharesIn && minBaseAmountOut !== undefined && !!destination && enabled;
-
+  const publicClient = usePublicClient();
   const addRecentTransaction = useAddRecentTransaction();
-  const {
-    write: removeLiquidity,
-    status,
-    data,
-  } = useContractWrite({
+  const { write: removeLiquidity, status } = useContractWrite({
     abi: HyperdriveABI,
     address: market.address,
     functionName: "removeLiquidity",
@@ -45,21 +39,23 @@ export function useRemoveLiquidity({
       : undefined,
     // TODO: better gas optimization
     gas: 500_000n,
-    onSuccess: (data) => {
+    onSuccess: async (data) => {
       addRecentTransaction({
         hash: data.hash,
         description: "Remove Liquidity",
       });
+      await publicClient.waitForTransactionReceipt({
+        hash: data.hash,
+        onReplaced() {
+          queryClient.invalidateQueries();
+        },
+      });
+      queryClient.invalidateQueries();
     },
-  });
-
-  const { status: txnStatus } = useWaitForTransactionThenInvalidateCache({
-    hash: data?.hash,
   });
 
   return {
     removeLiquidity,
     removeLiquidityStatus: status,
-    removeLiquidityTransactionStatus: txnStatus,
   };
 }
