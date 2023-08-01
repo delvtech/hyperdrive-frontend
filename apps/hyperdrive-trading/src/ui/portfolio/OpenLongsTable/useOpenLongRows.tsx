@@ -65,6 +65,7 @@ function createOpenLongRow({
       <ValueCell
         key="value"
         long={long}
+        hyperdriveAddress={hyperdrive.address}
         baseDecimals={baseDecimals}
         baseSymbol={baseSymbol}
       />,
@@ -84,16 +85,18 @@ function createOpenLongRow({
 
 function ValueCell({
   baseDecimals,
+  hyperdriveAddress,
   baseSymbol,
   long,
 }: {
   long: Long;
+  hyperdriveAddress: Address;
   baseDecimals: number;
   baseSymbol: string;
 }) {
   const { address: account } = useAccount();
   const { baseAmountOut } = usePreviewCloseLong({
-    hyperdriveAddress: long.hyperdriveAddress,
+    hyperdriveAddress,
     maturityTime: long.maturity,
     bondAmountIn: long.bondAmount,
     minBaseAmountOut: parseUnits("1", 18), // TODO: slippage
