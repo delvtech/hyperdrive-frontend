@@ -59,19 +59,18 @@ export function OpenShortForm({
     ? baseAmountIn && baseAmountIn > tokenAllowance
     : true;
 
-  const { openShort, openShortTransactionStatus, openShortSubmittedStatus } =
-    useOpenShort({
-      market,
-      amountBondShorts: amountAsBigInt,
-      // TODO: handle slippage
-      maxBaseAmountIn: constants.MaxUint256.toBigInt(),
-      destination: account,
-      enabled: openShortPreviewStatus === "success" && !needsApproval,
-      onExecuted: () => {
-        // reset local state after successful transaction
-        setAmount(undefined);
-      },
-    });
+  const { openShort, openShortSubmittedStatus } = useOpenShort({
+    market,
+    amountBondShorts: amountAsBigInt,
+    // TODO: handle slippage
+    maxBaseAmountIn: constants.MaxUint256.toBigInt(),
+    destination: account,
+    enabled: openShortPreviewStatus === "success" && !needsApproval,
+    onExecuted: () => {
+      // reset local state after successful transaction
+      setAmount(undefined);
+    },
+  });
 
   const current = new Date();
   const expiryDate = new Date(
@@ -126,7 +125,6 @@ export function OpenShortForm({
             disabled={
               !hasEnoughBalance ||
               !openShort ||
-              openShortTransactionStatus === "loading" ||
               openShortSubmittedStatus === "loading"
             }
             className="daisy-btn-accent daisy-btn"

@@ -16,6 +16,8 @@ interface UseOpenShortOptions {
   destination: Address | undefined;
   asUnderlying?: boolean;
   enabled?: boolean;
+  /** Callback to be invoked when the transaction is finalized */
+  onExecuted?: () => void;
 }
 
 interface UseOpenShortResult {
@@ -30,6 +32,7 @@ export function useOpenShort({
   destination,
   asUnderlying = true,
   enabled,
+  onExecuted,
 }: UseOpenShortOptions): UseOpenShortResult {
   const queryClient = useQueryClient();
 
@@ -68,6 +71,7 @@ export function useOpenShort({
           queryClient.invalidateQueries();
         },
       });
+      onExecuted?.();
       queryClient.invalidateQueries();
     },
   });
