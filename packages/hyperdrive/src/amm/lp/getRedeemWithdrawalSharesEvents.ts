@@ -29,7 +29,7 @@ interface GetRedeemWithdrawalSharesEventsOptions {
 
 export async function getRedeemWithdrawalSharesEvents({
   args: { provider },
-  fromBlock = 0n,
+  fromBlock = "earliest",
   toBlock = "latest",
   hyperdriveAddress,
   publicClient,

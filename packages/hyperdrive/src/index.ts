@@ -77,7 +77,7 @@ export {
   getRedeemedWithdrawalSharesQuery,
 } from "src/amm/lp/getRedeemedWithdrawalShares";
 export type {
-  GetRedeeemedWithdrawalSharesOptions,
+  GetRedeemedWithdrawalSharesOptions,
   RedeemedWithdrawalShares,
 } from "src/amm/lp/getRedeemedWithdrawalShares";
 

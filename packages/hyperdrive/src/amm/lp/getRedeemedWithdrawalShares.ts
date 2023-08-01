@@ -3,7 +3,7 @@ import { getRedeemWithdrawalSharesEvents } from "./getRedeemWithdrawalSharesEven
 import { makeQueryKey } from "src/makeQueryKey";
 import { QueryObserverOptions } from "@tanstack/query-core";
 
-export interface GetRedeeemedWithdrawalSharesOptions {
+export interface GetRedeemedWithdrawalSharesOptions {
   account: Address;
   hyperdriveAddress: Address;
   publicClient: PublicClient;
@@ -20,7 +20,7 @@ export async function getRedeemedWithdrawalShares({
   account,
   hyperdriveAddress,
   publicClient,
-}: GetRedeeemedWithdrawalSharesOptions): Promise<RedeemedWithdrawalShares[]> {
+}: GetRedeemedWithdrawalSharesOptions): Promise<RedeemedWithdrawalShares[]> {
   const redeemWithdrawalShareEvents = await getRedeemWithdrawalSharesEvents({
     args: { provider: account },
     hyperdriveAddress,
@@ -47,7 +47,7 @@ export function getRedeemedWithdrawalSharesQuery({
   account,
   hyperdriveAddress,
   publicClient,
-}: Partial<GetRedeeemedWithdrawalSharesOptions>): QueryObserverOptions<
+}: Partial<GetRedeemedWithdrawalSharesOptions>): QueryObserverOptions<
   Awaited<ReturnType<typeof getRedeemedWithdrawalShares>>
 > {
   const queryEnabled = !!account && !!hyperdriveAddress && !!publicClient;
