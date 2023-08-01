@@ -28,19 +28,18 @@ export function OpenShortPreview({
       </div>
 
       <div className="flex flex-col gap-y-1 tracking-wide">
-        {!!costBasis && (
-          <div className="flex">
-            <p className="mr-auto">Cost Basis</p>
-            <p className="font-semibold tracking-wide">
-              {formatBalance(
-                formatUnits(costBasis, market.baseToken.decimals),
-                6,
-                false,
-              )}{" "}
-              {market.baseToken.symbol}
-            </p>
-          </div>
-        )}
+        <div className="flex">
+          <p className="mr-auto">Cost Basis</p>
+          <p className="font-semibold tracking-wide">
+            {costBasis
+              ? `${formatBalance(
+                  formatUnits(costBasis, market.baseToken.decimals),
+                  6,
+                  false,
+                )} ${market.baseToken.symbol}`
+              : "0"}
+          </p>
+        </div>
 
         <div className="flex">
           <p className="mr-auto">Amount</p>
@@ -66,14 +65,18 @@ export function OpenShortPreview({
           </p>
         </div>
 
-        {!!costBasis && amountShort > 0n && costBasis > 0n && (
-          <div className="flex">
-            <p className="mr-auto">Exposure</p>
-            <p className="font-semibold tracking-wide">
-              {formatBalance((amountShort / costBasis).toString(), 4, false)}x
-            </p>
-          </div>
-        )}
+        <div className="flex">
+          <p className="mr-auto">Exposure</p>
+          <p className="font-semibold tracking-wide">
+            {!!costBasis && amountShort > 0n && costBasis > 0n
+              ? `${formatBalance(
+                  (amountShort / costBasis).toString(),
+                  4,
+                  false,
+                )}x`
+              : "0"}
+          </p>
+        </div>
       </div>
     </div>
   );

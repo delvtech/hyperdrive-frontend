@@ -1,16 +1,15 @@
 import { HyperdriveABI } from "@hyperdrive/core";
+import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { MutationStatus, useQueryClient } from "@tanstack/react-query";
-import { useState } from "react";
-import toast from "react-hot-toast";
 import { Hyperdrive } from "src/appconfig/types";
 import { ZERO_ADDRESS } from "src/base/constants";
+import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";
 import {
   Address,
   useContractWrite,
   usePrepareContractWrite,
-  useWaitForTransaction,
+  usePublicClient,
 } from "wagmi";
-
 interface UseOpenShortOptions {
   market: Hyperdrive;
   amountBondShorts: bigint | undefined;
@@ -25,7 +24,6 @@ interface UseOpenShortOptions {
 interface UseOpenShortResult {
   openShort: (() => void) | undefined;
   openShortSubmittedStatus: MutationStatus;
-  openShortTransactionStatus: MutationStatus;
 }
 
 export function useOpenShort({
@@ -38,9 +36,6 @@ export function useOpenShort({
   onExecuted,
 }: UseOpenShortOptions): UseOpenShortResult {
   const queryClient = useQueryClient();
-
-  // state to store transaction hash
-  const [hash, setHash] = useState<Address | undefined>(undefined);
 
   const queryEnabled =
     !!amountBondShorts && !!maxBaseAmountIn && !!destination && enabled;
@@ -62,28 +57,26 @@ export function useOpenShort({
     value: requiresEth && maxBaseAmountIn ? maxBaseAmountIn : 0n,
   });
 
-  const { status: txnStatus } = useWaitForTransaction({
-    hash,
-    onSuccess: (data) => {
-      toast.remove(data.transactionHash);
-      setHash(undefined);
-      queryClient.invalidateQueries();
-      onExecuted?.();
-    },
-  });
-
+  const publicClient = usePublicClient();
+  const addRecentTransaction = useAddRecentTransaction();
   const { write: openShort, status } = useContractWrite({
     ...config,
-    onSettled: (data) => {
-      if (data) {
-        setHash(data.hash);
-      }
+    onSuccess: async (data) => {
+      addRecentTransaction({
+        hash: data.hash,
+        description: "Open Short",
+      });
+      await waitForTransactionAndInvalidateCache({
+        publicClient,
+        hash: data.hash,
+        queryClient,
+      });
+      onExecuted?.();
     },
   });
 
   return {
     openShort,
     openShortSubmittedStatus: status,
-    openShortTransactionStatus: txnStatus,
   };
 }

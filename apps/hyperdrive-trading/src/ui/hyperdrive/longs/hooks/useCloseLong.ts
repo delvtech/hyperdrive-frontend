@@ -1,9 +1,13 @@
 import { HyperdriveABI, Long } from "@hyperdrive/core";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
-import { MutationStatus } from "@tanstack/react-query";
-import { useWaitForTransactionThenInvalidateCache } from "src/ui/network/useWaitForTransactionThenInvalidateCache/useWaitForTransactionThenInvalidateCache";
-import { Address, useContractWrite, usePrepareContractWrite } from "wagmi";
-
+import { queryClient } from "src/network/queryClient";
+import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";
+import {
+  Address,
+  useContractWrite,
+  usePrepareContractWrite,
+  usePublicClient,
+} from "wagmi";
 interface UseCloseLongOptions {
   long: Long | undefined;
   bondAmountIn: bigint | undefined;
@@ -16,7 +20,6 @@ interface UseCloseLongOptions {
 interface UseCloseLongResult {
   closeLong: (() => void) | undefined;
   isPendingWalletAction: boolean;
-  closeLongTransactionStatus: MutationStatus;
 }
 
 export function useCloseLong({
@@ -51,25 +54,21 @@ export function useCloseLong({
     // TODO: better gas optimization
     gas: 500_000n,
   });
-
+  const publicClient = usePublicClient();
   const addRecentTransaction = useAddRecentTransaction();
-  const {
-    write: closeLong,
-    status,
-    data,
-  } = useContractWrite({
+  const { write: closeLong, status } = useContractWrite({
     ...config,
-    onSuccess: (data) => {
+    onSuccess: async (data) => {
       addRecentTransaction({ hash: data.hash, description: "Close long" });
+      await waitForTransactionAndInvalidateCache({
+        publicClient,
+        hash: data.hash,
+        queryClient,
+      });
     },
   });
-
-  const { status: closeLongTransactionStatus } =
-    useWaitForTransactionThenInvalidateCache({ hash: data?.hash });
-
   return {
     closeLong,
     isPendingWalletAction: status === "loading",
-    closeLongTransactionStatus,
   };
 }

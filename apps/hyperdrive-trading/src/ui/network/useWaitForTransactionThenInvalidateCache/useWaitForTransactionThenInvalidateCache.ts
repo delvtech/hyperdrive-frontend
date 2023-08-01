@@ -6,6 +6,9 @@ import { useQueryClient, useWaitForTransaction } from "wagmi";
 // invalidate wagmi's cache once the tx is confirmed. This makes it so
 // useContractRead callers (for things like balances, reserves, allowances,
 // etc..) will refetch after a tx is confirmed.
+/**
+ * @deprecated use an async onSuccess callback and invalidateQueries directly
+ */
 export function useWaitForTransactionThenInvalidateCache({
   hash,
 }: {
