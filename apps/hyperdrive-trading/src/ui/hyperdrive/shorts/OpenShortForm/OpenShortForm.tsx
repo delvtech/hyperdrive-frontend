@@ -2,7 +2,6 @@ import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { constants, ethers } from "ethers";
 import { ReactElement } from "react";
 import { Hyperdrive, Token } from "src/appconfig/types";
-import { convertMillisecondsToMonths } from "src/base/covertMillisecondsToMonths";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { useMaxShort } from "src/ui/hyperdrive/shorts/hooks/useMaxShort";
 import { useOpenShort } from "src/ui/hyperdrive/shorts/hooks/useOpenShort";
@@ -74,11 +73,7 @@ export function OpenShortForm({
     });
 
   const current = new Date();
-  const expiryDate = new Date(
-    current.setMonth(
-      current.getMonth() + convertMillisecondsToMonths(market.termLengthMS),
-    ),
-  );
+  const expiryDate = new Date(current.getTime() + market.termLengthMS);
   const bondToken = {
     symbol: "Bonds",
     address: "0x0",
