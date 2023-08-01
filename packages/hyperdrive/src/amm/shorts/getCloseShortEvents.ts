@@ -15,7 +15,7 @@ interface CloseShortEvent {
   eventLog: GetFilterLogsReturnType<typeof HyperdriveABI, "CloseShort">[number];
 }
 interface GetCloseShortEventsOptions {
-  args: { traderAddress?: Address };
+  args?: { traderAddress?: Address };
   fromBlock?: bigint;
   toBlock?: bigint | BlockTag;
   hyperdriveAddress: Address;
@@ -23,7 +23,7 @@ interface GetCloseShortEventsOptions {
 }
 
 export async function getCloseShortEvents({
-  args: { traderAddress },
+  args,
   fromBlock = 0n,
   toBlock = "latest",
   hyperdriveAddress,
@@ -34,7 +34,7 @@ export async function getCloseShortEvents({
       abi: HyperdriveABI,
       address: hyperdriveAddress,
       eventName: "CloseShort",
-      args: { trader: traderAddress },
+      args: { trader: args?.traderAddress },
       fromBlock,
       toBlock,
     }),

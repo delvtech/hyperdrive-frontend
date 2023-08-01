@@ -15,6 +15,7 @@ interface OpenShortEvent {
   eventLog: GetFilterLogsReturnType<typeof HyperdriveABI, "OpenShort">[number];
 }
 interface GetOpenShortEventsOptions {
+  args?: { trader?: Address };
   fromBlock?: bigint;
   toBlock?: bigint | BlockTag;
   hyperdriveAddress: Address;
@@ -22,6 +23,7 @@ interface GetOpenShortEventsOptions {
 }
 
 export async function getOpenShortEvents({
+  args,
   fromBlock,
   toBlock = "latest",
   hyperdriveAddress,
@@ -29,6 +31,7 @@ export async function getOpenShortEvents({
 }: GetOpenShortEventsOptions): Promise<OpenShortEvent[]> {
   const openShortLogs = await publicClient.getFilterLogs({
     filter: await publicClient.createContractEventFilter({
+      args,
       abi: HyperdriveABI,
       address: hyperdriveAddress,
       eventName: "OpenShort",
