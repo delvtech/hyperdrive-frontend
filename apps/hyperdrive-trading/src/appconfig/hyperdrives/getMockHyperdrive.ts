@@ -20,11 +20,6 @@ export async function getMockHyperdrive(
     address: hyperdriveAddress,
   });
 
-  const {} = await publicClient.readContract({
-    abi: HyperdriveABI,
-    functionName: "getPoolConfig",
-    address: hyperdriveAddress,
-  });
   return {
     address: hyperdriveAddress,
     termLengthMS: Number(positionDuration) * 1000,

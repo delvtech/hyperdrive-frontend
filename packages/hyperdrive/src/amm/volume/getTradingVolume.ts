@@ -3,6 +3,7 @@ import { HyperdriveABI } from "src/abis/Hyperdrive";
 import { getOpenLongEvents } from "src/amm/longs/getOpenLongEvents";
 import { getOpenShortEvents } from "src/amm/shorts/getOpenShortEvents";
 import { sumBigInt } from "src/base/sumBigInt";
+import { makeQueryKey } from "src/makeQueryKey";
 import {
   Address,
   DecodeEventLogReturnType,
@@ -72,7 +73,11 @@ export function getTradingVolumeQuery({
   currentBlockNumber: bigint;
 }): QueryObserverOptions<Awaited<ReturnType<typeof getTradingVolume>>> {
   return {
-    queryKey: ["tradingVolume", { hyperdriveAddress, publicClient }],
+    queryKey: makeQueryKey("tradingVolume", {
+      hyperdriveAddress,
+      publicClient,
+      currentBlockNumber: currentBlockNumber?.toString(),
+    }),
     queryFn: () =>
       getTradingVolume(hyperdriveAddress, publicClient, currentBlockNumber),
     enabled: !!currentBlockNumber,
