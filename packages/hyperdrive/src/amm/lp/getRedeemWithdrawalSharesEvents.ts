@@ -47,8 +47,6 @@ export async function getRedeemWithdrawalSharesEvents({
     }),
   });
 
-  console.log(redeemWithdrawalShareLogs);
-
   return redeemWithdrawalShareLogs.map((log) => ({
     eventData: decodeEventLog({
       abi: HyperdriveABI,
