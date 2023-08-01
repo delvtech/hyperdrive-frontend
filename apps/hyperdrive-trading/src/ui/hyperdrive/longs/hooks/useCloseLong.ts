@@ -9,6 +9,7 @@ import {
   usePublicClient,
 } from "wagmi";
 interface UseCloseLongOptions {
+  hyperdriveAddress: Address | undefined;
   long: Long | undefined;
   bondAmountIn: bigint | undefined;
   minBaseAmountOut: bigint | undefined;
@@ -23,6 +24,7 @@ interface UseCloseLongResult {
 }
 
 export function useCloseLong({
+  hyperdriveAddress,
   long,
   bondAmountIn,
   minBaseAmountOut,
@@ -31,6 +33,7 @@ export function useCloseLong({
   enabled = true,
 }: UseCloseLongOptions): UseCloseLongResult {
   const queryEnabled =
+    !!hyperdriveAddress &&
     !!long &&
     !!bondAmountIn &&
     minBaseAmountOut !== undefined && // check undefined since 0 is valid
@@ -39,7 +42,7 @@ export function useCloseLong({
 
   const { config } = usePrepareContractWrite({
     abi: HyperdriveABI,
-    address: long?.hyperdriveAddress,
+    address: hyperdriveAddress,
     functionName: "closeLong",
     enabled: queryEnabled,
     args: queryEnabled
