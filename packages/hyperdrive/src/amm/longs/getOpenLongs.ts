@@ -26,13 +26,8 @@ export async function getOpenLongs({
     hyperdriveAddress,
     publicClient,
   });
-  // Grouping these by maturity time because it's the easiest property to match
-  // on the TransferSingle events once we've decoded them. (We could figure out
-  // how to re-construct the assetId in the TransferSingle events, but it's not
-  // necessary for this) Due to the checkpointing, timestamps are unique so this
-  // is safe.
-  const totalBasePaidByMaturityTime = mapValues(
-    groupBy(openLongEvents, (event) => event.eventData.maturityTime.toString()),
+  const totalBasePaidByAssetId = mapValues(
+    groupBy(openLongEvents, (event) => event.eventData.assetId.toString()),
     (events) => sumBigInt(events.map((event) => event.eventData.baseAmount)),
   );
 
@@ -41,15 +36,8 @@ export async function getOpenLongs({
     hyperdriveAddress,
     publicClient,
   });
-  // Grouping these by maturity time because it's the easiest property to match
-  // on the TransferSingle events once we've decoded them. (We could figure out
-  // how to re-construct the assetId in the TransferSingle events, but it's not
-  // necessary for this) Due to the checkpointing, timestamps are unique so this
-  // is safe.
-  const totalBaseReceivedByMaturityTime = mapValues(
-    groupBy(closeLongEvents, (event) =>
-      event.eventData.maturityTime.toString(),
-    ),
+  const totalBaseReceivedByAssetId = mapValues(
+    groupBy(closeLongEvents, (event) => event.eventData.assetId.toString()),
     (events) => sumBigInt(events.map((event) => event.eventData.baseAmount)),
   );
 
@@ -77,8 +65,7 @@ export async function getOpenLongs({
       return {
         assetId,
         bondAmount: sumBigInt(events.map((event) => event.eventData.value)),
-        baseAmountPaid:
-          totalBasePaidByMaturityTime[decoded.timestamp.toString()],
+        baseAmountPaid: totalBasePaidByAssetId[assetId.toString()],
         maturity: decoded.timestamp,
       };
     },
@@ -107,8 +94,7 @@ export async function getOpenLongs({
       return {
         assetId,
         bondAmount: sumBigInt(events.map((event) => event.eventData.value)),
-        baseAmountPaid:
-          totalBaseReceivedByMaturityTime[decoded.timestamp.toString()],
+        baseAmountPaid: totalBaseReceivedByAssetId[assetId.toString()],
         maturity: decoded.timestamp,
       };
     },
