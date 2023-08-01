@@ -7,6 +7,12 @@ interface WaitForTransactionAndInvalidateCacheOptions {
   queryClient: typeof queryClient;
 }
 
+/**
+ * Used for invalidating the cache after a transaction has been mined.
+ * @param publicClient
+ * @param hash
+ * @param queryClient
+ */
 export async function waitForTransactionAndInvalidateCache({
   publicClient,
   hash,
