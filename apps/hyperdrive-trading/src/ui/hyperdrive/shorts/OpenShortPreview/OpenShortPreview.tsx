@@ -37,7 +37,7 @@ export function OpenShortPreview({
                   6,
                   false,
                 )} ${market.baseToken.symbol}`
-              : "N/A"}
+              : "0"}
           </p>
         </div>
 
@@ -74,7 +74,7 @@ export function OpenShortPreview({
                   4,
                   false,
                 )}x`
-              : "N/A"}
+              : "0"}
           </p>
         </div>
       </div>
