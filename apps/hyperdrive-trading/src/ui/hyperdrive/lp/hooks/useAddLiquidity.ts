@@ -3,9 +3,13 @@ import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { MutationStatus } from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
 import { ZERO_ADDRESS } from "src/base/constants";
-import { useWaitForTransactionThenInvalidateCache } from "src/ui/network/useWaitForTransactionThenInvalidateCache/useWaitForTransactionThenInvalidateCache";
-import { Address, useContractWrite, usePrepareContractWrite } from "wagmi";
-
+import { queryClient } from "src/network/queryClient";
+import {
+  Address,
+  useContractWrite,
+  usePrepareContractWrite,
+  usePublicClient,
+} from "wagmi";
 interface UseAddLiquidityOptions {
   market: Hyperdrive;
   destination: Address | undefined;
@@ -19,7 +23,6 @@ interface UseAddLiquidityOptions {
 interface UseAddLiquidityResult {
   addLiquidity: (() => void) | undefined;
   addLiquidityStatus: MutationStatus;
-  addLiquidityTransactionStatus: MutationStatus;
 }
 
 export function useAddLiquidity({
@@ -54,26 +57,23 @@ export function useAddLiquidity({
     // asUnderlying is true.
     value: requiresEth && contribution ? contribution : 0n,
   });
-
+  const publicClient = usePublicClient();
   const addRecentTransaction = useAddRecentTransaction();
-  const {
-    write: addLiquidity,
-    status,
-    data,
-  } = useContractWrite({
+  const { write: addLiquidity, status } = useContractWrite({
     ...config,
-    onSuccess: (data) => {
+    onSuccess: async (data) => {
       addRecentTransaction({ hash: data.hash, description: "Add Liquidity" });
+      await publicClient.waitForTransactionReceipt({
+        hash: data.hash,
+        onReplaced() {
+          queryClient.invalidateQueries();
+        },
+      });
+      queryClient.invalidateQueries();
     },
   });
-
-  const { status: txnStatus } = useWaitForTransactionThenInvalidateCache({
-    hash: data?.hash,
-  });
-
   return {
     addLiquidity,
     addLiquidityStatus: status,
-    addLiquidityTransactionStatus: txnStatus,
   };
 }
