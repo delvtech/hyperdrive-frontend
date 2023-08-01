@@ -77,7 +77,7 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
     <div className="flex flex-col gap-10">
       {/* You Pay Section */}
       <div className="space-y-4 text-base-content">
-        <h5>You Pay</h5>
+        <h5>You pay</h5>
         <TokenInput
           token={market.baseToken}
           value={amount ?? ""}
@@ -88,7 +88,7 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
 
       {/* New Position Section */}
       <div className="space-y-4 text-base-content">
-        <h5>Position preview</h5>
+        <h5 className="text-center font-thin ">Preview transaction</h5>
         <OpenLongPreview
           hyperdrive={market}
           long={{

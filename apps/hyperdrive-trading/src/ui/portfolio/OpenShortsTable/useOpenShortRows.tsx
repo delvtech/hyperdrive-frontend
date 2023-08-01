@@ -106,9 +106,11 @@ function ValueCell({
   return (
     <span className="inline-flex items-center gap-1">
       {baseAmountOut !== undefined
-        ? `${formatBalance(formatUnits(baseAmountOut, baseDecimals), 2)}`
-        : null}{" "}
-      {baseSymbol}
+        ? `${formatBalance(
+            formatUnits(baseAmountOut, baseDecimals),
+            2,
+          )} ${baseSymbol}`
+        : "-"}
     </span>
   );
 }
