@@ -1,7 +1,12 @@
 import { ERC20_ABI } from "@hyperdrive/core";
-import { useWaitForTransactionThenInvalidateCache } from "src/ui/network/useWaitForTransactionThenInvalidateCache/useWaitForTransactionThenInvalidateCache";
-import { Address, useContractWrite, usePrepareContractWrite } from "wagmi";
-
+import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
+import { queryClient } from "src/network/queryClient";
+import {
+  Address,
+  useContractWrite,
+  usePrepareContractWrite,
+  usePublicClient,
+} from "wagmi";
 interface UseTokenApprovalOptions {
   tokenAddress: Address;
   spender: Address | undefined;
@@ -22,11 +27,20 @@ export function useTokenApproval({
     functionName: "approve",
     args: enabled ? [spender, amount] : undefined,
   });
-
-  const { write: approve, data } = useContractWrite(approveConfig);
-
-  useWaitForTransactionThenInvalidateCache({
-    hash: data?.hash,
+  const addRecentTransaction = useAddRecentTransaction();
+  const publicClient = usePublicClient();
+  const { write: approve } = useContractWrite({
+    ...approveConfig,
+    onSuccess: async (data) => {
+      addRecentTransaction({ hash: data.hash, description: "Token Approved" });
+      await publicClient.waitForTransactionReceipt({
+        hash: data.hash,
+        onReplaced() {
+          queryClient.invalidateQueries();
+        },
+      });
+      queryClient.invalidateQueries();
+    },
   });
 
   return { approve };
