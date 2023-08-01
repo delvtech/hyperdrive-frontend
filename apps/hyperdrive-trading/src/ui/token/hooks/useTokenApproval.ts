@@ -20,7 +20,7 @@ export function useTokenApproval({
 }: UseTokenApprovalOptions): { approve: (() => void) | undefined } {
   const enabled = !!spender;
 
-  const { config: approveConfig } = usePrepareContractWrite({
+  const { config } = usePrepareContractWrite({
     enabled: !!spender,
     address: tokenAddress,
     abi: ERC20_ABI,
@@ -30,7 +30,7 @@ export function useTokenApproval({
   const addRecentTransaction = useAddRecentTransaction();
   const publicClient = usePublicClient();
   const { write: approve } = useContractWrite({
-    ...approveConfig,
+    ...config,
     onSuccess: async (data) => {
       addRecentTransaction({ hash: data.hash, description: "Token Approved" });
       await publicClient.waitForTransactionReceipt({
