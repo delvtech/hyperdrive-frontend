@@ -75,7 +75,6 @@ export async function getOpenLongs({
         events[0].eventLog.data,
       );
       return {
-        hyperdriveAddress,
         assetId,
         bondAmount: sumBigInt(events.map((event) => event.eventData.value)),
         baseAmountPaid:
@@ -106,7 +105,6 @@ export async function getOpenLongs({
         events[0].eventLog.data,
       );
       return {
-        hyperdriveAddress,
         assetId,
         bondAmount: sumBigInt(events.map((event) => event.eventData.value)),
         baseAmountPaid:
