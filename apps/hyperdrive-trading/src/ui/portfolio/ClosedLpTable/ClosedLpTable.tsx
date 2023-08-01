@@ -6,7 +6,7 @@ import {
 } from "src/ui/base/components/tables/SortableGridTable";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useClosedLpShares } from "src/ui/hyperdrive/lp/hooks/useClosedLpShares";
-import { useWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useWithdrawalShares";
+import { useRedeemedWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useRedeemedWithdrawalShares.ts";
 import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
 
@@ -24,8 +24,7 @@ export function ClosedLpTable({
     account,
   });
 
-  // TODO: make a useClosedWithdrawalShares hook
-  const { withdrawalShares } = useWithdrawalShares({
+  const { redeemedWithdrawalShares } = useRedeemedWithdrawalShares({
     hyperdriveAddress: hyperdrive.address,
     account,
   });
@@ -61,6 +60,34 @@ export function ClosedLpTable({
           </span>,
           <span key="closed-on" className="italic">
             {new Date(Number(closedTimestamp * 1000n)).toLocaleDateString()}
+          </span>,
+        ],
+      ),
+    );
+  }
+
+  if (redeemedWithdrawalShares) {
+    rows.push(
+      ...redeemedWithdrawalShares.map(
+        ({ baseAmount, timestamp, withdrawalShareAmount }) => [
+          <span key="type" className="font-semibold uppercase italic">
+            Pending Withdrawal
+          </span>,
+          <span key="shares" className="italic">
+            {`${formatBalance(
+              formatUnits(withdrawalShareAmount, hyperdrive.baseToken.decimals),
+            )}`}
+          </span>,
+          <span key="value" className="italic">
+            {`${formatBalance(
+              formatUnits(baseAmount, hyperdrive.baseToken.decimals),
+            )} ${hyperdrive.baseToken.symbol}`}
+          </span>,
+          <span key="withdrawalShares" className="italic">
+            0
+          </span>,
+          <span key="closed-on" className="italic">
+            {new Date(Number(timestamp * 1000n)).toLocaleDateString()}
           </span>,
         ],
       ),
