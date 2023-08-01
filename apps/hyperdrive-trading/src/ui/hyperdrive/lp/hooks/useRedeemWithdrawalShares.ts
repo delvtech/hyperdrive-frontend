@@ -3,6 +3,7 @@ import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { MutationStatus } from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
 import { queryClient } from "src/network/queryClient";
+import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";
 import { Address, useContractWrite, usePublicClient } from "wagmi";
 interface UseRedeemWithdrawalSharesOptions {
   market: Hyperdrive;
@@ -52,13 +53,11 @@ export function useRedeemWithdrawalShares({
         hash: data.hash,
         description: "Remove Liquidity",
       });
-      await publicClient.waitForTransactionReceipt({
+      await waitForTransactionAndInvalidateCache({
+        publicClient,
         hash: data.hash,
-        onReplaced() {
-          queryClient.invalidateQueries();
-        },
+        queryClient,
       });
-      queryClient.invalidateQueries();
     },
   });
 

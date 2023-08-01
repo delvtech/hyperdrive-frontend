@@ -4,6 +4,7 @@ import { MutationStatus } from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
 import { ZERO_ADDRESS } from "src/base/constants";
 import { queryClient } from "src/network/queryClient";
+import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";
 import {
   Address,
   useContractWrite,
@@ -63,13 +64,11 @@ export function useAddLiquidity({
     ...config,
     onSuccess: async (data) => {
       addRecentTransaction({ hash: data.hash, description: "Add Liquidity" });
-      await publicClient.waitForTransactionReceipt({
+      await waitForTransactionAndInvalidateCache({
+        publicClient,
         hash: data.hash,
-        onReplaced() {
-          queryClient.invalidateQueries();
-        },
+        queryClient,
       });
-      queryClient.invalidateQueries();
     },
   });
   return {

@@ -3,6 +3,7 @@ import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { MutationStatus, useQueryClient } from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
 import { ZERO_ADDRESS } from "src/base/constants";
+import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";
 import {
   Address,
   useContractWrite,
@@ -65,14 +66,12 @@ export function useOpenShort({
         hash: data.hash,
         description: "Open Short",
       });
-      await publicClient.waitForTransactionReceipt({
+      await waitForTransactionAndInvalidateCache({
+        publicClient,
         hash: data.hash,
-        onReplaced() {
-          queryClient.invalidateQueries();
-        },
+        queryClient,
       });
       onExecuted?.();
-      queryClient.invalidateQueries();
     },
   });
 

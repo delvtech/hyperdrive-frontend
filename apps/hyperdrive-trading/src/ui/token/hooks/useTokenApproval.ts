@@ -1,6 +1,7 @@
 import { ERC20_ABI } from "@hyperdrive/core";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { queryClient } from "src/network/queryClient";
+import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";
 import {
   Address,
   useContractWrite,
@@ -33,13 +34,11 @@ export function useTokenApproval({
     ...config,
     onSuccess: async (data) => {
       addRecentTransaction({ hash: data.hash, description: "Token Approved" });
-      await publicClient.waitForTransactionReceipt({
+      await waitForTransactionAndInvalidateCache({
+        publicClient,
         hash: data.hash,
-        onReplaced() {
-          queryClient.invalidateQueries();
-        },
+        queryClient,
       });
-      queryClient.invalidateQueries();
     },
   });
 
