@@ -16,7 +16,7 @@ interface CloseShortEvent {
 }
 interface GetCloseShortEventsOptions {
   args?: { traderAddress?: Address };
-  fromBlock?: bigint;
+  fromBlock?: bigint | BlockTag;
   toBlock?: bigint | BlockTag;
   hyperdriveAddress: Address;
   publicClient: PublicClient;
@@ -24,7 +24,7 @@ interface GetCloseShortEventsOptions {
 
 export async function getCloseShortEvents({
   args,
-  fromBlock = 0n,
+  fromBlock = "earliest",
   toBlock = "latest",
   hyperdriveAddress,
   publicClient,

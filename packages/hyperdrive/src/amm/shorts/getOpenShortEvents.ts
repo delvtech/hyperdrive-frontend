@@ -16,7 +16,7 @@ interface OpenShortEvent {
 }
 interface GetOpenShortEventsOptions {
   args?: { trader?: Address };
-  fromBlock?: bigint;
+  fromBlock?: bigint | BlockTag;
   toBlock?: bigint | BlockTag;
   hyperdriveAddress: Address;
   publicClient: PublicClient;
@@ -24,7 +24,7 @@ interface GetOpenShortEventsOptions {
 
 export async function getOpenShortEvents({
   args,
-  fromBlock,
+  fromBlock = "earliest",
   toBlock = "latest",
   hyperdriveAddress,
   publicClient,
