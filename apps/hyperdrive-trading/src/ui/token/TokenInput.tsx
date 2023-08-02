@@ -29,8 +29,14 @@ export function TokenInput({
         <input
           autoFocus={autoFocus}
           className="w-full bg-transparent text-h4 font-semibold outline-neutral-content placeholder:text-neutral-content focus:outline-dashed"
-          max={maxValue}
+          // Setting step to `any` allows any number between min and max to be
+          // displayed without triggering the browser's native validation
+          // tooltips. We do this because by default steps are whole numbers.
+          // See:
+          // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number#step
+          step="any"
           min="0"
+          max={maxValue}
           name="Base Token Input"
           onChange={(event) => onChange(event.target.value)}
           placeholder="0"
