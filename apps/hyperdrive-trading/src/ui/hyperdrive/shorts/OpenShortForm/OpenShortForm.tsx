@@ -134,7 +134,7 @@ export function OpenShortForm({
             className="daisy-btn-accent daisy-btn"
             onClick={() => openShort?.()}
           >
-            Open Short
+            Open short
           </button>
         )
       ) : (
