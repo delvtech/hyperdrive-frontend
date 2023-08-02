@@ -40,7 +40,7 @@ export function PositionsSection({
     setSearchParams({
       ...searchParams,
       position,
-      openOrClosed: activeOpenOrClosedTab,
+      openOrClosed: "Open",
     });
   };
 
