@@ -16,7 +16,7 @@ interface CloseLongEvent {
 }
 interface GetCloseLongEventsOptions {
   args: { traderAddress?: Address };
-  fromBlock?: bigint;
+  fromBlock?: bigint | BlockTag;
   toBlock?: bigint | BlockTag;
   hyperdriveAddress: Address;
   publicClient: PublicClient;
@@ -24,7 +24,7 @@ interface GetCloseLongEventsOptions {
 
 export async function getCloseLongEvents({
   args: { traderAddress },
-  fromBlock = 0n,
+  fromBlock = "earliest",
   toBlock = "latest",
   hyperdriveAddress,
   publicClient,

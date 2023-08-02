@@ -25,6 +25,7 @@ export function useAppConfig(): {
         case 31337: {
           const addresses = await fetchLocalhostAddresses();
           return getAppConfigFromLocalAddresses(
+            chainId,
             addresses,
             publicClient as PublicClient,
           );
@@ -34,6 +35,7 @@ export function useAppConfig(): {
           // The custom chain is curently deployed using the same contracts as
           // the local devnet, so we can get the appConfig in the same way
           return getAppConfigFromLocalAddresses(
+            chainId,
             addresses,
             publicClient as PublicClient,
           );

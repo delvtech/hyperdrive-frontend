@@ -1,6 +1,6 @@
 import { Long } from "@hyperdrive/core";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import { MouseEvent, ReactElement, useEffect } from "react";
+import { MouseEvent, ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { Stat } from "src/ui/base/components/Stat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -21,7 +21,6 @@ interface CloseLongFormProps {
 export function CloseLongForm({
   hyperdrive,
   long,
-  onSuccess,
   onCloseLong,
 }: CloseLongFormProps): ReactElement {
   const { decimals: baseDecimals, symbol: baseSymbol } = hyperdrive.baseToken;
@@ -33,27 +32,21 @@ export function CloseLongForm({
   });
 
   const { baseAmountOut, previewCloseLongStatus } = usePreviewCloseLong({
-    hyperdriveAddress: long.hyperdriveAddress,
+    hyperdriveAddress: hyperdrive.address,
     maturityTime: long.maturity,
     bondAmountIn: amountAsBigInt,
     minBaseAmountOut: parseUnits("0", baseDecimals),
     destination: account,
   });
 
-  const { closeLong, isPendingWalletAction, closeLongTransactionStatus } =
-    useCloseLong({
-      long,
-      bondAmountIn: amountAsBigInt,
-      minBaseAmountOut: parseUnits("0", baseDecimals),
-      destination: account,
-      enabled: previewCloseLongStatus === "success",
-    });
-
-  useEffect(() => {
-    if (closeLongTransactionStatus === "success") {
-      onSuccess();
-    }
-  }, [closeLongTransactionStatus, onSuccess]);
+  const { closeLong, isPendingWalletAction } = useCloseLong({
+    hyperdriveAddress: hyperdrive.address,
+    long,
+    bondAmountIn: amountAsBigInt,
+    minBaseAmountOut: parseUnits("0", baseDecimals),
+    destination: account,
+    enabled: previewCloseLongStatus === "success",
+  });
 
   return (
     <div className="flex flex-col gap-6">
@@ -106,11 +99,7 @@ export function CloseLongForm({
             onCloseLong?.(e);
           }}
         >
-          {closeLongTransactionStatus === "loading" ? (
-            <span>Closing position</span>
-          ) : (
-            <span>Close position</span>
-          )}
+          <span>Close position</span>
         </button>
       ) : (
         <ConnectButton />

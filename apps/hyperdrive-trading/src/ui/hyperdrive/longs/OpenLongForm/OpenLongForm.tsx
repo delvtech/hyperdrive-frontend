@@ -75,7 +75,7 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
   // console.log(minOutput, "minOutput");
   // console.log(amountAsBigInt, "amountAsBigInt");
 
-  const { openLong, openLongTransactionStatus, openLongStatus } = useOpenLong({
+  const { openLong, openLongStatus } = useOpenLong({
     market,
     baseAmount: amountAsBigInt,
     // TODO: handle slippage
@@ -88,7 +88,7 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
     <div className="flex flex-col gap-10">
       {/* You Pay Section */}
       <div className="space-y-4 text-base-content">
-        <h5>You Pay</h5>
+        <h5>You pay</h5>
         <TokenInput
           token={market.baseToken}
           value={amount ?? ""}
@@ -99,13 +99,13 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
 
       {/* New Position Section */}
       <div className="space-y-4 text-base-content">
-        <h5>Position preview</h5>
+        <h5 className="text-center font-thin ">Preview transaction</h5>
         <OpenLongPreview
           hyperdrive={market}
           long={{
             bondAmount: longAmountOut || 0n,
             assetId: 0n,
-            hyperdriveAddress: market.address,
+            baseAmountPaid: 0n,
             maturity: BigInt(
               Math.round((Date.now() + market.termLengthMS) / 1000),
             ),
@@ -119,18 +119,18 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
           <button
             disabled={!approve}
             className="daisy-btn-warning daisy-btn"
-            onClick={() => approve?.()}
+            onClick={(e) => {
+              // Do this so we don't close the modal
+              e.preventDefault();
+              approve?.();
+            }}
           >
             <h5>Approve {market.baseToken.symbol}</h5>
           </button>
         ) : (
           // Trade button
           <button
-            disabled={
-              !openLong ||
-              openLongTransactionStatus === "loading" ||
-              openLongStatus === "loading"
-            }
+            disabled={!openLong || openLongStatus === "loading"}
             className="daisy-btn-secondary daisy-btn"
             onClick={() => openLong?.()}
           >

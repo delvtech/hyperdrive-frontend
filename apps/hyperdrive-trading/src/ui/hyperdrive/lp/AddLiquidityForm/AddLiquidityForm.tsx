@@ -58,16 +58,15 @@ export function AddLiquidityForm({
       enabled: !needsApproval,
     });
 
-  const { addLiquidity, addLiquidityTransactionStatus, addLiquidityStatus } =
-    useAddLiquidity({
-      market,
-      contribution: amountAsBigInt,
-      // TODO: Add slippage control
-      minAPR: parseUnits("0", market.baseToken.decimals),
-      maxAPR: parseUnits("999", market.baseToken.decimals),
-      destination: account,
-      enabled: addLiquidityPreviewStatus === "success" && !needsApproval,
-    });
+  const { addLiquidity, addLiquidityStatus } = useAddLiquidity({
+    market,
+    contribution: amountAsBigInt,
+    // TODO: Add slippage control
+    minAPR: parseUnits("0", market.baseToken.decimals),
+    maxAPR: parseUnits("999", market.baseToken.decimals),
+    destination: account,
+    enabled: addLiquidityPreviewStatus === "success" && !needsApproval,
+  });
 
   return (
     <div className="flex flex-col gap-10">
@@ -95,18 +94,18 @@ export function AddLiquidityForm({
           <button
             disabled={!approve}
             className="daisy-btn-warning daisy-btn"
-            onClick={() => approve?.()}
+            onClick={(e) => {
+              // Do this so we don't close the modal
+              e.preventDefault();
+              approve?.();
+            }}
           >
             <h5>Approve {market.baseToken.symbol}</h5>
           </button>
         ) : (
           // Trade button
           <button
-            disabled={
-              !addLiquidity ||
-              addLiquidityTransactionStatus === "loading" ||
-              addLiquidityStatus === "loading"
-            }
+            disabled={!addLiquidity || addLiquidityStatus === "loading"}
             className="daisy-btn-primary daisy-btn"
             onClick={() => addLiquidity?.()}
           >

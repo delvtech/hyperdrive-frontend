@@ -9,11 +9,12 @@ import { PublicClient } from "viem";
  * from the given addresses.
  */
 export async function getAppConfigFromLocalAddresses(
+  chainId: number,
   addresses: LocalAddressesJson,
   publicClient: PublicClient,
 ): Promise<AppConfig> {
   const config: AppConfig = {
-    chainId: await publicClient.getChainId(),
+    chainId,
     hyperdriveMath: addresses.mockHyperdriveMath,
     hyperdrives: [
       await getMockHyperdrive(addresses.mockHyperdrive, publicClient),

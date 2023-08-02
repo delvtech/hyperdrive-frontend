@@ -1,10 +1,15 @@
 import { HyperdriveABI, Long } from "@hyperdrive/core";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
-import { MutationStatus } from "@tanstack/react-query";
-import { useWaitForTransactionThenInvalidateCache } from "src/ui/network/useWaitForTransactionThenInvalidateCache/useWaitForTransactionThenInvalidateCache";
-import { Address, useContractWrite, usePrepareContractWrite } from "wagmi";
-
+import { queryClient } from "src/network/queryClient";
+import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";
+import {
+  Address,
+  useContractWrite,
+  usePrepareContractWrite,
+  usePublicClient,
+} from "wagmi";
 interface UseCloseLongOptions {
+  hyperdriveAddress: Address | undefined;
   long: Long | undefined;
   bondAmountIn: bigint | undefined;
   minBaseAmountOut: bigint | undefined;
@@ -16,10 +21,10 @@ interface UseCloseLongOptions {
 interface UseCloseLongResult {
   closeLong: (() => void) | undefined;
   isPendingWalletAction: boolean;
-  closeLongTransactionStatus: MutationStatus;
 }
 
 export function useCloseLong({
+  hyperdriveAddress,
   long,
   bondAmountIn,
   minBaseAmountOut,
@@ -28,6 +33,7 @@ export function useCloseLong({
   enabled = true,
 }: UseCloseLongOptions): UseCloseLongResult {
   const queryEnabled =
+    !!hyperdriveAddress &&
     !!long &&
     !!bondAmountIn &&
     minBaseAmountOut !== undefined && // check undefined since 0 is valid
@@ -36,7 +42,7 @@ export function useCloseLong({
 
   const { config } = usePrepareContractWrite({
     abi: HyperdriveABI,
-    address: long?.hyperdriveAddress,
+    address: hyperdriveAddress,
     functionName: "closeLong",
     enabled: queryEnabled,
     args: queryEnabled
@@ -51,25 +57,21 @@ export function useCloseLong({
     // TODO: better gas optimization
     gas: 500_000n,
   });
-
+  const publicClient = usePublicClient();
   const addRecentTransaction = useAddRecentTransaction();
-  const {
-    write: closeLong,
-    status,
-    data,
-  } = useContractWrite({
+  const { write: closeLong, status } = useContractWrite({
     ...config,
-    onSuccess: (data) => {
+    onSuccess: async (data) => {
       addRecentTransaction({ hash: data.hash, description: "Close long" });
+      await waitForTransactionAndInvalidateCache({
+        publicClient,
+        hash: data.hash,
+        queryClient,
+      });
     },
   });
-
-  const { status: closeLongTransactionStatus } =
-    useWaitForTransactionThenInvalidateCache({ hash: data?.hash });
-
   return {
     closeLong,
     isPendingWalletAction: status === "loading",
-    closeLongTransactionStatus,
   };
 }

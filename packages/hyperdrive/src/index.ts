@@ -39,6 +39,7 @@ export {
   getOpenShorts,
   getOpenShortsQuery,
 } from "src/amm/shorts/getOpenShorts";
+export type { ClosedShort, OpenShort, Short } from "src/amm/shorts/types";
 export { getShorts } from "src/amm/shorts/getShortsOld";
 export {
   getClosedShorts,
@@ -66,12 +67,20 @@ export {
 export type { ClosedLpShares } from "src/amm/lp/getClosedLpShares";
 export type { GetLpSharesOptions } from "src/amm/lp/getLpShares";
 
-// Withdraw Shares
+// Withdrawal Shares
 export {
   getWithdrawalShares,
   getWithdrawalSharesQuery,
 } from "src/amm/lp/getWithdrawalShares";
 export type { GetWithdrawalSharesOptions } from "src/amm/lp/getWithdrawalShares";
+export {
+  getRedeemedWithdrawalShares,
+  getRedeemedWithdrawalSharesQuery,
+} from "src/amm/lp/getRedeemedWithdrawalShares";
+export type {
+  GetRedeemedWithdrawalSharesOptions,
+  RedeemedWithdrawalShares,
+} from "src/amm/lp/getRedeemedWithdrawalShares";
 
 // Utils
 export { sumBigInt } from "src/base/sumBigInt";
