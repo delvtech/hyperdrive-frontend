@@ -1,7 +1,4 @@
-import { Address } from "viem";
-
 export interface Long {
-  hyperdriveAddress: Address;
   assetId: bigint;
   bondAmount: bigint;
   /**

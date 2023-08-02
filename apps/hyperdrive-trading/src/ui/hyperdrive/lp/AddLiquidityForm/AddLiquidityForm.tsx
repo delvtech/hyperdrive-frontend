@@ -94,7 +94,11 @@ export function AddLiquidityForm({
           <button
             disabled={!approve}
             className="daisy-btn-warning daisy-btn"
-            onClick={() => approve?.()}
+            onClick={(e) => {
+              // Do this so we don't close the modal
+              e.preventDefault();
+              approve?.();
+            }}
           >
             <h5>Approve {market.baseToken.symbol}</h5>
           </button>
