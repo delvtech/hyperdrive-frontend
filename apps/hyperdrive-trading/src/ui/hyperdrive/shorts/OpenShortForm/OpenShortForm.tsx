@@ -124,7 +124,7 @@ export function OpenShortForm({
             <h5>Approve {market.baseToken.symbol}</h5>
           </button>
         ) : (
-          // Trade button
+          // Open short button
           <button
             disabled={
               !hasEnoughBalance ||
