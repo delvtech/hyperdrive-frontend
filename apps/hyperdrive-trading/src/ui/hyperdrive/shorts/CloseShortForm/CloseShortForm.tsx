@@ -2,6 +2,7 @@ import { OpenShort } from "@hyperdrive/core";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
+import { calculateProfitLossPercentage } from "src/base/calculateProfitLossPercentage";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { useCloseShort } from "src/ui/hyperdrive/shorts/hooks/useCloseShort";
@@ -9,18 +10,6 @@ import { usePreviewCloseShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewC
 import { TokenInput } from "src/ui/token/TokenInput";
 import { formatUnits, parseUnits } from "viem";
 import { useAccount } from "wagmi";
-const getProfitLossPercentage = (
-  baseAmountOut: bigint,
-  baseAmountPaid: bigint,
-): string => {
-  if (baseAmountPaid === 0n) {
-    return "0";
-  } // Avoid division by zero
-
-  const profitOrLoss =
-    (Number(baseAmountOut - baseAmountPaid) / Number(baseAmountPaid)) * 100;
-  return profitOrLoss.toFixed(2);
-};
 
 interface CloseShortFormProps {
   hyperdrive: Hyperdrive;
@@ -78,23 +67,6 @@ export function CloseShortForm({
         </div>
       )}
 
-      {/* You receive Section */}
-      {/* {short && (
-        <div className="space-y-4 text-center text-base-content">
-          <Stat
-            label={"You receive"}
-            value={
-              baseAmountOut
-                ? `${formatBalance(
-                    formatUnits(baseAmountOut, baseDecimals),
-                    8,
-                  )} ${baseSymbol}`
-                : ""
-            }
-          />
-        </div>
-      )} */}
-
       <div className="flex flex-col gap-y-4 rounded border-neutral-content bg-transparent ">
         <div className="flex flex-col gap-y-1 tracking-wide">
           {short && (
@@ -114,11 +86,11 @@ export function CloseShortForm({
         <div className="flex justify-between">
           <p className="font-light text-neutral-content">Profit / Loss</p>
           <p className="tracking-wide">
-            {short && baseAmountOut && short.baseAmountPaid
-              ? `${getProfitLossPercentage(
+            {baseAmountOut && short.baseAmountPaid
+              ? `${calculateProfitLossPercentage({
                   baseAmountOut,
-                  short.baseAmountPaid,
-                )}%`
+                  baseAmountPaid: short.baseAmountPaid,
+                })}%`
               : ""}
           </p>
         </div>
