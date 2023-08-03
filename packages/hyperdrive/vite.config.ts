@@ -1,5 +1,6 @@
 import { defineConfig } from "vitest/config";
 import type { UserConfig as VitestUserConfigInterface } from "vitest/config";
+import tsconfigPaths from "vite-tsconfig-paths";
 
 const vitestConfig: VitestUserConfigInterface = {
   test: {
@@ -8,5 +9,6 @@ const vitestConfig: VitestUserConfigInterface = {
 };
 
 export default defineConfig({
+  plugins: [tsconfigPaths()],
   test: vitestConfig.test,
 });
