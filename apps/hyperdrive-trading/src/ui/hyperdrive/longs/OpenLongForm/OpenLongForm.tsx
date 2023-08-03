@@ -68,11 +68,11 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
   const longAmountOutAfterSlippage =
     longAmountOut &&
     amountAsBigInt &&
-    calculateBondAmountWithSlippage(
-      longAmountOut,
-      amountAsBigInt,
-      market.baseToken.decimals,
-    );
+    calculateBondAmountWithSlippage({
+      amountIn: amountAsBigInt,
+      amountOut: longAmountOut,
+      decimals: market.baseToken.decimals,
+    });
 
   const { openLong, openLongStatus } = useOpenLong({
     market,

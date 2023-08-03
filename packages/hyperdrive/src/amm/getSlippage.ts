@@ -32,11 +32,15 @@ function calculateSaferBondAmount(
   return parseUnits(defaultAmount, decimals);
 }
 
-export function calculateBondAmountWithSlippage(
-  amountOut: bigint,
-  amountIn: bigint,
-  decimals: number,
-): bigint {
+export function calculateBondAmountWithSlippage({
+  amountOut,
+  amountIn,
+  decimals,
+}: {
+  amountOut: bigint | null;
+  amountIn: bigint | null;
+  decimals: number;
+}): bigint {
   if (!amountOut || !amountIn) {
     return parseUnits("1", decimals);
   }

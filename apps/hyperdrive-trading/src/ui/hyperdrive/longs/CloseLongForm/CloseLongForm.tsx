@@ -1,4 +1,4 @@
-import { Long } from "@hyperdrive/core";
+import { calculateBondAmountWithSlippage, Long } from "@hyperdrive/core";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
@@ -39,11 +39,20 @@ export function CloseLongForm({
     destination: account,
   });
 
+  const closeLongAmountAfterSlippage =
+    baseAmountOut &&
+    amountAsBigInt &&
+    calculateBondAmountWithSlippage({
+      amountIn: amountAsBigInt,
+      amountOut: baseAmountOut,
+      decimals: hyperdrive.baseToken.decimals,
+    });
+
   const { closeLong, isPendingWalletAction } = useCloseLong({
     hyperdriveAddress: hyperdrive.address,
     long,
     bondAmountIn: amountAsBigInt,
-    minBaseAmountOut: parseUnits("0", baseDecimals),
+    minBaseAmountOut: closeLongAmountAfterSlippage,
     destination: account,
     enabled: previewCloseLongStatus === "success",
   });
