@@ -66,20 +66,24 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
     enabled: !needsApproval,
   });
 
-  const minOutput =
+  // Calculate the minimum acceptable output after accounting for slippage.
+  const minOutputWithSlippage =
     longAmountOut &&
     getMinOutputSlippage({
       previewAmount: longAmountOut,
       slippageTolerance: 0.02,
     });
-  // console.log(minOutput, "minOutput");
-  // console.log(amountAsBigInt, "amountAsBigInt");
+
+  // Take the maximum between minOutputWithSlippage and amountAsBigInt to prevent
+  // potential negative interest rates leading to contract reversion.
+  const saferBondAmountAfterSlippage = minOutputWithSlippage
+    ? BigInt(Math.max(Number(minOutputWithSlippage), Number(amountAsBigInt)))
+    : parseUnits("1", market.baseToken.decimals);
 
   const { openLong, openLongStatus } = useOpenLong({
     market,
     baseAmount: amountAsBigInt,
-    // TODO: handle slippage
-    bondAmountOut: minOutput ?? parseUnits("1", market.baseToken.decimals),
+    bondAmountOut: saferBondAmountAfterSlippage,
     destination: account,
     enabled: openLongPreviewStatus === "success" && !needsApproval,
   });
