@@ -2,7 +2,6 @@ import { OpenShort } from "@hyperdrive/core";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
-import { getProfitLossText } from "src/base/calculateProfitLoss";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { useCloseShort } from "src/ui/hyperdrive/shorts/hooks/useCloseShort";
@@ -10,6 +9,7 @@ import { usePreviewCloseShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewC
 import { TokenInput } from "src/ui/token/TokenInput";
 import { formatUnits, parseUnits } from "viem";
 import { useAccount } from "wagmi";
+import { getProfitLossText } from "./getProfitLossText";
 
 interface CloseShortFormProps {
   hyperdrive: Hyperdrive;
@@ -87,12 +87,12 @@ export function CloseShortForm({
           <p className="font-light text-neutral-content">Profit / Loss</p>
           <p className="tracking-wide">
             {baseAmountOut && short.baseAmountPaid
-              ? `${getProfitLossText({
+              ? getProfitLossText({
                   baseAmountOut,
                   baseAmountPaid: short.baseAmountPaid,
                   baseDecimals,
                   baseSymbol,
-                })}`
+                })
               : ""}
           </p>
         </div>
