@@ -92,11 +92,6 @@ export function CloseLongForm({
           disabled={!closeLong || isPendingWalletAction}
           onClick={(e) => {
             closeLong?.();
-
-            // useful if this is rendered in a modal for example and you want to
-            // call e.preventDefault() to prevent the modal from closing right
-            // away when the user clicks.
-            onCloseLong?.(e);
           }}
         >
           <span>Close position</span>

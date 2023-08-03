@@ -100,7 +100,7 @@ export function AddLiquidityForm({
               approve?.();
             }}
           >
-            <h5>Approve {market.baseToken.symbol}</h5>
+            Approve {market.baseToken.symbol}
           </button>
         ) : (
           // Trade button
@@ -109,7 +109,7 @@ export function AddLiquidityForm({
             className="daisy-btn-primary daisy-btn"
             onClick={() => addLiquidity?.()}
           >
-            <h5>Add Liquidity</h5>
+            Add liquidity
           </button>
         )
       ) : (
@@ -117,7 +117,7 @@ export function AddLiquidityForm({
           className="daisy-btn-primary daisy-btn"
           onClick={() => openConnectModal?.()}
         >
-          <h5>Connect wallet</h5>
+          Connect wallet
         </button>
       )}
     </div>
