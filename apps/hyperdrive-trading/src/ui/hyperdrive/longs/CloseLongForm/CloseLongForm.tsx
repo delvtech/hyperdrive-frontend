@@ -52,8 +52,7 @@ export function CloseLongForm({
     bondAmountIn: amountAsBigInt,
     minBaseAmountOut: closeLongAmountAfterSlippage,
     destination: account,
-    enabled:
-      previewCloseLongStatus === "success" && !!closeLongAmountAfterSlippage,
+    enabled: previewCloseLongStatus === "success",
   });
 
   return (
