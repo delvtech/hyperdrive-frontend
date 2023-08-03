@@ -1,8 +1,7 @@
-import { Short } from "@hyperdrive/core";
+import { OpenShort } from "@hyperdrive/core";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
-import { Stat } from "src/ui/base/components/Stat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { useCloseShort } from "src/ui/hyperdrive/shorts/hooks/useCloseShort";
@@ -10,10 +9,11 @@ import { usePreviewCloseShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewC
 import { TokenInput } from "src/ui/token/TokenInput";
 import { formatUnits, parseUnits } from "viem";
 import { useAccount } from "wagmi";
+import { getProfitLossText } from "./getProfitLossText";
 
 interface CloseShortFormProps {
   hyperdrive: Hyperdrive;
-  short: Short;
+  short: OpenShort;
   onCloseShort?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 
@@ -67,22 +67,36 @@ export function CloseShortForm({
         </div>
       )}
 
-      {/* You receive Section */}
-      {short && (
-        <div className="space-y-4 text-center text-base-content">
-          <Stat
-            label={"You receive"}
-            value={
-              baseAmountOut
-                ? `${formatBalance(
-                    formatUnits(baseAmountOut, baseDecimals),
-                    8,
-                  )} ${baseSymbol}`
-                : ""
-            }
-          />
+      <div className="flex flex-col gap-y-4 rounded border-neutral-content bg-transparent ">
+        <div className="flex flex-col gap-y-1 tracking-wide">
+          {short && (
+            <div className="flex justify-between">
+              <p className="font-light text-neutral-content">You receive</p>
+              <p className="tracking-wide">
+                {baseAmountOut
+                  ? `${formatBalance(
+                      formatUnits(baseAmountOut, baseDecimals),
+                      8,
+                    )} ${baseSymbol}`
+                  : ""}
+              </p>
+            </div>
+          )}
         </div>
-      )}
+        <div className="flex justify-between">
+          <p className="font-light text-neutral-content">Profit / Loss</p>
+          <p className="tracking-wide">
+            {baseAmountOut && short.baseAmountPaid
+              ? getProfitLossText({
+                  baseAmountOut,
+                  baseAmountPaid: short.baseAmountPaid,
+                  baseDecimals,
+                  baseSymbol,
+                })
+              : ""}
+          </p>
+        </div>
+      </div>
 
       {account ? (
         <button
