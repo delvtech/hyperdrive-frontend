@@ -3,7 +3,7 @@ import { makeQueryKey } from "src/makeQueryKey";
 
 import { QueryObserverOptions } from "@tanstack/query-core";
 import { getPoolInfo } from "src/amm/getPoolInfo";
-import { multiplyBigInt } from "src/base/multiplyBigInt";
+import { multiplyBigInt } from "src/base/multiplyBigInt/multiplyBigInt";
 
 interface GetLiquidityResult {
   liquidity: bigint;

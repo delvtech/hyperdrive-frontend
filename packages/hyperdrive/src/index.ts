@@ -84,4 +84,4 @@ export type {
 
 // Utils
 export { sumBigInt } from "src/base/sumBigInt";
-export { multiplyBigInt } from "src/base/multiplyBigInt";
+export { multiplyBigInt } from "src/base/multiplyBigInt/multiplyBigInt";
