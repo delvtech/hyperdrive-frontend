@@ -50,7 +50,7 @@ export function CloseShortForm({
   const { closeShort, isPendingWalletAction } = useCloseShort({
     short,
     bondAmountIn: amountAsBigInt,
-    minBaseAmountOut: closeShortAmountAfterSlippage || 1n,
+    minBaseAmountOut: closeShortAmountAfterSlippage,
     destination: account,
     enabled: previewCloseShortStatus === "success",
   });

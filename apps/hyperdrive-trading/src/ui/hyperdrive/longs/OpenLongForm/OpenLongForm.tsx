@@ -77,7 +77,7 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
   const { openLong, openLongStatus } = useOpenLong({
     market,
     baseAmount: amountAsBigInt,
-    bondAmountOut: longAmountOutAfterSlippage || 1n,
+    bondAmountOut: longAmountOutAfterSlippage,
     destination: account,
     enabled: openLongPreviewStatus === "success" && !needsApproval,
   });

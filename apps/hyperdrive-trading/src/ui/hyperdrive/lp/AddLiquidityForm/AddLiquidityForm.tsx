@@ -1,3 +1,4 @@
+import { calculateBondAmountWithSlippage } from "@hyperdrive/core";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { ethers } from "ethers";
 import { ReactElement } from "react";
@@ -58,11 +59,19 @@ export function AddLiquidityForm({
       enabled: !needsApproval,
     });
 
+  const minAPRAfterSlippage =
+    lpSharesOut &&
+    amountAsBigInt &&
+    calculateBondAmountWithSlippage({
+      amountOut: lpSharesOut,
+      amountIn: amountAsBigInt,
+      decimals: market.baseToken.decimals,
+    });
+
   const { addLiquidity, addLiquidityStatus } = useAddLiquidity({
     market,
     contribution: amountAsBigInt,
-    // TODO: Add slippage control
-    minAPR: parseUnits("0", market.baseToken.decimals),
+    minAPR: minAPRAfterSlippage,
     maxAPR: parseUnits("999", market.baseToken.decimals),
     destination: account,
     enabled: addLiquidityPreviewStatus === "success" && !needsApproval,
