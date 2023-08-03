@@ -23,7 +23,7 @@ function calculateSaferBondAmount(
   decimals: number,
 ): bigint {
   if (minOutput) {
-    return BigInt(Math.min(Number(minOutput), Number(amount)));
+    return BigInt(Math.max(Number(minOutput), Number(amount)));
   }
   return parseUnits(defaultAmount, decimals);
 }
