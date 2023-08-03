@@ -41,9 +41,7 @@ export function CloseLongForm({
 
   const closeLongAmountAfterSlippage =
     baseAmountOut &&
-    amountAsBigInt &&
     calculateBondAmountWithSlippage({
-      amountIn: amountAsBigInt,
       amountOut: baseAmountOut,
       decimals: hyperdrive.baseToken.decimals,
     });
@@ -54,7 +52,8 @@ export function CloseLongForm({
     bondAmountIn: amountAsBigInt,
     minBaseAmountOut: closeLongAmountAfterSlippage,
     destination: account,
-    enabled: previewCloseLongStatus === "success",
+    enabled:
+      previewCloseLongStatus === "success" && !!closeLongAmountAfterSlippage,
   });
 
   return (

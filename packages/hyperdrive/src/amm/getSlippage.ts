@@ -1,17 +1,13 @@
 import { parseUnits } from "src/base/parseUnits";
 import { formatUnits } from "viem";
 
-function getMinOutputSlippage({
-  previewAmount,
-  slippageTolerance,
-}: {
-  previewAmount: bigint;
-  slippageTolerance: number;
-}): bigint {
-  const amountAsNumber = Number(formatUnits(previewAmount, 18));
-  const minOutput = amountAsNumber * (1 - slippageTolerance);
-  return parseUnits(minOutput.toString(), 18);
-}
+// export function getMinOutputSlippage({
+//   previewAmount,
+//   slippageTolerance,
+// }: {
+//   previewAmount: bigint;
+//   slippageTolerance: number;
+// }): bigint {}
 
 // *
 // * @description Take the maximum between minOutputWithSlippage and amountAsBigInt to prevent potential negative interest rates leading to contract reversion.
@@ -27,30 +23,19 @@ function calculateSaferBondAmount(
   decimals: number,
 ): bigint {
   if (minOutput) {
-    return BigInt(Math.max(Number(minOutput), Number(amount)));
+    return BigInt(Math.min(Number(minOutput), Number(amount)));
   }
   return parseUnits(defaultAmount, decimals);
 }
 
 export function calculateBondAmountWithSlippage({
   amountOut,
-  amountIn,
   decimals,
 }: {
-  amountOut: bigint | null;
-  amountIn: bigint | null;
+  amountOut: bigint;
   decimals: number;
 }): bigint {
-  if (!amountOut || !amountIn) {
-    return parseUnits("1", decimals);
-  }
-  return calculateSaferBondAmount(
-    getMinOutputSlippage({
-      previewAmount: amountOut,
-      slippageTolerance: 0.02,
-    }),
-    amountIn,
-    "1",
-    decimals,
-  );
+  const amountAsNumber = Number(formatUnits(amountOut, 18));
+  const minOutput = amountAsNumber * (1 - 0.02);
+  return parseUnits(minOutput.toString(), decimals);
 }

@@ -67,9 +67,7 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
 
   const longAmountOutAfterSlippage =
     longAmountOut &&
-    amountAsBigInt &&
     calculateBondAmountWithSlippage({
-      amountIn: amountAsBigInt,
       amountOut: longAmountOut,
       decimals: market.baseToken.decimals,
     });

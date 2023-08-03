@@ -40,9 +40,7 @@ export function CloseShortForm({
 
   const closeShortAmountAfterSlippage =
     baseAmountOut &&
-    amountAsBigInt &&
     calculateBondAmountWithSlippage({
-      amountIn: amountAsBigInt,
       amountOut: baseAmountOut,
       decimals: hyperdrive.baseToken.decimals,
     });

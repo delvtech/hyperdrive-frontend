@@ -40,9 +40,7 @@ export function RemoveLiquidityForm({
 
   const minBaseAmountAfterSlippage =
     baseAmountOut &&
-    amountAsBigInt &&
     calculateBondAmountWithSlippage({
-      amountIn: amountAsBigInt,
       amountOut: baseAmountOut,
       decimals: hyperdrive.baseToken.decimals,
     });

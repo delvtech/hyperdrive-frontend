@@ -61,10 +61,8 @@ export function AddLiquidityForm({
 
   const minAPRAfterSlippage =
     lpSharesOut &&
-    amountAsBigInt &&
     calculateBondAmountWithSlippage({
       amountOut: lpSharesOut,
-      amountIn: amountAsBigInt,
       decimals: market.baseToken.decimals,
     });
 
