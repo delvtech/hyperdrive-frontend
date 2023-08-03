@@ -104,11 +104,6 @@ export function RemoveLiquidityForm({
           disabled={!removeLiquidity || removeLiquidityStatus === "loading"}
           onClick={(e) => {
             removeLiquidity?.();
-
-            // useful if this is rendered in a modal for example and you want to
-            // call e.preventDefault() to prevent the modal from closing right
-            // away when the user clicks.
-            onRemoveLiquidity?.(e);
           }}
         >
           Remove liquidity

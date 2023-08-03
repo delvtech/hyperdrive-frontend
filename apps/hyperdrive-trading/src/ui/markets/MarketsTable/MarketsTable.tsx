@@ -1,6 +1,6 @@
 import uniqBy from "lodash.uniqby";
 import { ReactElement, useMemo, useState } from "react";
-import { convertMillisecondsToMonths } from "src/base/covertMillisecondsToMonths";
+import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import {
   Row,
@@ -106,7 +106,7 @@ function createMarketRow({
         <YieldSourceLabel yieldSource={yieldSource} />
       </span>,
       <p key="term" className="font-semibold">
-        {convertMillisecondsToMonths(market.termLengthMS)} months
+        {convertMillisecondsToDays(market.termLengthMS)} days
       </p>,
 
       <span
