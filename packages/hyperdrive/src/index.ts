@@ -87,4 +87,4 @@ export { sumBigInt } from "src/base/sumBigInt";
 export { multiplyBigInt } from "src/base/multiplyBigInt";
 
 // Slippage
-export { getMinOutputSlippage } from "src/amm/getSlippage";
+export { calculateBondAmountWithSlippage } from "src/amm/getSlippage";

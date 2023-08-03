@@ -1,4 +1,4 @@
-import { getMinOutputSlippage } from "@hyperdrive/core";
+import { calculateBondAmountWithSlippage } from "@hyperdrive/core";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { ethers } from "ethers";
 import { ReactElement } from "react";
@@ -11,7 +11,6 @@ import { OpenLongPreview } from "src/ui/hyperdrive/longs/OpenLongPreview/OpenLon
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenApproval } from "src/ui/token/hooks/useTokenApproval";
 import { TokenInput } from "src/ui/token/TokenInput";
-import { parseUnits } from "viem";
 import { useAccount, useBalance } from "wagmi";
 
 interface OpenLongFormProps {
@@ -66,24 +65,19 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
     enabled: !needsApproval,
   });
 
-  // Calculate the minimum acceptable output after accounting for slippage.
-  const minOutputWithSlippage =
+  const longAmountOutAfterSlippage =
     longAmountOut &&
-    getMinOutputSlippage({
-      previewAmount: longAmountOut,
-      slippageTolerance: 0.02,
-    });
-
-  // Take the maximum between minOutputWithSlippage and amountAsBigInt to prevent
-  // potential negative interest rates leading to contract reversion.
-  const saferBondAmountAfterSlippage = minOutputWithSlippage
-    ? BigInt(Math.max(Number(minOutputWithSlippage), Number(amountAsBigInt)))
-    : parseUnits("1", market.baseToken.decimals);
+    amountAsBigInt &&
+    calculateBondAmountWithSlippage(
+      longAmountOut,
+      amountAsBigInt,
+      market.baseToken.decimals,
+    );
 
   const { openLong, openLongStatus } = useOpenLong({
     market,
     baseAmount: amountAsBigInt,
-    bondAmountOut: saferBondAmountAfterSlippage,
+    bondAmountOut: longAmountOutAfterSlippage || 1n,
     destination: account,
     enabled: openLongPreviewStatus === "success" && !needsApproval,
   });
