@@ -1,7 +1,7 @@
 import { Long } from "@hyperdrive/core";
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
-import { convertMillisecondsToMonths } from "src/base/covertMillisecondsToMonths";
+import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { formatUnits } from "viem";
 
@@ -17,10 +17,10 @@ export function OpenLongPreview({
   return (
     <div className="flex flex-col gap-y-4 rounded border-neutral-content bg-transparent ">
       <div className="flex flex-col gap-y-1 tracking-wide">
-        <div className="flex justify-between">
-          <p className="font-light text-neutral-content">Term length</p>
-          <p className="tracking-wide">
-            {convertMillisecondsToMonths(hyperdrive.termLengthMS)} months
+        <div className="flex">
+          <p className="mr-auto">Term Length</p>
+          <p className="font-semibold tracking-wide">
+            {convertMillisecondsToDays(hyperdrive.termLengthMS)} days
           </p>
         </div>
 
