@@ -8,7 +8,7 @@ export function calculateBondAmountWithSlippage({
   amountOut: bigint;
   decimals: number;
 }): bigint {
-  const amountAsNumber = Number(formatUnits(amountOut, 18));
+  const amountAsNumber = Number(formatUnits(amountOut, decimals));
   const minOutput = amountAsNumber * (1 - 0.02);
   return parseUnits(minOutput.toString(), decimals);
 }
