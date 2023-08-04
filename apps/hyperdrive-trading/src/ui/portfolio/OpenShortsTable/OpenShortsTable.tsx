@@ -14,7 +14,7 @@ export function OpenShortsTable({
 }: OpenOrdersTableProps): ReactElement {
   const { address: account } = useAccount();
 
-  const { openShortRows = [] } = useOpenShortRows({
+  const { openShortRows = [], openShortRowsStatus } = useOpenShortRows({
     account,
     hyperdrive,
   });
@@ -26,6 +26,7 @@ export function OpenShortsTable({
       // Blank col added for actions
       cols={["Position", "Bonds", "Amount paid", "Value", "Matures on", ""]}
       rows={openShortRows}
+      isFetchingData={openShortRowsStatus === "loading"}
     />
   );
 }
