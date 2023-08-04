@@ -118,17 +118,12 @@ export function SortableGridTable<K extends string>({
         })}
       </GridTableHeader>
 
-      {isFetchingData
+      {!isFetchingData
         ? rows.map((_, i) => {
             return (
               <GridTableRow key={i} className={classNames(bodyRowClassName)}>
                 {Array.from({ length: cols.length }).map((_, j) => (
-                  <span key={j}>
-                    <Skeleton
-                      className="h-6 w-full"
-                      style={{ display: "inline-block" }}
-                    />
-                  </span>
+                  <Skeleton key={j} />
                 ))}
               </GridTableRow>
             );
