@@ -19,15 +19,16 @@ export function ClosedLpTable({
 }: ClosedLpTablePRops): ReactElement {
   const { address: account } = useAccount();
 
-  const { closedLpShares } = useClosedLpShares({
+  const { closedLpShares, closedLpSharesStatus } = useClosedLpShares({
     hyperdriveAddress: hyperdrive.address,
     account,
   });
 
-  const { redeemedWithdrawalShares } = useRedeemedWithdrawalShares({
-    hyperdriveAddress: hyperdrive.address,
-    account,
-  });
+  const { redeemedWithdrawalShares, redeemedWithdrawlSharesStatus } =
+    useRedeemedWithdrawalShares({
+      hyperdriveAddress: hyperdrive.address,
+      account,
+    });
 
   const rows: Row[] = [];
   if (closedLpShares) {
@@ -106,6 +107,10 @@ export function ClosedLpTable({
         "Closed on",
       ]}
       rows={rows}
+      isFetchingData={
+        closedLpSharesStatus === "loading" ||
+        redeemedWithdrawlSharesStatus === "loading"
+      }
     />
   );
 }
