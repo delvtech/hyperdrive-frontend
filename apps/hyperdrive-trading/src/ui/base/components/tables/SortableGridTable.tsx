@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import { ReactElement, ReactNode, useState } from "react";
+import Skeleton from "react-loading-skeleton";
 import { GridTableHeader } from "src/ui/base/components/tables/GridTableHeader";
 import { GridTableRow } from "src/ui/base/components/tables/GridTableRow";
 import { GridTableRowLink } from "src/ui/base/components/tables/GridTableRowLink";
@@ -12,6 +13,7 @@ interface SortableGridTableProps<K extends string> {
   rows: Row[];
   onSort?: (sortOptions: SortOptions<K>) => void;
   emptyTableElement?: ReactNode;
+  isFetchingData?: boolean;
   headingRowClassName?: string;
   bodyRowClassName?: string;
   defaultSortOptions?: SortOptions<K>;
@@ -52,6 +54,7 @@ export function SortableGridTable<K extends string>({
   onSort,
   headingRowClassName,
   emptyTableElement = <DefaultEmptyTableElement />,
+  isFetchingData,
   bodyRowClassName,
   defaultSortOptions,
 }: SortableGridTableProps<K>): ReactElement {
@@ -115,7 +118,22 @@ export function SortableGridTable<K extends string>({
         })}
       </GridTableHeader>
 
-      {rows.length
+      {isFetchingData
+        ? rows.map((_, i) => {
+            return (
+              <GridTableRow key={i} className={classNames(bodyRowClassName)}>
+                {Array.from({ length: cols.length }).map((_, j) => (
+                  <span key={j}>
+                    <Skeleton
+                      className="h-6 w-full"
+                      style={{ display: "inline-block" }}
+                    />
+                  </span>
+                ))}
+              </GridTableRow>
+            );
+          })
+        : rows.length
         ? rows.map((row, i) => {
             if (!row) {
               return;

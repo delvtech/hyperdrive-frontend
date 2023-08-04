@@ -37,7 +37,7 @@ export function MarketsTable(): ReactElement {
     useState<number>(ALL_TERM_LENGTHS_KEY);
 
   // TODO: no loading state for now
-  const { data: marketsRowData = [] } = useMarketRowData(
+  const { data: marketsRowData = [], isFetching } = useMarketRowData(
     config?.hyperdrives,
     publicClient as PublicClient,
   );
@@ -87,6 +87,7 @@ export function MarketsTable(): ReactElement {
           rows={filteredMarkets.map((marketRowData) =>
             createMarketRow(marketRowData),
           )}
+          isFetchingData={!!isFetching}
         />
       </div>
     </div>
