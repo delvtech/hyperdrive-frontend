@@ -1,6 +1,3 @@
-import { parseUnits } from "src/base/parseUnits";
-import { formatUnits } from "viem";
-
 export function calculateBondAmountWithSlippage({
   amountOut,
   decimals,
@@ -8,7 +5,17 @@ export function calculateBondAmountWithSlippage({
   amountOut: bigint;
   decimals: number;
 }): bigint {
-  const amountAsNumber = Number(formatUnits(amountOut, decimals));
-  const minOutput = amountAsNumber * (1 - 0.02);
-  return parseUnits(minOutput.toString(), decimals);
+  // Convert the amountOut to a "decimal-based" bigint by shifting the decimal places
+  const shiftDecimals = 10n ** BigInt(decimals);
+  const amountWithDecimals = amountOut * shiftDecimals;
+
+  // Calculate the slippage amount
+  const slippage = 2n; // 2% slippage
+  const slippageAmount = (amountWithDecimals * slippage) / 100n;
+
+  // Subtract the slippage from the amountOut
+  const minOutput = amountWithDecimals - slippageAmount;
+
+  // Convert back to the original decimal places by dividing through
+  return minOutput / shiftDecimals;
 }
