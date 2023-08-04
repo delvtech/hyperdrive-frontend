@@ -118,7 +118,7 @@ export function SortableGridTable<K extends string>({
         })}
       </GridTableHeader>
 
-      {!isFetchingData
+      {isFetchingData
         ? rows.map((_, i) => {
             return (
               <GridTableRow key={i} className={classNames(bodyRowClassName)}>
