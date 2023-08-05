@@ -36,11 +36,11 @@
     "access": "public"
   },
   "dependencies": {
-    "@tanstack/query-core": "^4.29.11",
+    "@tanstack/query-core": "^4.32.5",
     "@types/lodash.groupby": "^4.6.7",
     "@types/lodash.mapvalues": "^4.6.7",
     "lodash.groupby": "^4.6.0",
     "lodash.mapvalues": "^4.6.0",
-    "viem": "^1.4.2"
+    "viem": "^1.5.3"
   }
 }
