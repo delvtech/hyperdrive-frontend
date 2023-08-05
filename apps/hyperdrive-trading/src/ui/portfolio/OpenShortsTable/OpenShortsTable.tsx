@@ -26,7 +26,7 @@ export function OpenShortsTable({
       // Blank col added for actions
       cols={["Position", "Bonds", "Amount paid", "Value", "Matures on", ""]}
       rows={openShortRows}
-      isFetchingData={openShortRowsStatus === "loading"}
+      showSkeleton={openShortRowsStatus === "loading"}
     />
   );
 }

@@ -107,7 +107,7 @@ export function ClosedLpTable({
         "Closed on",
       ]}
       rows={rows}
-      isFetchingData={
+      showSkeleton={
         closedLpSharesStatus === "loading" ||
         redeemedWithdrawlSharesStatus === "loading"
       }

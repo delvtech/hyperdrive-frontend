@@ -151,7 +151,7 @@ export function OpenLpPosition({
       // Blank col added for actions
       cols={["Position", "Shares", "Value", "Withdrawable", ""]}
       rows={rows}
-      isFetchingData={
+      showSkeleton={
         lpSharesStatus === "loading" || withdrawalSharesStatus === "loading"
       }
     />

@@ -24,7 +24,7 @@ export function ClosedLongsTable({
       bodyRowClassName="grid-cols-4 text-base-content items-center text-sm md:text-h6 even:bg-secondary/5 h-16 "
       cols={["Position", "Bonds", "Value", "Matures on", "Closed on"]}
       rows={closedLongRows}
-      isFetchingData={closedLongRowsStatus === "loading"}
+      showSkeleton={closedLongRowsStatus === "loading"}
     />
   );
 }

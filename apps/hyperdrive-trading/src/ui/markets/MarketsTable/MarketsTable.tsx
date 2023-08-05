@@ -85,7 +85,7 @@ export function MarketsTable(): ReactElement {
           rows={filteredMarkets.map((marketRowData) =>
             createMarketRow(marketRowData),
           )}
-          isFetchingData={marketRowDataStatus === "loading"}
+          showSkeleton={marketRowDataStatus === "loading"}
         />
       </div>
     </div>

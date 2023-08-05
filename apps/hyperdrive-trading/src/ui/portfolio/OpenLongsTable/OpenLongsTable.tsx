@@ -26,7 +26,7 @@ export function OpenLongsTable({
       // Blank col added for actions
       cols={["Position", "Bonds", "Amount paid", "Value", "Matures on", ""]}
       rows={openLongRows}
-      isFetchingData={openLongRowsStatus === "loading"}
+      showSkeleton={openLongRowsStatus === "loading"}
     />
   );
 }
