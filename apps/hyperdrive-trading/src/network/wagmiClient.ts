@@ -1,6 +1,5 @@
-import { getDefaultWallets } from "@rainbow-me/rainbowkit";
 import { cloudChain, cloudChainRpcProvider } from "src/network/cloudChain";
-import { Chain, ChainProviderFn, configureChains, createConfig } from "wagmi";
+import { Chain, ChainProviderFn, configureChains } from "wagmi";
 import { foundry, goerli } from "wagmi/chains";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
@@ -9,7 +8,6 @@ const {
   VITE_CUSTOM_CHAIN_NODE_RPC_URL,
   VITE_CUSTOM_CHAIN_ADDRESSES_URL,
   VITE_CUSTOM_CHAIN_CHAIN_ID,
-  VITE_WALLET_CONNECT_PROJECT_ID,
   VITE_ALCHEMY_GOERLI_RPC_KEY,
 } = import.meta.env;
 
@@ -46,22 +44,7 @@ if (
   providersToConfigure.push(cloudChainRpcProvider);
 }
 
-const { chains, publicClient, webSocketPublicClient } = configureChains(
+export const { chains, publicClient, webSocketPublicClient } = configureChains(
   chainsToConfigure,
   providersToConfigure,
 );
-
-export const wagmiChains = chains;
-
-const { connectors } = getDefaultWallets({
-  appName: "Hyperdrive",
-  projectId: VITE_WALLET_CONNECT_PROJECT_ID || undefined,
-  chains,
-});
-
-export const wagmiConfig = createConfig({
-  autoConnect: true,
-  connectors,
-  publicClient,
-  webSocketPublicClient,
-});

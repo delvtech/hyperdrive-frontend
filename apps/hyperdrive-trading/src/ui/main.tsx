@@ -7,20 +7,32 @@ import { Toaster } from "react-hot-toast";
 import { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { queryClient } from "src/network/queryClient";
-import { wagmiChains, wagmiConfig } from "src/network/wagmiClient";
+import {
+  chains,
+  publicClient,
+  webSocketPublicClient,
+} from "src/network/wagmiClient";
+import { connectors } from "src/network/walletConnectors";
 import { App } from "src/ui/app/App/App";
 import "src/ui/globals.css";
-import { WagmiConfig } from "wagmi";
+import { createConfig, WagmiConfig } from "wagmi";
 
 const container = document.getElementById("root") as HTMLDivElement;
 const root = createRoot(container);
+
+const wagmiConfig = createConfig({
+  publicClient,
+  autoConnect: true,
+  connectors,
+  webSocketPublicClient,
+});
 
 root.render(
   <QueryClientProvider client={queryClient}>
     <Toaster position="bottom-left" reverseOrder={false} />
     <WagmiConfig config={wagmiConfig}>
       <RainbowKitProvider
-        chains={wagmiChains}
+        chains={chains}
         showRecentTransactions
         theme={darkTheme()}
       >
