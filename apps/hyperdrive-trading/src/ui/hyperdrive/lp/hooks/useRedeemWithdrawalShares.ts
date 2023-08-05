@@ -46,8 +46,7 @@ export function useRedeemWithdrawalShares({
           asUnderlying,
         ]
       : undefined,
-    // TODO: better gas optimization
-    gas: 500_000n,
+
     onSuccess: async (data) => {
       addRecentTransaction({
         hash: data.hash,

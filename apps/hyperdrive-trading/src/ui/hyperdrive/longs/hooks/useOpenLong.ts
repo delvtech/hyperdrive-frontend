@@ -48,8 +48,7 @@ export function useOpenLong({
     args: queryEnabled
       ? [baseAmount, bondAmountOut, destination, asUnderlying]
       : undefined,
-    // TODO: better gas optimization
-    gas: 500_000n,
+
     // Used when ETH is the base asset (e.g. StethHyperdrive) and
     // asUnderlying is true.
     value: requiresEth && baseAmount ? baseAmount : 0n,
