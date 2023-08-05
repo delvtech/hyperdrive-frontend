@@ -14,7 +14,7 @@ export function OpenLongsTable({
 }: OpenOrdersTableProps): ReactElement {
   const { address: account } = useAccount();
 
-  const { openLongRows = [] } = useOpenLongRows({
+  const { openLongRows = [], openLongRowsStatus } = useOpenLongRows({
     account,
     hyperdrive,
   });
@@ -26,6 +26,7 @@ export function OpenLongsTable({
       // Blank col added for actions
       cols={["Position", "Bonds", "Amount paid", "Value", "Matures on", ""]}
       rows={openLongRows}
+      showSkeleton={openLongRowsStatus === "loading"}
     />
   );
 }

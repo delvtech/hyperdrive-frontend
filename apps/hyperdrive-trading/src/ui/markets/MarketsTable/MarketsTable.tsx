@@ -37,10 +37,8 @@ export function MarketsTable(): ReactElement {
     useState<number>(ALL_TERM_LENGTHS_KEY);
 
   // TODO: no loading state for now
-  const { data: marketsRowData = [] } = useMarketRowData(
-    config?.hyperdrives,
-    publicClient as PublicClient,
-  );
+  const { data: marketsRowData = [], status: marketRowDataStatus } =
+    useMarketRowData(config?.hyperdrives, publicClient as PublicClient);
 
   const filteredMarkets = useMemo(() => {
     const marketFilteredByTermLength = termLengthFilter
@@ -87,6 +85,7 @@ export function MarketsTable(): ReactElement {
           rows={filteredMarkets.map((marketRowData) =>
             createMarketRow(marketRowData),
           )}
+          showSkeleton={marketRowDataStatus === "loading"}
         />
       </div>
     </div>

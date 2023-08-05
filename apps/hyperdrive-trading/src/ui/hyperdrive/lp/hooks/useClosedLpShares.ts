@@ -1,5 +1,5 @@
 import { ClosedLpShares, getClosedLpSharesQuery } from "@hyperdrive/core";
-import { useQuery } from "@tanstack/react-query";
+import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { Address, usePublicClient } from "wagmi";
 
 interface UseClosedLpSharesOptions {
@@ -11,14 +11,15 @@ export function useClosedLpShares({
   hyperdriveAddress,
 }: UseClosedLpSharesOptions): {
   closedLpShares: ClosedLpShares[] | undefined;
+  closedLpSharesStatus: QueryStatus;
 } {
   const publicClient = usePublicClient();
-  const { data: closedLpShares } = useQuery(
+  const { data: closedLpShares, status: closedLpSharesStatus } = useQuery(
     getClosedLpSharesQuery({
       providerAddress: account,
       hyperdriveAddress,
       publicClient: publicClient as any,
     }),
   );
-  return { closedLpShares: closedLpShares };
+  return { closedLpShares: closedLpShares, closedLpSharesStatus };
 }
