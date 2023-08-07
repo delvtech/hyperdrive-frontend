@@ -26,11 +26,25 @@ export function OpenLongsTable({
       // Blank col added for actions
       cols={[
         {
-          cell: "Position",
-          description: "What type of trade is it?",
-          className: "daisy-tooltip text-start border",
+          cell: (
+            <span
+              className="daisy-tooltip w-full border text-start"
+              data-tip="User's chosen role in Hyperdrive: holding discounted bonds, short-selling bonds, or providing liquidity for trades."
+            >
+              Position
+            </span>
+          ),
         },
-        { cell: "Bonds" },
+        {
+          cell: (
+            <span
+              className="daisy-tooltip flex border text-start"
+              data-tip="The bonds?"
+            >
+              Bonds
+            </span>
+          ),
+        },
         { cell: "Amount paid" },
         { cell: "Value" },
         { cell: "Matures on" },

@@ -108,11 +108,7 @@ export function SortableGridTable<K extends string>({
             }
 
             return (
-              <span
-                key={i}
-                className={col.className}
-                data-tip={col.description}
-              >
+              <span key={i} className={col.className}>
                 {col.cell}
               </span>
             );
