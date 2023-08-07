@@ -52,8 +52,7 @@ export function useAddLiquidity({
     args: queryEnabled
       ? [contribution, minAPR, maxAPR, destination, asUnderlying]
       : undefined,
-    // TODO: better gas optimization
-    gas: 500_000n,
+
     // Used when ETH is the base asset (e.g. StethHyperdrive) and
     // asUnderlying is true.
     value: requiresEth && contribution ? contribution : 0n,

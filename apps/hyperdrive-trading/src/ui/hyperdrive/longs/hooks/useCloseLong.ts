@@ -54,8 +54,6 @@ export function useCloseLong({
           asUnderlying,
         ]
       : undefined,
-    // TODO: better gas optimization
-    gas: 500_000n,
   });
   const publicClient = usePublicClient();
   const addRecentTransaction = useAddRecentTransaction();
