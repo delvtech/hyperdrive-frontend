@@ -53,7 +53,7 @@ export function ClosedLongsTable({
         {
           cell: (
             <CellWithTooltip
-              content="Matures On"
+              content="Matures on"
               tooltip="Date when the position matures and is settled."
             />
           ),
