@@ -5,7 +5,6 @@ import {
   decodeEventLog,
   DecodeEventLogReturnType,
   GetFilterLogsReturnType,
-  BlockTag,
 } from "viem";
 interface CloseLongEvent {
   eventData: DecodeEventLogReturnType<
@@ -16,8 +15,8 @@ interface CloseLongEvent {
 }
 interface GetCloseLongEventsOptions {
   args: { traderAddress?: Address };
-  fromBlock?: bigint | BlockTag;
-  toBlock?: bigint | BlockTag;
+  fromBlock?: bigint | "earliest";
+  toBlock?: bigint | "latest";
   hyperdriveAddress: Address;
   publicClient: PublicClient;
 }

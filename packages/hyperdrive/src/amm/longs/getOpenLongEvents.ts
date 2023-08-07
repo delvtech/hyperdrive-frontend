@@ -5,7 +5,6 @@ import {
   decodeEventLog,
   DecodeEventLogReturnType,
   GetFilterLogsReturnType,
-  BlockTag,
 } from "viem";
 export interface OpenLongEvent {
   eventData: DecodeEventLogReturnType<typeof HyperdriveABI, "OpenLong">["args"];
@@ -13,8 +12,8 @@ export interface OpenLongEvent {
 }
 interface GetOpenLongEventsOptions {
   args?: { traderAddress?: Address };
-  fromBlock?: bigint | BlockTag;
-  toBlock?: bigint | BlockTag;
+  fromBlock?: bigint | "earliest";
+  toBlock?: bigint | "latest";
   hyperdriveAddress: Address;
   publicClient: PublicClient;
 }
