@@ -24,7 +24,18 @@ export function OpenLongsTable({
       headingRowClassName="grid-cols-5 text-start text-neutral-content"
       bodyRowClassName="grid-cols-5 text-base-content items-center text-sm md:text-h6 even:bg-secondary/5 h-16"
       // Blank col added for actions
-      cols={["Position", "Bonds", "Amount paid", "Value", "Matures on", ""]}
+      cols={[
+        {
+          cell: "Position",
+          description: "What type of trade is it?",
+          className: "daisy-tooltip text-start border",
+        },
+        { cell: "Bonds" },
+        { cell: "Amount paid" },
+        { cell: "Value" },
+        { cell: "Matures on" },
+      ]}
+      // cols={["Position", "Bonds", "Amount paid", "Value", "Matures on", ""]}
       rows={openLongRows}
       showSkeleton={openLongRowsStatus === "loading"}
     />

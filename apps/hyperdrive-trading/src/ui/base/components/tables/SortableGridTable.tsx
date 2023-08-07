@@ -108,7 +108,11 @@ export function SortableGridTable<K extends string>({
             }
 
             return (
-              <span key={i} className={col.className}>
+              <span
+                key={i}
+                className={col.className}
+                data-tip={col.description}
+              >
                 {col.cell}
               </span>
             );
@@ -172,6 +176,7 @@ export type Column<K extends string> =
       cell: ReactNode;
       className?: string;
       sortKey?: K;
+      description?: string;
     };
 
 export type Row =
