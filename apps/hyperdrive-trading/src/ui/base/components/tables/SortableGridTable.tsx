@@ -172,7 +172,6 @@ export type Column<K extends string> =
       cell: ReactNode;
       className?: string;
       sortKey?: K;
-      description?: string;
     };
 
 export type Row =
