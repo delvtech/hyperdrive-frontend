@@ -41,7 +41,7 @@
     "react-hot-toast": "^2.4.0",
     "react-loading-skeleton": "^3.3.1",
     "react-router-dom": "^6.8.1",
-    "viem": "^1.4.2",
+    "viem": "^1.5.3",
     "wagmi": "^1.0.6"
   },
   "devDependencies": {
