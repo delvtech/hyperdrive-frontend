@@ -212,3 +212,19 @@ function DefaultEmptyTableElement() {
     </div>
   );
 }
+
+interface CellWithTooltipProps {
+  content: ReactNode;
+  tooltip: string;
+}
+
+export function CellWithTooltip({
+  content,
+  tooltip,
+}: CellWithTooltipProps): ReactElement {
+  return (
+    <span className="daisy-tooltip" data-tip={tooltip}>
+      {content}
+    </span>
+  );
+}
