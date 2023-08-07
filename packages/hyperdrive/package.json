@@ -25,11 +25,13 @@
     "@hyperdrive/tsconfig": "*",
     "@parcel/transformer-typescript-types": "2.8.3",
     "dotenv": "^16.0.3",
+    "happy-dom": "^10.7.0",
     "parcel": "^2.8.0",
     "prettier-plugin-organize-imports": "^3.2.2",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.1.0",
     "typescript": "^5.0.2",
+    "vite-tsconfig-paths": "^4.2.0",
     "vitest": "^0.28.5"
   },
   "publishConfig": {
@@ -39,6 +41,7 @@
     "@tanstack/query-core": "^4.29.11",
     "@types/lodash.groupby": "^4.6.7",
     "@types/lodash.mapvalues": "^4.6.7",
+    "@viem/anvil": "^0.0.6",
     "lodash.groupby": "^4.6.0",
     "lodash.mapvalues": "^4.6.0",
     "viem": "^1.4.2"

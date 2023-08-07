@@ -1,12 +1,11 @@
 import { defineConfig } from "vitest/config";
-import type { UserConfig as VitestUserConfigInterface } from "vitest/config";
-
-const vitestConfig: VitestUserConfigInterface = {
-  test: {
-    // https://vitest.dev/config
-  },
-};
+import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
-  test: vitestConfig.test,
+  plugins: [tsconfigPaths()],
+  test: {
+    environment: "happy-dom",
+    globalSetup: ["src/testing/globalSetup.ts"],
+    setupFiles: ["src/testing/setup.ts"],
+  },
 });

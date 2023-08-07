@@ -1,7 +1,7 @@
 import { PublicClient, Address } from "viem";
 import { HyperdriveMathABI } from "src/abis/HyperdriveMath";
 import { QueryClient, QueryObserverOptions } from "@tanstack/query-core";
-import { getPoolConfigQuery } from "src/amm/getPoolConfig";
+import { getPoolConfigQuery } from "src/amm/getPoolConfig/getPoolConfig";
 import { getPoolInfoQuery } from "src/amm/getPoolInfo";
 import { makeQueryKey } from "src/makeQueryKey";
 import { formatRate } from "src/base/formatRate";
