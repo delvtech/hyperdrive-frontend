@@ -120,7 +120,7 @@ export function ClosedLpTable({
         {
           cell: (
             <CellWithTooltip
-              content="Value Received"
+              content="Value received"
               tooltip="Total assets collected upon closing the position."
             />
           ),

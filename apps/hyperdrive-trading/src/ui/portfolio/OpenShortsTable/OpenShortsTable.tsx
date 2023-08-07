@@ -47,7 +47,7 @@ export function OpenShortsTable({
         {
           cell: (
             <CellWithTooltip
-              content="Amount Paid"
+              content="Amount paid"
               tooltip="Capital expended to initiate a position, either long, short, or as an LP."
             />
           ),

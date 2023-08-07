@@ -62,7 +62,7 @@ export function ClosedLongsTable({
         {
           cell: (
             <CellWithTooltip
-              content="Closed On"
+              content="Closed on"
               tooltip="Date when the position was settled or exited."
             />
           ),
