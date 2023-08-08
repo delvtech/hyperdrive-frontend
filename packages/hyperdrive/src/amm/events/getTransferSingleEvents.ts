@@ -4,15 +4,14 @@ import {
   PublicClient,
   decodeEventLog,
   Address,
-  BlockTag,
   GetFilterLogsReturnType,
   DecodeEventLogReturnType,
 } from "viem";
 
 interface GetTransferSingleEvents {
   args: { fromAddress?: Address; toAddress?: Address };
-  fromBlock?: bigint;
-  toBlock?: bigint | BlockTag;
+  fromBlock?: bigint | "earliest";
+  toBlock?: bigint | "latest";
   hyperdriveAddress: Address;
   publicClient: PublicClient;
 }
@@ -30,7 +29,7 @@ interface TransferSingleEvent {
 
 export async function getTransferSingleEvents({
   args: { fromAddress, toAddress },
-  fromBlock = 0n,
+  fromBlock = "earliest",
   toBlock = "latest",
   hyperdriveAddress,
   publicClient,
@@ -57,16 +56,6 @@ export async function getTransferSingleEvents({
   }));
 }
 
-/**
- * Creates a Query object for consumers who want easy caching via @tanstack/query
- *
- * TODO: Experimenting w/ this idea here for now as proof-of-concept, see:
- * https://twitter.com/DannyDelott/status/1623571402115911680
- *
- * Ultimately @hyperdrive/core should not know about caching and just be pure
- * hyperdrive-typescript library. If this works well in practice we should move
- * this to its own @hypedrive/queries package.
- */
 export function getTransferSingleEventsQuery({
   hyperdriveAddress,
   publicClient,

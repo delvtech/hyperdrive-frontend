@@ -1,7 +1,6 @@
 import { HyperdriveABI } from "src/abis/Hyperdrive";
 import {
   Address,
-  BlockTag,
   DecodeEventLogReturnType,
   GetFilterLogsReturnType,
   PublicClient,
@@ -21,8 +20,8 @@ interface RedeemWithdrawalSharesEvent {
 
 interface GetRedeemWithdrawalSharesEventsOptions {
   args: { provider?: Address };
-  fromBlock?: bigint | BlockTag;
-  toBlock?: bigint | BlockTag;
+  fromBlock?: bigint | "earliest";
+  toBlock?: bigint | "latest";
   hyperdriveAddress: Address;
   publicClient: PublicClient;
 }

@@ -5,7 +5,6 @@ import {
   decodeEventLog,
   DecodeEventLogReturnType,
   GetFilterLogsReturnType,
-  BlockTag,
 } from "viem";
 interface CloseShortEvent {
   eventData: DecodeEventLogReturnType<
@@ -16,8 +15,8 @@ interface CloseShortEvent {
 }
 interface GetCloseShortEventsOptions {
   args?: { traderAddress?: Address };
-  fromBlock?: bigint | BlockTag;
-  toBlock?: bigint | BlockTag;
+  fromBlock?: bigint | "earliest";
+  toBlock?: bigint | "latest";
   hyperdriveAddress: Address;
   publicClient: PublicClient;
 }
