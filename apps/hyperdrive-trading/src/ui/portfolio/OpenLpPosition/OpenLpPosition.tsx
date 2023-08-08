@@ -154,7 +154,7 @@ export function OpenLpPosition({
         {
           cell: (
             <CellWithTooltip
-              tooltip="User's chosen role in Hyperdrive: holding discounted bonds, short-selling bonds, or providing liquidity for trades."
+              tooltip="Long and Short positions have a maturity date based on the open date and position duration of the pool whereas LP positions can remain active indefinitely (until closed by the LPer)."
               content="Position"
             />
           ),
@@ -170,7 +170,7 @@ export function OpenLpPosition({
         {
           cell: (
             <CellWithTooltip
-              tooltip="Current worth of the LP's deposited capital."
+              tooltip="Current settlement value of your open position."
               content="Value"
             />
           ),

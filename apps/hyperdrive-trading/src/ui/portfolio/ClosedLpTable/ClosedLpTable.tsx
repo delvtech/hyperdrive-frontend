@@ -104,7 +104,7 @@ export function ClosedLpTable({
         {
           cell: (
             <CellWithTooltip
-              tooltip="User's chosen role in Hyperdrive: holding discounted bonds, short-selling bonds, or providing liquidity for trades."
+              tooltip="Long and Short positions have a maturity date based on the open date and position duration of the pool whereas LP positions can remain active indefinitely (until closed by the LPer)."
               content="Position"
             />
           ),
@@ -137,7 +137,7 @@ export function ClosedLpTable({
           cell: (
             <CellWithTooltip
               content="Closed on"
-              tooltip="Date when the LP position was settled or exited."
+              tooltip=" Date when the position was settled by the trader"
             />
           ),
         },

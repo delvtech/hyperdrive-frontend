@@ -30,7 +30,7 @@ export function ClosedShortsTable({
         {
           cell: (
             <CellWithTooltip
-              tooltip="User's chosen role in Hyperdrive: holding discounted bonds, short-selling bonds, or providing liquidity for trades."
+              tooltip="Long and Short positions have a maturity date based on the open date and position duration of the pool whereas LP positions can remain active indefinitely (until closed by the LPer)."
               content="Position"
             />
           ),
@@ -38,7 +38,7 @@ export function ClosedShortsTable({
         {
           cell: (
             <CellWithTooltip
-              tooltip="Instruments in Hyperdrive representing a fixed return. Purchased at a discount and earn interest until maturity."
+              tooltip="Hyperdrive-native instruments with a market-based fixed rate; can be closed early for current market value or held for the full position duration (i.e., term) and subsequently redeemed for the bond’s face value"
               content="Bonds"
             />
           ),
@@ -47,7 +47,7 @@ export function ClosedShortsTable({
           cell: (
             <CellWithTooltip
               content="Value"
-              tooltip="Present worth of your position in the market."
+              tooltip="Current settlement value of your open position"
             />
           ),
         },
@@ -55,7 +55,7 @@ export function ClosedShortsTable({
           cell: (
             <CellWithTooltip
               content="Matures on"
-              tooltip="Date when the position matures and is settled."
+              tooltip="Date at which the position matures and can be settled by the trader."
             />
           ),
         },
@@ -64,7 +64,7 @@ export function ClosedShortsTable({
           cell: (
             <CellWithTooltip
               content="Closed on"
-              tooltip="Date when the position was settled or exited."
+              tooltip="Date when the position was settled by the trader"
             />
           ),
         },
