@@ -41,7 +41,7 @@ export function CloseShortForm({
   const closeShortAmountAfterSlippage =
     baseAmountOut &&
     adjustAmountByPercentage({
-      amountOut: baseAmountOut,
+      amount: baseAmountOut,
       decimals: hyperdrive.baseToken.decimals,
     });
 

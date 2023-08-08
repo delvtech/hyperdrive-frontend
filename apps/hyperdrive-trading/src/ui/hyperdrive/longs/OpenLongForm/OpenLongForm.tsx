@@ -68,7 +68,7 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
   const longAmountOutAfterSlippage =
     longAmountOut &&
     adjustAmountByPercentage({
-      amountOut: longAmountOut,
+      amount: longAmountOut,
       decimals: market.baseToken.decimals,
     });
 

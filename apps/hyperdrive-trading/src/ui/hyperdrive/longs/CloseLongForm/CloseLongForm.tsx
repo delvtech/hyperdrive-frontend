@@ -42,7 +42,7 @@ export function CloseLongForm({
   const closeLongAmountAfterSlippage =
     baseAmountOut &&
     adjustAmountByPercentage({
-      amountOut: baseAmountOut,
+      amount: baseAmountOut,
       decimals: hyperdrive.baseToken.decimals,
     });
 
