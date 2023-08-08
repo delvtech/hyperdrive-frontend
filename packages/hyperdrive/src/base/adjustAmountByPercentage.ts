@@ -1,13 +1,13 @@
 export function adjustAmountByPercentage({
-  amountOut,
+  amount,
   decimals,
 }: {
-  amountOut: bigint;
+  amount: bigint;
   decimals: number;
 }): bigint {
   // Convert the amountOut to a "decimal-based" bigint by shifting the decimal places
   const shiftDecimals = 10n ** BigInt(decimals);
-  const amountWithDecimals = amountOut * shiftDecimals;
+  const amountWithDecimals = amount * shiftDecimals;
 
   // Calculate the slippage amount
   const percentage = 2n; // 2% slippage
