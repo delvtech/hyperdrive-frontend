@@ -37,7 +37,7 @@ export function ClosedLongsTable({
         {
           cell: (
             <CellWithTooltip
-              tooltip="Hyperdrive-native instruments with a market-based fixed rate; can be closed early for current market value or held for the full position duration (i.e., term) and subsequently redeemed for the bond’s face value"
+              tooltip="Hyperdrive-native instruments with a market-based fixed rate; can be closed early for current market value or held for the full position duration (i.e., term) and subsequently redeemed for the bond’s face value."
               content="Bonds"
             />
           ),
@@ -46,7 +46,7 @@ export function ClosedLongsTable({
           cell: (
             <CellWithTooltip
               content="Value"
-              tooltip="Current settlement value of your open position"
+              tooltip="Current settlement value of your open position."
             />
           ),
         },
@@ -63,7 +63,7 @@ export function ClosedLongsTable({
           cell: (
             <CellWithTooltip
               content="Closed on"
-              tooltip="Date when the position was settled by the trader"
+              tooltip="Date when the position was settled by the trader."
             />
           ),
         },

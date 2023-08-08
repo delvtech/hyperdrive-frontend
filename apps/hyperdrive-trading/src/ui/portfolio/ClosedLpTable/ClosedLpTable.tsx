@@ -137,7 +137,7 @@ export function ClosedLpTable({
           cell: (
             <CellWithTooltip
               content="Closed on"
-              tooltip=" Date when the position was settled by the trader"
+              tooltip=" Date when the position was settled by the trader."
             />
           ),
         },
