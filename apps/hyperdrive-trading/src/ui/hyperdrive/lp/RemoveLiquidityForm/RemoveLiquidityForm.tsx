@@ -1,3 +1,4 @@
+import { adjustAmountByPercentage } from "@hyperdrive/core";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
@@ -37,10 +38,17 @@ export function RemoveLiquidityForm({
       destination: account,
     });
 
+  const minBaseAmountAfterSlippage =
+    baseAmountOut &&
+    adjustAmountByPercentage({
+      amount: baseAmountOut,
+      decimals: hyperdrive.baseToken.decimals,
+    });
+
   const { removeLiquidity, removeLiquidityStatus } = useRemoveLiquidity({
     market: hyperdrive,
     lpSharesIn: amountAsBigInt,
-    minBaseAmountOut: 0n,
+    minBaseAmountOut: minBaseAmountAfterSlippage,
     destination: account,
     enabled: previewRemoveLiquidityStatus === "success",
   });

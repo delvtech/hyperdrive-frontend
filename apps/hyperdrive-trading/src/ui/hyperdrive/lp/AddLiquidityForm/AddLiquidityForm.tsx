@@ -61,7 +61,6 @@ export function AddLiquidityForm({
   const { addLiquidity, addLiquidityStatus } = useAddLiquidity({
     market,
     contribution: amountAsBigInt,
-    // TODO: Add slippage control
     minAPR: parseUnits("0", market.baseToken.decimals),
     maxAPR: parseUnits("999", market.baseToken.decimals),
     destination: account,

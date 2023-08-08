@@ -1,3 +1,4 @@
+import { adjustAmountByPercentage } from "@hyperdrive/core";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { ethers } from "ethers";
 import { ReactElement } from "react";
@@ -64,11 +65,17 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
     enabled: !needsApproval,
   });
 
+  const longAmountOutAfterSlippage =
+    longAmountOut &&
+    adjustAmountByPercentage({
+      amount: longAmountOut,
+      decimals: market.baseToken.decimals,
+    });
+
   const { openLong, openLongStatus } = useOpenLong({
     market,
     baseAmount: amountAsBigInt,
-    // TODO: handle slippage
-    bondAmountOut: 1n,
+    bondAmountOut: longAmountOutAfterSlippage,
     destination: account,
     enabled: openLongPreviewStatus === "success" && !needsApproval,
   });
