@@ -89,5 +89,5 @@ export type {
 export { sumBigInt } from "src/base/sumBigInt";
 
 // Slippage
-export { adjustAmountByPercentage } from "src/amm/getSlippage";
+export { adjustAmountByPercentage } from "src/base/adjustAmountByPercentage";
 export { multiplyBigInt } from "src/base/multiplyBigInt/multiplyBigInt";
