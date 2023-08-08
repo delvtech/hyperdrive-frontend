@@ -26,12 +26,12 @@ export function OpenLpPosition({
 }: OpenOrdersTableProps): ReactElement {
   const { address: account } = useAccount();
 
-  const { lpShares } = useLpShares({
+  const { lpShares, lpSharesStatus } = useLpShares({
     hyperdriveAddress: hyperdrive.address,
     account,
   });
 
-  const { withdrawalShares } = useWithdrawalShares({
+  const { withdrawalShares, withdrawalSharesStatus } = useWithdrawalShares({
     hyperdriveAddress: hyperdrive.address,
     account,
   });
@@ -151,6 +151,9 @@ export function OpenLpPosition({
       // Blank col added for actions
       cols={["Position", "Shares", "Value", "Withdrawable", ""]}
       rows={rows}
+      showSkeleton={
+        lpSharesStatus === "loading" || withdrawalSharesStatus === "loading"
+      }
     />
   );
 }

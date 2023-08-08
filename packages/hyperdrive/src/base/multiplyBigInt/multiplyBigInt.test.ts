@@ -1,4 +1,4 @@
-import { multiplyBigInt } from "src/base/multiplyBigInt";
+import { multiplyBigInt } from "src/base/multiplyBigInt/multiplyBigInt";
 import { expect, test } from "vitest";
 
 test("multiplyBigInt: simple multiplication", async () => {

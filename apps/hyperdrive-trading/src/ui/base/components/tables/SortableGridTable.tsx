@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import { ReactElement, ReactNode, useState } from "react";
+import Skeleton from "react-loading-skeleton";
 import { GridTableHeader } from "src/ui/base/components/tables/GridTableHeader";
 import { GridTableRow } from "src/ui/base/components/tables/GridTableRow";
 import { GridTableRowLink } from "src/ui/base/components/tables/GridTableRowLink";
@@ -12,6 +13,7 @@ interface SortableGridTableProps<K extends string> {
   rows: Row[];
   onSort?: (sortOptions: SortOptions<K>) => void;
   emptyTableElement?: ReactNode;
+  showSkeleton?: boolean;
   headingRowClassName?: string;
   bodyRowClassName?: string;
   defaultSortOptions?: SortOptions<K>;
@@ -52,6 +54,7 @@ export function SortableGridTable<K extends string>({
   onSort,
   headingRowClassName,
   emptyTableElement = <DefaultEmptyTableElement />,
+  showSkeleton,
   bodyRowClassName,
   defaultSortOptions,
 }: SortableGridTableProps<K>): ReactElement {
@@ -115,46 +118,50 @@ export function SortableGridTable<K extends string>({
         })}
       </GridTableHeader>
 
-      {rows.length
-        ? rows.map((row, i) => {
-            if (!row) {
-              return;
-            }
-            // is row options object
-            if ("cells" in row) {
-              if (row.href) {
-                return (
-                  <GridTableRowLink
-                    key={i}
-                    href={row.href as string}
-                    className={classNames(bodyRowClassName, row.className)}
-                  >
-                    {row.cells.map((cell, i) => (
-                      <span key={i}>{cell}</span>
-                    ))}
-                  </GridTableRowLink>
-                );
-              }
-
+      {showSkeleton ? (
+        <Skeleton />
+      ) : rows.length ? (
+        rows.map((row, i) => {
+          if (!row) {
+            return;
+          }
+          // is row options object
+          if ("cells" in row) {
+            if (row.href) {
               return (
-                <GridTableRow
+                <GridTableRowLink
                   key={i}
+                  href={row.href as string}
                   className={classNames(bodyRowClassName, row.className)}
                 >
-                  {row.cells}
-                </GridTableRow>
+                  {row.cells.map((cell, i) => (
+                    <span key={i}>{cell}</span>
+                  ))}
+                </GridTableRowLink>
               );
             }
 
             return (
-              <GridTableRow key={i} className={bodyRowClassName}>
-                {row.map((cell, i) => (
-                  <span key={i}>{cell}</span>
-                ))}
+              <GridTableRow
+                key={i}
+                className={classNames(bodyRowClassName, row.className)}
+              >
+                {row.cells}
               </GridTableRow>
             );
-          })
-        : emptyTableElement}
+          }
+
+          return (
+            <GridTableRow key={i} className={bodyRowClassName}>
+              {row.map((cell, i) => (
+                <span key={i}>{cell}</span>
+              ))}
+            </GridTableRow>
+          );
+        })
+      ) : (
+        emptyTableElement
+      )}
     </>
   );
 }

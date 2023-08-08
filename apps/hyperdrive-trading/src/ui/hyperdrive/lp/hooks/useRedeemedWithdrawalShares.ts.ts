@@ -2,7 +2,7 @@ import {
   getRedeemedWithdrawalSharesQuery,
   RedeemedWithdrawalShares,
 } from "@hyperdrive/core";
-import { useQuery } from "@tanstack/react-query";
+import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { Address, usePublicClient } from "wagmi";
 
 interface UseRedeemedWithdrawalSharesOptions {
@@ -14,14 +14,18 @@ export function useRedeemedWithdrawalShares({
   hyperdriveAddress,
 }: UseRedeemedWithdrawalSharesOptions): {
   redeemedWithdrawalShares: RedeemedWithdrawalShares[] | undefined;
+  redeemedWithdrawlSharesStatus: QueryStatus;
 } {
   const publicClient = usePublicClient();
-  const { data: redeemedWithdrawalShares } = useQuery(
+  const {
+    data: redeemedWithdrawalShares,
+    status: redeemedWithdrawlSharesStatus,
+  } = useQuery(
     getRedeemedWithdrawalSharesQuery({
       account,
       hyperdriveAddress,
       publicClient: publicClient as any,
     }),
   );
-  return { redeemedWithdrawalShares };
+  return { redeemedWithdrawalShares, redeemedWithdrawlSharesStatus };
 }

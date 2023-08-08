@@ -10,7 +10,10 @@ export { HyperdriveABI } from "src/abis/Hyperdrive";
 export { mockErc4626Abi } from "src/abis/MockErc4626";
 
 // AMM
-export { getPoolConfig, getPoolConfigQuery } from "src/amm/getPoolConfig";
+export {
+  getPoolConfig,
+  getPoolConfigQuery,
+} from "src/amm/getPoolConfig/getPoolConfig";
 export { getPoolInfo, getPoolInfoQuery } from "src/amm/getPoolInfo";
 export { getTransferSingleEvents } from "src/amm/events/getTransferSingleEvents";
 export { getCurrentFixedAPRQuery } from "src/amm/getFixedAPR";
@@ -84,7 +87,7 @@ export type {
 
 // Utils
 export { sumBigInt } from "src/base/sumBigInt";
-export { multiplyBigInt } from "src/base/multiplyBigInt";
 
 // Slippage
 export { calculateBondAmountWithSlippage } from "src/amm/getSlippage";
+export { multiplyBigInt } from "src/base/multiplyBigInt/multiplyBigInt";

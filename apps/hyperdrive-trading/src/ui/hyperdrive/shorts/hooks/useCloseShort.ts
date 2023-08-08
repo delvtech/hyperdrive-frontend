@@ -45,8 +45,6 @@ export function useCloseShort({
           asUnderlying,
         ]
       : undefined,
-    // TODO: better gas optimization
-    gas: 500_000n,
   });
 
   const addRecentTransaction = useAddRecentTransaction();
