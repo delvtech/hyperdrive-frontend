@@ -1,4 +1,4 @@
-import { calculatePercentageChange } from "src/base/calculateProfitLoss";
+import { calculatePercentageChange } from "src/base/calculatePercentageChange";
 import { formatUnits } from "viem";
 
 /**
