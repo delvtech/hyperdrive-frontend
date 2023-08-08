@@ -1,7 +1,7 @@
 import { test } from "vitest";
 import { getContract } from "viem";
 import { publicClient, testClient, walletClient } from "src/testing/utils";
-import { ERC20MintableABI, HyperdriveABI, getPoolInfo } from "..";
+import { ERC20MintableABI, HyperdriveABI, getOpenLongs, getPoolInfo } from "..";
 import { parseUnits } from "src/base/parseUnits";
 
 // const baseContract = getContract({
@@ -90,6 +90,13 @@ test("gets the poolInfo", async () => {
     value: 0n,
     // gas: 1391291n,
   });
+
+  const openLongs = await getOpenLongs({
+    publicClient,
+    hyperdriveAddress: "0xd8058efe0198ae9dD7D563e1b4938Dcbc86A1F81",
+    account,
+  });
+  console.log(openLongs, "openLongs!");
 
   // const receipt = await publicClient.waitForTransactionReceipt({ hash: tx });
   // console.log(receipt, "receipt!");
