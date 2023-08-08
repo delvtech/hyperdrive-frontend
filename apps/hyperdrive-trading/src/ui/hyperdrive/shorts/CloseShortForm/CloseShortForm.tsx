@@ -1,4 +1,4 @@
-import { OpenShort } from "@hyperdrive/core";
+import { adjustAmountByPercentage, OpenShort } from "@hyperdrive/core";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
@@ -7,7 +7,7 @@ import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { useCloseShort } from "src/ui/hyperdrive/shorts/hooks/useCloseShort";
 import { usePreviewCloseShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewCloseShort";
 import { TokenInput } from "src/ui/token/TokenInput";
-import { formatUnits, parseUnits } from "viem";
+import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
 import { getProfitLossText } from "./getProfitLossText";
 
@@ -38,10 +38,17 @@ export function CloseShortForm({
     destination: account,
   });
 
+  const closeShortAmountAfterSlippage =
+    baseAmountOut &&
+    adjustAmountByPercentage({
+      amount: baseAmountOut,
+      decimals: hyperdrive.baseToken.decimals,
+    });
+
   const { closeShort, isPendingWalletAction } = useCloseShort({
     short,
     bondAmountIn: amountAsBigInt,
-    minBaseAmountOut: parseUnits("0", baseDecimals),
+    minBaseAmountOut: closeShortAmountAfterSlippage,
     destination: account,
     enabled: previewCloseShortStatus === "success",
   });
