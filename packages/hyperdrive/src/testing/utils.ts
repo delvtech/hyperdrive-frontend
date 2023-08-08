@@ -6,6 +6,7 @@ import {
   http,
 } from "viem";
 import { foundry } from "viem/chains";
+import { publicActions, walletActions } from "viem";
 
 /**
  * The id of the current test worker.
@@ -40,7 +41,9 @@ export const testClient = createTestClient({
 export const publicClient = createPublicClient({
   chain: anvil,
   transport: http(),
-});
+})
+  .extend(publicActions)
+  .extend(walletActions);
 
 export const walletClient = createWalletClient({
   chain: anvil,
