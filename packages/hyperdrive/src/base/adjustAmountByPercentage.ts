@@ -10,7 +10,7 @@ export function adjustAmountByPercentage({
   const amountWithDecimals = amount * shiftDecimals;
 
   // Calculate the slippage amount
-  const percentage = 2n; // 2% slippage
+  const percentage = 1n; // 1% slippage
   const slippageAmount = (amountWithDecimals * percentage) / 100n;
 
   // Subtract the slippage from the amountOut
