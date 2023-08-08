@@ -1,4 +1,4 @@
-import { calculateBondAmountWithSlippage, Long } from "@hyperdrive/core";
+import { adjustAmountByPercentage, Long } from "@hyperdrive/core";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
@@ -41,7 +41,7 @@ export function CloseLongForm({
 
   const closeLongAmountAfterSlippage =
     baseAmountOut &&
-    calculateBondAmountWithSlippage({
+    adjustAmountByPercentage({
       amountOut: baseAmountOut,
       decimals: hyperdrive.baseToken.decimals,
     });

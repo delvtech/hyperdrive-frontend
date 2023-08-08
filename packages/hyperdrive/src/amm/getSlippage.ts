@@ -1,4 +1,4 @@
-export function calculateBondAmountWithSlippage({
+export function adjustAmountByPercentage({
   amountOut,
   decimals,
 }: {
@@ -10,8 +10,8 @@ export function calculateBondAmountWithSlippage({
   const amountWithDecimals = amountOut * shiftDecimals;
 
   // Calculate the slippage amount
-  const slippage = 2n; // 2% slippage
-  const slippageAmount = (amountWithDecimals * slippage) / 100n;
+  const percentage = 2n; // 2% slippage
+  const slippageAmount = (amountWithDecimals * percentage) / 100n;
 
   // Subtract the slippage from the amountOut
   const minOutput = amountWithDecimals - slippageAmount;

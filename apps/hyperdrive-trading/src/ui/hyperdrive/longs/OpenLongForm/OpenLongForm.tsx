@@ -1,4 +1,4 @@
-import { calculateBondAmountWithSlippage } from "@hyperdrive/core";
+import { adjustAmountByPercentage } from "@hyperdrive/core";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { ethers } from "ethers";
 import { ReactElement } from "react";
@@ -67,7 +67,7 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
 
   const longAmountOutAfterSlippage =
     longAmountOut &&
-    calculateBondAmountWithSlippage({
+    adjustAmountByPercentage({
       amountOut: longAmountOut,
       decimals: market.baseToken.decimals,
     });
