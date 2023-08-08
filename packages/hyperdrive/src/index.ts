@@ -26,8 +26,11 @@ export {
   getLongPrice,
   getCurrentLongPriceQuery,
 } from "src/amm/longs/getLongPrice";
-export { getOpenLongs, getOpenLongsQuery } from "src/amm/longs/getOpenLongs";
-export type { GetOpenLongsOptions } from "src/amm/longs/getOpenLongs";
+export {
+  getOpenLongs,
+  getOpenLongsQuery,
+} from "src/amm/longs/getOpenLongs/getOpenLongs";
+export type { GetOpenLongsOptions } from "src/amm/longs/getOpenLongs/getOpenLongs";
 export {
   getClosedLongs,
   getCloseLongsQuery,

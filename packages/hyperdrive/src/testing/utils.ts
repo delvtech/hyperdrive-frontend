@@ -1,3 +1,4 @@
+import { ALICE } from "src/testing/accounts";
 import {
   type Chain,
   createPublicClient,
@@ -16,6 +17,7 @@ import { foundry } from "viem/chains";
 export const pool = Number(process.env.VITEST_POOL_ID ?? 1);
 export const anvil: Chain = {
   ...foundry,
+  id: 123,
   rpcUrls: {
     // These rpc urls are automatically used in the transports.
     default: {
@@ -35,6 +37,7 @@ export const testClient = createTestClient({
   chain: anvil,
   mode: "anvil",
   transport: http(),
+  account: ALICE,
 });
 
 export const publicClient = createPublicClient({
@@ -45,4 +48,5 @@ export const publicClient = createPublicClient({
 export const walletClient = createWalletClient({
   chain: anvil,
   transport: http(),
+  account: ALICE,
 });
