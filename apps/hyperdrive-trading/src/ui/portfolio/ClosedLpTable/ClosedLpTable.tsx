@@ -1,6 +1,7 @@
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import {
+  CellWithTooltip,
   Row,
   SortableGridTable,
 } from "src/ui/base/components/tables/SortableGridTable";
@@ -100,11 +101,46 @@ export function ClosedLpTable({
       headingRowClassName="grid-cols-5 text-start text-neutral-content"
       bodyRowClassName="grid-cols-5 text-base-content items-center text-sm md:text-h6 even:bg-secondary/5 h-16"
       cols={[
-        "Position",
-        "Shares",
-        "Value Received",
-        "Withdrawal shares",
-        "Closed on",
+        {
+          cell: (
+            <CellWithTooltip
+              tooltip="Long and Short positions have a maturity date based on the open date and position duration of the pool whereas LP positions can remain active indefinitely (until closed by the LPer)."
+              content="Position"
+            />
+          ),
+        },
+        {
+          cell: (
+            <CellWithTooltip
+              tooltip="LP's proportionate stake in the liquidity pool."
+              content="Shares"
+            />
+          ),
+        },
+        {
+          cell: (
+            <CellWithTooltip
+              content="Value received"
+              tooltip="Total assets collected upon closing the position."
+            />
+          ),
+        },
+        {
+          cell: (
+            <CellWithTooltip
+              content="Withdrawal shares"
+              tooltip="Portion of LP's stake withdrawn from the pool."
+            />
+          ),
+        },
+        {
+          cell: (
+            <CellWithTooltip
+              content="Closed on"
+              tooltip=" Date when the position was settled by the trader."
+            />
+          ),
+        },
       ]}
       rows={rows}
       showSkeleton={
