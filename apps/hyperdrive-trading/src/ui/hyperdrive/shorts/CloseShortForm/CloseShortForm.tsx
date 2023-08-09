@@ -93,7 +93,7 @@ export function CloseShortForm({
         <div className="flex justify-between">
           <p className="font-light text-neutral-content">Profit / Loss</p>
           <p className="tracking-wide">
-            {baseAmountOut && amountAsBigInt && short.baseAmountPaid
+            {baseAmountOut && amountAsBigInt
               ? getProfitLossText({
                   baseAmountOut,
                   amountInput: amountAsBigInt,
