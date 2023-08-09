@@ -5,18 +5,18 @@
  * @returns The calculated profit or loss percentage.
  */
 export function calculatePercentageChange({
-  initialAmount,
+  amountInput,
   finalAmount,
 }: {
-  initialAmount: bigint;
+  amountInput: bigint;
   finalAmount: bigint;
 }): string {
-  if (initialAmount === 0n) {
+  if (amountInput === 0n) {
     return "0"; // Prevent division by zero
   }
 
   // Calculate profit or loss percentage
   const profitOrLoss =
-    (Number(finalAmount - initialAmount) / Number(initialAmount)) * 100;
+    (Number(finalAmount - amountInput) / Number(amountInput)) * 100;
   return profitOrLoss.toFixed(2);
 }
