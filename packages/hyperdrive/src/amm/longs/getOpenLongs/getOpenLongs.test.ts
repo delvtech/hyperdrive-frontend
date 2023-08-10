@@ -1,13 +1,12 @@
 import { expect, test } from "vitest";
 
-import { parseUnits, formatUnits, Address } from "viem";
+import { parseUnits, formatUnits } from "viem";
 import { publicClient } from "src/testing/utils";
 import { getOpenLongs } from "src/amm/longs/getOpenLongs/getOpenLongs";
 import { ALICE } from "src/testing/accounts";
 import { TestAddresses } from "src/addresses/test";
 import { HyperdriveABI } from "src/abis/Hyperdrive";
-import { ERC20MintableABI } from "src/abis/ERC20Mintable";
-import { MAX_UINT256 } from "src/base/numbers";
+import { setupMintTokensAndApproveHyperdrive } from "src/amm/testing/setupMintTokensAndApproveHyperdrive";
 
 test("returns the users open longs", async () => {
   await setupMintTokensAndApproveHyperdrive(ALICE);
@@ -79,20 +78,3 @@ test("returns the users open longs", async () => {
     +formatUnits(openLongsAfterPartialClosing[0].baseAmountPaid, 18),
   ).closeTo(0.019167099247425833, 0.000000001);
 });
-
-async function setupMintTokensAndApproveHyperdrive(account: Address) {
-  await publicClient.writeContract({
-    abi: ERC20MintableABI,
-    address: TestAddresses.baseToken,
-    functionName: "mint",
-    args: [account, parseUnits("100000", 18)],
-    account,
-  });
-  await publicClient.writeContract({
-    functionName: "approve",
-    account,
-    address: TestAddresses.baseToken,
-    args: [TestAddresses.mockHyperdrive, MAX_UINT256],
-    abi: ERC20MintableABI,
-  });
-}
