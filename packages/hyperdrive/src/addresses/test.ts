@@ -1,5 +1,3 @@
-import { Address } from "viem";
-
 // https://github.com/delvtech/hyperdrive/releases/tag/v0.0.11
 export const TestAddresses = {
   baseToken: "0x5FbDB2315678afecb367f032d93F642f64180aa3",

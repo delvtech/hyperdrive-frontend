@@ -3,7 +3,7 @@ import { Hash } from "viem";
 import { fetchLogs } from "@viem/anvil";
 import { afterEach, beforeAll } from "vitest";
 
-let snapshot: Hash | undefined;
+let snapshot: Hash;
 beforeAll(async () => {
   // get the state dump once at the very beginning
   snapshot = await testClient.request({
@@ -13,7 +13,7 @@ beforeAll(async () => {
 
 afterEach(async (context) => {
   await testClient.request({
-    method: "evm_revert" as any,
+    method: "evm_revert",
     params: [snapshot],
   });
 

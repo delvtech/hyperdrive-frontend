@@ -1,7 +1,7 @@
 import { expect, test } from "vitest";
 
 import { parseUnits, formatUnits, Address } from "viem";
-import { publicClient, testClient } from "src/testing/utils";
+import { publicClient } from "src/testing/utils";
 import { getOpenLongs } from "src/amm/longs/getOpenLongs/getOpenLongs";
 import { ALICE } from "src/testing/accounts";
 import { TestAddresses } from "src/addresses/test";
