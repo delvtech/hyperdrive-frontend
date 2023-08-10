@@ -45,6 +45,6 @@ test("poolInfo changes after a trade", async () => {
     hyperdriveAddress: TestAddresses.mockHyperdrive,
   });
 
-  // Expect poolInfo to have changed after the trade
-  expect(longsOutstandingStart).not.toStrictEqual(longsOutstandingFinish);
+  // Expect the longsOutstanding to have increased in the poolInfo
+  expect(longsOutstandingStart).toBeLessThan(longsOutstandingFinish);
 });
