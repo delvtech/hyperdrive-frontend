@@ -1,7 +1,7 @@
 // Wagmi Contract Bytecode.
 // https://etherscan.io/address/0xfba3912ca04dd458c843e2ee08967fc04f3579c2#code
 
-export const exampleContract = {
+export const wagmiContract = {
   abi: [
     { inputs: [], stateMutability: "nonpayable", type: "constructor" },
     {
