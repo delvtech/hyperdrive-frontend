@@ -2,35 +2,20 @@ import { parseUnits } from "src/base/parseUnits";
 import { publicClient, testClient, walletClient } from "src/testing/utils";
 import { expect, test } from "vitest";
 import { ERC20MintableABI, HyperdriveABI, getPoolInfo } from "..";
-
+import { Address } from "viem";
+import { TestAddresses } from "src/addresses/test";
+import { MAX_UINT256 } from "src/base/numbers";
 test("poolInfo changes after a trade", async () => {
   await testClient.setLoggingEnabled(true);
 
   const [account] = await walletClient.getAddresses();
 
   // Constants
-  const ERC20_ADDRESS = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
   const HYPERDRIVE_ADDRESS = "0xd8058efe0198ae9dD7D563e1b4938Dcbc86A1F81";
   const AMOUNT = parseUnits("100", 18);
   const MIN_AMOUNT = 1n;
 
-  // Approve ERC20 tokens
-  await publicClient.writeContract({
-    abi: ERC20MintableABI,
-    address: ERC20_ADDRESS,
-    account,
-    functionName: "approve",
-    args: [HYPERDRIVE_ADDRESS, AMOUNT],
-  });
-
-  // Mint ERC20 tokens
-  await publicClient.writeContract({
-    abi: ERC20MintableABI,
-    address: ERC20_ADDRESS,
-    account,
-    functionName: "mint",
-    args: [account, AMOUNT],
-  });
+  await setupMintTokensAndApproveHyperdrive(account);
 
   // Conduct initial trade
   await publicClient.writeContract({
@@ -42,8 +27,8 @@ test("poolInfo changes after a trade", async () => {
     value: 0n,
   });
 
-  // Get initial poolInfo
-  const poolInfoStart = await getPoolInfo({
+  // Get initial longsOutstanding
+  const { longsOutstanding: longsOutstandingStart } = await getPoolInfo({
     publicClient,
     hyperdriveAddress: HYPERDRIVE_ADDRESS,
   });
@@ -58,12 +43,29 @@ test("poolInfo changes after a trade", async () => {
     value: 0n,
   });
 
-  // Get updated poolInfo
-  const poolInfoFinish = await getPoolInfo({
+  // Get updated longsOutstanding
+  const { longsOutstanding: longsOutstandingFinish } = await getPoolInfo({
     publicClient,
     hyperdriveAddress: HYPERDRIVE_ADDRESS,
   });
 
   // Expect poolInfo to have changed after the trade
-  expect(poolInfoStart).not.toStrictEqual(poolInfoFinish);
+  expect(longsOutstandingStart).not.toStrictEqual(longsOutstandingFinish);
 });
+
+async function setupMintTokensAndApproveHyperdrive(account: Address) {
+  await publicClient.writeContract({
+    abi: ERC20MintableABI,
+    address: TestAddresses.baseToken,
+    functionName: "mint",
+    args: [account, parseUnits("100000", 18)],
+    account,
+  });
+  await publicClient.writeContract({
+    functionName: "approve",
+    account,
+    address: TestAddresses.baseToken,
+    args: [TestAddresses.mockHyperdrive, MAX_UINT256],
+    abi: ERC20MintableABI,
+  });
+}
