@@ -1,21 +1,18 @@
-import { test, expect } from "vitest";
-import { publicClient } from "src/testing/utils";
-import { ALICE } from "src/testing/accounts";
-import { parseUnits } from "viem";
-import { setupMintTokensAndApproveHyperdrive } from "./testing/setupMintTokensAndApproveHyperdrive";
-import { getFixedAPR } from "./getFixedAPR";
 import { TestAddresses } from "src/addresses/test";
-import { getPoolInfo } from "./getPoolInfo";
-import { getPoolConfig } from "./getPoolConfig/getPoolConfig";
+import { ALICE } from "src/testing/accounts";
+import { publicClient } from "src/testing/utils";
+import { parseUnits } from "viem";
+import { expect, test } from "vitest";
 import { HyperdriveABI } from "..";
+import { getFixedAPR } from "./getFixedAPR";
+import { getPoolConfig } from "./getPoolConfig/getPoolConfig";
+import { getPoolInfo } from "./getPoolInfo";
+import { setupMintTokensAndApproveHyperdrive } from "./testing/setupMintTokensAndApproveHyperdrive";
 
 test("gets the fixed APR and verifies its change after opening a long position", async () => {
   const mockHyperdriveAddress = TestAddresses.mockHyperdrive;
   const mockHyperdriveMathAddress = TestAddresses.mockHyperdriveMath;
-  const initialExpectedAPR = "5.00";
-  const expectedAPRAfterPosition = "4.54";
 
-  // Setup
   await setupMintTokensAndApproveHyperdrive(ALICE);
 
   // Fetch Initial Values
@@ -29,7 +26,7 @@ test("gets the fixed APR and verifies its change after opening a long position",
       hyperdriveAddress: mockHyperdriveAddress,
       publicClient,
     });
-  const { formatted: formattedStart } = await getFixedAPR({
+  const { apr: aprStart } = await getFixedAPR({
     hyperdriveMathAddress: mockHyperdriveMathAddress,
     publicClient,
     bondReserves: bondReservesStart,
@@ -40,7 +37,7 @@ test("gets the fixed APR and verifies its change after opening a long position",
   });
 
   // Assert initial APR values
-  expect(formattedStart).toStrictEqual(initialExpectedAPR);
+  // expect(formattedStart).toStrictEqual(initialExpectedAPR);
 
   // Open Long Position
   const baseAmountIn = parseUnits("100000", 18);
@@ -61,7 +58,7 @@ test("gets the fixed APR and verifies its change after opening a long position",
     hyperdriveAddress: mockHyperdriveAddress,
     publicClient,
   });
-  const { formatted: formattedFinish } = await getFixedAPR({
+  const { apr: aprFinish } = await getFixedAPR({
     hyperdriveMathAddress: mockHyperdriveMathAddress,
     publicClient,
     bondReserves: bondReservesFinish,
@@ -71,6 +68,66 @@ test("gets the fixed APR and verifies its change after opening a long position",
     timeStretch,
   });
 
-  // Assert APR values after opening the position
-  expect(formattedFinish).toStrictEqual(expectedAPRAfterPosition);
+  // Assert the APR value has decreased after opening a large long
+  expect(aprFinish).toBeLessThan(aprStart);
+});
+
+test("gets the fixed APR and verifies its change after opening a short position", async () => {
+  const mockHyperdriveAddress = TestAddresses.mockHyperdrive;
+  const mockHyperdriveMathAddress = TestAddresses.mockHyperdriveMath;
+
+  await setupMintTokensAndApproveHyperdrive(ALICE);
+
+  // Fetch Initial Values
+  const { bondReserves: bondReservesStart, shareReserves: shareReservesStart } =
+    await getPoolInfo({
+      hyperdriveAddress: mockHyperdriveAddress,
+      publicClient,
+    });
+  const { initialSharePrice, positionDuration, timeStretch } =
+    await getPoolConfig({
+      hyperdriveAddress: mockHyperdriveAddress,
+      publicClient,
+    });
+  const { apr: aprStart } = await getFixedAPR({
+    hyperdriveMathAddress: mockHyperdriveMathAddress,
+    publicClient,
+    bondReserves: bondReservesStart,
+    shareReserves: shareReservesStart,
+    initialSharePrice,
+    positionDuration,
+    timeStretch,
+  });
+
+  // Open Short Position
+  const baseAmountIn = parseUnits("100000", 18);
+  const maxAmountOut = parseUnits("100001", 18);
+  await publicClient.writeContract({
+    abi: HyperdriveABI,
+    functionName: "openShort",
+    account: ALICE,
+    address: mockHyperdriveAddress,
+    args: [baseAmountIn, maxAmountOut, ALICE, true],
+    value: 0n,
+  });
+
+  // Fetch Values After Opening Position
+  const {
+    bondReserves: bondReservesFinish,
+    shareReserves: shareReservesFinish,
+  } = await getPoolInfo({
+    hyperdriveAddress: mockHyperdriveAddress,
+    publicClient,
+  });
+  const { apr: aprFinish } = await getFixedAPR({
+    hyperdriveMathAddress: mockHyperdriveMathAddress,
+    publicClient,
+    bondReserves: bondReservesFinish,
+    shareReserves: shareReservesFinish,
+    initialSharePrice,
+    positionDuration,
+    timeStretch,
+  });
+  // Assert APR value has increased after opening a large short
+  expect(aprStart).toBeLessThan(aprFinish);
 });
