@@ -36,9 +36,6 @@ test("gets the fixed APR and verifies its change after opening a long position",
     timeStretch,
   });
 
-  // Assert initial APR values
-  // expect(formattedStart).toStrictEqual(initialExpectedAPR);
-
   // Open Long Position
   const baseAmountIn = parseUnits("100000", 18);
   await publicClient.writeContract({
