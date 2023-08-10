@@ -12,22 +12,22 @@ import { formatUnits } from "viem";
  */
 export function getProfitLossText({
   baseAmountOut,
-  baseAmountPaid,
+  amountInput,
   baseSymbol,
   baseDecimals,
 }: {
   baseAmountOut: bigint;
-  baseAmountPaid: bigint;
+  amountInput: bigint;
   baseSymbol: string;
   baseDecimals: number;
 }): string {
   const profitLossAmount = Number(
-    formatUnits(baseAmountOut - baseAmountPaid, baseDecimals),
+    formatUnits(baseAmountOut - amountInput, baseDecimals),
   );
 
   const profitLossPercentage = calculatePercentageChange({
-    finalAmount: baseAmountOut,
-    initialAmount: baseAmountPaid,
+    amountBefore: amountInput,
+    amountAfter: baseAmountOut,
   });
   return `${profitLossAmount.toFixed(
     2,

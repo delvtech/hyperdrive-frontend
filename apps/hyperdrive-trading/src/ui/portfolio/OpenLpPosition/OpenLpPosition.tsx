@@ -3,6 +3,7 @@ import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { Hyperdrive } from "src/appconfig/types";
 import {
+  CellWithTooltip,
   Row,
   SortableGridTable,
 } from "src/ui/base/components/tables/SortableGridTable";
@@ -149,7 +150,40 @@ export function OpenLpPosition({
       headingRowClassName="grid-cols-[4fr_4fr_4fr_4fr_1fr] text-start text-neutral-content"
       bodyRowClassName="grid-cols-[4fr_4fr_4fr_4fr_1fr] text-base-content items-center text-sm md:text-h6 even:bg-secondary/5 h-16"
       // Blank col added for actions
-      cols={["Position", "Shares", "Value", "Withdrawable", ""]}
+      cols={[
+        {
+          cell: (
+            <CellWithTooltip
+              tooltip="Long and Short positions have a maturity date based on the open date and position duration of the pool whereas LP positions can remain active indefinitely (until closed by the LPer)."
+              content="Position"
+            />
+          ),
+        },
+        {
+          cell: (
+            <CellWithTooltip
+              tooltip="LP's proportionate stake in the total liquidity pool."
+              content="Share"
+            />
+          ),
+        },
+        {
+          cell: (
+            <CellWithTooltip
+              tooltip="Current settlement value of your open position."
+              content="Value"
+            />
+          ),
+        },
+        {
+          cell: (
+            <CellWithTooltip
+              tooltip="Amount of capital LP can reclaim now."
+              content="Withdrawable"
+            />
+          ),
+        },
+      ]}
       rows={rows}
       showSkeleton={
         lpSharesStatus === "loading" || withdrawalSharesStatus === "loading"
