@@ -1,22 +1,22 @@
 /**
  * Calculates the profit or loss percentage.
- * @param baseAmountOut The amount received.
- * @param baseAmountPaid The amount paid.
+ * @param amountBefore The amount paid.
+ * @param amountAfter The amount received.
  * @returns The calculated profit or loss percentage.
  */
 export function calculatePercentageChange({
-  initialAmount,
-  finalAmount,
+  amountBefore,
+  amountAfter,
 }: {
-  initialAmount: bigint;
-  finalAmount: bigint;
+  amountBefore: bigint;
+  amountAfter: bigint;
 }): string {
-  if (initialAmount === 0n) {
+  if (amountBefore === 0n) {
     return "0"; // Prevent division by zero
   }
 
   // Calculate profit or loss percentage
   const profitOrLoss =
-    (Number(finalAmount - initialAmount) / Number(initialAmount)) * 100;
+    (Number(amountAfter - amountBefore) / Number(amountBefore)) * 100;
   return profitOrLoss.toFixed(2);
 }

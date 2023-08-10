@@ -93,10 +93,10 @@ export function CloseLongForm({
       <div className="flex justify-between">
         <p className="font-light text-neutral-content">Profit / Loss</p>
         <p className="tracking-wide">
-          {baseAmountOut && long.baseAmountPaid
+          {baseAmountOut && amountAsBigInt
             ? `${getProfitLossText({
                 baseAmountOut,
-                baseAmountPaid: long.baseAmountPaid,
+                amountInput: amountAsBigInt,
                 baseDecimals,
                 baseSymbol,
               })}`
