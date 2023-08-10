@@ -26,8 +26,8 @@ export function getProfitLossText({
   );
 
   const profitLossPercentage = calculatePercentageChange({
-    finalAmount: baseAmountOut,
-    amountInput,
+    amountBefore: amountInput,
+    amountAfter: baseAmountOut,
   });
   return `${profitLossAmount.toFixed(
     2,
