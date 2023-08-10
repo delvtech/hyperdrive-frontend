@@ -15,7 +15,7 @@
   "scripts": {
     "watch": "parcel watch",
     "build": "tsc --noEmit && parcel build --no-cache",
-    "test": "vitest",
+    "test": "vitest --no-threads",
     "test:run": "vitest run",
     "typecheck": "tsc --noEmit"
   },

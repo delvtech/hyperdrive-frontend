@@ -1,9 +1,10 @@
+import { ALICE } from "src/testing/accounts";
 import {
   type Chain,
   createPublicClient,
   createTestClient,
-  createWalletClient,
   http,
+  walletActions,
 } from "viem";
 import { foundry } from "viem/chains";
 
@@ -35,14 +36,12 @@ export const testClient = createTestClient({
   chain: anvil,
   mode: "anvil",
   transport: http(),
+  account: ALICE,
 });
 
+// See:
+// https://viem.sh/docs/clients/test.html#extending-with-public-wallet-actions
 export const publicClient = createPublicClient({
   chain: anvil,
   transport: http(),
-});
-
-export const walletClient = createWalletClient({
-  chain: anvil,
-  transport: http(),
-});
+}).extend(walletActions);
