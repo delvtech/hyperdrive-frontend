@@ -16,6 +16,11 @@ export function adjustAmountByPercentage({
   // Subtract the slippage from the amountOut
   const minOutput = amountWithDecimals - slippageAmount;
 
-  // Convert back to the original decimal places by dividing through
-  return minOutput / shiftDecimals;
+  // Handle small values to ensure proper rounding
+  if (minOutput < shiftDecimals && minOutput > 0n) {
+    return 0n;
+  }
+
+  // Convert back to the original decimal places by dividing through with rounding
+  return (minOutput + shiftDecimals / 2n) / shiftDecimals;
 }
