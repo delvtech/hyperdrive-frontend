@@ -1,6 +1,6 @@
 import { QueryObserverOptions } from "@tanstack/query-core";
 import { PublicClient, Address } from "viem";
-import { ClosedLong } from "./types";
+import { ClosedLong } from "./typesOld";
 import { getCloseLongEvents } from "src/amm/longs/getCloseLongEvents";
 import { makeQueryKey } from "src/makeQueryKey";
 

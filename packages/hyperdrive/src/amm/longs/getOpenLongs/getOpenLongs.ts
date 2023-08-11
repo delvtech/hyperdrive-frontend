@@ -4,7 +4,7 @@ import mapValues from "lodash.mapvalues";
 import { sumBigInt } from "src/base/sumBigInt";
 import { decodeAssetFromTransferSingleEventData } from "src/amm/events/decodeAssetFromTransferSingleEventData";
 import { getTransferSingleEvents } from "src/amm/events/getTransferSingleEvents";
-import { Long } from "src/amm/longs/types";
+import { Long } from "src/amm/longs/typesOld";
 import { PublicClient, Address } from "viem";
 import { makeQueryKey } from "src/makeQueryKey";
 import { getOpenLongEvents } from "src/amm/longs/getOpenLongEvents";
