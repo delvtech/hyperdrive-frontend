@@ -3,13 +3,13 @@ import { ALICE } from "src/testing/accounts";
 import { publicClient } from "src/testing/utils";
 import { parseUnits } from "viem";
 import { expect, test } from "vitest";
-import { HyperdriveABI } from "..";
-import { getFixedAPR } from "./getFixedAPR";
-import { getPoolConfig } from "./getPoolConfig/getPoolConfig";
-import { getPoolInfo } from "./getPoolInfo";
-import { setupMintTokensAndApproveHyperdrive } from "./testing/setupMintTokensAndApproveHyperdrive";
+import { HyperdriveABI } from "src/abis/Hyperdrive";
+import { getFixedAPR } from "src/amm/getFixedAPR";
+import { getPoolConfig } from "src/amm/getPoolConfig/getPoolConfig";
+import { getPoolInfo } from "src/amm/getPoolInfo";
+import { setupMintTokensAndApproveHyperdrive } from "src/amm/testing/setupMintTokensAndApproveHyperdrive";
 
-test("gets the fixed APR and verifies its change after opening a long position", async () => {
+test("should verify APR decreases after opening a long position", async () => {
   const mockHyperdriveAddress = TestAddresses.mockHyperdrive;
   const mockHyperdriveMathAddress = TestAddresses.mockHyperdriveMath;
 
@@ -69,7 +69,7 @@ test("gets the fixed APR and verifies its change after opening a long position",
   expect(aprFinish).toBeLessThan(aprStart);
 });
 
-test("gets the fixed APR and verifies its change after opening a short position", async () => {
+test("should verify APR increases after opening a short position", async () => {
   const mockHyperdriveAddress = TestAddresses.mockHyperdrive;
   const mockHyperdriveMathAddress = TestAddresses.mockHyperdriveMath;
 

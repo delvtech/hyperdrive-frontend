@@ -4,9 +4,9 @@ import { ALICE } from "src/testing/accounts";
 import { publicClient } from "src/testing/utils";
 import { expect, test } from "vitest";
 import { HyperdriveABI, getPoolInfo } from "..";
-import { setupMintTokensAndApproveHyperdrive } from "./testing/setupMintTokensAndApproveHyperdrive";
+import { setupMintTokensAndApproveHyperdrive } from "src/amm/testing/setupMintTokensAndApproveHyperdrive";
 
-test("poolInfo changes after a trade", async () => {
+test("should observe an increase in longsOutstanding after executing two trades", async () => {
   // Constants
   const baseAmountIn = parseUnits("100", 18);
   const minAmountOut = 1n;
