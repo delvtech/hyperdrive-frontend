@@ -7,7 +7,7 @@ import { publicClient } from "src/testing/utils";
 import { HyperdriveABI } from "..";
 import { TestAddresses } from "src/addresses/test";
 
-test("adjustAmountByPercentage - basic functionality", () => {
+test("should return adjusted amount when given a basic input", () => {
   const amount = parseUnits("100", 18);
   const expectedAmount = parseUnits("99", 18);
   expect(adjustAmountByPercentage({ amount, decimals: 18 })).toBe(
@@ -15,7 +15,7 @@ test("adjustAmountByPercentage - basic functionality", () => {
   );
 });
 
-test("adjustAmountByPercentage - precision", () => {
+test("should handle precision accurately when given precise input amounts", () => {
   const preciseAmount = parseUnits("100.123456", 18);
   const expectedPreciseAmount = preciseAmount - preciseAmount / 100n;
   expect(
@@ -23,41 +23,32 @@ test("adjustAmountByPercentage - precision", () => {
   ).toBe(expectedPreciseAmount);
 });
 
-test("adjustAmountByPercentage - rounding", () => {
-  const roundingAmount = parseUnits("0.000000000000000001", 18); // smallest possible value greater than zero with 18 decimals
+test("should round down to zero when given the smallest possible positive value", () => {
+  const roundingAmount = parseUnits("0.000000000000000001", 18);
   expect(
     adjustAmountByPercentage({ amount: roundingAmount, decimals: 18 }),
-  ).toBe(0n); // Adjusting such a small amount by 1% should effectively round down to 0
+  ).toBe(0n);
 });
 
-test("adjustAmountByPercentage - zero amount", () => {
+test("should return zero when input amount is zero", () => {
   expect(adjustAmountByPercentage({ amount: 0n, decimals: 18 })).toBe(0n);
 });
 
-test("adjustAmountByPercentage - negative amount", () => {
+test("should throw an error when given a negative input amount", () => {
   const negativeAmount = parseUnits("-100", 18);
-
-  // Throw an error if the input amount is negative
   expect(() => {
     adjustAmountByPercentage({ amount: negativeAmount, decimals: 18 });
   }).toThrow(Error("Negative amounts are not allowed"));
 });
 
-// Test the `adjustAmountByPercentage` function within the context of an "open long" operation.
-test("adjustAmountByPercentage - mock open long", async () => {
-  // Setup
+test("should simulate and execute 'open long' operation correctly when mocking an open long operation", async () => {
   await setupMintTokensAndApproveHyperdrive(ALICE);
-
-  // Define the initial amount of tokens for the long operation.
   const baseAmountIn = parseUnits("100", 18);
-
-  // Calculate the minimum output amount after accounting for a 1% slippage.
   const minAmountOut = adjustAmountByPercentage({
     amount: baseAmountIn,
     decimals: 18,
   });
 
-  // Simulate an "open long" operation
   const { request } = await publicClient.simulateContract({
     abi: HyperdriveABI,
     functionName: "openLong",
@@ -66,21 +57,16 @@ test("adjustAmountByPercentage - mock open long", async () => {
     args: [baseAmountIn, minAmountOut, ALICE, true],
     value: 0n,
   });
-
-  // Ensure that the minimum output amount from the simulation matches the calculated amount.
   expect(request.args[1]).toBe(minAmountOut);
 
-  // Execute the "open long" and retrieve the transaction hash.
   const hash = await publicClient.writeContract({
     abi: HyperdriveABI,
     functionName: "openLong",
     account: ALICE,
     address: TestAddresses.mockHyperdrive,
     args: [baseAmountIn, minAmountOut, ALICE, true],
-    value: 0n, // Ensure no Ethereum is sent with this transaction.
+    value: 0n,
   });
-
-  // Retrieve the receipt for the transaction and verify that the transaction was successful.
   const { status } = await publicClient.getTransactionReceipt({ hash });
   expect(status).toEqual("success");
 });
