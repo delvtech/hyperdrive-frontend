@@ -8,8 +8,8 @@ import { HyperdriveABI } from "..";
 import { TestAddresses } from "src/addresses/test";
 
 test("adjustAmountByPercentage - basic functionality", () => {
-  const amount = parseUnits("100", 18); // represents 100 tokens with 18 decimals
-  const expectedAmount = parseUnits("99", 18); // represents 99 tokens with 18 decimals
+  const amount = parseUnits("100", 18);
+  const expectedAmount = parseUnits("99", 18);
   expect(adjustAmountByPercentage({ amount, decimals: 18 })).toBe(
     expectedAmount,
   );
@@ -35,9 +35,9 @@ test("adjustAmountByPercentage - zero amount", () => {
 });
 
 test("adjustAmountByPercentage - negative amount", () => {
-  const negativeAmount = parseUnits("-100", 18); // represents -100 tokens with 18 decimals
+  const negativeAmount = parseUnits("-100", 18);
 
-  // Using a lambda function to capture potential thrown errors
+  // Throw an error if the input amount is negative
   expect(() => {
     adjustAmountByPercentage({ amount: negativeAmount, decimals: 18 });
   }).toThrow(Error("Negative amounts are not allowed"));
@@ -45,7 +45,7 @@ test("adjustAmountByPercentage - negative amount", () => {
 
 // Test the `adjustAmountByPercentage` function within the context of an "open long" operation.
 test("adjustAmountByPercentage - mock open long", async () => {
-  // Set up the testing environment by minting tokens and approving them for use in the Hyperdrive contract.
+  // Setup
   await setupMintTokensAndApproveHyperdrive(ALICE);
 
   // Define the initial amount of tokens for the long operation.
@@ -57,7 +57,7 @@ test("adjustAmountByPercentage - mock open long", async () => {
     decimals: 18,
   });
 
-  // Simulate an "open long" operation on the Hyperdrive contract without actually sending the transaction.
+  // Simulate an "open long" operation
   const { request } = await publicClient.simulateContract({
     abi: HyperdriveABI,
     functionName: "openLong",
@@ -71,7 +71,7 @@ test("adjustAmountByPercentage - mock open long", async () => {
   expect(request.args[1]).toBe(minAmountOut);
 
   // Execute the "open long" and retrieve the transaction hash.
-  const hash = await await publicClient.writeContract({
+  const hash = await publicClient.writeContract({
     abi: HyperdriveABI,
     functionName: "openLong",
     account: ALICE,
@@ -82,7 +82,5 @@ test("adjustAmountByPercentage - mock open long", async () => {
 
   // Retrieve the receipt for the transaction and verify that the transaction was successful.
   const { status } = await publicClient.getTransactionReceipt({ hash });
-
-  // Ensure that the transaction was successful.
   expect(status).toEqual("success");
 });
