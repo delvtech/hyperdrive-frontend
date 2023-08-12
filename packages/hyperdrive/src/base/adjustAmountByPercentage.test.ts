@@ -1,10 +1,10 @@
 import { expect, test } from "vitest";
-import { adjustAmountByPercentage } from "./adjustAmountByPercentage";
+import { adjustAmountByPercentage } from "src/base/adjustAmountByPercentage";
 import { parseUnits } from "viem";
 import { ALICE } from "src/testing/accounts";
 import { setupMintTokensAndApproveHyperdrive } from "src/amm/testing/setupMintTokensAndApproveHyperdrive";
 import { publicClient } from "src/testing/utils";
-import { HyperdriveABI } from "..";
+import { HyperdriveABI } from "src/abis/Hyperdrive";
 import { TestAddresses } from "src/addresses/test";
 
 test("should return adjusted amount when given a basic input", () => {

@@ -1,5 +1,5 @@
 import { expect, test } from "vitest";
-import { formatRate } from "./formatRate";
+import { formatRate } from "src/base/formatRate";
 
 test("should format common input values accurately when given typical rate values", () => {
   expect(formatRate(0n)).toBe("0.00");
