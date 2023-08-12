@@ -5,6 +5,11 @@ export function adjustAmountByPercentage({
   amount: bigint;
   decimals: number;
 }): bigint {
+  // Check if the input amount is negative and throw an error if true
+  if (amount < 0n) {
+    throw new Error("Negative amounts are not allowed");
+  }
+
   // Convert the amountOut to a "decimal-based" bigint by shifting the decimal places
   const shiftDecimals = 10n ** BigInt(decimals);
   const amountWithDecimals = amount * shiftDecimals;
@@ -16,6 +21,11 @@ export function adjustAmountByPercentage({
   // Subtract the slippage from the amountOut
   const minOutput = amountWithDecimals - slippageAmount;
 
-  // Convert back to the original decimal places by dividing through
-  return minOutput / shiftDecimals;
+  // Handle small values to ensure proper rounding
+  if (minOutput < shiftDecimals && minOutput > 0n) {
+    return 0n;
+  }
+
+  // Convert back to the original decimal places by dividing through with rounding
+  return (minOutput + shiftDecimals / 2n) / shiftDecimals;
 }
