@@ -31,8 +31,14 @@ jobs:
         run: |
           curl -L https://foundry.paradigm.xyz | bash
 
-      - name: Install foundry
-        run: ~/.foundry/bin/foundryup
+      - name: Source bashrc
+      run: source /home/runner/.bashrc
+
+      - name: Run foundryup
+        run: /home/runner/.foundry/bin/foundryup
+
+      - name: Fetch Submodule Dependencies
+        run: /home/runner/.foundry/bin/forge update
 
       - name: Run tests
         run: yarn test:run
