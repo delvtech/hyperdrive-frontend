@@ -27,5 +27,9 @@ jobs:
       - name: Install dependencies
         run: yarn
 
+      - name: Install Foundry curl
+        run: |
+          curl -L https://foundry.paradigm.xyz | bash
+
       - name: Run tests
         run: yarn test:run
