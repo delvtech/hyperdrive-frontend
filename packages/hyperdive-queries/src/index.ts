@@ -21,7 +21,7 @@ export { getMaxShortQuery } from "src/amm/shorts/getMaxShort";
 export { getLiquidityQuery } from "src/amm/getLiquidity";
 
 // Trading Volume
-export { getTradingVolume } from "src/amm/volume/getTradingVolume";
+export { getTradingVolumeQuery } from "src/amm/volume/getTradingVolume";
 
 // LP Shares
 export { getLpSharesQuery } from "src/amm/lp/getLpShares";

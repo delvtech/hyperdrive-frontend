@@ -1,25 +1,6 @@
-import { PublicClient, Address, ContractFunctionResult } from "viem";
-import { HyperdriveABI } from "src/abis/Hyperdrive";
 import { QueryObserverOptions } from "@tanstack/query-core";
 import { makeQueryKey } from "src/makeQueryKey";
-
-interface GetPoolInfoOptions {
-  hyperdriveAddress: Address;
-  publicClient: PublicClient;
-}
-
-export async function getPoolInfo({
-  publicClient,
-  hyperdriveAddress,
-}: GetPoolInfoOptions): Promise<
-  ContractFunctionResult<typeof HyperdriveABI, "getPoolInfo">
-> {
-  return publicClient.readContract({
-    address: hyperdriveAddress,
-    abi: HyperdriveABI,
-    functionName: "getPoolInfo",
-  });
-}
+import { GetPoolInfoOptions, getPoolInfo } from "@hyperdrive/core";
 
 export function getPoolInfoQuery({
   hyperdriveAddress,

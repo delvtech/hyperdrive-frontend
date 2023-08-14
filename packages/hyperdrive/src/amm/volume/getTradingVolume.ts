@@ -11,14 +11,14 @@ import {
   PublicClient,
   formatUnits,
 } from "viem";
-interface OpenShortEvent {
+export interface OpenShortEvent {
   eventData: DecodeEventLogReturnType<
     typeof HyperdriveABI,
     "OpenShort"
   >["args"];
   eventLog: GetFilterLogsReturnType<typeof HyperdriveABI, "OpenShort">[number];
 }
-interface OpenLongEvent {
+export interface OpenLongEvent {
   eventData: DecodeEventLogReturnType<typeof HyperdriveABI, "OpenLong">["args"];
   eventLog: GetFilterLogsReturnType<typeof HyperdriveABI, "OpenLong">[number];
 }

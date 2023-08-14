@@ -4,8 +4,8 @@ import { parseUnits } from "viem";
 import { ALICE } from "src/testing/accounts";
 import { setupMintTokensAndApproveHyperdrive } from "src/amm/testing/setupMintTokensAndApproveHyperdrive";
 import { publicClient } from "src/testing/utils";
-import { HyperdriveABI } from "src/abis/Hyperdrive";
 import { TestAddresses } from "src/addresses/test";
+import { HyperdriveABI } from "@hyperdrive/core";
 
 test("should return adjusted amount when given a basic input", () => {
   const amount = parseUnits("100", 18);

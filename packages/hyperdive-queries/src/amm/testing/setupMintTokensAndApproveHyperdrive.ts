@@ -1,8 +1,8 @@
 import { parseUnits, Address } from "viem";
 import { publicClient } from "src/testing/utils";
 import { TestAddresses } from "src/addresses/test";
-import { ERC20MintableABI } from "src/abis/ERC20Mintable";
 import { MAX_UINT256 } from "src/base/numbers";
+import { ERC20MintableABI } from "@hyperdrive/core";
 
 export async function setupMintTokensAndApproveHyperdrive(
   account: Address,

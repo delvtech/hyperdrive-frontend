@@ -1,4 +1,4 @@
-import { HyperdriveABI } from "src/abis/Hyperdrive";
+import { HyperdriveABI } from "@hyperdrive/core";
 import {
   PublicClient,
   Address,
