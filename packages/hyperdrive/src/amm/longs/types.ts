@@ -7,7 +7,7 @@ export interface LongPosition {
    * The timestamp, in seconds, when the bonds associated with this long
    * position will mature.
    */
-  maturityTimestamp: number;
+  maturityTimestamp: bigint;
 }
 
 ////////////////
@@ -23,28 +23,29 @@ export interface OpenLongPosition extends LongPosition {
    * Multiple transactions can be associated with a single position
    * within the same checkpoint.
    */
-  positionTransactions: (SelfOpened | TransferredOut)[];
+  positionTransactions: (SelfOpened | TransferredIn)[];
 }
 
 interface OpenLongTransactionBase {
   quantityOfBonds: bigint;
 
-  /** The timestamp, in seconds, when the transaction occurred. */
-  timestamp: number;
+  /** The block when the transaction occurred. */
+  blockNumber: bigint;
 
   transactionHash: Hash;
 }
 
-interface SelfOpened extends OpenLongTransactionBase {
+export interface SelfOpened extends OpenLongTransactionBase {
   acquisitionType: "SELF_OPENED";
 
   /** The amount paid to acquire the bonds. */
   baseAmountIn: bigint;
 }
 
-interface TransferredIn extends OpenLongTransactionBase {
+export interface TransferredIn extends OpenLongTransactionBase {
   acquisitionType: "TRANSFER_IN";
   from: Address;
+  maturityTimestamp: bigint;
 }
 
 //////////////////
@@ -64,8 +65,8 @@ interface CloseLongTransactionBase {
   /** The quantity of bonds returned to the pool. */
   bondsIn: bigint;
 
-  /** The timestamp, in seconds, when the transaction occurred. */
-  timestamp: number;
+  /** The block when the transaction occurred. */
+  blockNumber: bigint;
 
   transactionHash: Hash;
 }

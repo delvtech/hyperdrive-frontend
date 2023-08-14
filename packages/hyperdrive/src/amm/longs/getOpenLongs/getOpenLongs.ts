@@ -16,6 +16,9 @@ export interface GetOpenLongsOptions {
   publicClient: PublicClient;
 }
 
+/**
+ * @deprecated use getLongs instead
+ */
 export async function getOpenLongs({
   account,
   hyperdriveAddress,
