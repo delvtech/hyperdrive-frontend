@@ -5,7 +5,6 @@ import {
   decodeEventLog,
   DecodeEventLogReturnType,
   GetFilterLogsReturnType,
-  BlockTag,
 } from "viem";
 interface OpenShortEvent {
   eventData: DecodeEventLogReturnType<

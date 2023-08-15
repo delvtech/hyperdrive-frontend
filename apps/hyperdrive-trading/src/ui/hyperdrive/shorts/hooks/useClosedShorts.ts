@@ -1,6 +1,7 @@
-import { ClosedShort, getClosedShortsQuery } from "@hyperdrive/core";
+import { ClosedShort } from "@hyperdrive/core";
+import { getClosedShortsQuery } from "@hyperdrive/queries";
 import { QueryStatus, useQuery } from "@tanstack/react-query";
-import { Address, PublicClient } from "viem";
+import { Address } from "viem";
 import { usePublicClient } from "wagmi";
 
 interface UseClosedShortsOptions {
@@ -23,7 +24,7 @@ export function useClosedShorts({
     getClosedShortsQuery({
       traderAddress: account,
       hyperdriveAddress,
-      publicClient: publicClient as PublicClient,
+      publicClient: publicClient,
     }),
   );
 

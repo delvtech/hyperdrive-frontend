@@ -1,8 +1,6 @@
-import { QueryObserverOptions } from "@tanstack/query-core";
 import { PublicClient, Address } from "viem";
 import { getCloseShortEvents } from "src/amm/shorts/getCloseShortEvents";
 import { ClosedShort } from "src/amm/shorts/types";
-import { makeQueryKey } from "src/makeQueryKey";
 
 export interface GetClosedShortsOptions {
   traderAddress: Address;
@@ -42,29 +40,4 @@ export async function getClosedShorts({
   );
 
   return await Promise.all([...Object.values(closedShortsById)]);
-}
-
-export function getClosedShortsQuery({
-  hyperdriveAddress,
-  publicClient,
-  traderAddress,
-}: Partial<GetClosedShortsOptions>): QueryObserverOptions<
-  Awaited<ReturnType<typeof getClosedShorts>>
-> {
-  const queryEnabled = !!traderAddress && !!hyperdriveAddress && !!publicClient;
-  return {
-    enabled: queryEnabled,
-    queryKey: makeQueryKey("closed-shorts", {
-      hyperdriveAddress,
-      traderAddress,
-    }),
-    queryFn: queryEnabled
-      ? () =>
-          getClosedShorts({
-            traderAddress,
-            hyperdriveAddress,
-            publicClient,
-          })
-      : undefined,
-  };
 }

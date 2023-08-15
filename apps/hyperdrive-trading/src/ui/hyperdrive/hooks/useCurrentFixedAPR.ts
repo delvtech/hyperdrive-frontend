@@ -1,4 +1,4 @@
-import { getCurrentFixedAPRQuery } from "@hyperdrive/core";
+import { getCurrentFixedAPRQuery } from "@hyperdrive/queries";
 import { useQuery } from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
 import { queryClient } from "src/network/queryClient";

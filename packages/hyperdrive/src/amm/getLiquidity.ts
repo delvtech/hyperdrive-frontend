@@ -1,7 +1,5 @@
 import { Address, PublicClient, formatUnits } from "viem";
-import { makeQueryKey } from "src/makeQueryKey";
 
-import { QueryObserverOptions } from "@tanstack/query-core";
 import { getPoolInfo } from "src/amm/getPoolInfo";
 import { multiplyBigInt } from "src/base/multiplyBigInt/multiplyBigInt";
 
@@ -30,31 +28,4 @@ export async function getLiquidity(
     multiplyBigInt([lpSharePrice, shareReserves], 18) - longsOutstanding;
 
   return { liquidity, formatted: formatUnits(liquidity, 18) };
-}
-
-interface GetLiquidityQueryOptions {
-  hyperdriveAddress: Address | undefined;
-  publicClient: PublicClient;
-}
-
-type GetLiquidityReturnType = Awaited<ReturnType<typeof getLiquidity>>;
-
-/**
- * TODO: Move this to its own @hyperdrive/queries package eventually.
- */
-export function getLiquidityQuery({
-  hyperdriveAddress,
-  publicClient,
-}: GetLiquidityQueryOptions): QueryObserverOptions<GetLiquidityReturnType> {
-  const queryEnabled = !!hyperdriveAddress;
-
-  return {
-    enabled: queryEnabled,
-    queryKey: makeQueryKey("get-liquidity", {
-      hyperdriveAddress,
-    }),
-    queryFn: queryEnabled
-      ? () => getLiquidity(hyperdriveAddress, publicClient)
-      : undefined,
-  };
 }

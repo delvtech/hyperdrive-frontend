@@ -1,4 +1,4 @@
-import { getLpSharesQuery } from "@hyperdrive/core";
+import { getLpSharesQuery } from "@hyperdrive/queries";
 import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { Address, usePublicClient } from "wagmi";
 
@@ -18,7 +18,7 @@ export function useLpShares({
     getLpSharesQuery({
       account,
       hyperdriveAddress,
-      publicClient: publicClient as any,
+      publicClient,
     }),
   );
   return { lpShares, lpSharesStatus };

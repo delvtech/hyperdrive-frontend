@@ -1,27 +1,34 @@
-import { QueryObserverOptions } from "@tanstack/query-core";
+import { QueryClient, QueryObserverOptions } from "@tanstack/query-core";
 import { getPoolConfigQuery } from "src/amm/getPoolConfig/getPoolConfig";
 import { getPoolInfoQuery } from "src/amm/getPoolInfo";
 import { getDecimalsQuery } from "src/token/getDecimals";
 import { makeQueryKey } from "src/makeQueryKey";
-import {
-  GetCurrentLongPriceQueryOptions,
-  getLongPrice,
-} from "@hyperdrive/core";
+import { getMaxLong } from "@hyperdrive/core";
+import { Address, PublicClient } from "viem";
 
-export function getCurrentLongPriceQuery({
+interface GetMaxLongQueryOptions {
+  hyperdriveAddress: Address | undefined;
+  hyperdriveMathAddress: Address | undefined;
+  publicClient: PublicClient;
+  queryClient: QueryClient;
+  maxIterations: number;
+}
+
+export function getMaxLongQuery({
   hyperdriveAddress,
   hyperdriveMathAddress,
   publicClient,
   queryClient,
-}: GetCurrentLongPriceQueryOptions): QueryObserverOptions<
-  Awaited<ReturnType<typeof getLongPrice>>
+  maxIterations,
+}: GetMaxLongQueryOptions): QueryObserverOptions<
+  Awaited<ReturnType<typeof getMaxLong>>
 > {
   const queryEnabled =
     !!hyperdriveAddress && !!publicClient && !!hyperdriveMathAddress;
 
   return {
     enabled: queryEnabled,
-    queryKey: makeQueryKey("getLongPrice", {
+    queryKey: makeQueryKey("getMaxLong", {
       hyperdriveAddress,
       hyperdriveMathAddress,
     }),
@@ -29,9 +36,9 @@ export function getCurrentLongPriceQuery({
       ? async () => {
           const {
             initialSharePrice,
-            positionDuration,
             timeStretch,
             baseToken,
+            minimumShareReserves,
           } = await queryClient.fetchQuery(
             getPoolConfigQuery({
               publicClient,
@@ -46,22 +53,26 @@ export function getCurrentLongPriceQuery({
             }),
           );
 
-          const { bondReserves, shareReserves } = await queryClient.fetchQuery(
-            getPoolInfoQuery({
-              publicClient,
-              hyperdriveAddress,
-            }),
-          );
+          const { bondReserves, shareReserves, sharePrice, longsOutstanding } =
+            await queryClient.fetchQuery(
+              getPoolInfoQuery({
+                publicClient,
+                hyperdriveAddress,
+              }),
+            );
 
-          return getLongPrice({
-            publicClient,
+          return getMaxLong({
             hyperdriveMathAddress,
-            positionDuration,
-            bondReserves,
+            publicClient,
             shareReserves,
+            sharePrice,
+            bondReserves,
+            longsOutstanding,
+            minimumShareReserves,
             initialSharePrice,
-            timeStretch,
             baseDecimals,
+            timeStretch,
+            maxIterations: BigInt(maxIterations),
           });
         }
       : undefined,

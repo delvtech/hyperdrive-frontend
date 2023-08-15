@@ -6,6 +6,7 @@ import {
   DecodeEventLogReturnType,
   GetFilterLogsReturnType,
 } from "viem";
+
 interface CloseLongEvent {
   eventData: DecodeEventLogReturnType<
     typeof HyperdriveABI,

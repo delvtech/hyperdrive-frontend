@@ -1,4 +1,5 @@
-import { getPoolConfigQuery, HyperdriveABI } from "@hyperdrive/core";
+import { HyperdriveABI } from "@hyperdrive/core";
+import { getPoolConfigQuery } from "@hyperdrive/queries";
 import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { ContractFunctionResult } from "viem";
 import { Address } from "wagmi";

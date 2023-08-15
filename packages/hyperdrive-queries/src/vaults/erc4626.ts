@@ -1,6 +1,12 @@
-import { GetVaultRateQueryOptions, getVaultRate } from "@hyperdrive/core";
+import { getVaultRate } from "@hyperdrive/core";
 import { QueryObserverOptions } from "@tanstack/query-core";
 import { makeQueryKey } from "src/makeQueryKey";
+import { Address, PublicClient } from "viem";
+
+interface GetVaultRateQueryOptions {
+  vaultAddress: Address | undefined;
+  publicClient: PublicClient;
+}
 
 export function getVaultRateQuery({
   vaultAddress,

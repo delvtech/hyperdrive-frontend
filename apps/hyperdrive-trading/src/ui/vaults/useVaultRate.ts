@@ -1,6 +1,6 @@
-import { getVaultRateQuery } from "@hyperdrive/core";
+import { getVaultRateQuery } from "@hyperdrive/queries";
 import { useQuery } from "@tanstack/react-query";
-import { Address, PublicClient } from "viem";
+import { Address } from "viem";
 import { usePublicClient } from "wagmi";
 
 interface UseVaultRateOptions {
@@ -15,7 +15,7 @@ export function useVaultRate({ vaultAddress }: UseVaultRateOptions): {
 
   const { data: vaultRate, status: vaultRateStatus } = useQuery(
     getVaultRateQuery({
-      publicClient: publicClient as PublicClient,
+      publicClient,
       vaultAddress,
     }),
   );

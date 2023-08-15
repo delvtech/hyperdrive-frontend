@@ -1,4 +1,3 @@
-import { QueryObserverOptions } from "@tanstack/query-core";
 import groupBy from "lodash.groupby";
 import mapValues from "lodash.mapvalues";
 import { sumBigInt } from "src/base/sumBigInt";
@@ -6,7 +5,6 @@ import { decodeAssetFromTransferSingleEventData } from "src/amm/events/decodeAss
 import { getTransferSingleEvents } from "src/amm/events/getTransferSingleEvents";
 import { PublicClient, Address } from "viem";
 import { ClosedShort, OpenShort } from "src/amm/shorts/types";
-import { makeQueryKey } from "src/makeQueryKey";
 import { getOpenShortEvents } from "src/amm/shorts/getOpenShortEvents";
 import { getCloseShortEvents } from "src/amm/shorts/getCloseShortEvents";
 
@@ -125,21 +123,4 @@ export async function getOpenShorts({
   }
 
   return Object.values(openShortsById).filter((short) => short.bondAmount);
-}
-
-export function getOpenShortsQuery({
-  hyperdriveAddress,
-  publicClient,
-  account,
-}: Partial<GetOpenShortsOptions>): QueryObserverOptions<
-  Awaited<ReturnType<typeof getOpenShorts>>
-> {
-  const queryEnabled = !!account && !!hyperdriveAddress && !!publicClient;
-  return {
-    enabled: queryEnabled,
-    queryKey: makeQueryKey("open-shorts", { hyperdriveAddress, account }),
-    queryFn: queryEnabled
-      ? () => getOpenShorts({ account, hyperdriveAddress, publicClient })
-      : undefined,
-  };
 }

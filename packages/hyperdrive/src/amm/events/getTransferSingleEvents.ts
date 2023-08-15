@@ -1,4 +1,3 @@
-import { QueryObserverOptions } from "@tanstack/query-core";
 import { HyperdriveABI } from "src/abis/Hyperdrive";
 import {
   PublicClient,
@@ -54,34 +53,4 @@ export async function getTransferSingleEvents({
     }).args,
     eventLog: log,
   }));
-}
-
-export function getTransferSingleEventsQuery({
-  hyperdriveAddress,
-  publicClient,
-  args: { fromAddress, toAddress } = {},
-  fromBlock,
-  toBlock,
-}: Partial<GetTransferSingleEvents>): QueryObserverOptions<
-  Awaited<ReturnType<typeof getTransferSingleEvents>>
-> {
-  // NOTE: args parameter is optional, don't include it in the enabled criteria
-  const queryEnabled = !!hyperdriveAddress && !!publicClient;
-  return {
-    enabled: queryEnabled,
-    queryKey: [
-      "TransferSingle",
-      { hyperdriveAddress, from: fromAddress, to: toAddress },
-    ],
-    queryFn: queryEnabled
-      ? () =>
-          getTransferSingleEvents({
-            hyperdriveAddress,
-            args: { fromAddress: fromAddress, toAddress: toAddress },
-            fromBlock,
-            toBlock,
-            publicClient,
-          })
-      : undefined,
-  };
 }

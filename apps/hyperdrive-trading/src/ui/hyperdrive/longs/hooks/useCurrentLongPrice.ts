@@ -1,4 +1,5 @@
-import { getCurrentLongPriceQuery, GetLongPriceResult } from "@hyperdrive/core";
+import { GetLongPriceResult } from "@hyperdrive/core";
+import { getCurrentLongPriceQuery } from "@hyperdrive/queries";
 import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
 import { queryClient } from "src/network/queryClient";

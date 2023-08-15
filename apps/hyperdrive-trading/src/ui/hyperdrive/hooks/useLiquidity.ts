@@ -1,4 +1,4 @@
-import { getLiquidityQuery } from "@hyperdrive/core";
+import { getLiquidityQuery } from "@hyperdrive/queries";
 import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { Address, usePublicClient } from "wagmi";
 
