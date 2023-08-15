@@ -52,6 +52,18 @@ export function RemoveLiquidityForm({
     enabled: previewRemoveLiquidityStatus === "success",
   });
 
+  const formattedBaseAmountOut =
+    baseAmountOut !== undefined
+      ? `${formatBalance(
+          formatUnits(baseAmountOut, baseDecimals),
+          8,
+        )} ${baseSymbol}`
+      : null;
+
+  const formattedWithdrawalSharesOut = withdrawalSharesOut
+    ? formatBalance(formatUnits(withdrawalSharesOut, baseDecimals), 8)
+    : null;
+
   return (
     <div className="flex flex-col gap-6">
       {/* Amount to close section */}
@@ -74,22 +86,11 @@ export function RemoveLiquidityForm({
       {/* You receive Section */}
       <div className="flex justify-between">
         <p className="font-light text-neutral-content">You receive</p>
-        <p className="tracking-wide">
-          {baseAmountOut !== undefined &&
-            `${formatBalance(
-              formatUnits(baseAmountOut, baseDecimals),
-              8,
-            )} ${baseSymbol}`}
-        </p>
+        <p className="tracking-wide">{formattedBaseAmountOut}</p>
       </div>
       <div className="flex items-center justify-between">
-        <p className="font-light text-neutral-content">Withdrawl shares</p>
-        <p className="tracking-wide">
-          <>
-            {withdrawalSharesOut &&
-              formatBalance(formatUnits(withdrawalSharesOut, baseDecimals), 8)}
-          </>
-        </p>
+        <p className="font-light text-neutral-content">Withdrawal shares</p>
+        <p className="tracking-wide">{formattedWithdrawalSharesOut}</p>
       </div>
 
       {account ? (
