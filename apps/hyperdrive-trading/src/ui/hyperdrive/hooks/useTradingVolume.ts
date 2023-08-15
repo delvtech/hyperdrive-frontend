@@ -1,4 +1,4 @@
-import { getTradingVolumeQuery } from "@hyperdrive/core";
+import { getTradingVolumeQuery } from "@hyperdrive/queries";
 import { useQuery } from "@tanstack/react-query";
 import { Address, PublicClient } from "viem";
 

@@ -1,9 +1,9 @@
-import { getMaxShortQuery, GetMaxShortResult } from "@hyperdrive/core";
+import { GetMaxShortResult } from "@hyperdrive/core";
+import { getMaxShortQuery } from "@hyperdrive/queries";
 import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
 import { queryClient } from "src/network/queryClient";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
-import { PublicClient } from "viem";
 import { usePublicClient } from "wagmi";
 
 export function useMaxShort(hyperdrive: Hyperdrive): {
@@ -16,7 +16,7 @@ export function useMaxShort(hyperdrive: Hyperdrive): {
   const { data, status } = useQuery(
     getMaxShortQuery({
       hyperdriveMathAddress: appConfig?.hyperdriveMath,
-      publicClient: publicClient as PublicClient,
+      publicClient,
       hyperdriveAddress: hyperdrive.address,
       queryClient,
     }),
