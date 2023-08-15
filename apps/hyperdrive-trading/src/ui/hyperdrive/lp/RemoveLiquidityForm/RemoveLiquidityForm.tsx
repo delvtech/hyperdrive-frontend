@@ -2,7 +2,6 @@ import { adjustAmountByPercentage } from "@hyperdrive/core";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
-import { Stat } from "src/ui/base/components/Stat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { usePreviewRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewRemoveLiquidity";
@@ -53,6 +52,18 @@ export function RemoveLiquidityForm({
     enabled: previewRemoveLiquidityStatus === "success",
   });
 
+  const formattedBaseAmountOut =
+    baseAmountOut !== undefined
+      ? `${formatBalance(
+          formatUnits(baseAmountOut, baseDecimals),
+          8,
+        )} ${baseSymbol}`
+      : null;
+
+  const formattedWithdrawalSharesOut = withdrawalSharesOut
+    ? formatBalance(formatUnits(withdrawalSharesOut, baseDecimals), 8)
+    : null;
+
   return (
     <div className="flex flex-col gap-6">
       {/* Amount to close section */}
@@ -73,29 +84,13 @@ export function RemoveLiquidityForm({
       </div>
 
       {/* You receive Section */}
-      <div className="space-y-4 text-center text-base-content">
-        <Stat
-          label={"You receive"}
-          value={
-            <>
-              {baseAmountOut !== undefined &&
-                `${formatBalance(
-                  formatUnits(baseAmountOut, baseDecimals),
-                  8,
-                )} ${baseSymbol}`}
-              {withdrawalSharesOut && (
-                <>
-                  <br />
-                  {formatBalance(
-                    formatUnits(withdrawalSharesOut, baseDecimals),
-                    8,
-                  )}{" "}
-                  Withdrawal shares
-                </>
-              )}
-            </>
-          }
-        />
+      <div className="flex justify-between">
+        <p className="font-light text-neutral-content">You receive</p>
+        <p className="tracking-wide">{formattedBaseAmountOut}</p>
+      </div>
+      <div className="flex items-center justify-between">
+        <p className="font-light text-neutral-content">Withdrawal shares</p>
+        <p className="tracking-wide">{formattedWithdrawalSharesOut}</p>
       </div>
 
       {account ? (
