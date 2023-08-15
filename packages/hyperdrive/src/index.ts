@@ -53,12 +53,15 @@ export {
 } from "src/amm/shorts/getClosedShorts";
 export { getMaxShort, getMaxShortQuery } from "src/amm/shorts/getMaxShort";
 export type { GetMaxShortOptions } from "src/amm/shorts/getMaxShort";
+export { getCloseShortEvents } from "src/amm/shorts/getCloseShortEvents";
 
 // Liquidity
 export { getLiquidity, getLiquidityQuery } from "src/amm/getLiquidity";
 
 // Trading Volume
 export {
+  type OpenLongEvent,
+  type OpenShortEvent,
   getTradingVolume,
   getTradingVolumeQuery,
 } from "src/amm/volume/getTradingVolume";
