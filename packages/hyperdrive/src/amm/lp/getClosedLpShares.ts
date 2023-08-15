@@ -1,6 +1,4 @@
-import { QueryObserverOptions } from "@tanstack/query-core";
 import { PublicClient, Address } from "viem";
-import { makeQueryKey } from "src/makeQueryKey";
 import { getRemoveLiquidityEvents } from "src/amm/lp/getRemoveLiquidityEvents";
 
 export interface GetClosedLpSharesOptions {
@@ -46,31 +44,4 @@ export async function getClosedLpShares({
       };
     }),
   );
-}
-
-export function getClosedLpSharesQuery({
-  hyperdriveAddress,
-  publicClient,
-  providerAddress,
-}: Partial<GetClosedLpSharesOptions>): QueryObserverOptions<
-  Awaited<ReturnType<typeof getClosedLpShares>>
-> {
-  const queryEnabled =
-    !!providerAddress && !!hyperdriveAddress && !!publicClient;
-
-  return {
-    enabled: queryEnabled,
-    queryKey: makeQueryKey("remove-liquidity", {
-      hyperdriveAddress,
-      providerAddress,
-    }),
-    queryFn: queryEnabled
-      ? () =>
-          getClosedLpShares({
-            providerAddress: providerAddress,
-            hyperdriveAddress,
-            publicClient,
-          })
-      : undefined,
-  };
 }

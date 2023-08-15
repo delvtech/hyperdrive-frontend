@@ -1,9 +1,7 @@
-import { QueryObserverOptions } from "@tanstack/query-core";
 import { HyperdriveABI } from "src/abis/Hyperdrive";
 import { getOpenLongEvents } from "src/amm/longs/getOpenLongEvents";
 import { getOpenShortEvents } from "src/amm/shorts/getOpenShortEvents";
 import { sumBigInt } from "src/base/sumBigInt";
-import { makeQueryKey } from "src/makeQueryKey";
 import {
   Address,
   DecodeEventLogReturnType,
@@ -61,27 +59,6 @@ export async function getTradingVolume(
   const formattedTotalVolume = formatUnits(totalVolume, 18);
 
   return { formatted: formattedTotalVolume.toString(), volume: totalVolume };
-}
-
-export function getTradingVolumeQuery({
-  hyperdriveAddress,
-  publicClient,
-  currentBlockNumber,
-}: {
-  hyperdriveAddress: Address;
-  publicClient: PublicClient;
-  currentBlockNumber: bigint;
-}): QueryObserverOptions<Awaited<ReturnType<typeof getTradingVolume>>> {
-  return {
-    queryKey: makeQueryKey("tradingVolume", {
-      hyperdriveAddress,
-      publicClient,
-      currentBlockNumber: currentBlockNumber?.toString(),
-    }),
-    queryFn: () =>
-      getTradingVolume(hyperdriveAddress, publicClient, currentBlockNumber),
-    enabled: !!currentBlockNumber,
-  };
 }
 
 function calculateTotalAmount(
