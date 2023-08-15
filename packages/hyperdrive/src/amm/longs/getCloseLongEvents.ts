@@ -5,6 +5,7 @@ import {
   decodeEventLog,
   DecodeEventLogReturnType,
   GetFilterLogsReturnType,
+  CallParameters,
 } from "viem";
 
 interface CloseLongEvent {
@@ -20,6 +21,7 @@ interface GetCloseLongEventsOptions {
   toBlock?: bigint | "latest";
   hyperdriveAddress: Address;
   publicClient: PublicClient;
+  options?: CallParameters;
 }
 
 export async function getCloseLongEvents({
@@ -28,6 +30,7 @@ export async function getCloseLongEvents({
   toBlock = "latest",
   hyperdriveAddress,
   publicClient,
+  options,
 }: GetCloseLongEventsOptions): Promise<CloseLongEvent[]> {
   const closeLongLogs = await publicClient.getFilterLogs({
     filter: await publicClient.createContractEventFilter({

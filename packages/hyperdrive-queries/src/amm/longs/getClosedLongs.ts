@@ -6,6 +6,7 @@ export function getCloseLongsQuery({
   hyperdriveAddress,
   publicClient,
   traderAddress: account,
+  options,
 }: Partial<GetCloseLongsOptions>): QueryObserverOptions<
   Awaited<ReturnType<typeof getClosedLongs>>
 > {
@@ -19,6 +20,7 @@ export function getCloseLongsQuery({
             traderAddress: account,
             hyperdriveAddress,
             publicClient,
+            options,
           })
       : undefined,
   };
