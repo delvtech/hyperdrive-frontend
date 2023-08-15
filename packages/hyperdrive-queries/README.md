@@ -44,20 +44,23 @@ function useBaseToken(
 #### Node script:
 
 ```ts
-import { QueryClient } from "@tanstack/query-core";
-import { PublicClient, createPublicClient } from "viem";
+import { PublicClient, createPublicClient, http } from "viem";
 import { mainnet } from "viem/chains";
-import { getPoolConfigQuery } from "@hyperdrive/queries";
+import { configureHyperdrive } from "@hyperdrive/queries";
 
-const queryClient = new QueryClient();
-const publicClient = createPublicClient({
-  chain: mainnet,
-  transport: http(),
+const { poolActions, portolioActions } = configureHyperdrive({
+  hyperdriveAddress: "0x.....",
+  hyperdriveMathAddress: "0x.....",
+  publicClient: createPublicClient({
+    chain: mainnet,
+    transport: http(),
+  },
 });
 
 (async function () {
-  const poolConfig = await queryClient.fetchQuery(
-    getPoolConfigQuery({ hyperdriveAddress, publicClient }),
-  );
+  const poolConfig = await poolActions.getPoolConfig();
+  const poolInfo = await poolActions.getPoolInfo();
+  const fixedRate = await poolActions.getFixedRate({ blockNumber });
+  const userLongs = await portfolioActions.getActiveLongs({ who })
 })();
 ```
