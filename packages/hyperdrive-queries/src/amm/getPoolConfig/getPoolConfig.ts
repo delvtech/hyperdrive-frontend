@@ -5,6 +5,7 @@ import { GetPoolConfigOptions, getPoolConfig } from "@hyperdrive/core";
 export function getPoolConfigQuery({
   hyperdriveAddress,
   publicClient,
+  options,
 }: Partial<GetPoolConfigOptions>): QueryObserverOptions<
   Awaited<ReturnType<typeof getPoolConfig>>
 > {
@@ -18,6 +19,7 @@ export function getPoolConfigQuery({
           getPoolConfig({
             hyperdriveAddress,
             publicClient,
+            options: options,
           })
       : undefined,
     // pool config is static constants, so it never needs to be refreshed
