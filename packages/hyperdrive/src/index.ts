@@ -13,6 +13,7 @@ export { mockErc4626Abi } from "src/abis/MockErc4626";
 export { getPoolConfig } from "src/amm/getPoolConfig/getPoolConfig";
 export { getPoolInfo } from "src/amm/getPoolInfo";
 export { getTransferSingleEvents } from "src/amm/events/getTransferSingleEvents";
+export { getFixedAPR } from "src/amm/getFixedAPR";
 
 // Vaults
 export { getVaultRate } from "src/vaults/erc4626";

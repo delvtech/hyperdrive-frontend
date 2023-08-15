@@ -1,12 +1,17 @@
-import { QueryObserverOptions } from "@tanstack/query-core";
+import { QueryClient, QueryObserverOptions } from "@tanstack/query-core";
 import { getPoolConfigQuery } from "src/amm/getPoolConfig/getPoolConfig";
 import { getPoolInfoQuery } from "src/amm/getPoolInfo";
 import { getDecimalsQuery } from "src/token/getDecimals";
 import { makeQueryKey } from "src/makeQueryKey";
-import {
-  GetCurrentLongPriceQueryOptions,
-  getLongPrice,
-} from "@hyperdrive/core";
+import { getLongPrice } from "@hyperdrive/core";
+import { Address, PublicClient } from "viem";
+
+interface GetCurrentLongPriceQueryOptions {
+  hyperdriveAddress: Address | undefined;
+  hyperdriveMathAddress: Address | undefined;
+  publicClient: PublicClient;
+  queryClient: QueryClient;
+}
 
 export function getCurrentLongPriceQuery({
   hyperdriveAddress,

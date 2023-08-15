@@ -1,9 +1,18 @@
-import { QueryObserverOptions } from "@tanstack/query-core";
+import { QueryClient, QueryObserverOptions } from "@tanstack/query-core";
 import { getPoolConfigQuery } from "src/amm/getPoolConfig/getPoolConfig";
 import { getPoolInfoQuery } from "src/amm/getPoolInfo";
 import { getDecimalsQuery } from "src/token/getDecimals";
 import { makeQueryKey } from "src/makeQueryKey";
-import { GetMaxLongQueryOptions, getMaxLong } from "@hyperdrive/core";
+import { getMaxLong } from "@hyperdrive/core";
+import { Address, PublicClient } from "viem";
+
+interface GetMaxLongQueryOptions {
+  hyperdriveAddress: Address | undefined;
+  hyperdriveMathAddress: Address | undefined;
+  publicClient: PublicClient;
+  queryClient: QueryClient;
+  maxIterations: number;
+}
 
 export function getMaxLongQuery({
   hyperdriveAddress,
