@@ -1,12 +1,50 @@
 # Hyperdrive Queries
 
-Hyperdrive Queries is a collection of query generators designed to work
-seamlessly with @tanstack/query.
+Hyperdrive Queries is a TypeScript SDK which provides an easy way to interact
+with the Hyperdrive AMM in both Web and NodeJS environments.
 
-Written in TypeScript, it provides an easy way to interact with the Hyperdrive
-AMM in a both Web and NodeJS environments.
+## What's included
 
-## Examples
+- **TypeScript SDK** A VanillaJS library containing everything you need to start
+  working with Hyperdrive.
+
+- **Queries** a collection of query generators designed to work
+  seamlessly with @tanstack/query, eg: React/Svelte/Solid/Vue.
+
+## Installation
+
+Install `@hyperdrive/queries` and its `viem` and `@tanstack/query-core` peer
+dependencies.
+
+Npm:
+`npm i @hypedrive/queries viem @tanstack/query-core`
+
+Yarn:
+`yarn add @hypedrive/queries viem @tanstack/query-core`
+
+#### Node script:
+
+```ts
+import { PublicClient, createPublicClient, http } from "viem";
+import { mainnet } from "viem/chains";
+import { configureHyperdrive } from "@hyperdrive/queries";
+
+const { poolActions, portolioActions } = configureHyperdrive({
+  hyperdriveAddress: "0x.....",
+  hyperdriveMathAddress: "0x.....",
+  publicClient: createPublicClient({
+    chain: mainnet,
+    transport: http(),
+  },
+});
+
+(async function () {
+  const poolConfig = await poolActions.getPoolConfig();
+  const poolInfo = await poolActions.getPoolInfo();
+  const fixedRate = await poolActions.getFixedRate({ blockNumber });
+  const userLongs = await portfolioActions.getActiveLongs({ who })
+})();
+```
 
 #### React hook:
 
@@ -39,25 +77,4 @@ function useBaseToken(
     select: (poolConfig) => poolConfig.baseToken,
   });
 }
-```
-
-#### Node script:
-
-```ts
-import { QueryClient } from "@tanstack/query-core";
-import { PublicClient, createPublicClient } from "viem";
-import { mainnet } from "viem/chains";
-import { getPoolConfigQuery } from "@hyperdrive/queries";
-
-const queryClient = new QueryClient();
-const publicClient = createPublicClient({
-  chain: mainnet,
-  transport: http(),
-});
-
-(async function () {
-  const poolConfig = await queryClient.fetchQuery(
-    getPoolConfigQuery({ hyperdriveAddress, publicClient }),
-  );
-})();
 ```
