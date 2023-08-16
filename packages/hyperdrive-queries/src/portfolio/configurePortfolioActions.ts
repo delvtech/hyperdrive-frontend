@@ -2,6 +2,7 @@ import { Address, PublicClient } from "viem";
 
 import {
   ClosedLong,
+  ClosedLpShares,
   ClosedShort,
   EventOptions,
   Long,
@@ -17,7 +18,7 @@ import { getRedeemedWithdrawalSharesQuery } from "src/amm/lp/getRedeemedWithdraw
 import { getWithdrawalSharesQuery } from "src/amm/lp/getWithdrawalShares";
 import { getClosedShortsQuery } from "src/amm/shorts/getClosedShorts";
 import { getOpenShortsQuery } from "src/amm/shorts/getOpenShorts";
-import { getClosedLpSharesQuery } from "..";
+import { getClosedLpSharesQuery } from "src/amm/lp/getClosedLpShares";
 export interface PortfolioActions {
   getActiveLongs: (options: EventOptions) => Promise<Long[]>;
   getClosedLongs: (options: EventOptions) => Promise<ClosedLong[]>;
@@ -27,8 +28,8 @@ export interface PortfolioActions {
   getClosedWithdrawalShares: (
     options: EventOptions,
   ) => Promise<RedeemedWithdrawalShares[]>;
-  getActiveLpShares: (options: ReadCallOptions) => void;
-  getClosedLpShares: (options: EventOptions) => void;
+  getActiveLpShares: (options: ReadCallOptions) => Promise<bigint>;
+  getClosedLpShares: (options: EventOptions) => Promise<ClosedLpShares[]>;
 }
 
 export function configurePortfolioActions({
