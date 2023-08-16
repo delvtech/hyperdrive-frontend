@@ -7,7 +7,7 @@ export interface GetLpSharesOptions {
   account: Address;
   hyperdriveAddress: Address;
   publicClient: PublicClient;
-  options: ReadCallOptions;
+  options?: ReadCallOptions;
 }
 
 export async function getLpShares({
