@@ -4,7 +4,7 @@ import { parseUnits } from "viem";
 import { ALICE } from "src/testing/accounts";
 import { setupMintTokensAndApproveHyperdrive } from "src/amm/testing/setupMintTokensAndApproveHyperdrive";
 import { publicClient } from "src/testing/utils";
-import { TestAddresses } from "src/addresses/test";
+import { TestAddresses } from "src/testing/test";
 import { HyperdriveABI } from "@hyperdrive/core";
 
 test("should return adjusted amount when given a basic input", () => {

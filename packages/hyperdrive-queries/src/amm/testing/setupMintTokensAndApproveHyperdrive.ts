@@ -1,6 +1,6 @@
 import { parseUnits, Address } from "viem";
 import { publicClient } from "src/testing/utils";
-import { TestAddresses } from "src/addresses/test";
+import { TestAddresses } from "src/testing/test";
 import { MAX_UINT256 } from "src/base/numbers";
 import { ERC20MintableABI } from "@hyperdrive/core";
 
