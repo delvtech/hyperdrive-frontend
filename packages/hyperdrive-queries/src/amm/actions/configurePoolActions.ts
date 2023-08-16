@@ -1,6 +1,6 @@
 import { ReadCallOptions } from "@hyperdrive/core";
 import { QueryClient } from "@tanstack/query-core";
-import { getFixedRateQuery } from "src/amm/getFixedRate";
+import { getFixedRateQuery } from "src/amm/getFixedRateQuery";
 import { getPoolConfigQuery } from "src/amm/getPoolConfig/getPoolConfig";
 import { getPoolInfoQuery } from "src/amm/getPoolInfo";
 import { Address, PublicClient } from "viem";
