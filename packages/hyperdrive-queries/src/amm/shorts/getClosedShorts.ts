@@ -1,18 +1,20 @@
 import { QueryObserverOptions } from "@tanstack/query-core";
 import { PublicClient, Address } from "viem";
 import { makeQueryKey } from "src/makeQueryKey";
-import { getClosedShorts } from "@hyperdrive/core";
+import { EventOptions, getClosedShorts } from "@hyperdrive/core";
 
 export interface GetClosedShortsOptions {
   traderAddress: Address;
   hyperdriveAddress: Address;
   publicClient: PublicClient;
+  options?: EventOptions;
 }
 
 export function getClosedShortsQuery({
   hyperdriveAddress,
   publicClient,
   traderAddress,
+  options,
 }: Partial<GetClosedShortsOptions>): QueryObserverOptions<
   Awaited<ReturnType<typeof getClosedShorts>>
 > {
@@ -22,6 +24,7 @@ export function getClosedShortsQuery({
     queryKey: makeQueryKey("closed-shorts", {
       hyperdriveAddress,
       traderAddress,
+      options,
     }),
     queryFn: queryEnabled
       ? () =>
@@ -29,6 +32,7 @@ export function getClosedShortsQuery({
             traderAddress,
             hyperdriveAddress,
             publicClient,
+            options,
           })
       : undefined,
   };

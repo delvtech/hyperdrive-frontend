@@ -1,4 +1,5 @@
 import { HyperdriveABI } from "src/abis/Hyperdrive";
+import { EventOptions } from "src/base/EventOptions";
 import {
   PublicClient,
   Address,
@@ -18,18 +19,16 @@ interface CloseShortEvent {
 }
 interface GetRemoveLiquidityEventsOptions {
   args: { providerAddress?: Address };
-  fromBlock?: bigint | "earliest";
-  toBlock?: bigint | "latest";
   hyperdriveAddress: Address;
   publicClient: PublicClient;
+  options?: EventOptions;
 }
 
 export async function getRemoveLiquidityEvents({
   args: { providerAddress },
-  fromBlock = 0n,
-  toBlock = "latest",
   hyperdriveAddress,
   publicClient,
+  options,
 }: GetRemoveLiquidityEventsOptions): Promise<CloseShortEvent[]> {
   const closeLPLogs = await publicClient.getFilterLogs({
     filter: await publicClient.createContractEventFilter({
@@ -37,8 +36,8 @@ export async function getRemoveLiquidityEvents({
       address: hyperdriveAddress,
       eventName: "RemoveLiquidity",
       args: { provider: providerAddress },
-      fromBlock,
-      toBlock,
+      fromBlock: options?.fromBlock || "earliest",
+      toBlock: options?.toBlock || "latest",
     }),
   });
 

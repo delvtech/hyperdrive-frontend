@@ -1,10 +1,11 @@
 import { HyperdriveABI } from "src/abis/Hyperdrive";
+import { EventOptions } from "src/base/EventOptions";
 import {
-  PublicClient,
   Address,
-  decodeEventLog,
   DecodeEventLogReturnType,
   GetFilterLogsReturnType,
+  PublicClient,
+  decodeEventLog,
 } from "viem";
 export interface OpenLongEvent {
   eventData: DecodeEventLogReturnType<typeof HyperdriveABI, "OpenLong">["args"];
@@ -12,18 +13,16 @@ export interface OpenLongEvent {
 }
 interface GetOpenLongEventsOptions {
   args?: { traderAddress?: Address };
-  fromBlock?: bigint | "earliest";
-  toBlock?: bigint | "latest";
   hyperdriveAddress: Address;
   publicClient: PublicClient;
+  options?: EventOptions;
 }
 
 export async function getOpenLongEvents({
   args: { traderAddress } = {},
-  fromBlock = "earliest",
-  toBlock = "latest",
   hyperdriveAddress,
   publicClient,
+  options,
 }: GetOpenLongEventsOptions): Promise<OpenLongEvent[]> {
   const openLongLogs = await publicClient.getFilterLogs({
     filter: await publicClient.createContractEventFilter({
@@ -31,8 +30,8 @@ export async function getOpenLongEvents({
       address: hyperdriveAddress,
       eventName: "OpenLong",
       args: { trader: traderAddress },
-      fromBlock,
-      toBlock,
+      fromBlock: options?.fromBlock || "earliest",
+      toBlock: options?.toBlock || "latest",
     }),
   });
 

@@ -6,6 +6,7 @@ export function getOpenLongsQuery({
   hyperdriveAddress,
   publicClient,
   account,
+  options,
 }: Partial<GetOpenLongsOptions>): QueryObserverOptions<
   Awaited<ReturnType<typeof getOpenLongs>>
 > {
@@ -15,9 +16,11 @@ export function getOpenLongsQuery({
     queryKey: makeQueryKey("open-longs", {
       hyperdriveAddress,
       account,
+      options,
     }),
     queryFn: queryEnabled
-      ? () => getOpenLongs({ account, hyperdriveAddress, publicClient })
+      ? () =>
+          getOpenLongs({ account, hyperdriveAddress, publicClient, options })
       : undefined,
   };
 }

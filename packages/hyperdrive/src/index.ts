@@ -71,3 +71,5 @@ export { adjustAmountByPercentage } from "src/base/adjustAmountByPercentage";
 export { multiplyBigInt } from "src/base/multiplyBigInt/multiplyBigInt";
 
 export { type ReadCallOptions } from "src/base/ReadCallOptions";
+
+export { type EventOptions } from "src/base/EventOptions";

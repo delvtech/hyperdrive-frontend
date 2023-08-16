@@ -48,7 +48,7 @@ export async function getTradingVolume(
       publicClient,
     }),
     getOpenLongEvents({
-      fromBlock: blockNumber24hAgo,
+      options: { fromBlock: blockNumber24hAgo },
       hyperdriveAddress,
       publicClient,
     }),

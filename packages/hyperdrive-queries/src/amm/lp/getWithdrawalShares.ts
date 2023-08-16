@@ -9,15 +9,26 @@ export function getWithdrawalSharesQuery({
   account,
   hyperdriveAddress,
   publicClient,
+  options,
 }: Partial<GetWithdrawalSharesOptions>): QueryObserverOptions<
   Awaited<ReturnType<typeof getWithdrawalShares>>
 > {
   const queryEnabled = !!account && !!hyperdriveAddress && !!publicClient;
   return {
     enabled: queryEnabled,
-    queryKey: makeQueryKey("withdrawal-shares", { hyperdriveAddress, account }),
+    queryKey: makeQueryKey("withdrawal-shares", {
+      hyperdriveAddress,
+      account,
+      options,
+    }),
     queryFn: queryEnabled
-      ? () => getWithdrawalShares({ account, hyperdriveAddress, publicClient })
+      ? () =>
+          getWithdrawalShares({
+            account,
+            hyperdriveAddress,
+            publicClient,
+            options,
+          })
       : undefined,
   };
 }
