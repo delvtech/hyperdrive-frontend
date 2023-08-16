@@ -4,7 +4,10 @@ import {
   configurePoolActions,
 } from "src/amm/actions/configurePoolActions";
 import { Address, PublicClient } from "viem";
-import { configurePortfolioActions } from "./portfolio/configurePortfolioActions";
+import {
+  PortfolioActions,
+  configurePortfolioActions,
+} from "./portfolio/configurePortfolioActions";
 
 interface ConfigureHyperdriveOptions {
   hyperdriveAddress: Address;
@@ -20,7 +23,7 @@ export function configureHyperdrive({
   queryClient: queryClientFromOptions,
 }: ConfigureHyperdriveOptions): {
   poolActions: PoolActions;
-  portfolio: ReturnType<typeof configurePortfolioActions>;
+  portfolio: PortfolioActions;
 } {
   const queryClient = queryClientFromOptions
     ? queryClientFromOptions
