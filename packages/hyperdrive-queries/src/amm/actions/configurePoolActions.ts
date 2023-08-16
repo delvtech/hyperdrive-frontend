@@ -5,7 +5,16 @@ import { getPoolConfigQuery } from "src/amm/getPoolConfig/getPoolConfig";
 import { getPoolInfoQuery } from "src/amm/getPoolInfo";
 import { Address, PublicClient } from "viem";
 
+/**
+ * PoolActions Interface
+ *
+ * The PoolActions interface provides methods for querying specific
+ * configurations, statistics, and rates of a pool.
+ */
 export interface PoolActions {
+  /**
+   * Retrieves the configuration settings of a pool.
+   */
   getPoolConfig: (options: ReadCallOptions) => Promise<{
     baseToken: `0x${string}`;
     initialSharePrice: bigint;
@@ -23,6 +32,10 @@ export interface PoolActions {
     oracleSize: bigint;
     updateGap: bigint;
   }>;
+
+  /**
+   * Retrieves info about the pool's reserves and other state about the pool.
+   */
   getPoolInfo: (options: ReadCallOptions) => Promise<{
     shareReserves: bigint;
     bondReserves: bigint;
@@ -37,11 +50,16 @@ export interface PoolActions {
     withdrawalSharesProceeds: bigint;
     lpSharePrice: bigint;
   }>;
+
+  /**
+   * Fetches the pool's APR.
+   */
   getFixedRate: (options: ReadCallOptions) => Promise<{
     apr: bigint;
     formatted: string;
   }>;
 }
+
 export function configurePoolActions({
   hyperdriveAddress,
   hyperdriveMathAddress,
