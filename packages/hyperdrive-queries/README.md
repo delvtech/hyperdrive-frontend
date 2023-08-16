@@ -13,23 +13,22 @@ with the Hyperdrive AMM in both Web and NodeJS environments.
 
 ## Installation
 
-Install `@hyperdrive/queries` and its `viem` and `@tanstack/query-core` peer
-dependencies.
+Install `@hyperdrive/queries` and its `viem` peer dependency.
 
 Npm:
-`npm i @hypedrive/queries viem @tanstack/query-core`
+`npm i @hyperdrive/queries viem`
 
 Yarn:
-`yarn add @hypedrive/queries viem @tanstack/query-core`
+`yarn add @hyperdrive/queries viem`
 
-#### Node script:
+#### TypeScript usage:
 
 ```ts
 import { PublicClient, createPublicClient, http } from "viem";
 import { mainnet } from "viem/chains";
 import { configureHyperdrive } from "@hyperdrive/queries";
 
-const { poolActions, portolioActions } = configureHyperdrive({
+const { pool, portolio } = configureHyperdrive({
   hyperdriveAddress: "0x.....",
   hyperdriveMathAddress: "0x.....",
   publicClient: createPublicClient({
@@ -39,10 +38,10 @@ const { poolActions, portolioActions } = configureHyperdrive({
 });
 
 (async function () {
-  const poolConfig = await poolActions.getPoolConfig();
-  const poolInfo = await poolActions.getPoolInfo();
-  const fixedRate = await poolActions.getFixedRate({ blockNumber });
-  const userLongs = await portfolioActions.getActiveLongs({ who })
+  const poolConfig = await pool.getPoolConfig();
+  const poolInfo = await pool.getPoolInfo();
+  const fixedRate = await pool.getFixedRate({ blockNumber });
+  const userLongs = await portfolio.getActiveLongs({ who })
 })();
 ```
 
