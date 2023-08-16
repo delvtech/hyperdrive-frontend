@@ -13,7 +13,7 @@ export function getPoolConfigQuery({
 
   return {
     enabled: queryEnabled,
-    queryKey: makeQueryKey("getPoolConfig", { hyperdriveAddress }),
+    queryKey: makeQueryKey("getPoolConfig", { hyperdriveAddress, options }),
     queryFn: queryEnabled
       ? async () =>
           getPoolConfig({

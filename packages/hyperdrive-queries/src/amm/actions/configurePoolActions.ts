@@ -1,11 +1,20 @@
 import { ReadCallOptions } from "@hyperdrive/core";
 import { QueryClient } from "@tanstack/query-core";
-import { getCurrentFixedAPRQuery } from "src/amm/getFixedAPR";
-import { getPoolConfigQuery } from "src/amm/getPoolConfig/getPoolConfig";
-import { getPoolInfoQuery } from "src/amm/getPoolInfo";
+import { getFixedRateQuery } from "src/amm/getFixedRateQuery";
+import { getPoolConfigQuery } from "src/amm/getPoolConfigQuery/getPoolConfigQuery";
+import { getPoolInfoQuery } from "src/amm/getPoolInfoQuery";
 import { Address, PublicClient } from "viem";
 
+/**
+ * PoolActions Interface
+ *
+ * The PoolActions interface provides methods for querying specific
+ * configurations, statistics, and rates of a pool.
+ */
 export interface PoolActions {
+  /**
+   * Retrieves the configuration settings of a pool.
+   */
   getPoolConfig: (options: ReadCallOptions) => Promise<{
     baseToken: `0x${string}`;
     initialSharePrice: bigint;
@@ -23,7 +32,11 @@ export interface PoolActions {
     oracleSize: bigint;
     updateGap: bigint;
   }>;
-  getPoolInfo: () => Promise<{
+
+  /**
+   * Retrieves info about the pool's reserves and other state about the pool.
+   */
+  getPoolInfo: (options: ReadCallOptions) => Promise<{
     shareReserves: bigint;
     bondReserves: bigint;
     lpTotalSupply: bigint;
@@ -37,11 +50,16 @@ export interface PoolActions {
     withdrawalSharesProceeds: bigint;
     lpSharePrice: bigint;
   }>;
-  getFixedRate: () => Promise<{
+
+  /**
+   * Fetches the pool's APR.
+   */
+  getFixedRate: (options: ReadCallOptions) => Promise<{
     apr: bigint;
     formatted: string;
   }>;
 }
+
 export function configurePoolActions({
   hyperdriveAddress,
   hyperdriveMathAddress,
@@ -66,17 +84,18 @@ export function configurePoolActions({
           options,
         }),
       ),
-    getPoolInfo: () =>
+    getPoolInfo: (options: ReadCallOptions) =>
       queryClient.fetchQuery(
-        getPoolInfoQuery({ hyperdriveAddress, publicClient }),
+        getPoolInfoQuery({ hyperdriveAddress, publicClient, options }),
       ),
-    getFixedRate: () =>
+    getFixedRate: (options: ReadCallOptions) =>
       queryClient.fetchQuery(
-        getCurrentFixedAPRQuery({
+        getFixedRateQuery({
           hyperdriveAddress,
           hyperdriveMathAddress,
           publicClient,
           queryClient,
+          options,
         }),
       ),
   };
