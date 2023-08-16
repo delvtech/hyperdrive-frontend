@@ -1,4 +1,4 @@
-import { getCurrentFixedAPRQuery } from "@hyperdrive/queries";
+import { getFixedRateQuery } from "@hyperdrive/queries";
 import { useQuery } from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
 import { queryClient } from "src/network/queryClient";
@@ -14,7 +14,7 @@ export function useCurrentFixedAPR(hyperdrive: Hyperdrive): {
   const publicClient = usePublicClient();
 
   const { data, status } = useQuery(
-    getCurrentFixedAPRQuery({
+    getFixedRateQuery({
       hyperdriveAddress: hyperdrive.address,
       hyperdriveMathAddress: appConfig?.hyperdriveMath,
       publicClient: publicClient as PublicClient,

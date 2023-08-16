@@ -10,7 +10,7 @@ interface GetCurrentFixedAPRQueryOptions {
   hyperdriveMathAddress: Address | undefined;
   publicClient: PublicClient;
   queryClient: QueryClient;
-  options: ReadCallOptions;
+  options?: ReadCallOptions;
 }
 export function getFixedRateQuery({
   hyperdriveAddress,
