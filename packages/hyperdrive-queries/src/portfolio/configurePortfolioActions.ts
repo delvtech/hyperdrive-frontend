@@ -6,6 +6,7 @@ import {
   EventOptions,
   Long,
   OpenShort,
+  ReadCallOptions,
   RedeemedWithdrawalShares,
 } from "@hyperdrive/core";
 import { QueryClient } from "@tanstack/query-core";
@@ -22,11 +23,11 @@ export interface PortfolioActions {
   getClosedLongs: (options: EventOptions) => Promise<ClosedLong[]>;
   getActiveShorts: (options: EventOptions) => Promise<OpenShort[]>;
   getClosedShorts: (options: EventOptions) => Promise<ClosedShort[]>;
-  getActiveWithdrawalShares: () => Promise<bigint>;
+  getActiveWithdrawalShares: (options: ReadCallOptions) => Promise<bigint>;
   getClosedWithdrawalShares: (
     options: EventOptions,
   ) => Promise<RedeemedWithdrawalShares[]>;
-  getActiveLpShares: () => void;
+  getActiveLpShares: (options: ReadCallOptions) => void;
   getClosedLpShares: (options: EventOptions) => void;
 }
 
@@ -81,9 +82,14 @@ export function configurePortfolioActions({
           options,
         }),
       ),
-    getActiveWithdrawalShares: () =>
+    getActiveWithdrawalShares: (options: ReadCallOptions) =>
       queryClient.fetchQuery(
-        getWithdrawalSharesQuery({ account, hyperdriveAddress, publicClient }),
+        getWithdrawalSharesQuery({
+          account,
+          hyperdriveAddress,
+          publicClient,
+          options,
+        }),
       ),
     getClosedWithdrawalShares: (options: EventOptions) =>
       queryClient.fetchQuery(
@@ -94,9 +100,9 @@ export function configurePortfolioActions({
           options,
         }),
       ),
-    getActiveLpShares: () =>
+    getActiveLpShares: (options: ReadCallOptions) =>
       queryClient.fetchQuery(
-        getLpSharesQuery({ account, hyperdriveAddress, publicClient }),
+        getLpSharesQuery({ account, hyperdriveAddress, publicClient, options }),
       ),
     getClosedLpShares: (options: EventOptions) =>
       queryClient.fetchQuery(

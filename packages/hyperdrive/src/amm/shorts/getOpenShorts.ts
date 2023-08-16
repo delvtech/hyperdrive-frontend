@@ -13,7 +13,7 @@ export interface GetOpenShortsOptions {
   account: Address;
   hyperdriveAddress: Address;
   publicClient: PublicClient;
-  options: EventOptions;
+  options?: EventOptions;
 }
 
 export async function getOpenShorts({

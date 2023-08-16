@@ -6,7 +6,7 @@ export interface GetRedeemedWithdrawalSharesOptions {
   account: Address;
   hyperdriveAddress: Address;
   publicClient: PublicClient;
-  options: EventOptions;
+  options?: EventOptions;
 }
 
 export interface RedeemedWithdrawalShares {

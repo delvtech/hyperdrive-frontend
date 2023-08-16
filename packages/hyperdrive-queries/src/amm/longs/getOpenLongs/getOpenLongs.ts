@@ -16,6 +16,7 @@ export function getOpenLongsQuery({
     queryKey: makeQueryKey("open-longs", {
       hyperdriveAddress,
       account,
+      options,
     }),
     queryFn: queryEnabled
       ? () =>
