@@ -1,6 +1,6 @@
 import { ReadCallOptions } from "@hyperdrive/core";
 import { QueryClient } from "@tanstack/query-core";
-import { getCurrentFixedAPRQuery } from "src/amm/getFixedAPR";
+import { getFixedRateQuery } from "src/amm/getFixedRate";
 import { getPoolConfigQuery } from "src/amm/getPoolConfig/getPoolConfig";
 import { getPoolInfoQuery } from "src/amm/getPoolInfo";
 import { Address, PublicClient } from "viem";
@@ -23,7 +23,7 @@ export interface PoolActions {
     oracleSize: bigint;
     updateGap: bigint;
   }>;
-  getPoolInfo: () => Promise<{
+  getPoolInfo: (options: ReadCallOptions) => Promise<{
     shareReserves: bigint;
     bondReserves: bigint;
     lpTotalSupply: bigint;
@@ -37,7 +37,7 @@ export interface PoolActions {
     withdrawalSharesProceeds: bigint;
     lpSharePrice: bigint;
   }>;
-  getFixedRate: () => Promise<{
+  getFixedRate: (options: ReadCallOptions) => Promise<{
     apr: bigint;
     formatted: string;
   }>;
@@ -66,17 +66,18 @@ export function configurePoolActions({
           options,
         }),
       ),
-    getPoolInfo: () =>
+    getPoolInfo: (options: ReadCallOptions) =>
       queryClient.fetchQuery(
-        getPoolInfoQuery({ hyperdriveAddress, publicClient }),
+        getPoolInfoQuery({ hyperdriveAddress, publicClient, options }),
       ),
-    getFixedRate: () =>
+    getFixedRate: (options: ReadCallOptions) =>
       queryClient.fetchQuery(
-        getCurrentFixedAPRQuery({
+        getFixedRateQuery({
           hyperdriveAddress,
           hyperdriveMathAddress,
           publicClient,
           queryClient,
+          options,
         }),
       ),
   };

@@ -5,6 +5,7 @@ import { GetPoolInfoOptions, getPoolInfo } from "@hyperdrive/core";
 export function getPoolInfoQuery({
   hyperdriveAddress,
   publicClient,
+  options,
 }: Partial<GetPoolInfoOptions>): QueryObserverOptions<
   Awaited<ReturnType<typeof getPoolInfo>>
 > {
@@ -18,6 +19,7 @@ export function getPoolInfoQuery({
           getPoolInfo({
             hyperdriveAddress,
             publicClient,
+            options,
           })
       : undefined,
   };

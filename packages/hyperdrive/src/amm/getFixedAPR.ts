@@ -1,6 +1,7 @@
 import { PublicClient, Address } from "viem";
 import { HyperdriveMathABI } from "src/abis/HyperdriveMath";
 import { formatRate } from "src/base/formatRate";
+import { ReadCallOptions } from "src/base/ReadCallOptions";
 
 export interface GetFixedAPROptions {
   hyperdriveMathAddress: Address;
@@ -25,6 +26,7 @@ export interface GetFixedAPROptions {
    */
   timeStretch: bigint;
   publicClient: PublicClient;
+  options: ReadCallOptions;
 }
 
 export async function getFixedAPR({
@@ -35,6 +37,7 @@ export async function getFixedAPR({
   initialSharePrice,
   positionDuration,
   timeStretch,
+  options,
 }: GetFixedAPROptions): Promise<{ apr: bigint; formatted: string }> {
   const apr = await publicClient.readContract({
     address: hyperdriveMathAddress,
@@ -47,6 +50,7 @@ export async function getFixedAPR({
       positionDuration,
       timeStretch,
     ],
+    ...options,
   });
 
   const formatted = formatRate(apr);

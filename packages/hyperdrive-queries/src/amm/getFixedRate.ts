@@ -2,7 +2,7 @@ import { QueryClient, QueryObserverOptions } from "@tanstack/query-core";
 import { getPoolConfigQuery } from "src/amm/getPoolConfig/getPoolConfig";
 import { getPoolInfoQuery } from "src/amm/getPoolInfo";
 import { makeQueryKey } from "src/makeQueryKey";
-import { getFixedAPR } from "@hyperdrive/core";
+import { ReadCallOptions, getFixedAPR } from "@hyperdrive/core";
 import { Address, PublicClient } from "viem";
 
 interface GetCurrentFixedAPRQueryOptions {
@@ -10,12 +10,14 @@ interface GetCurrentFixedAPRQueryOptions {
   hyperdriveMathAddress: Address | undefined;
   publicClient: PublicClient;
   queryClient: QueryClient;
+  options: ReadCallOptions;
 }
-export function getCurrentFixedAPRQuery({
+export function getFixedRateQuery({
   hyperdriveAddress,
   hyperdriveMathAddress,
   publicClient,
   queryClient,
+  options,
 }: GetCurrentFixedAPRQueryOptions): QueryObserverOptions<
   Awaited<ReturnType<typeof getFixedAPR>>
 > {
@@ -35,12 +37,14 @@ export function getCurrentFixedAPRQuery({
               getPoolConfigQuery({
                 publicClient,
                 hyperdriveAddress,
+                options,
               }),
             );
           const { bondReserves, shareReserves } = await queryClient.fetchQuery(
             getPoolInfoQuery({
               publicClient,
               hyperdriveAddress,
+              options,
             }),
           );
 
@@ -52,6 +56,7 @@ export function getCurrentFixedAPRQuery({
             initialSharePrice,
             timeStretch,
             positionDuration,
+            options,
           });
         }
       : undefined,
