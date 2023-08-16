@@ -1,4 +1,5 @@
 import { HyperdriveABI } from "src/abis/Hyperdrive";
+import { EventOptions } from "src/base/EventOptions";
 import {
   PublicClient,
   Address,
@@ -21,13 +22,11 @@ interface GetCloseLongEventsOptions {
   toBlock?: bigint | "latest";
   hyperdriveAddress: Address;
   publicClient: PublicClient;
-  options?: CallParameters;
+  options?: EventOptions;
 }
 
 export async function getCloseLongEvents({
   args: { traderAddress },
-  fromBlock = "earliest",
-  toBlock = "latest",
   hyperdriveAddress,
   publicClient,
   options,
@@ -38,8 +37,8 @@ export async function getCloseLongEvents({
       address: hyperdriveAddress,
       eventName: "CloseLong",
       args: { trader: traderAddress },
-      fromBlock,
-      toBlock,
+      fromBlock: options?.fromBlock || "earliest",
+      toBlock: options?.toBlock || "latest",
     }),
   });
 

@@ -6,6 +6,7 @@ export function getClosedLpSharesQuery({
   hyperdriveAddress,
   publicClient,
   providerAddress,
+  options,
 }: Partial<GetClosedLpSharesOptions>): QueryObserverOptions<
   Awaited<ReturnType<typeof getClosedLpShares>>
 > {
@@ -17,6 +18,7 @@ export function getClosedLpSharesQuery({
     queryKey: makeQueryKey("remove-liquidity", {
       hyperdriveAddress,
       providerAddress,
+      options,
     }),
     queryFn: queryEnabled
       ? () =>
@@ -24,6 +26,7 @@ export function getClosedLpSharesQuery({
             providerAddress: providerAddress,
             hyperdriveAddress,
             publicClient,
+            options,
           })
       : undefined,
   };

@@ -7,23 +7,27 @@ import { PublicClient, Address } from "viem";
 import { ClosedShort, OpenShort } from "src/amm/shorts/types";
 import { getOpenShortEvents } from "src/amm/shorts/getOpenShortEvents";
 import { getCloseShortEvents } from "src/amm/shorts/getCloseShortEvents";
+import { EventOptions } from "src/base/EventOptions";
 
 export interface GetOpenShortsOptions {
   account: Address;
   hyperdriveAddress: Address;
   publicClient: PublicClient;
+  options: EventOptions;
 }
 
 export async function getOpenShorts({
   account,
   hyperdriveAddress,
   publicClient,
+  options,
 }: GetOpenShortsOptions): Promise<OpenShort[]> {
   // get the amount the account has received from closing shorts
   const closeShortEvents = await getCloseShortEvents({
     args: { traderAddress: account },
     hyperdriveAddress,
     publicClient,
+    options,
   });
   const amountReceivedByAssetId = mapValues(
     groupBy(closeShortEvents, (event) => event.eventData.assetId),

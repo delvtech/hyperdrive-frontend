@@ -16,15 +16,18 @@ import { getRedeemedWithdrawalSharesQuery } from "src/amm/lp/getRedeemedWithdraw
 import { getWithdrawalSharesQuery } from "src/amm/lp/getWithdrawalShares";
 import { getClosedShortsQuery } from "src/amm/shorts/getClosedShorts";
 import { getOpenShortsQuery } from "src/amm/shorts/getOpenShorts";
+import { getClosedLpSharesQuery } from "..";
 export interface PortfolioActions {
   getActiveLongs: (options: EventOptions) => Promise<Long[]>;
-  getClosedLongs: () => Promise<ClosedLong[]>;
-  getActiveShorts: () => Promise<OpenShort[]>;
-  getClosedShorts: () => Promise<ClosedShort[]>;
+  getClosedLongs: (options: EventOptions) => Promise<ClosedLong[]>;
+  getActiveShorts: (options: EventOptions) => Promise<OpenShort[]>;
+  getClosedShorts: (options: EventOptions) => Promise<ClosedShort[]>;
   getActiveWithdrawalShares: () => Promise<bigint>;
-  getClosedWithdrawalShares: () => Promise<RedeemedWithdrawalShares[]>;
+  getClosedWithdrawalShares: (
+    options: EventOptions,
+  ) => Promise<RedeemedWithdrawalShares[]>;
   getActiveLpShares: () => void;
-  getClosedLpShares: () => void;
+  getClosedLpShares: (options: EventOptions) => void;
 }
 
 export function configurePortfolioActions({
@@ -51,52 +54,57 @@ export function configurePortfolioActions({
           options,
         }),
       ),
-    getClosedLongs: () =>
+    getClosedLongs: (options: EventOptions) =>
       queryClient.fetchQuery(
         getCloseLongsQuery({
           hyperdriveAddress,
           publicClient,
           traderAddress: account,
+          options,
         }),
       ),
-    getActiveShorts: () =>
+    getActiveShorts: (options: EventOptions) =>
       queryClient.fetchQuery(
         getOpenShortsQuery({
           account,
           hyperdriveAddress,
           publicClient,
+          options,
         }),
       ),
-    getClosedShorts: () =>
+    getClosedShorts: (options: EventOptions) =>
       queryClient.fetchQuery(
         getClosedShortsQuery({
           hyperdriveAddress,
           publicClient,
           traderAddress: account,
+          options,
         }),
       ),
     getActiveWithdrawalShares: () =>
       queryClient.fetchQuery(
         getWithdrawalSharesQuery({ account, hyperdriveAddress, publicClient }),
       ),
-    getClosedWithdrawalShares: () =>
+    getClosedWithdrawalShares: (options: EventOptions) =>
       queryClient.fetchQuery(
         getRedeemedWithdrawalSharesQuery({
           account,
           hyperdriveAddress,
           publicClient,
+          options,
         }),
       ),
     getActiveLpShares: () =>
       queryClient.fetchQuery(
         getLpSharesQuery({ account, hyperdriveAddress, publicClient }),
       ),
-    getClosedLpShares: () =>
+    getClosedLpShares: (options: EventOptions) =>
       queryClient.fetchQuery(
-        getRedeemedWithdrawalSharesQuery({
-          account,
+        getClosedLpSharesQuery({
+          providerAddress: account,
           hyperdriveAddress,
           publicClient,
+          options,
         }),
       ),
   };

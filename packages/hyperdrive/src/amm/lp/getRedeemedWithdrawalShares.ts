@@ -1,10 +1,12 @@
 import { Address, PublicClient } from "viem";
 import { getRedeemWithdrawalSharesEvents } from "./getRedeemWithdrawalSharesEvents";
+import { EventOptions } from "src/base/EventOptions";
 
 export interface GetRedeemedWithdrawalSharesOptions {
   account: Address;
   hyperdriveAddress: Address;
   publicClient: PublicClient;
+  options: EventOptions;
 }
 
 export interface RedeemedWithdrawalShares {
@@ -18,11 +20,13 @@ export async function getRedeemedWithdrawalShares({
   account,
   hyperdriveAddress,
   publicClient,
+  options,
 }: GetRedeemedWithdrawalSharesOptions): Promise<RedeemedWithdrawalShares[]> {
   const redeemWithdrawalShareEvents = await getRedeemWithdrawalSharesEvents({
     args: { provider: account },
     hyperdriveAddress,
     publicClient,
+    options,
   });
 
   return Promise.all(

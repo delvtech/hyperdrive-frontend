@@ -1,12 +1,13 @@
-import { PublicClient, Address, CallParameters } from "viem";
-import { ClosedLong } from "./types";
 import { getCloseLongEvents } from "src/amm/longs/getCloseLongEvents";
+import { EventOptions } from "src/base/EventOptions";
+import { Address, PublicClient } from "viem";
+import { ClosedLong } from "./types";
 
 export interface GetClosedLongsOptions {
   traderAddress: Address;
   hyperdriveAddress: Address;
   publicClient: PublicClient;
-  options?: CallParameters;
+  options?: EventOptions;
 }
 
 export async function getClosedLongs({

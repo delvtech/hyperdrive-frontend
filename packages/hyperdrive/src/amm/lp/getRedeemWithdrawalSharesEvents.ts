@@ -1,4 +1,5 @@
 import { HyperdriveABI } from "src/abis/Hyperdrive";
+import { EventOptions } from "src/base/EventOptions";
 import {
   Address,
   DecodeEventLogReturnType,
@@ -24,14 +25,14 @@ interface GetRedeemWithdrawalSharesEventsOptions {
   toBlock?: bigint | "latest";
   hyperdriveAddress: Address;
   publicClient: PublicClient;
+  options?: EventOptions;
 }
 
 export async function getRedeemWithdrawalSharesEvents({
   args: { provider },
-  fromBlock = "earliest",
-  toBlock = "latest",
   hyperdriveAddress,
   publicClient,
+  options,
 }: GetRedeemWithdrawalSharesEventsOptions): Promise<
   RedeemWithdrawalSharesEvent[]
 > {
@@ -41,8 +42,8 @@ export async function getRedeemWithdrawalSharesEvents({
       address: hyperdriveAddress,
       eventName: "RedeemWithdrawalShares",
       args: { provider },
-      fromBlock,
-      toBlock,
+      fromBlock: options?.fromBlock || "earliest",
+      toBlock: options?.toBlock || "latest",
     }),
   });
 

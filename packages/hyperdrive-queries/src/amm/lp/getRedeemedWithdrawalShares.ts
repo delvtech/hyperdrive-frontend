@@ -9,6 +9,7 @@ export function getRedeemedWithdrawalSharesQuery({
   account,
   hyperdriveAddress,
   publicClient,
+  options,
 }: Partial<GetRedeemedWithdrawalSharesOptions>): QueryObserverOptions<
   Awaited<ReturnType<typeof getRedeemedWithdrawalShares>>
 > {
@@ -19,6 +20,7 @@ export function getRedeemedWithdrawalSharesQuery({
     queryKey: makeQueryKey("redeemed-withdrawal-shares", {
       hyperdriveAddress,
       account,
+      options,
     }),
     queryFn: queryEnabled
       ? () =>
@@ -26,6 +28,7 @@ export function getRedeemedWithdrawalSharesQuery({
             account,
             hyperdriveAddress,
             publicClient,
+            options,
           })
       : undefined,
   };
