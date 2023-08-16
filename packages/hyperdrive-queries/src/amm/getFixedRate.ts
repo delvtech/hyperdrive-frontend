@@ -29,6 +29,7 @@ export function getFixedRateQuery({
     queryKey: makeQueryKey("calculateAPR", {
       hyperdriveAddress,
       hyperdriveMathAddress,
+      options,
     }),
     queryFn: queryEnabled
       ? async () => {

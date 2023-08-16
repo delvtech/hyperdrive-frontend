@@ -26,7 +26,7 @@ export interface GetFixedAPROptions {
    */
   timeStretch: bigint;
   publicClient: PublicClient;
-  options: ReadCallOptions;
+  options?: ReadCallOptions;
 }
 
 export async function getFixedAPR({
