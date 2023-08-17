@@ -1,7 +1,7 @@
 // AMM
-export { getPoolConfigQuery } from "src/amm/getPoolConfig/getPoolConfig";
-export { getPoolInfoQuery } from "src/amm/getPoolInfo";
-export { getCurrentFixedAPRQuery } from "src/amm/getFixedAPR";
+export { getPoolConfigQuery } from "src/amm/getPoolConfigQuery/getPoolConfigQuery";
+export { getPoolInfoQuery } from "src/amm/getPoolInfoQuery";
+export { getFixedRateQuery } from "src/amm/getFixedRateQuery";
 
 // Vaults
 export { getVaultRateQuery } from "src/vaults/erc4626";

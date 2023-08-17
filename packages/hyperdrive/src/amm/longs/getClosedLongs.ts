@@ -1,22 +1,26 @@
-import { PublicClient, Address } from "viem";
-import { ClosedLong } from "./types";
 import { getCloseLongEvents } from "src/amm/longs/getCloseLongEvents";
+import { EventOptions } from "src/base/EventOptions";
+import { Address, PublicClient } from "viem";
+import { ClosedLong } from "./types";
 
 export interface GetClosedLongsOptions {
   traderAddress: Address;
   hyperdriveAddress: Address;
   publicClient: PublicClient;
+  options?: EventOptions;
 }
 
 export async function getClosedLongs({
   traderAddress,
   hyperdriveAddress,
   publicClient,
+  options,
 }: GetClosedLongsOptions): Promise<ClosedLong[]> {
   const closedLongs = await getCloseLongEvents({
     args: { traderAddress },
     hyperdriveAddress,
     publicClient,
+    options,
   });
 
   const closedLongsById = await Promise.all(

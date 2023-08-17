@@ -1,4 +1,5 @@
 import { HyperdriveABI } from "src/abis/Hyperdrive";
+import { EventOptions } from "src/base/EventOptions";
 import {
   PublicClient,
   Address,
@@ -15,18 +16,16 @@ interface CloseShortEvent {
 }
 interface GetCloseShortEventsOptions {
   args?: { traderAddress?: Address };
-  fromBlock?: bigint | "earliest";
-  toBlock?: bigint | "latest";
   hyperdriveAddress: Address;
   publicClient: PublicClient;
+  options?: EventOptions;
 }
 
 export async function getCloseShortEvents({
   args,
-  fromBlock = "earliest",
-  toBlock = "latest",
   hyperdriveAddress,
   publicClient,
+  options,
 }: GetCloseShortEventsOptions): Promise<CloseShortEvent[]> {
   const closeShortLogs = await publicClient.getFilterLogs({
     filter: await publicClient.createContractEventFilter({
@@ -34,8 +33,8 @@ export async function getCloseShortEvents({
       address: hyperdriveAddress,
       eventName: "CloseShort",
       args: { trader: args?.traderAddress },
-      fromBlock,
-      toBlock,
+      fromBlock: options?.fromBlock || "earliest",
+      toBlock: options?.toBlock || "latest",
     }),
   });
 

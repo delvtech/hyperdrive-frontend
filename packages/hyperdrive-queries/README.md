@@ -1,12 +1,19 @@
 # Hyperdrive Queries
 
 Hyperdrive Queries is a collection of query generators designed to work
-seamlessly with @tanstack/query.
+seamlessly with @tanstack/query, eg: React/Svelte/Solid/Vue.
 
-Written in TypeScript, it provides an easy way to interact with the Hyperdrive
-AMM in a both Web and NodeJS environments.
+- **Queries**
 
-## Examples
+## Installation
+
+Install `@hyperdrive/queries` and its `viem` peer dependency.
+
+Npm:
+`npm i @hyperdrive/queries viem`
+
+Yarn:
+`yarn add @hyperdrive/queries viem`
 
 #### React hook:
 
@@ -39,25 +46,4 @@ function useBaseToken(
     select: (poolConfig) => poolConfig.baseToken,
   });
 }
-```
-
-#### Node script:
-
-```ts
-import { QueryClient } from "@tanstack/query-core";
-import { PublicClient, createPublicClient } from "viem";
-import { mainnet } from "viem/chains";
-import { getPoolConfigQuery } from "@hyperdrive/queries";
-
-const queryClient = new QueryClient();
-const publicClient = createPublicClient({
-  chain: mainnet,
-  transport: http(),
-});
-
-(async function () {
-  const poolConfig = await queryClient.fetchQuery(
-    getPoolConfigQuery({ hyperdriveAddress, publicClient }),
-  );
-})();
 ```

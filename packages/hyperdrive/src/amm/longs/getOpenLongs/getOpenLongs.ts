@@ -1,28 +1,32 @@
 import groupBy from "lodash.groupby";
 import mapValues from "lodash.mapvalues";
-import { sumBigInt } from "src/base/sumBigInt";
 import { decodeAssetFromTransferSingleEventData } from "src/amm/events/decodeAssetFromTransferSingleEventData";
 import { getTransferSingleEvents } from "src/amm/events/getTransferSingleEvents";
-import { Long } from "src/amm/longs/types";
-import { PublicClient, Address } from "viem";
-import { getOpenLongEvents } from "src/amm/longs/getOpenLongEvents";
 import { getCloseLongEvents } from "src/amm/longs/getCloseLongEvents";
+import { getOpenLongEvents } from "src/amm/longs/getOpenLongEvents";
+import { Long } from "src/amm/longs/types";
+import { EventOptions } from "src/base/EventOptions";
+import { sumBigInt } from "src/base/sumBigInt";
+import { Address, PublicClient } from "viem";
 
 export interface GetOpenLongsOptions {
   account: Address;
   hyperdriveAddress: Address;
   publicClient: PublicClient;
+  options?: EventOptions;
 }
 
 export async function getOpenLongs({
   account,
   hyperdriveAddress,
   publicClient,
+  options,
 }: GetOpenLongsOptions): Promise<Long[]> {
   const openLongEvents = await getOpenLongEvents({
     args: { traderAddress: account },
     hyperdriveAddress,
     publicClient,
+    options,
   });
   const totalBasePaidByAssetId = mapValues(
     groupBy(openLongEvents, (event) => event.eventData.assetId.toString()),

@@ -1,14 +1,17 @@
 import { PublicClient, Address, ContractFunctionResult } from "viem";
 import { HyperdriveABI } from "src/abis/Hyperdrive";
+import { ReadCallOptions } from "src/base/ReadCallOptions";
 
 interface GetPoolInfoOptions {
   hyperdriveAddress: Address;
   publicClient: PublicClient;
+  options?: ReadCallOptions;
 }
 
 export async function getPoolInfo({
   publicClient,
   hyperdriveAddress,
+  options,
 }: GetPoolInfoOptions): Promise<
   ContractFunctionResult<typeof HyperdriveABI, "getPoolInfo">
 > {
@@ -16,5 +19,6 @@ export async function getPoolInfo({
     address: hyperdriveAddress,
     abi: HyperdriveABI,
     functionName: "getPoolInfo",
+    ...options,
   });
 }
