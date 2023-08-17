@@ -1,7 +1,8 @@
 {
-  "index": "Introduction",
-  "another": "Another Page",
-  "advanced": "Advanced (A Folder)",
+  "index": "Getting Started",
+  "sdk": "Hyperdrive SDK",
+  "core": "Hyperdrive Core",
+  "queries": "Hyperdrive Queries",
   "about": {
     "title": "About",
     "type": "page"
