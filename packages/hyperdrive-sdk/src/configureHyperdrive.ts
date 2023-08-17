@@ -2,7 +2,7 @@ import { QueryClient } from "@tanstack/query-core";
 import {
   PoolActions,
   configurePoolActions,
-} from "src/amm/actions/configurePoolActions";
+} from "src/amm/configurePoolActions";
 import { Address, PublicClient } from "viem";
 import {
   PortfolioActions,

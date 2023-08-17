@@ -1,32 +1,24 @@
-# Hyperdrive Queries
+# Hyperdrive SDK
 
-Hyperdrive Queries is a TypeScript SDK which provides an easy way to interact
-with the Hyperdrive AMM in both Web and NodeJS environments.
-
-## What's included
-
-- **TypeScript SDK** A VanillaJS library containing everything you need to start
-  working with Hyperdrive.
-
-- **Queries** a collection of query generators designed to work
-  seamlessly with @tanstack/query, eg: React/Svelte/Solid/Vue.
+A vanilla TypeScript SDK containing everything you need to start working with
+the Hyperdrive AMM.
 
 ## Installation
 
-Install `@hyperdrive/queries` and its `viem` peer dependency.
+Install `@hyperdrive/sdk` and its `viem` peer dependency.
 
 Npm:
-`npm i @hyperdrive/queries viem`
+`npm i @hyperdrive/sdk viem`
 
 Yarn:
-`yarn add @hyperdrive/queries viem`
+`yarn add @hyperdrive/sdk viem`
 
 #### TypeScript usage:
 
 ```ts
 import { PublicClient, createPublicClient, http } from "viem";
 import { mainnet } from "viem/chains";
-import { configureHyperdrive } from "@hyperdrive/queries";
+import { configureHyperdrive } from "@hyperdrive/sdk";
 
 const { pool, portolio } = configureHyperdrive({
   hyperdriveAddress: "0x.....",
@@ -43,37 +35,4 @@ const { pool, portolio } = configureHyperdrive({
   const fixedRate = await pool.getFixedRate({ blockNumber });
   const userLongs = await portfolio.getActiveLongs({ who })
 })();
-```
-
-#### React hook:
-
-```ts
-import { useQuery } from "@tanstack/react-query";
-import { PublicClient } from "viem";
-import { getPoolConfigQuery } from "@hyperdrive/queries";
-
-function usePoolConfig(
-  hyperdriveAddress: `0x${string}`,
-  publicClient: PublicClient,
-) {
-  return useQuery(getPoolConfigQuery({ hyperdriveAddress, publicClient }));
-}
-```
-
-#### React hook w/ custom `select`:
-
-```ts
-import { useQuery } from "@tanstack/react-query";
-import { PublicClient } from "viem";
-import { getPoolConfigQuery } from "@hyperdrive/queries";
-
-function useBaseToken(
-  hyperdriveAddress: `0x${string}`,
-  publicClient: PublicClient,
-) {
-  return useQuery({
-    ...getPoolConfigQuery({ hyperdriveAddress, publicClient }),
-    select: (poolConfig) => poolConfig.baseToken,
-  });
-}
 ```

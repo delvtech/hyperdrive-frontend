@@ -1,13 +1,13 @@
 import { ReadCallOptions } from "@hyperdrive/core";
+import {
+  getPoolConfigQuery,
+  getFixedRateQuery,
+  getPoolInfoQuery,
+} from "@hyperdrive/queries";
 import { QueryClient } from "@tanstack/query-core";
-import { getFixedRateQuery } from "src/amm/getFixedRateQuery";
-import { getPoolConfigQuery } from "src/amm/getPoolConfigQuery/getPoolConfigQuery";
-import { getPoolInfoQuery } from "src/amm/getPoolInfoQuery";
 import { Address, PublicClient } from "viem";
 
 /**
- * PoolActions Interface
- *
  * The PoolActions interface provides methods for querying specific
  * configurations, statistics, and rates of a pool.
  */

@@ -1,4 +1,3 @@
-import { Address, PublicClient } from "viem";
 import {
   ClosedLong,
   ClosedLpShares,
@@ -9,15 +8,18 @@ import {
   ReadCallOptions,
   RedeemedWithdrawalShares,
 } from "@hyperdrive/core";
+import {
+  getClosedLpSharesQuery,
+  getClosedShortsQuery,
+  getCloseLongsQuery,
+  getLpSharesQuery,
+  getOpenLongsQuery,
+  getOpenShortsQuery,
+  getRedeemedWithdrawalSharesQuery,
+  getWithdrawalSharesQuery,
+} from "@hyperdrive/queries";
 import { QueryClient } from "@tanstack/query-core";
-import { getCloseLongsQuery } from "src/amm/longs/getClosedLongs";
-import { getOpenLongsQuery } from "src/amm/longs/getOpenLongs/getOpenLongs";
-import { getLpSharesQuery } from "src/amm/lp/getLpShares";
-import { getRedeemedWithdrawalSharesQuery } from "src/amm/lp/getRedeemedWithdrawalShares";
-import { getWithdrawalSharesQuery } from "src/amm/lp/getWithdrawalShares";
-import { getClosedShortsQuery } from "src/amm/shorts/getClosedShorts";
-import { getOpenShortsQuery } from "src/amm/shorts/getOpenShorts";
-import { getClosedLpSharesQuery } from "src/amm/lp/getClosedLpShares";
+import { Address, PublicClient } from "viem";
 
 export interface PortfolioActions {
   getActiveLongs: (args: {
