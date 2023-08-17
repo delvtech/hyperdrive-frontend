@@ -1,50 +1,19 @@
 # Hyperdrive Queries
 
-Hyperdrive Queries is a TypeScript SDK which provides an easy way to interact
-with the Hyperdrive AMM in both Web and NodeJS environments.
+Hyperdrive Queries is a collection of query generators designed to work
+seamlessly with @tanstack/query, eg: React/Svelte/Solid/Vue.
 
-## What's included
-
-- **TypeScript SDK** A VanillaJS library containing everything you need to start
-  working with Hyperdrive.
-
-- **Queries** a collection of query generators designed to work
-  seamlessly with @tanstack/query, eg: React/Svelte/Solid/Vue.
+- **Queries**
 
 ## Installation
 
-Install `@hyperdrive/queries` and its `viem` and `@tanstack/query-core` peer
-dependencies.
+Install `@hyperdrive/queries` and its `viem` peer dependency.
 
 Npm:
-`npm i @hypedrive/queries viem @tanstack/query-core`
+`npm i @hyperdrive/queries viem`
 
 Yarn:
-`yarn add @hypedrive/queries viem @tanstack/query-core`
-
-#### Node script:
-
-```ts
-import { PublicClient, createPublicClient, http } from "viem";
-import { mainnet } from "viem/chains";
-import { configureHyperdrive } from "@hyperdrive/queries";
-
-const { poolActions, portolioActions } = configureHyperdrive({
-  hyperdriveAddress: "0x.....",
-  hyperdriveMathAddress: "0x.....",
-  publicClient: createPublicClient({
-    chain: mainnet,
-    transport: http(),
-  },
-});
-
-(async function () {
-  const poolConfig = await poolActions.getPoolConfig();
-  const poolInfo = await poolActions.getPoolInfo();
-  const fixedRate = await poolActions.getFixedRate({ blockNumber });
-  const userLongs = await portfolioActions.getActiveLongs({ who })
-})();
-```
+`yarn add @hyperdrive/queries viem`
 
 #### React hook:
 
