@@ -1,15 +1,9 @@
 # Hyperdrive Queries
 
-Hyperdrive Queries is a TypeScript SDK which provides an easy way to interact
-with the Hyperdrive AMM in both Web and NodeJS environments.
+Hyperdrive Queries is a collection of query generators designed to work
+seamlessly with @tanstack/query, eg: React/Svelte/Solid/Vue.
 
-## What's included
-
-- **TypeScript SDK** A VanillaJS library containing everything you need to start
-  working with Hyperdrive.
-
-- **Queries** a collection of query generators designed to work
-  seamlessly with @tanstack/query, eg: React/Svelte/Solid/Vue.
+- **Queries**
 
 ## Installation
 
@@ -20,30 +14,6 @@ Npm:
 
 Yarn:
 `yarn add @hyperdrive/queries viem`
-
-#### TypeScript usage:
-
-```ts
-import { PublicClient, createPublicClient, http } from "viem";
-import { mainnet } from "viem/chains";
-import { configureHyperdrive } from "@hyperdrive/queries";
-
-const { pool, portolio } = configureHyperdrive({
-  hyperdriveAddress: "0x.....",
-  hyperdriveMathAddress: "0x.....",
-  publicClient: createPublicClient({
-    chain: mainnet,
-    transport: http(),
-  },
-});
-
-(async function () {
-  const poolConfig = await pool.getPoolConfig();
-  const poolInfo = await pool.getPoolInfo();
-  const fixedRate = await pool.getFixedRate({ blockNumber });
-  const userLongs = await portfolio.getActiveLongs({ who })
-})();
-```
 
 #### React hook:
 
