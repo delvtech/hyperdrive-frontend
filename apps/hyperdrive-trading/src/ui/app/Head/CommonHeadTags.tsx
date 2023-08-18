@@ -1,8 +1,8 @@
 import Helmet from "react-helmet";
 
 interface CommonHeadTagsProps {
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
 }
 
 const defaultTitle = "Hyperdrive Trading";
