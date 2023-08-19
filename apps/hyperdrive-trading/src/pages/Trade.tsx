@@ -1,6 +1,7 @@
 import { ReactElement } from "react";
 import { useLoaderData } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
+import { CommonHeadTags } from "src/ui/app/Head/CommonHeadTags";
 import { useDevLogging } from "src/ui/hyperdrive/hooks/useDevLogging";
 import { TradeBody } from "src/ui/trade/TradeBody/TradeBody";
 
@@ -12,6 +13,7 @@ export function Trade(): ReactElement {
 
   return (
     <div className="flex h-full justify-center bg-base-100 py-8 px-4">
+      <CommonHeadTags />
       <TradeBody hyperdrive={market} />
     </div>
   );
