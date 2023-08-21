@@ -1,4 +1,6 @@
-const config = {
+import { ThemeConfig } from "nextra";
+
+const config: ThemeConfig = {
   logo: <span>Hyperdrive SDK</span>,
   project: {
     link: "https://github.com/delvtech/hyperdrive-monorepo",
