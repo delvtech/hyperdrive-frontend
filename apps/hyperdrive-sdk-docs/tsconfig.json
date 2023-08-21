@@ -19,5 +19,5 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["pages", "components"]
+  "include": ["pages", "components", "./theme.config.tsx"]
 }

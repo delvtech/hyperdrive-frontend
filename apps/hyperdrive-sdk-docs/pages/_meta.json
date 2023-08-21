@@ -4,13 +4,12 @@
   "core": "Hyperdrive Core",
   "queries": "Hyperdrive Queries",
   "about": {
-    "title": "About",
-    "type": "page"
+    "display": "hidden"
   },
   "contact": {
     "title": "Contact ↗",
     "type": "page",
-    "href": "https://twitter.com/shuding_",
+    "href": "https://twitter.com/delv_tech",
     "newWindow": true
   }
 }

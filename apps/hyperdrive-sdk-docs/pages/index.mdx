@@ -1,11 +1,51 @@
-# Introduction
- 
-Welcome to Nextra! This is a basic docs template. You can use it as a starting point for your own project :)
+# Hyperdrive SDK
 
-## What is Nextra?
+A vanilla TypeScript SDK containing everything you need to start working with
+the Hyperdrive AMM.
 
-A **simple**, **powerful** and **flexible** site generation framework with everything you love from Next.js.
+## Installation
 
-## Documentation
+Install `@hyperdrive/sdk` and its [viem](https://viem.sh) peer dependency.
 
-The documentation is available at [https://nextra.site](https://nextra.site).
+Npm:
+
+```bash
+npm i @hyperdrive/sdk viem
+```
+
+Yarn:
+
+```bash
+yarn add @hyperdrive/sdk viem
+```
+
+## Configure Hyperdrive
+
+First, configure your desired hyperdrive address to be used by the SDK, and the
+clients you want to use for reading/writing to the Ethereum network.
+
+```ts
+import { PublicClient, createPublicClient, http } from "viem";
+import { mainnet } from "viem/chains";
+import { configureHyperdrive } from "@hyperdrive/sdk";
+
+export const hyperdrive = configureHyperdrive({
+  hyperdriveAddress: "0x.....",
+  hyperdriveMathAddress: "0x.....",
+  publicClient: createPublicClient({
+    chain: mainnet,
+    transport: http(),
+  },
+});
+```
+
+## You're good to go!
+
+Use the SDK! You can now import and use the Hyperdrive SDK throughout your app.
+
+```ts
+(async function () {
+  const fixedRate = await hyperdrive.pool.getFixedRate();
+  const myLongs = await hyperdrive.portfolio.getActiveLongs({ who: "0x..." });
+})();
+```
