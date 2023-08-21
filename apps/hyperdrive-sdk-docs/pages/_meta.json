@@ -1,0 +1,15 @@
+{
+  "index": "Getting Started",
+  "sdk": "Hyperdrive SDK",
+  "core": "Hyperdrive Core",
+  "queries": "Hyperdrive Queries",
+  "about": {
+    "display": "hidden"
+  },
+  "contact": {
+    "title": "Contact ↗",
+    "type": "page",
+    "href": "https://twitter.com/delv_tech",
+    "newWindow": true
+  }
+}
