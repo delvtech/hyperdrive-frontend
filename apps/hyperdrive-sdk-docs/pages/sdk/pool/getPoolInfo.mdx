@@ -2,8 +2,8 @@
 
 Documentation for the pool info, what you can provide and what it returns. TODO
 
-```ts
+```ts {3}
 const pool = configurePoolActions({hyperdriveAddress, hyperdriveMathAddress, queryClient})
 
-const { shareReserves, bondReserves } = pool.getPoolInfo()
+const { shareReserves, bondReserves } = await pool.getPoolInfo()
 ```

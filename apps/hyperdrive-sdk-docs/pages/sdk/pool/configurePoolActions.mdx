@@ -1,11 +1,9 @@
 # Configure Pool
 
-TODO
-
-```ts
+```ts {1}
 const pool = configurePoolActions({hyperdriveAddress, hyperdriveMathAddress, queryClient})
 
-const poolConfig = pool.getPoolConfig()
-const poolInfo = pool.getPoolInfo()
-const fixedRate = pool.getFixedRate()
+const poolConfig = await pool.getPoolConfig()
+const poolInfo = await pool.getPoolInfo()
+const fixedRate = await pool.getFixedRate()
 ```

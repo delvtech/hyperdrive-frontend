@@ -5,6 +5,10 @@ const config: ThemeConfig = {
   project: {
     link: "https://github.com/delvtech/hyperdrive-monorepo",
   },
+  sidebar: {
+    defaultMenuCollapseLevel: 2,
+    autoCollapse: true,
+  },
   chat: {
     link: "https://discord.gg/atwMje4P",
   },

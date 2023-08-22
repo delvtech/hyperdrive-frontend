@@ -2,8 +2,8 @@
 
 Documentation for the pool config, what you can provide and what it returns. TODO
 
-```ts
+```ts {3}
 const pool = configurePoolActions({hyperdriveAddress, hyperdriveMathAddress, queryClient})
 
-const { baseToken, initialSharePrice } = pool.getPoolConfig()
+const { baseToken, initialSharePrice } = await pool.getPoolConfig()
 ```
