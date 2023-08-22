@@ -6,8 +6,7 @@ const config: ThemeConfig = {
     link: "https://github.com/delvtech/hyperdrive-monorepo",
   },
   sidebar: {
-    defaultMenuCollapseLevel: 2,
-    autoCollapse: true,
+    defaultMenuCollapseLevel: 1,
   },
   chat: {
     link: "https://discord.gg/atwMje4P",
