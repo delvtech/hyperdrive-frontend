@@ -2,7 +2,6 @@
   "index": "Getting Started",
   "sdk": "Hyperdrive SDK",
   "core": "Hyperdrive Core",
-  "queries": "Hyperdrive Queries",
   "about": {
     "display": "hidden"
   },
