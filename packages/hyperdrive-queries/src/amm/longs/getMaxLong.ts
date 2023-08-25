@@ -3,11 +3,11 @@ import { getPoolConfigQuery } from "src/amm/getPoolConfigQuery/getPoolConfigQuer
 import { getPoolInfoQuery } from "src/amm/getPoolInfoQuery";
 import { getDecimalsQuery } from "src/token/getDecimals";
 import { makeQueryKey } from "src/makeQueryKey";
-import { getMaxLong } from "@hyperdrive/core";
+import { HyperdriveContract, getMaxLong } from "@hyperdrive/core";
 import { Address, PublicClient } from "viem";
 
 interface GetMaxLongQueryOptions {
-  hyperdriveAddress: Address | undefined;
+  contract: HyperdriveContract | undefined;
   hyperdriveMathAddress: Address | undefined;
   publicClient: PublicClient;
   queryClient: QueryClient;
@@ -15,7 +15,7 @@ interface GetMaxLongQueryOptions {
 }
 
 export function getMaxLongQuery({
-  hyperdriveAddress,
+  contract,
   hyperdriveMathAddress,
   publicClient,
   queryClient,
@@ -23,13 +23,12 @@ export function getMaxLongQuery({
 }: GetMaxLongQueryOptions): QueryObserverOptions<
   Awaited<ReturnType<typeof getMaxLong>>
 > {
-  const queryEnabled =
-    !!hyperdriveAddress && !!publicClient && !!hyperdriveMathAddress;
+  const queryEnabled = !!contract && !!publicClient && !!hyperdriveMathAddress;
 
   return {
     enabled: queryEnabled,
     queryKey: makeQueryKey("getMaxLong", {
-      hyperdriveAddress,
+      address: contract?.address,
       hyperdriveMathAddress,
     }),
     queryFn: queryEnabled
@@ -39,12 +38,7 @@ export function getMaxLongQuery({
             timeStretch,
             baseToken,
             minimumShareReserves,
-          } = await queryClient.fetchQuery(
-            getPoolConfigQuery({
-              publicClient,
-              hyperdriveAddress,
-            }),
-          );
+          } = await queryClient.fetchQuery(getPoolConfigQuery(contract));
 
           const baseDecimals = await queryClient.fetchQuery(
             getDecimalsQuery({
@@ -57,7 +51,7 @@ export function getMaxLongQuery({
             await queryClient.fetchQuery(
               getPoolInfoQuery({
                 publicClient,
-                hyperdriveAddress,
+                hyperdriveAddress: contract.address,
               }),
             );
 

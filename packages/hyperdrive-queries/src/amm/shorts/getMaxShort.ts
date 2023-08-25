@@ -4,33 +4,32 @@ import { getPoolConfigQuery } from "src/amm/getPoolConfigQuery/getPoolConfigQuer
 import { getPoolInfoQuery } from "src/amm/getPoolInfoQuery";
 import { getDecimalsQuery } from "src/token/getDecimals";
 import { makeQueryKey } from "src/makeQueryKey";
-import { getMaxShort } from "@hyperdrive/core";
+import { HyperdriveContract, getMaxShort } from "@hyperdrive/core";
 
 /**
  * TODO: move this to a @hyperdrive/queries package.
  */
 interface GetMaxShortQueryOptions {
-  hyperdriveAddress: Address | undefined;
+  contract: HyperdriveContract | undefined;
   hyperdriveMathAddress: Address | undefined;
   publicClient: PublicClient;
   queryClient: QueryClient;
 }
 
 export function getMaxShortQuery({
-  hyperdriveAddress,
+  contract,
   hyperdriveMathAddress,
   publicClient,
   queryClient,
 }: GetMaxShortQueryOptions): QueryObserverOptions<
   Awaited<ReturnType<typeof getMaxShort>>
 > {
-  const queryEnabled =
-    !!hyperdriveAddress && !!publicClient && !!hyperdriveMathAddress;
+  const queryEnabled = !!contract && !!publicClient && !!hyperdriveMathAddress;
 
   return {
     enabled: queryEnabled,
     queryKey: makeQueryKey("getMaxShort", {
-      hyperdriveAddress,
+      address: contract?.address,
       hyperdriveMathAddress,
     }),
     queryFn: queryEnabled
@@ -40,12 +39,7 @@ export function getMaxShortQuery({
             timeStretch,
             baseToken,
             minimumShareReserves,
-          } = await queryClient.fetchQuery(
-            getPoolConfigQuery({
-              publicClient,
-              hyperdriveAddress,
-            }),
-          );
+          } = await queryClient.fetchQuery(getPoolConfigQuery(contract));
 
           const baseDecimals = await queryClient.fetchQuery(
             getDecimalsQuery({
@@ -58,7 +52,7 @@ export function getMaxShortQuery({
             await queryClient.fetchQuery(
               getPoolInfoQuery({
                 publicClient,
-                hyperdriveAddress,
+                hyperdriveAddress: contract.address,
               }),
             );
 
