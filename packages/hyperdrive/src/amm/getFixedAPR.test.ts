@@ -8,12 +8,18 @@ import { getFixedAPR } from "src/amm/getFixedAPR";
 import { getPoolConfig } from "src/amm/getPoolConfig/getPoolConfig";
 import { getPoolInfo } from "src/amm/getPoolInfo";
 import { setupMintTokensAndApproveHyperdrive } from "src/amm/testing/setupMintTokensAndApproveHyperdrive";
+import { ViemHyperdrive } from "src/contract/viem/ViemHyperdrive";
 
 test("should verify APR decreases after opening a long position", async () => {
   const mockHyperdriveAddress = TestAddresses.mockHyperdrive;
   const mockHyperdriveMathAddress = TestAddresses.mockHyperdriveMath;
 
   await setupMintTokensAndApproveHyperdrive(ALICE);
+
+  const contract = new ViemHyperdrive({
+    address: mockHyperdriveAddress,
+    publicClient,
+  });
 
   // Fetch Initial Values
   const { bondReserves: bondReservesStart, shareReserves: shareReservesStart } =
@@ -22,10 +28,7 @@ test("should verify APR decreases after opening a long position", async () => {
       publicClient,
     });
   const { initialSharePrice, positionDuration, timeStretch } =
-    await getPoolConfig({
-      hyperdriveAddress: mockHyperdriveAddress,
-      publicClient,
-    });
+    await getPoolConfig(contract);
   const { apr: aprStart } = await getFixedAPR({
     hyperdriveMathAddress: mockHyperdriveMathAddress,
     publicClient,
@@ -75,6 +78,11 @@ test("should verify APR increases after opening a short position", async () => {
 
   await setupMintTokensAndApproveHyperdrive(ALICE);
 
+  const contract = new ViemHyperdrive({
+    address: mockHyperdriveAddress,
+    publicClient,
+  });
+
   // Fetch Initial Values
   const { bondReserves: bondReservesStart, shareReserves: shareReservesStart } =
     await getPoolInfo({
@@ -82,10 +90,7 @@ test("should verify APR increases after opening a short position", async () => {
       publicClient,
     });
   const { initialSharePrice, positionDuration, timeStretch } =
-    await getPoolConfig({
-      hyperdriveAddress: mockHyperdriveAddress,
-      publicClient,
-    });
+    await getPoolConfig(contract);
   const { apr: aprStart } = await getFixedAPR({
     hyperdriveMathAddress: mockHyperdriveMathAddress,
     publicClient,

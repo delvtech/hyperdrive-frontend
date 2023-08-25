@@ -73,3 +73,6 @@ export { multiplyBigInt } from "src/base/multiplyBigInt/multiplyBigInt";
 export { type ReadCallOptions } from "src/base/ReadCallOptions";
 
 export { type EventOptions } from "src/base/EventOptions";
+
+export { type HyperdriveContract } from "src/contract/HyperdriveContract";
+export { ViemHyperdrive } from "src/contract/viem/ViemHyperdrive";

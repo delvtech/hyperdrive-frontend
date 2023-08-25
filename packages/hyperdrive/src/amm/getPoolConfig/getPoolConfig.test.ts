@@ -2,12 +2,15 @@ import { expect, test } from "vitest";
 
 import { publicClient } from "src/testing/utils";
 import { getPoolConfig } from "src/amm/getPoolConfig/getPoolConfig";
+import { ViemHyperdrive } from "src/contract/viem/ViemHyperdrive";
 
 test("gets the poolConfig", async () => {
-  const poolConfig = await getPoolConfig({
+  const contract = new ViemHyperdrive({
+    address: "0xd8058efe0198ae9dD7D563e1b4938Dcbc86A1F81",
     publicClient,
-    hyperdriveAddress: "0xd8058efe0198ae9dD7D563e1b4938Dcbc86A1F81",
   });
+
+  const poolConfig = await getPoolConfig(contract);
 
   expect(poolConfig).toStrictEqual({
     baseToken: "0x5FbDB2315678afecb367f032d93F642f64180aa3",
