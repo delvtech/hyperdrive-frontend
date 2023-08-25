@@ -1,4 +1,4 @@
-import { ReadCallOptions } from "@hyperdrive/core";
+import { HyperdriveContract, ReadCallOptions } from "@hyperdrive/core";
 import {
   getPoolConfigQuery,
   getFixedRateQuery,
@@ -61,12 +61,12 @@ export interface PoolActions {
 }
 
 export function configurePoolActions({
-  hyperdriveAddress,
+  contract,
   hyperdriveMathAddress,
   publicClient,
   queryClient: queryClientFromOptions,
 }: {
-  hyperdriveAddress: Address;
+  contract: HyperdriveContract;
   hyperdriveMathAddress: Address;
   publicClient: PublicClient;
   queryClient?: QueryClient;
@@ -77,21 +77,19 @@ export function configurePoolActions({
 
   return {
     getPoolConfig: (options: ReadCallOptions) =>
+      queryClient.fetchQuery(getPoolConfigQuery(contract)),
+    getPoolInfo: (options: ReadCallOptions) =>
       queryClient.fetchQuery(
-        getPoolConfigQuery({
-          hyperdriveAddress,
+        getPoolInfoQuery({
+          hyperdriveAddress: contract.address,
           publicClient,
           options,
         }),
       ),
-    getPoolInfo: (options: ReadCallOptions) =>
-      queryClient.fetchQuery(
-        getPoolInfoQuery({ hyperdriveAddress, publicClient, options }),
-      ),
     getFixedRate: (options: ReadCallOptions) =>
       queryClient.fetchQuery(
         getFixedRateQuery({
-          hyperdriveAddress,
+          contract,
           hyperdriveMathAddress,
           publicClient,
           queryClient,

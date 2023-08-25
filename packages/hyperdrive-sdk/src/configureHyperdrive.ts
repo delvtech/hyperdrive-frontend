@@ -8,39 +8,66 @@ import {
   PortfolioActions,
   configurePortfolioActions,
 } from "./portfolio/configurePortfolioActions";
+import { ViemHyperdrive } from "@hyperdrive/core";
 
-interface ConfigureHyperdriveOptions {
+type ConfigureHyperdriveOptions = {
   hyperdriveAddress: Address;
   hyperdriveMathAddress: Address;
-  publicClient: PublicClient;
   queryClient?: QueryClient;
-}
+} & (
+  | {
+      viem: {
+        publicClient: PublicClient;
+      };
+      ethers?: never;
+    }
+  | {
+      viem?: never;
+      // TODO:
+      ethers: {
+        foo: string;
+      };
+    }
+);
 
 export function configureHyperdrive({
   hyperdriveAddress,
   hyperdriveMathAddress,
-  publicClient,
+  viem,
+  ethers,
   queryClient: queryClientFromOptions,
-}: ConfigureHyperdriveOptions): {
-  poolActions: PoolActions;
-  portfolio: PortfolioActions;
-} {
+}: ConfigureHyperdriveOptions):
+  | {
+      poolActions: PoolActions;
+      portfolio: PortfolioActions;
+    }
+  | undefined {
   const queryClient = queryClientFromOptions
     ? queryClientFromOptions
     : new QueryClient();
 
-  return {
-    poolActions: configurePoolActions({
-      hyperdriveAddress,
-      hyperdriveMathAddress,
-      publicClient,
-      queryClient,
-    }),
-    portfolio: configurePortfolioActions({
-      hyperdriveAddress,
-      publicClient,
-      queryClient,
-    }),
-    // TODO: lpActions
-  };
+  if (viem) {
+    const contract = new ViemHyperdrive({
+      address: hyperdriveAddress,
+      publicClient: viem.publicClient,
+    });
+
+    return {
+      poolActions: configurePoolActions({
+        contract,
+        hyperdriveMathAddress,
+        publicClient: viem.publicClient,
+        queryClient,
+      }),
+      portfolio: configurePortfolioActions({
+        hyperdriveAddress,
+        publicClient: viem.publicClient,
+        queryClient,
+      }),
+      // TODO: lpActions
+    };
+  } else if (ethers) {
+    // TODO:
+    return;
+  }
 }
