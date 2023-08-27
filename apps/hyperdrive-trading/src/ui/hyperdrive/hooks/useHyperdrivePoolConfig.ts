@@ -3,6 +3,7 @@ import { getPoolConfigQuery } from "@hyperdrive/queries";
 import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { ContractFunctionResult } from "viem";
 import { Address } from "wagmi";
+import { useHyperdriveContract } from "./useHyperdriveContract";
 
 export function useHyperdrivePoolConfig(hyperdriveAddress: Address): {
   poolConfig:
@@ -10,8 +11,9 @@ export function useHyperdrivePoolConfig(hyperdriveAddress: Address): {
     | undefined;
   poolConfigStatus: QueryStatus;
 } {
+  const hyperdriveContract = useHyperdriveContract(hyperdriveAddress);
   const { data: poolConfig, status: poolConfigStatus } = useQuery(
-    getPoolConfigQuery({ hyperdriveAddress: hyperdriveAddress }),
+    getPoolConfigQuery(hyperdriveContract),
   );
 
   return { poolConfig, poolConfigStatus };
