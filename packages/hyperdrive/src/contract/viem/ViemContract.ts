@@ -34,6 +34,6 @@ export class ViemContract<TAbi extends Abi> implements Contract<TAbi> {
       // ...options,
     });
 
-    return result[0] as any;
+    return result as any;
   };
 }
