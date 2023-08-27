@@ -1,7 +1,7 @@
 import { Address } from "abitype";
 import { HyperdriveContract } from "src/contract/HyperdriveContract";
 
-export async function getPoolConfig(
+export function getPoolConfig(
   contract: HyperdriveContract,
 ): Promise<PoolConfig> {
   return contract.read("getPoolConfig", []);
