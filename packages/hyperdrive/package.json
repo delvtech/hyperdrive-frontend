@@ -32,6 +32,7 @@
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.1.0",
     "typescript": "^5.0.2",
+    "viem": "^1.5.3",
     "vite-tsconfig-paths": "^4.2.0",
     "vitest": "^0.28.5"
   },
@@ -43,7 +44,10 @@
     "@types/lodash.mapvalues": "^4.6.7",
     "@viem/anvil": "^0.0.6",
     "lodash.groupby": "^4.6.0",
-    "lodash.mapvalues": "^4.6.0",
-    "viem": "^1.5.3"
+    "lodash.mapvalues": "^4.6.0"
+  },
+  "peerDependencies": {
+    "ethers": ">=6",
+    "viem": "^1.5"
   }
 }

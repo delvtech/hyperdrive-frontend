@@ -4,6 +4,7 @@ import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
 import { queryClient } from "src/network/queryClient";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import { useHyperdriveContract } from "src/ui/hyperdrive/hooks/useHyperdriveContract";
 import { usePublicClient } from "wagmi";
 
 export function useMaxShort(hyperdrive: Hyperdrive): {
@@ -12,12 +13,13 @@ export function useMaxShort(hyperdrive: Hyperdrive): {
 } {
   const { appConfig } = useAppConfig();
   const publicClient = usePublicClient();
+  const contract = useHyperdriveContract(hyperdrive.address);
 
   const { data, status } = useQuery(
     getMaxShortQuery({
+      contract,
       hyperdriveMathAddress: appConfig?.hyperdriveMath,
       publicClient,
-      hyperdriveAddress: hyperdrive.address,
       queryClient,
     }),
   );

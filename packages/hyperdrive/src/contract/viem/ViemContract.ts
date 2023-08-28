@@ -28,7 +28,7 @@ export class ViemContract<TAbi extends Abi> implements Contract<TAbi> {
     const result = await this._publicClient.readContract({
       address: this.address,
       abi: this.abi as any,
-      functionName: functionName as any,
+      functionName: functionName,
       // TODO: confirm type is valid
       args: args as any,
       // ...options,

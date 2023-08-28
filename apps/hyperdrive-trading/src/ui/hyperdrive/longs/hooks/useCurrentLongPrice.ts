@@ -4,6 +4,7 @@ import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
 import { queryClient } from "src/network/queryClient";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import { useHyperdriveContract } from "src/ui/hyperdrive/hooks/useHyperdriveContract";
 import { PublicClient } from "viem";
 import { usePublicClient } from "wagmi";
 
@@ -13,10 +14,11 @@ export function useCurrentLongPrice(hyperdrive: Hyperdrive): {
 } {
   const { appConfig } = useAppConfig();
   const publicClient = usePublicClient();
+  const contract = useHyperdriveContract(hyperdrive.address);
 
   const { data, status } = useQuery(
     getCurrentLongPriceQuery({
-      hyperdriveAddress: hyperdrive.address,
+      contract,
       hyperdriveMathAddress: appConfig?.hyperdriveMath,
       publicClient: publicClient as PublicClient,
       queryClient,
