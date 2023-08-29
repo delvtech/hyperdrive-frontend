@@ -3,7 +3,7 @@ import { QueryKey } from "@tanstack/query-core";
 /**
  * This is a factory function for generating query keys. By using this function,
  * we enforce a consistent namespacing across our queries and prevent a
- * potential collision with existing queries within the application.
+ * potential collision with existing queries in an application.
 
  * Recommended use: All queries should leverage this function for query key
  * creation to maintain namespace integrity.
