@@ -49,13 +49,13 @@ export function CloseShortModalButton({
       }
     >
       {({ showModal }) => (
-        <label
+        <button
           onClick={showModal}
           tabIndex={0}
-          className=" daisy-btn-ghost daisy-btn-sm daisy-btn"
+          className=" daisy-btn-secondary daisy-btn-sm daisy-btn"
         >
           Close
-        </label>
+        </button>
       )}
     </Modal>
   );
