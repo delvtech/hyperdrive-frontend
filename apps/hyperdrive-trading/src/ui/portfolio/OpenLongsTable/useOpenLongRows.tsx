@@ -5,6 +5,7 @@ import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { CloseLongModalButton } from "src/ui/hyperdrive/longs/CloseLongModalButton/CloseLongModalButton";
 import { useOpenLongs } from "src/ui/hyperdrive/longs/hooks/useOpenLongs";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
+import { getProfitLossText } from "src/ui/hyperdrive/shorts/CloseShortForm/getProfitLossText";
 import { Address, formatUnits, parseUnits } from "viem";
 import { useAccount } from "wagmi";
 
@@ -58,17 +59,24 @@ function createOpenLongRow({
       <span key="size">
         {formatBalance(formatUnits(long.bondAmount, baseDecimals), 4)}
       </span>,
-      <span key="amountPaid">
-        {formatBalance(formatUnits(long.baseAmountPaid, baseDecimals), 4)}{" "}
-        {`${baseSymbol}`}
-      </span>,
-      <ValueCell
-        key="value"
+      <ProfitLossCell
+        key="profitLoss"
         long={long}
         hyperdriveAddress={hyperdrive.address}
         baseDecimals={baseDecimals}
         baseSymbol={baseSymbol}
       />,
+      // <span key="amountPaid">
+      //   {formatBalance(formatUnits(long.baseAmountPaid, baseDecimals), 4)}{" "}
+      //   {`${baseSymbol}`}
+      // </span>,
+      // <ValueCell
+      //   key="value"
+      //   long={long}
+      //   hyperdriveAddress={hyperdrive.address}
+      //   baseDecimals={baseDecimals}
+      //   baseSymbol={baseSymbol}
+      // />,
       <span key="maturity">
         {new Date(Number(long.maturity * 1000n)).toLocaleDateString()}
       </span>,
@@ -81,6 +89,40 @@ function createOpenLongRow({
       </span>,
     ],
   };
+}
+
+function ProfitLossCell({
+  baseDecimals,
+  hyperdriveAddress,
+  baseSymbol,
+  long,
+}: {
+  long: Long;
+  hyperdriveAddress: Address;
+  baseDecimals: number;
+  baseSymbol: string;
+}) {
+  const { address: account } = useAccount();
+  const { baseAmountOut } = usePreviewCloseLong({
+    hyperdriveAddress,
+    maturityTime: long.maturity,
+    bondAmountIn: long.bondAmount,
+    minBaseAmountOut: parseUnits("1", 18), // TODO: slippage
+    destination: account,
+  });
+
+  return (
+    <span className="inline-flex items-center gap-1">
+      {baseAmountOut && long.baseAmountPaid !== 0n
+        ? `${getProfitLossText({
+            baseAmountOut,
+            amountInput: long.baseAmountPaid,
+            baseDecimals,
+            baseSymbol,
+          })}`
+        : ""}
+    </span>
+  );
 }
 
 function ValueCell({
