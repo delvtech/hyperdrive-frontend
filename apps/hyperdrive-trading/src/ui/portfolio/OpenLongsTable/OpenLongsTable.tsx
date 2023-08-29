@@ -39,8 +39,8 @@ export function OpenLongsTable({
         {
           cell: (
             <CellWithTooltip
-              tooltip="Hyperdrive-native instruments with a market-based fixed rate; can be closed early for current market value or held for the full position duration (i.e., term) and subsequently redeemed for the bond’s face value."
-              content="Bonds"
+              tooltip="You can redeem the bonds for this value at maturity."
+              content="Value at maturity"
             />
           ),
         },
