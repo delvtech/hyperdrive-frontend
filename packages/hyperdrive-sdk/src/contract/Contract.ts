@@ -51,7 +51,9 @@ export type ContractEventFunction<TAbi extends Abi> = <
   TEventName extends EventName<TAbi>,
 >(
   eventName: TEventName,
-  fromBlock: bigint | BlockTag,
-  toBlock: bigint | BlockTag,
-  filter: EventFilter<TAbi, TEventName>,
+  options?: {
+    filter?: EventFilter<TAbi, TEventName>;
+    fromBlock?: bigint | BlockTag;
+    toBlock?: bigint | BlockTag;
+  },
 ) => Promise<TypedEvent<TAbi, TEventName>[]>;
