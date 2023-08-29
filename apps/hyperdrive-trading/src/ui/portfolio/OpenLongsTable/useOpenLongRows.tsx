@@ -65,6 +65,7 @@ function createOpenLongRow({
         hyperdriveAddress={hyperdrive.address}
         baseDecimals={baseDecimals}
         baseSymbol={baseSymbol}
+        hyperdrive={hyperdrive}
       />,
       // <span key="amountPaid">
       //   {formatBalance(formatUnits(long.baseAmountPaid, baseDecimals), 4)}{" "}
@@ -96,11 +97,13 @@ function ProfitLossCell({
   hyperdriveAddress,
   baseSymbol,
   long,
+  hyperdrive,
 }: {
   long: Long;
   hyperdriveAddress: Address;
   baseDecimals: number;
   baseSymbol: string;
+  hyperdrive: Hyperdrive;
 }) {
   const { address: account } = useAccount();
   const { baseAmountOut } = usePreviewCloseLong({
@@ -112,7 +115,16 @@ function ProfitLossCell({
   });
 
   return (
-    <span className="inline-flex items-center gap-1">
+    <span
+      className="daisy-tooltip inline-flex items-center gap-1"
+      data-tip={`Amount Paid: ${formatBalance(
+        formatUnits(long.baseAmountPaid, hyperdrive.baseToken.decimals),
+        4,
+      )} ${baseSymbol} / Value: ${
+        baseAmountOut &&
+        formatBalance(formatUnits(baseAmountOut, baseDecimals), 2)
+      } `}
+    >
       {baseAmountOut && long.baseAmountPaid !== 0n
         ? `${getProfitLossText({
             baseAmountOut,
@@ -121,6 +133,24 @@ function ProfitLossCell({
             baseSymbol,
           })}`
         : ""}
+    </span>
+  );
+}
+
+function PaymentDataTooltip({
+  long,
+  hyperdrive,
+}: {
+  long: Long;
+  hyperdrive: Hyperdrive;
+}) {
+  const baseAmountPaid = formatBalance(
+    formatUnits(long.baseAmountPaid, hyperdrive.baseToken.decimals),
+    4,
+  );
+  return (
+    <span>
+      <p>Amount Paid: {baseAmountPaid}</p>
     </span>
   );
 }
