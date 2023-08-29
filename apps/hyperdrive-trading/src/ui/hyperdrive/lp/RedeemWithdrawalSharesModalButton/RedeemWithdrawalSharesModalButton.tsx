@@ -48,15 +48,13 @@ export function RedeemWithdrawalSharesModalButton({
       }
     >
       {({ showModal }) => (
-        <span className="daisy-dropdown-end daisy-dropdown">
-          <label
-            onClick={showModal}
-            tabIndex={0}
-            className="daisy-btn-ghost daisy-btn-sm daisy-btn"
-          >
-            Redeem
-          </label>
-        </span>
+        <label
+          onClick={showModal}
+          tabIndex={0}
+          className="daisy-btn-ghost daisy-btn-sm daisy-btn"
+        >
+          Redeem
+        </label>
       )}
     </Modal>
   );

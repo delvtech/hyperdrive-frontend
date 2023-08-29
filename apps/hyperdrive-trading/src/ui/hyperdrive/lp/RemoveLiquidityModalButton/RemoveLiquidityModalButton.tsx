@@ -48,15 +48,13 @@ export function RemoveLiquidityModalButton({
       }
     >
       {({ showModal }) => (
-        <span className="daisy-dropdown-end daisy-dropdown">
-          <label
-            onClick={showModal}
-            tabIndex={0}
-            className="daisy-btn-ghost daisy-btn-sm daisy-btn"
-          >
-            Remove
-          </label>
-        </span>
+        <label
+          onClick={showModal}
+          tabIndex={0}
+          className="daisy-btn-ghost daisy-btn-sm daisy-btn"
+        >
+          Remove
+        </label>
       )}
     </Modal>
   );
