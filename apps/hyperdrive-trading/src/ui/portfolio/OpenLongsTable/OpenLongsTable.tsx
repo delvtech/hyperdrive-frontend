@@ -39,7 +39,7 @@ export function OpenLongsTable({
         {
           cell: (
             <CellWithTooltip
-              tooltip="You can redeem the bonds for this value at maturity."
+              tooltip={`The amount of ${hyperdrive.baseToken.name} you can redeem this position for at the end of the term.`}
               content="Value at maturity"
             />
           ),
