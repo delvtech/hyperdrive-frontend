@@ -4,9 +4,8 @@ import {
   FunctionArgs,
   FunctionReturnType,
   EventName,
-  BlockTag,
   EventFilter,
-  TypedEvent,
+  Event,
 } from "src/base/abitype";
 
 /**
@@ -23,18 +22,11 @@ export interface Contract<TAbi extends Abi> {
 }
 
 /**
- * Get a strongly typed function type from an abi
+ * Eth RPC block tag strings
  */
-export type ContractFunction<
-  TAbi extends Abi,
-  TAbiStateMutability extends AbiStateMutability = AbiStateMutability,
-> = <TFunctionName extends FunctionName<TAbi, TAbiStateMutability>>(
-  fn: TFunctionName,
-  args: FunctionArgs<TAbi, TFunctionName>,
-  options?: ReadCallOptions,
-) => Promise<FunctionReturnType<TAbi, TFunctionName>>;
+export type BlockTag = "latest" | "earliest" | "pending" | "safe" | "finalized";
 
-export type ReadCallOptions =
+export type ContractReadOptions =
   | {
       blockNumber?: bigint;
       blockTag?: never;
@@ -47,13 +39,35 @@ export type ReadCallOptions =
       blockTag?: BlockTag;
     };
 
+/**
+ * A strongly typed function signature for calling contract methods based on an
+ * abi.
+ */
+export type ContractFunction<
+  TAbi extends Abi,
+  TAbiStateMutability extends AbiStateMutability = AbiStateMutability,
+> = <TFunctionName extends FunctionName<TAbi, TAbiStateMutability>>(
+  fn: TFunctionName,
+  args: FunctionArgs<TAbi, TFunctionName>,
+  options?: ContractReadOptions,
+) => Promise<FunctionReturnType<TAbi, TFunctionName>>;
+
+export interface ContractEventFunctionOptions<
+  TAbi extends Abi,
+  TEventName extends EventName<TAbi>,
+> {
+  filter?: EventFilter<TAbi, TEventName>;
+  fromBlock?: bigint | BlockTag;
+  toBlock?: bigint | BlockTag;
+}
+
+/**
+ * A strongly typed function signature for fetching contract events based on an
+ * abi.
+ */
 export type ContractEventFunction<TAbi extends Abi> = <
   TEventName extends EventName<TAbi>,
 >(
   eventName: TEventName,
-  options?: {
-    filter?: EventFilter<TAbi, TEventName>;
-    fromBlock?: bigint | BlockTag;
-    toBlock?: bigint | BlockTag;
-  },
-) => Promise<TypedEvent<TAbi, TEventName>[]>;
+  options?: ContractEventFunctionOptions<TAbi, TEventName>,
+) => Promise<Event<TAbi, TEventName>[]>;
