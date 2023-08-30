@@ -5,7 +5,10 @@ import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { CloseLongModalButton } from "src/ui/hyperdrive/longs/CloseLongModalButton/CloseLongModalButton";
 import { useOpenLongs } from "src/ui/hyperdrive/longs/hooks/useOpenLongs";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
-import { getProfitLossText } from "src/ui/hyperdrive/shorts/CloseShortForm/getProfitLossText";
+import {
+  getProfitLossText,
+  getStyleClassForProfitLoss,
+} from "src/ui/hyperdrive/shorts/CloseShortForm/getProfitLossText";
 import { Address, formatUnits, parseUnits } from "viem";
 import { useAccount } from "wagmi";
 
@@ -102,10 +105,13 @@ function ProfitLossCell({
     minBaseAmountOut: parseUnits("0", baseDecimals),
     destination: account,
   });
+  const profitLossClass = baseAmountOut
+    ? getStyleClassForProfitLoss(baseAmountOut, long.baseAmountPaid)
+    : "";
 
   return (
     <span
-      className="daisy-tooltip inline-flex items-center gap-1"
+      className={`daisy-tooltip inline-flex items-center gap-1 ${profitLossClass}`}
       data-tip={`Amount Paid: ${formatBalance(
         formatUnits(long.baseAmountPaid, hyperdrive.baseToken.decimals),
         4,

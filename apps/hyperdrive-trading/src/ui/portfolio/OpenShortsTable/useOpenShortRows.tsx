@@ -1,8 +1,11 @@
-import { OpenShort, Short } from "@hyperdrive/core";
+import { OpenShort } from "@hyperdrive/core";
 import { Hyperdrive } from "src/appconfig/types";
 import { Row } from "src/ui/base/components/tables/SortableGridTable";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { getProfitLossText } from "src/ui/hyperdrive/shorts/CloseShortForm/getProfitLossText";
+import {
+  getProfitLossText,
+  getStyleClassForProfitLoss,
+} from "src/ui/hyperdrive/shorts/CloseShortForm/getProfitLossText";
 import { CloseShortModalButton } from "src/ui/hyperdrive/shorts/CloseShortModalButton/CloseShortModalButton";
 import { useOpenShorts } from "src/ui/hyperdrive/shorts/hooks/useOpenShorts";
 import { usePreviewCloseShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewCloseShort";
@@ -92,7 +95,7 @@ function ProfitLossCell({
   short,
   hyperdrive,
 }: {
-  short: Short;
+  short: OpenShort;
   hyperdriveAddress: Address;
   baseDecimals: number;
   baseSymbol: string;
@@ -107,21 +110,29 @@ function ProfitLossCell({
     destination: account,
   });
 
+  const profitLossClass = baseAmountOut
+    ? getStyleClassForProfitLoss(baseAmountOut, short.baseAmountPaid)
+    : "";
+
   return (
     <span
-      className="daisy-tooltip inline-flex items-center gap-1"
+      className={`daisy-tooltip inline-flex items-center gap-1 ${profitLossClass}`}
       data-tip={`Amount Paid: ${formatBalance(
         formatUnits(short.bondAmount, hyperdrive.baseToken.decimals),
         4,
       )} ${baseSymbol} / Value: ${
         baseAmountOut &&
-        formatBalance(formatUnits(baseAmountOut, baseDecimals), 2)
+        formatBalance(
+          Number(formatUnits(short.bondAmount, baseDecimals)) -
+            Number(formatUnits(baseAmountOut, baseDecimals)),
+          2,
+        )
       } `}
     >
       {baseAmountOut && short.bondAmount !== 0n
         ? `${getProfitLossText({
             baseAmountOut,
-            amountInput: short.bondAmount,
+            amountInput: short.baseAmountPaid,
             baseDecimals,
             baseSymbol,
             showPercentage: false,
