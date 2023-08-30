@@ -29,7 +29,7 @@ export type FunctionArgs<
 >;
 
 /**
- * Get the return type of a function from an abi
+ * Get the return type of an abi function
  */
 export type FunctionReturnType<
   TAbi extends Abi,
@@ -48,6 +48,7 @@ export type ContractFunction<
 > = <TFunctionName extends FunctionName<TAbi, TAbiStateMutability>>(
   fn: TFunctionName,
   args: FunctionArgs<TAbi, TFunctionName>,
+  options?: ReadCallOptions,
 ) => Promise<FunctionReturnType<TAbi, TFunctionName>>;
 
 /**
@@ -152,3 +153,16 @@ export type ContractEventFunction<TAbi extends Abi> = <
   toBlock: bigint | BlockTag,
   filter: EventFilter<TAbi, TEventName>,
 ) => Promise<TypedEvent<TAbi, TEventName>[]>;
+
+export type ReadCallOptions =
+  | {
+      blockNumber?: bigint;
+      blockTag?: never;
+    }
+  | {
+      blockNumber?: never;
+      /**
+       * @default 'latest'
+       */
+      blockTag?: BlockTag;
+    };
