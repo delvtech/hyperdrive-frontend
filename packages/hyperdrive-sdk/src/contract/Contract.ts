@@ -12,6 +12,7 @@ export interface ReadableContract<TAbi extends Abi> {
   abi: TAbi;
   address: Address;
   read: ContractFunction<TAbi>;
+  simulateWrite: ContractFunction<TAbi, "nonpayable" | "payable">;
   getEvents: ContractEventFunction<TAbi>;
 }
 export interface WritableContract<TAbi extends Abi>
