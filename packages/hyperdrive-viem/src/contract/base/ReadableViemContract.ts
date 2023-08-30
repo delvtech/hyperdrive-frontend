@@ -22,7 +22,7 @@ export class ReadableViemContract<TAbi extends Abi>
   abi: TAbi;
   address: Address;
 
-  protected _publicClient: PublicClient;
+  protected readonly _publicClient: PublicClient;
 
   constructor({
     abi,

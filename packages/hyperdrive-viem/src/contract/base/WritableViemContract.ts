@@ -18,7 +18,7 @@ export class WritableViemContract<TAbi extends Abi>
   extends ReadableViemContract<TAbi>
   implements WritableContract<TAbi>
 {
-  protected _walletClient: WalletClient;
+  protected readonly _walletClient: WalletClient;
 
   constructor({
     abi,
