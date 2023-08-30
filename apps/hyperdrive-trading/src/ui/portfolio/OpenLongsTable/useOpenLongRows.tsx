@@ -5,6 +5,10 @@ import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { CloseLongModalButton } from "src/ui/hyperdrive/longs/CloseLongModalButton/CloseLongModalButton";
 import { useOpenLongs } from "src/ui/hyperdrive/longs/hooks/useOpenLongs";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
+import {
+  getProfitLossText,
+  getStyleClassForProfitLoss,
+} from "src/ui/hyperdrive/shorts/CloseShortForm/getProfitLossText";
 import { Address, formatUnits, parseUnits } from "viem";
 import { useAccount } from "wagmi";
 
@@ -58,16 +62,13 @@ function createOpenLongRow({
       <span key="size">
         {formatBalance(formatUnits(long.bondAmount, baseDecimals), 4)}
       </span>,
-      <span key="amountPaid">
-        {formatBalance(formatUnits(long.baseAmountPaid, baseDecimals), 4)}{" "}
-        {`${baseSymbol}`}
-      </span>,
-      <ValueCell
-        key="value"
+      <ProfitLossCell
+        key="profitLoss"
         long={long}
         hyperdriveAddress={hyperdrive.address}
         baseDecimals={baseDecimals}
         baseSymbol={baseSymbol}
+        hyperdrive={hyperdrive}
       />,
       <span key="maturity">
         {new Date(Number(long.maturity * 1000n)).toLocaleDateString()}
@@ -83,31 +84,51 @@ function createOpenLongRow({
   };
 }
 
-function ValueCell({
+function ProfitLossCell({
   baseDecimals,
   hyperdriveAddress,
   baseSymbol,
   long,
+  hyperdrive,
 }: {
   long: Long;
   hyperdriveAddress: Address;
   baseDecimals: number;
   baseSymbol: string;
+  hyperdrive: Hyperdrive;
 }) {
   const { address: account } = useAccount();
   const { baseAmountOut } = usePreviewCloseLong({
     hyperdriveAddress,
     maturityTime: long.maturity,
     bondAmountIn: long.bondAmount,
-    minBaseAmountOut: parseUnits("1", 18), // TODO: slippage
+    minBaseAmountOut: parseUnits("0", baseDecimals),
     destination: account,
   });
+  const profitLossClass = baseAmountOut
+    ? getStyleClassForProfitLoss(baseAmountOut, long.baseAmountPaid)
+    : "";
+
   return (
-    <span className="inline-flex items-center gap-1">
-      {baseAmountOut !== undefined
-        ? `${formatBalance(formatUnits(baseAmountOut, baseDecimals), 2)}`
-        : null}{" "}
-      {baseSymbol}
+    <span
+      className={`daisy-tooltip inline-flex items-center gap-1 ${profitLossClass}`}
+      data-tip={`Amount Paid: ${formatBalance(
+        formatUnits(long.baseAmountPaid, hyperdrive.baseToken.decimals),
+        4,
+      )} ${baseSymbol} / Value: ${
+        baseAmountOut &&
+        formatBalance(formatUnits(baseAmountOut, baseDecimals), 2)
+      } `}
+    >
+      {baseAmountOut && long.baseAmountPaid !== 0n
+        ? `${getProfitLossText({
+            baseAmountOut,
+            amountInput: long.baseAmountPaid,
+            baseDecimals,
+            baseSymbol,
+            showPercentage: false,
+          })}`
+        : ""}
     </span>
   );
 }

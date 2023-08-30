@@ -15,21 +15,38 @@ export function getProfitLossText({
   amountInput,
   baseSymbol,
   baseDecimals,
+  showPercentage = true,
 }: {
   baseAmountOut: bigint;
   amountInput: bigint;
   baseSymbol: string;
   baseDecimals: number;
+  showPercentage?: boolean;
 }): string {
   const profitLossAmount = Number(
     formatUnits(baseAmountOut - amountInput, baseDecimals),
   );
 
-  const profitLossPercentage = calculatePercentageChange({
-    amountBefore: amountInput,
-    amountAfter: baseAmountOut,
-  });
-  return `${profitLossAmount.toFixed(
-    2,
-  )} ${baseSymbol} (${profitLossPercentage}%)`;
+  let result = `${profitLossAmount.toFixed(2)} ${baseSymbol}`;
+
+  if (showPercentage) {
+    const profitLossPercentage = calculatePercentageChange({
+      amountBefore: amountInput,
+      amountAfter: baseAmountOut,
+    });
+    result += ` (${profitLossPercentage}%)`;
+  }
+
+  return result;
+}
+
+export function getStyleClassForProfitLoss(
+  baseAmountOut: bigint,
+  baseAmountPaid: bigint,
+): string | undefined {
+  if (baseAmountOut > baseAmountPaid) {
+    return "text-accent";
+  } else {
+    return "text-red-700";
+  }
 }
