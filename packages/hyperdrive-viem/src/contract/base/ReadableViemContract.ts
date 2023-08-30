@@ -34,13 +34,29 @@ export class ReadableViemContract<TAbi extends Abi>
     this._publicClient = publicClient;
   }
 
-  read: ContractFunction<TAbi> = (functionName, args) => {
+  read: ContractFunction<TAbi> = (functionName, args, options) => {
     return this._publicClient.readContract({
       abi: this.abi as any,
       address: this.address,
       functionName: functionName,
       args: args as any,
+      ...options,
     }) as any;
+  };
+
+  simulateWrite: ContractFunction<TAbi, "nonpayable" | "payable"> = async (
+    functionName,
+    args,
+    options,
+  ) => {
+    const { result } = await this._publicClient.simulateContract({
+      abi: this.abi as any,
+      address: this.address,
+      functionName: functionName,
+      args: args as any,
+      ...options,
+    });
+    return result as any;
   };
 
   getEvents: ContractEventFunction<TAbi> = async (eventName, options) => {

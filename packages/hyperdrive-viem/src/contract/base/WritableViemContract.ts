@@ -37,6 +37,7 @@ export class WritableViemContract<TAbi extends Abi>
   write: ContractFunction<TAbi, "nonpayable" | "payable"> = async (
     functionName,
     args,
+    options,
   ) => {
     const [account] = await this._walletClient.getAddresses();
     const { request } = await this._publicClient.simulateContract({
@@ -45,6 +46,7 @@ export class WritableViemContract<TAbi extends Abi>
       account,
       functionName,
       args: args as any,
+      ...options,
     });
     return this._walletClient.writeContract(request) as any;
   };
