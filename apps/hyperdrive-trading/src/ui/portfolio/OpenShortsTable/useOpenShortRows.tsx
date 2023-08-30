@@ -9,7 +9,7 @@ import {
 import { CloseShortModalButton } from "src/ui/hyperdrive/shorts/CloseShortModalButton/CloseShortModalButton";
 import { useOpenShorts } from "src/ui/hyperdrive/shorts/hooks/useOpenShorts";
 import { usePreviewCloseShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewCloseShort";
-import { Address, formatUnits } from "viem";
+import { Address, formatUnits, parseUnits } from "viem";
 import { useAccount } from "wagmi";
 
 interface UseOpenShortRowsOptions {
@@ -106,7 +106,7 @@ function ProfitLossCell({
     hyperdriveAddress,
     maturityTime: short.maturity,
     shortAmountIn: short.bondAmount,
-    minBaseAmountOut: 0n,
+    minBaseAmountOut: parseUnits("1", 18),
     destination: account,
   });
 
