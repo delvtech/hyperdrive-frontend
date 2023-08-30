@@ -1,43 +1,47 @@
-import {
-  WritableViemContract,
-  WritableViemContractOptions,
-} from "src/contract/base/WritableViemContract";
-import {
-  ReadableViemContract,
-  ReadableViemContractOptions,
-} from "src/contract/base/ReadableViemContract";
+import { WritableViemContract } from "src/contract/base/WritableViemContract";
+import { ReadableViemContract } from "src/contract/base/ReadableViemContract";
 import {
   HyperdriveABI,
   ReadableHyperdriveContract,
   WritableHyperdriveContract,
 } from "@hyperdrive/sdk";
+import { Address, PublicClient, WalletClient } from "viem";
 
-export type ViemHyperdriveContract<
-  TOptions extends
-    | Omit<WritableViemContractOptions, "abi">
-    | Omit<ReadableViemContractOptions, "abi">,
-> = TOptions extends Omit<WritableViemContractOptions, "abi">
-  ? WritableHyperdriveContract
-  : ReadableHyperdriveContract;
+interface ViemHyperdriveContractOptions {
+  address: Address;
+  publicClient: PublicClient;
+  walletClient?: WalletClient;
+}
 
 /**
  * Get a new `ReadableHyperdriveContract` or `WritableHyperdriveContract`
  * instance depending on options.
  */
 export function viemHyperdriveContract<
-  TOptions extends
-    | Omit<WritableViemContractOptions, "abi">
-    | Omit<ReadableViemContractOptions, "abi">,
->(options: TOptions): ViemHyperdriveContract<TOptions> {
-  if ("walletClient" in options) {
+  TOptions extends ViemHyperdriveContractOptions,
+>({
+  address,
+  publicClient,
+  walletClient,
+}: TOptions): ViemHyperdriveContract<TOptions> {
+  if (walletClient) {
     return new WritableViemContract({
       abi: HyperdriveABI,
-      ...options,
+      address,
+      publicClient,
+      walletClient,
     });
   }
 
   return new ReadableViemContract({
     abi: HyperdriveABI,
-    ...options,
+    address,
+    publicClient,
   }) as ReadableHyperdriveContract as ViemHyperdriveContract<TOptions>;
 }
+
+export type ViemHyperdriveContract<
+  TOptions extends ViemHyperdriveContractOptions,
+> = TOptions["walletClient"] extends WalletClient
+  ? WritableHyperdriveContract
+  : ReadableHyperdriveContract;
