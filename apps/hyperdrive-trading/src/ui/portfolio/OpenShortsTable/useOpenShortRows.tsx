@@ -124,6 +124,7 @@ function ProfitLossCell({
             amountInput: short.bondAmount,
             baseDecimals,
             baseSymbol,
+            showPercentage: false,
           })}`
         : ""}
     </span>

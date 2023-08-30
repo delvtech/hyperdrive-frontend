@@ -67,17 +67,6 @@ function createOpenLongRow({
         baseSymbol={baseSymbol}
         hyperdrive={hyperdrive}
       />,
-      // <span key="amountPaid">
-      //   {formatBalance(formatUnits(long.baseAmountPaid, baseDecimals), 4)}{" "}
-      //   {`${baseSymbol}`}
-      // </span>,
-      // <ValueCell
-      //   key="value"
-      //   long={long}
-      //   hyperdriveAddress={hyperdrive.address}
-      //   baseDecimals={baseDecimals}
-      //   baseSymbol={baseSymbol}
-      // />,
       <span key="maturity">
         {new Date(Number(long.maturity * 1000n)).toLocaleDateString()}
       </span>,
@@ -110,7 +99,7 @@ function ProfitLossCell({
     hyperdriveAddress,
     maturityTime: long.maturity,
     bondAmountIn: long.bondAmount,
-    minBaseAmountOut: parseUnits("1", 18), // TODO: slippage
+    minBaseAmountOut: parseUnits("0", baseDecimals),
     destination: account,
   });
 
@@ -131,6 +120,7 @@ function ProfitLossCell({
             amountInput: long.baseAmountPaid,
             baseDecimals,
             baseSymbol,
+            showPercentage: false,
           })}`
         : ""}
     </span>
