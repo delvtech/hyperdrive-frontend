@@ -12,7 +12,11 @@ export interface ReadableContract<TAbi extends Abi> {
   abi: TAbi;
   address: Address;
   read: ContractFunction<TAbi>;
-  simulateWrite: ContractFunction<TAbi, "nonpayable" | "payable">;
+  simulateWrite: ContractFunction<
+    TAbi,
+    "nonpayable" | "payable",
+    ContractWriteOptions
+  >;
   getEvents: ContractEventFunction<TAbi>;
 }
 export interface WritableContract<TAbi extends Abi>
@@ -30,34 +34,17 @@ export type Contract<TAbi extends Abi> =
   | WritableContract<TAbi>;
 
 /**
- * Eth RPC block tag strings
- */
-export type BlockTag = "latest" | "earliest" | "pending" | "safe" | "finalized";
-
-export type ContractReadOptions =
-  | {
-      blockNumber?: bigint;
-      blockTag?: never;
-    }
-  | {
-      blockNumber?: never;
-      /**
-       * @default 'latest'
-       */
-      blockTag?: BlockTag;
-    };
-
-/**
  * A strongly typed function signature for calling contract methods based on an
  * abi
  */
 export type ContractFunction<
   TAbi extends Abi,
   TAbiStateMutability extends AbiStateMutability = AbiStateMutability,
+  TOptions extends ContractReadOptions = ContractReadOptions,
 > = <TFunctionName extends FunctionName<TAbi, TAbiStateMutability>>(
   fn: TFunctionName,
   args: FunctionArgs<TAbi, TFunctionName>,
-  options?: ContractReadOptions,
+  options?: TOptions,
 ) => Promise<FunctionReturnType<TAbi, TFunctionName>>;
 
 export interface ContractEventFunctionOptions<
@@ -93,3 +80,59 @@ export type ContractEventFunction<TAbi extends Abi> = <
   eventName: TEventName,
   options?: ContractEventFunctionOptions<TAbi, TEventName>,
 ) => Promise<ContractEvent<TAbi, TEventName>[]>;
+
+// ETH JSON-RPC Types
+// TODO: Find or build an OS types package (e.g., @types/evm-json-rpc)
+// https://github.com/ethereum/execution-apis/tree/main
+
+// https://github.com/ethereum/execution-apis/blob/main/src/schemas/block.yaml#L105
+export type BlockTag = "latest" | "earliest" | "pending" | "safe" | "finalized";
+
+// https://github.com/ethereum/execution-apis/blob/main/src/eth/execute.yaml#L1
+export type ContractReadOptions =
+  | {
+      blockNumber?: bigint;
+      blockTag?: never;
+    }
+  | {
+      blockNumber?: never;
+      /**
+       * @default 'latest'
+       */
+      blockTag?: BlockTag;
+    };
+
+// https://github.com/ethereum/execution-apis/blob/main/src/schemas/transaction.yaml#L274
+export type ContractWriteOptions = ContractReadOptions & {
+  type: `0x${string}`;
+  nonce: bigint;
+  to: Address;
+  from: Address;
+  /**
+   * Gas limit
+   */
+  gas: bigint;
+  value: bigint;
+  input: `0x${string}`;
+  /**
+   * The gas price willing to be paid by the sender in wei
+   */
+  gasPrice: bigint;
+  /**
+   * Maximum fee per gas the sender is willing to pay to miners in wei
+   */
+  maxPriorityFeePerGas: bigint;
+  /**
+   * The maximum total fee per gas the sender is willing to pay (includes the
+   * network / base fee and miner / priority fee) in wei
+   */
+  maxFeePerGas: bigint;
+  /**
+   * EIP-2930 access list
+   */
+  accessList: `0x${string}`[];
+  /**
+   * Chain ID that this transaction is valid on.
+   */
+  chainId: bigint;
+};
