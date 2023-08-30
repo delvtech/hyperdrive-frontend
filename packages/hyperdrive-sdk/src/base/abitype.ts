@@ -43,7 +43,7 @@ type DetailedEventInput<
 /**
  * Get an object type for an event's fields from an abi
  */
-export type Event<
+export type EventArgs<
   TAbi extends Abi,
   TEventName extends EventName<TAbi>,
 > = EventInputToPrimitiveTypes<DetailedEventInput<TAbi, TEventName>>;
@@ -62,7 +62,7 @@ type IndexedEventInput<
 export type EventFilter<
   TAbi extends Abi,
   TEventName extends EventName<TAbi>,
-> = EventInputToPrimitiveTypes<IndexedEventInput<TAbi, TEventName>>;
+> = Partial<EventInputToPrimitiveTypes<IndexedEventInput<TAbi, TEventName>>>;
 
 /**
  * Get a union of function names from an abi

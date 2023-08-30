@@ -21,6 +21,7 @@ export type {
   Contract,
   ContractEventFunction,
   ContractFunction,
+  ContractEvent,
 } from "./contract/Contract";
 export type {
   HyperdriveContract,

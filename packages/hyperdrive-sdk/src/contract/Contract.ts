@@ -5,7 +5,7 @@ import {
   FunctionReturnType,
   EventName,
   EventFilter,
-  Event,
+  EventArgs,
 } from "src/base/abitype";
 
 export interface ReadableContract<TAbi extends Abi> {
@@ -48,7 +48,7 @@ export type ContractReadOptions =
 
 /**
  * A strongly typed function signature for calling contract methods based on an
- * abi.
+ * abi
  */
 export type ContractFunction<
   TAbi extends Abi,
@@ -69,12 +69,26 @@ export interface ContractEventFunctionOptions<
 }
 
 /**
+ * A strongly typed event object based on an abi
+ */
+export interface ContractEvent<
+  TAbi extends Abi,
+  TEventName extends EventName<TAbi>,
+> {
+  eventName: TEventName;
+  args: EventArgs<TAbi, TEventName>;
+  data?: `0x${string}`;
+  blockNumber?: bigint;
+  transactionHash?: `0x${string}`;
+}
+
+/**
  * A strongly typed function signature for fetching contract events based on an
- * abi.
+ * abi
  */
 export type ContractEventFunction<TAbi extends Abi> = <
   TEventName extends EventName<TAbi>,
 >(
   eventName: TEventName,
   options?: ContractEventFunctionOptions<TAbi, TEventName>,
-) => Promise<Event<TAbi, TEventName>[]>;
+) => Promise<ContractEvent<TAbi, TEventName>[]>;
