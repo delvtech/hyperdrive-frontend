@@ -24,6 +24,7 @@
     "@hyperdrive/prettier-config": "*",
     "@hyperdrive/tsconfig": "*",
     "@parcel/transformer-typescript-types": "2.8.3",
+    "abitype": "^0.9.8",
     "dotenv": "^16.0.3",
     "happy-dom": "^10.7.0",
     "parcel": "^2.8.0",
