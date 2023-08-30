@@ -1,14 +1,14 @@
 import { ContractReadOptions } from "src/contract/Contract";
-import { HyperdriveContract } from "src/hyperdrive/HyperdriveContract";
+import { ReadableHyperdriveContract } from "src/hyperdrive/HyperdriveContract";
 import { PoolConfig } from "src/pool/PoolConfig";
 import { PoolInfo } from "src/pool/PoolInfo";
 
 interface ReadableHyperdriveConstructorOptions {
-  contract: HyperdriveContract;
+  contract: ReadableHyperdriveContract;
 }
 
 export class ReadableHyperdrive {
-  private readonly contract: HyperdriveContract;
+  private readonly contract: ReadableHyperdriveContract;
 
   constructor({ contract }: ReadableHyperdriveConstructorOptions) {
     this.contract = contract;
