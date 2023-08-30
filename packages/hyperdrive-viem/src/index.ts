@@ -8,4 +8,4 @@ export {
   type WritableViemContractOptions,
 } from "src/contract/base/WritableViemContract";
 
-export { viemHyperdriveContract } from "src/contract/viemHyperdriveContract";
+export { createHyperdriveContract } from "src/contract/createHyperdriveContract";

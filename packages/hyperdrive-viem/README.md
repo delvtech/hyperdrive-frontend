@@ -12,10 +12,10 @@ npm install @hyperdrive/viem
 
 ```typescript
 import { configureHyperdrive, HyperdriveAbi } from "@hyperdrive/sdk";
-import { viemHyperdriveContract } from "@hyperdrive/sdk-viem";
+import { createHyperdriveContract } from "@hyperdrive/sdk-viem";
 import { publicClient } from "./client";
 
-const contract = viemHyperdriveContract({
+const contract = createHyperdriveContract({
   address: "0x...", // hyperdrive contract address
   publicClient,
 });
