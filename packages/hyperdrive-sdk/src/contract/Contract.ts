@@ -8,18 +8,25 @@ import {
   Event,
 } from "src/base/abitype";
 
+export interface ReadableContract<TAbi extends Abi> {
+  abi: TAbi;
+  address: Address;
+  read: ContractFunction<TAbi>;
+  getEvents: ContractEventFunction<TAbi>;
+}
+export interface WritableContract<TAbi extends Abi>
+  extends ReadableContract<TAbi> {
+  write: ContractFunction<TAbi, "nonpayable" | "payable">;
+}
+
 /**
  * An abstracted contract interface to allow interchangeable web3 libraries.
  * Designed to be used by consumers that care about the interface of a contract,
  * but aren't necessarily concerned with where it's deployed or how it connects.
  */
-export interface Contract<TAbi extends Abi> {
-  abi: TAbi;
-  address: Address;
-  read: ContractFunction<TAbi>;
-  write: ContractFunction<TAbi, "nonpayable" | "payable">;
-  getEvents: ContractEventFunction<TAbi>;
-}
+export type Contract<TAbi extends Abi> =
+  | WritableContract<TAbi>
+  | WritableContract<TAbi>;
 
 /**
  * Eth RPC block tag strings
