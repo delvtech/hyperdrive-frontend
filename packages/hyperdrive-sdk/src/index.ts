@@ -6,3 +6,9 @@ export { configurePoolActions } from "src/amm/configurePoolActions";
 
 // Portfolio
 export { configurePortfolioActions } from "src/portfolio/configurePortfolioActions";
+
+export type {
+  Contract,
+  ContractEventFunction,
+  ContractFunction,
+} from "./contract/Contract";

@@ -1,5 +1,13 @@
-import { Abi, Address } from "abitype";
-import { ContractEventFunction, ContractFunction } from "src/base/abitype";
+import { Abi, Address, AbiStateMutability } from "abitype";
+import {
+  FunctionName,
+  FunctionArgs,
+  FunctionReturnType,
+  EventName,
+  BlockTag,
+  EventFilter,
+  TypedEvent,
+} from "src/base/abitype";
 
 /**
  * An abstracted contract interface to allow interchangeable web3 libraries.
@@ -13,3 +21,37 @@ export interface Contract<TAbi extends Abi> {
   write: ContractFunction<TAbi, "nonpayable" | "payable">;
   getEvents: ContractEventFunction<TAbi>;
 }
+
+/**
+ * Get a strongly typed function type from an abi
+ */
+export type ContractFunction<
+  TAbi extends Abi,
+  TAbiStateMutability extends AbiStateMutability = AbiStateMutability,
+> = <TFunctionName extends FunctionName<TAbi, TAbiStateMutability>>(
+  fn: TFunctionName,
+  args: FunctionArgs<TAbi, TFunctionName>,
+  options?: ReadCallOptions,
+) => Promise<FunctionReturnType<TAbi, TFunctionName>>;
+
+export type ReadCallOptions =
+  | {
+      blockNumber?: bigint;
+      blockTag?: never;
+    }
+  | {
+      blockNumber?: never;
+      /**
+       * @default 'latest'
+       */
+      blockTag?: BlockTag;
+    };
+
+export type ContractEventFunction<TAbi extends Abi> = <
+  TEventName extends EventName<TAbi>,
+>(
+  eventName: TEventName,
+  fromBlock: bigint | BlockTag,
+  toBlock: bigint | BlockTag,
+  filter: EventFilter<TAbi, TEventName>,
+) => Promise<TypedEvent<TAbi, TEventName>[]>;

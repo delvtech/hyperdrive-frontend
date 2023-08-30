@@ -7,7 +7,6 @@ import {
   ExtractAbiEventNames,
   ExtractAbiEvent,
 } from "abitype";
-type EventName<TAbi extends Abi> = ExtractAbiEventNames<TAbi>;
 
 /**
  * Get a union of function names from an abi
@@ -39,17 +38,7 @@ export type FunctionReturnType<
   "outputs"
 >[0];
 
-/**
- * Get a strongly typed function type from an abi
- */
-export type ContractFunction<
-  TAbi extends Abi,
-  TAbiStateMutability extends AbiStateMutability = AbiStateMutability,
-> = <TFunctionName extends FunctionName<TAbi, TAbiStateMutability>>(
-  fn: TFunctionName,
-  args: FunctionArgs<TAbi, TFunctionName>,
-  options?: ReadCallOptions,
-) => Promise<FunctionReturnType<TAbi, TFunctionName>>;
+export type EventName<TAbi extends Abi> = ExtractAbiEventNames<TAbi>;
 
 /**
  * FilterArray<['a', 'b', 'c'], 'b'> = ['a', 'c']
@@ -96,7 +85,7 @@ type TransformEventTypes<Tup extends readonly AbiEventObject[]> =
 
 export interface TypedEvent<
   TAbi extends Abi,
-  TEventName extends ExtractAbiEventNames<TAbi>,
+  TEventName extends EventName<TAbi>,
 > extends Event {
   args: TransformEventTypes<
     FilterArray<
@@ -138,31 +127,9 @@ type TransformFilterTypes<Tup extends readonly AbiEventObject[]> =
  */
 export type EventFilter<
   TAbi extends Abi,
-  TEventName extends ExtractAbiEventNames<TAbi>,
+  TEventName extends EventName<TAbi>,
 > = TransformFilterTypes<
   FilterArray<ExtractAbiEvent<TAbi, TEventName>["inputs"], { indexed: true }>
 >;
 
-type BlockTag = "latest" | "earliest" | "pending" | "safe" | "finalized";
-
-export type ContractEventFunction<TAbi extends Abi> = <
-  TEventName extends EventName<TAbi>,
->(
-  eventName: TEventName,
-  fromBlock: bigint | BlockTag,
-  toBlock: bigint | BlockTag,
-  filter: EventFilter<TAbi, TEventName>,
-) => Promise<TypedEvent<TAbi, TEventName>[]>;
-
-export type ReadCallOptions =
-  | {
-      blockNumber?: bigint;
-      blockTag?: never;
-    }
-  | {
-      blockNumber?: never;
-      /**
-       * @default 'latest'
-       */
-      blockTag?: BlockTag;
-    };
+export type BlockTag = "latest" | "earliest" | "pending" | "safe" | "finalized";
