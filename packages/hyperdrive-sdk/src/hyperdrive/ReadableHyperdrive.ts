@@ -8,7 +8,7 @@ interface ReadableHyperdriveConstructorOptions {
 }
 
 export class ReadableHyperdrive {
-  private contract: HyperdriveContract;
+  private readonly contract: HyperdriveContract;
 
   constructor({ contract }: ReadableHyperdriveConstructorOptions) {
     this.contract = contract;
