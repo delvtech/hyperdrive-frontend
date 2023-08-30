@@ -1,11 +1,12 @@
-import { OpenShort } from "@hyperdrive/core";
+import { OpenShort, Short } from "@hyperdrive/core";
 import { Hyperdrive } from "src/appconfig/types";
 import { Row } from "src/ui/base/components/tables/SortableGridTable";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { getProfitLossText } from "src/ui/hyperdrive/shorts/CloseShortForm/getProfitLossText";
 import { CloseShortModalButton } from "src/ui/hyperdrive/shorts/CloseShortModalButton/CloseShortModalButton";
 import { useOpenShorts } from "src/ui/hyperdrive/shorts/hooks/useOpenShorts";
 import { usePreviewCloseShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewCloseShort";
-import { Address, formatUnits, parseUnits } from "viem";
+import { Address, formatUnits } from "viem";
 import { useAccount } from "wagmi";
 
 interface UseOpenShortRowsOptions {
@@ -62,15 +63,13 @@ function createOpenShortRow({
       <span key="size">
         {formatBalance(formatUnits(short.bondAmount, baseDecimals), 4)}
       </span>,
-      <span key="amountPaid">
-        {formatBalance(formatUnits(short.baseAmountPaid, baseDecimals), 4)}{" "}
-        {`${baseSymbol}`}
-      </span>,
-      <ValueCell
-        key="value"
+      <ProfitLossCell
+        key="profitLoss"
         short={short}
+        hyperdriveAddress={hyperdrive.address}
         baseDecimals={baseDecimals}
         baseSymbol={baseSymbol}
+        hyperdrive={hyperdrive}
       />,
       <span key="maturity">
         {new Date(Number(short.maturity * 1000n)).toLocaleDateString()}
@@ -86,31 +85,47 @@ function createOpenShortRow({
   };
 }
 
-function ValueCell({
+function ProfitLossCell({
   baseDecimals,
+  hyperdriveAddress,
   baseSymbol,
   short,
+  hyperdrive,
 }: {
-  short: OpenShort;
+  short: Short;
+  hyperdriveAddress: Address;
   baseDecimals: number;
   baseSymbol: string;
+  hyperdrive: Hyperdrive;
 }) {
   const { address: account } = useAccount();
   const { baseAmountOut } = usePreviewCloseShort({
-    hyperdriveAddress: short.hyperdriveAddress,
+    hyperdriveAddress,
     maturityTime: short.maturity,
     shortAmountIn: short.bondAmount,
-    minBaseAmountOut: parseUnits("1", 18), // TODO: slippage
+    minBaseAmountOut: 0n, // TODO: slippage
     destination: account,
   });
+
   return (
-    <span className="inline-flex items-center gap-1">
-      {baseAmountOut !== undefined
-        ? `${formatBalance(
-            formatUnits(baseAmountOut, baseDecimals),
-            2,
-          )} ${baseSymbol}`
-        : "-"}
+    <span
+      className="daisy-tooltip inline-flex items-center gap-1"
+      data-tip={`Amount Paid: ${formatBalance(
+        formatUnits(short.bondAmount, hyperdrive.baseToken.decimals),
+        4,
+      )} ${baseSymbol} / Value: ${
+        baseAmountOut &&
+        formatBalance(formatUnits(baseAmountOut, baseDecimals), 2)
+      } `}
+    >
+      {baseAmountOut && short.bondAmount !== 0n
+        ? `${getProfitLossText({
+            baseAmountOut,
+            amountInput: short.bondAmount,
+            baseDecimals,
+            baseSymbol,
+          })}`
+        : ""}
     </span>
   );
 }

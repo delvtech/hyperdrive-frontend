@@ -52,22 +52,6 @@ export function OpenLongsTable({
             />
           ),
         },
-        // {
-        //   cell: (
-        //     <CellWithTooltip
-        //       content="Amount Paid"
-        //       tooltip="Capital expended to initiate a position, either long, short, or as an LP."
-        //     />
-        //   ),
-        // },
-        // {
-        //   cell: (
-        //     <CellWithTooltip
-        //       content="Value"
-        //       tooltip="Current settlement value of your open position."
-        //     />
-        //   ),
-        // },
         {
           cell: (
             <CellWithTooltip
