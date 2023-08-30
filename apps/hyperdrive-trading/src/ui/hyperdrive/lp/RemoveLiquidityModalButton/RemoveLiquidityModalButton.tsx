@@ -1,4 +1,3 @@
-import { EllipsisHorizontalIcon } from "@heroicons/react/20/solid";
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
@@ -49,22 +48,13 @@ export function RemoveLiquidityModalButton({
       }
     >
       {({ showModal }) => (
-        <span className="daisy-dropdown-end daisy-dropdown">
-          <label
-            tabIndex={0}
-            className="daisy-btn-ghost daisy-btn-sm daisy-btn-circle daisy-btn"
-          >
-            <EllipsisHorizontalIcon width={25} height={25} />
-          </label>
-          <ul
-            tabIndex={0}
-            className="daisy-dropdown-content daisy-menu rounded-md bg-base-300 shadow"
-          >
-            <li className="my-1 flex cursor-pointer justify-center">
-              <button onClick={showModal}>Remove liquidity</button>
-            </li>
-          </ul>
-        </span>
+        <button
+          onClick={showModal}
+          tabIndex={0}
+          className="daisy-btn-secondary daisy-btn-sm daisy-btn"
+        >
+          Remove
+        </button>
       )}
     </Modal>
   );

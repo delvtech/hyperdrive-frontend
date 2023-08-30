@@ -1,4 +1,3 @@
-import { EllipsisHorizontalIcon } from "@heroicons/react/20/solid";
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import { OpenShort } from "@hyperdrive/core";
 import { ReactElement } from "react";
@@ -19,7 +18,8 @@ export function CloseShortModalButton({
   function closeModal() {
     (window as any)[modalId].close();
   }
-
+  const maturity = new Date(Number(short.maturity * 1000n));
+  const hasMatured = maturity < new Date();
   return (
     <Modal
       modalId={modalId}
@@ -50,22 +50,15 @@ export function CloseShortModalButton({
       }
     >
       {({ showModal }) => (
-        <span className="daisy-dropdown-end daisy-dropdown">
-          <label
-            tabIndex={0}
-            className="daisy-btn-ghost daisy-btn-sm daisy-btn-circle daisy-btn"
-          >
-            <EllipsisHorizontalIcon width={25} height={25} />
-          </label>
-          <ul
-            tabIndex={0}
-            className="daisy-dropdown-content daisy-menu z-10 rounded-md bg-base-300 shadow"
-          >
-            <li className="my-1 flex cursor-pointer justify-center">
-              <button onClick={showModal}>Close position</button>
-            </li>
-          </ul>
-        </span>
+        <button
+          onClick={showModal}
+          tabIndex={0}
+          className={`${
+            hasMatured ? "daisy-btn-primary" : "daisy-btn-secondary"
+          } daisy-btn-sm daisy-btn`}
+        >
+          {hasMatured ? "Redeem" : "Close"}
+        </button>
       )}
     </Modal>
   );
