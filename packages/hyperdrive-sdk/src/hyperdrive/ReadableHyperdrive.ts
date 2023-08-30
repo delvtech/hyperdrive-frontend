@@ -1,6 +1,7 @@
 import { ReadCallOptions } from "src/base/abitype";
 import { HyperdriveContract } from "src/hyperdrive/HyperdriveContract";
 import { PoolConfig } from "src/pool/PoolConfig";
+import { PoolInfo } from "src/pool/PoolInfo";
 
 interface ReadableHyperdriveConstructorOptions {
   contract: HyperdriveContract;
@@ -20,5 +21,15 @@ export class ReadableHyperdrive {
    */
   getPoolConfig(options?: ReadCallOptions): Promise<PoolConfig> {
     return this.contract.read("getPoolConfig", [], options);
+  }
+
+  /**
+   * Gets info about the pool's reserves and other state that is important to
+   * evaluate potential trades.
+   * @param options
+   * @returns PoolInfo
+   */
+  getPoolInfo(options?: ReadCallOptions): Promise<PoolInfo> {
+    return this.contract.read("getPoolInfo", [], options);
   }
 }
