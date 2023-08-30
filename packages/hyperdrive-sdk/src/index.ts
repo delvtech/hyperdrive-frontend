@@ -27,4 +27,4 @@ export type {
   HyperdriveContract,
   ReadableHyperdriveContract,
   WritableHyperdriveContract,
-} from "src/contract/HyperdriveContract";
+} from "src/hyperdrive/HyperdriveContract";
