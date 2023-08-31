@@ -86,8 +86,8 @@ export class ReadableHyperdrive {
 
   /**
    * Calculates the total trading volume in bonds given a block window.
-   * @param options?.fromBlock - The start block, defaults to "earliest"
-   * @param options?.toBlock - The end block, defaults to "latest"
+   * @param options.fromBlock - The start block, defaults to "earliest"
+   * @param options.toBlock - The end block, defaults to "latest"
    * @returns the total amount of bonds traded
    */
   async getTradingVolume(options?: {
@@ -128,41 +128,15 @@ export class ReadableHyperdrive {
     );
   }
 
-  private async getOpenLongEvents({
-    filter,
-    fromBlock = "earliest",
-    toBlock = "latest",
-  }: {
-    filter?: ContractGetEventsOptions<
-      typeof HyperdriveABI,
-      "OpenLong"
-    >["filter"];
-    fromBlock?: BlockTag | bigint;
-    toBlock?: BlockTag | bigint;
-  }) {
-    return this.contract.getEvents("OpenLong", {
-      filter,
-      fromBlock,
-      toBlock,
-    });
+  private async getOpenLongEvents(
+    options?: ContractGetEventsOptions<typeof HyperdriveABI, "OpenLong">,
+  ) {
+    return this.contract.getEvents("OpenLong", options);
   }
 
-  private async getOpenShortEvents({
-    filter,
-    fromBlock = "earliest",
-    toBlock = "latest",
-  }: {
-    filter?: ContractGetEventsOptions<
-      typeof HyperdriveABI,
-      "OpenShort"
-    >["filter"];
-    fromBlock?: BlockTag | bigint;
-    toBlock?: BlockTag | bigint;
-  }) {
-    return this.contract.getEvents("OpenShort", {
-      filter,
-      fromBlock,
-      toBlock,
-    });
+  private async getOpenShortEvents(
+    options?: ContractGetEventsOptions<typeof HyperdriveABI, "OpenShort">,
+  ) {
+    return this.contract.getEvents("OpenShort", options);
   }
 }
