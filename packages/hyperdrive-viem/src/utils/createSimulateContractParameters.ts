@@ -39,9 +39,11 @@ export function createSimulateContractParameters(
 type SimulateContractParameters = {
   accessList?: ContractWriteOptions["accessList"];
   account?: `0x${string}`;
+  gas?: bigint;
+  nonce?: number;
 } & ({ blockTag?: BlockTag } | { blockNumber?: bigint }) &
   (
     | { gasPrice?: bigint }
     | { maxFeePerGas?: bigint }
     | { maxPriorityFeePerGas?: bigint }
-  ) & { gas?: bigint } & { nonce?: number };
+  );
