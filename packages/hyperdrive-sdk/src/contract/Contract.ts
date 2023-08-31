@@ -12,7 +12,7 @@ export interface ReadableContract<TAbi extends Abi> {
   abi: TAbi;
   address: Address;
   read: ContractFunction<TAbi>;
-  simulateWrite: ContractSimulateWriteFunction<TAbi>;
+  simulateWrite: ContractWriteFunction<TAbi>;
   getEvents: ContractEventFunction<TAbi>;
 }
 export interface WritableContract<TAbi extends Abi>
@@ -36,7 +36,7 @@ export type Contract<TAbi extends Abi> =
 export type ContractFunction<
   TAbi extends Abi,
   TAbiStateMutability extends AbiStateMutability = AbiStateMutability,
-  TOptions extends ContractReadOptions = ContractReadOptions,
+  TOptions = ContractReadOptions,
 > = <TFunctionName extends FunctionName<TAbi, TAbiStateMutability>>(
   fn: TFunctionName,
   args: FunctionArgs<TAbi, TFunctionName>,
@@ -48,15 +48,6 @@ export type ContractFunction<
  * on an abi
  */
 export type ContractWriteFunction<TAbi extends Abi> = ContractFunction<
-  TAbi,
-  "nonpayable" | "payable"
->;
-
-/**
- * A strongly typed function signature for simulating contract write methods
- * based on an abi
- */
-export type ContractSimulateWriteFunction<TAbi extends Abi> = ContractFunction<
   TAbi,
   "nonpayable" | "payable",
   ContractWriteOptions
@@ -118,7 +109,7 @@ export type ContractReadOptions =
     };
 
 // https://github.com/ethereum/execution-apis/blob/main/src/schemas/transaction.yaml#L274
-export type ContractWriteOptions = ContractReadOptions & {
+export type ContractWriteOptions = {
   type?: `0x${string}`;
   nonce?: bigint;
   to?: Address;

@@ -1,4 +1,4 @@
-import { BlockTag, ContractWriteOptions } from "@hyperdrive/sdk";
+import { ContractWriteOptions } from "@hyperdrive/sdk";
 
 /**
  * Get parameters for `simulateContract` from `ContractWriteOptions`
@@ -8,8 +8,6 @@ export function createSimulateContractParameters(
 ): SimulateContractParameters {
   const {
     accessList,
-    blockNumber,
-    blockTag,
     from,
     gas,
     gasPrice,
@@ -18,7 +16,6 @@ export function createSimulateContractParameters(
     nonce,
   } = options || {};
 
-  const blockOptions = blockTag ? { blockTag } : { blockNumber };
   const gasPriceOptions =
     gasPrice !== undefined
       ? { gasPrice }
@@ -27,7 +24,6 @@ export function createSimulateContractParameters(
   return {
     accessList,
     account: from,
-    ...blockOptions,
     gas,
     ...gasPriceOptions,
     nonce: nonce !== undefined ? Number(nonce) : undefined,
@@ -39,9 +35,8 @@ type SimulateContractParameters = {
   account?: `0x${string}`;
   gas?: bigint;
   nonce?: number;
-} & ({ blockTag?: BlockTag } | { blockNumber?: bigint }) &
-  (
-    | { gasPrice?: bigint }
-    | { maxFeePerGas?: bigint }
-    | { maxPriorityFeePerGas?: bigint }
-  );
+} & (
+  | { gasPrice?: bigint }
+  | { maxFeePerGas?: bigint }
+  | { maxPriorityFeePerGas?: bigint }
+);
