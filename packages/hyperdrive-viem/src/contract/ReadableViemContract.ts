@@ -62,14 +62,6 @@ export class ReadableViemContract<TAbi extends Abi>
     args: FunctionArgs<TAbi, TFunctionName>,
     options?: ContractWriteOptions,
   ): Promise<FunctionReturnType<TAbi, TFunctionName>> {
-    console.log("simulateWrite options:", {
-      abi: this.abi as any,
-      address: this.address,
-      functionName,
-      args: args as any,
-      ...createSimulateContractParameters(options),
-    });
-
     const { result } = await this._publicClient.simulateContract({
       abi: this.abi as any,
       address: this.address,
