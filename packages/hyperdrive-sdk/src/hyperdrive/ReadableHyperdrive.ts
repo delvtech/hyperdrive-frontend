@@ -112,6 +112,22 @@ export class ReadableHyperdrive {
     return totalVolume;
   }
 
+  /**
+   * Gets the current price of a bond in the pool.
+   */
+  async getLongPrice(options?: ContractReadOptions): Promise<bigint> {
+    const { initialSharePrice, timeStretch } = await this.getPoolConfig(
+      options,
+    );
+    const { shareReserves, bondReserves } = await this.getPoolInfo(options);
+
+    return this.mathContract.read(
+      "calculateSpotPrice",
+      [shareReserves, bondReserves, initialSharePrice, timeStretch],
+      options,
+    );
+  }
+
   private async getOpenLongEvents({
     filter,
     fromBlock = "earliest",

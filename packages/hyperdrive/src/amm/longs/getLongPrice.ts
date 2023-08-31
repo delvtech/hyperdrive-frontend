@@ -32,6 +32,9 @@ interface GetLongPriceResult {
   formatted: string;
 }
 
+/**
+ * @deprecated use SDK instead
+ */
 export async function getLongPrice({
   hyperdriveMathAddress,
   publicClient,
