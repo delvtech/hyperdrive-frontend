@@ -41,7 +41,7 @@ export class ReadableHyperdrive {
    * Gets the pool's fixed APR, i.e. the fixed rate a user locks in when they
    * open a long.
    */
-  async getFixedApr(options?: ContractReadOptions): Promise<bigint> {
+  async getFixedRate(options?: ContractReadOptions): Promise<bigint> {
     const { positionDuration, initialSharePrice, timeStretch } =
       await this.getPoolConfig(options);
     const { shareReserves, bondReserves } = await this.getPoolInfo(options);
