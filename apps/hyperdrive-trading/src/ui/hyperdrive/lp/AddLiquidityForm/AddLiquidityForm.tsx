@@ -1,4 +1,4 @@
-import { LinkIcon } from "@heroicons/react/24/outline";
+import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { ethers } from "ethers";
 import { ReactElement } from "react";
@@ -73,17 +73,18 @@ export function AddLiquidityForm({
     <div className="flex flex-col gap-10">
       <div className="text-base-content">
         <h5>Add liquidity</h5>
-        <p className="flex flex-row items-center">
-          Earn trading fees when users open long or shorts
+        <div className="flex flex-col items-start">
+          <p>Earn trading fees when users open long or shorts</p>
           <Link
-            className="ml-2 cursor-pointer"
+            className="flex cursor-pointer flex-row items-center text-sm"
             to={
               "https://www.notion.so/delv-tech/LP-Profitability-0acf6928b88c4a33875221aa15ca62d2?pvs=4"
             }
           >
-            <LinkIcon width={15} />
+            Learn More
+            <ArrowTopRightOnSquareIcon className="ml-1" width={12} />
           </Link>
-        </p>
+        </div>
       </div>
       <TokenInput
         token={market.baseToken}

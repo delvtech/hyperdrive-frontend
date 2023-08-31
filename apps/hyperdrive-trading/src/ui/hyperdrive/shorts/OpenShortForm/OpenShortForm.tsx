@@ -1,4 +1,4 @@
-import { LinkIcon } from "@heroicons/react/24/outline";
+import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { constants, ethers } from "ethers";
 import { ReactElement } from "react";
@@ -86,17 +86,18 @@ export function OpenShortForm({
     <div className="flex flex-col gap-10">
       <div className="text-base-content">
         <h5>Open a short</h5>
-        <p className="flex flex-row items-center">
-          Earn yield by shorting the current bond price
+        <div className="flex flex-col items-start">
+          <p>Earn yield by shorting the current bond price</p>
           <Link
-            className="ml-2 cursor-pointer"
+            className="flex cursor-pointer flex-row items-center text-sm"
             to={
               "https://www.notion.so/delv-tech/Short-Scenarios-ddff34fa457545cdbc7556e57e43b282?pvs=4"
             }
           >
-            <LinkIcon width={15} />
+            Learn More
+            <ArrowTopRightOnSquareIcon className="ml-1" width={12} />
           </Link>
-        </p>
+        </div>
       </div>
       <TokenInput
         token={bondToken}
