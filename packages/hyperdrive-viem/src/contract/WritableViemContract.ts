@@ -41,7 +41,9 @@ export class WritableViemContract<TAbi extends Abi>
     this._walletClient = walletClient;
   }
 
-  override async simulateWrite<TFunctionName extends FunctionName<TAbi>>(
+  override async simulateWrite<
+    TFunctionName extends FunctionName<TAbi, "nonpayable" | "payable">,
+  >(
     functionName: TFunctionName,
     args: FunctionArgs<TAbi>,
     options?: ContractWriteOptions,
@@ -54,7 +56,9 @@ export class WritableViemContract<TAbi extends Abi>
     });
   }
 
-  async write<TFunctionName extends FunctionName<TAbi>>(
+  async write<
+    TFunctionName extends FunctionName<TAbi, "nonpayable" | "payable">,
+  >(
     functionName: TFunctionName,
     args: FunctionArgs<TAbi, TFunctionName>,
     options?: ContractWriteOptions,
