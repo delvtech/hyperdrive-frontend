@@ -1,5 +1,5 @@
-import { WritableViemContract } from "src/contract/base/WritableViemContract";
-import { ReadableViemContract } from "src/contract/base/ReadableViemContract";
+import { WritableViemContract } from "src/contract/WritableViemContract";
+import { ReadableViemContract } from "src/contract/ReadableViemContract";
 import { HyperdriveABI } from "@hyperdrive/sdk";
 import { Address, PublicClient, WalletClient } from "viem";
 
@@ -26,7 +26,7 @@ export function createHyperdriveContract<
       address,
       publicClient,
       walletClient,
-    });
+    }) as ViemHyperdriveContract<TOptions>;
   }
 
   return new ReadableViemContract({

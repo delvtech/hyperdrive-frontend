@@ -1,9 +1,16 @@
 import { Abi, WalletClient } from "viem";
-import { ContractFunction, WritableContract } from "@hyperdrive/sdk";
+import {
+  ContractWriteOptions,
+  FunctionArgs,
+  FunctionName,
+  FunctionReturnType,
+  WritableContract,
+} from "@hyperdrive/sdk";
 import {
   ReadableViemContract,
   ReadableViemContractOptions,
-} from "src/contract/base/ReadableViemContract";
+} from "src/contract/ReadableViemContract";
+import { createSimulateContractParameters } from "src/utils/createSimulateContractParameters";
 
 export interface WritableViemContractOptions<TAbi extends Abi = Abi>
   extends ReadableViemContractOptions<TAbi> {
@@ -34,20 +41,35 @@ export class WritableViemContract<TAbi extends Abi>
     this._walletClient = walletClient;
   }
 
-  write: ContractFunction<TAbi, "nonpayable" | "payable"> = async (
-    functionName,
-    args,
-    options,
-  ) => {
+  override async simulateWrite<TFunctionName extends FunctionName<TAbi>>(
+    functionName: TFunctionName,
+    args: FunctionArgs<TAbi>,
+    options?: ContractWriteOptions,
+  ): Promise<FunctionReturnType<TAbi>> {
     const [account] = await this._walletClient.getAddresses();
+
+    return super.simulateWrite(functionName, args, {
+      from: account,
+      ...options,
+    });
+  }
+
+  async write<TFunctionName extends FunctionName<TAbi>>(
+    functionName: TFunctionName,
+    args: FunctionArgs<TAbi, TFunctionName>,
+    options?: ContractWriteOptions,
+  ): Promise<FunctionReturnType<TAbi, TFunctionName>> {
+    const [account] = await this._walletClient.getAddresses();
+
     const { request } = await this._publicClient.simulateContract({
       abi: this.abi as any,
       address: this.address,
       account,
       functionName,
       args: args as any,
-      ...options,
+      ...createSimulateContractParameters(options),
     });
+
     return this._walletClient.writeContract(request) as any;
-  };
+  }
 }

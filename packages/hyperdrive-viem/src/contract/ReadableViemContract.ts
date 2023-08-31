@@ -1,10 +1,17 @@
 import { Address, PublicClient, Abi } from "viem";
 import {
-  ContractEventFunction,
-  ContractFunction,
+  ContractEvent,
+  ContractGetEventsOptions,
+  ContractReadOptions,
+  ContractWriteOptions,
   EventArgs,
+  EventName,
+  FunctionArgs,
+  FunctionName,
+  FunctionReturnType,
   ReadableContract,
 } from "@hyperdrive/sdk";
+import { createSimulateContractParameters } from "src/utils/createSimulateContractParameters";
 
 export interface ReadableViemContractOptions<TAbi extends Abi = Abi> {
   abi: TAbi;
@@ -19,8 +26,8 @@ export interface ReadableViemContractOptions<TAbi extends Abi = Abi> {
 export class ReadableViemContract<TAbi extends Abi>
   implements ReadableContract<TAbi>
 {
-  abi: TAbi;
-  address: Address;
+  readonly abi: TAbi;
+  readonly address: Address;
 
   protected readonly _publicClient: PublicClient;
 
@@ -34,32 +41,49 @@ export class ReadableViemContract<TAbi extends Abi>
     this._publicClient = publicClient;
   }
 
-  read: ContractFunction<TAbi> = (functionName, args, options) => {
+  read<TFunctionName extends FunctionName<TAbi>>(
+    functionName: TFunctionName,
+    args: FunctionArgs<TAbi, TFunctionName>,
+    options?: ContractReadOptions,
+  ): Promise<FunctionReturnType<TAbi, TFunctionName>> {
     return this._publicClient.readContract({
       abi: this.abi as any,
       address: this.address,
-      functionName: functionName,
+      functionName,
       args: args as any,
       ...options,
-    }) as any;
-  };
+    }) as Promise<FunctionReturnType<TAbi, TFunctionName>>;
+  }
 
-  simulateWrite: ContractFunction<TAbi, "nonpayable" | "payable"> = async (
-    functionName,
-    args,
-    options,
-  ) => {
+  async simulateWrite<
+    TFunctionName extends FunctionName<TAbi, "nonpayable" | "payable">,
+  >(
+    functionName: TFunctionName,
+    args: FunctionArgs<TAbi, TFunctionName>,
+    options?: ContractWriteOptions,
+  ): Promise<FunctionReturnType<TAbi, TFunctionName>> {
+    console.log("simulateWrite options:", {
+      abi: this.abi as any,
+      address: this.address,
+      functionName,
+      args: args as any,
+      ...createSimulateContractParameters(options),
+    });
+
     const { result } = await this._publicClient.simulateContract({
       abi: this.abi as any,
       address: this.address,
-      functionName: functionName,
+      functionName,
       args: args as any,
-      ...options,
+      ...createSimulateContractParameters(options),
     });
-    return result as any;
-  };
+    return result as FunctionReturnType<TAbi, TFunctionName>;
+  }
 
-  getEvents: ContractEventFunction<TAbi> = async (eventName, options) => {
+  async getEvents<TEventName extends EventName<TAbi>>(
+    eventName: TEventName,
+    options?: ContractGetEventsOptions<TAbi, TEventName>,
+  ): Promise<ContractEvent<TAbi, TEventName>[]> {
     const filter = await this._publicClient.createContractEventFilter({
       address: this.address,
       abi: this.abi,
@@ -80,5 +104,5 @@ export class ReadableViemContract<TAbi extends Abi>
         transactionHash: transactionHash ?? undefined,
       };
     });
-  };
+  }
 }
