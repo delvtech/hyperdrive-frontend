@@ -8,6 +8,9 @@ interface GetPoolInfoOptions {
   options?: ReadCallOptions;
 }
 
+/**
+ * @deprecated use SDK
+ */
 export async function getPoolInfo({
   publicClient,
   hyperdriveAddress,
