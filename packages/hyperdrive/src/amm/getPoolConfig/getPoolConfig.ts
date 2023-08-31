@@ -8,6 +8,9 @@ type GetPoolConfigOptions = {
   options?: ReadCallOptions;
 };
 
+/**
+ * @deprecated use SDK
+ */
 export function getPoolConfig({
   publicClient,
   hyperdriveAddress,
