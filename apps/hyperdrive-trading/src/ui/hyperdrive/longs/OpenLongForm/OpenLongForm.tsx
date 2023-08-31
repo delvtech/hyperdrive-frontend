@@ -1,7 +1,9 @@
+import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import { adjustAmountByPercentage } from "@hyperdrive/core";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { ethers } from "ethers";
 import { ReactElement } from "react";
+import { Link } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { useMaxLong } from "src/ui/hyperdrive/longs/hooks/useMaxLong";
@@ -82,17 +84,27 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
 
   return (
     <div className="flex flex-col gap-10">
-      {/* You Pay Section */}
-      <div className="space-y-4 text-base-content">
-        <h5>You pay</h5>
-        <TokenInput
-          token={market.baseToken}
-          value={amount ?? ""}
-          maxValue={maxAmount}
-          onChange={(newAmount) => setAmount(newAmount)}
-        />
+      <div className="text-base-content">
+        <h5>Open a long</h5>
+        <div className="flex flex-col items-start">
+          <p>Secure a fixed rate by purchasing bonds.</p>
+          <Link
+            className="flex cursor-pointer flex-row items-center text-sm"
+            to={
+              "https://www.notion.so/delv-tech/Long-Scenarios-5396e8a14a794aaf821c3f8ed6dbcef9?pvs=4"
+            }
+          >
+            Learn More
+            <ArrowTopRightOnSquareIcon className="ml-1" width={12} />
+          </Link>
+        </div>
       </div>
-
+      <TokenInput
+        token={market.baseToken}
+        value={amount ?? ""}
+        maxValue={maxAmount}
+        onChange={(newAmount) => setAmount(newAmount)}
+      />
       {/* New Position Section */}
       <div className="space-y-4 text-base-content">
         <h5 className="text-center font-thin ">Preview transaction</h5>
