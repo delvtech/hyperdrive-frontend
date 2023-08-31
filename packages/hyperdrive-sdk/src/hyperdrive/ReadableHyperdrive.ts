@@ -1,5 +1,4 @@
 import { HyperdriveABI } from "@hyperdrive/core";
-import { multiplyBigInt } from "src/base/multiplyBigInt/multiplyBigInt";
 import { sumBigInt } from "src/base/sumBigInt";
 import {
   BlockTag,
@@ -10,6 +9,8 @@ import { ReadableHyperdriveContract } from "src/hyperdrive/HyperdriveContract";
 import { HyperdriveMathContract } from "src/hyperdrive/HyperdriveMathContract";
 import { PoolConfig } from "src/pool/PoolConfig";
 import { PoolInfo } from "src/pool/PoolInfo";
+import { calculateLiquidity } from "src/pool/calculateLiquidity";
+import { calculateTradingVolume } from "src/pool/calculateTradingVolume";
 
 interface ReadableHyperdriveConstructorOptions {
   contract: ReadableHyperdriveContract;
@@ -74,8 +75,11 @@ export class ReadableHyperdrive {
     const { lpSharePrice, shareReserves, longsOutstanding } =
       await this.getPoolInfo(options);
 
-    const liquidity =
-      multiplyBigInt([lpSharePrice, shareReserves], 18) - longsOutstanding;
+    const liquidity = calculateLiquidity(
+      lpSharePrice,
+      shareReserves,
+      longsOutstanding,
+    );
 
     return liquidity;
   }
@@ -94,20 +98,15 @@ export class ReadableHyperdrive {
       fromBlock,
       toBlock,
     });
-    const totalBondsFromOpeningLongs = sumBigInt(
-      openLongEvents.map((event) => event.args.bondAmount),
-    );
-
     const openShortEvents = await this.getOpenShortEvents({
       fromBlock,
       toBlock,
     });
-    const totalBondsFromOpeningShorts = sumBigInt(
-      openShortEvents.map((event) => event.args.bondAmount),
-    );
 
-    const totalVolume =
-      totalBondsFromOpeningLongs + totalBondsFromOpeningShorts;
+    const totalVolume = await calculateTradingVolume(
+      sumBigInt(openLongEvents.map((event) => event.args.bondAmount)),
+      sumBigInt(openShortEvents.map((event) => event.args.bondAmount)),
+    );
 
     return totalVolume;
   }
