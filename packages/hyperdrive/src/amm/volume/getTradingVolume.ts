@@ -28,6 +28,8 @@ export interface OpenLongEvent {
  * @param publicClient - Client to fetch data.
  * @param currentBlockNumber - Current block number.
  * @returns Total trading volume as a string.
+ *
+ * @deprecated use SDK instead
  */
 export async function getTradingVolume(
   hyperdriveAddress: Address,

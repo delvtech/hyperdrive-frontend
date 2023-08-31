@@ -1,5 +1,11 @@
+import { HyperdriveABI } from "@hyperdrive/core";
 import { multiplyBigInt } from "src/base/multiplyBigInt/multiplyBigInt";
-import { ContractReadOptions } from "src/contract/Contract";
+import { sumBigInt } from "src/base/sumBigInt";
+import {
+  BlockTag,
+  ContractGetEventsOptions,
+  ContractReadOptions,
+} from "src/contract/Contract";
 import { ReadableHyperdriveContract } from "src/hyperdrive/HyperdriveContract";
 import { HyperdriveMathContract } from "src/hyperdrive/HyperdriveMathContract";
 import { PoolConfig } from "src/pool/PoolConfig";
@@ -72,5 +78,75 @@ export class ReadableHyperdrive {
       multiplyBigInt([lpSharePrice, shareReserves], 18) - longsOutstanding;
 
     return liquidity;
+  }
+
+  /**
+   * Calculates the total trading volume in bonds given a block window.
+   */
+  async getTradingVolume({
+    fromBlock = "earliest",
+    toBlock = "latest",
+  }: {
+    fromBlock?: BlockTag | bigint;
+    toBlock?: BlockTag | bigint;
+  }): Promise<bigint> {
+    const openLongEvents = await this.getOpenLongEvents({
+      fromBlock,
+      toBlock,
+    });
+    const totalBondsFromOpeningLongs = sumBigInt(
+      openLongEvents.map((event) => event.args.bondAmount),
+    );
+
+    const openShortEvents = await this.getOpenShortEvents({
+      fromBlock,
+      toBlock,
+    });
+    const totalBondsFromOpeningShorts = sumBigInt(
+      openShortEvents.map((event) => event.args.bondAmount),
+    );
+
+    const totalVolume =
+      totalBondsFromOpeningLongs + totalBondsFromOpeningShorts;
+
+    return totalVolume;
+  }
+
+  private async getOpenLongEvents({
+    filter,
+    fromBlock = "earliest",
+    toBlock = "latest",
+  }: {
+    filter?: ContractGetEventsOptions<
+      typeof HyperdriveABI,
+      "OpenLong"
+    >["filter"];
+    fromBlock?: BlockTag | bigint;
+    toBlock?: BlockTag | bigint;
+  }) {
+    return this.contract.getEvents("OpenLong", {
+      filter,
+      fromBlock,
+      toBlock,
+    });
+  }
+
+  private async getOpenShortEvents({
+    filter,
+    fromBlock = "earliest",
+    toBlock = "latest",
+  }: {
+    filter?: ContractGetEventsOptions<
+      typeof HyperdriveABI,
+      "OpenShort"
+    >["filter"];
+    fromBlock?: BlockTag | bigint;
+    toBlock?: BlockTag | bigint;
+  }) {
+    return this.contract.getEvents("OpenShort", {
+      filter,
+      fromBlock,
+      toBlock,
+    });
   }
 }
