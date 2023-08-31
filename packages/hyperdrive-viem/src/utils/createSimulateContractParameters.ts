@@ -22,9 +22,7 @@ export function createSimulateContractParameters(
   const gasPriceOptions =
     gasPrice !== undefined
       ? { gasPrice }
-      : maxFeePerGas == undefined
-      ? { maxFeePerGas }
-      : { maxPriorityFeePerGas };
+      : { maxFeePerGas, maxPriorityFeePerGas };
 
   return {
     accessList,
