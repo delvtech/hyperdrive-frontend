@@ -104,35 +104,38 @@ export type ContractReadOptions =
 
 // https://github.com/ethereum/execution-apis/blob/main/src/schemas/transaction.yaml#L274
 export type ContractWriteOptions = ContractReadOptions & {
-  type: `0x${string}`;
-  nonce: bigint;
-  to: Address;
-  from: Address;
+  type?: `0x${string}`;
+  nonce?: bigint;
+  to?: Address;
+  from?: Address;
   /**
    * Gas limit
    */
-  gas: bigint;
-  value: bigint;
-  input: `0x${string}`;
+  gas?: bigint;
+  value?: bigint;
+  input?: `0x${string}`;
   /**
    * The gas price willing to be paid by the sender in wei
    */
-  gasPrice: bigint;
+  gasPrice?: bigint;
   /**
    * Maximum fee per gas the sender is willing to pay to miners in wei
    */
-  maxPriorityFeePerGas: bigint;
+  maxPriorityFeePerGas?: bigint;
   /**
    * The maximum total fee per gas the sender is willing to pay (includes the
    * network / base fee and miner / priority fee) in wei
    */
-  maxFeePerGas: bigint;
+  maxFeePerGas?: bigint;
   /**
    * EIP-2930 access list
    */
-  accessList: `0x${string}`[];
+  accessList?: {
+    address: `0x${string}`;
+    storageKeys: `0x${string}`[];
+  }[];
   /**
    * Chain ID that this transaction is valid on.
    */
-  chainId: bigint;
+  chainId?: bigint;
 };
