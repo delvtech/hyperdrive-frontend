@@ -26,7 +26,7 @@ export interface WritableContract<TAbi extends Abi>
  * but aren't necessarily concerned with where it's deployed or how it connects.
  */
 export type Contract<TAbi extends Abi> =
-  | WritableContract<TAbi>
+  | ReadableContract<TAbi>
   | WritableContract<TAbi>;
 
 /**
