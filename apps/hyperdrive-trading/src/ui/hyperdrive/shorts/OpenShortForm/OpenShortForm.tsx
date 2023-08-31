@@ -1,6 +1,8 @@
+import { LinkIcon } from "@heroicons/react/24/outline";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { constants, ethers } from "ethers";
 import { ReactElement } from "react";
+import { Link } from "react-router-dom";
 import { Hyperdrive, Token } from "src/appconfig/types";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { useMaxShort } from "src/ui/hyperdrive/shorts/hooks/useMaxShort";
@@ -82,16 +84,26 @@ export function OpenShortForm({
 
   return (
     <div className="flex flex-col gap-10">
-      {/* You Pay Section */}
-      <div className="space-y-4 text-base-content">
-        <h5>Amount to short</h5>
-        <TokenInput
-          token={bondToken}
-          value={amount ?? ""}
-          maxValue={maxShort?.formatted}
-          onChange={(newAmount) => setAmount(newAmount)}
-        />
+      <div className="text-base-content">
+        <h5>Open a short</h5>
+        <p className="flex flex-row items-center">
+          Earn yield by shorting the current bond price
+          <Link
+            className="ml-2 cursor-pointer"
+            to={
+              "https://www.notion.so/delv-tech/Short-Scenarios-ddff34fa457545cdbc7556e57e43b282?pvs=4"
+            }
+          >
+            <LinkIcon width={15} />
+          </Link>
+        </p>
       </div>
+      <TokenInput
+        token={bondToken}
+        value={amount ?? ""}
+        maxValue={maxShort?.formatted}
+        onChange={(newAmount) => setAmount(newAmount)}
+      />
 
       {/* New Position Section */}
       <div className="space-y-4 text-base-content">

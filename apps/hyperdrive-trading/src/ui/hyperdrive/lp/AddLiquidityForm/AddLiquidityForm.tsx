@@ -1,6 +1,8 @@
+import { LinkIcon } from "@heroicons/react/24/outline";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { ethers } from "ethers";
 import { ReactElement } from "react";
+import { Link } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
 import { parseUnits } from "src/base/parseUnits";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
@@ -69,17 +71,27 @@ export function AddLiquidityForm({
 
   return (
     <div className="flex flex-col gap-10">
-      {/* Amount Section */}
-      <div className="space-y-4 text-base-content">
-        <h5>Amount to add</h5>
-        <TokenInput
-          token={market.baseToken}
-          value={amount ?? ""}
-          maxValue={baseTokenBalance?.formatted}
-          maxLabel="Balance"
-          onChange={(newAmount) => setAmount(newAmount)}
-        />
+      <div className="text-base-content">
+        <h5>Add liquidity</h5>
+        <p className="flex flex-row items-center">
+          Earn trading fees when users open long or shorts
+          <Link
+            className="ml-2 cursor-pointer"
+            to={
+              "https://www.notion.so/delv-tech/LP-Profitability-0acf6928b88c4a33875221aa15ca62d2?pvs=4"
+            }
+          >
+            <LinkIcon width={15} />
+          </Link>
+        </p>
       </div>
+      <TokenInput
+        token={market.baseToken}
+        value={amount ?? ""}
+        maxValue={baseTokenBalance?.formatted}
+        maxLabel="Balance"
+        onChange={(newAmount) => setAmount(newAmount)}
+      />
 
       {/* New Position Section */}
       <div className="space-y-4 text-base-content">

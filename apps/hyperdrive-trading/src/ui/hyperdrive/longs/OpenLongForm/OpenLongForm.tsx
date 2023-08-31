@@ -84,7 +84,6 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
 
   return (
     <div className="flex flex-col gap-10">
-      {/* You Pay Section */}
       <div className="text-base-content">
         <h5>Open a long</h5>
         <p className="flex flex-row items-center">
