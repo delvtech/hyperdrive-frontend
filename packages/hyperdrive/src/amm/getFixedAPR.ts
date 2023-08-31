@@ -29,6 +29,9 @@ export interface GetFixedAPROptions {
   options?: ReadCallOptions;
 }
 
+/**
+ * @deprecated use SDK instead
+ */
 export async function getFixedAPR({
   hyperdriveMathAddress,
   publicClient,
