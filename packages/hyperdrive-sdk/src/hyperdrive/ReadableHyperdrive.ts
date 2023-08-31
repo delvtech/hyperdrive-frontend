@@ -86,14 +86,15 @@ export class ReadableHyperdrive {
 
   /**
    * Calculates the total trading volume in bonds given a block window.
+   * @param options?.fromBlock - The start block, defaults to "earliest"
+   * @param options?.toBlock - The end block, defaults to "latest"
+   * @returns the total amount of bonds traded
    */
-  async getTradingVolume({
-    fromBlock = "earliest",
-    toBlock = "latest",
-  }: {
+  async getTradingVolume(options?: {
     fromBlock?: BlockTag | bigint;
     toBlock?: BlockTag | bigint;
   }): Promise<bigint> {
+    const { fromBlock = "earliest", toBlock = "latest" } = options || {};
     const openLongEvents = await this.getOpenLongEvents({
       fromBlock,
       toBlock,
