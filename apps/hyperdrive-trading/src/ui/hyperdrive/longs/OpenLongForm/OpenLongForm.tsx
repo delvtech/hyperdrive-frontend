@@ -1,4 +1,4 @@
-import { LinkIcon } from "@heroicons/react/24/outline";
+import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import { adjustAmountByPercentage } from "@hyperdrive/core";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { ethers } from "ethers";
@@ -86,17 +86,18 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
     <div className="flex flex-col gap-10">
       <div className="text-base-content">
         <h5>Open a long</h5>
-        <p className="flex flex-row items-center">
-          Secure a fixed rate by purchasing bonds.
+        <div className="flex flex-col items-start">
+          <p>Secure a fixed rate by purchasing bonds.</p>
           <Link
-            className="ml-2 cursor-pointer"
+            className="flex cursor-pointer flex-row items-center text-sm"
             to={
               "https://www.notion.so/delv-tech/Long-Scenarios-5396e8a14a794aaf821c3f8ed6dbcef9?pvs=4"
             }
           >
-            <LinkIcon width={15} />
+            Learn More
+            <ArrowTopRightOnSquareIcon className="ml-1" width={12} />
           </Link>
-        </p>
+        </div>
       </div>
       <TokenInput
         token={market.baseToken}
