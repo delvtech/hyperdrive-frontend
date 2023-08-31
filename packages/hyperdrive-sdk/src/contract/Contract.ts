@@ -12,16 +12,12 @@ export interface ReadableContract<TAbi extends Abi> {
   abi: TAbi;
   address: Address;
   read: ContractFunction<TAbi>;
-  simulateWrite: ContractFunction<
-    TAbi,
-    "nonpayable" | "payable",
-    ContractWriteOptions
-  >;
+  simulateWrite: ContractSimulateWriteFunction<TAbi>;
   getEvents: ContractEventFunction<TAbi>;
 }
 export interface WritableContract<TAbi extends Abi>
   extends ReadableContract<TAbi> {
-  write: ContractFunction<TAbi, "nonpayable" | "payable">;
+  write: ContractWriteFunction<TAbi>;
 }
 
 /**
@@ -47,7 +43,26 @@ export type ContractFunction<
   options?: TOptions,
 ) => Promise<FunctionReturnType<TAbi, TFunctionName>>;
 
-export interface ContractEventFunctionOptions<
+/**
+ * A strongly typed function signature for calling contract write methods based
+ * on an abi
+ */
+export type ContractWriteFunction<TAbi extends Abi> = ContractFunction<
+  TAbi,
+  "nonpayable" | "payable"
+>;
+
+/**
+ * A strongly typed function signature for simulating contract write methods
+ * based on an abi
+ */
+export type ContractSimulateWriteFunction<TAbi extends Abi> = ContractFunction<
+  TAbi,
+  "nonpayable" | "payable",
+  ContractWriteOptions
+>;
+
+export interface ContractGetEventsOptions<
   TAbi extends Abi,
   TEventName extends EventName<TAbi>,
 > {
@@ -78,7 +93,7 @@ export type ContractEventFunction<TAbi extends Abi> = <
   TEventName extends EventName<TAbi>,
 >(
   eventName: TEventName,
-  options?: ContractEventFunctionOptions<TAbi, TEventName>,
+  options?: ContractGetEventsOptions<TAbi, TEventName>,
 ) => Promise<ContractEvent<TAbi, TEventName>[]>;
 
 // ETH JSON-RPC Types
