@@ -10,7 +10,6 @@ import { HyperdriveMathContract } from "src/hyperdrive/HyperdriveMathContract";
 import { PoolConfig } from "src/pool/PoolConfig";
 import { PoolInfo } from "src/pool/PoolInfo";
 import { calculateLiquidity } from "src/pool/calculateLiquidity";
-import { calculateTradingVolume } from "src/pool/calculateTradingVolume";
 
 interface ReadableHyperdriveConstructorOptions {
   contract: ReadableHyperdriveContract;
@@ -104,10 +103,9 @@ export class ReadableHyperdrive {
       toBlock,
     });
 
-    const totalVolume = await calculateTradingVolume(
-      sumBigInt(openLongEvents.map((event) => event.args.bondAmount)),
-      sumBigInt(openShortEvents.map((event) => event.args.bondAmount)),
-    );
+    const totalVolume =
+      sumBigInt(openLongEvents.map((event) => event.args.bondAmount)) +
+      sumBigInt(openShortEvents.map((event) => event.args.bondAmount));
 
     return totalVolume;
   }
