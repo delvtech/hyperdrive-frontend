@@ -14,6 +14,8 @@ interface GetLiquidityResult {
  *
  * @param hyperdriveAddress - The address of the hyperdrive
  * @param publicClient - The public client
+ *
+ * @deprecated use SDK instead
  */
 export async function getLiquidity(
   hyperdriveAddress: Address,
