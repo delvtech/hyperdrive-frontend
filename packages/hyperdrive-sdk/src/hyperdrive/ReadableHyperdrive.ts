@@ -143,21 +143,14 @@ export class ReadableHyperdrive {
 
   private async getTransferSingleEvents({
     filter,
-    fromBlock = "earliest",
-    toBlock = "latest",
-  }: {
-    filter?: ContractGetEventsOptions<
-      typeof HyperdriveABI,
-      "TransferSingle"
-    >["filter"];
-    fromBlock?: BlockTag | bigint;
-    toBlock?: BlockTag | bigint;
-  }): Promise<TransferSingleEvent[]> {
+    fromBlock,
+    toBlock,
+  }: ContractGetEventsOptions<typeof HyperdriveABI, "TransferSingle">) {
     return this.contract.getEvents("TransferSingle", {
-      filter,
       fromBlock,
       toBlock,
-    }) as unknown as TransferSingleEvent[]; // TODO: Check if this type casting is correct
+      filter,
+    }); // TODO: Check if this type casting is correct
   }
 
   private parseAssetType(identifier: number): AssetType {
@@ -247,20 +240,20 @@ export class ReadableHyperdrive {
     ).filter(
       (transferSingleEvent) =>
         this.decodeAssetFromTransferSingleEventData(
-          transferSingleEvent.eventLog.data,
+          transferSingleEvent.data as `0x${string}`,
         ).assetType === "LONG",
     );
 
     const longsMintedOrReceivedById = mapValues(
-      groupBy(longsMintedOrReceived, (event) => event.eventData.id),
+      groupBy(longsMintedOrReceived, (event) => event.args.id),
       (events): Long => {
-        const assetId = events[0].eventData.id;
+        const assetId = events[0].args.id;
         const decoded = this.decodeAssetFromTransferSingleEventData(
-          events[0].eventLog.data,
+          events[0].data as `0x${string}`,
         );
         return {
           assetId,
-          bondAmount: sumBigInt(events.map((event) => event.eventData.value)),
+          bondAmount: sumBigInt(events.map((event) => event.args.value)),
           baseAmountPaid: totalBasePaidByAssetId[assetId.toString()],
           maturity: decoded.timestamp,
         };
@@ -276,20 +269,20 @@ export class ReadableHyperdrive {
     ).filter(
       (transferSingleEvent) =>
         this.decodeAssetFromTransferSingleEventData(
-          transferSingleEvent.eventLog.data,
+          transferSingleEvent.data as `0x${string}`,
         ).assetType === "LONG",
     );
 
     const longsRedeemedOrSentById = mapValues(
-      groupBy(longsRedeemedOrSent, (event) => event.eventData.id),
+      groupBy(longsRedeemedOrSent, (event) => event.args.id),
       (events): Long => {
-        const assetId = events[0].eventData.id;
+        const assetId = events[0].args.id;
         const decoded = this.decodeAssetFromTransferSingleEventData(
-          events[0].eventLog.data,
+          events[0].data as `0x${string}`,
         );
         return {
           assetId,
-          bondAmount: sumBigInt(events.map((event) => event.eventData.value)),
+          bondAmount: sumBigInt(events.map((event) => event.args.value)),
           baseAmountPaid: totalBaseReceivedByAssetId[assetId.toString()],
           maturity: decoded.timestamp,
         };
@@ -345,27 +338,28 @@ export class ReadableHyperdrive {
         toBlock,
       })
     ).filter(
-      ({ eventLog }) =>
-        this.decodeAssetFromTransferSingleEventData(eventLog.data).assetType ===
-        "SHORT",
+      ({ data }) =>
+        this.decodeAssetFromTransferSingleEventData(data as `0x${string}`)
+          .assetType === "SHORT",
     );
 
     const closedShortsById: Record<string, Long> = {};
 
-    for (const { eventData, eventLog } of transferOutEvents) {
-      const assetId = eventData.id.toString();
+    for (const { args, data } of transferOutEvents) {
+      const assetId = args.id.toString();
 
       if (closedShortsById[assetId]) {
-        closedShortsById[assetId].bondAmount += eventData.value;
+        closedShortsById[assetId].bondAmount += args.value;
         continue;
       }
 
       closedShortsById[assetId] = {
-        assetId: eventData.id,
-        bondAmount: eventData.value,
+        assetId: args.id,
+        bondAmount: args.value,
         baseAmountPaid: amountReceivedByAssetId[assetId] ?? 0n,
-        maturity: this.decodeAssetFromTransferSingleEventData(eventLog.data)
-          .timestamp,
+        maturity: this.decodeAssetFromTransferSingleEventData(
+          data as `0x${string}`,
+        ).timestamp,
       };
     }
 
@@ -387,18 +381,18 @@ export class ReadableHyperdrive {
         toBlock,
       })
     ).filter(
-      ({ eventLog }) =>
-        this.decodeAssetFromTransferSingleEventData(eventLog.data).assetType ===
-        "SHORT",
+      ({ data }) =>
+        this.decodeAssetFromTransferSingleEventData(data as `0x{$string}`)
+          .assetType === "SHORT",
     );
 
     const openShortsById: Record<string, Long> = {};
 
-    for (const { eventData, eventLog } of transferInEvents) {
-      const assetId = eventData.id.toString();
+    for (const { data, args } of transferInEvents) {
+      const assetId = args.id.toString();
 
       if (openShortsById[assetId]) {
-        openShortsById[assetId].bondAmount += eventData.value;
+        openShortsById[assetId].bondAmount += args.value;
         continue;
       }
 
@@ -407,12 +401,12 @@ export class ReadableHyperdrive {
         (amountReceivedByAssetId[assetId] ?? 0n);
 
       openShortsById[assetId] = {
-        assetId: eventData.id,
-        bondAmount:
-          eventData.value - (closedShortsById[assetId]?.bondAmount ?? 0n),
+        assetId: args.id,
+        bondAmount: args.value - (closedShortsById[assetId]?.bondAmount ?? 0n),
         baseAmountPaid: netAmountPaid > 0n ? netAmountPaid : 0n,
-        maturity: this.decodeAssetFromTransferSingleEventData(eventLog.data)
-          .timestamp,
+        maturity: this.decodeAssetFromTransferSingleEventData(
+          data as `0x${string}`,
+        ).timestamp,
       };
     }
 
