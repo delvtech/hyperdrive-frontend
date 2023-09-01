@@ -6,19 +6,19 @@ import {
   ContractReadOptions,
 } from "src/contract/Contract";
 import { ReadableHyperdriveContract } from "src/hyperdrive/HyperdriveContract";
-import { HyperdriveMathContract } from "src/hyperdrive/HyperdriveMathContract";
+import { ReadableHyperdriveMathContract } from "src/hyperdrive/HyperdriveMathContract";
 import { PoolConfig } from "src/pool/PoolConfig";
 import { PoolInfo } from "src/pool/PoolInfo";
 import { calculateLiquidity } from "src/pool/calculateLiquidity";
 
 interface ReadableHyperdriveConstructorOptions {
   contract: ReadableHyperdriveContract;
-  mathContract: HyperdriveMathContract;
+  mathContract: ReadableHyperdriveMathContract;
 }
 
 export class ReadableHyperdrive {
   private readonly contract: ReadableHyperdriveContract;
-  private readonly mathContract: HyperdriveMathContract;
+  private readonly mathContract: ReadableHyperdriveMathContract;
 
   constructor({
     contract,
