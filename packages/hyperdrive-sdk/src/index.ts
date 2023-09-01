@@ -16,12 +16,14 @@ export type {
 } from "./contract/Contract";
 
 // Hyperdrive Contract types
-export type {
-  HyperdriveContract,
-  ReadableHyperdriveContract,
-  WritableHyperdriveContract,
-} from "src/hyperdrive/HyperdriveContract";
+export type { IHyperdriveContract } from "src/hyperdrive/HyperdriveContract";
 
 // SDK classes
-export { ReadableHyperdrive } from "src/hyperdrive/ReadableHyperdrive";
-export { WritableHyperdrive } from "src/hyperdrive/WritableHyperdrive";
+export {
+  type IReadableHyperdrive,
+  ReadableHyperdrive,
+} from "src/hyperdrive/ReadableHyperdrive";
+export {
+  type IWritableHyperdrive,
+  WritableHyperdrive,
+} from "src/hyperdrive/WritableHyperdrive";
