@@ -13,10 +13,15 @@ export type {
   ContractEventFunction,
   ContractFunction,
   ContractEvent,
-} from "./contract/Contract";
+} from "src/contract/Contract";
 
 // Hyperdrive Contract types
-export type { IHyperdriveContract } from "src/hyperdrive/HyperdriveContract";
+export type {
+  HyperdriveContract,
+  ReadableHyperdriveContract,
+  WritableHyperdriveContract,
+  HyperdriveMathContract,
+} from "src/hyperdrive/contracts";
 
 // SDK classes
 export {

@@ -1,11 +1,10 @@
 import { HyperdriveABI } from "@hyperdrive/core";
 import { ContractWriteOptions, WritableContract } from "src/contract/Contract";
+import { WritableHyperdriveContract } from "src/hyperdrive/contracts";
 
 interface WritableHyperdriveConstructorOptions {
   contract: WritableHyperdriveContract;
 }
-
-export type WritableHyperdriveContract = WritableContract<typeof HyperdriveABI>;
 
 export interface IWritableHyperdrive {
   /**

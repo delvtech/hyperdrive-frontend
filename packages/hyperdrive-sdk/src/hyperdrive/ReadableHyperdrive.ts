@@ -4,18 +4,17 @@ import {
   BlockTag,
   ContractGetEventsOptions,
   ContractReadOptions,
-  ReadableContract,
 } from "src/contract/Contract";
-import { IHyperdriveMathContract } from "src/hyperdrive/HyperdriveMathContract";
+import { HyperdriveMathContract } from "src/hyperdrive/HyperdriveMathContract";
+import { ReadableHyperdriveContract } from "src/hyperdrive/contracts";
 import { PoolConfig } from "src/pool/PoolConfig";
 import { PoolInfo } from "src/pool/PoolInfo";
 import { calculateLiquidity } from "src/pool/calculateLiquidity";
 
 interface ReadableHyperdriveConstructorOptions {
   contract: ReadableHyperdriveContract;
-  mathContract: IHyperdriveMathContract;
+  mathContract: HyperdriveMathContract;
 }
-export type ReadableHyperdriveContract = ReadableContract<typeof HyperdriveABI>;
 
 export interface IReadableHyperdrive {
   /**
@@ -60,7 +59,7 @@ export interface IReadableHyperdrive {
 
 export class ReadableHyperdrive implements IReadableHyperdrive {
   private readonly contract: ReadableHyperdriveContract;
-  private readonly mathContract: IHyperdriveMathContract;
+  private readonly mathContract: HyperdriveMathContract;
 
   constructor({
     contract,

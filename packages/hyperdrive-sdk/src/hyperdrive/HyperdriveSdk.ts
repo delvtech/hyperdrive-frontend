@@ -3,8 +3,7 @@ import {
   BlockTag,
   ContractWriteOptions,
 } from "src/contract/Contract";
-import { IHyperdriveContract } from "src/hyperdrive/HyperdriveContract";
-import { IHyperdriveMathContract } from "src/hyperdrive/HyperdriveMathContract";
+import { HyperdriveMathContract } from "src/hyperdrive/HyperdriveMathContract";
 import {
   ReadableHyperdrive,
   IReadableHyperdrive,
@@ -13,12 +12,13 @@ import {
   IWritableHyperdrive,
   WritableHyperdrive,
 } from "src/hyperdrive/WritableHyperdrive";
+import { HyperdriveContract } from "src/hyperdrive/contracts";
 import { PoolConfig } from "src/pool/PoolConfig";
 import { PoolInfo } from "src/pool/PoolInfo";
 
 interface HyperdriveSdkConstructorOptions {
-  hyperdriveContract: IHyperdriveContract;
-  mathContract: IHyperdriveMathContract;
+  hyperdriveContract: HyperdriveContract;
+  mathContract: HyperdriveMathContract;
 }
 
 export class HyperdriveSdk implements IReadableHyperdrive, IWritableHyperdrive {
