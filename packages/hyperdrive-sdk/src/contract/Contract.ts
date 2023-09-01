@@ -25,9 +25,8 @@ export interface WritableContract<TAbi extends Abi>
  * Designed to be used by consumers that care about the interface of a contract,
  * but aren't necessarily concerned with where it's deployed or how it connects.
  */
-export type Contract<TAbi extends Abi> =
-  | ReadableContract<TAbi>
-  | WritableContract<TAbi>;
+export type Contract<TAbi extends Abi> = ReadableContract<TAbi> &
+  WritableContract<TAbi>;
 
 /**
  * A strongly typed function signature for calling contract methods based on an
