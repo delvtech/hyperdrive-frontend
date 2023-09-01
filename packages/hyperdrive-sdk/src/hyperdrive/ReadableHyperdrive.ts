@@ -261,5 +261,54 @@ export class ReadableHyperdrive {
         };
       },
     );
+
+    const longsRedeemedOrSent = (
+      await this.getTransferSingleEvents({
+        filter: { from: account },
+        fromBlock,
+        toBlock,
+      })
+    ).filter(
+      (transferSingleEvent) =>
+        this.decodeAssetFromTransferSingleEventData(
+          transferSingleEvent.eventLog.data,
+        ).assetType === "LONG",
+    );
+
+    const longsRedeemedOrSentById = mapValues(
+      groupBy(longsRedeemedOrSent, (event) => event.eventData.id),
+      (events): Long => {
+        const assetId = events[0].eventData.id;
+        const decoded = this.decodeAssetFromTransferSingleEventData(
+          events[0].eventLog.data,
+        );
+        return {
+          assetId,
+          bondAmount: sumBigInt(events.map((event) => event.eventData.value)),
+          baseAmountPaid: totalBaseReceivedByAssetId[assetId.toString()],
+          maturity: decoded.timestamp,
+        };
+      },
+    );
+
+    const openLongsById = mapValues(
+      longsMintedOrReceivedById,
+      (long, key): Long => {
+        const matchingExit = longsRedeemedOrSentById[key];
+        if (matchingExit) {
+          const newBondAmount = long.bondAmount - matchingExit.bondAmount;
+          const newBaseAmountPaid =
+            long.baseAmountPaid - matchingExit.baseAmountPaid;
+          return {
+            ...long,
+            bondAmount: newBondAmount,
+            baseAmountPaid: newBaseAmountPaid,
+          };
+        }
+        return long;
+      },
+    );
+
+    return Object.values(openLongsById).filter((long) => long.bondAmount);
   }
 }
