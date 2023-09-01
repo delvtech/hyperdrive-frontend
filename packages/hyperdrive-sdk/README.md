@@ -1,51 +1,67 @@
-# Hyperdrive SDK
+# @hyperdrive/sdk
 
 A vanilla TypeScript SDK containing everything you need to start working with
 the Hyperdrive AMM.
 
-## Installation
+| Library                    | Description                                    |
+| -------------------------- | ---------------------------------------------- |
+| `@hyperdrive/sdk`          | TypeScript SDK for Hyperdrive                  |
+| `@hyperdrive/sdk-viem`     | Viem bindings for the TypeScript SDK           |
+| _`@hyperdrive/sdk-ethers`_ | _TODO: Ethers bindings for the TypeScript SDK_ |
 
-Install `@hyperdrive/sdk` and its [viem](https://viem.sh) peer dependency.
+## Quickstart (Viem)
 
-Npm:
-
-```bash
-npm i @hyperdrive/sdk viem
-```
-
-Yarn:
+Install in your project:
 
 ```bash
-yarn add @hyperdrive/sdk viem
+npm i @hyperdrive/sdk @hyperdrive/sdk-viem viem
 ```
 
-## Configure Hyperdrive
-
-First, configure your desired hyperdrive address to be used by the SDK, and the
-clients you want to use for reading/writing to the Ethereum network.
+Configure the Hyperdrive SDK and get the current fixed rate:
 
 ```ts
-import { PublicClient, createPublicClient, http } from "viem";
+import {
+  PublicClient,
+  createPublicClient,
+  createWalletClient,
+  custom,
+  http,
+} from "viem";
 import { mainnet } from "viem/chains";
-import { configureHyperdrive } from "@hyperdrive/sdk";
+import { HyperdriveSDK } from "@hyperdrive/sdk";
+import {
+  HyperdriveContract,
+  HypedriveMathContract,
+} from "@hyperdrive/sdk-viem";
 
-export const hyperdrive = configureHyperdrive({
-  hyperdriveAddress: "0x.....",
-  hyperdriveMathAddress: "0x.....",
-  publicClient: createPublicClient({
-    chain: mainnet,
-    transport: http(),
-  },
+// 1. Set up your viem clients
+const publicClient = createPublicClient({
+  chain: mainnet,
+  transport: http(),
 });
-```
+const walletClient = createWalletClient({
+  chain: mainnet,
+  transport: custom(window.ethereum),
+});
 
-## You're good to go!
+// 2. Create contract instances
+const hyperdriveContract = new HyperdriveContract({
+  publicClient,
+  walletClient,
+  address: "0x12345",
+});
+const mathContract = new HyperdriveMathContract({
+  publicClient,
+  address: "0x67890",
+});
 
-Use the SDK! You can now import and use the Hyperdrive SDK throughout your app.
+// 3. Create Hyperdrive SDK instance
+export const hyperdrive = new HyperdriveSdk({
+  hyperdriveContract,
+  mathContract,
+});
 
-```ts
 (async function () {
-  const fixedRate = await hyperdrive.pool.getFixedRate();
-  const myLongs = await hyperdrive.portfolio.getActiveLongs({ who: "0x..." });
+  console.log(`The current fixed rate is: ${await hyperdrive.getFixedRate()}`);
 })();
 ```
