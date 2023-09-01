@@ -141,8 +141,6 @@ export class ReadableHyperdrive {
     return this.contract.getEvents("OpenShort", options);
   }
 
-  // Get Active Longs
-
   private async getTransferSingleEvents({
     filter,
     fromBlock = "earliest",
@@ -159,7 +157,7 @@ export class ReadableHyperdrive {
       filter,
       fromBlock,
       toBlock,
-    }) as unknown as TransferSingleEvent[];
+    }) as unknown as TransferSingleEvent[]; // TODO: Check if this type casting is correct
   }
 
   private parseAssetType(identifier: number): AssetType {

@@ -2,12 +2,10 @@ import { HyperdriveABI } from "@hyperdrive/core";
 import {
   Abi,
   AbiEvent,
-  AbiParameter,
-  ExtractAbiEvent,
-  ExtractAbiEventNames,
-  AbiEventParameter,
   AbiParametersToPrimitiveTypes,
   Address,
+  ExtractAbiEvent,
+  ExtractAbiEventNames,
 } from "abitype";
 import { BlockTag } from "src/contract/Contract";
 
