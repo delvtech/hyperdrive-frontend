@@ -7,8 +7,8 @@ import {
 import mapValues from "lodash.mapvalues";
 import groupBy from "lodash.groupby";
 import { sumBigInt } from "src/base/sumBigInt";
-import { decodeAssetFromTransferSingleEventData } from "./decodeAssetFromTransferSingleEventData";
-import { ReadableHyperdriveContract } from "..";
+import { decodeAssetFromTransferSingleEventData } from "src/long/decodeAssetFromTransferSingleEventData";
+import { ReadableHyperdriveContract } from "src/hyperdrive/HyperdriveContract";
 
 async function getTransferSingleEvents({
   contract,

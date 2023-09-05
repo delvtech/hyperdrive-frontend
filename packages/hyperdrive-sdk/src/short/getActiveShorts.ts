@@ -13,7 +13,7 @@ import {
   ContractReadOptions,
 } from "src/contract/Contract";
 import { decodeAssetFromTransferSingleEventData } from "src/long/decodeAssetFromTransferSingleEventData";
-import { ReadableHyperdriveContract } from "..";
+import { ReadableHyperdriveContract } from "src/hyperdrive/HyperdriveContract";
 async function getTransferSingleEvents({
   contract,
   filter,
