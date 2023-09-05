@@ -8,6 +8,10 @@ export { HyperdriveMathABI } from "src/abis/HyperdriveMath";
 export { HyperdriveABI } from "src/abis/Hyperdrive";
 export { mockErc4626Abi } from "src/abis/MockErc4626";
 
+// SimpleCache
+export type { SimpleCache } from "src/cache/SimpleCache";
+export { LRUSimpleCache } from "src/cache/LRUSimpleCache";
+
 // Contract Interface
 export type {
   IReadableContract,
