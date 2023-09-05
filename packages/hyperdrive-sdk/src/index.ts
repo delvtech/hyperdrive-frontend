@@ -17,6 +17,11 @@ export type {
   ContractFunction,
   ContractEvent,
 } from "src/contract/Contract";
+export type {
+  CachedReadableContract,
+  CachedWritableContract,
+  CachedContract,
+} from "src/contract/CachedContract";
 
 // Hyperdrive Contract types
 export type {
