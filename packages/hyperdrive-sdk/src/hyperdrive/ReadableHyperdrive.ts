@@ -16,7 +16,48 @@ interface ReadableHyperdriveOptions {
   mathContract: ReadableHyperdriveMathContract;
 }
 
-export class ReadableHyperdrive {
+export interface IReadableHyperdrive {
+  /**
+   * Gets the pool's configuration parameters
+   */
+  getPoolConfig(options?: ContractReadOptions): Promise<PoolConfig>;
+
+  /**
+   * Gets info about the pool's reserves and other state that is important to
+   * evaluate potential trades.
+   */
+  getPoolInfo(options?: ContractReadOptions): Promise<PoolInfo>;
+
+  /**
+   * Gets the pool's fixed APR, i.e. the fixed rate a user locks in when they
+   * open a long.
+   */
+  getFixedRate(options?: ContractReadOptions): Promise<bigint>;
+
+  /**
+   * This function retrieves the market liquidity by using the following formula:
+   * marketLiquidity = lpSharePrice * shareReserves - longsOutstanding
+   */
+  getLiquidity(options?: ContractReadOptions): Promise<bigint>;
+
+  /**
+   * Calculates the total trading volume in bonds given a block window.
+   * @param options.fromBlock - The start block, defaults to "earliest"
+   * @param options.toBlock - The end block, defaults to "latest"
+   * @returns the total amount of bonds traded
+   */
+  getTradingVolume(options?: {
+    fromBlock?: BlockTag | bigint;
+    toBlock?: BlockTag | bigint;
+  }): Promise<bigint>;
+
+  /**
+   * Gets the current price of a bond in the pool.
+   */
+  getLongPrice(options?: ContractReadOptions): Promise<bigint>;
+}
+
+export class ReadableHyperdrive implements IReadableHyperdrive {
   private readonly contract: ReadableHyperdriveContract;
   private readonly mathContract: ReadableHyperdriveMathContract;
 
@@ -25,25 +66,14 @@ export class ReadableHyperdrive {
     this.mathContract = mathContract;
   }
 
-  /**
-   * Gets the pool's configuration parameters
-   */
   getPoolConfig(options?: ContractReadOptions): Promise<PoolConfig> {
     return this.contract.read("getPoolConfig", [], options);
   }
 
-  /**
-   * Gets info about the pool's reserves and other state that is important to
-   * evaluate potential trades.
-   */
   getPoolInfo(options?: ContractReadOptions): Promise<PoolInfo> {
     return this.contract.read("getPoolInfo", [], options);
   }
 
-  /**
-   * Gets the pool's fixed APR, i.e. the fixed rate a user locks in when they
-   * open a long.
-   */
   async getFixedRate(options?: ContractReadOptions): Promise<bigint> {
     const { positionDuration, initialSharePrice, timeStretch } =
       await this.getPoolConfig(options);
@@ -63,10 +93,6 @@ export class ReadableHyperdrive {
     return apr;
   }
 
-  /**
-   * This function retrieves the market liquidity by using the following formula:
-   * marketLiquidity = lpSharePrice * shareReserves - longsOutstanding
-   */
   async getLiquidity(options?: ContractReadOptions): Promise<bigint> {
     const { lpSharePrice, shareReserves, longsOutstanding } =
       await this.getPoolInfo(options);
@@ -80,12 +106,6 @@ export class ReadableHyperdrive {
     return liquidity;
   }
 
-  /**
-   * Calculates the total trading volume in bonds given a block window.
-   * @param options.fromBlock - The start block, defaults to "earliest"
-   * @param options.toBlock - The end block, defaults to "latest"
-   * @returns the total amount of bonds traded
-   */
   async getTradingVolume(options?: {
     fromBlock?: BlockTag | bigint;
     toBlock?: BlockTag | bigint;
@@ -107,9 +127,6 @@ export class ReadableHyperdrive {
     return totalVolume;
   }
 
-  /**
-   * Gets the current price of a bond in the pool.
-   */
   async getLongPrice(options?: ContractReadOptions): Promise<bigint> {
     const { initialSharePrice, timeStretch } = await this.getPoolConfig(
       options,
