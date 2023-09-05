@@ -1,20 +1,19 @@
 import {
   ClosedShort,
   HyperdriveABI,
-  Long,
   OpenShort,
   Short,
   sumBigInt,
 } from "@hyperdrive/core";
 import { Address } from "abitype";
+import groupBy from "lodash.groupby";
+import mapValues from "lodash.mapvalues";
 import {
   ContractGetEventsOptions,
   ContractReadOptions,
 } from "src/contract/Contract";
-import { ReadableHyperdriveContract } from "..";
-import mapValues from "lodash.mapvalues";
-import groupBy from "lodash.groupby";
 import { decodeAssetFromTransferSingleEventData } from "src/long/decodeAssetFromTransferSingleEventData";
+import { ReadableHyperdriveContract } from "..";
 async function getTransferSingleEvents({
   contract,
   filter,
@@ -33,12 +32,10 @@ async function getTransferSingleEvents({
 export async function getActiveShorts({
   contract,
   account,
-
   options,
 }: {
   contract: ReadableHyperdriveContract;
   account: Address;
-
   options: ContractReadOptions;
 }): Promise<Short[]> {
   const fromBlock = options?.blockNumber || options?.blockTag || "earliest";
