@@ -17,8 +17,6 @@ export type {
   IReadableContract,
   IWritableContract,
   Contract,
-  ContractEventFunction,
-  ContractFunction,
   ContractEvent,
 } from "src/contract/Contract";
 export type {

@@ -11,13 +11,34 @@ import {
 export interface IReadableContract<TAbi extends Abi> {
   abi: TAbi;
   address: Address;
-  read: ContractFunction<TAbi>;
-  simulateWrite: ContractWriteFunction<TAbi>;
-  getEvents: ContractEventFunction<TAbi>;
+
+  read<TFunctionName extends FunctionName<TAbi>>(
+    fn: TFunctionName,
+    args: FunctionArgs<TAbi, TFunctionName>,
+    options?: ContractReadOptions,
+  ): Promise<FunctionReturnType<TAbi, TFunctionName>>;
+
+  simulateWrite<
+    TFunctionName extends FunctionName<TAbi, "nonpayable" | "payable">,
+  >(
+    fn: TFunctionName,
+    args: FunctionArgs<TAbi, TFunctionName>,
+    options?: ContractWriteOptions,
+  ): Promise<FunctionReturnType<TAbi, TFunctionName>>;
+
+  getEvents<TEventName extends EventName<TAbi>>(
+    eventName: TEventName,
+    options?: ContractGetEventsOptions<TAbi, TEventName>,
+  ): Promise<ContractEvent<TAbi, TEventName>[]>;
 }
+
 export interface IWritableContract<TAbi extends Abi>
   extends IReadableContract<TAbi> {
-  write: ContractWriteFunction<TAbi>;
+  write<TFunctionName extends FunctionName<TAbi, "nonpayable" | "payable">>(
+    fn: TFunctionName,
+    args: FunctionArgs<TAbi, TFunctionName>,
+    options?: ContractWriteOptions,
+  ): Promise<FunctionReturnType<TAbi, TFunctionName>>;
 }
 
 /**
@@ -28,30 +49,6 @@ export interface IWritableContract<TAbi extends Abi>
 export type Contract<TAbi extends Abi> =
   | IReadableContract<TAbi>
   | IWritableContract<TAbi>;
-
-/**
- * A strongly typed function signature for calling contract methods based on an
- * abi
- */
-export type ContractFunction<
-  TAbi extends Abi,
-  TAbiStateMutability extends AbiStateMutability = AbiStateMutability,
-  TOptions = ContractReadOptions,
-> = <TFunctionName extends FunctionName<TAbi, TAbiStateMutability>>(
-  fn: TFunctionName,
-  args: FunctionArgs<TAbi, TFunctionName>,
-  options?: TOptions,
-) => Promise<FunctionReturnType<TAbi, TFunctionName>>;
-
-/**
- * A strongly typed function signature for calling contract write methods based
- * on an abi
- */
-export type ContractWriteFunction<TAbi extends Abi> = ContractFunction<
-  TAbi,
-  "nonpayable" | "payable",
-  ContractWriteOptions
->;
 
 export interface ContractGetEventsOptions<
   TAbi extends Abi,
@@ -75,17 +72,6 @@ export interface ContractEvent<
   blockNumber?: bigint;
   transactionHash?: `0x${string}`;
 }
-
-/**
- * A strongly typed function signature for fetching contract events based on an
- * abi
- */
-export type ContractEventFunction<TAbi extends Abi> = <
-  TEventName extends EventName<TAbi>,
->(
-  eventName: TEventName,
-  options?: ContractGetEventsOptions<TAbi, TEventName>,
-) => Promise<ContractEvent<TAbi, TEventName>[]>;
 
 // ETH JSON-RPC Types
 // TODO: Find or build an OS types package (e.g., @types/evm-json-rpc)
