@@ -55,7 +55,7 @@ export type ContractWriteFunction<TAbi extends Abi> = ContractFunction<
 
 export interface ContractGetEventsOptions<
   TAbi extends Abi,
-  TEventName extends EventName<TAbi>,
+  TEventName extends EventName<TAbi> = EventName<TAbi>,
 > {
   filter?: EventFilter<TAbi, TEventName>;
   fromBlock?: bigint | BlockTag;
@@ -67,7 +67,7 @@ export interface ContractGetEventsOptions<
  */
 export interface ContractEvent<
   TAbi extends Abi,
-  TEventName extends EventName<TAbi>,
+  TEventName extends EventName<TAbi> = EventName<TAbi>,
 > {
   eventName: TEventName;
   args: EventArgs<TAbi, TEventName>;

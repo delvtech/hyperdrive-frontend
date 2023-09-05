@@ -61,7 +61,7 @@ type IndexedEventInput<
  */
 export type EventFilter<
   TAbi extends Abi,
-  TEventName extends EventName<TAbi>,
+  TEventName extends EventName<TAbi> = EventName<TAbi>,
 > = Partial<EventInputToPrimitiveTypes<IndexedEventInput<TAbi, TEventName>>>;
 
 /**
