@@ -1,4 +1,4 @@
-import { ClosedShort, HyperdriveABI, OpenShort } from "@hyperdrive/core";
+import { ClosedShort, HyperdriveABI, Long, OpenShort } from "@hyperdrive/core";
 import { Address } from "abitype";
 import groupBy from "lodash.groupby";
 import mapValues from "lodash.mapvalues";
@@ -11,7 +11,6 @@ import {
 import { ReadableHyperdriveContract } from "src/hyperdrive/HyperdriveContract";
 import { HyperdriveMathContract } from "src/hyperdrive/HyperdriveMathContract";
 import { decodeAssetFromTransferSingleEventData } from "src/long/decodeAssetFromTransferSingleEventData";
-import { getActiveLongs } from "src/long/getActiveLongs";
 import { PoolConfig } from "src/pool/PoolConfig";
 import { PoolInfo } from "src/pool/PoolInfo";
 import { calculateLiquidity } from "src/pool/calculateLiquidity";
@@ -154,6 +153,13 @@ export class ReadableHyperdrive {
     });
   }
 
+  /**
+   * Gets the active longs opened by a specific user.
+   * @param account - The user's address
+   * @param options.fromBlock - The start block, defaults to "earliest"
+   * @param options.toBlock - The end block, defaults to "latest"
+   * @returns the active longs opened by a specific user
+   */
   private async getActiveLongs({
     account,
     options,
@@ -161,13 +167,117 @@ export class ReadableHyperdrive {
     account: Address;
     options: ContractReadOptions;
   }) {
-    return getActiveLongs({
-      contract: this.contract,
-      account,
-      options,
+    const fromBlock = options?.blockNumber || options?.blockTag || "earliest";
+    const toBlock = options?.blockNumber || options?.blockTag || "latest";
+
+    const openLongEvents = await this.contract.getEvents("OpenLong", {
+      filter: { trader: account },
+      fromBlock,
+      toBlock,
     });
+
+    const totalBasePaidByAssetId = mapValues(
+      groupBy(openLongEvents, (event) => event.args.assetId.toString()),
+      (events) => sumBigInt(events.map((event) => event.args.baseAmount)),
+    );
+
+    const closeLongEvents = await this.contract.getEvents("CloseLong", {
+      filter: { trader: account },
+      fromBlock,
+      toBlock,
+    });
+
+    const totalBaseReceivedByAssetId = mapValues(
+      groupBy(closeLongEvents, (event) => event.args.assetId.toString()),
+      (events) => sumBigInt(events.map((event) => event.args.baseAmount)),
+    );
+
+    const longsMintedOrReceived = (
+      await this.getTransferSingleEvents({
+        filter: { to: account },
+        fromBlock,
+        toBlock,
+      })
+    ).filter(
+      (transferSingleEvent) =>
+        decodeAssetFromTransferSingleEventData(
+          transferSingleEvent.data as `0x${string}`,
+        ).assetType === "LONG",
+    );
+
+    const longsMintedOrReceivedById = mapValues(
+      groupBy(longsMintedOrReceived, (event) => event.args.id),
+      (events): Long => {
+        const assetId = events[0].args.id;
+        const decoded = decodeAssetFromTransferSingleEventData(
+          events[0].data as `0x${string}`,
+        );
+        return {
+          assetId,
+          bondAmount: sumBigInt(events.map((event) => event.args.value)),
+          baseAmountPaid: totalBasePaidByAssetId[assetId.toString()],
+          maturity: decoded.timestamp,
+        };
+      },
+    );
+
+    const longsRedeemedOrSent = (
+      await this.getTransferSingleEvents({
+        filter: { from: account },
+        fromBlock,
+        toBlock,
+      })
+    ).filter(
+      (transferSingleEvent) =>
+        decodeAssetFromTransferSingleEventData(
+          transferSingleEvent.data as `0x${string}`,
+        ).assetType === "LONG",
+    );
+
+    const longsRedeemedOrSentById = mapValues(
+      groupBy(longsRedeemedOrSent, (event) => event.args.id),
+      (events): Long => {
+        const assetId = events[0].args.id;
+        const decoded = decodeAssetFromTransferSingleEventData(
+          events[0].data as `0x${string}`,
+        );
+        return {
+          assetId,
+          bondAmount: sumBigInt(events.map((event) => event.args.value)),
+          baseAmountPaid: totalBaseReceivedByAssetId[assetId.toString()],
+          maturity: decoded.timestamp,
+        };
+      },
+    );
+
+    const openLongsById = mapValues(
+      longsMintedOrReceivedById,
+      (long, key): Long => {
+        const matchingExit = longsRedeemedOrSentById[key];
+        if (matchingExit) {
+          const newBondAmount = long.bondAmount - matchingExit.bondAmount;
+          const newBaseAmountPaid =
+            long.baseAmountPaid - matchingExit.baseAmountPaid;
+          return {
+            ...long,
+            bondAmount: newBondAmount,
+            baseAmountPaid: newBaseAmountPaid,
+          };
+        }
+        return long;
+      },
+    );
+
+    return Object.values(openLongsById).filter((long) => long.bondAmount);
   }
 
+  /**
+   * Gets the active shorts opened by a specific user.
+   * @param account - The user's address
+   * @param options.fromBlock - The start block, defaults to "earliest"
+   * @param options.toBlock - The end block, defaults to "latest"
+   * @returns the active shorts opened by a specific user
+   * */
   private async getActiveShorts({
     account,
     options,
