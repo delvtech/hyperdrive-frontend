@@ -8,15 +8,15 @@ import {
   EventArgs,
 } from "src/base/abitype";
 
-export interface ReadableContract<TAbi extends Abi> {
+export interface IReadableContract<TAbi extends Abi> {
   abi: TAbi;
   address: Address;
   read: ContractFunction<TAbi>;
   simulateWrite: ContractWriteFunction<TAbi>;
   getEvents: ContractEventFunction<TAbi>;
 }
-export interface WritableContract<TAbi extends Abi>
-  extends ReadableContract<TAbi> {
+export interface IWritableContract<TAbi extends Abi>
+  extends IReadableContract<TAbi> {
   write: ContractWriteFunction<TAbi>;
 }
 
@@ -26,8 +26,8 @@ export interface WritableContract<TAbi extends Abi>
  * but aren't necessarily concerned with where it's deployed or how it connects.
  */
 export type Contract<TAbi extends Abi> =
-  | ReadableContract<TAbi>
-  | WritableContract<TAbi>;
+  | IReadableContract<TAbi>
+  | IWritableContract<TAbi>;
 
 /**
  * A strongly typed function signature for calling contract methods based on an

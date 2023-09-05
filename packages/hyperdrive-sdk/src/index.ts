@@ -10,13 +10,13 @@ export { mockErc4626Abi } from "src/abis/MockErc4626";
 
 // Contract Interface
 export type {
-  ReadableContract,
-  WritableContract,
+  IReadableContract,
+  IWritableContract,
   Contract,
   ContractEventFunction,
   ContractFunction,
   ContractEvent,
-} from "./contract/Contract";
+} from "src/contract/Contract";
 
 // Hyperdrive Contract types
 export type {
