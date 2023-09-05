@@ -11,7 +11,7 @@ import { PoolConfig } from "src/pool/PoolConfig";
 import { PoolInfo } from "src/pool/PoolInfo";
 import { calculateLiquidity } from "src/pool/calculateLiquidity";
 
-interface ReadableHyperdriveConstructorOptions {
+interface ReadableHyperdriveOptions {
   contract: ReadableHyperdriveContract;
   mathContract: ReadableHyperdriveMathContract;
 }
@@ -20,10 +20,7 @@ export class ReadableHyperdrive {
   private readonly contract: ReadableHyperdriveContract;
   private readonly mathContract: ReadableHyperdriveMathContract;
 
-  constructor({
-    contract,
-    mathContract,
-  }: ReadableHyperdriveConstructorOptions) {
+  constructor({ contract, mathContract }: ReadableHyperdriveOptions) {
     this.contract = contract;
     this.mathContract = mathContract;
   }

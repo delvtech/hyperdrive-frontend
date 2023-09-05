@@ -1,14 +1,14 @@
 import { ContractWriteOptions } from "src/contract/Contract";
 import { WritableHyperdriveContract } from "src/hyperdrive/HyperdriveContract";
 
-interface WritableHyperdriveConstructorOptions {
+interface WritableHyperdriveOptions {
   contract: WritableHyperdriveContract;
 }
 
 export class WritableHyperdrive {
   private readonly contract: WritableHyperdriveContract;
 
-  constructor({ contract }: WritableHyperdriveConstructorOptions) {
+  constructor({ contract }: WritableHyperdriveOptions) {
     this.contract = contract;
   }
 
