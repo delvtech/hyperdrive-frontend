@@ -1,4 +1,7 @@
-import { HyperdriveABI } from "@hyperdrive/core";
+import { ClosedShort, HyperdriveABI, Long, OpenShort } from "@hyperdrive/core";
+import { Address } from "abitype";
+import groupBy from "lodash.groupby";
+import mapValues from "lodash.mapvalues";
 import { sumBigInt } from "src/base/sumBigInt";
 import {
   BlockTag,
@@ -6,6 +9,7 @@ import {
   ContractReadOptions,
 } from "src/contract/Contract";
 import { ReadableHyperdriveContract } from "src/hyperdrive/HyperdriveContract";
+import { decodeAssetFromTransferSingleEventData } from "src/utils/decodeAssetFromTransferSingleEventData";
 import { ReadableHyperdriveMathContract } from "src/hyperdrive/HyperdriveMathContract";
 import { PoolConfig } from "src/pool/PoolConfig";
 import { PoolInfo } from "src/pool/PoolInfo";
@@ -150,5 +154,253 @@ export class ReadableHyperdrive implements IReadableHyperdrive {
     options?: ContractGetEventsOptions<typeof HyperdriveABI, "OpenShort">,
   ) {
     return this.contract.getEvents("OpenShort", options);
+  }
+
+  private async getTransferSingleEvents({
+    filter,
+    fromBlock,
+    toBlock,
+  }: ContractGetEventsOptions<typeof HyperdriveABI, "TransferSingle">) {
+    return this.contract.getEvents("TransferSingle", {
+      fromBlock,
+      toBlock,
+      filter,
+    });
+  }
+
+  /**
+   * Gets the active longs opened by a specific user.
+   * @param account - The user's address
+   * @param options.toBlock - The end block, defaults to "latest"
+   * @returns the active longs opened by a specific user
+   */
+  private async getActiveLongs({
+    account,
+    options,
+  }: {
+    account: Address;
+    options: ContractReadOptions;
+  }) {
+    const fromBlock = "earliest";
+    const toBlock = options?.blockNumber || options?.blockTag || "latest";
+
+    const openLongEvents = await this.contract.getEvents("OpenLong", {
+      filter: { trader: account },
+      fromBlock,
+      toBlock,
+    });
+
+    const totalBasePaidByAssetId = mapValues(
+      groupBy(openLongEvents, (event) => event.args.assetId.toString()),
+      (events) => sumBigInt(events.map((event) => event.args.baseAmount)),
+    );
+
+    const closeLongEvents = await this.contract.getEvents("CloseLong", {
+      filter: { trader: account },
+      fromBlock,
+      toBlock,
+    });
+
+    const totalBaseReceivedByAssetId = mapValues(
+      groupBy(closeLongEvents, (event) => event.args.assetId.toString()),
+      (events) => sumBigInt(events.map((event) => event.args.baseAmount)),
+    );
+
+    const longsMintedOrReceived = (
+      await this.getTransferSingleEvents({
+        filter: { to: account },
+        fromBlock,
+        toBlock,
+      })
+    ).filter(
+      (transferSingleEvent) =>
+        decodeAssetFromTransferSingleEventData(
+          transferSingleEvent.data as `0x${string}`,
+        ).assetType === "LONG",
+    );
+
+    const longsMintedOrReceivedById = mapValues(
+      groupBy(longsMintedOrReceived, (event) => event.args.id),
+      (events): Long => {
+        const assetId = events[0].args.id;
+        const decoded = decodeAssetFromTransferSingleEventData(
+          events[0].data as `0x${string}`,
+        );
+        return {
+          assetId,
+          bondAmount: sumBigInt(events.map((event) => event.args.value)),
+          baseAmountPaid: totalBasePaidByAssetId[assetId.toString()],
+          maturity: decoded.timestamp,
+        };
+      },
+    );
+
+    const longsRedeemedOrSent = (
+      await this.getTransferSingleEvents({
+        filter: { from: account },
+        fromBlock,
+        toBlock,
+      })
+    ).filter(
+      (transferSingleEvent) =>
+        decodeAssetFromTransferSingleEventData(
+          transferSingleEvent.data as `0x${string}`,
+        ).assetType === "LONG",
+    );
+
+    const longsRedeemedOrSentById = mapValues(
+      groupBy(longsRedeemedOrSent, (event) => event.args.id),
+      (events): Long => {
+        const assetId = events[0].args.id;
+        const decoded = decodeAssetFromTransferSingleEventData(
+          events[0].data as `0x${string}`,
+        );
+        return {
+          assetId,
+          bondAmount: sumBigInt(events.map((event) => event.args.value)),
+          baseAmountPaid: totalBaseReceivedByAssetId[assetId.toString()],
+          maturity: decoded.timestamp,
+        };
+      },
+    );
+
+    const openLongsById = mapValues(
+      longsMintedOrReceivedById,
+      (long, key): Long => {
+        const matchingExit = longsRedeemedOrSentById[key];
+        if (matchingExit) {
+          const newBondAmount = long.bondAmount - matchingExit.bondAmount;
+          const newBaseAmountPaid =
+            long.baseAmountPaid - matchingExit.baseAmountPaid;
+          return {
+            ...long,
+            bondAmount: newBondAmount,
+            baseAmountPaid: newBaseAmountPaid,
+          };
+        }
+        return long;
+      },
+    );
+
+    return Object.values(openLongsById).filter((long) => long.bondAmount);
+  }
+
+  /**
+   * Gets the active shorts opened by a specific user.
+   * @param account - The user's address
+   * @param options.toBlock - The end block, defaults to "latest"
+   * @returns the active shorts opened by a specific user
+   * */
+  private async getActiveShorts({
+    account,
+    options,
+  }: {
+    account: Address;
+    options: ContractReadOptions;
+  }) {
+    const fromBlock = "earliest";
+    const toBlock = options?.blockNumber || options?.blockTag || "latest";
+
+    const closeShortEvents = await this.contract.getEvents("CloseShort", {
+      filter: { trader: account },
+      fromBlock,
+      toBlock,
+    });
+
+    const amountReceivedByAssetId = mapValues(
+      groupBy(closeShortEvents, (event) => event.args.assetId.toString()),
+      (events) => sumBigInt(events.map((event) => event.args.baseAmount)),
+    );
+
+    const transferOutEvents = (
+      await this.getTransferSingleEvents({
+        filter: { from: account },
+        fromBlock,
+        toBlock,
+      })
+    ).filter(
+      ({ data }) =>
+        decodeAssetFromTransferSingleEventData(data as `0x${string}`)
+          .assetType === "SHORT",
+    );
+
+    const closedShortsById: Record<string, ClosedShort> = {};
+
+    for (const { args: eventData, data: eventLog } of transferOutEvents) {
+      const assetId = eventData.id.toString();
+
+      if (closedShortsById[assetId]) {
+        closedShortsById[assetId].bondAmount += eventData.value;
+        continue;
+      }
+
+      closedShortsById[assetId] = {
+        hyperdriveAddress: this.contract.address,
+        assetId: eventData.id,
+        bondAmount: eventData.value ?? 0n,
+        baseAmountReceived: amountReceivedByAssetId[assetId] ?? 0n,
+        maturity: decodeAssetFromTransferSingleEventData(
+          eventLog as `0x${string}`,
+        ).timestamp,
+        //Can we use this of closedTimestamp?
+        closedTimestamp: decodeAssetFromTransferSingleEventData(
+          eventLog as `0x${string}`,
+        ).timestamp,
+      };
+    }
+
+    const openShortEvents = await this.contract.getEvents("OpenShort", {
+      filter: { trader: account },
+      fromBlock,
+      toBlock,
+    });
+
+    const amountPaidByAssetId = mapValues(
+      groupBy(openShortEvents, (event) => event.args.assetId),
+      (events) => sumBigInt(events.map((event) => event.args.baseAmount)),
+    );
+
+    const transferInEvents = (
+      await this.getTransferSingleEvents({
+        filter: { to: account },
+        fromBlock,
+        toBlock,
+      })
+    ).filter(
+      ({ data: eventLog }) =>
+        decodeAssetFromTransferSingleEventData(eventLog as `0x{$string}`)
+          .assetType === "SHORT",
+    );
+
+    const openShortsById: Record<string, OpenShort> = {};
+
+    for (const { data: eventLog, args: eventData } of transferInEvents) {
+      const assetId = eventData.id.toString();
+
+      if (openShortsById[assetId]) {
+        openShortsById[assetId].bondAmount += eventData.value;
+        continue;
+      }
+
+      const netAmountPaid =
+        (amountPaidByAssetId[assetId] ?? 0n) -
+        (amountReceivedByAssetId[assetId] ?? 0n);
+
+      openShortsById[assetId] = {
+        hyperdriveAddress: this.contract.address,
+        assetId: eventData.id,
+        bondAmount:
+          eventData.value - (closedShortsById[assetId]?.bondAmount ?? 0n),
+        baseAmountPaid: netAmountPaid > 0n ? netAmountPaid : 0n,
+        openedTimestamp: decodeAssetFromTransferSingleEventData(
+          eventLog as `0x${string}`,
+        ).timestamp,
+        maturity: decodeAssetFromTransferSingleEventData(
+          eventLog as `0x${string}`,
+        ).timestamp,
+      };
+    }
+
+    return Object.values(openShortsById).filter((short) => short.bondAmount);
   }
 }
