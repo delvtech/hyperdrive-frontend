@@ -14,15 +14,15 @@ import { PoolConfig } from "src/pool/PoolConfig";
 import { PoolInfo } from "src/pool/PoolInfo";
 
 interface HyperdriveSdkOptions {
-  contract: ReadableHyperdriveContract;
+  hyperdriveContract: ReadableHyperdriveContract;
   mathContract: ReadableHyperdriveMathContract;
 }
 
 export class HyperdriveSdk implements IReadableHyperdrive, IWritableHyperdrive {
   private _readable: ReadableHyperdrive;
-  constructor({ contract, mathContract }: HyperdriveSdkOptions) {
+  constructor({ hyperdriveContract, mathContract }: HyperdriveSdkOptions) {
     this._readable = new ReadableHyperdrive({
-      contract,
+      contract: hyperdriveContract,
       mathContract,
     });
   }
