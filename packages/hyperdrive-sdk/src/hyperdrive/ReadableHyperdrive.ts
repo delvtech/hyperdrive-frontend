@@ -14,8 +14,8 @@ import { ReadableHyperdriveMathContract } from "src/hyperdrive/HyperdriveMathCon
 import { PoolConfig } from "src/pool/PoolConfig";
 import { PoolInfo } from "src/pool/PoolInfo";
 import { calculateLiquidity } from "src/pool/calculateLiquidity";
-
-interface ReadableHyperdriveOptions {
+import { formatUnits } from "src/base/formatUnits";
+interface ReadableHyperdriveConstructorOptions {
   contract: ReadableHyperdriveContract;
   mathContract: ReadableHyperdriveMathContract;
 }
@@ -65,7 +65,10 @@ export class ReadableHyperdrive implements IReadableHyperdrive {
   private readonly contract: ReadableHyperdriveContract;
   private readonly mathContract: ReadableHyperdriveMathContract;
 
-  constructor({ contract, mathContract }: ReadableHyperdriveOptions) {
+  constructor({
+    contract,
+    mathContract,
+  }: ReadableHyperdriveConstructorOptions) {
     this.contract = contract;
     this.mathContract = mathContract;
   }
@@ -402,5 +405,138 @@ export class ReadableHyperdrive implements IReadableHyperdrive {
     }
 
     return Object.values(openShortsById).filter((short) => short.bondAmount);
+  }
+
+  private async getInActiveLongs({
+    account,
+    options,
+  }: {
+    account: Address;
+    options: ContractReadOptions;
+  }) {
+    const fromBlock = "earliest";
+    const toBlock = options?.blockNumber || options?.blockTag || "latest";
+
+    const closedLongs = await this.contract.getEvents("CloseLong", {
+      filter: { trader: account },
+      fromBlock,
+      toBlock,
+    });
+
+    const closedLongsById = mapValues(
+      groupBy(closedLongs, (event) => event.args.assetId.toString()),
+      (events) => {
+        const assetId = events[0].args.assetId;
+        const decoded = decodeAssetFromTransferSingleEventData(
+          events[0].data as `0x${string}`,
+        );
+        return {
+          hyperdriveAddress: this.contract.address,
+          assetId,
+          bondAmount: sumBigInt(events.map((event) => event.args.bondAmount)),
+          baseAmountPaid: sumBigInt(
+            events.map((event) => event.args.baseAmount),
+          ),
+          maturity: decoded.timestamp,
+          closedTimestamp: decodeAssetFromTransferSingleEventData(
+            events[0].data as `0x${string}`,
+          ).timestamp,
+        };
+      },
+    );
+    return Object.values(closedLongsById).filter((long) => long.bondAmount);
+  }
+
+  private async getInActiveShorts({
+    account,
+    options,
+  }: {
+    account: Address;
+    options: ContractReadOptions;
+  }) {
+    const fromBlock = "earliest";
+    const toBlock = options?.blockNumber || options?.blockTag || "latest";
+    const closedShorts = await this.contract.getEvents("CloseShort", {
+      filter: { trader: account },
+      fromBlock,
+      toBlock,
+    });
+
+    const closedShortsById = mapValues(
+      groupBy(closedShorts, (event) => event.args.assetId.toString()),
+      (events) => {
+        const assetId = events[0].args.assetId;
+        const decoded = decodeAssetFromTransferSingleEventData(
+          events[0].data as `0x${string}`,
+        );
+        return {
+          hyperdriveAddress: this.contract.address,
+          assetId,
+          bondAmount: sumBigInt(events.map((event) => event.args.bondAmount)),
+          baseAmountReceived: sumBigInt(
+            events.map((event) => event.args.baseAmount),
+          ),
+          maturity: decoded.timestamp,
+          closedTimestamp: decodeAssetFromTransferSingleEventData(
+            events[0].data as `0x${string}`,
+          ).timestamp,
+        };
+      },
+    );
+    return Object.values(closedShortsById).filter((short) => short.bondAmount);
+  }
+
+  private async getMaxShort(options?: ContractReadOptions) {
+    const { minimumShareReserves, initialSharePrice, timeStretch } =
+      await this.getPoolConfig(options);
+    const { shareReserves, bondReserves, longsOutstanding, sharePrice } =
+      await this.getPoolInfo(options);
+    const maxBondsOut = await this.mathContract.read(
+      "calculateMaxShort",
+      [
+        {
+          shareReserves,
+          bondReserves,
+          longsOutstanding,
+          timeStretch,
+          sharePrice,
+          initialSharePrice,
+          minimumShareReserves,
+        },
+      ],
+      options,
+    );
+    return {
+      maxBondsOut,
+      formatted: formatUnits(maxBondsOut, 18),
+    };
+  }
+
+  private async getMaxLong(options?: ContractReadOptions) {
+    const { minimumShareReserves, initialSharePrice, timeStretch } =
+      await this.getPoolConfig(options);
+    const { shareReserves, bondReserves, longsOutstanding, sharePrice } =
+      await this.getPoolInfo(options);
+    const maxBondsOut = await this.mathContract.read(
+      "calculateMaxLong",
+      [
+        {
+          shareReserves,
+          bondReserves,
+          longsOutstanding,
+          timeStretch,
+          sharePrice,
+          initialSharePrice,
+          minimumShareReserves,
+        },
+        //TODO: Max iterations, what should this be?
+        1000n,
+      ],
+      options,
+    );
+    return {
+      maxBondsOut,
+      formatted: formatUnits(maxBondsOut, 18),
+    };
   }
 }
