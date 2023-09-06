@@ -9,7 +9,7 @@ import {
   FunctionArgs,
   FunctionName,
   FunctionReturnType,
-  ReadableContract,
+  IReadableContract,
 } from "@hyperdrive/sdk";
 import { createSimulateContractParameters } from "src/utils/createSimulateContractParameters";
 
@@ -24,7 +24,7 @@ export interface ReadableViemContractOptions<TAbi extends Abi = Abi> {
  * @see https://viem.sh/
  */
 export class ReadableViemContract<TAbi extends Abi>
-  implements ReadableContract<TAbi>
+  implements IReadableContract<TAbi>
 {
   readonly abi: TAbi;
   readonly address: Address;

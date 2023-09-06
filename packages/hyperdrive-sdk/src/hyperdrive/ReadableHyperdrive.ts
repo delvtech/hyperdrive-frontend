@@ -14,42 +14,70 @@ import { ReadableHyperdriveMathContract } from "src/hyperdrive/HyperdriveMathCon
 import { PoolConfig } from "src/pool/PoolConfig";
 import { PoolInfo } from "src/pool/PoolInfo";
 import { calculateLiquidity } from "src/pool/calculateLiquidity";
-interface ReadableHyperdriveConstructorOptions {
+
+interface ReadableHyperdriveOptions {
   contract: ReadableHyperdriveContract;
   mathContract: ReadableHyperdriveMathContract;
 }
 
-export class ReadableHyperdrive {
-  private readonly contract: ReadableHyperdriveContract;
-  private readonly mathContract: ReadableHyperdriveMathContract;
-
-  constructor({
-    contract,
-    mathContract,
-  }: ReadableHyperdriveConstructorOptions) {
-    this.contract = contract;
-    this.mathContract = mathContract;
-  }
-
+export interface IReadableHyperdrive {
   /**
    * Gets the pool's configuration parameters
    */
-  getPoolConfig(options?: ContractReadOptions): Promise<PoolConfig> {
-    return this.contract.read("getPoolConfig", [], options);
-  }
+  getPoolConfig(options?: ContractReadOptions): Promise<PoolConfig>;
 
   /**
    * Gets info about the pool's reserves and other state that is important to
    * evaluate potential trades.
    */
-  getPoolInfo(options?: ContractReadOptions): Promise<PoolInfo> {
-    return this.contract.read("getPoolInfo", [], options);
-  }
+  getPoolInfo(options?: ContractReadOptions): Promise<PoolInfo>;
 
   /**
    * Gets the pool's fixed APR, i.e. the fixed rate a user locks in when they
    * open a long.
    */
+  getFixedRate(options?: ContractReadOptions): Promise<bigint>;
+
+  /**
+   * This function retrieves the market liquidity by using the following formula:
+   * marketLiquidity = lpSharePrice * shareReserves - longsOutstanding
+   */
+  getLiquidity(options?: ContractReadOptions): Promise<bigint>;
+
+  /**
+   * Calculates the total trading volume in bonds given a block window.
+   * @param options.fromBlock - The start block, defaults to "earliest"
+   * @param options.toBlock - The end block, defaults to "latest"
+   * @returns the total amount of bonds traded
+   */
+  getTradingVolume(options?: {
+    fromBlock?: BlockTag | bigint;
+    toBlock?: BlockTag | bigint;
+  }): Promise<bigint>;
+
+  /**
+   * Gets the current price of a bond in the pool.
+   */
+  getLongPrice(options?: ContractReadOptions): Promise<bigint>;
+}
+
+export class ReadableHyperdrive implements IReadableHyperdrive {
+  private readonly contract: ReadableHyperdriveContract;
+  private readonly mathContract: ReadableHyperdriveMathContract;
+
+  constructor({ contract, mathContract }: ReadableHyperdriveOptions) {
+    this.contract = contract;
+    this.mathContract = mathContract;
+  }
+
+  getPoolConfig(options?: ContractReadOptions): Promise<PoolConfig> {
+    return this.contract.read("getPoolConfig", [], options);
+  }
+
+  getPoolInfo(options?: ContractReadOptions): Promise<PoolInfo> {
+    return this.contract.read("getPoolInfo", [], options);
+  }
+
   async getFixedRate(options?: ContractReadOptions): Promise<bigint> {
     const { positionDuration, initialSharePrice, timeStretch } =
       await this.getPoolConfig(options);
@@ -69,10 +97,6 @@ export class ReadableHyperdrive {
     return apr;
   }
 
-  /**
-   * This function retrieves the market liquidity by using the following formula:
-   * marketLiquidity = lpSharePrice * shareReserves - longsOutstanding
-   */
   async getLiquidity(options?: ContractReadOptions): Promise<bigint> {
     const { lpSharePrice, shareReserves, longsOutstanding } =
       await this.getPoolInfo(options);
@@ -86,12 +110,6 @@ export class ReadableHyperdrive {
     return liquidity;
   }
 
-  /**
-   * Calculates the total trading volume in bonds given a block window.
-   * @param options.fromBlock - The start block, defaults to "earliest"
-   * @param options.toBlock - The end block, defaults to "latest"
-   * @returns the total amount of bonds traded
-   */
   async getTradingVolume(options?: {
     fromBlock?: BlockTag | bigint;
     toBlock?: BlockTag | bigint;
@@ -113,9 +131,6 @@ export class ReadableHyperdrive {
     return totalVolume;
   }
 
-  /**
-   * Gets the current price of a bond in the pool.
-   */
   async getLongPrice(options?: ContractReadOptions): Promise<bigint> {
     const { initialSharePrice, timeStretch } = await this.getPoolConfig(
       options,
