@@ -103,6 +103,22 @@ export interface IReadableHyperdrive {
     account: Address;
     options: ContractReadOptions;
   }): Promise<ClosedShort[]>;
+
+  /**
+   * Gets the maximum amount of bonds a user can open a short for.
+   */
+  getMaxShort(options?: ContractReadOptions): Promise<{
+    maxBondsOut: bigint;
+    formatted: string;
+  }>;
+
+  /**
+   * Gets the maximum amount of bonds a user can open a long for.
+   */
+  getMaxLong(options?: ContractReadOptions): Promise<{
+    maxBondsOut: bigint;
+    formatted: string;
+  }>;
 }
 
 export class ReadableHyperdrive implements IReadableHyperdrive {
@@ -530,7 +546,9 @@ export class ReadableHyperdrive implements IReadableHyperdrive {
     return Object.values(closedShortsById).filter((short) => short.bondAmount);
   }
 
-  private async getMaxShort(options?: ContractReadOptions) {
+  async getMaxShort(
+    options?: ContractReadOptions,
+  ): Promise<{ maxBondsOut: bigint; formatted: string }> {
     const { minimumShareReserves, initialSharePrice, timeStretch } =
       await this.getPoolConfig(options);
     const { shareReserves, bondReserves, longsOutstanding, sharePrice } =
@@ -556,7 +574,9 @@ export class ReadableHyperdrive implements IReadableHyperdrive {
     };
   }
 
-  private async getMaxLong(options?: ContractReadOptions) {
+  async getMaxLong(
+    options?: ContractReadOptions,
+  ): Promise<{ maxBondsOut: bigint; formatted: string }> {
     const { minimumShareReserves, initialSharePrice, timeStretch } =
       await this.getPoolConfig(options);
     const { shareReserves, bondReserves, longsOutstanding, sharePrice } =
