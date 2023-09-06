@@ -1,11 +1,5 @@
-// Hypedrive SDK main entrypoint
-export { configureHyperdrive } from "src/configureHyperdrive";
-
-// AMM
-export { configurePoolActions } from "src/amm/configurePoolActions";
-
-// Portfolio
-export { configurePortfolioActions } from "src/portfolio/configurePortfolioActions";
+// Hyperdrive sdk main entrypoint for consumers
+export { HyperdriveSdk } from "src/hyperdrive/HyperdriveSdk";
 
 // ABIs
 export { ERC20_ABI } from "src/abis/ERC20";
@@ -23,8 +17,14 @@ export type {
   ContractFunction,
   ContractEvent,
 } from "./contract/Contract";
+
+// Hyperdrive Contract types
 export type {
   HyperdriveContract,
   ReadableHyperdriveContract,
   WritableHyperdriveContract,
 } from "src/hyperdrive/HyperdriveContract";
+
+// SDK classes
+export { ReadableHyperdrive } from "src/hyperdrive/ReadableHyperdrive";
+export { WritableHyperdrive } from "src/hyperdrive/WritableHyperdrive";
