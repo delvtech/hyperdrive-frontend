@@ -3,26 +3,42 @@ import {
   BlockTag,
   ContractWriteOptions,
 } from "src/contract/Contract";
-import { IReadableHyperdrive } from "src/hyperdrive/ReadableHyperdrive";
+import { ReadableHyperdriveContract } from "src/hyperdrive/HyperdriveContract";
+import { ReadableHyperdriveMathContract } from "src/hyperdrive/HyperdriveMathContract";
+import {
+  IReadableHyperdrive,
+  ReadableHyperdrive,
+} from "src/hyperdrive/ReadableHyperdrive";
 import { IWritableHyperdrive } from "src/hyperdrive/WritableHyperdrive";
 import { PoolConfig } from "src/pool/PoolConfig";
 import { PoolInfo } from "src/pool/PoolInfo";
 
+interface HyperdriveSdkOptions {
+  contract: ReadableHyperdriveContract;
+  mathContract: ReadableHyperdriveMathContract;
+}
+
 export class HyperdriveSdk implements IReadableHyperdrive, IWritableHyperdrive {
-  constructor() {}
+  private _readable: ReadableHyperdrive;
+  constructor({ contract, mathContract }: HyperdriveSdkOptions) {
+    this._readable = new ReadableHyperdrive({
+      contract,
+      mathContract,
+    });
+  }
   getPoolConfig(
     options?: ContractReadOptions | undefined,
   ): Promise<PoolConfig> {
-    throw new Error("Method not implemented.");
+    return this._readable.getPoolConfig(options);
   }
   getPoolInfo(options?: ContractReadOptions | undefined): Promise<PoolInfo> {
-    throw new Error("Method not implemented.");
+    return this._readable.getPoolInfo(options);
   }
   getFixedRate(options?: ContractReadOptions | undefined): Promise<bigint> {
-    throw new Error("Method not implemented.");
+    return this._readable.getFixedRate(options);
   }
   getLiquidity(options?: ContractReadOptions | undefined): Promise<bigint> {
-    throw new Error("Method not implemented.");
+    return this._readable.getLiquidity(options);
   }
   getTradingVolume(
     options?:
@@ -32,10 +48,10 @@ export class HyperdriveSdk implements IReadableHyperdrive, IWritableHyperdrive {
         }
       | undefined,
   ): Promise<bigint> {
-    throw new Error("Method not implemented.");
+    return this._readable.getTradingVolume(options);
   }
   getLongPrice(options?: ContractReadOptions | undefined): Promise<bigint> {
-    throw new Error("Method not implemented.");
+    return this._readable.getLongPrice(options);
   }
   checkpoint(
     time: number,
