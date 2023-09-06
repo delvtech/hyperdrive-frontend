@@ -59,6 +59,50 @@ export interface IReadableHyperdrive {
    * Gets the current price of a bond in the pool.
    */
   getLongPrice(options?: ContractReadOptions): Promise<bigint>;
+
+  /**
+   * Gets the active longs opened by a specific user.
+   */
+  getOpenLongs({
+    account,
+    options,
+  }: {
+    account: Address;
+    options: ContractReadOptions;
+  }): Promise<Long[]>;
+
+  /**
+   * Gets the active shorts opened by a specific user.
+   */
+  getOpenShorts({
+    account,
+    options,
+  }: {
+    account: Address;
+    options: ContractReadOptions;
+  }): Promise<OpenShort[]>;
+
+  /**
+   * Gets the inactive longs opened by a specific user.
+   */
+  getClosedLongs({
+    account,
+    options,
+  }: {
+    account: Address;
+    options: ContractReadOptions;
+  }): Promise<Long[]>;
+
+  /**
+   * Gets the inactive shorts opened by a specific user.
+   */
+  getClosedShorts({
+    account,
+    options,
+  }: {
+    account: Address;
+    options: ContractReadOptions;
+  }): Promise<ClosedShort[]>;
 }
 
 export class ReadableHyperdrive implements IReadableHyperdrive {
@@ -177,13 +221,13 @@ export class ReadableHyperdrive implements IReadableHyperdrive {
    * @param options.toBlock - The end block, defaults to "latest"
    * @returns the active longs opened by a specific user
    */
-  private async getActiveLongs({
+  async getOpenLongs({
     account,
     options,
   }: {
     account: Address;
     options: ContractReadOptions;
-  }) {
+  }): Promise<Long[]> {
     const fromBlock = "earliest";
     const toBlock = options?.blockNumber || options?.blockTag || "latest";
 
@@ -294,13 +338,13 @@ export class ReadableHyperdrive implements IReadableHyperdrive {
    * @param options.toBlock - The end block, defaults to "latest"
    * @returns the active shorts opened by a specific user
    * */
-  private async getActiveShorts({
+  async getOpenShorts({
     account,
     options,
   }: {
     account: Address;
     options: ContractReadOptions;
-  }) {
+  }): Promise<OpenShort[]> {
     const fromBlock = "earliest";
     const toBlock = options?.blockNumber || options?.blockTag || "latest";
 
@@ -407,13 +451,13 @@ export class ReadableHyperdrive implements IReadableHyperdrive {
     return Object.values(openShortsById).filter((short) => short.bondAmount);
   }
 
-  private async getInActiveLongs({
+  async getClosedLongs({
     account,
     options,
   }: {
     account: Address;
     options: ContractReadOptions;
-  }) {
+  }): Promise<Long[]> {
     const fromBlock = "earliest";
     const toBlock = options?.blockNumber || options?.blockTag || "latest";
 
@@ -447,13 +491,13 @@ export class ReadableHyperdrive implements IReadableHyperdrive {
     return Object.values(closedLongsById).filter((long) => long.bondAmount);
   }
 
-  private async getInActiveShorts({
+  async getClosedShorts({
     account,
     options,
   }: {
     account: Address;
     options: ContractReadOptions;
-  }) {
+  }): Promise<ClosedShort[]> {
     const fromBlock = "earliest";
     const toBlock = options?.blockNumber || options?.blockTag || "latest";
     const closedShorts = await this.contract.getEvents("CloseShort", {
