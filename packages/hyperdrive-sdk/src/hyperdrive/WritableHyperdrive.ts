@@ -1,32 +1,22 @@
 import { ContractWriteOptions } from "src/contract/Contract";
 import { WritableHyperdriveContract } from "src/hyperdrive/HyperdriveContract";
 
-interface WritableHyperdriveConstructorOptions {
+interface WritableHyperdriveOptions {
   contract: WritableHyperdriveContract;
 }
 
-export class WritableHyperdrive {
-  private readonly contract: WritableHyperdriveContract;
-
-  constructor({ contract }: WritableHyperdriveConstructorOptions) {
-    this.contract = contract;
-  }
-
+export interface IWritableHyperdrive {
   /**
    * Allows anyone to mint a new checkpoint.
    * @param time - The time (in seconds) of the checkpoint to create.
    */
-  checkpoint(time: number, options?: ContractWriteOptions): Promise<void> {
-    return this.contract.write("checkpoint", [BigInt(time)], options);
-  }
+  checkpoint(time: number, options?: ContractWriteOptions): Promise<void>;
 
   /**
    * Allows an authorized address to pause this contract
    * @param paused - True to pause all deposits and false to unpause them
    */
-  pause(paused: boolean, options?: ContractWriteOptions): Promise<void> {
-    return this.contract.write("pause", [paused], options);
-  }
+  pause(paused: boolean, options?: ContractWriteOptions): Promise<void>;
 
   /**
    * Allows the first LP to initialize the market with a target APR.
@@ -39,6 +29,32 @@ export class WritableHyperdrive {
    *                      blocked.
    * @returns The initial number of LP shares created.
    */
+  initialize(
+    args: {
+      contribution: bigint;
+      apr: bigint;
+      destination: `0x${string}`;
+      asUnderlying?: boolean;
+    },
+    options?: ContractWriteOptions,
+  ): Promise<bigint>;
+}
+
+export class WritableHyperdrive implements IWritableHyperdrive {
+  private readonly contract: WritableHyperdriveContract;
+
+  constructor({ contract }: WritableHyperdriveOptions) {
+    this.contract = contract;
+  }
+
+  checkpoint(time: number, options?: ContractWriteOptions): Promise<void> {
+    return this.contract.write("checkpoint", [BigInt(time)], options);
+  }
+
+  pause(paused: boolean, options?: ContractWriteOptions): Promise<void> {
+    return this.contract.write("pause", [paused], options);
+  }
+
   async initialize(
     args: {
       contribution: bigint;

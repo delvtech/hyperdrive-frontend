@@ -4,7 +4,7 @@ import {
   FunctionArgs,
   FunctionName,
   FunctionReturnType,
-  WritableContract,
+  IWritableContract,
 } from "@hyperdrive/sdk";
 import {
   ReadableViemContract,
@@ -23,7 +23,7 @@ export interface WritableViemContractOptions<TAbi extends Abi = Abi>
  */
 export class WritableViemContract<TAbi extends Abi>
   extends ReadableViemContract<TAbi>
-  implements WritableContract<TAbi>
+  implements IWritableContract<TAbi>
 {
   protected readonly _walletClient: WalletClient;
 
