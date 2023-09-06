@@ -1,4 +1,11 @@
-import { ClosedShort, HyperdriveABI, Long, OpenShort } from "@hyperdrive/core";
+import {
+  LP_ASSET_ID,
+  ClosedShort,
+  HyperdriveABI,
+  Long,
+  OpenShort,
+  ClosedLpShares,
+} from "./../../../hyperdrive/dist/types.d";
 import { Address } from "abitype";
 import groupBy from "lodash.groupby";
 import mapValues from "lodash.mapvalues";
@@ -402,5 +409,44 @@ export class ReadableHyperdrive implements IReadableHyperdrive {
     }
 
     return Object.values(openShortsById).filter((short) => short.bondAmount);
+  }
+
+  async getLpShares(
+    account: Address,
+    options?: ContractReadOptions,
+  ): Promise<bigint> {
+    const lpShares = await this.contract.read(
+      "balanceOf",
+      [LP_ASSET_ID, account],
+      options,
+    );
+    return lpShares;
+  }
+
+  async getClosedLpShares(
+    account: Address,
+    options?: ContractReadOptions,
+  ): Promise<ClosedLpShares[]> {
+    const removeLiquidityEvents = await this.contract.getEvents(
+      "RemoveLiquidity",
+      {
+        filter: { provider: account },
+        ...options,
+      },
+    );
+    return Promise.all(
+      removeLiquidityEvents.map(async ({ data, args }) => {
+        const { baseAmount, lpAmount, withdrawalShareAmount } = args;
+        return {
+          hyperdriveAddress: this.contract.address,
+          lpAmount,
+          baseAmount,
+          withdrawalShareAmount,
+          closedTimestamp: decodeAssetFromTransferSingleEventData(
+            data as `0x${string}`,
+          ).timestamp,
+        };
+      }),
+    );
   }
 }
