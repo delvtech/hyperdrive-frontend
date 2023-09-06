@@ -10,7 +10,7 @@ import {
 } from "src/contract/Contract";
 import { ReadableHyperdriveContract } from "src/hyperdrive/HyperdriveContract";
 import { HyperdriveMathContract } from "src/hyperdrive/HyperdriveMathContract";
-import { decodeAssetFromTransferSingleEventData } from "src/long/decodeAssetFromTransferSingleEventData";
+import { decodeAssetFromTransferSingleEventData } from "src/utils/decodeAssetFromTransferSingleEventData";
 import { PoolConfig } from "src/pool/PoolConfig";
 import { PoolInfo } from "src/pool/PoolInfo";
 import { calculateLiquidity } from "src/pool/calculateLiquidity";
@@ -156,7 +156,6 @@ export class ReadableHyperdrive {
   /**
    * Gets the active longs opened by a specific user.
    * @param account - The user's address
-   * @param options.fromBlock - The start block, defaults to "earliest"
    * @param options.toBlock - The end block, defaults to "latest"
    * @returns the active longs opened by a specific user
    */
@@ -167,7 +166,7 @@ export class ReadableHyperdrive {
     account: Address;
     options: ContractReadOptions;
   }) {
-    const fromBlock = options?.blockNumber || options?.blockTag || "earliest";
+    const fromBlock = "earliest";
     const toBlock = options?.blockNumber || options?.blockTag || "latest";
 
     const openLongEvents = await this.contract.getEvents("OpenLong", {
@@ -274,7 +273,6 @@ export class ReadableHyperdrive {
   /**
    * Gets the active shorts opened by a specific user.
    * @param account - The user's address
-   * @param options.fromBlock - The start block, defaults to "earliest"
    * @param options.toBlock - The end block, defaults to "latest"
    * @returns the active shorts opened by a specific user
    * */
@@ -285,7 +283,7 @@ export class ReadableHyperdrive {
     account: Address;
     options: ContractReadOptions;
   }) {
-    const fromBlock = options?.blockNumber || options?.blockTag || "earliest";
+    const fromBlock = "earliest";
     const toBlock = options?.blockNumber || options?.blockTag || "latest";
 
     const closeShortEvents = await this.contract.getEvents("CloseShort", {
