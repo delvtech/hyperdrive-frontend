@@ -26,43 +26,31 @@ export class HyperdriveSdk implements IReadableHyperdrive, IWritableHyperdrive {
       mathContract,
     });
   }
-  getPoolConfig(
-    options?: ContractReadOptions | undefined,
-  ): Promise<PoolConfig> {
+  getPoolConfig(options?: ContractReadOptions): Promise<PoolConfig> {
     return this._readable.getPoolConfig(options);
   }
-  getPoolInfo(options?: ContractReadOptions | undefined): Promise<PoolInfo> {
+  getPoolInfo(options?: ContractReadOptions): Promise<PoolInfo> {
     return this._readable.getPoolInfo(options);
   }
-  getFixedRate(options?: ContractReadOptions | undefined): Promise<bigint> {
+  getFixedRate(options?: ContractReadOptions): Promise<bigint> {
     return this._readable.getFixedRate(options);
   }
-  getLiquidity(options?: ContractReadOptions | undefined): Promise<bigint> {
+  getLiquidity(options?: ContractReadOptions): Promise<bigint> {
     return this._readable.getLiquidity(options);
   }
-  getTradingVolume(
-    options?:
-      | {
-          fromBlock?: bigint | BlockTag | undefined;
-          toBlock?: bigint | BlockTag | undefined;
-        }
-      | undefined,
-  ): Promise<bigint> {
+  getTradingVolume(options?: {
+    fromBlock?: bigint | BlockTag;
+    toBlock?: bigint | BlockTag;
+  }): Promise<bigint> {
     return this._readable.getTradingVolume(options);
   }
-  getLongPrice(options?: ContractReadOptions | undefined): Promise<bigint> {
+  getLongPrice(options?: ContractReadOptions): Promise<bigint> {
     return this._readable.getLongPrice(options);
   }
-  checkpoint(
-    time: number,
-    options?: ContractWriteOptions | undefined,
-  ): Promise<void> {
+  checkpoint(time: number, options?: ContractWriteOptions): Promise<void> {
     throw new Error("Method not implemented.");
   }
-  pause(
-    paused: boolean,
-    options?: ContractWriteOptions | undefined,
-  ): Promise<void> {
+  pause(paused: boolean, options?: ContractWriteOptions): Promise<void> {
     throw new Error("Method not implemented.");
   }
   initialize(
@@ -70,9 +58,9 @@ export class HyperdriveSdk implements IReadableHyperdrive, IWritableHyperdrive {
       contribution: bigint;
       apr: bigint;
       destination: `0x${string}`;
-      asUnderlying?: boolean | undefined;
+      asUnderlying?: boolean;
     },
-    options?: ContractWriteOptions | undefined,
+    options?: ContractWriteOptions,
   ): Promise<bigint> {
     throw new Error("Method not implemented.");
   }
