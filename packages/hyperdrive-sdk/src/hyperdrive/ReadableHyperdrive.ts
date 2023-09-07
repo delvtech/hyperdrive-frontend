@@ -1,4 +1,11 @@
-import { ClosedShort, HyperdriveABI, Long, OpenShort } from "@hyperdrive/core";
+import {
+  ClosedLpShares,
+  ClosedShort,
+  HyperdriveABI,
+  Long,
+  OpenShort,
+  RedeemedWithdrawalShares,
+} from "@hyperdrive/core";
 import { Address } from "abitype";
 import { format } from "dnum";
 import groupBy from "lodash.groupby";
@@ -14,7 +21,9 @@ import { ReadableHyperdriveMathContract } from "src/hyperdrive/HyperdriveMathCon
 import { PoolConfig } from "src/pool/PoolConfig";
 import { PoolInfo } from "src/pool/PoolInfo";
 import { calculateLiquidity } from "src/pool/calculateLiquidity";
+import { WITHDRAW_SHARES_ASSET_ID, LP_ASSET_ID } from "src/lp/constants";
 import { decodeAssetFromTransferSingleEventData } from "src/utils/decodeAssetFromTransferSingleEventData";
+
 interface ReadableHyperdriveOptions {
   contract: ReadableHyperdriveContract;
   mathContract: ReadableHyperdriveMathContract;
@@ -119,6 +128,50 @@ export interface IReadableHyperdrive {
     maxBondsOut: bigint;
     formatted: string;
   }>;
+
+  /**
+   * Gets the amount of LP shares a user has.
+   */
+  getLpShares({
+    account,
+    options,
+  }: {
+    account: Address;
+    options?: ContractReadOptions;
+  }): Promise<bigint>;
+
+  /**
+   * Gets the amount of closed LP shares a user has.
+   */
+  getClosedLpShares({
+    account,
+    options,
+  }: {
+    account: Address;
+    options?: ContractReadOptions;
+  }): Promise<ClosedLpShares[]>;
+
+  /**
+   * Gets the amount of withdrawal shares a user has.
+   */
+  getWithdrawalShares({
+    account,
+    options,
+  }: {
+    account: Address;
+    options?: ContractReadOptions;
+  }): Promise<bigint>;
+
+  /**
+   * Gets the amount of redeemed withdrawal shares a user has.
+   */
+  getRedeemedWithdrawalShares({
+    account,
+    options,
+  }: {
+    account: Address;
+    options?: ContractReadOptions;
+  }): Promise<RedeemedWithdrawalShares[]>;
 }
 
 export class ReadableHyperdrive implements IReadableHyperdrive {
@@ -599,5 +652,94 @@ export class ReadableHyperdrive implements IReadableHyperdrive {
       maxBondsOut,
       formatted: format([maxBondsOut, 18], 2),
     };
+  }
+
+  async getLpShares({
+    account,
+    options,
+  }: {
+    account: Address;
+    options?: ContractReadOptions;
+  }): Promise<bigint> {
+    const lpShares = await this.contract.read(
+      "balanceOf",
+      [LP_ASSET_ID, account],
+      options,
+    );
+    return lpShares;
+  }
+
+  async getClosedLpShares({
+    account,
+    options,
+  }: {
+    account: Address;
+    options?: ContractReadOptions;
+  }): Promise<ClosedLpShares[]> {
+    const removeLiquidityEvents = await this.contract.getEvents(
+      "RemoveLiquidity",
+      {
+        filter: { provider: account },
+        ...options,
+      },
+    );
+    return Promise.all(
+      removeLiquidityEvents.map(async ({ data, args }) => {
+        const { baseAmount, lpAmount, withdrawalShareAmount } = args;
+        return {
+          hyperdriveAddress: this.contract.address,
+          lpAmount,
+          baseAmount,
+          withdrawalShareAmount,
+          closedTimestamp: decodeAssetFromTransferSingleEventData(
+            data as `0x${string}`,
+          ).timestamp,
+        };
+      }),
+    );
+  }
+
+  async getWithdrawalShares({
+    account,
+    options,
+  }: {
+    account: Address;
+    options?: ContractReadOptions;
+  }): Promise<bigint> {
+    return this.contract.read(
+      "balanceOf",
+      [WITHDRAW_SHARES_ASSET_ID, account],
+      options,
+    );
+  }
+
+  async getRedeemedWithdrawalShares({
+    account,
+    options,
+  }: {
+    account: Address;
+    options?: ContractReadOptions;
+  }): Promise<RedeemedWithdrawalShares[]> {
+    const redeemedWithdrawalShareEvents = await this.contract.getEvents(
+      "RedeemWithdrawalShares",
+      {
+        filter: { provider: account },
+        ...options,
+      },
+    );
+
+    return Promise.all(
+      redeemedWithdrawalShareEvents.map(async ({ data, args }) => {
+        const { withdrawalShareAmount, baseAmount } = args;
+        return {
+          hyperdriveAddress: this.contract.address,
+          withdrawalShareAmount,
+          baseAmount,
+          timestamp: decodeAssetFromTransferSingleEventData(
+            data as `0x${string}`,
+          ).timestamp,
+        };
+      }),
+    );
   }
 }

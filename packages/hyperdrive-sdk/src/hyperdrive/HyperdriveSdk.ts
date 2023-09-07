@@ -1,4 +1,10 @@
-import { Long, OpenShort, ClosedShort } from "@hyperdrive/core";
+import {
+  Long,
+  OpenShort,
+  ClosedShort,
+  ClosedLpShares,
+  RedeemedWithdrawalShares,
+} from "@hyperdrive/core";
 import { Address } from "abitype";
 import {
   ContractReadOptions,
@@ -96,6 +102,42 @@ export class HyperdriveSdk implements IReadableHyperdrive, IWritableHyperdrive {
   ): Promise<{ maxBondsOut: bigint; formatted: string }> {
     return this._readable.getMaxLong(options);
   }
+  getLpShares({
+    account,
+    options,
+  }: {
+    account: Address;
+    options?: ContractReadOptions;
+  }): Promise<bigint> {
+    return this._readable.getLpShares({ account, options });
+  }
+  getClosedLpShares({
+    account,
+    options,
+  }: {
+    account: Address;
+    options?: ContractReadOptions;
+  }): Promise<ClosedLpShares[]> {
+    return this._readable.getClosedLpShares({ account, options });
+  }
+  getWithdrawalShares({
+    account,
+    options,
+  }: {
+    account: Address;
+    options?: ContractReadOptions;
+  }): Promise<bigint> {
+    return this._readable.getWithdrawalShares({ account, options });
+  }
+  getRedeemedWithdrawalShares({
+    account,
+    options,
+  }: {
+    account: Address;
+    options?: ContractReadOptions;
+  }): Promise<RedeemedWithdrawalShares[]> {
+    return this._readable.getRedeemedWithdrawalShares({ account, options });
+  }
   checkpoint(time: number, options?: ContractWriteOptions): Promise<void> {
     throw new Error("Method not implemented.");
   }
@@ -106,7 +148,7 @@ export class HyperdriveSdk implements IReadableHyperdrive, IWritableHyperdrive {
     args: {
       contribution: bigint;
       apr: bigint;
-      destination: `0x${string}`;
+      destination: Address;
       asUnderlying?: boolean;
     },
     options?: ContractWriteOptions,
