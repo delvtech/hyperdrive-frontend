@@ -1,11 +1,12 @@
 import {
-  LP_ASSET_ID,
+  ClosedLpShares,
   ClosedShort,
   HyperdriveABI,
+  LP_ASSET_ID,
   Long,
   OpenShort,
-  ClosedLpShares,
-} from "./../../../hyperdrive/dist/types.d";
+  RedeemedWithdrawalShares,
+} from "@hyperdrive/core";
 import { Address } from "abitype";
 import groupBy from "lodash.groupby";
 import mapValues from "lodash.mapvalues";
@@ -16,11 +17,12 @@ import {
   ContractReadOptions,
 } from "src/contract/Contract";
 import { ReadableHyperdriveContract } from "src/hyperdrive/HyperdriveContract";
-import { decodeAssetFromTransferSingleEventData } from "src/utils/decodeAssetFromTransferSingleEventData";
 import { ReadableHyperdriveMathContract } from "src/hyperdrive/HyperdriveMathContract";
 import { PoolConfig } from "src/pool/PoolConfig";
 import { PoolInfo } from "src/pool/PoolInfo";
 import { calculateLiquidity } from "src/pool/calculateLiquidity";
+import { WITHDRAW_SHARES_ASSET_ID } from "src/utils/constants";
+import { decodeAssetFromTransferSingleEventData } from "src/utils/decodeAssetFromTransferSingleEventData";
 
 interface ReadableHyperdriveOptions {
   contract: ReadableHyperdriveContract;
@@ -443,6 +445,50 @@ export class ReadableHyperdrive implements IReadableHyperdrive {
           baseAmount,
           withdrawalShareAmount,
           closedTimestamp: decodeAssetFromTransferSingleEventData(
+            data as `0x${string}`,
+          ).timestamp,
+        };
+      }),
+    );
+  }
+
+  async getWithdrawalShares({
+    account,
+    options,
+  }: {
+    account: Address;
+    options?: ContractReadOptions;
+  }): Promise<bigint> {
+    return this.contract.read(
+      "balanceOf",
+      [WITHDRAW_SHARES_ASSET_ID, account],
+      options,
+    );
+  }
+
+  async getRedeemedWithdrawalShares({
+    account,
+    options,
+  }: {
+    account: Address;
+    options?: ContractReadOptions;
+  }): Promise<RedeemedWithdrawalShares[]> {
+    const redeemedWithdrawalShareEvents = await this.contract.getEvents(
+      "RedeemWithdrawalShares",
+      {
+        filter: { provider: account },
+        ...options,
+      },
+    );
+
+    return Promise.all(
+      redeemedWithdrawalShareEvents.map(async ({ data, args }) => {
+        const { withdrawalShareAmount, baseAmount } = args;
+        return {
+          hyperdriveAddress: this.contract.address,
+          withdrawalShareAmount,
+          baseAmount,
+          timestamp: decodeAssetFromTransferSingleEventData(
             data as `0x${string}`,
           ).timestamp,
         };
