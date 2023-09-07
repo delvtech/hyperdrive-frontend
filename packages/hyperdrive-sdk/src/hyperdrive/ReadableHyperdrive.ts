@@ -8,6 +8,7 @@ import {
   RedeemedWithdrawalShares,
 } from "@hyperdrive/core";
 import { Address } from "abitype";
+import { format } from "dnum";
 import groupBy from "lodash.groupby";
 import mapValues from "lodash.mapvalues";
 import { sumBigInt } from "src/base/sumBigInt";
@@ -68,6 +69,66 @@ export interface IReadableHyperdrive {
    * Gets the current price of a bond in the pool.
    */
   getLongPrice(options?: ContractReadOptions): Promise<bigint>;
+
+  /**
+   * Gets the active longs opened by a specific user.
+   */
+  getOpenLongs({
+    account,
+    options,
+  }: {
+    account: Address;
+    options?: ContractReadOptions;
+  }): Promise<Long[]>;
+
+  /**
+   * Gets the active shorts opened by a specific user.
+   */
+  getOpenShorts({
+    account,
+    options,
+  }: {
+    account: Address;
+    options?: ContractReadOptions;
+  }): Promise<OpenShort[]>;
+
+  /**
+   * Gets the inactive longs opened by a specific user.
+   */
+  getClosedLongs({
+    account,
+    options,
+  }: {
+    account: Address;
+    options?: ContractReadOptions;
+  }): Promise<Long[]>;
+
+  /**
+   * Gets the inactive shorts opened by a specific user.
+   */
+  getClosedShorts({
+    account,
+    options,
+  }: {
+    account: Address;
+    options?: ContractReadOptions;
+  }): Promise<ClosedShort[]>;
+
+  /**
+   * Gets the maximum amount of bonds a user can open a short for.
+   */
+  getMaxShort(options?: ContractReadOptions): Promise<{
+    maxBondsOut: bigint;
+    formatted: string;
+  }>;
+
+  /**
+   * Gets the maximum amount of bonds a user can open a long for.
+   */
+  getMaxLong(options?: ContractReadOptions): Promise<{
+    maxBondsOut: bigint;
+    formatted: string;
+  }>;
 }
 
 export class ReadableHyperdrive implements IReadableHyperdrive {
@@ -183,13 +244,13 @@ export class ReadableHyperdrive implements IReadableHyperdrive {
    * @param options.toBlock - The end block, defaults to "latest"
    * @returns the active longs opened by a specific user
    */
-  private async getActiveLongs({
+  async getOpenLongs({
     account,
     options,
   }: {
     account: Address;
-    options: ContractReadOptions;
-  }) {
+    options?: ContractReadOptions;
+  }): Promise<Long[]> {
     const fromBlock = "earliest";
     const toBlock = options?.blockNumber || options?.blockTag || "latest";
 
@@ -300,13 +361,13 @@ export class ReadableHyperdrive implements IReadableHyperdrive {
    * @param options.toBlock - The end block, defaults to "latest"
    * @returns the active shorts opened by a specific user
    * */
-  private async getActiveShorts({
+  async getOpenShorts({
     account,
     options,
   }: {
     account: Address;
-    options: ContractReadOptions;
-  }) {
+    options?: ContractReadOptions;
+  }): Promise<OpenShort[]> {
     const fromBlock = "earliest";
     const toBlock = options?.blockNumber || options?.blockTag || "latest";
 
@@ -411,6 +472,143 @@ export class ReadableHyperdrive implements IReadableHyperdrive {
     }
 
     return Object.values(openShortsById).filter((short) => short.bondAmount);
+  }
+
+  async getClosedLongs({
+    account,
+    options,
+  }: {
+    account: Address;
+    options?: ContractReadOptions;
+  }): Promise<Long[]> {
+    const fromBlock = "earliest";
+    const toBlock = options?.blockNumber || options?.blockTag || "latest";
+
+    const closedLongs = await this.contract.getEvents("CloseLong", {
+      filter: { trader: account },
+      fromBlock,
+      toBlock,
+    });
+
+    const closedLongsById = mapValues(
+      groupBy(closedLongs, (event) => event.args.assetId.toString()),
+      (events) => {
+        const assetId = events[0].args.assetId;
+        const decoded = decodeAssetFromTransferSingleEventData(
+          events[0].data as `0x${string}`,
+        );
+        return {
+          hyperdriveAddress: this.contract.address,
+          assetId,
+          bondAmount: sumBigInt(events.map((event) => event.args.bondAmount)),
+          baseAmountPaid: sumBigInt(
+            events.map((event) => event.args.baseAmount),
+          ),
+          maturity: decoded.timestamp,
+          closedTimestamp: decodeAssetFromTransferSingleEventData(
+            events[0].data as `0x${string}`,
+          ).timestamp,
+        };
+      },
+    );
+    return Object.values(closedLongsById).filter((long) => long.bondAmount);
+  }
+
+  async getClosedShorts({
+    account,
+    options,
+  }: {
+    account: Address;
+    options?: ContractReadOptions;
+  }): Promise<ClosedShort[]> {
+    const fromBlock = "earliest";
+    const toBlock = options?.blockNumber || options?.blockTag || "latest";
+    const closedShorts = await this.contract.getEvents("CloseShort", {
+      filter: { trader: account },
+      fromBlock,
+      toBlock,
+    });
+
+    const closedShortsById = mapValues(
+      groupBy(closedShorts, (event) => event.args.assetId.toString()),
+      (events) => {
+        const assetId = events[0].args.assetId;
+        const decoded = decodeAssetFromTransferSingleEventData(
+          events[0].data as `0x${string}`,
+        );
+        return {
+          hyperdriveAddress: this.contract.address,
+          assetId,
+          bondAmount: sumBigInt(events.map((event) => event.args.bondAmount)),
+          baseAmountReceived: sumBigInt(
+            events.map((event) => event.args.baseAmount),
+          ),
+          maturity: decoded.timestamp,
+          closedTimestamp: decodeAssetFromTransferSingleEventData(
+            events[0].data as `0x${string}`,
+          ).timestamp,
+        };
+      },
+    );
+    return Object.values(closedShortsById).filter((short) => short.bondAmount);
+  }
+
+  async getMaxShort(
+    options?: ContractReadOptions,
+  ): Promise<{ maxBondsOut: bigint; formatted: string }> {
+    const { minimumShareReserves, initialSharePrice, timeStretch } =
+      await this.getPoolConfig(options);
+    const { shareReserves, bondReserves, longsOutstanding, sharePrice } =
+      await this.getPoolInfo(options);
+    const maxBondsOut = await this.mathContract.read(
+      "calculateMaxShort",
+      [
+        {
+          shareReserves,
+          bondReserves,
+          longsOutstanding,
+          timeStretch,
+          sharePrice,
+          initialSharePrice,
+          minimumShareReserves,
+        },
+      ],
+      options,
+    );
+    return {
+      maxBondsOut,
+      formatted: format([maxBondsOut, 18], 2),
+    };
+  }
+
+  async getMaxLong(
+    options?: ContractReadOptions,
+  ): Promise<{ maxBondsOut: bigint; formatted: string }> {
+    const { minimumShareReserves, initialSharePrice, timeStretch } =
+      await this.getPoolConfig(options);
+    const { shareReserves, bondReserves, longsOutstanding, sharePrice } =
+      await this.getPoolInfo(options);
+    const maxBondsOut = await this.mathContract.read(
+      "calculateMaxLong",
+      [
+        {
+          shareReserves,
+          bondReserves,
+          longsOutstanding,
+          timeStretch,
+          sharePrice,
+          initialSharePrice,
+          minimumShareReserves,
+        },
+        //TODO: Max iterations, what should this be?
+        1000n,
+      ],
+      options,
+    );
+    return {
+      maxBondsOut,
+      formatted: format([maxBondsOut, 18], 2),
+    };
   }
 
   async getLpShares(
