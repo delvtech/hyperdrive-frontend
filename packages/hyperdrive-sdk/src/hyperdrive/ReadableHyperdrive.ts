@@ -2,7 +2,6 @@ import {
   ClosedLpShares,
   ClosedShort,
   HyperdriveABI,
-  LP_ASSET_ID,
   Long,
   OpenShort,
   RedeemedWithdrawalShares,
@@ -22,7 +21,7 @@ import { ReadableHyperdriveMathContract } from "src/hyperdrive/HyperdriveMathCon
 import { PoolConfig } from "src/pool/PoolConfig";
 import { PoolInfo } from "src/pool/PoolInfo";
 import { calculateLiquidity } from "src/pool/calculateLiquidity";
-import { WITHDRAW_SHARES_ASSET_ID } from "src/utils/constants";
+import { WITHDRAW_SHARES_ASSET_ID, LP_ASSET_ID } from "src/lp/constants";
 import { decodeAssetFromTransferSingleEventData } from "src/utils/decodeAssetFromTransferSingleEventData";
 
 interface ReadableHyperdriveOptions {
@@ -133,15 +132,24 @@ export interface IReadableHyperdrive {
   /**
    * Gets the amount of LP shares a user has.
    */
-  getLpShares(account: Address, options?: ContractReadOptions): Promise<bigint>;
+  getLpShares({
+    account,
+    options,
+  }: {
+    account: Address;
+    options?: ContractReadOptions;
+  }): Promise<bigint>;
 
   /**
    * Gets the amount of closed LP shares a user has.
    */
-  getClosedLpShares(
-    account: Address,
-    options?: ContractReadOptions,
-  ): Promise<ClosedLpShares[]>;
+  getClosedLpShares({
+    account,
+    options,
+  }: {
+    account: Address;
+    options?: ContractReadOptions;
+  }): Promise<ClosedLpShares[]>;
 
   /**
    * Gets the amount of withdrawal shares a user has.
@@ -646,10 +654,13 @@ export class ReadableHyperdrive implements IReadableHyperdrive {
     };
   }
 
-  async getLpShares(
-    account: Address,
-    options?: ContractReadOptions,
-  ): Promise<bigint> {
+  async getLpShares({
+    account,
+    options,
+  }: {
+    account: Address;
+    options?: ContractReadOptions;
+  }): Promise<bigint> {
     const lpShares = await this.contract.read(
       "balanceOf",
       [LP_ASSET_ID, account],
@@ -658,10 +669,13 @@ export class ReadableHyperdrive implements IReadableHyperdrive {
     return lpShares;
   }
 
-  async getClosedLpShares(
-    account: Address,
-    options?: ContractReadOptions,
-  ): Promise<ClosedLpShares[]> {
+  async getClosedLpShares({
+    account,
+    options,
+  }: {
+    account: Address;
+    options?: ContractReadOptions;
+  }): Promise<ClosedLpShares[]> {
     const removeLiquidityEvents = await this.contract.getEvents(
       "RemoveLiquidity",
       {
