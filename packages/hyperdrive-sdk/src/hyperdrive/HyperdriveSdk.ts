@@ -1,3 +1,5 @@
+import { Long, OpenShort, ClosedShort } from "@hyperdrive/core";
+import { Address } from "abitype";
 import {
   ContractReadOptions,
   BlockTag,
@@ -26,6 +28,7 @@ export class HyperdriveSdk implements IReadableHyperdrive, IWritableHyperdrive {
       mathContract,
     });
   }
+
   getPoolConfig(options?: ContractReadOptions): Promise<PoolConfig> {
     return this._readable.getPoolConfig(options);
   }
@@ -46,6 +49,52 @@ export class HyperdriveSdk implements IReadableHyperdrive, IWritableHyperdrive {
   }
   getLongPrice(options?: ContractReadOptions): Promise<bigint> {
     return this._readable.getLongPrice(options);
+  }
+  getOpenLongs({
+    account,
+    options,
+  }: {
+    account: Address;
+    options?: ContractReadOptions;
+  }): Promise<Long[]> {
+    return this._readable.getOpenLongs({ account, options });
+  }
+  getOpenShorts({
+    account,
+    options,
+  }: {
+    account: Address;
+    options?: ContractReadOptions;
+  }): Promise<OpenShort[]> {
+    return this._readable.getOpenShorts({ account, options });
+  }
+  getClosedLongs({
+    account,
+    options,
+  }: {
+    account: Address;
+    options?: ContractReadOptions;
+  }): Promise<Long[]> {
+    return this._readable.getClosedLongs({ account, options });
+  }
+  getClosedShorts({
+    account,
+    options,
+  }: {
+    account: Address;
+    options?: ContractReadOptions;
+  }): Promise<ClosedShort[]> {
+    return this._readable.getClosedShorts({ account, options });
+  }
+  getMaxShort(
+    options?: ContractReadOptions,
+  ): Promise<{ maxBondsOut: bigint; formatted: string }> {
+    return this._readable.getMaxShort(options);
+  }
+  getMaxLong(
+    options?: ContractReadOptions,
+  ): Promise<{ maxBondsOut: bigint; formatted: string }> {
+    return this._readable.getMaxLong(options);
   }
   checkpoint(time: number, options?: ContractWriteOptions): Promise<void> {
     throw new Error("Method not implemented.");
