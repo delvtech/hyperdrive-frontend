@@ -17,7 +17,10 @@ import {
   IReadableHyperdrive,
   ReadableHyperdrive,
 } from "src/hyperdrive/ReadableHyperdrive";
-import { IWritableHyperdrive } from "src/hyperdrive/WritableHyperdrive";
+import {
+  IWritableHyperdrive,
+  WritableHyperdrive,
+} from "src/hyperdrive/WritableHyperdrive";
 import { PoolConfig } from "src/pool/PoolConfig";
 import { PoolInfo } from "src/pool/PoolInfo";
 
@@ -28,10 +31,14 @@ interface HyperdriveSdkOptions {
 
 export class HyperdriveSdk implements IReadableHyperdrive, IWritableHyperdrive {
   private _readable: ReadableHyperdrive;
+  private _writable: WritableHyperdrive;
   constructor({ hyperdriveContract, mathContract }: HyperdriveSdkOptions) {
     this._readable = new ReadableHyperdrive({
       contract: hyperdriveContract,
       mathContract,
+    });
+    this._writable = new WritableHyperdrive({
+      contract: hyperdriveContract,
     });
   }
 
@@ -139,10 +146,10 @@ export class HyperdriveSdk implements IReadableHyperdrive, IWritableHyperdrive {
     return this._readable.getRedeemedWithdrawalShares({ account, options });
   }
   checkpoint(time: number, options?: ContractWriteOptions): Promise<void> {
-    throw new Error("Method not implemented.");
+    return this._writable.checkpoint(time, options);
   }
   pause(paused: boolean, options?: ContractWriteOptions): Promise<void> {
-    throw new Error("Method not implemented.");
+    return this._writable.pause(paused, options);
   }
   initialize(
     args: {
@@ -153,6 +160,6 @@ export class HyperdriveSdk implements IReadableHyperdrive, IWritableHyperdrive {
     },
     options?: ContractWriteOptions,
   ): Promise<bigint> {
-    throw new Error("Method not implemented.");
+    return this._writable.initialize(args, options);
   }
 }
