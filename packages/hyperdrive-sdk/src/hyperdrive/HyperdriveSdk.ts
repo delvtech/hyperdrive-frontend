@@ -102,17 +102,23 @@ export class HyperdriveSdk implements IReadableHyperdrive, IWritableHyperdrive {
   ): Promise<{ maxBondsOut: bigint; formatted: string }> {
     return this._readable.getMaxLong(options);
   }
-  getLpShares(
-    account: Address,
-    options?: ContractReadOptions,
-  ): Promise<bigint> {
-    return this._readable.getLpShares(account, options);
+  getLpShares({
+    account,
+    options,
+  }: {
+    account: Address;
+    options?: ContractReadOptions;
+  }): Promise<bigint> {
+    return this._readable.getLpShares({ account, options });
   }
-  getClosedLpShares(
-    account: Address,
-    options?: ContractReadOptions,
-  ): Promise<ClosedLpShares[]> {
-    return this._readable.getClosedLpShares(account, options);
+  getClosedLpShares({
+    account,
+    options,
+  }: {
+    account: Address;
+    options?: ContractReadOptions;
+  }): Promise<ClosedLpShares[]> {
+    return this._readable.getClosedLpShares({ account, options });
   }
   getWithdrawalShares({
     account,
