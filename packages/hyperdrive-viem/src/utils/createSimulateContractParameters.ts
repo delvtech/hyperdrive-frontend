@@ -3,7 +3,7 @@ import { ContractWriteOptions } from "@hyperdrive/sdk";
 /**
  * Get parameters for `simulateContract` from `ContractWriteOptions`
  */
-export function createSimulateContractParameters(
+export function convertWriteOptionsToSimulateOptions(
   options?: ContractWriteOptions,
 ): SimulateContractParameters {
   const {
