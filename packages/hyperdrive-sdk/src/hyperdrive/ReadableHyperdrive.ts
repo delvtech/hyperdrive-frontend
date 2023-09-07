@@ -1,5 +1,6 @@
 import { ClosedShort, HyperdriveABI, Long, OpenShort } from "@hyperdrive/core";
 import { Address } from "abitype";
+import { format } from "dnum";
 import groupBy from "lodash.groupby";
 import mapValues from "lodash.mapvalues";
 import { sumBigInt } from "src/base/sumBigInt";
@@ -9,12 +10,11 @@ import {
   ContractReadOptions,
 } from "src/contract/Contract";
 import { ReadableHyperdriveContract } from "src/hyperdrive/HyperdriveContract";
-import { decodeAssetFromTransferSingleEventData } from "src/utils/decodeAssetFromTransferSingleEventData";
 import { ReadableHyperdriveMathContract } from "src/hyperdrive/HyperdriveMathContract";
 import { PoolConfig } from "src/pool/PoolConfig";
 import { PoolInfo } from "src/pool/PoolInfo";
 import { calculateLiquidity } from "src/pool/calculateLiquidity";
-import { formatUnits } from "src/base/formatUnits";
+import { decodeAssetFromTransferSingleEventData } from "src/utils/decodeAssetFromTransferSingleEventData";
 interface ReadableHyperdriveOptions {
   contract: ReadableHyperdriveContract;
   mathContract: ReadableHyperdriveMathContract;
@@ -68,7 +68,7 @@ export interface IReadableHyperdrive {
     options,
   }: {
     account: Address;
-    options: ContractReadOptions;
+    options?: ContractReadOptions;
   }): Promise<Long[]>;
 
   /**
@@ -79,7 +79,7 @@ export interface IReadableHyperdrive {
     options,
   }: {
     account: Address;
-    options: ContractReadOptions;
+    options?: ContractReadOptions;
   }): Promise<OpenShort[]>;
 
   /**
@@ -90,7 +90,7 @@ export interface IReadableHyperdrive {
     options,
   }: {
     account: Address;
-    options: ContractReadOptions;
+    options?: ContractReadOptions;
   }): Promise<Long[]>;
 
   /**
@@ -101,7 +101,7 @@ export interface IReadableHyperdrive {
     options,
   }: {
     account: Address;
-    options: ContractReadOptions;
+    options?: ContractReadOptions;
   }): Promise<ClosedShort[]>;
 
   /**
@@ -239,7 +239,7 @@ export class ReadableHyperdrive implements IReadableHyperdrive {
     options,
   }: {
     account: Address;
-    options: ContractReadOptions;
+    options?: ContractReadOptions;
   }): Promise<Long[]> {
     const fromBlock = "earliest";
     const toBlock = options?.blockNumber || options?.blockTag || "latest";
@@ -356,7 +356,7 @@ export class ReadableHyperdrive implements IReadableHyperdrive {
     options,
   }: {
     account: Address;
-    options: ContractReadOptions;
+    options?: ContractReadOptions;
   }): Promise<OpenShort[]> {
     const fromBlock = "earliest";
     const toBlock = options?.blockNumber || options?.blockTag || "latest";
@@ -469,7 +469,7 @@ export class ReadableHyperdrive implements IReadableHyperdrive {
     options,
   }: {
     account: Address;
-    options: ContractReadOptions;
+    options?: ContractReadOptions;
   }): Promise<Long[]> {
     const fromBlock = "earliest";
     const toBlock = options?.blockNumber || options?.blockTag || "latest";
@@ -509,7 +509,7 @@ export class ReadableHyperdrive implements IReadableHyperdrive {
     options,
   }: {
     account: Address;
-    options: ContractReadOptions;
+    options?: ContractReadOptions;
   }): Promise<ClosedShort[]> {
     const fromBlock = "earliest";
     const toBlock = options?.blockNumber || options?.blockTag || "latest";
@@ -567,7 +567,7 @@ export class ReadableHyperdrive implements IReadableHyperdrive {
     );
     return {
       maxBondsOut,
-      formatted: formatUnits(maxBondsOut, 18),
+      formatted: format([maxBondsOut, 18], 2),
     };
   }
 
@@ -597,7 +597,7 @@ export class ReadableHyperdrive implements IReadableHyperdrive {
     );
     return {
       maxBondsOut,
-      formatted: formatUnits(maxBondsOut, 18),
+      formatted: format([maxBondsOut, 18], 2),
     };
   }
 }
