@@ -1,8 +1,8 @@
 import { ContractWriteOptions } from "src/contract/Contract";
-import { WritableHyperdriveContract } from "src/hyperdrive/HyperdriveContract";
+import { HyperdriveContract } from "src/hyperdrive/HyperdriveContract";
 
 interface WritableHyperdriveOptions {
-  contract: WritableHyperdriveContract;
+  contract: HyperdriveContract;
 }
 
 export interface IWritableHyperdrive {
@@ -41,7 +41,7 @@ export interface IWritableHyperdrive {
 }
 
 export class WritableHyperdrive implements IWritableHyperdrive {
-  private readonly contract: WritableHyperdriveContract;
+  private readonly contract: HyperdriveContract;
 
   constructor({ contract }: WritableHyperdriveOptions) {
     this.contract = contract;

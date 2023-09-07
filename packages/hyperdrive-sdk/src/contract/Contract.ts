@@ -8,26 +8,39 @@ import {
   EventArgs,
 } from "src/base/abitype";
 
-export interface IReadableContract<TAbi extends Abi> {
-  abi: TAbi;
-  address: Address;
-  read: ContractFunction<TAbi>;
-  simulateWrite: ContractWriteFunction<TAbi>;
-  getEvents: ContractEventFunction<TAbi>;
-}
-export interface IWritableContract<TAbi extends Abi>
-  extends IReadableContract<TAbi> {
-  write: ContractWriteFunction<TAbi>;
-}
-
 /**
  * An abstracted contract interface to allow interchangeable web3 libraries.
  * Designed to be used by consumers that care about the interface of a contract,
  * but aren't necessarily concerned with where it's deployed or how it connects.
  */
-export type Contract<TAbi extends Abi> =
-  | IReadableContract<TAbi>
-  | IWritableContract<TAbi>;
+export interface IContract<TAbi extends Abi> {
+  /**
+   * The ABI for this contract
+   */
+  abi: TAbi;
+  /**
+   * The address this contract is deployed at
+   */
+  address: Address;
+  /**
+   * Call a read-only function on a contract, and return the response.
+   */
+  read: ContractFunction<TAbi>;
+  /**
+   * Simulate/validate a contract interaction. This is useful for retrieving
+   * return data and revert reasons of contract write functions.
+   */
+  simulateWrite: ContractWriteFunction<TAbi>;
+  /**
+   * Returns a list of event logs since the filter was created.
+   */
+  getEvents: ContractEventFunction<TAbi>;
+
+  /**
+   * Execute a write function on a contract.
+   */
+  write: ContractWriteFunction<TAbi>;
+}
 
 /**
  * A strongly typed function signature for calling contract methods based on an

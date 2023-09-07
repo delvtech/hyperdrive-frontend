@@ -16,17 +16,17 @@ import {
   ContractGetEventsOptions,
   ContractReadOptions,
 } from "src/contract/Contract";
-import { ReadableHyperdriveContract } from "src/hyperdrive/HyperdriveContract";
-import { ReadableHyperdriveMathContract } from "src/hyperdrive/HyperdriveMathContract";
+import { decodeAssetFromTransferSingleEventData } from "src/utils/decodeAssetFromTransferSingleEventData";
+import { HyperdriveMathContract } from "src/hyperdrive/HyperdriveMathContract";
 import { PoolConfig } from "src/pool/PoolConfig";
 import { PoolInfo } from "src/pool/PoolInfo";
 import { calculateLiquidity } from "src/pool/calculateLiquidity";
 import { WITHDRAW_SHARES_ASSET_ID, LP_ASSET_ID } from "src/lp/constants";
-import { decodeAssetFromTransferSingleEventData } from "src/utils/decodeAssetFromTransferSingleEventData";
+import { HyperdriveContract } from "src/hyperdrive/HyperdriveContract";
 
 interface ReadableHyperdriveOptions {
-  contract: ReadableHyperdriveContract;
-  mathContract: ReadableHyperdriveMathContract;
+  contract: HyperdriveContract;
+  mathContract: HyperdriveMathContract;
 }
 
 export interface IReadableHyperdrive {
@@ -175,8 +175,8 @@ export interface IReadableHyperdrive {
 }
 
 export class ReadableHyperdrive implements IReadableHyperdrive {
-  private readonly contract: ReadableHyperdriveContract;
-  private readonly mathContract: ReadableHyperdriveMathContract;
+  private readonly contract: HyperdriveContract;
+  private readonly mathContract: HyperdriveMathContract;
 
   constructor({ contract, mathContract }: ReadableHyperdriveOptions) {
     this.contract = contract;

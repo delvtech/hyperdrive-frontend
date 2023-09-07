@@ -11,8 +11,8 @@ import {
   BlockTag,
   ContractWriteOptions,
 } from "src/contract/Contract";
-import { ReadableHyperdriveContract } from "src/hyperdrive/HyperdriveContract";
-import { ReadableHyperdriveMathContract } from "src/hyperdrive/HyperdriveMathContract";
+import { HyperdriveContract } from "src/hyperdrive/HyperdriveContract";
+import { HyperdriveMathContract } from "src/hyperdrive/HyperdriveMathContract";
 import {
   IReadableHyperdrive,
   ReadableHyperdrive,
@@ -22,8 +22,8 @@ import { PoolConfig } from "src/pool/PoolConfig";
 import { PoolInfo } from "src/pool/PoolInfo";
 
 interface HyperdriveSdkOptions {
-  hyperdriveContract: ReadableHyperdriveContract;
-  mathContract: ReadableHyperdriveMathContract;
+  hyperdriveContract: HyperdriveContract;
+  mathContract: HyperdriveMathContract;
 }
 
 export class HyperdriveSdk implements IReadableHyperdrive, IWritableHyperdrive {
