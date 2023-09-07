@@ -28,11 +28,12 @@ import {
   http,
 } from "viem";
 import { mainnet } from "viem/chains";
-import { HyperdriveSDK } from "@hyperdrive/sdk";
 import {
-  HyperdriveContract,
-  HypedriveMathContract,
-} from "@hyperdrive/sdk-viem";
+  HyperdriveSDK,
+  HyperdriveABI,
+  HyperdriveMathABI,
+} from "@hyperdrive/sdk";
+import { ViemContract } from "@hyperdrive/sdk-viem";
 
 // 1. Set up your viem clients
 const publicClient = createPublicClient({
@@ -46,14 +47,16 @@ const walletClient = createWalletClient({
 
 // 2. Create Hyperdrive SDK instance
 export const hyperdrive = new HyperdriveSdk({
-  hyperdriveContract: new HyperdriveContract({
+  hyperdriveContract: new ViemContract({
     publicClient,
     walletClient,
+    abi: HyperdriveABI,
     address: "<hyperdrive-address-here>",
   }),
-  mathContract: new HyperdriveMathContract({
+  mathContract: new ViemContract({
     publicClient,
     address: "<math-address-here>",
+    abi: HyperdriveMathABI,
   }),
 });
 
