@@ -5,12 +5,10 @@ import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { Stat } from "src/ui/base/components/Stat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useCurrentFixedAPR } from "src/ui/hyperdrive/hooks/useCurrentFixedAPR";
-import { useHyperdrivePoolInfo } from "src/ui/hyperdrive/hooks/useHyperdrivePoolInfo";
 import { useLiquidity } from "src/ui/hyperdrive/hooks/useLiquidity";
 import { useTradingVolume } from "src/ui/hyperdrive/hooks/useTradingVolume";
 import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
 import { useVaultRate } from "src/ui/vaults/useVaultRate";
-import { formatUnits } from "viem";
 import { useBlockNumber, useChainId } from "wagmi";
 export function MarketStats({
   hyperdrive,
@@ -27,7 +25,6 @@ export function MarketStats({
   );
 
   const { liquidity } = useLiquidity(hyperdrive.address);
-  const { poolInfo } = useHyperdrivePoolInfo(hyperdrive.address);
   const { fixedAPR } = useCurrentFixedAPR(hyperdrive);
   const { longPrice } = useCurrentLongPrice(hyperdrive);
   const { vaultRate } = useVaultRate({
@@ -86,17 +83,6 @@ export function MarketStats({
           }
         />
       ) : undefined}
-      <Stat
-        label="LP share price"
-        value={`${formatBalance(
-          formatUnits(
-            poolInfo?.lpSharePrice || 0n,
-            hyperdrive.baseToken.decimals,
-          ),
-          2,
-        )} ${hyperdrive.baseToken.symbol}`}
-        description={"The price of the LP share."}
-      />
       <Stat
         label="Volume (24h)"
         value={
