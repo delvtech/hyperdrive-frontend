@@ -129,6 +129,41 @@ export interface IReadableHyperdrive {
     maxBondsOut: bigint;
     formatted: string;
   }>;
+
+  /**
+   * Gets the amount of LP shares a user has.
+   */
+  getLpShares(account: Address, options?: ContractReadOptions): Promise<bigint>;
+
+  /**
+   * Gets the amount of closed LP shares a user has.
+   */
+  getClosedLpShares(
+    account: Address,
+    options?: ContractReadOptions,
+  ): Promise<ClosedLpShares[]>;
+
+  /**
+   * Gets the amount of withdrawal shares a user has.
+   */
+  getWithdrawalShares({
+    account,
+    options,
+  }: {
+    account: Address;
+    options?: ContractReadOptions;
+  }): Promise<bigint>;
+
+  /**
+   * Gets the amount of redeemed withdrawal shares a user has.
+   */
+  getRedeemedWithdrawalShares({
+    account,
+    options,
+  }: {
+    account: Address;
+    options?: ContractReadOptions;
+  }): Promise<RedeemedWithdrawalShares[]>;
 }
 
 export class ReadableHyperdrive implements IReadableHyperdrive {
