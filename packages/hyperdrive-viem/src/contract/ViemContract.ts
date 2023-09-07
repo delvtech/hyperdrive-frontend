@@ -19,7 +19,7 @@ import { Abi, Address, PublicClient, WalletClient } from "viem";
  */
 export class ViemContract<TAbi extends Abi> implements IContract<TAbi> {
   readonly abi: TAbi;
-  readonly address: `0x${string}`;
+  readonly address: Address;
   private publicClient: PublicClient;
   private walletClient?: WalletClient;
   constructor({
