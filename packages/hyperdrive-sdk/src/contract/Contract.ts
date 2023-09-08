@@ -1,4 +1,4 @@
-import { Abi, Address, AbiStateMutability } from "abitype";
+import { Abi, Address } from "abitype";
 import {
   FunctionName,
   FunctionArgs,
@@ -8,7 +8,7 @@ import {
   EventArgs,
 } from "src/base/abitype";
 
-export interface IReadableContract<TAbi extends Abi> {
+export interface IReadableContract<TAbi extends Abi = Abi> {
   abi: TAbi;
   address: Address;
 
@@ -32,7 +32,7 @@ export interface IReadableContract<TAbi extends Abi> {
   ): Promise<ContractEvent<TAbi, TEventName>[]>;
 }
 
-export interface IWritableContract<TAbi extends Abi>
+export interface IWritableContract<TAbi extends Abi = Abi>
   extends IReadableContract<TAbi> {
   write<TFunctionName extends FunctionName<TAbi, "nonpayable" | "payable">>(
     fn: TFunctionName,
@@ -46,7 +46,7 @@ export interface IWritableContract<TAbi extends Abi>
  * Designed to be used by consumers that care about the interface of a contract,
  * but aren't necessarily concerned with where it's deployed or how it connects.
  */
-export type Contract<TAbi extends Abi> =
+export type Contract<TAbi extends Abi = Abi> =
   | IReadableContract<TAbi>
   | IWritableContract<TAbi>;
 
