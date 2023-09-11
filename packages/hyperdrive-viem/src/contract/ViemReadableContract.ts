@@ -101,6 +101,10 @@ export class ViemReadableContract<TAbi extends Abi = Abi>
     });
   }
 
+  /**
+   * Get a wrapped version of this contract with caching capabilities. Useful
+   * for reducing the number of actual reads from the contract.
+   */
   withCache(cache?: SimpleCache): ViemCachedReadableContract<TAbi> {
     return new ViemCachedReadableContract({
       abi: this.abi,
@@ -110,6 +114,9 @@ export class ViemReadableContract<TAbi extends Abi = Abi>
     });
   }
 
+  /**
+   * Get an extended version of this contract with write capabilities.
+   */
   withWallet(walletClient: WalletClient): ViemWritableContract<TAbi> {
     return new ViemWritableContract({
       abi: this.abi,
