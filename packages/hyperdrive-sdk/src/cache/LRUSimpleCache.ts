@@ -2,6 +2,15 @@ import { LRUCache } from "lru-cache";
 import stringify from "fast-json-stable-stringify";
 import { SimpleCache, SimpleCacheKey } from "src/cache/SimpleCache";
 
+/**
+ * An LRU (Least Recently Used) implementation of the `SimpleCache` interface.
+ * This class wraps around the
+ * [lru-cache](https://www.npmjs.com/package/lru-cache) library to provide LRU
+ * caching capabilities conforming to the `SimpleCache` interface.
+ *
+ * @template TValue - The type of value to be stored in the cache.
+ * @template TKey - The type of key used to access values in the cache.
+ */
 export class LRUSimpleCache<
   TValue extends NonNullable<unknown> = NonNullable<unknown>,
   TKey extends SimpleCacheKey = SimpleCacheKey,
@@ -9,6 +18,11 @@ export class LRUSimpleCache<
 {
   protected cache: LRUCache<string, TValue, void>;
 
+  /**
+   * Initializes a new instance of the LRUSimpleCache with specified options.
+   *
+   * @param options - Configuration options for the underlying LRUCache.
+   */
   constructor(options: LRUCache.Options<string, TValue, void>) {
     this.cache = new LRUCache(options);
   }

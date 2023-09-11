@@ -16,6 +16,10 @@ import {
 } from "src/base/abitype";
 import { createSimpleCacheKey } from "src/cache/utils/createSimpleCacheKey";
 
+/**
+ * Extended readable contract interface that provides capabilities
+ * for cache management on contract reads.
+ */
 export interface ICachedReadableContract<TAbi extends Abi = Abi>
   extends IReadableContract<TAbi> {
   deleteRead: (...args: Parameters<IReadableContract<TAbi>["read"]>) => void;
@@ -30,6 +34,16 @@ export interface CachedReadableContractOptions<TAbi extends Abi = Abi> {
   cache?: SimpleCache;
 }
 
+/**
+ * A wrapped Ethereum contract reader that provides caching capabilities.
+ * Useful for reducing the number of actual reads from a contract by caching
+ * and reusing previous read results.
+ *
+ * @example
+ * const cachedContract = new CachedReadableContract({ contract: myContract });
+ * const result1 = await cachedContract.read("functionName", args);
+ * const result2 = await cachedContract.read("functionName", args); // Fetched from cache
+ */
 export class CachedReadableContract<TAbi extends Abi = Abi>
   implements ICachedReadableContract<TAbi>
 {
@@ -47,6 +61,10 @@ export class CachedReadableContract<TAbi extends Abi = Abi>
     this._cache = cache || new LRUSimpleCache({ max: DEFAULT_CACHE_SIZE });
   }
 
+  /**
+   * Reads data from the contract. First checks the cache, and if not present,
+   * fetches from the contract and then caches the result.
+   */
   async read<TFunctionName extends FunctionName<TAbi>>(
     functionName: TFunctionName,
     args: FunctionArgs<TAbi, TFunctionName>,
@@ -60,6 +78,14 @@ export class CachedReadableContract<TAbi extends Abi = Abi>
 
   /**
    * Deletes a specific read from the cache.
+   *
+   * @example
+   * const cachedContract = new CachedReadableContract({ contract: myContract });
+   * const result1 = await cachedContract.read("functionName", args);
+   * const result2 = await cachedContract.read("functionName", args); // Fetched from cache
+   *
+   * cachedContract.deleteRead("functionName", args);
+   * const result3 = await cachedContract.read("functionName", args); // Fetched from contract
    */
   deleteRead<TFunctionName extends FunctionName<TAbi>>(
     functionName: TFunctionName,
@@ -70,6 +96,10 @@ export class CachedReadableContract<TAbi extends Abi = Abi>
     this._cache.delete(key);
   }
 
+  /**
+   * Gets events from the contract. First checks the cache, and if not present,
+   * fetches from the contract and then caches the result.
+   */
   async getEvents<TEventName extends EventName<TAbi>>(
     eventName: TEventName,
     options?: ContractGetEventsOptions<TAbi, TEventName>,
@@ -87,6 +117,10 @@ export class CachedReadableContract<TAbi extends Abi = Abi>
     this._cache.clear();
   }
 
+  /**
+   * Simulates a contract write operation. This method directly delegates
+   * to the underlying contract without interacting with the cache.
+   */
   simulateWrite<
     TFunctionName extends FunctionName<TAbi, "nonpayable" | "payable">,
   >(

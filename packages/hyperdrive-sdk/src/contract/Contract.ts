@@ -8,34 +8,54 @@ import {
   EventArgs,
 } from "src/base/abitype";
 
+/**
+ * Interface representing a readable contract with specified ABI.
+ * Provides methods to read and simulate write operations on the contract.
+ */
 export interface IReadableContract<TAbi extends Abi = Abi> {
   abi: TAbi;
   address: Address;
 
+  /**
+   * Reads a specified function from the contract.
+   */
   read<TFunctionName extends FunctionName<TAbi>>(
-    fn: TFunctionName,
+    functionName: TFunctionName,
     args: FunctionArgs<TAbi, TFunctionName>,
     options?: ContractReadOptions,
   ): Promise<FunctionReturnType<TAbi, TFunctionName>>;
 
+  /**
+   * Simulates a write operation on a specified function of the contract.
+   */
   simulateWrite<
     TFunctionName extends FunctionName<TAbi, "nonpayable" | "payable">,
   >(
-    fn: TFunctionName,
+    functionName: TFunctionName,
     args: FunctionArgs<TAbi, TFunctionName>,
     options?: ContractWriteOptions,
   ): Promise<FunctionReturnType<TAbi, TFunctionName>>;
 
+  /**
+   * Retrieves specified events from the contract.
+   */
   getEvents<TEventName extends EventName<TAbi>>(
     eventName: TEventName,
     options?: ContractGetEventsOptions<TAbi, TEventName>,
   ): Promise<ContractEvent<TAbi, TEventName>[]>;
 }
 
+/**
+ * Interface representing a writable contract with specified ABI.
+ * Extends IReadableContract to also include write operations.
+ */
 export interface IWritableContract<TAbi extends Abi = Abi>
   extends IReadableContract<TAbi> {
+  /**
+   * Writes to a specified function on the contract.
+   */
   write<TFunctionName extends FunctionName<TAbi, "nonpayable" | "payable">>(
-    fn: TFunctionName,
+    functionName: TFunctionName,
     args: FunctionArgs<TAbi, TFunctionName>,
     options?: ContractWriteOptions,
   ): Promise<FunctionReturnType<TAbi, TFunctionName>>;
