@@ -742,4 +742,24 @@ export class ReadableHyperdrive implements IReadableHyperdrive {
       }),
     );
   }
+
+  async getPreviewOpenLong({
+    baseAmount,
+    bondAmountOut,
+    destination,
+    asUnderlying,
+  }: {
+    baseAmount: bigint;
+    bondAmountOut: bigint;
+    destination: Address;
+    asUnderlying: boolean;
+  }): Promise<bigint> {
+    const result = await this.contract.simulateWrite("openLong", [
+      baseAmount,
+      bondAmountOut,
+      destination,
+      asUnderlying,
+    ]);
+    return result;
+  }
 }
