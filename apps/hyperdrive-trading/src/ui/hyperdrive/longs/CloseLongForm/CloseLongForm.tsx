@@ -6,7 +6,6 @@ import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { useCloseLong } from "src/ui/hyperdrive/longs/hooks/useCloseLong";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
-import { getProfitLossText } from "src/ui/hyperdrive/shorts/CloseShortForm/getProfitLossText";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { formatUnits, parseUnits } from "viem";
 import { useAccount } from "wagmi";
@@ -21,7 +20,6 @@ interface CloseLongFormProps {
 export function CloseLongForm({
   hyperdrive,
   long,
-  onCloseLong,
 }: CloseLongFormProps): ReactElement {
   const { decimals: baseDecimals, symbol: baseSymbol } = hyperdrive.baseToken;
 
@@ -90,19 +88,6 @@ export function CloseLongForm({
           </p>
         </div>
       )}
-      <div className="flex justify-between">
-        <p className="font-light text-neutral-content">Profit / Loss</p>
-        <p className="tracking-wide">
-          {baseAmountOut && amountAsBigInt
-            ? `${getProfitLossText({
-                baseAmountOut,
-                amountInput: amountAsBigInt,
-                baseDecimals,
-                baseSymbol,
-              })}`
-            : ""}
-        </p>
-      </div>
 
       {account ? (
         <button

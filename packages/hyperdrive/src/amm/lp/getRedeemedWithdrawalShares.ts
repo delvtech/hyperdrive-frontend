@@ -1,5 +1,5 @@
 import { Address, PublicClient } from "viem";
-import { getRedeemWithdrawalSharesEvents } from "./getRedeemWithdrawalSharesEvents";
+import { getRedeemWithdrawalSharesEvents } from "src/amm/lp/getRedeemWithdrawalSharesEvents";
 import { EventOptions } from "src/base/EventOptions";
 
 export interface GetRedeemedWithdrawalSharesOptions {
