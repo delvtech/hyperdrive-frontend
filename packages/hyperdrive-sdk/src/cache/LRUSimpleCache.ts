@@ -1,4 +1,5 @@
 import { LRUCache } from "lru-cache";
+import stringify from "fast-json-stable-stringify";
 import { SimpleCache, SimpleCacheKey } from "src/cache/SimpleCache";
 
 export class LRUSimpleCache<
@@ -6,22 +7,22 @@ export class LRUSimpleCache<
   TKey extends SimpleCacheKey = SimpleCacheKey,
 > implements SimpleCache<TValue, TKey>
 {
-  private cache: LRUCache<TKey, TValue, void>;
+  protected cache: LRUCache<string, TValue, void>;
 
-  constructor(options: LRUCache.Options<TKey, TValue, void>) {
+  constructor(options: LRUCache.Options<string, TValue, void>) {
     this.cache = new LRUCache(options);
   }
 
   get(key: TKey): TValue | undefined {
-    return this.cache.get(key);
+    return this.cache.get(stringify(key));
   }
 
   set(key: TKey, value: TValue): void {
-    this.cache.set(key, value);
+    this.cache.set(stringify(key), value);
   }
 
   delete(key: TKey): boolean {
-    return this.cache.delete(key);
+    return this.cache.delete(stringify(key));
   }
 
   clear(): void {
@@ -29,6 +30,6 @@ export class LRUSimpleCache<
   }
 
   find(predicate: (value: TValue, key: TKey) => boolean): TValue | undefined {
-    return this.cache.find(predicate);
+    return this.cache.find((value, key) => predicate(value, JSON.parse(key)));
   }
 }

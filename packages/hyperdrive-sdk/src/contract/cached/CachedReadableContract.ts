@@ -18,7 +18,7 @@ import { createSimpleCacheKey } from "src/cache/utils/createSimpleCacheKey";
 
 export interface ICachedReadableContract<TAbi extends Abi = Abi>
   extends IReadableContract<TAbi> {
-  deleteRead: (...args: Parameters<IReadableContract<TAbi>["read"]>) => boolean;
+  deleteRead: (...args: Parameters<IReadableContract<TAbi>["read"]>) => void;
   clearCache: () => void;
 }
 
@@ -65,9 +65,9 @@ export class CachedReadableContract<TAbi extends Abi = Abi>
     functionName: TFunctionName,
     args: FunctionArgs<TAbi, TFunctionName>,
     options?: ContractReadOptions,
-  ): boolean {
+  ): void {
     const key = createSimpleCacheKey(["read", { functionName, args, options }]);
-    return this._cache.delete(key);
+    this._cache.delete(key);
   }
 
   async getEvents<TEventName extends EventName<TAbi>>(
