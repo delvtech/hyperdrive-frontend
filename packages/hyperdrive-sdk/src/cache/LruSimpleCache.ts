@@ -11,7 +11,7 @@ import { SimpleCache, SimpleCacheKey } from "src/cache/SimpleCache";
  * @template TValue - The type of value to be stored in the cache.
  * @template TKey - The type of key used to access values in the cache.
  */
-export class LRUSimpleCache<
+export class LruSimpleCache<
   TValue extends NonNullable<unknown> = NonNullable<unknown>,
   TKey extends SimpleCacheKey = SimpleCacheKey,
 > implements SimpleCache<TValue, TKey>
@@ -19,7 +19,7 @@ export class LRUSimpleCache<
   protected cache: LRUCache<string, TValue, void>;
 
   /**
-   * Initializes a new instance of the LRUSimpleCache with specified options.
+   * Initializes a new instance of the LruSimpleCache with specified options.
    *
    * @param options - Configuration options for the underlying LRUCache.
    */

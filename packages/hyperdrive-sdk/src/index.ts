@@ -10,7 +10,7 @@ export { mockErc4626Abi } from "src/abis/MockErc4626";
 
 // SimpleCache
 export type { SimpleCache } from "src/cache/SimpleCache";
-export { LRUSimpleCache } from "src/cache/LRUSimpleCache";
+export { LruSimpleCache } from "src/cache/LruSimpleCache";
 
 // Contract Interface
 export type {

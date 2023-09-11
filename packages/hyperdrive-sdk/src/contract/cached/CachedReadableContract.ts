@@ -7,7 +7,7 @@ import {
   IReadableContract,
 } from "src/contract/Contract";
 import { SimpleCache, SimpleCacheKey } from "src/cache/SimpleCache";
-import { LRUSimpleCache } from "src/cache/LRUSimpleCache";
+import { LruSimpleCache } from "src/cache/LruSimpleCache";
 import {
   EventName,
   FunctionArgs,
@@ -58,7 +58,7 @@ export class CachedReadableContract<TAbi extends Abi = Abi>
     this.address = contract.address;
     this.abi = contract.abi;
     this._contract = contract;
-    this._cache = cache || new LRUSimpleCache({ max: DEFAULT_CACHE_SIZE });
+    this._cache = cache || new LruSimpleCache({ max: DEFAULT_CACHE_SIZE });
   }
 
   /**
