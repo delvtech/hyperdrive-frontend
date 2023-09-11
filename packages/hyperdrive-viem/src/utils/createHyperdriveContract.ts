@@ -38,7 +38,7 @@ export function createHyperdriveContract<
     contract = contract.withWallet(walletClient);
   }
 
-  if (cache) {
+  if (cache !== false) {
     return contract.withCache(
       // true means use the default value for cache, so we need to explicitly
       // set it to undefined if we want to use the default cache.
