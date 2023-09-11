@@ -9,9 +9,12 @@ import {
   FunctionName,
   FunctionReturnType,
   IReadableContract,
+  SimpleCache,
 } from "@hyperdrive/sdk";
+import { ViemCachedReadableContract } from "src/contract/ViemCachedReadableContract";
+import { ViemWritableContract } from "src/contract/ViemWritableContract";
 import { createSimulateContractParameters } from "src/utils/createSimulateContractParameters";
-import { Abi, Address, PublicClient } from "viem";
+import { Abi, Address, PublicClient, WalletClient } from "viem";
 
 export interface ViemReadableContractOptions<TAbi extends Abi = Abi> {
   abi: TAbi;
@@ -23,7 +26,7 @@ export interface ViemReadableContractOptions<TAbi extends Abi = Abi> {
  * A viem implementation of the ReadableContract interface.
  * @see https://viem.sh/
  */
-export class ViemReadableContract<TAbi extends Abi>
+export class ViemReadableContract<TAbi extends Abi = Abi>
   implements IReadableContract<TAbi>
 {
   readonly abi: TAbi;
@@ -95,6 +98,24 @@ export class ViemReadableContract<TAbi extends Abi>
         eventName,
         transactionHash: transactionHash ?? undefined,
       };
+    });
+  }
+
+  withCache(cache?: SimpleCache): ViemCachedReadableContract<TAbi> {
+    return new ViemCachedReadableContract({
+      abi: this.abi,
+      address: this.address,
+      publicClient: this._publicClient,
+      cache,
+    });
+  }
+
+  withWallet(walletClient: WalletClient): ViemWritableContract<TAbi> {
+    return new ViemWritableContract({
+      abi: this.abi,
+      address: this.address,
+      publicClient: this._publicClient,
+      walletClient,
     });
   }
 }

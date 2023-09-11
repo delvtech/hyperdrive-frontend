@@ -4,7 +4,9 @@ import {
   FunctionName,
   FunctionReturnType,
   IWritableContract,
+  SimpleCache,
 } from "@hyperdrive/sdk";
+import { ViemCachedWritableContract } from "src/contract/ViemCachedWritableContract";
 import {
   ViemReadableContract,
   ViemReadableContractOptions,
@@ -21,7 +23,7 @@ export interface ViemWritableContractOptions<TAbi extends Abi = Abi>
  * A viem implementation of the WritableContract interface.
  * @see https://viem.sh/
  */
-export class ViemWritableContract<TAbi extends Abi>
+export class ViemWritableContract<TAbi extends Abi = Abi>
   extends ViemReadableContract<TAbi>
   implements IWritableContract<TAbi>
 {
@@ -75,5 +77,15 @@ export class ViemWritableContract<TAbi extends Abi>
     });
 
     return this._walletClient.writeContract(request) as any;
+  }
+
+  withCache(cache?: SimpleCache): ViemCachedWritableContract<TAbi> {
+    return new ViemCachedWritableContract({
+      abi: this.abi,
+      address: this.address,
+      publicClient: this._publicClient,
+      walletClient: this._walletClient,
+      cache,
+    });
   }
 }

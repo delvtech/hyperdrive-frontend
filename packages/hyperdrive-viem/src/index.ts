@@ -1,4 +1,12 @@
 export {
+  ViemCachedReadableContract,
+  type ViemCachedReadableContractOptions,
+} from "src/contract/ViemCachedReadableContract";
+export {
+  ViemCachedWritableContract,
+  type ViemCachedWritableContractOptions,
+} from "src/contract/ViemCachedWritableContract";
+export {
   ViemReadableContract,
   type ViemReadableContractOptions,
 } from "src/contract/ViemReadableContract";

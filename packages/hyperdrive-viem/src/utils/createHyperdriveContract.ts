@@ -1,4 +1,6 @@
-import { HyperdriveABI } from "@hyperdrive/sdk";
+import { HyperdriveABI, SimpleCache } from "@hyperdrive/sdk";
+import { ViemCachedReadableContract } from "src/contract/ViemCachedReadableContract";
+import { ViemCachedWritableContract } from "src/contract/ViemCachedWritableContract";
 import { ViemReadableContract } from "src/contract/ViemReadableContract";
 import { ViemWritableContract } from "src/contract/ViemWritableContract";
 import { Address, PublicClient, WalletClient } from "viem";
@@ -7,6 +9,10 @@ interface CreateHyperdriveContractOptions {
   address: Address;
   publicClient: PublicClient;
   walletClient?: WalletClient;
+  /**
+   * Set to `false` to disable caching.
+   */
+  cache?: SimpleCache | boolean;
 }
 
 /**
@@ -19,25 +25,36 @@ export function createHyperdriveContract<
   address,
   publicClient,
   walletClient,
+  cache,
 }: TOptions): ViemHyperdriveContract<TOptions> {
-  if (walletClient) {
-    return new ViemWritableContract({
+  let contract: ViemReadableContract | ViemWritableContract =
+    new ViemReadableContract({
       abi: HyperdriveABI,
       address,
       publicClient,
-      walletClient,
-    }) as ViemHyperdriveContract<TOptions>;
+    });
+
+  if (walletClient) {
+    contract = contract.withWallet(walletClient);
   }
 
-  return new ViemReadableContract({
-    abi: HyperdriveABI,
-    address,
-    publicClient,
-  }) as ViemHyperdriveContract<TOptions>;
+  if (cache) {
+    return contract.withCache(
+      // true means use the default value for cache, so we need to explicitly
+      // set it to undefined if we want to use the default cache.
+      cache === true ? undefined : cache,
+    ) as ViemHyperdriveContract<TOptions>;
+  }
+
+  return contract as ViemHyperdriveContract<TOptions>;
 }
 
 export type ViemHyperdriveContract<
   TOptions extends CreateHyperdriveContractOptions,
 > = TOptions["walletClient"] extends WalletClient
-  ? ViemWritableContract<typeof HyperdriveABI>
-  : ViemReadableContract<typeof HyperdriveABI>;
+  ? TOptions["cache"] extends false
+    ? ViemWritableContract<typeof HyperdriveABI>
+    : ViemCachedWritableContract<typeof HyperdriveABI>
+  : TOptions["cache"] extends false
+  ? ViemReadableContract<typeof HyperdriveABI>
+  : ViemCachedReadableContract<typeof HyperdriveABI>;
