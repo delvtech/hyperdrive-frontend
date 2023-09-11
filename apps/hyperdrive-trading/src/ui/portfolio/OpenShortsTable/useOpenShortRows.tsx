@@ -106,7 +106,7 @@ function ProfitLossCell({
     hyperdriveAddress,
     maturityTime: short.maturity,
     shortAmountIn: short.bondAmount,
-    minBaseAmountOut: parseUnits("1", 18),
+    minBaseAmountOut: parseUnits("0", 18),
     destination: account,
   });
 

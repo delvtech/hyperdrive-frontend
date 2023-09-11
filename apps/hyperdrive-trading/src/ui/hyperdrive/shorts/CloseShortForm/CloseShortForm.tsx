@@ -9,7 +9,6 @@ import { usePreviewCloseShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewC
 import { TokenInput } from "src/ui/token/TokenInput";
 import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
-import { getProfitLossText } from "./getProfitLossText";
 
 interface CloseShortFormProps {
   hyperdrive: Hyperdrive;
@@ -20,7 +19,6 @@ interface CloseShortFormProps {
 export function CloseShortForm({
   hyperdrive,
   short,
-  onCloseShort,
 }: CloseShortFormProps): ReactElement {
   const { decimals: baseDecimals, symbol: baseSymbol } = hyperdrive.baseToken;
 
@@ -90,26 +88,13 @@ export function CloseShortForm({
             </div>
           )}
         </div>
-        <div className="flex justify-between">
-          <p className="font-light text-neutral-content">Profit / Loss</p>
-          <p className="tracking-wide">
-            {baseAmountOut && amountAsBigInt
-              ? getProfitLossText({
-                  baseAmountOut,
-                  amountInput: amountAsBigInt,
-                  baseDecimals,
-                  baseSymbol,
-                })
-              : ""}
-          </p>
-        </div>
       </div>
 
       {account ? (
         <button
           className="daisy-btn-accent daisy-btn"
           disabled={!closeShort || isPendingWalletAction}
-          onClick={(e) => {
+          onClick={() => {
             closeShort?.();
           }}
         >
