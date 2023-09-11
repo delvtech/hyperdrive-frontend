@@ -1,4 +1,3 @@
-import { Address, PublicClient, Abi } from "viem";
 import {
   ContractEvent,
   ContractGetEventsOptions,
@@ -12,8 +11,9 @@ import {
   IReadableContract,
 } from "@hyperdrive/sdk";
 import { createSimulateContractParameters } from "src/utils/createSimulateContractParameters";
+import { Abi, Address, PublicClient } from "viem";
 
-export interface ReadableViemContractOptions<TAbi extends Abi = Abi> {
+export interface ViemReadableContractOptions<TAbi extends Abi = Abi> {
   abi: TAbi;
   address: Address;
   publicClient: PublicClient;
@@ -23,7 +23,7 @@ export interface ReadableViemContractOptions<TAbi extends Abi = Abi> {
  * A viem implementation of the ReadableContract interface.
  * @see https://viem.sh/
  */
-export class ReadableViemContract<TAbi extends Abi>
+export class ViemReadableContract<TAbi extends Abi>
   implements IReadableContract<TAbi>
 {
   readonly abi: TAbi;
@@ -35,7 +35,7 @@ export class ReadableViemContract<TAbi extends Abi>
     abi,
     address,
     publicClient,
-  }: ReadableViemContractOptions<TAbi>) {
+  }: ViemReadableContractOptions<TAbi>) {
     this.abi = abi;
     this.address = address;
     this._publicClient = publicClient;

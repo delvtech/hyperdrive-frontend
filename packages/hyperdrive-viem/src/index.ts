@@ -1,11 +1,9 @@
 export {
-  ReadableViemContract,
-  type ReadableViemContractOptions,
-} from "src/contract/ReadableViemContract";
-
+  ViemReadableContract,
+  type ViemReadableContractOptions,
+} from "src/contract/ViemReadableContract";
 export {
-  WritableViemContract,
-  type WritableViemContractOptions,
-} from "src/contract/WritableViemContract";
-
+  ViemWritableContract,
+  type ViemWritableContractOptions,
+} from "src/contract/ViemWritableContract";
 export { createHyperdriveContract } from "src/utils/createHyperdriveContract";

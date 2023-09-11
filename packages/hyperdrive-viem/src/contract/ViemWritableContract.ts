@@ -1,4 +1,3 @@
-import { Abi, WalletClient } from "viem";
 import {
   ContractWriteOptions,
   FunctionArgs,
@@ -7,13 +6,14 @@ import {
   IWritableContract,
 } from "@hyperdrive/sdk";
 import {
-  ReadableViemContract,
-  ReadableViemContractOptions,
-} from "src/contract/ReadableViemContract";
+  ViemReadableContract,
+  ViemReadableContractOptions,
+} from "src/contract/ViemReadableContract";
 import { createSimulateContractParameters } from "src/utils/createSimulateContractParameters";
+import { Abi, WalletClient } from "viem";
 
-export interface WritableViemContractOptions<TAbi extends Abi = Abi>
-  extends ReadableViemContractOptions<TAbi> {
+export interface ViemWritableContractOptions<TAbi extends Abi = Abi>
+  extends ViemReadableContractOptions<TAbi> {
   walletClient: WalletClient;
 }
 
@@ -21,8 +21,8 @@ export interface WritableViemContractOptions<TAbi extends Abi = Abi>
  * A viem implementation of the WritableContract interface.
  * @see https://viem.sh/
  */
-export class WritableViemContract<TAbi extends Abi>
-  extends ReadableViemContract<TAbi>
+export class ViemWritableContract<TAbi extends Abi>
+  extends ViemReadableContract<TAbi>
   implements IWritableContract<TAbi>
 {
   protected readonly _walletClient: WalletClient;
@@ -32,7 +32,7 @@ export class WritableViemContract<TAbi extends Abi>
     address,
     publicClient,
     walletClient,
-  }: WritableViemContractOptions<TAbi>) {
+  }: ViemWritableContractOptions<TAbi>) {
     super({
       abi,
       address,

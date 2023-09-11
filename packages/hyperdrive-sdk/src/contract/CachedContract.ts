@@ -1,9 +1,9 @@
 import { Abi } from "abitype";
-import { ReadableContract } from "src/contract/Contract";
+import { IReadableContract } from "src/contract/Contract";
 
 export interface CachedReadableContract<TAbi extends Abi>
-  extends ReadableContract<TAbi> {
-  deleteRead: (...args: Parameters<ReadableContract<TAbi>["read"]>) => boolean;
+  extends IReadableContract<TAbi> {
+  deleteRead: (...args: Parameters<IReadableContract<TAbi>["read"]>) => boolean;
   clearCache: () => void;
 }
 

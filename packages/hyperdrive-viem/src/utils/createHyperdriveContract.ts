@@ -1,6 +1,6 @@
-import { WritableViemContract } from "src/contract/WritableViemContract";
-import { ReadableViemContract } from "src/contract/ReadableViemContract";
 import { HyperdriveABI } from "@hyperdrive/sdk";
+import { ViemReadableContract } from "src/contract/ViemReadableContract";
+import { ViemWritableContract } from "src/contract/ViemWritableContract";
 import { Address, PublicClient, WalletClient } from "viem";
 
 interface CreateHyperdriveContractOptions {
@@ -21,7 +21,7 @@ export function createHyperdriveContract<
   walletClient,
 }: TOptions): ViemHyperdriveContract<TOptions> {
   if (walletClient) {
-    return new WritableViemContract({
+    return new ViemWritableContract({
       abi: HyperdriveABI,
       address,
       publicClient,
@@ -29,7 +29,7 @@ export function createHyperdriveContract<
     }) as ViemHyperdriveContract<TOptions>;
   }
 
-  return new ReadableViemContract({
+  return new ViemReadableContract({
     abi: HyperdriveABI,
     address,
     publicClient,
@@ -39,5 +39,5 @@ export function createHyperdriveContract<
 export type ViemHyperdriveContract<
   TOptions extends CreateHyperdriveContractOptions,
 > = TOptions["walletClient"] extends WalletClient
-  ? WritableViemContract<typeof HyperdriveABI>
-  : ReadableViemContract<typeof HyperdriveABI>;
+  ? ViemWritableContract<typeof HyperdriveABI>
+  : ViemReadableContract<typeof HyperdriveABI>;
