@@ -19,13 +19,17 @@ export type {
   Contract,
   ContractEvent,
 } from "src/contract/Contract";
-export type {
+export {
   CachedReadableContract,
+  type CachedReadableContractOptions,
+  type ICachedReadableContract,
+} from "src/contract/cached/CachedReadableContract";
+export {
   CachedWritableContract,
-  CachedContract,
-} from "src/contract/CachedContract";
-
-// Hyperdrive Contract types
+  type CachedWritableContractOptions,
+  type ICachedWritableContract,
+} from "src/contract/cached/CachedWritableContract";
+export type { ICachedContract } from "src/contract/cached/CachedContract";
 export type {
   HyperdriveContract,
   ReadableHyperdriveContract,
