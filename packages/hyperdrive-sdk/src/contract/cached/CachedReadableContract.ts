@@ -14,7 +14,7 @@ import {
   FunctionName,
   FunctionReturnType,
 } from "src/base/abitype";
-import sortKeys from "sort-keys";
+import { createSimpleCacheKey } from "src/cache/utils/createSimpleCacheKey";
 
 export interface ICachedReadableContract<TAbi extends Abi = Abi>
   extends IReadableContract<TAbi> {
@@ -52,10 +52,10 @@ export class CachedReadableContract<TAbi extends Abi = Abi>
     args: FunctionArgs<TAbi, TFunctionName>,
     options?: ContractReadOptions,
   ): Promise<FunctionReturnType<TAbi, TFunctionName>> {
-    const key = this._makeReadKey(functionName, args, options);
-    return this._getOrSet(key, () =>
-      this._contract.read(functionName, args, options),
-    );
+    return this._query({
+      key: createSimpleCacheKey(["read", { functionName, args, options }]),
+      callback: () => this._contract.read(functionName, args, options),
+    });
   }
 
   /**
@@ -66,7 +66,7 @@ export class CachedReadableContract<TAbi extends Abi = Abi>
     args: FunctionArgs<TAbi, TFunctionName>,
     options?: ContractReadOptions,
   ): boolean {
-    const key = this._makeReadKey(functionName, args, options);
+    const key = createSimpleCacheKey(["read", { functionName, args, options }]);
     return this._cache.delete(key);
   }
 
@@ -74,9 +74,10 @@ export class CachedReadableContract<TAbi extends Abi = Abi>
     eventName: TEventName,
     options?: ContractGetEventsOptions<TAbi, TEventName>,
   ): Promise<ContractEvent<TAbi, TEventName>[]> {
-    return this._getOrSet({ eventName, options }, () =>
-      this._contract.getEvents(eventName, options),
-    );
+    return this._query({
+      key: createSimpleCacheKey(["getEvents", { eventName, options }]),
+      callback: () => this._contract.getEvents(eventName, options),
+    });
   }
 
   /**
@@ -97,35 +98,25 @@ export class CachedReadableContract<TAbi extends Abi = Abi>
   }
 
   /**
-   * Generates a unique key for caching read results.
-   */
-  private _makeReadKey<TFunctionName extends FunctionName<TAbi>>(
-    functionName: TFunctionName,
-    args: FunctionArgs<TAbi, TFunctionName>,
-    options?: ContractReadOptions,
-  ): SimpleCacheKey {
-    return {
-      functionName,
-      args: sortKeys(args), // Sorting keys ensures consistent cache key generation
-      options: options && sortKeys(options),
-    };
-  }
-
-  /**
    * Retrieves a value from the cache or sets it if not present.
    */
-  private async _getOrSet<TValue = any>(
-    key: SimpleCacheKey,
-    setter: () => TValue,
-  ): Promise<TValue> {
+  private async _query<TValue = any>({
+    key,
+    callback,
+  }: QueryOptions<TValue>): Promise<TValue> {
     let value = this._cache.get(key);
     if (value) {
       return value;
     }
 
-    value = await setter();
+    value = await callback();
     this._cache.set(key, value);
 
     return value;
   }
+}
+
+interface QueryOptions<TValue = any> {
+  key: SimpleCacheKey;
+  callback: () => Promise<TValue> | TValue;
 }
