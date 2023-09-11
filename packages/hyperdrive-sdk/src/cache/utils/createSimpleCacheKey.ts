@@ -31,17 +31,15 @@ export function createSimpleCacheKey(rawKey: NonNullable<any>): SimpleCacheKey {
         );
       }
 
-      const processedObject: Record<string, SimpleCacheKey | null> = {};
+      const processedObject: Record<string, SimpleCacheKey> = {};
 
       // sort keys to ensure consistent key generation
       for (const key of Object.keys(rawKey).sort()) {
         const value = rawKey[key];
 
-        // ignore properties with undefined values since it's the same as not
-        // having the property at all
-        if (value !== undefined) {
-          processedObject[key] =
-            value === null ? value : createSimpleCacheKey(value);
+        // ignore properties with undefined or null values
+        if (value !== undefined && value !== null) {
+          processedObject[key] = createSimpleCacheKey(value);
         }
       }
 

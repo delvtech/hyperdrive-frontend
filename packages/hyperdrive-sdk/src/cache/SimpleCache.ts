@@ -46,14 +46,13 @@ export interface SimpleCache<
 /**
  * Represents possible serializable key types for the SimpleCache. Can be a
  * primitive (string, number, boolean), an array of SimpleCache (with possible
- * null/undefined values), or a record with string keys and SimpleCache (or
- * null) values.
+ * null/undefined values), or a record with string keys and SimpleCache values.
  */
 export type SimpleCacheKey =
   | KeyPrimitive
   | (SimpleCacheKey | null | undefined)[]
   | {
-      [key: string]: SimpleCacheKey | null;
+      [key: string]: SimpleCacheKey;
     };
 
 /** Primitive types that can be used as part of a cache key. */
