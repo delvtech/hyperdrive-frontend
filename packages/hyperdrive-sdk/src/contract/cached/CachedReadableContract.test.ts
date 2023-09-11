@@ -68,3 +68,24 @@ test("The deleteRead function deletes the cached read value", async () => {
   const stub = contract.getReadStub("balanceOf");
   expect(stub?.callCount).toBe(2);
 });
+
+test("It clears the cache", async () => {
+  const contract = new ReadableContractStub(HyperdriveABI);
+  const cachedContract = new CachedReadableContract({ contract });
+
+  contract.stubRead("balanceOf", 100n);
+  contract.stubRead("factory", "0x123abc");
+
+  await cachedContract.read("balanceOf", [0n, "0x123abc"]);
+  await cachedContract.read("factory", []);
+
+  cachedContract.clearCache();
+
+  await cachedContract.read("balanceOf", [0n, "0x123abc"]);
+  await cachedContract.read("factory", []);
+
+  const stubA = contract.getReadStub("balanceOf");
+  const stubB = contract.getReadStub("factory");
+  expect(stubA?.callCount).toBe(2);
+  expect(stubB?.callCount).toBe(2);
+});
