@@ -138,6 +138,84 @@ export class HyperdriveSdk implements IReadableHyperdrive, IWritableHyperdrive {
   }): Promise<RedeemedWithdrawalShares[]> {
     return this._readable.getRedeemedWithdrawalShares({ account, options });
   }
+  previewCloseLong({
+    maturityTime,
+    bondAmountIn,
+    minBaseAmountOut,
+    destination,
+    asUnderlying = false,
+  }: {
+    maturityTime: bigint;
+    bondAmountIn: bigint;
+    minBaseAmountOut: bigint;
+    destination: Address;
+    asUnderlying: boolean;
+  }): Promise<bigint> {
+    return this._readable.previewCloseLong({
+      maturityTime,
+      bondAmountIn,
+      minBaseAmountOut,
+      destination,
+      asUnderlying,
+    });
+  }
+  previewCloseShort({
+    maturityTime,
+    shortAmountIn,
+    minBaseAmountOut,
+    destination,
+    asUnderlying = false,
+  }: {
+    maturityTime: bigint;
+    shortAmountIn: bigint;
+    minBaseAmountOut: bigint;
+    destination: Address;
+    asUnderlying: boolean;
+  }): Promise<bigint> {
+    return this._readable.previewCloseShort({
+      maturityTime,
+      shortAmountIn,
+      minBaseAmountOut,
+      destination,
+      asUnderlying,
+    });
+  }
+  previewOpenLong({
+    baseAmount,
+    bondAmountOut,
+    destination,
+    asUnderlying = false,
+  }: {
+    baseAmount: bigint;
+    bondAmountOut: bigint;
+    destination: Address;
+    asUnderlying: boolean;
+  }): Promise<bigint> {
+    return this._readable.previewOpenLong({
+      baseAmount,
+      bondAmountOut,
+      destination,
+      asUnderlying,
+    });
+  }
+  previewOpenShort({
+    baseAmount,
+    maxBaseAmountIn,
+    destination,
+    asUnderlying = false,
+  }: {
+    baseAmount: bigint;
+    maxBaseAmountIn: bigint;
+    destination: Address;
+    asUnderlying: boolean;
+  }): Promise<bigint> {
+    return this._readable.previewOpenShort({
+      baseAmount,
+      maxBaseAmountIn,
+      destination,
+      asUnderlying,
+    });
+  }
   checkpoint(time: number, options?: ContractWriteOptions): Promise<void> {
     throw new Error("Method not implemented.");
   }

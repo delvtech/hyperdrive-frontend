@@ -172,6 +172,70 @@ export interface IReadableHyperdrive {
     account: Address;
     options?: ContractReadOptions;
   }): Promise<RedeemedWithdrawalShares[]>;
+
+  /**
+   * Predicts the amount of base asset a user will receive when they close a long.
+   */
+  previewCloseLong({
+    maturityTime,
+    bondAmountIn,
+    minBaseAmountOut,
+    destination,
+    asUnderlying,
+  }: {
+    maturityTime: bigint;
+    bondAmountIn: bigint;
+    minBaseAmountOut: bigint;
+    destination: Address;
+    asUnderlying?: boolean | undefined;
+  }): Promise<bigint>;
+
+  /**
+   * Predicts the amount of base asset a user will receive when they close a short.
+   */
+  previewCloseShort({
+    maturityTime,
+    shortAmountIn,
+    minBaseAmountOut,
+    destination,
+    asUnderlying,
+  }: {
+    maturityTime: bigint;
+    shortAmountIn: bigint;
+    minBaseAmountOut: bigint;
+    destination: Address;
+    asUnderlying?: boolean;
+  }): Promise<bigint>;
+
+  /**
+   * Predicts the amount of base a user will receive when they open a long.
+   */
+  previewOpenLong({
+    baseAmount,
+    bondAmountOut,
+    destination,
+    asUnderlying,
+  }: {
+    baseAmount: bigint;
+    bondAmountOut: bigint;
+    destination: Address;
+    asUnderlying?: boolean | undefined;
+  }): Promise<bigint>;
+
+  /**
+   * Predicts the amount of base a user will receive when they open a short.
+   */
+  previewOpenShort({
+    baseAmount,
+    maxBaseAmountIn,
+    destination,
+    asUnderlying,
+  }: {
+    baseAmount: bigint;
+    maxBaseAmountIn: bigint;
+    destination: Address;
+    asUnderlying?: boolean;
+  }): Promise<bigint>;
 }
 
 export class ReadableHyperdrive implements IReadableHyperdrive {
@@ -743,7 +807,7 @@ export class ReadableHyperdrive implements IReadableHyperdrive {
     );
   }
 
-  async getPreviewOpenLong({
+  async previewOpenLong({
     baseAmount,
     bondAmountOut,
     destination,
@@ -754,12 +818,74 @@ export class ReadableHyperdrive implements IReadableHyperdrive {
     destination: Address;
     asUnderlying: boolean;
   }): Promise<bigint> {
-    const result = await this.contract.simulateWrite("openLong", [
+    return await this.contract.simulateWrite("openLong", [
       baseAmount,
       bondAmountOut,
       destination,
       asUnderlying,
     ]);
-    return result;
+  }
+
+  async previewOpenShort({
+    baseAmount,
+    maxBaseAmountIn,
+    destination,
+    asUnderlying,
+  }: {
+    baseAmount: bigint;
+    maxBaseAmountIn: bigint;
+    destination: Address;
+    asUnderlying: boolean;
+  }): Promise<bigint> {
+    return await this.contract.simulateWrite("openShort", [
+      baseAmount,
+      maxBaseAmountIn,
+      destination,
+      asUnderlying,
+    ]);
+  }
+
+  async previewCloseLong({
+    maturityTime,
+    bondAmountIn,
+    minBaseAmountOut,
+    destination,
+    asUnderlying,
+  }: {
+    maturityTime: bigint;
+    bondAmountIn: bigint;
+    minBaseAmountOut: bigint;
+    destination: Address;
+    asUnderlying: boolean;
+  }): Promise<bigint> {
+    return await this.contract.simulateWrite("closeLong", [
+      maturityTime,
+      bondAmountIn,
+      minBaseAmountOut,
+      destination,
+      asUnderlying,
+    ]);
+  }
+
+  async previewCloseShort({
+    maturityTime,
+    shortAmountIn,
+    minBaseAmountOut,
+    destination,
+    asUnderlying,
+  }: {
+    maturityTime: bigint;
+    shortAmountIn: bigint;
+    minBaseAmountOut: bigint;
+    destination: Address;
+    asUnderlying: boolean;
+  }): Promise<bigint> {
+    return await this.contract.simulateWrite("closeShort", [
+      maturityTime,
+      shortAmountIn,
+      minBaseAmountOut,
+      destination,
+      asUnderlying,
+    ]);
   }
 }
