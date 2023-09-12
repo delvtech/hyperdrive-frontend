@@ -144,12 +144,14 @@ export class HyperdriveSdk implements IReadableHyperdrive, IWritableHyperdrive {
     minBaseAmountOut,
     destination,
     asUnderlying = true,
+    options,
   }: {
     maturityTime: bigint;
     bondAmountIn: bigint;
     minBaseAmountOut: bigint;
     destination: Address;
     asUnderlying: boolean;
+    options: ContractWriteOptions;
   }): Promise<bigint> {
     return this._readable.previewCloseLong({
       maturityTime,
@@ -157,6 +159,7 @@ export class HyperdriveSdk implements IReadableHyperdrive, IWritableHyperdrive {
       minBaseAmountOut,
       destination,
       asUnderlying,
+      options,
     });
   }
   previewCloseShort({
@@ -165,12 +168,14 @@ export class HyperdriveSdk implements IReadableHyperdrive, IWritableHyperdrive {
     minBaseAmountOut,
     destination,
     asUnderlying = true,
+    options,
   }: {
     maturityTime: bigint;
     shortAmountIn: bigint;
     minBaseAmountOut: bigint;
     destination: Address;
     asUnderlying: boolean;
+    options: ContractWriteOptions;
   }): Promise<bigint> {
     return this._readable.previewCloseShort({
       maturityTime,
@@ -178,24 +183,28 @@ export class HyperdriveSdk implements IReadableHyperdrive, IWritableHyperdrive {
       minBaseAmountOut,
       destination,
       asUnderlying,
+      options,
     });
   }
   previewOpenLong({
     baseAmount,
-    bondAmountOut,
+    minBaseAmountOut,
     destination,
     asUnderlying = true,
+    options,
   }: {
     baseAmount: bigint;
-    bondAmountOut: bigint;
+    minBaseAmountOut: bigint;
     destination: Address;
     asUnderlying: boolean;
+    options: ContractWriteOptions;
   }): Promise<bigint> {
     return this._readable.previewOpenLong({
       baseAmount,
-      bondAmountOut,
+      minBaseAmountOut,
       destination,
       asUnderlying,
+      options,
     });
   }
   previewOpenShort({
@@ -203,17 +212,20 @@ export class HyperdriveSdk implements IReadableHyperdrive, IWritableHyperdrive {
     maxBaseAmountIn,
     destination,
     asUnderlying = true,
+    options,
   }: {
     baseAmount: bigint;
     maxBaseAmountIn: bigint;
     destination: Address;
     asUnderlying: boolean;
+    options: ContractWriteOptions;
   }): Promise<bigint> {
     return this._readable.previewOpenShort({
       baseAmount,
       maxBaseAmountIn,
       destination,
       asUnderlying,
+      options,
     });
   }
   checkpoint(time: number, options?: ContractWriteOptions): Promise<void> {

@@ -15,6 +15,7 @@ import {
   BlockTag,
   ContractGetEventsOptions,
   ContractReadOptions,
+  ContractWriteOptions,
 } from "src/contract/Contract";
 import { ReadableHyperdriveContract } from "src/hyperdrive/HyperdriveContract";
 import { ReadableHyperdriveMathContract } from "src/hyperdrive/HyperdriveMathContract";
@@ -182,12 +183,14 @@ export interface IReadableHyperdrive {
     minBaseAmountOut,
     destination,
     asUnderlying,
+    options,
   }: {
     maturityTime: bigint;
     bondAmountIn: bigint;
     minBaseAmountOut: bigint;
     destination: Address;
     asUnderlying: boolean;
+    options: ContractWriteOptions;
   }): Promise<bigint>;
 
   /**
@@ -199,12 +202,14 @@ export interface IReadableHyperdrive {
     minBaseAmountOut,
     destination,
     asUnderlying,
+    options,
   }: {
     maturityTime: bigint;
     shortAmountIn: bigint;
     minBaseAmountOut: bigint;
     destination: Address;
     asUnderlying: boolean;
+    options: ContractWriteOptions;
   }): Promise<bigint>;
 
   /**
@@ -212,14 +217,16 @@ export interface IReadableHyperdrive {
    */
   previewOpenLong({
     baseAmount,
-    bondAmountOut,
+    minBaseAmountOut,
     destination,
     asUnderlying,
+    options,
   }: {
     baseAmount: bigint;
-    bondAmountOut: bigint;
+    minBaseAmountOut: bigint;
     destination: Address;
     asUnderlying: boolean;
+    options: ContractWriteOptions;
   }): Promise<bigint>;
 
   /**
@@ -230,11 +237,13 @@ export interface IReadableHyperdrive {
     maxBaseAmountIn,
     destination,
     asUnderlying,
+    options,
   }: {
     baseAmount: bigint;
     maxBaseAmountIn: bigint;
     destination: Address;
     asUnderlying: boolean;
+    options: ContractWriteOptions;
   }): Promise<bigint>;
 }
 
@@ -809,21 +818,22 @@ export class ReadableHyperdrive implements IReadableHyperdrive {
 
   async previewOpenLong({
     baseAmount,
-    bondAmountOut,
+    minBaseAmountOut,
     destination,
     asUnderlying,
+    options,
   }: {
     baseAmount: bigint;
-    bondAmountOut: bigint;
+    minBaseAmountOut: bigint;
     destination: Address;
     asUnderlying: boolean;
+    options?: ContractWriteOptions;
   }): Promise<bigint> {
-    return await this.contract.simulateWrite("openLong", [
-      baseAmount,
-      bondAmountOut,
-      destination,
-      asUnderlying,
-    ]);
+    return await this.contract.simulateWrite(
+      "openLong",
+      [baseAmount, minBaseAmountOut, destination, asUnderlying],
+      options,
+    );
   }
 
   async previewOpenShort({
@@ -831,18 +841,19 @@ export class ReadableHyperdrive implements IReadableHyperdrive {
     maxBaseAmountIn,
     destination,
     asUnderlying,
+    options,
   }: {
     baseAmount: bigint;
     maxBaseAmountIn: bigint;
     destination: Address;
     asUnderlying: boolean;
+    options?: ContractWriteOptions;
   }): Promise<bigint> {
-    return await this.contract.simulateWrite("openShort", [
-      baseAmount,
-      maxBaseAmountIn,
-      destination,
-      asUnderlying,
-    ]);
+    return await this.contract.simulateWrite(
+      "openShort",
+      [baseAmount, maxBaseAmountIn, destination, asUnderlying],
+      options,
+    );
   }
 
   async previewCloseLong({
@@ -851,20 +862,20 @@ export class ReadableHyperdrive implements IReadableHyperdrive {
     minBaseAmountOut,
     destination,
     asUnderlying,
+    options,
   }: {
     maturityTime: bigint;
     bondAmountIn: bigint;
     minBaseAmountOut: bigint;
     destination: Address;
     asUnderlying: boolean;
+    options?: ContractWriteOptions;
   }): Promise<bigint> {
-    return await this.contract.simulateWrite("closeLong", [
-      maturityTime,
-      bondAmountIn,
-      minBaseAmountOut,
-      destination,
-      asUnderlying,
-    ]);
+    return await this.contract.simulateWrite(
+      "closeLong",
+      [maturityTime, bondAmountIn, minBaseAmountOut, destination, asUnderlying],
+      options,
+    );
   }
 
   async previewCloseShort({
@@ -873,19 +884,25 @@ export class ReadableHyperdrive implements IReadableHyperdrive {
     minBaseAmountOut,
     destination,
     asUnderlying,
+    options,
   }: {
     maturityTime: bigint;
     shortAmountIn: bigint;
     minBaseAmountOut: bigint;
     destination: Address;
     asUnderlying: boolean;
+    options?: ContractWriteOptions;
   }): Promise<bigint> {
-    return await this.contract.simulateWrite("closeShort", [
-      maturityTime,
-      shortAmountIn,
-      minBaseAmountOut,
-      destination,
-      asUnderlying,
-    ]);
+    return await this.contract.simulateWrite(
+      "closeShort",
+      [
+        maturityTime,
+        shortAmountIn,
+        minBaseAmountOut,
+        destination,
+        asUnderlying,
+      ],
+      options,
+    );
   }
 }
