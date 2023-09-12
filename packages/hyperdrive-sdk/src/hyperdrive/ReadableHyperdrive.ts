@@ -187,7 +187,7 @@ export interface IReadableHyperdrive {
     bondAmountIn: bigint;
     minBaseAmountOut: bigint;
     destination: Address;
-    asUnderlying?: boolean | undefined;
+    asUnderlying: boolean;
   }): Promise<bigint>;
 
   /**
@@ -204,7 +204,7 @@ export interface IReadableHyperdrive {
     shortAmountIn: bigint;
     minBaseAmountOut: bigint;
     destination: Address;
-    asUnderlying?: boolean;
+    asUnderlying: boolean;
   }): Promise<bigint>;
 
   /**
@@ -219,7 +219,7 @@ export interface IReadableHyperdrive {
     baseAmount: bigint;
     bondAmountOut: bigint;
     destination: Address;
-    asUnderlying?: boolean | undefined;
+    asUnderlying: boolean;
   }): Promise<bigint>;
 
   /**
@@ -234,7 +234,7 @@ export interface IReadableHyperdrive {
     baseAmount: bigint;
     maxBaseAmountIn: bigint;
     destination: Address;
-    asUnderlying?: boolean;
+    asUnderlying: boolean;
   }): Promise<bigint>;
 }
 
