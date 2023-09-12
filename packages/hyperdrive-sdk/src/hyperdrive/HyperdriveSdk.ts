@@ -138,6 +138,96 @@ export class HyperdriveSdk implements IReadableHyperdrive, IWritableHyperdrive {
   }): Promise<RedeemedWithdrawalShares[]> {
     return this._readable.getRedeemedWithdrawalShares({ account, options });
   }
+  previewCloseLong({
+    maturityTime,
+    bondAmountIn,
+    minBaseAmountOut,
+    destination,
+    asUnderlying = true,
+    options,
+  }: {
+    maturityTime: bigint;
+    bondAmountIn: bigint;
+    minBaseAmountOut: bigint;
+    destination: Address;
+    asUnderlying: boolean;
+    options: ContractWriteOptions;
+  }): Promise<bigint> {
+    return this._readable.previewCloseLong({
+      maturityTime,
+      bondAmountIn,
+      minBaseAmountOut,
+      destination,
+      asUnderlying,
+      options,
+    });
+  }
+  previewCloseShort({
+    maturityTime,
+    shortAmountIn,
+    minBaseAmountOut,
+    destination,
+    asUnderlying = true,
+    options,
+  }: {
+    maturityTime: bigint;
+    shortAmountIn: bigint;
+    minBaseAmountOut: bigint;
+    destination: Address;
+    asUnderlying: boolean;
+    options: ContractWriteOptions;
+  }): Promise<bigint> {
+    return this._readable.previewCloseShort({
+      maturityTime,
+      shortAmountIn,
+      minBaseAmountOut,
+      destination,
+      asUnderlying,
+      options,
+    });
+  }
+  previewOpenLong({
+    baseAmount,
+    minBaseAmountOut,
+    destination,
+    asUnderlying = true,
+    options,
+  }: {
+    baseAmount: bigint;
+    minBaseAmountOut: bigint;
+    destination: Address;
+    asUnderlying: boolean;
+    options: ContractWriteOptions;
+  }): Promise<bigint> {
+    return this._readable.previewOpenLong({
+      baseAmount,
+      minBaseAmountOut,
+      destination,
+      asUnderlying,
+      options,
+    });
+  }
+  previewOpenShort({
+    amountOfBondsToShort,
+    maxBaseAmountIn,
+    destination,
+    asUnderlying = true,
+    options,
+  }: {
+    amountOfBondsToShort: bigint;
+    maxBaseAmountIn: bigint;
+    destination: Address;
+    asUnderlying: boolean;
+    options: ContractWriteOptions;
+  }): Promise<bigint> {
+    return this._readable.previewOpenShort({
+      amountOfBondsToShort,
+      maxBaseAmountIn,
+      destination,
+      asUnderlying,
+      options,
+    });
+  }
   checkpoint(time: number, options?: ContractWriteOptions): Promise<void> {
     throw new Error("Method not implemented.");
   }

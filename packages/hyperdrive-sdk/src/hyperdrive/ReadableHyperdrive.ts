@@ -15,6 +15,7 @@ import {
   BlockTag,
   ContractGetEventsOptions,
   ContractReadOptions,
+  ContractWriteOptions,
 } from "src/contract/Contract";
 import { ReadableHyperdriveContract } from "src/hyperdrive/HyperdriveContract";
 import { ReadableHyperdriveMathContract } from "src/hyperdrive/HyperdriveMathContract";
@@ -172,6 +173,78 @@ export interface IReadableHyperdrive {
     account: Address;
     options?: ContractReadOptions;
   }): Promise<RedeemedWithdrawalShares[]>;
+
+  /**
+   * Predicts the amount of base asset a user will receive when closing a long.
+   */
+  previewCloseLong({
+    maturityTime,
+    bondAmountIn,
+    minBaseAmountOut,
+    destination,
+    asUnderlying,
+    options,
+  }: {
+    maturityTime: bigint;
+    bondAmountIn: bigint;
+    minBaseAmountOut: bigint;
+    destination: Address;
+    asUnderlying: boolean;
+    options: ContractWriteOptions;
+  }): Promise<bigint>;
+
+  /**
+   * Predicts the amount of base asset a user will receive when closing a short.
+   */
+  previewCloseShort({
+    maturityTime,
+    shortAmountIn,
+    minBaseAmountOut,
+    destination,
+    asUnderlying,
+    options,
+  }: {
+    maturityTime: bigint;
+    shortAmountIn: bigint;
+    minBaseAmountOut: bigint;
+    destination: Address;
+    asUnderlying: boolean;
+    options: ContractWriteOptions;
+  }): Promise<bigint>;
+
+  /**
+   * Predicts the amount of bonds a user will receive when opening a long.
+   */
+  previewOpenLong({
+    baseAmount,
+    minBaseAmountOut,
+    destination,
+    asUnderlying,
+    options,
+  }: {
+    baseAmount: bigint;
+    minBaseAmountOut: bigint;
+    destination: Address;
+    asUnderlying: boolean;
+    options: ContractWriteOptions;
+  }): Promise<bigint>;
+
+  /**
+   * Predicts the amount of base asset it will cost to open a short.
+   */
+  previewOpenShort({
+    amountOfBondsToShort,
+    maxBaseAmountIn,
+    destination,
+    asUnderlying,
+    options,
+  }: {
+    amountOfBondsToShort: bigint;
+    maxBaseAmountIn: bigint;
+    destination: Address;
+    asUnderlying: boolean;
+    options: ContractWriteOptions;
+  }): Promise<bigint>;
 }
 
 export class ReadableHyperdrive implements IReadableHyperdrive {
@@ -740,6 +813,96 @@ export class ReadableHyperdrive implements IReadableHyperdrive {
           ).timestamp,
         };
       }),
+    );
+  }
+
+  async previewOpenLong({
+    baseAmount,
+    minBaseAmountOut,
+    destination,
+    asUnderlying,
+    options,
+  }: {
+    baseAmount: bigint;
+    minBaseAmountOut: bigint;
+    destination: Address;
+    asUnderlying: boolean;
+    options?: ContractWriteOptions;
+  }): Promise<bigint> {
+    return await this.contract.simulateWrite(
+      "openLong",
+      [baseAmount, minBaseAmountOut, destination, asUnderlying],
+      options,
+    );
+  }
+
+  async previewOpenShort({
+    amountOfBondsToShort,
+    maxBaseAmountIn,
+    destination,
+    asUnderlying,
+    options,
+  }: {
+    amountOfBondsToShort: bigint;
+    maxBaseAmountIn: bigint;
+    destination: Address;
+    asUnderlying: boolean;
+    options?: ContractWriteOptions;
+  }): Promise<bigint> {
+    return await this.contract.simulateWrite(
+      "openShort",
+      [amountOfBondsToShort, maxBaseAmountIn, destination, asUnderlying],
+      options,
+    );
+  }
+
+  async previewCloseLong({
+    maturityTime,
+    bondAmountIn,
+    minBaseAmountOut,
+    destination,
+    asUnderlying,
+    options,
+  }: {
+    maturityTime: bigint;
+    bondAmountIn: bigint;
+    minBaseAmountOut: bigint;
+    destination: Address;
+    asUnderlying: boolean;
+    options?: ContractWriteOptions;
+  }): Promise<bigint> {
+    return await this.contract.simulateWrite(
+      "closeLong",
+      [maturityTime, bondAmountIn, minBaseAmountOut, destination, asUnderlying],
+      options,
+    );
+  }
+
+  async previewCloseShort({
+    maturityTime,
+    shortAmountIn,
+    minBaseAmountOut,
+    destination,
+    asUnderlying,
+    options,
+  }: {
+    maturityTime: bigint;
+    shortAmountIn: bigint;
+    minBaseAmountOut: bigint;
+    destination: Address;
+    asUnderlying: boolean;
+    options?: ContractWriteOptions;
+  }): Promise<bigint> {
+    return await this.contract.simulateWrite(
+      "closeShort",
+      [
+        maturityTime,
+        shortAmountIn,
+        minBaseAmountOut,
+        destination,
+        asUnderlying,
+      ],
+      options,
     );
   }
 }
