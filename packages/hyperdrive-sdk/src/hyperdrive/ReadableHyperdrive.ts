@@ -175,7 +175,7 @@ export interface IReadableHyperdrive {
   }): Promise<RedeemedWithdrawalShares[]>;
 
   /**
-   * Predicts the amount of base asset a user will receive when they close a long.
+   * Predicts the amount of base asset a user will receive when closing a long.
    */
   previewCloseLong({
     maturityTime,
@@ -194,7 +194,7 @@ export interface IReadableHyperdrive {
   }): Promise<bigint>;
 
   /**
-   * Predicts the amount of base asset a user will receive when they close a short.
+   * Predicts the amount of base asset a user will receive when closing a short.
    */
   previewCloseShort({
     maturityTime,
@@ -213,7 +213,7 @@ export interface IReadableHyperdrive {
   }): Promise<bigint>;
 
   /**
-   * Predicts the amount of base a user will receive when they open a long.
+   * Predicts the amount of bonds a user will receive when opening a long.
    */
   previewOpenLong({
     baseAmount,
@@ -230,16 +230,16 @@ export interface IReadableHyperdrive {
   }): Promise<bigint>;
 
   /**
-   * Predicts the amount of base a user will receive when they open a short.
+   * Predicts the amount of base asset it will cost to open a short.
    */
   previewOpenShort({
-    baseAmount,
+    amountOfBondsToShort,
     maxBaseAmountIn,
     destination,
     asUnderlying,
     options,
   }: {
-    baseAmount: bigint;
+    amountOfBondsToShort: bigint;
     maxBaseAmountIn: bigint;
     destination: Address;
     asUnderlying: boolean;
@@ -837,13 +837,13 @@ export class ReadableHyperdrive implements IReadableHyperdrive {
   }
 
   async previewOpenShort({
-    baseAmount,
+    amountOfBondsToShort,
     maxBaseAmountIn,
     destination,
     asUnderlying,
     options,
   }: {
-    baseAmount: bigint;
+    amountOfBondsToShort: bigint;
     maxBaseAmountIn: bigint;
     destination: Address;
     asUnderlying: boolean;
@@ -851,7 +851,7 @@ export class ReadableHyperdrive implements IReadableHyperdrive {
   }): Promise<bigint> {
     return await this.contract.simulateWrite(
       "openShort",
-      [baseAmount, maxBaseAmountIn, destination, asUnderlying],
+      [amountOfBondsToShort, maxBaseAmountIn, destination, asUnderlying],
       options,
     );
   }

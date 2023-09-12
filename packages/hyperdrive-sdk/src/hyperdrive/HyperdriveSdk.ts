@@ -208,20 +208,20 @@ export class HyperdriveSdk implements IReadableHyperdrive, IWritableHyperdrive {
     });
   }
   previewOpenShort({
-    baseAmount,
+    amountOfBondsToShort,
     maxBaseAmountIn,
     destination,
     asUnderlying = true,
     options,
   }: {
-    baseAmount: bigint;
+    amountOfBondsToShort: bigint;
     maxBaseAmountIn: bigint;
     destination: Address;
     asUnderlying: boolean;
     options: ContractWriteOptions;
   }): Promise<bigint> {
     return this._readable.previewOpenShort({
-      baseAmount,
+      amountOfBondsToShort,
       maxBaseAmountIn,
       destination,
       asUnderlying,
