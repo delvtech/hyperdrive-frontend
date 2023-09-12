@@ -143,7 +143,7 @@ export class HyperdriveSdk implements IReadableHyperdrive, IWritableHyperdrive {
     bondAmountIn,
     minBaseAmountOut,
     destination,
-    asUnderlying = false,
+    asUnderlying = true,
   }: {
     maturityTime: bigint;
     bondAmountIn: bigint;
@@ -164,7 +164,7 @@ export class HyperdriveSdk implements IReadableHyperdrive, IWritableHyperdrive {
     shortAmountIn,
     minBaseAmountOut,
     destination,
-    asUnderlying = false,
+    asUnderlying = true,
   }: {
     maturityTime: bigint;
     shortAmountIn: bigint;
@@ -184,7 +184,7 @@ export class HyperdriveSdk implements IReadableHyperdrive, IWritableHyperdrive {
     baseAmount,
     bondAmountOut,
     destination,
-    asUnderlying = false,
+    asUnderlying = true,
   }: {
     baseAmount: bigint;
     bondAmountOut: bigint;
@@ -202,7 +202,7 @@ export class HyperdriveSdk implements IReadableHyperdrive, IWritableHyperdrive {
     baseAmount,
     maxBaseAmountIn,
     destination,
-    asUnderlying = false,
+    asUnderlying = true,
   }: {
     baseAmount: bigint;
     maxBaseAmountIn: bigint;
