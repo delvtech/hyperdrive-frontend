@@ -1,7 +1,7 @@
 import { ChevronRightIcon, SquaresPlusIcon } from "@heroicons/react/24/outline";
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
-import { ChecklistItem } from "src/ui/base/components/ChecklistItem/CheckedListItem";
+import { ChecklistItem } from "src/ui/base/components/ChecklistItem/ChecklistItem";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { Well } from "src/ui/base/components/Well/Well";
 import { AddLiquidityForm } from "src/ui/hyperdrive/lp/AddLiquidityForm/AddLiquidityForm";
