@@ -23,7 +23,10 @@ export function AddLiquidityModalButton({
           <div className="flex w-[272px] flex-col justify-between gap-2 p-4">
             <SquaresPlusIcon className="mb-2 h-16 text-primary" />
             <p className="text-h5">Add Liquidity</p>
-            <p className="font-bold">Earn trading fees and interest</p>
+            <p className="font-bold">
+              Earn trading fees <span className="text-primary">and</span>{" "}
+              interest
+            </p>
             <div className="mt-4 ml-4 flex flex-col gap-2 ">
               <ChecklistItem checked readOnly variant="primary">
                 Deposit {hyperdrive.baseToken.symbol} to back trades
