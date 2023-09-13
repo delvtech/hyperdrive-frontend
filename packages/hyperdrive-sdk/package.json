@@ -24,11 +24,14 @@
     "@hyperdrive/prettier-config": "*",
     "@hyperdrive/tsconfig": "*",
     "@parcel/transformer-typescript-types": "2.8.3",
+    "@types/sinon": "^10.0.16",
+    "@viem/anvil": "^0.0.6",
     "abitype": "^0.9.8",
     "dotenv": "^16.0.3",
     "happy-dom": "^10.7.0",
     "parcel": "^2.8.0",
     "prettier-plugin-organize-imports": "^3.2.2",
+    "sinon": "^15.2.0",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.1.0",
     "typescript": "^5.0.2",
@@ -44,10 +47,11 @@
     "@tanstack/query-core": "^4.29.11",
     "@types/lodash.groupby": "^4.6.7",
     "@types/lodash.mapvalues": "^4.6.7",
-    "@viem/anvil": "^0.0.6",
     "dnum": "^2.7.0",
+    "fast-json-stable-stringify": "^2.1.0",
     "lodash.groupby": "^4.6.0",
     "lodash.mapvalues": "^4.6.0",
+    "lru-cache": "^10.0.1",
     "viem": "^1.5.3"
   }
 }

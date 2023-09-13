@@ -1,17 +1,17 @@
-import { WritableViemContract } from "src/contract/WritableViemContract";
-import { ReadableViemContract } from "src/contract/ReadableViemContract";
-import { HyperdriveABI } from "@hyperdrive/sdk";
+import { HyperdriveABI, SimpleCache } from "@hyperdrive/sdk";
+import { ViemCachedReadContract } from "src/contract/ViemCachedReadContract";
+import { ViemCachedReadWriteContract } from "src/contract/ViemCachedReadWriteContract";
 import { Address, PublicClient, WalletClient } from "viem";
 
 interface CreateHyperdriveContractOptions {
   address: Address;
   publicClient: PublicClient;
   walletClient?: WalletClient;
+  cache?: SimpleCache;
 }
 
 /**
- * Get a new `ReadableHyperdriveContract` or `WritableHyperdriveContract`
- * instance depending on options.
+ * Get a new `Contract` instance using Viem.
  */
 export function createHyperdriveContract<
   TOptions extends CreateHyperdriveContractOptions,
@@ -19,25 +19,28 @@ export function createHyperdriveContract<
   address,
   publicClient,
   walletClient,
+  cache,
 }: TOptions): ViemHyperdriveContract<TOptions> {
   if (walletClient) {
-    return new WritableViemContract({
+    return new ViemCachedReadWriteContract({
       abi: HyperdriveABI,
       address,
       publicClient,
       walletClient,
-    }) as ViemHyperdriveContract<TOptions>;
+      cache,
+    });
   }
 
-  return new ReadableViemContract({
+  return new ViemCachedReadContract({
     abi: HyperdriveABI,
     address,
     publicClient,
+    cache,
   }) as ViemHyperdriveContract<TOptions>;
 }
 
 export type ViemHyperdriveContract<
   TOptions extends CreateHyperdriveContractOptions,
 > = TOptions["walletClient"] extends WalletClient
-  ? WritableViemContract<typeof HyperdriveABI>
-  : ReadableViemContract<typeof HyperdriveABI>;
+  ? ViemCachedReadWriteContract<typeof HyperdriveABI>
+  : ViemCachedReadContract<typeof HyperdriveABI>;

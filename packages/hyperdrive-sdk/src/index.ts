@@ -8,23 +8,34 @@ export { HyperdriveMathABI } from "src/abis/HyperdriveMath";
 export { HyperdriveABI } from "src/abis/Hyperdrive";
 export { mockErc4626Abi } from "src/abis/MockErc4626";
 
+// SimpleCache
+export type { SimpleCache } from "src/cache/SimpleCache";
+export { LruSimpleCache } from "src/cache/LruSimpleCache";
+
 // Contract Interface
 export type {
-  IReadableContract,
-  IWritableContract,
+  IReadContract,
+  IReadWriteContract,
   Contract,
-  ContractEventFunction,
-  ContractFunction,
   ContractEvent,
 } from "src/contract/Contract";
-
-// Hyperdrive Contract types
+export {
+  CachedReadContract,
+  type CachedReadContractOptions,
+  type ICachedReadContract,
+} from "src/contract/cached/CachedReadContract";
+export {
+  CachedReadWriteContract,
+  type CachedReadWriteContractOptions,
+  type ICachedReadWriteContract,
+} from "src/contract/cached/CachedReadWriteContract";
+export type { ICachedContract } from "src/contract/cached/CachedContract";
 export type {
   HyperdriveContract,
-  ReadableHyperdriveContract,
-  WritableHyperdriveContract,
+  ReadHyperdriveContract,
+  ReadWriteHyperdriveContract,
 } from "src/hyperdrive/HyperdriveContract";
 
 // SDK classes
-export { ReadableHyperdrive } from "src/hyperdrive/ReadableHyperdrive";
-export { WritableHyperdrive } from "src/hyperdrive/WritableHyperdrive";
+export { ReadHyperdrive } from "src/hyperdrive/ReadHyperdrive";
+export { ReadWriteHyperdrive } from "src/hyperdrive/ReadWriteHyperdrive";
