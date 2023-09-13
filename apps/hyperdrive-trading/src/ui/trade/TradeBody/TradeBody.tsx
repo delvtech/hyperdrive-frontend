@@ -43,9 +43,7 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
       <div>
         <div className="flex flex-wrap justify-center gap-16">
           <OpenLongModalButton hyperdrive={hyperdrive} />
-
           <OpenShortModalButton hyperdrive={hyperdrive} />
-
           <AddLiquidityModalButton hyperdrive={hyperdrive} />
         </div>
       </div>
