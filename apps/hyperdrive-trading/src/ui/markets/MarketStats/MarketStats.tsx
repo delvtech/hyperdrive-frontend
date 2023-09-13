@@ -56,7 +56,7 @@ export function MarketStats({
         value={
           fixedAPR ? (
             <span className="flex items-center gap-1.5">
-              {fixedAPR?.formatted || "0"}%
+              {fixedAPR?.formatted || "0"}% APR
             </span>
           ) : (
             <Skeleton className="opacity-50" />
