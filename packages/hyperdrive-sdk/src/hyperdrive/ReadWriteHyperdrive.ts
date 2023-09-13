@@ -43,6 +43,7 @@ export interface IReadWriteHyperdrive {
    * @param baseAmount - The amount of base supplied to the position
    * @param bondAmountOut - The amount of bonds to send to the destination
    * @param asUnderlying - TODO: come up with good comment for this
+   * @param options - Contract Write Options
    *
    */
   openLong({
