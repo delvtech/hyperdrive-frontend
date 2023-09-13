@@ -1,9 +1,9 @@
 import { expect, test } from "vitest";
 import { HyperdriveABI } from "@hyperdrive/core";
-import { WritableContractStub } from "src/contract/stubs/WritableContractStub";
+import { ReadWriteContractStub } from "src/contract/stubs/ReadWriteContractStub";
 
 test("It stubs the write function", async () => {
-  const contract = new WritableContractStub(HyperdriveABI);
+  const contract = new ReadWriteContractStub(HyperdriveABI);
 
   const stubbedValue = 100n;
   contract.stubWrite("addLiquidity", stubbedValue);

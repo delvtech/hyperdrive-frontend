@@ -1,12 +1,12 @@
 import { expect, test } from "vitest";
 import { HyperdriveABI } from "@hyperdrive/core";
 import { ContractEvent } from "src/contract/Contract";
-import { ReadableContractStub } from "src/contract/stubs/ReadableContractStub";
-import { CachedReadableContract } from "src/contract/cached/CachedReadableContract";
+import { ReadContractStub } from "src/contract/stubs/ReadContractStub";
+import { CachedReadContract } from "src/contract/cached/CachedReadContract";
 
 test("It caches the read function", async () => {
-  const contract = new ReadableContractStub(HyperdriveABI);
-  const cachedContract = new CachedReadableContract({ contract });
+  const contract = new ReadContractStub(HyperdriveABI);
+  const cachedContract = new CachedReadContract({ contract });
 
   const stubbedValue = "0x123abc";
   contract.stubRead("baseToken", stubbedValue);
@@ -22,8 +22,8 @@ test("It caches the read function", async () => {
 });
 
 test("It caches the getEvents function", async () => {
-  const contract = new ReadableContractStub(HyperdriveABI);
-  const cachedContract = new CachedReadableContract({ contract });
+  const contract = new ReadContractStub(HyperdriveABI);
+  const cachedContract = new CachedReadContract({ contract });
 
   const stubbedEvents: ContractEvent<typeof HyperdriveABI, "AddLiquidity">[] = [
     {
@@ -51,8 +51,8 @@ test("It caches the getEvents function", async () => {
 });
 
 test("The deleteRead function deletes the cached read value", async () => {
-  const contract = new ReadableContractStub(HyperdriveABI);
-  const cachedContract = new CachedReadableContract({ contract });
+  const contract = new ReadContractStub(HyperdriveABI);
+  const cachedContract = new CachedReadContract({ contract });
 
   const stubbedValue = 100n;
   contract.stubRead("balanceOf", stubbedValue);
@@ -70,8 +70,8 @@ test("The deleteRead function deletes the cached read value", async () => {
 });
 
 test("It clears the cache", async () => {
-  const contract = new ReadableContractStub(HyperdriveABI);
-  const cachedContract = new CachedReadableContract({ contract });
+  const contract = new ReadContractStub(HyperdriveABI);
+  const cachedContract = new CachedReadContract({ contract });
 
   contract.stubRead("balanceOf", 100n);
   contract.stubRead("factory", "0x123abc");

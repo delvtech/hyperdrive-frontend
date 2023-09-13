@@ -1,10 +1,10 @@
 import { expect, test } from "vitest";
 import { HyperdriveABI } from "@hyperdrive/core";
 import { ContractEvent } from "src/contract/Contract";
-import { ReadableContractStub } from "src/contract/stubs/ReadableContractStub";
+import { ReadContractStub } from "src/contract/stubs/ReadContractStub";
 
 test("It stubs the read function", async () => {
-  const contract = new ReadableContractStub(HyperdriveABI);
+  const contract = new ReadContractStub(HyperdriveABI);
 
   expect(() => contract.read("baseToken", [])).toThrowError();
 
@@ -19,7 +19,7 @@ test("It stubs the read function", async () => {
 });
 
 test("It stubs the simulateWrite function", async () => {
-  const contract = new ReadableContractStub(HyperdriveABI);
+  const contract = new ReadContractStub(HyperdriveABI);
 
   expect(() => contract.simulateWrite("addLiquidity", [])).toThrowError();
 
@@ -34,7 +34,7 @@ test("It stubs the simulateWrite function", async () => {
 });
 
 test("It stubs the getEvents function", async () => {
-  const contract = new ReadableContractStub(HyperdriveABI);
+  const contract = new ReadContractStub(HyperdriveABI);
 
   expect(() => contract.getEvents("addLiquidity")).toThrowError();
 

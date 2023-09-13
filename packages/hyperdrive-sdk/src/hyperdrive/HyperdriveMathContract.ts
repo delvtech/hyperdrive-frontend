@@ -1,6 +1,6 @@
 import { HyperdriveMathABI } from "src/abis/HyperdriveMath";
-import { IReadableContract } from "src/contract/Contract";
+import { IReadContract } from "src/contract/Contract";
 
-export type ReadableHyperdriveMathContract = IReadableContract<
+export type ReadHyperdriveMathContract = IReadContract<
   typeof HyperdriveMathABI
 >;

@@ -14,28 +14,28 @@ export { LruSimpleCache } from "src/cache/LruSimpleCache";
 
 // Contract Interface
 export type {
-  IReadableContract,
-  IWritableContract,
+  IReadContract,
+  IReadWriteContract,
   Contract,
   ContractEvent,
 } from "src/contract/Contract";
 export {
-  CachedReadableContract,
-  type CachedReadableContractOptions,
-  type ICachedReadableContract,
-} from "src/contract/cached/CachedReadableContract";
+  CachedReadContract,
+  type CachedReadContractOptions,
+  type ICachedReadContract,
+} from "src/contract/cached/CachedReadContract";
 export {
-  CachedWritableContract,
-  type CachedWritableContractOptions,
-  type ICachedWritableContract,
-} from "src/contract/cached/CachedWritableContract";
+  CachedReadWriteContract,
+  type CachedReadWriteContractOptions,
+  type ICachedReadWriteContract,
+} from "src/contract/cached/CachedReadWriteContract";
 export type { ICachedContract } from "src/contract/cached/CachedContract";
 export type {
   HyperdriveContract,
-  ReadableHyperdriveContract,
-  WritableHyperdriveContract,
+  ReadHyperdriveContract,
+  ReadWriteHyperdriveContract,
 } from "src/hyperdrive/HyperdriveContract";
 
 // SDK classes
-export { ReadableHyperdrive } from "src/hyperdrive/ReadableHyperdrive";
-export { WritableHyperdrive } from "src/hyperdrive/WritableHyperdrive";
+export { ReadHyperdrive } from "src/hyperdrive/ReadHyperdrive";
+export { ReadWriteHyperdrive } from "src/hyperdrive/ReadWriteHyperdrive";

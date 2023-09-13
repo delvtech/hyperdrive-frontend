@@ -1,7 +1,7 @@
 import { Abi } from "abitype";
-import { ICachedReadableContract } from "src/contract/cached/CachedReadableContract";
-import { ICachedWritableContract } from "src/contract/cached/CachedWritableContract";
+import { ICachedReadContract } from "src/contract/cached/CachedReadContract";
+import { ICachedReadWriteContract } from "src/contract/cached/CachedReadWriteContract";
 
 export type ICachedContract<TAbi extends Abi = Abi> =
-  | ICachedReadableContract<TAbi>
-  | ICachedWritableContract<TAbi>;
+  | ICachedReadContract<TAbi>
+  | ICachedReadWriteContract<TAbi>;

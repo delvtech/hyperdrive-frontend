@@ -8,37 +8,33 @@ import {
   FunctionArgs,
   FunctionName,
   FunctionReturnType,
-  IReadableContract,
+  IReadContract,
   SimpleCache,
 } from "@hyperdrive/sdk";
-import { ViemCachedReadableContract } from "src/contract/ViemCachedReadableContract";
-import { ViemWritableContract } from "src/contract/ViemWritableContract";
+import { ViemCachedReadContract } from "src/contract/ViemCachedReadContract";
+import { ViemReadWriteContract } from "src/contract/ViemReadWriteContract";
 import { createSimulateContractParameters } from "src/utils/createSimulateContractParameters";
 import { Abi, Address, PublicClient, WalletClient } from "viem";
 
-export interface ViemReadableContractOptions<TAbi extends Abi = Abi> {
+export interface ViemReadContractOptions<TAbi extends Abi = Abi> {
   abi: TAbi;
   address: Address;
   publicClient: PublicClient;
 }
 
 /**
- * A viem implementation of the ReadableContract interface.
+ * A viem implementation of the ReadContract interface.
  * @see https://viem.sh/
  */
-export class ViemReadableContract<TAbi extends Abi = Abi>
-  implements IReadableContract<TAbi>
+export class ViemReadContract<TAbi extends Abi = Abi>
+  implements IReadContract<TAbi>
 {
   readonly abi: TAbi;
   readonly address: Address;
 
   protected readonly _publicClient: PublicClient;
 
-  constructor({
-    abi,
-    address,
-    publicClient,
-  }: ViemReadableContractOptions<TAbi>) {
+  constructor({ abi, address, publicClient }: ViemReadContractOptions<TAbi>) {
     this.abi = abi;
     this.address = address;
     this._publicClient = publicClient;
@@ -105,8 +101,8 @@ export class ViemReadableContract<TAbi extends Abi = Abi>
    * Get a wrapped version of this contract with caching capabilities. Useful
    * for reducing the number of actual reads from the contract.
    */
-  withCache(cache?: SimpleCache): ViemCachedReadableContract<TAbi> {
-    return new ViemCachedReadableContract({
+  withCache(cache?: SimpleCache): ViemCachedReadContract<TAbi> {
+    return new ViemCachedReadContract({
       abi: this.abi,
       address: this.address,
       publicClient: this._publicClient,
@@ -117,8 +113,8 @@ export class ViemReadableContract<TAbi extends Abi = Abi>
   /**
    * Get an extended version of this contract with write capabilities.
    */
-  withWallet(walletClient: WalletClient): ViemWritableContract<TAbi> {
-    return new ViemWritableContract({
+  withWallet(walletClient: WalletClient): ViemReadWriteContract<TAbi> {
+    return new ViemReadWriteContract({
       abi: this.abi,
       address: this.address,
       publicClient: this._publicClient,

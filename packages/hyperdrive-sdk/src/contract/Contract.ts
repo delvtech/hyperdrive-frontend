@@ -12,7 +12,7 @@ import {
  * Interface representing a readable contract with specified ABI.
  * Provides methods to read and simulate write operations on the contract.
  */
-export interface IReadableContract<TAbi extends Abi = Abi> {
+export interface IReadContract<TAbi extends Abi = Abi> {
   abi: TAbi;
   address: Address;
 
@@ -47,10 +47,10 @@ export interface IReadableContract<TAbi extends Abi = Abi> {
 
 /**
  * Interface representing a writable contract with specified ABI.
- * Extends IReadableContract to also include write operations.
+ * Extends IReadContract to also include write operations.
  */
-export interface IWritableContract<TAbi extends Abi = Abi>
-  extends IReadableContract<TAbi> {
+export interface IReadWriteContract<TAbi extends Abi = Abi>
+  extends IReadContract<TAbi> {
   /**
    * Writes to a specified function on the contract.
    */
@@ -67,8 +67,8 @@ export interface IWritableContract<TAbi extends Abi = Abi>
  * but aren't necessarily concerned with where it's deployed or how it connects.
  */
 export type Contract<TAbi extends Abi = Abi> =
-  | IReadableContract<TAbi>
-  | IWritableContract<TAbi>;
+  | IReadContract<TAbi>
+  | IReadWriteContract<TAbi>;
 
 export interface ContractGetEventsOptions<
   TAbi extends Abi,

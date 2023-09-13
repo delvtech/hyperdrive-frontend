@@ -4,7 +4,7 @@ import {
   ContractGetEventsOptions,
   ContractReadOptions,
   ContractWriteOptions,
-  IReadableContract,
+  IReadContract,
 } from "src/contract/Contract";
 import { SimpleCache, SimpleCacheKey } from "src/cache/SimpleCache";
 import { LruSimpleCache } from "src/cache/LruSimpleCache";
@@ -20,17 +20,17 @@ import { createSimpleCacheKey } from "src/cache/utils/createSimpleCacheKey";
  * Extended readable contract interface that provides capabilities
  * for cache management on contract reads.
  */
-export interface ICachedReadableContract<TAbi extends Abi = Abi>
-  extends IReadableContract<TAbi> {
-  deleteRead: (...args: Parameters<IReadableContract<TAbi>["read"]>) => void;
+export interface ICachedReadContract<TAbi extends Abi = Abi>
+  extends IReadContract<TAbi> {
+  deleteRead: (...args: Parameters<IReadContract<TAbi>["read"]>) => void;
   clearCache: () => void;
 }
 
 // TODO: Figure out a good default cache size
 const DEFAULT_CACHE_SIZE = 100;
 
-export interface CachedReadableContractOptions<TAbi extends Abi = Abi> {
-  contract: IReadableContract<TAbi>;
+export interface CachedReadContractOptions<TAbi extends Abi = Abi> {
+  contract: IReadContract<TAbi>;
   cache?: SimpleCache;
 }
 
@@ -40,21 +40,21 @@ export interface CachedReadableContractOptions<TAbi extends Abi = Abi> {
  * and reusing previous read results.
  *
  * @example
- * const cachedContract = new CachedReadableContract({ contract: myContract });
+ * const cachedContract = new CachedReadContract({ contract: myContract });
  * const result1 = await cachedContract.read("functionName", args);
  * const result2 = await cachedContract.read("functionName", args); // Fetched from cache
  */
-export class CachedReadableContract<TAbi extends Abi = Abi>
-  implements ICachedReadableContract<TAbi>
+export class CachedReadContract<TAbi extends Abi = Abi>
+  implements ICachedReadContract<TAbi>
 {
   address: `0x${string}`;
   abi: TAbi;
 
   /** Internal cache for contract reads. */
   protected readonly _cache: SimpleCache;
-  protected readonly _contract: IReadableContract<TAbi>;
+  protected readonly _contract: IReadContract<TAbi>;
 
-  constructor({ contract, cache }: CachedReadableContractOptions<TAbi>) {
+  constructor({ contract, cache }: CachedReadContractOptions<TAbi>) {
     this.address = contract.address;
     this.abi = contract.abi;
     this._contract = contract;
@@ -80,7 +80,7 @@ export class CachedReadableContract<TAbi extends Abi = Abi>
    * Deletes a specific read from the cache.
    *
    * @example
-   * const cachedContract = new CachedReadableContract({ contract: myContract });
+   * const cachedContract = new CachedReadContract({ contract: myContract });
    * const result1 = await cachedContract.read("functionName", args);
    * const result2 = await cachedContract.read("functionName", args); // Fetched from cache
    *

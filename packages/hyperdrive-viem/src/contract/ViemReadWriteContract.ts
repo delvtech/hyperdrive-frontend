@@ -3,29 +3,29 @@ import {
   FunctionArgs,
   FunctionName,
   FunctionReturnType,
-  IWritableContract,
+  IReadWriteContract,
   SimpleCache,
 } from "@hyperdrive/sdk";
-import { ViemCachedWritableContract } from "src/contract/ViemCachedWritableContract";
+import { ViemCachedReadWriteContract } from "src/contract/ViemCachedReadWriteContract";
 import {
-  ViemReadableContract,
-  ViemReadableContractOptions,
-} from "src/contract/ViemReadableContract";
+  ViemReadContract,
+  ViemReadContractOptions,
+} from "src/contract/ViemReadContract";
 import { createSimulateContractParameters } from "src/utils/createSimulateContractParameters";
 import { Abi, WalletClient } from "viem";
 
-export interface ViemWritableContractOptions<TAbi extends Abi = Abi>
-  extends ViemReadableContractOptions<TAbi> {
+export interface ViemReadWriteContractOptions<TAbi extends Abi = Abi>
+  extends ViemReadContractOptions<TAbi> {
   walletClient: WalletClient;
 }
 
 /**
- * A viem implementation of the WritableContract interface.
+ * A viem implementation of the ReadWriteContract interface.
  * @see https://viem.sh/
  */
-export class ViemWritableContract<TAbi extends Abi = Abi>
-  extends ViemReadableContract<TAbi>
-  implements IWritableContract<TAbi>
+export class ViemReadWriteContract<TAbi extends Abi = Abi>
+  extends ViemReadContract<TAbi>
+  implements IReadWriteContract<TAbi>
 {
   protected readonly _walletClient: WalletClient;
 
@@ -34,7 +34,7 @@ export class ViemWritableContract<TAbi extends Abi = Abi>
     address,
     publicClient,
     walletClient,
-  }: ViemWritableContractOptions<TAbi>) {
+  }: ViemReadWriteContractOptions<TAbi>) {
     super({
       abi,
       address,
@@ -79,8 +79,8 @@ export class ViemWritableContract<TAbi extends Abi = Abi>
     return this._walletClient.writeContract(request) as any;
   }
 
-  withCache(cache?: SimpleCache): ViemCachedWritableContract<TAbi> {
-    return new ViemCachedWritableContract({
+  withCache(cache?: SimpleCache): ViemCachedReadWriteContract<TAbi> {
+    return new ViemCachedReadWriteContract({
       abi: this.abi,
       address: this.address,
       publicClient: this._publicClient,

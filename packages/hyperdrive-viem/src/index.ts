@@ -1,17 +1,17 @@
 export {
-  ViemCachedReadableContract,
-  type ViemCachedReadableContractOptions,
-} from "src/contract/ViemCachedReadableContract";
+  ViemCachedReadContract,
+  type ViemCachedReadContractOptions,
+} from "src/contract/ViemCachedReadContract";
 export {
-  ViemCachedWritableContract,
-  type ViemCachedWritableContractOptions,
-} from "src/contract/ViemCachedWritableContract";
+  ViemCachedReadWriteContract,
+  type ViemCachedReadWriteContractOptions,
+} from "src/contract/ViemCachedReadWriteContract";
 export {
-  ViemReadableContract,
-  type ViemReadableContractOptions,
-} from "src/contract/ViemReadableContract";
+  ViemReadContract,
+  type ViemReadContractOptions,
+} from "src/contract/ViemReadContract";
 export {
-  ViemWritableContract,
-  type ViemWritableContractOptions,
-} from "src/contract/ViemWritableContract";
+  ViemReadWriteContract,
+  type ViemReadWriteContractOptions,
+} from "src/contract/ViemReadWriteContract";
 export { createHyperdriveContract } from "src/utils/createHyperdriveContract";

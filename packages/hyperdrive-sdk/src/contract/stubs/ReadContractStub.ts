@@ -11,24 +11,24 @@ import {
   ContractGetEventsOptions,
   ContractReadOptions,
   ContractWriteOptions,
-  IReadableContract,
+  IReadContract,
 } from "src/contract/Contract";
 
 /**
- * A mock implementation of a `ReadableContract` designed to facilitate unit
- * testing. The `ReadableContractStub` provides a way to stub out specific
+ * A mock implementation of a `ReadContract` designed to facilitate unit
+ * testing. The `ReadContractStub` provides a way to stub out specific
  * contract read, write, and event-fetching behaviors, allowing tests to focus
  * on the business logic of the SDK.
  *
  * @example
- * const contract = new ReadableContractStub(HyperdriveABI);
+ * const contract = new ReadContractStub(HyperdriveABI);
  * contract.stubRead("baseToken", "0x123abc");
  *
  * const value = await contract.read("baseToken", []); // "0x123abc"
  *
  */
-export class ReadableContractStub<TAbi extends Abi = Abi>
-  implements IReadableContract<TAbi>
+export class ReadContractStub<TAbi extends Abi = Abi>
+  implements IReadContract<TAbi>
 {
   abi;
   address = "0x0000000000000000000000000000000000000000" as `0x${string}`;

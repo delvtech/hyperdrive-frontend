@@ -1,28 +1,31 @@
-import { ContractWriteOptions, IWritableContract } from "src/contract/Contract";
-import { ReadableContractStub } from "src/contract/stubs/ReadableContractStub";
+import {
+  ContractWriteOptions,
+  IReadWriteContract,
+} from "src/contract/Contract";
+import { ReadContractStub } from "src/contract/stubs/ReadContractStub";
 import { Abi } from "abitype";
 import { FunctionArgs, FunctionName } from "src/base/abitype";
 import { stub } from "sinon";
 
 /**
  * A mock implementation of a writable Ethereum contract designed for unit
- * testing purposes. The `WritableContractStub` extends the functionalities of
- * `ReadableContractStub` and provides capabilities to stub out specific
+ * testing purposes. The `ReadWriteContractStub` extends the functionalities of
+ * `ReadContractStub` and provides capabilities to stub out specific
  * contract write behaviors. This makes it a valuable tool when testing
  * scenarios that involve contract writing operations, without actually
  * interacting with a real Ethereum contract.
  *
  * @example
- * const contract = new WritableContractStub(HyperdriveABI);
+ * const contract = new ReadWriteContractStub(HyperdriveABI);
  * contract.stubWrite("addLiquidity", 100n);
  *
  * const result = await contract.write("addLiquidity", []); // 100n
- * @extends {ReadableContractStub<TAbi>}
- * @implements {IWritableContract<TAbi>}
+ * @extends {ReadContractStub<TAbi>}
+ * @implements {IReadWriteContract<TAbi>}
  */
-export class WritableContractStub<TAbi extends Abi = Abi>
-  extends ReadableContractStub<TAbi>
-  implements IWritableContract<TAbi>
+export class ReadWriteContractStub<TAbi extends Abi = Abi>
+  extends ReadContractStub<TAbi>
+  implements IReadWriteContract<TAbi>
 {
   /**
    * Simulates a contract write operation for a given function. If the function
