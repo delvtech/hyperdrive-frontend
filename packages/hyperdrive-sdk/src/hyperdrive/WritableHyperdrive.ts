@@ -134,6 +134,75 @@ export interface IWritableHyperdrive {
     asUnderlying?: boolean;
     options: ContractWriteOptions;
   }): Promise<bigint>;
+
+  /**
+   * Adds liquidity to the pool.
+   * @param destination - The account adding liquidity
+   * @param contribution - The amount of base to supply
+   * @param minAPR - The minimum APR to accept
+   * @param maxAPR - The maximum APR to accept
+   * @param asUnderlying - TODO: come up with good comment for this
+   * @param options - Contract Write Options
+   */
+  addLiquidity({
+    destination,
+    contribution,
+    minAPR,
+    maxAPR,
+    asUnderlying,
+    options,
+  }: {
+    destination: Address;
+    contribution: bigint;
+    minAPR: bigint;
+    maxAPR: bigint;
+    asUnderlying?: boolean;
+    options: ContractWriteOptions;
+  }): Promise<bigint>;
+
+  /**
+   * Removes liquidity from the pool.
+   * @param destination - The account removing liquidity
+   * @param lpSharesIn - The amount of LP shares to remove
+   * @param minBaseAmountOut - The minimum amount of base to send to the destination
+   * @param asUnderlying - TODO: come up with good comment for this
+   * @param options - Contract Write Options
+   */
+  removeLiquidity({
+    destination,
+    lpSharesIn,
+    minBaseAmountOut,
+    asUnderlying,
+    options,
+  }: {
+    destination: Address;
+    lpSharesIn: bigint;
+    minBaseAmountOut: bigint;
+    asUnderlying?: boolean;
+    options: ContractWriteOptions;
+  }): Promise<bigint>;
+
+  /**
+   * Redeems withdrawal shares.
+   * @param withdrawalSharesIn - The amount of withdrawal shares to redeem
+   * @param minBaseAmountOutPerShare - The minimum amount of base to send to the destination per share
+   * @param destination - The account receiving the base
+   * @param asUnderlying - TODO: come up with good comment for this
+   * @param options - Contract Write Options
+   */
+  redeemWithdrawalShares({
+    withdrawalSharesIn,
+    minBaseAmountOutPerShare,
+    destination,
+    asUnderlying,
+    options,
+  }: {
+    withdrawalSharesIn: bigint;
+    minBaseAmountOutPerShare: bigint;
+    destination: Address;
+    asUnderlying?: boolean;
+    options: ContractWriteOptions;
+  }): Promise<bigint>;
 }
 
 export class WritableHyperdrive implements IWritableHyperdrive {
@@ -270,6 +339,73 @@ export class WritableHyperdrive implements IWritableHyperdrive {
         destination,
         asUnderlying,
       ],
+      options,
+    );
+  }
+
+  async addLiquidity({
+    destination,
+    contribution,
+    minAPR,
+    maxAPR,
+    asUnderlying = true,
+    options,
+  }: {
+    destination: Address;
+    contribution: bigint;
+    minAPR: bigint;
+    maxAPR: bigint;
+    asUnderlying?: boolean;
+    options: ContractWriteOptions;
+  }): Promise<bigint> {
+    const { baseToken } = await this.contract.read("getPoolConfig", []);
+    const requiresEth = asUnderlying && baseToken === ZERO_ADDRESS;
+    return this.contract.write(
+      "addLiquidity",
+      [contribution, minAPR, maxAPR, destination, asUnderlying],
+      {
+        value: requiresEth && contribution ? contribution : 0n,
+        ...options,
+      },
+    );
+  }
+
+  async removeLiquidity({
+    destination,
+    lpSharesIn,
+    minBaseAmountOut,
+    asUnderlying = true,
+    options,
+  }: {
+    destination: Address;
+    lpSharesIn: bigint;
+    minBaseAmountOut: bigint;
+    asUnderlying?: boolean;
+    options: ContractWriteOptions;
+  }): Promise<bigint> {
+    return this.contract.write(
+      "removeLiquidity",
+      [lpSharesIn, minBaseAmountOut, destination, asUnderlying],
+      options,
+    );
+  }
+
+  async redeemWithdrawalShares({
+    withdrawalSharesIn,
+    minBaseAmountOutPerShare,
+    destination,
+    asUnderlying = true,
+    options,
+  }: {
+    withdrawalSharesIn: bigint;
+    minBaseAmountOutPerShare: bigint;
+    destination: Address;
+    asUnderlying?: boolean;
+    options: ContractWriteOptions;
+  }): Promise<bigint> {
+    return this.contract.write(
+      "redeemWithdrawalShares",
+      [withdrawalSharesIn, minBaseAmountOutPerShare, destination, asUnderlying],
       options,
     );
   }

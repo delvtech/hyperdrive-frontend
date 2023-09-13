@@ -330,6 +330,74 @@ export class HyperdriveSdk implements IReadableHyperdrive, IWritableHyperdrive {
       options,
     });
   }
+
+  addLiquidity({
+    destination,
+    contribution,
+    minAPR,
+    maxAPR,
+    asUnderlying,
+    options,
+  }: {
+    destination: `0x${string}`;
+    contribution: bigint;
+    minAPR: bigint;
+    maxAPR: bigint;
+    asUnderlying?: boolean | undefined;
+    options: ContractWriteOptions;
+  }): Promise<bigint> {
+    return this._writable.addLiquidity({
+      destination,
+      contribution,
+      minAPR,
+      maxAPR,
+      asUnderlying,
+      options,
+    });
+  }
+  removeLiquidity({
+    destination,
+    lpSharesIn,
+    minBaseAmountOut,
+    asUnderlying,
+    options,
+  }: {
+    destination: `0x${string}`;
+    lpSharesIn: bigint;
+    minBaseAmountOut: bigint;
+    asUnderlying?: boolean | undefined;
+    options: ContractWriteOptions;
+  }): Promise<bigint> {
+    return this._writable.removeLiquidity({
+      destination,
+      lpSharesIn,
+      minBaseAmountOut,
+      asUnderlying,
+      options,
+    });
+  }
+  redeemWithdrawalShares({
+    withdrawalSharesIn,
+    minBaseAmountOutPerShare,
+    destination,
+    asUnderlying,
+    options,
+  }: {
+    withdrawalSharesIn: bigint;
+    minBaseAmountOutPerShare: bigint;
+    destination: `0x${string}`;
+    asUnderlying?: boolean | undefined;
+    options: ContractWriteOptions;
+  }): Promise<bigint> {
+    return this._writable.redeemWithdrawalShares({
+      withdrawalSharesIn,
+      minBaseAmountOutPerShare,
+      destination,
+      asUnderlying,
+      options,
+    });
+  }
+
   checkpoint(time: number, options?: ContractWriteOptions): Promise<void> {
     throw new Error("Method not implemented.");
   }
