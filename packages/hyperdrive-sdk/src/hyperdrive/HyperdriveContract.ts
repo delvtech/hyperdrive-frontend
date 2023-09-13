@@ -1,14 +1,12 @@
 import { HyperdriveABI } from "@hyperdrive/core";
 import {
   Contract,
-  IReadableContract,
-  IWritableContract,
+  IReadContract,
+  IReadWriteContract,
 } from "src/contract/Contract";
 
-export type ReadableHyperdriveContract = IReadableContract<
-  typeof HyperdriveABI
->;
-export type WritableHyperdriveContract = IWritableContract<
+export type ReadHyperdriveContract = IReadContract<typeof HyperdriveABI>;
+export type ReadWriteHyperdriveContract = IReadWriteContract<
   typeof HyperdriveABI
 >;
 

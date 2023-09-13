@@ -1,13 +1,9 @@
+import { ReadWriteHyperdriveContract } from "src/hyperdrive/HyperdriveContract";
 import { Long, Short } from "@hyperdrive/core";
 import { Address } from "abitype";
 import { ContractWriteOptions } from "src/contract/Contract";
-import { WritableHyperdriveContract } from "src/hyperdrive/HyperdriveContract";
 import { ZERO_ADDRESS } from "src/utils/constants";
-interface WritableHyperdriveOptions {
-  contract: WritableHyperdriveContract;
-}
-
-export interface IWritableHyperdrive {
+export interface IReadWriteHyperdrive {
   /**
    * Allows anyone to mint a new checkpoint.
    * @param time - The time (in seconds) of the checkpoint to create.
@@ -205,10 +201,10 @@ export interface IWritableHyperdrive {
   }): Promise<bigint>;
 }
 
-export class WritableHyperdrive implements IWritableHyperdrive {
-  private readonly contract: WritableHyperdriveContract;
+export class ReadWriteHyperdrive implements IReadWriteHyperdrive {
+  private readonly contract: ReadWriteHyperdriveContract;
 
-  constructor({ contract }: WritableHyperdriveOptions) {
+  constructor(contract: ReadWriteHyperdriveContract) {
     this.contract = contract;
   }
 

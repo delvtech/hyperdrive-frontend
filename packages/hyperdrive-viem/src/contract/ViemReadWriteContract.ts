@@ -1,29 +1,31 @@
-import { Abi, WalletClient } from "viem";
 import {
   ContractWriteOptions,
   FunctionArgs,
   FunctionName,
   FunctionReturnType,
-  IWritableContract,
+  IReadWriteContract,
+  SimpleCache,
 } from "@hyperdrive/sdk";
+import { ViemCachedReadWriteContract } from "src/contract/ViemCachedReadWriteContract";
 import {
-  ReadableViemContract,
-  ReadableViemContractOptions,
-} from "src/contract/ReadableViemContract";
+  ViemReadContract,
+  ViemReadContractOptions,
+} from "src/contract/ViemReadContract";
 import { createSimulateContractParameters } from "src/utils/createSimulateContractParameters";
+import { Abi, WalletClient } from "viem";
 
-export interface WritableViemContractOptions<TAbi extends Abi = Abi>
-  extends ReadableViemContractOptions<TAbi> {
+export interface ViemReadWriteContractOptions<TAbi extends Abi = Abi>
+  extends ViemReadContractOptions<TAbi> {
   walletClient: WalletClient;
 }
 
 /**
- * A viem implementation of the WritableContract interface.
+ * A viem implementation of the ReadWriteContract interface.
  * @see https://viem.sh/
  */
-export class WritableViemContract<TAbi extends Abi>
-  extends ReadableViemContract<TAbi>
-  implements IWritableContract<TAbi>
+export class ViemReadWriteContract<TAbi extends Abi = Abi>
+  extends ViemReadContract<TAbi>
+  implements IReadWriteContract<TAbi>
 {
   protected readonly _walletClient: WalletClient;
 
@@ -32,7 +34,7 @@ export class WritableViemContract<TAbi extends Abi>
     address,
     publicClient,
     walletClient,
-  }: WritableViemContractOptions<TAbi>) {
+  }: ViemReadWriteContractOptions<TAbi>) {
     super({
       abi,
       address,
@@ -75,5 +77,15 @@ export class WritableViemContract<TAbi extends Abi>
     });
 
     return this._walletClient.writeContract(request) as any;
+  }
+
+  withCache(cache?: SimpleCache): ViemCachedReadWriteContract<TAbi> {
+    return new ViemCachedReadWriteContract({
+      abi: this.abi,
+      address: this.address,
+      publicClient: this._publicClient,
+      walletClient: this._walletClient,
+      cache,
+    });
   }
 }

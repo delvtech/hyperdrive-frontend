@@ -12,38 +12,35 @@ import {
   BlockTag,
   ContractWriteOptions,
 } from "src/contract/Contract";
+
 import {
-  ReadableHyperdriveContract,
-  WritableHyperdriveContract,
+  ReadHyperdriveContract,
+  ReadWriteHyperdriveContract,
 } from "src/hyperdrive/HyperdriveContract";
-import { ReadableHyperdriveMathContract } from "src/hyperdrive/HyperdriveMathContract";
+import { ReadHyperdriveMathContract } from "src/hyperdrive/HyperdriveMathContract";
+import { IReadHyperdrive, ReadHyperdrive } from "src/hyperdrive/ReadHyperdrive";
 import {
-  IReadableHyperdrive,
-  ReadableHyperdrive,
-} from "src/hyperdrive/ReadableHyperdrive";
-import {
-  IWritableHyperdrive,
-  WritableHyperdrive,
-} from "src/hyperdrive/WritableHyperdrive";
+  ReadWriteHyperdrive,
+  IReadWriteHyperdrive,
+} from "src/hyperdrive/ReadWriteHyperdrive";
+
 import { PoolConfig } from "src/pool/PoolConfig";
 import { PoolInfo } from "src/pool/PoolInfo";
 
 interface HyperdriveSdkOptions {
-  hyperdriveContract: ReadableHyperdriveContract & WritableHyperdriveContract;
-  mathContract: ReadableHyperdriveMathContract;
+  hyperdriveContract: ReadHyperdriveContract & ReadWriteHyperdriveContract;
+  mathContract: ReadHyperdriveMathContract;
 }
 
-export class HyperdriveSdk implements IReadableHyperdrive, IWritableHyperdrive {
-  private _readable: ReadableHyperdrive;
-  private _writable: WritableHyperdrive;
+export class HyperdriveSdk implements IReadHyperdrive, IReadWriteHyperdrive {
+  private _readable: ReadHyperdrive;
+  private _writable: ReadWriteHyperdrive;
   constructor({ hyperdriveContract, mathContract }: HyperdriveSdkOptions) {
-    this._readable = new ReadableHyperdrive({
+    this._readable = new ReadHyperdrive({
       contract: hyperdriveContract,
       mathContract,
     });
-    this._writable = new WritableHyperdrive({
-      contract: hyperdriveContract,
-    });
+    this._writable = new ReadWriteHyperdrive({ contract: hyperdriveContract });
   }
 
   getPoolConfig(options?: ContractReadOptions): Promise<PoolConfig> {
