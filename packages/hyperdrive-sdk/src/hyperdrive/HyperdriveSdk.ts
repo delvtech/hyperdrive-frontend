@@ -244,7 +244,7 @@ export class HyperdriveSdk implements IReadHyperdrive, IReadWriteHyperdrive {
     asUnderlying,
     options,
   }: {
-    destination: `0x${string}`;
+    destination: Address;
     baseAmount: bigint;
     bondAmountOut: bigint;
     asUnderlying?: boolean | undefined;
@@ -265,7 +265,7 @@ export class HyperdriveSdk implements IReadHyperdrive, IReadWriteHyperdrive {
     asUnderlying,
     options,
   }: {
-    destination: `0x${string}`;
+    destination: Address;
     bondAmount: bigint;
     maxDeposit: bigint;
     asUnderlying?: boolean | undefined;
@@ -290,7 +290,7 @@ export class HyperdriveSdk implements IReadHyperdrive, IReadWriteHyperdrive {
     long: Long;
     bondAmountIn: bigint;
     minBaseAmountOut: bigint;
-    destination: `0x${string}`;
+    destination: Address;
     asUnderlying?: boolean | undefined;
     options: ContractWriteOptions;
   }): Promise<bigint> {
@@ -314,7 +314,7 @@ export class HyperdriveSdk implements IReadHyperdrive, IReadWriteHyperdrive {
     short: Short;
     bondAmountIn: bigint;
     minBaseAmountOut: bigint;
-    destination: `0x${string}`;
+    destination: Address;
     asUnderlying?: boolean | undefined;
     options: ContractWriteOptions;
   }): Promise<bigint> {
@@ -336,7 +336,7 @@ export class HyperdriveSdk implements IReadHyperdrive, IReadWriteHyperdrive {
     asUnderlying,
     options,
   }: {
-    destination: `0x${string}`;
+    destination: Address;
     contribution: bigint;
     minAPR: bigint;
     maxAPR: bigint;
@@ -359,7 +359,7 @@ export class HyperdriveSdk implements IReadHyperdrive, IReadWriteHyperdrive {
     asUnderlying,
     options,
   }: {
-    destination: `0x${string}`;
+    destination: Address;
     lpSharesIn: bigint;
     minBaseAmountOut: bigint;
     asUnderlying?: boolean | undefined;
@@ -382,7 +382,7 @@ export class HyperdriveSdk implements IReadHyperdrive, IReadWriteHyperdrive {
   }: {
     withdrawalSharesIn: bigint;
     minBaseAmountOutPerShare: bigint;
-    destination: `0x${string}`;
+    destination: Address;
     asUnderlying?: boolean | undefined;
     options: ContractWriteOptions;
   }): Promise<bigint> {
