@@ -1,6 +1,7 @@
+import { Address } from "abitype";
 import { ContractWriteOptions } from "src/contract/Contract";
 import { WritableHyperdriveContract } from "src/hyperdrive/HyperdriveContract";
-
+import { ZERO_ADDRESS } from "src/utils/constants";
 interface WritableHyperdriveOptions {
   contract: WritableHyperdriveContract;
 }
@@ -73,6 +74,31 @@ export class WritableHyperdrive implements IWritableHyperdrive {
         args?.asUnderlying ?? true,
       ],
       options,
+    );
+  }
+
+  async openLong({
+    destination,
+    baseAmount,
+    bondAmountOut,
+    asUnderlying = true,
+    options,
+  }: {
+    destination: Address;
+    baseAmount: bigint;
+    bondAmountOut: bigint;
+    asUnderlying?: boolean;
+    options: ContractWriteOptions;
+  }): Promise<bigint> {
+    const { baseToken } = await this.contract.read("getPoolConfig", []);
+    const requiresEth = asUnderlying && baseToken === ZERO_ADDRESS;
+    return this.contract.write(
+      "openLong",
+      [baseAmount, bondAmountOut, destination, asUnderlying],
+      {
+        value: requiresEth && baseAmount ? baseAmount : 0n,
+        ...options,
+      },
     );
   }
 }
