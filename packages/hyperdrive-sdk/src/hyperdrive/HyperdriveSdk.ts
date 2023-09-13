@@ -18,14 +18,14 @@ import {
   ReadWriteHyperdriveContract,
 } from "src/hyperdrive/HyperdriveContract";
 import { ReadHyperdriveMathContract } from "src/hyperdrive/HyperdriveMathContract";
-import { IReadHyperdrive, ReadHyperdrive } from "src/hyperdrive/ReadHyperdrive";
+
+import { PoolConfig } from "src/pool/PoolConfig";
+import { PoolInfo } from "src/pool/PoolInfo";
 import {
   ReadWriteHyperdrive,
   IReadWriteHyperdrive,
 } from "src/hyperdrive/ReadWriteHyperdrive";
-
-import { PoolConfig } from "src/pool/PoolConfig";
-import { PoolInfo } from "src/pool/PoolInfo";
+import { ReadHyperdrive, IReadHyperdrive } from "src/hyperdrive/ReadHyperdrive";
 
 interface HyperdriveSdkOptions {
   hyperdriveContract: ReadHyperdriveContract & ReadWriteHyperdriveContract;

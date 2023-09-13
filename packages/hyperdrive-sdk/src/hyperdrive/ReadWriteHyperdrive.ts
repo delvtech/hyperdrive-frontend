@@ -204,7 +204,7 @@ export interface IReadWriteHyperdrive {
 export class ReadWriteHyperdrive implements IReadWriteHyperdrive {
   private readonly contract: ReadWriteHyperdriveContract;
 
-  constructor(contract: ReadWriteHyperdriveContract) {
+  constructor({ contract }: { contract: ReadWriteHyperdriveContract }) {
     this.contract = contract;
   }
 

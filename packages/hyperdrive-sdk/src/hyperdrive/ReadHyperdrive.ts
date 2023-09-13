@@ -25,7 +25,7 @@ import { calculateLiquidity } from "src/pool/calculateLiquidity";
 import { WITHDRAW_SHARES_ASSET_ID, LP_ASSET_ID } from "src/lp/constants";
 import { decodeAssetFromTransferSingleEventData } from "src/utils/decodeAssetFromTransferSingleEventData";
 
-interface ReadHyperdriveOptions {
+export interface ReadHyperdriveOptions {
   contract: ReadHyperdriveContract;
   mathContract: ReadHyperdriveMathContract;
 }
