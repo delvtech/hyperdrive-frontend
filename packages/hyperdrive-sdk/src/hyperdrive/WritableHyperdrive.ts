@@ -1,3 +1,4 @@
+import { Long, Short } from "@hyperdrive/core";
 import { Address } from "abitype";
 import { ContractWriteOptions } from "src/contract/Contract";
 import { WritableHyperdriveContract } from "src/hyperdrive/HyperdriveContract";
@@ -39,6 +40,100 @@ export interface IWritableHyperdrive {
     },
     options?: ContractWriteOptions,
   ): Promise<bigint>;
+
+  /**
+   * Opens a new long position.
+   * @param destination - The account opening the position
+   * @param baseAmount - The amount of base supplied to the position
+   * @param bondAmountOut - The amount of bonds to send to the destination
+   * @param asUnderlying - TODO: come up with good comment for this
+   *
+   */
+  openLong({
+    destination,
+    baseAmount,
+    bondAmountOut,
+    asUnderlying,
+    options,
+  }: {
+    destination: Address;
+    baseAmount: bigint;
+    bondAmountOut: bigint;
+    asUnderlying?: boolean;
+    options: ContractWriteOptions;
+  }): Promise<bigint>;
+
+  /**
+   * Opens a new short position.
+   * @param destination - The account opening the position
+   * @param baseAmount - The amount of base supplied to the position
+   * @param bondAmountOut - The amount of bonds to send to the destination
+   * @param asUnderlying - TODO: come up with good comment for this
+   * @param options - Contract Write Options
+   */
+  openShort({
+    destination,
+    bondAmount,
+    maxDeposit,
+    asUnderlying,
+    options,
+  }: {
+    destination: Address;
+    bondAmount: bigint;
+    maxDeposit: bigint;
+    asUnderlying?: boolean;
+    options: ContractWriteOptions;
+  }): Promise<bigint>;
+
+  /**
+   * Closes a long position.
+   * @param long - The long position to close
+   * @param bondAmountIn - The amount of of bonds to remove from the position
+   * @param minBaseAmountOut - The minimum amount of base to send to the destination
+   * @param destination - The account receiving the base
+   * @param asUnderlying - TODO: come up with good comment for this
+   * @param options - Contract Write Options
+   */
+  closeLong({
+    long,
+    bondAmountIn,
+    minBaseAmountOut,
+    destination,
+    asUnderlying,
+    options,
+  }: {
+    long: Long;
+    bondAmountIn: bigint;
+    minBaseAmountOut: bigint;
+    destination: Address;
+    asUnderlying?: boolean;
+    options: ContractWriteOptions;
+  }): Promise<bigint>;
+
+  /**
+   * Closes a short position.
+   * @param short - The short position to close
+   * @param bondAmountIn - The amount of bonds to remove from the position
+   * @param minBaseAmountOut - The minimum amount of base to send to the destination
+   * @param destination - The account receiving the base
+   * @param asUnderlying - TODO: come up with good comment for this
+   * @param options - Contract Write Options
+   */
+  closeShort({
+    short,
+    bondAmountIn,
+    minBaseAmountOut,
+    destination,
+    asUnderlying,
+    options,
+  }: {
+    short: Short;
+    bondAmountIn: bigint;
+    minBaseAmountOut: bigint;
+    destination: Address;
+    asUnderlying?: boolean;
+    options: ContractWriteOptions;
+  }): Promise<bigint>;
 }
 
 export class WritableHyperdrive implements IWritableHyperdrive {
@@ -99,6 +194,83 @@ export class WritableHyperdrive implements IWritableHyperdrive {
         value: requiresEth && baseAmount ? baseAmount : 0n,
         ...options,
       },
+    );
+  }
+
+  async openShort({
+    destination,
+    bondAmount,
+    maxDeposit,
+    asUnderlying = true,
+    options,
+  }: {
+    destination: Address;
+    bondAmount: bigint;
+    maxDeposit: bigint;
+    asUnderlying?: boolean;
+    options: ContractWriteOptions;
+  }): Promise<bigint> {
+    return this.contract.write(
+      "openShort",
+      [bondAmount, maxDeposit, destination, asUnderlying],
+      // TODO: Do we need to pass value here?
+      { value: 0n, ...options },
+    );
+  }
+
+  async closeLong({
+    long,
+    bondAmountIn,
+    minBaseAmountOut,
+    destination,
+    asUnderlying = true,
+    options,
+  }: {
+    long: Long;
+    bondAmountIn: bigint;
+    minBaseAmountOut: bigint;
+    destination: Address;
+    asUnderlying?: boolean;
+    options: ContractWriteOptions;
+  }): Promise<bigint> {
+    return this.contract.write(
+      "closeLong",
+      [
+        long.maturity,
+        bondAmountIn,
+        minBaseAmountOut,
+        destination,
+        asUnderlying,
+      ],
+      options,
+    );
+  }
+
+  async closeShort({
+    short,
+    bondAmountIn,
+    minBaseAmountOut,
+    destination,
+    asUnderlying = true,
+    options,
+  }: {
+    short: Short;
+    bondAmountIn: bigint;
+    minBaseAmountOut: bigint;
+    destination: Address;
+    asUnderlying?: boolean;
+    options: ContractWriteOptions;
+  }): Promise<bigint> {
+    return this.contract.write(
+      "closeShort",
+      [
+        short.maturity,
+        bondAmountIn,
+        minBaseAmountOut,
+        destination,
+        asUnderlying,
+      ],
+      options,
     );
   }
 }

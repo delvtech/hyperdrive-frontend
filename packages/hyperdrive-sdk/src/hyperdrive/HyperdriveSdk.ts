@@ -4,6 +4,7 @@ import {
   ClosedShort,
   ClosedLpShares,
   RedeemedWithdrawalShares,
+  Short,
 } from "@hyperdrive/core";
 import { Address } from "abitype";
 import {
@@ -11,27 +12,37 @@ import {
   BlockTag,
   ContractWriteOptions,
 } from "src/contract/Contract";
-import { ReadableHyperdriveContract } from "src/hyperdrive/HyperdriveContract";
+import {
+  ReadableHyperdriveContract,
+  WritableHyperdriveContract,
+} from "src/hyperdrive/HyperdriveContract";
 import { ReadableHyperdriveMathContract } from "src/hyperdrive/HyperdriveMathContract";
 import {
   IReadableHyperdrive,
   ReadableHyperdrive,
 } from "src/hyperdrive/ReadableHyperdrive";
-import { IWritableHyperdrive } from "src/hyperdrive/WritableHyperdrive";
+import {
+  IWritableHyperdrive,
+  WritableHyperdrive,
+} from "src/hyperdrive/WritableHyperdrive";
 import { PoolConfig } from "src/pool/PoolConfig";
 import { PoolInfo } from "src/pool/PoolInfo";
 
 interface HyperdriveSdkOptions {
-  hyperdriveContract: ReadableHyperdriveContract;
+  hyperdriveContract: ReadableHyperdriveContract & WritableHyperdriveContract;
   mathContract: ReadableHyperdriveMathContract;
 }
 
 export class HyperdriveSdk implements IReadableHyperdrive, IWritableHyperdrive {
   private _readable: ReadableHyperdrive;
+  private _writable: WritableHyperdrive;
   constructor({ hyperdriveContract, mathContract }: HyperdriveSdkOptions) {
     this._readable = new ReadableHyperdrive({
       contract: hyperdriveContract,
       mathContract,
+    });
+    this._writable = new WritableHyperdrive({
+      contract: hyperdriveContract,
     });
   }
 
@@ -223,6 +234,97 @@ export class HyperdriveSdk implements IReadableHyperdrive, IWritableHyperdrive {
     return this._readable.previewOpenShort({
       amountOfBondsToShort,
       maxBaseAmountIn,
+      destination,
+      asUnderlying,
+      options,
+    });
+  }
+
+  openLong({
+    destination,
+    baseAmount,
+    bondAmountOut,
+    asUnderlying,
+    options,
+  }: {
+    destination: `0x${string}`;
+    baseAmount: bigint;
+    bondAmountOut: bigint;
+    asUnderlying?: boolean | undefined;
+    options: ContractWriteOptions;
+  }): Promise<bigint> {
+    return this._writable.openLong({
+      destination,
+      baseAmount,
+      bondAmountOut,
+      asUnderlying,
+      options,
+    });
+  }
+  openShort({
+    destination,
+    bondAmount,
+    maxDeposit,
+    asUnderlying,
+    options,
+  }: {
+    destination: `0x${string}`;
+    bondAmount: bigint;
+    maxDeposit: bigint;
+    asUnderlying?: boolean | undefined;
+    options: ContractWriteOptions;
+  }): Promise<bigint> {
+    return this._writable.openShort({
+      destination,
+      bondAmount,
+      maxDeposit,
+      asUnderlying,
+      options,
+    });
+  }
+  closeLong({
+    long,
+    bondAmountIn,
+    minBaseAmountOut,
+    destination,
+    asUnderlying,
+    options,
+  }: {
+    long: Long;
+    bondAmountIn: bigint;
+    minBaseAmountOut: bigint;
+    destination: `0x${string}`;
+    asUnderlying?: boolean | undefined;
+    options: ContractWriteOptions;
+  }): Promise<bigint> {
+    return this._writable.closeLong({
+      long,
+      bondAmountIn,
+      minBaseAmountOut,
+      destination,
+      asUnderlying,
+      options,
+    });
+  }
+  closeShort({
+    short,
+    bondAmountIn,
+    minBaseAmountOut,
+    destination,
+    asUnderlying,
+    options,
+  }: {
+    short: Short;
+    bondAmountIn: bigint;
+    minBaseAmountOut: bigint;
+    destination: `0x${string}`;
+    asUnderlying?: boolean | undefined;
+    options: ContractWriteOptions;
+  }): Promise<bigint> {
+    return this._writable.closeShort({
+      short,
+      bondAmountIn,
+      minBaseAmountOut,
       destination,
       asUnderlying,
       options,
