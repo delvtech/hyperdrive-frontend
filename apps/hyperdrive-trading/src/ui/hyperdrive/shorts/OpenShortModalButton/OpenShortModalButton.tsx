@@ -40,7 +40,7 @@ export function OpenShortModalButton({
                 Profit from rising fixed rates
               </ChecklistItem>
               <ChecklistItem readOnly checked variant="accent">
-                Redeemable before maturity
+                Redeemable before term ends
               </ChecklistItem>
             </div>
             {/* Using a div styled as a button here just as a visual cue. Don't

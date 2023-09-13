@@ -38,7 +38,7 @@ export function AddLiquidityModalButton({
             {/* Using a div styled as a button here just as a visual cue. Don't
             use a real button here since the Well is interactive already, and
             doing so would create invalid dom nesting of buttons. */}
-            <div className="daisy-btn-primary daisy-btn-sm daisy-btn mt-2 justify-between gap-0 border-primary">
+            <div className="daisy-btn-primary daisy-btn-sm daisy-btn mt-4 justify-between gap-0 border-primary">
               <span className="ml-4 flex-1 text-center">Add liquidity</span>
               <ChevronRightIcon className="h-3 text-right" />
             </div>
