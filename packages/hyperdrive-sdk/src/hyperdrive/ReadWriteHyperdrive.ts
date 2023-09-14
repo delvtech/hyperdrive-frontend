@@ -3,6 +3,8 @@ import { Long, Short } from "@hyperdrive/core";
 import { Address } from "abitype";
 import { ContractWriteOptions } from "src/contract/Contract";
 import { ZERO_ADDRESS } from "src/utils/constants";
+import { ReadHyperdrive, ReadHyperdriveOptions } from "./ReadHyperdrive";
+
 export interface IReadWriteHyperdrive {
   /**
    * Allows anyone to mint a new checkpoint.
@@ -202,10 +204,18 @@ export interface IReadWriteHyperdrive {
   }): Promise<bigint>;
 }
 
-export class ReadWriteHyperdrive implements IReadWriteHyperdrive {
-  private readonly contract: ReadWriteHyperdriveContract;
+export interface ReadWriteHyperdriveOptions extends ReadHyperdriveOptions {
+  contract: ReadWriteHyperdriveContract;
+}
 
-  constructor({ contract }: { contract: ReadWriteHyperdriveContract }) {
+export class ReadWriteHyperdrive
+  extends ReadHyperdrive
+  implements IReadWriteHyperdrive
+{
+  protected readonly contract: ReadWriteHyperdriveContract;
+
+  constructor({ contract, mathContract }: ReadWriteHyperdriveOptions) {
+    super({ contract, mathContract });
     this.contract = contract;
   }
 
