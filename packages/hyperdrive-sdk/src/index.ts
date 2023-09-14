@@ -1,5 +1,5 @@
-// Hyperdrive sdk main entrypoint for consumers
-export { HyperdriveSdk } from "src/hyperdrive/HyperdriveSdk";
+// Main Hyperdrive sdk entrypoint for consumers
+export { createHyperdriveClient } from "src/hyperdrive/utils/createHyperdriveClient";
 
 // ABIs
 export { ERC20_ABI } from "src/abis/ERC20";
@@ -36,6 +36,6 @@ export type {
   ReadWriteHyperdriveContract,
 } from "src/hyperdrive/HyperdriveContract";
 
-// SDK classes
+// Client classes
 export { ReadHyperdrive } from "src/hyperdrive/ReadHyperdrive";
 export { ReadWriteHyperdrive } from "src/hyperdrive/ReadWriteHyperdrive";

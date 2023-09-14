@@ -1,9 +1,9 @@
-import { ContractWriteOptions } from "src/contract/Contract";
 import { ReadWriteHyperdriveContract } from "src/hyperdrive/HyperdriveContract";
-
-interface ReadWriteHyperdriveOptions {
-  contract: ReadWriteHyperdriveContract;
-}
+import { Long, Short } from "@hyperdrive/core";
+import { Address } from "abitype";
+import { ContractWriteOptions } from "src/contract/Contract";
+import { ZERO_ADDRESS } from "src/utils/constants";
+import { ReadHyperdrive, ReadHyperdriveOptions } from "./ReadHyperdrive";
 
 export interface IReadWriteHyperdrive {
   /**
@@ -38,12 +38,184 @@ export interface IReadWriteHyperdrive {
     },
     options?: ContractWriteOptions,
   ): Promise<bigint>;
+
+  /**
+   * Opens a new long position.
+   * @param destination - The account opening the position
+   * @param baseAmount - The amount of base supplied to the position
+   * @param bondAmountOut - The amount of bonds to send to the destination
+   * @param asUnderlying - TODO: come up with good comment for this
+   * @param options - Contract Write Options
+   *
+   */
+  openLong({
+    destination,
+    baseAmount,
+    bondAmountOut,
+    asUnderlying,
+    options,
+  }: {
+    destination: Address;
+    baseAmount: bigint;
+    bondAmountOut: bigint;
+    asUnderlying?: boolean;
+    options: ContractWriteOptions;
+  }): Promise<bigint>;
+
+  /**
+   * Opens a new short position.
+   * @param destination - The account opening the position
+   * @param baseAmount - The amount of base supplied to the position
+   * @param bondAmountOut - The amount of bonds to send to the destination
+   * @param asUnderlying - TODO: come up with good comment for this
+   * @param options - Contract Write Options
+   */
+  openShort({
+    destination,
+    bondAmount,
+    maxDeposit,
+    asUnderlying,
+    options,
+  }: {
+    destination: Address;
+    bondAmount: bigint;
+    maxDeposit: bigint;
+    asUnderlying?: boolean;
+    options: ContractWriteOptions;
+  }): Promise<bigint>;
+
+  /**
+   * Closes a long position.
+   * @param long - The long position to close
+   * @param bondAmountIn - The amount of of bonds to remove from the position
+   * @param minBaseAmountOut - The minimum amount of base to send to the destination
+   * @param destination - The account receiving the base
+   * @param asUnderlying - TODO: come up with good comment for this
+   * @param options - Contract Write Options
+   */
+  closeLong({
+    long,
+    bondAmountIn,
+    minBaseAmountOut,
+    destination,
+    asUnderlying,
+    options,
+  }: {
+    long: Long;
+    bondAmountIn: bigint;
+    minBaseAmountOut: bigint;
+    destination: Address;
+    asUnderlying?: boolean;
+    options: ContractWriteOptions;
+  }): Promise<bigint>;
+
+  /**
+   * Closes a short position.
+   * @param short - The short position to close
+   * @param bondAmountIn - The amount of bonds to remove from the position
+   * @param minBaseAmountOut - The minimum amount of base to send to the destination
+   * @param destination - The account receiving the base
+   * @param asUnderlying - TODO: come up with good comment for this
+   * @param options - Contract Write Options
+   */
+  closeShort({
+    short,
+    bondAmountIn,
+    minBaseAmountOut,
+    destination,
+    asUnderlying,
+    options,
+  }: {
+    short: Short;
+    bondAmountIn: bigint;
+    minBaseAmountOut: bigint;
+    destination: Address;
+    asUnderlying?: boolean;
+    options: ContractWriteOptions;
+  }): Promise<bigint>;
+
+  /**
+   * Adds liquidity to the pool.
+   * @param destination - The account adding liquidity
+   * @param contribution - The amount of base to supply
+   * @param minAPR - The minimum APR to accept
+   * @param maxAPR - The maximum APR to accept
+   * @param asUnderlying - TODO: come up with good comment for this
+   * @param options - Contract Write Options
+   */
+  addLiquidity({
+    destination,
+    contribution,
+    minAPR,
+    maxAPR,
+    asUnderlying,
+    options,
+  }: {
+    destination: Address;
+    contribution: bigint;
+    minAPR: bigint;
+    maxAPR: bigint;
+    asUnderlying?: boolean;
+    options: ContractWriteOptions;
+  }): Promise<bigint>;
+
+  /**
+   * Removes liquidity from the pool.
+   * @param destination - The account removing liquidity
+   * @param lpSharesIn - The amount of LP shares to remove
+   * @param minBaseAmountOut - The minimum amount of base to send to the destination
+   * @param asUnderlying - TODO: come up with good comment for this
+   * @param options - Contract Write Options
+   */
+  removeLiquidity({
+    destination,
+    lpSharesIn,
+    minBaseAmountOut,
+    asUnderlying,
+    options,
+  }: {
+    destination: Address;
+    lpSharesIn: bigint;
+    minBaseAmountOut: bigint;
+    asUnderlying?: boolean;
+    options: ContractWriteOptions;
+  }): Promise<bigint>;
+
+  /**
+   * Redeems withdrawal shares.
+   * @param withdrawalSharesIn - The amount of withdrawal shares to redeem
+   * @param minBaseAmountOutPerShare - The minimum amount of base to send to the destination per share
+   * @param destination - The account receiving the base
+   * @param asUnderlying - TODO: come up with good comment for this
+   * @param options - Contract Write Options
+   */
+  redeemWithdrawalShares({
+    withdrawalSharesIn,
+    minBaseAmountOutPerShare,
+    destination,
+    asUnderlying,
+    options,
+  }: {
+    withdrawalSharesIn: bigint;
+    minBaseAmountOutPerShare: bigint;
+    destination: Address;
+    asUnderlying?: boolean;
+    options: ContractWriteOptions;
+  }): Promise<bigint>;
 }
 
-export class ReadWriteHyperdrive implements IReadWriteHyperdrive {
-  private readonly contract: ReadWriteHyperdriveContract;
+export interface ReadWriteHyperdriveOptions extends ReadHyperdriveOptions {
+  contract: ReadWriteHyperdriveContract;
+}
 
-  constructor({ contract }: ReadWriteHyperdriveOptions) {
+export class ReadWriteHyperdrive
+  extends ReadHyperdrive
+  implements IReadWriteHyperdrive
+{
+  protected readonly contract: ReadWriteHyperdriveContract;
+
+  constructor({ contract, mathContract }: ReadWriteHyperdriveOptions) {
+    super({ contract, mathContract });
     this.contract = contract;
   }
 
@@ -72,6 +244,175 @@ export class ReadWriteHyperdrive implements IReadWriteHyperdrive {
         args.destination,
         args?.asUnderlying ?? true,
       ],
+      options,
+    );
+  }
+
+  async openLong({
+    destination,
+    baseAmount,
+    bondAmountOut,
+    asUnderlying = true,
+    options,
+  }: {
+    destination: Address;
+    baseAmount: bigint;
+    bondAmountOut: bigint;
+    asUnderlying?: boolean;
+    options: ContractWriteOptions;
+  }): Promise<bigint> {
+    const { baseToken } = await this.contract.read("getPoolConfig", []);
+    const requiresEth = asUnderlying && baseToken === ZERO_ADDRESS;
+    return this.contract.write(
+      "openLong",
+      [baseAmount, bondAmountOut, destination, asUnderlying],
+      {
+        value: requiresEth && baseAmount ? baseAmount : 0n,
+        ...options,
+      },
+    );
+  }
+
+  async openShort({
+    destination,
+    bondAmount,
+    maxDeposit,
+    asUnderlying = true,
+    options,
+  }: {
+    destination: Address;
+    bondAmount: bigint;
+    maxDeposit: bigint;
+    asUnderlying?: boolean;
+    options: ContractWriteOptions;
+  }): Promise<bigint> {
+    return this.contract.write(
+      "openShort",
+      [bondAmount, maxDeposit, destination, asUnderlying],
+      // TODO: Do we need to pass value here?
+      { value: 0n, ...options },
+    );
+  }
+
+  async closeLong({
+    long,
+    bondAmountIn,
+    minBaseAmountOut,
+    destination,
+    asUnderlying = true,
+    options,
+  }: {
+    long: Long;
+    bondAmountIn: bigint;
+    minBaseAmountOut: bigint;
+    destination: Address;
+    asUnderlying?: boolean;
+    options: ContractWriteOptions;
+  }): Promise<bigint> {
+    return this.contract.write(
+      "closeLong",
+      [
+        long.maturity,
+        bondAmountIn,
+        minBaseAmountOut,
+        destination,
+        asUnderlying,
+      ],
+      options,
+    );
+  }
+
+  async closeShort({
+    short,
+    bondAmountIn,
+    minBaseAmountOut,
+    destination,
+    asUnderlying = true,
+    options,
+  }: {
+    short: Short;
+    bondAmountIn: bigint;
+    minBaseAmountOut: bigint;
+    destination: Address;
+    asUnderlying?: boolean;
+    options: ContractWriteOptions;
+  }): Promise<bigint> {
+    return this.contract.write(
+      "closeShort",
+      [
+        short.maturity,
+        bondAmountIn,
+        minBaseAmountOut,
+        destination,
+        asUnderlying,
+      ],
+      options,
+    );
+  }
+
+  async addLiquidity({
+    destination,
+    contribution,
+    minAPR,
+    maxAPR,
+    asUnderlying = true,
+    options,
+  }: {
+    destination: Address;
+    contribution: bigint;
+    minAPR: bigint;
+    maxAPR: bigint;
+    asUnderlying?: boolean;
+    options: ContractWriteOptions;
+  }): Promise<bigint> {
+    const { baseToken } = await this.contract.read("getPoolConfig", []);
+    const requiresEth = asUnderlying && baseToken === ZERO_ADDRESS;
+    return this.contract.write(
+      "addLiquidity",
+      [contribution, minAPR, maxAPR, destination, asUnderlying],
+      {
+        value: requiresEth && contribution ? contribution : 0n,
+        ...options,
+      },
+    );
+  }
+
+  async removeLiquidity({
+    destination,
+    lpSharesIn,
+    minBaseAmountOut,
+    asUnderlying = true,
+    options,
+  }: {
+    destination: Address;
+    lpSharesIn: bigint;
+    minBaseAmountOut: bigint;
+    asUnderlying?: boolean;
+    options: ContractWriteOptions;
+  }): Promise<bigint> {
+    return this.contract.write(
+      "removeLiquidity",
+      [lpSharesIn, minBaseAmountOut, destination, asUnderlying],
+      options,
+    );
+  }
+
+  async redeemWithdrawalShares({
+    withdrawalSharesIn,
+    minBaseAmountOutPerShare,
+    destination,
+    asUnderlying = true,
+    options,
+  }: {
+    withdrawalSharesIn: bigint;
+    minBaseAmountOutPerShare: bigint;
+    destination: Address;
+    asUnderlying?: boolean;
+    options: ContractWriteOptions;
+  }): Promise<bigint> {
+    return this.contract.write(
+      "redeemWithdrawalShares",
+      [withdrawalSharesIn, minBaseAmountOutPerShare, destination, asUnderlying],
       options,
     );
   }
