@@ -247,7 +247,7 @@ export class HyperdriveSdk implements IReadHyperdrive, IReadWriteHyperdrive {
     destination: Address;
     baseAmount: bigint;
     bondAmountOut: bigint;
-    asUnderlying?: boolean | undefined;
+    asUnderlying?: boolean;
     options: ContractWriteOptions;
   }): Promise<bigint> {
     return this._writable.openLong({
@@ -268,7 +268,7 @@ export class HyperdriveSdk implements IReadHyperdrive, IReadWriteHyperdrive {
     destination: Address;
     bondAmount: bigint;
     maxDeposit: bigint;
-    asUnderlying?: boolean | undefined;
+    asUnderlying?: boolean;
     options: ContractWriteOptions;
   }): Promise<bigint> {
     return this._writable.openShort({
@@ -291,7 +291,7 @@ export class HyperdriveSdk implements IReadHyperdrive, IReadWriteHyperdrive {
     bondAmountIn: bigint;
     minBaseAmountOut: bigint;
     destination: Address;
-    asUnderlying?: boolean | undefined;
+    asUnderlying?: boolean;
     options: ContractWriteOptions;
   }): Promise<bigint> {
     return this._writable.closeLong({
@@ -315,7 +315,7 @@ export class HyperdriveSdk implements IReadHyperdrive, IReadWriteHyperdrive {
     bondAmountIn: bigint;
     minBaseAmountOut: bigint;
     destination: Address;
-    asUnderlying?: boolean | undefined;
+    asUnderlying?: boolean;
     options: ContractWriteOptions;
   }): Promise<bigint> {
     return this._writable.closeShort({
@@ -340,7 +340,7 @@ export class HyperdriveSdk implements IReadHyperdrive, IReadWriteHyperdrive {
     contribution: bigint;
     minAPR: bigint;
     maxAPR: bigint;
-    asUnderlying?: boolean | undefined;
+    asUnderlying?: boolean;
     options: ContractWriteOptions;
   }): Promise<bigint> {
     return this._writable.addLiquidity({
@@ -362,7 +362,7 @@ export class HyperdriveSdk implements IReadHyperdrive, IReadWriteHyperdrive {
     destination: Address;
     lpSharesIn: bigint;
     minBaseAmountOut: bigint;
-    asUnderlying?: boolean | undefined;
+    asUnderlying?: boolean;
     options: ContractWriteOptions;
   }): Promise<bigint> {
     return this._writable.removeLiquidity({
@@ -383,7 +383,7 @@ export class HyperdriveSdk implements IReadHyperdrive, IReadWriteHyperdrive {
     withdrawalSharesIn: bigint;
     minBaseAmountOutPerShare: bigint;
     destination: Address;
-    asUnderlying?: boolean | undefined;
+    asUnderlying?: boolean;
     options: ContractWriteOptions;
   }): Promise<bigint> {
     return this._writable.redeemWithdrawalShares({
