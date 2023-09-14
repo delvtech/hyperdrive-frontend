@@ -7,12 +7,17 @@ import {
   ReadWriteHyperdriveOptions,
 } from "src/hyperdrive/ReadWriteHyperdrive";
 
-type HyperdriveSdkOptions = ReadHyperdriveOptions | ReadWriteHyperdriveOptions;
+type HyperdriveClientOptions =
+  | ReadHyperdriveOptions
+  | ReadWriteHyperdriveOptions;
 
-export function createHyperdriveSdk({
-  contract,
-  mathContract,
-}: HyperdriveSdkOptions): any {
+/**
+ * Factory function to create a Hyperdrive client. The client will have either
+ * read or read/write capabilities based on the provided contract.
+ */
+export function createHyperdriveClient<
+  TOptions extends HyperdriveClientOptions,
+>({ contract, mathContract }: TOptions): HyperdriveClient<TOptions> {
   if ("write" in contract) {
     return new ReadWriteHyperdrive({
       contract,
@@ -23,5 +28,10 @@ export function createHyperdriveSdk({
   return new ReadHyperdrive({
     contract,
     mathContract,
-  });
+  }) as HyperdriveClient<TOptions>;
 }
+
+type HyperdriveClient<TOptions extends HyperdriveClientOptions> =
+  TOptions extends ReadWriteHyperdriveOptions
+    ? ReadWriteHyperdrive
+    : ReadHyperdrive;
