@@ -18,6 +18,9 @@ export type {
   IReadWriteContract,
   Contract,
   ContractEvent,
+  ContractReadOptions,
+  ContractWriteOptions,
+  ContractGetEventsOptions,
 } from "src/contract/Contract";
 export {
   CachedReadContract,
@@ -35,6 +38,16 @@ export type {
   ReadHyperdriveContract,
   ReadWriteHyperdriveContract,
 } from "src/hyperdrive/HyperdriveContract";
+
+// Utils
+export type {
+  EventName,
+  EventArgs,
+  EventFilter,
+  FunctionName,
+  FunctionArgs,
+  FunctionReturnType,
+} from "src/base/abitype";
 
 // Client classes
 export { ReadHyperdrive } from "src/hyperdrive/ReadHyperdrive";

@@ -10,8 +10,11 @@ export { HyperdriveABI } from "src/abis/Hyperdrive";
 export { mockErc4626Abi } from "src/abis/MockErc4626";
 
 // AMM
-export { getPoolConfig } from "src/amm/getPoolConfig/getPoolConfig";
-export { getPoolInfo } from "src/amm/getPoolInfo";
+export {
+  getPoolConfig,
+  type GetPoolConfigOptions,
+} from "src/amm/getPoolConfig/getPoolConfig";
+export { getPoolInfo, type GetPoolInfoOptions } from "src/amm/getPoolInfo";
 export { getTransferSingleEvents } from "src/amm/events/getTransferSingleEvents";
 export { getFixedAPR } from "src/amm/getFixedAPR";
 
@@ -19,11 +22,18 @@ export { getFixedAPR } from "src/amm/getFixedAPR";
 export { getVaultRate } from "src/vaults/erc4626";
 
 // Longs
-export { getLongPrice } from "src/amm/longs/getLongPrice";
-export { getOpenLongs } from "src/amm/longs/getOpenLongs/getOpenLongs";
-export type { GetOpenLongsOptions } from "src/amm/longs/getOpenLongs/getOpenLongs";
-export { getClosedLongs } from "src/amm/longs/getClosedLongs";
-export type { GetClosedLongsOptions as GetCloseLongsOptions } from "src/amm/longs/getClosedLongs";
+export {
+  getLongPrice,
+  type GetLongPriceOptions,
+} from "src/amm/longs/getLongPrice";
+export {
+  getOpenLongs,
+  type GetOpenLongsOptions,
+} from "src/amm/longs/getOpenLongs/getOpenLongs";
+export {
+  getClosedLongs,
+  type GetClosedLongsOptions,
+} from "src/amm/longs/getClosedLongs";
 export type { Long, ClosedLong } from "src/amm/longs/types";
 export { getMaxLong } from "src/amm/longs/getMaxLong";
 export type { GetMaxLongOptions } from "src/amm/longs/getMaxLong";
@@ -31,11 +41,17 @@ export type { GetMaxLongOptions } from "src/amm/longs/getMaxLong";
 // Shorts
 export { getOpenShorts } from "src/amm/shorts/getOpenShorts";
 export type { ClosedShort, OpenShort, Short } from "src/amm/shorts/types";
-export { getShorts } from "src/amm/shorts/getShortsOld";
-export { getClosedShorts } from "src/amm/shorts/getClosedShorts";
+export { getShorts, type GetShortsOptions } from "src/amm/shorts/getShortsOld";
+export {
+  getClosedShorts,
+  type GetClosedShortsOptions,
+} from "src/amm/shorts/getClosedShorts";
 export { getMaxShort } from "src/amm/shorts/getMaxShort";
 export type { GetMaxShortOptions } from "src/amm/shorts/getMaxShort";
-export { getCloseShortEvents } from "src/amm/shorts/getCloseShortEvents";
+export {
+  getCloseShortEvents,
+  type GetCloseShortEventsOptions,
+} from "src/amm/shorts/getCloseShortEvents";
 
 // Liquidity
 export { getLiquidity } from "src/amm/getLiquidity";
@@ -50,7 +66,10 @@ export {
 // LP Shares
 export { LP_ASSET_ID, WITHDRAW_SHARES_ASSET_ID } from "src/amm/lp/constants";
 export { getLpShares } from "src/amm/lp/getLpShares";
-export { getClosedLpShares } from "src/amm/lp/getClosedLpShares";
+export {
+  getClosedLpShares,
+  type GetClosedLpSharesOptions,
+} from "src/amm/lp/getClosedLpShares";
 export type { ClosedLpShares } from "src/amm/lp/getClosedLpShares";
 export type { GetLpSharesOptions } from "src/amm/lp/getLpShares";
 

@@ -14,7 +14,7 @@ interface CloseShortEvent {
   >["args"];
   eventLog: GetFilterLogsReturnType<typeof HyperdriveABI, "CloseShort">[number];
 }
-interface GetCloseShortEventsOptions {
+export interface GetCloseShortEventsOptions {
   args?: { traderAddress?: Address };
   hyperdriveAddress: Address;
   publicClient: PublicClient;

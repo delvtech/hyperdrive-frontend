@@ -1,13 +1,13 @@
 import { QueryObserverOptions } from "@tanstack/query-core";
 import { makeQueryKey } from "src/makeQueryKey";
-import { GetCloseLongsOptions, getClosedLongs } from "@hyperdrive/core";
+import { GetClosedLongsOptions, getClosedLongs } from "@hyperdrive/core";
 
 export function getCloseLongsQuery({
   hyperdriveAddress,
   publicClient,
   traderAddress: account,
   options,
-}: Partial<GetCloseLongsOptions>): QueryObserverOptions<
+}: Partial<GetClosedLongsOptions>): QueryObserverOptions<
   Awaited<ReturnType<typeof getClosedLongs>>
 > {
   const queryEnabled = !!account && !!hyperdriveAddress && !!publicClient;

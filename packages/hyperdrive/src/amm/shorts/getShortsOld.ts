@@ -1,7 +1,7 @@
 import { HyperdriveABI } from "src/abis/Hyperdrive";
 import { PublicClient, decodeEventLog, Address } from "viem";
 
-interface GetShortsOptions {
+export interface GetShortsOptions {
   account: Address;
   hyperdriveAddress: Address;
   publicClient: PublicClient;

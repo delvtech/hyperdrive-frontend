@@ -2,7 +2,7 @@ import { PublicClient, Address, ContractFunctionResult } from "viem";
 import { HyperdriveABI } from "src/abis/Hyperdrive";
 import { ReadCallOptions } from "src/base/ReadCallOptions";
 
-interface GetPoolInfoOptions {
+export interface GetPoolInfoOptions {
   hyperdriveAddress: Address;
   publicClient: PublicClient;
   options?: ReadCallOptions;
