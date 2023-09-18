@@ -1,9 +1,14 @@
-import { HyperdriveMathABI } from "@hyperdrive/sdk";
+import { HyperdriveMathABI, SimpleCache } from "@hyperdrive/sdk";
 import { ViemCachedReadContract } from "src/contract/ViemCachedReadContract";
-import { CreateHyperdriveContractOptions } from "src/utils/createHyperdriveContract";
+import { Address, PublicClient } from "viem";
 
+interface CreateHyperdriveMathContractOptions {
+  address: Address;
+  publicClient: PublicClient;
+  cache?: SimpleCache;
+}
 export function createHyperdriveMathContract<
-  TOptions extends CreateHyperdriveContractOptions,
+  TOptions extends CreateHyperdriveMathContractOptions,
 >({ address, publicClient, cache }: TOptions): ViemHyperdriveMathContract {
   return new ViemCachedReadContract({
     abi: HyperdriveMathABI,
