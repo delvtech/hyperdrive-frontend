@@ -3,7 +3,7 @@ import { ViemCachedReadContract } from "src/contract/ViemCachedReadContract";
 import { ViemCachedReadWriteContract } from "src/contract/ViemCachedReadWriteContract";
 import { Address, PublicClient, WalletClient } from "viem";
 
-interface CreateHyperdriveContractOptions {
+export interface CreateHyperdriveContractOptions {
   address: Address;
   publicClient: PublicClient;
   walletClient?: WalletClient;
