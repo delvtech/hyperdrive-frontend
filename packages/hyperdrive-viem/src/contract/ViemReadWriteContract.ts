@@ -4,14 +4,12 @@ import {
   FunctionName,
   FunctionReturnType,
   IReadWriteContract,
-  SimpleCache,
 } from "@hyperdrive/sdk";
-import { ViemCachedReadWriteContract } from "src/contract/ViemCachedReadWriteContract";
 import {
   ViemReadContract,
   ViemReadContractOptions,
 } from "src/contract/ViemReadContract";
-import { createSimulateContractParameters } from "src/utils/createSimulateContractParameters";
+import { createSimulateContractParameters } from "src/contract/utils/createSimulateContractParameters";
 import { Abi, WalletClient } from "viem";
 
 export interface ViemReadWriteContractOptions<TAbi extends Abi = Abi>
@@ -43,6 +41,7 @@ export class ViemReadWriteContract<TAbi extends Abi = Abi>
     this._walletClient = walletClient;
   }
 
+  // override to get the account from the wallet client
   override async simulateWrite<
     TFunctionName extends FunctionName<TAbi, "nonpayable" | "payable">,
   >(
@@ -77,15 +76,5 @@ export class ViemReadWriteContract<TAbi extends Abi = Abi>
     });
 
     return this._walletClient.writeContract(request) as any;
-  }
-
-  withCache(cache?: SimpleCache): ViemCachedReadWriteContract<TAbi> {
-    return new ViemCachedReadWriteContract({
-      abi: this.abi,
-      address: this.address,
-      publicClient: this._publicClient,
-      walletClient: this._walletClient,
-      cache,
-    });
   }
 }

@@ -1,3 +1,8 @@
+// client
+export { ViemReadHyperdrive } from "src/client/ViemReadHyperdrive";
+export { ViemReadWriteHyperdrive } from "src/client/ViemReadWriteHyperdrive";
+
+// contract
 export {
   ViemCachedReadContract,
   type ViemCachedReadContractOptions,
@@ -14,4 +19,3 @@ export {
   ViemReadWriteContract,
   type ViemReadWriteContractOptions,
 } from "src/contract/ViemReadWriteContract";
-export { createHyperdriveContract } from "src/utils/createHyperdriveContract";
