@@ -20,8 +20,6 @@
     "typecheck": "turbo run typecheck"
   },
   "devDependencies": {
-    "@parcel/packager-ts": "2.8.3",
-    "@parcel/transformer-typescript-types": "2.8.3",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "prettier": "latest",
@@ -29,7 +27,8 @@
     "typescript": "^5.0.2"
   },
   "resolutions": {
-    "typescript": "^5.0.2"
+    "typescript": "^5.0.2",
+    "viem": "^1.10.14"
   },
   "lint-staged": {
     "{apps,packages}/**/*.{gql,graphql,js,jsx,ts,tsx,json}": [

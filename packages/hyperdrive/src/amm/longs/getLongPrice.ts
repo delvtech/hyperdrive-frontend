@@ -27,7 +27,7 @@ export interface GetLongPriceOptions {
   publicClient: PublicClient;
 }
 
-interface GetLongPriceResult {
+export interface GetLongPriceResult {
   price: bigint;
   formatted: string;
 }

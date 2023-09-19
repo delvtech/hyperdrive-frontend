@@ -2,19 +2,15 @@
   "name": "@hyperdrive/sdk",
   "version": "0.0.0",
   "license": "MIT",
-  "source": "src/index.ts",
   "type": "module",
-  "main": "dist/main.mjs",
-  "types": "dist/types.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
-  "alias": {
-    "src": "./src"
-  },
   "scripts": {
-    "watch": "parcel watch",
-    "build": "tsc --noEmit && parcel build --no-cache",
+    "build": "tsup src/index.ts --minify --format esm --clean --dts",
+    "watch": "npm run build -- --watch",
     "test": "vitest --no-threads",
     "test:run": "vitest run",
     "typecheck": "tsc --noEmit"
@@ -23,17 +19,16 @@
     "@hyperdrive/eslint-config": "*",
     "@hyperdrive/prettier-config": "*",
     "@hyperdrive/tsconfig": "*",
-    "@parcel/transformer-typescript-types": "2.8.3",
     "@types/sinon": "^10.0.16",
     "@viem/anvil": "^0.0.6",
     "abitype": "^0.9.8",
     "dotenv": "^16.0.3",
     "happy-dom": "^10.7.0",
-    "parcel": "^2.8.0",
     "prettier-plugin-organize-imports": "^3.2.2",
     "sinon": "^15.2.0",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.1.0",
+    "tsup": "^7.2.0",
     "typescript": "^5.0.2",
     "vite-tsconfig-paths": "^4.2.0",
     "vitest": "^0.28.5"
