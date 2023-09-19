@@ -1,11 +1,15 @@
-import { ReadWriteHyperdriveContract } from "src/hyperdrive/HyperdriveContract";
+import { IReadWriteHyperdriveContract } from "src/hyperdrive/HyperdriveContract";
 import { Long, Short } from "@hyperdrive/core";
 import { Address } from "abitype";
 import { ContractWriteOptions } from "src/contract/Contract";
 import { ZERO_ADDRESS } from "src/utils/constants";
-import { ReadHyperdrive, ReadHyperdriveOptions } from "./ReadHyperdrive";
+import {
+  IReadHyperdrive,
+  ReadHyperdrive,
+  ReadHyperdriveOptions,
+} from "src/hyperdrive/ReadHyperdrive";
 
-export interface IReadWriteHyperdrive {
+export interface IReadWriteHyperdrive extends IReadHyperdrive {
   /**
    * Allows anyone to mint a new checkpoint.
    * @param time - The time (in seconds) of the checkpoint to create.
@@ -205,14 +209,14 @@ export interface IReadWriteHyperdrive {
 }
 
 export interface ReadWriteHyperdriveOptions extends ReadHyperdriveOptions {
-  contract: ReadWriteHyperdriveContract;
+  contract: IReadWriteHyperdriveContract;
 }
 
 export class ReadWriteHyperdrive
   extends ReadHyperdrive
   implements IReadWriteHyperdrive
 {
-  protected readonly contract: ReadWriteHyperdriveContract;
+  protected readonly contract: IReadWriteHyperdriveContract;
 
   constructor({ contract, mathContract }: ReadWriteHyperdriveOptions) {
     super({ contract, mathContract });

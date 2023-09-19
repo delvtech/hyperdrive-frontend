@@ -1,5 +1,9 @@
 // Main Hyperdrive sdk entrypoint for consumers
-export { createHyperdriveClient } from "src/hyperdrive/utils/createHyperdriveClient";
+export {
+  createHyperdriveClient,
+  type HyperdriveClientOptions,
+  type HyperdriveClient,
+} from "src/hyperdrive/utils/createHyperdriveClient";
 
 // ABIs
 export { ERC20_ABI } from "src/abis/ERC20";
@@ -9,7 +13,7 @@ export { HyperdriveABI } from "src/abis/Hyperdrive";
 export { mockErc4626Abi } from "src/abis/MockErc4626";
 
 // SimpleCache
-export type { SimpleCache } from "src/cache/SimpleCache";
+export type { SimpleCache, SimpleCacheKey } from "src/cache/SimpleCache";
 export { LruSimpleCache } from "src/cache/LruSimpleCache";
 
 // Contract Interface
@@ -34,9 +38,9 @@ export {
 } from "src/contract/cached/CachedReadWriteContract";
 export type { ICachedContract } from "src/contract/cached/CachedContract";
 export type {
-  HyperdriveContract,
-  ReadHyperdriveContract,
-  ReadWriteHyperdriveContract,
+  IHyperdriveContract,
+  IReadHyperdriveContract,
+  IReadWriteHyperdriveContract,
 } from "src/hyperdrive/HyperdriveContract";
 
 // Utils

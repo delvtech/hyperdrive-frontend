@@ -32,12 +32,17 @@ const DEFAULT_CACHE_SIZE = 100;
 export interface CachedReadContractOptions<TAbi extends Abi = Abi> {
   contract: IReadContract<TAbi>;
   cache?: SimpleCache;
+  /**
+   * An ID to distinguish this instance from others. Used to prefix to all cache
+   * keys.
+   */
+  id?: string;
 }
 
 /**
- * A wrapped Ethereum contract reader that provides caching capabilities.
- * Useful for reducing the number of actual reads from a contract by caching
- * and reusing previous read results.
+ * A wrapped Ethereum contract reader that provides caching capabilities. Useful
+ * for reducing the number of actual reads from a contract by caching and
+ * reusing previous read results.
  *
  * @example
  * const cachedContract = new CachedReadContract({ contract: myContract });
@@ -47,18 +52,21 @@ export interface CachedReadContractOptions<TAbi extends Abi = Abi> {
 export class CachedReadContract<TAbi extends Abi = Abi>
   implements ICachedReadContract<TAbi>
 {
-  address: `0x${string}`;
-  abi: TAbi;
+  readonly address: `0x${string}`;
+  readonly abi: TAbi;
+
+  protected readonly _contract: IReadContract<TAbi>;
+  protected readonly _id: string;
 
   /** Internal cache for contract reads. */
   protected readonly _cache: SimpleCache;
-  protected readonly _contract: IReadContract<TAbi>;
 
-  constructor({ contract, cache }: CachedReadContractOptions<TAbi>) {
+  constructor({ contract, cache, id }: CachedReadContractOptions<TAbi>) {
     this.address = contract.address;
     this.abi = contract.abi;
     this._contract = contract;
     this._cache = cache || new LruSimpleCache({ max: DEFAULT_CACHE_SIZE });
+    this._id = id || "";
   }
 
   /**
@@ -70,8 +78,18 @@ export class CachedReadContract<TAbi extends Abi = Abi>
     args: FunctionArgs<TAbi, TFunctionName>,
     options?: ContractReadOptions,
   ): Promise<FunctionReturnType<TAbi, TFunctionName>> {
-    return this._query({
-      key: createSimpleCacheKey(["read", { functionName, args, options }]),
+    return this._getOrSet({
+      key: createSimpleCacheKey([
+        this._id,
+        "read",
+        {
+          address: this.address,
+          functionName,
+          args,
+          options,
+        },
+      ]),
+
       callback: () => this._contract.read(functionName, args, options),
     });
   }
@@ -92,7 +110,17 @@ export class CachedReadContract<TAbi extends Abi = Abi>
     args: FunctionArgs<TAbi, TFunctionName>,
     options?: ContractReadOptions,
   ): void {
-    const key = createSimpleCacheKey(["read", { functionName, args, options }]);
+    const key = createSimpleCacheKey([
+      this._id,
+      "read",
+      {
+        address: this.address,
+        functionName,
+        args,
+        options,
+      },
+    ]);
+
     this._cache.delete(key);
   }
 
@@ -104,8 +132,16 @@ export class CachedReadContract<TAbi extends Abi = Abi>
     eventName: TEventName,
     options?: ContractGetEventsOptions<TAbi, TEventName>,
   ): Promise<ContractEvent<TAbi, TEventName>[]> {
-    return this._query({
-      key: createSimpleCacheKey(["getEvents", { eventName, options }]),
+    return this._getOrSet({
+      key: createSimpleCacheKey([
+        this._id,
+        "getEvents",
+        {
+          address: this.address,
+          eventName,
+          options,
+        },
+      ]),
       callback: () => this._contract.getEvents(eventName, options),
     });
   }
@@ -134,10 +170,13 @@ export class CachedReadContract<TAbi extends Abi = Abi>
   /**
    * Retrieves a value from the cache or sets it if not present.
    */
-  private async _query<TValue = any>({
+  private async _getOrSet<TValue = any>({
     key,
     callback,
-  }: QueryOptions<TValue>): Promise<TValue> {
+  }: {
+    key: SimpleCacheKey;
+    callback: () => Promise<TValue> | TValue;
+  }): Promise<TValue> {
     let value = this._cache.get(key);
     if (value) {
       return value;
@@ -148,9 +187,4 @@ export class CachedReadContract<TAbi extends Abi = Abi>
 
     return value;
   }
-}
-
-interface QueryOptions<TValue = any> {
-  key: SimpleCacheKey;
-  callback: () => Promise<TValue> | TValue;
 }

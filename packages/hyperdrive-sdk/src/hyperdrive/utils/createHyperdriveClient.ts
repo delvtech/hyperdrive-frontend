@@ -7,7 +7,7 @@ import {
   ReadWriteHyperdriveOptions,
 } from "src/hyperdrive/ReadWriteHyperdrive";
 
-type HyperdriveClientOptions =
+export type HyperdriveClientOptions =
   | ReadHyperdriveOptions
   | ReadWriteHyperdriveOptions;
 
@@ -31,7 +31,8 @@ export function createHyperdriveClient<
   }) as HyperdriveClient<TOptions>;
 }
 
-type HyperdriveClient<TOptions extends HyperdriveClientOptions> =
-  TOptions extends ReadWriteHyperdriveOptions
-    ? ReadWriteHyperdrive
-    : ReadHyperdrive;
+export type HyperdriveClient<
+  TOptions extends HyperdriveClientOptions = HyperdriveClientOptions,
+> = TOptions extends ReadWriteHyperdriveOptions
+  ? ReadWriteHyperdrive
+  : ReadHyperdrive;

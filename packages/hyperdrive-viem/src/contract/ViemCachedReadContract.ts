@@ -8,6 +8,7 @@ import { Abi } from "viem";
 export interface ViemCachedReadContractOptions<TAbi extends Abi = Abi>
   extends ViemReadContractOptions<TAbi> {
   cache?: SimpleCache;
+  id?: string;
 }
 
 export class ViemCachedReadContract<
@@ -18,6 +19,7 @@ export class ViemCachedReadContract<
     address,
     publicClient,
     cache,
+    id,
   }: ViemCachedReadContractOptions<TAbi>) {
     super({
       contract: new ViemReadContract({
@@ -26,6 +28,7 @@ export class ViemCachedReadContract<
         publicClient,
       }),
       cache,
+      id,
     });
   }
 }

@@ -1,7 +1,6 @@
 import {
   ClosedLpShares,
   ClosedShort,
-  HyperdriveABI,
   Long,
   OpenShort,
   RedeemedWithdrawalShares,
@@ -17,17 +16,18 @@ import {
   ContractReadOptions,
   ContractWriteOptions,
 } from "src/contract/Contract";
-import { ReadHyperdriveContract } from "src/hyperdrive/HyperdriveContract";
-import { ReadHyperdriveMathContract } from "src/hyperdrive/HyperdriveMathContract";
+import { IReadHyperdriveContract } from "src/hyperdrive/HyperdriveContract";
+import { IReadHyperdriveMathContract } from "src/hyperdrive/HyperdriveMathContract";
 import { PoolConfig } from "src/pool/PoolConfig";
 import { PoolInfo } from "src/pool/PoolInfo";
 import { calculateLiquidity } from "src/pool/calculateLiquidity";
 import { WITHDRAW_SHARES_ASSET_ID, LP_ASSET_ID } from "src/lp/constants";
 import { decodeAssetFromTransferSingleEventData } from "src/utils/decodeAssetFromTransferSingleEventData";
+import { HyperdriveABI } from "src/abis/Hyperdrive";
 
 export interface ReadHyperdriveOptions {
-  contract: ReadHyperdriveContract;
-  mathContract: ReadHyperdriveMathContract;
+  contract: IReadHyperdriveContract;
+  mathContract: IReadHyperdriveMathContract;
 }
 
 export interface IReadHyperdrive {
@@ -248,8 +248,8 @@ export interface IReadHyperdrive {
 }
 
 export class ReadHyperdrive implements IReadHyperdrive {
-  protected readonly contract: ReadHyperdriveContract;
-  protected readonly mathContract: ReadHyperdriveMathContract;
+  protected readonly contract: IReadHyperdriveContract;
+  protected readonly mathContract: IReadHyperdriveMathContract;
 
   constructor({ contract, mathContract }: ReadHyperdriveOptions) {
     this.contract = contract;

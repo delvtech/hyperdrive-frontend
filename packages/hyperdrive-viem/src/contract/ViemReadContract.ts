@@ -9,12 +9,9 @@ import {
   FunctionName,
   FunctionReturnType,
   IReadContract,
-  SimpleCache,
 } from "@hyperdrive/sdk";
-import { ViemCachedReadContract } from "src/contract/ViemCachedReadContract";
-import { ViemReadWriteContract } from "src/contract/ViemReadWriteContract";
-import { createSimulateContractParameters } from "src/utils/createSimulateContractParameters";
-import { Abi, Address, PublicClient, WalletClient } from "viem";
+import { createSimulateContractParameters } from "src/contract/utils/createSimulateContractParameters";
+import { Abi, Address, PublicClient } from "viem";
 
 export interface ViemReadContractOptions<TAbi extends Abi = Abi> {
   abi: TAbi;
@@ -94,31 +91,6 @@ export class ViemReadContract<TAbi extends Abi = Abi>
         eventName,
         transactionHash: transactionHash ?? undefined,
       };
-    });
-  }
-
-  /**
-   * Get a wrapped version of this contract with caching capabilities. Useful
-   * for reducing the number of actual reads from the contract.
-   */
-  withCache(cache?: SimpleCache): ViemCachedReadContract<TAbi> {
-    return new ViemCachedReadContract({
-      abi: this.abi,
-      address: this.address,
-      publicClient: this._publicClient,
-      cache,
-    });
-  }
-
-  /**
-   * Get an extended version of this contract with write capabilities.
-   */
-  withWallet(walletClient: WalletClient): ViemReadWriteContract<TAbi> {
-    return new ViemReadWriteContract({
-      abi: this.abi,
-      address: this.address,
-      publicClient: this._publicClient,
-      walletClient,
     });
   }
 }
