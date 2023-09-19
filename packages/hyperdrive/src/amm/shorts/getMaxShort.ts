@@ -35,7 +35,7 @@ export interface GetMaxShortOptions {
   publicClient: PublicClient;
 }
 
-interface GetMaxShortResult {
+export interface GetMaxShortResult {
   maxBondsOut: bigint;
   formatted: string;
 }

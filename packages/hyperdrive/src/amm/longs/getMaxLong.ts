@@ -39,7 +39,7 @@ export interface GetMaxLongOptions {
   publicClient: PublicClient;
 }
 
-interface GetMaxLongResult {
+export interface GetMaxLongResult {
   maxBaseIn: bigint;
   formattedMaxBaseIn: string;
   maxBondsOut: bigint;

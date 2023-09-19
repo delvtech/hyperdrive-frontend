@@ -25,6 +25,7 @@ export { getVaultRate } from "src/vaults/erc4626";
 export {
   getLongPrice,
   type GetLongPriceOptions,
+  type GetLongPriceResult,
 } from "src/amm/longs/getLongPrice";
 export {
   getOpenLongs,
@@ -36,7 +37,10 @@ export {
 } from "src/amm/longs/getClosedLongs";
 export type { Long, ClosedLong } from "src/amm/longs/types";
 export { getMaxLong } from "src/amm/longs/getMaxLong";
-export type { GetMaxLongOptions } from "src/amm/longs/getMaxLong";
+export type {
+  GetMaxLongOptions,
+  GetMaxLongResult,
+} from "src/amm/longs/getMaxLong";
 
 // Shorts
 export { getOpenShorts } from "src/amm/shorts/getOpenShorts";
@@ -47,7 +51,10 @@ export {
   type GetClosedShortsOptions,
 } from "src/amm/shorts/getClosedShorts";
 export { getMaxShort } from "src/amm/shorts/getMaxShort";
-export type { GetMaxShortOptions } from "src/amm/shorts/getMaxShort";
+export type {
+  GetMaxShortOptions,
+  GetMaxShortResult,
+} from "src/amm/shorts/getMaxShort";
 export {
   getCloseShortEvents,
   type GetCloseShortEventsOptions,
