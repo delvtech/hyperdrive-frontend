@@ -1,27 +1,30 @@
-import { GetLongPriceResult } from "@hyperdrive/core";
-import { getCurrentLongPriceQuery } from "@hyperdrive/queries";
 import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
-import { queryClient } from "src/network/queryClient";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
-import { PublicClient } from "viem";
-import { usePublicClient } from "wagmi";
+import { makeQueryKey } from "src/base/makeQueryKey";
+import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
+import { formatUnits } from "viem";
 
 export function useCurrentLongPrice(hyperdrive: Hyperdrive): {
-  longPrice: GetLongPriceResult | undefined;
+  longPrice: { price: bigint; formatted: string } | undefined;
   longPriceStatus: QueryStatus;
 } {
-  const { appConfig } = useAppConfig();
-  const publicClient = usePublicClient();
-
-  const { data, status } = useQuery(
-    getCurrentLongPriceQuery({
+  const readHyperdrive = useReadHyperdrive(hyperdrive.address);
+  const queryEnabled = !!readHyperdrive;
+  const { data, status } = useQuery({
+    queryKey: makeQueryKey("current-long-price", {
       hyperdriveAddress: hyperdrive.address,
-      hyperdriveMathAddress: appConfig?.hyperdriveMath,
-      publicClient: publicClient as PublicClient,
-      queryClient,
     }),
-  );
+    queryFn: queryEnabled
+      ? async () => {
+          const price = await readHyperdrive.getLongPrice();
+          return {
+            price,
+            formatted: formatUnits(price, hyperdrive.baseToken.decimals),
+          };
+        }
+      : undefined,
+    enabled: queryEnabled,
+  });
 
   return {
     longPrice: data,

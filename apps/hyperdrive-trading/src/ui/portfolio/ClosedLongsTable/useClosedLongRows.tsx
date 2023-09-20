@@ -7,7 +7,7 @@ import { Address, formatUnits } from "viem";
 
 interface UseClosedLongRowsOptions {
   account: Address | undefined;
-  hyperdrive: Hyperdrive | undefined;
+  hyperdrive: Hyperdrive;
 }
 
 export function useClosedLongRows({
