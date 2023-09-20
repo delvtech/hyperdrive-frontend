@@ -1,9 +1,7 @@
 import {
-  ClosedLong,
   ClosedLpShares,
   ClosedShort,
   EventOptions,
-  Long,
   OpenShort,
   ReadCallOptions,
   RedeemedWithdrawalShares,
@@ -19,6 +17,7 @@ import {
   getWithdrawalSharesQuery,
 } from "@hyperdrive/queries";
 import { QueryClient } from "@tanstack/query-core";
+import { ClosedLong, Long } from "src/longs/types";
 import { Address, PublicClient } from "viem";
 
 export interface PortfolioActions {
