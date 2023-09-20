@@ -4,7 +4,7 @@ import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
 interface UseOpenShortsOptions {
-  account: Address;
+  account: Address | undefined;
   hyperdriveAddress: Address | undefined;
 }
 
@@ -19,7 +19,7 @@ export function useOpenShorts({
   openShortsStatus: "error" | "success" | "loading";
 } {
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
-  const queryEnabled = !!readHyperdrive;
+  const queryEnabled = !!readHyperdrive && !!account;
   const { data: openShorts, status: openShortsStatus } = useQuery({
     queryKey: makeQueryKey("openShorts", { account, hyperdriveAddress }),
     queryFn: queryEnabled

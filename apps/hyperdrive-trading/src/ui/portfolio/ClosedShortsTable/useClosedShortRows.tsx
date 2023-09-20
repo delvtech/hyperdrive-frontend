@@ -7,7 +7,7 @@ import { useClosedShorts } from "src/ui/hyperdrive/shorts/hooks/useClosedShorts"
 import { Address, formatUnits } from "viem";
 
 interface UseClosedShortsRowsOptions {
-  account: Address;
+  account: Address | undefined;
   hyperdrive: Hyperdrive | undefined;
 }
 

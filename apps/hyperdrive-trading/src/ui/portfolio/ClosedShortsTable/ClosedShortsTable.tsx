@@ -6,7 +6,7 @@ import {
   SortableGridTable,
 } from "src/ui/base/components/tables/SortableGridTable";
 import { useClosedShortRows } from "src/ui/portfolio/ClosedShortsTable/useClosedShortRows";
-import { Address, useAccount } from "wagmi";
+import { useAccount } from "wagmi";
 
 interface ClosedShortsTableProps {
   hyperdrive: Hyperdrive;
@@ -18,7 +18,7 @@ export function ClosedShortsTable({
   const { address: account } = useAccount();
   const { closedShortRows: closedLongRows = [], closedShortRowsStatus } =
     useClosedShortRows({
-      account: account as Address,
+      account,
       hyperdrive: hyperdrive,
     });
 

@@ -5,7 +5,7 @@ import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
 
 interface UseClosedShortsOptions {
-  account: Address;
+  account: Address | undefined;
   hyperdriveAddress: Address | undefined;
 }
 
@@ -20,7 +20,7 @@ export function useClosedShorts({
   closedShortsStatus: QueryStatus;
 } {
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
-  const queryEnabled = !!readHyperdrive;
+  const queryEnabled = !!readHyperdrive && !!account;
   const { data: closedShorts, status: closedShortsStatus } = useQuery({
     queryKey: makeQueryKey("closedShorts", { account, hyperdriveAddress }),
     queryFn: queryEnabled
