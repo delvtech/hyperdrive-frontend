@@ -1,8 +1,7 @@
-import { getTradingVolumeQuery } from "@hyperdrive/queries";
 import { useQuery } from "@tanstack/react-query";
-import { Address, PublicClient } from "viem";
-
-import { usePublicClient } from "wagmi";
+import { makeQueryKey } from "src/base/makeQueryKey";
+import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
+import { Address } from "viem";
 type UseTradingVolumeResult = {
   tradingVolume: string | undefined;
 };
@@ -10,15 +9,24 @@ export function useTradingVolume(
   hyperdriveAddress: Address,
   currentBlockNumber: bigint,
 ): UseTradingVolumeResult {
-  const publicClient = usePublicClient();
-
-  const { data: tradingVolume } = useQuery(
-    getTradingVolumeQuery({
+  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
+  const queryEnabled = !!readHyperdrive;
+  const { data: tradingVolume } = useQuery({
+    queryKey: makeQueryKey("tradingVolume", {
       hyperdriveAddress,
-      publicClient: publicClient as PublicClient,
       currentBlockNumber,
     }),
-  );
+    queryFn: queryEnabled
+      ? () => {
+          const tradingVolume = readHyperdrive.getTradingVolume();
+          return {
+            tradingVolume: tradingVolume,
+            formatted: tradingVolume?.toString(),
+          };
+        }
+      : undefined,
+    enabled: queryEnabled,
+  });
 
   return { tradingVolume: tradingVolume?.formatted };
 }
