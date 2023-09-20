@@ -16,7 +16,7 @@ export { mockErc4626Abi } from "src/abis/MockErc4626";
 export type { SimpleCache, SimpleCacheKey } from "src/cache/SimpleCache";
 export { LruSimpleCache } from "src/cache/LruSimpleCache";
 
-// Contract Interface
+// Contract
 export type {
   IReadContract,
   IReadWriteContract,
@@ -42,6 +42,9 @@ export type {
   IReadHyperdriveContract,
   IReadWriteHyperdriveContract,
 } from "src/hyperdrive/HyperdriveContract";
+
+// Network
+export type { INetwork } from "src/network/Network";
 
 // Utils
 export type {
