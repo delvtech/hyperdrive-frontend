@@ -6,7 +6,7 @@ import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Address, useChainId, usePublicClient } from "wagmi";
 
 export function useReadHyperdrive(
-  address: Address,
+  address: Address | undefined,
 ): ReadHyperdrive | undefined {
   const { appConfig } = useAppConfig();
 
@@ -14,7 +14,7 @@ export function useReadHyperdrive(
   const publicClient = usePublicClient();
 
   return useMemo(() => {
-    if (!appConfig) {
+    if (!appConfig || !address) {
       return undefined;
     }
     return new ViemReadHyperdrive({

@@ -1,6 +1,6 @@
-import { getLiquidityQuery } from "@hyperdrive/queries";
 import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { Address, usePublicClient } from "wagmi";
+import { useReadHyperdrive } from "./useReadHyperdrive";
 
 export function useLiquidity(hyperdriveAddress: Address): {
   liquidity:
@@ -12,13 +12,9 @@ export function useLiquidity(hyperdriveAddress: Address): {
   liquidityStatus: QueryStatus;
 } {
   const publicClient = usePublicClient();
+  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
 
-  const { data, status } = useQuery(
-    getLiquidityQuery({
-      hyperdriveAddress,
-      publicClient: publicClient as any,
-    }),
-  );
+  const { data, status } = useQuery();
 
   return {
     liquidity: data,
