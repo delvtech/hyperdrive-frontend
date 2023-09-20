@@ -18,7 +18,7 @@ export function useLiquidity(hyperdriveAddress: Address): {
     queryKey: makeQueryKey("liquidity", { hyperdriveAddress }),
     queryFn: queryEnabled
       ? async () => {
-          const liquidity = await readHyperdrive?.getLiquidity();
+          const liquidity = await readHyperdrive.getLiquidity();
           return { liquidity: liquidity, formatted: liquidity?.toString() };
         }
       : undefined,

@@ -12,7 +12,7 @@ export function useHyperdrivePoolInfo(marketAddress: Address): {
   const queryEnabled = !!readHyperdrive;
   const { data: poolInfo, status: poolInfoStatus } = useQuery({
     queryKey: makeQueryKey("poolInfo", { marketAddress }),
-    queryFn: queryEnabled ? () => readHyperdrive?.getPoolInfo() : undefined,
+    queryFn: queryEnabled ? () => readHyperdrive.getPoolInfo() : undefined,
     enabled: queryEnabled,
   });
 
