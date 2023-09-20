@@ -1,6 +1,3 @@
-/**
- * @deprecated use type from @hyperdrive/sdk instead
- */
 export interface Long {
   assetId: bigint;
   bondAmount: bigint;
@@ -12,9 +9,6 @@ export interface Long {
   baseAmountPaid: bigint;
 }
 
-/**
- * @deprecated use type from @hyperdrive/sdk instead
- */
 export interface ClosedLong extends Long {
   // A closed long will include the baseAmount that was redeemed
   baseAmount: bigint;

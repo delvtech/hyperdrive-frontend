@@ -1,4 +1,4 @@
-import { ClosedLong } from "@hyperdrive/core";
+import { ClosedLong } from "@hyperdrive/sdk";
 import { Hyperdrive } from "src/appconfig/types";
 import { Row } from "src/ui/base/components/tables/SortableGridTable";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";

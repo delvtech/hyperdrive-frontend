@@ -1,28 +1,22 @@
-import { GetMaxLongResult } from "@hyperdrive/core";
-import { getMaxLongQuery } from "@hyperdrive/queries";
-import { QueryStatus, useQuery } from "@tanstack/react-query";
+import { ReadHyperdrive } from "@hyperdrive/sdk";
+import { useQuery } from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
-import { queryClient } from "src/network/queryClient";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
-import { usePublicClient } from "wagmi";
+import { makeQueryKey } from "src/base/makeQueryKey";
+import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 
 export function useMaxLong(hyperdrive: Hyperdrive): {
-  maxLong: GetMaxLongResult | undefined;
-  maxLongStatus: QueryStatus;
+  maxLong: Awaited<ReturnType<ReadHyperdrive["getMaxLong"]>> | undefined;
+  maxLongStatus: "error" | "success" | "loading";
 } {
-  const { appConfig } = useAppConfig();
-  const publicClient = usePublicClient();
-
-  const { data, status } = useQuery(
-    getMaxLongQuery({
-      hyperdriveMathAddress: appConfig?.hyperdriveMath,
-      publicClient,
+  const readHyperdrive = useReadHyperdrive(hyperdrive.address);
+  const queryEnabled = !!readHyperdrive;
+  const { data, status } = useQuery({
+    enabled: queryEnabled,
+    queryKey: makeQueryKey("maxLong", {
       hyperdriveAddress: hyperdrive.address,
-      queryClient,
-      // TODO: What should this be?
-      maxIterations: 15,
     }),
-  );
+    queryFn: queryEnabled ? () => readHyperdrive.getMaxLong() : undefined,
+  });
 
   return {
     maxLong: data,

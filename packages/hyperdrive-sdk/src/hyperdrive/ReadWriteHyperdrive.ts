@@ -1,5 +1,5 @@
 import { IReadWriteHyperdriveContract } from "src/hyperdrive/HyperdriveContract";
-import { Long, Short } from "@hyperdrive/core";
+import { Short } from "@hyperdrive/core";
 import { Address } from "abitype";
 import { ContractWriteOptions } from "src/contract/Contract";
 import { ZERO_ADDRESS } from "src/utils/constants";
@@ -8,6 +8,7 @@ import {
   ReadHyperdrive,
   ReadHyperdriveOptions,
 } from "src/hyperdrive/ReadHyperdrive";
+import { Long } from "src/longs/types";
 
 export interface IReadWriteHyperdrive extends IReadHyperdrive {
   /**
@@ -223,12 +224,15 @@ export class ReadWriteHyperdrive
     this.contract = contract;
   }
 
-  checkpoint(time: number, options?: ContractWriteOptions): Promise<void> {
-    return this.contract.write("checkpoint", [BigInt(time)], options);
+  async checkpoint(
+    time: number,
+    options?: ContractWriteOptions,
+  ): Promise<void> {
+    this.contract.write("checkpoint", [BigInt(time)], options);
   }
 
-  pause(paused: boolean, options?: ContractWriteOptions): Promise<void> {
-    return this.contract.write("pause", [paused], options);
+  async pause(paused: boolean, options?: ContractWriteOptions): Promise<void> {
+    this.contract.write("pause", [paused], options);
   }
 
   async initialize(
@@ -240,7 +244,7 @@ export class ReadWriteHyperdrive
     },
     options?: ContractWriteOptions,
   ): Promise<bigint> {
-    return this.contract.write(
+    const [result] = await this.contract.write(
       "initialize",
       [
         args.contribution,
@@ -250,6 +254,7 @@ export class ReadWriteHyperdrive
       ],
       options,
     );
+    return result;
   }
 
   async openLong({
@@ -265,9 +270,9 @@ export class ReadWriteHyperdrive
     asUnderlying?: boolean;
     options: ContractWriteOptions;
   }): Promise<bigint> {
-    const { baseToken } = await this.contract.read("getPoolConfig", []);
+    const { baseToken } = await this.getPoolConfig();
     const requiresEth = asUnderlying && baseToken === ZERO_ADDRESS;
-    return this.contract.write(
+    const [result] = await this.contract.write(
       "openLong",
       [baseAmount, bondAmountOut, destination, asUnderlying],
       {
@@ -275,6 +280,7 @@ export class ReadWriteHyperdrive
         ...options,
       },
     );
+    return result;
   }
 
   async openShort({
@@ -290,12 +296,13 @@ export class ReadWriteHyperdrive
     asUnderlying?: boolean;
     options: ContractWriteOptions;
   }): Promise<bigint> {
-    return this.contract.write(
+    const [result] = await this.contract.write(
       "openShort",
       [bondAmount, maxDeposit, destination, asUnderlying],
       // TODO: Do we need to pass value here?
       { value: 0n, ...options },
     );
+    return result;
   }
 
   async closeLong({
@@ -313,7 +320,7 @@ export class ReadWriteHyperdrive
     asUnderlying?: boolean;
     options: ContractWriteOptions;
   }): Promise<bigint> {
-    return this.contract.write(
+    const [result] = await this.contract.write(
       "closeLong",
       [
         long.maturity,
@@ -324,6 +331,7 @@ export class ReadWriteHyperdrive
       ],
       options,
     );
+    return result;
   }
 
   async closeShort({
@@ -341,7 +349,7 @@ export class ReadWriteHyperdrive
     asUnderlying?: boolean;
     options: ContractWriteOptions;
   }): Promise<bigint> {
-    return this.contract.write(
+    const [result] = await this.contract.write(
       "closeShort",
       [
         short.maturity,
@@ -352,6 +360,7 @@ export class ReadWriteHyperdrive
       ],
       options,
     );
+    return result;
   }
 
   async addLiquidity({
@@ -369,9 +378,9 @@ export class ReadWriteHyperdrive
     asUnderlying?: boolean;
     options: ContractWriteOptions;
   }): Promise<bigint> {
-    const { baseToken } = await this.contract.read("getPoolConfig", []);
+    const { baseToken } = await this.getPoolConfig();
     const requiresEth = asUnderlying && baseToken === ZERO_ADDRESS;
-    return this.contract.write(
+    const [result] = await this.contract.write(
       "addLiquidity",
       [contribution, minAPR, maxAPR, destination, asUnderlying],
       {
@@ -379,6 +388,7 @@ export class ReadWriteHyperdrive
         ...options,
       },
     );
+    return result;
   }
 
   async removeLiquidity({
@@ -394,11 +404,12 @@ export class ReadWriteHyperdrive
     asUnderlying?: boolean;
     options: ContractWriteOptions;
   }): Promise<bigint> {
-    return this.contract.write(
+    const [result] = await this.contract.write(
       "removeLiquidity",
       [lpSharesIn, minBaseAmountOut, destination, asUnderlying],
       options,
     );
+    return result;
   }
 
   async redeemWithdrawalShares({
@@ -414,10 +425,11 @@ export class ReadWriteHyperdrive
     asUnderlying?: boolean;
     options: ContractWriteOptions;
   }): Promise<bigint> {
-    return this.contract.write(
+    const [result] = await this.contract.write(
       "redeemWithdrawalShares",
       [withdrawalSharesIn, minBaseAmountOutPerShare, destination, asUnderlying],
       options,
     );
+    return result;
   }
 }

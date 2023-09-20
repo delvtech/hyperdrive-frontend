@@ -1,9 +1,9 @@
-import { ClosedLong } from "@hyperdrive/core";
-import { getCloseLongsQuery } from "@hyperdrive/queries";
+import { ClosedLong } from "@hyperdrive/sdk";
 
 import { QueryStatus, useQuery } from "@tanstack/react-query";
-import { Address, PublicClient } from "viem";
-import { usePublicClient } from "wagmi";
+import { makeQueryKey } from "src/base/makeQueryKey";
+import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
+import { Address } from "viem";
 
 interface UseClosedLongsOptions {
   account: Address | undefined;
@@ -20,14 +20,15 @@ export function useClosedLongs({
   closedLongs: ClosedLong[] | undefined;
   closedLongsStatus: QueryStatus;
 } {
-  const publicClient = usePublicClient();
-  const { data: closedLongs, status: closedLongsStatus } = useQuery(
-    getCloseLongsQuery({
-      traderAddress: account,
-      hyperdriveAddress,
-      publicClient: publicClient as PublicClient,
-    }),
-  );
+  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
+  const queryEnabled = !!readHyperdrive && !!account && !!hyperdriveAddress;
+  const { data: closedLongs, status: closedLongsStatus } = useQuery({
+    queryKey: makeQueryKey("closedLongs", { account, hyperdriveAddress }),
+    queryFn: queryEnabled
+      ? () => readHyperdrive.getClosedLongs({ account })
+      : undefined,
+    enabled: queryEnabled,
+  });
 
   return { closedLongs, closedLongsStatus };
 }

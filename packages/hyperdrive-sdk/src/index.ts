@@ -46,7 +46,11 @@ export type {
 // Network
 export type { INetwork } from "src/network/Network";
 
+// Shorts
 export type { ClosedShort, OpenShort } from "src/shorts/types";
+
+// Longs
+export type { ClosedLong, Long } from "src/longs/types";
 
 // Utils
 export type {

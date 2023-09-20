@@ -5,7 +5,7 @@ import { ReadWriteContractStub } from "src/contract/stubs/ReadWriteContractStub"
 test("It stubs the write function", async () => {
   const contract = new ReadWriteContractStub(HyperdriveABI);
 
-  const stubbedValue = 100n;
+  const stubbedValue = [100n] as const;
   contract.stubWrite("addLiquidity", stubbedValue);
 
   const value = await contract.write("addLiquidity", []);

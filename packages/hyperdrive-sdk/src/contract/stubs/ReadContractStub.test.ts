@@ -8,7 +8,7 @@ test("It stubs the read function", async () => {
 
   expect(() => contract.read("baseToken", [])).toThrowError();
 
-  const stubbedValue = "0x123abc";
+  const stubbedValue = ["0x123abc"] as const;
   contract.stubRead("baseToken", stubbedValue);
 
   const value = await contract.read("baseToken", []);
@@ -23,7 +23,7 @@ test("It stubs the simulateWrite function", async () => {
 
   expect(() => contract.simulateWrite("addLiquidity", [])).toThrowError();
 
-  const stubbedResult = 100n;
+  const stubbedResult = [100n] as const;
   contract.stubWrite("addLiquidity", stubbedResult);
 
   const result = await contract.simulateWrite("addLiquidity", []);
