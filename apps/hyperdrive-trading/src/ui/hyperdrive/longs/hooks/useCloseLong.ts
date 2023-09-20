@@ -1,4 +1,5 @@
-import { HyperdriveABI, Long } from "@hyperdrive/core";
+import { HyperdriveABI } from "@hyperdrive/core";
+import { Long } from "@hyperdrive/sdk";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { queryClient } from "src/network/queryClient";
 import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";

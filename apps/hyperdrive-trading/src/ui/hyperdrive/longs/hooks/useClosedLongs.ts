@@ -1,5 +1,5 @@
-import { ClosedLong } from "@hyperdrive/core";
 import { getCloseLongsQuery } from "@hyperdrive/queries";
+import { ClosedLong } from "@hyperdrive/sdk";
 
 import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { Address, PublicClient } from "viem";

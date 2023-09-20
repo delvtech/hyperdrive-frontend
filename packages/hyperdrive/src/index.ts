@@ -35,7 +35,6 @@ export {
   getClosedLongs,
   type GetClosedLongsOptions,
 } from "src/amm/longs/getClosedLongs";
-export type { Long, ClosedLong } from "src/amm/longs/types";
 export { getMaxLong } from "src/amm/longs/getMaxLong";
 export type {
   GetMaxLongOptions,

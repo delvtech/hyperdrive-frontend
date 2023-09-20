@@ -1,7 +1,6 @@
 import {
   ClosedLpShares,
   ClosedShort,
-  Long,
   OpenShort,
   RedeemedWithdrawalShares,
 } from "@hyperdrive/core";
@@ -24,6 +23,7 @@ import { calculateLiquidity } from "src/pool/calculateLiquidity";
 import { WITHDRAW_SHARES_ASSET_ID, LP_ASSET_ID } from "src/lp/constants";
 import { decodeAssetFromTransferSingleEventData } from "src/utils/decodeAssetFromTransferSingleEventData";
 import { HyperdriveABI } from "src/abis/Hyperdrive";
+import { Long } from "src/longs/types";
 
 export interface ReadHyperdriveOptions {
   contract: IReadHyperdriveContract;

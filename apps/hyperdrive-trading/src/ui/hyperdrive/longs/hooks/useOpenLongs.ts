@@ -1,5 +1,5 @@
-import { Long } from "@hyperdrive/core";
 import { getOpenLongsQuery } from "@hyperdrive/queries";
+import { Long } from "@hyperdrive/sdk";
 import { useQuery } from "@tanstack/react-query";
 import { Address } from "viem";
 import { usePublicClient } from "wagmi";
