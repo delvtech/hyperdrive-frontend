@@ -1,4 +1,4 @@
-import { Long } from "@hyperdrive/core";
+import { Long } from "@hyperdrive/sdk";
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
