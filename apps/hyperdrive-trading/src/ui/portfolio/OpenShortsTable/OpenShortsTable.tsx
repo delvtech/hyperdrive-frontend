@@ -6,7 +6,7 @@ import {
   SortableGridTable,
 } from "src/ui/base/components/tables/SortableGridTable";
 import { useOpenShortRows } from "src/ui/portfolio/OpenShortsTable/useOpenShortRows";
-import { useAccount } from "wagmi";
+import { Address, useAccount } from "wagmi";
 
 interface OpenOrdersTableProps {
   hyperdrive: Hyperdrive;
@@ -18,7 +18,7 @@ export function OpenShortsTable({
   const { address: account } = useAccount();
 
   const { openShortRows = [], openShortRowsStatus } = useOpenShortRows({
-    account,
+    account: account as Address,
     hyperdrive,
   });
 
