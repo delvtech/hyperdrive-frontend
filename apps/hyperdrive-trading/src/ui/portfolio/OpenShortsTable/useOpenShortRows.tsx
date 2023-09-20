@@ -13,7 +13,7 @@ import { Address, formatUnits, parseUnits } from "viem";
 import { useAccount } from "wagmi";
 
 interface UseOpenShortRowsOptions {
-  account: Address | undefined;
+  account: Address;
   hyperdrive: Hyperdrive | undefined;
 }
 
