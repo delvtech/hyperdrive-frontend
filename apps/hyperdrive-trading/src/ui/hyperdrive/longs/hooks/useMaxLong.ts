@@ -1,17 +1,11 @@
+import { ReadHyperdrive } from "@hyperdrive/sdk";
 import { useQuery } from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 
 export function useMaxLong(hyperdrive: Hyperdrive): {
-  maxLong:
-    | {
-        maxBaseIn: bigint;
-        formattedMaxBaseIn: string;
-        maxBondsOut: bigint;
-        formattedMaxBondsOut: string;
-      }
-    | undefined;
+  maxLong: Awaited<ReturnType<ReadHyperdrive["getMaxLong"]>> | undefined;
   maxLongStatus: "error" | "success" | "loading";
 } {
   const readHyperdrive = useReadHyperdrive(hyperdrive.address);
