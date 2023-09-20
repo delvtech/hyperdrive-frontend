@@ -24,7 +24,7 @@ export function useClosedShorts({
   const { data: closedShorts, status: closedShortsStatus } = useQuery({
     queryKey: makeQueryKey("closedShorts", { account, hyperdriveAddress }),
     queryFn: queryEnabled
-      ? async () => readHyperdrive.getClosedShorts({ account })
+      ? async () => await readHyperdrive.getClosedShorts({ account })
       : undefined,
     enabled: queryEnabled,
   });

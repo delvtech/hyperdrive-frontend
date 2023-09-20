@@ -16,7 +16,7 @@ export function useMaxShort(hyperdrive: Hyperdrive): {
   const { data, status } = useQuery({
     queryKey: makeQueryKey("maxShort", { appConfig, hyperdrive }),
     queryFn: queryEnabled
-      ? async () => readHyperdrive.getMaxShort()
+      ? async () => await readHyperdrive.getMaxShort()
       : undefined,
     enabled: queryEnabled,
   });

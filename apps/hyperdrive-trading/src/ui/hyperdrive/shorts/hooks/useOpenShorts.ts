@@ -23,7 +23,7 @@ export function useOpenShorts({
   const { data: openShorts, status: openShortsStatus } = useQuery({
     queryKey: makeQueryKey("openShorts", { account, hyperdriveAddress }),
     queryFn: queryEnabled
-      ? async () => readHyperdrive.getOpenShorts({ account })
+      ? async () => await readHyperdrive.getOpenShorts({ account })
       : undefined,
     enabled: queryEnabled,
   });
