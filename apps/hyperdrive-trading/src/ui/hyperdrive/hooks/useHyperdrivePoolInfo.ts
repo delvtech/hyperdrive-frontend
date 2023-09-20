@@ -2,9 +2,8 @@
 import { PoolInfo } from "@hyperdrive/sdk/src/pool/PoolInfo";
 import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
+import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "wagmi";
-import { useReadHyperdrive } from "./useReadHyperdrive";
-
 export function useHyperdrivePoolInfo(marketAddress: Address): {
   poolInfo: PoolInfo | undefined;
   poolInfoStatus: QueryStatus;
@@ -13,7 +12,7 @@ export function useHyperdrivePoolInfo(marketAddress: Address): {
   const queryEnabled = !!readHyperdrive;
   const { data: poolInfo, status: poolInfoStatus } = useQuery({
     queryKey: makeQueryKey("poolInfo", { marketAddress }),
-    queryFn: queryEnabled ? () => readHyperdrive.getPoolInfo() : undefined,
+    queryFn: queryEnabled ? () => readHyperdrive?.getPoolInfo() : undefined,
     enabled: queryEnabled,
   });
 
