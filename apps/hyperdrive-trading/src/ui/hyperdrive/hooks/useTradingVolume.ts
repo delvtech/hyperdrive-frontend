@@ -17,11 +17,11 @@ export function useTradingVolume(
       currentBlockNumber,
     }),
     queryFn: queryEnabled
-      ? () => {
-          const tradingVolume = readHyperdrive.getTradingVolume();
+      ? async () => {
+          const tradingVolume = await readHyperdrive.getTradingVolume();
           return {
             tradingVolume: tradingVolume,
-            formatted: tradingVolume?.toString(),
+            formatted: tradingVolume.toString(),
           };
         }
       : undefined,
