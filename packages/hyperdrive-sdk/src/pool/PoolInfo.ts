@@ -1,14 +1,4 @@
-export interface PoolInfo {
-  shareReserves: bigint;
-  bondReserves: bigint;
-  lpTotalSupply: bigint;
-  sharePrice: bigint;
-  longsOutstanding: bigint;
-  longAverageMaturityTime: bigint;
-  shortsOutstanding: bigint;
-  shortAverageMaturityTime: bigint;
-  shortBaseVolume: bigint;
-  withdrawalSharesReadyToWithdraw: bigint;
-  withdrawalSharesProceeds: bigint;
-  lpSharePrice: bigint;
-}
+import { HyperdriveABI } from "src/abis/Hyperdrive";
+import { FunctionReturnType } from "src/base/abitype";
+
+export type PoolInfo = FunctionReturnType<typeof HyperdriveABI, "getPoolInfo">;
