@@ -9,16 +9,16 @@ export class ViemNetwork implements INetwork {
   }
 
   async getBlockNumber(blockTag?: BlockTag): Promise<bigint> {
-    if (blockTag) {
-      const { number } = await this._publicClient.getBlock({ blockTag });
-
-      if (!number) {
-        throw new Error(`Block not found for block tag: ${blockTag}`);
-      }
-
-      return number;
+    if (!blockTag) {
+      return this._publicClient.getBlockNumber();
     }
 
-    return this._publicClient.getBlockNumber();
+    const { number } = await this._publicClient.getBlock({ blockTag });
+
+    if (!number) {
+      throw new Error(`Block not found for block tag: ${blockTag}`);
+    }
+
+    return number;
   }
 }
