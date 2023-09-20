@@ -21,7 +21,7 @@ import { ClosedLpShares } from "src/lp/ClosedLpShares";
 import { RedeemedWithdrawalShares } from "src/withdrawalShares/RedeemedWithdrawalShares";
 import { ClosedShort, OpenShort } from "src/shorts/types";
 import { INetwork } from "src/network/Network";
-import { getLatestCheckpointId } from "src/utils/getLatestCheckpoint";
+import { getCheckpointId } from "src/utils/getLatestCheckpoint";
 
 export interface ReadHyperdriveOptions {
   contract: IReadHyperdriveContract;
@@ -789,7 +789,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
       options?.blockNumber ??
       (await this.network.getBlockNumber(options?.blockTag));
 
-    const checkpointId = getLatestCheckpointId(blockNumber, checkpointDuration);
+    const checkpointId = getCheckpointId(blockNumber, checkpointDuration);
     const [{ longExposure: checkpointLongExposure }] = await this.contract.read(
       "getCheckpoint",
       [checkpointId],
