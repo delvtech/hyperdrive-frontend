@@ -219,8 +219,8 @@ export class ReadWriteHyperdrive
 {
   protected readonly contract: IReadWriteHyperdriveContract;
 
-  constructor({ contract, mathContract }: ReadWriteHyperdriveOptions) {
-    super({ contract, mathContract });
+  constructor({ contract, mathContract, network }: ReadWriteHyperdriveOptions) {
+    super({ contract, mathContract, network });
     this.contract = contract;
   }
 

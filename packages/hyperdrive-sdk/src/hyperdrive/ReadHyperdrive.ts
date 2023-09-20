@@ -24,10 +24,13 @@ import { WITHDRAW_SHARES_ASSET_ID, LP_ASSET_ID } from "src/lp/constants";
 import { decodeAssetFromTransferSingleEventData } from "src/utils/decodeAssetFromTransferSingleEventData";
 import { HyperdriveABI } from "src/abis/Hyperdrive";
 import { ClosedLong, Long } from "src/longs/types";
+import { INetwork } from "src/network/Network";
+import { getLatestCheckpointId } from "src/utils/getLatestCheckpoint";
 
 export interface ReadHyperdriveOptions {
   contract: IReadHyperdriveContract;
   mathContract: IReadHyperdriveMathContract;
+  network: INetwork;
 }
 
 export interface IReadHyperdrive {
@@ -252,10 +255,12 @@ export interface IReadHyperdrive {
 export class ReadHyperdrive implements IReadHyperdrive {
   protected readonly contract: IReadHyperdriveContract;
   protected readonly mathContract: IReadHyperdriveMathContract;
+  protected readonly network: INetwork;
 
-  constructor({ contract, mathContract }: ReadHyperdriveOptions) {
+  constructor({ contract, mathContract, network }: ReadHyperdriveOptions) {
     this.contract = contract;
     this.mathContract = mathContract;
+    this.network = network;
   }
 
   async getPoolConfig(options?: ContractReadOptions): Promise<PoolConfig> {
@@ -675,11 +680,17 @@ export class ReadHyperdrive implements IReadHyperdrive {
   async getMaxShort(
     options?: ContractReadOptions,
   ): Promise<{ maxBondsOut: bigint; formatted: string }> {
-    const { minimumShareReserves, initialSharePrice, timeStretch } =
+    const { minimumShareReserves, initialSharePrice, timeStretch, fees } =
       await this.getPoolConfig(options);
-    const { shareReserves, bondReserves, longsOutstanding, sharePrice } =
-      await this.getPoolInfo(options);
-    const [maxBondsOut] = await this.mathContract.read(
+    const {
+      shareReserves,
+      bondReserves,
+      longsOutstanding,
+      sharePrice,
+      longExposure,
+    } = await this.getPoolInfo(options);
+
+    const maxBondsOut = await this.mathContract.read(
       "calculateMaxShort",
       [
         {
@@ -690,6 +701,9 @@ export class ReadHyperdrive implements IReadHyperdrive {
           sharePrice,
           initialSharePrice,
           minimumShareReserves,
+          longExposure,
+          curveFee: fees.curve,
+          governanceFee: fees.governance,
         },
       ],
       options,
@@ -700,17 +714,32 @@ export class ReadHyperdrive implements IReadHyperdrive {
     };
   }
 
-  async getMaxLong(options?: ContractReadOptions): Promise<{
-    maxBaseIn: bigint;
-    formattedMaxBaseIn: string;
-    maxBondsOut: bigint;
-    formattedMaxBondsOut: string;
-  }> {
-    const { minimumShareReserves, initialSharePrice, timeStretch } =
-      await this.getPoolConfig(options);
-    const { shareReserves, bondReserves, longsOutstanding, sharePrice } =
-      await this.getPoolInfo(options);
-    const [maxBaseIn, maxBondsOut] = await this.mathContract.read(
+  async getMaxLong(
+    options?: ContractReadOptions,
+  ): Promise<{ maxBondsOut: bigint; formatted: string }> {
+    const {
+      minimumShareReserves,
+      initialSharePrice,
+      timeStretch,
+      checkpointDuration,
+      fees,
+    } = await this.getPoolConfig(options);
+    const {
+      shareReserves,
+      bondReserves,
+      longsOutstanding,
+      sharePrice,
+      longExposure,
+    } = await this.getPoolInfo(options);
+
+    const blockNumber = await this.network.getBlockNumber();
+    const checkpointId = getLatestCheckpointId(blockNumber, checkpointDuration);
+    const { longExposure: checkpointLongExposure } = await this.contract.read(
+      "getCheckpoint",
+      [checkpointId],
+    );
+
+    const maxBondsOut = await this.mathContract.read(
       "calculateMaxLong",
       [
         {
@@ -721,7 +750,11 @@ export class ReadHyperdrive implements IReadHyperdrive {
           sharePrice,
           initialSharePrice,
           minimumShareReserves,
+          longExposure,
+          curveFee: fees.curve,
+          governanceFee: fees.governance,
         },
+        checkpointLongExposure,
         //TODO: Max iterations, what should this be?
         1000n,
       ],
