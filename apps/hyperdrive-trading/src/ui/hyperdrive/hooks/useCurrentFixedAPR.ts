@@ -4,15 +4,14 @@ import { Hyperdrive } from "src/appconfig/types";
 import { formatRate } from "src/base/formatRate";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
-import { usePublicClient } from "wagmi";
-import { useReadHyperdrive } from "./useReadHyperdrive";
+import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 
 export function useCurrentFixedAPR(hyperdrive: Hyperdrive): {
   fixedAPR: { apr: bigint; formatted: string } | undefined;
   fixedAPRStatus: "loading" | "error" | "success";
 } {
   const { appConfig } = useAppConfig();
-  const publicClient = usePublicClient();
+
   const readHyperdrive = useReadHyperdrive(hyperdrive.address);
   const queryEnabled = !!readHyperdrive;
   const { data, status } = useQuery({

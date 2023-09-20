@@ -1,12 +1,20 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import { HyperdriveABI } from "@hyperdrive/core";
-import { Address, useContractRead } from "wagmi";
+import { PoolInfo } from "@hyperdrive/sdk/src/pool/PoolInfo";
+import { QueryStatus, useQuery } from "@tanstack/react-query";
+import { makeQueryKey } from "src/base/makeQueryKey";
+import { Address } from "wagmi";
+import { useReadHyperdrive } from "./useReadHyperdrive";
 
-export function useHyperdrivePoolInfo(marketAddress: Address) {
-  const { data: poolInfo, status: poolInfoStatus } = useContractRead({
-    address: marketAddress,
-    abi: HyperdriveABI,
-    functionName: "getPoolInfo",
+export function useHyperdrivePoolInfo(marketAddress: Address): {
+  poolInfo: PoolInfo | undefined;
+  poolInfoStatus: QueryStatus;
+} {
+  const readHyperdrive = useReadHyperdrive(marketAddress);
+  const queryEnabled = !!readHyperdrive;
+  const { data: poolInfo, status: poolInfoStatus } = useQuery({
+    queryKey: makeQueryKey("poolInfo", { marketAddress }),
+    queryFn: queryEnabled ? () => readHyperdrive.getPoolInfo() : undefined,
+    enabled: queryEnabled,
   });
 
   return { poolInfo, poolInfoStatus };
