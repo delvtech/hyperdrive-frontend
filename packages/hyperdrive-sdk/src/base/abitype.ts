@@ -92,4 +92,4 @@ export type FunctionReturnType<
 > = AbiParametersToPrimitiveTypes<
   ExtractAbiFunction<TAbi, TFunctionName>["outputs"],
   "outputs"
->[0];
+>;
