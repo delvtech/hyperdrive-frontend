@@ -62,11 +62,6 @@ export const HyperdriveABI = [
   },
   {
     inputs: [],
-    name: "FixedPointMath_AddOverflow",
-    type: "error",
-  },
-  {
-    inputs: [],
     name: "FixedPointMath_InvalidExponent",
     type: "error",
   },
@@ -78,11 +73,6 @@ export const HyperdriveABI = [
   {
     inputs: [],
     name: "FixedPointMath_NegativeOrZeroInput",
-    type: "error",
-  },
-  {
-    inputs: [],
-    name: "FixedPointMath_SubOverflow",
     type: "error",
   },
   {
@@ -229,6 +219,11 @@ export const HyperdriveABI = [
       },
     ],
     name: "ReturnData",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "ShareReservesDeltaExceedsBondReservesDelta",
     type: "error",
   },
   {
@@ -827,6 +822,25 @@ export const HyperdriveABI = [
     type: "function",
   },
   {
+    inputs: [
+      {
+        internalType: "bool",
+        name: "asUnderlying",
+        type: "bool",
+      },
+    ],
+    name: "collectGovernanceFee",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "proceeds",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
     inputs: [],
     name: "factory",
     outputs: [
@@ -862,9 +876,9 @@ export const HyperdriveABI = [
             type: "uint128",
           },
           {
-            internalType: "uint128",
-            name: "shortBaseVolume",
-            type: "uint128",
+            internalType: "int128",
+            name: "longExposure",
+            type: "int128",
           },
         ],
         internalType: "struct IHyperdrive.Checkpoint",
@@ -918,7 +932,7 @@ export const HyperdriveABI = [
           },
           {
             internalType: "uint128",
-            name: "shortBaseVolume",
+            name: "longExposure",
             type: "uint128",
           },
           {
@@ -1075,11 +1089,6 @@ export const HyperdriveABI = [
           },
           {
             internalType: "uint256",
-            name: "shortBaseVolume",
-            type: "uint256",
-          },
-          {
-            internalType: "uint256",
             name: "withdrawalSharesReadyToWithdraw",
             type: "uint256",
           },
@@ -1091,6 +1100,11 @@ export const HyperdriveABI = [
           {
             internalType: "uint256",
             name: "lpSharePrice",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "longExposure",
             type: "uint256",
           },
         ],
@@ -1110,6 +1124,31 @@ export const HyperdriveABI = [
         internalType: "uint256",
         name: "",
         type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "getWithdrawPool",
+    outputs: [
+      {
+        components: [
+          {
+            internalType: "uint128",
+            name: "readyToWithdraw",
+            type: "uint128",
+          },
+          {
+            internalType: "uint128",
+            name: "proceeds",
+            type: "uint128",
+          },
+        ],
+        internalType: "struct IHyperdrive.WithdrawPool",
+        name: "",
+        type: "tuple",
       },
     ],
     stateMutability: "view",
@@ -1681,31 +1720,6 @@ export const HyperdriveABI = [
     name: "transferFromBridge",
     outputs: [],
     stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "withdrawPool",
-    outputs: [
-      {
-        components: [
-          {
-            internalType: "uint128",
-            name: "readyToWithdraw",
-            type: "uint128",
-          },
-          {
-            internalType: "uint128",
-            name: "proceeds",
-            type: "uint128",
-          },
-        ],
-        internalType: "struct IHyperdrive.WithdrawPool",
-        name: "",
-        type: "tuple",
-      },
-    ],
-    stateMutability: "view",
     type: "function",
   },
 ] as const;
