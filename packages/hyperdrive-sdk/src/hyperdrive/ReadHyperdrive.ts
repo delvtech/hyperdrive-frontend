@@ -785,7 +785,10 @@ export class ReadHyperdrive implements IReadHyperdrive {
       longExposure,
     } = await this.getPoolInfo(options);
 
-    const blockNumber = await this.network.getBlockNumber();
+    const blockNumber =
+      options?.blockNumber ??
+      (await this.network.getBlockNumber(options?.blockTag));
+
     const checkpointId = getLatestCheckpointId(blockNumber, checkpointDuration);
     const [{ longExposure: checkpointLongExposure }] = await this.contract.read(
       "getCheckpoint",
