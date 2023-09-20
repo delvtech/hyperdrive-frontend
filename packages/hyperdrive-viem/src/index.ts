@@ -19,3 +19,6 @@ export {
   ViemReadWriteContract,
   type ViemReadWriteContractOptions,
 } from "src/contract/ViemReadWriteContract";
+
+// network
+export { ViemNetwork } from "src/network/ViemNetwork";
