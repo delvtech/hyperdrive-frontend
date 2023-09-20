@@ -1,26 +1,25 @@
 import { GetMaxShortResult } from "@hyperdrive/core";
-import { getMaxShortQuery } from "@hyperdrive/queries";
 import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
-import { queryClient } from "src/network/queryClient";
+import { makeQueryKey } from "src/base/makeQueryKey";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
-import { usePublicClient } from "wagmi";
+import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 
 export function useMaxShort(hyperdrive: Hyperdrive): {
   maxShort: GetMaxShortResult | undefined;
   maxShortStatus: QueryStatus;
 } {
   const { appConfig } = useAppConfig();
-  const publicClient = usePublicClient();
 
-  const { data, status } = useQuery(
-    getMaxShortQuery({
-      hyperdriveMathAddress: appConfig?.hyperdriveMath,
-      publicClient,
-      hyperdriveAddress: hyperdrive.address,
-      queryClient,
-    }),
-  );
+  const readHyperdrive = useReadHyperdrive(hyperdrive.address);
+  const queryEnabled = !!readHyperdrive;
+  const { data, status } = useQuery({
+    queryKey: makeQueryKey("maxShort", { appConfig, hyperdrive }),
+    queryFn: queryEnabled
+      ? async () => await readHyperdrive.getMaxShort()
+      : undefined,
+    enabled: queryEnabled,
+  });
 
   return {
     maxShort: data,

@@ -46,6 +46,8 @@ export type {
 // Network
 export type { INetwork } from "src/network/Network";
 
+export type { ClosedShort, OpenShort } from "src/shorts/types";
+
 // Utils
 export type {
   EventName,
