@@ -23,7 +23,7 @@ import { calculateLiquidity } from "src/pool/calculateLiquidity";
 import { WITHDRAW_SHARES_ASSET_ID, LP_ASSET_ID } from "src/lp/constants";
 import { decodeAssetFromTransferSingleEventData } from "src/utils/decodeAssetFromTransferSingleEventData";
 import { HyperdriveABI } from "src/abis/Hyperdrive";
-import { Long } from "src/longs/types";
+import { ClosedLong, Long } from "src/longs/types";
 
 export interface ReadHyperdriveOptions {
   contract: IReadHyperdriveContract;
@@ -101,7 +101,7 @@ export interface IReadHyperdrive {
   }: {
     account: Address;
     options?: ContractReadOptions;
-  }): Promise<Long[]>;
+  }): Promise<ClosedLong[]>;
 
   /**
    * Gets the inactive shorts opened by a specific user.
@@ -596,7 +596,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
   }: {
     account: Address;
     options?: ContractReadOptions;
-  }): Promise<Long[]> {
+  }): Promise<ClosedLong[]> {
     const fromBlock = "earliest";
     const toBlock = options?.blockNumber || options?.blockTag || "latest";
 
@@ -608,18 +608,16 @@ export class ReadHyperdrive implements IReadHyperdrive {
 
     const closedLongsById = mapValues(
       groupBy(closedLongs, (event) => event.args.assetId.toString()),
-      (events) => {
+      (events): ClosedLong => {
         const assetId = events[0].args.assetId;
         const decoded = decodeAssetFromTransferSingleEventData(
           events[0].data as `0x${string}`,
         );
         return {
-          hyperdriveAddress: this.contract.address,
           assetId,
           bondAmount: sumBigInt(events.map((event) => event.args.bondAmount)),
-          baseAmountPaid: sumBigInt(
-            events.map((event) => event.args.baseAmount),
-          ),
+          baseAmount: sumBigInt(events.map((event) => event.args.baseAmount)),
+          baseAmountPaid: 0n, // TODO: Remove this field, this is copy/paste from @hyperdrive/queries
           maturity: decoded.timestamp,
           closedTimestamp: decodeAssetFromTransferSingleEventData(
             events[0].data as `0x${string}`,
