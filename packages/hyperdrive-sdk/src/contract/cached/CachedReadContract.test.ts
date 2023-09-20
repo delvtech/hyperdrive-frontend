@@ -8,7 +8,7 @@ test("It caches the read function", async () => {
   const contract = new ReadContractStub(HyperdriveABI);
   const cachedContract = new CachedReadContract({ contract });
 
-  const stubbedValue = "0x123abc";
+  const stubbedValue = ["0x123abc"] as const;
   contract.stubRead("baseToken", stubbedValue);
 
   const value = await cachedContract.read("baseToken", []);
@@ -54,7 +54,7 @@ test("The deleteRead function deletes the cached read value", async () => {
   const contract = new ReadContractStub(HyperdriveABI);
   const cachedContract = new CachedReadContract({ contract });
 
-  const stubbedValue = 100n;
+  const stubbedValue = [100n] as const;
   contract.stubRead("balanceOf", stubbedValue);
 
   const value = await cachedContract.read("balanceOf", [0n, "0x123abc"]);
@@ -73,8 +73,8 @@ test("It clears the cache", async () => {
   const contract = new ReadContractStub(HyperdriveABI);
   const cachedContract = new CachedReadContract({ contract });
 
-  contract.stubRead("balanceOf", 100n);
-  contract.stubRead("factory", "0x123abc");
+  contract.stubRead("balanceOf", [100n]);
+  contract.stubRead("factory", ["0x123abc"]);
 
   await cachedContract.read("balanceOf", [0n, "0x123abc"]);
   await cachedContract.read("factory", []);
