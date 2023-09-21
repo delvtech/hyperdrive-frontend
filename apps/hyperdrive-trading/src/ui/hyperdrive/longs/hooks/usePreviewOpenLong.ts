@@ -1,9 +1,9 @@
-import { HyperdriveABI } from "@hyperdrive/core";
 import { useQuery } from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
-import { ZERO_ADDRESS } from "src/base/constants";
 import { Address, useAccount, usePublicClient } from "wagmi";
 
+import { makeQueryKey } from "src/base/makeQueryKey";
+import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 interface UsePreviewOpenLongOptions {
   market: Hyperdrive;
   baseAmount: bigint | undefined;
@@ -28,44 +28,34 @@ export function usePreviewOpenLong({
 }: UsePreviewOpenLongOptions): UsePreviewOpenLongResult {
   const publicClient = usePublicClient();
   const { address: account } = useAccount();
-
+  const readHyperdrive = useReadHyperdrive(market.address);
   const queryEnabled =
     !!baseAmount &&
     !!bondAmountOut &&
     !!destination &&
     !!publicClient &&
     !!account &&
-    enabled;
-
-  const requiresEth = asUnderlying && market.baseToken.address === ZERO_ADDRESS;
+    enabled &&
+    !!readHyperdrive;
 
   const { data, status } = useQuery({
-    queryKey: [
-      "preview-open-long",
-      {
-        market: market.address,
-        baseAmount: baseAmount?.toString(),
-        boundAmountOut: bondAmountOut?.toString(),
-        destination: destination?.toString(),
-      },
-    ],
-    enabled: queryEnabled,
+    queryKey: makeQueryKey("previewOpenLong", {
+      market: market.address,
+      baseAmount,
+      bondAmountOut,
+      destination,
+      asUnderlying,
+    }),
     queryFn: queryEnabled
-      ? async () => {
-          const { result } = await publicClient.simulateContract({
-            abi: HyperdriveABI,
-            address: market.address,
-            account,
-            functionName: "openLong",
-            args: [baseAmount, bondAmountOut, destination, asUnderlying],
-            // Used when ETH is the base asset (e.g. StethHyperdrive) and
-            // asUnderlying is true.
-            value: requiresEth && baseAmount ? baseAmount : 0n,
-          });
-
-          return result;
-        }
+      ? async () =>
+          await readHyperdrive.previewOpenLong({
+            baseAmount,
+            minBaseAmountOut: bondAmountOut,
+            destination,
+            asUnderlying,
+          })
       : undefined,
+    enabled: queryEnabled,
   });
-  return { longAmountOut: data?.[1], status };
+  return { longAmountOut: data, status };
 }
