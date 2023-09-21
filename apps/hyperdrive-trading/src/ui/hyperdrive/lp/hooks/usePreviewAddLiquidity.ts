@@ -1,7 +1,7 @@
-import { HyperdriveABI } from "@hyperdrive/core";
 import { useQuery } from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
-import { ZERO_ADDRESS } from "src/base/constants";
+import { makeQueryKey } from "src/base/makeQueryKey";
+import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address, useAccount, usePublicClient } from "wagmi";
 
 interface UsePreviewAddLiquidityOptions {
@@ -30,7 +30,7 @@ export function usePreviewAddLiquidity({
 }: UsePreviewAddLiquidityOptions): UsePreviewAddLiquidityResult {
   const publicClient = usePublicClient();
   const { address: account } = useAccount();
-
+  const readHyperdrive = useReadHyperdrive(market.address);
   const queryEnabled =
     minAPR !== undefined &&
     !!maxAPR &&
@@ -38,39 +38,29 @@ export function usePreviewAddLiquidity({
     !!destination &&
     !!publicClient &&
     !!account &&
-    enabled;
-
-  const requiresEth = asUnderlying && market.baseToken.address === ZERO_ADDRESS;
+    enabled &&
+    !!readHyperdrive;
 
   const { data, status } = useQuery({
-    queryKey: [
-      "preview-add-liquidity",
-      {
-        market: market.address,
-        contribution: contribution?.toString(),
-        minAPR: minAPR?.toString(),
-        maxAPR: maxAPR?.toString(),
-        destination: destination?.toString(),
-      },
-    ],
-    enabled: queryEnabled,
+    queryKey: makeQueryKey("previewAddLiquidity", {
+      market: market.address,
+      destination,
+      contribution,
+      minAPR,
+      maxAPR,
+      asUnderlying,
+    }),
     queryFn: queryEnabled
-      ? async () => {
-          const { result } = await publicClient.simulateContract({
-            abi: HyperdriveABI,
-            address: market.address,
-            account,
-            functionName: "addLiquidity",
-            args: [contribution, minAPR, maxAPR, destination, asUnderlying],
-
-            // Used when ETH is the base asset (e.g. StethHyperdrive) and
-            // asUnderlying is true.
-            value: requiresEth && contribution ? contribution : 0n,
-          });
-
-          return result;
-        }
+      ? () =>
+          readHyperdrive.previewAddLiquidity({
+            destination,
+            contribution,
+            minAPR,
+            maxAPR,
+            asUnderlying,
+          })
       : undefined,
+    enabled: queryEnabled,
   });
 
   return { status, lpSharesOut: data };
