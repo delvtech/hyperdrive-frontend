@@ -952,13 +952,14 @@ export class ReadHyperdrive implements IReadHyperdrive {
     destination: Address;
     asUnderlying: boolean;
     options?: ContractWriteOptions;
-  }): Promise<bigint> {
-    const [removeLiquidity] = await this.contract.simulateWrite(
-      "removeLiquidity",
-      [lpSharesIn, minBaseAmountOut, destination, asUnderlying],
-      options,
-    );
-    return removeLiquidity;
+  }): Promise<{ baseAmountOut: bigint; withdrawlSharesOut: bigint }> {
+    const [baseAmountOut, withdrawlSharesOut] =
+      await this.contract.simulateWrite(
+        "removeLiquidity",
+        [lpSharesIn, minBaseAmountOut, destination, asUnderlying],
+        options,
+      );
+    return { baseAmountOut, withdrawlSharesOut };
   }
 
   async previewRedeemWithdrawalShares({
@@ -973,12 +974,12 @@ export class ReadHyperdrive implements IReadHyperdrive {
     destination: Address;
     asUnderlying: boolean;
     options?: ContractWriteOptions;
-  }): Promise<bigint> {
-    const [redeemWithdrawalShares] = await this.contract.simulateWrite(
+  }): Promise<{ baseAmountOut: bigint; sharesRedeemed: bigint }> {
+    const [baseAmountOut, sharesRedeemed] = await this.contract.simulateWrite(
       "redeemWithdrawalShares",
       [withdrawalSharesIn, minBaseAmountOutPerShare, destination, asUnderlying],
       options,
     );
-    return redeemWithdrawalShares;
+    return { baseAmountOut, sharesRedeemed };
   }
 }
