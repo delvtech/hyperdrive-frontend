@@ -219,13 +219,13 @@ export interface IReadHyperdrive {
    */
   previewOpenLong({
     baseAmount,
-    minBaseAmountOut,
+    minBondAmountOut,
     destination,
     asUnderlying,
     options,
   }: {
     baseAmount: bigint;
-    minBaseAmountOut: bigint;
+    minBondAmountOut: bigint;
     destination: Address;
     asUnderlying: boolean;
     options: ContractWriteOptions;
@@ -878,20 +878,20 @@ export class ReadHyperdrive implements IReadHyperdrive {
 
   async previewOpenLong({
     baseAmount,
-    minBaseAmountOut,
+    minBondAmountOut,
     destination,
     asUnderlying,
     options,
   }: {
     baseAmount: bigint;
-    minBaseAmountOut: bigint;
+    minBondAmountOut: bigint;
     destination: Address;
     asUnderlying: boolean;
     options?: ContractWriteOptions;
   }): Promise<bigint> {
     const [openLong] = await this.contract.simulateWrite(
       "openLong",
-      [baseAmount, minBaseAmountOut, destination, asUnderlying],
+      [baseAmount, minBondAmountOut, destination, asUnderlying],
       options,
     );
     return openLong;
