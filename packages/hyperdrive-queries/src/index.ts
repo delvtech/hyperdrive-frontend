@@ -6,12 +6,6 @@ export { getFixedRateQuery } from "src/amm/getFixedRateQuery";
 // Vaults
 export { getVaultRateQuery } from "src/vaults/erc4626";
 
-// Longs
-export { getCurrentLongPriceQuery } from "src/amm/longs/getLongPrice";
-export { getOpenLongsQuery } from "src/amm/longs/getOpenLongs/getOpenLongs";
-export { getCloseLongsQuery } from "src/amm/longs/getClosedLongs";
-export { getMaxLongQuery } from "src/amm/longs/getMaxLong";
-
 // Shorts
 export { getOpenShortsQuery } from "src/amm/shorts/getOpenShorts";
 export { getClosedShortsQuery } from "src/amm/shorts/getClosedShorts";
