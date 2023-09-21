@@ -1,7 +1,7 @@
-import { HyperdriveABI } from "@hyperdrive/core";
 import { QueryStatus, useQuery } from "@tanstack/react-query";
+import { makeQueryKey } from "src/base/makeQueryKey";
+import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address, useAccount, usePublicClient } from "wagmi";
-
 interface UsePreviewCloseShortOptions {
   hyperdriveAddress: Address;
   maturityTime: bigint | undefined;
@@ -28,7 +28,7 @@ export function usePreviewCloseShort({
 }: UsePreviewCloseShortOptions): UsePreviewCloseShortResult {
   const publicClient = usePublicClient();
   const { address: account } = useAccount();
-
+  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
   const queryEnabled =
     !!maturityTime &&
     !!shortAmountIn &&
@@ -36,37 +36,29 @@ export function usePreviewCloseShort({
     !!destination &&
     !!publicClient &&
     !!account &&
-    enabled;
+    enabled &&
+    !!readHyperdrive;
 
   const { data, status } = useQuery({
-    queryKey: [
-      "preview-close-short",
+    queryKey: makeQueryKey("previewCloseShort", {
       hyperdriveAddress,
-      shortAmountIn?.toString(),
-      minBaseAmountOut?.toString(),
-      destination?.toString(),
-    ],
-    enabled: queryEnabled,
+      maturityTime,
+      shortAmountIn,
+      minBaseAmountOut,
+      destination,
+      asUnderlying,
+    }),
     queryFn: queryEnabled
-      ? async () => {
-          // TODO: Move this to @hyperdrive/queries and use the math contract for this calc instead
-          const { result } = await publicClient.simulateContract({
-            abi: HyperdriveABI,
-            address: hyperdriveAddress,
-            account,
-            functionName: "closeShort",
-            args: [
-              maturityTime,
-              shortAmountIn,
-              minBaseAmountOut,
-              destination,
-              asUnderlying,
-            ],
-          });
-
-          return result;
-        }
+      ? async () =>
+          await readHyperdrive.previewCloseShort({
+            maturityTime,
+            shortAmountIn,
+            minBaseAmountOut,
+            destination,
+            asUnderlying: true,
+          })
       : undefined,
+    enabled: queryEnabled,
   });
 
   return { baseAmountOut: data, previewCloseShortStatus: status };
