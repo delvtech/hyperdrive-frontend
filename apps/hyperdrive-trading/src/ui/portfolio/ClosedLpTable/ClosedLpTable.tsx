@@ -7,7 +7,7 @@ import {
 } from "src/ui/base/components/tables/SortableGridTable";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useClosedLpShares } from "src/ui/hyperdrive/lp/hooks/useClosedLpShares";
-import { useRedeemedWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useRedeemedWithdrawalShares.ts";
+import { useRedeemedWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useRedeemedWithdrawalShares";
 import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
 
