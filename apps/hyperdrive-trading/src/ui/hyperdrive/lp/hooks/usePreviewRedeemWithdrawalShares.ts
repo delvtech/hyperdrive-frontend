@@ -1,7 +1,8 @@
-import { HyperdriveABI } from "@hyperdrive/core";
 import { MutationStatus, useQuery } from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
-import { Address, useAccount, usePublicClient } from "wagmi";
+import { makeQueryKey } from "src/base/makeQueryKey";
+import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
+import { Address } from "wagmi";
 
 interface UsePreviewRedeemWithdrawalSharesOptions {
   market: Hyperdrive;
@@ -26,47 +27,32 @@ export function usePreviewRedeemWithdrawalShares({
   asUnderlying = true,
   enabled = true,
 }: UsePreviewRedeemWithdrawalSharesOptions): UsePreviewRedeemWithdrawalSharesResult {
-  const publicClient = usePublicClient();
-  const { address: account } = useAccount();
-
+  const readHyperdrive = useReadHyperdrive(market.address);
   const queryEnabled =
     !!withdrawalSharesIn &&
     minBaseAmountOutPerShare !== undefined &&
     !!destination &&
-    enabled;
+    enabled &&
+    !!readHyperdrive;
 
   const { data, status } = useQuery({
-    queryKey: [
-      "preview-redeem-withdrawal-shares",
-      {
-        market: market.address,
-        withdrawalSharesIn: withdrawalSharesIn?.toString(),
-        minBaseAmountOut: minBaseAmountOutPerShare?.toString(),
-        destination: destination?.toString(),
-      },
-    ],
-    enabled: queryEnabled,
+    queryKey: makeQueryKey("previewRedeemWithdrawalShares", {
+      market: market.address,
+      withdrawalSharesIn,
+      minBaseAmountOutPerShare,
+      destination,
+      asUnderlying,
+    }),
     queryFn: queryEnabled
-      ? async () => {
-          const { result } = await publicClient.simulateContract({
-            abi: HyperdriveABI,
-            address: market.address,
-            account,
-            functionName: "redeemWithdrawalShares",
-            args: [
-              withdrawalSharesIn,
-              minBaseAmountOutPerShare,
-              destination,
-              asUnderlying,
-            ],
-          });
-
-          return {
-            baseAmountOut: result[0] as bigint,
-            sharesRedeemed: result[1] as bigint,
-          };
-        }
+      ? () =>
+          readHyperdrive.previewRedeemWithdrawalShares({
+            withdrawalSharesIn,
+            minBaseAmountOutPerShare,
+            destination,
+            asUnderlying,
+          })
       : undefined,
+    enabled: queryEnabled,
   });
 
   return {

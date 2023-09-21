@@ -282,7 +282,7 @@ export interface IReadHyperdrive {
     destination: Address;
     asUnderlying: boolean;
     options: ContractWriteOptions;
-  }): Promise<{ baseAmountOut: bigint; withdrawlSharesOut: bigint }>;
+  }): Promise<{ baseAmountOut: bigint; withdrawalSharesOut: bigint }>;
 
   /**
    * Predicts the amount of base asset and redeemed shares a user will receive when redeeming withdrawal shares.
@@ -1005,14 +1005,14 @@ export class ReadHyperdrive implements IReadHyperdrive {
     destination: Address;
     asUnderlying: boolean;
     options?: ContractWriteOptions;
-  }): Promise<{ baseAmountOut: bigint; withdrawlSharesOut: bigint }> {
-    const [baseAmountOut, withdrawlSharesOut] =
+  }): Promise<{ baseAmountOut: bigint; withdrawalSharesOut: bigint }> {
+    const [baseAmountOut, withdrawalSharesOut] =
       await this.contract.simulateWrite(
         "removeLiquidity",
         [lpSharesIn, minBaseAmountOut, destination, asUnderlying],
         options,
       );
-    return { baseAmountOut, withdrawlSharesOut };
+    return { baseAmountOut, withdrawalSharesOut };
   }
 
   async previewRedeemWithdrawalShares({

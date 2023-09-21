@@ -1,7 +1,8 @@
-import { HyperdriveABI } from "@hyperdrive/core";
 import { MutationStatus, useQuery } from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
-import { Address, useAccount, usePublicClient } from "wagmi";
+import { makeQueryKey } from "src/base/makeQueryKey";
+import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
+import { Address } from "wagmi";
 
 interface UsePreviewRemoveLiquidityOptions {
   market: Hyperdrive;
@@ -26,39 +27,32 @@ export function usePreviewRemoveLiquidity({
   asUnderlying = true,
   enabled = true,
 }: UsePreviewRemoveLiquidityOptions): UsePreviewRemoveLiquidityResult {
-  const publicClient = usePublicClient();
-  const { address: account } = useAccount();
-
+  const readHyperdrive = useReadHyperdrive(market.address);
   const queryEnabled =
-    !!lpSharesIn && minBaseAmountOut !== undefined && !!destination && enabled;
+    !!lpSharesIn &&
+    minBaseAmountOut !== undefined &&
+    !!destination &&
+    enabled &&
+    !!readHyperdrive;
 
   const { data, status } = useQuery({
-    queryKey: [
-      "preview-remove-liquidity",
-      {
-        market: market.address,
-        lpSharesIn: lpSharesIn?.toString(),
-        minBaseAmountOut: minBaseAmountOut?.toString(),
-        destination: destination?.toString(),
-      },
-    ],
-    enabled: queryEnabled,
+    queryKey: makeQueryKey("previewRemoveLiquidity", {
+      market: market.address,
+      lpSharesIn,
+      minBaseAmountOut,
+      destination,
+      asUnderlying,
+    }),
     queryFn: queryEnabled
-      ? async () => {
-          const { result } = await publicClient.simulateContract({
-            abi: HyperdriveABI,
-            address: market.address,
-            account,
-            functionName: "removeLiquidity",
-            args: [lpSharesIn, minBaseAmountOut, destination, asUnderlying],
-          });
-
-          return {
-            baseAmountOut: result[0] as bigint,
-            withdrawalSharesOut: result[1] as bigint,
-          };
-        }
+      ? () =>
+          readHyperdrive.previewRemoveLiquidity({
+            lpSharesIn,
+            minBaseAmountOut,
+            destination,
+            asUnderlying,
+          })
       : undefined,
+    enabled: queryEnabled,
   });
 
   return {
