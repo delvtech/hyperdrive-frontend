@@ -1,6 +1,6 @@
-import { HyperdriveABI } from "@hyperdrive/core";
 import { QueryStatus, useQuery } from "@tanstack/react-query";
-import { Address, useAccount, usePublicClient } from "wagmi";
+import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
+import { Address, useAccount } from "wagmi";
 
 interface UsePreviewCloseLongOptions {
   hyperdriveAddress: Address | undefined;
@@ -30,22 +30,22 @@ export function usePreviewCloseLong({
   asUnderlying = true,
   enabled = true,
 }: UsePreviewCloseLongOptions): UsePreviewCloseLongResult {
-  const publicClient = usePublicClient();
   const { address: account } = useAccount();
 
+  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
   const queryEnabled =
+    !!readHyperdrive &&
     !!hyperdriveAddress &&
     !!maturityTime &&
     !!bondAmountIn &&
     minBaseAmountOut !== undefined && // check undefined since 0 is valid
     !!destination &&
-    !!publicClient &&
     !!account &&
     enabled;
 
   const { data, status } = useQuery({
     queryKey: [
-      "preview-close-long",
+      "previewCloseLong",
       hyperdriveAddress,
       bondAmountIn?.toString(),
       minBaseAmountOut?.toString(),
@@ -53,24 +53,14 @@ export function usePreviewCloseLong({
     ],
     enabled: queryEnabled,
     queryFn: queryEnabled
-      ? async () => {
-          // TODO: Refactor this to the math library instead
-          const { result } = await publicClient.simulateContract({
-            abi: HyperdriveABI,
-            address: hyperdriveAddress,
-            account,
-            functionName: "closeLong",
-            args: [
-              maturityTime,
-              bondAmountIn,
-              minBaseAmountOut,
-              destination,
-              asUnderlying,
-            ],
-          });
-
-          return result;
-        }
+      ? () =>
+          readHyperdrive.previewCloseLong({
+            maturityTime,
+            bondAmountIn,
+            minBaseAmountOut,
+            destination,
+            asUnderlying,
+          })
       : undefined,
   });
 
