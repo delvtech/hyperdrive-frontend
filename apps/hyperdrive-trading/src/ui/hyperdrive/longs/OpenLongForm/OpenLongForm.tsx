@@ -62,7 +62,7 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
   const { longAmountOut, status: openLongPreviewStatus } = usePreviewOpenLong({
     market,
     baseAmount: amountAsBigInt,
-    bondAmountOut: 1n, // todo add slippage control
+    minBondAmountOut: 1n, // todo add slippage control
     destination: account,
     enabled: !needsApproval,
   });

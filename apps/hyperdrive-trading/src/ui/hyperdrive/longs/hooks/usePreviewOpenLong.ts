@@ -1,13 +1,13 @@
-import { HyperdriveABI } from "@hyperdrive/core";
 import { useQuery } from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
-import { ZERO_ADDRESS } from "src/base/constants";
+import { makeQueryKey } from "src/base/makeQueryKey";
+import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address, useAccount, usePublicClient } from "wagmi";
 
 interface UsePreviewOpenLongOptions {
   market: Hyperdrive;
   baseAmount: bigint | undefined;
-  bondAmountOut: bigint | undefined;
+  minBondAmountOut: bigint | undefined;
   destination: Address | undefined;
   asUnderlying?: boolean;
   enabled?: boolean;
@@ -21,7 +21,7 @@ interface UsePreviewOpenLongResult {
 export function usePreviewOpenLong({
   market,
   baseAmount,
-  bondAmountOut,
+  minBondAmountOut,
   destination,
   asUnderlying = true,
   enabled,
@@ -29,43 +29,33 @@ export function usePreviewOpenLong({
   const publicClient = usePublicClient();
   const { address: account } = useAccount();
 
+  const readHyperdrive = useReadHyperdrive(market.address);
   const queryEnabled =
+    !!readHyperdrive &&
     !!baseAmount &&
-    !!bondAmountOut &&
+    !!minBondAmountOut &&
     !!destination &&
     !!publicClient &&
     !!account &&
     enabled;
 
-  const requiresEth = asUnderlying && market.baseToken.address === ZERO_ADDRESS;
-
   const { data, status } = useQuery({
-    queryKey: [
-      "preview-open-long",
-      {
-        market: market.address,
-        baseAmount: baseAmount?.toString(),
-        boundAmountOut: bondAmountOut?.toString(),
-        destination: destination?.toString(),
-      },
-    ],
+    queryKey: makeQueryKey("previewOpenLong", {
+      market: market.address,
+      baseAmount,
+      minBondAmountOut,
+      destination,
+    }),
     enabled: queryEnabled,
     queryFn: queryEnabled
-      ? async () => {
-          const { result } = await publicClient.simulateContract({
-            abi: HyperdriveABI,
-            address: market.address,
-            account,
-            functionName: "openLong",
-            args: [baseAmount, bondAmountOut, destination, asUnderlying],
-            // Used when ETH is the base asset (e.g. StethHyperdrive) and
-            // asUnderlying is true.
-            value: requiresEth && baseAmount ? baseAmount : 0n,
-          });
-
-          return result;
-        }
+      ? () =>
+          readHyperdrive.previewOpenLong({
+            baseAmount,
+            minBondAmountOut,
+            destination,
+            asUnderlying,
+          })
       : undefined,
   });
-  return { longAmountOut: data?.[1], status };
+  return { longAmountOut: data, status };
 }
