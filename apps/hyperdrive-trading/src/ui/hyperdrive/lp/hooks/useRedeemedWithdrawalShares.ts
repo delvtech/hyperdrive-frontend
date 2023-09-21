@@ -25,8 +25,7 @@ export function useRedeemedWithdrawalShares({
       hyperdriveAddress,
     }),
     queryFn: queryEnabled
-      ? async () =>
-          await readHyperdrive.getRedeemedWithdrawalShares({ account })
+      ? () => readHyperdrive.getRedeemedWithdrawalShares({ account })
       : undefined,
     enabled: queryEnabled,
   });

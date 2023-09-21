@@ -18,7 +18,7 @@ export function useLpShares({
   const { data: lpShares, status: lpSharesStatus } = useQuery({
     queryKey: makeQueryKey("lpShares", { account, hyperdriveAddress }),
     queryFn: queryEnabled
-      ? async () => await readHyperdrive.getLpShares({ account })
+      ? () => readHyperdrive.getLpShares({ account })
       : undefined,
     enabled: queryEnabled,
   });

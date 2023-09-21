@@ -18,7 +18,7 @@ export function useWithdrawalShares({
   const { data: withdrawalShares, status: withdrawalSharesStatus } = useQuery({
     queryKey: makeQueryKey("withdrawalShares", { account, hyperdriveAddress }),
     queryFn: queryEnabled
-      ? async () => await readHyperdrive.getWithdrawalShares({ account })
+      ? () => readHyperdrive.getWithdrawalShares({ account })
       : undefined,
     enabled: queryEnabled,
   });

@@ -19,7 +19,7 @@ export function useClosedLpShares({
   const { data: closedLpShares, status: closedLpSharesStatus } = useQuery({
     queryKey: makeQueryKey("closedLpShares", { account, hyperdriveAddress }),
     queryFn: queryEnabled
-      ? async () => await readHyperdrive.getClosedLpShares({ account })
+      ? () => readHyperdrive.getClosedLpShares({ account })
       : undefined,
     enabled: queryEnabled,
   });
