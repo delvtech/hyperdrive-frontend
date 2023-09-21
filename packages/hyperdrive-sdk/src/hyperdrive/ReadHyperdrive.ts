@@ -247,6 +247,59 @@ export interface IReadHyperdrive {
     asUnderlying: boolean;
     options: ContractWriteOptions;
   }): Promise<bigint>;
+
+  /**
+   * Predicts the amount of LP shares a user will receive when adding liquidity.
+   */
+  previewAddLiquidity({
+    contribution,
+    minAPR,
+    maxAPR,
+    destination,
+    asUnderlying,
+    options,
+  }: {
+    contribution: bigint;
+    minAPR: bigint;
+    maxAPR: bigint;
+    destination: Address;
+    asUnderlying: boolean;
+    options: ContractWriteOptions;
+  }): Promise<bigint>;
+
+  /**
+   * Predicts the amount of base asset and withdrawlshares a user will receive when removing liquidity.
+   */
+  previewRemoveLiquidity({
+    lpSharesIn,
+    minBaseAmountOut,
+    destination,
+    asUnderlying,
+    options,
+  }: {
+    lpSharesIn: bigint;
+    minBaseAmountOut: bigint;
+    destination: Address;
+    asUnderlying: boolean;
+    options: ContractWriteOptions;
+  }): Promise<{ baseAmountOut: bigint; withdrawlSharesOut: bigint }>;
+
+  /**
+   * Predicts the amount of base asset and redeemed shares a user will receive when redeeming withdrawal shares.
+   */
+  previewRedeemWithdrawalShares({
+    withdrawalSharesIn,
+    minBaseAmountOutPerShare,
+    destination,
+    asUnderlying,
+    options,
+  }: {
+    withdrawalSharesIn: bigint;
+    minBaseAmountOutPerShare: bigint;
+    destination: Address;
+    asUnderlying: boolean;
+    options: ContractWriteOptions;
+  }): Promise<{ baseAmountOut: bigint; sharesRedeemed: bigint }>;
 }
 
 export class ReadHyperdrive implements IReadHyperdrive {
@@ -915,5 +968,71 @@ export class ReadHyperdrive implements IReadHyperdrive {
       options,
     );
     return closeShort;
+  }
+
+  async previewAddLiquidity({
+    contribution,
+    minAPR,
+    maxAPR,
+    destination,
+    asUnderlying,
+    options,
+  }: {
+    contribution: bigint;
+    minAPR: bigint;
+    maxAPR: bigint;
+    destination: Address;
+    asUnderlying: boolean;
+    options?: ContractWriteOptions;
+  }): Promise<bigint> {
+    const [lpShares] = await this.contract.simulateWrite(
+      "addLiquidity",
+      [contribution, minAPR, maxAPR, destination, asUnderlying],
+      options,
+    );
+    return lpShares;
+  }
+
+  async previewRemoveLiquidity({
+    lpSharesIn,
+    minBaseAmountOut,
+    destination,
+    asUnderlying,
+    options,
+  }: {
+    lpSharesIn: bigint;
+    minBaseAmountOut: bigint;
+    destination: Address;
+    asUnderlying: boolean;
+    options?: ContractWriteOptions;
+  }): Promise<{ baseAmountOut: bigint; withdrawlSharesOut: bigint }> {
+    const [baseAmountOut, withdrawlSharesOut] =
+      await this.contract.simulateWrite(
+        "removeLiquidity",
+        [lpSharesIn, minBaseAmountOut, destination, asUnderlying],
+        options,
+      );
+    return { baseAmountOut, withdrawlSharesOut };
+  }
+
+  async previewRedeemWithdrawalShares({
+    withdrawalSharesIn,
+    minBaseAmountOutPerShare,
+    destination,
+    asUnderlying,
+    options,
+  }: {
+    withdrawalSharesIn: bigint;
+    minBaseAmountOutPerShare: bigint;
+    destination: Address;
+    asUnderlying: boolean;
+    options?: ContractWriteOptions;
+  }): Promise<{ baseAmountOut: bigint; sharesRedeemed: bigint }> {
+    const [baseAmountOut, sharesRedeemed] = await this.contract.simulateWrite(
+      "redeemWithdrawalShares",
+      [withdrawalSharesIn, minBaseAmountOutPerShare, destination, asUnderlying],
+      options,
+    );
+    return { baseAmountOut, sharesRedeemed };
   }
 }
