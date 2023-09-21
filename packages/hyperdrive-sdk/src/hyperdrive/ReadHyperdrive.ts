@@ -690,7 +690,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
       longExposure,
     } = await this.getPoolInfo(options);
 
-    const maxBondsOut = await this.mathContract.read(
+    const [maxBondsOut] = await this.mathContract.read(
       "calculateMaxShort",
       [
         {
@@ -714,9 +714,12 @@ export class ReadHyperdrive implements IReadHyperdrive {
     };
   }
 
-  async getMaxLong(
-    options?: ContractReadOptions,
-  ): Promise<{ maxBondsOut: bigint; formatted: string }> {
+  async getMaxLong(options?: ContractReadOptions): Promise<{
+    maxBaseIn: bigint;
+    formattedMaxBaseIn: string;
+    maxBondsOut: bigint;
+    formattedMaxBondsOut: string;
+  }> {
     const {
       minimumShareReserves,
       initialSharePrice,
@@ -737,12 +740,12 @@ export class ReadHyperdrive implements IReadHyperdrive {
       (await this.network.getBlockNumber(options?.blockTag));
 
     const checkpointId = getCheckpointId(blockNumber, checkpointDuration);
-    const { longExposure: checkpointLongExposure } = await this.contract.read(
+    const [{ longExposure: checkpointLongExposure }] = await this.contract.read(
       "getCheckpoint",
       [checkpointId],
     );
 
-    const maxBondsOut = await this.mathContract.read(
+    const [maxBaseIn, maxBondsOut] = await this.mathContract.read(
       "calculateMaxLong",
       [
         {
