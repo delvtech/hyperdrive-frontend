@@ -960,4 +960,25 @@ export class ReadHyperdrive implements IReadHyperdrive {
     );
     return removeLiquidity;
   }
+
+  async previewRedeemWithdrawalShares({
+    withdrawalSharesIn,
+    minBaseAmountOutPerShare,
+    destination,
+    asUnderlying,
+    options,
+  }: {
+    withdrawalSharesIn: bigint;
+    minBaseAmountOutPerShare: bigint;
+    destination: Address;
+    asUnderlying: boolean;
+    options?: ContractWriteOptions;
+  }): Promise<bigint> {
+    const [redeemWithdrawalShares] = await this.contract.simulateWrite(
+      "redeemWithdrawalShares",
+      [withdrawalSharesIn, minBaseAmountOutPerShare, destination, asUnderlying],
+      options,
+    );
+    return redeemWithdrawalShares;
+  }
 }
