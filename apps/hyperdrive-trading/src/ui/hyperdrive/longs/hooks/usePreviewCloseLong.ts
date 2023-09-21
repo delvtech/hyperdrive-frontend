@@ -1,5 +1,6 @@
-import { HyperdriveABI } from "@hyperdrive/core";
 import { QueryStatus, useQuery } from "@tanstack/react-query";
+import { makeQueryKey } from "src/base/makeQueryKey";
+import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address, useAccount, usePublicClient } from "wagmi";
 
 interface UsePreviewCloseLongOptions {
@@ -32,7 +33,7 @@ export function usePreviewCloseLong({
 }: UsePreviewCloseLongOptions): UsePreviewCloseLongResult {
   const publicClient = usePublicClient();
   const { address: account } = useAccount();
-
+  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
   const queryEnabled =
     !!hyperdriveAddress &&
     !!maturityTime &&
@@ -41,37 +42,29 @@ export function usePreviewCloseLong({
     !!destination &&
     !!publicClient &&
     !!account &&
-    enabled;
+    enabled &&
+    !!readHyperdrive;
 
   const { data, status } = useQuery({
-    queryKey: [
-      "preview-close-long",
+    queryKey: makeQueryKey("previewCloseLong", {
       hyperdriveAddress,
-      bondAmountIn?.toString(),
-      minBaseAmountOut?.toString(),
-      destination?.toString(),
-    ],
-    enabled: queryEnabled,
+      maturityTime,
+      bondAmountIn,
+      minBaseAmountOut,
+      destination,
+      asUnderlying,
+    }),
     queryFn: queryEnabled
-      ? async () => {
-          // TODO: Refactor this to the math library instead
-          const { result } = await publicClient.simulateContract({
-            abi: HyperdriveABI,
-            address: hyperdriveAddress,
-            account,
-            functionName: "closeLong",
-            args: [
-              maturityTime,
-              bondAmountIn,
-              minBaseAmountOut,
-              destination,
-              asUnderlying,
-            ],
-          });
-
-          return result;
-        }
+      ? async () =>
+          await readHyperdrive.previewCloseLong({
+            maturityTime,
+            bondAmountIn,
+            minBaseAmountOut,
+            destination,
+            asUnderlying: true,
+          })
       : undefined,
+    enabled: queryEnabled,
   });
 
   return { baseAmountOut: data, previewCloseLongStatus: status };
