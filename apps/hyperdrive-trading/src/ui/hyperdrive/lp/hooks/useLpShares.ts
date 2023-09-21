@@ -1,7 +1,7 @@
-import { getLpSharesQuery } from "@hyperdrive/queries";
 import { QueryStatus, useQuery } from "@tanstack/react-query";
-import { Address, usePublicClient } from "wagmi";
-
+import { makeQueryKey } from "src/base/makeQueryKey";
+import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
+import { Address } from "wagmi";
 interface UseLpSharesOptions {
   account: Address | undefined;
   hyperdriveAddress: Address | undefined;
@@ -13,13 +13,14 @@ export function useLpShares({
   lpShares: bigint | undefined;
   lpSharesStatus: QueryStatus;
 } {
-  const publicClient = usePublicClient();
-  const { data: lpShares, status: lpSharesStatus } = useQuery(
-    getLpSharesQuery({
-      account,
-      hyperdriveAddress,
-      publicClient,
-    }),
-  );
+  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
+  const queryEnabled = !!readHyperdrive && !!account;
+  const { data: lpShares, status: lpSharesStatus } = useQuery({
+    queryKey: makeQueryKey("lpShares", { account, hyperdriveAddress }),
+    queryFn: queryEnabled
+      ? () => readHyperdrive.getLpShares({ account })
+      : undefined,
+    enabled: queryEnabled,
+  });
   return { lpShares, lpSharesStatus };
 }
