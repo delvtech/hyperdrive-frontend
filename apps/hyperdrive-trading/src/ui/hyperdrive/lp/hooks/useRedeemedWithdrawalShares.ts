@@ -1,8 +1,8 @@
 import { RedeemedWithdrawalShares } from "@hyperdrive/core";
-import { getRedeemedWithdrawalSharesQuery } from "@hyperdrive/queries";
 import { QueryStatus, useQuery } from "@tanstack/react-query";
-import { Address, usePublicClient } from "wagmi";
-
+import { makeQueryKey } from "src/base/makeQueryKey";
+import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
+import { Address } from "wagmi";
 interface UseRedeemedWithdrawalSharesOptions {
   account: Address | undefined;
   hyperdriveAddress: Address | undefined;
@@ -14,16 +14,21 @@ export function useRedeemedWithdrawalShares({
   redeemedWithdrawalShares: RedeemedWithdrawalShares[] | undefined;
   redeemedWithdrawlSharesStatus: QueryStatus;
 } {
-  const publicClient = usePublicClient();
+  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
+  const queryEnabled = !!readHyperdrive && !!account;
   const {
     data: redeemedWithdrawalShares,
     status: redeemedWithdrawlSharesStatus,
-  } = useQuery(
-    getRedeemedWithdrawalSharesQuery({
+  } = useQuery({
+    queryKey: makeQueryKey("redeemedWithdrawalShares", {
       account,
       hyperdriveAddress,
-      publicClient,
     }),
-  );
+    queryFn: queryEnabled
+      ? async () =>
+          await readHyperdrive.getRedeemedWithdrawalShares({ account })
+      : undefined,
+    enabled: queryEnabled,
+  });
   return { redeemedWithdrawalShares, redeemedWithdrawlSharesStatus };
 }
