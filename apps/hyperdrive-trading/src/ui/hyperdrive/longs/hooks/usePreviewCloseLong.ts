@@ -1,4 +1,5 @@
 import { QueryStatus, useQuery } from "@tanstack/react-query";
+import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address, useAccount } from "wagmi";
 
@@ -44,13 +45,12 @@ export function usePreviewCloseLong({
     enabled;
 
   const { data, status } = useQuery({
-    queryKey: [
-      "previewCloseLong",
+    queryKey: makeQueryKey("previewCloseLong", {
       hyperdriveAddress,
-      bondAmountIn?.toString(),
-      minBaseAmountOut?.toString(),
-      destination?.toString(),
-    ],
+      bondAmountIn: bondAmountIn,
+      minBaseAmountOut: minBaseAmountOut,
+      destination: destination,
+    }),
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? () =>
