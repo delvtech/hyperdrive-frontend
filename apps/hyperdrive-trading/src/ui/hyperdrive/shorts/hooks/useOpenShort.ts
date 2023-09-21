@@ -1,15 +1,12 @@
-import { HyperdriveABI } from "@hyperdrive/core";
-import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
-import { MutationStatus, useQueryClient } from "@tanstack/react-query";
-import { Hyperdrive } from "src/appconfig/types";
-import { ZERO_ADDRESS } from "src/base/constants";
-import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";
 import {
-  Address,
-  useContractWrite,
-  usePrepareContractWrite,
-  usePublicClient,
-} from "wagmi";
+  MutationStatus,
+  useMutation,
+  useQueryClient,
+} from "@tanstack/react-query";
+import { Hyperdrive } from "src/appconfig/types";
+import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
+import { Address } from "wagmi";
+
 interface UseOpenShortOptions {
   market: Hyperdrive;
   amountBondShorts: bigint | undefined;
@@ -35,41 +32,28 @@ export function useOpenShort({
   enabled,
   onExecuted,
 }: UseOpenShortOptions): UseOpenShortResult {
+  const readWriteHyperdrive = useReadWriteHyperdrive(market.address);
   const queryClient = useQueryClient();
 
-  const queryEnabled =
-    !!amountBondShorts && !!maxBaseAmountIn && !!destination && enabled;
-
-  const requiresEth = asUnderlying && market.baseToken.address === ZERO_ADDRESS;
-
-  const { config } = usePrepareContractWrite({
-    abi: HyperdriveABI,
-    address: market.address,
-    functionName: "openShort",
-    enabled: queryEnabled,
-    args: queryEnabled
-      ? [amountBondShorts, maxBaseAmountIn, destination, asUnderlying]
-      : undefined,
-
-    // Used when ETH is the base asset (e.g. StethHyperdrive) and
-    // asUnderlying is true.
-    value: requiresEth && maxBaseAmountIn ? maxBaseAmountIn : 0n,
-  });
-
-  const publicClient = usePublicClient();
-  const addRecentTransaction = useAddRecentTransaction();
-  const { write: openShort, status } = useContractWrite({
-    ...config,
-    onSuccess: async (data) => {
-      addRecentTransaction({
-        hash: data.hash,
-        description: "Open Short",
-      });
-      await waitForTransactionAndInvalidateCache({
-        publicClient,
-        hash: data.hash,
-        queryClient,
-      });
+  const { mutate: openShort, status } = useMutation({
+    mutationFn: async () => {
+      if (
+        !!amountBondShorts &&
+        !!maxBaseAmountIn &&
+        !!destination &&
+        enabled &&
+        !!readWriteHyperdrive
+      ) {
+        readWriteHyperdrive.openShort({
+          bondAmount: amountBondShorts,
+          destination,
+          maxDeposit: maxBaseAmountIn,
+          asUnderlying,
+        });
+      }
+    },
+    onSuccess: async () => {
+      queryClient.invalidateQueries();
       onExecuted?.();
     },
   });

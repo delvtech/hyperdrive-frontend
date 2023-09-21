@@ -64,7 +64,7 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
     baseAmount: bigint;
     bondAmountOut: bigint;
     asUnderlying?: boolean;
-    options: ContractWriteOptions;
+    options?: ContractWriteOptions;
   }): Promise<bigint>;
 
   /**
@@ -86,7 +86,7 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
     bondAmount: bigint;
     maxDeposit: bigint;
     asUnderlying?: boolean;
-    options: ContractWriteOptions;
+    options?: ContractWriteOptions;
   }): Promise<bigint>;
 
   /**
@@ -111,7 +111,7 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
     minBaseAmountOut: bigint;
     destination: Address;
     asUnderlying?: boolean;
-    options: ContractWriteOptions;
+    options?: ContractWriteOptions;
   }): Promise<bigint>;
 
   /**
@@ -136,7 +136,7 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
     minBaseAmountOut: bigint;
     destination: Address;
     asUnderlying?: boolean;
-    options: ContractWriteOptions;
+    options?: ContractWriteOptions;
   }): Promise<bigint>;
 
   /**
@@ -161,7 +161,7 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
     minAPR: bigint;
     maxAPR: bigint;
     asUnderlying?: boolean;
-    options: ContractWriteOptions;
+    options?: ContractWriteOptions;
   }): Promise<bigint>;
 
   /**
@@ -183,7 +183,7 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
     lpSharesIn: bigint;
     minBaseAmountOut: bigint;
     asUnderlying?: boolean;
-    options: ContractWriteOptions;
+    options?: ContractWriteOptions;
   }): Promise<bigint>;
 
   /**
@@ -205,7 +205,7 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
     minBaseAmountOutPerShare: bigint;
     destination: Address;
     asUnderlying?: boolean;
-    options: ContractWriteOptions;
+    options?: ContractWriteOptions;
   }): Promise<bigint>;
 }
 
@@ -268,7 +268,7 @@ export class ReadWriteHyperdrive
     baseAmount: bigint;
     bondAmountOut: bigint;
     asUnderlying?: boolean;
-    options: ContractWriteOptions;
+    options?: ContractWriteOptions;
   }): Promise<bigint> {
     const { baseToken } = await this.getPoolConfig();
     const requiresEth = asUnderlying && baseToken === ZERO_ADDRESS;
@@ -294,7 +294,7 @@ export class ReadWriteHyperdrive
     bondAmount: bigint;
     maxDeposit: bigint;
     asUnderlying?: boolean;
-    options: ContractWriteOptions;
+    options?: ContractWriteOptions;
   }): Promise<bigint> {
     const [result] = await this.contract.write(
       "openShort",
@@ -318,7 +318,7 @@ export class ReadWriteHyperdrive
     minBaseAmountOut: bigint;
     destination: Address;
     asUnderlying?: boolean;
-    options: ContractWriteOptions;
+    options?: ContractWriteOptions;
   }): Promise<bigint> {
     const [result] = await this.contract.write(
       "closeLong",
@@ -347,7 +347,7 @@ export class ReadWriteHyperdrive
     minBaseAmountOut: bigint;
     destination: Address;
     asUnderlying?: boolean;
-    options: ContractWriteOptions;
+    options?: ContractWriteOptions;
   }): Promise<bigint> {
     const [result] = await this.contract.write(
       "closeShort",
@@ -376,7 +376,7 @@ export class ReadWriteHyperdrive
     minAPR: bigint;
     maxAPR: bigint;
     asUnderlying?: boolean;
-    options: ContractWriteOptions;
+    options?: ContractWriteOptions;
   }): Promise<bigint> {
     const { baseToken } = await this.getPoolConfig();
     const requiresEth = asUnderlying && baseToken === ZERO_ADDRESS;
@@ -402,7 +402,7 @@ export class ReadWriteHyperdrive
     lpSharesIn: bigint;
     minBaseAmountOut: bigint;
     asUnderlying?: boolean;
-    options: ContractWriteOptions;
+    options?: ContractWriteOptions;
   }): Promise<bigint> {
     const [result] = await this.contract.write(
       "removeLiquidity",
@@ -423,7 +423,7 @@ export class ReadWriteHyperdrive
     minBaseAmountOutPerShare: bigint;
     destination: Address;
     asUnderlying?: boolean;
-    options: ContractWriteOptions;
+    options?: ContractWriteOptions;
   }): Promise<bigint> {
     const [result] = await this.contract.write(
       "redeemWithdrawalShares",

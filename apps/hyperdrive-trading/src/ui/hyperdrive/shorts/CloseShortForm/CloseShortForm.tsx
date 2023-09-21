@@ -44,6 +44,7 @@ export function CloseShortForm({
     });
 
   const { closeShort, isPendingWalletAction } = useCloseShort({
+    market: hyperdrive,
     short,
     bondAmountIn: amountAsBigInt,
     minBaseAmountOut: closeShortAmountAfterSlippage,

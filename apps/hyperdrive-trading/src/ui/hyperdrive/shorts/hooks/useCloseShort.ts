@@ -1,8 +1,11 @@
-import { HyperdriveABI, Short } from "@hyperdrive/core";
-import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
-import { Address, useContractWrite, usePrepareContractWrite } from "wagmi";
+import { Short } from "@hyperdrive/core";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { Hyperdrive } from "src/appconfig/types";
+import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
+import { Address } from "wagmi";
 
 interface UseCloseShortOptions {
+  market: Hyperdrive;
   short: Short | undefined;
   bondAmountIn: bigint | undefined;
   minBaseAmountOut: bigint | undefined;
@@ -17,6 +20,7 @@ interface UseCloseShortResult {
 }
 
 export function useCloseShort({
+  market,
   short,
   bondAmountIn,
   minBaseAmountOut,
@@ -24,34 +28,30 @@ export function useCloseShort({
   asUnderlying = true,
   enabled = true,
 }: UseCloseShortOptions): UseCloseShortResult {
-  const queryEnabled =
-    !!short &&
-    !!bondAmountIn &&
-    minBaseAmountOut !== undefined && // check undefined since 0 is valid
-    !!destination &&
-    enabled;
+  const readWriteHyperdrive = useReadWriteHyperdrive(market.address);
+  const queryClient = useQueryClient();
 
-  const { config } = usePrepareContractWrite({
-    abi: HyperdriveABI,
-    address: short?.hyperdriveAddress,
-    functionName: "closeShort",
-    enabled: queryEnabled,
-    args: queryEnabled
-      ? [
-          short.maturity,
+  const { mutate: closeShort, status } = useMutation({
+    mutationFn: async () => {
+      if (
+        !!short &&
+        !!bondAmountIn &&
+        minBaseAmountOut !== undefined && // check undefined since 0 is valid
+        !!destination &&
+        enabled &&
+        readWriteHyperdrive
+      ) {
+        readWriteHyperdrive.closeShort({
           bondAmountIn,
           minBaseAmountOut,
           destination,
           asUnderlying,
-        ]
-      : undefined,
-  });
-
-  const addRecentTransaction = useAddRecentTransaction();
-  const { write: closeShort, status } = useContractWrite({
-    ...config,
-    onSuccess: (data) => {
-      addRecentTransaction({ hash: data.hash, description: "Close short" });
+          short,
+        });
+      }
+    },
+    onSuccess: async () => {
+      queryClient.invalidateQueries();
     },
   });
 
