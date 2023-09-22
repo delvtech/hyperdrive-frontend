@@ -1,10 +1,12 @@
-import { HyperdriveABI } from "@hyperdrive/core";
-import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
-import { MutationStatus } from "@tanstack/react-query";
+import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
+
+import {
+  MutationStatus,
+  useMutation,
+  useQueryClient,
+} from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
-import { queryClient } from "src/network/queryClient";
-import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";
-import { Address, useContractWrite, usePublicClient } from "wagmi";
+import { Address } from "wagmi";
 interface UseRemoveLiquidityOptions {
   market: Hyperdrive;
   lpSharesIn: bigint | undefined;
@@ -27,31 +29,30 @@ export function useRemoveLiquidity({
   asUnderlying = true,
   enabled,
 }: UseRemoveLiquidityOptions): UseRemoveLiquidityResult {
-  const queryEnabled =
-    !!lpSharesIn && minBaseAmountOut !== undefined && !!destination && enabled;
-  const publicClient = usePublicClient();
-  const addRecentTransaction = useAddRecentTransaction();
-  const { write: removeLiquidity, status } = useContractWrite({
-    abi: HyperdriveABI,
-    address: market.address,
-    functionName: "removeLiquidity",
-    args: queryEnabled
-      ? [lpSharesIn, minBaseAmountOut, destination, asUnderlying]
-      : undefined,
+  const readWriteHyperdrive = useReadWriteHyperdrive(market.address);
+  const queryClient = useQueryClient();
 
-    onSuccess: async (data) => {
-      addRecentTransaction({
-        hash: data.hash,
-        description: "Remove Liquidity",
-      });
-      await waitForTransactionAndInvalidateCache({
-        publicClient,
-        hash: data.hash,
-        queryClient,
-      });
+  const { mutate: removeLiquidity, status } = useMutation({
+    mutationFn: async () => {
+      if (
+        !!lpSharesIn &&
+        minBaseAmountOut !== undefined &&
+        !!destination &&
+        enabled &&
+        readWriteHyperdrive
+      ) {
+        readWriteHyperdrive.removeLiquidity({
+          lpSharesIn,
+          minBaseAmountOut,
+          destination,
+          asUnderlying,
+        });
+      }
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries();
     },
   });
-
   return {
     removeLiquidity,
     removeLiquidityStatus: status,

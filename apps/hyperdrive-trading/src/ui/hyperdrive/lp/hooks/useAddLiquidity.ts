@@ -1,16 +1,12 @@
-import { HyperdriveABI } from "@hyperdrive/core";
-import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
-import { MutationStatus } from "@tanstack/react-query";
-import { Hyperdrive } from "src/appconfig/types";
-import { ZERO_ADDRESS } from "src/base/constants";
-import { queryClient } from "src/network/queryClient";
-import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";
+import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
+
 import {
-  Address,
-  useContractWrite,
-  usePrepareContractWrite,
-  usePublicClient,
-} from "wagmi";
+  MutationStatus,
+  useMutation,
+  useQueryClient,
+} from "@tanstack/react-query";
+import { Hyperdrive } from "src/appconfig/types";
+import { Address } from "wagmi";
 interface UseAddLiquidityOptions {
   market: Hyperdrive;
   destination: Address | undefined;
@@ -35,41 +31,33 @@ export function useAddLiquidity({
   asUnderlying = true,
   enabled,
 }: UseAddLiquidityOptions): UseAddLiquidityResult {
-  const queryEnabled =
-    minAPR !== undefined &&
-    !!maxAPR &&
-    !!contribution &&
-    !!destination &&
-    enabled;
+  const readWriteHyperdrive = useReadWriteHyperdrive(market.address);
+  const queryClient = useQueryClient();
 
-  const requiresEth = asUnderlying && market.baseToken.address === ZERO_ADDRESS;
-
-  const { config } = usePrepareContractWrite({
-    abi: HyperdriveABI,
-    address: market.address,
-    functionName: "addLiquidity",
-    enabled: queryEnabled,
-    args: queryEnabled
-      ? [contribution, minAPR, maxAPR, destination, asUnderlying]
-      : undefined,
-
-    // Used when ETH is the base asset (e.g. StethHyperdrive) and
-    // asUnderlying is true.
-    value: requiresEth && contribution ? contribution : 0n,
-  });
-  const publicClient = usePublicClient();
-  const addRecentTransaction = useAddRecentTransaction();
-  const { write: addLiquidity, status } = useContractWrite({
-    ...config,
-    onSuccess: async (data) => {
-      addRecentTransaction({ hash: data.hash, description: "Add Liquidity" });
-      await waitForTransactionAndInvalidateCache({
-        publicClient,
-        hash: data.hash,
-        queryClient,
-      });
+  const { mutate: addLiquidity, status } = useMutation({
+    mutationFn: async () => {
+      if (
+        !!contribution &&
+        !!minAPR &&
+        !!maxAPR &&
+        !!destination &&
+        enabled &&
+        readWriteHyperdrive
+      ) {
+        readWriteHyperdrive.addLiquidity({
+          contribution,
+          minAPR,
+          maxAPR,
+          destination,
+          asUnderlying,
+        });
+      }
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries();
     },
   });
+
   return {
     addLiquidity,
     addLiquidityStatus: status,

@@ -1,10 +1,12 @@
-import { HyperdriveABI } from "@hyperdrive/core";
-import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
-import { MutationStatus } from "@tanstack/react-query";
+import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
+
+import {
+  MutationStatus,
+  useMutation,
+  useQueryClient,
+} from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
-import { queryClient } from "src/network/queryClient";
-import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";
-import { Address, useContractWrite, usePublicClient } from "wagmi";
+import { Address } from "wagmi";
 interface UseRedeemWithdrawalSharesOptions {
   market: Hyperdrive;
   withdrawalSharesIn: bigint | undefined;
@@ -27,36 +29,28 @@ export function useRedeemWithdrawalShares({
   asUnderlying = true,
   enabled,
 }: UseRedeemWithdrawalSharesOptions): UseRedeemWithdrawalSharesResult {
-  const queryEnabled =
-    !!withdrawalSharesIn &&
-    minBaseAmountOutPerShare !== undefined &&
-    !!destination &&
-    enabled;
-  const publicClient = usePublicClient();
-  const addRecentTransaction = useAddRecentTransaction();
-  const { write: redeemWithdrawalShares, status } = useContractWrite({
-    abi: HyperdriveABI,
-    address: market.address,
-    functionName: "redeemWithdrawalShares",
-    args: queryEnabled
-      ? [
+  const readWriteHyperdrive = useReadWriteHyperdrive(market.address);
+  const queryClient = useQueryClient();
+
+  const { mutate: redeemWithdrawalShares, status } = useMutation({
+    mutationFn: async () => {
+      if (
+        !!withdrawalSharesIn &&
+        minBaseAmountOutPerShare !== undefined &&
+        !!destination &&
+        enabled &&
+        readWriteHyperdrive
+      ) {
+        readWriteHyperdrive.redeemWithdrawalShares({
           withdrawalSharesIn,
           minBaseAmountOutPerShare,
           destination,
           asUnderlying,
-        ]
-      : undefined,
-
-    onSuccess: async (data) => {
-      addRecentTransaction({
-        hash: data.hash,
-        description: "Remove Liquidity",
-      });
-      await waitForTransactionAndInvalidateCache({
-        publicClient,
-        hash: data.hash,
-        queryClient,
-      });
+        });
+      }
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries();
     },
   });
 
