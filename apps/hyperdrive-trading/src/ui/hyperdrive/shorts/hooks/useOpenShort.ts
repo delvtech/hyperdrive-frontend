@@ -3,12 +3,11 @@ import {
   useMutation,
   useQueryClient,
 } from "@tanstack/react-query";
-import { Hyperdrive } from "src/appconfig/types";
 import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
 import { Address } from "wagmi";
 
 interface UseOpenShortOptions {
-  market: Hyperdrive;
+  hyperdriveAddress: Address;
   amountBondShorts: bigint | undefined;
   maxBaseAmountIn: bigint | undefined;
   destination: Address | undefined;
@@ -24,7 +23,7 @@ interface UseOpenShortResult {
 }
 
 export function useOpenShort({
-  market,
+  hyperdriveAddress,
   amountBondShorts,
   maxBaseAmountIn,
   destination,
@@ -32,7 +31,7 @@ export function useOpenShort({
   enabled,
   onExecuted,
 }: UseOpenShortOptions): UseOpenShortResult {
-  const readWriteHyperdrive = useReadWriteHyperdrive(market.address);
+  const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
   const queryClient = useQueryClient();
 
   const { mutate: openShort, status } = useMutation({

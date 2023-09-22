@@ -61,7 +61,7 @@ export function OpenShortForm({
     : true;
 
   const { openShort, openShortSubmittedStatus } = useOpenShort({
-    market,
+    hyperdriveAddress: market.address,
     amountBondShorts: amountAsBigInt,
     // TODO: handle slippage
     maxBaseAmountIn: constants.MaxUint256.toBigInt(),
