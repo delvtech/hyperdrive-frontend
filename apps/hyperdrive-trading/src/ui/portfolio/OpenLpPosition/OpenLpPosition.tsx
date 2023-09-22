@@ -60,9 +60,7 @@ export function OpenLpPosition({
       <span key="type" className="font-semibold uppercase text-primary">
         LP
       </span>,
-      formatBalance(
-        formatUnits(lpShares, (hyperdrive as Hyperdrive).baseToken.decimals),
-      ),
+      formatUnits(lpShares, (hyperdrive as Hyperdrive).baseToken.decimals),
       <span key="value">
         {!!poolInfo ? (
           `${formatBalance({
