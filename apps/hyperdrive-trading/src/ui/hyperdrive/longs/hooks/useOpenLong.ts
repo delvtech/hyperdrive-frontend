@@ -43,7 +43,7 @@ export function useOpenLong({
         enabled &&
         readWriteHyperdrive
       ) {
-        return readWriteHyperdrive.openLong({
+        await readWriteHyperdrive.openLong({
           baseAmount,
           bondAmountOut,
           destination,
@@ -57,11 +57,9 @@ export function useOpenLong({
             },
           },
         });
+        queryClient.invalidateQueries();
+        onExecuted?.();
       }
-    },
-    onSuccess: () => {
-      queryClient.invalidateQueries();
-      onExecuted?.();
     },
   });
 
