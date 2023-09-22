@@ -47,7 +47,7 @@ export function RedeemWithdrawalSharesForm({
 
   const { redeemWithdrawalShares, redeemWithdrawalSharesStatus } =
     useRedeemWithdrawalShares({
-      market: hyperdrive,
+      hyperdriveAddress: hyperdrive.address,
       withdrawalSharesIn: amountAsBigInt,
       minBaseAmountOutPerShare: 0n,
       destination: account,

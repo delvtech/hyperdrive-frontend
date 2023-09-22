@@ -1,11 +1,11 @@
 import { Short } from "@hyperdrive/core";
+import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { Hyperdrive } from "src/appconfig/types";
 import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
 import { Address } from "wagmi";
 
 interface UseCloseShortOptions {
-  market: Hyperdrive;
+  hyperdriveAddress: Address;
   short: Short | undefined;
   bondAmountIn: bigint | undefined;
   minBaseAmountOut: bigint | undefined;
@@ -20,7 +20,7 @@ interface UseCloseShortResult {
 }
 
 export function useCloseShort({
-  market,
+  hyperdriveAddress,
   short,
   bondAmountIn,
   minBaseAmountOut,
@@ -28,9 +28,9 @@ export function useCloseShort({
   asUnderlying = true,
   enabled = true,
 }: UseCloseShortOptions): UseCloseShortResult {
-  const readWriteHyperdrive = useReadWriteHyperdrive(market.address);
+  const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
   const queryClient = useQueryClient();
-
+  const addTransaction = useAddRecentTransaction();
   const { mutate: closeShort, status } = useMutation({
     mutationFn: async () => {
       if (
@@ -41,17 +41,23 @@ export function useCloseShort({
         enabled &&
         readWriteHyperdrive
       ) {
-        readWriteHyperdrive.closeShort({
+        await readWriteHyperdrive.closeShort({
           bondAmountIn,
           minBaseAmountOut,
           destination,
           asUnderlying,
           short,
+          options: {
+            onSubmitted(hash) {
+              addTransaction({
+                hash,
+                description: "Close Short",
+              });
+            },
+          },
         });
+        queryClient.invalidateQueries();
       }
-    },
-    onSuccess: async () => {
-      queryClient.invalidateQueries();
     },
   });
 

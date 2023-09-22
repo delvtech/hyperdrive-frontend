@@ -1,15 +1,10 @@
-import { HyperdriveABI, Long } from "@hyperdrive/sdk";
+import { Long } from "@hyperdrive/sdk";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
-import { queryClient } from "src/network/queryClient";
-import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";
-import {
-  Address,
-  useContractWrite,
-  usePrepareContractWrite,
-  usePublicClient,
-} from "wagmi";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
+import { Address } from "wagmi";
 interface UseCloseLongOptions {
-  hyperdriveAddress: Address | undefined;
+  hyperdriveAddress: Address;
   long: Long | undefined;
   bondAmountIn: bigint | undefined;
   minBaseAmountOut: bigint | undefined;
@@ -32,42 +27,39 @@ export function useCloseLong({
   asUnderlying = true,
   enabled = true,
 }: UseCloseLongOptions): UseCloseLongResult {
-  const queryEnabled =
-    !!hyperdriveAddress &&
-    !!long &&
-    !!bondAmountIn &&
-    minBaseAmountOut !== undefined && // check undefined since 0 is valid
-    !!destination &&
-    enabled;
-
-  const { config } = usePrepareContractWrite({
-    abi: HyperdriveABI,
-    address: hyperdriveAddress,
-    functionName: "closeLong",
-    enabled: queryEnabled,
-    args: queryEnabled
-      ? [
-          long.maturity,
+  const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
+  const queryClient = useQueryClient();
+  const addTransaction = useAddRecentTransaction();
+  const { mutate: closeLong, status } = useMutation({
+    mutationFn: async () => {
+      if (
+        !!long &&
+        !!bondAmountIn &&
+        minBaseAmountOut !== undefined && // check undefined since 0 is valid
+        !!destination &&
+        enabled &&
+        readWriteHyperdrive
+      ) {
+        await readWriteHyperdrive.closeLong({
           bondAmountIn,
           minBaseAmountOut,
           destination,
           asUnderlying,
-        ]
-      : undefined,
-  });
-  const publicClient = usePublicClient();
-  const addRecentTransaction = useAddRecentTransaction();
-  const { write: closeLong, status } = useContractWrite({
-    ...config,
-    onSuccess: async (data) => {
-      addRecentTransaction({ hash: data.hash, description: "Close long" });
-      await waitForTransactionAndInvalidateCache({
-        publicClient,
-        hash: data.hash,
-        queryClient,
-      });
+          long,
+          options: {
+            onSubmitted(hash) {
+              addTransaction({
+                hash,
+                description: "Close Long",
+              });
+            },
+          },
+        });
+        queryClient.invalidateQueries();
+      }
     },
   });
+
   return {
     closeLong,
     isPendingWalletAction: status === "loading",

@@ -75,7 +75,7 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
     });
 
   const { openLong, openLongStatus } = useOpenLong({
-    market,
+    hyperdriveAddress: market.address,
     baseAmount: amountAsBigInt,
     bondAmountOut: longAmountOutAfterSlippage,
     destination: account,

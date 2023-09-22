@@ -61,7 +61,7 @@ export function AddLiquidityForm({
     });
 
   const { addLiquidity, addLiquidityStatus } = useAddLiquidity({
-    market,
+    hyperdriveAddress: market.address,
     contribution: amountAsBigInt,
     minAPR: parseUnits("0", market.baseToken.decimals),
     maxAPR: parseUnits("999", market.baseToken.decimals),
