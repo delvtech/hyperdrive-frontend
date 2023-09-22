@@ -57,7 +57,7 @@ export interface IReadWriteContract<TAbi extends Abi = Abi>
   write<TFunctionName extends FunctionName<TAbi, "nonpayable" | "payable">>(
     functionName: TFunctionName,
     args: FunctionArgs<TAbi, TFunctionName>,
-    options?: ContractWriteOptions,
+    options?: ContractWriteOptionsWithCallback,
   ): Promise<FunctionReturnType<TAbi, TFunctionName>>;
 }
 
@@ -115,7 +115,7 @@ export type ContractReadOptions =
     };
 
 // https://github.com/ethereum/execution-apis/blob/main/src/schemas/transaction.yaml#L274
-export type ContractWriteOptions = {
+export interface ContractWriteOptions {
   type?: `0x${string}`;
   nonce?: bigint;
   to?: Address;
@@ -150,8 +150,11 @@ export type ContractWriteOptions = {
    * Chain ID that this transaction is valid on.
    */
   chainId?: bigint;
+}
+
+export interface ContractWriteOptionsWithCallback extends ContractWriteOptions {
   /**
    * Called when a transaction is submitted on chain.
    */
   onSubmitted?: (hash: `0x${string}`) => void;
-};
+}
