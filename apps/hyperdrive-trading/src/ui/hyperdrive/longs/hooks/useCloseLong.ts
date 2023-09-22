@@ -1,10 +1,9 @@
 import { Long } from "@hyperdrive/sdk";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { Hyperdrive } from "src/appconfig/types";
 import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
 import { Address } from "wagmi";
 interface UseCloseLongOptions {
-  market: Hyperdrive;
+  hyperdriveAddress: Address;
   long: Long | undefined;
   bondAmountIn: bigint | undefined;
   minBaseAmountOut: bigint | undefined;
@@ -19,7 +18,7 @@ interface UseCloseLongResult {
 }
 
 export function useCloseLong({
-  market,
+  hyperdriveAddress,
   long,
   bondAmountIn,
   minBaseAmountOut,
@@ -27,7 +26,7 @@ export function useCloseLong({
   asUnderlying = true,
   enabled = true,
 }: UseCloseLongOptions): UseCloseLongResult {
-  const readWriteHyperdrive = useReadWriteHyperdrive(market.address);
+  const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
   const queryClient = useQueryClient();
 
   const { mutate: closeLong, status } = useMutation({

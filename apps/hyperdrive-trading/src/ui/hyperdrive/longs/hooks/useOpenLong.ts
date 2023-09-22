@@ -2,11 +2,10 @@ import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHype
 
 import { MutationStatus } from "@tanstack/query-core";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { Hyperdrive } from "src/appconfig/types";
 import { Address } from "wagmi";
 
 interface UseOpenLongOptions {
-  market: Hyperdrive;
+  hyperdriveAddress: Address;
   destination: Address | undefined;
   baseAmount: bigint | undefined;
   bondAmountOut: bigint | undefined;
@@ -21,14 +20,14 @@ interface UseOpenLongResult {
 }
 
 export function useOpenLong({
-  market,
+  hyperdriveAddress,
   destination,
   baseAmount,
   bondAmountOut,
   asUnderlying = true,
   enabled,
 }: UseOpenLongOptions): UseOpenLongResult {
-  const readWriteHyperdrive = useReadWriteHyperdrive(market.address);
+  const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
   const queryClient = useQueryClient();
   const { mutate: openLong, status } = useMutation({
     mutationFn: async () => {
