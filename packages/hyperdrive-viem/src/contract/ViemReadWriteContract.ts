@@ -1,5 +1,6 @@
 import {
   ContractWriteOptions,
+  ContractWriteOptionsWithCallback,
   FunctionArgs,
   FunctionName,
   FunctionReturnType,
@@ -62,7 +63,7 @@ export class ViemReadWriteContract<TAbi extends Abi = Abi>
   >(
     functionName: TFunctionName,
     args: FunctionArgs<TAbi, TFunctionName>,
-    options?: ContractWriteOptions,
+    options?: ContractWriteOptionsWithCallback,
   ): Promise<FunctionReturnType<TAbi, TFunctionName>> {
     const [account] = await this._walletClient.getAddresses();
 
