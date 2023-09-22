@@ -1,16 +1,9 @@
-import { HyperdriveABI } from "@hyperdrive/core";
-import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
+import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
+
 import { MutationStatus } from "@tanstack/query-core";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
-import { ZERO_ADDRESS } from "src/base/constants";
-import { queryClient } from "src/network/queryClient";
-import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";
-import {
-  Address,
-  useContractWrite,
-  usePrepareContractWrite,
-  usePublicClient,
-} from "wagmi";
+import { Address } from "wagmi";
 
 interface UseOpenLongOptions {
   market: Hyperdrive;
@@ -35,38 +28,29 @@ export function useOpenLong({
   asUnderlying = true,
   enabled,
 }: UseOpenLongOptions): UseOpenLongResult {
-  const queryEnabled =
-    !!baseAmount && !!bondAmountOut && !!destination && enabled;
-
-  const requiresEth = asUnderlying && market.baseToken.address === ZERO_ADDRESS;
-
-  const { config } = usePrepareContractWrite({
-    abi: HyperdriveABI,
-    address: market.address,
-    functionName: "openLong",
-    enabled: queryEnabled,
-    args: queryEnabled
-      ? [baseAmount, bondAmountOut, destination, asUnderlying]
-      : undefined,
-
-    // Used when ETH is the base asset (e.g. StethHyperdrive) and
-    // asUnderlying is true.
-    value: requiresEth && baseAmount ? baseAmount : 0n,
-  });
-  const publicClient = usePublicClient();
-  const addRecentTransaction = useAddRecentTransaction();
-  const { write: openLong, status } = useContractWrite({
-    ...config,
-    onSuccess: async (data) => {
-      addRecentTransaction({ hash: data.hash, description: "Open Long" });
-      await waitForTransactionAndInvalidateCache({
-        publicClient,
-        hash: data.hash,
-        queryClient,
-      });
+  const readWriteHyperdrive = useReadWriteHyperdrive(market.address);
+  const queryClient = useQueryClient();
+  const { mutate: openLong, status } = useMutation({
+    mutationFn: async () => {
+      if (
+        !!baseAmount &&
+        !!bondAmountOut &&
+        !!destination &&
+        enabled &&
+        readWriteHyperdrive
+      ) {
+        readWriteHyperdrive.openLong({
+          baseAmount,
+          bondAmountOut,
+          destination,
+          asUnderlying,
+        });
+      }
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries();
     },
   });
-
   return {
     openLong,
     openLongStatus: status,

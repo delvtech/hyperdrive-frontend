@@ -50,7 +50,7 @@ export function useCloseShort({
         });
       }
     },
-    onSuccess: async () => {
+    onSuccess: () => {
       queryClient.invalidateQueries();
     },
   });

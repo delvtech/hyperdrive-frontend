@@ -52,7 +52,7 @@ export function useOpenShort({
         });
       }
     },
-    onSuccess: async () => {
+    onSuccess: () => {
       queryClient.invalidateQueries();
       onExecuted?.();
     },
