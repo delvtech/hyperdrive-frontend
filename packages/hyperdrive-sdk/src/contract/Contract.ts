@@ -150,4 +150,8 @@ export type ContractWriteOptions = {
    * Chain ID that this transaction is valid on.
    */
   chainId?: bigint;
+  /**
+   * Called when a transaction is submitted on chain.
+   */
+  onSubmitted?: (hash: `0x${string}`) => void;
 };
