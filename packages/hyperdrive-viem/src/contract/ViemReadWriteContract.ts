@@ -1,5 +1,6 @@
 import {
   ContractWriteOptions,
+  ContractWriteOptionsWithCallback,
   FunctionArgs,
   FunctionName,
   FunctionReturnType,
@@ -62,11 +63,11 @@ export class ViemReadWriteContract<TAbi extends Abi = Abi>
   >(
     functionName: TFunctionName,
     args: FunctionArgs<TAbi, TFunctionName>,
-    options?: ContractWriteOptions,
+    options?: ContractWriteOptionsWithCallback,
   ): Promise<FunctionReturnType<TAbi, TFunctionName>> {
     const [account] = await this._walletClient.getAddresses();
 
-    const { request } = await this._publicClient.simulateContract({
+    const { request, result } = await this._publicClient.simulateContract({
       abi: this.abi as any,
       address: this.address,
       account,
@@ -74,7 +75,9 @@ export class ViemReadWriteContract<TAbi extends Abi = Abi>
       args: args as any,
       ...createSimulateContractParameters(options),
     });
-
-    return this._walletClient.writeContract(request) as any;
+    const hash = await this._walletClient.writeContract(request);
+    options?.onSubmitted?.(hash);
+    await this._publicClient.waitForTransactionReceipt({ hash });
+    return result as FunctionReturnType<TAbi, TFunctionName>;
   }
 }
