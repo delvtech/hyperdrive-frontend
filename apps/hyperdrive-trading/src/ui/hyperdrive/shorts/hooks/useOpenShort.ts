@@ -1,3 +1,4 @@
+import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import {
   MutationStatus,
   useMutation,
@@ -33,7 +34,7 @@ export function useOpenShort({
 }: UseOpenShortOptions): UseOpenShortResult {
   const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
   const queryClient = useQueryClient();
-
+  const addTransaction = useAddRecentTransaction();
   const { mutate: openShort, status } = useMutation({
     mutationFn: async () => {
       if (
@@ -43,17 +44,23 @@ export function useOpenShort({
         enabled &&
         !!readWriteHyperdrive
       ) {
-        readWriteHyperdrive.openShort({
+        await readWriteHyperdrive.openShort({
           bondAmount: amountBondShorts,
           destination,
           maxDeposit: maxBaseAmountIn,
           asUnderlying,
+          options: {
+            onSubmitted: (hash) => {
+              addTransaction({
+                hash,
+                description: "openShort",
+              });
+            },
+          },
         });
+        queryClient.invalidateQueries();
+        onExecuted?.();
       }
-    },
-    onSuccess: () => {
-      queryClient.invalidateQueries();
-      onExecuted?.();
     },
   });
 

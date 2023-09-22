@@ -1,5 +1,6 @@
 import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
 
+import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import {
   MutationStatus,
   useMutation,
@@ -30,7 +31,7 @@ export function useRedeemWithdrawalShares({
 }: UseRedeemWithdrawalSharesOptions): UseRedeemWithdrawalSharesResult {
   const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
   const queryClient = useQueryClient();
-
+  const addTransaction = useAddRecentTransaction();
   const { mutate: redeemWithdrawalShares, status } = useMutation({
     mutationFn: async () => {
       if (
@@ -40,16 +41,22 @@ export function useRedeemWithdrawalShares({
         enabled &&
         readWriteHyperdrive
       ) {
-        readWriteHyperdrive.redeemWithdrawalShares({
+        await readWriteHyperdrive.redeemWithdrawalShares({
           withdrawalSharesIn,
           minBaseAmountOutPerShare,
           destination,
           asUnderlying,
+          options: {
+            onSubmitted(hash) {
+              addTransaction({
+                hash,
+                description: "redeemWithdrawalShares",
+              });
+            },
+          },
         });
+        queryClient.invalidateQueries();
       }
-    },
-    onSuccess: () => {
-      queryClient.invalidateQueries();
     },
   });
 

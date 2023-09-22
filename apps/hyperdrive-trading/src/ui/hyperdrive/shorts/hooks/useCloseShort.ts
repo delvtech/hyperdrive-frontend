@@ -1,4 +1,5 @@
 import { Short } from "@hyperdrive/core";
+import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
 import { Address } from "wagmi";
@@ -29,7 +30,7 @@ export function useCloseShort({
 }: UseCloseShortOptions): UseCloseShortResult {
   const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
   const queryClient = useQueryClient();
-
+  const addTransaction = useAddRecentTransaction();
   const { mutate: closeShort, status } = useMutation({
     mutationFn: async () => {
       if (
@@ -40,17 +41,23 @@ export function useCloseShort({
         enabled &&
         readWriteHyperdrive
       ) {
-        readWriteHyperdrive.closeShort({
+        await readWriteHyperdrive.closeShort({
           bondAmountIn,
           minBaseAmountOut,
           destination,
           asUnderlying,
           short,
+          options: {
+            onSubmitted(hash) {
+              addTransaction({
+                hash,
+                description: "closeShort",
+              });
+            },
+          },
         });
+        queryClient.invalidateQueries();
       }
-    },
-    onSuccess: () => {
-      queryClient.invalidateQueries();
     },
   });
 

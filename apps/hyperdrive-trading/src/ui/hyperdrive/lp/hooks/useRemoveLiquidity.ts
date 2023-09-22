@@ -1,5 +1,6 @@
 import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
 
+import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import {
   MutationStatus,
   useMutation,
@@ -30,7 +31,7 @@ export function useRemoveLiquidity({
 }: UseRemoveLiquidityOptions): UseRemoveLiquidityResult {
   const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
   const queryClient = useQueryClient();
-
+  const addTransaction = useAddRecentTransaction();
   const { mutate: removeLiquidity, status } = useMutation({
     mutationFn: async () => {
       if (
@@ -40,16 +41,22 @@ export function useRemoveLiquidity({
         enabled &&
         readWriteHyperdrive
       ) {
-        readWriteHyperdrive.removeLiquidity({
+        await readWriteHyperdrive.removeLiquidity({
           lpSharesIn,
           minBaseAmountOut,
           destination,
           asUnderlying,
+          options: {
+            onSubmitted(hash) {
+              addTransaction({
+                hash,
+                description: "removeLiquidity",
+              });
+            },
+          },
         });
+        queryClient.invalidateQueries();
       }
-    },
-    onSuccess: () => {
-      queryClient.invalidateQueries();
     },
   });
   return {
