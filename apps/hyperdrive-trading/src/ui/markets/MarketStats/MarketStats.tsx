@@ -6,7 +6,6 @@ import { Stat } from "src/ui/base/components/Stat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useCurrentFixedAPR } from "src/ui/hyperdrive/hooks/useCurrentFixedAPR";
 import { useLiquidity } from "src/ui/hyperdrive/hooks/useLiquidity";
-import { useTradingVolume } from "src/ui/hyperdrive/hooks/useTradingVolume";
 import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
 import { useVaultRate } from "src/ui/vaults/useVaultRate";
 import { useBlockNumber, useChainId } from "wagmi";
@@ -19,10 +18,10 @@ export function MarketStats({
   const { data: currentBlockNumber } = useBlockNumber();
 
   const chainId = useChainId();
-  const { tradingVolume } = useTradingVolume(
-    hyperdrive.address,
-    currentBlockNumber as bigint,
-  );
+  // const { tradingVolume } = useTradingVolume(
+  //   hyperdrive.address,
+  //   currentBlockNumber as bigint,
+  // );
 
   const { liquidity } = useLiquidity(hyperdrive.address);
   const { fixedAPR } = useCurrentFixedAPR(hyperdrive);
@@ -83,7 +82,7 @@ export function MarketStats({
           }
         />
       ) : undefined}
-      <Stat
+      {/* <Stat
         label="Volume (24h)"
         value={
           <FormattedDaiValue
@@ -92,7 +91,7 @@ export function MarketStats({
           />
         }
         description={"The total trading volume in the last 24 hours."}
-      />
+      /> */}
       <Stat
         label="Liquidity"
         value={

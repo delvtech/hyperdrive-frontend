@@ -47,8 +47,8 @@ export function usePreviewCloseLong({
   const { data, status } = useQuery({
     queryKey: makeQueryKey("previewCloseLong", {
       hyperdriveAddress,
-      bondAmountIn: bondAmountIn,
-      minBaseAmountOut: minBaseAmountOut,
+      bondAmountIn: bondAmountIn?.toString(),
+      minBaseAmountOut: minBaseAmountOut?.toString(),
       destination: destination,
     }),
     enabled: queryEnabled,

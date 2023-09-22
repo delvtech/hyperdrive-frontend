@@ -747,6 +747,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
       ],
       options,
     );
+    console.log("asdfasdf", maxBondsOut, format([maxBondsOut, 18], 2));
     return {
       maxBondsOut,
       formatted: format([maxBondsOut, 18], 2),

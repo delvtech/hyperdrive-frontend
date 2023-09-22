@@ -42,8 +42,8 @@ export function usePreviewOpenLong({
   const { data, status } = useQuery({
     queryKey: makeQueryKey("previewOpenLong", {
       market: market.address,
-      baseAmount,
-      minBondAmountOut,
+      baseAmount: baseAmount?.toString(),
+      minBondAmountOut: minBondAmountOut?.toString(),
       destination,
     }),
     enabled: queryEnabled,
