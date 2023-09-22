@@ -51,7 +51,7 @@ export function useCloseShort({
             onSubmitted(hash) {
               addTransaction({
                 hash,
-                description: "closeShort",
+                description: "Close Short",
               });
             },
           },

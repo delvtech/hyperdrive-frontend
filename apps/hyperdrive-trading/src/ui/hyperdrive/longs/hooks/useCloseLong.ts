@@ -50,7 +50,7 @@ export function useCloseLong({
             onSubmitted(hash) {
               addTransaction({
                 hash,
-                description: "closeLong",
+                description: "Close Long",
               });
             },
           },

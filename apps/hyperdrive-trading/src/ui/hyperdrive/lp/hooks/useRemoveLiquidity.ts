@@ -50,7 +50,7 @@ export function useRemoveLiquidity({
             onSubmitted(hash) {
               addTransaction({
                 hash,
-                description: "removeLiquidity",
+                description: "Remove Liquidity",
               });
             },
           },

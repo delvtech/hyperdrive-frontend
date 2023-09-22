@@ -53,7 +53,7 @@ export function useOpenShort({
             onSubmitted: (hash) => {
               addTransaction({
                 hash,
-                description: "openShort",
+                description: "Open Short",
               });
             },
           },

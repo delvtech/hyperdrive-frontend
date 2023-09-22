@@ -54,7 +54,7 @@ export function useAddLiquidity({
             onSubmitted(hash) {
               addTransaction({
                 hash,
-                description: "addLiquidity",
+                description: "Add Liquidity",
               });
             },
           },

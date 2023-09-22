@@ -51,7 +51,7 @@ export function useOpenLong({
             onSubmitted: (hash) => {
               addTransaction({
                 hash,
-                description: "openLong",
+                description: "Open Long",
               });
             },
           },

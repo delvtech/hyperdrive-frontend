@@ -50,7 +50,7 @@ export function useRedeemWithdrawalShares({
             onSubmitted(hash) {
               addTransaction({
                 hash,
-                description: "redeemWithdrawalShares",
+                description: "Redeem Withdrawal Shares",
               });
             },
           },
