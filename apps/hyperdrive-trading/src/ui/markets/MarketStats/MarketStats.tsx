@@ -19,9 +19,9 @@ export function MarketStats({
   const { data: currentBlockNumber } = useBlockNumber();
 
   const chainId = useChainId();
-  const { tradingVolume } = useTradingVolume(
+  const tradingVolume = useTradingVolume(
     hyperdrive.address,
-    currentBlockNumber as bigint,
+    currentBlockNumber,
   );
 
   const { liquidity } = useLiquidity(hyperdrive.address);
@@ -66,9 +66,10 @@ export function MarketStats({
       />
       <Stat
         label="Bond price"
-        value={`${formatBalance(longPrice?.formatted || "0", 2)} ${
-          hyperdrive.baseToken.symbol
-        }`}
+        value={`${formatBalance({
+          balance: longPrice?.formatted || "0",
+          numDecimals: 2,
+        })} ${hyperdrive.baseToken.symbol}`}
         description={"The price of the bond in the base asset."}
       />
       {/* TODO: This will only work on cloudchain for now. Remove this condition
@@ -88,7 +89,7 @@ export function MarketStats({
         value={
           <FormattedDaiValue
             symbol={hyperdrive.baseToken.symbol}
-            value={tradingVolume || "0"}
+            value={tradingVolume.formatted || "0"}
           />
         }
         description={"The total trading volume in the last 24 hours."}
@@ -123,7 +124,7 @@ function FormattedDaiValue({
 }) {
   return (
     <span className="flex flex-row items-center justify-start font-semibold">
-      {formatBalance(value, 0)}
+      {value}
       <span className="ml-1">{symbol}</span>
     </span>
   );

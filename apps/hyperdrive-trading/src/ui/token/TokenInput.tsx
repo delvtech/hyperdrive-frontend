@@ -1,6 +1,5 @@
 import { ReactElement } from "react";
 import { Token } from "src/appconfig/types";
-import { formatBalance } from "src/ui/base/formatting/formatBalance";
 
 interface TokenInputProps {
   token: Token;
@@ -62,7 +61,7 @@ export function TokenInput({
             </span>
           )}
           <p>
-            {maxLabel}: {formatBalance(maxValue ?? "0", 8)}
+            {maxLabel}: {maxValue}
           </p>
         </div>
       )}

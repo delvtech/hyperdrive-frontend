@@ -24,11 +24,11 @@ export function AddLiquidityPreview({
         <div className="flex">
           <p className="mr-auto">LP Shares Received</p>
           <p className="font-semibold tracking-wide">
-            {formatBalance(
-              formatUnits(lpShares, hyperdrive.baseToken.decimals),
-              4,
-              false,
-            )}{" "}
+            {formatBalance({
+              balance: formatUnits(lpShares, hyperdrive.baseToken.decimals),
+              numDecimals: 4,
+              includeCommas: false,
+            })}{" "}
             LP
           </p>
         </div>

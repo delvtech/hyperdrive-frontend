@@ -749,7 +749,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     );
     return {
       maxBondsOut,
-      formatted: format([maxBondsOut, 18], 2),
+      formatted: format([maxBondsOut, 18], { digits: 2 }),
     };
   }
 

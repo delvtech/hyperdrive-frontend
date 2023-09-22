@@ -36,10 +36,13 @@ export function OpenLongPreview({
             Claimable at maturity
           </p>
           <p className="font-semibold tracking-wide">
-            {formatBalance(
-              formatUnits(long.bondAmount, hyperdrive.baseToken.decimals),
-              4,
-            )}{" "}
+            {formatBalance({
+              balance: formatUnits(
+                long.bondAmount,
+                hyperdrive.baseToken.decimals,
+              ),
+              numDecimals: 4,
+            })}{" "}
             {hyperdrive.baseToken.symbol}
           </p>
         </div>

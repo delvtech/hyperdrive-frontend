@@ -56,13 +56,16 @@ function createClosedShortRow({
         Short
       </span>,
       <span key="size" className="italic">
-        {formatBalance(formatUnits(short.bondAmount, baseDecimals), 4)}
+        {formatBalance({
+          balance: formatUnits(short.bondAmount, baseDecimals),
+          numDecimals: 4,
+        })}
       </span>,
       <span key="value" className="inline-flex items-center gap-1 italic">
-        {`${formatBalance(
-          formatUnits(short.baseAmountReceived, baseDecimals),
-          2,
-        )} ${baseSymbol}`}
+        {`${formatBalance({
+          balance: formatUnits(short.baseAmountReceived, baseDecimals),
+          numDecimals: 2,
+        })} ${baseSymbol}`}
       </span>,
       <span key="maturity" className="italic">
         {new Date(Number(short.maturity * 1000n)).toLocaleDateString()}

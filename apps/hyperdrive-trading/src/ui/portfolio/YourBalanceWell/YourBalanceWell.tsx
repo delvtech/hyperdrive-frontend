@@ -28,7 +28,11 @@ export function YourBalanceWell({ token }: { token: Token }): ReactElement {
           value={
             <div className="-mt-1 flex items-center gap-1 text-h5">
               <img className="h-4" src={token.iconUrl} />
-              {formatBalance(balance?.formatted || 0, 4)} {token.symbol}
+              {formatBalance({
+                balance: balance?.formatted || 0,
+                numDecimals: 4,
+              })}{" "}
+              {token.symbol}
               {chainId === 31337 ? (
                 <button
                   disabled={!mint}

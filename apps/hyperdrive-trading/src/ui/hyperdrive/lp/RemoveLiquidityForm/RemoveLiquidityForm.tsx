@@ -54,14 +54,17 @@ export function RemoveLiquidityForm({
 
   const formattedBaseAmountOut =
     baseAmountOut !== undefined
-      ? `${formatBalance(
-          formatUnits(baseAmountOut, baseDecimals),
-          8,
-        )} ${baseSymbol}`
+      ? `${formatBalance({
+          balance: formatUnits(baseAmountOut, baseDecimals),
+          numDecimals: 8,
+        })} ${baseSymbol}`
       : null;
 
   const formattedWithdrawalSharesOut = withdrawalSharesOut
-    ? formatBalance(formatUnits(withdrawalSharesOut, baseDecimals), 8)
+    ? formatBalance({
+        balance: formatUnits(withdrawalSharesOut, baseDecimals),
+        numDecimals: 8,
+      })
     : null;
 
   return (

@@ -1,4 +1,5 @@
 import { QueryStatus, useQuery } from "@tanstack/react-query";
+import * as dnum from "dnum";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "wagmi";
@@ -19,7 +20,10 @@ export function useLiquidity(hyperdriveAddress: Address): {
     queryFn: queryEnabled
       ? async () => {
           const liquidity = await readHyperdrive.getLiquidity();
-          return { liquidity: liquidity, formatted: liquidity.toString() };
+          return {
+            liquidity: liquidity,
+            formatted: dnum.format([liquidity, 18], { digits: 2 }),
+          };
         }
       : undefined,
     enabled: queryEnabled,

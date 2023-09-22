@@ -37,18 +37,30 @@ export class ViemReadContract<TAbi extends Abi = Abi>
     this._publicClient = publicClient;
   }
 
-  read<TFunctionName extends FunctionName<TAbi>>(
+  async read<TFunctionName extends FunctionName<TAbi>>(
     functionName: TFunctionName,
     args: FunctionArgs<TAbi, TFunctionName>,
     options?: ContractReadOptions,
   ): Promise<FunctionReturnType<TAbi, TFunctionName>> {
-    return this._publicClient.readContract({
+    const result = await this._publicClient.readContract({
       abi: this.abi as any,
       address: this.address,
       functionName,
       args: args as any,
       ...options,
-    }) as Promise<FunctionReturnType<TAbi, TFunctionName>>;
+    });
+
+    // Viem is smart enough to turn an array with 1 element into just that
+    // element, but not all contract methods return a single value. To handle
+    // this discrepancy we make sure to always return an array.
+    if (Array.isArray(result)) {
+      return result as unknown as Promise<
+        FunctionReturnType<TAbi, TFunctionName>
+      >;
+    }
+    return [result] as unknown as Promise<
+      FunctionReturnType<TAbi, TFunctionName>
+    >;
   }
 
   async simulateWrite<

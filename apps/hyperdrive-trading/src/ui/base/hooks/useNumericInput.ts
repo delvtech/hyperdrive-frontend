@@ -24,11 +24,11 @@ export function useNumericInput({
     : undefined;
 
   const formattedAmount = amountAsBigInt
-    ? formatBalance(
-        formatUnits(amountAsBigInt, decimals),
-        undefined,
-        formatCommas,
-      )
+    ? formatBalance({
+        balance: formatUnits(amountAsBigInt, decimals),
+        numDecimals: undefined,
+        includeCommas: formatCommas,
+      })
     : undefined;
 
   return {

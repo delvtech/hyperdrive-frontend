@@ -45,9 +45,9 @@ export function usePreviewAddLiquidity({
     queryKey: makeQueryKey("previewAddLiquidity", {
       market: market.address,
       destination,
-      contribution,
-      minAPR,
-      maxAPR,
+      contribution: contribution?.toString(),
+      minAPR: minAPR?.toString(),
+      maxAPR: maxAPR?.toString(),
       asUnderlying,
     }),
     queryFn: queryEnabled

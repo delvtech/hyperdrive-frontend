@@ -55,13 +55,16 @@ function createClosedLongRow({
         Long
       </span>,
       <span key="size" className="italic">
-        {formatBalance(formatUnits(long.bondAmount, baseDecimals), 4)}
+        {formatBalance({
+          balance: formatUnits(long.bondAmount, baseDecimals),
+          numDecimals: 4,
+        })}
       </span>,
       <span key="value" className="inline-flex items-center gap-1 italic">
-        {`${formatBalance(
-          formatUnits(long.baseAmount, baseDecimals),
-          2,
-        )} ${baseSymbol}`}
+        {`${formatBalance({
+          balance: formatUnits(long.baseAmount, baseDecimals),
+          numDecimals: 2,
+        })} ${baseSymbol}`}
       </span>,
       <span key="maturity" className="italic">
         {new Date(Number(long.maturity * 1000n)).toLocaleDateString()}
