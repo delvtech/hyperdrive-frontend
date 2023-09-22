@@ -24,6 +24,7 @@ export type {
   ContractEvent,
   ContractReadOptions,
   ContractWriteOptions,
+  ContractWriteOptionsWithCallback,
   ContractGetEventsOptions,
 } from "src/contract/Contract";
 export {

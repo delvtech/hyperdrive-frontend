@@ -80,6 +80,9 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
     bondAmountOut: longAmountOutAfterSlippage,
     destination: account,
     enabled: openLongPreviewStatus === "success" && !needsApproval,
+    onExecuted: () => {
+      setAmount("");
+    },
   });
 
   return (
