@@ -45,7 +45,7 @@ export function RemoveLiquidityForm({
     });
 
   const { removeLiquidity, removeLiquidityStatus } = useRemoveLiquidity({
-    market: hyperdrive,
+    hyperdriveAddress: hyperdrive.address,
     lpSharesIn: amountAsBigInt,
     minBaseAmountOut: minBaseAmountAfterSlippage,
     destination: account,

@@ -5,10 +5,9 @@ import {
   useMutation,
   useQueryClient,
 } from "@tanstack/react-query";
-import { Hyperdrive } from "src/appconfig/types";
 import { Address } from "wagmi";
 interface UseRemoveLiquidityOptions {
-  market: Hyperdrive;
+  hyperdriveAddress: Address;
   lpSharesIn: bigint | undefined;
   minBaseAmountOut: bigint | undefined;
   destination: Address | undefined;
@@ -22,14 +21,14 @@ interface UseRemoveLiquidityResult {
 }
 
 export function useRemoveLiquidity({
-  market,
+  hyperdriveAddress,
   lpSharesIn,
   minBaseAmountOut,
   destination,
   asUnderlying = true,
   enabled,
 }: UseRemoveLiquidityOptions): UseRemoveLiquidityResult {
-  const readWriteHyperdrive = useReadWriteHyperdrive(market.address);
+  const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
   const queryClient = useQueryClient();
 
   const { mutate: removeLiquidity, status } = useMutation({

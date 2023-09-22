@@ -5,10 +5,9 @@ import {
   useMutation,
   useQueryClient,
 } from "@tanstack/react-query";
-import { Hyperdrive } from "src/appconfig/types";
 import { Address } from "wagmi";
 interface UseRedeemWithdrawalSharesOptions {
-  market: Hyperdrive;
+  hyperdriveAddress: Address;
   withdrawalSharesIn: bigint | undefined;
   minBaseAmountOutPerShare: bigint | undefined;
   destination: Address | undefined;
@@ -22,14 +21,14 @@ interface UseRedeemWithdrawalSharesResult {
 }
 
 export function useRedeemWithdrawalShares({
-  market,
+  hyperdriveAddress,
   withdrawalSharesIn,
   minBaseAmountOutPerShare,
   destination,
   asUnderlying = true,
   enabled,
 }: UseRedeemWithdrawalSharesOptions): UseRedeemWithdrawalSharesResult {
-  const readWriteHyperdrive = useReadWriteHyperdrive(market.address);
+  const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
   const queryClient = useQueryClient();
 
   const { mutate: redeemWithdrawalShares, status } = useMutation({

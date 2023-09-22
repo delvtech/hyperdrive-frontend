@@ -5,10 +5,9 @@ import {
   useMutation,
   useQueryClient,
 } from "@tanstack/react-query";
-import { Hyperdrive } from "src/appconfig/types";
 import { Address } from "wagmi";
 interface UseAddLiquidityOptions {
-  market: Hyperdrive;
+  hyperdriveAddress: Address;
   destination: Address | undefined;
   contribution: bigint | undefined;
   minAPR: bigint | undefined;
@@ -23,7 +22,7 @@ interface UseAddLiquidityResult {
 }
 
 export function useAddLiquidity({
-  market,
+  hyperdriveAddress,
   destination,
   contribution,
   minAPR,
@@ -31,7 +30,7 @@ export function useAddLiquidity({
   asUnderlying = true,
   enabled,
 }: UseAddLiquidityOptions): UseAddLiquidityResult {
-  const readWriteHyperdrive = useReadWriteHyperdrive(market.address);
+  const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
   const queryClient = useQueryClient();
 
   const { mutate: addLiquidity, status } = useMutation({
