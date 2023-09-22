@@ -80,10 +80,10 @@ export function CloseShortForm({
               <p className="font-light text-neutral-content">You receive</p>
               <p className="tracking-wide">
                 {baseAmountOut
-                  ? `${formatBalance(
-                      formatUnits(baseAmountOut, baseDecimals),
-                      8,
-                    )} ${baseSymbol}`
+                  ? `${formatBalance({
+                      balance: formatUnits(baseAmountOut, baseDecimals),
+                      numDecimals: 8,
+                    })} ${baseSymbol}`
                   : ""}
               </p>
             </div>

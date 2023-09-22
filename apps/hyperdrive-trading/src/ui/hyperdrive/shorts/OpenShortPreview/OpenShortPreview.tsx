@@ -32,11 +32,11 @@ export function OpenShortPreview({
           <p className="mr-auto">Cost Basis</p>
           <p className="font-semibold tracking-wide">
             {costBasis
-              ? `${formatBalance(
-                  formatUnits(costBasis, market.baseToken.decimals),
-                  6,
-                  false,
-                )} ${market.baseToken.symbol}`
+              ? `${formatBalance({
+                  balance: formatUnits(costBasis, market.baseToken.decimals),
+                  numDecimals: 6,
+                  includeCommas: false,
+                })} ${market.baseToken.symbol}`
               : "0"}
           </p>
         </div>
@@ -44,10 +44,10 @@ export function OpenShortPreview({
         <div className="flex">
           <p className="mr-auto">Amount</p>
           <p className="font-semibold tracking-wide">
-            {formatBalance(
-              formatUnits(amountShort, market.baseToken.decimals),
-              6,
-            )}
+            {formatBalance({
+              balance: formatUnits(amountShort, market.baseToken.decimals),
+              numDecimals: 6,
+            })}
           </p>
         </div>
 
@@ -69,11 +69,11 @@ export function OpenShortPreview({
           <p className="mr-auto">Exposure</p>
           <p className="font-semibold tracking-wide">
             {!!costBasis && amountShort > 0n && costBasis > 0n
-              ? `${formatBalance(
-                  (amountShort / costBasis).toString(),
-                  4,
-                  false,
-                )}x`
+              ? `${formatBalance({
+                  balance: (amountShort / costBasis).toString(),
+                  numDecimals: 4,
+                  includeCommas: false,
+                })}x`
               : "0"}
           </p>
         </div>

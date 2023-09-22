@@ -6,12 +6,18 @@ import { commify } from "ethers/lib/utils";
  * @param balance
  * @param numDecimals max decimals, default is 1
  * @returns a formatted string with proper commas and {numDecimals} decimal places
+ *
+ * @deprecated this depends on ethersjs and is deprecated, use dnum.format instead
  */
-export function formatBalance(
-  balance: string | number,
+export function formatBalance({
+  balance,
   numDecimals = 1,
   includeCommas = true,
-): string {
+}: {
+  balance: string | number;
+  numDecimals?: number;
+  includeCommas?: boolean;
+}): string {
   return includeCommas
     ? commify(format(`.${numDecimals}~f`)(+balance))
     : format(`.${numDecimals}~f`)(+balance);

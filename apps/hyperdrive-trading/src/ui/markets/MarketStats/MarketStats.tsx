@@ -6,6 +6,7 @@ import { Stat } from "src/ui/base/components/Stat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useCurrentFixedAPR } from "src/ui/hyperdrive/hooks/useCurrentFixedAPR";
 import { useLiquidity } from "src/ui/hyperdrive/hooks/useLiquidity";
+import { useTradingVolume } from "src/ui/hyperdrive/hooks/useTradingVolume";
 import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
 import { useVaultRate } from "src/ui/vaults/useVaultRate";
 import { useBlockNumber, useChainId } from "wagmi";
@@ -18,10 +19,10 @@ export function MarketStats({
   const { data: currentBlockNumber } = useBlockNumber();
 
   const chainId = useChainId();
-  // const { tradingVolume } = useTradingVolume(
-  //   hyperdrive.address,
-  //   currentBlockNumber as bigint,
-  // );
+  const tradingVolume = useTradingVolume(
+    hyperdrive.address,
+    currentBlockNumber,
+  );
 
   const { liquidity } = useLiquidity(hyperdrive.address);
   const { fixedAPR } = useCurrentFixedAPR(hyperdrive);
@@ -65,9 +66,10 @@ export function MarketStats({
       />
       <Stat
         label="Bond price"
-        value={`${formatBalance(longPrice?.formatted || "0", 2)} ${
-          hyperdrive.baseToken.symbol
-        }`}
+        value={`${formatBalance({
+          balance: longPrice?.formatted || "0",
+          numDecimals: 2,
+        })} ${hyperdrive.baseToken.symbol}`}
         description={"The price of the bond in the base asset."}
       />
       {/* TODO: This will only work on cloudchain for now. Remove this condition
@@ -82,16 +84,16 @@ export function MarketStats({
           }
         />
       ) : undefined}
-      {/* <Stat
+      <Stat
         label="Volume (24h)"
         value={
           <FormattedDaiValue
             symbol={hyperdrive.baseToken.symbol}
-            value={tradingVolume || "0"}
+            value={tradingVolume.formatted || "0"}
           />
         }
         description={"The total trading volume in the last 24 hours."}
-      /> */}
+      />
       <Stat
         label="Liquidity"
         value={
@@ -122,7 +124,7 @@ function FormattedDaiValue({
 }) {
   return (
     <span className="flex flex-row items-center justify-start font-semibold">
-      {formatBalance(value, 0)}
+      {value}
       <span className="ml-1">{symbol}</span>
     </span>
   );

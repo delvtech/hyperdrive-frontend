@@ -60,7 +60,10 @@ function createOpenLongRow({
         Long
       </span>,
       <span key="size">
-        {formatBalance(formatUnits(long.bondAmount, baseDecimals), 4)}
+        {formatBalance({
+          balance: formatUnits(long.bondAmount, baseDecimals),
+          numDecimals: 4,
+        })}
       </span>,
       <ProfitLossCell
         key="profitLoss"
@@ -112,12 +115,18 @@ function ProfitLossCell({
   return (
     <span
       className={`daisy-tooltip inline-flex items-center gap-1 ${profitLossClass}`}
-      data-tip={`Amount Paid: ${formatBalance(
-        formatUnits(long.baseAmountPaid, hyperdrive.baseToken.decimals),
-        4,
-      )} ${baseSymbol} / Value: ${
+      data-tip={`Amount Paid: ${formatBalance({
+        balance: formatUnits(
+          long.baseAmountPaid,
+          hyperdrive.baseToken.decimals,
+        ),
+        numDecimals: 4,
+      })} ${baseSymbol} / Value: ${
         baseAmountOut &&
-        formatBalance(formatUnits(baseAmountOut, baseDecimals), 2)
+        formatBalance({
+          balance: formatUnits(baseAmountOut, baseDecimals),
+          numDecimals: 2,
+        })
       } `}
     >
       {baseAmountOut && long.baseAmountPaid !== 0n

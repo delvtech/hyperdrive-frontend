@@ -1,32 +1,27 @@
 import { useQuery } from "@tanstack/react-query";
+import * as dnum from "dnum";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
-type UseTradingVolumeResult = {
-  tradingVolume: string | undefined;
-};
 export function useTradingVolume(
   hyperdriveAddress: Address,
-  currentBlockNumber: bigint,
-): UseTradingVolumeResult {
+  currentBlockNumber: bigint | undefined,
+): { tradingVolume: bigint | undefined; formatted: string | undefined } {
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
-  const queryEnabled = !!readHyperdrive;
+  const queryEnabled = !!readHyperdrive && currentBlockNumber !== undefined;
   const { data: tradingVolume } = useQuery({
     queryKey: makeQueryKey("tradingVolume", {
       hyperdriveAddress,
       currentBlockNumber: currentBlockNumber?.toString(),
     }),
-    queryFn: queryEnabled
-      ? async () => {
-          const tradingVolume = await readHyperdrive.getTradingVolume();
-          return {
-            tradingVolume: tradingVolume,
-            formatted: tradingVolume.toString(),
-          };
-        }
-      : undefined,
+    queryFn: queryEnabled ? () => readHyperdrive.getTradingVolume() : undefined,
     enabled: queryEnabled,
   });
 
-  return { tradingVolume: tradingVolume?.formatted };
+  return {
+    tradingVolume: tradingVolume,
+    formatted: tradingVolume
+      ? dnum.format([tradingVolume, 18], { digits: 2 })
+      : undefined,
+  };
 }

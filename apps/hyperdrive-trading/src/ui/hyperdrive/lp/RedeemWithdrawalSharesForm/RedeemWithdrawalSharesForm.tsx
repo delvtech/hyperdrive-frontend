@@ -82,10 +82,10 @@ export function RedeemWithdrawalSharesForm({
           label={"You receive"}
           value={
             baseAmountOut
-              ? `${formatBalance(
-                  formatUnits(baseAmountOut, baseDecimals),
-                  8,
-                )} ${baseSymbol}`
+              ? `${formatBalance({
+                  balance: formatUnits(baseAmountOut, baseDecimals),
+                  numDecimals: 8,
+                })} ${baseSymbol}`
               : ""
           }
         />
