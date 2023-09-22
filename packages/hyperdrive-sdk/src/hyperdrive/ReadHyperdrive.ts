@@ -5,7 +5,6 @@ import {
   RedeemedWithdrawalShares,
 } from "@hyperdrive/core";
 import { Address } from "abitype";
-import { format } from "dnum";
 import groupBy from "lodash.groupby";
 import mapValues from "lodash.mapvalues";
 import { sumBigInt } from "src/base/sumBigInt";
@@ -117,19 +116,14 @@ export interface IReadHyperdrive {
   /**
    * Gets the maximum amount of bonds a user can open a short for.
    */
-  getMaxShort(options?: ContractReadOptions): Promise<{
-    maxBondsOut: bigint;
-    formatted: string;
-  }>;
+  getMaxShort(options?: ContractReadOptions): Promise<bigint>;
 
   /**
    * Gets the maximum amount of bonds a user can open a long for.
    */
   getMaxLong(options?: ContractReadOptions): Promise<{
     maxBaseIn: bigint;
-    formattedMaxBaseIn: string;
     maxBondsOut: bigint;
-    formattedMaxBondsOut: string;
   }>;
 
   /**
@@ -725,9 +719,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     return Object.values(closedShortsById).filter((short) => short.bondAmount);
   }
 
-  async getMaxShort(
-    options?: ContractReadOptions,
-  ): Promise<{ maxBondsOut: bigint; formatted: string }> {
+  async getMaxShort(options?: ContractReadOptions): Promise<bigint> {
     const { minimumShareReserves, initialSharePrice, timeStretch } =
       await this.getPoolConfig(options);
     const { shareReserves, bondReserves, longsOutstanding, sharePrice } =
@@ -747,17 +739,12 @@ export class ReadHyperdrive implements IReadHyperdrive {
       ],
       options,
     );
-    return {
-      maxBondsOut,
-      formatted: format([maxBondsOut, 18], { digits: 2 }),
-    };
+    return maxBondsOut;
   }
 
   async getMaxLong(options?: ContractReadOptions): Promise<{
     maxBaseIn: bigint;
-    formattedMaxBaseIn: string;
     maxBondsOut: bigint;
-    formattedMaxBondsOut: string;
   }> {
     const { minimumShareReserves, initialSharePrice, timeStretch } =
       await this.getPoolConfig(options);
@@ -782,9 +769,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     );
     return {
       maxBaseIn,
-      formattedMaxBaseIn: format([maxBaseIn, 18], 2),
       maxBondsOut,
-      formattedMaxBondsOut: format([maxBondsOut, 18], 2),
     };
   }
 
