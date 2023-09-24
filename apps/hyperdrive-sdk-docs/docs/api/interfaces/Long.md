@@ -20,7 +20,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/longs/types.ts:2](https://github.com/delvtech/hyperdrive-monorepo/blob/3e85835/packages/hyperdrive-sdk/src/longs/types.ts#L2)
+[packages/hyperdrive-sdk/src/longs/types.ts:2](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/longs/types.ts#L2)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/longs/types.ts:9](https://github.com/delvtech/hyperdrive-monorepo/blob/3e85835/packages/hyperdrive-sdk/src/longs/types.ts#L9)
+[packages/hyperdrive-sdk/src/longs/types.ts:9](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/longs/types.ts#L9)
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/longs/types.ts:3](https://github.com/delvtech/hyperdrive-monorepo/blob/3e85835/packages/hyperdrive-sdk/src/longs/types.ts#L3)
+[packages/hyperdrive-sdk/src/longs/types.ts:3](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/longs/types.ts#L3)
 
 ___
 
@@ -52,4 +52,4 @@ Time in seconds when this long will mature
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/longs/types.ts:7](https://github.com/delvtech/hyperdrive-monorepo/blob/3e85835/packages/hyperdrive-sdk/src/longs/types.ts#L7)
+[packages/hyperdrive-sdk/src/longs/types.ts:7](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/longs/types.ts#L7)

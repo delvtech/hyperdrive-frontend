@@ -51,7 +51,7 @@ but aren't necessarily concerned with where it's deployed or how it connects.
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/contract/Contract.ts:69](https://github.com/delvtech/hyperdrive-monorepo/blob/3e85835/packages/hyperdrive-sdk/src/contract/Contract.ts#L69)
+[packages/hyperdrive-sdk/src/contract/Contract.ts:69](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/contract/Contract.ts#L69)
 
 ___
 
@@ -61,7 +61,7 @@ ___
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/contract/Contract.ts:104](https://github.com/delvtech/hyperdrive-monorepo/blob/3e85835/packages/hyperdrive-sdk/src/contract/Contract.ts#L104)
+[packages/hyperdrive-sdk/src/contract/Contract.ts:104](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/contract/Contract.ts#L104)
 
 ___
 
@@ -80,7 +80,7 @@ Get an object type for an event's fields from an abi
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/base/abitype.ts:46](https://github.com/delvtech/hyperdrive-monorepo/blob/3e85835/packages/hyperdrive-sdk/src/base/abitype.ts#L46)
+[packages/hyperdrive-sdk/src/base/abitype.ts:46](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/base/abitype.ts#L46)
 
 ___
 
@@ -99,7 +99,7 @@ Get an object type for an event's indexed fields from an abi
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/base/abitype.ts:62](https://github.com/delvtech/hyperdrive-monorepo/blob/3e85835/packages/hyperdrive-sdk/src/base/abitype.ts#L62)
+[packages/hyperdrive-sdk/src/base/abitype.ts:62](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/base/abitype.ts#L62)
 
 ___
 
@@ -117,7 +117,7 @@ Get a union of event names from an abi
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/base/abitype.ts:30](https://github.com/delvtech/hyperdrive-monorepo/blob/3e85835/packages/hyperdrive-sdk/src/base/abitype.ts#L30)
+[packages/hyperdrive-sdk/src/base/abitype.ts:30](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/base/abitype.ts#L30)
 
 ___
 
@@ -136,7 +136,7 @@ Get an array of argument types for a function from an abi
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/base/abitype.ts:78](https://github.com/delvtech/hyperdrive-monorepo/blob/3e85835/packages/hyperdrive-sdk/src/base/abitype.ts#L78)
+[packages/hyperdrive-sdk/src/base/abitype.ts:78](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/base/abitype.ts#L78)
 
 ___
 
@@ -155,7 +155,7 @@ Get a union of function names from an abi
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/base/abitype.ts:70](https://github.com/delvtech/hyperdrive-monorepo/blob/3e85835/packages/hyperdrive-sdk/src/base/abitype.ts#L70)
+[packages/hyperdrive-sdk/src/base/abitype.ts:70](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/base/abitype.ts#L70)
 
 ___
 
@@ -174,7 +174,7 @@ Get the return type of an abi function
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/base/abitype.ts:89](https://github.com/delvtech/hyperdrive-monorepo/blob/3e85835/packages/hyperdrive-sdk/src/base/abitype.ts#L89)
+[packages/hyperdrive-sdk/src/base/abitype.ts:89](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/base/abitype.ts#L89)
 
 ___
 
@@ -190,7 +190,7 @@ ___
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/hyperdrive/utils/createHyperdriveClient.ts:34](https://github.com/delvtech/hyperdrive-monorepo/blob/3e85835/packages/hyperdrive-sdk/src/hyperdrive/utils/createHyperdriveClient.ts#L34)
+[packages/hyperdrive-sdk/src/hyperdrive/utils/createHyperdriveClient.ts:34](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/hyperdrive/utils/createHyperdriveClient.ts#L34)
 
 ___
 
@@ -200,7 +200,7 @@ ___
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/hyperdrive/utils/createHyperdriveClient.ts:10](https://github.com/delvtech/hyperdrive-monorepo/blob/3e85835/packages/hyperdrive-sdk/src/hyperdrive/utils/createHyperdriveClient.ts#L10)
+[packages/hyperdrive-sdk/src/hyperdrive/utils/createHyperdriveClient.ts:10](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/hyperdrive/utils/createHyperdriveClient.ts#L10)
 
 ___
 
@@ -216,7 +216,7 @@ ___
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/contract/cached/CachedContract.ts:5](https://github.com/delvtech/hyperdrive-monorepo/blob/3e85835/packages/hyperdrive-sdk/src/contract/cached/CachedContract.ts#L5)
+[packages/hyperdrive-sdk/src/contract/cached/CachedContract.ts:5](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/contract/cached/CachedContract.ts#L5)
 
 ___
 
@@ -228,7 +228,7 @@ Represents a contract utilizing the Hyperdrive ABI that includes caching
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/hyperdrive/HyperdriveContract.ts:14](https://github.com/delvtech/hyperdrive-monorepo/blob/3e85835/packages/hyperdrive-sdk/src/hyperdrive/HyperdriveContract.ts#L14)
+[packages/hyperdrive-sdk/src/hyperdrive/HyperdriveContract.ts:14](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/hyperdrive/HyperdriveContract.ts#L14)
 
 ___
 
@@ -238,7 +238,7 @@ ___
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/hyperdrive/HyperdriveContract.ts:6](https://github.com/delvtech/hyperdrive-monorepo/blob/3e85835/packages/hyperdrive-sdk/src/hyperdrive/HyperdriveContract.ts#L6)
+[packages/hyperdrive-sdk/src/hyperdrive/HyperdriveContract.ts:6](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/hyperdrive/HyperdriveContract.ts#L6)
 
 ___
 
@@ -248,7 +248,7 @@ ___
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/hyperdrive/HyperdriveContract.ts:7](https://github.com/delvtech/hyperdrive-monorepo/blob/3e85835/packages/hyperdrive-sdk/src/hyperdrive/HyperdriveContract.ts#L7)
+[packages/hyperdrive-sdk/src/hyperdrive/HyperdriveContract.ts:7](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/hyperdrive/HyperdriveContract.ts#L7)
 
 ___
 
@@ -262,7 +262,7 @@ null/undefined values), or a record with string keys and SimpleCache values.
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/cache/SimpleCache.ts:51](https://github.com/delvtech/hyperdrive-monorepo/blob/3e85835/packages/hyperdrive-sdk/src/cache/SimpleCache.ts#L51)
+[packages/hyperdrive-sdk/src/cache/SimpleCache.ts:51](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/cache/SimpleCache.ts#L51)
 
 ## Variables
 
@@ -272,7 +272,7 @@ null/undefined values), or a record with string keys and SimpleCache values.
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/abis/ERC20Mintable.ts:1](https://github.com/delvtech/hyperdrive-monorepo/blob/3e85835/packages/hyperdrive-sdk/src/abis/ERC20Mintable.ts#L1)
+[packages/hyperdrive-sdk/src/abis/ERC20Mintable.ts:1](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/abis/ERC20Mintable.ts#L1)
 
 ___
 
@@ -282,7 +282,7 @@ ___
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/abis/ERC20.ts:1](https://github.com/delvtech/hyperdrive-monorepo/blob/3e85835/packages/hyperdrive-sdk/src/abis/ERC20.ts#L1)
+[packages/hyperdrive-sdk/src/abis/ERC20.ts:1](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/abis/ERC20.ts#L1)
 
 ___
 
@@ -292,7 +292,7 @@ ___
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/abis/Hyperdrive.ts:1](https://github.com/delvtech/hyperdrive-monorepo/blob/3e85835/packages/hyperdrive-sdk/src/abis/Hyperdrive.ts#L1)
+[packages/hyperdrive-sdk/src/abis/Hyperdrive.ts:1](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/abis/Hyperdrive.ts#L1)
 
 ___
 
@@ -302,7 +302,7 @@ ___
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/abis/HyperdriveMath.ts:1](https://github.com/delvtech/hyperdrive-monorepo/blob/3e85835/packages/hyperdrive-sdk/src/abis/HyperdriveMath.ts#L1)
+[packages/hyperdrive-sdk/src/abis/HyperdriveMath.ts:1](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/abis/HyperdriveMath.ts#L1)
 
 ___
 
@@ -312,7 +312,7 @@ ___
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/abis/MockErc4626.ts:1](https://github.com/delvtech/hyperdrive-monorepo/blob/3e85835/packages/hyperdrive-sdk/src/abis/MockErc4626.ts#L1)
+[packages/hyperdrive-sdk/src/abis/MockErc4626.ts:1](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/abis/MockErc4626.ts#L1)
 
 ## Functions
 
@@ -341,4 +341,4 @@ read or read/write capabilities based on the provided contract.
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/hyperdrive/utils/createHyperdriveClient.ts:18](https://github.com/delvtech/hyperdrive-monorepo/blob/3e85835/packages/hyperdrive-sdk/src/hyperdrive/utils/createHyperdriveClient.ts#L18)
+[packages/hyperdrive-sdk/src/hyperdrive/utils/createHyperdriveClient.ts:18](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/hyperdrive/utils/createHyperdriveClient.ts#L18)

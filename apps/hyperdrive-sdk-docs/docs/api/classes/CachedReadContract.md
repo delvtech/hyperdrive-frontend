@@ -54,7 +54,7 @@ const result2 = await cachedContract.read("functionName", args); // Fetched from
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:64](https://github.com/delvtech/hyperdrive-monorepo/blob/3e85835/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L64)
+[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:64](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L64)
 
 ## Properties
 
@@ -66,7 +66,7 @@ Internal cache for contract reads.
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:62](https://github.com/delvtech/hyperdrive-monorepo/blob/3e85835/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L62)
+[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:62](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L62)
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:58](https://github.com/delvtech/hyperdrive-monorepo/blob/3e85835/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L58)
+[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:58](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L58)
 
 ___
 
@@ -86,7 +86,7 @@ ___
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:59](https://github.com/delvtech/hyperdrive-monorepo/blob/3e85835/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L59)
+[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:59](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L59)
 
 ___
 
@@ -100,7 +100,7 @@ ___
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:56](https://github.com/delvtech/hyperdrive-monorepo/blob/3e85835/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L56)
+[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:56](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L56)
 
 ___
 
@@ -114,7 +114,7 @@ ___
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:55](https://github.com/delvtech/hyperdrive-monorepo/blob/3e85835/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L55)
+[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:55](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L55)
 
 ## Methods
 
@@ -144,7 +144,7 @@ Retrieves a value from the cache or sets it if not present.
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:173](https://github.com/delvtech/hyperdrive-monorepo/blob/3e85835/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L173)
+[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:173](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L173)
 
 ___
 
@@ -164,7 +164,7 @@ Clears the entire cache.
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:152](https://github.com/delvtech/hyperdrive-monorepo/blob/3e85835/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L152)
+[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:152](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L152)
 
 ___
 
@@ -209,7 +209,7 @@ const result3 = await cachedContract.read("functionName", args); // Fetched from
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:108](https://github.com/delvtech/hyperdrive-monorepo/blob/3e85835/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L108)
+[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:108](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L108)
 
 ___
 
@@ -243,7 +243,7 @@ fetches from the contract and then caches the result.
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:131](https://github.com/delvtech/hyperdrive-monorepo/blob/3e85835/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L131)
+[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:131](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L131)
 
 ___
 
@@ -278,7 +278,7 @@ fetches from the contract and then caches the result.
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:76](https://github.com/delvtech/hyperdrive-monorepo/blob/3e85835/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L76)
+[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:76](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L76)
 
 ___
 
@@ -313,4 +313,4 @@ to the underlying contract without interacting with the cache.
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:160](https://github.com/delvtech/hyperdrive-monorepo/blob/3e85835/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L160)
+[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:160](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L160)

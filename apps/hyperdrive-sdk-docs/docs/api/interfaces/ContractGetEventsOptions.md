@@ -21,7 +21,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/contract/Contract.ts:77](https://github.com/delvtech/hyperdrive-monorepo/blob/3e85835/packages/hyperdrive-sdk/src/contract/Contract.ts#L77)
+[packages/hyperdrive-sdk/src/contract/Contract.ts:77](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/contract/Contract.ts#L77)
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/contract/Contract.ts:78](https://github.com/delvtech/hyperdrive-monorepo/blob/3e85835/packages/hyperdrive-sdk/src/contract/Contract.ts#L78)
+[packages/hyperdrive-sdk/src/contract/Contract.ts:78](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/contract/Contract.ts#L78)
 
 ___
 
@@ -41,4 +41,4 @@ ___
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/contract/Contract.ts:79](https://github.com/delvtech/hyperdrive-monorepo/blob/3e85835/packages/hyperdrive-sdk/src/contract/Contract.ts#L79)
+[packages/hyperdrive-sdk/src/contract/Contract.ts:79](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/contract/Contract.ts#L79)
