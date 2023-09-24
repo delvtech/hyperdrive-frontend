@@ -12,7 +12,17 @@ const config = {
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
+  plugins: [
+    [
+      "docusaurus-plugin-typedoc",
 
+      // Plugin / TypeDoc options
+      {
+        entryPoints: ["../../packages/hyperdrive-sdk/src/index.ts"],
+        tsconfig: "../../packages/hyperdrive-sdk/tsconfig.json",
+      },
+    ],
+  ],
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "facebook", // Usually your GitHub org/user name.
