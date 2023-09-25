@@ -223,7 +223,7 @@ export interface IReadHyperdrive {
     destination: Address;
     asUnderlying: boolean;
     options: ContractWriteOptions;
-  }): Promise<bigint>;
+  }): Promise<{ maturityTime: bigint; bondProceeds: bigint }>;
 
   /**
    * Predicts the amount of base asset it will cost to open a short.
@@ -240,7 +240,7 @@ export interface IReadHyperdrive {
     destination: Address;
     asUnderlying: boolean;
     options: ContractWriteOptions;
-  }): Promise<bigint>;
+  }): Promise<{ maturityTime: bigint; traderDeposit: bigint }>;
 
   /**
    * Predicts the amount of LP shares a user will receive when adding liquidity.
@@ -873,13 +873,13 @@ export class ReadHyperdrive implements IReadHyperdrive {
     destination: Address;
     asUnderlying: boolean;
     options?: ContractWriteOptions;
-  }): Promise<bigint> {
-    const [openLong] = await this.contract.simulateWrite(
+  }): Promise<{ maturityTime: bigint; bondProceeds: bigint }> {
+    const [maturityTime, bondProceeds] = await this.contract.simulateWrite(
       "openLong",
       [baseAmount, minBondAmountOut, destination, asUnderlying],
       options,
     );
-    return openLong;
+    return { maturityTime, bondProceeds };
   }
 
   async previewOpenShort({
@@ -894,13 +894,13 @@ export class ReadHyperdrive implements IReadHyperdrive {
     destination: Address;
     asUnderlying: boolean;
     options?: ContractWriteOptions;
-  }): Promise<bigint> {
-    const [openShort] = await this.contract.simulateWrite(
+  }): Promise<{ maturityTime: bigint; traderDeposit: bigint }> {
+    const [maturityTime, traderDeposit] = await this.contract.simulateWrite(
       "openShort",
       [amountOfBondsToShort, maxBaseAmountIn, destination, asUnderlying],
       options,
     );
-    return openShort;
+    return { maturityTime, traderDeposit };
   }
 
   async previewCloseLong({
