@@ -13,6 +13,7 @@ import { OpenLongPreview } from "src/ui/hyperdrive/longs/OpenLongPreview/OpenLon
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenApproval } from "src/ui/token/hooks/useTokenApproval";
 import { TokenInput } from "src/ui/token/TokenInput";
+import { formatUnits } from "viem";
 import { useAccount, useBalance } from "wagmi";
 
 interface OpenLongFormProps {
@@ -31,12 +32,11 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
   const { maxLong } = useMaxLong(market);
 
   let maxAmount: string | undefined;
-
   if (maxLong && baseTokenBalance) {
     maxAmount =
       maxLong.maxBaseIn > baseTokenBalance.value
         ? baseTokenBalance.formatted
-        : maxLong.formattedMaxBaseIn;
+        : formatUnits(maxLong.maxBaseIn, market.baseToken.decimals);
   }
 
   const { amount, amountAsBigInt, setAmount } = useNumericInput({
