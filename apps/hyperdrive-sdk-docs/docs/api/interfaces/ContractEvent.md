@@ -13,17 +13,17 @@ A strongly typed event object based on an abi
 | Name | Type |
 | :------ | :------ |
 | `TAbi` | extends `Abi` |
-| `TEventName` | extends [`EventName`](../modules.md#eventname)<`TAbi`\> = [`EventName`](../modules.md#eventname)<`TAbi`\> |
+| `TEventName` | extends [`EventName`](../#eventname)<`TAbi`\> = [`EventName`](../#eventname)<`TAbi`\> |
 
 ## Properties
 
 ### args
 
-• **args**: [`EventArgs`](../modules.md#eventargs)<`TAbi`, `TEventName`\>
+• **args**: [`EventArgs`](../#eventargs)<`TAbi`, `TEventName`\>
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/contract/Contract.ts:90](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/contract/Contract.ts#L90)
+[packages/hyperdrive-sdk/src/contract/Contract.ts:90](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/contract/Contract.ts#L90)
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/contract/Contract.ts:92](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/contract/Contract.ts#L92)
+[packages/hyperdrive-sdk/src/contract/Contract.ts:92](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/contract/Contract.ts#L92)
 
 ___
 
@@ -43,7 +43,7 @@ ___
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/contract/Contract.ts:91](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/contract/Contract.ts#L91)
+[packages/hyperdrive-sdk/src/contract/Contract.ts:91](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/contract/Contract.ts#L91)
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/contract/Contract.ts:89](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/contract/Contract.ts#L89)
+[packages/hyperdrive-sdk/src/contract/Contract.ts:89](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/contract/Contract.ts#L89)
 
 ___
 
@@ -63,4 +63,4 @@ ___
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/contract/Contract.ts:93](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/contract/Contract.ts#L93)
+[packages/hyperdrive-sdk/src/contract/Contract.ts:93](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/contract/Contract.ts#L93)

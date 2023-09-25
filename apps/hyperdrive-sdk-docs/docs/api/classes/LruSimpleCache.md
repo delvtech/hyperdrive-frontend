@@ -16,7 +16,7 @@ caching capabilities conforming to the `SimpleCache` interface.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `TValue` | extends `NonNullable`<`unknown`\> = `NonNullable`<`unknown`\> | The type of value to be stored in the cache. |
-| `TKey` | extends [`SimpleCacheKey`](../modules.md#simplecachekey) = [`SimpleCacheKey`](../modules.md#simplecachekey) | The type of key used to access values in the cache. |
+| `TKey` | extends [`SimpleCacheKey`](../#simplecachekey) = [`SimpleCacheKey`](../#simplecachekey) | The type of key used to access values in the cache. |
 
 ## Implements
 
@@ -35,7 +35,7 @@ Initializes a new instance of the LruSimpleCache with specified options.
 | Name | Type |
 | :------ | :------ |
 | `TValue` | extends `Object` = {} |
-| `TKey` | extends [`SimpleCacheKey`](../modules.md#simplecachekey) = [`SimpleCacheKey`](../modules.md#simplecachekey) |
+| `TKey` | extends [`SimpleCacheKey`](../#simplecachekey) = [`SimpleCacheKey`](../#simplecachekey) |
 
 #### Parameters
 
@@ -45,17 +45,7 @@ Initializes a new instance of the LruSimpleCache with specified options.
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/cache/LruSimpleCache.ts:26](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/cache/LruSimpleCache.ts#L26)
-
-## Properties
-
-### cache
-
-• `Protected` **cache**: `LRUCache`<`string`, `TValue`, `void`\>
-
-#### Defined in
-
-[packages/hyperdrive-sdk/src/cache/LruSimpleCache.ts:19](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/cache/LruSimpleCache.ts#L19)
+[packages/hyperdrive-sdk/src/cache/LruSimpleCache.ts:26](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/cache/LruSimpleCache.ts#L26)
 
 ## Methods
 
@@ -75,7 +65,7 @@ Removes all of the mappings from this cache.
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/cache/LruSimpleCache.ts:42](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/cache/LruSimpleCache.ts#L42)
+[packages/hyperdrive-sdk/src/cache/LruSimpleCache.ts:42](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/cache/LruSimpleCache.ts#L42)
 
 ___
 
@@ -101,7 +91,7 @@ Removes the mapping for the specified key from this cache if present.
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/cache/LruSimpleCache.ts:38](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/cache/LruSimpleCache.ts#L38)
+[packages/hyperdrive-sdk/src/cache/LruSimpleCache.ts:38](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/cache/LruSimpleCache.ts#L38)
 
 ___
 
@@ -128,7 +118,7 @@ matches, or undefined if no match is found.
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/cache/LruSimpleCache.ts:46](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/cache/LruSimpleCache.ts#L46)
+[packages/hyperdrive-sdk/src/cache/LruSimpleCache.ts:46](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/cache/LruSimpleCache.ts#L46)
 
 ___
 
@@ -154,7 +144,7 @@ Retrieves the value associated with the specified key.
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/cache/LruSimpleCache.ts:30](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/cache/LruSimpleCache.ts#L30)
+[packages/hyperdrive-sdk/src/cache/LruSimpleCache.ts:30](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/cache/LruSimpleCache.ts#L30)
 
 ___
 
@@ -183,4 +173,4 @@ replaced.
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/cache/LruSimpleCache.ts:34](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/cache/LruSimpleCache.ts#L34)
+[packages/hyperdrive-sdk/src/cache/LruSimpleCache.ts:34](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/cache/LruSimpleCache.ts#L34)

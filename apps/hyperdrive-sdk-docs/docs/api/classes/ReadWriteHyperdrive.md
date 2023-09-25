@@ -34,35 +34,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/hyperdrive/ReadWriteHyperdrive.ts:225](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/hyperdrive/ReadWriteHyperdrive.ts#L225)
-
-## Properties
-
-### contract
-
-• `Protected` `Readonly` **contract**: [`IReadWriteHyperdriveContract`](../modules.md#ireadwritehyperdrivecontract)
-
-#### Overrides
-
-[ReadHyperdrive](ReadHyperdrive.md).[contract](ReadHyperdrive.md#contract)
-
-#### Defined in
-
-[packages/hyperdrive-sdk/src/hyperdrive/ReadWriteHyperdrive.ts:223](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/hyperdrive/ReadWriteHyperdrive.ts#L223)
-
-___
-
-### mathContract
-
-• `Protected` `Readonly` **mathContract**: `IReadHyperdriveMathContract`
-
-#### Inherited from
-
-[ReadHyperdrive](ReadHyperdrive.md).[mathContract](ReadHyperdrive.md#mathcontract)
-
-#### Defined in
-
-[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:307](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L307)
+[packages/hyperdrive-sdk/src/hyperdrive/ReadWriteHyperdrive.ts:225](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/hyperdrive/ReadWriteHyperdrive.ts#L225)
 
 ## Methods
 
@@ -92,7 +64,7 @@ IReadWriteHyperdrive.addLiquidity
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/hyperdrive/ReadWriteHyperdrive.ts:369](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/hyperdrive/ReadWriteHyperdrive.ts#L369)
+[packages/hyperdrive-sdk/src/hyperdrive/ReadWriteHyperdrive.ts:369](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/hyperdrive/ReadWriteHyperdrive.ts#L369)
 
 ___
 
@@ -117,7 +89,7 @@ IReadWriteHyperdrive.checkpoint
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/hyperdrive/ReadWriteHyperdrive.ts:230](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/hyperdrive/ReadWriteHyperdrive.ts#L230)
+[packages/hyperdrive-sdk/src/hyperdrive/ReadWriteHyperdrive.ts:230](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/hyperdrive/ReadWriteHyperdrive.ts#L230)
 
 ___
 
@@ -147,7 +119,7 @@ IReadWriteHyperdrive.closeLong
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/hyperdrive/ReadWriteHyperdrive.ts:311](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/hyperdrive/ReadWriteHyperdrive.ts#L311)
+[packages/hyperdrive-sdk/src/hyperdrive/ReadWriteHyperdrive.ts:311](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/hyperdrive/ReadWriteHyperdrive.ts#L311)
 
 ___
 
@@ -177,7 +149,7 @@ IReadWriteHyperdrive.closeShort
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/hyperdrive/ReadWriteHyperdrive.ts:340](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/hyperdrive/ReadWriteHyperdrive.ts#L340)
+[packages/hyperdrive-sdk/src/hyperdrive/ReadWriteHyperdrive.ts:340](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/hyperdrive/ReadWriteHyperdrive.ts#L340)
 
 ___
 
@@ -191,7 +163,7 @@ ___
 | :------ | :------ |
 | `«destructured»` | `Object` |
 | › `account` | \`0x${string}\` |
-| › `options?` | [`ContractReadOptions`](../modules.md#contractreadoptions) |
+| › `options?` | [`ContractReadOptions`](../#contractreadoptions) |
 
 #### Returns
 
@@ -207,7 +179,7 @@ IReadWriteHyperdrive.getClosedLongs
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:651](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L651)
+[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:660](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L660)
 
 ___
 
@@ -221,7 +193,7 @@ ___
 | :------ | :------ |
 | `«destructured»` | `Object` |
 | › `account` | \`0x${string}\` |
-| › `options?` | [`ContractReadOptions`](../modules.md#contractreadoptions) |
+| › `options?` | [`ContractReadOptions`](../#contractreadoptions) |
 
 #### Returns
 
@@ -237,7 +209,7 @@ IReadWriteHyperdrive.getClosedLpShares
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:806](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L806)
+[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:815](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L815)
 
 ___
 
@@ -251,7 +223,7 @@ ___
 | :------ | :------ |
 | `«destructured»` | `Object` |
 | › `account` | \`0x${string}\` |
-| › `options?` | [`ContractReadOptions`](../modules.md#contractreadoptions) |
+| › `options?` | [`ContractReadOptions`](../#contractreadoptions) |
 
 #### Returns
 
@@ -267,7 +239,7 @@ IReadWriteHyperdrive.getClosedShorts
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:689](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L689)
+[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:698](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L698)
 
 ___
 
@@ -279,7 +251,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `options?` | [`ContractReadOptions`](../modules.md#contractreadoptions) |
+| `options?` | [`ContractReadOptions`](../#contractreadoptions) |
 
 #### Returns
 
@@ -295,7 +267,7 @@ IReadWriteHyperdrive.getFixedRate
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:324](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L324)
+[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:324](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L324)
 
 ___
 
@@ -307,7 +279,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `options?` | [`ContractReadOptions`](../modules.md#contractreadoptions) |
+| `options?` | [`ContractReadOptions`](../#contractreadoptions) |
 
 #### Returns
 
@@ -323,7 +295,7 @@ IReadWriteHyperdrive.getLiquidity
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:343](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L343)
+[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:343](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L343)
 
 ___
 
@@ -331,15 +303,22 @@ ___
 
 ▸ **getLongPrice**(`options?`): `Promise`<`bigint`\>
 
+Gets the spot price of a long
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `options?` | [`ContractReadOptions`](../modules.md#contractreadoptions) |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | [`ContractReadOptions`](../#contractreadoptions) | The read options |
 
 #### Returns
 
 `Promise`<`bigint`\>
+
+the spot price of a long
+```ts
+  const longPrice = await readHyperdrive.getLongPrice();
+```
 
 #### Implementation of
 
@@ -351,7 +330,7 @@ IReadWriteHyperdrive.getLongPrice
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:377](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L377)
+[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:386](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L386)
 
 ___
 
@@ -365,7 +344,7 @@ ___
 | :------ | :------ |
 | `«destructured»` | `Object` |
 | › `account` | \`0x${string}\` |
-| › `options?` | [`ContractReadOptions`](../modules.md#contractreadoptions) |
+| › `options?` | [`ContractReadOptions`](../#contractreadoptions) |
 
 #### Returns
 
@@ -381,7 +360,7 @@ IReadWriteHyperdrive.getLpShares
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:791](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L791)
+[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:800](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L800)
 
 ___
 
@@ -393,7 +372,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `options?` | [`ContractReadOptions`](../modules.md#contractreadoptions) |
+| `options?` | [`ContractReadOptions`](../#contractreadoptions) |
 
 #### Returns
 
@@ -409,7 +388,7 @@ IReadWriteHyperdrive.getMaxLong
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:756](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L756)
+[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:765](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L765)
 
 ___
 
@@ -421,7 +400,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `options?` | [`ContractReadOptions`](../modules.md#contractreadoptions) |
+| `options?` | [`ContractReadOptions`](../#contractreadoptions) |
 
 #### Returns
 
@@ -437,7 +416,7 @@ IReadWriteHyperdrive.getMaxShort
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:728](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L728)
+[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:737](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L737)
 
 ___
 
@@ -453,7 +432,7 @@ Gets the active longs opened by a specific user.
 | :------ | :------ | :------ |
 | `account` | `Object` | The user's address |
 | `account.account` | \`0x${string}\` | - |
-| `account.options?` | [`ContractReadOptions`](../modules.md#contractreadoptions) | - |
+| `account.options?` | [`ContractReadOptions`](../#contractreadoptions) | - |
 
 #### Returns
 
@@ -471,7 +450,7 @@ IReadWriteHyperdrive.getOpenLongs
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:421](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L421)
+[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:430](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L430)
 
 ___
 
@@ -487,7 +466,7 @@ Gets the active shorts opened by a specific user.
 | :------ | :------ | :------ |
 | `account` | `Object` | The user's address |
 | `account.account` | \`0x${string}\` | - |
-| `account.options?` | [`ContractReadOptions`](../modules.md#contractreadoptions) | - |
+| `account.options?` | [`ContractReadOptions`](../#contractreadoptions) | - |
 
 #### Returns
 
@@ -505,7 +484,7 @@ IReadWriteHyperdrive.getOpenShorts
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:538](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L538)
+[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:547](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L547)
 
 ___
 
@@ -517,7 +496,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `options?` | [`ContractReadOptions`](../modules.md#contractreadoptions) |
+| `options?` | [`ContractReadOptions`](../#contractreadoptions) |
 
 #### Returns
 
@@ -533,7 +512,7 @@ IReadWriteHyperdrive.getPoolConfig
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:314](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L314)
+[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:314](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L314)
 
 ___
 
@@ -545,7 +524,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `options?` | [`ContractReadOptions`](../modules.md#contractreadoptions) |
+| `options?` | [`ContractReadOptions`](../#contractreadoptions) |
 
 #### Returns
 
@@ -561,7 +540,7 @@ IReadWriteHyperdrive.getPoolInfo
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:319](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L319)
+[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:319](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L319)
 
 ___
 
@@ -575,7 +554,7 @@ ___
 | :------ | :------ |
 | `«destructured»` | `Object` |
 | › `account` | \`0x${string}\` |
-| › `options?` | [`ContractReadOptions`](../modules.md#contractreadoptions) |
+| › `options?` | [`ContractReadOptions`](../#contractreadoptions) |
 
 #### Returns
 
@@ -591,7 +570,7 @@ IReadWriteHyperdrive.getRedeemedWithdrawalShares
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:849](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L849)
+[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:858](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L858)
 
 ___
 
@@ -621,7 +600,7 @@ IReadWriteHyperdrive.getTradingVolume
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:356](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L356)
+[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:356](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L356)
 
 ___
 
@@ -635,7 +614,7 @@ ___
 | :------ | :------ |
 | `«destructured»` | `Object` |
 | › `account` | \`0x${string}\` |
-| › `options?` | [`ContractReadOptions`](../modules.md#contractreadoptions) |
+| › `options?` | [`ContractReadOptions`](../#contractreadoptions) |
 
 #### Returns
 
@@ -651,7 +630,7 @@ IReadWriteHyperdrive.getWithdrawalShares
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:834](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L834)
+[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:843](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L843)
 
 ___
 
@@ -680,7 +659,7 @@ IReadWriteHyperdrive.initialize
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/hyperdrive/ReadWriteHyperdrive.ts:241](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/hyperdrive/ReadWriteHyperdrive.ts#L241)
+[packages/hyperdrive-sdk/src/hyperdrive/ReadWriteHyperdrive.ts:241](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/hyperdrive/ReadWriteHyperdrive.ts#L241)
 
 ___
 
@@ -709,7 +688,7 @@ IReadWriteHyperdrive.openLong
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/hyperdrive/ReadWriteHyperdrive.ts:263](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/hyperdrive/ReadWriteHyperdrive.ts#L263)
+[packages/hyperdrive-sdk/src/hyperdrive/ReadWriteHyperdrive.ts:263](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/hyperdrive/ReadWriteHyperdrive.ts#L263)
 
 ___
 
@@ -738,7 +717,7 @@ IReadWriteHyperdrive.openShort
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/hyperdrive/ReadWriteHyperdrive.ts:289](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/hyperdrive/ReadWriteHyperdrive.ts#L289)
+[packages/hyperdrive-sdk/src/hyperdrive/ReadWriteHyperdrive.ts:289](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/hyperdrive/ReadWriteHyperdrive.ts#L289)
 
 ___
 
@@ -763,7 +742,7 @@ IReadWriteHyperdrive.pause
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/hyperdrive/ReadWriteHyperdrive.ts:237](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/hyperdrive/ReadWriteHyperdrive.ts#L237)
+[packages/hyperdrive-sdk/src/hyperdrive/ReadWriteHyperdrive.ts:237](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/hyperdrive/ReadWriteHyperdrive.ts#L237)
 
 ___
 
@@ -797,7 +776,7 @@ IReadWriteHyperdrive.previewAddLiquidity
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:973](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L973)
+[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:982](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L982)
 
 ___
 
@@ -831,7 +810,7 @@ IReadWriteHyperdrive.previewCloseLong
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:921](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L921)
+[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:930](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L930)
 
 ___
 
@@ -865,7 +844,7 @@ IReadWriteHyperdrive.previewCloseShort
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:944](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L944)
+[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:953](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L953)
 
 ___
 
@@ -898,7 +877,7 @@ IReadWriteHyperdrive.previewOpenLong
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:879](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L879)
+[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:888](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L888)
 
 ___
 
@@ -931,7 +910,7 @@ IReadWriteHyperdrive.previewOpenShort
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:900](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L900)
+[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:909](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L909)
 
 ___
 
@@ -964,7 +943,7 @@ IReadWriteHyperdrive.previewRedeemWithdrawalShares
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:1018](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L1018)
+[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:1027](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L1027)
 
 ___
 
@@ -997,7 +976,7 @@ IReadWriteHyperdrive.previewRemoveLiquidity
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:996](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L996)
+[packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts:1005](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/hyperdrive/ReadHyperdrive.ts#L1005)
 
 ___
 
@@ -1026,7 +1005,7 @@ IReadWriteHyperdrive.redeemWithdrawalShares
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/hyperdrive/ReadWriteHyperdrive.ts:418](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/hyperdrive/ReadWriteHyperdrive.ts#L418)
+[packages/hyperdrive-sdk/src/hyperdrive/ReadWriteHyperdrive.ts:418](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/hyperdrive/ReadWriteHyperdrive.ts#L418)
 
 ___
 
@@ -1055,4 +1034,4 @@ IReadWriteHyperdrive.removeLiquidity
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/hyperdrive/ReadWriteHyperdrive.ts:397](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/hyperdrive/ReadWriteHyperdrive.ts#L397)
+[packages/hyperdrive-sdk/src/hyperdrive/ReadWriteHyperdrive.ts:397](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/hyperdrive/ReadWriteHyperdrive.ts#L397)

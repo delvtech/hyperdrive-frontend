@@ -1,10 +1,12 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const defaultTypeDocConfig = require("./typedoc.json");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "My Site",
-  tagline: "Dinosaurs are cool",
+  title: "Hyperdrive SDK Docs",
+  tagline: "Hyperdrive SDK Docs",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
@@ -12,14 +14,17 @@ const config = {
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
+
   plugins: [
     [
       "docusaurus-plugin-typedoc",
 
       // Plugin / TypeDoc options
       {
+        id: "hyperdrive-sdk",
         entryPoints: ["../../packages/hyperdrive-sdk/src/index.ts"],
         tsconfig: "../../packages/hyperdrive-sdk/tsconfig.json",
+        ...defaultTypeDocConfig,
       },
     ],
   ],

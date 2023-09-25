@@ -14,7 +14,7 @@ get, set, delete, clear, and find.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `TValue` | `any` | The type of value to be stored in the cache. |
-| `TKey` | extends [`SimpleCacheKey`](../modules.md#simplecachekey) = [`SimpleCacheKey`](../modules.md#simplecachekey) | The type of key used to access values in the cache. Must be a serializable value to ensure consistency and predictability. |
+| `TKey` | extends [`SimpleCacheKey`](../#simplecachekey) = [`SimpleCacheKey`](../#simplecachekey) | The type of key used to access values in the cache. Must be a serializable value to ensure consistency and predictability. |
 
 ## Implemented by
 
@@ -38,7 +38,7 @@ Removes all of the mappings from this cache.
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/cache/SimpleCache.ts:33](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/cache/SimpleCache.ts#L33)
+[packages/hyperdrive-sdk/src/cache/SimpleCache.ts:33](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/cache/SimpleCache.ts#L33)
 
 ___
 
@@ -64,7 +64,7 @@ Removes the mapping for the specified key from this cache if present.
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/cache/SimpleCache.ts:28](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/cache/SimpleCache.ts#L28)
+[packages/hyperdrive-sdk/src/cache/SimpleCache.ts:28](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/cache/SimpleCache.ts#L28)
 
 ___
 
@@ -91,7 +91,7 @@ matches, or undefined if no match is found.
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/cache/SimpleCache.ts:41](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/cache/SimpleCache.ts#L41)
+[packages/hyperdrive-sdk/src/cache/SimpleCache.ts:41](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/cache/SimpleCache.ts#L41)
 
 ___
 
@@ -117,7 +117,7 @@ Retrieves the value associated with the specified key.
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/cache/SimpleCache.ts:16](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/cache/SimpleCache.ts#L16)
+[packages/hyperdrive-sdk/src/cache/SimpleCache.ts:16](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/cache/SimpleCache.ts#L16)
 
 ___
 
@@ -146,4 +146,4 @@ replaced.
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/cache/SimpleCache.ts:23](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/cache/SimpleCache.ts#L23)
+[packages/hyperdrive-sdk/src/cache/SimpleCache.ts:23](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/cache/SimpleCache.ts#L23)

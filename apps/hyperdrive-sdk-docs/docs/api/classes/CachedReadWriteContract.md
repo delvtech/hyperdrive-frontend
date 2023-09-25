@@ -51,55 +51,9 @@ capabilities.
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/contract/cached/CachedReadWriteContract.ts:43](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/contract/cached/CachedReadWriteContract.ts#L43)
+[packages/hyperdrive-sdk/src/contract/cached/CachedReadWriteContract.ts:43](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/contract/cached/CachedReadWriteContract.ts#L43)
 
 ## Properties
-
-### \_cache
-
-• `Protected` `Readonly` **\_cache**: [`SimpleCache`](../interfaces/SimpleCache.md)<`any`, [`SimpleCacheKey`](../modules.md#simplecachekey)\>
-
-Internal cache for contract reads.
-
-#### Inherited from
-
-[CachedReadContract](CachedReadContract.md).[_cache](CachedReadContract.md#_cache)
-
-#### Defined in
-
-[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:62](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L62)
-
-___
-
-### \_contract
-
-• `Protected` `Readonly` **\_contract**: [`IReadWriteContract`](../interfaces/IReadWriteContract.md)<`TAbi`\>
-
-The wrapped writable contract instance.
-
-#### Overrides
-
-[CachedReadContract](CachedReadContract.md).[_contract](CachedReadContract.md#_contract)
-
-#### Defined in
-
-[packages/hyperdrive-sdk/src/contract/cached/CachedReadWriteContract.ts:41](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/contract/cached/CachedReadWriteContract.ts#L41)
-
-___
-
-### \_id
-
-• `Protected` `Readonly` **\_id**: `string`
-
-#### Inherited from
-
-[CachedReadContract](CachedReadContract.md).[_id](CachedReadContract.md#_id)
-
-#### Defined in
-
-[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:59](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L59)
-
-___
 
 ### abi
 
@@ -115,7 +69,7 @@ ___
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:56](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L56)
+[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:56](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L56)
 
 ___
 
@@ -133,7 +87,7 @@ ___
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:55](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L55)
+[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:55](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L55)
 
 ## Methods
 
@@ -157,7 +111,7 @@ Clears the entire cache.
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:152](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L152)
+[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:152](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L152)
 
 ___
 
@@ -179,7 +133,7 @@ Deletes a specific read from the cache.
 | :------ | :------ |
 | `functionName` | `TFunctionName` |
 | `args` | { [K in string \| number \| symbol]: { [K in string \| number \| symbol]: AbiParameterToPrimitiveType<Extract<Extract<TAbi[number], Object\>, Object\>["inputs"][K], "inputs"\> }[K] } |
-| `options?` | [`ContractReadOptions`](../modules.md#contractreadoptions) |
+| `options?` | [`ContractReadOptions`](../#contractreadoptions) |
 
 #### Returns
 
@@ -206,7 +160,7 @@ const result3 = await cachedContract.read("functionName", args); // Fetched from
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:108](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L108)
+[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:108](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L108)
 
 ___
 
@@ -244,7 +198,7 @@ fetches from the contract and then caches the result.
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:131](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L131)
+[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:131](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L131)
 
 ___
 
@@ -267,7 +221,7 @@ fetches from the contract and then caches the result.
 | :------ | :------ |
 | `functionName` | `TFunctionName` |
 | `args` | { [K in string \| number \| symbol]: { [K in string \| number \| symbol]: AbiParameterToPrimitiveType<Extract<Extract<TAbi[number], Object\>, Object\>["inputs"][K], "inputs"\> }[K] } |
-| `options?` | [`ContractReadOptions`](../modules.md#contractreadoptions) |
+| `options?` | [`ContractReadOptions`](../#contractreadoptions) |
 
 #### Returns
 
@@ -283,7 +237,7 @@ fetches from the contract and then caches the result.
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:76](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L76)
+[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:76](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L76)
 
 ___
 
@@ -322,7 +276,7 @@ to the underlying contract without interacting with the cache.
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:160](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L160)
+[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:160](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L160)
 
 ___
 
@@ -358,4 +312,4 @@ inherently modify state and cannot be cached.
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/contract/cached/CachedReadWriteContract.ts:53](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/contract/cached/CachedReadWriteContract.ts#L53)
+[packages/hyperdrive-sdk/src/contract/cached/CachedReadWriteContract.ts:53](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/contract/cached/CachedReadWriteContract.ts#L53)

@@ -4,6 +4,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "module": "Node16",
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "resolveJsonModule": true,
+    "allowImportingTsExtensions": true
   }
 }

@@ -24,7 +24,7 @@ Short.assetId
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/shorts/types.ts:5](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/shorts/types.ts#L5)
+[packages/hyperdrive-sdk/src/shorts/types.ts:5](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/shorts/types.ts#L5)
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/shorts/types.ts:19](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/shorts/types.ts#L19)
+[packages/hyperdrive-sdk/src/shorts/types.ts:19](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/shorts/types.ts#L19)
 
 ___
 
@@ -48,7 +48,7 @@ Short.bondAmount
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/shorts/types.ts:6](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/shorts/types.ts#L6)
+[packages/hyperdrive-sdk/src/shorts/types.ts:6](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/shorts/types.ts#L6)
 
 ___
 
@@ -62,7 +62,7 @@ Short.hyperdriveAddress
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/shorts/types.ts:4](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/shorts/types.ts#L4)
+[packages/hyperdrive-sdk/src/shorts/types.ts:4](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/shorts/types.ts#L4)
 
 ___
 
@@ -78,7 +78,7 @@ Short.maturity
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/shorts/types.ts:10](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/shorts/types.ts#L10)
+[packages/hyperdrive-sdk/src/shorts/types.ts:10](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/shorts/types.ts#L10)
 
 ___
 
@@ -88,4 +88,4 @@ ___
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/shorts/types.ts:20](https://github.com/delvtech/hyperdrive-monorepo/blob/75f770a/packages/hyperdrive-sdk/src/shorts/types.ts#L20)
+[packages/hyperdrive-sdk/src/shorts/types.ts:20](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/shorts/types.ts#L20)

@@ -374,6 +374,15 @@ export class ReadHyperdrive implements IReadHyperdrive {
     return totalVolume;
   }
 
+  /**
+   * Gets the spot price of a long
+   * @param options - The read options
+   * @returns the spot price of a long
+   * ```ts
+   *   const longPrice = await readHyperdrive.getLongPrice();
+   * ```
+   *
+   */
   async getLongPrice(options?: ContractReadOptions): Promise<bigint> {
     const { initialSharePrice, timeStretch } = await this.getPoolConfig(
       options,
