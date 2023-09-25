@@ -32,6 +32,7 @@ export interface CachedReadWriteContractOptions<TAbi extends Abi = Abi>
  * useful for both reading (with caching) and writing to a contract. It extends
  * the functionality provided by CachedReadContract by adding write
  * capabilities.
+ * @hidden
  */
 export class CachedReadWriteContract<TAbi extends Abi = Abi>
   extends CachedReadContract<TAbi>

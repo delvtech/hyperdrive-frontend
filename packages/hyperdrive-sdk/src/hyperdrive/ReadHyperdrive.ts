@@ -306,6 +306,9 @@ export class ReadHyperdrive implements IReadHyperdrive {
   protected readonly contract: IReadHyperdriveContract;
   protected readonly mathContract: IReadHyperdriveMathContract;
 
+  /**
+   * @hidden
+   */
   constructor({ contract, mathContract }: ReadHyperdriveOptions) {
     this.contract = contract;
     this.mathContract = mathContract;

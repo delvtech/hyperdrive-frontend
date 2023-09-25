@@ -2,7 +2,5 @@
   "excludeInternal": true,
   "excludePrivate": true,
   "excludeProtected": true,
-  "githubPages": false,
-  "readme": "none",
-  "categoryOrder": [""]
+  "githubPages": false
 }

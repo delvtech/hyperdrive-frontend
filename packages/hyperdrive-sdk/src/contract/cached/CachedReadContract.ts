@@ -48,6 +48,7 @@ export interface CachedReadContractOptions<TAbi extends Abi = Abi> {
  * const cachedContract = new CachedReadContract({ contract: myContract });
  * const result1 = await cachedContract.read("functionName", args);
  * const result2 = await cachedContract.read("functionName", args); // Fetched from cache
+ * @hidden
  */
 export class CachedReadContract<TAbi extends Abi = Abi>
   implements ICachedReadContract<TAbi>

@@ -22,11 +22,11 @@ custom_edit_url: null
 
 ### cache
 
-• `Optional` **cache**: [`SimpleCache`](SimpleCache.md)<`any`, [`SimpleCacheKey`](../#simplecachekey)\>
+• `Optional` **cache**: `SimpleCache`<`any`, [`SimpleCacheKey`](../modules.md#simplecachekey)\>
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:34](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L34)
+[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:34](https://github.com/delvtech/hyperdrive-monorepo/blob/4f356e4/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L34)
 
 ___
 
@@ -36,7 +36,7 @@ ___
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:33](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L33)
+[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:33](https://github.com/delvtech/hyperdrive-monorepo/blob/4f356e4/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L33)
 
 ___
 
@@ -49,4 +49,4 @@ keys.
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:39](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L39)
+[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:39](https://github.com/delvtech/hyperdrive-monorepo/blob/4f356e4/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L39)

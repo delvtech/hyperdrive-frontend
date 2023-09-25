@@ -11,7 +11,7 @@ custom_edit_url: null
 | Name | Type |
 | :------ | :------ |
 | `TAbi` | extends `Abi` |
-| `TEventName` | extends [`EventName`](../#eventname)<`TAbi`\> = [`EventName`](../#eventname)<`TAbi`\> |
+| `TEventName` | extends [`EventName`](../modules.md#eventname)<`TAbi`\> = [`EventName`](../modules.md#eventname)<`TAbi`\> |
 
 ## Properties
 
@@ -21,7 +21,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/contract/Contract.ts:77](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/contract/Contract.ts#L77)
+[packages/hyperdrive-sdk/src/contract/Contract.ts:77](https://github.com/delvtech/hyperdrive-monorepo/blob/4f356e4/packages/hyperdrive-sdk/src/contract/Contract.ts#L77)
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/contract/Contract.ts:78](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/contract/Contract.ts#L78)
+[packages/hyperdrive-sdk/src/contract/Contract.ts:78](https://github.com/delvtech/hyperdrive-monorepo/blob/4f356e4/packages/hyperdrive-sdk/src/contract/Contract.ts#L78)
 
 ___
 
@@ -41,4 +41,4 @@ ___
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/contract/Contract.ts:79](https://github.com/delvtech/hyperdrive-monorepo/blob/e9b3f15/packages/hyperdrive-sdk/src/contract/Contract.ts#L79)
+[packages/hyperdrive-sdk/src/contract/Contract.ts:79](https://github.com/delvtech/hyperdrive-monorepo/blob/4f356e4/packages/hyperdrive-sdk/src/contract/Contract.ts#L79)
