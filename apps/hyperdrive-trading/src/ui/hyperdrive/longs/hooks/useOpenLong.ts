@@ -11,7 +11,11 @@ interface UseOpenLongOptions {
   baseAmount: bigint | undefined;
   bondAmountOut: bigint | undefined;
   asUnderlying?: boolean;
+
+  /** Controls whether or not an `openLong` callback will be returned to the
+   * caller, useful for disabling buttons and other hooks */
   enabled?: boolean;
+
   /** Callback to be invoked when the transaction is finalized */
   onExecuted?: () => void;
 }
@@ -39,7 +43,6 @@ export function useOpenLong({
         !!baseAmount &&
         !!bondAmountOut &&
         !!destination &&
-        enabled &&
         readWriteHyperdrive
       ) {
         await readWriteHyperdrive.openLong({
@@ -62,7 +65,8 @@ export function useOpenLong({
     },
   });
   return {
-    openLong,
+    // Don't return the `openLong` callback if the caller has disabled this hook
+    openLong: enabled ? openLong : undefined,
     openLongStatus: status,
   };
 }

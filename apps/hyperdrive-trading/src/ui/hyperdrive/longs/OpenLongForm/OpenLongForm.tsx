@@ -55,16 +55,16 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
     amount: ethers.constants.MaxUint256.toBigInt(),
   });
 
-  const needsApproval = tokenAllowance
-    ? amountAsBigInt && amountAsBigInt > tokenAllowance
-    : true;
+  const hasEnoughAllowance = tokenAllowance
+    ? amountAsBigInt === undefined || amountAsBigInt < tokenAllowance
+    : false;
 
   const { longAmountOut, status: openLongPreviewStatus } = usePreviewOpenLong({
     market,
     baseAmount: amountAsBigInt,
     minBondAmountOut: 1n, // todo add slippage control
     destination: account,
-    enabled: !needsApproval,
+    enabled: hasEnoughAllowance,
   });
 
   const longAmountOutAfterSlippage =
@@ -79,7 +79,7 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
     baseAmount: amountAsBigInt,
     bondAmountOut: longAmountOutAfterSlippage,
     destination: account,
-    enabled: openLongPreviewStatus === "success" && !needsApproval,
+    enabled: openLongPreviewStatus === "success" && hasEnoughAllowance,
     onExecuted: () => {
       setAmount("");
     },
@@ -125,7 +125,7 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
       </div>
 
       {account ? (
-        needsApproval ? (
+        !hasEnoughAllowance ? (
           // Approval button
           <button
             disabled={!approve}
