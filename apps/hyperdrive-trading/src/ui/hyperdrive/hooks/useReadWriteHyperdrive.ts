@@ -6,7 +6,7 @@ import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Address, useChainId, usePublicClient, useWalletClient } from "wagmi";
 
 export function useReadWriteHyperdrive(
-  address: Address,
+  address: Address | undefined,
 ): ReadWriteHyperdrive | undefined {
   const { appConfig } = useAppConfig();
 
@@ -15,7 +15,7 @@ export function useReadWriteHyperdrive(
   const { data: walletClient } = useWalletClient();
 
   return useMemo(() => {
-    if (!appConfig || !walletClient) {
+    if (!appConfig || !walletClient || !address) {
       return undefined;
     }
 

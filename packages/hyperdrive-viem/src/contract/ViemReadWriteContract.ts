@@ -70,10 +70,12 @@ export class ViemReadWriteContract<TAbi extends Abi = Abi>
     const { request, result } = await this._publicClient.simulateContract({
       abi: this.abi as any,
       address: this.address,
-      account,
       functionName,
       args: args as any,
-      ...createSimulateContractParameters(options),
+      ...createSimulateContractParameters({
+        ...options,
+        from: options?.from ?? account,
+      }),
     });
     const hash = await this._walletClient.writeContract(request);
     options?.onSubmitted?.(hash);
