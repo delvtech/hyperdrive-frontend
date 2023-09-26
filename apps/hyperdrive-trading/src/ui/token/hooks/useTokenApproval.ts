@@ -1,4 +1,4 @@
-import { ERC20_ABI } from "@hyperdrive/core";
+import { ERC20_ABI } from "@hyperdrive/sdk";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { queryClient } from "src/network/queryClient";
 import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";
@@ -28,6 +28,7 @@ export function useTokenApproval({
     functionName: "approve",
     args: enabled ? [spender, amount] : undefined,
   });
+
   const addRecentTransaction = useAddRecentTransaction();
   const publicClient = usePublicClient();
   const { write: approve } = useContractWrite({
