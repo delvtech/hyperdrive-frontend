@@ -28,7 +28,7 @@ export function OpenShortForm({
     token: market.baseToken.address,
   });
 
-  const { maxShort } = useMaxShort(market);
+  const { maxShort, maxShortFormatted } = useMaxShort(market);
 
   const { amount, amountAsBigInt, setAmount } = useNumericInput({
     decimals: market.baseToken.decimals,
@@ -102,7 +102,7 @@ export function OpenShortForm({
       <TokenInput
         token={bondToken}
         value={amount ?? ""}
-        maxValue={maxShort?.formatted}
+        maxValue={maxShortFormatted}
         onChange={(newAmount) => setAmount(newAmount)}
       />
 
