@@ -27,9 +27,7 @@ export class LruSimpleCache<
   constructor(options: LRUCache.Options<string, TValue, void>) {
     this.cache = new LRUCache(options);
   }
-  /**
-   * @hidden
-   */
+
   get(key: TKey): TValue | undefined {
     return this.cache.get(stringify(key));
   }

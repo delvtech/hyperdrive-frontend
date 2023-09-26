@@ -23,6 +23,10 @@ for cache management on contract reads.
 
   ↳↳ [`ICachedReadWriteContract`](ICachedReadWriteContract.md)
 
+## Implemented by
+
+- [`CachedReadContract`](../classes/CachedReadContract.md)
+
 ## Properties
 
 ### abi
@@ -35,7 +39,7 @@ for cache management on contract reads.
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/contract/Contract.ts:16](https://github.com/delvtech/hyperdrive-monorepo/blob/ad69d2e/packages/hyperdrive-sdk/src/contract/Contract.ts#L16)
+[packages/hyperdrive-sdk/src/contract/Contract.ts:16](https://github.com/delvtech/hyperdrive-monorepo/blob/de09d2d/packages/hyperdrive-sdk/src/contract/Contract.ts#L16)
 
 ___
 
@@ -49,7 +53,7 @@ ___
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/contract/Contract.ts:17](https://github.com/delvtech/hyperdrive-monorepo/blob/ad69d2e/packages/hyperdrive-sdk/src/contract/Contract.ts#L17)
+[packages/hyperdrive-sdk/src/contract/Contract.ts:17](https://github.com/delvtech/hyperdrive-monorepo/blob/de09d2d/packages/hyperdrive-sdk/src/contract/Contract.ts#L17)
 
 ___
 
@@ -67,7 +71,7 @@ ___
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:26](https://github.com/delvtech/hyperdrive-monorepo/blob/ad69d2e/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L26)
+[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:26](https://github.com/delvtech/hyperdrive-monorepo/blob/de09d2d/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L26)
 
 ___
 
@@ -91,7 +95,7 @@ ___
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:25](https://github.com/delvtech/hyperdrive-monorepo/blob/ad69d2e/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L25)
+[packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts:25](https://github.com/delvtech/hyperdrive-monorepo/blob/de09d2d/packages/hyperdrive-sdk/src/contract/cached/CachedReadContract.ts#L25)
 
 ## Methods
 
@@ -124,7 +128,7 @@ Retrieves specified events from the contract.
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/contract/Contract.ts:42](https://github.com/delvtech/hyperdrive-monorepo/blob/ad69d2e/packages/hyperdrive-sdk/src/contract/Contract.ts#L42)
+[packages/hyperdrive-sdk/src/contract/Contract.ts:42](https://github.com/delvtech/hyperdrive-monorepo/blob/de09d2d/packages/hyperdrive-sdk/src/contract/Contract.ts#L42)
 
 ___
 
@@ -158,7 +162,7 @@ Reads a specified function from the contract.
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/contract/Contract.ts:22](https://github.com/delvtech/hyperdrive-monorepo/blob/ad69d2e/packages/hyperdrive-sdk/src/contract/Contract.ts#L22)
+[packages/hyperdrive-sdk/src/contract/Contract.ts:22](https://github.com/delvtech/hyperdrive-monorepo/blob/de09d2d/packages/hyperdrive-sdk/src/contract/Contract.ts#L22)
 
 ___
 
@@ -192,4 +196,4 @@ Simulates a write operation on a specified function of the contract.
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/contract/Contract.ts:31](https://github.com/delvtech/hyperdrive-monorepo/blob/ad69d2e/packages/hyperdrive-sdk/src/contract/Contract.ts#L31)
+[packages/hyperdrive-sdk/src/contract/Contract.ts:31](https://github.com/delvtech/hyperdrive-monorepo/blob/de09d2d/packages/hyperdrive-sdk/src/contract/Contract.ts#L31)

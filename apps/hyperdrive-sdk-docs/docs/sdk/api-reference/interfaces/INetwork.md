@@ -20,4 +20,4 @@ An interface representing data the SDK needs to get from the network.
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/network/Network.ts:5](https://github.com/delvtech/hyperdrive-monorepo/blob/ad69d2e/packages/hyperdrive-sdk/src/network/Network.ts#L5)
+[packages/hyperdrive-sdk/src/network/Network.ts:5](https://github.com/delvtech/hyperdrive-monorepo/blob/de09d2d/packages/hyperdrive-sdk/src/network/Network.ts#L5)

@@ -24,6 +24,7 @@ const config = {
         entryPoints: ["../../packages/hyperdrive-sdk/src/index.ts"],
         tsconfig: "../../packages/hyperdrive-sdk/tsconfig.json",
         out: "sdk/api-reference",
+
         ...defaultTypeDocConfig,
       },
     ],

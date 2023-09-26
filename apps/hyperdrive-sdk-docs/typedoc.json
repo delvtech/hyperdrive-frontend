@@ -1,6 +1,5 @@
 {
   "excludeInternal": true,
   "excludePrivate": true,
-  "excludeProtected": true,
-  "githubPages": false
+  "excludeProtected": true
 }
