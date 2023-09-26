@@ -1,13 +1,14 @@
-import { GetMaxShortResult } from "@hyperdrive/core";
-import { QueryStatus, useQuery } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
+import * as dnum from "dnum";
 import { Hyperdrive } from "src/appconfig/types";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 
 export function useMaxShort(hyperdrive: Hyperdrive): {
-  maxShort: GetMaxShortResult | undefined;
-  maxShortStatus: QueryStatus;
+  maxShort: bigint | undefined;
+  maxShortFormatted: string | undefined;
+  maxShortStatus: "error" | "success" | "loading";
 } {
   const { appConfig } = useAppConfig();
 
@@ -23,6 +24,9 @@ export function useMaxShort(hyperdrive: Hyperdrive): {
 
   return {
     maxShort: data,
+    maxShortFormatted: data
+      ? dnum.format([data, hyperdrive.baseToken.decimals], 2)
+      : undefined,
     maxShortStatus: status,
   };
 }

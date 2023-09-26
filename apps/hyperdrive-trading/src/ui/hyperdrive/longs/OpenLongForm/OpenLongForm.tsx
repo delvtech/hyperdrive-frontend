@@ -13,6 +13,7 @@ import { OpenLongPreview } from "src/ui/hyperdrive/longs/OpenLongPreview/OpenLon
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenApproval } from "src/ui/token/hooks/useTokenApproval";
 import { TokenInput } from "src/ui/token/TokenInput";
+import { formatUnits } from "viem";
 import { useAccount, useBalance } from "wagmi";
 
 interface OpenLongFormProps {
@@ -31,12 +32,11 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
   const { maxLong } = useMaxLong(market);
 
   let maxAmount: string | undefined;
-
   if (maxLong && baseTokenBalance) {
     maxAmount =
       maxLong.maxBaseIn > baseTokenBalance.value
         ? baseTokenBalance.formatted
-        : maxLong.formattedMaxBaseIn;
+        : formatUnits(maxLong.maxBaseIn, market.baseToken.decimals);
   }
 
   const { amount, amountAsBigInt, setAmount } = useNumericInput({
@@ -55,16 +55,16 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
     amount: ethers.constants.MaxUint256.toBigInt(),
   });
 
-  const needsApproval = tokenAllowance
-    ? amountAsBigInt && amountAsBigInt > tokenAllowance
-    : true;
+  const hasEnoughAllowance = tokenAllowance
+    ? amountAsBigInt === undefined || amountAsBigInt < tokenAllowance
+    : false;
 
   const { longAmountOut, status: openLongPreviewStatus } = usePreviewOpenLong({
     market,
     baseAmount: amountAsBigInt,
     minBondAmountOut: 1n, // todo add slippage control
     destination: account,
-    enabled: !needsApproval,
+    enabled: hasEnoughAllowance,
   });
 
   const longAmountOutAfterSlippage =
@@ -79,7 +79,7 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
     baseAmount: amountAsBigInt,
     bondAmountOut: longAmountOutAfterSlippage,
     destination: account,
-    enabled: openLongPreviewStatus === "success" && !needsApproval,
+    enabled: openLongPreviewStatus === "success" && hasEnoughAllowance,
     onExecuted: () => {
       setAmount("");
     },
@@ -125,7 +125,7 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
       </div>
 
       {account ? (
-        needsApproval ? (
+        !hasEnoughAllowance ? (
           // Approval button
           <button
             disabled={!approve}

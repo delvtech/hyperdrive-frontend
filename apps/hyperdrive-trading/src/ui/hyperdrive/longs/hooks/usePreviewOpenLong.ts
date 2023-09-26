@@ -16,6 +16,7 @@ interface UsePreviewOpenLongOptions {
 interface UsePreviewOpenLongResult {
   status: "error" | "idle" | "loading" | "success";
   longAmountOut: bigint | undefined;
+  maturityTime: bigint | undefined;
 }
 
 export function usePreviewOpenLong({
@@ -54,8 +55,17 @@ export function usePreviewOpenLong({
             minBondAmountOut,
             destination,
             asUnderlying,
+            options: {
+              // all preview methods require a `from` option in order to call
+              // the simulateContract successfully
+              from: account,
+            },
           })
       : undefined,
   });
-  return { longAmountOut: data, status };
+  return {
+    longAmountOut: data?.bondProceeds,
+    maturityTime: data?.maturityTime,
+    status,
+  };
 }

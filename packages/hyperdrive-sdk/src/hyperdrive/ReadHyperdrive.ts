@@ -5,7 +5,6 @@ import {
   RedeemedWithdrawalShares,
 } from "@hyperdrive/core";
 import { Address } from "abitype";
-import { format } from "dnum";
 import groupBy from "lodash.groupby";
 import mapValues from "lodash.mapvalues";
 import { sumBigInt } from "src/base/sumBigInt";
@@ -117,19 +116,14 @@ export interface IReadHyperdrive {
   /**
    * Gets the maximum amount of bonds a user can open a short for.
    */
-  getMaxShort(options?: ContractReadOptions): Promise<{
-    maxBondsOut: bigint;
-    formatted: string;
-  }>;
+  getMaxShort(options?: ContractReadOptions): Promise<bigint>;
 
   /**
    * Gets the maximum amount of bonds a user can open a long for.
    */
   getMaxLong(options?: ContractReadOptions): Promise<{
     maxBaseIn: bigint;
-    formattedMaxBaseIn: string;
     maxBondsOut: bigint;
-    formattedMaxBondsOut: string;
   }>;
 
   /**
@@ -229,7 +223,7 @@ export interface IReadHyperdrive {
     destination: Address;
     asUnderlying: boolean;
     options: ContractWriteOptions;
-  }): Promise<bigint>;
+  }): Promise<{ maturityTime: bigint; bondProceeds: bigint }>;
 
   /**
    * Predicts the amount of base asset it will cost to open a short.
@@ -246,7 +240,7 @@ export interface IReadHyperdrive {
     destination: Address;
     asUnderlying: boolean;
     options: ContractWriteOptions;
-  }): Promise<bigint>;
+  }): Promise<{ maturityTime: bigint; traderDeposit: bigint }>;
 
   /**
    * Predicts the amount of LP shares a user will receive when adding liquidity.
@@ -738,9 +732,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     return Object.values(closedShortsById).filter((short) => short.bondAmount);
   }
 
-  async getMaxShort(
-    options?: ContractReadOptions,
-  ): Promise<{ maxBondsOut: bigint; formatted: string }> {
+  async getMaxShort(options?: ContractReadOptions): Promise<bigint> {
     const { minimumShareReserves, initialSharePrice, timeStretch } =
       await this.getPoolConfig(options);
     const { shareReserves, bondReserves, longsOutstanding, sharePrice } =
@@ -760,17 +752,12 @@ export class ReadHyperdrive implements IReadHyperdrive {
       ],
       options,
     );
-    return {
-      maxBondsOut,
-      formatted: format([maxBondsOut, 18], { digits: 2 }),
-    };
+    return maxBondsOut;
   }
 
   async getMaxLong(options?: ContractReadOptions): Promise<{
     maxBaseIn: bigint;
-    formattedMaxBaseIn: string;
     maxBondsOut: bigint;
-    formattedMaxBondsOut: string;
   }> {
     const { minimumShareReserves, initialSharePrice, timeStretch } =
       await this.getPoolConfig(options);
@@ -795,9 +782,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     );
     return {
       maxBaseIn,
-      formattedMaxBaseIn: format([maxBaseIn, 18], 2),
       maxBondsOut,
-      formattedMaxBondsOut: format([maxBondsOut, 18], 2),
     };
   }
 
@@ -901,13 +886,13 @@ export class ReadHyperdrive implements IReadHyperdrive {
     destination: Address;
     asUnderlying: boolean;
     options?: ContractWriteOptions;
-  }): Promise<bigint> {
-    const [openLong] = await this.contract.simulateWrite(
+  }): Promise<{ maturityTime: bigint; bondProceeds: bigint }> {
+    const [maturityTime, bondProceeds] = await this.contract.simulateWrite(
       "openLong",
       [baseAmount, minBondAmountOut, destination, asUnderlying],
       options,
     );
-    return openLong;
+    return { maturityTime, bondProceeds };
   }
 
   async previewOpenShort({
@@ -922,13 +907,13 @@ export class ReadHyperdrive implements IReadHyperdrive {
     destination: Address;
     asUnderlying: boolean;
     options?: ContractWriteOptions;
-  }): Promise<bigint> {
-    const [openShort] = await this.contract.simulateWrite(
+  }): Promise<{ maturityTime: bigint; traderDeposit: bigint }> {
+    const [maturityTime, traderDeposit] = await this.contract.simulateWrite(
       "openShort",
       [amountOfBondsToShort, maxBaseAmountIn, destination, asUnderlying],
       options,
     );
-    return openShort;
+    return { maturityTime, traderDeposit };
   }
 
   async previewCloseLong({

@@ -3,7 +3,7 @@ import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHype
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { MutationStatus } from "@tanstack/query-core";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { Address } from "wagmi";
+import { Address, useAccount } from "wagmi";
 
 interface UseOpenLongOptions {
   hyperdriveAddress: Address;
@@ -11,7 +11,11 @@ interface UseOpenLongOptions {
   baseAmount: bigint | undefined;
   bondAmountOut: bigint | undefined;
   asUnderlying?: boolean;
+
+  /** Controls whether or not an `openLong` callback will be returned to the
+   * caller, useful for disabling buttons and other hooks */
   enabled?: boolean;
+
   /** Callback to be invoked when the transaction is finalized */
   onExecuted?: () => void;
 }
@@ -30,6 +34,7 @@ export function useOpenLong({
   enabled,
   onExecuted,
 }: UseOpenLongOptions): UseOpenLongResult {
+  const { address: account } = useAccount();
   const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
   const addTransaction = useAddRecentTransaction();
   const queryClient = useQueryClient();
@@ -39,7 +44,6 @@ export function useOpenLong({
         !!baseAmount &&
         !!bondAmountOut &&
         !!destination &&
-        enabled &&
         readWriteHyperdrive
       ) {
         await readWriteHyperdrive.openLong({
@@ -48,6 +52,7 @@ export function useOpenLong({
           destination,
           asUnderlying,
           options: {
+            from: account,
             onSubmitted: (hash) => {
               addTransaction({
                 hash,
@@ -62,7 +67,8 @@ export function useOpenLong({
     },
   });
   return {
-    openLong,
+    // Don't return the `openLong` callback if the caller has disabled this hook
+    openLong: enabled ? openLong : undefined,
     openLongStatus: status,
   };
 }
