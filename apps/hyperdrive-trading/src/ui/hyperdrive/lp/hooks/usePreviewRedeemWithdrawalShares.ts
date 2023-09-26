@@ -38,8 +38,8 @@ export function usePreviewRedeemWithdrawalShares({
   const { data, status } = useQuery({
     queryKey: makeQueryKey("previewRedeemWithdrawalShares", {
       market: market.address,
-      withdrawalSharesIn,
-      minBaseAmountOutPerShare,
+      withdrawalSharesIn: withdrawalSharesIn?.toString(),
+      minBaseAmountOutPerShare: minBaseAmountOutPerShare?.toString(),
       destination,
       asUnderlying,
     }),

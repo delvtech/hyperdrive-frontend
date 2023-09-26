@@ -38,8 +38,8 @@ export function usePreviewRemoveLiquidity({
   const { data, status } = useQuery({
     queryKey: makeQueryKey("previewRemoveLiquidity", {
       market: market.address,
-      lpSharesIn,
-      minBaseAmountOut,
+      lpSharesIn: lpSharesIn?.toString(),
+      minBaseAmountOut: minBaseAmountOut?.toString(),
       destination,
       asUnderlying,
     }),
