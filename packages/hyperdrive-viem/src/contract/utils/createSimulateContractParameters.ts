@@ -27,7 +27,7 @@ export function createSimulateContractParameters(
     gas,
     ...gasPriceOptions,
     nonce: nonce !== undefined ? Number(nonce) : undefined,
-  } as any;
+  };
 }
 
 type SimulateContractParameters = {

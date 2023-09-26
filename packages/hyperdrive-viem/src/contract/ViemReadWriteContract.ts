@@ -78,6 +78,18 @@ export class ViemReadWriteContract<TAbi extends Abi = Abi>
     const hash = await this._walletClient.writeContract(request);
     options?.onSubmitted?.(hash);
     await this._publicClient.waitForTransactionReceipt({ hash });
-    return result as FunctionReturnType<TAbi, TFunctionName>;
+
+    // Viem is smart enough to unpack an array of length 1 (might have something
+    // to do with the `components` field in the abi), but not all contract
+    // methods return a single-value array. To handle this discrepancy we make
+    // sure to always return an array.
+    if (Array.isArray(result)) {
+      return result as unknown as Promise<
+        FunctionReturnType<TAbi, TFunctionName>
+      >;
+    }
+    return [result] as unknown as Promise<
+      FunctionReturnType<TAbi, TFunctionName>
+    >;
   }
 }
