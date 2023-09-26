@@ -379,6 +379,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
 
   /**
    * Gets the spot price of a long
+   * {@label Get Long Price}
    * @param options - The read options
    * @returns the spot price of a long
    * ```ts
