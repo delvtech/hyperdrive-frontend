@@ -56,8 +56,8 @@ export function usePreviewOpenLong({
             destination,
             asUnderlying,
             options: {
-              // all preview methods require a `from` option in order call the
-              // simulateContract successfully
+              // all preview methods require a `from` option in order to call
+              // the simulateContract successfully
               from: account,
             },
           })
