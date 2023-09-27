@@ -1,9 +1,6 @@
 // Main Hyperdrive sdk entrypoint for consumers
-export {
-  createHyperdriveClient,
-  type HyperdriveClientOptions,
-  type HyperdriveClient,
-} from "src/hyperdrive/utils/createHyperdriveClient";
+export { ReadHyperdrive } from "src/hyperdrive/ReadHyperdrive";
+export { ReadWriteHyperdrive } from "src/hyperdrive/ReadWriteHyperdrive";
 
 // ABIs
 export { ERC20_ABI } from "src/abis/ERC20";
@@ -72,7 +69,3 @@ export type {
 // Math utils
 export { adjustAmountByPercentage } from "src/base/adjustAmountByPercentage";
 export { multiplyBigInt } from "src/base/multiplyBigInt/multiplyBigInt";
-
-// Client classes
-export { ReadHyperdrive } from "src/hyperdrive/ReadHyperdrive";
-export { ReadWriteHyperdrive } from "src/hyperdrive/ReadWriteHyperdrive";
