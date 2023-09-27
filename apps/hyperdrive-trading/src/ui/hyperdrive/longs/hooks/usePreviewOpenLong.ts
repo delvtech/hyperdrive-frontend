@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
-import { Address, usePublicClient } from "wagmi";
+import { Address } from "wagmi";
 
 interface UsePreviewOpenLongOptions {
   market: Hyperdrive;
@@ -27,15 +27,12 @@ export function usePreviewOpenLong({
   asUnderlying = true,
   enabled,
 }: UsePreviewOpenLongOptions): UsePreviewOpenLongResult {
-  const publicClient = usePublicClient();
-
-  const readHyperdrive = useReadWriteHyperdrive(market.address);
+  const readWriteHyperdrive = useReadWriteHyperdrive(market.address);
   const queryEnabled =
-    !!readHyperdrive &&
+    !!readWriteHyperdrive &&
     !!baseAmount &&
     !!minBondAmountOut &&
     !!destination &&
-    !!publicClient &&
     enabled;
 
   const { data, status } = useQuery({
@@ -48,7 +45,7 @@ export function usePreviewOpenLong({
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? () =>
-          readHyperdrive.previewOpenLong({
+          readWriteHyperdrive.previewOpenLong({
             baseAmount,
             minBondAmountOut,
             destination,
