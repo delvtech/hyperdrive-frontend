@@ -14,6 +14,8 @@ interface UseAddLiquidityOptions {
   minAPR: bigint | undefined;
   maxAPR: bigint | undefined;
   asUnderlying?: boolean;
+  /** Controls whether or not an `addLiquidity` callback will be returned to the
+   * caller, useful for disabling buttons and other hooks */
   enabled?: boolean;
 }
 
@@ -34,16 +36,17 @@ export function useAddLiquidity({
   const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
   const queryClient = useQueryClient();
   const addTransaction = useAddRecentTransaction();
+  const mutationEnabled =
+    !!contribution &&
+    minAPR !== undefined &&
+    maxAPR !== undefined &&
+    !!destination &&
+    enabled &&
+    readWriteHyperdrive;
+
   const { mutate: addLiquidity, status } = useMutation({
     mutationFn: async () => {
-      if (
-        !!contribution &&
-        !!minAPR &&
-        !!maxAPR &&
-        !!destination &&
-        enabled &&
-        readWriteHyperdrive
-      ) {
+      if (mutationEnabled) {
         await readWriteHyperdrive.addLiquidity({
           contribution,
           minAPR,
@@ -65,7 +68,9 @@ export function useAddLiquidity({
   });
 
   return {
-    addLiquidity,
+    // Don't return the `addLiquidity` callback if mutation isn't enabled, this
+    // makes the hook feel more like useContractWrite from wagmi
+    addLiquidity: mutationEnabled ? addLiquidity : undefined,
     addLiquidityStatus: status,
   };
 }

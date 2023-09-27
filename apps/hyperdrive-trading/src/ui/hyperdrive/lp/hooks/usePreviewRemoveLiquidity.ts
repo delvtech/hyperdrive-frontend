@@ -1,7 +1,7 @@
 import { MutationStatus, useQuery } from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
+import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
 import { Address } from "wagmi";
 
 interface UsePreviewRemoveLiquidityOptions {
@@ -27,25 +27,25 @@ export function usePreviewRemoveLiquidity({
   asUnderlying = true,
   enabled = true,
 }: UsePreviewRemoveLiquidityOptions): UsePreviewRemoveLiquidityResult {
-  const readHyperdrive = useReadHyperdrive(market.address);
+  const readWriteHyperdrive = useReadWriteHyperdrive(market.address);
   const queryEnabled =
     !!lpSharesIn &&
     minBaseAmountOut !== undefined &&
     !!destination &&
     enabled &&
-    !!readHyperdrive;
+    !!readWriteHyperdrive;
 
   const { data, status } = useQuery({
     queryKey: makeQueryKey("previewRemoveLiquidity", {
       market: market.address,
-      lpSharesIn,
-      minBaseAmountOut,
+      lpSharesIn: lpSharesIn?.toString(),
+      minBaseAmountOut: minBaseAmountOut?.toString(),
       destination,
       asUnderlying,
     }),
     queryFn: queryEnabled
       ? () =>
-          readHyperdrive.previewRemoveLiquidity({
+          readWriteHyperdrive.previewRemoveLiquidity({
             lpSharesIn,
             minBaseAmountOut,
             destination,

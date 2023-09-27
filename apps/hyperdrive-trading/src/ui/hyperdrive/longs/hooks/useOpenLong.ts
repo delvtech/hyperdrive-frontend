@@ -38,14 +38,16 @@ export function useOpenLong({
   const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
   const addTransaction = useAddRecentTransaction();
   const queryClient = useQueryClient();
+  const mutationEnabled =
+    !!baseAmount &&
+    !!bondAmountOut &&
+    !!destination &&
+    enabled &&
+    readWriteHyperdrive;
+
   const { mutate: openLong, status } = useMutation({
     mutationFn: async () => {
-      if (
-        !!baseAmount &&
-        !!bondAmountOut &&
-        !!destination &&
-        readWriteHyperdrive
-      ) {
+      if (mutationEnabled) {
         await readWriteHyperdrive.openLong({
           baseAmount,
           bondAmountOut,
@@ -67,8 +69,9 @@ export function useOpenLong({
     },
   });
   return {
-    // Don't return the `openLong` callback if the caller has disabled this hook
-    openLong: enabled ? openLong : undefined,
+    // Don't return the `openLong` callback if mutation isn't enabled, this
+    // makes the hook feel more like useContractWrite from wagmi
+    openLong: mutationEnabled ? openLong : undefined,
     openLongStatus: status,
   };
 }

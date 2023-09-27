@@ -30,16 +30,17 @@ export function useCloseLong({
   const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
   const queryClient = useQueryClient();
   const addTransaction = useAddRecentTransaction();
+  const mutationEnabled =
+    !!long &&
+    !!bondAmountIn &&
+    minBaseAmountOut !== undefined && // check undefined since 0 is valid
+    !!destination &&
+    enabled &&
+    readWriteHyperdrive;
+
   const { mutate: closeLong, status } = useMutation({
     mutationFn: async () => {
-      if (
-        !!long &&
-        !!bondAmountIn &&
-        minBaseAmountOut !== undefined && // check undefined since 0 is valid
-        !!destination &&
-        enabled &&
-        readWriteHyperdrive
-      ) {
+      if (mutationEnabled) {
         await readWriteHyperdrive.closeLong({
           bondAmountIn,
           minBaseAmountOut,
@@ -61,7 +62,9 @@ export function useCloseLong({
   });
 
   return {
-    closeLong,
+    // Don't return the `closeLong` callback if mutation isn't enabled, this
+    // makes the hook feel more like useContractWrite from wagmi
+    closeLong: mutationEnabled ? closeLong : undefined,
     isPendingWalletAction: status === "loading",
   };
 }

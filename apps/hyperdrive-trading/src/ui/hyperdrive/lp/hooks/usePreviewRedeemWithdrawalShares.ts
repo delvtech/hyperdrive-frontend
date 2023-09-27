@@ -1,7 +1,7 @@
 import { MutationStatus, useQuery } from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
+import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
 import { Address } from "wagmi";
 
 interface UsePreviewRedeemWithdrawalSharesOptions {
@@ -27,25 +27,25 @@ export function usePreviewRedeemWithdrawalShares({
   asUnderlying = true,
   enabled = true,
 }: UsePreviewRedeemWithdrawalSharesOptions): UsePreviewRedeemWithdrawalSharesResult {
-  const readHyperdrive = useReadHyperdrive(market.address);
+  const readWriteHyperdrive = useReadWriteHyperdrive(market.address);
   const queryEnabled =
     !!withdrawalSharesIn &&
     minBaseAmountOutPerShare !== undefined &&
     !!destination &&
     enabled &&
-    !!readHyperdrive;
+    !!readWriteHyperdrive;
 
   const { data, status } = useQuery({
     queryKey: makeQueryKey("previewRedeemWithdrawalShares", {
       market: market.address,
-      withdrawalSharesIn,
-      minBaseAmountOutPerShare,
+      withdrawalSharesIn: withdrawalSharesIn?.toString(),
+      minBaseAmountOutPerShare: minBaseAmountOutPerShare?.toString(),
       destination,
       asUnderlying,
     }),
     queryFn: queryEnabled
       ? () =>
-          readHyperdrive.previewRedeemWithdrawalShares({
+          readWriteHyperdrive.previewRedeemWithdrawalShares({
             withdrawalSharesIn,
             minBaseAmountOutPerShare,
             destination,

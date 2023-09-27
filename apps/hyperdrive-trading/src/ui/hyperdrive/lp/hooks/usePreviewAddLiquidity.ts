@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
+import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
 import { Address, useAccount, usePublicClient } from "wagmi";
 
 interface UsePreviewAddLiquidityOptions {
@@ -30,7 +30,7 @@ export function usePreviewAddLiquidity({
 }: UsePreviewAddLiquidityOptions): UsePreviewAddLiquidityResult {
   const publicClient = usePublicClient();
   const { address: account } = useAccount();
-  const readHyperdrive = useReadHyperdrive(market.address);
+  const readWriteHyperdrive = useReadWriteHyperdrive(market.address);
   const queryEnabled =
     minAPR !== undefined &&
     !!maxAPR &&
@@ -39,7 +39,7 @@ export function usePreviewAddLiquidity({
     !!publicClient &&
     !!account &&
     enabled &&
-    !!readHyperdrive;
+    !!readWriteHyperdrive;
 
   const { data, status } = useQuery({
     queryKey: makeQueryKey("previewAddLiquidity", {
@@ -52,7 +52,7 @@ export function usePreviewAddLiquidity({
     }),
     queryFn: queryEnabled
       ? () =>
-          readHyperdrive.previewAddLiquidity({
+          readWriteHyperdrive.previewAddLiquidity({
             destination,
             contribution,
             minAPR,

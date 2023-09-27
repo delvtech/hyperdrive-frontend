@@ -32,15 +32,16 @@ export function useRemoveLiquidity({
   const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
   const queryClient = useQueryClient();
   const addTransaction = useAddRecentTransaction();
+  const mutationEnabled =
+    !!lpSharesIn &&
+    minBaseAmountOut !== undefined &&
+    !!destination &&
+    enabled &&
+    readWriteHyperdrive;
+
   const { mutate: removeLiquidity, status } = useMutation({
     mutationFn: async () => {
-      if (
-        !!lpSharesIn &&
-        minBaseAmountOut !== undefined &&
-        !!destination &&
-        enabled &&
-        readWriteHyperdrive
-      ) {
+      if (mutationEnabled) {
         await readWriteHyperdrive.removeLiquidity({
           lpSharesIn,
           minBaseAmountOut,
@@ -60,7 +61,9 @@ export function useRemoveLiquidity({
     },
   });
   return {
-    removeLiquidity,
+    // Don't return the `removeLiquidity` callback if mutation isn't enabled,
+    // this makes the hook feel more like useContractWrite from wagmi
+    removeLiquidity: mutationEnabled ? removeLiquidity : undefined,
     removeLiquidityStatus: status,
   };
 }
