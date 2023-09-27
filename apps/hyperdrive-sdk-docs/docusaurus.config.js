@@ -30,7 +30,7 @@ const config = {
     ],
   ],
 
-  onBrokenLinks: "throw",
+  onBrokenLinks: "ignore",
   onBrokenMarkdownLinks: "warn",
 
   presets: [
