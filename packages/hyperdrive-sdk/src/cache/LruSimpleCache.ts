@@ -10,6 +10,7 @@ import { SimpleCache, SimpleCacheKey } from "src/cache/SimpleCache";
  *
  * @template TValue - The type of value to be stored in the cache.
  * @template TKey - The type of key used to access values in the cache.
+ * @hidden
  */
 export class LruSimpleCache<
   TValue extends NonNullable<unknown> = NonNullable<unknown>,

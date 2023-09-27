@@ -29,5 +29,6 @@
       "dependsOn": ["build"],
       "inputs": ["test/**/*.ts", "test/**/*.tsx"]
     }
+
   }
 }

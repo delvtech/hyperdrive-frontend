@@ -4,7 +4,7 @@
  *
  * @template TValue - The type of value to be stored in the cache.
  * @template TKey - The type of key used to access values in the cache.
- *   Must be a serializable value to ensure consistency and predictability.
+ * Must be a serializable value to ensure consistency and predictability.
  */
 export interface SimpleCache<
   TValue = any,

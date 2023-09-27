@@ -300,6 +300,9 @@ export class ReadHyperdrive implements IReadHyperdrive {
   protected readonly contract: IReadHyperdriveContract;
   protected readonly mathContract: IReadHyperdriveMathContract;
 
+  /**
+   * @hidden
+   */
   constructor({ contract, mathContract }: ReadHyperdriveOptions) {
     this.contract = contract;
     this.mathContract = mathContract;
@@ -368,6 +371,16 @@ export class ReadHyperdrive implements IReadHyperdrive {
     return totalVolume;
   }
 
+  /**
+   * Gets the spot price of a long
+   * {@label Get Long Price}
+   * @param options - The read options
+   * @returns the spot price of a long
+   * ```ts
+   *   const longPrice = await readHyperdrive.getLongPrice();
+   * ```
+   *
+   */
   async getLongPrice(options?: ContractReadOptions): Promise<bigint> {
     const { initialSharePrice, timeStretch } = await this.getPoolConfig(
       options,
