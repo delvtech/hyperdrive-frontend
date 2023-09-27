@@ -17,8 +17,7 @@
     "format": "turbo run format",
     "format:check": "turbo run format:check",
     "postinstall": "husky install",
-    "typecheck": "turbo run typecheck",
-    "start:docs": "turbo run start:docs --filter=./apps/hyperdrive-sdk-docs --force"
+    "typecheck": "turbo run typecheck"
   },
   "devDependencies": {
     "husky": "^8.0.1",

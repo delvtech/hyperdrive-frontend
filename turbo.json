@@ -28,10 +28,7 @@
     "test:run": {
       "dependsOn": ["build"],
       "inputs": ["test/**/*.ts", "test/**/*.tsx"]
-    },
-    "start:docs": {
-      "dependsOn": ["^build"],
-      "outputs": []
     }
+
   }
 }
