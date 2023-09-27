@@ -1,8 +1,9 @@
-import { HyperdriveABI } from "@hyperdrive/core";
 import { MutationStatus, useQuery } from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
 import { ZERO_ADDRESS } from "src/base/constants";
-import { Address, useAccount, usePublicClient } from "wagmi";
+import { makeQueryKey } from "src/base/makeQueryKey";
+import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
+import { Address } from "wagmi";
 
 interface UsePreviewOpenShortOptions {
   market: Hyperdrive;
@@ -26,49 +27,38 @@ export function usePreviewOpenShort({
   asUnderlying = true,
   enabled = true,
 }: UsePreviewOpenShortOptions): UsePreviewOpenShortResult {
-  const publicClient = usePublicClient();
-  const { address: account } = useAccount();
-
+  const readWriteHyperdrive = useReadWriteHyperdrive(market.address);
   const queryEnabled =
+    !!readWriteHyperdrive &&
     !!amountBondShorts &&
     !!maxBaseAmountIn &&
     !!destination &&
-    !!publicClient &&
-    !!account &&
     enabled;
 
-  const requiresEth = asUnderlying && market.baseToken.address === ZERO_ADDRESS;
-
   const { data, status } = useQuery({
-    queryKey: [
-      "preview-open-short",
-      market.address,
-      amountBondShorts?.toString(),
-      maxBaseAmountIn?.toString(),
+    queryKey: makeQueryKey("previewOpenShort", {
+      market: market.address,
+      amountBondShorts: amountBondShorts?.toString(),
+      maxBaseAmountIn: maxBaseAmountIn?.toString(),
       destination,
-    ],
+    }),
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? async () => {
-          const { result } = await publicClient.simulateContract({
-            abi: HyperdriveABI,
-            address: market.address,
-            account,
-            functionName: "openShort",
-            args: [
-              amountBondShorts,
-              maxBaseAmountIn,
-              destination,
-              asUnderlying,
-            ],
-            // Used when ETH is the base asset (e.g. StethHyperdrive) and
-            // asUnderlying is true.
-            value: requiresEth && maxBaseAmountIn ? maxBaseAmountIn : 0n,
-          });
+          const requiresEth =
+            asUnderlying && market.baseToken.address === ZERO_ADDRESS;
 
-          return result[1];
+          return readWriteHyperdrive.previewOpenShort({
+            amountOfBondsToShort: amountBondShorts,
+            asUnderlying,
+            destination,
+            maxBaseAmountIn,
+            options: {
+              value: requiresEth && maxBaseAmountIn ? maxBaseAmountIn : 0n,
+            },
+          });
         }
       : undefined,
   });
-  return { baseAmountIn: data, status };
+  return { baseAmountIn: data?.traderDeposit, status };
 }
