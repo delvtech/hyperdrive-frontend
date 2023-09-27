@@ -1,4 +1,4 @@
-import { ClosedShort } from "@hyperdrive/core";
+import { ClosedShort } from "@hyperdrive/sdk";
 import { QueryStatus } from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
 import { Row } from "src/ui/base/components/tables/SortableGridTable";

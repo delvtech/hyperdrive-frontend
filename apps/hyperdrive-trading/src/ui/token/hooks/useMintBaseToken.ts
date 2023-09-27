@@ -1,4 +1,4 @@
-import { ERC20MintableABI } from "@hyperdrive/core";
+import { ERC20MintableABI } from "@hyperdrive/sdk";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { Address, formatUnits } from "viem";
 import {

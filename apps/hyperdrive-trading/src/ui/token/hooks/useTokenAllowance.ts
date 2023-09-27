@@ -1,4 +1,4 @@
-import { ERC20_ABI } from "@hyperdrive/core";
+import { ERC20_ABI } from "@hyperdrive/sdk";
 import { Address, useContractRead } from "wagmi";
 
 interface UseTokenAllowanceOptions {
