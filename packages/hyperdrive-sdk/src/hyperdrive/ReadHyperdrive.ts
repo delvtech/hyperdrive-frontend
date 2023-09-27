@@ -1,9 +1,3 @@
-import {
-  ClosedLpShares,
-  ClosedShort,
-  OpenShort,
-  RedeemedWithdrawalShares,
-} from "@hyperdrive/core";
 import { Address } from "abitype";
 import groupBy from "lodash.groupby";
 import mapValues from "lodash.mapvalues";
@@ -23,6 +17,9 @@ import { WITHDRAW_SHARES_ASSET_ID, LP_ASSET_ID } from "src/lp/constants";
 import { decodeAssetFromTransferSingleEventData } from "src/utils/decodeAssetFromTransferSingleEventData";
 import { HyperdriveABI } from "src/abis/Hyperdrive";
 import { ClosedLong, Long } from "src/longs/types";
+import { ClosedLpShares } from "src/lp/ClosedLpShares";
+import { RedeemedWithdrawalShares } from "src/withdrawalShares/RedeemedWithdrawalShares";
+import { ClosedShort, OpenShort } from "src/shorts/types";
 
 export interface ReadHyperdriveOptions {
   contract: IReadHyperdriveContract;

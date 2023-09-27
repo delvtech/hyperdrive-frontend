@@ -1,4 +1,4 @@
-import { multiplyBigInt } from "@hyperdrive/core";
+import { multiplyBigInt } from "@hyperdrive/sdk";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { Hyperdrive } from "src/appconfig/types";

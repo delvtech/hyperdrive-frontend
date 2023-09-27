@@ -1,6 +1,6 @@
 import { Address } from "abitype";
 
-interface Short {
+export interface Short {
   hyperdriveAddress: Address;
   assetId: bigint;
   bondAmount: bigint;

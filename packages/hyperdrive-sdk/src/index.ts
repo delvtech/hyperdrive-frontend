@@ -48,12 +48,18 @@ export type {
 export type { INetwork } from "src/network/Network";
 
 // Shorts
-export type { ClosedShort, OpenShort } from "src/shorts/types";
+export type { Short, ClosedShort, OpenShort } from "src/shorts/types";
 
 // Longs
 export type { ClosedLong, Long } from "src/longs/types";
 
-// Utils
+// LP
+export type { ClosedLpShares } from "src/lp/ClosedLpShares";
+
+// Withdrawal Shares
+export type { RedeemedWithdrawalShares } from "src/withdrawalShares/RedeemedWithdrawalShares";
+
+// ABI utils
 export type {
   EventName,
   EventArgs,
@@ -62,6 +68,10 @@ export type {
   FunctionArgs,
   FunctionReturnType,
 } from "src/base/abitype";
+
+// Math utils
+export { adjustAmountByPercentage } from "src/base/adjustAmountByPercentage";
+export { multiplyBigInt } from "src/base/multiplyBigInt/multiplyBigInt";
 
 // Client classes
 export { ReadHyperdrive } from "src/hyperdrive/ReadHyperdrive";

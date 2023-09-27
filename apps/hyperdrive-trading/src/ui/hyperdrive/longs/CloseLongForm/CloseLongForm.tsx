@@ -1,5 +1,4 @@
-import { adjustAmountByPercentage } from "@hyperdrive/core";
-import { Long } from "@hyperdrive/sdk";
+import { Long, adjustAmountByPercentage } from "@hyperdrive/sdk";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";

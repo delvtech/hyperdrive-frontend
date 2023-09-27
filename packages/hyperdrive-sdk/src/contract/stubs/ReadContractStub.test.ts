@@ -1,7 +1,7 @@
 import { expect, test } from "vitest";
-import { HyperdriveABI } from "@hyperdrive/core";
 import { ContractEvent } from "src/contract/Contract";
 import { ReadContractStub } from "src/contract/stubs/ReadContractStub";
+import { HyperdriveABI } from "src/abis/Hyperdrive";
 
 test("It stubs the read function", async () => {
   const contract = new ReadContractStub(HyperdriveABI);

@@ -1,4 +1,4 @@
-import { ClosedLpShares } from "@hyperdrive/core";
+import { ClosedLpShares } from "@hyperdrive/sdk";
 import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";

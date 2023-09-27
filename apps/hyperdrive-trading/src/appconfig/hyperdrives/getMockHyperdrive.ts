@@ -1,4 +1,4 @@
-import { HyperdriveABI } from "@hyperdrive/core";
+import { HyperdriveABI } from "@hyperdrive/sdk";
 import { Hyperdrive } from "src/appconfig/types";
 import { Address, PublicClient } from "viem";
 import { erc20ABI } from "wagmi";
