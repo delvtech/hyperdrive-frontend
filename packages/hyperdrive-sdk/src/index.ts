@@ -41,6 +41,10 @@ export type {
   IReadWriteHyperdriveContract,
 } from "src/hyperdrive/HyperdriveContract";
 
+// Pool
+export type { PoolConfig } from "src/pool/PoolConfig";
+export type { PoolInfo } from "src/pool/PoolInfo";
+
 // Network
 export type { INetwork } from "src/network/Network";
 
