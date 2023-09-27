@@ -1,6 +1,7 @@
-import { HyperdriveABI } from "@hyperdrive/core";
 import { QueryStatus, useQuery } from "@tanstack/react-query";
-import { Address, useAccount, usePublicClient } from "wagmi";
+import { makeQueryKey } from "src/base/makeQueryKey";
+import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
+import { Address } from "wagmi";
 
 interface UsePreviewCloseShortOptions {
   hyperdriveAddress: Address;
@@ -26,46 +27,32 @@ export function usePreviewCloseShort({
   asUnderlying = true,
   enabled = true,
 }: UsePreviewCloseShortOptions): UsePreviewCloseShortResult {
-  const publicClient = usePublicClient();
-  const { address: account } = useAccount();
-
+  const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
   const queryEnabled =
+    !!readWriteHyperdrive &&
     !!maturityTime &&
     !!shortAmountIn &&
     minBaseAmountOut !== undefined && // check against undefined explicitly, because base amount of 0 is valid
     !!destination &&
-    !!publicClient &&
-    !!account &&
     enabled;
 
   const { data, status } = useQuery({
-    queryKey: [
-      "preview-close-short",
+    queryKey: makeQueryKey("previewCloseShort", {
       hyperdriveAddress,
-      shortAmountIn?.toString(),
-      minBaseAmountOut?.toString(),
-      destination?.toString(),
-    ],
+      shortAmountIn: shortAmountIn?.toString(),
+      minBaseAmountOut: minBaseAmountOut?.toString(),
+      destination,
+    }),
     enabled: queryEnabled,
     queryFn: queryEnabled
-      ? async () => {
-          // TODO: Move this to @hyperdrive/queries and use the math contract for this calc instead
-          const { result } = await publicClient.simulateContract({
-            abi: HyperdriveABI,
-            address: hyperdriveAddress,
-            account,
-            functionName: "closeShort",
-            args: [
-              maturityTime,
-              shortAmountIn,
-              minBaseAmountOut,
-              destination,
-              asUnderlying,
-            ],
-          });
-
-          return result;
-        }
+      ? async () =>
+          readWriteHyperdrive.previewCloseShort({
+            asUnderlying,
+            destination,
+            maturityTime,
+            minBaseAmountOut,
+            shortAmountIn,
+          })
       : undefined,
   });
 
