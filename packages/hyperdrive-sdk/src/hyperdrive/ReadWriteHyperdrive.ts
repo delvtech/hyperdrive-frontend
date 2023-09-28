@@ -1,5 +1,4 @@
 import { IReadWriteHyperdriveContract } from "src/hyperdrive/HyperdriveContract";
-import { Short } from "@hyperdrive/core";
 import { Address } from "abitype";
 import {
   ContractWriteOptions,
@@ -12,6 +11,7 @@ import {
   ReadHyperdriveOptions,
 } from "src/hyperdrive/ReadHyperdrive";
 import { Long } from "src/longs/types";
+import { Short } from "src/shorts/types";
 
 export interface IReadWriteHyperdrive extends IReadHyperdrive {
   /**
