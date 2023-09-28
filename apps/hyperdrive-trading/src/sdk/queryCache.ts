@@ -7,11 +7,6 @@ function toQueryKey(key: SimpleCacheKey): QueryKey {
   return [stringify(key)];
 }
 
-// Convert QueryKey to SimpleCacheKey
-function fromQueryKey(queryKey: QueryKey): SimpleCacheKey {
-  return JSON.parse(queryKey[0] as string);
-}
-
 export class QueryCacheSdk<
   TValue extends NonNullable<unknown> = NonNullable<unknown>,
   TKey extends SimpleCacheKey = SimpleCacheKey,
