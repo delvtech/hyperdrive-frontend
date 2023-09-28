@@ -4,7 +4,7 @@ import stringify from "fast-json-stable-stringify";
 
 // Convert SimpleCacheKey to QueryKey
 function toQueryKey(key: SimpleCacheKey): QueryKey {
-  return [stringify(key)];
+  return ["@hyperdrive/sdk", stringify(key)];
 }
 
 export class QueryCacheSdk<
@@ -14,8 +14,8 @@ export class QueryCacheSdk<
 {
   private queryClient: QueryClient;
 
-  constructor() {
-    this.queryClient = new QueryClient();
+  constructor(queryClient?: QueryClient) {
+    this.queryClient = queryClient ?? new QueryClient();
   }
 
   get(key: TKey): TValue | undefined {
@@ -50,17 +50,5 @@ export class QueryCacheSdk<
       }
     }
     return undefined;
-  }
-
-  subscribe(key: TKey): void {
-    const queryKey = toQueryKey(key);
-    const unsub = this.queryClient.getQueryCache().subscribe((event) => {
-      if (
-        event.query.getObserversCount() === 0 &&
-        event.query.queryKey === queryKey
-      ) {
-        unsub();
-      }
-    });
   }
 }
