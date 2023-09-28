@@ -6,6 +6,7 @@ import {
 } from "@hyperdrive/sdk";
 import { ViemCachedReadContract } from "src/contract/ViemCachedReadContract";
 import { Address, PublicClient } from "viem";
+import { ViemNetwork } from "src/network/ViemNetwork";
 
 interface ViemReadHyperdriveOptions {
   address: Address;
@@ -38,6 +39,7 @@ export class ViemReadHyperdrive extends ReadHyperdrive {
         cache,
         id,
       }),
+      network: new ViemNetwork(publicClient),
     });
   }
 }

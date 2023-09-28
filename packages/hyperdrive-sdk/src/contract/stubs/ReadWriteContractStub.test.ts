@@ -1,6 +1,6 @@
-import { expect, test } from "vitest";
+import { HyperdriveABI } from "src/abis/Hyperdrive";
 import { ReadWriteContractStub } from "src/contract/stubs/ReadWriteContractStub";
-import { HyperdriveABI } from "@hyperdrive/core";
+import { expect, test } from "vitest";
 
 test("It stubs the write function", async () => {
   const contract = new ReadWriteContractStub(HyperdriveABI);
