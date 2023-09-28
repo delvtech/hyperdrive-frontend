@@ -1,13 +1,13 @@
 import { SimpleCache, SimpleCacheKey } from "@hyperdrive/sdk";
-import { QueryClient, QueryKey } from "@tanstack/react-query";
+import { QueryClient, QueryKey } from "@tanstack/query-core";
 import stringify from "fast-json-stable-stringify";
 
 // Convert SimpleCacheKey to QueryKey
-function toQueryKey(key: SimpleCacheKey): QueryKey {
+function convertSimpleCacheKeyToQueryKey(key: SimpleCacheKey): QueryKey {
   return ["@hyperdrive/sdk", stringify(key)];
 }
 
-export class QueryCacheSdk<
+export class QueryClientSimpleCache<
   TValue extends NonNullable<unknown> = NonNullable<unknown>,
   TKey extends SimpleCacheKey = SimpleCacheKey,
 > implements SimpleCache<TValue, TKey>
@@ -19,17 +19,17 @@ export class QueryCacheSdk<
   }
 
   get(key: TKey): TValue | undefined {
-    const queryKey = toQueryKey(key);
+    const queryKey = convertSimpleCacheKeyToQueryKey(key);
     return this.queryClient.getQueryData<TValue>(queryKey);
   }
 
   set(key: TKey, value: TValue): void {
-    const queryKey = toQueryKey(key);
+    const queryKey = convertSimpleCacheKeyToQueryKey(key);
     this.queryClient.setQueryData(queryKey, value);
   }
 
   delete(key: TKey): boolean {
-    const queryKey = toQueryKey(key);
+    const queryKey = convertSimpleCacheKeyToQueryKey(key);
     this.queryClient.removeQueries(queryKey);
     // Assume success because removeQueries does not return a value
     return true;
