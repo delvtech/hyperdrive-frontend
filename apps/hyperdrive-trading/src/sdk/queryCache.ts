@@ -1,0 +1,49 @@
+import { SimpleCache, SimpleCacheKey } from "@hyperdrive/sdk";
+import { QueryClient, QueryKey } from "@tanstack/react-query";
+import stringify from "fast-json-stable-stringify";
+
+// Convert SimpleCacheKey to QueryKey
+function toQueryKey(key: SimpleCacheKey): QueryKey {
+  return [stringify(key)];
+}
+
+// Convert QueryKey to SimpleCacheKey
+function fromQueryKey(queryKey: QueryKey): SimpleCacheKey {
+  return JSON.parse(queryKey[0] as string);
+}
+
+export class QueryCacheSdk<
+  TValue extends NonNullable<unknown> = NonNullable<unknown>,
+  TKey extends SimpleCacheKey = SimpleCacheKey,
+> implements SimpleCache<TValue, TKey>
+{
+  private queryClient: QueryClient;
+
+  constructor() {
+    this.queryClient = new QueryClient();
+  }
+
+  get(key: TKey): TValue | undefined {
+    const queryKey = toQueryKey(key);
+    return this.queryClient.getQueryData<TValue>(queryKey);
+  }
+
+  set(key: TKey, value: TValue): void {
+    const queryKey = toQueryKey(key);
+    this.queryClient.setQueryData(queryKey, value);
+  }
+
+  delete(key: TKey): boolean {
+    const queryKey = toQueryKey(key);
+    this.queryClient.removeQueries(queryKey);
+    return true; // Assuming success since React Query does not provide a boolean response for this operation.
+  }
+
+  clear(): void {
+    this.queryClient.clear();
+  }
+
+  find(predicate: (value: TValue, key: TKey) => boolean): TValue | undefined {
+    return undefined; // TODO: Implement this
+  }
+}
