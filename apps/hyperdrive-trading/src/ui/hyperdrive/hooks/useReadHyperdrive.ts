@@ -1,6 +1,6 @@
 import { ViemReadHyperdrive } from "@hyperdrive/sdk-viem";
 import { useMemo } from "react";
-import { sdkCache } from "src/sdk/sdkCache";
+import { querySdkCache } from "src/sdk/sdkCache";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Address, useChainId, usePublicClient } from "wagmi";
 
@@ -20,7 +20,7 @@ export function useReadHyperdrive(
       address,
       mathAddress: appConfig.hyperdriveMath,
       publicClient,
-      cache: sdkCache,
+      cache: querySdkCache,
       id: chainId.toString(),
     });
   }, [address, appConfig, chainId, publicClient]);

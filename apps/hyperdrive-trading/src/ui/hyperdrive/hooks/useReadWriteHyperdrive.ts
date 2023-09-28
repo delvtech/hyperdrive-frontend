@@ -1,7 +1,7 @@
 import { ReadWriteHyperdrive } from "@hyperdrive/sdk";
 import { ViemReadWriteHyperdrive } from "@hyperdrive/sdk-viem";
 import { useMemo } from "react";
-import { sdkCache } from "src/sdk/sdkCache";
+import { querySdkCache } from "src/sdk/sdkCache";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Address, useChainId, usePublicClient, useWalletClient } from "wagmi";
 
@@ -24,7 +24,7 @@ export function useReadWriteHyperdrive(
       mathAddress: appConfig.hyperdriveMath,
       publicClient,
       walletClient,
-      cache: sdkCache,
+      cache: querySdkCache,
       id: chainId.toString(),
     });
   }, [address, appConfig, chainId, publicClient, walletClient]);
