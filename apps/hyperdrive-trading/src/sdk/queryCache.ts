@@ -44,6 +44,20 @@ export class QueryCacheSdk<
   }
 
   find(predicate: (value: TValue, key: TKey) => boolean): TValue | undefined {
-    return undefined; // TODO: Implement this
+    const queries = this.queryClient.getQueryCache().findAll();
+
+    for (const query of queries) {
+      const value = query.state.data as TValue;
+      const key = query.queryKey as TKey;
+      if (predicate(value, key)) {
+        return value;
+      }
+    }
+    return undefined;
+  }
+
+  subscribe(key: TKey): void {
+    const queryKey = toQueryKey(key);
+    this.queryClient.getQueryCache().subscribe((event) => {});
   }
 }
