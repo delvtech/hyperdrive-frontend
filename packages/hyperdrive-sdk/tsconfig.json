@@ -6,6 +6,7 @@
     "rootDir": ".",
     "baseUrl": ".",
     "target": "esnext",
+    "module": "ESNext",
     "paths": {
       "src/*": ["src/*"]
     },

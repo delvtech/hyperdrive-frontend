@@ -1,22 +1,12 @@
 export const HyperdriveMathABI = [
   {
     inputs: [],
-    name: "FixedPointMath_AddOverflow",
-    type: "error",
-  },
-  {
-    inputs: [],
     name: "FixedPointMath_InvalidExponent",
     type: "error",
   },
   {
     inputs: [],
     name: "FixedPointMath_NegativeInput",
-    type: "error",
-  },
-  {
-    inputs: [],
-    name: "FixedPointMath_SubOverflow",
     type: "error",
   },
   {
@@ -48,35 +38,6 @@ export const HyperdriveMathABI = [
       },
     ],
     name: "calculateAPRFromReserves",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-    ],
-    stateMutability: "pure",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "uint256",
-        name: "_baseAmount",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "_bondAmount",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "_timeRemaining",
-        type: "uint256",
-      },
-    ],
-    name: "calculateBaseVolume",
     outputs: [
       {
         internalType: "uint256",
@@ -275,6 +236,11 @@ export const HyperdriveMathABI = [
           },
           {
             internalType: "uint256",
+            name: "longExposure",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
             name: "timeStretch",
             type: "uint256",
           },
@@ -293,10 +259,25 @@ export const HyperdriveMathABI = [
             name: "minimumShareReserves",
             type: "uint256",
           },
+          {
+            internalType: "uint256",
+            name: "curveFee",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "governanceFee",
+            type: "uint256",
+          },
         ],
         internalType: "struct HyperdriveMath.MaxTradeParams",
         name: "_params",
         type: "tuple",
+      },
+      {
+        internalType: "int256",
+        name: "_checkpointLongExposure",
+        type: "int256",
       },
       {
         internalType: "uint256",
@@ -341,6 +322,11 @@ export const HyperdriveMathABI = [
           },
           {
             internalType: "uint256",
+            name: "longExposure",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
             name: "timeStretch",
             type: "uint256",
           },
@@ -357,6 +343,16 @@ export const HyperdriveMathABI = [
           {
             internalType: "uint256",
             name: "minimumShareReserves",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "curveFee",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "governanceFee",
             type: "uint256",
           },
         ],
@@ -518,11 +514,6 @@ export const HyperdriveMathABI = [
             name: "shortAverageTimeRemaining",
             type: "uint256",
           },
-          {
-            internalType: "uint256",
-            name: "shortBaseVolume",
-            type: "uint256",
-          },
         ],
         internalType: "struct HyperdriveMath.PresentValueParams",
         name: "_params",
@@ -599,6 +590,11 @@ export const HyperdriveMathABI = [
       {
         internalType: "uint256",
         name: "_sharePrice",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_flatFee",
         type: "uint256",
       },
     ],
