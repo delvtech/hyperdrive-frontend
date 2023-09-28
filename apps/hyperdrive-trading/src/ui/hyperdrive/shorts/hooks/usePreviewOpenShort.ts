@@ -3,7 +3,7 @@ import { Hyperdrive } from "src/appconfig/types";
 import { ZERO_ADDRESS } from "src/base/constants";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
-import { Address } from "wagmi";
+import { Address } from "viem";
 
 interface UsePreviewOpenShortOptions {
   market: Hyperdrive;

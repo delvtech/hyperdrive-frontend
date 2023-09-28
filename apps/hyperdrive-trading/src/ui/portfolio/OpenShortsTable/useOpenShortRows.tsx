@@ -22,7 +22,7 @@ export function useOpenShortRows({
   hyperdrive,
 }: UseOpenShortRowsOptions): {
   openShortRows: Row[] | undefined;
-  openShortRowsStatus: "error" | "success" | "loading";
+  openShortRowsStatus: "error" | "success" | "pending";
 } {
   const { openShorts = [], openShortsStatus: openShortRowsStatus } =
     useOpenShorts({

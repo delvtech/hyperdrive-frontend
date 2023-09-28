@@ -96,7 +96,7 @@ export function RedeemWithdrawalSharesForm({
           className="daisy-btn-primary daisy-btn"
           disabled={
             !redeemWithdrawalShares ||
-            redeemWithdrawalSharesStatus === "loading"
+            redeemWithdrawalSharesStatus === "pending"
           }
           onClick={(e) => {
             redeemWithdrawalShares?.();

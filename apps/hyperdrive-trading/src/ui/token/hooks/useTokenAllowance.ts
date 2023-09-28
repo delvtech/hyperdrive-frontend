@@ -1,5 +1,6 @@
 import { ERC20_ABI } from "@hyperdrive/sdk";
-import { Address, useContractRead } from "wagmi";
+import { Address } from "viem";
+import { useContractRead } from "wagmi";
 
 interface UseTokenAllowanceOptions {
   account: Address | undefined;
@@ -9,7 +10,7 @@ interface UseTokenAllowanceOptions {
 
 interface useTokenAllowanceResult {
   tokenAllowance: bigint | undefined;
-  status: "error" | "idle" | "loading" | "success";
+  status: "error" | "pending" | "success";
 }
 
 export function useTokenAllowance({

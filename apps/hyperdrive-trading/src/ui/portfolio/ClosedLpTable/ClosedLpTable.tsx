@@ -150,8 +150,8 @@ export function ClosedLpTable({
       ]}
       rows={rows}
       showSkeleton={
-        closedLpSharesStatus === "loading" ||
-        redeemedWithdrawlSharesStatus === "loading"
+        closedLpSharesStatus === "pending" ||
+        redeemedWithdrawlSharesStatus === "pending"
       }
     />
   );

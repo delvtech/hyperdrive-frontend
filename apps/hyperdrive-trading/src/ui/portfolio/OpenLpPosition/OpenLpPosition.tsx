@@ -187,7 +187,7 @@ export function OpenLpPosition({
       ]}
       rows={rows}
       showSkeleton={
-        lpSharesStatus === "loading" || withdrawalSharesStatus === "loading"
+        lpSharesStatus === "pending" || withdrawalSharesStatus === "pending"
       }
     />
   );

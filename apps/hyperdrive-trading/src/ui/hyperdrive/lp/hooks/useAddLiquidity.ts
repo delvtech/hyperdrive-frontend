@@ -6,7 +6,7 @@ import {
   useMutation,
   useQueryClient,
 } from "@tanstack/react-query";
-import { Address } from "wagmi";
+import { Address } from "viem";
 interface UseAddLiquidityOptions {
   hyperdriveAddress: Address;
   destination: Address | undefined;

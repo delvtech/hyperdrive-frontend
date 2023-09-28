@@ -1,5 +1,5 @@
-import { Chain } from "wagmi";
-import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
+import { Chain } from "@wagmi/core/chains";
+import { http } from "viem";
 
 const { VITE_CUSTOM_CHAIN_NODE_RPC_URL, VITE_CUSTOM_CHAIN_CHAIN_ID } =
   import.meta.env;
@@ -19,8 +19,4 @@ export const cloudChain: Chain = {
   },
 };
 
-export const cloudChainRpcProvider = jsonRpcProvider({
-  rpc: () => ({
-    http: VITE_CUSTOM_CHAIN_NODE_RPC_URL,
-  }),
-});
+export const cloudChainTransport = http(VITE_CUSTOM_CHAIN_NODE_RPC_URL);

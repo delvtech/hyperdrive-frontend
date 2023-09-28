@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
-import { Address } from "wagmi";
+import { Address } from "viem";
 
 interface UsePreviewOpenLongOptions {
   market: Hyperdrive;
@@ -14,7 +14,7 @@ interface UsePreviewOpenLongOptions {
 }
 
 interface UsePreviewOpenLongResult {
-  status: "error" | "idle" | "loading" | "success";
+  status: "error" | "pending" | "success";
   longAmountOut: bigint | undefined;
   maturityTime: bigint | undefined;
 }

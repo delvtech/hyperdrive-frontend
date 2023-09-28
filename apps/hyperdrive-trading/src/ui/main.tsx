@@ -10,15 +10,14 @@ import { queryClient } from "src/network/queryClient";
 import { wagmiChains, wagmiConfig } from "src/network/wagmiClient";
 import { App } from "src/ui/app/App/App";
 import "src/ui/globals.css";
-import { WagmiConfig } from "wagmi";
-
+import { WagmiProvider } from "wagmi";
 const container = document.getElementById("root") as HTMLDivElement;
 const root = createRoot(container);
 
 root.render(
-  <QueryClientProvider client={queryClient}>
-    <Toaster position="bottom-left" reverseOrder={false} />
-    <WagmiConfig config={wagmiConfig}>
+  <WagmiProvider config={wagmiConfig}>
+    <QueryClientProvider client={queryClient}>
+      <Toaster position="bottom-left" reverseOrder={false} />
       <RainbowKitProvider
         chains={wagmiChains}
         showRecentTransactions
@@ -31,6 +30,6 @@ root.render(
           <App />
         </SkeletonTheme>
       </RainbowKitProvider>
-    </WagmiConfig>
-  </QueryClientProvider>,
+    </QueryClientProvider>
+  </WagmiProvider>,
 );

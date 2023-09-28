@@ -137,7 +137,7 @@ export function OpenShortForm({
             disabled={
               !hasEnoughBalance ||
               !openShort ||
-              openShortSubmittedStatus === "loading"
+              openShortSubmittedStatus === "pending"
             }
             className="daisy-btn-accent daisy-btn"
             onClick={() => openShort?.()}

@@ -30,7 +30,7 @@ export class QueryClientSimpleCache<
 
   delete(key: TKey): boolean {
     const queryKey = convertSimpleCacheKeyToQueryKey(key);
-    this.queryClient.removeQueries(queryKey);
+    this.queryClient.removeQueries({ queryKey, exact: true });
     // Assume success because removeQueries does not return a value
     return true;
   }

@@ -99,7 +99,7 @@ export function RemoveLiquidityForm({
       {account ? (
         <button
           className="daisy-btn-primary daisy-btn"
-          disabled={!removeLiquidity || removeLiquidityStatus === "loading"}
+          disabled={!removeLiquidity || removeLiquidityStatus === "pending"}
           onClick={(e) => {
             removeLiquidity?.();
           }}

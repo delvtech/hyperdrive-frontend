@@ -69,7 +69,7 @@ export function ClosedLongsTable({
         },
       ]}
       rows={closedLongRows}
-      showSkeleton={closedLongRowsStatus === "loading"}
+      showSkeleton={closedLongRowsStatus === "pending"}
     />
   );
 }

@@ -15,7 +15,7 @@ export function useClosedLongRows({
   hyperdrive,
 }: UseClosedLongRowsOptions): {
   closedLongRows: Row[] | undefined;
-  closedLongRowsStatus: "error" | "success" | "loading";
+  closedLongRowsStatus: "error" | "success" | "pending";
 } {
   const { closedLongs = [], closedLongsStatus: closedLongRowsStatus } =
     useClosedLongs({

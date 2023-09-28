@@ -1,7 +1,6 @@
-import { HyperdriveABI } from "@hyperdrive/sdk";
+import { ERC20_ABI, HyperdriveABI } from "@hyperdrive/sdk";
 import { Hyperdrive } from "src/appconfig/types";
 import { Address, PublicClient } from "viem";
-import { erc20ABI } from "wagmi";
 
 export async function getMockHyperdrive(
   hyperdriveAddress: Address,
@@ -20,6 +19,11 @@ export async function getMockHyperdrive(
     address: hyperdriveAddress,
   });
 
+  const newLocal = await publicClient.readContract({
+    address: baseToken,
+    abi: ERC20_ABI,
+    functionName: "name",
+  });
   return {
     address: hyperdriveAddress,
     termLengthMS: Number(positionDuration) * 1000,
@@ -28,15 +32,11 @@ export async function getMockHyperdrive(
     baseToken: {
       address: baseToken,
       decimals: 18, // No need to fetch this, we know it's 18
-      name: await publicClient.readContract({
-        address: baseToken,
-        abi: erc20ABI,
-        functionName: "name",
-      }),
+      name: newLocal,
 
       symbol: await publicClient.readContract({
         address: baseToken,
-        abi: erc20ABI,
+        abi: ERC20_ABI,
         functionName: "symbol",
       }),
       iconUrl:

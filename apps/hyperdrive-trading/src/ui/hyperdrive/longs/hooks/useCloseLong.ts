@@ -2,7 +2,7 @@ import { Long } from "@hyperdrive/sdk";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
-import { Address } from "wagmi";
+import { Address } from "viem";
 interface UseCloseLongOptions {
   hyperdriveAddress: Address;
   long: Long | undefined;
@@ -65,6 +65,6 @@ export function useCloseLong({
     // Don't return the `closeLong` callback if mutation isn't enabled, this
     // makes the hook feel more like useContractWrite from wagmi
     closeLong: mutationEnabled ? closeLong : undefined,
-    isPendingWalletAction: status === "loading",
+    isPendingWalletAction: status === "pending",
   };
 }

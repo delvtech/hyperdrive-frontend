@@ -141,7 +141,7 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
         ) : (
           // Trade button
           <button
-            disabled={!openLong || openLongStatus === "loading"}
+            disabled={!openLong || openLongStatus === "pending"}
             className="daisy-btn-secondary daisy-btn"
             onClick={() => openLong?.()}
           >

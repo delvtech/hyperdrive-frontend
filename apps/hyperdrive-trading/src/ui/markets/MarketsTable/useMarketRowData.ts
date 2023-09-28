@@ -2,6 +2,7 @@ import { getLiquidity } from "@hyperdrive/core";
 import { useQuery, UseQueryResult } from "@tanstack/react-query";
 import { AppConfig, Hyperdrive } from "src/appconfig/types";
 import { YieldSource } from "src/appconfig/yieldSources/yieldSources";
+import { makeQueryKey } from "src/base/makeQueryKey";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { PublicClient } from "viem";
 
@@ -64,7 +65,7 @@ export function useMarketRowData(
   const queryEnabled = !!hyperdrives && !!appConfig;
 
   return useQuery<MarketTableRowData[]>({
-    queryKey: hyperdrives,
+    queryKey: makeQueryKey("marketRowData", hyperdrives),
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? () => fetchMarketRowData(hyperdrives, publicClient, appConfig)

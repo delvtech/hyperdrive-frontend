@@ -70,7 +70,7 @@ export function ClosedShortsTable({
         },
       ]}
       rows={closedLongRows}
-      showSkeleton={closedShortRowsStatus === "loading"}
+      showSkeleton={closedShortRowsStatus === "pending"}
     />
   );
 }

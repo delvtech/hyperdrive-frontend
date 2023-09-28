@@ -1,6 +1,7 @@
+import { useQueryClient } from "@tanstack/react-query";
 import { useEffect, useRef } from "react";
 import { Hash } from "viem";
-import { useQueryClient, useWaitForTransaction } from "wagmi";
+import { useWaitForTransactionReceipt } from "wagmi";
 
 // This is a wrapper around wagmi's useWaitForTransaction that will also
 // invalidate wagmi's cache once the tx is confirmed. This makes it so
@@ -13,8 +14,8 @@ export function useWaitForTransactionThenInvalidateCache({
   hash,
 }: {
   hash: Hash | undefined;
-}): { status: "error" | "idle" | "loading" | "success" } {
-  const { status } = useWaitForTransaction({
+}): { status: "error" | "pending" | "success" } {
+  const { status } = useWaitForTransactionReceipt({
     hash,
   });
 

@@ -17,7 +17,7 @@ export function useOpenLongs({
   hyperdriveAddress,
 }: UseOpenLongsOptions): {
   openLongs: Long[] | undefined;
-  openLongsStatus: "error" | "success" | "loading";
+  openLongsStatus: "error" | "success" | "pending";
 } {
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
   const queryEnabled = !!readHyperdrive && !!account;

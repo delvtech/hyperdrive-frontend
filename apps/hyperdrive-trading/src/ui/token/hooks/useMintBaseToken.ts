@@ -3,8 +3,8 @@ import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { Address, formatUnits } from "viem";
 import {
   useChainId,
+  useContractSimulate,
   useContractWrite,
-  usePrepareContractWrite,
   useToken,
 } from "wagmi";
 
@@ -19,14 +19,15 @@ export function useMintBaseToken({
 }): { mint: (() => void) | undefined } {
   const addRecentTransaction = useAddRecentTransaction();
   const chainId = useChainId();
-  const { data } = useToken({
+  const { data: tokenData } = useToken({
     address: baseToken,
-    staleTime: Infinity,
+    query: { staleTime: Infinity },
   });
 
-  const isEnabled = !!destination && !!amount && chainId === 31337 && !!data;
+  const isEnabled =
+    !!destination && !!amount && chainId === 31337 && !!tokenData;
 
-  const { config } = usePrepareContractWrite({
+  const { data } = useContractSimulate({
     address: baseToken,
     abi: ERC20MintableABI,
     functionName: "mint",
@@ -34,17 +35,18 @@ export function useMintBaseToken({
     args: isEnabled ? [destination, amount] : undefined,
   });
 
-  const { write: mint } = useContractWrite({
-    ...config,
-    onSuccess: (result) => {
-      addRecentTransaction({
-        hash: result.hash,
-        description: `Mint ${formatUnits(amount, data?.decimals || 0)} ${
-          data?.symbol
-        }`,
-      });
+  const { writeContract: mint } = useContractWrite({
+    mutation: {
+      onSuccess(data) {
+        addRecentTransaction({
+          hash: data,
+          description: `Mint ${formatUnits(amount, tokenData?.decimals || 0)} ${
+            tokenData?.symbol
+          }`,
+        });
+      },
     },
   });
 
-  return { mint };
+  return { mint: data ? () => mint(data?.request) : undefined };
 }

@@ -11,7 +11,7 @@ interface UseVaultRateOptions {
 
 export function useVaultRate({ vaultAddress }: UseVaultRateOptions): {
   vaultRate: { vaultRate: bigint; formatted: string } | undefined;
-  vaultRateStatus: "error" | "success" | "loading";
+  vaultRateStatus: "error" | "success" | "pending";
 } {
   const publicClient = usePublicClient();
 

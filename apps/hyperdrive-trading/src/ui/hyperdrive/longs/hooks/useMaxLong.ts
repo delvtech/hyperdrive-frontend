@@ -6,7 +6,7 @@ import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 
 export function useMaxLong(hyperdrive: Hyperdrive): {
   maxLong: Awaited<ReturnType<ReadHyperdrive["getMaxLong"]>> | undefined;
-  maxLongStatus: "error" | "success" | "loading";
+  maxLongStatus: "error" | "pending" | "success";
 } {
   const readHyperdrive = useReadHyperdrive(hyperdrive.address);
   const queryEnabled = !!readHyperdrive;

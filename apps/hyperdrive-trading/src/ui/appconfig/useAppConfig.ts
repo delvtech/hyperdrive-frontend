@@ -13,7 +13,7 @@ const CUSTOM_CHAIN_ADDRESSES_URL = import.meta.env
 
 export function useAppConfig(): {
   appConfig: AppConfig | undefined;
-  appConfigStatus: "idle" | "error" | "loading" | "success";
+  appConfigStatus: "pending" | "success" | "error";
 } {
   const chainId = useChainId() as SupportedChainId;
   const publicClient = usePublicClient();

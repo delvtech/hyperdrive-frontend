@@ -2,7 +2,8 @@ import { useQuery } from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
-import { Address, useAccount, usePublicClient } from "wagmi";
+import { Address } from "viem";
+import { useAccount, usePublicClient } from "wagmi";
 
 interface UsePreviewAddLiquidityOptions {
   market: Hyperdrive;
@@ -15,7 +16,7 @@ interface UsePreviewAddLiquidityOptions {
 }
 
 interface UsePreviewAddLiquidityResult {
-  status: "error" | "idle" | "loading" | "success";
+  status: "error" | "pending" | "success";
   lpSharesOut: bigint | undefined;
 }
 

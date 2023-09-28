@@ -117,7 +117,7 @@ export function AddLiquidityForm({
         ) : (
           // Trade button
           <button
-            disabled={!addLiquidity || addLiquidityStatus === "loading"}
+            disabled={!addLiquidity || addLiquidityStatus === "pending"}
             className="daisy-btn-primary daisy-btn"
             onClick={() => addLiquidity?.()}
           >

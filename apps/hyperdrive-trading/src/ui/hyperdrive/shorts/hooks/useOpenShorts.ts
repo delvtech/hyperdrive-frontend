@@ -16,7 +16,7 @@ export function useOpenShorts({
   hyperdriveAddress,
 }: UseOpenShortsOptions): {
   openShorts: OpenShort[] | undefined;
-  openShortsStatus: "error" | "success" | "loading";
+  openShortsStatus: "error" | "success" | "pending";
 } {
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
   const queryEnabled = !!readHyperdrive && !!account;

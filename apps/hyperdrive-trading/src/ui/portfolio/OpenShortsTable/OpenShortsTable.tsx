@@ -62,7 +62,7 @@ export function OpenShortsTable({
         },
       ]}
       rows={openShortRows}
-      showSkeleton={openShortRowsStatus === "loading"}
+      showSkeleton={openShortRowsStatus === "pending"}
     />
   );
 }

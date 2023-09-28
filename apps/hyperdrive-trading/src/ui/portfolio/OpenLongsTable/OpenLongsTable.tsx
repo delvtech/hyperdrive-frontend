@@ -63,7 +63,7 @@ export function OpenLongsTable({
       ]}
       // cols={["Position", "Bonds", "Amount paid", "Value", "Matures on", ""]}
       rows={openLongRows}
-      showSkeleton={openLongRowsStatus === "loading"}
+      showSkeleton={openLongRowsStatus === "pending"}
     />
   );
 }

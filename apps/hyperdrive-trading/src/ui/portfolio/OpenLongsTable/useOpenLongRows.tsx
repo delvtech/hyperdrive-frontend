@@ -22,7 +22,7 @@ export function useOpenLongRows({
   hyperdrive,
 }: UseOpenLongRowsOptions): {
   openLongRows: Row[] | undefined;
-  openLongRowsStatus: "error" | "success" | "loading";
+  openLongRowsStatus: "error" | "success" | "pending";
 } {
   const { openLongs = [], openLongsStatus } = useOpenLongs({
     account,

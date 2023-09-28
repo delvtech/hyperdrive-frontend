@@ -2,7 +2,7 @@ import { Short } from "@hyperdrive/sdk";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
-import { Address } from "wagmi";
+import { Address } from "viem";
 
 interface UseCloseShortOptions {
   hyperdriveAddress: Address;
@@ -63,6 +63,6 @@ export function useCloseShort({
 
   return {
     closeShort,
-    isPendingWalletAction: status === "loading",
+    isPendingWalletAction: status === "pending",
   };
 }

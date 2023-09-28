@@ -85,7 +85,7 @@ export function MarketsTable(): ReactElement {
           rows={filteredMarkets.map((marketRowData) =>
             createMarketRow(marketRowData),
           )}
-          showSkeleton={marketRowDataStatus === "loading"}
+          showSkeleton={marketRowDataStatus === "pending"}
         />
       </div>
     </div>

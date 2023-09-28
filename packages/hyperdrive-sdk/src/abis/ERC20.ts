@@ -1,185 +1,222 @@
 export const ERC20_ABI = [
   {
-    anonymous: false,
+    type: "event",
+    name: "Approval",
     inputs: [
       {
         indexed: true,
-        internalType: "address",
         name: "owner",
         type: "address",
       },
       {
         indexed: true,
-        internalType: "address",
         name: "spender",
         type: "address",
       },
       {
         indexed: false,
-        internalType: "uint256",
         name: "value",
         type: "uint256",
       },
     ],
-    name: "Approval",
-    type: "event",
   },
   {
-    anonymous: false,
+    type: "event",
+    name: "Transfer",
     inputs: [
       {
         indexed: true,
-        internalType: "address",
         name: "from",
         type: "address",
       },
       {
         indexed: true,
-        internalType: "address",
         name: "to",
         type: "address",
       },
       {
         indexed: false,
-        internalType: "uint256",
         name: "value",
         type: "uint256",
       },
     ],
-    name: "Transfer",
-    type: "event",
   },
   {
+    anonymous: false,
     inputs: [
       {
+        indexed: true,
         internalType: "address",
         name: "owner",
         type: "address",
       },
       {
+        indexed: true,
         internalType: "address",
+        name: "operator",
+        type: "address",
+      },
+      {
+        indexed: false,
+        internalType: "bool",
+        name: "approved",
+        type: "bool",
+      },
+    ],
+    name: "ApprovalForAll",
+    type: "event",
+  },
+  {
+    type: "function",
+    name: "allowance",
+    stateMutability: "view",
+    inputs: [
+      {
+        name: "owner",
+        type: "address",
+      },
+      {
         name: "spender",
         type: "address",
       },
     ],
-    name: "allowance",
     outputs: [
       {
-        internalType: "uint256",
         name: "",
         type: "uint256",
       },
     ],
-    stateMutability: "view",
-    type: "function",
   },
   {
+    type: "function",
+    name: "approve",
+    stateMutability: "nonpayable",
     inputs: [
       {
-        internalType: "address",
         name: "spender",
         type: "address",
       },
       {
-        internalType: "uint256",
         name: "amount",
         type: "uint256",
       },
     ],
-    name: "approve",
     outputs: [
       {
-        internalType: "bool",
         name: "",
         type: "bool",
       },
     ],
-    stateMutability: "nonpayable",
-    type: "function",
   },
   {
+    type: "function",
+    name: "balanceOf",
+    stateMutability: "view",
     inputs: [
       {
-        internalType: "address",
         name: "account",
         type: "address",
       },
     ],
-    name: "balanceOf",
     outputs: [
       {
-        internalType: "uint256",
         name: "",
         type: "uint256",
       },
     ],
-    stateMutability: "view",
-    type: "function",
   },
   {
+    type: "function",
+    name: "decimals",
+    stateMutability: "view",
     inputs: [],
-    name: "totalSupply",
     outputs: [
       {
-        internalType: "uint256",
         name: "",
-        type: "uint256",
+        type: "uint8",
       },
     ],
+  },
+  {
+    type: "function",
+    name: "name",
     stateMutability: "view",
-    type: "function",
+    inputs: [],
+    outputs: [
+      {
+        name: "",
+        type: "string",
+      },
+    ],
   },
   {
-    inputs: [
+    type: "function",
+    name: "symbol",
+    stateMutability: "view",
+    inputs: [],
+    outputs: [
       {
-        internalType: "address",
-        name: "to",
-        type: "address",
+        name: "",
+        type: "string",
       },
+    ],
+  },
+  {
+    type: "function",
+    name: "totalSupply",
+    stateMutability: "view",
+    inputs: [],
+    outputs: [
       {
-        internalType: "uint256",
-        name: "amount",
+        name: "",
         type: "uint256",
       },
     ],
+  },
+  {
+    type: "function",
     name: "transfer",
-    outputs: [
-      {
-        internalType: "bool",
-        name: "",
-        type: "bool",
-      },
-    ],
     stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
     inputs: [
       {
-        internalType: "address",
-        name: "from",
+        name: "recipient",
         type: "address",
       },
       {
-        internalType: "address",
-        name: "to",
-        type: "address",
-      },
-      {
-        internalType: "uint256",
         name: "amount",
         type: "uint256",
       },
     ],
-    name: "transferFrom",
     outputs: [
       {
-        internalType: "bool",
         name: "",
         type: "bool",
       },
     ],
-    stateMutability: "nonpayable",
+  },
+  {
     type: "function",
+    name: "transferFrom",
+    stateMutability: "nonpayable",
+    inputs: [
+      {
+        name: "sender",
+        type: "address",
+      },
+      {
+        name: "recipient",
+        type: "address",
+      },
+      {
+        name: "amount",
+        type: "uint256",
+      },
+    ],
+    outputs: [
+      {
+        name: "",
+        type: "bool",
+      },
+    ],
   },
 ] as const;

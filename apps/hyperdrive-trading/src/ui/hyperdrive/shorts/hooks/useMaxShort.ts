@@ -8,7 +8,7 @@ import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 export function useMaxShort(hyperdrive: Hyperdrive): {
   maxShort: bigint | undefined;
   maxShortFormatted: string | undefined;
-  maxShortStatus: "error" | "success" | "loading";
+  maxShortStatus: "error" | "success" | "pending";
 } {
   const { appConfig } = useAppConfig();
 

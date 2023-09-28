@@ -8,7 +8,7 @@ import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 
 export function useCurrentFixedAPR(hyperdrive: Hyperdrive): {
   fixedAPR: { apr: bigint; formatted: string } | undefined;
-  fixedAPRStatus: "loading" | "error" | "success";
+  fixedAPRStatus: "pending" | "error" | "success";
 } {
   const { appConfig } = useAppConfig();
 
