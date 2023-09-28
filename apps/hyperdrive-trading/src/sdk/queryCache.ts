@@ -36,7 +36,8 @@ export class QueryCacheSdk<
   delete(key: TKey): boolean {
     const queryKey = toQueryKey(key);
     this.queryClient.removeQueries(queryKey);
-    return true; // Assuming success since React Query does not provide a boolean response for this operation.
+    // Assume success because removeQueries does not return a value
+    return true;
   }
 
   clear(): void {
@@ -58,6 +59,13 @@ export class QueryCacheSdk<
 
   subscribe(key: TKey): void {
     const queryKey = toQueryKey(key);
-    this.queryClient.getQueryCache().subscribe((event) => {});
+    const unsub = this.queryClient.getQueryCache().subscribe((event) => {
+      if (
+        event.query.getObserversCount() === 0 &&
+        event.query.queryKey === queryKey
+      ) {
+        unsub();
+      }
+    });
   }
 }
