@@ -12,6 +12,7 @@ import { OpenShortPreview } from "src/ui/hyperdrive/shorts/OpenShortPreview/Open
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenApproval } from "src/ui/token/hooks/useTokenApproval";
 import { TokenInput } from "src/ui/token/TokenInput";
+import { formatUnits } from "viem";
 import { useAccount, useBalance } from "wagmi";
 
 interface OpenShortPositionFormProps {
@@ -28,7 +29,7 @@ export function OpenShortForm({
     token: market.baseToken.address,
   });
 
-  const { maxShort, maxShortFormatted } = useMaxShort(market);
+  const { maxShort } = useMaxShort(market);
 
   const { amount, amountAsBigInt, setAmount } = useNumericInput({
     decimals: market.baseToken.decimals,
@@ -102,7 +103,16 @@ export function OpenShortForm({
       <TokenInput
         token={bondToken}
         value={amount ?? ""}
-        maxValue={maxShortFormatted}
+        maxValue={
+          maxShort
+            ? formatUnits(maxShort, market.baseToken.decimals)
+            : undefined
+        }
+        showMax={
+          // TODO: Show the max button again on once we have get_max_short from
+          // the rust sdk and can get a quote for the user's max short
+          false
+        }
         onChange={(newAmount) => setAmount(newAmount)}
       />
 
