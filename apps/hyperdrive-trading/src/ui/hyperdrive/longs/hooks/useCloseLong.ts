@@ -56,7 +56,7 @@ export function useCloseLong({
             },
           },
         });
-        queryClient.invalidateQueries();
+        queryClient.resetQueries();
       }
     },
   });

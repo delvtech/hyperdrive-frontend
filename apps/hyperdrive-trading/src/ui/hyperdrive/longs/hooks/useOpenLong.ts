@@ -61,7 +61,7 @@ export function useOpenLong({
             },
           },
         });
-        queryClient.invalidateQueries();
+        queryClient.resetQueries();
         onExecuted?.();
       }
     },

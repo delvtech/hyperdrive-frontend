@@ -58,7 +58,7 @@ export function useOpenShort({
             },
           },
         });
-        queryClient.invalidateQueries();
+        queryClient.resetQueries();
         onExecuted?.();
       }
     },

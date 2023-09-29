@@ -24,7 +24,7 @@ export function useWaitForTransactionThenInvalidateCache({
   const isCacheInvalidated = useRef(false);
   useEffect(() => {
     if (status === "success" && !isCacheInvalidated.current) {
-      queryClient.invalidateQueries();
+      queryClient.resetQueries();
       isCacheInvalidated.current = true;
     }
   }, [queryClient, status]);

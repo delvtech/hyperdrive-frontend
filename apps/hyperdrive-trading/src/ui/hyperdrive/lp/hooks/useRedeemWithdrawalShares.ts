@@ -56,7 +56,7 @@ export function useRedeemWithdrawalShares({
             },
           },
         });
-        queryClient.invalidateQueries();
+        queryClient.resetQueries();
       }
     },
   });
