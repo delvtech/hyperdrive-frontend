@@ -1,9 +1,12 @@
-import { getLiquidity } from "@hyperdrive/core";
+import { ViemReadHyperdrive } from "@hyperdrive/sdk-viem";
 import { useQuery, UseQueryResult } from "@tanstack/react-query";
-import { AppConfig, Hyperdrive } from "src/appconfig/types";
+import { Hyperdrive } from "src/appconfig/types";
 import { YieldSource } from "src/appconfig/yieldSources/yieldSources";
+import { formatRate } from "src/base/formatRate";
+import { querySdkCache } from "src/sdk/sdkCache";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
-import { PublicClient } from "viem";
+import { formatUnits } from "viem";
+import { usePublicClient } from "wagmi";
 
 export interface MarketTableRowData {
   market: Hyperdrive;
@@ -15,51 +18,10 @@ export interface MarketTableRowData {
 }
 export type MarketStatistics = Omit<MarketTableRowData, "market" | "liquidity">;
 
-// TODO: stubbed function for now
-// ideally fetched from an api
-function getMarketStatistics(
-  market: Hyperdrive,
-  yieldSource: YieldSource,
-): Promise<MarketStatistics> {
-  return Promise.resolve({
-    yieldSource,
-    longAPR: "1.25%",
-    shortAPR: "1.25%",
-    lpAPR: "1.25%",
-  });
-}
-
-async function fetchMarketRowData(
-  hyperdrives: Hyperdrive[],
-  publicClient: PublicClient,
-  appConfig: AppConfig,
-) {
-  return await Promise.all(
-    hyperdrives.map(async (hyperdrive) => {
-      const statsPromise = getMarketStatistics(
-        hyperdrive,
-        appConfig.yieldSources[hyperdrive.yieldSource],
-      );
-      const liquidityPromise = getLiquidity(hyperdrive.address, publicClient);
-
-      const [stats, liquidity] = await Promise.all([
-        statsPromise,
-        liquidityPromise,
-      ]);
-
-      return {
-        market: hyperdrive,
-        liquidity: liquidity.formatted,
-        ...stats,
-      };
-    }),
-  );
-}
-
 export function useMarketRowData(
   hyperdrives: Hyperdrive[] | undefined,
-  publicClient: PublicClient,
 ): UseQueryResult<MarketTableRowData[]> {
+  const publicClient = usePublicClient();
   const { appConfig } = useAppConfig();
   const queryEnabled = !!hyperdrives && !!appConfig;
 
@@ -67,7 +29,31 @@ export function useMarketRowData(
     queryKey: hyperdrives,
     enabled: queryEnabled,
     queryFn: queryEnabled
-      ? () => fetchMarketRowData(hyperdrives, publicClient, appConfig)
+      ? () =>
+          Promise.all(
+            hyperdrives.map(async (hyperdrive): Promise<MarketTableRowData> => {
+              const readHyperdrive = new ViemReadHyperdrive({
+                address: hyperdrive.address,
+                mathAddress: appConfig.hyperdriveMath,
+                publicClient,
+                cache: querySdkCache,
+              });
+              const liquidity = await readHyperdrive.getLiquidity();
+              const longApr = await readHyperdrive.getFixedRate();
+              return {
+                market: hyperdrive,
+                liquidity: formatUnits(
+                  liquidity,
+                  hyperdrive.baseToken.decimals,
+                ),
+                longAPR: formatRate(longApr),
+                yieldSource: appConfig.yieldSources[hyperdrive.yieldSource],
+                // TODO: Stubbed for now
+                shortAPR: "1.25%",
+                lpAPR: "1.25%",
+              };
+            }),
+          )
       : undefined,
   });
 }

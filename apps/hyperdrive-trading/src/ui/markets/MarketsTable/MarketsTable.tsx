@@ -12,7 +12,6 @@ import {
   useMarketRowData,
 } from "src/ui/markets/MarketsTable/useMarketRowData";
 import { YieldSourceLabel } from "src/ui/markets/YieldSourceLabel/YieldSourceLabel";
-import { PublicClient } from "viem";
 import { usePublicClient } from "wagmi";
 
 const ALL_PROTOCOLS_KEY = "All Markets";
@@ -38,7 +37,7 @@ export function MarketsTable(): ReactElement {
 
   // TODO: no loading state for now
   const { data: marketsRowData = [], status: marketRowDataStatus } =
-    useMarketRowData(config?.hyperdrives, publicClient as PublicClient);
+    useMarketRowData(config?.hyperdrives);
 
   const filteredMarkets = useMemo(() => {
     const marketFilteredByTermLength = termLengthFilter
