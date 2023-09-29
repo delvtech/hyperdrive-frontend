@@ -56,7 +56,7 @@ export function useRemoveLiquidity({
             },
           },
         });
-        queryClient.invalidateQueries();
+        queryClient.resetQueries();
       }
     },
   });

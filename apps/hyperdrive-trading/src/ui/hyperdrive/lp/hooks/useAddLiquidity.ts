@@ -62,7 +62,7 @@ export function useAddLiquidity({
             },
           },
         });
-        queryClient.invalidateQueries();
+        queryClient.resetQueries();
       }
     },
   });

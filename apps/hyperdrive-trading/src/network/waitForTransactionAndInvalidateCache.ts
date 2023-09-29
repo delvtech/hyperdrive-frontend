@@ -21,8 +21,8 @@ export async function waitForTransactionAndInvalidateCache({
   publicClient.waitForTransactionReceipt({
     hash,
     onReplaced() {
-      queryClient.invalidateQueries();
+      queryClient.resetQueries();
     },
   });
-  queryClient.invalidateQueries();
+  queryClient.resetQueries();
 }
