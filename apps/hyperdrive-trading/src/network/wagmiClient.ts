@@ -1,8 +1,8 @@
-import { getDefaultWallets } from "@rainbow-me/rainbowkit";
 import { cloudChain, cloudChainTransport } from "src/network/cloudChain";
 import { Chain, Transport } from "viem";
 import { createConfig, http } from "wagmi";
 import { foundry, goerli, hardhat, mainnet } from "wagmi/chains";
+import { injected } from "wagmi/connectors";
 import { foundryTransport } from "./foundry";
 import { goerliTransport } from "./goerli";
 
@@ -42,11 +42,12 @@ if (
 
 export const wagmiChains = chains;
 
-const { connectors } = getDefaultWallets({
-  appName: "Hyperdrive",
-  projectId: VITE_WALLET_CONNECT_PROJECT_ID || undefined,
-  chains,
-});
+// TODO: Uncomment when Rainbowkit is compatible with wagmi alpha
+// const { connectors } = getDefaultWallets({
+//   appName: "Hyperdrive",
+//   projectId: VITE_WALLET_CONNECT_PROJECT_ID || undefined,
+//   chains,
+// });
 
 if (!chains.length) {
   console.warn("No chains were configured, see wagmiClient.ts");
@@ -54,7 +55,7 @@ if (!chains.length) {
 
 export const wagmiConfig = createConfig({
   chains: wagmiChains as [Chain],
-  connectors: connectors(),
+  connectors: [injected({ target: "metaMask" })],
   transports: {
     [mainnet.id]: http(),
     [hardhat.id]: http(),
