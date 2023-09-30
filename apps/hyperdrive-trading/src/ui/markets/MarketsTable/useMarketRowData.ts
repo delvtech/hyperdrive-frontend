@@ -3,6 +3,7 @@ import { useQuery, UseQueryResult } from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
 import { YieldSource } from "src/appconfig/yieldSources/yieldSources";
 import { formatRate } from "src/base/formatRate";
+import { makeQueryKey } from "src/base/makeQueryKey";
 import { querySdkCache } from "src/sdk/sdkCache";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatUnits } from "viem";
@@ -26,7 +27,7 @@ export function useMarketRowData(
   const queryEnabled = !!hyperdrives && !!appConfig;
 
   return useQuery<MarketTableRowData[]>({
-    queryKey: hyperdrives,
+    queryKey: makeQueryKey("app/markets", hyperdrives),
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? () =>
