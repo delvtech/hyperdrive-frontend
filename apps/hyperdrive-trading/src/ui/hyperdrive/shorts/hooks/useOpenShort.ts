@@ -35,15 +35,16 @@ export function useOpenShort({
   const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
   const queryClient = useQueryClient();
   const addTransaction = useAddRecentTransaction();
+  const mutationEnabled =
+    !!amountBondShorts &&
+    !!maxBaseAmountIn &&
+    !!destination &&
+    enabled &&
+    !!readWriteHyperdrive;
+
   const { mutate: openShort, status } = useMutation({
     mutationFn: async () => {
-      if (
-        !!amountBondShorts &&
-        !!maxBaseAmountIn &&
-        !!destination &&
-        enabled &&
-        !!readWriteHyperdrive
-      ) {
+      if (mutationEnabled) {
         await readWriteHyperdrive.openShort({
           bondAmount: amountBondShorts,
           destination,
@@ -65,7 +66,9 @@ export function useOpenShort({
   });
 
   return {
-    openShort,
+    // Don't return the `openShort` callback if mutation isn't enabled, this
+    // makes the hook feel more like useContractWrite from wagmi
+    openShort: mutationEnabled ? openShort : undefined,
     openShortSubmittedStatus: status,
   };
 }

@@ -90,7 +90,7 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
     maxDeposit: bigint;
     asUnderlying?: boolean;
     options?: ContractWriteOptionsWithCallback;
-  }): Promise<bigint>;
+  }): Promise<{ maturityTime: bigint; traderDeposit: bigint }>;
 
   /**
    * Closes a long position.
@@ -298,14 +298,14 @@ export class ReadWriteHyperdrive
     maxDeposit: bigint;
     asUnderlying?: boolean;
     options?: ContractWriteOptionsWithCallback;
-  }): Promise<bigint> {
-    const [result] = await this.contract.write(
+  }): Promise<{ maturityTime: bigint; traderDeposit: bigint }> {
+    const [maturityTime, traderDeposit] = await this.contract.write(
       "openShort",
       [bondAmount, maxDeposit, destination, asUnderlying],
       // TODO: Do we need to pass value here?
       { value: 0n, ...options },
     );
-    return result;
+    return { maturityTime, traderDeposit };
   }
 
   async closeLong({
