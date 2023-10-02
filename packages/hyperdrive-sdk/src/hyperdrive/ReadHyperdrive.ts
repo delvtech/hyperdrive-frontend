@@ -828,7 +828,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
         },
         checkpointLongExposure,
         //TODO: Max iterations, what should this be?
-        1000n,
+        7n,
       ],
       options,
     );
