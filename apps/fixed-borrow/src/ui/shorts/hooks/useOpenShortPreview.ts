@@ -1,6 +1,7 @@
+import { HyperdriveABI } from "@hyperdrive/sdk";
 import { useQuery } from "@tanstack/react-query";
+import { HyperdriveGoerliAddresses } from "src/addresses/goerli";
 import { Address, useAccount, usePublicClient } from "wagmi";
-import { HyperdriveABI, HyperdriveGoerliAddresses } from "@hyperdrive/core";
 
 const dsrHyperdriveAddress = HyperdriveGoerliAddresses.dsrHyperdrive as Address;
 

@@ -1,6 +1,5 @@
 import { Disclosure } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
-import { HyperdriveGoerliAddresses } from "@hyperdrive/core";
 import { SparkGoerliAddresses } from "@hyperdrive/spark";
 import { ReactElement } from "react";
 import { parseUnits } from "viem";
@@ -11,6 +10,7 @@ import { useUserCurrentDebt } from "src/ui/loans/hooks/useUserCurrentDebt";
 import { QuickstartSection } from "src/ui/quickstart/QuickStartSection/QuickstartSection";
 import { useShorts } from "src/ui/shorts/hooks/useShorts";
 import { useAccount } from "wagmi";
+import { HyperdriveGoerliAddresses } from "src/addresses/goerli";
 
 export function FixedBorrowPage(): ReactElement {
   const { address: account } = useAccount();

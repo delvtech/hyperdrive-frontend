@@ -7,8 +7,8 @@ import { parseUnits, formatUnits } from "viem";
 import { PreviewRow } from "src/ui/loans/previews/PreviewRow";
 import { calculateValueToShort } from "src/shorts/calculateValueToShort";
 import { useOpenShortPreview } from "src/ui/shorts/hooks/useOpenShortPreview";
-import { HyperdriveGoerliAddresses } from "@hyperdrive/core";
 import { useUserCurrentDebt } from "src/ui/loans/hooks/useUserCurrentDebt";
+import { HyperdriveGoerliAddresses } from "src/addresses/goerli";
 
 interface TransactionPreviewProps {
   supplyAmount: string | number | undefined;

@@ -24,7 +24,6 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.0.16",
-    "@hyperdrive/core": "*",
     "@hyperdrive/sdk": "*",
     "@hyperdrive/sdk-viem": "*",
     "@rainbow-me/rainbowkit": "^1.0.0",

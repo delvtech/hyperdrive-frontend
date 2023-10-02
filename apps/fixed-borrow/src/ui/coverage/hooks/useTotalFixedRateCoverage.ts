@@ -1,4 +1,4 @@
-import { HyperdriveGoerliAddresses } from "@hyperdrive/core";
+import { HyperdriveGoerliAddresses } from "src/addresses/goerli";
 import { useShorts } from "src/ui/shorts/hooks/useShorts";
 import { useAccount } from "wagmi";
 
