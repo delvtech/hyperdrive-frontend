@@ -7,15 +7,9 @@ Looking for a [getting started guide](/docs/sdk/getting-started)?
 ## Overview
 When the trader enters a long position, they are typically long on the bond price. They have purchased bonds at a discount, with a set maturity date. The lower the bond price, the higher the fixed return that the trader is getting, because they’re paying less money now for more base asset at maturity. By buying bonds, they bring the bond price up and the fixed rate down.
 
-## TODO:
-- have a destructured return value
-- have a couple usage examples
- - have another that uses the onSubmitted
- - this method will wait for the transaction to be mined before returning
-
 ## Usage
 
-```tsx {14}
+```tsx {16}
 import { ViemReadWriteHyperdrive } from '@hyperdrive/sdk-viem'
 import { publicClient, walletClient } from '../clients'
 import { HYPERDRIVE_ADDRESS, HYPERDRIVE_MATH_ADDRESS } from '../constants'
@@ -31,7 +25,21 @@ export const hyperdrive = new ViemReadWriteHyperdrive({
 });
 // note that you may want/need to handle this async code differently,
 // for example if top-level await is not an option
-const {} = await hyperdrive.openLong({baseAmount, bondAmountOut, destination});
+const { maturityTime, bondProceeds } = await hyperdrive.openLong({baseAmount, bondAmountOut, destination});
+
+// openLong can also be called with ContractWriteOptions that allows you to specify a callback for when the transaction is submitted
+// a custom cache can also be passed in
+await hyperdrive.openLong({
+    baseAmount,
+    bondAmountOut,
+    destination,
+    chache: customSdkCache,
+    id: chainId.toString(),
+    options: {
+        onSubmitted: (txHash) => {
+            console.log(`txHash: ${txHash}`)
+        }
+}});
 
 ```
 ## Input
@@ -45,3 +53,7 @@ const {} = await hyperdrive.openLong({baseAmount, bondAmountOut, destination});
 | id            | Custom id for this instance of hyperdrive                                           | Yes          |
 
 ## Output
+| Params        | Description                                   |
+| ------------- | --------------------------------------------- |
+| maturityTime  | The maturity time of the bonds.        |
+| bondProceeds  | The amount of bonds the user received                  |
