@@ -9,28 +9,31 @@ When the trader enters a long position, they are typically long on the bond pric
 
 ## Usage
 
+### Create Hyperdrive SDK instance using Viem
+
 ```tsx {18}
 import { ViemReadWriteHyperdrive } from '@hyperdrive/sdk-viem'
-import { publicClient, walletClient } from '../clients'
-import { HYPERDRIVE_ADDRESS, HYPERDRIVE_MATH_ADDRESS } from '../constants'
-import { querySdkCache } from '../cache'
-import { chainId } from '../chainId'
+import { publicClient, walletClient } from './clients'
 
-// Create Hyperdrive SDK instance using Viem
 export const hyperdrive = new ViemReadWriteHyperdrive({
-    address: HYPERDRIVE_ADDRESS,
-    mathAddress: HYPERDRIVE_MATH_ADDRESS,
+    address: `0x...`,
+    mathAddress: `0x...`,
     publicClient,
     walletClient,
-    cache: querySdkCache, // optional
-    id: chainId.toString(),
 });
-// note that you may want/need to handle this async code differently,
-// for example if top-level await is not an option
-const { maturityTime, bondProceeds } = await hyperdrive.openLong({baseAmount, bondAmountOut, destination});
+```
 
-// openLong can also be called with ContractWriteOptions that allows you to specify a callback for when the transaction is submitted
-// a custom cache can also be passed in
+
+
+
+### Open a long, wait for the tx to be mined, then grab the result
+```tsx
+const { maturityTime, bondProceeds } = await hyperdrive.openLong({baseAmount, bondAmountOut, destination});
+```
+
+### Open a long and grab the submitted txHash
+openLong can also be called with [ContractWriteOptions](/docs/sdk/api-reference/interfaces/ContractWriteOptionsWithCallback) that allows you to specify a callback for when the transaction is submitted. A custom cache can also be passed in.
+```ts
 await hyperdrive.openLong({
     baseAmount,
     bondAmountOut,
