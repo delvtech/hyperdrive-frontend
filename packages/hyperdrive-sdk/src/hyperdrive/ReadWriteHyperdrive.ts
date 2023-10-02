@@ -68,7 +68,7 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
     bondAmountOut: bigint;
     asUnderlying?: boolean;
     options?: ContractWriteOptionsWithCallback;
-  }): Promise<bigint>;
+  }): Promise<{ maturityTime: bigint; bondProceeds: bigint }>;
 
   /**
    * Opens a new short position.
@@ -272,10 +272,10 @@ export class ReadWriteHyperdrive
     bondAmountOut: bigint;
     asUnderlying?: boolean;
     options?: ContractWriteOptionsWithCallback;
-  }): Promise<bigint> {
+  }): Promise<{ maturityTime: bigint; bondProceeds: bigint }> {
     const { baseToken } = await this.getPoolConfig();
     const requiresEth = asUnderlying && baseToken === ZERO_ADDRESS;
-    const [result] = await this.contract.write(
+    const [maturityTime, bondProceeds] = await this.contract.write(
       "openLong",
       [baseAmount, bondAmountOut, destination, asUnderlying],
       {
@@ -283,7 +283,7 @@ export class ReadWriteHyperdrive
         ...options,
       },
     );
-    return result;
+    return { maturityTime, bondProceeds };
   }
 
   async openShort({
