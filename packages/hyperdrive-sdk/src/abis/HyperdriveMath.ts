@@ -10,6 +10,16 @@ export const HyperdriveMathABI = [
     type: "error",
   },
   {
+    inputs: [],
+    name: "InvalidTradeSize",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "NegativePresentValue",
+    type: "error",
+  },
+  {
     inputs: [
       {
         internalType: "uint256",
@@ -225,6 +235,11 @@ export const HyperdriveMathABI = [
             type: "uint256",
           },
           {
+            internalType: "int256",
+            name: "shareAdjustment",
+            type: "int256",
+          },
+          {
             internalType: "uint256",
             name: "bondReserves",
             type: "uint256",
@@ -311,6 +326,11 @@ export const HyperdriveMathABI = [
             type: "uint256",
           },
           {
+            internalType: "int256",
+            name: "shareAdjustment",
+            type: "int256",
+          },
+          {
             internalType: "uint256",
             name: "bondReserves",
             type: "uint256",
@@ -359,6 +379,16 @@ export const HyperdriveMathABI = [
         internalType: "struct HyperdriveMath.MaxTradeParams",
         name: "_params",
         type: "tuple",
+      },
+      {
+        internalType: "int256",
+        name: "_checkpointExposure",
+        type: "int256",
+      },
+      {
+        internalType: "uint256",
+        name: "_maxIterations",
+        type: "uint256",
       },
     ],
     name: "calculateMaxShort",
@@ -468,6 +498,11 @@ export const HyperdriveMathABI = [
             internalType: "uint256",
             name: "shareReserves",
             type: "uint256",
+          },
+          {
+            internalType: "int256",
+            name: "shareAdjustment",
+            type: "int256",
           },
           {
             internalType: "uint256",
