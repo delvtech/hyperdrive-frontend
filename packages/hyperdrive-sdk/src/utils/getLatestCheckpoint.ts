@@ -1,6 +1,6 @@
 export function getCheckpointId(
-  blockNumber: bigint,
+  blockTimestamp: bigint,
   checkpointDuration: bigint,
 ): bigint {
-  return blockNumber - (blockNumber % checkpointDuration);
+  return blockTimestamp - (blockTimestamp % checkpointDuration);
 }
