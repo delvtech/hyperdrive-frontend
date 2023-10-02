@@ -25,10 +25,17 @@ const sidebars = {
       id: "sdk/getting-started/index",
     },
     {
-      type: "doc",
+      type: "category",
       label: "Recipes",
-      id: "sdk/recipes/index",
+      items: [
+        {
+          type: "doc",
+          id: "sdk/recipes/long",
+          label: "Open a Long",
+        },
+      ],
     },
+
     {
       type: "category",
       label: "API Reference",
