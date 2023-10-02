@@ -9,7 +9,7 @@ When the trader enters a long position, they are typically long on the bond pric
 
 ## Usage
 
-```tsx {16}
+```tsx {18}
 import { ViemReadWriteHyperdrive } from '@hyperdrive/sdk-viem'
 import { publicClient, walletClient } from '../clients'
 import { HYPERDRIVE_ADDRESS, HYPERDRIVE_MATH_ADDRESS } from '../constants'
