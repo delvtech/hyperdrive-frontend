@@ -13,6 +13,8 @@ When the trader enters a long position, they are typically long on the bond pric
 import { ViemReadWriteHyperdrive } from '@hyperdrive/sdk-viem'
 import { publicClient, walletClient } from '../clients'
 import { HYPERDRIVE_ADDRESS, HYPERDRIVE_MATH_ADDRESS } from '../constants'
+import { querySdkCache } from '../cache'
+import { chainId } from '../chainId'
 
 // Create Hyperdrive SDK instance using Viem
 export const hyperdrive = new ViemReadWriteHyperdrive({
