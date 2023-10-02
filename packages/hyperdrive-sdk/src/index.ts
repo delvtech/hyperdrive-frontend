@@ -46,7 +46,7 @@ export type { PoolConfig } from "src/pool/PoolConfig";
 export type { PoolInfo } from "src/pool/PoolInfo";
 
 // Network
-export type { INetwork } from "src/network/Network";
+export type { INetwork, GetBlockParameters } from "src/network/Network";
 
 // Shorts
 export type { Short, ClosedShort, OpenShort } from "src/shorts/types";

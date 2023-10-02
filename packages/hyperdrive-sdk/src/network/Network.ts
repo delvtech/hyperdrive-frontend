@@ -1,12 +1,36 @@
 import { BlockTag } from "src/contract/Contract";
+export type GetBlockParameters =
+  | {
+      /** Hash of the block. */
+      blockHash?: `0x${string}`;
+      blockNumber?: never;
+      blockTag?: never;
+    }
+  | {
+      blockHash?: never;
+      /** The block number. */
+      blockNumber?: bigint;
+      blockTag?: never;
+    }
+  | {
+      blockHash?: never;
+      blockNumber?: never;
+      /**
+       * The block tag.
+       * @default 'latest'
+       */
+      blockTag?: BlockTag;
+    };
 
 /**
  * An interface representing data the SDK needs to get from the network.
  */
 export interface INetwork {
   /**
-   * Get a block number from a block tag. If no block tag is provided, the
-   * latest block number is returned.
+   * Get a block from a block tag, number, or hash. If no argument is provided,
+   * the latest block is returned.
    */
-  getBlockNumber(blockTag?: BlockTag): Promise<bigint>;
+  getBlock(
+    args?: GetBlockParameters,
+  ): Promise<{ blockNumber: bigint; timestamp: bigint }>;
 }
