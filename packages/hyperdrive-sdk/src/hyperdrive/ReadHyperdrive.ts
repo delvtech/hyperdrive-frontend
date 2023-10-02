@@ -297,6 +297,7 @@ export interface IReadHyperdrive {
   }): Promise<{ baseAmountOut: bigint; sharesRedeemed: bigint }>;
 }
 
+const MAX_ITERATIONS = 7n;
 export class ReadHyperdrive implements IReadHyperdrive {
   protected readonly contract: IReadHyperdriveContract;
   protected readonly mathContract: IReadHyperdriveMathContract;
@@ -743,8 +744,13 @@ export class ReadHyperdrive implements IReadHyperdrive {
   }
 
   async getMaxShort(options?: ContractReadOptions): Promise<bigint> {
-    const { minimumShareReserves, initialSharePrice, timeStretch, fees } =
-      await this.getPoolConfig(options);
+    const {
+      minimumShareReserves,
+      initialSharePrice,
+      timeStretch,
+      fees,
+      checkpointDuration,
+    } = await this.getPoolConfig(options);
     const {
       shareReserves,
       bondReserves,
@@ -753,15 +759,20 @@ export class ReadHyperdrive implements IReadHyperdrive {
       shareAdjustment,
       longExposure,
     } = await this.getPoolInfo(options);
+    const { timestamp: blockTimestamp } = await this.network.getBlock(options);
+
+    const checkpointId = getCheckpointId(blockTimestamp, checkpointDuration);
+    const [{ longExposure: checkpointLongExposure }] = await this.contract.read(
+      "getCheckpoint",
+      [checkpointId],
+    );
 
     const [maxBondsOut] = await this.mathContract.read(
       "calculateMaxShort",
       [
         {
-          shareReserves: calculateEffectiveShareReserves(
-            shareReserves,
-            shareAdjustment,
-          ),
+          shareReserves,
+          shareAdjustment,
           bondReserves,
           longsOutstanding,
           timeStretch,
@@ -772,6 +783,8 @@ export class ReadHyperdrive implements IReadHyperdrive {
           curveFee: fees.curve,
           governanceFee: fees.governance,
         },
+        checkpointLongExposure,
+        MAX_ITERATIONS,
       ],
       options,
     );
@@ -791,18 +804,16 @@ export class ReadHyperdrive implements IReadHyperdrive {
     } = await this.getPoolConfig(options);
     const {
       shareReserves,
-      shareAdjustment,
       bondReserves,
       longsOutstanding,
       sharePrice,
       longExposure,
+      shareAdjustment,
     } = await this.getPoolInfo(options);
 
-    const blockNumber =
-      options?.blockNumber ??
-      (await this.network.getBlockNumber(options?.blockTag));
+    const { timestamp: blockTimestamp } = await this.network.getBlock(options);
 
-    const checkpointId = getCheckpointId(blockNumber, checkpointDuration);
+    const checkpointId = getCheckpointId(blockTimestamp, checkpointDuration);
     const [{ longExposure: checkpointLongExposure }] = await this.contract.read(
       "getCheckpoint",
       [checkpointId],
@@ -812,10 +823,8 @@ export class ReadHyperdrive implements IReadHyperdrive {
       "calculateMaxLong",
       [
         {
-          shareReserves: calculateEffectiveShareReserves(
-            shareReserves,
-            shareAdjustment,
-          ),
+          shareReserves,
+          shareAdjustment,
           bondReserves,
           longsOutstanding,
           timeStretch,
@@ -827,11 +836,11 @@ export class ReadHyperdrive implements IReadHyperdrive {
           governanceFee: fees.governance,
         },
         checkpointLongExposure,
-        //TODO: Max iterations, what should this be?
-        7n,
+        MAX_ITERATIONS,
       ],
       options,
     );
+
     return {
       maxBaseIn,
       maxBondsOut,
