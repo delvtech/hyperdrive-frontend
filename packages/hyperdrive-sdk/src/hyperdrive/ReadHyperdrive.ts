@@ -22,6 +22,7 @@ import { RedeemedWithdrawalShares } from "src/withdrawalShares/RedeemedWithdrawa
 import { ClosedShort, OpenShort } from "src/shorts/types";
 import { INetwork } from "src/network/Network";
 import { getCheckpointId } from "src/utils/getLatestCheckpoint";
+import { calculateEffectiveShareReserves } from "src/pool/calculateEffectiveShares";
 
 export interface ReadHyperdriveOptions {
   contract: IReadHyperdriveContract;
@@ -49,7 +50,7 @@ export interface IReadHyperdrive {
 
   /**
    * This function retrieves the market liquidity by using the following formula:
-   * marketLiquidity = lpSharePrice * shareReserves - longsOutstanding
+   * marketLiquidity = lpSharePrice * effectiveShareReserves - longsOutstanding
    */
   getLiquidity(options?: ContractReadOptions): Promise<bigint>;
 
@@ -323,11 +324,12 @@ export class ReadHyperdrive implements IReadHyperdrive {
   async getFixedRate(options?: ContractReadOptions): Promise<bigint> {
     const { positionDuration, initialSharePrice, timeStretch } =
       await this.getPoolConfig(options);
-    const { shareReserves, bondReserves } = await this.getPoolInfo(options);
+    const { shareReserves, bondReserves, shareAdjustment } =
+      await this.getPoolInfo(options);
     const [apr] = await this.mathContract.read(
       "calculateAPRFromReserves",
       [
-        shareReserves,
+        calculateEffectiveShareReserves(shareReserves, shareAdjustment),
         bondReserves,
         initialSharePrice,
         positionDuration,
@@ -340,12 +342,12 @@ export class ReadHyperdrive implements IReadHyperdrive {
   }
 
   async getLiquidity(options?: ContractReadOptions): Promise<bigint> {
-    const { lpSharePrice, shareReserves, longsOutstanding } =
+    const { lpSharePrice, shareReserves, longsOutstanding, shareAdjustment } =
       await this.getPoolInfo(options);
 
     const liquidity = calculateLiquidity(
       lpSharePrice,
-      shareReserves,
+      calculateEffectiveShareReserves(shareReserves, shareAdjustment),
       longsOutstanding,
     );
 
@@ -387,11 +389,17 @@ export class ReadHyperdrive implements IReadHyperdrive {
     const { initialSharePrice, timeStretch } = await this.getPoolConfig(
       options,
     );
-    const { shareReserves, bondReserves } = await this.getPoolInfo(options);
+    const { shareReserves, bondReserves, shareAdjustment } =
+      await this.getPoolInfo(options);
 
     const [spotPrice] = await this.mathContract.read(
       "calculateSpotPrice",
-      [shareReserves, bondReserves, initialSharePrice, timeStretch],
+      [
+        calculateEffectiveShareReserves(shareReserves, shareAdjustment),
+        bondReserves,
+        initialSharePrice,
+        timeStretch,
+      ],
       options,
     );
     return spotPrice;
@@ -742,6 +750,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
       bondReserves,
       longsOutstanding,
       sharePrice,
+      shareAdjustment,
       longExposure,
     } = await this.getPoolInfo(options);
 
@@ -749,7 +758,10 @@ export class ReadHyperdrive implements IReadHyperdrive {
       "calculateMaxShort",
       [
         {
-          shareReserves,
+          shareReserves: calculateEffectiveShareReserves(
+            shareReserves,
+            shareAdjustment,
+          ),
           bondReserves,
           longsOutstanding,
           timeStretch,
@@ -779,6 +791,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     } = await this.getPoolConfig(options);
     const {
       shareReserves,
+      shareAdjustment,
       bondReserves,
       longsOutstanding,
       sharePrice,
@@ -799,7 +812,10 @@ export class ReadHyperdrive implements IReadHyperdrive {
       "calculateMaxLong",
       [
         {
-          shareReserves,
+          shareReserves: calculateEffectiveShareReserves(
+            shareReserves,
+            shareAdjustment,
+          ),
           bondReserves,
           longsOutstanding,
           timeStretch,
