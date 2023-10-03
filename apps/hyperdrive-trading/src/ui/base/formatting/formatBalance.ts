@@ -1,4 +1,8 @@
-import { format as dnFormat, toString as dnToString } from "dnum";
+import {
+  format as dnFormat,
+  from as dnFrom,
+  toString as dnToString,
+} from "dnum";
 /**
  * Used for final balance presentation since it cuts off decimals
  * @param balance
@@ -16,8 +20,9 @@ export function formatBalance({
   places?: number;
   includeCommas?: boolean;
 }): string {
+  const dn = dnFrom([balance, decimals]);
   if (includeCommas) {
-    return dnFormat([balance, decimals], places);
+    return dnFormat(dn, places);
   }
-  return dnToString([balance, decimals], places);
+  return dnToString(dn, places);
 }
