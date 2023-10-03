@@ -29,8 +29,9 @@ export function YourBalanceWell({ token }: { token: Token }): ReactElement {
             <div className="-mt-1 flex items-center gap-1 text-h5">
               <img className="h-4" src={token.iconUrl} />
               {formatBalance({
-                balance: balance?.formatted || 0,
-                numDecimals: 4,
+                balance: balance?.value || 0n,
+                decimals: token.decimals,
+                places: 4,
               })}{" "}
               {token.symbol}
               {chainId === 31337 ? (

@@ -1,9 +1,9 @@
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
-import { ethers } from "ethers";
 import { ReactElement } from "react";
 import { Link } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
+import { MAX_UINT256 } from "src/base/constants";
 import { parseUnits } from "src/base/parseUnits";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { AddLiquidityPreview } from "src/ui/hyperdrive/lp/AddLiquidityPreview/AddLiquidityPreview";
@@ -42,7 +42,7 @@ export function AddLiquidityForm({
   const { approve } = useTokenApproval({
     tokenAddress: market.baseToken.address,
     spender: market.address,
-    amount: ethers.constants.MaxUint256.toBigInt(),
+    amount: MAX_UINT256,
   });
 
   const needsApproval = tokenAllowance

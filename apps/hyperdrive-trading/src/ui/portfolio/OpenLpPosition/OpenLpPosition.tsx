@@ -64,13 +64,11 @@ export function OpenLpPosition({
       <span key="value">
         {!!poolInfo ? (
           `${formatBalance({
-            balance: formatUnits(
-              multiplyBigInt(
-                [lpShares, poolInfo.lpSharePrice],
-                hyperdrive.baseToken.decimals,
-              ),
+            balance: multiplyBigInt(
+              [lpShares, poolInfo.lpSharePrice],
               hyperdrive.baseToken.decimals,
             ),
+            decimals: hyperdrive.baseToken.decimals,
           })} ${hyperdrive.baseToken.symbol}`
         ) : (
           <Skeleton />
@@ -79,10 +77,8 @@ export function OpenLpPosition({
       <span key="withdrawable">
         {lpBaseWithdrawable !== undefined ? (
           `${formatBalance({
-            balance: formatUnits(
-              lpBaseWithdrawable,
-              hyperdrive.baseToken.decimals,
-            ),
+            balance: lpBaseWithdrawable,
+            decimals: hyperdrive.baseToken.decimals,
           })} ${hyperdrive.baseToken.symbol}`
         ) : (
           <Skeleton />
@@ -104,21 +100,17 @@ export function OpenLpPosition({
         Pending withdrawal
       </span>,
       formatBalance({
-        balance: formatUnits(
-          withdrawalShares,
-          (hyperdrive as Hyperdrive).baseToken.decimals,
-        ),
+        balance: withdrawalShares,
+        decimals: hyperdrive.baseToken.decimals,
       }),
       <span key="value">
         {!!poolInfo ? (
           `${formatBalance({
-            balance: formatUnits(
-              multiplyBigInt(
-                [withdrawalShares, poolInfo.lpSharePrice],
-                hyperdrive.baseToken.decimals,
-              ),
+            balance: multiplyBigInt(
+              [withdrawalShares, poolInfo.lpSharePrice],
               hyperdrive.baseToken.decimals,
             ),
+            decimals: hyperdrive.baseToken.decimals,
           })} ${hyperdrive.baseToken.symbol}`
         ) : (
           <Skeleton />
@@ -127,10 +119,8 @@ export function OpenLpPosition({
       <span key="withdrawable">
         {withdrawalSharesBaseWithdrawable !== undefined ? (
           `${formatBalance({
-            balance: formatUnits(
-              withdrawalSharesBaseWithdrawable,
-              hyperdrive.baseToken.decimals,
-            ),
+            balance: withdrawalSharesBaseWithdrawable,
+            decimals: hyperdrive.baseToken.decimals,
           })} ${hyperdrive.baseToken.symbol}`
         ) : (
           <Skeleton />

@@ -2,7 +2,6 @@ import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { Pill } from "src/ui/base/components/Pill";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { formatUnits } from "viem";
 
 interface AddLiquidityPreviewProps {
   hyperdrive: Hyperdrive;
@@ -25,8 +24,9 @@ export function AddLiquidityPreview({
           <p className="mr-auto">LP Shares Received</p>
           <p className="font-semibold tracking-wide">
             {formatBalance({
-              balance: formatUnits(lpShares, hyperdrive.baseToken.decimals),
-              numDecimals: 4,
+              balance: lpShares,
+              decimals: hyperdrive.baseToken.decimals,
+              places: 4,
               includeCommas: false,
             })}{" "}
             LP

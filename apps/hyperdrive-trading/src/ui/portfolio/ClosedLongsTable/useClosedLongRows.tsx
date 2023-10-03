@@ -3,7 +3,7 @@ import { Hyperdrive } from "src/appconfig/types";
 import { Row } from "src/ui/base/components/tables/SortableGridTable";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useClosedLongs } from "src/ui/hyperdrive/longs/hooks/useClosedLongs";
-import { Address, formatUnits } from "viem";
+import { Address } from "viem";
 
 interface UseClosedLongRowsOptions {
   account: Address | undefined;
@@ -56,14 +56,16 @@ function createClosedLongRow({
       </span>,
       <span key="size" className="italic">
         {formatBalance({
-          balance: formatUnits(long.bondAmount, baseDecimals),
-          numDecimals: 4,
+          balance: long.bondAmount,
+          decimals: baseDecimals,
+          places: 4,
         })}
       </span>,
       <span key="value" className="inline-flex items-center gap-1 italic">
         {`${formatBalance({
-          balance: formatUnits(long.baseAmount, baseDecimals),
-          numDecimals: 2,
+          balance: long.baseAmount,
+          decimals: baseDecimals,
+          places: 2,
         })} ${baseSymbol}`}
       </span>,
       <span key="maturity" className="italic">

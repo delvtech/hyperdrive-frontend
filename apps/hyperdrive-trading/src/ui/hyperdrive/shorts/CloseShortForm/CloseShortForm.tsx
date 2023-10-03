@@ -81,8 +81,9 @@ export function CloseShortForm({
               <p className="tracking-wide">
                 {baseAmountOut
                   ? `${formatBalance({
-                      balance: formatUnits(baseAmountOut, baseDecimals),
-                      numDecimals: 8,
+                      balance: baseAmountOut,
+                      decimals: baseDecimals,
+                      places: 8,
                     })} ${baseSymbol}`
                   : ""}
               </p>
