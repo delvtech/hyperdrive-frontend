@@ -14,15 +14,15 @@ import { PoolConfig } from "src/pool/PoolConfig";
 import { PoolInfo } from "src/pool/PoolInfo";
 import { calculateLiquidity } from "src/pool/calculateLiquidity";
 import { WITHDRAW_SHARES_ASSET_ID, LP_ASSET_ID } from "src/lp/constants";
-import { decodeAssetFromTransferSingleEventData } from "src/utils/decodeAssetFromTransferSingleEventData";
+import { decodeAssetFromTransferSingleEventData } from "src/pool/decodeAssetFromTransferSingleEventData";
 import { HyperdriveABI } from "src/abis/Hyperdrive";
 import { ClosedLong, Long } from "src/longs/types";
 import { ClosedLpShares } from "src/lp/ClosedLpShares";
 import { RedeemedWithdrawalShares } from "src/withdrawalShares/RedeemedWithdrawalShares";
 import { ClosedShort, OpenShort } from "src/shorts/types";
 import { INetwork } from "src/network/Network";
-import { getCheckpointId } from "src/utils/getLatestCheckpoint";
 import { calculateEffectiveShareReserves } from "src/pool/calculateEffectiveShares";
+import { getCheckpointId } from "src/pool/getCheckpointId";
 
 export interface ReadHyperdriveOptions {
   contract: IReadHyperdriveContract;
