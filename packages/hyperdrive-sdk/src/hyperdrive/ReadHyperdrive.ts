@@ -13,7 +13,7 @@ import { IReadHyperdriveMathContract } from "src/hyperdrive/HyperdriveMathContra
 import { PoolConfig } from "src/pool/PoolConfig";
 import { PoolInfo } from "src/pool/PoolInfo";
 import { calculateLiquidity } from "src/pool/calculateLiquidity";
-import { WITHDRAW_SHARES_ASSET_ID, LP_ASSET_ID } from "src/lp/constants";
+import { LP_ASSET_ID } from "src/lp/assetId";
 import { decodeAssetFromTransferSingleEventData } from "src/pool/decodeAssetFromTransferSingleEventData";
 import { HyperdriveABI } from "src/abis/Hyperdrive";
 import { ClosedLong, Long } from "src/longs/types";
@@ -23,6 +23,7 @@ import { ClosedShort, OpenShort } from "src/shorts/types";
 import { INetwork } from "src/network/Network";
 import { calculateEffectiveShareReserves } from "src/pool/calculateEffectiveShares";
 import { getCheckpointId } from "src/pool/getCheckpointId";
+import { WITHDRAW_SHARES_ASSET_ID } from "src/withdrawalShares/assetId";
 
 export interface ReadHyperdriveOptions {
   contract: IReadHyperdriveContract;
