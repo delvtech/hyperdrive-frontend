@@ -174,6 +174,8 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
    * @param minBaseAmountOut - The minimum amount of base to send to the destination
    * @param asUnderlying - TODO: come up with good comment for this
    * @param options - Contract Write Options
+   * @returns baseProceeds
+   * @returns withdrawShares
    */
   removeLiquidity({
     destination,
@@ -187,7 +189,7 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
     minBaseAmountOut: bigint;
     asUnderlying?: boolean;
     options?: ContractWriteOptionsWithCallback;
-  }): Promise<bigint>;
+  }): Promise<{ baseProceeds: bigint; withdrawShares: bigint }>;
 
   /**
    * Redeems withdrawal shares.
@@ -209,7 +211,7 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
     destination: Address;
     asUnderlying?: boolean;
     options?: ContractWriteOptionsWithCallback;
-  }): Promise<bigint>;
+  }): Promise<{ proceeds: bigint; sharesRedeemed: bigint }>;
 }
 
 export interface ReadWriteHyperdriveOptions extends ReadHyperdriveOptions {
@@ -383,7 +385,7 @@ export class ReadWriteHyperdrive
   }): Promise<bigint> {
     const { baseToken } = await this.getPoolConfig();
     const requiresEth = asUnderlying && baseToken === ZERO_ADDRESS;
-    const [result] = await this.contract.write(
+    const [lpShares] = await this.contract.write(
       "addLiquidity",
       [contribution, minAPR, maxAPR, destination, asUnderlying],
       {
@@ -391,7 +393,7 @@ export class ReadWriteHyperdrive
         ...options,
       },
     );
-    return result;
+    return lpShares;
   }
 
   async removeLiquidity({
@@ -406,13 +408,13 @@ export class ReadWriteHyperdrive
     minBaseAmountOut: bigint;
     asUnderlying?: boolean;
     options?: ContractWriteOptionsWithCallback;
-  }): Promise<bigint> {
-    const [result] = await this.contract.write(
+  }): Promise<{ baseProceeds: bigint; withdrawShares: bigint }> {
+    const [baseProceeds, withdrawShares] = await this.contract.write(
       "removeLiquidity",
       [lpSharesIn, minBaseAmountOut, destination, asUnderlying],
       options,
     );
-    return result;
+    return { baseProceeds, withdrawShares };
   }
 
   async redeemWithdrawalShares({
@@ -427,12 +429,12 @@ export class ReadWriteHyperdrive
     destination: Address;
     asUnderlying?: boolean;
     options?: ContractWriteOptionsWithCallback;
-  }): Promise<bigint> {
-    const [result] = await this.contract.write(
+  }): Promise<{ proceeds: bigint; sharesRedeemed: bigint }> {
+    const [proceeds, sharesRedeemed] = await this.contract.write(
       "redeemWithdrawalShares",
       [withdrawalSharesIn, minBaseAmountOutPerShare, destination, asUnderlying],
       options,
     );
-    return result;
+    return { proceeds, sharesRedeemed };
   }
 }
