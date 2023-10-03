@@ -1,5 +1,5 @@
-import { INetwork } from "@hyperdrive/sdk";
-import { BlockTag, PublicClient } from "viem";
+import { INetwork, GetBlockParameters } from "@hyperdrive/sdk";
+import { PublicClient } from "viem";
 
 export class ViemNetwork implements INetwork {
   private readonly _publicClient: PublicClient;
@@ -8,17 +8,16 @@ export class ViemNetwork implements INetwork {
     this._publicClient = publicClient;
   }
 
-  async getBlockNumber(blockTag?: BlockTag): Promise<bigint> {
-    if (!blockTag) {
-      return this._publicClient.getBlockNumber();
+  async getBlock(args: GetBlockParameters): Promise<{
+    blockNumber: bigint;
+    timestamp: bigint;
+  }> {
+    const block = await this._publicClient.getBlock(args);
+
+    if (!block.number || !block.timestamp) {
+      throw new Error(`Block not found for args: ${args}`);
     }
 
-    const { number } = await this._publicClient.getBlock({ blockTag });
-
-    if (!number) {
-      throw new Error(`Block not found for block tag: ${blockTag}`);
-    }
-
-    return number;
+    return { blockNumber: block.number, timestamp: block.timestamp };
   }
 }

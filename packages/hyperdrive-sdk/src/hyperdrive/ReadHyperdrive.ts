@@ -13,15 +13,17 @@ import { IReadHyperdriveMathContract } from "src/hyperdrive/HyperdriveMathContra
 import { PoolConfig } from "src/pool/PoolConfig";
 import { PoolInfo } from "src/pool/PoolInfo";
 import { calculateLiquidity } from "src/pool/calculateLiquidity";
-import { WITHDRAW_SHARES_ASSET_ID, LP_ASSET_ID } from "src/lp/constants";
-import { decodeAssetFromTransferSingleEventData } from "src/utils/decodeAssetFromTransferSingleEventData";
+import { LP_ASSET_ID } from "src/lp/assetId";
+import { decodeAssetFromTransferSingleEventData } from "src/pool/decodeAssetFromTransferSingleEventData";
 import { HyperdriveABI } from "src/abis/Hyperdrive";
 import { ClosedLong, Long } from "src/longs/types";
 import { ClosedLpShares } from "src/lp/ClosedLpShares";
 import { RedeemedWithdrawalShares } from "src/withdrawalShares/RedeemedWithdrawalShares";
 import { ClosedShort, OpenShort } from "src/shorts/types";
 import { INetwork } from "src/network/Network";
-import { getCheckpointId } from "src/utils/getLatestCheckpoint";
+import { calculateEffectiveShareReserves } from "src/pool/calculateEffectiveShares";
+import { getCheckpointId } from "src/pool/getCheckpointId";
+import { WITHDRAW_SHARES_ASSET_ID } from "src/withdrawalShares/assetId";
 
 export interface ReadHyperdriveOptions {
   contract: IReadHyperdriveContract;
@@ -49,7 +51,7 @@ export interface IReadHyperdrive {
 
   /**
    * This function retrieves the market liquidity by using the following formula:
-   * marketLiquidity = lpSharePrice * shareReserves - longsOutstanding
+   * marketLiquidity = lpSharePrice * effectiveShareReserves - longsOutstanding
    */
   getLiquidity(options?: ContractReadOptions): Promise<bigint>;
 
@@ -296,6 +298,7 @@ export interface IReadHyperdrive {
   }): Promise<{ baseAmountOut: bigint; sharesRedeemed: bigint }>;
 }
 
+const MAX_ITERATIONS = 7n;
 export class ReadHyperdrive implements IReadHyperdrive {
   protected readonly contract: IReadHyperdriveContract;
   protected readonly mathContract: IReadHyperdriveMathContract;
@@ -323,11 +326,12 @@ export class ReadHyperdrive implements IReadHyperdrive {
   async getFixedRate(options?: ContractReadOptions): Promise<bigint> {
     const { positionDuration, initialSharePrice, timeStretch } =
       await this.getPoolConfig(options);
-    const { shareReserves, bondReserves } = await this.getPoolInfo(options);
+    const { shareReserves, bondReserves, shareAdjustment } =
+      await this.getPoolInfo(options);
     const [apr] = await this.mathContract.read(
       "calculateAPRFromReserves",
       [
-        shareReserves,
+        calculateEffectiveShareReserves(shareReserves, shareAdjustment),
         bondReserves,
         initialSharePrice,
         positionDuration,
@@ -340,12 +344,12 @@ export class ReadHyperdrive implements IReadHyperdrive {
   }
 
   async getLiquidity(options?: ContractReadOptions): Promise<bigint> {
-    const { lpSharePrice, shareReserves, longsOutstanding } =
+    const { lpSharePrice, shareReserves, longsOutstanding, shareAdjustment } =
       await this.getPoolInfo(options);
 
     const liquidity = calculateLiquidity(
       lpSharePrice,
-      shareReserves,
+      calculateEffectiveShareReserves(shareReserves, shareAdjustment),
       longsOutstanding,
     );
 
@@ -387,11 +391,17 @@ export class ReadHyperdrive implements IReadHyperdrive {
     const { initialSharePrice, timeStretch } = await this.getPoolConfig(
       options,
     );
-    const { shareReserves, bondReserves } = await this.getPoolInfo(options);
+    const { shareReserves, bondReserves, shareAdjustment } =
+      await this.getPoolInfo(options);
 
     const [spotPrice] = await this.mathContract.read(
       "calculateSpotPrice",
-      [shareReserves, bondReserves, initialSharePrice, timeStretch],
+      [
+        calculateEffectiveShareReserves(shareReserves, shareAdjustment),
+        bondReserves,
+        initialSharePrice,
+        timeStretch,
+      ],
       options,
     );
     return spotPrice;
@@ -735,21 +745,35 @@ export class ReadHyperdrive implements IReadHyperdrive {
   }
 
   async getMaxShort(options?: ContractReadOptions): Promise<bigint> {
-    const { minimumShareReserves, initialSharePrice, timeStretch, fees } =
-      await this.getPoolConfig(options);
+    const {
+      minimumShareReserves,
+      initialSharePrice,
+      timeStretch,
+      fees,
+      checkpointDuration,
+    } = await this.getPoolConfig(options);
     const {
       shareReserves,
       bondReserves,
       longsOutstanding,
       sharePrice,
+      shareAdjustment,
       longExposure,
     } = await this.getPoolInfo(options);
+    const { timestamp: blockTimestamp } = await this.network.getBlock(options);
+
+    const checkpointId = getCheckpointId(blockTimestamp, checkpointDuration);
+    const [{ longExposure: checkpointLongExposure }] = await this.contract.read(
+      "getCheckpoint",
+      [checkpointId],
+    );
 
     const [maxBondsOut] = await this.mathContract.read(
       "calculateMaxShort",
       [
         {
           shareReserves,
+          shareAdjustment,
           bondReserves,
           longsOutstanding,
           timeStretch,
@@ -760,6 +784,8 @@ export class ReadHyperdrive implements IReadHyperdrive {
           curveFee: fees.curve,
           governanceFee: fees.governance,
         },
+        checkpointLongExposure,
+        MAX_ITERATIONS,
       ],
       options,
     );
@@ -783,13 +809,12 @@ export class ReadHyperdrive implements IReadHyperdrive {
       longsOutstanding,
       sharePrice,
       longExposure,
+      shareAdjustment,
     } = await this.getPoolInfo(options);
 
-    const blockNumber =
-      options?.blockNumber ??
-      (await this.network.getBlockNumber(options?.blockTag));
+    const { timestamp: blockTimestamp } = await this.network.getBlock(options);
 
-    const checkpointId = getCheckpointId(blockNumber, checkpointDuration);
+    const checkpointId = getCheckpointId(blockTimestamp, checkpointDuration);
     const [{ longExposure: checkpointLongExposure }] = await this.contract.read(
       "getCheckpoint",
       [checkpointId],
@@ -800,6 +825,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
       [
         {
           shareReserves,
+          shareAdjustment,
           bondReserves,
           longsOutstanding,
           timeStretch,
@@ -811,11 +837,11 @@ export class ReadHyperdrive implements IReadHyperdrive {
           governanceFee: fees.governance,
         },
         checkpointLongExposure,
-        //TODO: Max iterations, what should this be?
-        1000n,
+        MAX_ITERATIONS,
       ],
       options,
     );
+
     return {
       maxBaseIn,
       maxBondsOut,

@@ -4,7 +4,6 @@ import {
   ContractWriteOptions,
   ContractWriteOptionsWithCallback,
 } from "src/contract/Contract";
-import { ZERO_ADDRESS } from "src/utils/constants";
 import {
   IReadHyperdrive,
   ReadHyperdrive,
@@ -12,6 +11,7 @@ import {
 } from "src/hyperdrive/ReadHyperdrive";
 import { Long } from "src/longs/types";
 import { Short } from "src/shorts/types";
+import { ZERO_ADDRESS } from "src/base/numbers";
 
 export interface IReadWriteHyperdrive extends IReadHyperdrive {
   /**

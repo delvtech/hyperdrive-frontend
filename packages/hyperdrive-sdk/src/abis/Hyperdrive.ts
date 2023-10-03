@@ -157,7 +157,17 @@ export const HyperdriveABI = [
   },
   {
     inputs: [],
+    name: "InvalidTradeSize",
+    type: "error",
+  },
+  {
+    inputs: [],
     name: "MaxFeeTooHigh",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "MinimumTransactionAmount",
     type: "error",
   },
   {
@@ -168,6 +178,11 @@ export const HyperdriveABI = [
   {
     inputs: [],
     name: "NegativeInterest",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "NegativePresentValue",
     type: "error",
   },
   {
@@ -254,11 +269,6 @@ export const HyperdriveABI = [
   {
     inputs: [],
     name: "UnsupportedToken",
-    type: "error",
-  },
-  {
-    inputs: [],
-    name: "ZeroAmount",
     type: "error",
   },
   {
@@ -931,6 +941,11 @@ export const HyperdriveABI = [
             type: "uint128",
           },
           {
+            internalType: "int128",
+            name: "shareAdjustment",
+            type: "int128",
+          },
+          {
             internalType: "uint128",
             name: "longExposure",
             type: "uint128",
@@ -973,6 +988,11 @@ export const HyperdriveABI = [
           {
             internalType: "uint256",
             name: "minimumShareReserves",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "minimumTransactionAmount",
             type: "uint256",
           },
           {
@@ -1051,6 +1071,11 @@ export const HyperdriveABI = [
             internalType: "uint256",
             name: "shareReserves",
             type: "uint256",
+          },
+          {
+            internalType: "int256",
+            name: "shareAdjustment",
+            type: "int256",
           },
           {
             internalType: "uint256",
