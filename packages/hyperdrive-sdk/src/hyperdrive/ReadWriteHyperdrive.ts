@@ -150,6 +150,7 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
    * @param maxAPR - The maximum APR to accept
    * @param asUnderlying - TODO: come up with good comment for this
    * @param options - Contract Write Options
+   * @return lpShares The number of LP tokens created
    */
   addLiquidity({
     destination,
@@ -199,6 +200,8 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
    * @param destination - The account receiving the base
    * @param asUnderlying - TODO: come up with good comment for this
    * @param options - Contract Write Options
+   * @return baseProceeds The amount of base the LP received.
+   * @return sharesRedeemed The amount of withdrawal shares that were redeemed.
    */
   redeemWithdrawalShares({
     withdrawalSharesIn,
@@ -212,7 +215,7 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
     destination: Address;
     asUnderlying?: boolean;
     options?: ContractWriteOptionsWithCallback;
-  }): Promise<{ proceeds: bigint; sharesRedeemed: bigint }>;
+  }): Promise<{ baseProceeds: bigint; sharesRedeemed: bigint }>;
 }
 
 export interface ReadWriteHyperdriveOptions extends ReadHyperdriveOptions {
@@ -430,12 +433,12 @@ export class ReadWriteHyperdrive
     destination: Address;
     asUnderlying?: boolean;
     options?: ContractWriteOptionsWithCallback;
-  }): Promise<{ proceeds: bigint; sharesRedeemed: bigint }> {
-    const [proceeds, sharesRedeemed] = await this.contract.write(
+  }): Promise<{ baseProceeds: bigint; sharesRedeemed: bigint }> {
+    const [baseProceeds, sharesRedeemed] = await this.contract.write(
       "redeemWithdrawalShares",
       [withdrawalSharesIn, minBaseAmountOutPerShare, destination, asUnderlying],
       options,
     );
-    return { proceeds, sharesRedeemed };
+    return { baseProceeds, sharesRedeemed };
   }
 }
