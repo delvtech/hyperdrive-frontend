@@ -174,8 +174,9 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
    * @param minBaseAmountOut - The minimum amount of base to send to the destination
    * @param asUnderlying - TODO: come up with good comment for this
    * @param options - Contract Write Options
-   * @returns baseProceeds
-   * @returns withdrawShares
+   * @returns baseProceeds - The base the LP removing liquidity receives. The LP
+   receives a proportional amount of the pool's idle capital
+   * @returns withdrawShares - The base that the LP receives buys out some of their LP  shares, but it may not be sufficient to fully buy the LP out. In this case, the LP receives withdrawal shares equal in value to the present value they are owed. As idle capital becomes available, the pool will buy back these shares.
    */
   removeLiquidity({
     destination,
