@@ -5,9 +5,10 @@ import {
 } from "dnum";
 /**
  * Used for final balance presentation since it cuts off decimals
- * @param balance
- * @param numDecimals max decimals, default is 1
- * @returns a formatted string with proper commas and {numDecimals} decimal places
+ * @param balance bigint representation of the balance
+ * @param decimals decimal places of balance
+ * @param places number of place values the formatted balance should display, default is 1
+ * @returns a formatted string with proper commas and {places} decimal places
  */
 export function formatBalance({
   balance,
