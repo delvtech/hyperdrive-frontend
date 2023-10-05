@@ -8,7 +8,6 @@ import {
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useClosedLpShares } from "src/ui/hyperdrive/lp/hooks/useClosedLpShares";
 import { useRedeemedWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useRedeemedWithdrawalShares";
-import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
 
 interface ClosedLpTablePRops {
@@ -44,23 +43,20 @@ export function ClosedLpTable({
           </span>,
           <span key="shares" className="italic">
             {formatBalance({
-              balance: formatUnits(
-                lpAmount,
-                (hyperdrive as Hyperdrive).baseToken.decimals,
-              ),
+              balance: lpAmount,
+              decimals: hyperdrive.baseToken.decimals,
             })}
           </span>,
           <span key="value" className="italic">
             {`${formatBalance({
-              balance: formatUnits(baseAmount, hyperdrive.baseToken.decimals),
+              balance: baseAmount,
+              decimals: hyperdrive.baseToken.decimals,
             })} ${hyperdrive.baseToken.symbol}`}
           </span>,
           <span key="withdrawalShares" className="italic">
             {`${formatBalance({
-              balance: formatUnits(
-                withdrawalShareAmount,
-                hyperdrive.baseToken.decimals,
-              ),
+              balance: withdrawalShareAmount,
+              decimals: hyperdrive.baseToken.decimals,
             })}`}
           </span>,
           <span key="closed-on" className="italic">
@@ -80,15 +76,14 @@ export function ClosedLpTable({
           </span>,
           <span key="shares" className="italic">
             {`${formatBalance({
-              balance: formatUnits(
-                withdrawalShareAmount,
-                hyperdrive.baseToken.decimals,
-              ),
+              balance: withdrawalShareAmount,
+              decimals: hyperdrive.baseToken.decimals,
             })}`}
           </span>,
           <span key="value" className="italic">
             {`${formatBalance({
-              balance: formatUnits(baseAmount, hyperdrive.baseToken.decimals),
+              balance: baseAmount,
+              decimals: hyperdrive.baseToken.decimals,
             })} ${hyperdrive.baseToken.symbol}`}
           </span>,
           <span key="withdrawalShares" className="italic">

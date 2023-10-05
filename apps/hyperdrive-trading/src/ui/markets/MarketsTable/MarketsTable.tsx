@@ -112,7 +112,11 @@ function createMarketRow({
         className="flex flex-row items-center justify-start font-semibold"
       >
         <img className="mr-1 h-4" src={market.baseToken.iconUrl} />
-        {formatBalance({ balance: liquidity })}
+        {formatBalance({
+          balance: liquidity,
+          decimals: market.baseToken.decimals,
+          places: 0,
+        })}
       </span>,
       <span key="apy" className="font-semibold">
         1.25%

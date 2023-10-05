@@ -4,7 +4,7 @@ import { Hyperdrive } from "src/appconfig/types";
 import { Row } from "src/ui/base/components/tables/SortableGridTable";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useClosedShorts } from "src/ui/hyperdrive/shorts/hooks/useClosedShorts";
-import { Address, formatUnits } from "viem";
+import { Address } from "viem";
 
 interface UseClosedShortsRowsOptions {
   account: Address | undefined;
@@ -57,14 +57,16 @@ function createClosedShortRow({
       </span>,
       <span key="size" className="italic">
         {formatBalance({
-          balance: formatUnits(short.bondAmount, baseDecimals),
-          numDecimals: 4,
+          balance: short.bondAmount,
+          decimals: baseDecimals,
+          places: 4,
         })}
       </span>,
       <span key="value" className="inline-flex items-center gap-1 italic">
         {`${formatBalance({
-          balance: formatUnits(short.baseAmountReceived, baseDecimals),
-          numDecimals: 2,
+          balance: short.baseAmountReceived,
+          decimals: baseDecimals,
+          places: 2,
         })} ${baseSymbol}`}
       </span>,
       <span key="maturity" className="italic">

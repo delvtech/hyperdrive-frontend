@@ -1,9 +1,9 @@
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
-import { constants, ethers } from "ethers";
 import { ReactElement } from "react";
 import { Link } from "react-router-dom";
 import { Hyperdrive, Token } from "src/appconfig/types";
+import { MAX_UINT256 } from "src/base/constants";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { useMaxShort } from "src/ui/hyperdrive/shorts/hooks/useMaxShort";
 import { useOpenShort } from "src/ui/hyperdrive/shorts/hooks/useOpenShort";
@@ -38,7 +38,7 @@ export function OpenShortForm({
   const { baseAmountIn, status: openShortPreviewStatus } = usePreviewOpenShort({
     market,
     amountBondShorts: amountAsBigInt,
-    maxBaseAmountIn: constants.MaxUint256.toBigInt(), // todo add slippage control
+    maxBaseAmountIn: MAX_UINT256, // todo add slippage control
     destination: account,
   });
 
@@ -54,7 +54,7 @@ export function OpenShortForm({
   const { approve } = useTokenApproval({
     tokenAddress: market.baseToken.address,
     spender: market.address,
-    amount: ethers.constants.MaxUint256.toBigInt(),
+    amount: MAX_UINT256,
   });
 
   const needsApproval = tokenAllowance
@@ -65,7 +65,7 @@ export function OpenShortForm({
     hyperdriveAddress: market.address,
     amountBondShorts: amountAsBigInt,
     // TODO: handle slippage
-    maxBaseAmountIn: constants.MaxUint256.toBigInt(),
+    maxBaseAmountIn: MAX_UINT256,
     destination: account,
     enabled: openShortPreviewStatus === "success" && !needsApproval,
     onExecuted: () => {

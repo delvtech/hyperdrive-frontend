@@ -67,8 +67,9 @@ export function MarketStats({
       <Stat
         label="Bond price"
         value={`${formatBalance({
-          balance: longPrice?.formatted || "0",
-          numDecimals: 2,
+          balance: longPrice?.price || 0n,
+          decimals: hyperdrive.baseToken.decimals,
+          places: 2,
         })} ${hyperdrive.baseToken.symbol}`}
         description={"The price of the bond in the base asset."}
       />

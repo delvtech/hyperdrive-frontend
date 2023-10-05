@@ -1,10 +1,10 @@
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import { adjustAmountByPercentage } from "@hyperdrive/sdk";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
-import { ethers } from "ethers";
 import { ReactElement } from "react";
 import { Link } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
+import { MAX_UINT256 } from "src/base/constants";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { useMaxLong } from "src/ui/hyperdrive/longs/hooks/useMaxLong";
 import { useOpenLong } from "src/ui/hyperdrive/longs/hooks/useOpenLong";
@@ -52,7 +52,7 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
   const { approve } = useTokenApproval({
     tokenAddress: market.baseToken.address,
     spender: market.address,
-    amount: ethers.constants.MaxUint256.toBigInt(),
+    amount: MAX_UINT256,
   });
 
   const hasEnoughAllowance = tokenAllowance
