@@ -101,6 +101,7 @@ export function RedeemWithdrawalSharesForm({
           }
           onClick={(e) => {
             redeemWithdrawalShares?.();
+            onRedeemWithdrawalShares?.(e);
           }}
         >
           Redeem withdrawal shares
