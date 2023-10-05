@@ -52,8 +52,9 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
    * @param destination - The account opening the position
    * @param baseAmount - The amount of base supplied to the position
    * @param bondAmountOut - The amount of bonds to send to the destination
-   * @param asUnderlying - TODO: come up with good comment for this
+   * @param asUnderlying - A flag indicating whether the sender will pay in base or using another currency. Implementations choose which currencies they accept.
    * @param options - Contract Write Options
+   * @return bondProceeds - The amount of bonds the user received
    *
    */
   openLong({
@@ -75,8 +76,10 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
    * @param destination - The account opening the position
    * @param baseAmount - The amount of base supplied to the position
    * @param bondAmountOut - The amount of bonds to send to the destination
-   * @param asUnderlying - TODO: come up with good comment for this
+   * @param asUnderlying - A flag indicating whether the sender will pay in base or using another currency. Implementations choose which currencies they accept.
    * @param options - Contract Write Options
+   * @return maturityTime - The maturity time of the short.
+   * @return traderDeposit - The amount the user deposited for this trade.
    */
   openShort({
     destination,
@@ -98,8 +101,9 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
    * @param bondAmountIn - The amount of of bonds to remove from the position
    * @param minBaseAmountOut - The minimum amount of base to send to the destination
    * @param destination - The account receiving the base
-   * @param asUnderlying - TODO: come up with good comment for this
+   * @param asUnderlying - A flag indicating whether the sender will pay in base or using another currency. Implementations choose which currencies they accept.
    * @param options - Contract Write Options
+   * @return The amount of underlying asset the user receives.
    */
   closeLong({
     long,
@@ -123,8 +127,9 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
    * @param bondAmountIn - The amount of bonds to remove from the position
    * @param minBaseAmountOut - The minimum amount of base to send to the destination
    * @param destination - The account receiving the base
-   * @param asUnderlying - TODO: come up with good comment for this
+   * @param asUnderlying - A flag indicating whether the sender will pay in base or using another currency. Implementations choose which currencies they accept.
    * @param options - Contract Write Options
+   * @return The amount of base tokens produced by closing this short
    */
   closeShort({
     short,
@@ -148,8 +153,9 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
    * @param contribution - The amount of base to supply
    * @param minAPR - The minimum APR to accept
    * @param maxAPR - The maximum APR to accept
-   * @param asUnderlying - TODO: come up with good comment for this
+   * @param asUnderlying - A flag indicating whether the sender will pay in base or using another currency. Implementations choose which currencies they accept.
    * @param options - Contract Write Options
+   * @return lpShares The number of LP tokens created
    */
   addLiquidity({
     destination,
@@ -172,8 +178,11 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
    * @param destination - The account removing liquidity
    * @param lpSharesIn - The amount of LP shares to remove
    * @param minBaseAmountOut - The minimum amount of base to send to the destination
-   * @param asUnderlying - TODO: come up with good comment for this
+   * @param asUnderlying - A flag indicating whether the sender will pay in base or using another currency. Implementations choose which currencies they accept.
    * @param options - Contract Write Options
+   * @returns baseProceeds - The base the LP removing liquidity receives. The LP
+   receives a proportional amount of the pool's idle capital
+   * @returns withdrawShares - The base that the LP receives buys out some of their LP  shares, but it may not be sufficient to fully buy the LP out. In this case, the LP receives withdrawal shares equal in value to the present value they are owed. As idle capital becomes available, the pool will buy back these shares.
    */
   removeLiquidity({
     destination,
@@ -187,15 +196,17 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
     minBaseAmountOut: bigint;
     asUnderlying?: boolean;
     options?: ContractWriteOptionsWithCallback;
-  }): Promise<bigint>;
+  }): Promise<{ baseProceeds: bigint; withdrawShares: bigint }>;
 
   /**
    * Redeems withdrawal shares.
    * @param withdrawalSharesIn - The amount of withdrawal shares to redeem
    * @param minBaseAmountOutPerShare - The minimum amount of base to send to the destination per share
    * @param destination - The account receiving the base
-   * @param asUnderlying - TODO: come up with good comment for this
+   * @param asUnderlying - A flag indicating whether the sender will pay in base or using another currency. Implementations choose which currencies they accept.
    * @param options - Contract Write Options
+   * @return baseProceeds The amount of base the LP received.
+   * @return sharesRedeemed The amount of withdrawal shares that were redeemed.
    */
   redeemWithdrawalShares({
     withdrawalSharesIn,
@@ -209,7 +220,7 @@ export interface IReadWriteHyperdrive extends IReadHyperdrive {
     destination: Address;
     asUnderlying?: boolean;
     options?: ContractWriteOptionsWithCallback;
-  }): Promise<bigint>;
+  }): Promise<{ baseProceeds: bigint; sharesRedeemed: bigint }>;
 }
 
 export interface ReadWriteHyperdriveOptions extends ReadHyperdriveOptions {
@@ -383,7 +394,7 @@ export class ReadWriteHyperdrive
   }): Promise<bigint> {
     const { baseToken } = await this.getPoolConfig();
     const requiresEth = asUnderlying && baseToken === ZERO_ADDRESS;
-    const [result] = await this.contract.write(
+    const [lpShares] = await this.contract.write(
       "addLiquidity",
       [contribution, minAPR, maxAPR, destination, asUnderlying],
       {
@@ -391,7 +402,7 @@ export class ReadWriteHyperdrive
         ...options,
       },
     );
-    return result;
+    return lpShares;
   }
 
   async removeLiquidity({
@@ -406,13 +417,13 @@ export class ReadWriteHyperdrive
     minBaseAmountOut: bigint;
     asUnderlying?: boolean;
     options?: ContractWriteOptionsWithCallback;
-  }): Promise<bigint> {
-    const [result] = await this.contract.write(
+  }): Promise<{ baseProceeds: bigint; withdrawShares: bigint }> {
+    const [baseProceeds, withdrawShares] = await this.contract.write(
       "removeLiquidity",
       [lpSharesIn, minBaseAmountOut, destination, asUnderlying],
       options,
     );
-    return result;
+    return { baseProceeds, withdrawShares };
   }
 
   async redeemWithdrawalShares({
@@ -427,12 +438,12 @@ export class ReadWriteHyperdrive
     destination: Address;
     asUnderlying?: boolean;
     options?: ContractWriteOptionsWithCallback;
-  }): Promise<bigint> {
-    const [result] = await this.contract.write(
+  }): Promise<{ baseProceeds: bigint; sharesRedeemed: bigint }> {
+    const [baseProceeds, sharesRedeemed] = await this.contract.write(
       "redeemWithdrawalShares",
       [withdrawalSharesIn, minBaseAmountOutPerShare, destination, asUnderlying],
       options,
     );
-    return result;
+    return { baseProceeds, sharesRedeemed };
   }
 }
