@@ -53,7 +53,7 @@ await hyperdrive.openLong({
 | baseAmount    | The amount of base asset supplied to the position | No           |
 | bondAmountOut | The amount of bonds to send to the destination    | No           |
 | destination   | The account opening the position                    | No           |
-| asUnderlying  | TODO: come up with good comment for this           | Yes          |
+| asUnderlying  | A flag indicating whether the sender will pay in base or using another currency. | Yes          |
 | options       | [ContractWriteOptions](/docs/sdk/api-reference/interfaces/ContractWriteOptionsWithCallback) | Yes |
 | id            | Custom id for this instance of hyperdrive                                           | Yes          |
 
