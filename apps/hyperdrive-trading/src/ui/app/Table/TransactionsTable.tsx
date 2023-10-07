@@ -1,7 +1,7 @@
 import {
+  createColumnHelper,
   flexRender,
   getCoreRowModel,
-  TableOptions,
   useReactTable,
 } from "@tanstack/react-table";
 
@@ -35,15 +35,38 @@ type TransactionDataType = {
 };
 interface Props<D extends TransactionDataType> {
   data: D[];
-  columns: TableOptions<D>["columns"];
+  //   columns: TableOptions<D>["columns"];
   isLoading?: boolean;
 }
 
+type TransactionColumn = {
+  type: string;
+  value: bigint;
+  account: string;
+};
+
+const columnHelper = createColumnHelper<TransactionColumn>();
+
+const columns = [
+  columnHelper.accessor("type", {
+    header: "Type",
+    cell: (type) => type.getValue(),
+  }),
+  columnHelper.accessor("value", {
+    header: "Value",
+    cell: (value) => value.getValue(),
+  }),
+  columnHelper.accessor("account", {
+    header: "Account",
+    cell: (account) => account.getValue(),
+  }),
+];
+
 export function TransactionTable<D extends TransactionDataType>({
-  columns,
+  //   columns,
   data,
 }: Props<D>): JSX.Element {
-  const tableInstance = useReactTable<D>({
+  const tableInstance = useReactTable({
     columns,
     data,
     getCoreRowModel: getCoreRowModel(),
