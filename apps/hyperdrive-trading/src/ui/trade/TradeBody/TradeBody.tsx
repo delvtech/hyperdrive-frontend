@@ -1,9 +1,7 @@
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
-import {
-  MOCK_DATA,
-  TransactionTable,
-} from "src/ui/app/Table/TransactionsTable";
+import { TransactionTable } from "src/ui/app/Table/TransactionsTable";
+import { useTransactionData } from "src/ui/app/Table/useTransactionData";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { OpenLongModalButton } from "src/ui/hyperdrive/longs/OpenLongModalButton/OpenLongModalButton";
 import { AddLiquidityModalButton } from "src/ui/hyperdrive/lp/AddLiquidityModalButton/AddLiquidityModalButton";
@@ -22,7 +20,8 @@ interface PositionsTableProps {
 export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
   const { appConfig } = useAppConfig();
   const yieldSource = appConfig?.yieldSources[hyperdrive.yieldSource];
-
+  const transactionData = useTransactionData(hyperdrive);
+  console.log("transactionData", transactionData);
   return (
     <div className="flex max-w-6xl flex-col gap-16 ">
       {/* Name w/ market select */}
@@ -53,7 +52,7 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
       </div>
 
       <PositionsSection hyperdrive={hyperdrive} />
-      <TransactionTable data={MOCK_DATA} />
+      <TransactionTable data={transactionData} hyperdrive={hyperdrive} />
       <FAQ />
     </div>
   );

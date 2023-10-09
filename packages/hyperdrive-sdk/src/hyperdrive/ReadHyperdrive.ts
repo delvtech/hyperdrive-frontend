@@ -4,6 +4,7 @@ import mapValues from "lodash.mapvalues";
 import { sumBigInt } from "src/base/sumBigInt";
 import {
   BlockTag,
+  ContractEvent,
   ContractGetEventsOptions,
   ContractReadOptions,
   ContractWriteOptions,
@@ -407,15 +408,15 @@ export class ReadHyperdrive implements IReadHyperdrive {
     return spotPrice;
   }
 
-  private async getOpenLongEvents(
+  async getOpenLongEvents(
     options?: ContractGetEventsOptions<typeof HyperdriveABI, "OpenLong">,
-  ) {
+  ): Promise<ContractEvent<typeof HyperdriveABI, "OpenLong">[]> {
     return this.contract.getEvents("OpenLong", options);
   }
 
-  private async getOpenShortEvents(
+  async getOpenShortEvents(
     options?: ContractGetEventsOptions<typeof HyperdriveABI, "OpenShort">,
-  ) {
+  ): Promise<ContractEvent<typeof HyperdriveABI, "OpenShort">[]> {
     return this.contract.getEvents("OpenShort", options);
   }
 

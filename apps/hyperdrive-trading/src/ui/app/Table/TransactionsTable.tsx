@@ -4,19 +4,7 @@ import {
   getCoreRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-
-export const MOCK_DATA = [
-  {
-    type: "LP",
-    value: 100n,
-    account: "0x123",
-  },
-  {
-    type: "LONG",
-    value: 100n,
-    account: "0x124",
-  },
-];
+import { Hyperdrive } from "src/appconfig/types";
 
 type AssetType = "LP" | "LONG" | "SHORT" | "WITHDRAWAL_SHARE";
 type TransactionDataType = {
@@ -46,7 +34,6 @@ type TransactionColumn = {
 };
 
 const columnHelper = createColumnHelper<TransactionColumn>();
-
 const columns = [
   columnHelper.accessor("type", {
     header: "Type",
@@ -61,11 +48,15 @@ const columns = [
     cell: (account) => account.getValue(),
   }),
 ];
-
-export function TransactionTable<D extends TransactionDataType>({
+export function TransactionTable({
   //   columns,
+  hyperdrive,
   data,
-}: Props<D>): JSX.Element {
+}: {
+  hyperdrive: Hyperdrive;
+  data: any;
+}): JSX.Element {
+  // memoize the data
   const tableInstance = useReactTable({
     columns,
     data,
@@ -73,7 +64,7 @@ export function TransactionTable<D extends TransactionDataType>({
   });
 
   return (
-    <table>
+    <table className="daisy-table">
       <thead>
         {tableInstance.getHeaderGroups().map((headerGroup) => (
           <tr key={headerGroup.id}>
@@ -93,11 +84,14 @@ export function TransactionTable<D extends TransactionDataType>({
       <tbody>
         {tableInstance.getRowModel().rows.map((row) => (
           <tr key={row.id}>
-            {row.getVisibleCells().map((cell) => (
-              <td key={cell.id}>
-                {flexRender(cell.column.columnDef.cell, cell.getContext())}
-              </td>
-            ))}
+            {row.getVisibleCells().map((cell) => {
+              console.log("cell", cell.getValue());
+              return (
+                <td key={cell.id}>
+                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                </td>
+              );
+            })}
           </tr>
         ))}
       </tbody>
