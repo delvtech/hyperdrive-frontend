@@ -36,7 +36,13 @@ function mapEventName(eventName: string): string {
 const mapEventsToRowType = (events: TransactionData[]): RowType[] => {
   return events.map((event) => ({
     type: mapEventName(event.eventName),
-    value: dnum.format([event.baseAmount, 18], { digits: 2 }),
+    value: dnum.format(
+      [
+        event.eventName === "OpenShort" ? event.bondAmount : event.baseAmount,
+        18,
+      ],
+      { digits: 2 },
+    ),
     account: event.trader,
   }));
 };
