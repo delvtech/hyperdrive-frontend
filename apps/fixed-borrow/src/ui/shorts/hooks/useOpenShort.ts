@@ -1,5 +1,10 @@
 import { HyperdriveABI } from "@hyperdrive/sdk";
-import { Address, useContractWrite, usePrepareContractWrite } from "wagmi";
+import {
+  Address,
+  useContractRead,
+  useContractWrite,
+  usePrepareContractWrite,
+} from "wagmi";
 
 interface UseOpenShortOptions {
   hyperdrivePool: Address;
@@ -19,14 +24,20 @@ export function useOpenShort({
   openShort: (() => void) | undefined;
   openShortStatus: "error" | "idle" | "success" | "loading";
 } {
-  const queryEnabled = !!bondAmount && !!maxDeposit && !!destination;
+  const { data: poolInfo } = useContractRead({
+    abi: HyperdriveABI,
+    address: hyperdrivePool,
+    functionName: "getPoolInfo",
+  });
+  const queryEnabled =
+    !!bondAmount && !!maxDeposit && !!destination && !!poolInfo;
   const { config } = usePrepareContractWrite({
     abi: HyperdriveABI,
     address: hyperdrivePool,
     functionName: "openShort",
     enabled: queryEnabled,
     args: queryEnabled
-      ? [bondAmount, maxDeposit, destination, asUnderlying]
+      ? [bondAmount, maxDeposit, poolInfo.sharePrice, destination, asUnderlying]
       : undefined,
     // The gas cost estimate is innacurate because openShort also deposits into
     // the DSR, which has a variable gas cost.

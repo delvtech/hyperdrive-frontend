@@ -1,7 +1,8 @@
 import { HyperdriveABI } from "@hyperdrive/sdk";
+import { SparkGoerliAddresses } from "@hyperdrive/spark";
 import { useQuery } from "@tanstack/react-query";
 import { HyperdriveGoerliAddresses } from "src/addresses/goerli";
-import { Address, useAccount, usePublicClient } from "wagmi";
+import { Address, useAccount, useContractRead, usePublicClient } from "wagmi";
 
 const dsrHyperdriveAddress = HyperdriveGoerliAddresses.dsrHyperdrive as Address;
 
@@ -29,9 +30,14 @@ export function useOpenShortPreview({
   // directly, see: https://github.com/wagmi-dev/wagmi/discussions/1571
   const publicClient = usePublicClient();
 
-  const queryEnabled =
-    !!bondAmount && !!maxDeposit && !!destination && !!account;
+  const { data: poolInfo } = useContractRead({
+    abi: HyperdriveABI,
+    address: hyperdrivePool,
+    functionName: "getPoolInfo",
+  });
 
+  const queryEnabled =
+    !!bondAmount && !!maxDeposit && !!destination && !!account && !!poolInfo;
   const { data, status } = useQuery({
     queryKey: [
       "preview-open-short",
@@ -53,7 +59,13 @@ export function useOpenShortPreview({
             address: hyperdrivePool,
             functionName: "openShort",
             account,
-            args: [bondAmount, maxDeposit, destination, asUnderlying],
+            args: [
+              bondAmount,
+              maxDeposit,
+              poolInfo?.sharePrice,
+              destination,
+              asUnderlying,
+            ],
             value: 0n,
           });
           return short;
