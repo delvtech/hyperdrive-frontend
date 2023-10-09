@@ -20,8 +20,8 @@ interface PositionsTableProps {
 export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
   const { appConfig } = useAppConfig();
   const yieldSource = appConfig?.yieldSources[hyperdrive.yieldSource];
-  const transactionData = useTransactionData(hyperdrive);
-  console.log("transactionData", transactionData);
+  const { data: transactionData } = useTransactionData(hyperdrive);
+
   return (
     <div className="flex max-w-6xl flex-col gap-16 ">
       {/* Name w/ market select */}
@@ -52,7 +52,9 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
       </div>
 
       <PositionsSection hyperdrive={hyperdrive} />
+
       <TransactionTable data={transactionData} hyperdrive={hyperdrive} />
+
       <FAQ />
     </div>
   );

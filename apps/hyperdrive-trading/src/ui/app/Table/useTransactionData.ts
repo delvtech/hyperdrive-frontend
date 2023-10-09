@@ -1,6 +1,7 @@
-import { useQueries } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
+
 type TransactionData = {
   assetId: bigint;
   baseAmount: bigint;
@@ -15,31 +16,40 @@ type RowType = {
   value: string;
   account: string;
 };
-export function useTransactionData(hyperdrive: Hyperdrive): RowType[] {
-  const readHyperdrive = useReadHyperdrive(hyperdrive.address);
-  const events = useQueries({
-    queries: [
-      {
-        queryKey: ["longEvent", readHyperdrive?.getLongEvents()],
-        queryFn: async () => readHyperdrive?.getLongEvents(),
-      },
-      {
-        queryKey: ["shortEvents", readHyperdrive?.getShortEvents()],
-        queryFn: async () => readHyperdrive?.getShortEvents(),
-      },
-    ],
+
+// Helper function to map events to RowType
+const mapEventsToRowType = (events: TransactionData[]): RowType[] => {
+  return events.map((event) => ({
+    type: event.eventName,
+    value: event.baseAmount.toString(),
+    account: event.trader,
+  }));
+};
+
+export function useTransactionData({ address }: Hyperdrive): {
+  data: RowType[];
+  status: "loading" | "error" | "success";
+} {
+  const readHyperdrive = useReadHyperdrive(address);
+
+  const { data: longs, status: longsStatus } = useQuery({
+    queryKey: ["longEvent", readHyperdrive?.getLongEvents()],
+    queryFn: async () => readHyperdrive?.getLongEvents(),
   });
 
-  const combinedEvents = events.flatMap<TransactionData>(
-    ({ data: eventData }) => eventData,
-  );
-  const mappedEvents = combinedEvents.map((event) => {
-    return {
-      type: event.eventName,
-      value: event.baseAmount.toString(),
-      account: event.trader,
-    };
+  const { data: shorts, status: shortsStatus } = useQuery({
+    queryKey: ["shortEvent", readHyperdrive?.getShortEvents()],
+    queryFn: async () => readHyperdrive?.getShortEvents(),
   });
 
-  return mappedEvents;
+  const combinedEvents =
+    longsStatus === "success" && shortsStatus === "success"
+      ? [...longs, ...shorts]
+      : [];
+  const mappedEvents = mapEventsToRowType(combinedEvents);
+
+  return {
+    status: longsStatus ?? shortsStatus,
+    data: mappedEvents,
+  };
 }
