@@ -8,6 +8,7 @@ interface UsePreviewOpenLongOptions {
   market: Hyperdrive;
   baseAmount: bigint | undefined;
   minBondAmountOut: bigint | undefined;
+  minSharePrice: bigint | undefined;
   destination: Address | undefined;
   asUnderlying?: boolean;
   enabled?: boolean;
@@ -23,6 +24,7 @@ export function usePreviewOpenLong({
   market,
   baseAmount,
   minBondAmountOut,
+  minSharePrice,
   destination,
   asUnderlying = true,
   enabled,
@@ -32,6 +34,7 @@ export function usePreviewOpenLong({
     !!readWriteHyperdrive &&
     !!baseAmount &&
     !!minBondAmountOut &&
+    minSharePrice !== undefined &&
     !!destination &&
     enabled;
 
@@ -48,6 +51,7 @@ export function usePreviewOpenLong({
           readWriteHyperdrive.previewOpenLong({
             baseAmount,
             minBondAmountOut,
+            minSharePrice,
             destination,
             asUnderlying,
           })

@@ -11,6 +11,7 @@ interface UseOpenShortOptions {
   hyperdriveAddress: Address;
   amountBondShorts: bigint | undefined;
   maxBaseAmountIn: bigint | undefined;
+  minSharePrice: bigint | undefined;
   destination: Address | undefined;
   asUnderlying?: boolean;
   enabled?: boolean;
@@ -27,6 +28,7 @@ export function useOpenShort({
   hyperdriveAddress,
   amountBondShorts,
   maxBaseAmountIn,
+  minSharePrice,
   destination,
   asUnderlying = true,
   enabled,
@@ -39,6 +41,7 @@ export function useOpenShort({
     !!amountBondShorts &&
     !!maxBaseAmountIn &&
     !!destination &&
+    minSharePrice !== undefined &&
     enabled &&
     !!readWriteHyperdrive;
 
@@ -48,6 +51,7 @@ export function useOpenShort({
         await readWriteHyperdrive.openShort({
           bondAmount: amountBondShorts,
           destination,
+          minSharePrice,
           maxDeposit: maxBaseAmountIn,
           asUnderlying,
           options: {

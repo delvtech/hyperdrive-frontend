@@ -216,12 +216,14 @@ export interface IReadHyperdrive {
   previewOpenLong({
     baseAmount,
     minBondAmountOut,
+    minSharePrice,
     destination,
     asUnderlying,
     options,
   }: {
     baseAmount: bigint;
     minBondAmountOut: bigint;
+    minSharePrice: bigint;
     destination: Address;
     asUnderlying: boolean;
     options: ContractWriteOptions;
@@ -233,12 +235,14 @@ export interface IReadHyperdrive {
   previewOpenShort({
     amountOfBondsToShort,
     maxBaseAmountIn,
+    minSharePrice,
     destination,
     asUnderlying,
     options,
   }: {
     amountOfBondsToShort: bigint;
     maxBaseAmountIn: bigint;
+    minSharePrice: bigint;
     destination: Address;
     asUnderlying: boolean;
     options: ContractWriteOptions;
@@ -939,19 +943,21 @@ export class ReadHyperdrive implements IReadHyperdrive {
   async previewOpenLong({
     baseAmount,
     minBondAmountOut,
+    minSharePrice,
     destination,
     asUnderlying,
     options,
   }: {
     baseAmount: bigint;
     minBondAmountOut: bigint;
+    minSharePrice: bigint;
     destination: Address;
     asUnderlying: boolean;
     options?: ContractWriteOptions;
   }): Promise<{ maturityTime: bigint; bondProceeds: bigint }> {
     const [maturityTime, bondProceeds] = await this.contract.simulateWrite(
       "openLong",
-      [baseAmount, minBondAmountOut, destination, asUnderlying],
+      [baseAmount, minBondAmountOut, minSharePrice, destination, asUnderlying],
       options,
     );
     return { maturityTime, bondProceeds };
@@ -960,19 +966,27 @@ export class ReadHyperdrive implements IReadHyperdrive {
   async previewOpenShort({
     amountOfBondsToShort,
     maxBaseAmountIn,
+    minSharePrice,
     destination,
     asUnderlying,
     options,
   }: {
     amountOfBondsToShort: bigint;
     maxBaseAmountIn: bigint;
+    minSharePrice: bigint;
     destination: Address;
     asUnderlying: boolean;
     options?: ContractWriteOptions;
   }): Promise<{ maturityTime: bigint; traderDeposit: bigint }> {
     const [maturityTime, traderDeposit] = await this.contract.simulateWrite(
       "openShort",
-      [amountOfBondsToShort, maxBaseAmountIn, destination, asUnderlying],
+      [
+        amountOfBondsToShort,
+        maxBaseAmountIn,
+        minSharePrice,
+        destination,
+        asUnderlying,
+      ],
       options,
     );
     return { maturityTime, traderDeposit };
