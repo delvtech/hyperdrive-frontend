@@ -69,7 +69,10 @@ export function TransactionTable({
         {tableInstance.getHeaderGroups().map((headerGroup) => (
           <tr key={headerGroup.id}>
             {headerGroup.headers.map((header) => (
-              <th key={header.id}>
+              <th
+                className="text-lg font-thin text-neutral-content"
+                key={header.id}
+              >
                 {header.isPlaceholder
                   ? null
                   : flexRender(
@@ -83,9 +86,11 @@ export function TransactionTable({
       </thead>
       <tbody>
         {tableInstance.getRowModel().rows.map((row) => (
-          <tr key={row.id}>
+          <tr
+            className="h-16 grid-cols-4 items-center text-sm text-base-content even:bg-secondary/5 md:text-h6"
+            key={row.id}
+          >
             {row.getVisibleCells().map((cell) => {
-              console.log("cell", cell.getValue());
               return (
                 <td key={cell.id}>
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}

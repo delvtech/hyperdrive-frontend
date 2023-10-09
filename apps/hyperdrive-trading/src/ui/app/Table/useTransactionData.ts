@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
+import * as dnum from "dnum";
 import { Hyperdrive } from "src/appconfig/types";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
-
 type TransactionData = {
   assetId: bigint;
   baseAmount: bigint;
@@ -17,11 +17,26 @@ type RowType = {
   account: string;
 };
 
+function mapEventName(eventName: string): string {
+  switch (eventName) {
+    case "OpenLong":
+      return "Open Long";
+    case "OpenShort":
+      return "Open Short";
+    case "CloseLong":
+      return "Close Long";
+    case "CloseShort":
+      return "Close Short";
+    default:
+      return eventName;
+  }
+}
+
 // Helper function to map events to RowType
 const mapEventsToRowType = (events: TransactionData[]): RowType[] => {
   return events.map((event) => ({
-    type: event.eventName,
-    value: event.baseAmount.toString(),
+    type: mapEventName(event.eventName),
+    value: dnum.format([event.baseAmount, 18], { digits: 2 }),
     account: event.trader,
   }));
 };
