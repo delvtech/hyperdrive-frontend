@@ -7,13 +7,13 @@ export function useTransactionData(hyperdrive: Hyperdrive): any[] {
   const events = useQueries({
     queries: [
       {
-        queryKey: ["openLongEvents", readHyperdrive?.getLongEvents()],
+        queryKey: ["longEvent", readHyperdrive?.getLongEvents()],
         queryFn: async () => readHyperdrive?.getLongEvents(),
       },
-      // {
-      //   queryKey: ["openShortEvents", readHyperdrive?.getOpenShortEvents()],
-      //   queryFn: async () => readHyperdrive?.getOpenShortEvents(),
-      // },
+      {
+        queryKey: ["shortEvents", readHyperdrive?.getShortEvents()],
+        queryFn: async () => readHyperdrive?.getShortEvents(),
+      },
     ],
   });
   console.log(events, "events");

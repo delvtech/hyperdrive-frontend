@@ -313,6 +313,20 @@ export interface IReadHyperdrive {
       eventName: "OpenLong" | "CloseLong";
     }[]
   >;
+  getShortEvents(
+    options?:
+      | ContractGetEventsOptions<typeof HyperdriveABI, "OpenShort">
+      | ContractGetEventsOptions<typeof HyperdriveABI, "CloseShort">,
+  ): Promise<
+    {
+      trader: Address;
+      assetId: bigint;
+      bondAmount: bigint;
+      baseAmount: bigint;
+      timestamp: bigint;
+      eventName: "OpenShort" | "CloseShort";
+    }[]
+  >;
 }
 
 const MAX_ITERATIONS = 7n;
@@ -462,6 +476,53 @@ export class ReadHyperdrive implements IReadHyperdrive {
     }));
 
     const allEvents = [...decodedOpenLongEvents, ...decodedCloseLongEvents]
+      .sort((a, b) => Number(a.data.timestamp - b.data.timestamp))
+      .map((event) => {
+        const { data, args, eventName } = event;
+        const { timestamp } = data;
+        const { trader, assetId, bondAmount, baseAmount } = args;
+        return {
+          trader,
+          assetId,
+          bondAmount,
+          baseAmount,
+          timestamp,
+          eventName,
+        };
+      });
+
+    return allEvents;
+  }
+
+  async getShortEvents(
+    options?:
+      | ContractGetEventsOptions<typeof HyperdriveABI, "OpenShort">
+      | ContractGetEventsOptions<typeof HyperdriveABI, "CloseShort">,
+  ): Promise<
+    {
+      trader: Address;
+      assetId: bigint;
+      bondAmount: bigint;
+      baseAmount: bigint;
+      timestamp: bigint;
+      eventName: "OpenShort" | "CloseShort";
+    }[]
+  > {
+    const openShortEvents = await this.contract.getEvents("OpenShort", options);
+    const closeShortEvents = await this.contract.getEvents(
+      "CloseShort",
+      options,
+    );
+    const decodedOpenShortEvents = openShortEvents.map((event) => ({
+      ...event,
+      data: decodeAssetFromTransferSingleEventData(event.data as `0x${string}`),
+    }));
+    const decodedCloseShortEvents = closeShortEvents.map((event) => ({
+      ...event,
+      data: decodeAssetFromTransferSingleEventData(event.data as `0x${string}`),
+    }));
+
+    const allEvents = [...decodedOpenShortEvents, ...decodedCloseShortEvents]
       .sort((a, b) => Number(a.data.timestamp - b.data.timestamp))
       .map((event) => {
         const { data, args, eventName } = event;
