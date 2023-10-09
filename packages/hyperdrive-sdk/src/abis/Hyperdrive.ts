@@ -67,6 +67,11 @@ export const HyperdriveABI = [
   },
   {
     inputs: [],
+    name: "FixedPointMath_InvalidInput",
+    type: "error",
+  },
+  {
+    inputs: [],
     name: "FixedPointMath_NegativeInput",
     type: "error",
   },
@@ -117,6 +122,11 @@ export const HyperdriveABI = [
   },
   {
     inputs: [],
+    name: "InvalidForwarderAddress",
+    type: "error",
+  },
+  {
+    inputs: [],
     name: "InvalidInitialSharePrice",
     type: "error",
   },
@@ -163,6 +173,11 @@ export const HyperdriveABI = [
   {
     inputs: [],
     name: "MaxFeeTooHigh",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "MinimumSharePrice",
     type: "error",
   },
   {
@@ -264,6 +279,16 @@ export const HyperdriveABI = [
   {
     inputs: [],
     name: "UnexpectedSuccess",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "UnsafeCastToInt128",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "UnsafeCastToUint128",
     type: "error",
   },
   {
@@ -881,11 +906,6 @@ export const HyperdriveABI = [
             type: "uint128",
           },
           {
-            internalType: "uint128",
-            name: "longSharePrice",
-            type: "uint128",
-          },
-          {
             internalType: "int128",
             name: "longExposure",
             type: "int128",
@@ -916,6 +936,16 @@ export const HyperdriveABI = [
             type: "uint128",
           },
           {
+            internalType: "int128",
+            name: "shareAdjustment",
+            type: "int128",
+          },
+          {
+            internalType: "uint128",
+            name: "longExposure",
+            type: "uint128",
+          },
+          {
             internalType: "uint128",
             name: "longsOutstanding",
             type: "uint128",
@@ -932,22 +962,7 @@ export const HyperdriveABI = [
           },
           {
             internalType: "uint128",
-            name: "longOpenSharePrice",
-            type: "uint128",
-          },
-          {
-            internalType: "uint128",
             name: "shortAverageMaturityTime",
-            type: "uint128",
-          },
-          {
-            internalType: "int128",
-            name: "shareAdjustment",
-            type: "int128",
-          },
-          {
-            internalType: "uint128",
-            name: "longExposure",
             type: "uint128",
           },
           {
@@ -1320,6 +1335,11 @@ export const HyperdriveABI = [
         type: "uint256",
       },
       {
+        internalType: "uint256",
+        name: "_minSharePrice",
+        type: "uint256",
+      },
+      {
         internalType: "address",
         name: "_destination",
         type: "address",
@@ -1356,6 +1376,11 @@ export const HyperdriveABI = [
       {
         internalType: "uint256",
         name: "_maxDeposit",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_minSharePrice",
         type: "uint256",
       },
       {
