@@ -25,6 +25,7 @@ import { INetwork } from "src/network/Network";
 import { calculateEffectiveShareReserves } from "src/pool/calculateEffectiveShares";
 import { getCheckpointId } from "src/pool/getCheckpointId";
 import { WITHDRAW_SHARES_ASSET_ID } from "src/withdrawalShares/assetId";
+import { AssetType } from "src/pool/parseAssetType";
 
 export interface ReadHyperdriveOptions {
   contract: IReadHyperdriveContract;
@@ -297,6 +298,21 @@ export interface IReadHyperdrive {
     asUnderlying: boolean;
     options: ContractWriteOptions;
   }): Promise<{ baseAmountOut: bigint; sharesRedeemed: bigint }>;
+
+  getLongEvents(
+    options?:
+      | ContractGetEventsOptions<typeof HyperdriveABI, "OpenLong">
+      | ContractGetEventsOptions<typeof HyperdriveABI, "CloseLong">,
+  ): Promise<
+    {
+      trader: Address;
+      assetId: bigint;
+      bondAmount: bigint;
+      baseAmount: bigint;
+      timestamp: bigint;
+      eventName: "OpenLong" | "CloseLong";
+    }[]
+  >;
 }
 
 const MAX_ITERATIONS = 7n;
@@ -418,6 +434,50 @@ export class ReadHyperdrive implements IReadHyperdrive {
     options?: ContractGetEventsOptions<typeof HyperdriveABI, "OpenShort">,
   ): Promise<ContractEvent<typeof HyperdriveABI, "OpenShort">[]> {
     return this.contract.getEvents("OpenShort", options);
+  }
+
+  async getLongEvents(
+    options?:
+      | ContractGetEventsOptions<typeof HyperdriveABI, "OpenLong">
+      | ContractGetEventsOptions<typeof HyperdriveABI, "CloseLong">,
+  ): Promise<
+    {
+      trader: Address;
+      assetId: bigint;
+      bondAmount: bigint;
+      baseAmount: bigint;
+      timestamp: bigint;
+      eventName: "OpenLong" | "CloseLong";
+    }[]
+  > {
+    const openLongEvents = await this.contract.getEvents("OpenLong", options);
+    const closeLongEvents = await this.contract.getEvents("CloseLong", options);
+    const decodedOpenLongEvents = openLongEvents.map((event) => ({
+      ...event,
+      data: decodeAssetFromTransferSingleEventData(event.data as `0x${string}`),
+    }));
+    const decodedCloseLongEvents = closeLongEvents.map((event) => ({
+      ...event,
+      data: decodeAssetFromTransferSingleEventData(event.data as `0x${string}`),
+    }));
+
+    const allEvents = [...decodedOpenLongEvents, ...decodedCloseLongEvents]
+      .sort((a, b) => Number(a.data.timestamp - b.data.timestamp))
+      .map((event) => {
+        const { data, args, eventName } = event;
+        const { timestamp } = data;
+        const { trader, assetId, bondAmount, baseAmount } = args;
+        return {
+          trader,
+          assetId,
+          bondAmount,
+          baseAmount,
+          timestamp,
+          eventName,
+        };
+      });
+
+    return allEvents;
   }
 
   private async getTransferSingleEvents({
