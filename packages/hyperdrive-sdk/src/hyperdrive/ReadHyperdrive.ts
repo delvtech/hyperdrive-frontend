@@ -315,6 +315,7 @@ export interface IReadHyperdrive {
       baseAmount: bigint;
       timestamp: bigint;
       eventName: "OpenLong" | "CloseLong";
+      blockNumber: bigint | undefined;
     }[]
   >;
   getShortEvents(
@@ -329,6 +330,7 @@ export interface IReadHyperdrive {
       baseAmount: bigint;
       timestamp: bigint;
       eventName: "OpenShort" | "CloseShort";
+      blockNumber: bigint | undefined;
     }[]
   >;
 }
@@ -466,6 +468,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
       baseAmount: bigint;
       timestamp: bigint;
       eventName: "OpenLong" | "CloseLong";
+      blockNumber: bigint | undefined;
     }[]
   > {
     const openLongEvents = await this.contract.getEvents("OpenLong", options);
@@ -482,7 +485,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     const allEvents = [...decodedOpenLongEvents, ...decodedCloseLongEvents]
       .sort((a, b) => Number(a.data.timestamp - b.data.timestamp))
       .map((event) => {
-        const { data, args, eventName } = event;
+        const { data, args, eventName, blockNumber } = event;
         const { timestamp } = data;
         const { trader, assetId, bondAmount, baseAmount } = args;
         return {
@@ -492,6 +495,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
           baseAmount,
           timestamp,
           eventName,
+          blockNumber,
         };
       });
 
@@ -510,6 +514,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
       baseAmount: bigint;
       timestamp: bigint;
       eventName: "OpenShort" | "CloseShort";
+      blockNumber: bigint | undefined;
     }[]
   > {
     const openShortEvents = await this.contract.getEvents("OpenShort", options);
@@ -529,7 +534,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     const allEvents = [...decodedOpenShortEvents, ...decodedCloseShortEvents]
       .sort((a, b) => Number(a.data.timestamp - b.data.timestamp))
       .map((event) => {
-        const { data, args, eventName, transactionHash } = event;
+        const { data, args, eventName, blockNumber } = event;
         const { timestamp } = data;
         const { trader, assetId, bondAmount, baseAmount } = args;
         return {
@@ -539,6 +544,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
           baseAmount,
           timestamp,
           eventName,
+          blockNumber,
         };
       });
 
