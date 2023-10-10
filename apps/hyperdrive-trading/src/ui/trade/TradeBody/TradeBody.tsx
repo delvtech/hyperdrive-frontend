@@ -24,74 +24,10 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
       <div className="flex w-full flex-col gap-6">
         <div className="flex flex-wrap items-start justify-center md:justify-between">
           <div className="flex flex-col">
-            {/* Breadcrumbs */}
-            <div className="flex flex-1 justify-between">
-              <div className="daisy-breadcrumbs md:text-h6">
-                <ul>
-                  <li>
-                    <AllMarketsBreadcrumb />
-                  </li>
-                  <li>
-                    {hyperdrive.baseToken.symbol} /{" "}
-                    {`hy${hyperdrive.baseToken.symbol}`}
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Market name */}
-            <h3 className="my-2 inline-flex items-center gap-2 font-semibold md:my-0">
-              <div className="daisy-avatar-group -space-x-6">
-                <div className="daisy-placeholder daisy-avatar">
-                  <div className="w-14 bg-neutral-focus text-neutral-content">
-                    <span className="text-sm">
-                      <img src={hyperdrive.baseToken.iconUrl} />
-                    </span>
-                  </div>
-                </div>
-                <div className="daisy-placeholder daisy-avatar">
-                  <div className="w-14 bg-neutral-focus">
-                    <span className="text-sm text-secondary">
-                      hy{hyperdrive.baseToken.symbol}
-                    </span>
-                  </div>
-                </div>
-              </div>
-              {hyperdrive.baseToken.symbol} / hy{hyperdrive.baseToken.symbol}
-            </h3>
-
-            {/* Price badges */}
+            <MarketBreadcrumbs hyperdrive={hyperdrive} />
+            <MarketHeader hyperdrive={hyperdrive} />
             {longPrice ? (
-              <div className="mt-4 flex gap-4">
-                <div className="daisy-badge daisy-badge-neutral daisy-badge-lg text-base-content">
-                  <img
-                    className="mr-1 w-4"
-                    src={hyperdrive.baseToken.iconUrl}
-                  />{" "}
-                  1 {hyperdrive.baseToken.symbol} ≈{" "}
-                  {formatBalance({
-                    balance: divideBigInt(
-                      parseUnits("1", 18),
-                      longPrice.price,
-                      hyperdrive.baseToken.decimals,
-                    ),
-
-                    decimals: hyperdrive.baseToken.decimals,
-                    places: 3,
-                  })}{" "}
-                  hy{hyperdrive.baseToken.symbol}
-                </div>
-                <div className="daisy-badge daisy-badge-neutral daisy-badge-lg text-base-content">
-                  <span className="mr-1 text-[6pt] text-secondary">hyBASE</span>{" "}
-                  1 hy{hyperdrive.baseToken.symbol} ≈{" "}
-                  {formatBalance({
-                    balance: longPrice.price,
-                    decimals: hyperdrive.baseToken.decimals,
-                    places: 3,
-                  })}{" "}
-                  {hyperdrive.baseToken.symbol}
-                </div>
-              </div>
+              <PriceBadges hyperdrive={hyperdrive} longPrice={longPrice} />
             ) : null}
           </div>
           <YourBalanceWell token={hyperdrive.baseToken} />
@@ -112,6 +48,85 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
       <PositionsSection hyperdrive={hyperdrive} />
 
       <FAQ />
+    </div>
+  );
+}
+
+function MarketBreadcrumbs({ hyperdrive }: { hyperdrive: Hyperdrive }) {
+  return (
+    <div className="flex flex-1 justify-between">
+      <div className="daisy-breadcrumbs md:text-h6">
+        <ul>
+          <li>
+            <AllMarketsBreadcrumb />
+          </li>
+          <li>
+            {hyperdrive.baseToken.symbol} / {`hy${hyperdrive.baseToken.symbol}`}
+          </li>
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+function MarketHeader({ hyperdrive }: { hyperdrive: Hyperdrive }) {
+  return (
+    <h3 className="my-2 inline-flex items-center gap-2 font-semibold md:my-0">
+      <div className="daisy-avatar-group -space-x-6">
+        <div className="daisy-placeholder daisy-avatar">
+          <div className="w-14 bg-neutral-focus text-neutral-content">
+            <span className="text-sm">
+              <img src={hyperdrive.baseToken.iconUrl} />
+            </span>
+          </div>
+        </div>
+        <div className="daisy-placeholder daisy-avatar">
+          <div className="w-14 bg-neutral-focus">
+            <span className="text-sm text-secondary">
+              hy{hyperdrive.baseToken.symbol}
+            </span>
+          </div>
+        </div>
+      </div>
+      {hyperdrive.baseToken.symbol} / hy{hyperdrive.baseToken.symbol}
+    </h3>
+  );
+}
+
+function PriceBadges({
+  hyperdrive,
+  longPrice,
+}: {
+  hyperdrive: Hyperdrive;
+  longPrice: { price: bigint; formatted: string };
+}) {
+  return (
+    <div className="mt-4 flex gap-4">
+      <div className="daisy-badge daisy-badge-neutral daisy-badge-lg text-base-content">
+        <img className="mr-1 w-4" src={hyperdrive.baseToken.iconUrl} /> 1{" "}
+        {hyperdrive.baseToken.symbol} ≈{" "}
+        {formatBalance({
+          balance: divideBigInt(
+            parseUnits("1", 18),
+            longPrice.price,
+            hyperdrive.baseToken.decimals,
+          ),
+
+          decimals: hyperdrive.baseToken.decimals,
+          places: 3,
+        })}{" "}
+        hy{hyperdrive.baseToken.symbol}
+      </div>
+      <div className="daisy-badge daisy-badge-neutral daisy-badge-lg text-base-content">
+        <span className="mr-1 text-[6pt] text-secondary">hyBASE</span> 1 hy
+        {hyperdrive.baseToken.symbol} ≈{" "}
+        {formatBalance({
+          balance: longPrice.price,
+          decimals: hyperdrive.baseToken.decimals,
+          places: 3,
+        })}{" "}
+        {hyperdrive.baseToken.symbol}
+      </div>
     </div>
   );
 }
