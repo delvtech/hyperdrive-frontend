@@ -10,7 +10,7 @@ export type Transaction = {
   value: string;
   account: string;
   time: string;
-  blockNumber: string;
+  blockNumber: bigint | undefined;
 };
 
 const columnHelper = createColumnHelper<Transaction>();
@@ -33,7 +33,7 @@ const columns = [
   }),
   columnHelper.accessor("blockNumber", {
     header: "Block Number",
-    cell: (blockNumber) => blockNumber.getValue(),
+    cell: (blockNumber) => blockNumber.getValue()?.toString(),
   }),
 ];
 export function TransactionTable({

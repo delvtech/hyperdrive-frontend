@@ -11,8 +11,8 @@ type TransactionData = {
   bondAmount: bigint;
   eventName: string;
   timestamp: bigint;
-  trader: string;
-  blockNumber: bigint;
+  trader: `0x${string}`;
+  blockNumber: bigint | undefined;
 };
 
 function mapEventName(eventName: string): string {
@@ -45,7 +45,7 @@ const mapEventsToRowType = (events: TransactionData[]) => {
       ),
       account: formatAddress(event.trader),
       time: new Date(Number(event.timestamp) * 1000).toLocaleDateString(),
-      blockNumber: event.blockNumber.toString(),
+      blockNumber: event.blockNumber,
     }))
     .sort((a, b) => Number(b.blockNumber) - Number(a.blockNumber));
 };
