@@ -5,7 +5,7 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 
-export type TransactionColumn = {
+export type Transaction = {
   type: string;
   value: string;
   account: string;
@@ -13,7 +13,7 @@ export type TransactionColumn = {
   blockNumber: string;
 };
 
-const columnHelper = createColumnHelper<TransactionColumn>();
+const columnHelper = createColumnHelper<Transaction>();
 const columns = [
   columnHelper.accessor("type", {
     header: "Type",
@@ -39,7 +39,7 @@ const columns = [
 export function TransactionTable({
   data,
 }: {
-  data: TransactionColumn[];
+  data: Transaction[];
 }): JSX.Element {
   const tableInstance = useReactTable({
     columns,

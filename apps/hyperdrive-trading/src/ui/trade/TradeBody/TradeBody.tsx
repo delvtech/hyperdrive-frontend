@@ -52,9 +52,7 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
       </div>
 
       <PositionsSection hyperdrive={hyperdrive} />
-
       <TransactionTable data={transactionData} />
-
       <FAQ />
     </div>
   );

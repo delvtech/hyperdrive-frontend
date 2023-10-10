@@ -25,7 +25,6 @@ import { INetwork } from "src/network/Network";
 import { calculateEffectiveShareReserves } from "src/pool/calculateEffectiveShares";
 import { getCheckpointId } from "src/pool/getCheckpointId";
 import { WITHDRAW_SHARES_ASSET_ID } from "src/withdrawalShares/assetId";
-import { AssetType } from "src/pool/parseAssetType";
 
 export interface ReadHyperdriveOptions {
   contract: IReadHyperdriveContract;
@@ -473,33 +472,18 @@ export class ReadHyperdrive implements IReadHyperdrive {
   > {
     const openLongEvents = await this.contract.getEvents("OpenLong", options);
     const closeLongEvents = await this.contract.getEvents("CloseLong", options);
-    const decodedOpenLongEvents = openLongEvents.map((event) => ({
-      ...event,
-      data: decodeAssetFromTransferSingleEventData(event.data as `0x${string}`),
-    }));
-    const decodedCloseLongEvents = closeLongEvents.map((event) => ({
-      ...event,
-      data: decodeAssetFromTransferSingleEventData(event.data as `0x${string}`),
-    }));
-
-    const allEvents = [...decodedOpenLongEvents, ...decodedCloseLongEvents]
-      .sort((a, b) => Number(a.data.timestamp - b.data.timestamp))
-      .map((event) => {
-        const { data, args, eventName, blockNumber } = event;
-        const { timestamp } = data;
-        const { trader, assetId, bondAmount, baseAmount } = args;
-        return {
-          trader,
-          assetId,
-          bondAmount,
-          baseAmount,
-          timestamp,
-          eventName,
-          blockNumber,
-        };
-      });
-
-    return allEvents;
+    return [...openLongEvents, ...closeLongEvents]
+      .map(({ data, args, eventName, blockNumber }) => ({
+        trader: args.trader,
+        assetId: args.assetId,
+        bondAmount: args.bondAmount,
+        baseAmount: args.baseAmount,
+        timestamp: decodeAssetFromTransferSingleEventData(data as `0x${string}`)
+          .timestamp,
+        eventName,
+        blockNumber,
+      }))
+      .sort((a, b) => Number(a.timestamp - b.timestamp));
   }
 
   async getShortEvents(
@@ -522,33 +506,18 @@ export class ReadHyperdrive implements IReadHyperdrive {
       "CloseShort",
       options,
     );
-    const decodedOpenShortEvents = openShortEvents.map((event) => ({
-      ...event,
-      data: decodeAssetFromTransferSingleEventData(event.data as `0x${string}`),
-    }));
-    const decodedCloseShortEvents = closeShortEvents.map((event) => ({
-      ...event,
-      data: decodeAssetFromTransferSingleEventData(event.data as `0x${string}`),
-    }));
-
-    const allEvents = [...decodedOpenShortEvents, ...decodedCloseShortEvents]
-      .sort((a, b) => Number(a.data.timestamp - b.data.timestamp))
-      .map((event) => {
-        const { data, args, eventName, blockNumber } = event;
-        const { timestamp } = data;
-        const { trader, assetId, bondAmount, baseAmount } = args;
-        return {
-          trader,
-          assetId,
-          bondAmount,
-          baseAmount,
-          timestamp,
-          eventName,
-          blockNumber,
-        };
-      });
-
-    return allEvents;
+    return [...openShortEvents, ...closeShortEvents]
+      .map(({ data, args, eventName, blockNumber }) => ({
+        trader: args.trader,
+        assetId: args.assetId,
+        bondAmount: args.bondAmount,
+        baseAmount: args.baseAmount,
+        timestamp: decodeAssetFromTransferSingleEventData(data as `0x${string}`)
+          .timestamp,
+        eventName,
+        blockNumber,
+      }))
+      .sort((a, b) => Number(a.timestamp - b.timestamp));
   }
 
   private async getTransferSingleEvents({

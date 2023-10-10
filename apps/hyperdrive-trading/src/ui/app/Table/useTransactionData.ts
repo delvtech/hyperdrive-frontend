@@ -1,9 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 import * as dnum from "dnum";
 import { Hyperdrive } from "src/appconfig/types";
+import { makeQueryKey } from "src/base/makeQueryKey";
+import { Transaction } from "src/ui/app/Table/TransactionsTable";
 import { formatAddress } from "src/ui/base/formatting/formatAddress";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
-import { TransactionColumn } from "./TransactionsTable";
 type TransactionData = {
   assetId: bigint;
   baseAmount: bigint;
@@ -12,14 +13,6 @@ type TransactionData = {
   timestamp: bigint;
   trader: string;
   blockNumber: bigint;
-};
-
-export type RowType = {
-  type: string;
-  value: string;
-  account: string;
-  time: string;
-  blockNumber: string;
 };
 
 function mapEventName(eventName: string): string {
@@ -43,7 +36,9 @@ const mapEventsToRowType = (events: TransactionData[]) => {
       type: mapEventName(event.eventName),
       value: dnum.format(
         [
-          event.eventName === "OpenShort" ? event.bondAmount : event.baseAmount,
+          event.eventName === "OpenShort" || "CloseShort"
+            ? event.bondAmount
+            : event.baseAmount,
           18,
         ],
         { digits: 2 },
@@ -56,18 +51,18 @@ const mapEventsToRowType = (events: TransactionData[]) => {
 };
 
 export function useTransactionData({ address }: Hyperdrive): {
-  data: TransactionColumn[];
+  data: Transaction[];
   status: "loading" | "error" | "success";
 } {
   const readHyperdrive = useReadHyperdrive(address);
 
   const { data: longs, status: longsStatus } = useQuery({
-    queryKey: ["longEvent", readHyperdrive?.getLongEvents()],
+    queryKey: makeQueryKey("longEvents", { address }),
     queryFn: async () => readHyperdrive?.getLongEvents(),
   });
 
   const { data: shorts, status: shortsStatus } = useQuery({
-    queryKey: ["shortEvent", readHyperdrive?.getShortEvents()],
+    queryKey: makeQueryKey("shortEvents", { address }),
     queryFn: async () => readHyperdrive?.getShortEvents(),
   });
 
