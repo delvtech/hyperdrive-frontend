@@ -525,7 +525,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     const allEvents = [...decodedOpenShortEvents, ...decodedCloseShortEvents]
       .sort((a, b) => Number(a.data.timestamp - b.data.timestamp))
       .map((event) => {
-        const { data, args, eventName } = event;
+        const { data, args, eventName, transactionHash } = event;
         const { timestamp } = data;
         const { trader, assetId, bondAmount, baseAmount } = args;
         return {

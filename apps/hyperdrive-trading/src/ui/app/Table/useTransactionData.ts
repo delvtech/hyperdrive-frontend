@@ -16,7 +16,7 @@ type RowType = {
   type: string;
   value: string;
   account: string;
-  timestamp: bigint;
+  time: string;
 };
 
 function mapEventName(eventName: string): string {
@@ -35,19 +35,21 @@ function mapEventName(eventName: string): string {
 }
 
 // Helper function to map events to RowType
-const mapEventsToRowType = (events: TransactionData[]): RowType[] => {
-  return events.map((event) => ({
-    type: mapEventName(event.eventName),
-    value: dnum.format(
-      [
-        event.eventName === "OpenShort" ? event.bondAmount : event.baseAmount,
-        18,
-      ],
-      { digits: 2 },
-    ),
-    account: formatAddress(event.trader),
-    timestamp: event.timestamp,
-  }));
+const mapEventsToRowType = (events: TransactionData[]) => {
+  return events
+    .map((event) => ({
+      type: mapEventName(event.eventName),
+      value: dnum.format(
+        [
+          event.eventName === "OpenShort" ? event.bondAmount : event.baseAmount,
+          18,
+        ],
+        { digits: 2 },
+      ),
+      account: formatAddress(event.trader),
+      time: event.timestamp,
+    }))
+    .sort((a, b) => Number(b.time) - Number(a.time));
 };
 
 export function useTransactionData({ address }: Hyperdrive): {
@@ -66,21 +68,20 @@ export function useTransactionData({ address }: Hyperdrive): {
     queryFn: async () => readHyperdrive?.getShortEvents(),
   });
 
+  console.log("longs", longs);
+
   const combinedEvents =
     longsStatus === "success" && shortsStatus === "success"
-      ? [...longs, ...shorts]
+      ? [...(longs ?? []), ...(shorts ?? [])]
       : [];
   const mappedEvents = mapEventsToRowType(combinedEvents);
+  const convertedDates = mappedEvents.map((event) => ({
+    ...event,
+    time: new Date(Number(event.time) * 1000).toLocaleDateString(),
+  }));
 
-  console.log(mappedEvents, "nonsorted mapped events");
-  console.log(
-    mappedEvents.sort((a, b) => {
-      return Number(b.timestamp) - Number(a.timestamp);
-    }),
-    "sorted mapped events",
-  );
   return {
     status: longsStatus ?? shortsStatus,
-    data: mappedEvents,
+    data: convertedDates,
   };
 }
