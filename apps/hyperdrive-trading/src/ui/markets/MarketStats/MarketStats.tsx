@@ -54,7 +54,7 @@ export function MarketStats({
       <Stat
         label="Term"
         value={formattedTermLength}
-        description={`The length of time that the hy${hyperdrive.baseToken.symbol} will be locked.`}
+        description={`Duration the hy${hyperdrive.baseToken.symbol} remains locked`}
       />
       <Stat
         label="Fixed rate"
@@ -77,7 +77,7 @@ export function MarketStats({
             value={tradingVolume.formatted || "0"}
           />
         }
-        description={"The total trading volume in the last 24 hours."}
+        description={"The total trading volume in the last 24 hours"}
       />
       <Stat
         label="Liquidity"
