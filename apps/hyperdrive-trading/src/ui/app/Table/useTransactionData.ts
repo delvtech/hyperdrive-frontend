@@ -10,6 +10,7 @@ type TransactionData = {
   eventName: string;
   timestamp: bigint;
   trader: string;
+  blockNumber: bigint;
 };
 
 type RowType = {
@@ -17,6 +18,7 @@ type RowType = {
   value: string;
   account: string;
   time: string;
+  blockNumber: string;
 };
 
 function mapEventName(eventName: string): string {
@@ -48,8 +50,9 @@ const mapEventsToRowType = (events: TransactionData[]) => {
       ),
       account: formatAddress(event.trader),
       time: event.timestamp,
+      blockNumber: event.blockNumber.toString(),
     }))
-    .sort((a, b) => Number(b.time) - Number(a.time));
+    .sort((a, b) => Number(b.blockNumber) - Number(a.blockNumber));
 };
 
 export function useTransactionData({ address }: Hyperdrive): {

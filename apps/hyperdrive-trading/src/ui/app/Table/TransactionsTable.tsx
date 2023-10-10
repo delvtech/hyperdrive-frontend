@@ -32,6 +32,7 @@ type TransactionColumn = {
   value: bigint;
   account: string;
   time: string;
+  blockNumber: string;
 };
 
 const columnHelper = createColumnHelper<TransactionColumn>();
@@ -51,6 +52,10 @@ const columns = [
   columnHelper.accessor("time", {
     header: "Matures On",
     cell: (date) => date.getValue(),
+  }),
+  columnHelper.accessor("blockNumber", {
+    header: "Block Number",
+    cell: (blockNumber) => blockNumber.getValue(),
   }),
 ];
 export function TransactionTable({
