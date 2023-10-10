@@ -6,12 +6,11 @@ import { formatRate } from "src/base/formatRate";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { querySdkCache } from "src/sdk/sdkCache";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
-import { formatUnits } from "viem";
 import { usePublicClient } from "wagmi";
 
 export interface MarketTableRowData {
   market: Hyperdrive;
-  liquidity: string;
+  liquidity: bigint;
   yieldSource: YieldSource;
   longAPR: string;
   shortAPR: string;
@@ -43,10 +42,7 @@ export function useMarketRowData(
               const longApr = await readHyperdrive.getFixedRate();
               return {
                 market: hyperdrive,
-                liquidity: formatUnits(
-                  liquidity,
-                  hyperdrive.baseToken.decimals,
-                ),
+                liquidity,
                 longAPR: formatRate(longApr),
                 yieldSource: appConfig.yieldSources[hyperdrive.yieldSource],
                 // TODO: Stubbed for now

@@ -275,12 +275,14 @@ export class ReadWriteHyperdrive
     destination,
     baseAmount,
     bondAmountOut,
+    minSharePrice,
     asUnderlying = true,
     options,
   }: {
     destination: Address;
     baseAmount: bigint;
     bondAmountOut: bigint;
+    minSharePrice: bigint;
     asUnderlying?: boolean;
     options?: ContractWriteOptionsWithCallback;
   }): Promise<{ maturityTime: bigint; bondProceeds: bigint }> {
@@ -288,7 +290,7 @@ export class ReadWriteHyperdrive
     const requiresEth = asUnderlying && baseToken === ZERO_ADDRESS;
     const [maturityTime, bondProceeds] = await this.contract.write(
       "openLong",
-      [baseAmount, bondAmountOut, destination, asUnderlying],
+      [baseAmount, bondAmountOut, minSharePrice, destination, asUnderlying],
       {
         value: requiresEth && baseAmount ? baseAmount : 0n,
         ...options,
@@ -300,19 +302,21 @@ export class ReadWriteHyperdrive
   async openShort({
     destination,
     bondAmount,
+    minSharePrice,
     maxDeposit,
     asUnderlying = true,
     options,
   }: {
     destination: Address;
     bondAmount: bigint;
+    minSharePrice: bigint;
     maxDeposit: bigint;
     asUnderlying?: boolean;
     options?: ContractWriteOptionsWithCallback;
   }): Promise<{ maturityTime: bigint; traderDeposit: bigint }> {
     const [maturityTime, traderDeposit] = await this.contract.write(
       "openShort",
-      [bondAmount, maxDeposit, destination, asUnderlying],
+      [bondAmount, maxDeposit, minSharePrice, destination, asUnderlying],
       // TODO: Do we need to pass value here?
       { value: 0n, ...options },
     );

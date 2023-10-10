@@ -20,7 +20,8 @@ export function Well({
   const isInteractive = !disabled && (interactive || onClick);
   const className = classNames("rounded-lg p-4", {
     "w-full": block,
-    "hover:cursor-pointer hover:glass": isInteractive,
+    "hover:cursor-pointer hover:glass hover:-translate-y-1 hover:shadow-lg transition duration-300 ease-in-out":
+      isInteractive,
     "bg-base-300/50 ring-neutral-content/20 ring-1": !variant,
     "bg-primary/5 ring-primary/20 ring-1": variant === "primary",
     "bg-secondary/5 ring-secondary/20 ring-1": variant === "secondary",

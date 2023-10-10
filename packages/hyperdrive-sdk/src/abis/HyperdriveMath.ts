@@ -6,7 +6,7 @@ export const HyperdriveMathABI = [
   },
   {
     inputs: [],
-    name: "FixedPointMath_NegativeInput",
+    name: "FixedPointMath_InvalidInput",
     type: "error",
   },
   {
@@ -23,7 +23,7 @@ export const HyperdriveMathABI = [
     inputs: [
       {
         internalType: "uint256",
-        name: "_shareReserves",
+        name: "_effectiveShareReserves",
         type: "uint256",
       },
       {
@@ -62,7 +62,7 @@ export const HyperdriveMathABI = [
     inputs: [
       {
         internalType: "uint256",
-        name: "_shareReserves",
+        name: "_effectiveShareReserves",
         type: "uint256",
       },
       {
@@ -83,16 +83,6 @@ export const HyperdriveMathABI = [
       {
         internalType: "uint256",
         name: "_timeStretch",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "_openSharePrice",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "_closeSharePrice",
         type: "uint256",
       },
       {
@@ -131,7 +121,7 @@ export const HyperdriveMathABI = [
     inputs: [
       {
         internalType: "uint256",
-        name: "_shareReserves",
+        name: "_effectiveShareReserves",
         type: "uint256",
       },
       {
@@ -190,7 +180,7 @@ export const HyperdriveMathABI = [
     inputs: [
       {
         internalType: "uint256",
-        name: "_shareReserves",
+        name: "_effectiveShareReserves",
         type: "uint256",
       },
       {
@@ -406,7 +396,76 @@ export const HyperdriveMathABI = [
     inputs: [
       {
         internalType: "uint256",
-        name: "_shareReserves",
+        name: "_shareProceeds",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_shareReservesDelta",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_shareCurveDelta",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_totalGovernanceFee",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_openSharePrice",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_closeSharePrice",
+        type: "uint256",
+      },
+      {
+        internalType: "bool",
+        name: "_isLong",
+        type: "bool",
+      },
+    ],
+    name: "calculateNegativeInterestOnClose",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+      {
+        internalType: "int256",
+        name: "",
+        type: "int256",
+      },
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "pure",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "_effectiveShareReserves",
         type: "uint256",
       },
       {
@@ -450,7 +509,7 @@ export const HyperdriveMathABI = [
     inputs: [
       {
         internalType: "uint256",
-        name: "_shareReserves",
+        name: "_effectiveShareReserves",
         type: "uint256",
       },
       {

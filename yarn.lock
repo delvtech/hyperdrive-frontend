@@ -6466,10 +6466,10 @@ dns-packet@^5.2.2:
   dependencies:
     "@leichtgewicht/ip-codec" "^2.0.1"
 
-dnum@^2.7.0:
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/dnum/-/dnum-2.7.0.tgz#fad6a470184d61993f690a273f02d2025d61b53c"
-  integrity sha512-A+B7s8AbIMF6PkOSgS6CakvI+iLX5G4kdcPIinzZnTNHWLD/+pbQBNeEsAYVAP3kzIG5qcC/LbbdKKs/q65BPw==
+dnum@^2.9.0:
+  version "2.9.0"
+  resolved "https://registry.yarnpkg.com/dnum/-/dnum-2.9.0.tgz#b15ed1fae9be6c343bd5efe4a11a7ce246ef78b4"
+  integrity sha512-Mr/aOIIJHLkf40y+MevDM/NIgnz7+wv3fKmqOQ8A4qy6kZ5580S+6cHt/qSPV6tYBsCOxHo3NAey1L0xt6qRUg==
   dependencies:
     from-exponential "^1.1.1"
 

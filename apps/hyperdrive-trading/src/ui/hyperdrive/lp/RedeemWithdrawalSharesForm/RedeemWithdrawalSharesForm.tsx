@@ -83,8 +83,9 @@ export function RedeemWithdrawalSharesForm({
           value={
             baseAmountOut
               ? `${formatBalance({
-                  balance: formatUnits(baseAmountOut, baseDecimals),
-                  numDecimals: 8,
+                  balance: baseAmountOut,
+                  decimals: baseDecimals,
+                  places: 8,
                 })} ${baseSymbol}`
               : ""
           }
@@ -100,6 +101,7 @@ export function RedeemWithdrawalSharesForm({
           }
           onClick={(e) => {
             redeemWithdrawalShares?.();
+            onRedeemWithdrawalShares?.(e);
           }}
         >
           Redeem withdrawal shares

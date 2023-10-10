@@ -33,7 +33,7 @@
     "buffer": "^6.0.3",
     "classnames": "^2.3.2",
     "daisyui": "^3.0.22",
-    "ethers": "^5.7.2",
+    "dnum": "^2.9.0",
     "gud-type": "^1.0.4",
     "lightweight-charts": "^4.0.1",
     "lodash.uniqby": "^4.7.0",

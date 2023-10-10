@@ -1,11 +1,10 @@
-import { ChevronRightIcon } from "@heroicons/react/24/outline";
 import { ReactElement } from "react";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { MarketsTable } from "src/ui/markets/MarketsTable/MarketsTable";
 
 const MARKETS_MODAL_KEY = "MARKETS_MODAL";
 
-export function MarketSelect(): ReactElement {
+export function AllMarketsBreadcrumb(): ReactElement {
   return (
     <Modal
       className={"w-[90vw] max-w-[90vw] p-0 md:w-[70vw] md:max-w-[70vw] md:p-4"}
@@ -16,11 +15,9 @@ export function MarketSelect(): ReactElement {
         <label
           onClick={showModal}
           htmlFor={MARKETS_MODAL_KEY}
-          className="glass daisy-btn-xs daisy-btn w-auto px-4 "
+          className="daisy-link-hover daisy-link"
         >
-          <span className="inline-flex items-center text-sm">
-            Select market <ChevronRightIcon className="ml-1 h-4" />
-          </span>
+          All Markets
         </label>
       )}
     </Modal>

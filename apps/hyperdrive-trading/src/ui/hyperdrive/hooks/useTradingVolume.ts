@@ -21,7 +21,7 @@ export function useTradingVolume(
   return {
     tradingVolume: tradingVolume,
     formatted: tradingVolume
-      ? dnum.format([tradingVolume, 18], { digits: 2 })
+      ? dnum.format([tradingVolume, 18], { digits: 0 })
       : undefined,
   };
 }

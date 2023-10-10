@@ -3,7 +3,6 @@ import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { formatUnits } from "viem";
 
 interface OpenLongPreviewProps {
   hyperdrive: Hyperdrive;
@@ -37,11 +36,9 @@ export function OpenLongPreview({
           </p>
           <p className="font-semibold tracking-wide">
             {formatBalance({
-              balance: formatUnits(
-                long.bondAmount,
-                hyperdrive.baseToken.decimals,
-              ),
-              numDecimals: 4,
+              balance: long.bondAmount,
+              decimals: hyperdrive.baseToken.decimals,
+              places: 4,
             })}{" "}
             {hyperdrive.baseToken.symbol}
           </p>

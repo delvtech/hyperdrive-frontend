@@ -3,7 +3,6 @@ import { Hyperdrive } from "src/appconfig/types";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { Pill } from "src/ui/base/components/Pill";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { formatUnits } from "viem";
 
 interface OpenShortPreviewProps {
   market: Hyperdrive;
@@ -33,8 +32,9 @@ export function OpenShortPreview({
           <p className="font-semibold tracking-wide">
             {costBasis
               ? `${formatBalance({
-                  balance: formatUnits(costBasis, market.baseToken.decimals),
-                  numDecimals: 6,
+                  balance: costBasis,
+                  decimals: market.baseToken.decimals,
+                  places: 6,
                   includeCommas: false,
                 })} ${market.baseToken.symbol}`
               : "0"}
@@ -45,8 +45,9 @@ export function OpenShortPreview({
           <p className="mr-auto">Amount</p>
           <p className="font-semibold tracking-wide">
             {formatBalance({
-              balance: formatUnits(amountShort, market.baseToken.decimals),
-              numDecimals: 6,
+              balance: amountShort,
+              decimals: market.baseToken.decimals,
+              places: 6,
             })}
           </p>
         </div>
@@ -70,8 +71,9 @@ export function OpenShortPreview({
           <p className="font-semibold tracking-wide">
             {!!costBasis && amountShort > 0n && costBasis > 0n
               ? `${formatBalance({
-                  balance: (amountShort / costBasis).toString(),
-                  numDecimals: 4,
+                  balance: amountShort / costBasis,
+                  decimals: market.baseToken.decimals,
+                  places: 4,
                   includeCommas: false,
                 })}x`
               : "0"}

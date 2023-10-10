@@ -9,7 +9,7 @@ import {
   getProfitLossText,
   getStyleClassForProfitLoss,
 } from "src/ui/hyperdrive/shorts/CloseShortForm/getProfitLossText";
-import { Address, formatUnits, parseUnits } from "viem";
+import { Address, parseUnits } from "viem";
 import { useAccount } from "wagmi";
 
 interface UseOpenLongRowsOptions {
@@ -61,8 +61,9 @@ function createOpenLongRow({
       </span>,
       <span key="size">
         {formatBalance({
-          balance: formatUnits(long.bondAmount, baseDecimals),
-          numDecimals: 4,
+          balance: long.bondAmount,
+          decimals: baseDecimals,
+          places: 4,
         })}
       </span>,
       <ProfitLossCell
@@ -116,16 +117,15 @@ function ProfitLossCell({
     <span
       className={`daisy-tooltip inline-flex items-center gap-1 ${profitLossClass}`}
       data-tip={`Amount Paid: ${formatBalance({
-        balance: formatUnits(
-          long.baseAmountPaid,
-          hyperdrive.baseToken.decimals,
-        ),
-        numDecimals: 4,
+        balance: long.baseAmountPaid,
+        decimals: hyperdrive.baseToken.decimals,
+        places: 4,
       })} ${baseSymbol} / Value: ${
         baseAmountOut &&
         formatBalance({
-          balance: formatUnits(baseAmountOut, baseDecimals),
-          numDecimals: 2,
+          balance: baseAmountOut,
+          decimals: baseDecimals,
+          places: 2,
         })
       } `}
     >

@@ -9,7 +9,7 @@ import {
 import { CloseShortModalButton } from "src/ui/hyperdrive/shorts/CloseShortModalButton/CloseShortModalButton";
 import { useOpenShorts } from "src/ui/hyperdrive/shorts/hooks/useOpenShorts";
 import { usePreviewCloseShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewCloseShort";
-import { Address, formatUnits, parseUnits } from "viem";
+import { Address, parseUnits } from "viem";
 import { useAccount } from "wagmi";
 
 interface UseOpenShortRowsOptions {
@@ -65,8 +65,9 @@ function createOpenShortRow({
       </span>,
       <span key="size">
         {formatBalance({
-          balance: formatUnits(short.bondAmount, baseDecimals),
-          numDecimals: 4,
+          balance: short.bondAmount,
+          decimals: baseDecimals,
+          places: 4,
         })}
       </span>,
       <ProfitLossCell
@@ -121,15 +122,15 @@ function ProfitLossCell({
     <span
       className={`daisy-tooltip inline-flex items-center gap-1 ${profitLossClass}`}
       data-tip={`Amount Paid: ${formatBalance({
-        balance: formatUnits(short.bondAmount, hyperdrive.baseToken.decimals),
-        numDecimals: 4,
+        balance: short.bondAmount,
+        decimals: hyperdrive.baseToken.decimals,
+        places: 4,
       })} ${baseSymbol} / Value: ${
         baseAmountOut &&
         formatBalance({
-          balance:
-            Number(formatUnits(short.bondAmount, baseDecimals)) -
-            Number(formatUnits(baseAmountOut, baseDecimals)),
-          numDecimals: 2,
+          balance: short.bondAmount - baseAmountOut,
+          decimals: baseDecimals,
+          places: 2,
         })
       } `}
     >
