@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import * as dnum from "dnum";
 import { Hyperdrive } from "src/appconfig/types";
+import { formatAddress } from "src/ui/base/formatting/formatAddress";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 type TransactionData = {
   assetId: bigint;
@@ -44,7 +45,7 @@ const mapEventsToRowType = (events: TransactionData[]): RowType[] => {
       ],
       { digits: 2 },
     ),
-    account: event.trader,
+    account: formatAddress(event.trader),
     timestamp: event.timestamp,
   }));
 };
