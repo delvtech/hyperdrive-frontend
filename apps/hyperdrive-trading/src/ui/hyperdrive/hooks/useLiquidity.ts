@@ -22,7 +22,7 @@ export function useLiquidity(hyperdriveAddress: Address): {
           const liquidity = await readHyperdrive.getLiquidity();
           return {
             liquidity: liquidity,
-            formatted: dnum.format([liquidity, 18], { digits: 2 }),
+            formatted: dnum.format([liquidity, 18], { digits: 0 }),
           };
         }
       : undefined,
