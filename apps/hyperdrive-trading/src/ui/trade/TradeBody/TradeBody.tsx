@@ -4,7 +4,6 @@ import { divideBigInt } from "src/base/divideBigInt";
 import { parseUnits } from "src/base/parseUnits";
 import { TransactionTable } from "src/ui/app/Table/TransactionsTable";
 import { useTransactionData } from "src/ui/app/Table/useTransactionData";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { OpenLongModalButton } from "src/ui/hyperdrive/longs/OpenLongModalButton/OpenLongModalButton";
 import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
@@ -20,13 +19,11 @@ interface PositionsTableProps {
   hyperdrive: Hyperdrive;
 }
 export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
-  const { appConfig } = useAppConfig();
-  const yieldSource = appConfig?.yieldSources[hyperdrive.yieldSource];
   const { data: transactionData } = useTransactionData(hyperdrive);
   const { longPrice } = useCurrentLongPrice(hyperdrive);
 
   return (
-    <div className="flex max-w-6xl flex-col gap-16 ">
+    <div className="flex max-w-6xl flex-col gap-16">
       <div className="flex w-full flex-col gap-6">
         <div className="flex flex-wrap items-start justify-center md:justify-between">
           <div className="flex flex-col">
@@ -52,7 +49,12 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
       </div>
 
       <PositionsSection hyperdrive={hyperdrive} />
-      <TransactionTable data={transactionData} />
+      <div>
+        <span className="mb-4 gap-0 text-h4 font-normal text-neutral-content">
+          Transactions
+        </span>
+        <TransactionTable data={transactionData} />
+      </div>
       <FAQ />
     </div>
   );

@@ -52,27 +52,22 @@ const mapEventsToRowType = (events: TransactionData[]) => {
 
 export function useTransactionData({ address }: Hyperdrive): {
   data: Transaction[];
-  status: "loading" | "error" | "success";
 } {
   const readHyperdrive = useReadHyperdrive(address);
 
-  const { data: longs, status: longsStatus } = useQuery({
+  const { data: longs } = useQuery({
     queryKey: makeQueryKey("longEvents", { address }),
     queryFn: async () => readHyperdrive?.getLongEvents(),
   });
 
-  const { data: shorts, status: shortsStatus } = useQuery({
+  const { data: shorts } = useQuery({
     queryKey: makeQueryKey("shortEvents", { address }),
     queryFn: async () => readHyperdrive?.getShortEvents(),
   });
 
-  const combinedEvents =
-    longsStatus === "success" && shortsStatus === "success"
-      ? [...(longs ?? []), ...(shorts ?? [])]
-      : [];
+  const combinedEvents = [...(longs ?? []), ...(shorts ?? [])];
 
   return {
-    status: longsStatus ?? shortsStatus,
     data: mapEventsToRowType(combinedEvents),
   };
 }

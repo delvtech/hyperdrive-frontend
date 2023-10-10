@@ -49,9 +49,6 @@ export function TransactionTable({
 
   return (
     <div className="max-h-96 overflow-y-scroll">
-      <span className=" text-h4 font-normal text-neutral-content">
-        Transactions
-      </span>
       <table className="daisy-table mt-5">
         <thead>
           {tableInstance.getHeaderGroups().map((headerGroup) => (
