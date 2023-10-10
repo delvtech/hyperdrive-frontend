@@ -1,12 +1,14 @@
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import { divideBigInt } from "src/base/divideBigInt";
+import { parseUnits } from "src/base/parseUnits";
+import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { OpenLongModalButton } from "src/ui/hyperdrive/longs/OpenLongModalButton/OpenLongModalButton";
+import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
 import { AddLiquidityModalButton } from "src/ui/hyperdrive/lp/AddLiquidityModalButton/AddLiquidityModalButton";
 import { OpenShortModalButton } from "src/ui/hyperdrive/shorts/OpenShortModalButton/OpenShortModalButton";
-import { MarketSelect } from "src/ui/markets/MarketSelect/MarketSelect";
+import { AllMarketsBreadcrumb } from "src/ui/markets/MarketSelect/AllMarketsBreadcrumb";
 import { MarketStats } from "src/ui/markets/MarketStats/MarketStats";
-import { YieldSourceLabel } from "src/ui/markets/YieldSourceLabel/YieldSourceLabel";
 import { FAQ } from "src/ui/onboarding/FAQ/FAQ";
 import { PositionsSection } from "src/ui/portfolio/PositionsSection/PositionsSection";
 import { YourBalanceWell } from "src/ui/portfolio/YourBalanceWell/YourBalanceWell";
@@ -14,24 +16,83 @@ import { YourBalanceWell } from "src/ui/portfolio/YourBalanceWell/YourBalanceWel
 interface PositionsTableProps {
   hyperdrive: Hyperdrive;
 }
-
 export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
-  const { appConfig } = useAppConfig();
-  const yieldSource = appConfig?.yieldSources[hyperdrive.yieldSource];
+  const { longPrice } = useCurrentLongPrice(hyperdrive);
 
   return (
     <div className="flex max-w-6xl flex-col gap-16 ">
-      {/* Name w/ market select */}
       <div className="flex w-full flex-col gap-6">
         <div className="flex flex-wrap items-start justify-center md:justify-between">
-          <div className="flex shrink-0 flex-col">
+          <div className="flex flex-col">
+            {/* Breadcrumbs */}
             <div className="flex flex-1 justify-between">
-              <YieldSourceLabel yieldSource={yieldSource} />
-              <MarketSelect />
+              <div className="daisy-breadcrumbs md:text-h6">
+                <ul>
+                  <li>
+                    <AllMarketsBreadcrumb />
+                  </li>
+                  <li>
+                    {hyperdrive.baseToken.symbol} /{" "}
+                    {`hy${hyperdrive.baseToken.symbol}`}
+                  </li>
+                </ul>
+              </div>
             </div>
-            <p className="my-2 text-h3 font-semibold md:my-0">
-              {hyperdrive.name}
-            </p>
+
+            {/* Market name */}
+            <h3 className="my-2 inline-flex items-center gap-2 font-semibold md:my-0">
+              <div className="daisy-avatar-group -space-x-6">
+                <div className="daisy-placeholder daisy-avatar">
+                  <div className="w-14 bg-neutral-focus text-neutral-content">
+                    <span className="text-sm">
+                      <img src={hyperdrive.baseToken.iconUrl} />
+                    </span>
+                  </div>
+                </div>
+                <div className="daisy-placeholder daisy-avatar">
+                  <div className="w-14 bg-neutral-focus">
+                    <span className="text-sm text-secondary">
+                      hy{hyperdrive.baseToken.symbol}
+                    </span>
+                  </div>
+                </div>
+              </div>
+              {hyperdrive.baseToken.symbol} / hy{hyperdrive.baseToken.symbol}
+            </h3>
+
+            {/* Price badges */}
+            {longPrice ? (
+              <div className="mt-4 flex gap-4">
+                <div className="daisy-badge daisy-badge-neutral daisy-badge-lg text-base-content">
+                  <img
+                    className="mr-1 w-4"
+                    src={hyperdrive.baseToken.iconUrl}
+                  />{" "}
+                  1 {hyperdrive.baseToken.symbol} ≈{" "}
+                  {formatBalance({
+                    balance: divideBigInt(
+                      parseUnits("1", 18),
+                      longPrice.price,
+                      hyperdrive.baseToken.decimals,
+                    ),
+
+                    decimals: hyperdrive.baseToken.decimals,
+                    places: 3,
+                  })}{" "}
+                  hy{hyperdrive.baseToken.symbol}
+                </div>
+                <div className="daisy-badge daisy-badge-neutral daisy-badge-lg text-base-content">
+                  <span className="mr-1 text-[6pt] text-secondary">hyBASE</span>{" "}
+                  1 hy{hyperdrive.baseToken.symbol} ≈{" "}
+                  {formatBalance({
+                    balance: longPrice.price,
+                    decimals: hyperdrive.baseToken.decimals,
+                    places: 3,
+                  })}{" "}
+                  {hyperdrive.baseToken.symbol}
+                </div>
+              </div>
+            ) : null}
           </div>
           <YourBalanceWell token={hyperdrive.baseToken} />
         </div>
