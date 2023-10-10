@@ -15,6 +15,7 @@ type RowType = {
   type: string;
   value: string;
   account: string;
+  timestamp: bigint;
 };
 
 function mapEventName(eventName: string): string {
@@ -44,6 +45,7 @@ const mapEventsToRowType = (events: TransactionData[]): RowType[] => {
       { digits: 2 },
     ),
     account: event.trader,
+    timestamp: event.timestamp,
   }));
 };
 
@@ -69,6 +71,13 @@ export function useTransactionData({ address }: Hyperdrive): {
       : [];
   const mappedEvents = mapEventsToRowType(combinedEvents);
 
+  console.log(mappedEvents, "nonsorted mapped events");
+  console.log(
+    mappedEvents.sort((a, b) => {
+      return Number(b.timestamp) - Number(a.timestamp);
+    }),
+    "sorted mapped events",
+  );
   return {
     status: longsStatus ?? shortsStatus,
     data: mappedEvents,
