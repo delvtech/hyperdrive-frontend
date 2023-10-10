@@ -9,6 +9,7 @@ interface UsePreviewOpenShortOptions {
   market: Hyperdrive;
   amountBondShorts: bigint | undefined;
   maxBaseAmountIn: bigint | undefined;
+  minSharePrice: bigint | undefined;
   destination: Address | undefined;
   asUnderlying?: boolean;
   enabled?: boolean;
@@ -23,6 +24,7 @@ export function usePreviewOpenShort({
   market,
   amountBondShorts,
   maxBaseAmountIn,
+  minSharePrice,
   destination,
   asUnderlying = true,
   enabled = true,
@@ -32,6 +34,7 @@ export function usePreviewOpenShort({
     !!readWriteHyperdrive &&
     !!amountBondShorts &&
     !!maxBaseAmountIn &&
+    minSharePrice !== undefined &&
     !!destination &&
     enabled;
 
@@ -50,6 +53,7 @@ export function usePreviewOpenShort({
 
           return readWriteHyperdrive.previewOpenShort({
             amountOfBondsToShort: amountBondShorts,
+            minSharePrice,
             asUnderlying,
             destination,
             maxBaseAmountIn,

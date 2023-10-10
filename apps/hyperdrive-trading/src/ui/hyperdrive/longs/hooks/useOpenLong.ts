@@ -8,6 +8,7 @@ import { Address } from "wagmi";
 interface UseOpenLongOptions {
   hyperdriveAddress: Address;
   destination: Address | undefined;
+  minSharePrice: bigint | undefined;
   baseAmount: bigint | undefined;
   bondAmountOut: bigint | undefined;
   asUnderlying?: boolean;
@@ -30,6 +31,7 @@ export function useOpenLong({
   destination,
   baseAmount,
   bondAmountOut,
+  minSharePrice,
   asUnderlying = true,
   enabled,
   onExecuted,
@@ -41,6 +43,7 @@ export function useOpenLong({
     !!baseAmount &&
     !!bondAmountOut &&
     !!destination &&
+    minSharePrice !== undefined &&
     enabled &&
     readWriteHyperdrive;
 
@@ -51,6 +54,7 @@ export function useOpenLong({
           baseAmount,
           bondAmountOut,
           destination,
+          minSharePrice,
           asUnderlying,
           options: {
             onSubmitted: (hash) => {
