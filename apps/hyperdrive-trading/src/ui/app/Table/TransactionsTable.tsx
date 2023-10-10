@@ -4,32 +4,10 @@ import {
   getCoreRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { Hyperdrive } from "src/appconfig/types";
 
-type AssetType = "LP" | "LONG" | "SHORT" | "WITHDRAWAL_SHARE";
-type TransactionDataType = {
-  // Columns to have in the table
-  // Which market is it in?
-  // Type of transaction
-  // Value of transaction
-  // Price of bond at open
-  // Current price of bond or closed price
-  // Account
-  // Date of transaction
-  // Do we incude open and closed positions?
+export type TransactionColumn = {
   type: string;
-  value: bigint;
-  account: string;
-};
-interface Props<D extends TransactionDataType> {
-  data: D[];
-  //   columns: TableOptions<D>["columns"];
-  isLoading?: boolean;
-}
-
-type TransactionColumn = {
-  type: string;
-  value: bigint;
+  value: string;
   account: string;
   time: string;
   blockNumber: string;
@@ -42,7 +20,7 @@ const columns = [
     cell: (type) => type.getValue(),
   }),
   columnHelper.accessor("value", {
-    header: "Value",
+    header: "Size",
     cell: (value) => value.getValue(),
   }),
   columnHelper.accessor("account", {
@@ -59,14 +37,10 @@ const columns = [
   }),
 ];
 export function TransactionTable({
-  //   columns,
-  hyperdrive,
   data,
 }: {
-  hyperdrive: Hyperdrive;
-  data: any;
+  data: TransactionColumn[];
 }): JSX.Element {
-  // memoize the data
   const tableInstance = useReactTable({
     columns,
     data,

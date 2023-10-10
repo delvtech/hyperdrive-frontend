@@ -53,7 +53,7 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
 
       <PositionsSection hyperdrive={hyperdrive} />
 
-      <TransactionTable data={transactionData} hyperdrive={hyperdrive} />
+      <TransactionTable data={transactionData} />
 
       <FAQ />
     </div>

@@ -3,6 +3,7 @@ import * as dnum from "dnum";
 import { Hyperdrive } from "src/appconfig/types";
 import { formatAddress } from "src/ui/base/formatting/formatAddress";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
+import { TransactionColumn } from "./TransactionsTable";
 type TransactionData = {
   assetId: bigint;
   baseAmount: bigint;
@@ -13,7 +14,7 @@ type TransactionData = {
   blockNumber: bigint;
 };
 
-type RowType = {
+export type RowType = {
   type: string;
   value: string;
   account: string;
@@ -24,19 +25,18 @@ type RowType = {
 function mapEventName(eventName: string): string {
   switch (eventName) {
     case "OpenLong":
-      return "Open Long";
+      return "Buy";
     case "OpenShort":
-      return "Open Short";
+      return "Short";
     case "CloseLong":
-      return "Close Long";
+      return "Sell";
     case "CloseShort":
-      return "Close Short";
+      return "Cover";
     default:
       return eventName;
   }
 }
 
-// Helper function to map events to RowType
 const mapEventsToRowType = (events: TransactionData[]) => {
   return events
     .map((event) => ({
@@ -49,14 +49,14 @@ const mapEventsToRowType = (events: TransactionData[]) => {
         { digits: 2 },
       ),
       account: formatAddress(event.trader),
-      time: event.timestamp,
+      time: new Date(Number(event.timestamp) * 1000).toLocaleDateString(),
       blockNumber: event.blockNumber.toString(),
     }))
     .sort((a, b) => Number(b.blockNumber) - Number(a.blockNumber));
 };
 
 export function useTransactionData({ address }: Hyperdrive): {
-  data: RowType[];
+  data: TransactionColumn[];
   status: "loading" | "error" | "success";
 } {
   const readHyperdrive = useReadHyperdrive(address);
@@ -71,20 +71,13 @@ export function useTransactionData({ address }: Hyperdrive): {
     queryFn: async () => readHyperdrive?.getShortEvents(),
   });
 
-  console.log("longs", longs);
-
   const combinedEvents =
     longsStatus === "success" && shortsStatus === "success"
       ? [...(longs ?? []), ...(shorts ?? [])]
       : [];
-  const mappedEvents = mapEventsToRowType(combinedEvents);
-  const convertedDates = mappedEvents.map((event) => ({
-    ...event,
-    time: new Date(Number(event.time) * 1000).toLocaleDateString(),
-  }));
 
   return {
     status: longsStatus ?? shortsStatus,
-    data: convertedDates,
+    data: mapEventsToRowType(combinedEvents),
   };
 }
