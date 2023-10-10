@@ -23,7 +23,7 @@ export function formatBalance({
 }): string {
   const dn = dnFrom([balance, decimals]);
   if (includeCommas) {
-    return dnFormat(dn, places);
+    return dnFormat(dn, { digits: places, decimalsRounding: "ROUND_DOWN" });
   }
-  return dnToString(dn, places);
+  return dnToString(dn, { digits: places, decimalsRounding: "ROUND_DOWN" });
 }
