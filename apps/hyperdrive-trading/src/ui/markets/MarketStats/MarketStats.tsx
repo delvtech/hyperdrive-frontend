@@ -2,12 +2,11 @@ import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { Hyperdrive } from "src/appconfig/types";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Stat } from "src/ui/base/components/Stat";
-import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useCurrentFixedAPR } from "src/ui/hyperdrive/hooks/useCurrentFixedAPR";
 import { useLiquidity } from "src/ui/hyperdrive/hooks/useLiquidity";
 import { useTradingVolume } from "src/ui/hyperdrive/hooks/useTradingVolume";
-import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
 import { useVaultRate } from "src/ui/vaults/useVaultRate";
 import { useBlockNumber, useChainId } from "wagmi";
 export function MarketStats({
@@ -15,6 +14,7 @@ export function MarketStats({
 }: {
   hyperdrive: Hyperdrive;
 }): ReactElement {
+  const { appConfig } = useAppConfig();
   const formattedTermLength = formatTermLength(hyperdrive.termLengthMS);
   const { data: currentBlockNumber } = useBlockNumber();
 
@@ -26,30 +26,35 @@ export function MarketStats({
 
   const { liquidity } = useLiquidity(hyperdrive.address);
   const { fixedAPR } = useCurrentFixedAPR(hyperdrive);
-  const { longPrice } = useCurrentLongPrice(hyperdrive);
   const { vaultRate } = useVaultRate({
     // TODO: temporary for now until this available via addresses.json
     vaultAddress: "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
   });
 
+  // TODO: This will only work on cloudchain and local for now. Remove this
+  // condition once we can dynamically source the underlying 4626 vault address
+  // from the hyperdrive instance.
+  const showVaultRate = [
+    +import.meta.env.VITE_CUSTOM_CHAIN_CHAIN_ID,
+    31337,
+  ].includes(chainId);
+
   return (
     <div className="flex w-full flex-wrap items-center justify-center gap-16 md:justify-start">
       <Stat
-        label="Asset"
+        label="Yield source"
         value={
-          <span className="flex items-center gap-1.5">
-            {hyperdrive.baseToken.iconUrl && (
-              <img className="h-4" src={hyperdrive.baseToken.iconUrl} />
-            )}
-            {hyperdrive.baseToken.symbol}
-          </span>
+          <>
+            {appConfig?.yieldSources[hyperdrive.yieldSource].name}{" "}
+            {showVaultRate ? `@ ${vaultRate?.formatted || 0}% APY` : ""}
+          </>
         }
-        description={"The asset that is being used to back the bond."}
+        description={`The yield source backing the hy${hyperdrive.baseToken.symbol} in this pool`}
       />
       <Stat
         label="Term"
         value={formattedTermLength}
-        description={"The length of time that the bond will be locked."}
+        description={`The length of time that the hy${hyperdrive.baseToken.symbol} will be locked.`}
       />
       <Stat
         label="Fixed rate"
@@ -62,29 +67,8 @@ export function MarketStats({
             <Skeleton className="opacity-50" />
           )
         }
-        description={"The fixed rate that the bond will be issued at."}
+        description={`The fixed rate earned when purchasing hy${hyperdrive.baseToken.symbol}`}
       />
-      <Stat
-        label="Bond price"
-        value={`${formatBalance({
-          balance: longPrice?.price || 0n,
-          decimals: hyperdrive.baseToken.decimals,
-          places: 2,
-        })} ${hyperdrive.baseToken.symbol}`}
-        description={"The price of the bond in the base asset."}
-      />
-      {/* TODO: This will only work on cloudchain for now. Remove this condition
-      once we can dynamically source the underlying 4626 vault address from the
-      hyperdrive instance. */}
-      {chainId === +import.meta.env.VITE_CUSTOM_CHAIN_CHAIN_ID ? (
-        <Stat
-          label="Vault rate"
-          value={`${vaultRate?.formatted || "0"}% APY`}
-          description={
-            "The variable rate being earned by the underlying vault."
-          }
-        />
-      ) : undefined}
       <Stat
         label="Volume (24h)"
         value={
@@ -124,7 +108,7 @@ function FormattedDaiValue({
   symbol: string;
 }) {
   return (
-    <span className="flex flex-row items-center justify-start font-semibold">
+    <span className="flex flex-row items-center justify-start">
       {value}
       <span className="ml-1">{symbol}</span>
     </span>
