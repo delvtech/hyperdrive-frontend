@@ -443,13 +443,13 @@ export class ReadHyperdrive implements IReadHyperdrive {
     return spotPrice;
   }
 
-  async getOpenLongEvents(
+  private async getOpenLongEvents(
     options?: ContractGetEventsOptions<typeof HyperdriveABI, "OpenLong">,
   ): Promise<ContractEvent<typeof HyperdriveABI, "OpenLong">[]> {
     return this.contract.getEvents("OpenLong", options);
   }
 
-  async getOpenShortEvents(
+  private async getOpenShortEvents(
     options?: ContractGetEventsOptions<typeof HyperdriveABI, "OpenShort">,
   ): Promise<ContractEvent<typeof HyperdriveABI, "OpenShort">[]> {
     return this.contract.getEvents("OpenShort", options);

@@ -50,9 +50,7 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
 
       <PositionsSection hyperdrive={hyperdrive} />
       <div>
-        <span className="mb-4 gap-0 text-h4 font-normal text-neutral-content">
-          Transactions
-        </span>
+        <span className="mb-4 text-h4 text-neutral-content">Transactions</span>
         <TransactionTable data={transactionData} />
       </div>
       <FAQ />

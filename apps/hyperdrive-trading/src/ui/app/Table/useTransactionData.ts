@@ -65,9 +65,7 @@ export function useTransactionData({ address }: Hyperdrive): {
     queryFn: async () => readHyperdrive?.getShortEvents(),
   });
 
-  const combinedEvents = [...(longs ?? []), ...(shorts ?? [])];
-
   return {
-    data: mapEventsToRowType(combinedEvents),
+    data: mapEventsToRowType([...(longs ?? []), ...(shorts ?? [])]),
   };
 }
