@@ -8,7 +8,7 @@ import {
   SortableGridTable,
 } from "src/ui/base/components/tables/SortableGridTable";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { useHyperdrivePoolInfo } from "src/ui/hyperdrive/hooks/useHyperdrivePoolInfo";
+import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useLpShares } from "src/ui/hyperdrive/lp/hooks/useLpShares";
 import { usePreviewRedeemWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/usePreviewRedeemWithdrawalShares";
 import { usePreviewRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewRemoveLiquidity";
@@ -52,7 +52,7 @@ export function OpenLpPosition({
       destination: account,
     });
 
-  const { poolInfo } = useHyperdrivePoolInfo(hyperdrive.address);
+  const { poolInfo } = usePoolInfo(hyperdrive.address);
 
   const rows: Row[] = [];
   if (lpShares) {

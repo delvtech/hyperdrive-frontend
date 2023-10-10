@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
 import { MAX_UINT256 } from "src/base/constants";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
-import { useHyperdrivePoolInfo } from "src/ui/hyperdrive/hooks/useHyperdrivePoolInfo";
+import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useMaxLong } from "src/ui/hyperdrive/longs/hooks/useMaxLong";
 import { useOpenLong } from "src/ui/hyperdrive/longs/hooks/useOpenLong";
 import { usePreviewOpenLong } from "src/ui/hyperdrive/longs/hooks/usePreviewOpenLong";
@@ -60,7 +60,7 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
     ? amountAsBigInt === undefined || amountAsBigInt < tokenAllowance
     : false;
 
-  const { poolInfo } = useHyperdrivePoolInfo(market.address);
+  const { poolInfo } = usePoolInfo(market.address);
   const { longAmountOut, status: openLongPreviewStatus } = usePreviewOpenLong({
     market,
     baseAmount: amountAsBigInt,

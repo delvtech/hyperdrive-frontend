@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { Hyperdrive, Token } from "src/appconfig/types";
 import { MAX_UINT256 } from "src/base/constants";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
-import { useHyperdrivePoolInfo } from "src/ui/hyperdrive/hooks/useHyperdrivePoolInfo";
+import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useMaxShort } from "src/ui/hyperdrive/shorts/hooks/useMaxShort";
 import { useOpenShort } from "src/ui/hyperdrive/shorts/hooks/useOpenShort";
 import { usePreviewOpenShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewOpenShort";
@@ -36,7 +36,7 @@ export function OpenShortForm({
     decimals: market.baseToken.decimals,
   });
 
-  const { poolInfo } = useHyperdrivePoolInfo(market.address);
+  const { poolInfo } = usePoolInfo(market.address);
   const { baseAmountIn, status: openShortPreviewStatus } = usePreviewOpenShort({
     market,
     amountBondShorts: amountAsBigInt,
