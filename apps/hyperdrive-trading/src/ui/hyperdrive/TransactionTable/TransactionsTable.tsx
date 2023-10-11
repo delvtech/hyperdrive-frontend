@@ -4,45 +4,46 @@ import {
   getCoreRowModel,
   useReactTable,
 } from "@tanstack/react-table";
+import { Hyperdrive } from "src/appconfig/types";
+import { formatAddress } from "src/ui/base/formatting/formatAddress";
+import { Address } from "viem";
 
 export type Transaction = {
   type: string;
   value: string;
-  account: string;
+  account: Address;
   time: string;
   blockNumber: bigint | undefined;
 };
 
 const columnHelper = createColumnHelper<Transaction>();
-const columns = [
+const columns = (hyperdrive: Hyperdrive) => [
   columnHelper.accessor("type", {
     header: "Type",
     cell: (type) => type.getValue(),
   }),
   columnHelper.accessor("value", {
-    header: "Size",
+    header: `Size (hy${hyperdrive.baseToken.symbol})`,
     cell: (value) => value.getValue(),
   }),
   columnHelper.accessor("account", {
     header: "Account",
-    cell: (account) => account.getValue(),
-  }),
-  columnHelper.accessor("time", {
-    header: "Matures On",
-    cell: (date) => date.getValue(),
+    cell: (account) => formatAddress(account.getValue()),
   }),
   columnHelper.accessor("blockNumber", {
-    header: "Block Number",
+    header: "Block number",
     cell: (blockNumber) => blockNumber.getValue()?.toString(),
   }),
 ];
 export function TransactionTable({
+  hyperdrive,
   data,
 }: {
+  hyperdrive: Hyperdrive;
   data: Transaction[];
 }): JSX.Element {
   const tableInstance = useReactTable({
-    columns,
+    columns: columns(hyperdrive),
     data,
     getCoreRowModel: getCoreRowModel(),
   });

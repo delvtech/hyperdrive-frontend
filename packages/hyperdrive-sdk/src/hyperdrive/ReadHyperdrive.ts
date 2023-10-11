@@ -472,8 +472,8 @@ export class ReadHyperdrive implements IReadHyperdrive {
   > {
     const openLongEvents = await this.contract.getEvents("OpenLong", options);
     const closeLongEvents = await this.contract.getEvents("CloseLong", options);
-    return [...openLongEvents, ...closeLongEvents]
-      .map(({ data, args, eventName, blockNumber }) => ({
+    return [...openLongEvents, ...closeLongEvents].map(
+      ({ data, args, eventName, blockNumber }) => ({
         trader: args.trader,
         assetId: args.assetId,
         bondAmount: args.bondAmount,
@@ -482,8 +482,8 @@ export class ReadHyperdrive implements IReadHyperdrive {
           .timestamp,
         eventName,
         blockNumber,
-      }))
-      .sort((a, b) => Number(a.timestamp - b.timestamp));
+      }),
+    );
   }
 
   async getShortEvents(
@@ -506,8 +506,8 @@ export class ReadHyperdrive implements IReadHyperdrive {
       "CloseShort",
       options,
     );
-    return [...openShortEvents, ...closeShortEvents]
-      .map(({ data, args, eventName, blockNumber }) => ({
+    return [...openShortEvents, ...closeShortEvents].map(
+      ({ data, args, eventName, blockNumber }) => ({
         trader: args.trader,
         assetId: args.assetId,
         bondAmount: args.bondAmount,
@@ -516,8 +516,8 @@ export class ReadHyperdrive implements IReadHyperdrive {
           .timestamp,
         eventName,
         blockNumber,
-      }))
-      .sort((a, b) => Number(a.timestamp - b.timestamp));
+      }),
+    );
   }
 
   private async getTransferSingleEvents({

@@ -2,16 +2,16 @@ import { useQuery } from "@tanstack/react-query";
 import * as dnum from "dnum";
 import { Hyperdrive } from "src/appconfig/types";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { Transaction } from "src/ui/app/Table/TransactionsTable";
-import { formatAddress } from "src/ui/base/formatting/formatAddress";
+import { Transaction } from "src/ui/hyperdrive/TransactionTable/TransactionsTable";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
+import { Address } from "viem";
 type TransactionData = {
   assetId: bigint;
   baseAmount: bigint;
   bondAmount: bigint;
   eventName: string;
   timestamp: bigint;
-  trader: `0x${string}`;
+  trader: Address;
   blockNumber: bigint | undefined;
 };
 
@@ -20,17 +20,17 @@ function mapEventName(eventName: string): string {
     case "OpenLong":
       return "Buy";
     case "OpenShort":
-      return "Short";
+      return "Open Short";
     case "CloseLong":
       return "Sell";
     case "CloseShort":
-      return "Cover";
+      return "Close Short";
     default:
       return eventName;
   }
 }
 
-const mapEventsToRowType = (events: TransactionData[]) => {
+function mapEventsToRowType(events: TransactionData[]) {
   return events
     .map((event) => ({
       type: mapEventName(event.eventName),
@@ -43,15 +43,15 @@ const mapEventsToRowType = (events: TransactionData[]) => {
         ],
         { digits: 2 },
       ),
-      account: formatAddress(event.trader),
+      account: event.trader,
       time: new Date(Number(event.timestamp) * 1000).toLocaleDateString(),
       blockNumber: event.blockNumber,
     }))
     .sort((a, b) => Number(b.blockNumber) - Number(a.blockNumber));
-};
+}
 
 export function useTransactionData({ address }: Hyperdrive): {
-  data: Transaction[];
+  data: Transaction[] | undefined;
 } {
   const readHyperdrive = useReadHyperdrive(address);
 
@@ -65,7 +65,13 @@ export function useTransactionData({ address }: Hyperdrive): {
     queryFn: async () => readHyperdrive?.getShortEvents(),
   });
 
-  return {
-    data: mapEventsToRowType([...(longs ?? []), ...(shorts ?? [])]),
-  };
+  const data = [];
+  if (longs) {
+    data.push(...longs);
+  }
+  if (shorts) {
+    data.push(...shorts);
+  }
+
+  return { data: data.length ? mapEventsToRowType(data) : undefined };
 }

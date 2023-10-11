@@ -2,9 +2,9 @@ import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { divideBigInt } from "src/base/divideBigInt";
 import { parseUnits } from "src/base/parseUnits";
-import { TransactionTable } from "src/ui/app/Table/TransactionsTable";
-import { useTransactionData } from "src/ui/app/Table/useTransactionData";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { TransactionTable } from "src/ui/hyperdrive/TransactionTable/TransactionsTable";
+import { useTransactionData } from "src/ui/hyperdrive/TransactionTable/useTransactionData";
 import { OpenLongModalButton } from "src/ui/hyperdrive/longs/OpenLongModalButton/OpenLongModalButton";
 import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
 import { AddLiquidityModalButton } from "src/ui/hyperdrive/lp/AddLiquidityModalButton/AddLiquidityModalButton";
@@ -50,8 +50,12 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
 
       <PositionsSection hyperdrive={hyperdrive} />
       <div>
-        <span className="mb-4 text-h4 text-neutral-content">Transactions</span>
-        <TransactionTable data={transactionData} />
+        <span className="mb-2 text-h5 font-thin text-neutral-content">
+          Transactions
+        </span>
+        {transactionData && (
+          <TransactionTable data={transactionData} hyperdrive={hyperdrive} />
+        )}
       </div>
       <FAQ />
     </div>
