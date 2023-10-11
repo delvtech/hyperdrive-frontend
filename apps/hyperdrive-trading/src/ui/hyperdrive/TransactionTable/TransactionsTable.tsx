@@ -2,6 +2,7 @@ import {
   createColumnHelper,
   flexRender,
   getCoreRowModel,
+  getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
 import { Hyperdrive } from "src/appconfig/types";
@@ -25,6 +26,11 @@ const columns = (hyperdrive: Hyperdrive) => [
   columnHelper.accessor("value", {
     header: `Size (hy${hyperdrive.baseToken.symbol})`,
     cell: (value) => value.getValue(),
+    sortingFn: (a, b) => {
+      const aValue = Number(a?.getValue("value"));
+      const bValue = Number(b?.getValue("value"));
+      return aValue - bValue;
+    },
   }),
   columnHelper.accessor("account", {
     header: "Account",
@@ -46,6 +52,7 @@ export function TransactionTable({
     columns: columns(hyperdrive),
     data,
     getCoreRowModel: getCoreRowModel(),
+    getSortedRowModel: getSortedRowModel(),
   });
 
   return (
@@ -59,12 +66,25 @@ export function TransactionTable({
                   className="text-lg font-thin text-neutral-content"
                   key={header.id}
                 >
-                  {header.isPlaceholder
-                    ? null
-                    : flexRender(
+                  {header.isPlaceholder ? null : (
+                    <div
+                      {...{
+                        className: header.column.getCanSort()
+                          ? "cursor-pointer select-none"
+                          : "",
+                        onClick: header.column.getToggleSortingHandler(),
+                      }}
+                    >
+                      {flexRender(
                         header.column.columnDef.header,
                         header.getContext(),
                       )}
+                      {{
+                        asc: " 🔼",
+                        desc: " 🔽",
+                      }[header.column.getIsSorted() as string] ?? null}
+                    </div>
+                  )}
                 </th>
               ))}
             </tr>
