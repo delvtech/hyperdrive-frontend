@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import { ReactElement, ReactNode } from "react";
 
 interface StatProps {
@@ -17,12 +18,17 @@ export function Stat({
     <div className={className}>
       <p
         data-tip={description}
-        // use before: to style the text inside the tooltip
-        className="daisy-tooltip mb-1 font-light text-neutral-content before:text-base-content"
+        // Future note: use before: to style the text inside the tooltip
+        className={classNames(
+          "daisy-label-text daisy-tooltip mb-1 underline-offset-4",
+          description
+            ? "cursor-help border-b border-dashed border-current"
+            : "",
+        )}
       >
         {label}
       </p>
-      <div className="whitespace-nowrap text-base-content">{value}</div>
+      <div className="whitespace-nowrap text-h6">{value}</div>
     </div>
   );
 }
