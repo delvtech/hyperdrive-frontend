@@ -112,9 +112,8 @@ function PriceBadges({
 }) {
   return (
     <div className="mt-4 flex gap-4">
-      <div className="daisy-badge daisy-badge-neutral daisy-badge-lg text-base-content">
-        <img className="mr-1 w-4" src={hyperdrive.baseToken.iconUrl} /> 1{" "}
-        {hyperdrive.baseToken.symbol} ≈{" "}
+      <div className="daisy-badge daisy-badge-ghost daisy-badge-lg">
+        1 {hyperdrive.baseToken.symbol} ≈{" "}
         {formatBalance({
           balance: divideBigInt(
             parseUnits("1", 18),
@@ -127,9 +126,8 @@ function PriceBadges({
         })}{" "}
         hy{hyperdrive.baseToken.symbol}
       </div>
-      <div className="daisy-badge daisy-badge-neutral daisy-badge-lg text-base-content">
-        <span className="mr-1 text-[6pt] text-secondary">hyBASE</span> 1 hy
-        {hyperdrive.baseToken.symbol} ≈{" "}
+      <div className="daisy-badge daisy-badge-ghost daisy-badge-lg">
+        1 hy{hyperdrive.baseToken.symbol} ≈{" "}
         {formatBalance({
           balance: longPrice.price,
           decimals: hyperdrive.baseToken.decimals,
