@@ -4,6 +4,7 @@ import mapValues from "lodash.mapvalues";
 import { sumBigInt } from "src/base/sumBigInt";
 import {
   BlockTag,
+  ContractEvent,
   ContractGetEventsOptions,
   ContractReadOptions,
   ContractWriteOptions,
@@ -300,6 +301,37 @@ export interface IReadHyperdrive {
     asUnderlying: boolean;
     options: ContractWriteOptions;
   }): Promise<{ baseAmountOut: bigint; sharesRedeemed: bigint }>;
+
+  getLongEvents(
+    options?:
+      | ContractGetEventsOptions<typeof HyperdriveABI, "OpenLong">
+      | ContractGetEventsOptions<typeof HyperdriveABI, "CloseLong">,
+  ): Promise<
+    {
+      trader: Address;
+      assetId: bigint;
+      bondAmount: bigint;
+      baseAmount: bigint;
+      timestamp: bigint;
+      eventName: "OpenLong" | "CloseLong";
+      blockNumber: bigint | undefined;
+    }[]
+  >;
+  getShortEvents(
+    options?:
+      | ContractGetEventsOptions<typeof HyperdriveABI, "OpenShort">
+      | ContractGetEventsOptions<typeof HyperdriveABI, "CloseShort">,
+  ): Promise<
+    {
+      trader: Address;
+      assetId: bigint;
+      bondAmount: bigint;
+      baseAmount: bigint;
+      timestamp: bigint;
+      eventName: "OpenShort" | "CloseShort";
+      blockNumber: bigint | undefined;
+    }[]
+  >;
 }
 
 const MAX_ITERATIONS = 7n;
@@ -413,14 +445,79 @@ export class ReadHyperdrive implements IReadHyperdrive {
 
   private async getOpenLongEvents(
     options?: ContractGetEventsOptions<typeof HyperdriveABI, "OpenLong">,
-  ) {
+  ): Promise<ContractEvent<typeof HyperdriveABI, "OpenLong">[]> {
     return this.contract.getEvents("OpenLong", options);
   }
 
   private async getOpenShortEvents(
     options?: ContractGetEventsOptions<typeof HyperdriveABI, "OpenShort">,
-  ) {
+  ): Promise<ContractEvent<typeof HyperdriveABI, "OpenShort">[]> {
     return this.contract.getEvents("OpenShort", options);
+  }
+
+  async getLongEvents(
+    options?:
+      | ContractGetEventsOptions<typeof HyperdriveABI, "OpenLong">
+      | ContractGetEventsOptions<typeof HyperdriveABI, "CloseLong">,
+  ): Promise<
+    {
+      trader: Address;
+      assetId: bigint;
+      bondAmount: bigint;
+      baseAmount: bigint;
+      timestamp: bigint;
+      eventName: "OpenLong" | "CloseLong";
+      blockNumber: bigint | undefined;
+    }[]
+  > {
+    const openLongEvents = await this.contract.getEvents("OpenLong", options);
+    const closeLongEvents = await this.contract.getEvents("CloseLong", options);
+    return [...openLongEvents, ...closeLongEvents].map(
+      ({ data, args, eventName, blockNumber }) => ({
+        trader: args.trader,
+        assetId: args.assetId,
+        bondAmount: args.bondAmount,
+        baseAmount: args.baseAmount,
+        timestamp: decodeAssetFromTransferSingleEventData(data as `0x${string}`)
+          .timestamp,
+        eventName,
+        blockNumber,
+      }),
+    );
+  }
+
+  async getShortEvents(
+    options?:
+      | ContractGetEventsOptions<typeof HyperdriveABI, "OpenShort">
+      | ContractGetEventsOptions<typeof HyperdriveABI, "CloseShort">,
+  ): Promise<
+    {
+      trader: Address;
+      assetId: bigint;
+      bondAmount: bigint;
+      baseAmount: bigint;
+      timestamp: bigint;
+      eventName: "OpenShort" | "CloseShort";
+      blockNumber: bigint | undefined;
+    }[]
+  > {
+    const openShortEvents = await this.contract.getEvents("OpenShort", options);
+    const closeShortEvents = await this.contract.getEvents(
+      "CloseShort",
+      options,
+    );
+    return [...openShortEvents, ...closeShortEvents].map(
+      ({ data, args, eventName, blockNumber }) => ({
+        trader: args.trader,
+        assetId: args.assetId,
+        bondAmount: args.bondAmount,
+        baseAmount: args.baseAmount,
+        timestamp: decodeAssetFromTransferSingleEventData(data as `0x${string}`)
+          .timestamp,
+        eventName,
+        blockNumber,
+      }),
+    );
   }
 
   private async getTransferSingleEvents({
