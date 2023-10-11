@@ -57,18 +57,21 @@ export function CloseLongForm({
     <div className="flex flex-col gap-6">
       {/* Amount to close section */}
       {long && (
-        <div className="space-y-4 text-base-content">
-          <h5>Amount to close</h5>
+        <div className="flex space-y-4 text-base-content">
           <TokenInput
             token={{
-              name: "Hyperdrive Long",
-              symbol: "Long",
+              name: `Hyperdrive ${baseSymbol}`,
+              symbol: `hy${baseSymbol}`,
               decimals: baseDecimals,
               address: "0x00",
             }}
             value={amount ?? ""}
             maxValue={long ? formatUnits(long.bondAmount, baseDecimals) : ""}
-            maxLabel="Balance"
+            stat={`Balance: ${formatBalance({
+              balance: long.bondAmount,
+              decimals: baseDecimals,
+              places: 4,
+            })}`}
             onChange={(newAmount) => setAmount(newAmount)}
           />
         </div>

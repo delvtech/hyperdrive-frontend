@@ -57,17 +57,24 @@ export function CloseShortForm({
       {/* Amount to close section */}
       {short && (
         <div className="space-y-4 text-base-content">
-          <h5>Amount to close</h5>
           <TokenInput
             token={{
               name: "Hyperdrive Short",
-              symbol: "Short",
+              symbol: "Shorts",
               decimals: baseDecimals,
               address: "0x00",
             }}
             value={amount ?? ""}
             maxValue={short ? formatUnits(short.bondAmount, baseDecimals) : ""}
-            maxLabel="Balance"
+            stat={
+              short
+                ? `Available to close: ${formatBalance({
+                    balance: short.bondAmount,
+                    decimals: hyperdrive.baseToken.decimals,
+                    places: 4,
+                  })}`
+                : undefined
+            }
             onChange={(newAmount) => setAmount(newAmount)}
           />
         </div>
