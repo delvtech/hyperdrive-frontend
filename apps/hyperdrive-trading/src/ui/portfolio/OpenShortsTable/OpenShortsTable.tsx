@@ -57,9 +57,10 @@ function CurrentValueCell({ row }: { row: Row<OpenShort> }) {
   });
   const value =
     baseAmountOut &&
-    dnum.format([baseAmountOut, 18], {
+    dnum.format([row.original.bondAmount - baseAmountOut, 18], {
       digits: 2,
     });
+
   return <span>{value?.toString()}</span>;
 }
 
