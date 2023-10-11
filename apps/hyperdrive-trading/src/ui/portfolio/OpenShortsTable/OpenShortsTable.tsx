@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-key */
 import { OpenShort } from "@hyperdrive/sdk";
 import {
+  Row,
   createColumnHelper,
   flexRender,
   getCoreRowModel,
@@ -9,6 +10,8 @@ import {
 import * as dnum from "dnum";
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
+import { parseUnits } from "src/base/parseUnits";
+import { usePreviewCloseShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewCloseShort";
 import { useAccount } from "wagmi";
 interface OpenOrdersTableProps {
   hyperdrive: Hyperdrive;
@@ -35,19 +38,40 @@ const columns = (hyperdrive: Hyperdrive) => [
       });
     },
   }),
+  columnHelper.accessor("hyperdriveAddress", {
+    header: "Current Value",
+    cell: ({ row }) => {
+      return <CurrentValueCell row={row} />;
+    },
+  }),
 ];
+
+function CurrentValueCell({ row }: { row: Row<OpenShort> }) {
+  const { address: account } = useAccount();
+  const { baseAmountOut } = usePreviewCloseShort({
+    hyperdriveAddress: row.original.hyperdriveAddress,
+    maturityTime: row.original.maturity,
+    shortAmountIn: row.original.bondAmount,
+    minBaseAmountOut: parseUnits("0", 18),
+    destination: account,
+  });
+  const value =
+    baseAmountOut &&
+    dnum.format([baseAmountOut, 18], {
+      digits: 2,
+    });
+  return <span>{value?.toString()}</span>;
+}
+
 export function OpenShortsTable({
   hyperdrive,
   shorts,
 }: OpenOrdersTableProps): ReactElement {
-  const { address: account } = useAccount();
-
   const tableInstance = useReactTable({
     columns: columns(hyperdrive),
     data: shorts,
     getCoreRowModel: getCoreRowModel(),
   });
-  console.log(shorts, "shorts");
 
   return (
     <div className="max-h-96 overflow-y-scroll">
