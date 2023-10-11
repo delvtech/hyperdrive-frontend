@@ -22,7 +22,7 @@ export function Well({
     "w-full": block,
     "hover:cursor-pointer hover:glass hover:-translate-y-1 hover:shadow-lg transition duration-300 ease-in-out":
       isInteractive,
-    "bg-base-300/50 ring-neutral-content/20 ring-1": !variant,
+    "bg-base-200": !variant,
     "bg-primary/5 ring-primary/20 ring-1": variant === "primary",
     "bg-secondary/5 ring-secondary/20 ring-1": variant === "secondary",
     "bg-accent/5 ring-accent/20 ring-1": variant === "accent",
