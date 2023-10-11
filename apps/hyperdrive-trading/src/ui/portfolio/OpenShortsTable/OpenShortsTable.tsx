@@ -11,6 +11,8 @@ import * as dnum from "dnum";
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { parseUnits } from "src/base/parseUnits";
+import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
 import { usePreviewCloseShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewCloseShort";
 import { useAccount } from "wagmi";
 interface OpenOrdersTableProps {
@@ -44,6 +46,12 @@ const columns = (hyperdrive: Hyperdrive) => [
       return <CurrentValueCell row={row} />;
     },
   }),
+  columnHelper.accessor("openedTimestamp", {
+    header: "Current Price",
+    cell: ({ row }) => {
+      return <CurrentPriceCell row={row} hyperdrive={hyperdrive} />;
+    },
+  }),
 ];
 
 function CurrentValueCell({ row }: { row: Row<OpenShort> }) {
@@ -62,6 +70,26 @@ function CurrentValueCell({ row }: { row: Row<OpenShort> }) {
     });
 
   return <span>{value?.toString()}</span>;
+}
+
+function CurrentPriceCell({
+  row,
+  hyperdrive,
+}: {
+  row: Row<OpenShort>;
+  hyperdrive: Hyperdrive;
+}) {
+  const { longPrice } = useCurrentLongPrice(hyperdrive);
+  return (
+    <span>
+      {longPrice &&
+        `${formatBalance({
+          balance: longPrice?.price,
+          decimals: hyperdrive.baseToken.decimals,
+          places: 3,
+        })} ${hyperdrive.baseToken.symbol}`}
+    </span>
+  );
 }
 
 export function OpenShortsTable({
