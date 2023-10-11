@@ -1,8 +1,11 @@
+import { useQuery } from "@tanstack/react-query";
 import assertNever from "assert-never";
 import classNames from "classnames";
 import { ReactElement, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
+import { makeQueryKey } from "src/base/makeQueryKey";
+import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { ClosedLongsTable } from "src/ui/portfolio/ClosedLongsTable/ClosedLongsTable";
 import { ClosedLpTable } from "src/ui/portfolio/ClosedLpTable/ClosedLpTable";
 import { ClosedShortsTable } from "src/ui/portfolio/ClosedShortsTable/ClosedShortsTable";
@@ -13,6 +16,7 @@ import {
   PositionTab,
   PositionTabs,
 } from "src/ui/portfolio/PositionTabs/PositionTabs";
+import { useAccount } from "wagmi";
 
 export type OpenOrClosedTab = "Open" | "Closed";
 
@@ -22,6 +26,16 @@ export function PositionsSection({
   hyperdrive: Hyperdrive;
 }): ReactElement {
   const [searchParams, setSearchParams] = useSearchParams();
+  const { address: account } = useAccount();
+  const readHyperdrive = useReadHyperdrive(hyperdrive.address);
+  const queryEnabled = !!readHyperdrive && !!account;
+  const { data: shorts } = useQuery({
+    queryKey: makeQueryKey("shortPositions", { account }),
+    queryFn: queryEnabled
+      ? () => readHyperdrive?.getOpenShorts({ account })
+      : undefined,
+    enabled: queryEnabled,
+  });
 
   const activePositionTab =
     (searchParams.get("position") as PositionTab) || "Longs";
@@ -93,8 +107,10 @@ export function PositionsSection({
                 return <ClosedLongsTable hyperdrive={hyperdrive} />;
               }
               case "Shorts": {
-                if (activeOpenOrClosedTab === "Open") {
-                  return <OpenShortsTable hyperdrive={hyperdrive} />;
+                if (activeOpenOrClosedTab === "Open" && shorts) {
+                  return (
+                    <OpenShortsTable shorts={shorts} hyperdrive={hyperdrive} />
+                  );
                 }
                 return <ClosedShortsTable hyperdrive={hyperdrive} />;
               }
