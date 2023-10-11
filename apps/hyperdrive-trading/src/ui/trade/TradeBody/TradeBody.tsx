@@ -82,17 +82,17 @@ function MarketBreadcrumbs({ hyperdrive }: { hyperdrive: Hyperdrive }) {
 function MarketHeader({ hyperdrive }: { hyperdrive: Hyperdrive }) {
   return (
     <h3 className="my-2 inline-flex items-center gap-2 font-semibold md:my-0">
-      <div className="daisy-avatar-group -space-x-6">
-        <div className="daisy-placeholder daisy-avatar">
-          <div className="w-14 bg-neutral-focus text-neutral-content">
-            <span className="text-sm">
-              <img src={hyperdrive.baseToken.iconUrl} />
+      <div className="daisy-avatar-group -space-x-3 p-2">
+        <div className="daisy-placeholder daisy-avatar ring ring-primary ring-offset-0">
+          <div className="w-14 bg-base-100">
+            <span className="text-body font-bold">
+              {hyperdrive.baseToken.symbol}
             </span>
           </div>
         </div>
-        <div className="daisy-placeholder daisy-avatar">
-          <div className="w-14 bg-neutral-focus">
-            <span className="text-sm text-secondary">
+        <div className="daisy-placeholder daisy-avatar ring ring-secondary ring-offset-0">
+          <div className="w-14 bg-base-100">
+            <span className="text-body font-bold">
               hy{hyperdrive.baseToken.symbol}
             </span>
           </div>
