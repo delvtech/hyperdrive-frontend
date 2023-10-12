@@ -49,17 +49,7 @@ export function CloseShortModalButton({
         </div>
       }
     >
-      {({ showModal }) => (
-        <button
-          onClick={showModal}
-          tabIndex={0}
-          className={`${
-            hasMatured ? "daisy-btn-primary" : "daisy-btn-secondary"
-          } daisy-btn-sm daisy-btn`}
-        >
-          {hasMatured ? "Redeem" : "Close"}
-        </button>
-      )}
+      {({ showModal }) => null}
     </Modal>
   );
 }
