@@ -13,6 +13,7 @@ import { Hyperdrive } from "src/appconfig/types";
 import { parseUnits } from "src/base/parseUnits";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
+import { getProfitLossText } from "src/ui/hyperdrive/shorts/CloseShortForm/getProfitLossText";
 import { CloseShortModalButton } from "src/ui/hyperdrive/shorts/CloseShortModalButton/CloseShortModalButton";
 import { usePreviewCloseShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewCloseShort";
 import { useAccount } from "wagmi";
@@ -35,7 +36,7 @@ const columns = (hyperdrive: Hyperdrive) => [
   columnHelper.accessor("hyperdriveAddress", {
     header: "Current Value",
     cell: ({ row }) => {
-      return <CurrentValueCell row={row} />;
+      return <CurrentValueCell hyperdrive={hyperdrive} row={row} />;
     },
   }),
   columnHelper.accessor("baseAmountPaid", {
@@ -55,7 +56,13 @@ const columns = (hyperdrive: Hyperdrive) => [
   }),
 ];
 
-function CurrentValueCell({ row }: { row: Row<OpenShort> }) {
+function CurrentValueCell({
+  row,
+  hyperdrive,
+}: {
+  row: Row<OpenShort>;
+  hyperdrive: Hyperdrive;
+}) {
   const { address: account } = useAccount();
   const { baseAmountOut } = usePreviewCloseShort({
     hyperdriveAddress: row.original.hyperdriveAddress,
@@ -70,9 +77,23 @@ function CurrentValueCell({ row }: { row: Row<OpenShort> }) {
       digits: 2,
     });
 
-  return <span>{value?.toString()}</span>;
+  return (
+    <div>
+      <span>{value?.toString()}</span>
+      <span className="ml-2">
+        {baseAmountOut && row.original.bondAmount !== 0n
+          ? `(${getProfitLossText({
+              baseAmountOut,
+              amountInput: row.original.baseAmountPaid,
+              baseDecimals: hyperdrive.baseToken.decimals,
+              baseSymbol: hyperdrive.baseToken.symbol,
+              showPercentage: false,
+            })})`
+          : ""}
+      </span>
+    </div>
+  );
 }
-
 function CurrentPriceCell({
   row,
   hyperdrive,
