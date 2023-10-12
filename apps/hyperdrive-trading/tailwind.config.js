@@ -64,6 +64,10 @@ module.exports = {
           primary: "#007eed",
           secondary: "#522dae",
           accent: "#f40000",
+          "--tab-radius": "0.4rem",
+          "--rounded-box": "0.4rem", // border radius rounded-box utility class, used in card and other large boxes
+          "--rounded-btn": "0.4rem",
+          "--rounded-badge": "0.4rem",
           "--btn-text-case": "none", // set default text transform for buttons
         },
       },
