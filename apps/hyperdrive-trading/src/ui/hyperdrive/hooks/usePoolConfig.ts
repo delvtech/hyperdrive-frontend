@@ -5,7 +5,7 @@ import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { ContractFunctionResult } from "viem";
 import { Address } from "wagmi";
 
-export function useHyperdrivePoolConfig(hyperdriveAddress: Address): {
+export function usePoolConfig(hyperdriveAddress: Address): {
   poolConfig:
     | ContractFunctionResult<typeof HyperdriveABI, "getPoolConfig">
     | undefined;

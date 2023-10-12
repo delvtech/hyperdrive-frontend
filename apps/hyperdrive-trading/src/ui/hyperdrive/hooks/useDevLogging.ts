@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 import { Hyperdrive } from "src/appconfig/types";
-import { useHyperdrivePoolInfo } from "src/ui/hyperdrive/hooks//useHyperdrivePoolInfo";
-import { useHyperdrivePoolConfig } from "src/ui/hyperdrive/hooks/useHyperdrivePoolConfig";
+import { usePoolConfig } from "src/ui/hyperdrive/hooks/usePoolConfig";
+import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { formatUnits } from "viem";
 
 export function useDevLogging(market: Hyperdrive): void {
-  const { poolConfig } = useHyperdrivePoolConfig(market.address);
+  const { poolConfig } = usePoolConfig(market.address);
   useEffect(() => {
     if (import.meta.env.DEV) {
       console.log("Pool Config:");
@@ -17,7 +17,7 @@ export function useDevLogging(market: Hyperdrive): void {
     }
   }, [poolConfig, market.baseToken.decimals]);
 
-  const { poolInfo } = useHyperdrivePoolInfo(market.address);
+  const { poolInfo } = usePoolInfo(market.address);
   useEffect(() => {
     if (import.meta.env.DEV) {
       console.log("Pool Info:");
