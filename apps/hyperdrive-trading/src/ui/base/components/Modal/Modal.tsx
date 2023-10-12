@@ -25,10 +25,7 @@ export function Modal({
       {children({ showModal })}
 
       <dialog id={modalId} className={`daisy-modal`} ref={modalRef}>
-        <form
-          method="dialog"
-          className={`daisy-modal-box bg-base-300 ${className}`}
-        >
+        <form method="dialog" className={`daisy-modal-box ${className}`}>
           {modalContent}
         </form>
         <form method="dialog" className={`daisy-modal-backdrop`}>

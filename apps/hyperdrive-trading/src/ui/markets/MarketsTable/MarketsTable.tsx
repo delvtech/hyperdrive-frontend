@@ -61,7 +61,7 @@ export function MarketsTable(): ReactElement {
       {/* Markets sortable table */}
       <div>
         <SortableGridTable
-          headingRowClassName="grid-cols-auto bg-base-300 text-neutral-content bg-opacity-100"
+          headingRowClassName="grid-cols-auto bg-base-300 bg-opacity-100"
           bodyRowClassName="grid-cols-auto bg-transparent text-base-content"
           cols={[
             {

@@ -80,7 +80,7 @@ export function CloseLongForm({
       {/* You receive Section */}
       {long && (
         <div className="flex justify-between">
-          <p className="font-light text-neutral-content">You receive</p>
+          <p className="font-light">You receive</p>
           <p className="tracking-wide">
             {baseAmountOut
               ? `${formatBalance({

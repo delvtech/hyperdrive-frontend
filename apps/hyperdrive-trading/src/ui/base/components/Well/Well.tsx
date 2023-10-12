@@ -18,15 +18,14 @@ export function Well({
   onClick,
 }: PropsWithChildren<WellProps>): ReactElement {
   const isInteractive = !disabled && (interactive || onClick);
-  const className = classNames("rounded-lg p-4", {
-    "w-full": block,
-    "hover:cursor-pointer hover:glass hover:-translate-y-1 hover:shadow-lg transition duration-300 ease-in-out":
-      isInteractive,
-    "bg-base-300/50 ring-neutral-content/20 ring-1": !variant,
-    "bg-primary/5 ring-primary/20 ring-1": variant === "primary",
-    "bg-secondary/5 ring-secondary/20 ring-1": variant === "secondary",
-    "bg-accent/5 ring-accent/20 ring-1": variant === "accent",
-  });
+  const className = classNames(
+    "daisy-card p-4 daisy-card-bordered shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] bg-base-200",
+    {
+      "w-full": block,
+      "hover:cursor-pointer hover:-translate-y-1 transition duration-300 hover:shadow-xl ease-in-out":
+        isInteractive,
+    },
+  );
 
   if (onClick || interactive) {
     return (

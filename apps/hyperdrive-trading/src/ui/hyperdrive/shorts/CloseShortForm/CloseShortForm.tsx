@@ -84,7 +84,7 @@ export function CloseShortForm({
         <div className="flex flex-col gap-y-1 tracking-wide">
           {short && (
             <div className="flex justify-between">
-              <p className="font-light text-neutral-content">You receive</p>
+              <p className="font-light">You receive</p>
               <p className="tracking-wide">
                 {baseAmountOut
                   ? `${formatBalance({

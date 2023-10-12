@@ -98,11 +98,11 @@ export function RemoveLiquidityForm({
 
       {/* You receive Section */}
       <div className="flex justify-between">
-        <p className="font-light text-neutral-content">You receive</p>
+        <p className="font-light">You receive</p>
         <p className="tracking-wide">{formattedBaseAmountOut}</p>
       </div>
       <div className="flex items-center justify-between">
-        <p className="font-light text-neutral-content">Withdrawal shares</p>
+        <p className="font-light">Withdrawal shares</p>
         <p className="tracking-wide">{formattedWithdrawalSharesOut}</p>
       </div>
 

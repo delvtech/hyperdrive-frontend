@@ -25,28 +25,27 @@ export function OpenShortModalButton({
       {({ showModal }) => (
         <Well interactive variant="accent" onClick={() => showModal()}>
           <div className="flex w-[272px] flex-col justify-between gap-2 p-4">
-            <BoltIcon className="mb-2 h-16 text-accent" />
+            <BoltIcon className="mb-2 h-16" />
             <p className="text-h5">Open a short</p>
             <p className="font-bold">
-              Earn{" "}
-              <span className="text-accent">{vaultRate?.formatted}% APY</span>{" "}
-              on {hyperdrive.baseToken.symbol}
+              Earn <span>{vaultRate?.formatted}% APY</span> on{" "}
+              {hyperdrive.baseToken.symbol}
             </p>
             <div className="mt-4 ml-4 flex flex-col gap-2 ">
-              <ChecklistItem readOnly checked variant="accent">
+              <ChecklistItem readOnly checked>
                 Variable rate yield
               </ChecklistItem>
-              <ChecklistItem readOnly checked variant="accent">
+              <ChecklistItem readOnly checked>
                 Profit from rising fixed rates
               </ChecklistItem>
-              <ChecklistItem readOnly checked variant="accent">
+              <ChecklistItem readOnly checked>
                 Redeemable before term ends
               </ChecklistItem>
             </div>
             {/* Using a div styled as a button here just as a visual cue. Don't
             use a real button here since the Well is interactive already, and
             doing so would create invalid dom nesting of buttons. */}
-            <div className="daisy-btn-accent daisy-btn-sm daisy-btn mt-4 justify-between gap-0">
+            <div className="daisy-btn-neutral daisy-btn-sm daisy-btn mt-4 justify-between gap-0 hover:daisy-btn-ghost">
               <span className="ml-4 flex-1 text-center">Open short</span>
               <ChevronRightIcon className="h-3 text-right" />
             </div>

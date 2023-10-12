@@ -24,16 +24,14 @@ export function OpenLongPreview({
         </div>
 
         <div className="flex justify-between">
-          <p className="font-light text-neutral-content">Matures on</p>
+          <p className="font-light">Matures on</p>
           <p className="tracking-wide">
             {new Date(Number(long.maturity * 1000n)).toLocaleDateString()}
           </p>
         </div>
 
         <div className="flex justify-between">
-          <p className="font-light text-neutral-content">
-            Claimable at maturity
-          </p>
+          <p className="font-light">Claimable at maturity</p>
           <p className="font-semibold tracking-wide">
             {formatBalance({
               balance: long.bondAmount,
