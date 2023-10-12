@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import { ReactElement, ReactNode } from "react";
 import { Token } from "src/appconfig/types";
+import { HIDE_NUMERIC_INPUT_ARROWS_CLASS } from "src/ui/base/numericInput";
 
 interface TokenInputProps {
   token: Token;
@@ -67,9 +68,13 @@ export function TokenInput({
           max={maxValue}
           name={`${token.symbol} input`}
           disabled={disabled}
-          className={classNames("daisy-input-bordered daisy-input flex-1", {
-            "daisy-input-error text-error": hasError,
-          })}
+          className={classNames(
+            "daisy-input-bordered daisy-input flex-1",
+            HIDE_NUMERIC_INPUT_ARROWS_CLASS,
+            {
+              "daisy-input-error text-error": hasError,
+            },
+          )}
           value={value}
           placeholder="0"
           onChange={(event) => onChange(event.target.value)}
