@@ -32,6 +32,12 @@ const columns = (hyperdrive: Hyperdrive) => [
       });
     },
   }),
+  columnHelper.accessor("hyperdriveAddress", {
+    header: "Current Value",
+    cell: ({ row }) => {
+      return <CurrentValueCell row={row} />;
+    },
+  }),
   columnHelper.accessor("baseAmountPaid", {
     header: `Amount Paid`,
     cell: (baseAmountPaid) => {
@@ -39,12 +45,6 @@ const columns = (hyperdrive: Hyperdrive) => [
       return dnum.format([amountPaid, hyperdrive.baseToken.decimals], {
         digits: 4,
       });
-    },
-  }),
-  columnHelper.accessor("hyperdriveAddress", {
-    header: "Current Value",
-    cell: ({ row }) => {
-      return <CurrentValueCell row={row} />;
     },
   }),
   columnHelper.accessor("openedTimestamp", {
