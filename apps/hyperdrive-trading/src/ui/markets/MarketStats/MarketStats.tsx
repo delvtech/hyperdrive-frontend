@@ -77,7 +77,6 @@ export function MarketStats({
             value={tradingVolume.formatted || "0"}
           />
         }
-        description={"The total trading volume in the last 24 hours"}
       />
       <Stat
         label="Liquidity"
@@ -86,9 +85,6 @@ export function MarketStats({
             symbol={hyperdrive.baseToken.symbol}
             value={liquidity?.formatted || "0"}
           />
-        }
-        description={
-          "The total liquidity in the pool available for market making"
         }
       />
     </div>

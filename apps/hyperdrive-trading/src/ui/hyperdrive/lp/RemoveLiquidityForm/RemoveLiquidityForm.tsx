@@ -77,24 +77,32 @@ export function RemoveLiquidityForm({
         <TokenInput
           token={{
             name: "Hyperdrive LP",
-            symbol: "LP",
+            symbol: "LP shares",
             decimals: baseDecimals,
             address: "0x00",
           }}
           value={amount ?? ""}
           maxValue={formatUnits(lpShares, baseDecimals)}
-          maxLabel="Balance"
+          stat={
+            lpShares
+              ? `Balance: ${formatBalance({
+                  balance: lpShares,
+                  decimals: baseDecimals,
+                  places: 4,
+                })} LP shares`
+              : undefined
+          }
           onChange={(newAmount) => setAmount(newAmount)}
         />
       </div>
 
       {/* You receive Section */}
       <div className="flex justify-between">
-        <p className="font-light text-neutral-content">You receive</p>
+        <p className="font-light">You receive</p>
         <p className="tracking-wide">{formattedBaseAmountOut}</p>
       </div>
       <div className="flex items-center justify-between">
-        <p className="font-light text-neutral-content">Withdrawal shares</p>
+        <p className="font-light">Withdrawal shares</p>
         <p className="tracking-wide">{formattedWithdrawalSharesOut}</p>
       </div>
 

@@ -28,10 +28,7 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
         <div className="flex flex-wrap items-start justify-center md:justify-between">
           <div className="flex flex-col">
             <MarketBreadcrumbs hyperdrive={hyperdrive} />
-            <MarketHeader hyperdrive={hyperdrive} />
-            {longPrice ? (
-              <PriceBadges hyperdrive={hyperdrive} longPrice={longPrice} />
-            ) : null}
+            <MarketHeader hyperdrive={hyperdrive} longPrice={longPrice} />
           </div>
           <YourBalanceWell token={hyperdrive.baseToken} />
         </div>
@@ -50,9 +47,7 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
 
       <PositionsSection hyperdrive={hyperdrive} />
       <div>
-        <span className="mb-2 text-h5 font-thin text-neutral-content">
-          Transactions
-        </span>
+        <span className="mb-2 text-h5 font-thin">Transactions</span>
         {transactionData && (
           <TransactionTable data={transactionData} hyperdrive={hyperdrive} />
         )}
@@ -79,27 +74,40 @@ function MarketBreadcrumbs({ hyperdrive }: { hyperdrive: Hyperdrive }) {
   );
 }
 
-function MarketHeader({ hyperdrive }: { hyperdrive: Hyperdrive }) {
+function MarketHeader({
+  hyperdrive,
+  longPrice,
+}: {
+  hyperdrive: Hyperdrive;
+  longPrice: { price: bigint; formatted: string } | undefined;
+}) {
   return (
-    <h3 className="my-2 inline-flex items-center gap-2 font-semibold md:my-0">
-      <div className="daisy-avatar-group -space-x-6">
+    <div className="my-2 flex items-center gap-2 md:my-0">
+      <div className="daisy-avatar-group shrink-0 -space-x-4 p-2 font-semibold ">
         <div className="daisy-placeholder daisy-avatar">
-          <div className="w-14 bg-neutral-focus text-neutral-content">
-            <span className="text-sm">
-              <img src={hyperdrive.baseToken.iconUrl} />
+          <div className="w-16 bg-base-200">
+            <span className="text-body font-bold">
+              {hyperdrive.baseToken.symbol}
             </span>
           </div>
         </div>
         <div className="daisy-placeholder daisy-avatar">
-          <div className="w-14 bg-neutral-focus">
-            <span className="text-sm text-secondary">
+          <div className="w-16 bg-base-200">
+            <span className="text-body font-bold">
               hy{hyperdrive.baseToken.symbol}
             </span>
           </div>
         </div>
       </div>
-      {hyperdrive.baseToken.symbol} / hy{hyperdrive.baseToken.symbol}
-    </h3>
+      <div className="flex w-full flex-col items-start gap-1">
+        <h3 className="items-center font-semibold md:my-0">
+          {hyperdrive.baseToken.symbol} / hy{hyperdrive.baseToken.symbol}
+        </h3>
+        {longPrice ? (
+          <PriceBadges hyperdrive={hyperdrive} longPrice={longPrice} />
+        ) : null}
+      </div>
+    </div>
   );
 }
 
@@ -111,10 +119,9 @@ function PriceBadges({
   longPrice: { price: bigint; formatted: string };
 }) {
   return (
-    <div className="mt-4 flex gap-4">
-      <div className="daisy-badge daisy-badge-neutral daisy-badge-lg text-base-content">
-        <img className="mr-1 w-4" src={hyperdrive.baseToken.iconUrl} /> 1{" "}
-        {hyperdrive.baseToken.symbol} ≈{" "}
+    <div className="flex gap-4">
+      <div className="daisy-badge daisy-badge-ghost daisy-badge-lg border border-base-300/5">
+        1 {hyperdrive.baseToken.symbol} ≈{" "}
         {formatBalance({
           balance: divideBigInt(
             parseUnits("1", 18),
@@ -123,17 +130,16 @@ function PriceBadges({
           ),
 
           decimals: hyperdrive.baseToken.decimals,
-          places: 3,
+          places: 6,
         })}{" "}
         hy{hyperdrive.baseToken.symbol}
       </div>
-      <div className="daisy-badge daisy-badge-neutral daisy-badge-lg text-base-content">
-        <span className="mr-1 text-[6pt] text-secondary">hyBASE</span> 1 hy
-        {hyperdrive.baseToken.symbol} ≈{" "}
+      <div className="daisy-badge daisy-badge-ghost daisy-badge-lg border border-base-300/5">
+        1 hy{hyperdrive.baseToken.symbol} ≈{" "}
         {formatBalance({
           balance: longPrice.price,
           decimals: hyperdrive.baseToken.decimals,
-          places: 3,
+          places: 6,
         })}{" "}
         {hyperdrive.baseToken.symbol}
       </div>

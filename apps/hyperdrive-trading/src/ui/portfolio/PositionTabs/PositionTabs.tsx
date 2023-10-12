@@ -17,7 +17,7 @@ export function PositionTabs({
         className={classNames(
           "daisy-tab-lifted daisy-tab daisy-tab-sm border-b-base-100 md:daisy-tab-lg",
           {
-            "daisy-tab-active glass": activePositionTab === "Longs",
+            "daisy-tab-active": activePositionTab === "Longs",
           },
         )}
       >
@@ -28,7 +28,7 @@ export function PositionTabs({
         className={classNames(
           "daisy-tab-lifted daisy-tab daisy-tab-sm border-b-base-100 md:daisy-tab-lg",
           {
-            "daisy-tab-active glass": activePositionTab === "Shorts",
+            "daisy-tab-active": activePositionTab === "Shorts",
           },
         )}
       >
@@ -39,7 +39,7 @@ export function PositionTabs({
         className={classNames(
           "daisy-tab-lifted daisy-tab daisy-tab-sm border-b-base-100 md:daisy-tab-lg",
           {
-            "daisy-tab-active glass": activePositionTab === "LP",
+            "daisy-tab-active": activePositionTab === "LP",
           },
         )}
       >

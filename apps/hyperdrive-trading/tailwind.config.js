@@ -60,21 +60,14 @@ module.exports = {
       {
         night: {
           // eslint-disable-next-line @typescript-eslint/no-var-requires
-          ...require("daisyui/src/theming/themes")["[data-theme=night]"],
-          primary: "#F4B1FF",
-          secondary: "#8ABBFF",
-          accent: "#D4F17E",
-
-          success: "#61E4A3",
-          warning: "#FF9031",
-          error: "#E66E65",
-
-          "base-100": "#151427",
-          "base-content": "#D6D5F6",
-
-          neutral: "#202d40",
-          "neutral-content": "#9aa1cb",
-
+          ...require("daisyui/src/theming/themes")["[data-theme=lofi]"],
+          primary: "#007eed",
+          secondary: "#522dae",
+          accent: "#f40000",
+          "--tab-radius": "0.4rem",
+          "--rounded-box": "0.4rem", // border radius rounded-box utility class, used in card and other large boxes
+          "--rounded-btn": "0.4rem",
+          "--rounded-badge": "0.4rem",
           "--btn-text-case": "none", // set default text transform for buttons
         },
       },

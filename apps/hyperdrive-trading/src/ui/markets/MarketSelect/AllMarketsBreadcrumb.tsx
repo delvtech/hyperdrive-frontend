@@ -26,7 +26,7 @@ export function AllMarketsBreadcrumb(): ReactElement {
 
 function MarketsModalContent() {
   return (
-    <div className="flex max-h-[70vh] flex-col items-center overflow-auto rounded bg-base-300 p-1 md:p-4">
+    <div className="flex max-h-[70vh] flex-col items-center overflow-auto rounded p-1 md:p-4">
       <h3 className="mb-4 font-lato">Markets</h3>
 
       <MarketsTable />
