@@ -10,7 +10,7 @@ export function Disclosure({
   description,
 }: DisclosureProps): ReactElement {
   return (
-    <div className="group daisy-collapse-plus daisy-collapse border ">
+    <div className="group daisy-collapse-plus daisy-collapse border">
       <input type="checkbox" />
       <div className="text-xl daisy-collapse-title font-medium opacity-70 group-hover:opacity-100">
         {title}

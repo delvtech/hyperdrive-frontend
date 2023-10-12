@@ -28,7 +28,7 @@ export function Stat({
       >
         {label}
       </p>
-      <div className="whitespace-nowrap text-h6">{value}</div>
+      <div className="whitespace-nowrap text-h6 font-bold">{value}</div>
     </div>
   );
 }
