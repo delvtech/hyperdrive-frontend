@@ -11,8 +11,6 @@ import * as dnum from "dnum";
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { parseUnits } from "src/base/parseUnits";
-import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
 import {
   getProfitLossText,
   getStyleClassForProfitLoss,
@@ -96,25 +94,6 @@ function CurrentValueCell({
           : ""}
       </span>
     </div>
-  );
-}
-function CurrentPriceCell({
-  row,
-  hyperdrive,
-}: {
-  row: Row<OpenShort>;
-  hyperdrive: Hyperdrive;
-}) {
-  const { longPrice } = useCurrentLongPrice(hyperdrive);
-  return (
-    <span>
-      {longPrice &&
-        `${formatBalance({
-          balance: longPrice?.price,
-          decimals: hyperdrive.baseToken.decimals,
-          places: 3,
-        })} ${hyperdrive.baseToken.symbol}`}
-    </span>
   );
 }
 
