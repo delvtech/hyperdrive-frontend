@@ -111,13 +111,13 @@ export function TransactionTable({
           {tableInstance.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
-                <th className="text-lg font-thin" key={header.id}>
+                <th className="font-thin " key={header.id}>
                   {header.isPlaceholder ? null : (
                     <>
                       <div
                         {...{
                           className: header.column.getCanSort()
-                            ? "cursor-pointer select-none"
+                            ? "cursor-pointer select-none flex gap-2 items-center"
                             : "",
                           onClick: header.column.getToggleSortingHandler(),
                         }}
@@ -127,8 +127,8 @@ export function TransactionTable({
                           header.getContext(),
                         )}
                         {{
-                          asc: <ChevronUpIcon height={20} />,
-                          desc: <ChevronDownIcon height={20} />,
+                          asc: <ChevronUpIcon height={10} />,
+                          desc: <ChevronDownIcon height={10} />,
                         }[header.column.getIsSorted() as string] ?? null}
                       </div>
                       {header.column.getCanFilter() ? (
