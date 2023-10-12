@@ -1,3 +1,4 @@
+import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
   createColumnHelper,
   flexRender,
@@ -70,7 +71,7 @@ export function TransactionTable({
                     <div
                       {...{
                         className: header.column.getCanSort()
-                          ? "cursor-pointer select-none"
+                          ? "cursor-pointer select-none flex items-center gap-1"
                           : "",
                         onClick: header.column.getToggleSortingHandler(),
                       }}
@@ -80,8 +81,8 @@ export function TransactionTable({
                         header.getContext(),
                       )}
                       {{
-                        asc: " 🔼",
-                        desc: " 🔽",
+                        asc: <ChevronUpIcon height={20} />,
+                        desc: <ChevronDownIcon height={20} />,
                       }[header.column.getIsSorted() as string] ?? null}
                     </div>
                   )}
