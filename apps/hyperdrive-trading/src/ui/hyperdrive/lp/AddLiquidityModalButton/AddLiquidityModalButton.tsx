@@ -1,5 +1,6 @@
 import { ChevronRightIcon, SquaresPlusIcon } from "@heroicons/react/24/outline";
 import { ReactElement } from "react";
+import { useSearchParams } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
 import { ChecklistItem } from "src/ui/base/components/ChecklistItem/ChecklistItem";
 import { Modal } from "src/ui/base/components/Modal/Modal";
@@ -13,13 +14,25 @@ export function AddLiquidityModalButton({
 }: {
   hyperdrive: Hyperdrive;
 }): ReactElement {
+  const [searchParams, setSearchParams] = useSearchParams();
   return (
     <Modal
       modalId={ADD_LIQUIDITY_MODAL_ID}
       modalContent={<AddLiquidityForm market={hyperdrive} />}
     >
       {({ showModal }) => (
-        <Well interactive variant="primary" onClick={() => showModal()}>
+        <Well
+          interactive
+          variant="primary"
+          onClick={() => {
+            setSearchParams({
+              ...searchParams,
+              position: "LP",
+              openOrClosed: "Open",
+            });
+            return showModal();
+          }}
+        >
           <div className="flex w-[272px] flex-col justify-between gap-2 p-4">
             <SquaresPlusIcon className="mb-2 h-16" />
             <p className="text-h5">Add Liquidity</p>
