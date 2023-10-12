@@ -1,15 +1,15 @@
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
   Column,
-  FilterFn,
-  Table,
+  ColumnFiltersState,
   createColumnHelper,
   flexRender,
   getCoreRowModel,
+  getFilteredRowModel,
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { formatAddress } from "src/ui/base/formatting/formatAddress";
 import { Address } from "viem";
@@ -22,76 +22,84 @@ export type Transaction = {
   blockNumber: bigint | undefined;
 };
 
-const fuzzyFilter: FilterFn<any> = (value) => {
-  console.log(value, "fuzzy filter");
-  return true;
+const CustomFilter = ({ column }: { column: Column<any, unknown> }) => {
+  return (
+    <div className="flex gap-2">
+      <button onClick={() => column.setFilterValue("All")}>All</button>
+      <button onClick={() => column.setFilterValue("Long")}>Longs</button>
+      <button onClick={() => column.setFilterValue("Short")}>Shorts</button>
+    </div>
+  );
 };
 
-function Filter({
-  column,
-  table,
-}: {
-  column: Column<any, unknown>;
-  table: Table<any>;
-}) {}
-
-const columnHelper = createColumnHelper<Transaction>();
-const columns = (hyperdrive: Hyperdrive) => [
-  columnHelper.accessor("type", {
-    enableSorting: false,
-    enableColumnFilter: true,
-    header: ({ table, column }) => {
-      return (
-        <div className="flex gap-2">
-          <button>All</button>
-          <button onClick={() => table.setGlobalFilter("Long")}>Longs</button>
-          <button>Shorts</button>
-        </div>
-      );
-    },
-    cell: (type) => type.getValue(),
-  }),
-  columnHelper.accessor("value", {
-    header: `Size (hy${hyperdrive.baseToken.symbol})`,
-    cell: (value) => value.getValue(),
-    sortingFn: (a, b) => {
-      const aValue = Number(a?.getValue("value"));
-      const bValue = Number(b?.getValue("value"));
-      return aValue - bValue;
-    },
-  }),
-  columnHelper.accessor("account", {
-    header: "Account",
-    cell: (account) => formatAddress(account.getValue()),
-  }),
-  columnHelper.accessor("blockNumber", {
-    header: "Block number",
-    cell: (blockNumber) => blockNumber.getValue()?.toString(),
-  }),
-];
 export function TransactionTable({
   hyperdrive,
-  data,
+  data: transactionData,
 }: {
   hyperdrive: Hyperdrive;
   data: Transaction[];
 }): JSX.Element {
-  const [globalFilter, setGlobalFilter] = useState<
-    ("LONG" | "SHORT" | "ALL" | string)[]
-  >(["ALL"]);
-  const tableInstance = useReactTable({
-    columns: columns(hyperdrive),
-    data,
+  const columnHelper = createColumnHelper<Transaction>();
 
-    getColumnCanGlobalFilter(column) {
-      return column.id === "type";
-    },
+  const columns = useMemo(
+    () => [
+      columnHelper.accessor("type", {
+        enableSorting: false,
+        enableColumnFilter: true,
+        header: () => null,
+        filterFn: (row, id, filterValue) => {
+          if (filterValue === "All") {
+            return true;
+          }
+          if (filterValue === "Long") {
+            return !!(
+              row.getValue("type") === "Buy" || row.getValue("type") === "Sell"
+            );
+          }
+          if (filterValue === "Short") {
+            return !!(
+              row.getValue("type") === "Open Short" ||
+              row.getValue("type") === "Close Short"
+            );
+          } else {
+            return true;
+          }
+        },
+      }),
+      columnHelper.accessor("value", {
+        header: `Size (hy${hyperdrive.baseToken.symbol})`,
+        cell: (value) => value.getValue(),
+        enableColumnFilter: false,
+        sortingFn: (a, b) => {
+          const aValue = Number(a?.getValue("value"));
+          const bValue = Number(b?.getValue("value"));
+          return aValue - bValue;
+        },
+      }),
+      columnHelper.accessor("account", {
+        header: "Account",
+        cell: (account) => formatAddress(account.getValue()),
+      }),
+      columnHelper.accessor("blockNumber", {
+        header: "Block number",
+        cell: (blockNumber) => blockNumber.getValue()?.toString(),
+      }),
+    ],
+    [],
+  );
+  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
+  const tableInstance = useReactTable({
+    columns: columns,
+    data: transactionData || [],
+
     state: {
-      globalFilter,
+      columnFilters,
     },
-    globalFilterFn: fuzzyFilter,
-    onGlobalFilterChange: setGlobalFilter,
+
+    onColumnFiltersChange: setColumnFilters,
     enableColumnFilters: true,
+    enableFilters: true,
+    getFilteredRowModel: getFilteredRowModel(),
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
   });
@@ -103,28 +111,32 @@ export function TransactionTable({
           {tableInstance.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
-                <th
-                  className="text-lg font-thin text-neutral-content"
-                  key={header.id}
-                >
+                <th className="text-lg font-thin" key={header.id}>
                   {header.isPlaceholder ? null : (
-                    <div
-                      {...{
-                        className: header.column.getCanSort()
-                          ? "cursor-pointer select-none flex items-center gap-1"
-                          : "",
-                        onClick: header.column.getToggleSortingHandler(),
-                      }}
-                    >
-                      {flexRender(
-                        header.column.columnDef.header,
-                        header.getContext(),
-                      )}
-                      {{
-                        asc: <ChevronUpIcon height={20} />,
-                        desc: <ChevronDownIcon height={20} />,
-                      }[header.column.getIsSorted() as string] ?? null}
-                    </div>
+                    <>
+                      <div
+                        {...{
+                          className: header.column.getCanSort()
+                            ? "cursor-pointer select-none"
+                            : "",
+                          onClick: header.column.getToggleSortingHandler(),
+                        }}
+                      >
+                        {flexRender(
+                          header.column.columnDef.header,
+                          header.getContext(),
+                        )}
+                        {{
+                          asc: <ChevronUpIcon height={20} />,
+                          desc: <ChevronDownIcon height={20} />,
+                        }[header.column.getIsSorted() as string] ?? null}
+                      </div>
+                      {header.column.getCanFilter() ? (
+                        <div>
+                          <CustomFilter column={header.column} />
+                        </div>
+                      ) : null}
+                    </>
                   )}
                 </th>
               ))}
