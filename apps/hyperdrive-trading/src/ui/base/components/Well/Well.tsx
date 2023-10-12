@@ -19,10 +19,10 @@ export function Well({
 }: PropsWithChildren<WellProps>): ReactElement {
   const isInteractive = !disabled && (interactive || onClick);
   const className = classNames(
-    "daisy-card p-4 daisy-card-bordered shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] bg-base-200/50",
+    "daisy-card p-4 daisy-card-bordered shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] bg-base-200",
     {
       "w-full": block,
-      "hover:cursor-pointer hover:-translate-y-1 hover:shadow-lg transition duration-300 ease-in-out":
+      "hover:cursor-pointer hover:-translate-y-1 transition duration-300 hover:shadow-xl ease-in-out":
         isInteractive,
     },
   );
