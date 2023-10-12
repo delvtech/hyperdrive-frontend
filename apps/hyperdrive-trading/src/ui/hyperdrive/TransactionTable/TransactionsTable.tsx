@@ -78,10 +78,12 @@ export function TransactionTable({
       }),
       columnHelper.accessor("account", {
         header: "Account",
+        enableColumnFilter: false,
         cell: (account) => formatAddress(account.getValue()),
       }),
       columnHelper.accessor("blockNumber", {
         header: "Block number",
+        enableColumnFilter: false,
         cell: (blockNumber) => blockNumber.getValue()?.toString(),
       }),
     ],
@@ -111,7 +113,7 @@ export function TransactionTable({
           {tableInstance.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
-                <th className="font-thin " key={header.id}>
+                <th className="text-lg font-thin" key={header.id}>
                   {header.isPlaceholder ? null : (
                     <>
                       <div
@@ -127,8 +129,8 @@ export function TransactionTable({
                           header.getContext(),
                         )}
                         {{
-                          asc: <ChevronUpIcon height={10} />,
-                          desc: <ChevronDownIcon height={10} />,
+                          asc: <ChevronUpIcon height={15} />,
+                          desc: <ChevronDownIcon height={15} />,
                         }[header.column.getIsSorted() as string] ?? null}
                       </div>
                       {header.column.getCanFilter() ? (
