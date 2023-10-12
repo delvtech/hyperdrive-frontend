@@ -24,7 +24,7 @@ export function PositionsSection({
   const [searchParams, setSearchParams] = useSearchParams();
 
   const activePositionTab =
-    (searchParams.get("position") as PositionTab) || "Longs";
+    (searchParams.get("position") as PositionTab) || "Buys";
   const activeOpenOrClosedTab =
     (searchParams.get("openOrClosed") as OpenOrClosedTab) || "Open";
 
@@ -85,7 +85,7 @@ export function PositionsSection({
         <div className="w-full">
           {(() => {
             switch (activePositionTab) {
-              case "Longs": {
+              case "Buys": {
                 if (activeOpenOrClosedTab === "Open") {
                   return <OpenLongsTable hyperdrive={hyperdrive} />;
                 }

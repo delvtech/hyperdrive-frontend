@@ -28,7 +28,7 @@ export function OpenLongModalButton({
           onClick={() => {
             setSearchParams({
               ...searchParams,
-              position: "Longs",
+              position: "Buys",
               openOrClosed: "Open",
             });
             showModal();

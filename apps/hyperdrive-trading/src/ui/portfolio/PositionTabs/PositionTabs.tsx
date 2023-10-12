@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { ReactElement } from "react";
 
-export type PositionTab = "Longs" | "Shorts" | "LP";
+export type PositionTab = "Buys" | "Shorts" | "LP";
 
 export function PositionTabs({
   onTabClick,
@@ -13,15 +13,15 @@ export function PositionTabs({
   return (
     <div className="daisy-tabs">
       <button
-        onClick={() => onTabClick("Longs")}
+        onClick={() => onTabClick("Buys")}
         className={classNames(
           "daisy-tab-lifted daisy-tab daisy-tab-sm border-b-base-100 md:daisy-tab-lg",
           {
-            "daisy-tab-active": activePositionTab === "Longs",
+            "daisy-tab-active": activePositionTab === "Buys",
           },
         )}
       >
-        Longs
+        Buys
       </button>
       <button
         onClick={() => onTabClick("Shorts")}
