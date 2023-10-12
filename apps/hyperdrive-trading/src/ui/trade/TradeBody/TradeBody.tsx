@@ -83,23 +83,23 @@ function MarketHeader({
 }) {
   return (
     <div className="my-2 flex items-center gap-2 md:my-0">
-      <div className="daisy-avatar-group shrink-0 -space-x-3 p-2 font-semibold ">
-        <div className="daisy-placeholder daisy-avatar ring ring-primary ring-offset-0">
-          <div className="w-14 bg-base-100">
+      <div className="daisy-avatar-group shrink-0 -space-x-4 p-2 font-semibold ">
+        <div className="daisy-placeholder daisy-avatar">
+          <div className="w-16 bg-base-200">
             <span className="text-body font-bold">
               {hyperdrive.baseToken.symbol}
             </span>
           </div>
         </div>
-        <div className="daisy-placeholder daisy-avatar ring ring-secondary ring-offset-0">
-          <div className="w-14 bg-base-100">
+        <div className="daisy-placeholder daisy-avatar">
+          <div className="w-16 bg-base-200">
             <span className="text-body font-bold">
               hy{hyperdrive.baseToken.symbol}
             </span>
           </div>
         </div>
       </div>
-      <div className="flex w-full flex-col items-start">
+      <div className="flex w-full flex-col items-start gap-1">
         <h3 className="items-center font-semibold md:my-0">
           {hyperdrive.baseToken.symbol} / hy{hyperdrive.baseToken.symbol}
         </h3>
@@ -120,7 +120,7 @@ function PriceBadges({
 }) {
   return (
     <div className="flex gap-4">
-      <div className="daisy-badge daisy-badge-lg border-2">
+      <div className="daisy-badge daisy-badge-ghost daisy-badge-lg border border-base-300/5">
         1 {hyperdrive.baseToken.symbol} ≈{" "}
         {formatBalance({
           balance: divideBigInt(
@@ -134,7 +134,7 @@ function PriceBadges({
         })}{" "}
         hy{hyperdrive.baseToken.symbol}
       </div>
-      <div className="daisy-badge daisy-badge-lg border-2">
+      <div className="daisy-badge daisy-badge-ghost daisy-badge-lg border border-base-300/5">
         1 hy{hyperdrive.baseToken.symbol} ≈{" "}
         {formatBalance({
           balance: longPrice.price,
