@@ -23,30 +23,27 @@ export function OpenLongModalButton({
       {({ showModal }) => (
         <Well interactive variant="secondary" onClick={() => showModal()}>
           <div className="flex w-[272px] flex-col gap-2 p-4">
-            <ClockIcon className="mb-2 h-16 text-secondary" />
+            <ClockIcon className="mb-2 h-16" />
             <p className="text-h5 ">Open a long</p>
             <p className="font-bold">
-              Earn{" "}
-              <span className="text-secondary">
-                {fixedAPR?.formatted || "-"}% APR
-              </span>{" "}
-              on {hyperdrive.baseToken.symbol}
+              Earn <span>{fixedAPR?.formatted || "-"}% APR</span> on{" "}
+              {hyperdrive.baseToken.symbol}
             </p>
             <div className="mt-4 ml-4 flex flex-col gap-2">
-              <ChecklistItem checked readOnly variant="secondary">
+              <ChecklistItem checked readOnly>
                 Guaranteed fixed rate yield
               </ChecklistItem>
-              <ChecklistItem checked readOnly variant="secondary">
+              <ChecklistItem checked readOnly>
                 Minimal risk and maintenance
               </ChecklistItem>
-              <ChecklistItem checked readOnly variant="secondary">
+              <ChecklistItem checked readOnly>
                 Redeemable before term ends
               </ChecklistItem>
             </div>
             {/* Using a div styled as a button here just as a visual cue. Don't
             use a real button here since the Well is interactive already, and
             doing so would create invalid dom nesting of buttons. */}
-            <div className="daisy-btn-secondary daisy-btn-sm daisy-btn mt-4 justify-between gap-0 border-secondary">
+            <div className="daisy-btn-neutral daisy-btn-sm daisy-btn mt-4 justify-between gap-0 hover:daisy-btn-ghost">
               <span className="ml-4 flex-1 text-center">Open long</span>
               <ChevronRightIcon className="h-3 text-right" />
             </div>
