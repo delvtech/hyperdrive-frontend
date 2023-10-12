@@ -6,6 +6,7 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
+import { useState } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { formatAddress } from "src/ui/base/formatting/formatAddress";
 import { Address } from "viem";
@@ -21,7 +22,15 @@ export type Transaction = {
 const columnHelper = createColumnHelper<Transaction>();
 const columns = (hyperdrive: Hyperdrive) => [
   columnHelper.accessor("type", {
-    header: "Type",
+    header: ({ table }) => {
+      return (
+        <div className="flex gap-2">
+          <button>All</button>
+          <button>Longs</button>
+          <button>Shorts</button>
+        </div>
+      );
+    },
     cell: (type) => type.getValue(),
   }),
   columnHelper.accessor("value", {
@@ -49,9 +58,22 @@ export function TransactionTable({
   hyperdrive: Hyperdrive;
   data: Transaction[];
 }): JSX.Element {
+  const [globalFilter, setGlobalFilter] = useState<
+    ("LONG" | "SHORT" | "ALL" | string)[]
+  >(["ALL"]);
   const tableInstance = useReactTable({
     columns: columns(hyperdrive),
     data,
+
+    initialState: {
+      globalFilter: {
+        value: "Sell",
+        columnId: "type",
+      },
+    },
+    getColumnCanGlobalFilter(column) {
+      return column.id === "type";
+    },
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
   });
