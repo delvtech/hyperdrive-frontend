@@ -68,7 +68,7 @@ function CurrentValueCell({
     minBaseAmountOut: parseUnits("0", hyperdrive.baseToken.decimals),
     destination: account,
   });
-  const value =
+  const currentValue =
     baseAmountOut &&
     dnum.format(
       [row.original.bondAmount - baseAmountOut, hyperdrive.baseToken.decimals],
@@ -83,7 +83,7 @@ function CurrentValueCell({
 
   return (
     <div>
-      <span>{value?.toString()}</span>
+      <span>{currentValue?.toString()}</span>
       <span className={`ml-2 ${profitLossClass}`}>
         {baseAmountOut && row.original.bondAmount !== 0n
           ? `(${getProfitLossText({
