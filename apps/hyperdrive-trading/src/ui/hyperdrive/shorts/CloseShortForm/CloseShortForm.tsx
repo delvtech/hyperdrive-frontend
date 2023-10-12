@@ -12,7 +12,7 @@ import { useAccount } from "wagmi";
 
 interface CloseShortFormProps {
   hyperdrive: Hyperdrive;
-  short: OpenShort | undefined;
+  short: OpenShort;
   onCloseShort?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 
@@ -29,8 +29,8 @@ export function CloseShortForm({
   });
 
   const { baseAmountOut, previewCloseShortStatus } = usePreviewCloseShort({
-    hyperdriveAddress: short?.hyperdriveAddress,
-    maturityTime: short?.maturity,
+    hyperdriveAddress: short.hyperdriveAddress,
+    maturityTime: short.maturity,
     shortAmountIn: amountAsBigInt,
     minBaseAmountOut: 0n,
     destination: account,

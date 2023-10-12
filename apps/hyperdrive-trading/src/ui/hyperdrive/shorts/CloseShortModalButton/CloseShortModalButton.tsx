@@ -18,8 +18,7 @@ export function CloseShortModalButton({
   function closeModal() {
     (window as any)[modalId].close();
   }
-  const maturity = new Date(Number(short.maturity * 1000n));
-  const hasMatured = maturity < new Date();
+
   return (
     <Modal
       modalId={modalId}
@@ -48,8 +47,6 @@ export function CloseShortModalButton({
           />
         </div>
       }
-    >
-      {({ showModal }) => null}
-    </Modal>
+    />
   );
 }

@@ -51,12 +51,6 @@ const columns = (hyperdrive: Hyperdrive) => [
       });
     },
   }),
-  columnHelper.accessor("assetId", {
-    header: "Current Price",
-    cell: ({ row }) => {
-      return <CurrentPriceCell row={row} hyperdrive={hyperdrive} />;
-    },
-  }),
 ];
 
 function CurrentValueCell({
@@ -71,14 +65,17 @@ function CurrentValueCell({
     hyperdriveAddress: row.original.hyperdriveAddress,
     maturityTime: row.original.maturity,
     shortAmountIn: row.original.bondAmount,
-    minBaseAmountOut: parseUnits("0", 18),
+    minBaseAmountOut: parseUnits("0", hyperdrive.baseToken.decimals),
     destination: account,
   });
   const value =
     baseAmountOut &&
-    dnum.format([row.original.bondAmount - baseAmountOut, 18], {
-      digits: 2,
-    });
+    dnum.format(
+      [row.original.bondAmount - baseAmountOut, hyperdrive.baseToken.decimals],
+      {
+        digits: 2,
+      },
+    );
 
   const profitLossClass = baseAmountOut
     ? getStyleClassForProfitLoss(baseAmountOut, row.original.baseAmountPaid)

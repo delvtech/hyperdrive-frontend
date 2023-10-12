@@ -4,7 +4,7 @@ import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHype
 import { Address } from "wagmi";
 
 interface UsePreviewCloseShortOptions {
-  hyperdriveAddress: Address | undefined;
+  hyperdriveAddress: Address;
   maturityTime: bigint | undefined;
   shortAmountIn: bigint | undefined;
   minBaseAmountOut: bigint | undefined;
