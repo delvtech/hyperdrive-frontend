@@ -13,7 +13,10 @@ import { Hyperdrive } from "src/appconfig/types";
 import { parseUnits } from "src/base/parseUnits";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
-import { getProfitLossText } from "src/ui/hyperdrive/shorts/CloseShortForm/getProfitLossText";
+import {
+  getProfitLossText,
+  getStyleClassForProfitLoss,
+} from "src/ui/hyperdrive/shorts/CloseShortForm/getProfitLossText";
 import { CloseShortModalButton } from "src/ui/hyperdrive/shorts/CloseShortModalButton/CloseShortModalButton";
 import { usePreviewCloseShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewCloseShort";
 import { useAccount } from "wagmi";
@@ -48,7 +51,7 @@ const columns = (hyperdrive: Hyperdrive) => [
       });
     },
   }),
-  columnHelper.accessor("openedTimestamp", {
+  columnHelper.accessor("assetId", {
     header: "Current Price",
     cell: ({ row }) => {
       return <CurrentPriceCell row={row} hyperdrive={hyperdrive} />;
@@ -77,10 +80,14 @@ function CurrentValueCell({
       digits: 2,
     });
 
+  const profitLossClass = baseAmountOut
+    ? getStyleClassForProfitLoss(baseAmountOut, row.original.baseAmountPaid)
+    : "";
+
   return (
     <div>
       <span>{value?.toString()}</span>
-      <span className="ml-2">
+      <span className={`ml-2 ${profitLossClass}`}>
         {baseAmountOut && row.original.bondAmount !== 0n
           ? `(${getProfitLossText({
               baseAmountOut,
