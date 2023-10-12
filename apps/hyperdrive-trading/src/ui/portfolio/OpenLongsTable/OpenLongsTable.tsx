@@ -25,7 +25,7 @@ export function OpenLongsTable({
   return (
     <SortableGridTable
       headingRowClassName="grid-cols-5 text-start"
-      bodyRowClassName="grid-cols-4 text-base-content items-center text-sm md:text-h6 even:bg-secondary/5 h-16"
+      bodyRowClassName="grid-cols-4 items-center text-sm md:text-h6 even:bg-base-300/5 h-16"
       // Blank col added for actions
       cols={[
         {

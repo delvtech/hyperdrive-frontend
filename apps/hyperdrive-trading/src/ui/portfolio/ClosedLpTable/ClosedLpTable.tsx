@@ -100,7 +100,7 @@ export function ClosedLpTable({
   return (
     <SortableGridTable
       headingRowClassName="grid-cols-5 text-start"
-      bodyRowClassName="grid-cols-5 text-base-content items-center text-sm md:text-h6 even:bg-secondary/5 h-16"
+      bodyRowClassName="grid-cols-5 items-center text-sm md:text-h6 even:bg-base-300/5 h-16"
       cols={[
         {
           cell: (
