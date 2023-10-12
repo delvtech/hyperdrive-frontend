@@ -3,7 +3,7 @@ import { ReactElement, ReactNode, useRef } from "react";
 interface ModalProps {
   modalId: string;
   modalContent: ReactNode;
-  children: (options: ModalChildrenOptions) => ReactNode;
+  children?: (options: ModalChildrenOptions) => ReactNode;
   className?: string;
 }
 
@@ -22,7 +22,7 @@ export function Modal({
 
   return (
     <>
-      {children({ showModal })}
+      {children?.({ showModal })}
 
       <dialog id={modalId} className={`daisy-modal`} ref={modalRef}>
         <form method="dialog" className={`daisy-modal-box ${className}`}>
