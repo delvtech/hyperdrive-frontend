@@ -23,7 +23,6 @@ export function AddLiquidityModalButton({
       {({ showModal }) => (
         <Well
           interactive
-          variant="primary"
           onClick={() => {
             setSearchParams({
               ...searchParams,

@@ -25,7 +25,6 @@ export function OpenLongModalButton({
       {({ showModal }) => (
         <Well
           interactive
-          variant="secondary"
           onClick={() => {
             setSearchParams({
               ...searchParams,
