@@ -60,20 +60,19 @@ export function PositionsSection({
           activePositionTab={activePositionTab}
         />
 
-        <div className="daisy-tabs-boxed mb-1">
+        <div className="daisy-tabs mb-1">
           <button
             onClick={() => handleChangeOpenOrClosedTab("Open")}
-            className={classNames("daisy-tab text-sm", {
-              "daisy-tab-active !bg-base-300 !text-white":
-                activeOpenOrClosedTab === "Open",
+            className={classNames("daisy-tab", {
+              "daisy-tab-active font-medium": activeOpenOrClosedTab === "Open",
             })}
           >
             Open
           </button>
           <button
             onClick={() => handleChangeOpenOrClosedTab("Closed")}
-            className={classNames("daisy-tab text-sm", {
-              "daisy-tab-active !bg-base-300 !text-white":
+            className={classNames("daisy-tab", {
+              "daisy-tab-active font-medium":
                 activeOpenOrClosedTab === "Closed",
             })}
           >

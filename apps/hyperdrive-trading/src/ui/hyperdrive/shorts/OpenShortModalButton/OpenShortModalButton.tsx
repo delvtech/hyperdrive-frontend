@@ -27,7 +27,6 @@ export function OpenShortModalButton({
       {({ showModal }) => (
         <Well
           interactive
-          variant="accent"
           onClick={() => {
             setSearchParams({
               ...searchParams,

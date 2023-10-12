@@ -46,14 +46,7 @@ export function TokenInput({
       </label>
       <label className="daisy-input-group">
         <span>
-          {(() => {
-            if (token.iconUrl) {
-              return <img className="h-6" src={token.iconUrl} />;
-            }
-            if (token.symbol) {
-              return <span className="daisy-label-text">{token.symbol}</span>;
-            }
-          })()}
+          <span className="daisy-label-text">{token.symbol}</span>
         </span>
         <input
           type="number"
