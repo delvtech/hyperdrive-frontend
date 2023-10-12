@@ -28,10 +28,7 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
         <div className="flex flex-wrap items-start justify-center md:justify-between">
           <div className="flex flex-col">
             <MarketBreadcrumbs hyperdrive={hyperdrive} />
-            <MarketHeader hyperdrive={hyperdrive} />
-            {longPrice ? (
-              <PriceBadges hyperdrive={hyperdrive} longPrice={longPrice} />
-            ) : null}
+            <MarketHeader hyperdrive={hyperdrive} longPrice={longPrice} />
           </div>
           <YourBalanceWell token={hyperdrive.baseToken} />
         </div>
@@ -79,10 +76,16 @@ function MarketBreadcrumbs({ hyperdrive }: { hyperdrive: Hyperdrive }) {
   );
 }
 
-function MarketHeader({ hyperdrive }: { hyperdrive: Hyperdrive }) {
+function MarketHeader({
+  hyperdrive,
+  longPrice,
+}: {
+  hyperdrive: Hyperdrive;
+  longPrice: { price: bigint; formatted: string } | undefined;
+}) {
   return (
-    <h3 className="my-2 inline-flex items-center gap-2 font-semibold md:my-0">
-      <div className="daisy-avatar-group -space-x-3 p-2">
+    <div className="my-2 flex items-center gap-2 md:my-0">
+      <div className="daisy-avatar-group shrink-0 -space-x-3 p-2 font-semibold ">
         <div className="daisy-placeholder daisy-avatar ring ring-primary ring-offset-0">
           <div className="w-14 bg-base-100">
             <span className="text-body font-bold">
@@ -98,8 +101,15 @@ function MarketHeader({ hyperdrive }: { hyperdrive: Hyperdrive }) {
           </div>
         </div>
       </div>
-      {hyperdrive.baseToken.symbol} / hy{hyperdrive.baseToken.symbol}
-    </h3>
+      <div className="flex w-full flex-col items-start">
+        <h3 className="items-center font-semibold md:my-0">
+          {hyperdrive.baseToken.symbol} / hy{hyperdrive.baseToken.symbol}
+        </h3>
+        {longPrice ? (
+          <PriceBadges hyperdrive={hyperdrive} longPrice={longPrice} />
+        ) : null}
+      </div>
+    </div>
   );
 }
 
@@ -111,7 +121,7 @@ function PriceBadges({
   longPrice: { price: bigint; formatted: string };
 }) {
   return (
-    <div className="mt-4 flex gap-4">
+    <div className="flex gap-4">
       <div className="daisy-badge daisy-badge-ghost daisy-badge-lg">
         1 {hyperdrive.baseToken.symbol} ≈{" "}
         {formatBalance({
@@ -122,7 +132,7 @@ function PriceBadges({
           ),
 
           decimals: hyperdrive.baseToken.decimals,
-          places: 3,
+          places: 6,
         })}{" "}
         hy{hyperdrive.baseToken.symbol}
       </div>
@@ -131,7 +141,7 @@ function PriceBadges({
         {formatBalance({
           balance: longPrice.price,
           decimals: hyperdrive.baseToken.decimals,
-          places: 3,
+          places: 6,
         })}{" "}
         {hyperdrive.baseToken.symbol}
       </div>
