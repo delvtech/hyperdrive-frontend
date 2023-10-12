@@ -22,7 +22,7 @@ export function Modal({
 
   return (
     <>
-      {children && children({ showModal })}
+      {children?.({ showModal })}
 
       <dialog id={modalId} className={`daisy-modal`} ref={modalRef}>
         <form method="dialog" className={`daisy-modal-box ${className}`}>

@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-key */
 import { OpenShort } from "@hyperdrive/sdk";
+import { useQuery } from "@tanstack/react-query";
 import {
   Row,
   createColumnHelper,
@@ -7,10 +8,12 @@ import {
   getCoreRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import * as dnum from "dnum";
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
+import { makeQueryKey } from "src/base/makeQueryKey";
 import { parseUnits } from "src/base/parseUnits";
+import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import {
   getProfitLossText,
   getStyleClassForProfitLoss,
@@ -18,10 +21,6 @@ import {
 import { CloseShortModalButton } from "src/ui/hyperdrive/shorts/CloseShortModalButton/CloseShortModalButton";
 import { usePreviewCloseShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewCloseShort";
 import { useAccount } from "wagmi";
-interface OpenOrdersTableProps {
-  hyperdrive: Hyperdrive;
-  shorts: OpenShort[];
-}
 
 const columnHelper = createColumnHelper<OpenShort>();
 const columns = (hyperdrive: Hyperdrive) => [
@@ -29,13 +28,14 @@ const columns = (hyperdrive: Hyperdrive) => [
     header: `Size (hy${hyperdrive.baseToken.symbol})`,
     cell: (bondAmount) => {
       const bondAmountValue = bondAmount.getValue();
-      return dnum.format([bondAmountValue, hyperdrive.baseToken.decimals], {
-        digits: 2,
+      return formatBalance({
+        balance: bondAmountValue,
+        decimals: hyperdrive.baseToken.decimals,
       });
     },
   }),
-  columnHelper.accessor("hyperdriveAddress", {
-    header: "Current Value",
+  columnHelper.display({
+    header: `Current Value`,
     cell: ({ row }) => {
       return <CurrentValueCell hyperdrive={hyperdrive} row={row} />;
     },
@@ -44,8 +44,9 @@ const columns = (hyperdrive: Hyperdrive) => [
     header: `Amount Paid`,
     cell: (baseAmountPaid) => {
       const amountPaid = baseAmountPaid.getValue();
-      return dnum.format([amountPaid, hyperdrive.baseToken.decimals], {
-        digits: 4,
+      return formatBalance({
+        balance: amountPaid,
+        decimals: hyperdrive.baseToken.decimals,
       });
     },
   }),
@@ -68,13 +69,10 @@ function CurrentValueCell({
   });
   const currentValue =
     baseAmountOut &&
-    dnum.format(
-      [row.original.bondAmount - baseAmountOut, hyperdrive.baseToken.decimals],
-      {
-        digits: 2,
-      },
-    );
-
+    formatBalance({
+      balance: row.original.bondAmount - baseAmountOut,
+      decimals: hyperdrive.baseToken.decimals,
+    });
   const profitLossClass = baseAmountOut
     ? getStyleClassForProfitLoss(baseAmountOut, row.original.baseAmountPaid)
     : "";
@@ -99,11 +97,22 @@ function CurrentValueCell({
 
 export function OpenShortsTable({
   hyperdrive,
-  shorts,
-}: OpenOrdersTableProps): ReactElement {
+}: {
+  hyperdrive: Hyperdrive;
+}): ReactElement {
+  const { address: account } = useAccount();
+  const readHyperdrive = useReadHyperdrive(hyperdrive.address);
+  const queryEnabled = !!readHyperdrive && !!account;
+  const { data: shorts } = useQuery({
+    queryKey: makeQueryKey("shortPositions", { account }),
+    queryFn: queryEnabled
+      ? () => readHyperdrive?.getOpenShorts({ account })
+      : undefined,
+    enabled: queryEnabled,
+  });
   const tableInstance = useReactTable({
     columns: columns(hyperdrive),
-    data: shorts,
+    data: shorts || [],
     getCoreRowModel: getCoreRowModel(),
   });
 
@@ -126,10 +135,7 @@ export function OpenShortsTable({
           {tableInstance.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
-                <th
-                  className="text-lg font-thin text-neutral-content"
-                  key={header.id}
-                >
+                <th className="text-lg font-thin" key={header.id}>
                   {header.isPlaceholder
                     ? null
                     : flexRender(
@@ -146,7 +152,7 @@ export function OpenShortsTable({
             return (
               <tr
                 key={row.id}
-                className="h-16 cursor-pointer grid-cols-4 items-center text-sm text-base-content even:bg-secondary/5 md:text-h6"
+                className="daisy-hover h-16 cursor-pointer grid-cols-4 items-center text-sm text-base-content even:bg-secondary/5 md:text-h6"
                 onClick={() => {
                   const modalId = `${row.original.assetId}`;
                   (window as any)[modalId].showModal();
