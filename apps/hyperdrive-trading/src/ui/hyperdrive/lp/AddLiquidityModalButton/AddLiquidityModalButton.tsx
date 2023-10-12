@@ -33,21 +33,25 @@ export function AddLiquidityModalButton({
             return showModal();
           }}
         >
-          <div className="flex w-[272px] flex-col justify-between gap-2 p-4">
+          <div className="flex h-full w-[300px] flex-col justify-between gap-2 p-3">
             <SquaresPlusIcon className="mb-2 h-16" />
             <p className="text-h5">Add Liquidity</p>
             <p className="font-bold">
               Earn trading fees <span>and</span> interest
             </p>
+            <p className="daisy-label-text">
+              Take the other side of every Buy and Short. Earn fees and the
+              yield source rate.
+            </p>
             <div className="mt-4 ml-4 flex flex-col gap-2 ">
               <ChecklistItem checked readOnly>
-                Deposit {hyperdrive.baseToken.symbol} to back trades
+                Single-sided deposit with {hyperdrive.baseToken.symbol}
               </ChecklistItem>
               <ChecklistItem checked readOnly>
-                Idle capital accrues vault APY
+                Idle capital earns yield source rate
               </ChecklistItem>
               <ChecklistItem checked readOnly>
-                No rollovers, easy-to-use
+                No terms or rollovers, easy-to-use
               </ChecklistItem>
             </div>
             {/* Using a div styled as a button here just as a visual cue. Don't

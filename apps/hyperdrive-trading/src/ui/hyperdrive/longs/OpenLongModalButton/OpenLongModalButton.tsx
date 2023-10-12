@@ -35,16 +35,21 @@ export function OpenLongModalButton({
             showModal();
           }}
         >
-          <div className="flex w-[272px] flex-col gap-2 p-4">
+          <div className="flex h-full w-[300px] flex-col justify-between gap-2 p-3">
             <ClockIcon className="mb-2 h-16" />
-            <p className="text-h5 ">Open a long</p>
+            <p className="text-h5 ">Buy hy{hyperdrive.baseToken.symbol}</p>
             <p className="font-bold">
               Earn <span>{fixedAPR?.formatted || "-"}% APR</span> on{" "}
               {hyperdrive.baseToken.symbol}
             </p>
+            <p className="daisy-label-text">
+              1 hy{hyperdrive.baseToken.symbol} is always worth one{" "}
+              {hyperdrive.baseToken.symbol} at maturity. It{"'"}s a predictable
+              fixed rate.
+            </p>
             <div className="mt-4 ml-4 flex flex-col gap-2">
               <ChecklistItem checked readOnly>
-                Guaranteed fixed rate yield
+                Fixed rate included in the price
               </ChecklistItem>
               <ChecklistItem checked readOnly>
                 Minimal risk and maintenance
@@ -57,7 +62,9 @@ export function OpenLongModalButton({
             use a real button here since the Well is interactive already, and
             doing so would create invalid dom nesting of buttons. */}
             <div className="daisy-btn-neutral daisy-btn-sm daisy-btn mt-4 justify-between gap-0 hover:daisy-btn-ghost">
-              <span className="ml-4 flex-1 text-center">Open long</span>
+              <span className="ml-4 flex flex-1 flex-col gap-1 text-center">
+                Buy
+              </span>
               <ChevronRightIcon className="h-3 text-right" />
             </div>
           </div>
