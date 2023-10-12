@@ -1,5 +1,6 @@
 import { ChevronRightIcon, ClockIcon } from "@heroicons/react/24/outline";
 import { ReactElement } from "react";
+import { useSearchParams } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
 import { ChecklistItem } from "src/ui/base/components/ChecklistItem/ChecklistItem";
 import { Modal } from "src/ui/base/components/Modal/Modal";
@@ -15,13 +16,25 @@ export function OpenLongModalButton({
   hyperdrive: Hyperdrive;
 }): ReactElement {
   const { fixedAPR } = useCurrentFixedAPR(hyperdrive);
+  const [searchParams, setSearchParams] = useSearchParams();
   return (
     <Modal
       modalId={OPEN_LONG_MODAL_ID}
       modalContent={<OpenLongForm market={hyperdrive} />}
     >
       {({ showModal }) => (
-        <Well interactive variant="secondary" onClick={() => showModal()}>
+        <Well
+          interactive
+          variant="secondary"
+          onClick={() => {
+            setSearchParams({
+              ...searchParams,
+              position: "Longs",
+              openOrClosed: "Open",
+            });
+            showModal();
+          }}
+        >
           <div className="flex w-[272px] flex-col gap-2 p-4">
             <ClockIcon className="mb-2 h-16" />
             <p className="text-h5 ">Open a long</p>

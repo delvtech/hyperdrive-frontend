@@ -1,5 +1,6 @@
 import { BoltIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import { ReactElement } from "react";
+import { useSearchParams } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
 import { ChecklistItem } from "src/ui/base/components/ChecklistItem/ChecklistItem";
 import { Modal } from "src/ui/base/components/Modal/Modal";
@@ -13,6 +14,7 @@ export function OpenShortModalButton({
 }: {
   hyperdrive: Hyperdrive;
 }): ReactElement {
+  const [searchParams, setSearchParams] = useSearchParams();
   const { vaultRate } = useVaultRate({
     // TODO: temporary for now until this available via addresses.json
     vaultAddress: "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
@@ -23,7 +25,18 @@ export function OpenShortModalButton({
       modalContent={<OpenShortForm market={hyperdrive} />}
     >
       {({ showModal }) => (
-        <Well interactive variant="accent" onClick={() => showModal()}>
+        <Well
+          interactive
+          variant="accent"
+          onClick={() => {
+            setSearchParams({
+              ...searchParams,
+              position: "Shorts",
+              openOrClosed: "Open",
+            });
+            return showModal();
+          }}
+        >
           <div className="flex w-[272px] flex-col justify-between gap-2 p-4">
             <BoltIcon className="mb-2 h-16" />
             <p className="text-h5">Open a short</p>
