@@ -1,6 +1,5 @@
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
-  Column,
   ColumnFiltersState,
   createColumnHelper,
   flexRender,
@@ -9,7 +8,7 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { formatAddress } from "src/ui/base/formatting/formatAddress";
 import { Address } from "viem";
@@ -22,16 +21,52 @@ export type Transaction = {
   blockNumber: bigint | undefined;
 };
 
-const CustomFilter = ({ column }: { column: Column<any, unknown> }) => {
-  return (
-    <div className="flex gap-2">
-      <button onClick={() => column.setFilterValue("All")}>All</button>
-      <button onClick={() => column.setFilterValue("Long")}>Longs</button>
-      <button onClick={() => column.setFilterValue("Short")}>Shorts</button>
-    </div>
-  );
-};
-
+const columnHelper = createColumnHelper<Transaction>();
+const columns = (hyperdrive: Hyperdrive) => [
+  columnHelper.accessor("type", {
+    enableSorting: false,
+    enableColumnFilter: true,
+    header: () => null,
+    filterFn: (row, id, filterValue) => {
+      if (filterValue === "All") {
+        return true;
+      }
+      if (filterValue === "Long") {
+        return !!(
+          row.getValue("type") === "Buy" || row.getValue("type") === "Sell"
+        );
+      }
+      if (filterValue === "Short") {
+        return !!(
+          row.getValue("type") === "Open Short" ||
+          row.getValue("type") === "Close Short"
+        );
+      } else {
+        return true;
+      }
+    },
+  }),
+  columnHelper.accessor("value", {
+    header: `Size (hy${hyperdrive.baseToken.symbol})`,
+    cell: (value) => value.getValue(),
+    enableColumnFilter: false,
+    sortingFn: (a, b) => {
+      const aValue = Number(a?.getValue("value"));
+      const bValue = Number(b?.getValue("value"));
+      return aValue - bValue;
+    },
+  }),
+  columnHelper.accessor("account", {
+    header: "Account",
+    enableColumnFilter: false,
+    cell: (account) => formatAddress(account.getValue()),
+  }),
+  columnHelper.accessor("blockNumber", {
+    header: "Block number",
+    enableColumnFilter: false,
+    cell: (blockNumber) => blockNumber.getValue()?.toString(),
+  }),
+];
 export function TransactionTable({
   hyperdrive,
   data: transactionData,
@@ -39,65 +74,13 @@ export function TransactionTable({
   hyperdrive: Hyperdrive;
   data: Transaction[];
 }): JSX.Element {
-  const columnHelper = createColumnHelper<Transaction>();
-
-  const columns = useMemo(
-    () => [
-      columnHelper.accessor("type", {
-        enableSorting: false,
-        enableColumnFilter: true,
-        header: () => null,
-        filterFn: (row, id, filterValue) => {
-          if (filterValue === "All") {
-            return true;
-          }
-          if (filterValue === "Long") {
-            return !!(
-              row.getValue("type") === "Buy" || row.getValue("type") === "Sell"
-            );
-          }
-          if (filterValue === "Short") {
-            return !!(
-              row.getValue("type") === "Open Short" ||
-              row.getValue("type") === "Close Short"
-            );
-          } else {
-            return true;
-          }
-        },
-      }),
-      columnHelper.accessor("value", {
-        header: `Size (hy${hyperdrive.baseToken.symbol})`,
-        cell: (value) => value.getValue(),
-        enableColumnFilter: false,
-        sortingFn: (a, b) => {
-          const aValue = Number(a?.getValue("value"));
-          const bValue = Number(b?.getValue("value"));
-          return aValue - bValue;
-        },
-      }),
-      columnHelper.accessor("account", {
-        header: "Account",
-        enableColumnFilter: false,
-        cell: (account) => formatAddress(account.getValue()),
-      }),
-      columnHelper.accessor("blockNumber", {
-        header: "Block number",
-        enableColumnFilter: false,
-        cell: (blockNumber) => blockNumber.getValue()?.toString(),
-      }),
-    ],
-    [],
-  );
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const tableInstance = useReactTable({
-    columns: columns,
+    columns: columns(hyperdrive),
     data: transactionData || [],
-
     state: {
       columnFilters,
     },
-
     onColumnFiltersChange: setColumnFilters,
     enableColumnFilters: true,
     enableFilters: true,
@@ -134,8 +117,24 @@ export function TransactionTable({
                         }[header.column.getIsSorted() as string] ?? null}
                       </div>
                       {header.column.getCanFilter() ? (
-                        <div>
-                          <CustomFilter column={header.column} />
+                        <div className="flex gap-2">
+                          <button
+                            onClick={() => header.column.setFilterValue("All")}
+                          >
+                            All
+                          </button>
+                          <button
+                            onClick={() => header.column.setFilterValue("Long")}
+                          >
+                            Longs
+                          </button>
+                          <button
+                            onClick={() =>
+                              header.column.setFilterValue("Short")
+                            }
+                          >
+                            Shorts
+                          </button>
                         </div>
                       ) : null}
                     </>
