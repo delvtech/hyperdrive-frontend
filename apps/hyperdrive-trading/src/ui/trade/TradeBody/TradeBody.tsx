@@ -47,9 +47,7 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
 
       <PositionsSection hyperdrive={hyperdrive} />
       <div>
-        <span className="mb-2 text-h5 font-thin text-neutral-content">
-          Transactions
-        </span>
+        <span className="mb-2 text-h5 font-thin">Transactions</span>
         {transactionData && (
           <TransactionTable data={transactionData} hyperdrive={hyperdrive} />
         )}
@@ -122,7 +120,7 @@ function PriceBadges({
 }) {
   return (
     <div className="flex gap-4">
-      <div className="daisy-badge daisy-badge-ghost daisy-badge-lg">
+      <div className="daisy-badge daisy-badge-lg border-2">
         1 {hyperdrive.baseToken.symbol} ≈{" "}
         {formatBalance({
           balance: divideBigInt(
@@ -136,7 +134,7 @@ function PriceBadges({
         })}{" "}
         hy{hyperdrive.baseToken.symbol}
       </div>
-      <div className="daisy-badge daisy-badge-ghost daisy-badge-lg">
+      <div className="daisy-badge daisy-badge-lg border-2">
         1 hy{hyperdrive.baseToken.symbol} ≈{" "}
         {formatBalance({
           balance: longPrice.price,

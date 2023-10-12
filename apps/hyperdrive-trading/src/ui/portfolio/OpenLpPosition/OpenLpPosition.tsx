@@ -138,7 +138,7 @@ export function OpenLpPosition({
 
   return (
     <SortableGridTable
-      headingRowClassName="grid-cols-[4fr_4fr_4fr_4fr_1fr] text-start text-neutral-content"
+      headingRowClassName="grid-cols-[4fr_4fr_4fr_4fr_1fr] text-start"
       bodyRowClassName="grid-cols-[4fr_4fr_4fr_4fr_1fr] text-base-content items-center text-sm md:text-h6 even:bg-secondary/5 h-16"
       // Blank col added for actions
       cols={[

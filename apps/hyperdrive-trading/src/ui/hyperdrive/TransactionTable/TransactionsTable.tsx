@@ -55,10 +55,7 @@ export function TransactionTable({
           {tableInstance.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
-                <th
-                  className="text-lg font-thin text-neutral-content"
-                  key={header.id}
-                >
+                <th className="text-lg font-thin" key={header.id}>
                   {header.isPlaceholder
                     ? null
                     : flexRender(
