@@ -1,5 +1,8 @@
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
+  Column,
+  FilterFn,
+  Table,
   createColumnHelper,
   flexRender,
   getCoreRowModel,
@@ -19,14 +22,29 @@ export type Transaction = {
   blockNumber: bigint | undefined;
 };
 
+const fuzzyFilter: FilterFn<any> = (value) => {
+  console.log(value, "fuzzy filter");
+  return true;
+};
+
+function Filter({
+  column,
+  table,
+}: {
+  column: Column<any, unknown>;
+  table: Table<any>;
+}) {}
+
 const columnHelper = createColumnHelper<Transaction>();
 const columns = (hyperdrive: Hyperdrive) => [
   columnHelper.accessor("type", {
-    header: ({ table }) => {
+    enableSorting: false,
+    enableColumnFilter: true,
+    header: ({ table, column }) => {
       return (
         <div className="flex gap-2">
           <button>All</button>
-          <button>Longs</button>
+          <button onClick={() => table.setGlobalFilter("Long")}>Longs</button>
           <button>Shorts</button>
         </div>
       );
@@ -65,15 +83,15 @@ export function TransactionTable({
     columns: columns(hyperdrive),
     data,
 
-    initialState: {
-      globalFilter: {
-        value: "Sell",
-        columnId: "type",
-      },
-    },
     getColumnCanGlobalFilter(column) {
       return column.id === "type";
     },
+    state: {
+      globalFilter,
+    },
+    globalFilterFn: fuzzyFilter,
+    onGlobalFilterChange: setGlobalFilter,
+    enableColumnFilters: true,
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
   });
