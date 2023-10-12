@@ -18,8 +18,7 @@ export function CloseShortModalButton({
   function closeModal() {
     (window as any)[modalId].close();
   }
-  const maturity = new Date(Number(short.maturity * 1000n));
-  const hasMatured = maturity < new Date();
+
   return (
     <Modal
       modalId={modalId}
@@ -48,18 +47,6 @@ export function CloseShortModalButton({
           />
         </div>
       }
-    >
-      {({ showModal }) => (
-        <button
-          onClick={showModal}
-          tabIndex={0}
-          className={`${
-            hasMatured ? "daisy-btn-primary" : "daisy-btn-secondary"
-          } daisy-btn-sm daisy-btn`}
-        >
-          {hasMatured ? "Redeem" : "Close"}
-        </button>
-      )}
-    </Modal>
+    />
   );
 }

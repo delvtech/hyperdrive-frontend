@@ -134,7 +134,7 @@ export function TransactionTable({
         <tbody>
           {tableInstance.getRowModel().rows.map((row) => (
             <tr
-              className="h-16 grid-cols-4 items-center text-sm text-base-content even:bg-secondary/5 md:text-h6"
+              className="h-16 grid-cols-4 items-center text-sm even:bg-base-300/5 md:text-h6"
               key={row.id}
             >
               {row.getVisibleCells().map((cell) => {

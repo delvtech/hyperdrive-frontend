@@ -1,5 +1,6 @@
 import { ChevronRightIcon, SquaresPlusIcon } from "@heroicons/react/24/outline";
 import { ReactElement } from "react";
+import { useSearchParams } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
 import { ChecklistItem } from "src/ui/base/components/ChecklistItem/ChecklistItem";
 import { Modal } from "src/ui/base/components/Modal/Modal";
@@ -13,35 +14,46 @@ export function AddLiquidityModalButton({
 }: {
   hyperdrive: Hyperdrive;
 }): ReactElement {
+  const [searchParams, setSearchParams] = useSearchParams();
   return (
     <Modal
       modalId={ADD_LIQUIDITY_MODAL_ID}
       modalContent={<AddLiquidityForm market={hyperdrive} />}
     >
       {({ showModal }) => (
-        <Well interactive variant="primary" onClick={() => showModal()}>
+        <Well
+          interactive
+          variant="primary"
+          onClick={() => {
+            setSearchParams({
+              ...searchParams,
+              position: "LP",
+              openOrClosed: "Open",
+            });
+            return showModal();
+          }}
+        >
           <div className="flex w-[272px] flex-col justify-between gap-2 p-4">
-            <SquaresPlusIcon className="mb-2 h-16 text-primary" />
+            <SquaresPlusIcon className="mb-2 h-16" />
             <p className="text-h5">Add Liquidity</p>
             <p className="font-bold">
-              Earn trading fees <span className="text-primary">and</span>{" "}
-              interest
+              Earn trading fees <span>and</span> interest
             </p>
             <div className="mt-4 ml-4 flex flex-col gap-2 ">
-              <ChecklistItem checked readOnly variant="primary">
+              <ChecklistItem checked readOnly>
                 Deposit {hyperdrive.baseToken.symbol} to back trades
               </ChecklistItem>
-              <ChecklistItem checked readOnly variant="primary">
+              <ChecklistItem checked readOnly>
                 Idle capital accrues vault APY
               </ChecklistItem>
-              <ChecklistItem checked readOnly variant="primary">
+              <ChecklistItem checked readOnly>
                 No rollovers, easy-to-use
               </ChecklistItem>
             </div>
             {/* Using a div styled as a button here just as a visual cue. Don't
             use a real button here since the Well is interactive already, and
             doing so would create invalid dom nesting of buttons. */}
-            <div className="daisy-btn-primary daisy-btn-sm daisy-btn mt-4 justify-between gap-0 border-primary">
+            <div className="daisy-btn-neutral daisy-btn-sm daisy-btn mt-4 justify-between gap-0 hover:daisy-btn-ghost">
               <span className="ml-4 flex-1 text-center">Add liquidity</span>
               <ChevronRightIcon className="h-3 text-right" />
             </div>

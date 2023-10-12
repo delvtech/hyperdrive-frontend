@@ -8,7 +8,7 @@ import {
   SortableGridTable,
 } from "src/ui/base/components/tables/SortableGridTable";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { useHyperdrivePoolInfo } from "src/ui/hyperdrive/hooks/useHyperdrivePoolInfo";
+import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useLpShares } from "src/ui/hyperdrive/lp/hooks/useLpShares";
 import { usePreviewRedeemWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/usePreviewRedeemWithdrawalShares";
 import { usePreviewRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewRemoveLiquidity";
@@ -52,7 +52,7 @@ export function OpenLpPosition({
       destination: account,
     });
 
-  const { poolInfo } = useHyperdrivePoolInfo(hyperdrive.address);
+  const { poolInfo } = usePoolInfo(hyperdrive.address);
 
   const rows: Row[] = [];
   if (lpShares) {
@@ -138,8 +138,8 @@ export function OpenLpPosition({
 
   return (
     <SortableGridTable
-      headingRowClassName="grid-cols-[4fr_4fr_4fr_4fr_1fr] text-start text-neutral-content"
-      bodyRowClassName="grid-cols-[4fr_4fr_4fr_4fr_1fr] text-base-content items-center text-sm md:text-h6 even:bg-secondary/5 h-16"
+      headingRowClassName="grid-cols-[4fr_4fr_4fr_4fr_1fr] text-start"
+      bodyRowClassName="grid-cols-[4fr_4fr_4fr_4fr_1fr] items-center text-sm md:text-h6 even:bg-base-300/5 h-16"
       // Blank col added for actions
       cols={[
         {
