@@ -121,6 +121,15 @@ function PriceBadges({
   return (
     <div className="flex gap-4">
       <div className="daisy-badge daisy-badge-ghost daisy-badge-lg border border-base-300/5">
+        1 hy{hyperdrive.baseToken.symbol} ≈{" "}
+        {formatBalance({
+          balance: longPrice.price,
+          decimals: hyperdrive.baseToken.decimals,
+          places: 6,
+        })}{" "}
+        {hyperdrive.baseToken.symbol}
+      </div>
+      <div className="daisy-badge daisy-badge-ghost daisy-badge-lg border border-base-300/5">
         1 {hyperdrive.baseToken.symbol} ≈{" "}
         {formatBalance({
           balance: divideBigInt(
@@ -133,15 +142,6 @@ function PriceBadges({
           places: 6,
         })}{" "}
         hy{hyperdrive.baseToken.symbol}
-      </div>
-      <div className="daisy-badge daisy-badge-ghost daisy-badge-lg border border-base-300/5">
-        1 hy{hyperdrive.baseToken.symbol} ≈{" "}
-        {formatBalance({
-          balance: longPrice.price,
-          decimals: hyperdrive.baseToken.decimals,
-          places: 6,
-        })}{" "}
-        {hyperdrive.baseToken.symbol}
       </div>
     </div>
   );

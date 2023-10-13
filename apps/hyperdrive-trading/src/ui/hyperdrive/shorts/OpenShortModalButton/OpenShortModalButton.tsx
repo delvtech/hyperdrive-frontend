@@ -27,7 +27,6 @@ export function OpenShortModalButton({
       {({ showModal }) => (
         <Well
           interactive
-          variant="accent"
           onClick={() => {
             setSearchParams({
               ...searchParams,
@@ -37,19 +36,23 @@ export function OpenShortModalButton({
             return showModal();
           }}
         >
-          <div className="flex w-[272px] flex-col justify-between gap-2 p-4">
+          <div className="flex h-full w-[300px] flex-col justify-between gap-2 p-3">
             <BoltIcon className="mb-2 h-16" />
-            <p className="text-h5">Open a short</p>
+            <p className="text-h5">Short hy{hyperdrive.baseToken.symbol}</p>
             <p className="font-bold">
               Earn <span>{vaultRate?.formatted}% APY</span> on{" "}
               {hyperdrive.baseToken.symbol}
             </p>
-            <div className="mt-4 ml-4 flex flex-col gap-2 ">
+            <p className="daisy-label-text">
+              Profit when the price of hy{hyperdrive.baseToken.symbol} drops,
+              and also earn the yield source rate.
+            </p>
+            <div className="mt-4 ml-2 flex flex-col gap-2 ">
               <ChecklistItem readOnly checked>
-                Variable rate yield
+                Fixed rate up, hy{hyperdrive.baseToken.symbol} price down
               </ChecklistItem>
               <ChecklistItem readOnly checked>
-                Profit from rising fixed rates
+                Maximize exposure to yield source
               </ChecklistItem>
               <ChecklistItem readOnly checked>
                 Redeemable before term ends
@@ -59,7 +62,7 @@ export function OpenShortModalButton({
             use a real button here since the Well is interactive already, and
             doing so would create invalid dom nesting of buttons. */}
             <div className="daisy-btn-neutral daisy-btn-sm daisy-btn mt-4 justify-between gap-0 hover:daisy-btn-ghost">
-              <span className="ml-4 flex-1 text-center">Open short</span>
+              <span className="ml-4 flex-1 text-center">Short</span>
               <ChevronRightIcon className="h-3 text-right" />
             </div>
           </div>
