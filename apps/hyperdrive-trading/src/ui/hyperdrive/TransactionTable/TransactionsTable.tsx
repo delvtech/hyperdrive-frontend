@@ -8,6 +8,7 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
+import classNames from "classnames";
 import { useState } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { formatAddress } from "src/ui/base/formatting/formatAddress";
@@ -92,12 +93,11 @@ export function TransactionTable({
                   {header.isPlaceholder ? null : (
                     <>
                       <div
-                        {...{
-                          className: header.column.getCanSort()
-                            ? "cursor-pointer select-none flex gap-2 items-center"
-                            : "",
-                          onClick: header.column.getToggleSortingHandler(),
-                        }}
+                        className={classNames({
+                          "flex cursor-pointer select-none items-center gap-2":
+                            header.column.getCanSort(),
+                        })}
+                        onClick={header.column.getToggleSortingHandler()}
                       >
                         {flexRender(
                           header.column.columnDef.header,
@@ -109,21 +109,21 @@ export function TransactionTable({
                         }[header.column.getIsSorted() as string] ?? null}
                       </div>
                       {header.column.getCanFilter() ? (
-                        <div className="flex gap-2">
+                        <div className="daisy-tabs-lg">
                           {["All", "Long", "Short"].map((filter) => (
-                            <button
+                            <a
                               key={filter}
                               className={`${
                                 header.column.getFilterValue() !== filter
-                                  ? "text-base-300/30"
-                                  : ""
+                                  ? "daisy-tab text-lg"
+                                  : "daisy-tab daisy-tab-active text-lg"
                               }`}
                               onClick={() =>
                                 header.column.setFilterValue(filter)
                               }
                             >
                               {filter}
-                            </button>
+                            </a>
                           ))}
                         </div>
                       ) : null}
