@@ -7,9 +7,9 @@ export function Navbar(): ReactElement {
       <div className="daisy-navbar-start ml-2">
         <a className="inline-flex items-center gap-2 font-lato text-h6 font-extrabold uppercase tracking-widest">
           <div className="inline-flex w-full">
-            <div className="h-4 w-2.5 -skew-x-12 bg-primary"></div>
-            <div className="h-4 w-2.5 -skew-x-12 bg-secondary"></div>
-            <div className="h-4 w-2.5 -skew-x-12 bg-accent"></div>
+            <div className="h-4 w-2.5 -skew-x-12 bg-[#007eed]"></div>
+            <div className="h-4 w-2.5 -skew-x-12 bg-[#522dae]"></div>
+            <div className="h-4 w-2.5 -skew-x-12 bg-[#f40000]"></div>
           </div>
           Hyperdrive
         </a>

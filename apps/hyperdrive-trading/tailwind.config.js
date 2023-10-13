@@ -61,9 +61,9 @@ module.exports = {
         night: {
           // eslint-disable-next-line @typescript-eslint/no-var-requires
           ...require("daisyui/src/theming/themes")["[data-theme=lofi]"],
-          primary: "#007eed",
-          secondary: "#522dae",
-          accent: "#f40000",
+
+          error: "#f40000",
+          success: "#019d60",
           "--tab-radius": "0.4rem",
           "--rounded-box": "0.4rem", // border radius rounded-box utility class, used in card and other large boxes
           "--rounded-btn": "0.4rem",
