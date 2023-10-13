@@ -45,11 +45,8 @@ const columns = (hyperdrive: Hyperdrive) => [
     header: `Size (hy${hyperdrive.baseToken.symbol})`,
     cell: (value) => value.getValue(),
     enableColumnFilter: false,
-    sortingFn: (a, b) => {
-      const aValue = Number(a?.getValue("value"));
-      const bValue = Number(b?.getValue("value"));
-      return aValue - bValue;
-    },
+    sortingFn: (a, b) =>
+      Number(a?.getValue("value") ?? 0) - Number(b?.getValue("value") ?? 0),
   }),
   columnHelper.accessor("account", {
     header: "Account",
