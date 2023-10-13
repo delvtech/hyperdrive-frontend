@@ -197,7 +197,7 @@ function CurrentValueCell({
     baseAmountOut && baseAmountOut > row.original.baseAmountPaid;
 
   return (
-    <div className="flex items-center gap-1">
+    <div className="flex flex-col items-center gap-1 lg:flex-row">
       <span className="font-bold">{currentValue?.toString()}</span>
       <div
         data-tip={"Profit/Loss since open"}
