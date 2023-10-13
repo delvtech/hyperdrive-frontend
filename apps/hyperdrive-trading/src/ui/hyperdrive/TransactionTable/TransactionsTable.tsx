@@ -113,6 +113,11 @@ export function TransactionTable({
                           {["All", "Long", "Short"].map((filter) => (
                             <button
                               key={filter}
+                              className={`${
+                                header.column.getFilterValue() !== filter
+                                  ? "text-base-300/30"
+                                  : ""
+                              }`}
                               onClick={() =>
                                 header.column.setFilterValue(filter)
                               }
