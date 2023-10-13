@@ -721,7 +721,6 @@ export class ReadHyperdrive implements IReadHyperdrive {
       fromBlock,
       toBlock,
     });
-    console.log("openShortEvents", openShortEvents);
 
     const amountPaidByAssetId = mapValues(
       groupBy(openShortEvents, (event) => event.args.assetId),
