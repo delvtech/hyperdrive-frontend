@@ -28,10 +28,7 @@ export function CloseShortModalButton({
             className="daisy-btn-ghost daisy-btn-sm daisy-btn-circle daisy-btn absolute right-4 top-4"
             onClick={closeModal}
           >
-            <XMarkIcon
-              className="w-6 text-white opacity-70 hover:opacity-100 focus:opacity-100"
-              title="Close position"
-            />
+            <XMarkIcon className="w-6" title="Close position" />
           </button>
           <h3 className="text-h6 font-thin text-base-content">
             Close position

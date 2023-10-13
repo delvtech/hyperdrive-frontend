@@ -44,8 +44,8 @@ export function OpenShortModalButton({
               {hyperdrive.baseToken.symbol}
             </p>
             <p className="daisy-label-text">
-              Profit when the price of hy{hyperdrive.baseToken.symbol} drops,
-              and also earn the yield source rate.
+              Profit when hy{hyperdrive.baseToken.symbol} price drops, and
+              maximize exposure to the yield source.
             </p>
             <div className="mt-4 ml-2 flex flex-col gap-2 ">
               <ChecklistItem readOnly checked>

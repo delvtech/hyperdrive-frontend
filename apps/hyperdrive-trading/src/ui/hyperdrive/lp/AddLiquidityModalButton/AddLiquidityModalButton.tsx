@@ -47,10 +47,10 @@ export function AddLiquidityModalButton({
                 Single-sided deposit with {hyperdrive.baseToken.symbol}
               </ChecklistItem>
               <ChecklistItem checked readOnly>
-                Idle capital earns yield source rate
+                Idle liquidity earns yield source rate
               </ChecklistItem>
               <ChecklistItem checked readOnly>
-                No terms or rollovers, easy-to-use
+                No terms or manual LP rollovers
               </ChecklistItem>
             </div>
             {/* Using a div styled as a button here just as a visual cue. Don't
