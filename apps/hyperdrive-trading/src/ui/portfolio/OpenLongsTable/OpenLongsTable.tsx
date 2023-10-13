@@ -1,69 +1,213 @@
 /* eslint-disable react/jsx-key */
+import { Long } from "@hyperdrive/sdk";
+import { useQuery } from "@tanstack/react-query";
+import {
+  Row,
+  createColumnHelper,
+  flexRender,
+  getCoreRowModel,
+  useReactTable,
+} from "@tanstack/react-table";
+import classNames from "classnames";
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
-import {
-  CellWithTooltip,
-  SortableGridTable,
-} from "src/ui/base/components/tables/SortableGridTable";
-import { useOpenLongRows } from "src/ui/portfolio/OpenLongsTable/useOpenLongRows";
+import { calculateAnnualizedPercentageChange } from "src/base/calculateAnnualizedPercentageChange";
+import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
+import { makeQueryKey } from "src/base/makeQueryKey";
+import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
+import { CloseLongModalButton } from "src/ui/hyperdrive/longs/CloseLongModalButton/CloseLongModalButton";
+import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
+import { parseUnits } from "viem";
 import { useAccount } from "wagmi";
 
-interface OpenOrdersTableProps {
+interface OpenLongsTableProps {
   hyperdrive: Hyperdrive;
 }
 
+const columnHelper = createColumnHelper<Long>();
+const columns = (hyperdrive: Hyperdrive) => [
+  columnHelper.display({
+    header: `ID`,
+    cell: ({ row }) => <span>{Number(row.original.maturity)}</span>,
+  }),
+  columnHelper.display({
+    header: `Size (hy${hyperdrive.baseToken.symbol})`,
+    cell: ({ row }) => {
+      return (
+        <span>
+          {formatBalance({
+            balance: row.original.bondAmount,
+            decimals: hyperdrive.baseToken.decimals,
+            places: 2,
+          })}
+        </span>
+      );
+    },
+  }),
+  columnHelper.display({
+    header: `Fixed rate (APR)`,
+    cell: ({ row }) => {
+      return `${calculateAnnualizedPercentageChange({
+        amountBefore: row.original.baseAmountPaid,
+        amountAfter: row.original.bondAmount,
+        days: convertMillisecondsToDays(hyperdrive.termLengthMS),
+      })}%`;
+    },
+  }),
+  columnHelper.accessor("baseAmountPaid", {
+    header: `Paid (${hyperdrive.baseToken.symbol})`,
+    cell: (baseAmountPaid) => {
+      const amountPaid = baseAmountPaid.getValue();
+      return formatBalance({
+        balance: amountPaid,
+        decimals: hyperdrive.baseToken.decimals,
+        places: 2,
+      });
+    },
+  }),
+  columnHelper.display({
+    header: `Value (${hyperdrive.baseToken.symbol})`,
+    cell: ({ row }) => {
+      return <CurrentValueCell hyperdrive={hyperdrive} row={row} />;
+    },
+  }),
+  columnHelper.display({
+    header: `Matures on`,
+    cell: ({ row }) => {
+      const maturity = new Date(Number(row.original.maturity * 1000n));
+      return <span>{maturity.toDateString()}</span>;
+    },
+  }),
+];
 export function OpenLongsTable({
   hyperdrive,
-}: OpenOrdersTableProps): ReactElement {
+}: OpenLongsTableProps): ReactElement {
   const { address: account } = useAccount();
 
-  const { openLongRows = [], openLongRowsStatus } = useOpenLongRows({
-    account,
-    hyperdrive,
+  const readHyperdrive = useReadHyperdrive(hyperdrive.address);
+  const queryEnabled = !!readHyperdrive && !!account;
+  const { data: longs } = useQuery({
+    queryKey: makeQueryKey("longPositions", { account }),
+    queryFn: queryEnabled
+      ? () => readHyperdrive?.getOpenLongs({ account })
+      : undefined,
+    enabled: queryEnabled,
+  });
+  const tableInstance = useReactTable({
+    columns: columns(hyperdrive),
+    data: longs || [],
+    getCoreRowModel: getCoreRowModel(),
   });
 
   return (
-    <SortableGridTable
-      headingRowClassName="grid-cols-5 text-start"
-      bodyRowClassName="grid-cols-4 items-center text-sm md:text-h6 even:bg-base-300/5 h-16"
-      // Blank col added for actions
-      cols={[
-        {
-          cell: (
-            <CellWithTooltip
-              tooltip="Long and Short positions have a maturity date based on the open date and position duration of the pool whereas LP positions can remain active indefinitely (until closed by the LPer)."
-              content="Position"
-            />
-          ),
-        },
-        {
-          cell: (
-            <CellWithTooltip
-              tooltip={`The amount of ${hyperdrive.baseToken.name} you can redeem this position for at the end of the term.`}
-              content="Value at maturity"
-            />
-          ),
-        },
-        {
-          cell: (
-            <CellWithTooltip
-              content="Profit/Loss"
-              tooltip="Current profit/loss of your open position."
-            />
-          ),
-        },
-        {
-          cell: (
-            <CellWithTooltip
-              content="Matures on"
-              tooltip="Date at which the position matures and can be settled by the trader."
-            />
-          ),
-        },
-      ]}
-      // cols={["Position", "Bonds", "Amount paid", "Value", "Matures on", ""]}
-      rows={openLongRows}
-      showSkeleton={openLongRowsStatus === "loading"}
-    />
+    <div className="max-h-96 overflow-y-scroll">
+      {/* Modal needs to be rendered outside of the table so that dialog can be used. Otherwise react throws a dom nesting error */}
+      {tableInstance.getRowModel().rows.map((row) => {
+        const modalId = `${row.original.assetId}`;
+        return (
+          <CloseLongModalButton
+            key={modalId}
+            hyperdrive={hyperdrive}
+            modalId={modalId}
+            long={row.original}
+          />
+        );
+      })}
+      <table className="daisy-table daisy-table-lg">
+        <thead>
+          {tableInstance.getHeaderGroups().map((headerGroup) => (
+            <tr key={headerGroup.id}>
+              {headerGroup.headers.map((header) => (
+                <th className="" key={header.id}>
+                  {header.isPlaceholder
+                    ? null
+                    : flexRender(
+                        header.column.columnDef.header,
+                        header.getContext(),
+                      )}
+                </th>
+              ))}
+            </tr>
+          ))}
+        </thead>
+        <tbody>
+          {tableInstance.getRowModel().rows.map((row) => {
+            return (
+              <tr
+                key={row.id}
+                className="daisy-hover h-16 cursor-pointer grid-cols-4 items-center even:bg-base-200/50"
+                onClick={() => {
+                  const modalId = `${row.original.assetId}`;
+                  (window as any)[modalId].showModal();
+                }}
+              >
+                <>
+                  {row.getVisibleCells().map((cell) => {
+                    return (
+                      <td key={cell.id}>
+                        {flexRender(
+                          cell.column.columnDef.cell,
+                          cell.getContext(),
+                        )}
+                      </td>
+                    );
+                  })}
+                </>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+function CurrentValueCell({
+  row,
+  hyperdrive,
+}: {
+  row: Row<Long>;
+  hyperdrive: Hyperdrive;
+}) {
+  const { address: account } = useAccount();
+  const { baseAmountOut } = usePreviewCloseLong({
+    hyperdriveAddress: hyperdrive.address,
+    maturityTime: row.original.maturity,
+    bondAmountIn: row.original.bondAmount,
+    minBaseAmountOut: parseUnits("0", hyperdrive.baseToken.decimals),
+    destination: account,
+  });
+  const currentValue =
+    baseAmountOut &&
+    formatBalance({
+      balance: baseAmountOut,
+      decimals: hyperdrive.baseToken.decimals,
+      places: 4,
+    });
+
+  const isPositiveChangeInValue =
+    baseAmountOut && baseAmountOut > row.original.baseAmountPaid;
+
+  return (
+    <div className="flex items-center gap-1">
+      <span className="font-bold">{currentValue?.toString()} </span>
+      <div
+        className={classNames(
+          "daisy-badge daisy-badge-md",
+          { "text-success/70": isPositiveChangeInValue },
+          { "text-error/70": !isPositiveChangeInValue },
+        )}
+      >
+        {isPositiveChangeInValue ? "+" : ""}
+        {baseAmountOut
+          ? `${formatBalance({
+              balance: baseAmountOut - row.original.baseAmountPaid,
+              decimals: hyperdrive.baseToken.decimals,
+              places: 4,
+            })} ${hyperdrive.baseToken.symbol}`
+          : undefined}
+      </div>
+    </div>
   );
 }
