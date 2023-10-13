@@ -118,6 +118,7 @@ function AmountPaidAtOpen({
         formatBalance({
           balance: longPrice.price,
           decimals: hyperdrive.baseToken.decimals,
+          places: 6,
         })}
     </span>
   );
