@@ -45,7 +45,7 @@ const columns = (hyperdrive: Hyperdrive) => [
     cell: (baseAmountPaid) => {
       const amountPaid = baseAmountPaid.getValue();
       return formatBalance({
-        balance: amountPaid,
+        balance: amountPaid || 0n,
         decimals: hyperdrive.baseToken.decimals,
       });
     },
@@ -84,7 +84,7 @@ function CurrentValueCell({
         {baseAmountOut && row.original.bondAmount !== 0n
           ? `(${getProfitLossText({
               baseAmountOut,
-              amountInput: row.original.baseAmountPaid,
+              amountInput: row.original.baseAmountPaid || 0n,
               baseDecimals: hyperdrive.baseToken.decimals,
               baseSymbol: hyperdrive.baseToken.symbol,
               showPercentage: false,
