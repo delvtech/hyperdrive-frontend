@@ -692,7 +692,9 @@ export class ReadHyperdrive implements IReadHyperdrive {
 
     for (const { args: eventData, data: eventLog } of transferOutEvents) {
       const assetId = eventData.id.toString();
-
+      const closedShort = closeShortEvents.find(
+        (event) => event.args.assetId.toString() === assetId,
+      );
       if (closedShortsById[assetId]) {
         closedShortsById[assetId].bondAmount += eventData.value;
         continue;
@@ -710,6 +712,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
         closedTimestamp: decodeAssetFromTransferSingleEventData(
           eventLog as `0x${string}`,
         ).timestamp,
+        blockNumber: closedShort?.blockNumber,
       };
     }
 
@@ -718,6 +721,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
       fromBlock,
       toBlock,
     });
+    console.log("openShortEvents", openShortEvents);
 
     const amountPaidByAssetId = mapValues(
       groupBy(openShortEvents, (event) => event.args.assetId),
@@ -740,7 +744,9 @@ export class ReadHyperdrive implements IReadHyperdrive {
 
     for (const { data: eventLog, args: eventData } of transferInEvents) {
       const assetId = eventData.id.toString();
-
+      const short = openShortEvents.find(
+        (event) => event.args.assetId.toString() === assetId,
+      );
       if (openShortsById[assetId]) {
         openShortsById[assetId].bondAmount += eventData.value;
         continue;
@@ -762,6 +768,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
         maturity: decodeAssetFromTransferSingleEventData(
           eventLog as `0x${string}`,
         ).timestamp,
+        blockNumber: short?.blockNumber,
       };
     }
 

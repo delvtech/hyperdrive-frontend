@@ -13,9 +13,11 @@ export interface Short {
 export interface ClosedShort extends Short {
   baseAmountReceived: bigint;
   closedTimestamp: bigint;
+  blockNumber?: bigint;
 }
 
 export interface OpenShort extends Short {
   baseAmountPaid: bigint;
   openedTimestamp: bigint;
+  blockNumber?: bigint;
 }

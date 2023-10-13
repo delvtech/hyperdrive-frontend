@@ -29,7 +29,6 @@ export function useOpenShortRows({
       account,
       hyperdriveAddress: hyperdrive?.address,
     });
-
   const openShortRows = hyperdrive
     ? openShorts.map((short) =>
         createOpenShortRow({

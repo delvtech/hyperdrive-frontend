@@ -14,6 +14,7 @@ import { makeQueryKey } from "src/base/makeQueryKey";
 import { parseUnits } from "src/base/parseUnits";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
+import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
 import {
   getProfitLossText,
   getStyleClassForProfitLoss,
@@ -48,6 +49,12 @@ const columns = (hyperdrive: Hyperdrive) => [
         balance: amountPaid,
         decimals: hyperdrive.baseToken.decimals,
       });
+    },
+  }),
+  columnHelper.display({
+    header: `Amount Paid at Open`,
+    cell: ({ row }) => {
+      return <AmountPaidAtOpen hyperdrive={hyperdrive} row={row} />;
     },
   }),
 ];
@@ -95,6 +102,27 @@ function CurrentValueCell({
   );
 }
 
+function AmountPaidAtOpen({
+  row,
+  hyperdrive,
+}: {
+  row: Row<OpenShort>;
+  hyperdrive: Hyperdrive;
+}) {
+  const { longPrice } = useCurrentLongPrice(hyperdrive, {
+    blockNumber: row.original.blockNumber,
+  });
+  return (
+    <span>
+      {longPrice &&
+        formatBalance({
+          balance: longPrice.price,
+          decimals: hyperdrive.baseToken.decimals,
+        })}
+    </span>
+  );
+}
+
 export function OpenShortsTable({
   hyperdrive,
 }: {
@@ -115,7 +143,6 @@ export function OpenShortsTable({
     data: shorts || [],
     getCoreRowModel: getCoreRowModel(),
   });
-
   return (
     <div className="max-h-96 overflow-y-scroll">
       {/* Modal needs to be rendered outside of the table so that dialog can be used. Otherwise react throws a dom nesting error */}

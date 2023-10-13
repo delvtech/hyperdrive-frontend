@@ -1,10 +1,14 @@
+import { ContractReadOptions } from "@hyperdrive/sdk";
 import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { formatUnits } from "viem";
 
-export function useCurrentLongPrice(hyperdrive: Hyperdrive): {
+export function useCurrentLongPrice(
+  hyperdrive: Hyperdrive,
+  options?: ContractReadOptions,
+): {
   longPrice: { price: bigint; formatted: string } | undefined;
   longPriceStatus: QueryStatus;
 } {
@@ -16,7 +20,7 @@ export function useCurrentLongPrice(hyperdrive: Hyperdrive): {
     }),
     queryFn: queryEnabled
       ? async () => {
-          const price = await readHyperdrive.getLongPrice();
+          const price = await readHyperdrive.getLongPrice(options);
           return {
             price,
             formatted: formatUnits(price, hyperdrive.baseToken.decimals),
