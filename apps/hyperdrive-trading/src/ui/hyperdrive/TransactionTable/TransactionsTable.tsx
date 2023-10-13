@@ -1,9 +1,15 @@
+import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
+  ColumnFiltersState,
   createColumnHelper,
   flexRender,
   getCoreRowModel,
+  getFilteredRowModel,
+  getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
+import classNames from "classnames";
+import { useState } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { formatAddress } from "src/ui/base/formatting/formatAddress";
 import { Address } from "viem";
@@ -19,33 +25,61 @@ export type Transaction = {
 const columnHelper = createColumnHelper<Transaction>();
 const columns = (hyperdrive: Hyperdrive) => [
   columnHelper.accessor("type", {
-    header: "Type",
-    cell: (type) => type.getValue(),
+    enableSorting: false,
+    enableColumnFilter: true,
+    header: () => null,
+    filterFn: (row, _, filterValue) => {
+      const type = row.getValue("type") as string;
+      if (filterValue === "All") {
+        return true;
+      }
+      if (filterValue === "Long") {
+        return ["Buy", "Sell"].includes(type);
+      }
+      if (filterValue === "Short") {
+        return ["Open Short", "Close Short"].includes(type);
+      }
+      return true;
+    },
   }),
   columnHelper.accessor("value", {
     header: `Size (hy${hyperdrive.baseToken.symbol})`,
     cell: (value) => value.getValue(),
+    enableColumnFilter: false,
+    sortingFn: (a, b) =>
+      Number(a?.getValue("value") ?? 0) - Number(b?.getValue("value") ?? 0),
   }),
   columnHelper.accessor("account", {
     header: "Account",
+    enableColumnFilter: false,
     cell: (account) => formatAddress(account.getValue()),
   }),
   columnHelper.accessor("blockNumber", {
     header: "Block number",
+    enableColumnFilter: false,
     cell: (blockNumber) => blockNumber.getValue()?.toString(),
   }),
 ];
 export function TransactionTable({
   hyperdrive,
-  data,
+  data: transactionData,
 }: {
   hyperdrive: Hyperdrive;
   data: Transaction[];
 }): JSX.Element {
+  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const tableInstance = useReactTable({
     columns: columns(hyperdrive),
-    data,
+    data: transactionData || [],
+    state: {
+      columnFilters,
+    },
+    onColumnFiltersChange: setColumnFilters,
+    enableColumnFilters: true,
+    enableFilters: true,
+    getFilteredRowModel: getFilteredRowModel(),
     getCoreRowModel: getCoreRowModel(),
+    getSortedRowModel: getSortedRowModel(),
   });
 
   return (
@@ -56,12 +90,45 @@ export function TransactionTable({
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
                 <th className="text-lg font-thin" key={header.id}>
-                  {header.isPlaceholder
-                    ? null
-                    : flexRender(
-                        header.column.columnDef.header,
-                        header.getContext(),
-                      )}
+                  {header.isPlaceholder ? null : (
+                    <>
+                      <div
+                        className={classNames({
+                          "flex cursor-pointer select-none items-center gap-2":
+                            header.column.getCanSort(),
+                        })}
+                        onClick={header.column.getToggleSortingHandler()}
+                      >
+                        {flexRender(
+                          header.column.columnDef.header,
+                          header.getContext(),
+                        )}
+                        {{
+                          asc: <ChevronUpIcon height={15} />,
+                          desc: <ChevronDownIcon height={15} />,
+                        }[header.column.getIsSorted() as string] ?? null}
+                      </div>
+                      {header.column.getCanFilter() ? (
+                        <div className="daisy-tabs-lg">
+                          {["All", "Long", "Short"].map((filter) => (
+                            <a
+                              key={filter}
+                              className={`${
+                                header.column.getFilterValue() !== filter
+                                  ? "daisy-tab text-lg"
+                                  : "daisy-tab daisy-tab-active text-lg"
+                              }`}
+                              onClick={() =>
+                                header.column.setFilterValue(filter)
+                              }
+                            >
+                              {filter}
+                            </a>
+                          ))}
+                        </div>
+                      ) : null}
+                    </>
+                  )}
                 </th>
               ))}
             </tr>
