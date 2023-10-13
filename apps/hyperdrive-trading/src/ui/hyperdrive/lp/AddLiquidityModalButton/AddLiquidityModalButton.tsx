@@ -34,7 +34,7 @@ export function AddLiquidityModalButton({
         >
           <div className="flex h-full w-[300px] flex-col justify-between gap-2 p-3">
             <SquaresPlusIcon className="mb-2 h-16" />
-            <p className="text-h5">Add Liquidity</p>
+            <p className="text-h5 font-bold">Add Liquidity</p>
             <p className="font-bold">
               Earn trading fees <span>and</span> interest
             </p>

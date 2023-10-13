@@ -36,8 +36,8 @@ export function OpenLongModalButton({
         >
           <div className="flex h-full w-[300px] flex-col justify-between gap-2 p-3">
             <ClockIcon className="mb-2 h-16" />
-            <p className="text-h5 ">
-              Buy {hyperdrive.baseToken.symbol} at a discount
+            <p className="text-h5 font-bold">
+              Buy hy{hyperdrive.baseToken.symbol}
             </p>
             <p className="font-bold">
               Earn <span>{fixedAPR?.formatted || "-"}% APR</span> on{" "}
@@ -45,8 +45,8 @@ export function OpenLongModalButton({
             </p>
             <p className="daisy-label-text">
               1 hy{hyperdrive.baseToken.symbol} is worth 1{" "}
-              {hyperdrive.baseToken.symbol} at maturity, giving you predictable
-              fixed rate yield.
+              {hyperdrive.baseToken.symbol} at maturity, giving you a
+              predictable fixed rate yield.
             </p>
             <div className="mt-4 ml-4 flex flex-col gap-2">
               <ChecklistItem checked readOnly>

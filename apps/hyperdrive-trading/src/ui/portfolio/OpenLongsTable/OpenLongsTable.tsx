@@ -26,60 +26,67 @@ interface OpenLongsTableProps {
 }
 
 const columnHelper = createColumnHelper<Long>();
-const columns = (hyperdrive: Hyperdrive) => [
-  columnHelper.display({
-    header: `ID`,
-    cell: ({ row }) => <span>{Number(row.original.maturity)}</span>,
-  }),
-  columnHelper.display({
-    header: `Size (hy${hyperdrive.baseToken.symbol})`,
-    cell: ({ row }) => {
-      return (
-        <span>
-          {formatBalance({
-            balance: row.original.bondAmount,
-            decimals: hyperdrive.baseToken.decimals,
-            places: 2,
-          })}
-        </span>
-      );
-    },
-  }),
-  columnHelper.display({
-    header: `Fixed rate (APR)`,
-    cell: ({ row }) => {
-      return `${calculateAnnualizedPercentageChange({
-        amountBefore: row.original.baseAmountPaid,
-        amountAfter: row.original.bondAmount,
-        days: convertMillisecondsToDays(hyperdrive.termLengthMS),
-      })}%`;
-    },
-  }),
-  columnHelper.accessor("baseAmountPaid", {
-    header: `Paid (${hyperdrive.baseToken.symbol})`,
-    cell: (baseAmountPaid) => {
-      const amountPaid = baseAmountPaid.getValue();
-      return formatBalance({
-        balance: amountPaid,
-        decimals: hyperdrive.baseToken.decimals,
-        places: 2,
-      });
-    },
-  }),
-  columnHelper.display({
-    header: `Value (${hyperdrive.baseToken.symbol})`,
-    cell: ({ row }) => {
-      return <CurrentValueCell hyperdrive={hyperdrive} row={row} />;
-    },
-  }),
-  columnHelper.display({
-    header: `Matures on`,
-    cell: ({ row }) => {
-      const maturity = new Date(Number(row.original.maturity * 1000n));
-      return <span>{maturity.toDateString()}</span>;
-    },
-  }),
-];
+
+function getColumns(hyperdrive: Hyperdrive) {
+  return [
+    columnHelper.display({
+      header: `ID`,
+      cell: ({ row }) => <span>{Number(row.original.maturity)}</span>,
+    }),
+    columnHelper.display({
+      header: `Matures on`,
+      cell: ({ row }) => {
+        const maturity = new Date(Number(row.original.maturity * 1000n));
+        return <span>{maturity.toLocaleDateString()}</span>;
+      },
+    }),
+    columnHelper.display({
+      id: "size",
+      header: `Size (hy${hyperdrive.baseToken.symbol})`,
+      cell: ({ row }) => {
+        return (
+          <span>
+            {formatBalance({
+              balance: row.original.bondAmount,
+              decimals: hyperdrive.baseToken.decimals,
+              places: 2,
+            })}
+          </span>
+        );
+      },
+    }),
+    columnHelper.accessor("baseAmountPaid", {
+      id: "amountPaid",
+      header: `Amount paid (${hyperdrive.baseToken.symbol})`,
+      cell: (baseAmountPaid) => {
+        const amountPaid = baseAmountPaid.getValue();
+        return formatBalance({
+          balance: amountPaid,
+          decimals: hyperdrive.baseToken.decimals,
+          places: 2,
+        });
+      },
+    }),
+    columnHelper.display({
+      id: "fixedRate",
+      header: `Fixed rate (APR)`,
+      cell: ({ row }) => {
+        return `${calculateAnnualizedPercentageChange({
+          amountBefore: row.original.baseAmountPaid,
+          amountAfter: row.original.bondAmount,
+          days: convertMillisecondsToDays(hyperdrive.termLengthMS),
+        })}%`;
+      },
+    }),
+    columnHelper.display({
+      id: "value",
+      header: `Market value (${hyperdrive.baseToken.symbol})`,
+      cell: ({ row }) => {
+        return <CurrentValueCell hyperdrive={hyperdrive} row={row} />;
+      },
+    }),
+  ];
+}
 export function OpenLongsTable({
   hyperdrive,
 }: OpenLongsTableProps): ReactElement {
@@ -95,7 +102,7 @@ export function OpenLongsTable({
     enabled: queryEnabled,
   });
   const tableInstance = useReactTable({
-    columns: columns(hyperdrive),
+    columns: getColumns(hyperdrive),
     data: longs || [],
     getCoreRowModel: getCoreRowModel(),
   });
@@ -114,12 +121,12 @@ export function OpenLongsTable({
           />
         );
       })}
-      <table className="daisy-table daisy-table-lg">
+      <table className="daisy-table-zebra daisy-table daisy-table-lg">
         <thead>
           {tableInstance.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
-                <th className="" key={header.id}>
+                <th key={header.id}>
                   {header.isPlaceholder
                     ? null
                     : flexRender(
@@ -136,7 +143,7 @@ export function OpenLongsTable({
             return (
               <tr
                 key={row.id}
-                className="daisy-hover h-16 cursor-pointer grid-cols-4 items-center even:bg-base-200/50"
+                className="daisy-hover h-16 cursor-pointer grid-cols-4 items-center"
                 onClick={() => {
                   const modalId = `${row.original.assetId}`;
                   (window as any)[modalId].showModal();
@@ -191,12 +198,13 @@ function CurrentValueCell({
 
   return (
     <div className="flex items-center gap-1">
-      <span className="font-bold">{currentValue?.toString()} </span>
+      <span className="font-bold">{currentValue?.toString()}</span>
       <div
+        data-tip={"Profit/Loss since open"}
         className={classNames(
-          "daisy-badge daisy-badge-md",
-          { "text-success/70": isPositiveChangeInValue },
-          { "text-error/70": !isPositiveChangeInValue },
+          "daisy-badge daisy-badge-md daisy-tooltip inline-flex",
+          { "text-success": isPositiveChangeInValue },
+          { "text-error": !isPositiveChangeInValue },
         )}
       >
         {isPositiveChangeInValue ? "+" : ""}

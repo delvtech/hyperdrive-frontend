@@ -38,16 +38,18 @@ export function OpenShortModalButton({
         >
           <div className="flex h-full w-[300px] flex-col justify-between gap-2 p-3">
             <BoltIcon className="mb-2 h-16" />
-            <p className="text-h5">Short hy{hyperdrive.baseToken.symbol}</p>
+            <p className="text-h5 font-bold">
+              Short hy{hyperdrive.baseToken.symbol}
+            </p>
             <p className="font-bold">
               Earn <span>{vaultRate?.formatted}% APY</span> on{" "}
               {hyperdrive.baseToken.symbol}
             </p>
             <p className="daisy-label-text">
-              Profit when hy{hyperdrive.baseToken.symbol} price drops, and
-              maximize exposure to the yield source.
+              Profit when hy{hyperdrive.baseToken.symbol} price drops, while
+              maximizing exposure to the yield source.
             </p>
-            <div className="mt-4 ml-2 flex flex-col gap-2 ">
+            <div className="mt-4 ml-2 flex flex-col gap-2">
               <ChecklistItem readOnly checked>
                 Fixed rate up, hy{hyperdrive.baseToken.symbol} price down
               </ChecklistItem>
