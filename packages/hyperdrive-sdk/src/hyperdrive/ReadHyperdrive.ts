@@ -741,11 +741,13 @@ export class ReadHyperdrive implements IReadHyperdrive {
 
     const openShortsById: Record<string, OpenShort> = {};
 
-    for (const { data: eventLog, args: eventData } of transferInEvents) {
+    for (const {
+      data: eventLog,
+      args: eventData,
+      blockNumber,
+    } of transferInEvents) {
       const assetId = eventData.id.toString();
-      const short = openShortEvents.find(
-        (event) => event.args.assetId.toString() === assetId,
-      );
+
       if (openShortsById[assetId]) {
         openShortsById[assetId].bondAmount += eventData.value;
         continue;
@@ -767,7 +769,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
         maturity: decodeAssetFromTransferSingleEventData(
           eventLog as `0x${string}`,
         ).timestamp,
-        blockNumber: short?.blockNumber,
+        blockNumber: blockNumber,
       };
     }
 

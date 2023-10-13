@@ -51,12 +51,6 @@ const columns = (hyperdrive: Hyperdrive) => [
       });
     },
   }),
-  columnHelper.display({
-    header: `Amount Paid at Open`,
-    cell: ({ row }) => {
-      return <AmountPaidAtOpen hyperdrive={hyperdrive} row={row} />;
-    },
-  }),
 ];
 
 function CurrentValueCell({
@@ -77,8 +71,9 @@ function CurrentValueCell({
   const currentValue =
     baseAmountOut &&
     formatBalance({
-      balance: row.original.bondAmount - baseAmountOut,
+      balance: baseAmountOut,
       decimals: hyperdrive.baseToken.decimals,
+      places: 6,
     });
   const profitLossClass = baseAmountOut
     ? getStyleClassForProfitLoss(baseAmountOut, row.original.baseAmountPaid)
