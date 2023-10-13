@@ -27,23 +27,18 @@ const columns = (hyperdrive: Hyperdrive) => [
     enableSorting: false,
     enableColumnFilter: true,
     header: () => null,
-    filterFn: (row, id, filterValue) => {
+    filterFn: (row, _, filterValue) => {
+      const type = row.getValue("type") as string;
       if (filterValue === "All") {
         return true;
       }
       if (filterValue === "Long") {
-        return !!(
-          row.getValue("type") === "Buy" || row.getValue("type") === "Sell"
-        );
+        return ["Buy", "Sell"].includes(type);
       }
       if (filterValue === "Short") {
-        return !!(
-          row.getValue("type") === "Open Short" ||
-          row.getValue("type") === "Close Short"
-        );
-      } else {
-        return true;
+        return ["Open Short", "Close Short"].includes(type);
       }
+      return true;
     },
   }),
   columnHelper.accessor("value", {
@@ -118,23 +113,16 @@ export function TransactionTable({
                       </div>
                       {header.column.getCanFilter() ? (
                         <div className="flex gap-2">
-                          <button
-                            onClick={() => header.column.setFilterValue("All")}
-                          >
-                            All
-                          </button>
-                          <button
-                            onClick={() => header.column.setFilterValue("Long")}
-                          >
-                            Longs
-                          </button>
-                          <button
-                            onClick={() =>
-                              header.column.setFilterValue("Short")
-                            }
-                          >
-                            Shorts
-                          </button>
+                          {["All", "Long", "Short"].map((filter) => (
+                            <button
+                              key={filter}
+                              onClick={() =>
+                                header.column.setFilterValue(filter)
+                              }
+                            >
+                              {filter}
+                            </button>
+                          ))}
                         </div>
                       ) : null}
                     </>
