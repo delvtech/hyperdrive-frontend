@@ -26,7 +26,7 @@ export function YourBalanceWell({ token }: { token: Token }): ReactElement {
         <Stat
           label="Your available balance"
           value={
-            <div className="-mt-1 flex items-center gap-1 text-h5">
+            <div className="-mt-1 flex items-center gap-1 text-h6">
               {formatBalance({
                 balance: balance?.value || 0n,
                 decimals: token.decimals,

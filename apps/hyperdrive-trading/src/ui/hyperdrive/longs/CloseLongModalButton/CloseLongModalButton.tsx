@@ -19,9 +19,6 @@ export function CloseLongModalButton({
     (window as any)[modalId].close();
   }
 
-  const maturity = new Date(Number(long.maturity * 1000n));
-  const hasMatured = maturity < new Date();
-
   return (
     <Modal
       modalId={modalId}
@@ -31,10 +28,7 @@ export function CloseLongModalButton({
             className="daisy-btn-ghost daisy-btn-sm daisy-btn-circle daisy-btn absolute right-4 top-4"
             onClick={closeModal}
           >
-            <XMarkIcon
-              className="w-6 text-white opacity-70 hover:opacity-100 focus:opacity-100"
-              title="Close position"
-            />
+            <XMarkIcon className="w-6 " title="Close position" />
           </button>
           <h3 className="text-h6 font-thin text-base-content">
             Close position
@@ -51,18 +45,6 @@ export function CloseLongModalButton({
           />
         </div>
       }
-    >
-      {({ showModal }) => (
-        <button
-          onClick={showModal}
-          tabIndex={0}
-          className={`${
-            hasMatured ? "daisy-btn-primary" : "daisy-btn-secondary"
-          } daisy-btn-sm daisy-btn`}
-        >
-          {hasMatured ? "Redeem" : "Close"}
-        </button>
-      )}
-    </Modal>
+    />
   );
 }

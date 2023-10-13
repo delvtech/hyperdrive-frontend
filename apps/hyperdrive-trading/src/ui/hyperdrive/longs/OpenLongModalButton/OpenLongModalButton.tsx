@@ -28,7 +28,7 @@ export function OpenLongModalButton({
           onClick={() => {
             setSearchParams({
               ...searchParams,
-              position: "Longs",
+              position: "Buys",
               openOrClosed: "Open",
             });
             showModal();
@@ -36,15 +36,17 @@ export function OpenLongModalButton({
         >
           <div className="flex h-full w-[300px] flex-col justify-between gap-2 p-3">
             <ClockIcon className="mb-2 h-16" />
-            <p className="text-h5 ">Buy hy{hyperdrive.baseToken.symbol}</p>
+            <p className="text-h5 font-bold">
+              Buy hy{hyperdrive.baseToken.symbol}
+            </p>
             <p className="font-bold">
               Earn <span>{fixedAPR?.formatted || "-"}% APR</span> on{" "}
               {hyperdrive.baseToken.symbol}
             </p>
             <p className="daisy-label-text">
-              1 hy{hyperdrive.baseToken.symbol} is always worth one{" "}
-              {hyperdrive.baseToken.symbol} at maturity. It{"'"}s a predictable
-              fixed rate.
+              1 hy{hyperdrive.baseToken.symbol} is worth 1{" "}
+              {hyperdrive.baseToken.symbol} at maturity, giving you a
+              predictable fixed rate yield.
             </p>
             <div className="mt-4 ml-4 flex flex-col gap-2">
               <ChecklistItem checked readOnly>
