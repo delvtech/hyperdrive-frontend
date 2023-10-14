@@ -55,8 +55,7 @@ function getColumns(hyperdrive: Hyperdrive) {
         return <BaseAmountReceivedCell hyperdrive={hyperdrive} row={row} />;
       },
     }),
-    columnHelper.display({
-      id: "closedOn",
+    columnHelper.accessor("closedTimestamp", {
       header: `Closed on`,
       cell: ({ row }) => {
         return new Date(
