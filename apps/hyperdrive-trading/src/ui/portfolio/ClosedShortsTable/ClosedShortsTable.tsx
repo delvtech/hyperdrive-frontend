@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-key */
 import { ClosedShort } from "@hyperdrive/sdk";
 import { useQuery } from "@tanstack/react-query";
 import {
@@ -106,10 +105,7 @@ export function ClosedShortsTable({
         <tbody>
           {tableInstance.getRowModel().rows.map((row) => {
             return (
-              <tr
-                key={row.id}
-                className="daisy-hover h-16 cursor-pointer grid-cols-4 items-center"
-              >
+              <tr key={row.id} className="h-16 grid-cols-4 items-center">
                 <>
                   {row.getVisibleCells().map((cell) => {
                     return (
