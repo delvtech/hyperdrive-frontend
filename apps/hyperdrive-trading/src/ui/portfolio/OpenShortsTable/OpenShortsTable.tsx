@@ -45,7 +45,7 @@ const columns = (hyperdrive: Hyperdrive) => [
     cell: (baseAmountPaid) => {
       const amountPaid = baseAmountPaid.getValue();
       return formatBalance({
-        balance: amountPaid || 0n,
+        balance: amountPaid,
         decimals: hyperdrive.baseToken.decimals,
       });
     },

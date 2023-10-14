@@ -43,10 +43,10 @@ const columns = (hyperdrive: Hyperdrive) => [
   }),
   columnHelper.accessor("baseAmountReceived", {
     header: `Amount received`,
-    cell: ({ row }) => {
-      const amountReceived = row.original.baseAmountReceived;
+    cell: (baseAmountReceived) => {
+      const amountReceived = baseAmountReceived.getValue();
       return formatBalance({
-        balance: amountReceived || 0n,
+        balance: amountReceived,
         decimals: hyperdrive.baseToken.decimals,
         places: 4,
       });
@@ -54,12 +54,14 @@ const columns = (hyperdrive: Hyperdrive) => [
   }),
   columnHelper.accessor("closedTimestamp", {
     header: `Closed`,
-    cell: ({ row }) => {
-      if (!row.original.closedTimestamp) {
-        return;
-      }
-      const closed = new Date(Number(row.original.closedTimestamp * 1000n));
-      return <span>{closed?.toLocaleDateString()}</span>;
+    cell: (closedTimestamp) => {
+      return (
+        <span>
+          {new Date(
+            Number(closedTimestamp.getValue() * 1000n),
+          ).toLocaleDateString()}
+        </span>
+      );
     },
   }),
 ];
@@ -71,7 +73,7 @@ export function ClosedShortsTable({
   const readHyperdrive = useReadHyperdrive(hyperdrive.address);
   const queryEnabled = !!readHyperdrive && !!account;
   const { data: closedShorts } = useQuery({
-    queryKey: makeQueryKey("shortPositions", { account }),
+    queryKey: makeQueryKey("closedShortPositions", { account }),
     queryFn: queryEnabled
       ? () => readHyperdrive?.getClosedShorts({ account })
       : undefined,
@@ -107,10 +109,6 @@ export function ClosedShortsTable({
               <tr
                 key={row.id}
                 className="daisy-hover h-16 cursor-pointer grid-cols-4 items-center text-sm text-base-content even:bg-secondary/5 md:text-h6"
-                onClick={() => {
-                  const modalId = `${row.original.assetId}`;
-                  (window as any)[modalId].showModal();
-                }}
               >
                 <>
                   {row.getVisibleCells().map((cell) => {
