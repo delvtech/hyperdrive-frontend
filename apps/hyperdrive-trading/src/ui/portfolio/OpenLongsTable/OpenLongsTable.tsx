@@ -80,7 +80,7 @@ function getColumns(hyperdrive: Hyperdrive) {
     }),
     columnHelper.display({
       id: "value",
-      header: `Market value (${hyperdrive.baseToken.symbol})`,
+      header: `Current value (${hyperdrive.baseToken.symbol})`,
       cell: ({ row }) => {
         return <CurrentValueCell hyperdrive={hyperdrive} row={row} />;
       },
