@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-key */
 import { Long } from "@hyperdrive/sdk";
 import { useQuery } from "@tanstack/react-query";
 import {
