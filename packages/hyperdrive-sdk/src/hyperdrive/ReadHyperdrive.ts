@@ -95,7 +95,7 @@ export interface IReadHyperdrive {
   }): Promise<OpenShort[]>;
 
   /**
-   * Gets the inactive longs opened by a specific user.
+   * Gets the closed longs by a specific user.
    */
   getClosedLongs({
     account,
@@ -784,26 +784,28 @@ export class ReadHyperdrive implements IReadHyperdrive {
       toBlock,
     });
 
-    const closedLongsById = mapValues(
-      groupBy(closedLongs, (event) => event.args.assetId.toString()),
-      (events): ClosedLong => {
-        const assetId = events[0].args.assetId;
+    const closedLongsList: ClosedLong[] = await Promise.all(
+      closedLongs.map(async (event) => {
+        const assetId = event.args.assetId;
         const decoded = decodeAssetFromTransferSingleEventData(
-          events[0].data as `0x${string}`,
+          event.data as `0x${string}`,
         );
         return {
           assetId,
-          bondAmount: sumBigInt(events.map((event) => event.args.bondAmount)),
-          baseAmount: sumBigInt(events.map((event) => event.args.baseAmount)),
+          bondAmount: event.args.bondAmount,
+          baseAmount: event.args.baseAmount,
           baseAmountPaid: 0n, // TODO: Remove this field, this is copy/paste from @hyperdrive/queries
           maturity: decoded.timestamp,
-          closedTimestamp: decodeAssetFromTransferSingleEventData(
-            events[0].data as `0x${string}`,
+          closedTimestamp: (
+            await this.network.getBlock({
+              blockNumber: event.blockNumber,
+            })
           ).timestamp,
         };
-      },
+      }),
     );
-    return Object.values(closedLongsById).filter((long) => long.bondAmount);
+
+    return closedLongsList.filter((long) => long.bondAmount);
   }
 
   async getClosedShorts({
