@@ -86,7 +86,7 @@ export function ClosedShortsTable({
   });
   return (
     <div className="max-h-96 overflow-y-scroll">
-      <table className="daisy-table mt-5">
+      <table className="daisy-table-zebra daisy-table daisy-table-lg">
         <thead>
           {tableInstance.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
@@ -108,7 +108,7 @@ export function ClosedShortsTable({
             return (
               <tr
                 key={row.id}
-                className="daisy-hover h-16 cursor-pointer grid-cols-4 items-center text-sm text-base-content even:bg-secondary/5 md:text-h6"
+                className="daisy-hover h-16 cursor-pointer grid-cols-4 items-center"
               >
                 <>
                   {row.getVisibleCells().map((cell) => {
