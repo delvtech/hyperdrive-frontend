@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-key */
 import { Long } from "@hyperdrive/sdk";
 import { useQuery } from "@tanstack/react-query";
 import {
@@ -80,7 +79,7 @@ function getColumns(hyperdrive: Hyperdrive) {
     }),
     columnHelper.display({
       id: "value",
-      header: `Market value (${hyperdrive.baseToken.symbol})`,
+      header: `Current value (${hyperdrive.baseToken.symbol})`,
       cell: ({ row }) => {
         return <CurrentValueCell hyperdrive={hyperdrive} row={row} />;
       },
@@ -197,7 +196,7 @@ function CurrentValueCell({
     baseAmountOut && baseAmountOut > row.original.baseAmountPaid;
 
   return (
-    <div className="flex flex-col items-center gap-1 lg:flex-row">
+    <div className="flex flex-col items-center gap-1">
       <span className="font-bold">{currentValue?.toString()}</span>
       <div
         data-tip={"Profit/Loss since open"}
@@ -207,7 +206,7 @@ function CurrentValueCell({
           { "text-error": !isPositiveChangeInValue },
         )}
       >
-        {isPositiveChangeInValue ? "+" : ""}
+        <span>{isPositiveChangeInValue ? "+" : ""}</span>
         {baseAmountOut
           ? `${formatBalance({
               balance: baseAmountOut - row.original.baseAmountPaid,
