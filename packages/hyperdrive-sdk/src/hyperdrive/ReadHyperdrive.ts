@@ -823,28 +823,27 @@ export class ReadHyperdrive implements IReadHyperdrive {
       toBlock,
     });
 
-    const closedShortsById = mapValues(
-      groupBy(closedShorts, (event) => event.args.assetId.toString()),
-      (events) => {
-        const assetId = events[0].args.assetId;
+    const closedShortsList: ClosedShort[] = await Promise.all(
+      closedShorts.map(async (event) => {
+        const assetId = event.args.assetId;
         const decoded = decodeAssetFromTransferSingleEventData(
-          events[0].data as `0x${string}`,
+          event.data as `0x${string}`,
         );
         return {
           hyperdriveAddress: this.contract.address,
           assetId,
-          bondAmount: sumBigInt(events.map((event) => event.args.bondAmount)),
-          baseAmountReceived: sumBigInt(
-            events.map((event) => event.args.baseAmount),
-          ),
+          bondAmount: event.args.bondAmount,
+          baseAmountReceived: event.args.baseAmount,
           maturity: decoded.timestamp,
-          closedTimestamp: decodeAssetFromTransferSingleEventData(
-            events[0].data as `0x${string}`,
+          closedTimestamp: (
+            await this.network.getBlock({
+              blockNumber: event.blockNumber,
+            })
           ).timestamp,
         };
-      },
+      }),
     );
-    return Object.values(closedShortsById).filter((short) => short.bondAmount);
+    return closedShortsList.filter((short) => short.bondAmount);
   }
 
   async getMaxShort(options?: ContractReadOptions): Promise<bigint> {
