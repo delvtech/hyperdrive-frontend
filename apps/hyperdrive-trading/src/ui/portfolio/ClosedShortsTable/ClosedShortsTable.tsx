@@ -48,6 +48,7 @@ const columns = (hyperdrive: Hyperdrive) => [
       return formatBalance({
         balance: amountReceived || 0n,
         decimals: hyperdrive.baseToken.decimals,
+        places: 4,
       });
     },
   }),
@@ -55,7 +56,7 @@ const columns = (hyperdrive: Hyperdrive) => [
     header: `Closed`,
     cell: ({ row }) => {
       if (!row.original.closedTimestamp) {
-        return <span>Not closed</span>;
+        return;
       }
       const closed = new Date(Number(row.original.closedTimestamp * 1000n));
       return <span>{closed?.toLocaleDateString()}</span>;
