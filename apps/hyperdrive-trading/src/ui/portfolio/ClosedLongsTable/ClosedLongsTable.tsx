@@ -107,14 +107,7 @@ export function ClosedLongsTable({
         <tbody>
           {tableInstance.getRowModel().rows.map((row) => {
             return (
-              <tr
-                key={row.id}
-                className="h-16 items-center italic"
-                onClick={() => {
-                  const modalId = `${row.original.assetId}`;
-                  (window as any)[modalId].showModal();
-                }}
-              >
+              <tr key={row.id} className="h-16 items-center italic">
                 <>
                   {row.getVisibleCells().map((cell) => {
                     return (
