@@ -84,7 +84,7 @@ function CurrentValueCell({
         {baseAmountOut && row.original.bondAmount !== 0n
           ? `(${getProfitLossText({
               baseAmountOut,
-              amountInput: row.original.baseAmountPaid || 0n,
+              amountInput: row.original.baseAmountPaid,
               baseDecimals: hyperdrive.baseToken.decimals,
               baseSymbol: hyperdrive.baseToken.symbol,
               showPercentage: false,
