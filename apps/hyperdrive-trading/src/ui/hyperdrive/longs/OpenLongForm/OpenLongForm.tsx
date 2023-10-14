@@ -1,10 +1,9 @@
-import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import { adjustAmountByPercentage } from "@hyperdrive/sdk";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { ReactElement } from "react";
-import { Link } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
 import { MAX_UINT256 } from "src/base/constants";
+import { Well } from "src/ui/base/components/Well/Well";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
@@ -19,41 +18,43 @@ import { formatUnits } from "viem";
 import { useAccount, useBalance } from "wagmi";
 
 interface OpenLongFormProps {
-  market: Hyperdrive;
+  hyperdrive: Hyperdrive;
 }
 
-export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
+export function OpenLongForm({
+  hyperdrive: hyperdrive,
+}: OpenLongFormProps): ReactElement {
   const { address: account } = useAccount();
   const { openConnectModal } = useConnectModal();
 
   const { data: baseTokenBalance } = useBalance({
     address: account,
-    token: market.baseToken.address,
+    token: hyperdrive.baseToken.address,
   });
 
-  const { maxLong } = useMaxLong(market);
+  const { maxLong } = useMaxLong(hyperdrive);
 
   let maxAmount: string | undefined;
   if (maxLong && baseTokenBalance) {
     maxAmount =
       maxLong.maxBaseIn > baseTokenBalance.value
         ? baseTokenBalance.formatted
-        : formatUnits(maxLong.maxBaseIn, market.baseToken.decimals);
+        : formatUnits(maxLong.maxBaseIn, hyperdrive.baseToken.decimals);
   }
 
   const { amount, amountAsBigInt, setAmount } = useNumericInput({
-    decimals: market.baseToken.decimals,
+    decimals: hyperdrive.baseToken.decimals,
   });
 
   const { tokenAllowance } = useTokenAllowance({
     account,
-    spender: market.address,
-    tokenAddress: market.baseToken.address,
+    spender: hyperdrive.address,
+    tokenAddress: hyperdrive.baseToken.address,
   });
 
   const { approve } = useTokenApproval({
-    tokenAddress: market.baseToken.address,
-    spender: market.address,
+    tokenAddress: hyperdrive.baseToken.address,
+    spender: hyperdrive.address,
     amount: MAX_UINT256,
   });
 
@@ -61,9 +62,9 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
     ? amountAsBigInt === undefined || amountAsBigInt < tokenAllowance
     : false;
 
-  const { poolInfo } = usePoolInfo(market.address);
+  const { poolInfo } = usePoolInfo(hyperdrive.address);
   const { longAmountOut, status: openLongPreviewStatus } = usePreviewOpenLong({
-    market,
+    market: hyperdrive,
     baseAmount: amountAsBigInt,
     minBondAmountOut: 1n, // todo add slippage control
     minSharePrice: poolInfo?.sharePrice,
@@ -75,11 +76,11 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
     longAmountOut &&
     adjustAmountByPercentage({
       amount: longAmountOut,
-      decimals: market.baseToken.decimals,
+      decimals: hyperdrive.baseToken.decimals,
     });
 
   const { openLong, openLongStatus } = useOpenLong({
-    hyperdriveAddress: market.address,
+    hyperdriveAddress: hyperdrive.address,
     baseAmount: amountAsBigInt,
     bondAmountOut: longAmountOutAfterSlippage,
     minSharePrice: poolInfo?.sharePrice,
@@ -91,24 +92,10 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
   });
 
   return (
-    <div className="flex flex-col gap-10">
-      <div className="text-base-content">
-        <h5>Open a long</h5>
-        <div className="flex flex-col items-start">
-          <p>Secure a fixed rate by purchasing bonds.</p>
-          <Link
-            className="flex cursor-pointer flex-row items-center text-sm"
-            to={
-              "https://www.notion.so/delv-tech/Long-Scenarios-5396e8a14a794aaf821c3f8ed6dbcef9?pvs=4"
-            }
-          >
-            Learn More
-            <ArrowTopRightOnSquareIcon className="ml-1" width={12} />
-          </Link>
-        </div>
-      </div>
+    <div className="flex flex-col gap-4">
+      <h5 className="font-bold">Buy hy{hyperdrive.baseToken.symbol}</h5>
       <TokenInput
-        token={market.baseToken}
+        token={hyperdrive.baseToken}
         value={amount ?? ""}
         maxValue={maxAmount}
         inputLabel="Amount to spend"
@@ -116,61 +103,71 @@ export function OpenLongForm({ market }: OpenLongFormProps): ReactElement {
           baseTokenBalance
             ? `Balance: ${formatBalance({
                 balance: baseTokenBalance?.value,
-                decimals: market.baseToken.decimals,
+                decimals: hyperdrive.baseToken.decimals,
                 places: 4,
-              })} ${market.baseToken.symbol}`
+              })} ${hyperdrive.baseToken.symbol}`
             : undefined
         }
         onChange={(newAmount) => setAmount(newAmount)}
       />
-      {/* New Position Section */}
-      <div className="space-y-4 text-base-content">
-        <h5 className="text-center font-thin ">Preview transaction</h5>
-        <OpenLongPreview
-          hyperdrive={market}
-          long={{
-            bondAmount: longAmountOut || 0n,
-            assetId: 0n,
-            baseAmountPaid: 0n,
-            maturity: BigInt(
-              Math.round((Date.now() + market.termLengthMS) / 1000),
-            ),
-          }}
-        />
-      </div>
 
-      {account ? (
-        !hasEnoughAllowance ? (
-          // Approval button
-          <button
-            disabled={!approve}
-            className="daisy-btn-warning daisy-btn"
-            onClick={(e) => {
-              // Do this so we don't close the modal
-              e.preventDefault();
-              approve?.();
-            }}
-          >
-            <h5>Approve {market.baseToken.symbol}</h5>
-          </button>
+      {/* New Position Section */}
+      <div className="mt-4 flex flex-col gap-6">
+        <Well elevation="flat">
+          <div className="space-y-4">
+            <span className="text-h6 font-bold">Preview transaction</span>
+            <OpenLongPreview
+              hyperdrive={hyperdrive}
+              long={{
+                bondAmount: longAmountOut || 0n,
+                assetId: 0n,
+                baseAmountPaid: amountAsBigInt || 0n,
+                maturity: BigInt(
+                  Math.round((Date.now() + hyperdrive.termLengthMS) / 1000),
+                ),
+              }}
+            />
+          </div>
+        </Well>
+        <p className="text-center text-body">
+          Please note: 1 hy{hyperdrive.baseToken.symbol} is always worth 1{" "}
+          {hyperdrive.baseToken.symbol} at maturity, however its value may
+          fluctuate before maturity based on market activity.
+        </p>
+
+        {account ? (
+          !hasEnoughAllowance ? (
+            // Approval button
+            <button
+              disabled={!approve}
+              className="daisy-btn-warning daisy-btn"
+              onClick={(e) => {
+                // Do this so we don't close the modal
+                e.preventDefault();
+                approve?.();
+              }}
+            >
+              <h5>Approve {hyperdrive.baseToken.symbol}</h5>
+            </button>
+          ) : (
+            // Trade button
+            <button
+              disabled={!openLong || openLongStatus === "loading"}
+              className="daisy-btn-secondary daisy-btn"
+              onClick={() => openLong?.()}
+            >
+              Buy hy{hyperdrive.baseToken.symbol}
+            </button>
+          )
         ) : (
-          // Trade button
           <button
-            disabled={!openLong || openLongStatus === "loading"}
             className="daisy-btn-secondary daisy-btn"
-            onClick={() => openLong?.()}
+            onClick={() => openConnectModal?.()}
           >
-            Open long
+            <h5>Connect wallet</h5>
           </button>
-        )
-      ) : (
-        <button
-          className="daisy-btn-secondary daisy-btn"
-          onClick={() => openConnectModal?.()}
-        >
-          <h5>Connect wallet</h5>
-        </button>
-      )}
+        )}
+      </div>
     </div>
   );
 }
