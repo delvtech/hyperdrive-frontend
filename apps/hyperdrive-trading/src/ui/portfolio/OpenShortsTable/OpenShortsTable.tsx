@@ -54,32 +54,44 @@ const columns = (hyperdrive: Hyperdrive) => [
     },
   }),
   columnHelper.display({
-    header: "Implied Yield",
+    header: "Accrued Yield",
     cell: ({ row }) => {
-      return <ImpliedYieldCell hyperdrive={hyperdrive} row={row} />;
+      return <AccruedYieldCell hyperdrive={hyperdrive} row={row} />;
     },
   }),
 ];
 
-function ImpliedYieldCell({
+// ___Share price___
+// Accrued yield = (valutPriceEnd - valutPriceStart) / valutPriceStart * size of position
+/*
+  Rate    StartPrice    EndPrice
+  10%     1.00          1.10 (1.0*1.1)
+  10%     1.10          1.21 (1.1*1.1)
+  20%     2.00          2.40 (2.0*1.2)
+  20%     2.20          2.64 (2.2*1.2)
+*/
+
+function AccruedYieldCell({
   row,
   hyperdrive,
 }: {
   row: Row<OpenShort>;
   hyperdrive: Hyperdrive;
 }) {
-  const { address: account } = useAccount();
   // TODO: temporary for now until this available via addresses.json
   const { vaultRate } = useVaultRate({
     vaultAddress: "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
   });
-  const { baseAmountOut } = usePreviewCloseShort({
-    hyperdriveAddress: row.original.hyperdriveAddress,
-    maturityTime: row.original.maturity,
-    shortAmountIn: row.original.bondAmount,
-    minBaseAmountOut: parseUnits("0", hyperdrive.baseToken.decimals),
-    destination: account,
-  });
+
+  // // Current PoolInfo contains the current price of a vault share
+  // const { poolInfo } = usePoolInfo(hyperdrive.address);
+
+  // // Current PoolInfo contains price of a vault share when the short was opened
+  // const { poolInfo: poolInfoAtOpen } = usePoolInfo(hyperdrive.address);
+
+  // Accrued yield (in BASE) is:
+  // (poolInfo?.sharePrice / poolInfoAtOpen?.sharePrice) * row.original.bondAmount
+
   // const fixedRate = formatBalance({
   //   balance: row.original.baseAmountPaid,
   //   decimals: hyperdrive.baseToken.decimals,
@@ -101,13 +113,73 @@ function ImpliedYieldCell({
   return <span>{impliedYield?.toString()}%</span>;
 }
 
+// // what you get at the end of 7 days
+// funding_APY = some_compounding_to_365;
+
+/*
+displayed_APR = 0.0683;
+p = 0.99869;
+t = 7;
+HPR = (1 - p) / p;
+    = 0.0013117183510398956
+calculated_APY = (1 + HPR) ** (365 / t) - 1;
+               = 0.07074206109785264
+// APR is your annualized return without compounding
+calculated_APR = (HPR * 365) / t;
+               = 0.06839674258993741
+variable_APY = 0.05
+// for 7 days
+variable_HPR = (1 + variable_APY) ** (7 / 365) - 1
+             = 0.000936139684073467
+             (assumes original variable_APY compounds daily)
+variable_APR = variable_HPR * 365 / 7
+             = 0.04881299781240221
+what_you_get = variable_HPR - HPR
+            = 0.000936139684073467 - 0.0013117183510398956
+            = -0.0003755786669664286
+what_you_pay = 1-p
+              = 1 - 0.99869
+              = 0.00131
+implied_yield = what_you_get / what_you_pay - 1
+              = -0.0003755786669664286 / 0.00131 - 1
+              = -1.286701272493457
+              = -129%
+              (fixed rate was higher than variable, negative makes sense)
+another way to think of this is...
+implied_leverage = 1/(1-p)
+                 = 763.3587786259347
+                 = very based
+this means your return is
+                = (variable - fixed) * implied_leverage
+                = (variable_APR - APR) * implied_leverage
+                = (0.04881299781240221 - 0.0683) * implied_leverage
+                = -0.019487002187597788 * implied_leverage
+                = -0.019487002187597788 * 763.3587786259347
+              for a year:
+                = -14.875574189005565
+                = -1487.6% <- Annualized Return
+              for 7 days:
+                = -14.875574189005565 * 7 / 365
+                = -0.2852849844466821
+                = -28.53% <- Holding Period Return
+                (We have APR-ized the variable APY so we can compare it to the fixed APR,
+                and then applied the implied leverage to it)
+
+
+=== continuous compounding ===
+FV = future value
+PV = present value
+e^rt is the conversion between the two
+FV = PV * e^rt
+PV = FV / e^rt
+ or PV = FV * e^(-rt)
+*/
+
 function calculateFixedRateAtTimeOfShort(
   basePaid: bigint,
   bondsShorted: bigint,
   hyperdrive: Hyperdrive,
 ): number {
-  console.log("basePaid", basePaid);
-  console.log("bondsShorted", bondsShorted);
   // Example: 0.05 / 1 = fixed apr was 5% at time of short
   const fixedRate = Number(basePaid) / Number(bondsShorted);
   // const fixedRate = divideBigInt(
@@ -117,11 +189,11 @@ function calculateFixedRateAtTimeOfShort(
   // );
   // Example usage with a dynamic term length of 7 days:
   const basePaid2 = 0.05; // Replace with your actual values
-  const bondsReceived = 1; // Replace with your actual values
+  const shortsReceived = 1; // Replace with your actual values
   const termLengthInDayz = 365; // Replace with your actual term length
   const annualizedAPR = calculateAnnualizedAPR(
     basePaid2,
-    bondsReceived,
+    shortsReceived,
     termLengthInDayz,
   );
   console.log(`Annualized APR: ${annualizedAPR}`);
@@ -131,14 +203,18 @@ function calculateFixedRateAtTimeOfShort(
 }
 
 function calculateAnnualizedAPR(
-  basePaid: number,
-  bondsReceived: number,
-  termLengthInDays: number,
+  basePaid: number, // 1 - p
+  bondsShorted: number, // notional number of bonds, N
+  termLengthInDays: number, // t
 ): number {
-  const dailyInterest =
-    Math.pow(1 - basePaid / bondsReceived, 1 / termLengthInDays) - 1;
-  const annualizedAPR = Math.pow(1 + dailyInterest, 365) - 1;
-  return annualizedAPR;
+  // HPR = ( 1 - p ) / p
+  const basePaidPerBondShorted = basePaid / bondsShorted;
+  const price = 1 - basePaidPerBondShorted; // p
+  const holdingPeriodReturn = (1 - price) / price; // r = 5%
+  // before annualizing, we need to use (1+r) or else it doesn't work... 1^20=1... 0 ^ 20 = 0
+  const annualizedPeriodReturn =
+    (1 + holdingPeriodReturn) ** (365 / termLengthInDays) - 1;
+  return annualizedPeriodReturn;
 }
 
 function CurrentValueCell({
@@ -159,7 +235,7 @@ function CurrentValueCell({
   const currentValue =
     baseAmountOut &&
     formatBalance({
-      balance: row.original.bondAmount - baseAmountOut,
+      balance: baseAmountOut,
       decimals: hyperdrive.baseToken.decimals,
     });
   const profitLossClass = baseAmountOut
