@@ -20,7 +20,7 @@ export function OpenLongModalButton({
   return (
     <Modal
       modalId={OPEN_LONG_MODAL_ID}
-      modalContent={<OpenLongForm market={hyperdrive} />}
+      modalContent={<OpenLongForm hyperdrive={hyperdrive} />}
     >
       {({ showModal }) => (
         <Well
