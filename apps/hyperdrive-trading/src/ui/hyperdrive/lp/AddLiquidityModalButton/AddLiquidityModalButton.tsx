@@ -1,6 +1,5 @@
 import { ChevronRightIcon, SquaresPlusIcon } from "@heroicons/react/24/outline";
 import { ReactElement } from "react";
-import { useSearchParams } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
 import { ChecklistItem } from "src/ui/base/components/ChecklistItem/ChecklistItem";
 import { Modal } from "src/ui/base/components/Modal/Modal";
@@ -14,7 +13,6 @@ export function AddLiquidityModalButton({
 }: {
   hyperdrive: Hyperdrive;
 }): ReactElement {
-  const [searchParams, setSearchParams] = useSearchParams();
   return (
     <Modal
       modalId={ADD_LIQUIDITY_MODAL_ID}
@@ -24,11 +22,6 @@ export function AddLiquidityModalButton({
         <Well
           interactive
           onClick={() => {
-            setSearchParams({
-              ...searchParams,
-              position: "LP",
-              openOrClosed: "Open",
-            });
             return showModal();
           }}
         >
