@@ -34,35 +34,37 @@ export function ClosedLpTable({
   if (closedLpShares) {
     rows.push(
       ...closedLpShares.map(
-        ({ lpAmount, baseAmount, closedTimestamp, withdrawalShareAmount }) => [
-          <span
-            key="type"
-            className="font-semibold uppercase italic text-primary"
-          >
-            LP
-          </span>,
-          <span key="shares" className="italic">
-            {formatBalance({
-              balance: lpAmount,
-              decimals: hyperdrive.baseToken.decimals,
-            })}
-          </span>,
-          <span key="value" className="italic">
-            {`${formatBalance({
-              balance: baseAmount,
-              decimals: hyperdrive.baseToken.decimals,
-            })} ${hyperdrive.baseToken.symbol}`}
-          </span>,
-          <span key="withdrawalShares" className="italic">
-            {`${formatBalance({
-              balance: withdrawalShareAmount,
-              decimals: hyperdrive.baseToken.decimals,
-            })}`}
-          </span>,
-          <span key="closed-on" className="italic">
-            {new Date(Number(closedTimestamp * 1000n)).toLocaleDateString()}
-          </span>,
-        ],
+        ({ lpAmount, baseAmount, closedTimestamp, withdrawalShareAmount }) => {
+          return [
+            <span
+              key="type"
+              className="font-semibold uppercase italic text-primary"
+            >
+              LP
+            </span>,
+            <span key="shares" className="italic">
+              {formatBalance({
+                balance: lpAmount,
+                decimals: hyperdrive.baseToken.decimals,
+              })}
+            </span>,
+            <span key="value" className="italic">
+              {`${formatBalance({
+                balance: baseAmount,
+                decimals: hyperdrive.baseToken.decimals,
+              })} ${hyperdrive.baseToken.symbol}`}
+            </span>,
+            <span key="withdrawalShares" className="italic">
+              {`${formatBalance({
+                balance: withdrawalShareAmount,
+                decimals: hyperdrive.baseToken.decimals,
+              })}`}
+            </span>,
+            <span key="closed-on" className="italic">
+              {new Date(Number(closedTimestamp * 1000n)).toLocaleDateString()}
+            </span>,
+          ];
+        },
       ),
     );
   }
