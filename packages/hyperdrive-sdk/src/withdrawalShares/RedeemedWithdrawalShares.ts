@@ -4,5 +4,5 @@ export interface RedeemedWithdrawalShares {
   hyperdriveAddress: Address;
   withdrawalShareAmount: bigint;
   baseAmount: bigint;
-  timestamp: bigint;
+  redeemedTimestamp: bigint;
 }

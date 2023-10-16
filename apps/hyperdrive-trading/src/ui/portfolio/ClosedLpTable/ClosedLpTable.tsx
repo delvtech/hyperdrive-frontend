@@ -72,7 +72,7 @@ export function ClosedLpTable({
   if (redeemedWithdrawalShares) {
     rows.push(
       ...redeemedWithdrawalShares.map(
-        ({ baseAmount, timestamp, withdrawalShareAmount }) => [
+        ({ baseAmount, redeemedTimestamp, withdrawalShareAmount }) => [
           <span key="type" className="font-semibold uppercase italic">
             Withdrawal shares
           </span>,
@@ -92,7 +92,7 @@ export function ClosedLpTable({
             0
           </span>,
           <span key="closed-on" className="italic">
-            {new Date(Number(timestamp * 1000n)).toLocaleDateString()}
+            {new Date(Number(redeemedTimestamp * 1000n)).toLocaleDateString()}
           </span>,
         ],
       ),
@@ -123,7 +123,7 @@ export function ClosedLpTable({
         {
           cell: (
             <CellWithTooltip
-              content="Value received"
+              content={`Amount received (${hyperdrive.baseToken.symbol})`}
               tooltip="Total assets collected upon closing the position."
             />
           ),

@@ -1028,15 +1028,14 @@ export class ReadHyperdrive implements IReadHyperdrive {
     );
 
     return Promise.all(
-      redeemedWithdrawalShareEvents.map(async ({ data, args }) => {
+      redeemedWithdrawalShareEvents.map(async ({ blockNumber, args }) => {
         const { withdrawalShareAmount, baseAmount } = args;
         return {
           hyperdriveAddress: this.contract.address,
           withdrawalShareAmount,
           baseAmount,
-          timestamp: decodeAssetFromTransferSingleEventData(
-            data as `0x${string}`,
-          ).timestamp,
+          redeemedTimestamp: (await this.network.getBlock({ blockNumber }))
+            .timestamp,
         };
       }),
     );
