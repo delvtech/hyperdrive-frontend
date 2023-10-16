@@ -52,7 +52,7 @@ export function ClosedLpTable({
               {`${formatBalance({
                 balance: baseAmount,
                 decimals: hyperdrive.baseToken.decimals,
-              })} ${hyperdrive.baseToken.symbol}`}
+              })}`}
             </span>,
             <span key="withdrawalShares" className="italic">
               {`${formatBalance({
@@ -116,7 +116,7 @@ export function ClosedLpTable({
           cell: (
             <CellWithTooltip
               tooltip="LP's proportionate stake in the liquidity pool."
-              content="Shares"
+              content="Shares closed"
             />
           ),
         },

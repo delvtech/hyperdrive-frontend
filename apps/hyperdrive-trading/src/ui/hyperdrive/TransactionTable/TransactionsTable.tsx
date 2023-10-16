@@ -84,7 +84,7 @@ export function TransactionTable({
 
   return (
     <div className="max-h-96 overflow-y-scroll">
-      <table className="daisy-table-zebra daisy-table daisy-table-lg mt-5">
+      <table className="daisy-table-zebra daisy-table daisy-table-lg mt-2">
         <thead>
           {tableInstance.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
