@@ -74,7 +74,7 @@ export function ClosedLpTable({
       ...redeemedWithdrawalShares.map(
         ({ baseAmount, timestamp, withdrawalShareAmount }) => [
           <span key="type" className="font-semibold uppercase italic">
-            Pending Withdrawal
+            Withdrawal shares
           </span>,
           <span key="shares" className="italic">
             {`${formatBalance({
