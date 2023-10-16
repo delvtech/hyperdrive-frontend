@@ -979,18 +979,22 @@ export class ReadHyperdrive implements IReadHyperdrive {
         ...options,
       },
     );
-    return removeLiquidityEvents.map(({ data, args }) => {
-      const { baseAmount, lpAmount, withdrawalShareAmount } = args;
-      return {
-        hyperdriveAddress: this.contract.address,
-        lpAmount,
-        baseAmount,
-        withdrawalShareAmount,
-        closedTimestamp: decodeAssetFromTransferSingleEventData(
-          data as `0x${string}`,
-        ).timestamp,
-      };
-    });
+    return Promise.all(
+      removeLiquidityEvents.map(async ({ blockNumber, data, args }) => {
+        const { baseAmount, lpAmount, withdrawalShareAmount } = args;
+        return {
+          hyperdriveAddress: this.contract.address,
+          lpAmount,
+          baseAmount,
+          withdrawalShareAmount,
+          closedTimestamp: (
+            await this.network.getBlock({
+              blockNumber,
+            })
+          ).timestamp,
+        };
+      }),
+    );
   }
 
   async getWithdrawalShares({
