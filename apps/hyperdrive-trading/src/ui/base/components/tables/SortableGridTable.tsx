@@ -216,7 +216,9 @@ export function CellWithTooltip({
 }: CellWithTooltipProps): ReactElement {
   return (
     <span className="daisy-tooltip" data-tip={tooltip}>
-      {content}
+      <span className="text-sm font-bold text-black text-opacity-60">
+        {content}
+      </span>
     </span>
   );
 }

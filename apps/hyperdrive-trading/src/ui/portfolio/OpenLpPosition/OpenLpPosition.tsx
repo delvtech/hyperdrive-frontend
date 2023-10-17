@@ -15,7 +15,6 @@ import { usePreviewRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreview
 import { useWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useWithdrawalShares";
 import { RedeemWithdrawalSharesModalButton } from "src/ui/hyperdrive/lp/RedeemWithdrawalSharesModalButton/RedeemWithdrawalSharesModalButton";
 import { RemoveLiquidityModalButton } from "src/ui/hyperdrive/lp/RemoveLiquidityModalButton/RemoveLiquidityModalButton";
-import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
 
 interface OpenOrdersTableProps {
@@ -57,10 +56,14 @@ export function OpenLpPosition({
   const rows: Row[] = [];
   if (lpShares) {
     rows.push([
-      <span key="type" className="font-semibold uppercase text-primary">
+      <span key="type" className="font-semibold uppercase">
         LP
       </span>,
-      formatUnits(lpShares, (hyperdrive as Hyperdrive).baseToken.decimals),
+      formatBalance({
+        balance: lpShares,
+        decimals: (hyperdrive as Hyperdrive).baseToken.decimals,
+        places: 4,
+      }),
       <span key="value">
         {!!poolInfo ? (
           `${formatBalance({
@@ -69,6 +72,7 @@ export function OpenLpPosition({
               hyperdrive.baseToken.decimals,
             ),
             decimals: hyperdrive.baseToken.decimals,
+            places: 4,
           })} ${hyperdrive.baseToken.symbol}`
         ) : (
           <Skeleton />
@@ -138,8 +142,8 @@ export function OpenLpPosition({
 
   return (
     <SortableGridTable
-      headingRowClassName="grid-cols-[4fr_4fr_4fr_4fr_1fr] text-start"
-      bodyRowClassName="grid-cols-[4fr_4fr_4fr_4fr_1fr] items-center text-sm md:text-h6 even:bg-base-300/5 h-16"
+      headingRowClassName="grid-cols-[4fr_4fr_4fr_4fr_1fr]"
+      bodyRowClassName="grid-cols-[4fr_4fr_4fr_4fr_1fr] items-center even:bg-base-300/5 h-16"
       // Blank col added for actions
       cols={[
         {
@@ -154,7 +158,7 @@ export function OpenLpPosition({
           cell: (
             <CellWithTooltip
               tooltip="LP's proportionate stake in the total liquidity pool."
-              content="Share"
+              content="Shares"
             />
           ),
         },
@@ -174,6 +178,7 @@ export function OpenLpPosition({
             />
           ),
         },
+        { cell: <div /> },
       ]}
       rows={rows}
       showSkeleton={
