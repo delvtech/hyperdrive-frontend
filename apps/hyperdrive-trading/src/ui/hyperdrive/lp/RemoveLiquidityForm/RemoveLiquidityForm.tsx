@@ -22,7 +22,7 @@ export function RemoveLiquidityForm({
   lpShares,
   onRemoveLiquidity,
 }: RemoveLiquidityFormProps): ReactElement {
-  const { decimals: baseDecimals, symbol: baseSymbol } = hyperdrive.baseToken;
+  const { decimals: baseDecimals } = hyperdrive.baseToken;
 
   const { address: account } = useAccount();
 
@@ -121,6 +121,7 @@ export function RemoveLiquidityForm({
             disabled={!removeLiquidity || removeLiquidityStatus === "loading"}
             onClick={(e) => {
               removeLiquidity?.();
+              onRemoveLiquidity?.(e);
             }}
           >
             Remove liquidity

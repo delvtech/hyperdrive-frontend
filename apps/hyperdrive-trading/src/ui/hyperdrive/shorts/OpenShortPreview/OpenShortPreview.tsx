@@ -44,8 +44,8 @@ export function OpenShortPreview({
       </div>
 
       <div className="flex justify-between">
-        <p className="">Matures in</p>
-        <p className="">
+        <p>Matures in</p>
+        <p>
           {convertMillisecondsToDays(market.termLengthMS)} days,{" "}
           {new Date(
             Date.now() + Number(market.termLengthMS),
