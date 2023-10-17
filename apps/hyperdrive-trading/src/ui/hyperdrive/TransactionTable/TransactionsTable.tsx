@@ -39,12 +39,33 @@ const getColumns = (hyperdrive: Hyperdrive) => [
       if (filterValue === "Short") {
         return ["Open Short", "Close Short"].includes(type);
       }
+      if (filterValue === "LP") {
+        return [
+          "Add Liquidity",
+          "Remove Liquidity",
+          "Redeem Withdrawal Shares",
+        ].includes(type);
+      }
       return true;
     },
   }),
   columnHelper.accessor("value", {
-    header: `Size (hy${hyperdrive.baseToken.symbol})`,
-    cell: (value) => value.getValue(),
+    header: `Size`,
+    cell: ({ getValue, row }) => {
+      const size = getValue();
+      const isLpRow =
+        row.getValue("type") === "Add Liquidity" ||
+        row.getValue("type") === "Remove Liquidity" ||
+        row.getValue("type") === "Redeem Withdrawal Shares";
+      return (
+        <span>
+          {size}{" "}
+          {isLpRow
+            ? hyperdrive.baseToken.name
+            : `hy${hyperdrive.baseToken.symbol}`}
+        </span>
+      );
+    },
     enableColumnFilter: false,
     sortingFn: (a, b) =>
       Number(a?.getValue("value") ?? 0) - Number(b?.getValue("value") ?? 0),
@@ -110,7 +131,7 @@ export function TransactionTable({
                       </div>
                       {header.column.getCanFilter() ? (
                         <div className="daisy-tabs-lg">
-                          {["All", "Long", "Short"].map((filter) => (
+                          {["All", "Long", "Short", "LP"].map((filter) => (
                             <a
                               key={filter}
                               className={`${

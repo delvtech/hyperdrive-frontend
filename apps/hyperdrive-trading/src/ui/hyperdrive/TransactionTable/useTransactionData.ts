@@ -25,6 +25,12 @@ function mapEventName(eventName: string): string {
       return "Sell";
     case "CloseShort":
       return "Close Short";
+    case "AddLiquidity":
+      return "Add Liquidity";
+    case "RemoveLiquidity":
+      return "Remove Liquidity";
+    case "RedeemWithdrawalShares":
+      return "Redeem Withdrawal Shares";
     default:
       return eventName;
   }
@@ -36,9 +42,9 @@ function mapEventsToRowType(events: TransactionData[]) {
       type: mapEventName(event.eventName),
       value: dnum.format(
         [
-          event.eventName === "OpenShort" || "CloseShort"
-            ? event.bondAmount
-            : event.baseAmount,
+          event.eventName === "OpenShort" || event.eventName === "CloseShort"
+            ? event.bondAmount || 0n
+            : event.baseAmount || 0n,
           18,
         ],
         { digits: 2 },
@@ -75,6 +81,9 @@ export function useTransactionData({ address }: Hyperdrive): {
   }
   if (shorts) {
     data.push(...shorts);
+  }
+  if (lpEvents) {
+    data.push(...lpEvents);
   }
 
   return { data: data.length ? mapEventsToRowType(data) : undefined };
