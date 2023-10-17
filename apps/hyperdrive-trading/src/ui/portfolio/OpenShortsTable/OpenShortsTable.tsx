@@ -70,7 +70,7 @@ function CurrentValueCell({
   const currentValue =
     baseAmountOut &&
     formatBalance({
-      balance: row.original.bondAmount - baseAmountOut,
+      balance: baseAmountOut,
       decimals: hyperdrive.baseToken.decimals,
     });
   const profitLossClass = baseAmountOut

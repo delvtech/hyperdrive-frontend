@@ -4,21 +4,17 @@ import {
   getCoreRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import uniqBy from "lodash.uniqby";
-import { ReactElement, useState } from "react";
+import { ReactElement } from "react";
+import { useNavigate } from "react-router-dom";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
-import { Row } from "src/ui/base/components/tables/SortableGridTable";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { MARKETS_MODAL_KEY } from "src/ui/markets/MarketSelect/AllMarketsBreadcrumb";
 import {
   MarketTableRowData,
   useMarketRowData,
 } from "src/ui/markets/MarketsTable/useMarketRowData";
 import { YieldSourceLabel } from "src/ui/markets/YieldSourceLabel/YieldSourceLabel";
-import { usePublicClient } from "wagmi";
-
-const ALL_PROTOCOLS_KEY = "All Markets";
-const ALL_TERM_LENGTHS_KEY = 0;
 
 const columnHelper = createColumnHelper<MarketTableRowData>();
 
@@ -36,30 +32,54 @@ function columns() {
         );
       },
     }),
+    columnHelper.accessor("market.termLengthMS", {
+      header: "Term",
+      cell: ({ getValue }) => {
+        const termLength = getValue();
+        return (
+          <p key="term" className="font-semibold">
+            {convertMillisecondsToDays(termLength)} days
+          </p>
+        );
+      },
+    }),
+    columnHelper.accessor("liquidity", {
+      header: "Liquidity",
+      cell: ({ getValue, row }) => {
+        const liquidity = getValue();
+        return (
+          <span
+            key="liquidity"
+            className="flex flex-row items-center justify-start font-semibold"
+          >
+            <img
+              className="mr-1 h-4"
+              src={row.original.market.baseToken.iconUrl}
+            />
+            {formatBalance({
+              balance: liquidity,
+              decimals: row.original.market.baseToken.decimals,
+              places: 0,
+            })}
+          </span>
+        );
+      },
+    }),
+    columnHelper.accessor("longAPR", {
+      header: "Fixed Rate",
+      cell: ({ getValue }) => {
+        const fixedRate = getValue();
+        return <span key="fixed-rate">{fixedRate}%</span>;
+      },
+    }),
   ];
 }
 
 export function MarketsTable(): ReactElement {
   const { appConfig: config } = useAppConfig();
-  const publicClient = usePublicClient();
-
-  const allProtocols = config?.hyperdrives.map(
-    (market) => config?.yieldSources[market.yieldSource],
-  );
-  const protocols = uniqBy(allProtocols, (protocol) => protocol.name);
-  const allTermLengths = config?.hyperdrives.map(
-    (market) => market.termLengthMS,
-  );
-  const termLengths = uniqBy(allTermLengths, (termLength) => termLength);
-
-  const [protocolFilter, setSelectedProtocolFilter] =
-    useState<string>(ALL_PROTOCOLS_KEY);
-  const [termLengthFilter, setSelectedTermLengthFilter] =
-    useState<number>(ALL_TERM_LENGTHS_KEY);
-
+  const navigate = useNavigate();
   // TODO: no loading state for now
-  const { data: marketsRowData = [], status: marketRowDataStatus } =
-    useMarketRowData(config?.hyperdrives);
+  const { data: marketsRowData = [] } = useMarketRowData(config?.hyperdrives);
   const tableInstance = useReactTable({
     columns: columns(),
     data: marketsRowData || [],
@@ -67,7 +87,8 @@ export function MarketsTable(): ReactElement {
   });
 
   return (
-    <div className="max-h-96 overflow-y-scroll">
+    <div className="flex max-h-96 flex-col items-center overflow-y-scroll">
+      <h3 className="mb-4 font-lato">Markets</h3>
       <table className="daisy-table-zebra daisy-table daisy-table-lg">
         <thead>
           {tableInstance.getHeaderGroups().map((headerGroup) => (
@@ -92,7 +113,8 @@ export function MarketsTable(): ReactElement {
                 key={row.id}
                 className="daisy-hover h-16 cursor-pointer grid-cols-4 items-center"
                 onClick={() => {
-                  console.log("handle go to market");
+                  navigate(`/trade/${row.original.market}`);
+                  (window as any)[MARKETS_MODAL_KEY].close();
                 }}
               >
                 <>
@@ -114,38 +136,4 @@ export function MarketsTable(): ReactElement {
       </table>
     </div>
   );
-}
-
-function createMarketRow({
-  market,
-  yieldSource,
-  liquidity,
-}: MarketTableRowData): Row {
-  return {
-    href: `/trade/${market.address}`,
-    cells: [
-      <span key="name" className="font-bold">
-        <p>{market.name}</p>
-        <YieldSourceLabel yieldSource={yieldSource} />
-      </span>,
-      <p key="term" className="font-semibold">
-        {convertMillisecondsToDays(market.termLengthMS)} days
-      </p>,
-
-      <span
-        key="liquidity"
-        className="flex flex-row items-center justify-start font-semibold"
-      >
-        <img className="mr-1 h-4" src={market.baseToken.iconUrl} />
-        {formatBalance({
-          balance: liquidity,
-          decimals: market.baseToken.decimals,
-          places: 0,
-        })}
-      </span>,
-      <span key="apy" className="font-semibold">
-        1.25%
-      </span>,
-    ],
-  };
 }
