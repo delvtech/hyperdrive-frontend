@@ -1,11 +1,14 @@
+import {
+  createColumnHelper,
+  flexRender,
+  getCoreRowModel,
+  useReactTable,
+} from "@tanstack/react-table";
 import uniqBy from "lodash.uniqby";
-import { ReactElement, useMemo, useState } from "react";
+import { ReactElement, useState } from "react";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
-import {
-  Row,
-  SortableGridTable,
-} from "src/ui/base/components/tables/SortableGridTable";
+import { Row } from "src/ui/base/components/tables/SortableGridTable";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import {
   MarketTableRowData,
@@ -16,6 +19,25 @@ import { usePublicClient } from "wagmi";
 
 const ALL_PROTOCOLS_KEY = "All Markets";
 const ALL_TERM_LENGTHS_KEY = 0;
+
+const columnHelper = createColumnHelper<MarketTableRowData>();
+
+function columns() {
+  return [
+    columnHelper.accessor("market.name", {
+      header: "Name",
+      cell: ({ getValue, row }) => {
+        const marketName = getValue();
+        return (
+          <span key="name" className="font-bold">
+            <p>{marketName}</p>
+            <YieldSourceLabel yieldSource={row.original.yieldSource} />
+          </span>
+        );
+      },
+    }),
+  ];
+}
 
 export function MarketsTable(): ReactElement {
   const { appConfig: config } = useAppConfig();
@@ -38,55 +60,58 @@ export function MarketsTable(): ReactElement {
   // TODO: no loading state for now
   const { data: marketsRowData = [], status: marketRowDataStatus } =
     useMarketRowData(config?.hyperdrives);
-
-  const filteredMarkets = useMemo(() => {
-    const marketFilteredByTermLength = termLengthFilter
-      ? marketsRowData.filter(
-          (marketRowData) =>
-            marketRowData.market.termLengthMS === termLengthFilter,
-        )
-      : marketsRowData;
-
-    if (protocolFilter !== ALL_PROTOCOLS_KEY) {
-      return marketFilteredByTermLength.filter(
-        (marketRowData) => marketRowData.market.yieldSource === protocolFilter,
-      );
-    }
-
-    return marketFilteredByTermLength;
-  }, [marketsRowData, protocolFilter, termLengthFilter]);
+  const tableInstance = useReactTable({
+    columns: columns(),
+    data: marketsRowData || [],
+    getCoreRowModel: getCoreRowModel(),
+  });
 
   return (
-    <div className="flex flex-col space-y-8 overflow-x-auto rounded-sm ">
-      {/* Markets sortable table */}
-      <div>
-        <SortableGridTable
-          headingRowClassName="grid-cols-auto"
-          bodyRowClassName="grid-cols-auto"
-          cols={[
-            {
-              cell: "Name",
-              sortKey: "name",
-            },
-            {
-              cell: "Term Length",
-              sortKey: "termLength",
-            },
-            {
-              cell: "Liquidity",
-              sortKey: "liquidity",
-            },
-            {
-              cell: "Fixed Rate",
-              sortKey: "longAPR",
-            },
-          ]}
-          rows={filteredMarkets.map((marketRowData) =>
-            createMarketRow(marketRowData),
-          )}
-          showSkeleton={marketRowDataStatus === "loading"}
-        />
-      </div>
+    <div className="max-h-96 overflow-y-scroll">
+      <table className="daisy-table-zebra daisy-table daisy-table-lg">
+        <thead>
+          {tableInstance.getHeaderGroups().map((headerGroup) => (
+            <tr key={headerGroup.id}>
+              {headerGroup.headers.map((header) => (
+                <th key={header.id}>
+                  {header.isPlaceholder
+                    ? null
+                    : flexRender(
+                        header.column.columnDef.header,
+                        header.getContext(),
+                      )}
+                </th>
+              ))}
+            </tr>
+          ))}
+        </thead>
+        <tbody>
+          {tableInstance.getRowModel().rows.map((row) => {
+            return (
+              <tr
+                key={row.id}
+                className="daisy-hover h-16 cursor-pointer grid-cols-4 items-center"
+                onClick={() => {
+                  console.log("handle go to market");
+                }}
+              >
+                <>
+                  {row.getVisibleCells().map((cell) => {
+                    return (
+                      <td key={cell.id}>
+                        {flexRender(
+                          cell.column.columnDef.cell,
+                          cell.getContext(),
+                        )}
+                      </td>
+                    );
+                  })}
+                </>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
     </div>
   );
 }
