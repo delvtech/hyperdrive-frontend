@@ -25,7 +25,6 @@ import { INetwork } from "src/network/Network";
 import { calculateEffectiveShareReserves } from "src/pool/calculateEffectiveShares";
 import { getCheckpointId } from "src/pool/getCheckpointId";
 import { WITHDRAW_SHARES_ASSET_ID } from "src/withdrawalShares/assetId";
-import { add } from "dnum";
 
 export interface ReadHyperdriveOptions {
   contract: IReadHyperdriveContract;
@@ -333,6 +332,16 @@ export interface IReadHyperdrive {
       blockNumber: bigint | undefined;
     }[]
   >;
+
+  getLpEvents(): Promise<
+    {
+      trader: Address;
+      baseAmount: bigint;
+      timestamp: bigint;
+      eventName: "AddLiquidity" | "RemoveLiquidity" | "RedeemWithdrawalShares";
+      blockNumber: bigint | undefined;
+    }[]
+  >;
 }
 
 const MAX_ITERATIONS = 7n;
@@ -520,7 +529,15 @@ export class ReadHyperdrive implements IReadHyperdrive {
       }),
     );
   }
-  async getLpEvents(): Promise<any[]> {
+  async getLpEvents(): Promise<
+    {
+      trader: Address;
+      baseAmount: bigint;
+      timestamp: bigint;
+      eventName: "AddLiquidity" | "RemoveLiquidity" | "RedeemWithdrawalShares";
+      blockNumber: bigint | undefined;
+    }[]
+  > {
     const addLiquidtyEvents = await this.contract.getEvents("AddLiquidity");
     const removeLiquidityEvents = await this.contract.getEvents(
       "RemoveLiquidity",
