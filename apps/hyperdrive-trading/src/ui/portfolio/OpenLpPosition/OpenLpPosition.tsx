@@ -1,4 +1,5 @@
 import { multiplyBigInt } from "@hyperdrive/sdk";
+import { createColumnHelper } from "@tanstack/react-table";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { Hyperdrive } from "src/appconfig/types";
@@ -21,6 +22,13 @@ interface OpenOrdersTableProps {
   hyperdrive: Hyperdrive;
 }
 
+const columnHelper = createColumnHelper<Row>();
+function getColumns(
+  hyperdrive: Hyperdrive,
+  lpShares: bigint,
+  withdrawalShares: bigint,
+) {}
+
 export function OpenLpPosition({
   hyperdrive,
 }: OpenOrdersTableProps): ReactElement {
@@ -30,6 +38,7 @@ export function OpenLpPosition({
     hyperdriveAddress: hyperdrive.address,
     account,
   });
+  console.log("lpShares", lpShares);
 
   const { withdrawalShares, withdrawalSharesStatus } = useWithdrawalShares({
     hyperdriveAddress: hyperdrive.address,
