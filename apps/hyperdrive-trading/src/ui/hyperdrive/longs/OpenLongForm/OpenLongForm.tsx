@@ -129,6 +129,7 @@ export function OpenLongForm({
             />
           </div>
         </Well>
+
         <p className="text-center text-body">
           Please note: 1 hy{hyperdrive.baseToken.symbol} is always worth 1{" "}
           {hyperdrive.baseToken.symbol} at maturity, however its value may

@@ -1,9 +1,8 @@
-import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { ReactElement } from "react";
-import { Link } from "react-router-dom";
-import { Hyperdrive, Token } from "src/appconfig/types";
+import { Hyperdrive } from "src/appconfig/types";
 import { MAX_UINT256 } from "src/base/constants";
+import { Well } from "src/ui/base/components/Well/Well";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useMaxShort } from "src/ui/hyperdrive/shorts/hooks/useMaxShort";
@@ -77,86 +76,77 @@ export function OpenShortForm({
     },
   });
 
-  const current = new Date();
-  const expiryDate = new Date(current.getTime() + market.termLengthMS);
-  const bondToken = {
-    symbol: `hy${market.baseToken.symbol}`,
-    address: "0x0",
-    decimals: 18,
-    name: "Bonds",
-  } as Token;
-
   return (
-    <div className="flex flex-col gap-10">
-      <div className="text-base-content">
-        <h5>Open a short</h5>
-        <div className="flex flex-col items-start">
-          <p>Earn yield by shorting the current bond price</p>
-          <Link
-            className="flex cursor-pointer flex-row items-center text-sm"
-            to={
-              "https://www.notion.so/delv-tech/Short-Scenarios-ddff34fa457545cdbc7556e57e43b282?pvs=4"
-            }
-          >
-            Learn More
-            <ArrowTopRightOnSquareIcon className="ml-1" width={12} />
-          </Link>
-        </div>
-      </div>
+    <div className="flex flex-col gap-4">
+      <h5 className="font-bold">Short hy{market.baseToken.symbol}</h5>
       <TokenInput
-        token={bondToken}
+        token={{
+          symbol: `hy${market.baseToken.symbol}`,
+          address: "0x0",
+          decimals: 18,
+          name: "Bonds",
+        }}
         inputLabel="Amount to short"
         value={amount ?? ""}
         onChange={(newAmount) => setAmount(newAmount)}
       />
 
       {/* New Position Section */}
-      <div className="space-y-4 text-base-content">
-        <h5>Position preview</h5>
-        <OpenShortPreview
-          market={market}
-          costBasis={baseAmountIn ?? 0n}
-          amountShort={amountAsBigInt ?? 0n}
-          expiryDate={expiryDate}
-        />
-      </div>
+      <div className="mt-4 flex flex-col gap-6">
+        <Well elevation="flat">
+          <div className="space-y-4">
+            <span className="text-h6 font-bold">Preview transaction</span>
+            <OpenShortPreview
+              market={market}
+              costBasis={baseAmountIn ?? 0n}
+              shortSize={amountAsBigInt}
+            />
+          </div>
+        </Well>
 
-      {account ? (
-        needsApproval ? (
-          // Approval button
-          <button
-            disabled={!approve}
-            className="daisy-btn-warning daisy-btn"
-            onClick={(e) => {
-              // Do this so we don't close the modal
-              e.preventDefault();
-              approve?.();
-            }}
-          >
-            <h5>Approve {market.baseToken.symbol}</h5>
-          </button>
+        <p className="text-center text-body">
+          Please note: When you short hy{market.baseToken.symbol} you earn the
+          variable rate on the equivalent amount of {market.baseToken.symbol}{" "}
+          deposited in the yield source.
+        </p>
+
+        {account ? (
+          needsApproval ? (
+            // Approval button
+            <button
+              disabled={!approve}
+              className="daisy-btn-warning daisy-btn"
+              onClick={(e) => {
+                // Do this so we don't close the modal
+                e.preventDefault();
+                approve?.();
+              }}
+            >
+              <h5>Approve {market.baseToken.symbol}</h5>
+            </button>
+          ) : (
+            // Open short button
+            <button
+              disabled={
+                !hasEnoughBalance ||
+                !openShort ||
+                openShortSubmittedStatus === "loading"
+              }
+              className="daisy-btn-accent daisy-btn"
+              onClick={() => openShort?.()}
+            >
+              Short hy{market.baseToken.symbol}
+            </button>
+          )
         ) : (
-          // Open short button
           <button
-            disabled={
-              !hasEnoughBalance ||
-              !openShort ||
-              openShortSubmittedStatus === "loading"
-            }
-            className="daisy-btn-accent daisy-btn"
-            onClick={() => openShort?.()}
+            className="daisy-btn-secondary daisy-btn"
+            onClick={() => openConnectModal?.()}
           >
-            Open short
+            <h5>Connect wallet</h5>
           </button>
-        )
-      ) : (
-        <button
-          className="daisy-btn-secondary daisy-btn"
-          onClick={() => openConnectModal?.()}
-        >
-          <h5>Connect wallet</h5>
-        </button>
-      )}
+        )}
+      </div>
     </div>
   );
 }
