@@ -64,6 +64,10 @@ export function useTransactionData({ address }: Hyperdrive): {
     queryKey: makeQueryKey("shortEvents", { address }),
     queryFn: async () => readHyperdrive?.getShortEvents(),
   });
+  const { data: lpEvents } = useQuery({
+    queryKey: makeQueryKey("lpEvents", { address }),
+    queryFn: async () => readHyperdrive?.getLpEvents(),
+  });
 
   const data = [];
   if (longs) {
