@@ -6,9 +6,9 @@ import { Transaction } from "src/ui/hyperdrive/TransactionTable/TransactionsTabl
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
 type TransactionData = {
-  assetId: bigint;
+  assetId?: bigint;
   baseAmount: bigint;
-  bondAmount: bigint;
+  bondAmount?: bigint;
   eventName: string;
   timestamp: bigint;
   trader: Address;
