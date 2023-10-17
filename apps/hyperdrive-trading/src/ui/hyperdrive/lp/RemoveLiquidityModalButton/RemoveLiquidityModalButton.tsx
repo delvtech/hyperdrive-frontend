@@ -28,13 +28,10 @@ export function RemoveLiquidityModalButton({
             onClick={closeModal}
           >
             <XMarkIcon
-              className="w-6 text-white opacity-70 hover:opacity-100 focus:opacity-100"
+              className="w-6 opacity-70 hover:opacity-100 focus:opacity-100"
               title="Close position"
             />
           </button>
-          <h3 className="text-h6 font-thin text-base-content">
-            Remove liquidity
-          </h3>
           <RemoveLiquidityForm
             hyperdrive={hyperdrive}
             lpShares={lpShares}
