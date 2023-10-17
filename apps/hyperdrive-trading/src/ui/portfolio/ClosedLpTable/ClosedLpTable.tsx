@@ -36,10 +36,7 @@ export function ClosedLpTable({
       ...closedLpShares.map(
         ({ lpAmount, baseAmount, closedTimestamp, withdrawalShareAmount }) => {
           return [
-            <span
-              key="type"
-              className="font-semibold uppercase italic text-primary"
-            >
+            <span key="type" className="font-semibold uppercase italic">
               LP
             </span>,
             <span key="shares" className="italic">
@@ -89,7 +86,7 @@ export function ClosedLpTable({
             })} ${hyperdrive.baseToken.symbol}`}
           </span>,
           <span key="withdrawalShares" className="italic">
-            0
+            N/A
           </span>,
           <span key="closed-on" className="italic">
             {new Date(Number(redeemedTimestamp * 1000n)).toLocaleDateString()}
@@ -102,12 +99,12 @@ export function ClosedLpTable({
   return (
     <SortableGridTable
       headingRowClassName="grid-cols-5 text-start"
-      bodyRowClassName="grid-cols-5 items-center text-sm md:text-h6 even:bg-base-300/5 h-16"
+      bodyRowClassName="grid-cols-5 items-center even:bg-base-300/5 h-16"
       cols={[
         {
           cell: (
             <CellWithTooltip
-              tooltip="Long and Short positions have a maturity date based on the open date and position duration of the pool whereas LP positions can remain active indefinitely (until closed by the LPer)."
+              tooltip="LP Shares and Withdrawal shares"
               content="Position"
             />
           ),
@@ -115,7 +112,7 @@ export function ClosedLpTable({
         {
           cell: (
             <CellWithTooltip
-              tooltip="LP's proportionate stake in the liquidity pool."
+              tooltip="Amount of LP shares or withdrawal shares that were closed"
               content="Shares closed"
             />
           ),
@@ -124,15 +121,15 @@ export function ClosedLpTable({
           cell: (
             <CellWithTooltip
               content={`Amount received (${hyperdrive.baseToken.symbol})`}
-              tooltip="Total assets collected upon closing the position."
+              tooltip={`Total amount of ${hyperdrive.baseToken.symbol} user received  upon closing the position.`}
             />
           ),
         },
         {
           cell: (
             <CellWithTooltip
-              content="Withdrawal shares"
-              tooltip="Portion of LP's stake withdrawn from the pool."
+              content="Withdrawal shares received"
+              tooltip="Shares to claim idle liquidity to completely exit an LP position"
             />
           ),
         },

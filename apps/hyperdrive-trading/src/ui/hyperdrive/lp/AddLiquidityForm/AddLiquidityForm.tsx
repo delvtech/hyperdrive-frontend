@@ -1,10 +1,9 @@
-import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { ReactElement } from "react";
-import { Link } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
 import { MAX_UINT256 } from "src/base/constants";
 import { parseUnits } from "src/base/parseUnits";
+import { Well } from "src/ui/base/components/Well/Well";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { AddLiquidityPreview } from "src/ui/hyperdrive/lp/AddLiquidityPreview/AddLiquidityPreview";
@@ -71,22 +70,8 @@ export function AddLiquidityForm({
   });
 
   return (
-    <div className="flex flex-col gap-10">
-      <div className="text-base-content">
-        <h5>Add liquidity</h5>
-        <div className="flex flex-col items-start">
-          <p>Earn trading fees when users open long or shorts</p>
-          <Link
-            className="flex cursor-pointer flex-row items-center text-sm"
-            to={
-              "https://www.notion.so/delv-tech/LP-Profitability-0acf6928b88c4a33875221aa15ca62d2?pvs=4"
-            }
-          >
-            Learn More
-            <ArrowTopRightOnSquareIcon className="ml-1" width={12} />
-          </Link>
-        </div>
-      </div>
+    <div className="flex flex-col gap-4">
+      <h5 className="font-bold">Add liquidity</h5>
       <TokenInput
         token={market.baseToken}
         value={amount ?? ""}
@@ -105,43 +90,56 @@ export function AddLiquidityForm({
       />
 
       {/* New Position Section */}
-      <div className="space-y-4 text-base-content">
-        <h5>Position preview</h5>
-        <AddLiquidityPreview hyperdrive={market} lpShares={lpSharesOut || 0n} />
-      </div>
+      <div className="mt-4 flex flex-col gap-6">
+        <Well elevation="flat">
+          <div className="space-y-4">
+            <span className="text-h6 font-bold">Preview transaction</span>
+            <AddLiquidityPreview
+              hyperdrive={market}
+              lpShares={lpSharesOut || 0n}
+            />
+          </div>
+        </Well>
 
-      {account ? (
-        needsApproval ? (
-          // Approval button
-          <button
-            disabled={!approve}
-            className="daisy-btn-warning daisy-btn"
-            onClick={(e) => {
-              // Do this so we don't close the modal
-              e.preventDefault();
-              approve?.();
-            }}
-          >
-            Approve {market.baseToken.symbol}
-          </button>
+        <p className="text-center text-body">
+          Note: You can withdraw liquidity at any time. If you&apos;re backing
+          open positions, you&apos;ll receive Withdrawal Shares for later
+          redemption.
+        </p>
+
+        {account ? (
+          needsApproval ? (
+            // Approval button
+            <button
+              disabled={!approve}
+              className="daisy-btn-warning daisy-btn"
+              onClick={(e) => {
+                // Do this so we don't close the modal
+                e.preventDefault();
+                approve?.();
+              }}
+            >
+              Approve {market.baseToken.symbol}
+            </button>
+          ) : (
+            // Trade button
+            <button
+              disabled={!addLiquidity || addLiquidityStatus === "loading"}
+              className="daisy-btn-primary daisy-btn"
+              onClick={() => addLiquidity?.()}
+            >
+              Add liquidity
+            </button>
+          )
         ) : (
-          // Trade button
           <button
-            disabled={!addLiquidity || addLiquidityStatus === "loading"}
             className="daisy-btn-primary daisy-btn"
-            onClick={() => addLiquidity?.()}
+            onClick={() => openConnectModal?.()}
           >
-            Add liquidity
+            Connect wallet
           </button>
-        )
-      ) : (
-        <button
-          className="daisy-btn-primary daisy-btn"
-          onClick={() => openConnectModal?.()}
-        >
-          Connect wallet
-        </button>
-      )}
+        )}
+      </div>
     </div>
   );
 }

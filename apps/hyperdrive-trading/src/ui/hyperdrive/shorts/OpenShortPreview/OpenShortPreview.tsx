@@ -1,84 +1,56 @@
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
-import { Pill } from "src/ui/base/components/Pill";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 
 interface OpenShortPreviewProps {
   market: Hyperdrive;
   costBasis?: bigint;
-  amountShort: bigint;
-  expiryDate: Date;
+  shortSize?: bigint;
 }
 
 export function OpenShortPreview({
   market,
   costBasis,
-  amountShort,
-  expiryDate,
+  shortSize,
 }: OpenShortPreviewProps): ReactElement {
   return (
-    <div className="flex flex-col gap-y-4 rounded border border-neutral-content bg-transparent p-4">
-      <div className="flex items-center">
-        <h5 className="mr-4 font-bold">{market.name}</h5>
-        <Pill variant="Red" className="h-6 text-base-content">
-          Short
-        </Pill>
+    <div className="flex flex-col gap-1">
+      <div className="flex justify-between">
+        <p>Short size</p>
+        <p className="font-bold">
+          {shortSize
+            ? `${formatBalance({
+                balance: shortSize,
+                decimals: market.baseToken.decimals,
+                places: 6,
+              })}`
+            : "0"}{" "}
+          hy{market.baseToken.symbol}
+        </p>
+      </div>
+      <div className="flex justify-between">
+        <p>You pay</p>
+        <p className="font-bold">
+          {costBasis
+            ? `${formatBalance({
+                balance: costBasis,
+                decimals: market.baseToken.decimals,
+                places: 6,
+              })}`
+            : "0"}{" "}
+          {market.baseToken.symbol}
+        </p>
       </div>
 
-      <div className="flex flex-col gap-y-1 tracking-wide">
-        <div className="flex">
-          <p className="mr-auto">Cost Basis</p>
-          <p className="font-semibold tracking-wide">
-            {costBasis
-              ? `${formatBalance({
-                  balance: costBasis,
-                  decimals: market.baseToken.decimals,
-                  places: 6,
-                  includeCommas: false,
-                })} ${market.baseToken.symbol}`
-              : "0"}
-          </p>
-        </div>
-
-        <div className="flex">
-          <p className="mr-auto">Amount</p>
-          <p className="font-semibold tracking-wide">
-            {formatBalance({
-              balance: amountShort,
-              decimals: market.baseToken.decimals,
-              places: 6,
-            })}
-          </p>
-        </div>
-
-        <div className="flex">
-          <p className="mr-auto">Term Length</p>
-          <p className="font-semibold tracking-wide">
-            {convertMillisecondsToDays(market.termLengthMS)} days
-          </p>
-        </div>
-
-        <div className="flex">
-          <p className="mr-auto">Matures</p>
-          <p className="font-semibold tracking-wide">
-            {expiryDate.toLocaleDateString()}
-          </p>
-        </div>
-
-        <div className="flex">
-          <p className="mr-auto">Exposure</p>
-          <p className="font-semibold tracking-wide">
-            {!!costBasis && amountShort > 0n && costBasis > 0n
-              ? `${formatBalance({
-                  balance: amountShort / costBasis,
-                  decimals: market.baseToken.decimals,
-                  places: 4,
-                  includeCommas: false,
-                })}x`
-              : "0"}
-          </p>
-        </div>
+      <div className="flex justify-between">
+        <p>Matures in</p>
+        <p>
+          {convertMillisecondsToDays(market.termLengthMS)} days,{" "}
+          {new Date(
+            Date.now() + Number(market.termLengthMS),
+          ).toLocaleDateString()}
+        </p>
       </div>
     </div>
   );

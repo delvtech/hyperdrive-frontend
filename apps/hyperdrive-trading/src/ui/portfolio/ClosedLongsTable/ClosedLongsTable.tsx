@@ -10,6 +10,7 @@ import {
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { makeQueryKey } from "src/base/makeQueryKey";
+import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { useAccount } from "wagmi";
@@ -124,6 +125,7 @@ export function ClosedLongsTable({
           })}
         </tbody>
       </table>
+      {!closedLongs?.length ? <NonIdealState /> : null}
     </div>
   );
 }

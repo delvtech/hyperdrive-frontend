@@ -12,6 +12,7 @@ import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { parseUnits } from "src/base/parseUnits";
+import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import {
@@ -175,6 +176,7 @@ export function OpenShortsTable({
           })}
         </tbody>
       </table>
+      {!shorts?.length ? <NonIdealState /> : null}
     </div>
   );
 }

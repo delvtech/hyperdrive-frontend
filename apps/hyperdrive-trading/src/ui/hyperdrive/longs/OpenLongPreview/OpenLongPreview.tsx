@@ -31,21 +31,40 @@ export function OpenLongPreview({
 
       <div className="flex justify-between">
         <p>Fixed rate</p>
-        <p>
-          {long.bondAmount > 0
-            ? `${calculateAnnualizedPercentageChange({
+        <p className="flex items-center">
+          {long.bondAmount > 0 ? (
+            <>
+              <div
+                className={
+                  "daisy-badge daisy-badge-md inline-flex text-success"
+                }
+              >
+                <span>{long.bondAmount > long.baseAmountPaid ? "+" : ""}</span>
+                {long.baseAmountPaid
+                  ? `${formatBalance({
+                      balance: long.bondAmount - long.baseAmountPaid,
+                      decimals: hyperdrive.baseToken.decimals,
+                      places: 4,
+                    })} ${hyperdrive.baseToken.symbol}`
+                  : undefined}
+              </div>
+              {calculateAnnualizedPercentageChange({
                 amountBefore: long.baseAmountPaid,
                 amountAfter: long.bondAmount,
                 days: numDays,
-              })}`
-            : "0"}
+              })}
+            </>
+          ) : (
+            "0"
+          )}
           % APR
         </p>
       </div>
       <div className="flex justify-between">
         <p className="">Matures in</p>
         <p className="">
-          7 days, {new Date(Number(long.maturity * 1000n)).toLocaleDateString()}
+          {convertMillisecondsToDays(hyperdrive.termLengthMS)} days,{" "}
+          {new Date(Number(long.maturity * 1000n)).toLocaleDateString()}
         </p>
       </div>
     </div>

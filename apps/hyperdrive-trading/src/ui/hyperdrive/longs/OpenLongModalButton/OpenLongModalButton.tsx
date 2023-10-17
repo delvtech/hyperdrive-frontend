@@ -37,9 +37,9 @@ export function OpenLongModalButton({
               {hyperdrive.baseToken.symbol}
             </p>
             <p className="daisy-label-text">
-              1 hy{hyperdrive.baseToken.symbol} is worth 1{" "}
-              {hyperdrive.baseToken.symbol} at maturity, giving you a
-              predictable fixed rate yield.
+              1 hy{hyperdrive.baseToken.symbol} is always worth 1{" "}
+              {hyperdrive.baseToken.symbol} at maturity. It&apos;s a predictable
+              fixed rate yield.
             </p>
             <div className="mt-4 ml-4 flex flex-col gap-2">
               <ChecklistItem checked readOnly>
