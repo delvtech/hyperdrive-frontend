@@ -332,6 +332,16 @@ export interface IReadHyperdrive {
       blockNumber: bigint | undefined;
     }[]
   >;
+
+  getLpEvents(): Promise<
+    {
+      trader: Address;
+      baseAmount: bigint;
+      timestamp: bigint;
+      eventName: "AddLiquidity" | "RemoveLiquidity" | "RedeemWithdrawalShares";
+      blockNumber: bigint | undefined;
+    }[]
+  >;
 }
 
 const MAX_ITERATIONS = 7n;
@@ -517,6 +527,40 @@ export class ReadHyperdrive implements IReadHyperdrive {
         eventName,
         blockNumber,
       }),
+    );
+  }
+  async getLpEvents(): Promise<
+    {
+      trader: Address;
+      baseAmount: bigint;
+      timestamp: bigint;
+      eventName: "AddLiquidity" | "RemoveLiquidity" | "RedeemWithdrawalShares";
+      blockNumber: bigint | undefined;
+    }[]
+  > {
+    const addLiquidtyEvents = await this.contract.getEvents("AddLiquidity");
+    const removeLiquidityEvents = await this.contract.getEvents(
+      "RemoveLiquidity",
+    );
+    const redeemWithdrawalSharesEvents = await this.contract.getEvents(
+      "RedeemWithdrawalShares",
+    );
+    return Promise.all(
+      [
+        ...addLiquidtyEvents,
+        ...removeLiquidityEvents,
+        ...redeemWithdrawalSharesEvents,
+      ].map(async ({ args, eventName, blockNumber }) => ({
+        trader: args.provider,
+        baseAmount: args.baseAmount,
+        timestamp: (
+          await this.network.getBlock({
+            blockNumber,
+          })
+        ).timestamp,
+        eventName,
+        blockNumber,
+      })),
     );
   }
 
