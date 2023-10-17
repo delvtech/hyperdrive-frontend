@@ -23,7 +23,7 @@ export function FAQ(): ReactElement {
             long positions. Read our docs to learn more about{" "}
             <a
               className="underline"
-              href="https://www.notion.so/Position-Types-249d2fc0f16847c283b6f4df00df9bd5?pvs=21"
+              href="https://delv-tech.notion.site/Position-Types-249d2fc0f16847c283b6f4df00df9bd5"
             >
               Hyperdrive&rsquo;s Position Types
             </a>
@@ -46,7 +46,7 @@ export function FAQ(): ReactElement {
             about{" "}
             <a
               className="underline"
-              href="https://www.notion.so/Position-Types-249d2fc0f16847c283b6f4df00df9bd5?pvs=21"
+              href="https://delv-tech.notion.site/Position-Types-249d2fc0f16847c283b6f4df00df9bd5"
             >
               Hyperdrive&rsquo;s Position Types
             </a>
@@ -72,7 +72,7 @@ export function FAQ(): ReactElement {
             LP. <br /> Learn more about{" "}
             <a
               className="underline"
-              href="https://www.notion.so/LP-Profitability-0acf6928b88c4a33875221aa15ca62d2?pvs=21"
+              href="https://delv-tech.notion.site/LP-Profitability-0acf6928b88c4a33875221aa15ca62d2"
             >
               LP Profitability
             </a>
@@ -90,7 +90,7 @@ export function FAQ(): ReactElement {
             Yes, Longs and Shorts can be closed at any time (except in rare
             cases, learn more in the{" "}
             <a
-              href="https://www.notion.so/11eefd1e09974551949803e16fe48afa?pvs=21"
+              href="https://delv-tech.notion.site/AMM-Checkpoints-11eefd1e09974551949803e16fe48afa"
               className="underline"
             >
               docs
@@ -106,7 +106,7 @@ export function FAQ(): ReactElement {
             pending withdrawals that still share the same benefits of regular LP
             capital. Learn more in the{" "}
             <a
-              href="https://www.notion.so/9d3d21330909494d83608eddf7d518c5?pvs=21"
+              href="https://delv-tech.notion.site/LP-Shares-9d3d21330909494d83608eddf7d518c5"
               className="underline"
             >
               LP Shares

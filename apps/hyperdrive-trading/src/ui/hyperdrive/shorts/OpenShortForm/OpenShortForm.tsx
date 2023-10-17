@@ -105,9 +105,9 @@ export function OpenShortForm({
         </Well>
 
         <p className="text-center text-body">
-          Please note: When you short hy{market.baseToken.symbol} you earn the
-          variable rate on the equivalent amount of {market.baseToken.symbol}{" "}
-          deposited in the yield source.
+          Note: When you short hy{market.baseToken.symbol} you earn the variable
+          rate on the equivalent amount of {market.baseToken.symbol} deposited
+          in the yield source.
         </p>
 
         {account ? (
