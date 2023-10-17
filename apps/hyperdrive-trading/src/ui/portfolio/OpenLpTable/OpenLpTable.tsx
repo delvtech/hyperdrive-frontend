@@ -21,7 +21,7 @@ interface OpenOrdersTableProps {
   hyperdrive: Hyperdrive;
 }
 
-export function OpenLpPosition({
+export function OpenLpTable({
   hyperdrive,
 }: OpenOrdersTableProps): ReactElement {
   const { address: account } = useAccount();
