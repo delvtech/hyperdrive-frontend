@@ -131,7 +131,7 @@ export function OpenLongForm({
         </Well>
 
         <p className="text-center text-body">
-          Please note: 1 hy{hyperdrive.baseToken.symbol} is always worth 1{" "}
+          Note: 1 hy{hyperdrive.baseToken.symbol} is always worth 1{" "}
           {hyperdrive.baseToken.symbol} at maturity, however its value may
           fluctuate before maturity based on market activity.
         </p>
