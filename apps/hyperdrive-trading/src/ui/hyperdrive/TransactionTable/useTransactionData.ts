@@ -18,7 +18,7 @@ type TransactionData = {
 function mapEventName(eventName: string): string {
   switch (eventName) {
     case "OpenLong":
-      return "Buy";
+      return "Long";
     case "OpenShort":
       return "Open Short";
     case "CloseLong":

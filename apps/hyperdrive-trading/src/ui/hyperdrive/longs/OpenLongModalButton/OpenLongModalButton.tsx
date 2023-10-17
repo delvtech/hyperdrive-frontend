@@ -30,7 +30,7 @@ export function OpenLongModalButton({
           <div className="flex h-full w-[300px] flex-col justify-between gap-2 p-3">
             <ClockIcon className="mb-2 h-16" />
             <p className="text-h5 font-bold">
-              Buy hy{hyperdrive.baseToken.symbol}
+              Long hy{hyperdrive.baseToken.symbol}
             </p>
             <p className="font-bold">
               Earn <span>{fixedAPR?.formatted || "-"}% APR</span> on{" "}
@@ -57,7 +57,7 @@ export function OpenLongModalButton({
             doing so would create invalid dom nesting of buttons. */}
             <div className="daisy-btn-neutral daisy-btn-sm daisy-btn mt-4 justify-between gap-0 hover:daisy-btn-ghost">
               <span className="ml-4 flex flex-1 flex-col gap-1 text-center">
-                Buy
+                Long
               </span>
               <ChevronRightIcon className="h-3 text-right" />
             </div>
