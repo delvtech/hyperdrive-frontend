@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import { ReactElement, ReactNode, useState } from "react";
 import Skeleton from "react-loading-skeleton";
+import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { GridTableHeader } from "src/ui/base/components/tables/GridTableHeader";
 import { GridTableRow } from "src/ui/base/components/tables/GridTableRow";
 import { GridTableRowLink } from "src/ui/base/components/tables/GridTableRowLink";
@@ -53,7 +54,7 @@ export function SortableGridTable<K extends string>({
   rows,
   onSort,
   headingRowClassName,
-  emptyTableElement = <DefaultEmptyTableElement />,
+  emptyTableElement = <NonIdealState />,
   showSkeleton,
   bodyRowClassName,
   defaultSortOptions,
@@ -202,14 +203,6 @@ function nextSortDirection(
     default:
       return defaultDirection;
   }
-}
-
-function DefaultEmptyTableElement() {
-  return (
-    <div className="rounded-b-lg bg-base-200 p-10 text-center">
-      <p className="text-lg">Nothing to show.</p>
-    </div>
-  );
 }
 
 interface CellWithTooltipProps {

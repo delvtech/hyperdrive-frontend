@@ -13,6 +13,7 @@ import { Hyperdrive } from "src/appconfig/types";
 import { calculateAnnualizedPercentageChange } from "src/base/calculateAnnualizedPercentageChange";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { makeQueryKey } from "src/base/makeQueryKey";
+import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { CloseLongModalButton } from "src/ui/hyperdrive/longs/CloseLongModalButton/CloseLongModalButton";
@@ -165,6 +166,7 @@ export function OpenLongsTable({
           })}
         </tbody>
       </table>
+      {!longs?.length ? <NonIdealState /> : null}
     </div>
   );
 }
