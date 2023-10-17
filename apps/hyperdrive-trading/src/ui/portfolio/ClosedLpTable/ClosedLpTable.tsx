@@ -34,35 +34,37 @@ export function ClosedLpTable({
   if (closedLpShares) {
     rows.push(
       ...closedLpShares.map(
-        ({ lpAmount, baseAmount, closedTimestamp, withdrawalShareAmount }) => [
-          <span
-            key="type"
-            className="font-semibold uppercase italic text-primary"
-          >
-            LP
-          </span>,
-          <span key="shares" className="italic">
-            {formatBalance({
-              balance: lpAmount,
-              decimals: hyperdrive.baseToken.decimals,
-            })}
-          </span>,
-          <span key="value" className="italic">
-            {`${formatBalance({
-              balance: baseAmount,
-              decimals: hyperdrive.baseToken.decimals,
-            })} ${hyperdrive.baseToken.symbol}`}
-          </span>,
-          <span key="withdrawalShares" className="italic">
-            {`${formatBalance({
-              balance: withdrawalShareAmount,
-              decimals: hyperdrive.baseToken.decimals,
-            })}`}
-          </span>,
-          <span key="closed-on" className="italic">
-            {new Date(Number(closedTimestamp * 1000n)).toLocaleDateString()}
-          </span>,
-        ],
+        ({ lpAmount, baseAmount, closedTimestamp, withdrawalShareAmount }) => {
+          return [
+            <span
+              key="type"
+              className="font-semibold uppercase italic text-primary"
+            >
+              LP
+            </span>,
+            <span key="shares" className="italic">
+              {formatBalance({
+                balance: lpAmount,
+                decimals: hyperdrive.baseToken.decimals,
+              })}
+            </span>,
+            <span key="value" className="italic">
+              {`${formatBalance({
+                balance: baseAmount,
+                decimals: hyperdrive.baseToken.decimals,
+              })}`}
+            </span>,
+            <span key="withdrawalShares" className="italic">
+              {`${formatBalance({
+                balance: withdrawalShareAmount,
+                decimals: hyperdrive.baseToken.decimals,
+              })}`}
+            </span>,
+            <span key="closed-on" className="italic">
+              {new Date(Number(closedTimestamp * 1000n)).toLocaleDateString()}
+            </span>,
+          ];
+        },
       ),
     );
   }
@@ -70,9 +72,9 @@ export function ClosedLpTable({
   if (redeemedWithdrawalShares) {
     rows.push(
       ...redeemedWithdrawalShares.map(
-        ({ baseAmount, timestamp, withdrawalShareAmount }) => [
+        ({ baseAmount, redeemedTimestamp, withdrawalShareAmount }) => [
           <span key="type" className="font-semibold uppercase italic">
-            Pending Withdrawal
+            Withdrawal shares
           </span>,
           <span key="shares" className="italic">
             {`${formatBalance({
@@ -90,7 +92,7 @@ export function ClosedLpTable({
             0
           </span>,
           <span key="closed-on" className="italic">
-            {new Date(Number(timestamp * 1000n)).toLocaleDateString()}
+            {new Date(Number(redeemedTimestamp * 1000n)).toLocaleDateString()}
           </span>,
         ],
       ),
@@ -114,14 +116,14 @@ export function ClosedLpTable({
           cell: (
             <CellWithTooltip
               tooltip="LP's proportionate stake in the liquidity pool."
-              content="Shares"
+              content="Shares closed"
             />
           ),
         },
         {
           cell: (
             <CellWithTooltip
-              content="Value received"
+              content={`Amount received (${hyperdrive.baseToken.symbol})`}
               tooltip="Total assets collected upon closing the position."
             />
           ),
