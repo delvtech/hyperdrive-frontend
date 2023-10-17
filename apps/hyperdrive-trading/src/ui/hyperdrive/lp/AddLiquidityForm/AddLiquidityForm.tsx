@@ -102,10 +102,10 @@ export function AddLiquidityForm({
         </Well>
 
         <p className="text-center text-body">
-          Please note: You can remove liquidity at any time, however if your
-          liquidity is currently backing any open hy{market.baseToken.symbol}{" "}
-          positions, you will receive additional Withdrawal Shares to redeem
-          later.
+          Please note: You can remove your liquidity at any time, however if
+          your liquidity is backing any open positions you will receive
+          Withdrawal Shares to redeem later once the pool has enough idle
+          liquidity.
         </p>
 
         {account ? (
