@@ -84,12 +84,12 @@ export function TransactionTable({
 
   return (
     <div className="max-h-96 overflow-y-scroll">
-      <table className="daisy-table mt-5">
+      <table className="daisy-table-zebra daisy-table daisy-table-lg mt-2">
         <thead>
           {tableInstance.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
-                <th className="text-lg font-thin" key={header.id}>
+                <th key={header.id}>
                   {header.isPlaceholder ? null : (
                     <>
                       <div
@@ -115,7 +115,7 @@ export function TransactionTable({
                               key={filter}
                               className={`${
                                 header.column.getFilterValue() !== filter
-                                  ? "daisy-tab text-lg"
+                                  ? "daisy-tab text-lg font-normal"
                                   : "daisy-tab daisy-tab-active text-lg"
                               }`}
                               onClick={() =>
@@ -137,7 +137,7 @@ export function TransactionTable({
         <tbody>
           {tableInstance.getRowModel().rows.map((row) => (
             <tr
-              className="h-16 grid-cols-4 items-center text-sm even:bg-base-300/5 md:text-h6"
+              className="h-16 grid-cols-4 items-center text-sm md:text-h6"
               key={row.id}
             >
               {row.getVisibleCells().map((cell) => {
