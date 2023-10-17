@@ -545,18 +545,23 @@ export class ReadHyperdrive implements IReadHyperdrive {
     const redeemWithdrawalSharesEvents = await this.contract.getEvents(
       "RedeemWithdrawalShares",
     );
-    return [
-      ...addLiquidtyEvents,
-      ...removeLiquidityEvents,
-      ...redeemWithdrawalSharesEvents,
-    ].map(({ data, args, eventName, blockNumber }) => ({
-      trader: args.provider,
-      baseAmount: args.baseAmount,
-      timestamp: decodeAssetFromTransferSingleEventData(data as `0x${string}`)
-        .timestamp,
-      eventName,
-      blockNumber,
-    }));
+    return Promise.all(
+      [
+        ...addLiquidtyEvents,
+        ...removeLiquidityEvents,
+        ...redeemWithdrawalSharesEvents,
+      ].map(async ({ args, eventName, blockNumber }) => ({
+        trader: args.provider,
+        baseAmount: args.baseAmount,
+        timestamp: (
+          await this.network.getBlock({
+            blockNumber,
+          })
+        ).timestamp,
+        eventName,
+        blockNumber,
+      })),
+    );
   }
 
   private async getTransferSingleEvents({
