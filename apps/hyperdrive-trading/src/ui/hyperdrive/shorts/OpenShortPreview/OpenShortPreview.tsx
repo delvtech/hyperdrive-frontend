@@ -1,5 +1,6 @@
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
+import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 
 interface OpenShortPreviewProps {
@@ -16,7 +17,7 @@ export function OpenShortPreview({
   return (
     <div className="flex flex-col gap-1">
       <div className="flex justify-between">
-        <p>Size</p>
+        <p>Short size</p>
         <p className="font-bold">
           {shortSize
             ? `${formatBalance({
@@ -45,7 +46,7 @@ export function OpenShortPreview({
       <div className="flex justify-between">
         <p className="">Matures in</p>
         <p className="">
-          7 days,{" "}
+          {convertMillisecondsToDays(market.termLengthMS)} days,{" "}
           {new Date(
             Date.now() + Number(market.termLengthMS),
           ).toLocaleDateString()}

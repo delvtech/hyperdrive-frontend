@@ -45,7 +45,8 @@ export function OpenLongPreview({
       <div className="flex justify-between">
         <p className="">Matures in</p>
         <p className="">
-          7 days, {new Date(Number(long.maturity * 1000n)).toLocaleDateString()}
+          {convertMillisecondsToDays(hyperdrive.termLengthMS)} days,{" "}
+          {new Date(Number(long.maturity * 1000n)).toLocaleDateString()}
         </p>
       </div>
     </div>
