@@ -18,7 +18,7 @@ import { YieldSourceLabel } from "src/ui/markets/YieldSourceLabel/YieldSourceLab
 
 const columnHelper = createColumnHelper<MarketTableRowData>();
 
-function columns() {
+function getColumns() {
   return [
     columnHelper.accessor("market.name", {
       header: "Name",
@@ -81,7 +81,7 @@ export function MarketsTable(): ReactElement {
   // TODO: no loading state for now
   const { data: marketsRowData = [] } = useMarketRowData(config?.hyperdrives);
   const tableInstance = useReactTable({
-    columns: columns(),
+    columns: getColumns(),
     data: marketsRowData || [],
     getCoreRowModel: getCoreRowModel(),
   });

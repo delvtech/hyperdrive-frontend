@@ -23,7 +23,7 @@ import { usePreviewCloseShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewC
 import { useAccount } from "wagmi";
 
 const columnHelper = createColumnHelper<OpenShort>();
-const columns = (hyperdrive: Hyperdrive) => [
+const getColumns = (hyperdrive: Hyperdrive) => [
   columnHelper.accessor("bondAmount", {
     header: `Size (hy${hyperdrive.baseToken.symbol})`,
     cell: (bondAmount) => {
@@ -111,7 +111,7 @@ export function OpenShortsTable({
     enabled: queryEnabled,
   });
   const tableInstance = useReactTable({
-    columns: columns(hyperdrive),
+    columns: getColumns(hyperdrive),
     data: shorts || [],
     getCoreRowModel: getCoreRowModel(),
   });

@@ -18,7 +18,7 @@ interface ClosedShortsTableProps {
 }
 
 const columnHelper = createColumnHelper<ClosedShort>();
-const columns = (hyperdrive: Hyperdrive) => [
+const getColumns = (hyperdrive: Hyperdrive) => [
   columnHelper.display({
     header: `ID`,
     cell: ({ row }) => <span>{Number(row.original.maturity)}</span>,
@@ -79,7 +79,7 @@ export function ClosedShortsTable({
     enabled: queryEnabled,
   });
   const tableInstance = useReactTable({
-    columns: columns(hyperdrive),
+    columns: getColumns(hyperdrive),
     data: closedShorts || [],
     getCoreRowModel: getCoreRowModel(),
   });

@@ -23,7 +23,7 @@ export type Transaction = {
 };
 
 const columnHelper = createColumnHelper<Transaction>();
-const columns = (hyperdrive: Hyperdrive) => [
+const getColumns = (hyperdrive: Hyperdrive) => [
   columnHelper.accessor("type", {
     enableSorting: false,
     enableColumnFilter: true,
@@ -69,7 +69,7 @@ export function TransactionTable({
 }): JSX.Element {
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const tableInstance = useReactTable({
-    columns: columns(hyperdrive),
+    columns: getColumns(hyperdrive),
     data: transactionData || [],
     state: {
       columnFilters,
