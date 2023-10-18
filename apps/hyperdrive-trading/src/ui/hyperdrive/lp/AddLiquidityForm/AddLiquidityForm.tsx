@@ -94,11 +94,7 @@ export function AddLiquidityForm({
         <AddLiquidityPreview hyperdrive={market} lpShares={lpSharesOut || 0n} />
       }
       disclaimer={
-        <p className="text-center text-body">
-          Note: You can withdraw liquidity at any time. If you&apos;re backing
-          open positions, you&apos;ll receive Withdrawal Shares for later
-          redemption.
-        </p>
+        "Note: You can withdraw liquidity at any time. If you&apos;re backing open positions, you&apos;ll receive Withdrawal Shares for later redemption."
       }
       actionButton={
         account ? (
