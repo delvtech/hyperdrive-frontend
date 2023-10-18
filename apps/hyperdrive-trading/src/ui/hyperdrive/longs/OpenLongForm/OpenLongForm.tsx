@@ -3,7 +3,6 @@ import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { MAX_UINT256 } from "src/base/constants";
-import { Well } from "src/ui/base/components/Well/Well";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
@@ -11,6 +10,7 @@ import { useMaxLong } from "src/ui/hyperdrive/longs/hooks/useMaxLong";
 import { useOpenLong } from "src/ui/hyperdrive/longs/hooks/useOpenLong";
 import { usePreviewOpenLong } from "src/ui/hyperdrive/longs/hooks/usePreviewOpenLong";
 import { OpenLongPreview } from "src/ui/hyperdrive/longs/OpenLongPreview/OpenLongPreview";
+import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenApproval } from "src/ui/token/hooks/useTokenApproval";
 import { TokenInput } from "src/ui/token/TokenInput";
@@ -92,51 +92,42 @@ export function OpenLongForm({
   });
 
   return (
-    <div className="flex flex-col gap-4">
-      <h5 className="font-bold">Long hy{hyperdrive.baseToken.symbol}</h5>
-      <TokenInput
-        token={hyperdrive.baseToken}
-        value={amount ?? ""}
-        maxValue={maxAmount}
-        inputLabel="Amount to spend"
-        stat={
-          baseTokenBalance
-            ? `Balance: ${formatBalance({
-                balance: baseTokenBalance?.value,
-                decimals: hyperdrive.baseToken.decimals,
-                places: 4,
-              })} ${hyperdrive.baseToken.symbol}`
-            : undefined
-        }
-        onChange={(newAmount) => setAmount(newAmount)}
-      />
-
-      {/* New Position Section */}
-      <div className="mt-4 flex flex-col gap-6">
-        <Well elevation="flat">
-          <div className="space-y-4">
-            <span className="text-h6 font-bold">Preview transaction</span>
-            <OpenLongPreview
-              hyperdrive={hyperdrive}
-              long={{
-                bondAmount: longAmountOut || 0n,
-                assetId: 0n,
-                baseAmountPaid: amountAsBigInt || 0n,
-                maturity: BigInt(
-                  Math.round((Date.now() + hyperdrive.termLengthMS) / 1000),
-                ),
-              }}
-            />
-          </div>
-        </Well>
-
-        <p className="text-center text-body">
-          Note: 1 hy{hyperdrive.baseToken.symbol} is always worth 1{" "}
-          {hyperdrive.baseToken.symbol} at maturity, however its value may
-          fluctuate before maturity based on market activity.
-        </p>
-
-        {account ? (
+    <TransactionView
+      heading={`Long hy{hyperdrive.baseToken.symbol}`}
+      tokenInput={
+        <TokenInput
+          token={hyperdrive.baseToken}
+          value={amount ?? ""}
+          maxValue={maxAmount}
+          inputLabel="Amount to spend"
+          stat={
+            baseTokenBalance
+              ? `Balance: ${formatBalance({
+                  balance: baseTokenBalance?.value,
+                  decimals: hyperdrive.baseToken.decimals,
+                  places: 4,
+                })} ${hyperdrive.baseToken.symbol}`
+              : undefined
+          }
+          onChange={(newAmount) => setAmount(newAmount)}
+        />
+      }
+      transactionPreview={
+        <OpenLongPreview
+          hyperdrive={hyperdrive}
+          long={{
+            bondAmount: longAmountOut || 0n,
+            assetId: 0n,
+            baseAmountPaid: amountAsBigInt || 0n,
+            maturity: BigInt(
+              Math.round((Date.now() + hyperdrive.termLengthMS) / 1000),
+            ),
+          }}
+        />
+      }
+      disclaimer={`Note: 1 hy${hyperdrive.baseToken.symbol} is always worth 1 ${hyperdrive.baseToken.symbol} at maturity, however its value may fluctuate before maturity based on market activity.`}
+      actionButton={
+        account ? (
           !hasEnoughAllowance ? (
             // Approval button
             <button
@@ -167,8 +158,8 @@ export function OpenLongForm({
           >
             <h5>Connect wallet</h5>
           </button>
-        )}
-      </div>
-    </div>
+        )
+      }
+    />
   );
 }
