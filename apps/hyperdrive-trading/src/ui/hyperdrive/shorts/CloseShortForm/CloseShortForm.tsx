@@ -109,46 +109,5 @@ export function CloseShortForm({
         )
       }
     />
-
-    // <div className="flex flex-col gap-6">
-    //   {/* Amount to close section */}
-    //   {short && (
-    //     <div className="space-y-4 text-base-content">
-    //     </div>
-    //   )}
-
-    //   <div className="flex flex-col gap-y-4 rounded border-neutral-content bg-transparent ">
-    //     <div className="flex flex-col gap-y-1 tracking-wide">
-    //       {short && (
-    //         <div className="flex justify-between">
-    //           <p className="font-light">You receive</p>
-    //           <p className="tracking-wide">
-    //             {baseAmountOut
-    //               ? `${formatBalance({
-    //                   balance: baseAmountOut,
-    //                   decimals: baseDecimals,
-    //                   places: 8,
-    //                 })} ${baseSymbol}`
-    //               : ""}
-    //           </p>
-    //         </div>
-    //       )}
-    //     </div>
-    //   </div>
-
-    //   {account ? (
-    //     <button
-    //       className="daisy-btn-accent daisy-btn"
-    //       disabled={!closeShort || isPendingWalletAction}
-    //       onClick={() => {
-    //         closeShort?.();
-    //       }}
-    //     >
-    //       Close short
-    //     </button>
-    //   ) : (
-    //     <ConnectButton />
-    //   )}
-    // </div>
   );
 }
