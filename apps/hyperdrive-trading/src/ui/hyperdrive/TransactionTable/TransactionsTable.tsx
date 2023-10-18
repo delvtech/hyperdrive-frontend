@@ -33,10 +33,10 @@ const getColumns = (hyperdrive: Hyperdrive) => [
       if (filterValue === "All") {
         return true;
       }
-      if (filterValue === "Long") {
+      if (filterValue === "Longs") {
         return ["Open Long", "Close Long"].includes(type);
       }
-      if (filterValue === "Short") {
+      if (filterValue === "Shorts") {
         return ["Open Short", "Close Short"].includes(type);
       }
       if (filterValue === "LP") {
@@ -131,7 +131,7 @@ export function TransactionTable({
                       </div>
                       {header.column.getCanFilter() ? (
                         <div className="daisy-tabs-lg">
-                          {["All", "Long", "Short", "LP"].map((filter) => (
+                          {["All", "Longs", "Shorts", "LP"].map((filter) => (
                             <a
                               key={filter}
                               className={`${

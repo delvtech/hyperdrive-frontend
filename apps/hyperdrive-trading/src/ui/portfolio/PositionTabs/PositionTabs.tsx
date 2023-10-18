@@ -21,7 +21,7 @@ export function PositionTabs({
           },
         )}
       >
-        Long
+        Longs
       </button>
       <button
         onClick={() => onTabClick("Shorts")}
