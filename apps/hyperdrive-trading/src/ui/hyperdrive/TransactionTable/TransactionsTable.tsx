@@ -33,10 +33,10 @@ const getColumns = (hyperdrive: Hyperdrive) => [
       if (filterValue === "All") {
         return true;
       }
-      if (filterValue === "Long") {
+      if (filterValue === "Longs") {
         return ["Open Long", "Close Long"].includes(type);
       }
-      if (filterValue === "Short") {
+      if (filterValue === "Shorts") {
         return ["Open Short", "Close Short"].includes(type);
       }
       if (filterValue === "LP") {
