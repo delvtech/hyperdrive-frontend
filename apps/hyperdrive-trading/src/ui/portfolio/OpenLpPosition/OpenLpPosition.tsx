@@ -71,14 +71,51 @@ function getColumns(hyperdrive: Hyperdrive) {
       },
     }),
     columnHelper.accessor("lpShares", {
+      id: "currentValue",
       header: () => (
         <CellWithTooltip
           tooltip="The current value of the position."
           content="Value"
         />
       ),
-      cell: ({ getValue, row }) => {
-        return <span key="value_1"></span>;
+      cell: ({ row }) => {
+        return (
+          <CurrentValueCell key="value_1" hyperdrive={hyperdrive} row={row} />
+        );
+      },
+    }),
+    columnHelper.accessor("withdrawalShares", {
+      id: "withdrawable",
+      header: () => (
+        <CellWithTooltip
+          tooltip="The amount of base tokens that can be withdrawn from the position."
+          content="Withdrawable"
+        />
+      ),
+      cell: ({ row }) => {
+        const withdrawalShares = row.original.withdrawalShares;
+        const lpShares = row.original.lpShares;
+        if (lpShares) {
+          return (
+            <span key="remove-liquidity" className="flex justify-end">
+              <RemoveLiquidityModalButton
+                modalId="remove-liquidity-modal"
+                hyperdrive={hyperdrive}
+                lpShares={lpShares}
+              />
+            </span>
+          );
+        } else if (withdrawalShares) {
+          return (
+            <span key="redeem-withdraw-shares" className="flex justify-end">
+              <RedeemWithdrawalSharesModalButton
+                modalId="redeem-withdrawal-shares-modal"
+                hyperdrive={hyperdrive}
+                withdrawalShares={withdrawalShares}
+              />
+            </span>
+          );
+        }
       },
     }),
   ];
@@ -90,10 +127,49 @@ function CurrentValueCell({
 }: {
   hyperdrive: Hyperdrive;
   row: Row<LpRowType>;
-}): any {
+}): JSX.Element {
+  const { address: account } = useAccount();
   const lpShares = row.original.lpShares;
   const withdrawalShares = row.original.withdrawalShares;
   const poolInfo = usePoolInfo(hyperdrive.address);
+  const { baseAmountOut: withdrawalSharesBaseWithdrawable } =
+    usePreviewRedeemWithdrawalShares({
+      market: hyperdrive,
+      withdrawalSharesIn: withdrawalShares,
+      minBaseAmountOutPerShare: 1n, // TODO: slippage,
+      destination: account,
+    });
+  if (lpShares) {
+    return (
+      <span key="value">
+        {!!poolInfo ? (
+          `${formatBalance({
+            balance: multiplyBigInt(
+              [lpShares, poolInfo.poolInfo?.lpSharePrice || 0n],
+              hyperdrive.baseToken.decimals,
+            ),
+            decimals: hyperdrive.baseToken.decimals,
+            places: 4,
+          })} ${hyperdrive.baseToken.symbol}`
+        ) : (
+          <Skeleton />
+        )}
+      </span>
+    );
+  } else {
+    return (
+      <span key="withdrawable">
+        {withdrawalSharesBaseWithdrawable !== undefined ? (
+          `${formatBalance({
+            balance: withdrawalSharesBaseWithdrawable,
+            decimals: hyperdrive.baseToken.decimals,
+          })} ${hyperdrive.baseToken.symbol}`
+        ) : (
+          <Skeleton />
+        )}
+      </span>
+    );
+  }
 }
 
 export function OpenLpTable({
@@ -247,8 +323,6 @@ function OpenLpPosition({
       </span>,
     ]);
   }
-  const rowsLen = tableInstance.getRowModel().rows;
-  console.log(rowsLen, "len");
   return (
     <div className="max-h-96 overflow-y-scroll">
       <table className="daisy-table-zebra daisy-table daisy-table-lg">
