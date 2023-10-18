@@ -90,7 +90,6 @@ export function CloseLongForm({
           </p>
         </div>
       }
-      disclaimer={undefined}
       actionButton={
         account ? (
           <button

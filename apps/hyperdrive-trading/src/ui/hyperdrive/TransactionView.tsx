@@ -5,7 +5,7 @@ interface TransactionViewProps {
   heading: string;
   tokenInput: ReactNode;
   transactionPreview: ReactNode;
-  disclaimer: ReactNode;
+  disclaimer?: ReactNode;
 
   actionButton: ReactNode;
 }
@@ -30,7 +30,9 @@ export function TransactionView({
           </div>
         </Well>
 
-        <p className="text-center text-body">{disclaimer}</p>
+        {disclaimer ? (
+          <p className="text-center text-body">{disclaimer}</p>
+        ) : null}
 
         {actionButton}
       </div>
