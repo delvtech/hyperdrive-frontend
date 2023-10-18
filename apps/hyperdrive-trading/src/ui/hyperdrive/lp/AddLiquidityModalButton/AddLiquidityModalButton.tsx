@@ -32,7 +32,7 @@ export function AddLiquidityModalButton({
               Earn trading fees <span>and</span> interest
             </p>
             <p className="daisy-label-text">
-              Take the other side of every Buy and Short. Earn fees and the
+              Take the other side of every Long and Short. Earn fees and the
               yield source rate.
             </p>
             <div className="mt-4 ml-4 flex flex-col gap-2 ">
