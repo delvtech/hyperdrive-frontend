@@ -139,17 +139,19 @@ function CurrentValueCell({
       minBaseAmountOutPerShare: 1n, // TODO: slippage,
       destination: account,
     });
+  const { baseAmountOut: lpBaseWithdrawable } = usePreviewRemoveLiquidity({
+    market: hyperdrive,
+    lpSharesIn: lpShares,
+    minBaseAmountOut: 1n, // TODO: slippage,
+    destination: account,
+  });
   if (lpShares) {
     return (
-      <span key="value">
-        {!!poolInfo ? (
+      <span key="withdrawable">
+        {lpBaseWithdrawable !== undefined ? (
           `${formatBalance({
-            balance: multiplyBigInt(
-              [lpShares, poolInfo.poolInfo?.lpSharePrice || 0n],
-              hyperdrive.baseToken.decimals,
-            ),
+            balance: lpBaseWithdrawable,
             decimals: hyperdrive.baseToken.decimals,
-            places: 4,
           })} ${hyperdrive.baseToken.symbol}`
         ) : (
           <Skeleton />
@@ -172,13 +174,10 @@ function CurrentValueCell({
   }
 }
 
-export function OpenLpTable({
+export function OpenLpPosition({
   hyperdrive,
-}: {
-  hyperdrive: Hyperdrive;
-}): JSX.Element {
+}: OpenOrdersTableProps): ReactElement {
   const { address: account } = useAccount();
-
   const { lpShares } = useLpShares({
     hyperdriveAddress: hyperdrive.address,
     account,
@@ -188,22 +187,6 @@ export function OpenLpTable({
     hyperdriveAddress: hyperdrive.address,
     account,
   });
-
-  return (
-    <OpenLpPosition
-      hyperdrive={hyperdrive}
-      lpShares={lpShares}
-      withdrawalShares={withdrawalShares}
-    />
-  );
-}
-
-function OpenLpPosition({
-  hyperdrive,
-  lpShares,
-  withdrawalShares,
-}: OpenOrdersTableProps): ReactElement {
-  const { address: account } = useAccount();
   const memoizedData = useMemo(() => {
     return [
       {
