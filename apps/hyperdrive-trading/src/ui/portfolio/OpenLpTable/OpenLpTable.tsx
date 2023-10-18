@@ -1,3 +1,4 @@
+import { multiplyBigInt } from "@hyperdrive/sdk";
 import {
   Row,
   createColumnHelper,
@@ -11,6 +12,7 @@ import { Hyperdrive } from "src/appconfig/types";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { CellWithTooltip } from "src/ui/base/components/tables/SortableGridTable";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { RedeemWithdrawalSharesModalButton } from "src/ui/hyperdrive/lp/RedeemWithdrawalSharesModalButton/RedeemWithdrawalSharesModalButton";
 import { RemoveLiquidityModalButton } from "src/ui/hyperdrive/lp/RemoveLiquidityModalButton/RemoveLiquidityModalButton";
 import { useLpShares } from "src/ui/hyperdrive/lp/hooks/useLpShares";
@@ -57,14 +59,25 @@ function getColumns(hyperdrive: Hyperdrive) {
           content="Shares"
         />
       ),
-      cell: ({ getValue, row }) => {
-        const withdrawalShares = getValue();
-        const lpShares = row.original.lpShares;
 
-        return formatBalance({
-          balance: withdrawalShares ? withdrawalShares || 0n : lpShares || 0n,
-          decimals: hyperdrive.baseToken.decimals,
-        });
+      cell: ({ row, getValue }) => {
+        const withdrawalShares = getValue();
+        if (withdrawalShares) {
+          return (
+            <span>
+              {formatBalance({
+                balance: withdrawalShares,
+                decimals: hyperdrive.baseToken.decimals,
+              })}
+            </span>
+          );
+        } else {
+          return formatBalance({
+            balance: row.original.lpShares || 0n,
+            decimals: (hyperdrive as Hyperdrive).baseToken.decimals,
+            places: 4,
+          });
+        }
       },
     }),
     columnHelper.accessor("lpShares", {
@@ -76,9 +89,7 @@ function getColumns(hyperdrive: Hyperdrive) {
         />
       ),
       cell: ({ row }) => {
-        return (
-          <CurrentValueCell key="value_1" hyperdrive={hyperdrive} row={row} />
-        );
+        return <ValueCell key="value_1" hyperdrive={hyperdrive} row={row} />;
       },
     }),
     columnHelper.accessor("withdrawalShares", {
@@ -89,6 +100,12 @@ function getColumns(hyperdrive: Hyperdrive) {
           content="Withdrawable"
         />
       ),
+      cell: ({ row }) => {
+        return <WithdrawableCell hyperdrive={hyperdrive} row={row} />;
+      },
+    }),
+    columnHelper.display({
+      id: "actions",
       cell: ({ row }) => {
         const withdrawalShares = row.original.withdrawalShares;
         const lpShares = row.original.lpShares;
@@ -118,7 +135,53 @@ function getColumns(hyperdrive: Hyperdrive) {
   ];
 }
 
-function CurrentValueCell({
+function ValueCell({
+  row,
+  hyperdrive,
+}: {
+  row: Row<LpRowType>;
+  hyperdrive: Hyperdrive;
+}) {
+  const { poolInfo } = usePoolInfo(hyperdrive.address);
+  const lpShares = row.original.lpShares;
+  const withdrawalShares = row.original.withdrawalShares;
+  if (lpShares) {
+    return (
+      <span key="value">
+        {!!poolInfo ? (
+          `${formatBalance({
+            balance: multiplyBigInt(
+              [lpShares, poolInfo.lpSharePrice],
+              hyperdrive.baseToken.decimals,
+            ),
+            decimals: hyperdrive.baseToken.decimals,
+            places: 4,
+          })} ${hyperdrive.baseToken.symbol}`
+        ) : (
+          <Skeleton />
+        )}
+      </span>
+    );
+  } else {
+    return (
+      <span key="value">
+        {!!poolInfo && withdrawalShares ? (
+          `${formatBalance({
+            balance: multiplyBigInt(
+              [withdrawalShares, poolInfo.lpSharePrice],
+              hyperdrive.baseToken.decimals,
+            ),
+            decimals: hyperdrive.baseToken.decimals,
+          })} ${hyperdrive.baseToken.symbol}`
+        ) : (
+          <Skeleton />
+        )}
+      </span>
+    );
+  }
+}
+
+function WithdrawableCell({
   row,
   hyperdrive,
 }: {
