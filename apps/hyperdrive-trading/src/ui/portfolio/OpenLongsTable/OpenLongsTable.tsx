@@ -92,8 +92,8 @@ function FixedRateCell({
   hyperdrive: Hyperdrive;
 }) {
   return (
-    <div className="flex flex-col items-center gap-1">
-      <span className="font-bold">
+    <div className="flex flex-col gap-1">
+      <span className="ml-2 font-bold">
         {calculateAnnualizedPercentageChange({
           amountBefore: row.original.baseAmountPaid,
           amountAfter: row.original.bondAmount,
@@ -230,8 +230,8 @@ function CurrentValueCell({
     baseAmountOut && baseAmountOut > row.original.baseAmountPaid;
 
   return (
-    <div className="flex flex-col items-center gap-1">
-      <span className="font-bold">{currentValue?.toString()}</span>
+    <div className="flex flex-col gap-1">
+      <span className="ml-2 font-bold">{currentValue?.toString()}</span>
       <div
         data-tip={"Profit/Loss since open"}
         className={classNames(
