@@ -71,11 +71,7 @@ function getColumns(hyperdrive: Hyperdrive) {
       id: "fixedRate",
       header: `Fixed rate (APR)`,
       cell: ({ row }) => {
-        return `${calculateAnnualizedPercentageChange({
-          amountBefore: row.original.baseAmountPaid,
-          amountAfter: row.original.bondAmount,
-          days: convertMillisecondsToDays(hyperdrive.termLengthMS),
-        })}%`;
+        return <FixedRateCell hyperdrive={hyperdrive} row={row} />;
       },
     }),
     columnHelper.display({
@@ -87,6 +83,42 @@ function getColumns(hyperdrive: Hyperdrive) {
     }),
   ];
 }
+
+function FixedRateCell({
+  row,
+  hyperdrive,
+}: {
+  row: Row<Long>;
+  hyperdrive: Hyperdrive;
+}) {
+  return (
+    <div className="flex flex-col items-center gap-1">
+      <span className="font-bold">
+        {calculateAnnualizedPercentageChange({
+          amountBefore: row.original.baseAmountPaid,
+          amountAfter: row.original.bondAmount,
+          days: convertMillisecondsToDays(hyperdrive.termLengthMS),
+        })}
+        %
+      </span>
+      <div
+        data-tip={"Yield guaranteed if held to maturity"}
+        className={
+          "daisy-badge daisy-badge-md daisy-tooltip inline-flex text-success"
+        }
+      >
+        <span>{"+"}</span>
+        {formatBalance({
+          balance: row.original.bondAmount - row.original.baseAmountPaid,
+          decimals: hyperdrive.baseToken.decimals,
+          places: 4,
+        })}{" "}
+        {hyperdrive.baseToken.symbol}
+      </div>
+    </div>
+  );
+}
+
 export function OpenLongsTable({
   hyperdrive,
 }: OpenLongsTableProps): ReactElement {
