@@ -4,6 +4,7 @@ import { MouseEvent, ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
+import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { useCloseLong } from "src/ui/hyperdrive/longs/hooks/useCloseLong";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
 import { TokenInput } from "src/ui/token/TokenInput";
@@ -54,58 +55,57 @@ export function CloseLongForm({
   });
 
   return (
-    <div className="flex flex-col gap-6">
-      {/* Amount to close section */}
-      {long && (
-        <div className="flex space-y-4 text-base-content">
-          <TokenInput
-            token={{
-              name: `Hyperdrive ${baseSymbol}`,
-              symbol: `hy${baseSymbol}`,
-              decimals: baseDecimals,
-              address: "0x00",
-            }}
-            value={amount ?? ""}
-            maxValue={long ? formatUnits(long.bondAmount, baseDecimals) : ""}
-            stat={`Balance: ${formatBalance({
-              balance: long.bondAmount,
-              decimals: baseDecimals,
-              places: 4,
-            })}`}
-            onChange={(newAmount) => setAmount(newAmount)}
-          />
-        </div>
-      )}
-
-      {/* You receive Section */}
-      {long && (
+    <TransactionView
+      heading="Close long"
+      tokenInput={
+        <TokenInput
+          token={{
+            name: `Hyperdrive ${baseSymbol}`,
+            symbol: `hy${baseSymbol}`,
+            decimals: baseDecimals,
+            address: "0x00",
+          }}
+          value={amount ?? ""}
+          maxValue={long ? formatUnits(long.bondAmount, baseDecimals) : ""}
+          stat={`Balance: ${formatBalance({
+            balance: long.bondAmount,
+            decimals: baseDecimals,
+            places: 4,
+          })}`}
+          onChange={(newAmount) => setAmount(newAmount)}
+        />
+      }
+      transactionPreview={
         <div className="flex justify-between">
-          <p className="font-light">You receive</p>
-          <p className="tracking-wide">
+          <p>You receive</p>
+          <p className="font-bold">
             {baseAmountOut
               ? `${formatBalance({
                   balance: baseAmountOut,
                   decimals: baseDecimals,
                   places: 8,
-                })} ${baseSymbol}`
-              : ""}
+                })}`
+              : "0"}{" "}
+            {baseSymbol}
           </p>
         </div>
-      )}
-
-      {account ? (
-        <button
-          className="daisy-btn-secondary daisy-btn w-full"
-          disabled={!closeLong || isPendingWalletAction}
-          onClick={(e) => {
-            closeLong?.();
-          }}
-        >
-          <span>Close position</span>
-        </button>
-      ) : (
-        <ConnectButton />
-      )}
-    </div>
+      }
+      disclaimer={undefined}
+      actionButton={
+        account ? (
+          <button
+            className="daisy-btn-secondary daisy-btn w-full"
+            disabled={!closeLong || isPendingWalletAction}
+            onClick={(e) => {
+              closeLong?.();
+            }}
+          >
+            <span>Close position</span>
+          </button>
+        ) : (
+          <ConnectButton />
+        )
+      }
+    />
   );
 }
