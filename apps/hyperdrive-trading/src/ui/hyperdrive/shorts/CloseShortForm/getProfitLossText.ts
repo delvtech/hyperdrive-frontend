@@ -27,7 +27,7 @@ export function getProfitLossText({
     formatUnits(baseAmountOut - amountInput, baseDecimals),
   );
 
-  let result = `${profitLossAmount.toFixed(2)} ${baseSymbol}`;
+  let result = `${profitLossAmount.toFixed(4)} ${baseSymbol}`;
 
   if (showPercentage) {
     const profitLossPercentage = calculatePercentageChange({

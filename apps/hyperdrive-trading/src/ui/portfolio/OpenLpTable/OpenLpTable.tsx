@@ -21,7 +21,7 @@ interface OpenOrdersTableProps {
   hyperdrive: Hyperdrive;
 }
 
-export function OpenLpPosition({
+export function OpenLpTable({
   hyperdrive,
 }: OpenOrdersTableProps): ReactElement {
   const { address: account } = useAccount();
@@ -182,7 +182,8 @@ export function OpenLpPosition({
       ]}
       rows={rows}
       showSkeleton={
-        lpSharesStatus === "loading" || withdrawalSharesStatus === "loading"
+        account &&
+        (lpSharesStatus === "loading" || withdrawalSharesStatus === "loading")
       }
     />
   );

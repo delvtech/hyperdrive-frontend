@@ -30,9 +30,6 @@ export function CloseShortModalButton({
           >
             <XMarkIcon className="w-6" title="Close position" />
           </button>
-          <h3 className="text-h6 font-thin text-base-content">
-            Close position
-          </h3>
           <CloseShortForm
             hyperdrive={hyperdrive}
             short={short}

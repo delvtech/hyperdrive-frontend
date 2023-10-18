@@ -3,12 +3,12 @@ import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { MAX_UINT256 } from "src/base/constants";
 import { parseUnits } from "src/base/parseUnits";
-import { Well } from "src/ui/base/components/Well/Well";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { AddLiquidityPreview } from "src/ui/hyperdrive/lp/AddLiquidityPreview/AddLiquidityPreview";
 import { useAddLiquidity } from "src/ui/hyperdrive/lp/hooks/useAddLiquidity";
 import { usePreviewAddLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewAddLiquidity";
+import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenApproval } from "src/ui/token/hooks/useTokenApproval";
 import { TokenInput } from "src/ui/token/TokenInput";
@@ -70,44 +70,34 @@ export function AddLiquidityForm({
   });
 
   return (
-    <div className="flex flex-col gap-4">
-      <h5 className="font-bold">Add liquidity</h5>
-      <TokenInput
-        token={market.baseToken}
-        value={amount ?? ""}
-        maxValue={baseTokenBalance?.formatted}
-        inputLabel="Amount to deposit"
-        stat={
-          baseTokenBalance
-            ? `Balance: ${formatBalance({
-                balance: baseTokenBalance?.value,
-                decimals: market.baseToken.decimals,
-                places: 4,
-              })} ${market.baseToken.symbol}`
-            : undefined
-        }
-        onChange={(newAmount) => setAmount(newAmount)}
-      />
-
-      {/* New Position Section */}
-      <div className="mt-4 flex flex-col gap-6">
-        <Well elevation="flat">
-          <div className="space-y-4">
-            <span className="text-h6 font-bold">Preview transaction</span>
-            <AddLiquidityPreview
-              hyperdrive={market}
-              lpShares={lpSharesOut || 0n}
-            />
-          </div>
-        </Well>
-
-        <p className="text-center text-body">
-          Note: You can withdraw liquidity at any time. If you&apos;re backing
-          open positions, you&apos;ll receive Withdrawal Shares for later
-          redemption.
-        </p>
-
-        {account ? (
+    <TransactionView
+      heading="Add liquidity"
+      tokenInput={
+        <TokenInput
+          token={market.baseToken}
+          value={amount ?? ""}
+          maxValue={baseTokenBalance?.formatted}
+          inputLabel="Amount to deposit"
+          stat={
+            baseTokenBalance
+              ? `Balance: ${formatBalance({
+                  balance: baseTokenBalance?.value,
+                  decimals: market.baseToken.decimals,
+                  places: 4,
+                })} ${market.baseToken.symbol}`
+              : undefined
+          }
+          onChange={(newAmount) => setAmount(newAmount)}
+        />
+      }
+      transactionPreview={
+        <AddLiquidityPreview hyperdrive={market} lpShares={lpSharesOut || 0n} />
+      }
+      disclaimer={
+        "Note: You can withdraw liquidity at any time. If you&apos;re backing open positions, you&apos;ll receive Withdrawal Shares for later redemption."
+      }
+      actionButton={
+        account ? (
           needsApproval ? (
             // Approval button
             <button
@@ -138,8 +128,8 @@ export function AddLiquidityForm({
           >
             Connect wallet
           </button>
-        )}
-      </div>
-    </div>
+        )
+      }
+    />
   );
 }

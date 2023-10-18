@@ -91,7 +91,7 @@ export function ClosedShortsTable({
           {tableInstance.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
-                <th className="text-lg font-thin" key={header.id}>
+                <th key={header.id}>
                   {header.isPlaceholder
                     ? null
                     : flexRender(
