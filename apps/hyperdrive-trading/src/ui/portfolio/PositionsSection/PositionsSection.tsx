@@ -7,7 +7,7 @@ import { ClosedLongsTable } from "src/ui/portfolio/ClosedLongsTable/ClosedLongsT
 import { ClosedLpTable } from "src/ui/portfolio/ClosedLpTable/ClosedLpTable";
 import { ClosedShortsTable } from "src/ui/portfolio/ClosedShortsTable/ClosedShortsTable";
 import { OpenLongsTable } from "src/ui/portfolio/OpenLongsTable/OpenLongsTable";
-import { OpenLpPosition } from "src/ui/portfolio/OpenLpPosition/OpenLpPosition";
+import { OpenLpTable } from "src/ui/portfolio/OpenLpPosition/OpenLpPosition";
 import { OpenShortsTable } from "src/ui/portfolio/OpenShortsTable/OpenShortsTable";
 import {
   PositionTab,
@@ -99,7 +99,7 @@ export function PositionsSection({
               }
               case "LP":
                 if (activeOpenOrClosedTab === "Open") {
-                  return <OpenLpPosition hyperdrive={hyperdrive} />;
+                  return <OpenLpTable hyperdrive={hyperdrive} />;
                 }
                 return <ClosedLpTable hyperdrive={hyperdrive} />;
               default:
