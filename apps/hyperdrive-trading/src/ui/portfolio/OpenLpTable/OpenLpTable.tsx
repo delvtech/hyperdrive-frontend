@@ -94,7 +94,7 @@ function getColumns(hyperdrive: Hyperdrive) {
         const lpShares = row.original.lpShares;
         if (lpShares) {
           return (
-            <span key="remove-liquidity" className="flex justify-end">
+            <span className="flex justify-end">
               <RemoveLiquidityModalButton
                 modalId="remove-liquidity-modal"
                 hyperdrive={hyperdrive}
@@ -104,7 +104,7 @@ function getColumns(hyperdrive: Hyperdrive) {
           );
         } else if (withdrawalShares) {
           return (
-            <span key="redeem-withdraw-shares" className="flex justify-end">
+            <span className="flex justify-end">
               <RedeemWithdrawalSharesModalButton
                 modalId="redeem-withdrawal-shares-modal"
                 hyperdrive={hyperdrive}
@@ -130,7 +130,7 @@ function ValueCell({
   const withdrawalShares = row.original.withdrawalShares;
   if (lpShares) {
     return (
-      <span key="value">
+      <span>
         {!!poolInfo ? (
           `${formatBalance({
             balance: multiplyBigInt(
@@ -189,7 +189,7 @@ function WithdrawableCell({
   });
   if (lpShares) {
     return (
-      <span key="withdrawable">
+      <span>
         {lpBaseWithdrawable !== undefined ? (
           `${formatBalance({
             balance: lpBaseWithdrawable,
@@ -202,7 +202,7 @@ function WithdrawableCell({
     );
   } else {
     return (
-      <span key="withdrawable">
+      <span>
         {withdrawalSharesBaseWithdrawable !== undefined ? (
           `${formatBalance({
             balance: withdrawalSharesBaseWithdrawable,
