@@ -10,7 +10,6 @@ import { ReactElement, useMemo } from "react";
 import Skeleton from "react-loading-skeleton";
 import { Hyperdrive } from "src/appconfig/types";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
-import { CellWithTooltip } from "src/ui/base/components/tables/SortableGridTable";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { RedeemWithdrawalSharesModalButton } from "src/ui/hyperdrive/lp/RedeemWithdrawalSharesModalButton/RedeemWithdrawalSharesModalButton";
@@ -36,12 +35,7 @@ const columnHelper = createColumnHelper<LpRowType>();
 function getColumns(hyperdrive: Hyperdrive) {
   return [
     columnHelper.accessor("lpShares", {
-      header: () => (
-        <CellWithTooltip
-          tooltip="Long and Short positions have a maturity date based on the open date and position duration of the pool whereas LP positions can remain active indefinitely (until closed by the LPer)."
-          content="Position"
-        />
-      ),
+      header: "Position",
       cell: ({ getValue }) => {
         const lpShares = getValue();
         return (
@@ -53,12 +47,7 @@ function getColumns(hyperdrive: Hyperdrive) {
     }),
     columnHelper.accessor("lpShares", {
       id: "shares",
-      header: () => (
-        <CellWithTooltip
-          tooltip="LP's proportionate stake in the total liquidity pool."
-          content="Shares"
-        />
-      ),
+      header: "Shares",
 
       cell: ({ row, getValue }) => {
         const lpShares = getValue();
@@ -86,24 +75,14 @@ function getColumns(hyperdrive: Hyperdrive) {
     }),
     columnHelper.accessor("lpShares", {
       id: "value",
-      header: () => (
-        <CellWithTooltip
-          tooltip="The current value of the position."
-          content="Value"
-        />
-      ),
+      header: "Value",
       cell: ({ row }) => {
         return <ValueCell key="value_1" hyperdrive={hyperdrive} row={row} />;
       },
     }),
     columnHelper.accessor("withdrawalShares", {
       id: "withdrawable",
-      header: () => (
-        <CellWithTooltip
-          tooltip="The amount of base tokens that can be withdrawn from the position."
-          content="Withdrawable"
-        />
-      ),
+      header: "Withdrawable",
       cell: ({ row }) => {
         return <WithdrawableCell hyperdrive={hyperdrive} row={row} />;
       },
