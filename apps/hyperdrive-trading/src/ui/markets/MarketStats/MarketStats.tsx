@@ -70,6 +70,7 @@ export function MarketStats({
         description={`The fixed rate earned when purchasing hy${hyperdrive.baseToken.symbol}`}
       />
       <Stat
+        description={`The amount of hy${hyperdrive.baseToken.symbol} (either longs or shorts) that have been traded in the last 24 hours`}
         label="Volume (24h)"
         value={
           <FormattedDaiValue
@@ -80,6 +81,7 @@ export function MarketStats({
       />
       <Stat
         label="Liquidity"
+        description="The amount of capital that has been deployed by LPs to the pool"
         value={
           <FormattedDaiValue
             symbol={hyperdrive.baseToken.symbol}
