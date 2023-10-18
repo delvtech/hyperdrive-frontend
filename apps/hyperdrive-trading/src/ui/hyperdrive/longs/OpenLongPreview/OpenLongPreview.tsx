@@ -31,7 +31,7 @@ export function OpenLongPreview({
 
       <div className="flex justify-between">
         <p>Fixed rate</p>
-        <p className="flex items-center">
+        <div className="flex items-center">
           {long.bondAmount > 0 ? (
             <>
               <div
@@ -58,7 +58,7 @@ export function OpenLongPreview({
             "0"
           )}
           % APR
-        </p>
+        </div>
       </div>
       <div className="flex justify-between">
         <p className="">Matures in</p>

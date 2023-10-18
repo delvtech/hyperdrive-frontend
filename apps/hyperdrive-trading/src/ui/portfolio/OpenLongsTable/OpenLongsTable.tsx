@@ -143,7 +143,7 @@ export function OpenLongsTable({
             return (
               <tr
                 key={row.id}
-                className="daisy-hover h-16 cursor-pointer grid-cols-4 items-center"
+                className="daisy-hover h-16 cursor-pointer items-center"
                 onClick={() => {
                   const modalId = `${row.original.assetId}`;
                   (window as any)[modalId].showModal();
