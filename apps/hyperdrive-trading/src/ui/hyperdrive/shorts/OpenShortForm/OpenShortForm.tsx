@@ -2,13 +2,13 @@ import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { MAX_UINT256 } from "src/base/constants";
-import { Well } from "src/ui/base/components/Well/Well";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useMaxShort } from "src/ui/hyperdrive/shorts/hooks/useMaxShort";
 import { useOpenShort } from "src/ui/hyperdrive/shorts/hooks/useOpenShort";
 import { usePreviewOpenShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewOpenShort";
 import { OpenShortPreview } from "src/ui/hyperdrive/shorts/OpenShortPreview/OpenShortPreview";
+import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenApproval } from "src/ui/token/hooks/useTokenApproval";
 import { TokenInput } from "src/ui/token/TokenInput";
@@ -77,40 +77,31 @@ export function OpenShortForm({
   });
 
   return (
-    <div className="flex flex-col gap-4">
-      <h5 className="font-bold">Short hy{market.baseToken.symbol}</h5>
-      <TokenInput
-        token={{
-          symbol: `hy${market.baseToken.symbol}`,
-          address: "0x0",
-          decimals: 18,
-          name: "Bonds",
-        }}
-        inputLabel="Amount to short"
-        value={amount ?? ""}
-        onChange={(newAmount) => setAmount(newAmount)}
-      />
-
-      {/* New Position Section */}
-      <div className="mt-4 flex flex-col gap-6">
-        <Well elevation="flat">
-          <div className="space-y-4">
-            <span className="text-h6 font-bold">Preview transaction</span>
-            <OpenShortPreview
-              market={market}
-              costBasis={baseAmountIn ?? 0n}
-              shortSize={amountAsBigInt}
-            />
-          </div>
-        </Well>
-
-        <p className="text-center text-body">
-          Note: When you short hy{market.baseToken.symbol} you earn the variable
-          rate on the equivalent amount of {market.baseToken.symbol} deposited
-          in the yield source.
-        </p>
-
-        {account ? (
+    <TransactionView
+      heading={`Short hy${market.baseToken.symbol}`}
+      tokenInput={
+        <TokenInput
+          token={{
+            symbol: `hy${market.baseToken.symbol}`,
+            address: "0x0",
+            decimals: 18,
+            name: "Bonds",
+          }}
+          inputLabel="Amount to short"
+          value={amount ?? ""}
+          onChange={(newAmount) => setAmount(newAmount)}
+        />
+      }
+      transactionPreview={
+        <OpenShortPreview
+          market={market}
+          costBasis={baseAmountIn ?? 0n}
+          shortSize={amountAsBigInt}
+        />
+      }
+      disclaimer={`Note: When you short hy${market.baseToken.symbol} you earn the variable rate on the equivalent amount of ${market.baseToken.symbol} deposited in the yield source.`}
+      actionButton={
+        account ? (
           needsApproval ? (
             // Approval button
             <button
@@ -145,8 +136,8 @@ export function OpenShortForm({
           >
             <h5>Connect wallet</h5>
           </button>
-        )}
-      </div>
-    </div>
+        )
+      }
+    />
   );
 }
