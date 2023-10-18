@@ -182,7 +182,8 @@ export function OpenLpTable({
       ]}
       rows={rows}
       showSkeleton={
-        lpSharesStatus === "loading" || withdrawalSharesStatus === "loading"
+        account &&
+        (lpSharesStatus === "loading" || withdrawalSharesStatus === "loading")
       }
     />
   );
