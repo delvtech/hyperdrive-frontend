@@ -39,8 +39,8 @@ function getColumns(hyperdrive: Hyperdrive) {
       cell: ({ getValue }) => {
         const lpShares = getValue();
         return (
-          <span key="type" className="font-semibold uppercase">
-            {lpShares ? "LP" : "Pending withdrawal"}
+          <span className="font-semibold uppercase">
+            {lpShares ? "LP" : "Withdrawal Shares"}
           </span>
         );
       },
@@ -67,6 +67,7 @@ function getColumns(hyperdrive: Hyperdrive) {
               {formatBalance({
                 balance: row.original.withdrawalShares || 0n,
                 decimals: hyperdrive.baseToken.decimals,
+                places: 4,
               })}
             </span>
           );
@@ -77,7 +78,7 @@ function getColumns(hyperdrive: Hyperdrive) {
       id: "value",
       header: "Value",
       cell: ({ row }) => {
-        return <ValueCell key="value_1" hyperdrive={hyperdrive} row={row} />;
+        return <ValueCell hyperdrive={hyperdrive} row={row} />;
       },
     }),
     columnHelper.accessor("withdrawalShares", {
@@ -147,7 +148,7 @@ function ValueCell({
     );
   } else {
     return (
-      <span key="value">
+      <span>
         {!!poolInfo && withdrawalShares ? (
           `${formatBalance({
             balance: multiplyBigInt(
@@ -287,7 +288,7 @@ export function OpenLpTable({
           })}
         </tbody>
       </table>
-      {!lpShares || !withdrawalShares ? <NonIdealState /> : null}
+      {!lpShares && !withdrawalShares ? <NonIdealState /> : null}
     </div>
   );
 }
