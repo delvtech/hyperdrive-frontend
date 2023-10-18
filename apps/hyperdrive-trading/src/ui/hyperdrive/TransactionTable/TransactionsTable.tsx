@@ -61,7 +61,7 @@ const getColumns = (hyperdrive: Hyperdrive) => [
         <span>
           {size}{" "}
           {isLpRow
-            ? hyperdrive.baseToken.name
+            ? hyperdrive.baseToken.symbol
             : `hy${hyperdrive.baseToken.symbol}`}
         </span>
       );
