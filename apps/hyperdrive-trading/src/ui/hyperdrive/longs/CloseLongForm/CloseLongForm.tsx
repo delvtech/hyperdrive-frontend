@@ -14,13 +14,13 @@ import { useAccount } from "wagmi";
 interface CloseLongFormProps {
   hyperdrive: Hyperdrive;
   long: Long;
-  onSuccess: () => void;
   onCloseLong?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 
 export function CloseLongForm({
   hyperdrive,
   long,
+  onCloseLong,
 }: CloseLongFormProps): ReactElement {
   const { decimals: baseDecimals, symbol: baseSymbol } = hyperdrive.baseToken;
 
@@ -97,6 +97,7 @@ export function CloseLongForm({
             disabled={!closeLong || isPendingWalletAction}
             onClick={(e) => {
               closeLong?.();
+              onCloseLong?.(e);
             }}
           >
             <span>Close position</span>
