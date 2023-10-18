@@ -44,7 +44,6 @@ function getColumns(hyperdrive: Hyperdrive) {
       ),
       cell: ({ getValue }) => {
         const lpShares = getValue();
-
         return (
           <span key="type" className="font-semibold uppercase">
             {lpShares ? "LP" : "Pending withdrawal"}
@@ -52,7 +51,8 @@ function getColumns(hyperdrive: Hyperdrive) {
         );
       },
     }),
-    columnHelper.accessor("withdrawalShares", {
+    columnHelper.accessor("lpShares", {
+      id: "shares",
       header: () => (
         <CellWithTooltip
           tooltip="LP's proportionate stake in the total liquidity pool."
@@ -61,27 +61,31 @@ function getColumns(hyperdrive: Hyperdrive) {
       ),
 
       cell: ({ row, getValue }) => {
-        const withdrawalShares = getValue();
-        if (withdrawalShares) {
+        const lpShares = getValue();
+        if (lpShares) {
           return (
             <span>
               {formatBalance({
-                balance: withdrawalShares,
-                decimals: hyperdrive.baseToken.decimals,
+                balance: lpShares || 0n,
+                decimals: (hyperdrive as Hyperdrive).baseToken.decimals,
+                places: 4,
               })}
             </span>
           );
         } else {
-          return formatBalance({
-            balance: row.original.lpShares || 0n,
-            decimals: (hyperdrive as Hyperdrive).baseToken.decimals,
-            places: 4,
-          });
+          return (
+            <span>
+              {formatBalance({
+                balance: row.original.withdrawalShares || 0n,
+                decimals: hyperdrive.baseToken.decimals,
+              })}
+            </span>
+          );
         }
       },
     }),
     columnHelper.accessor("lpShares", {
-      id: "currentValue",
+      id: "value",
       header: () => (
         <CellWithTooltip
           tooltip="The current value of the position."
@@ -261,7 +265,6 @@ export function OpenLpTable({
     data: memoizedData as LpRowType[],
     getCoreRowModel: getCoreRowModel(),
   });
-
   return (
     <div className="max-h-96 overflow-y-scroll">
       <table className="daisy-table-zebra daisy-table daisy-table-lg">
