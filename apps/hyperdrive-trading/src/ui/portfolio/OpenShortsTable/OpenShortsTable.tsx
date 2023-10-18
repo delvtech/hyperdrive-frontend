@@ -131,7 +131,7 @@ export function OpenShortsTable({
           />
         );
       })}
-      <table className="daisy-table ">
+      <table className="daisy-table-zebra daisy-table daisy-table-lg">
         <thead>
           {tableInstance.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
@@ -153,7 +153,7 @@ export function OpenShortsTable({
             return (
               <tr
                 key={row.id}
-                className="daisy-hover h-16 cursor-pointer grid-cols-4 items-center text-sm text-base-content even:bg-secondary/5 md:text-h6"
+                className="daisy-hover h-16 cursor-pointer"
                 onClick={() => {
                   const modalId = `${row.original.assetId}`;
                   (window as any)[modalId].showModal();
