@@ -93,7 +93,7 @@ export function OpenLongForm({
 
   return (
     <div className="flex flex-col gap-4">
-      <h5 className="font-bold">Buy hy{hyperdrive.baseToken.symbol}</h5>
+      <h5 className="font-bold">Long hy{hyperdrive.baseToken.symbol}</h5>
       <TokenInput
         token={hyperdrive.baseToken}
         value={amount ?? ""}
@@ -157,7 +157,7 @@ export function OpenLongForm({
               className="daisy-btn-secondary daisy-btn"
               onClick={() => openLong?.()}
             >
-              Buy hy{hyperdrive.baseToken.symbol}
+              Long hy{hyperdrive.baseToken.symbol}
             </button>
           )
         ) : (

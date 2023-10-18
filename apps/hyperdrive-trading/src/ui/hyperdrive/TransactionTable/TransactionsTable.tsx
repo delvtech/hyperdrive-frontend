@@ -34,7 +34,7 @@ const getColumns = (hyperdrive: Hyperdrive) => [
         return true;
       }
       if (filterValue === "Long") {
-        return ["Buy", "Sell"].includes(type);
+        return ["Open Long", "Close Long"].includes(type);
       }
       if (filterValue === "Short") {
         return ["Open Short", "Close Short"].includes(type);
