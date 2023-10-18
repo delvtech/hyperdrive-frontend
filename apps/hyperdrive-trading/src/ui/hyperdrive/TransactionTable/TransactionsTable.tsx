@@ -131,7 +131,7 @@ export function TransactionTable({
                       </div>
                       {header.column.getCanFilter() ? (
                         <div className="daisy-tabs-lg">
-                          {["All", "Long", "Short", "LP"].map((filter) => (
+                          {["All", "Longs", "Shorts", "LP"].map((filter) => (
                             <a
                               key={filter}
                               className={`${
