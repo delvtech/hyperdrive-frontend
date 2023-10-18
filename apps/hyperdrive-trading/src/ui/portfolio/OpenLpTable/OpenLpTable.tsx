@@ -1,70 +1,137 @@
 import { multiplyBigInt } from "@hyperdrive/sdk";
-import { ReactElement } from "react";
+import {
+  Row,
+  createColumnHelper,
+  flexRender,
+  getCoreRowModel,
+  useReactTable,
+} from "@tanstack/react-table";
+import { ReactElement, useMemo } from "react";
 import Skeleton from "react-loading-skeleton";
 import { Hyperdrive } from "src/appconfig/types";
-import {
-  CellWithTooltip,
-  Row,
-  SortableGridTable,
-} from "src/ui/base/components/tables/SortableGridTable";
+import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
+import { RedeemWithdrawalSharesModalButton } from "src/ui/hyperdrive/lp/RedeemWithdrawalSharesModalButton/RedeemWithdrawalSharesModalButton";
+import { RemoveLiquidityModalButton } from "src/ui/hyperdrive/lp/RemoveLiquidityModalButton/RemoveLiquidityModalButton";
 import { useLpShares } from "src/ui/hyperdrive/lp/hooks/useLpShares";
 import { usePreviewRedeemWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/usePreviewRedeemWithdrawalShares";
 import { usePreviewRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewRemoveLiquidity";
 import { useWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useWithdrawalShares";
-import { RedeemWithdrawalSharesModalButton } from "src/ui/hyperdrive/lp/RedeemWithdrawalSharesModalButton/RedeemWithdrawalSharesModalButton";
-import { RemoveLiquidityModalButton } from "src/ui/hyperdrive/lp/RemoveLiquidityModalButton/RemoveLiquidityModalButton";
 import { useAccount } from "wagmi";
 
 interface OpenOrdersTableProps {
   hyperdrive: Hyperdrive;
+  lpShares?: bigint;
+  withdrawalShares?: bigint;
 }
 
-export function OpenLpTable({
+type LpRowType = {
+  withdrawalShares: bigint | undefined;
+  lpShares: bigint | undefined;
+};
+
+const columnHelper = createColumnHelper<LpRowType>();
+function getColumns(hyperdrive: Hyperdrive) {
+  return [
+    columnHelper.accessor("lpShares", {
+      header: "Position",
+      cell: ({ getValue }) => {
+        const lpShares = getValue();
+        return (
+          <span className="font-semibold uppercase">
+            {lpShares ? "LP" : "Withdrawal Shares"}
+          </span>
+        );
+      },
+    }),
+    columnHelper.accessor("lpShares", {
+      id: "shares",
+      header: "Shares",
+
+      cell: ({ row, getValue }) => {
+        const lpShares = getValue();
+        if (lpShares) {
+          return (
+            <span>
+              {formatBalance({
+                balance: lpShares || 0n,
+                decimals: (hyperdrive as Hyperdrive).baseToken.decimals,
+                places: 4,
+              })}
+            </span>
+          );
+        } else {
+          return (
+            <span>
+              {formatBalance({
+                balance: row.original.withdrawalShares || 0n,
+                decimals: hyperdrive.baseToken.decimals,
+                places: 4,
+              })}
+            </span>
+          );
+        }
+      },
+    }),
+    columnHelper.accessor("lpShares", {
+      id: "value",
+      header: "Value",
+      cell: ({ row }) => {
+        return <ValueCell hyperdrive={hyperdrive} row={row} />;
+      },
+    }),
+    columnHelper.accessor("withdrawalShares", {
+      id: "withdrawable",
+      header: "Withdrawable",
+      cell: ({ row }) => {
+        return <WithdrawableCell hyperdrive={hyperdrive} row={row} />;
+      },
+    }),
+    columnHelper.display({
+      id: "actions",
+      cell: ({ row }) => {
+        const withdrawalShares = row.original.withdrawalShares;
+        const lpShares = row.original.lpShares;
+        if (lpShares) {
+          return (
+            <span className="flex justify-end">
+              <RemoveLiquidityModalButton
+                modalId="remove-liquidity-modal"
+                hyperdrive={hyperdrive}
+                lpShares={lpShares}
+              />
+            </span>
+          );
+        } else if (withdrawalShares) {
+          return (
+            <span className="flex justify-end">
+              <RedeemWithdrawalSharesModalButton
+                modalId="redeem-withdrawal-shares-modal"
+                hyperdrive={hyperdrive}
+                withdrawalShares={withdrawalShares}
+              />
+            </span>
+          );
+        }
+      },
+    }),
+  ];
+}
+
+function ValueCell({
+  row,
   hyperdrive,
-}: OpenOrdersTableProps): ReactElement {
-  const { address: account } = useAccount();
-
-  const { lpShares, lpSharesStatus } = useLpShares({
-    hyperdriveAddress: hyperdrive.address,
-    account,
-  });
-
-  const { withdrawalShares, withdrawalSharesStatus } = useWithdrawalShares({
-    hyperdriveAddress: hyperdrive.address,
-    account,
-  });
-
-  const { baseAmountOut: lpBaseWithdrawable } = usePreviewRemoveLiquidity({
-    market: hyperdrive,
-    lpSharesIn: lpShares,
-    minBaseAmountOut: 1n, // TODO: slippage,
-    destination: account,
-  });
-
-  const { baseAmountOut: withdrawalSharesBaseWithdrawable } =
-    usePreviewRedeemWithdrawalShares({
-      market: hyperdrive,
-      withdrawalSharesIn: withdrawalShares,
-      minBaseAmountOutPerShare: 1n, // TODO: slippage,
-      destination: account,
-    });
-
+}: {
+  row: Row<LpRowType>;
+  hyperdrive: Hyperdrive;
+}) {
   const { poolInfo } = usePoolInfo(hyperdrive.address);
-
-  const rows: Row[] = [];
+  const lpShares = row.original.lpShares;
+  const withdrawalShares = row.original.withdrawalShares;
   if (lpShares) {
-    rows.push([
-      <span key="type" className="font-semibold uppercase">
-        LP
-      </span>,
-      formatBalance({
-        balance: lpShares,
-        decimals: (hyperdrive as Hyperdrive).baseToken.decimals,
-        places: 4,
-      }),
-      <span key="value">
+    return (
+      <span>
         {!!poolInfo ? (
           `${formatBalance({
             balance: multiplyBigInt(
@@ -77,38 +144,12 @@ export function OpenLpTable({
         ) : (
           <Skeleton />
         )}
-      </span>,
-      <span key="withdrawable">
-        {lpBaseWithdrawable !== undefined ? (
-          `${formatBalance({
-            balance: lpBaseWithdrawable,
-            decimals: hyperdrive.baseToken.decimals,
-          })} ${hyperdrive.baseToken.symbol}`
-        ) : (
-          <Skeleton />
-        )}
-      </span>,
-      <span key="remove-liquidity" className="flex justify-end">
-        <RemoveLiquidityModalButton
-          modalId="remove-liquidity-modal"
-          hyperdrive={hyperdrive}
-          lpShares={lpShares}
-        />
-      </span>,
-    ]);
-  }
-
-  if (withdrawalShares) {
-    rows.push([
-      <span key="type" className="font-semibold uppercase">
-        Pending withdrawal
-      </span>,
-      formatBalance({
-        balance: withdrawalShares,
-        decimals: hyperdrive.baseToken.decimals,
-      }),
-      <span key="value">
-        {!!poolInfo ? (
+      </span>
+    );
+  } else {
+    return (
+      <span>
+        {!!poolInfo && withdrawalShares ? (
           `${formatBalance({
             balance: multiplyBigInt(
               [withdrawalShares, poolInfo.lpSharePrice],
@@ -119,8 +160,50 @@ export function OpenLpTable({
         ) : (
           <Skeleton />
         )}
-      </span>,
-      <span key="withdrawable">
+      </span>
+    );
+  }
+}
+
+function WithdrawableCell({
+  row,
+  hyperdrive,
+}: {
+  hyperdrive: Hyperdrive;
+  row: Row<LpRowType>;
+}): JSX.Element {
+  const { address: account } = useAccount();
+  const lpShares = row.original.lpShares;
+  const withdrawalShares = row.original.withdrawalShares;
+  const { baseAmountOut: withdrawalSharesBaseWithdrawable } =
+    usePreviewRedeemWithdrawalShares({
+      market: hyperdrive,
+      withdrawalSharesIn: withdrawalShares,
+      minBaseAmountOutPerShare: 1n, // TODO: slippage,
+      destination: account,
+    });
+  const { baseAmountOut: lpBaseWithdrawable } = usePreviewRemoveLiquidity({
+    market: hyperdrive,
+    lpSharesIn: lpShares,
+    minBaseAmountOut: 1n, // TODO: slippage,
+    destination: account,
+  });
+  if (lpShares) {
+    return (
+      <span>
+        {lpBaseWithdrawable !== undefined ? (
+          `${formatBalance({
+            balance: lpBaseWithdrawable,
+            decimals: hyperdrive.baseToken.decimals,
+          })} ${hyperdrive.baseToken.symbol}`
+        ) : (
+          <Skeleton />
+        )}
+      </span>
+    );
+  } else {
+    return (
+      <span>
         {withdrawalSharesBaseWithdrawable !== undefined ? (
           `${formatBalance({
             balance: withdrawalSharesBaseWithdrawable,
@@ -129,62 +212,83 @@ export function OpenLpTable({
         ) : (
           <Skeleton />
         )}
-      </span>,
-      <span key="redeem-withdraw-shares" className="flex justify-end">
-        <RedeemWithdrawalSharesModalButton
-          modalId="redeem-withdrawal-shares-modal"
-          hyperdrive={hyperdrive}
-          withdrawalShares={withdrawalShares}
-        />
-      </span>,
-    ]);
+      </span>
+    );
   }
+}
 
+export function OpenLpTable({
+  hyperdrive,
+}: OpenOrdersTableProps): ReactElement {
+  const { address: account } = useAccount();
+  const { lpShares } = useLpShares({
+    hyperdriveAddress: hyperdrive.address,
+    account,
+  });
+
+  const { withdrawalShares } = useWithdrawalShares({
+    hyperdriveAddress: hyperdrive.address,
+    account,
+  });
+  const memoizedData = useMemo(() => {
+    return [
+      {
+        lpShares: lpShares || 0n,
+      },
+      {
+        withdrawalShares: withdrawalShares || 0n,
+      },
+    ];
+  }, [lpShares, withdrawalShares]);
+  const tableInstance = useReactTable({
+    columns: getColumns(hyperdrive),
+    data: memoizedData as LpRowType[],
+    getCoreRowModel: getCoreRowModel(),
+  });
   return (
-    <SortableGridTable
-      headingRowClassName="grid-cols-[4fr_4fr_4fr_4fr_1fr]"
-      bodyRowClassName="grid-cols-[4fr_4fr_4fr_4fr_1fr] items-center even:bg-base-300/5 h-16"
-      // Blank col added for actions
-      cols={[
-        {
-          cell: (
-            <CellWithTooltip
-              tooltip="Long and Short positions have a maturity date based on the open date and position duration of the pool whereas LP positions can remain active indefinitely (until closed by the LPer)."
-              content="Position"
-            />
-          ),
-        },
-        {
-          cell: (
-            <CellWithTooltip
-              tooltip="LP's proportionate stake in the total liquidity pool."
-              content="Shares"
-            />
-          ),
-        },
-        {
-          cell: (
-            <CellWithTooltip
-              tooltip="Current settlement value of your open position."
-              content="Value"
-            />
-          ),
-        },
-        {
-          cell: (
-            <CellWithTooltip
-              tooltip="Amount of capital LP can reclaim now."
-              content="Withdrawable"
-            />
-          ),
-        },
-        { cell: <div /> },
-      ]}
-      rows={rows}
-      showSkeleton={
-        account &&
-        (lpSharesStatus === "loading" || withdrawalSharesStatus === "loading")
-      }
-    />
+    <div className="max-h-96 overflow-y-scroll">
+      <table className="daisy-table-zebra daisy-table daisy-table-lg">
+        <thead>
+          {tableInstance.getHeaderGroups().map((headerGroup) => (
+            <tr key={headerGroup.id}>
+              {headerGroup.headers.map((header) => (
+                <th key={header.id}>
+                  {header.isPlaceholder
+                    ? null
+                    : flexRender(
+                        header.column.columnDef.header,
+                        header.getContext(),
+                      )}
+                </th>
+              ))}
+            </tr>
+          ))}
+        </thead>
+        <tbody>
+          {tableInstance.getRowModel().rows.map((row) => {
+            return (
+              <tr
+                key={row.id}
+                className="daisy-hover h-16 cursor-pointer grid-cols-4 items-center"
+              >
+                <>
+                  {row.getVisibleCells().map((cell) => {
+                    return (
+                      <td key={cell.id}>
+                        {flexRender(
+                          cell.column.columnDef.cell,
+                          cell.getContext(),
+                        )}
+                      </td>
+                    );
+                  })}
+                </>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+      {!lpShares && !withdrawalShares ? <NonIdealState /> : null}
+    </div>
   );
 }
