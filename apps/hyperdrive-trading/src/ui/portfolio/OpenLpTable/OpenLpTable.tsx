@@ -230,16 +230,18 @@ export function OpenLpTable({
     hyperdriveAddress: hyperdrive.address,
     account,
   });
+
   const memoizedData = useMemo(() => {
-    return [
-      {
-        lpShares: lpShares || 0n,
-      },
-      {
-        withdrawalShares: withdrawalShares || 0n,
-      },
-    ];
+    const data = [];
+    if (lpShares && lpShares !== 0n) {
+      data.push({ lpShares });
+    }
+    if (withdrawalShares && withdrawalShares !== 0n) {
+      data.push({ withdrawalShares });
+    }
+    return data;
   }, [lpShares, withdrawalShares]);
+
   const tableInstance = useReactTable({
     columns: getColumns(hyperdrive),
     data: memoizedData as LpRowType[],
