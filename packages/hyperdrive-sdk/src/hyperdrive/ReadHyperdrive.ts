@@ -25,6 +25,7 @@ import { INetwork } from "src/network/Network";
 import { calculateEffectiveShareReserves } from "src/pool/calculateEffectiveShares";
 import { getCheckpointId } from "src/pool/getCheckpointId";
 import { WITHDRAW_SHARES_ASSET_ID } from "src/withdrawalShares/assetId";
+import { Checkpoint } from "src/pool/Checkpoint";
 
 export interface ReadHyperdriveOptions {
   contract: IReadHyperdriveContract;
@@ -56,6 +57,11 @@ export interface IReadHyperdrive {
    */
   getLiquidity(options?: ContractReadOptions): Promise<bigint>;
 
+  getCheckpoint(args: {
+    checkpointId: bigint;
+    options?: ContractReadOptions;
+  }): Promise<Checkpoint>;
+
   /**
    * Calculates the total trading volume in bonds given a block window.
    * @param options.fromBlock - The start block, defaults to "earliest"
@@ -75,10 +81,7 @@ export interface IReadHyperdrive {
   /**
    * Gets the active longs opened by a specific user.
    */
-  getOpenLongs({
-    account,
-    options,
-  }: {
+  getOpenLongs(args: {
     account: Address;
     options?: ContractReadOptions;
   }): Promise<Long[]>;
@@ -86,10 +89,7 @@ export interface IReadHyperdrive {
   /**
    * Gets the active shorts opened by a specific user.
    */
-  getOpenShorts({
-    account,
-    options,
-  }: {
+  getOpenShorts(args: {
     account: Address;
     options?: ContractReadOptions;
   }): Promise<OpenShort[]>;
@@ -97,10 +97,7 @@ export interface IReadHyperdrive {
   /**
    * Gets the closed longs by a specific user.
    */
-  getClosedLongs({
-    account,
-    options,
-  }: {
+  getClosedLongs(args: {
     account: Address;
     options?: ContractReadOptions;
   }): Promise<ClosedLong[]>;
@@ -108,10 +105,7 @@ export interface IReadHyperdrive {
   /**
    * Gets the inactive shorts opened by a specific user.
    */
-  getClosedShorts({
-    account,
-    options,
-  }: {
+  getClosedShorts(args: {
     account: Address;
     options?: ContractReadOptions;
   }): Promise<ClosedShort[]>;
@@ -132,10 +126,7 @@ export interface IReadHyperdrive {
   /**
    * Gets the amount of LP shares a user has.
    */
-  getLpShares({
-    account,
-    options,
-  }: {
+  getLpShares(args: {
     account: Address;
     options?: ContractReadOptions;
   }): Promise<bigint>;
@@ -143,10 +134,7 @@ export interface IReadHyperdrive {
   /**
    * Gets the amount of closed LP shares a user has.
    */
-  getClosedLpShares({
-    account,
-    options,
-  }: {
+  getClosedLpShares(args: {
     account: Address;
     options?: ContractReadOptions;
   }): Promise<ClosedLpShares[]>;
@@ -154,10 +142,7 @@ export interface IReadHyperdrive {
   /**
    * Gets the amount of withdrawal shares a user has.
    */
-  getWithdrawalShares({
-    account,
-    options,
-  }: {
+  getWithdrawalShares(args: {
     account: Address;
     options?: ContractReadOptions;
   }): Promise<bigint>;
@@ -165,10 +150,7 @@ export interface IReadHyperdrive {
   /**
    * Gets the amount of redeemed withdrawal shares a user has.
    */
-  getRedeemedWithdrawalShares({
-    account,
-    options,
-  }: {
+  getRedeemedWithdrawalShares(args: {
     account: Address;
     options?: ContractReadOptions;
   }): Promise<RedeemedWithdrawalShares[]>;
@@ -176,14 +158,7 @@ export interface IReadHyperdrive {
   /**
    * Predicts the amount of base asset a user will receive when closing a long.
    */
-  previewCloseLong({
-    maturityTime,
-    bondAmountIn,
-    minBaseAmountOut,
-    destination,
-    asUnderlying,
-    options,
-  }: {
+  previewCloseLong(args: {
     maturityTime: bigint;
     bondAmountIn: bigint;
     minBaseAmountOut: bigint;
@@ -195,14 +170,7 @@ export interface IReadHyperdrive {
   /**
    * Predicts the amount of base asset a user will receive when closing a short.
    */
-  previewCloseShort({
-    maturityTime,
-    shortAmountIn,
-    minBaseAmountOut,
-    destination,
-    asUnderlying,
-    options,
-  }: {
+  previewCloseShort(args: {
     maturityTime: bigint;
     shortAmountIn: bigint;
     minBaseAmountOut: bigint;
@@ -214,14 +182,7 @@ export interface IReadHyperdrive {
   /**
    * Predicts the amount of bonds a user will receive when opening a long.
    */
-  previewOpenLong({
-    baseAmount,
-    minBondAmountOut,
-    minSharePrice,
-    destination,
-    asUnderlying,
-    options,
-  }: {
+  previewOpenLong(args: {
     baseAmount: bigint;
     minBondAmountOut: bigint;
     minSharePrice: bigint;
@@ -233,14 +194,7 @@ export interface IReadHyperdrive {
   /**
    * Predicts the amount of base asset it will cost to open a short.
    */
-  previewOpenShort({
-    amountOfBondsToShort,
-    maxBaseAmountIn,
-    minSharePrice,
-    destination,
-    asUnderlying,
-    options,
-  }: {
+  previewOpenShort(args: {
     amountOfBondsToShort: bigint;
     maxBaseAmountIn: bigint;
     minSharePrice: bigint;
@@ -252,14 +206,7 @@ export interface IReadHyperdrive {
   /**
    * Predicts the amount of LP shares a user will receive when adding liquidity.
    */
-  previewAddLiquidity({
-    contribution,
-    minAPR,
-    maxAPR,
-    destination,
-    asUnderlying,
-    options,
-  }: {
+  previewAddLiquidity(args: {
     contribution: bigint;
     minAPR: bigint;
     maxAPR: bigint;
@@ -271,13 +218,7 @@ export interface IReadHyperdrive {
   /**
    * Predicts the amount of base asset and withdrawlshares a user will receive when removing liquidity.
    */
-  previewRemoveLiquidity({
-    lpSharesIn,
-    minBaseAmountOut,
-    destination,
-    asUnderlying,
-    options,
-  }: {
+  previewRemoveLiquidity(args: {
     lpSharesIn: bigint;
     minBaseAmountOut: bigint;
     destination: Address;
@@ -288,13 +229,7 @@ export interface IReadHyperdrive {
   /**
    * Predicts the amount of base asset and redeemed shares a user will receive when redeeming withdrawal shares.
    */
-  previewRedeemWithdrawalShares({
-    withdrawalSharesIn,
-    minBaseAmountOutPerShare,
-    destination,
-    asUnderlying,
-    options,
-  }: {
+  previewRedeemWithdrawalShares(args: {
     withdrawalSharesIn: bigint;
     minBaseAmountOutPerShare: bigint;
     destination: Address;
@@ -357,6 +292,20 @@ export class ReadHyperdrive implements IReadHyperdrive {
     this.contract = contract;
     this.mathContract = mathContract;
     this.network = network;
+  }
+  async getCheckpoint({
+    checkpointId,
+    options,
+  }: {
+    checkpointId: bigint;
+    options?: ContractReadOptions | undefined;
+  }): Promise<Checkpoint> {
+    const [checkpoint] = await this.contract.read(
+      "getCheckpoint",
+      [checkpointId],
+      options,
+    );
+    return checkpoint;
   }
 
   async getPoolConfig(options?: ContractReadOptions): Promise<PoolConfig> {
@@ -709,6 +658,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     const fromBlock = "earliest";
     const toBlock = options?.blockNumber || options?.blockTag || "latest";
 
+    const { checkpointDuration } = await this.getPoolConfig(options);
     const closeShortEvents = await this.contract.getEvents("CloseShort", {
       filter: { trader: account },
       fromBlock,
@@ -734,7 +684,11 @@ export class ReadHyperdrive implements IReadHyperdrive {
 
     const closedShortsById: Record<string, ClosedShort> = {};
 
-    for (const { args: eventData, data: eventLog } of transferOutEvents) {
+    for (const {
+      args: eventData,
+      data: eventLog,
+      blockNumber,
+    } of transferOutEvents) {
       const assetId = eventData.id.toString();
 
       if (closedShortsById[assetId]) {
@@ -742,10 +696,12 @@ export class ReadHyperdrive implements IReadHyperdrive {
         continue;
       }
 
+      const { timestamp } = await this.network.getBlock({ blockNumber });
       closedShortsById[assetId] = {
         hyperdriveAddress: this.contract.address,
         assetId: eventData.id,
         bondAmount: eventData.value ?? 0n,
+        checkpointId: getCheckpointId(timestamp, checkpointDuration),
         baseAmountReceived: amountReceivedByAssetId[assetId] ?? 0n,
         maturity: decodeAssetFromTransferSingleEventData(
           eventLog as `0x${string}`,
@@ -782,8 +738,13 @@ export class ReadHyperdrive implements IReadHyperdrive {
 
     const openShortsById: Record<string, OpenShort> = {};
 
-    for (const { data: eventLog, args: eventData } of transferInEvents) {
+    for (const {
+      data: eventLog,
+      args: eventData,
+      blockNumber,
+    } of transferInEvents) {
       const assetId = eventData.id.toString();
+      const { timestamp } = await this.network.getBlock({ blockNumber });
 
       if (openShortsById[assetId]) {
         openShortsById[assetId].bondAmount += eventData.value;
@@ -797,6 +758,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
       openShortsById[assetId] = {
         hyperdriveAddress: this.contract.address,
         assetId: eventData.id,
+        checkpointId: getCheckpointId(timestamp, checkpointDuration),
         bondAmount:
           eventData.value - (closedShortsById[assetId]?.bondAmount ?? 0n),
         baseAmountPaid: netAmountPaid > 0n ? netAmountPaid : 0n,
@@ -867,23 +829,24 @@ export class ReadHyperdrive implements IReadHyperdrive {
       toBlock,
     });
 
+    const { checkpointDuration } = await this.getPoolConfig(options);
     const closedShortsList: ClosedShort[] = await Promise.all(
       closedShorts.map(async (event) => {
-        const assetId = event.args.assetId;
+        const { assetId } = event.args;
         const decoded = decodeAssetFromTransferSingleEventData(
           event.data as `0x${string}`,
         );
+        const { timestamp } = await this.network.getBlock({
+          blockNumber: event.blockNumber,
+        });
         return {
           hyperdriveAddress: this.contract.address,
           assetId,
           bondAmount: event.args.bondAmount,
           baseAmountReceived: event.args.baseAmount,
           maturity: decoded.timestamp,
-          closedTimestamp: (
-            await this.network.getBlock({
-              blockNumber: event.blockNumber,
-            })
-          ).timestamp,
+          closedTimestamp: timestamp,
+          checkpointId: getCheckpointId(timestamp, checkpointDuration),
         };
       }),
     );
@@ -909,10 +872,9 @@ export class ReadHyperdrive implements IReadHyperdrive {
     const { timestamp: blockTimestamp } = await this.network.getBlock(options);
 
     const checkpointId = getCheckpointId(blockTimestamp, checkpointDuration);
-    const [{ longExposure: checkpointLongExposure }] = await this.contract.read(
-      "getCheckpoint",
-      [checkpointId],
-    );
+    const { longExposure: checkpointLongExposure } = await this.getCheckpoint({
+      checkpointId,
+    });
 
     const [maxBondsOut] = await this.mathContract.read(
       "calculateMaxShort",
@@ -961,10 +923,10 @@ export class ReadHyperdrive implements IReadHyperdrive {
     const { timestamp: blockTimestamp } = await this.network.getBlock(options);
 
     const checkpointId = getCheckpointId(blockTimestamp, checkpointDuration);
-    const [{ longExposure: checkpointLongExposure }] = await this.contract.read(
-      "getCheckpoint",
-      [checkpointId],
-    );
+    const { longExposure: checkpointLongExposure } = await this.getCheckpoint({
+      checkpointId,
+      options,
+    });
 
     const [maxBaseIn, maxBondsOut] = await this.mathContract.read(
       "calculateMaxLong",

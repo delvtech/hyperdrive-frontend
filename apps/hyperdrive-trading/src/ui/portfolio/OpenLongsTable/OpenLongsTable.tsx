@@ -158,7 +158,7 @@ export function OpenLongsTable({
           {tableInstance.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
-                <th key={header.id}>
+                <th className="sticky top-0 z-10 bg-white" key={header.id}>
                   {header.isPlaceholder
                     ? null
                     : flexRender(
