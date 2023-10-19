@@ -25,6 +25,7 @@ import { INetwork } from "src/network/Network";
 import { calculateEffectiveShareReserves } from "src/pool/calculateEffectiveShares";
 import { getCheckpointId } from "src/pool/getCheckpointId";
 import { WITHDRAW_SHARES_ASSET_ID } from "src/withdrawalShares/assetId";
+import { Checkpoint } from "src/pool/Checkpoint";
 
 export interface ReadHyperdriveOptions {
   contract: IReadHyperdriveContract;
@@ -55,6 +56,11 @@ export interface IReadHyperdrive {
    * marketLiquidity = lpSharePrice * effectiveShareReserves - longsOutstanding
    */
   getLiquidity(options?: ContractReadOptions): Promise<bigint>;
+
+  getCheckpoint(args: {
+    checkpointId: bigint;
+    options?: ContractReadOptions;
+  }): Promise<Checkpoint>;
 
   /**
    * Calculates the total trading volume in bonds given a block window.
@@ -286,6 +292,20 @@ export class ReadHyperdrive implements IReadHyperdrive {
     this.contract = contract;
     this.mathContract = mathContract;
     this.network = network;
+  }
+  async getCheckpoint({
+    checkpointId,
+    options,
+  }: {
+    checkpointId: bigint;
+    options?: ContractReadOptions | undefined;
+  }): Promise<Checkpoint> {
+    const [checkpoint] = await this.contract.read(
+      "getCheckpoint",
+      [checkpointId],
+      options,
+    );
+    return checkpoint;
   }
 
   async getPoolConfig(options?: ContractReadOptions): Promise<PoolConfig> {
@@ -638,6 +658,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     const fromBlock = "earliest";
     const toBlock = options?.blockNumber || options?.blockTag || "latest";
 
+    const { checkpointDuration } = await this.getPoolConfig(options);
     const closeShortEvents = await this.contract.getEvents("CloseShort", {
       filter: { trader: account },
       fromBlock,
@@ -663,7 +684,11 @@ export class ReadHyperdrive implements IReadHyperdrive {
 
     const closedShortsById: Record<string, ClosedShort> = {};
 
-    for (const { args: eventData, data: eventLog } of transferOutEvents) {
+    for (const {
+      args: eventData,
+      data: eventLog,
+      blockNumber,
+    } of transferOutEvents) {
       const assetId = eventData.id.toString();
 
       if (closedShortsById[assetId]) {
@@ -671,10 +696,12 @@ export class ReadHyperdrive implements IReadHyperdrive {
         continue;
       }
 
+      const { timestamp } = await this.network.getBlock({ blockNumber });
       closedShortsById[assetId] = {
         hyperdriveAddress: this.contract.address,
         assetId: eventData.id,
         bondAmount: eventData.value ?? 0n,
+        checkpointId: getCheckpointId(timestamp, checkpointDuration),
         baseAmountReceived: amountReceivedByAssetId[assetId] ?? 0n,
         maturity: decodeAssetFromTransferSingleEventData(
           eventLog as `0x${string}`,
@@ -711,8 +738,13 @@ export class ReadHyperdrive implements IReadHyperdrive {
 
     const openShortsById: Record<string, OpenShort> = {};
 
-    for (const { data: eventLog, args: eventData } of transferInEvents) {
+    for (const {
+      data: eventLog,
+      args: eventData,
+      blockNumber,
+    } of transferInEvents) {
       const assetId = eventData.id.toString();
+      const { timestamp } = await this.network.getBlock({ blockNumber });
 
       if (openShortsById[assetId]) {
         openShortsById[assetId].bondAmount += eventData.value;
@@ -726,6 +758,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
       openShortsById[assetId] = {
         hyperdriveAddress: this.contract.address,
         assetId: eventData.id,
+        checkpointId: getCheckpointId(timestamp, checkpointDuration),
         bondAmount:
           eventData.value - (closedShortsById[assetId]?.bondAmount ?? 0n),
         baseAmountPaid: netAmountPaid > 0n ? netAmountPaid : 0n,
@@ -796,23 +829,24 @@ export class ReadHyperdrive implements IReadHyperdrive {
       toBlock,
     });
 
+    const { checkpointDuration } = await this.getPoolConfig(options);
     const closedShortsList: ClosedShort[] = await Promise.all(
       closedShorts.map(async (event) => {
-        const assetId = event.args.assetId;
+        const { assetId } = event.args;
         const decoded = decodeAssetFromTransferSingleEventData(
           event.data as `0x${string}`,
         );
+        const { timestamp } = await this.network.getBlock({
+          blockNumber: event.blockNumber,
+        });
         return {
           hyperdriveAddress: this.contract.address,
           assetId,
           bondAmount: event.args.bondAmount,
           baseAmountReceived: event.args.baseAmount,
           maturity: decoded.timestamp,
-          closedTimestamp: (
-            await this.network.getBlock({
-              blockNumber: event.blockNumber,
-            })
-          ).timestamp,
+          closedTimestamp: timestamp,
+          checkpointId: getCheckpointId(timestamp, checkpointDuration),
         };
       }),
     );
@@ -838,10 +872,9 @@ export class ReadHyperdrive implements IReadHyperdrive {
     const { timestamp: blockTimestamp } = await this.network.getBlock(options);
 
     const checkpointId = getCheckpointId(blockTimestamp, checkpointDuration);
-    const [{ longExposure: checkpointLongExposure }] = await this.contract.read(
-      "getCheckpoint",
-      [checkpointId],
-    );
+    const { longExposure: checkpointLongExposure } = await this.getCheckpoint({
+      checkpointId,
+    });
 
     const [maxBondsOut] = await this.mathContract.read(
       "calculateMaxShort",
@@ -890,10 +923,10 @@ export class ReadHyperdrive implements IReadHyperdrive {
     const { timestamp: blockTimestamp } = await this.network.getBlock(options);
 
     const checkpointId = getCheckpointId(blockTimestamp, checkpointDuration);
-    const [{ longExposure: checkpointLongExposure }] = await this.contract.read(
-      "getCheckpoint",
-      [checkpointId],
-    );
+    const { longExposure: checkpointLongExposure } = await this.getCheckpoint({
+      checkpointId,
+      options,
+    });
 
     const [maxBaseIn, maxBondsOut] = await this.mathContract.read(
       "calculateMaxLong",

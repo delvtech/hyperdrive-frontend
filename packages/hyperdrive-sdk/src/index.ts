@@ -44,6 +44,8 @@ export type {
 // Pool
 export type { PoolConfig } from "src/pool/PoolConfig";
 export type { PoolInfo } from "src/pool/PoolInfo";
+export type { Checkpoint } from "src/pool/Checkpoint";
+export { getCheckpointId } from "src/pool/getCheckpointId";
 
 // Network
 export type { INetwork, GetBlockParameters } from "src/network/Network";
