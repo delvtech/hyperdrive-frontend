@@ -60,7 +60,7 @@ const getColumns = (hyperdrive: Hyperdrive) => [
     },
   }),
   columnHelper.display({
-    header: `Accrued yield (${hyperdrive.baseToken.symbol})`,
+    header: `Yield earned (${hyperdrive.baseToken.symbol})`,
     cell: ({ row }) => {
       return <AccruedYieldCell hyperdrive={hyperdrive} row={row} />;
     },
