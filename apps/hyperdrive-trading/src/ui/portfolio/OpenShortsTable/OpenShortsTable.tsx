@@ -106,12 +106,7 @@ function AccruedYieldCell({
 
   return (
     <div className="flex flex-col gap-1">
-      <span
-        className="daisy-tooltip"
-        data-tip={`Yield from shorted hy${hyperdrive.baseToken.symbol} deposited into the yield source`}
-      >
-        {currentValue?.toString()}
-      </span>
+      <span>{currentValue?.toString()}</span>
     </div>
   );
 }
