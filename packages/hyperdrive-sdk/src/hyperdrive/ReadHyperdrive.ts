@@ -75,10 +75,7 @@ export interface IReadHyperdrive {
   /**
    * Gets the active longs opened by a specific user.
    */
-  getOpenLongs({
-    account,
-    options,
-  }: {
+  getOpenLongs(args: {
     account: Address;
     options?: ContractReadOptions;
   }): Promise<Long[]>;
@@ -86,10 +83,7 @@ export interface IReadHyperdrive {
   /**
    * Gets the active shorts opened by a specific user.
    */
-  getOpenShorts({
-    account,
-    options,
-  }: {
+  getOpenShorts(args: {
     account: Address;
     options?: ContractReadOptions;
   }): Promise<OpenShort[]>;
@@ -97,10 +91,7 @@ export interface IReadHyperdrive {
   /**
    * Gets the closed longs by a specific user.
    */
-  getClosedLongs({
-    account,
-    options,
-  }: {
+  getClosedLongs(args: {
     account: Address;
     options?: ContractReadOptions;
   }): Promise<ClosedLong[]>;
@@ -108,10 +99,7 @@ export interface IReadHyperdrive {
   /**
    * Gets the inactive shorts opened by a specific user.
    */
-  getClosedShorts({
-    account,
-    options,
-  }: {
+  getClosedShorts(args: {
     account: Address;
     options?: ContractReadOptions;
   }): Promise<ClosedShort[]>;
@@ -132,10 +120,7 @@ export interface IReadHyperdrive {
   /**
    * Gets the amount of LP shares a user has.
    */
-  getLpShares({
-    account,
-    options,
-  }: {
+  getLpShares(args: {
     account: Address;
     options?: ContractReadOptions;
   }): Promise<bigint>;
@@ -143,10 +128,7 @@ export interface IReadHyperdrive {
   /**
    * Gets the amount of closed LP shares a user has.
    */
-  getClosedLpShares({
-    account,
-    options,
-  }: {
+  getClosedLpShares(args: {
     account: Address;
     options?: ContractReadOptions;
   }): Promise<ClosedLpShares[]>;
@@ -154,10 +136,7 @@ export interface IReadHyperdrive {
   /**
    * Gets the amount of withdrawal shares a user has.
    */
-  getWithdrawalShares({
-    account,
-    options,
-  }: {
+  getWithdrawalShares(args: {
     account: Address;
     options?: ContractReadOptions;
   }): Promise<bigint>;
@@ -165,10 +144,7 @@ export interface IReadHyperdrive {
   /**
    * Gets the amount of redeemed withdrawal shares a user has.
    */
-  getRedeemedWithdrawalShares({
-    account,
-    options,
-  }: {
+  getRedeemedWithdrawalShares(args: {
     account: Address;
     options?: ContractReadOptions;
   }): Promise<RedeemedWithdrawalShares[]>;
@@ -176,14 +152,7 @@ export interface IReadHyperdrive {
   /**
    * Predicts the amount of base asset a user will receive when closing a long.
    */
-  previewCloseLong({
-    maturityTime,
-    bondAmountIn,
-    minBaseAmountOut,
-    destination,
-    asUnderlying,
-    options,
-  }: {
+  previewCloseLong(args: {
     maturityTime: bigint;
     bondAmountIn: bigint;
     minBaseAmountOut: bigint;
@@ -195,14 +164,7 @@ export interface IReadHyperdrive {
   /**
    * Predicts the amount of base asset a user will receive when closing a short.
    */
-  previewCloseShort({
-    maturityTime,
-    shortAmountIn,
-    minBaseAmountOut,
-    destination,
-    asUnderlying,
-    options,
-  }: {
+  previewCloseShort(args: {
     maturityTime: bigint;
     shortAmountIn: bigint;
     minBaseAmountOut: bigint;
@@ -214,14 +176,7 @@ export interface IReadHyperdrive {
   /**
    * Predicts the amount of bonds a user will receive when opening a long.
    */
-  previewOpenLong({
-    baseAmount,
-    minBondAmountOut,
-    minSharePrice,
-    destination,
-    asUnderlying,
-    options,
-  }: {
+  previewOpenLong(args: {
     baseAmount: bigint;
     minBondAmountOut: bigint;
     minSharePrice: bigint;
@@ -233,14 +188,7 @@ export interface IReadHyperdrive {
   /**
    * Predicts the amount of base asset it will cost to open a short.
    */
-  previewOpenShort({
-    amountOfBondsToShort,
-    maxBaseAmountIn,
-    minSharePrice,
-    destination,
-    asUnderlying,
-    options,
-  }: {
+  previewOpenShort(args: {
     amountOfBondsToShort: bigint;
     maxBaseAmountIn: bigint;
     minSharePrice: bigint;
@@ -252,14 +200,7 @@ export interface IReadHyperdrive {
   /**
    * Predicts the amount of LP shares a user will receive when adding liquidity.
    */
-  previewAddLiquidity({
-    contribution,
-    minAPR,
-    maxAPR,
-    destination,
-    asUnderlying,
-    options,
-  }: {
+  previewAddLiquidity(args: {
     contribution: bigint;
     minAPR: bigint;
     maxAPR: bigint;
@@ -271,13 +212,7 @@ export interface IReadHyperdrive {
   /**
    * Predicts the amount of base asset and withdrawlshares a user will receive when removing liquidity.
    */
-  previewRemoveLiquidity({
-    lpSharesIn,
-    minBaseAmountOut,
-    destination,
-    asUnderlying,
-    options,
-  }: {
+  previewRemoveLiquidity(args: {
     lpSharesIn: bigint;
     minBaseAmountOut: bigint;
     destination: Address;
@@ -288,13 +223,7 @@ export interface IReadHyperdrive {
   /**
    * Predicts the amount of base asset and redeemed shares a user will receive when redeeming withdrawal shares.
    */
-  previewRedeemWithdrawalShares({
-    withdrawalSharesIn,
-    minBaseAmountOutPerShare,
-    destination,
-    asUnderlying,
-    options,
-  }: {
+  previewRedeemWithdrawalShares(args: {
     withdrawalSharesIn: bigint;
     minBaseAmountOutPerShare: bigint;
     destination: Address;
