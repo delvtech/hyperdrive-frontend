@@ -211,13 +211,14 @@ function CurrentValueCell({
   hyperdrive: Hyperdrive;
 }) {
   const { address: account } = useAccount();
-  const { baseAmountOut } = usePreviewCloseLong({
+  const { baseAmountOut, previewCloseLongStatus } = usePreviewCloseLong({
     hyperdriveAddress: hyperdrive.address,
     maturityTime: row.original.maturity,
     bondAmountIn: row.original.bondAmount,
     minBaseAmountOut: parseUnits("0", hyperdrive.baseToken.decimals),
     destination: account,
   });
+
   const currentValue =
     baseAmountOut &&
     formatBalance({
@@ -228,7 +229,9 @@ function CurrentValueCell({
 
   const isPositiveChangeInValue =
     baseAmountOut && baseAmountOut > row.original.baseAmountPaid;
-
+  if (previewCloseLongStatus === "error") {
+    return <div>Insufficient Liquidity</div>;
+  }
   return (
     <div className="flex flex-col gap-1">
       <span className="ml-2 font-bold">{currentValue?.toString()}</span>

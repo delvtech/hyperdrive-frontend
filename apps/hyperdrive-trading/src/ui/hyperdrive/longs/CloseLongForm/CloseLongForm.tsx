@@ -56,6 +56,11 @@ export function CloseLongForm({
 
   return (
     <TransactionView
+      disclaimer={
+        previewCloseLongStatus === "error"
+          ? "Insufficient liquidity: There is not enough liquidity in the pool to close your long position at this time. You may either add more funds to the pool or wait for the liquidity to improve."
+          : ""
+      }
       heading="Close long"
       tokenInput={
         <TokenInput
