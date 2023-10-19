@@ -9,12 +9,15 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import classNames from "classnames";
+import * as dnum from "dnum";
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { parseUnits } from "src/base/parseUnits";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { useCheckpoint } from "src/ui/hyperdrive/hooks/useCheckpoint";
+import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { getProfitLossText } from "src/ui/hyperdrive/shorts/CloseShortForm/getProfitLossText";
 import { CloseShortModalButton } from "src/ui/hyperdrive/shorts/CloseShortModalButton/CloseShortModalButton";
@@ -57,12 +60,61 @@ const getColumns = (hyperdrive: Hyperdrive) => [
     },
   }),
   columnHelper.display({
-    header: `Current value (WETH)`,
+    header: `Accrued yield (${hyperdrive.baseToken.symbol})`,
+    cell: ({ row }) => {
+      return <AccruedYieldCell hyperdrive={hyperdrive} row={row} />;
+    },
+  }),
+  columnHelper.display({
+    header: `Current value (${hyperdrive.baseToken.symbol})`,
     cell: ({ row }) => {
       return <CurrentValueCell hyperdrive={hyperdrive} row={row} />;
     },
   }),
 ];
+
+function AccruedYieldCell({
+  row,
+  hyperdrive,
+}: {
+  row: Row<OpenShort>;
+  hyperdrive: Hyperdrive;
+}) {
+  const { poolInfo } = usePoolInfo(hyperdrive.address);
+  const { checkpoint } = useCheckpoint({
+    checkpointId: row.original.checkpointId,
+    hyperdriveAddress: hyperdrive.address,
+  });
+
+  // Accrued yield = (current share price - checkpoint share price) x number of bonds
+  const accruedYield = dnum.mul(
+    dnum.sub(
+      [poolInfo?.sharePrice || 0n, hyperdrive.baseToken.decimals],
+      [checkpoint?.sharePrice || 0n, 18],
+    ),
+    [row.original.bondAmount, hyperdrive.baseToken.decimals],
+    hyperdrive.baseToken.decimals,
+  );
+
+  const currentValue =
+    accruedYield &&
+    formatBalance({
+      balance: accruedYield[0],
+      decimals: hyperdrive.baseToken.decimals,
+      places: 6,
+    });
+
+  return (
+    <div className="flex flex-col gap-1">
+      <span
+        className="daisy-tooltip"
+        data-tip={`Yield from shorted hy${hyperdrive.baseToken.symbol} deposited into the yield source`}
+      >
+        {currentValue?.toString()}
+      </span>
+    </div>
+  );
+}
 
 function CurrentValueCell({
   row,
