@@ -26,6 +26,7 @@ import { calculateEffectiveShareReserves } from "src/pool/calculateEffectiveShar
 import { getCheckpointId } from "src/pool/getCheckpointId";
 import { WITHDRAW_SHARES_ASSET_ID } from "src/withdrawalShares/assetId";
 import { Checkpoint } from "src/pool/Checkpoint";
+import { MarketState } from "src/pool/MarketState";
 
 export interface ReadHyperdriveOptions {
   contract: IReadHyperdriveContract;
@@ -61,6 +62,12 @@ export interface IReadHyperdrive {
     checkpointId: bigint;
     options?: ContractReadOptions;
   }): Promise<Checkpoint>;
+
+  /**
+   *
+   * This function retrieves the market state. This is helpful for retrieving general market state statistics, such as whether the market has been paused.
+   */
+  getMarketState(options?: ContractReadOptions): Promise<MarketState>;
 
   /**
    * Calculates the total trading volume in bonds given a block window.
@@ -306,6 +313,15 @@ export class ReadHyperdrive implements IReadHyperdrive {
       options,
     );
     return checkpoint;
+  }
+
+  async getMarketState(options?: ContractReadOptions): Promise<MarketState> {
+    const [marketState] = await this.contract.read(
+      "getMarketState",
+      [],
+      options,
+    );
+    return marketState;
   }
 
   async getPoolConfig(options?: ContractReadOptions): Promise<PoolConfig> {

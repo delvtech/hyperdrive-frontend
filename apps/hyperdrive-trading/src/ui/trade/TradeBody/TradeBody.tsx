@@ -5,6 +5,7 @@ import { parseUnits } from "src/base/parseUnits";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { TransactionTable } from "src/ui/hyperdrive/TransactionTable/TransactionsTable";
 import { useTransactionData } from "src/ui/hyperdrive/TransactionTable/useTransactionData";
+import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { OpenLongModalButton } from "src/ui/hyperdrive/longs/OpenLongModalButton/OpenLongModalButton";
 import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
 import { AddLiquidityModalButton } from "src/ui/hyperdrive/lp/AddLiquidityModalButton/AddLiquidityModalButton";
@@ -22,7 +23,7 @@ interface PositionsTableProps {
 export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
   const { data: transactionData } = useTransactionData(hyperdrive);
   const { longPrice } = useCurrentLongPrice(hyperdrive);
-  const showBanner = false;
+  const { marketState } = useMarketState(hyperdrive.address);
   return (
     <div className="flex max-w-6xl flex-col gap-16">
       <div className="flex w-full flex-col gap-6">
@@ -36,8 +37,8 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
 
         {/* Stats row */}
         <MarketStats hyperdrive={hyperdrive} />
-        {showBanner && (
-          <CustomBanner description="The competition has been paused. You may close your positions, but no new positions may be opened." />
+        {marketState?.isPaused && (
+          <CustomBanner description="This market has been paused." />
         )}
       </div>
 
