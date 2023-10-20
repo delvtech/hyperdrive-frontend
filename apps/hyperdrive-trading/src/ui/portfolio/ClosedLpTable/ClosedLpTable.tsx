@@ -34,7 +34,7 @@ function getColumns(hyperdrive: Hyperdrive): any {
       },
     }),
     columnHelper.display({
-      header: "Shares",
+      header: "Shares closed",
       cell: ({ row }) => {
         const isWithdrawalShare = row.original.redeemedTimestamp;
         const shares = isWithdrawalShare
@@ -52,7 +52,7 @@ function getColumns(hyperdrive: Hyperdrive): any {
       },
     }),
     columnHelper.accessor("baseAmount", {
-      header: "Value",
+      header: `Amount received (${hyperdrive.baseToken.symbol})`,
       cell: ({ getValue }) => {
         const baseAmount = getValue();
         return (
@@ -67,10 +67,11 @@ function getColumns(hyperdrive: Hyperdrive): any {
       },
     }),
     columnHelper.display({
-      header: "Withdrawal Shares",
+      header: "Withdrawal shares received",
       cell: ({ row }) => {
+        const isWithdrawalShare = row.original.redeemedTimestamp;
         const withdrawalShareAmount = row.original.withdrawalShareAmount;
-        if (!withdrawalShareAmount) {
+        if (isWithdrawalShare) {
           return <span>N/A</span>;
         }
         return (
