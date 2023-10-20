@@ -67,7 +67,7 @@ export function MarketStats({
             <Skeleton className="opacity-50" />
           )
         }
-        description={`The fixed rate earned when purchasing hy${hyperdrive.baseToken.symbol}`}
+        description={`Fixed rate earned from purchasing hy${hyperdrive.baseToken.symbol}, before fees and slippage are applied`}
       />
       <Stat
         description={`The amount of hy${hyperdrive.baseToken.symbol} (either longs or shorts) that have been traded in the last 24 hours`}
