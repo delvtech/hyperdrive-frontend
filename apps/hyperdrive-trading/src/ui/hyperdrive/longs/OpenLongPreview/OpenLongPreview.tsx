@@ -52,7 +52,7 @@ export function OpenLongPreview({
       </div>
 
       <div className="flex justify-between">
-        <p>Effective fixed rate</p>
+        <p>Net fixed rate</p>
         <div className="flex items-center">
           {long.bondAmount > 0 ? (
             <>
