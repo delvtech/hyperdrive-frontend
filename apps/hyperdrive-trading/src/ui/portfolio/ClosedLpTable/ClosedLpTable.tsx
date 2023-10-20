@@ -17,10 +17,11 @@ interface ClosedLpTablePRops {
   hyperdrive: Hyperdrive;
 }
 
-const columnHelper = createColumnHelper<
-  ClosedLpShares & RedeemedWithdrawalShares
->();
-function getColumns(hyperdrive: Hyperdrive): any {
+type ClosedLpSharesAndWithdrawalShares = ClosedLpShares &
+  RedeemedWithdrawalShares;
+
+const columnHelper = createColumnHelper<ClosedLpSharesAndWithdrawalShares>();
+function getColumns(hyperdrive: Hyperdrive) {
   return [
     columnHelper.display({
       header: "Position",
@@ -125,7 +126,7 @@ export function ClosedLpTable({
     return data;
   }, [closedLpShares, redeemedWithdrawalShares]);
   const tableInstance = useReactTable({
-    data: memoizedData,
+    data: memoizedData as ClosedLpSharesAndWithdrawalShares[],
     columns: getColumns(hyperdrive),
     getCoreRowModel: getCoreRowModel(),
   });
