@@ -9,7 +9,7 @@ export function useTradingVolume(
 ): { tradingVolume: bigint | undefined; formatted: string | undefined } {
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
   const queryEnabled = !!readHyperdrive && currentBlockNumber !== undefined;
-  const { data: tradingVolume } = useQuery({
+  const { data: volume } = useQuery({
     queryKey: makeQueryKey("tradingVolume", {
       hyperdriveAddress,
       currentBlockNumber: currentBlockNumber?.toString(),
@@ -19,9 +19,9 @@ export function useTradingVolume(
   });
 
   return {
-    tradingVolume: tradingVolume,
-    formatted: tradingVolume
-      ? dnum.format([tradingVolume, 18], { digits: 0 })
+    tradingVolume: volume.totalVolume,
+    formatted: volume.totalVolume
+      ? dnum.format([volume.totalVolume, 18], { digits: 0 })
       : undefined,
   };
 }
