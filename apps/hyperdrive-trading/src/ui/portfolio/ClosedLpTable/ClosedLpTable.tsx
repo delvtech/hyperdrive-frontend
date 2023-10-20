@@ -1,10 +1,13 @@
-import { ReactElement } from "react";
-import { Hyperdrive } from "src/appconfig/types";
+import { ClosedLpShares, RedeemedWithdrawalShares } from "@hyperdrive/sdk";
 import {
-  CellWithTooltip,
-  Row,
-  SortableGridTable,
-} from "src/ui/base/components/tables/SortableGridTable";
+  createColumnHelper,
+  flexRender,
+  getCoreRowModel,
+  useReactTable,
+} from "@tanstack/react-table";
+import { ReactElement, useMemo } from "react";
+import { Hyperdrive } from "src/appconfig/types";
+import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useClosedLpShares } from "src/ui/hyperdrive/lp/hooks/useClosedLpShares";
 import { useRedeemedWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useRedeemedWithdrawalShares";
@@ -14,139 +17,162 @@ interface ClosedLpTablePRops {
   hyperdrive: Hyperdrive;
 }
 
+const columnHelper = createColumnHelper<
+  ClosedLpShares & RedeemedWithdrawalShares
+>();
+function getColumns(hyperdrive: Hyperdrive): any {
+  return [
+    columnHelper.display({
+      header: "Position",
+      cell: ({ row }) => {
+        const isWithdrawalShare = row.original.redeemedTimestamp;
+        return (
+          <span className="font-semibold uppercase">
+            {isWithdrawalShare ? "Withdrawal Shares" : "LP"}
+          </span>
+        );
+      },
+    }),
+    columnHelper.display({
+      header: "Shares",
+      cell: ({ row }) => {
+        const isWithdrawalShare = row.original.redeemedTimestamp;
+        const shares = isWithdrawalShare
+          ? row.original.withdrawalShareAmount
+          : row.original.lpAmount;
+        return (
+          <span>
+            {formatBalance({
+              balance: shares,
+              decimals: hyperdrive.baseToken.decimals,
+              places: 4,
+            })}
+          </span>
+        );
+      },
+    }),
+    columnHelper.accessor("baseAmount", {
+      header: "Value",
+      cell: ({ getValue }) => {
+        const baseAmount = getValue();
+        return (
+          <span>
+            {formatBalance({
+              balance: baseAmount,
+              decimals: hyperdrive.baseToken.decimals,
+              places: 4,
+            })}
+          </span>
+        );
+      },
+    }),
+    columnHelper.display({
+      header: "Withdrawal Shares",
+      cell: ({ row }) => {
+        const withdrawalShareAmount = row.original.withdrawalShareAmount;
+        if (!withdrawalShareAmount) {
+          return <span>N/A</span>;
+        }
+        return (
+          <span>
+            {formatBalance({
+              balance: withdrawalShareAmount,
+              decimals: hyperdrive.baseToken.decimals,
+              places: 4,
+            })}
+          </span>
+        );
+      },
+    }),
+    columnHelper.display({
+      header: "Closed on",
+      cell: ({ row }) => {
+        const closedTimestamp =
+          row.original.closedTimestamp || row.original.redeemedTimestamp;
+        return (
+          <span>
+            {new Date(Number(closedTimestamp * 1000n)).toLocaleDateString()}
+          </span>
+        );
+      },
+    }),
+  ];
+}
+
 export function ClosedLpTable({
   hyperdrive,
 }: ClosedLpTablePRops): ReactElement {
   const { address: account } = useAccount();
 
-  const { closedLpShares, closedLpSharesStatus } = useClosedLpShares({
+  const { closedLpShares } = useClosedLpShares({
     hyperdriveAddress: hyperdrive.address,
     account,
   });
 
-  const { redeemedWithdrawalShares, redeemedWithdrawlSharesStatus } =
-    useRedeemedWithdrawalShares({
-      hyperdriveAddress: hyperdrive.address,
-      account,
-    });
-
-  const rows: Row[] = [];
-  if (closedLpShares) {
-    rows.push(
-      ...closedLpShares.map(
-        ({ lpAmount, baseAmount, closedTimestamp, withdrawalShareAmount }) => {
-          return [
-            <span key="type" className="font-semibold uppercase italic">
-              LP
-            </span>,
-            <span key="shares" className="italic">
-              {formatBalance({
-                balance: lpAmount,
-                decimals: hyperdrive.baseToken.decimals,
-              })}
-            </span>,
-            <span key="value" className="italic">
-              {`${formatBalance({
-                balance: baseAmount,
-                decimals: hyperdrive.baseToken.decimals,
-              })}`}
-            </span>,
-            <span key="withdrawalShares" className="italic">
-              {`${formatBalance({
-                balance: withdrawalShareAmount,
-                decimals: hyperdrive.baseToken.decimals,
-              })}`}
-            </span>,
-            <span key="closed-on" className="italic">
-              {new Date(Number(closedTimestamp * 1000n)).toLocaleDateString()}
-            </span>,
-          ];
-        },
-      ),
-    );
-  }
-
-  if (redeemedWithdrawalShares) {
-    rows.push(
-      ...redeemedWithdrawalShares.map(
-        ({ baseAmount, redeemedTimestamp, withdrawalShareAmount }) => [
-          <span key="type" className="font-semibold uppercase italic">
-            Withdrawal shares
-          </span>,
-          <span key="shares" className="italic">
-            {`${formatBalance({
-              balance: withdrawalShareAmount,
-              decimals: hyperdrive.baseToken.decimals,
-            })}`}
-          </span>,
-          <span key="value" className="italic">
-            {`${formatBalance({
-              balance: baseAmount,
-              decimals: hyperdrive.baseToken.decimals,
-            })} ${hyperdrive.baseToken.symbol}`}
-          </span>,
-          <span key="withdrawalShares" className="italic">
-            N/A
-          </span>,
-          <span key="closed-on" className="italic">
-            {new Date(Number(redeemedTimestamp * 1000n)).toLocaleDateString()}
-          </span>,
-        ],
-      ),
-    );
-  }
+  const { redeemedWithdrawalShares } = useRedeemedWithdrawalShares({
+    hyperdriveAddress: hyperdrive.address,
+    account,
+  });
+  const memoizedData = useMemo(() => {
+    const data = [];
+    if (closedLpShares?.length) {
+      data.push(...closedLpShares);
+    }
+    if (redeemedWithdrawalShares?.length) {
+      data.push(...redeemedWithdrawalShares);
+    }
+    return data;
+  }, [closedLpShares, redeemedWithdrawalShares]);
+  const tableInstance = useReactTable({
+    data: memoizedData,
+    columns: getColumns(hyperdrive),
+    getCoreRowModel: getCoreRowModel(),
+  });
 
   return (
-    <SortableGridTable
-      headingRowClassName="grid-cols-5 text-start"
-      bodyRowClassName="grid-cols-5 items-center even:bg-base-300/5 h-16"
-      cols={[
-        {
-          cell: (
-            <CellWithTooltip
-              tooltip="LP Shares and Withdrawal shares"
-              content="Position"
-            />
-          ),
-        },
-        {
-          cell: (
-            <CellWithTooltip
-              tooltip="Amount of LP shares or withdrawal shares that were closed"
-              content="Shares closed"
-            />
-          ),
-        },
-        {
-          cell: (
-            <CellWithTooltip
-              content={`Amount received (${hyperdrive.baseToken.symbol})`}
-              tooltip={`Total amount of ${hyperdrive.baseToken.symbol} user received  upon closing the position.`}
-            />
-          ),
-        },
-        {
-          cell: (
-            <CellWithTooltip
-              content="Withdrawal shares received"
-              tooltip="Shares to claim idle liquidity to completely exit an LP position"
-            />
-          ),
-        },
-        {
-          cell: (
-            <CellWithTooltip
-              content="Closed on"
-              tooltip=" Date when the position was settled by the trader."
-            />
-          ),
-        },
-      ]}
-      rows={rows}
-      showSkeleton={
-        closedLpSharesStatus === "loading" ||
-        redeemedWithdrawlSharesStatus === "loading"
-      }
-    />
+    <div className="max-h-96 overflow-y-scroll">
+      <table className="daisy-table-zebra daisy-table daisy-table-lg">
+        <thead>
+          {tableInstance.getHeaderGroups().map((headerGroup) => (
+            <tr key={headerGroup.id}>
+              {headerGroup.headers.map((header) => (
+                <th className="sticky top-0 bg-white" key={header.id}>
+                  {header.isPlaceholder
+                    ? null
+                    : flexRender(
+                        header.column.columnDef.header,
+                        header.getContext(),
+                      )}
+                </th>
+              ))}
+            </tr>
+          ))}
+        </thead>
+        <tbody>
+          {tableInstance.getRowModel().rows.map((row) => {
+            return (
+              <tr
+                key={row.id}
+                className="daisy-hover h-16 cursor-pointer grid-cols-4 items-center"
+              >
+                <>
+                  {row.getVisibleCells().map((cell) => {
+                    return (
+                      <td key={cell.id}>
+                        {flexRender(
+                          cell.column.columnDef.cell,
+                          cell.getContext(),
+                        )}
+                      </td>
+                    );
+                  })}
+                </>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+      {!closedLpShares && !redeemedWithdrawalShares ? <NonIdealState /> : null}
+    </div>
   );
 }
