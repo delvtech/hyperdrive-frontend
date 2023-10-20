@@ -52,20 +52,22 @@ export function OpenLongPreview({
       </div>
 
       <div className="flex justify-between">
-        <p>Fixed rate</p>
+        <p>Effective fixed rate</p>
         <div className="flex items-center">
           {long.bondAmount > 0 ? (
             <>
               <span
-                className="daisy-tooltip daisy-tooltip-top cursor-help border-b border-dashed border-current "
-                data-tip={`Your effective fixed rate after the pool fee and slippage is applied.`}
+                className="daisy-tooltip daisy-tooltip-top cursor-help border-b border-dashed border-current"
+                data-tip={`Your effective fixed rate after pool fees and slippage are applied.`}
               >
-                {calculateAnnualizedPercentageChange({
-                  amountBefore: long.baseAmountPaid,
-                  amountAfter: long.bondAmount,
-                  days: numDays,
-                })}
-                % APR
+                <span className="font-bold">
+                  {calculateAnnualizedPercentageChange({
+                    amountBefore: long.baseAmountPaid,
+                    amountAfter: long.bondAmount,
+                    days: numDays,
+                  })}
+                  % APR
+                </span>
               </span>
               <div
                 className={
