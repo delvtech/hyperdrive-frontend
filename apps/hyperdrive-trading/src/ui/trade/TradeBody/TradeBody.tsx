@@ -1,4 +1,4 @@
-import { InformationCircleIcon } from "@heroicons/react/24/outline";
+import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { divideBigInt } from "src/base/divideBigInt";
@@ -39,8 +39,8 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
         {/* Stats row */}
         <MarketStats hyperdrive={hyperdrive} />
         <CustomBanner
-          icon={<InformationCircleIcon className="h-6 w-6" />}
-          description="Any long or short positions opened after Wednesday, Oct. 25, 2023 will not mature before the end of the trading competition."
+          icon={<ExclamationTriangleIcon className="h-6 w-6 text-warning" />}
+          description="Notice! Any positions opened after Wednesday, October 25th, will not mature before the end of the competition."
         />
         {marketState?.isPaused && (
           <CustomBanner description="This market has been paused. You may close your positions, but no new positions may be opened." />
