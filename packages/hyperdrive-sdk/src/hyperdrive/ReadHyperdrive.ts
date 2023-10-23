@@ -389,12 +389,10 @@ export class ReadHyperdrive implements IReadHyperdrive {
       toBlock,
     });
 
-    const totalVolume =
-      sumBigInt(openLongEvents.map((event) => event.args.bondAmount)) +
-      sumBigInt(openShortEvents.map((event) => event.args.bondAmount));
-
     return {
-      totalVolume,
+      totalVolume:
+        sumBigInt(openLongEvents.map((event) => event.args.bondAmount)) +
+        sumBigInt(openShortEvents.map((event) => event.args.bondAmount)),
       longVolume: sumBigInt(
         openLongEvents.map((event) => event.args.bondAmount),
       ),
