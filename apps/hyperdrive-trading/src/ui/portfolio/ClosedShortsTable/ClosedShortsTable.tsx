@@ -42,7 +42,7 @@ const getColumns = (hyperdrive: Hyperdrive) => [
     },
   }),
   columnHelper.accessor("baseAmountReceived", {
-    header: `Amount received`,
+    header: `Amount received (${hyperdrive.baseToken.symbol})`,
     cell: (baseAmountReceived) => {
       const amountReceived = baseAmountReceived.getValue();
       return formatBalance({
