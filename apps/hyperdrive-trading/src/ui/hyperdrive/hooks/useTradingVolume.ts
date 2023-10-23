@@ -6,9 +6,9 @@ export function useTradingVolume(
   hyperdriveAddress: Address,
   currentBlockNumber: bigint | undefined,
 ): {
-  totalVolume: bigint;
-  longVolume: bigint;
-  shortVolume: bigint;
+  totalVolume: bigint | undefined;
+  longVolume: bigint | undefined;
+  shortVolume: bigint | undefined;
 } {
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
   const queryEnabled = !!readHyperdrive && currentBlockNumber !== undefined;
@@ -21,8 +21,8 @@ export function useTradingVolume(
     enabled: queryEnabled,
   });
   return {
-    totalVolume: volume?.totalVolume ?? 0n,
-    longVolume: volume?.longVolume ?? 0n,
-    shortVolume: volume?.shortVolume ?? 0n,
+    totalVolume: volume?.totalVolume,
+    longVolume: volume?.longVolume,
+    shortVolume: volume?.shortVolume,
   };
 }
