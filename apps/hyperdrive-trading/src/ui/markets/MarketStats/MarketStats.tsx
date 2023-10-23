@@ -1,3 +1,4 @@
+import { format } from "dnum";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { Hyperdrive } from "src/appconfig/types";
@@ -19,7 +20,7 @@ export function MarketStats({
   const { data: currentBlockNumber } = useBlockNumber();
 
   const chainId = useChainId();
-  const tradingVolume = useTradingVolume(
+  const { totalVolume, longVolume, shortVolume } = useTradingVolume(
     hyperdrive.address,
     currentBlockNumber,
   );
@@ -70,12 +71,26 @@ export function MarketStats({
         description={`The fixed rate earned when purchasing hy${hyperdrive.baseToken.symbol}`}
       />
       <Stat
-        description={`The amount of hy${hyperdrive.baseToken.symbol} (either longs or shorts) that have been traded in the last 24 hours`}
+        description={`The amount of hy${
+          hyperdrive.baseToken.symbol
+        } (either longs or shorts) that have been traded in the last 24 hours. Long Volume: ${format(
+          [longVolume, hyperdrive.baseToken.decimals],
+          {
+            digits: 0,
+          },
+        )} ${hyperdrive.baseToken.symbol} / Short Volume: ${format(
+          [shortVolume, hyperdrive.baseToken.decimals],
+          {
+            digits: 0,
+          },
+        )} ${hyperdrive.baseToken.symbol}`}
         label="Volume (24h)"
         value={
           <FormattedDaiValue
             symbol={hyperdrive.baseToken.symbol}
-            value={tradingVolume.formatted || "0"}
+            value={format([totalVolume, hyperdrive.baseToken.decimals], {
+              digits: 0,
+            })}
           />
         }
       />
