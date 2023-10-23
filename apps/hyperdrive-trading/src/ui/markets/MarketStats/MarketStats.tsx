@@ -125,6 +125,7 @@ function FormattedDaiValue({
     <p
       data-tip={tooltip}
       className={
+        // Note: Tooltip-bottom not wrapping properly. See: https://github.com/saadeghi/daisyui/issues/84#issuecomment-1444067972
         "daisy-tooltip daisy-tooltip-bottom flex flex-row items-center justify-start before:whitespace-pre-wrap before:content-[attr(data-tip)]"
       }
     >
