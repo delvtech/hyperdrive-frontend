@@ -18,14 +18,27 @@ export function Navbar(): ReactElement {
       </div>
       <div className="daisy-navbar-end gap-8">
         {chainId === +import.meta.env.VITE_CUSTOM_CHAIN_CHAIN_ID ? (
-          <a
-            href="https://infra.delv.tech/dashboard/"
-            className="daisy-link-hover daisy-link inline-flex items-center underline"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Leaderboard
-          </a>
+          <>
+            <a
+              href="https://infra.delv.tech/dashboard/"
+              className="daisy-link-hover daisy-link inline-flex items-center underline"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Leaderboard
+            </a>
+            <span className="daisy-badge daisy-badge-lg">
+              Competition ends:{" "}
+              {
+                // Date object for October 31 2023.
+                new Date(
+                  2023,
+                  9, // october is 9, because january is 0
+                  31,
+                ).toLocaleDateString()
+              }
+            </span>
+          </>
         ) : null}
         <ConnectButton showBalance={false} />
       </div>
