@@ -254,7 +254,7 @@ export function OpenLpTable({
           {tableInstance.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
-                <th className="sticky top-0 bg-white" key={header.id}>
+                <th className="sticky top-0 bg-base-100" key={header.id}>
                   {header.isPlaceholder
                     ? null
                     : flexRender(
@@ -269,10 +269,7 @@ export function OpenLpTable({
         <tbody>
           {tableInstance.getRowModel().rows.map((row) => {
             return (
-              <tr
-                key={row.id}
-                className="daisy-hover h-16 cursor-pointer grid-cols-4 items-center"
-              >
+              <tr key={row.id} className="h-16 grid-cols-4 items-center">
                 <>
                   {row.getVisibleCells().map((cell) => {
                     return (

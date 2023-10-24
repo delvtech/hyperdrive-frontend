@@ -4,6 +4,7 @@ import { Hyperdrive } from "src/appconfig/types";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Stat } from "src/ui/base/components/Stat";
+import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useCurrentFixedAPR } from "src/ui/hyperdrive/hooks/useCurrentFixedAPR";
 import { useLiquidity } from "src/ui/hyperdrive/hooks/useLiquidity";
 import { useTradingVolume } from "src/ui/hyperdrive/hooks/useTradingVolume";
@@ -19,7 +20,7 @@ export function MarketStats({
   const { data: currentBlockNumber } = useBlockNumber();
 
   const chainId = useChainId();
-  const tradingVolume = useTradingVolume(
+  const { totalVolume, longVolume, shortVolume } = useTradingVolume(
     hyperdrive.address,
     currentBlockNumber,
   );
@@ -70,12 +71,25 @@ export function MarketStats({
         description={`Fixed rate earned from purchasing hy${hyperdrive.baseToken.symbol}, before fees and slippage are applied`}
       />
       <Stat
-        description={`The amount of hy${hyperdrive.baseToken.symbol} (either longs or shorts) that have been traded in the last 24 hours`}
+        description={`The amount of hy${hyperdrive.baseToken.symbol} (either longs or shorts) that have been traded in the last 24 hours. `}
         label="Volume (24h)"
         value={
           <FormattedDaiValue
             symbol={hyperdrive.baseToken.symbol}
-            value={tradingVolume.formatted || "0"}
+            value={formatBalance({
+              balance: totalVolume || 0n,
+              decimals: hyperdrive.baseToken.decimals,
+              places: 0,
+            })}
+            tooltip={`Long Volume: ${formatBalance({
+              balance: longVolume || 0n,
+              decimals: hyperdrive.baseToken.decimals,
+              places: 0,
+            })} ${hyperdrive.baseToken.symbol} / Short Volume: ${formatBalance({
+              balance: shortVolume || 0n,
+              decimals: hyperdrive.baseToken.decimals,
+              places: 0,
+            })} ${hyperdrive.baseToken.symbol}`}
           />
         }
       />
@@ -101,14 +115,22 @@ function formatTermLength(termLengthMS: number) {
 function FormattedDaiValue({
   value,
   symbol,
+  tooltip,
 }: {
   value: string;
   symbol: string;
+  tooltip?: string;
 }) {
   return (
-    <span className="flex flex-row items-center justify-start">
+    <p
+      data-tip={tooltip}
+      className={
+        // Note: Tooltip-bottom not wrapping properly. See: https://github.com/saadeghi/daisyui/issues/84#issuecomment-1444067972
+        "daisy-tooltip daisy-tooltip-bottom flex flex-row items-center justify-start before:whitespace-pre-wrap before:content-[attr(data-tip)]"
+      }
+    >
       {value}
       <span className="ml-1">{symbol}</span>
-    </span>
+    </p>
   );
 }

@@ -78,7 +78,11 @@ export interface IReadHyperdrive {
   getTradingVolume(options?: {
     fromBlock?: BlockTag | bigint;
     toBlock?: BlockTag | bigint;
-  }): Promise<bigint>;
+  }): Promise<{
+    totalVolume: bigint;
+    longVolume: bigint;
+    shortVolume: bigint;
+  }>;
 
   /**
    * Gets the current price of a bond in the pool.
@@ -370,7 +374,11 @@ export class ReadHyperdrive implements IReadHyperdrive {
   async getTradingVolume(options?: {
     fromBlock?: BlockTag | bigint;
     toBlock?: BlockTag | bigint;
-  }): Promise<bigint> {
+  }): Promise<{
+    totalVolume: bigint;
+    longVolume: bigint;
+    shortVolume: bigint;
+  }> {
     const { fromBlock = "earliest", toBlock = "latest" } = options || {};
     const openLongEvents = await this.getOpenLongEvents({
       fromBlock,
@@ -381,11 +389,17 @@ export class ReadHyperdrive implements IReadHyperdrive {
       toBlock,
     });
 
-    const totalVolume =
-      sumBigInt(openLongEvents.map((event) => event.args.bondAmount)) +
-      sumBigInt(openShortEvents.map((event) => event.args.bondAmount));
-
-    return totalVolume;
+    return {
+      totalVolume:
+        sumBigInt(openLongEvents.map((event) => event.args.bondAmount)) +
+        sumBigInt(openShortEvents.map((event) => event.args.bondAmount)),
+      longVolume: sumBigInt(
+        openLongEvents.map((event) => event.args.bondAmount),
+      ),
+      shortVolume: sumBigInt(
+        openShortEvents.map((event) => event.args.bondAmount),
+      ),
+    };
   }
 
   /**
