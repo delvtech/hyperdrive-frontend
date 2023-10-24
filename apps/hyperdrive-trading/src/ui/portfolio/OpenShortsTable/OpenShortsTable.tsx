@@ -204,7 +204,7 @@ export function OpenShortsTable({
           {tableInstance.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
-                <th className="sticky top-0 z-10 bg-white" key={header.id}>
+                <th className="sticky top-0 z-10 bg-base-100" key={header.id}>
                   {header.isPlaceholder
                     ? null
                     : flexRender(
@@ -221,7 +221,7 @@ export function OpenShortsTable({
             return (
               <tr
                 key={row.id}
-                className="daisy-hover h-16 cursor-pointer"
+                className="daisy-hover h-16 cursor-pointer transition duration-300 ease-in-out"
                 onClick={() => {
                   const modalId = `${row.original.assetId}`;
                   (window as any)[modalId].showModal();

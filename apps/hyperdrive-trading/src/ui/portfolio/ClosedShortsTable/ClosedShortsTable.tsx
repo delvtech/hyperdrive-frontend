@@ -42,7 +42,7 @@ const getColumns = (hyperdrive: Hyperdrive) => [
     },
   }),
   columnHelper.accessor("baseAmountReceived", {
-    header: `Amount received`,
+    header: `Amount received (${hyperdrive.baseToken.symbol})`,
     cell: (baseAmountReceived) => {
       const amountReceived = baseAmountReceived.getValue();
       return formatBalance({
@@ -91,7 +91,7 @@ export function ClosedShortsTable({
           {tableInstance.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
-                <th className="sticky top-0 bg-white" key={header.id}>
+                <th className="sticky top-0 bg-base-100" key={header.id}>
                   {header.isPlaceholder
                     ? null
                     : flexRender(
