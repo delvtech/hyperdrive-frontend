@@ -174,7 +174,7 @@ export function OpenLongsTable({
           {tableInstance.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
-                <th className="sticky top-0 z-10 bg-white" key={header.id}>
+                <th className="sticky top-0 z-10 bg-base-100" key={header.id}>
                   <div
                     className={classNames({
                       "flex cursor-pointer select-none items-center gap-2":
