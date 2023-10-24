@@ -1,4 +1,8 @@
-import { CachedReadContract, SimpleCache } from "@hyperdrive/sdk";
+import {
+  CachedReadContract,
+  SimpleCache,
+  SimpleCacheKey,
+} from "@hyperdrive/sdk";
 import {
   ViemReadContract,
   ViemReadContractOptions,
@@ -9,6 +13,7 @@ export interface ViemCachedReadContractOptions<TAbi extends Abi = Abi>
   extends ViemReadContractOptions<TAbi> {
   cache?: SimpleCache;
   id?: string;
+  pendingPromisesMap?: Map<SimpleCacheKey, Promise<any>>;
 }
 
 export class ViemCachedReadContract<
@@ -20,6 +25,7 @@ export class ViemCachedReadContract<
     publicClient,
     cache,
     id,
+    pendingPromisesMap,
   }: ViemCachedReadContractOptions<TAbi>) {
     super({
       contract: new ViemReadContract({
@@ -28,6 +34,7 @@ export class ViemCachedReadContract<
         publicClient,
       }),
       cache,
+      pendingPromisesMap,
       id,
     });
   }

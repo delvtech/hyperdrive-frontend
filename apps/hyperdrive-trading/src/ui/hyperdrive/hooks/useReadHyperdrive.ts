@@ -4,6 +4,9 @@ import { querySdkCache } from "src/sdk/sdkCache";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Address, useChainId, usePublicClient } from "wagmi";
 
+const pendingPromisesMap = new Map();
+pendingPromisesMap.set("asdf", true);
+
 export function useReadHyperdrive(
   address: Address | undefined,
 ): ViemReadHyperdrive | undefined {
@@ -22,6 +25,7 @@ export function useReadHyperdrive(
       publicClient,
       cache: querySdkCache,
       id: chainId.toString(),
+      pendingPromisesMap,
     });
   }, [address, appConfig, chainId, publicClient]);
 }

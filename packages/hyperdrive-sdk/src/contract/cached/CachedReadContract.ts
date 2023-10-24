@@ -37,6 +37,12 @@ export interface CachedReadContractOptions<TAbi extends Abi = Abi> {
    * keys.
    */
   id?: string;
+
+  /**
+   * Hold pending promises to avoid over fetching, requests to the cache that
+   * don't have an existing entry will await the same, single promise.
+   */
+  pendingPromisesMap?: Map<SimpleCacheKey, Promise<any>>;
 }
 
 /**
@@ -61,11 +67,19 @@ export class CachedReadContract<TAbi extends Abi = Abi>
   /** Internal cache for contract reads. */
   protected readonly _cache: SimpleCache;
 
-  constructor({ contract, cache, id }: CachedReadContractOptions<TAbi>) {
+  _pendingPromises: Map<SimpleCacheKey, Promise<any>>;
+
+  constructor({
+    contract,
+    cache,
+    id,
+    pendingPromisesMap,
+  }: CachedReadContractOptions<TAbi>) {
     this.address = contract.address;
     this.abi = contract.abi;
     this._contract = contract;
     this._cache = cache || new LruSimpleCache({ max: DEFAULT_CACHE_SIZE });
+    this._pendingPromises = pendingPromisesMap || new Map();
     this._id = id || "";
   }
 
@@ -182,8 +196,34 @@ export class CachedReadContract<TAbi extends Abi = Abi>
       return value;
     }
 
-    value = await callback();
+    const pendingPromise = this._pendingPromises.get(key);
+    if (pendingPromise) {
+      const value = await pendingPromise;
+      return value;
+    }
+
+    // No pending promise or cache entry found, make the request
+    const requestPromise = callback();
+    this._pendingPromises.set(key, requestPromise as any);
+
+    if ((key as any)[2 as any]?.functionName === "getPoolConfig") {
+      console.log(
+        "cache miss and no pending promise, making request:",
+        value,
+        key,
+      );
+      console.log(
+        "keys in pending promises",
+        this._pendingPromises.size,
+        this._pendingPromises.keys(),
+      );
+    }
+
+    // console.log("fresh request promise value", this._pendingPromises.get(key));
+    value = await requestPromise;
+
     this._cache.set(key, value);
+    // this._pendingPromises.delete(key);
 
     return value;
   }
