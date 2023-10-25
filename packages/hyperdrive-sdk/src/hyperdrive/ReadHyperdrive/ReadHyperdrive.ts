@@ -386,16 +386,17 @@ export class ReadHyperdrive implements IReadHyperdrive {
       toBlock,
     });
 
+    const longVolume = sumBigInt(
+      openLongEvents.map((event) => event.args.bondAmount),
+    );
+
+    const shortVolume = sumBigInt(
+      openShortEvents.map((event) => event.args.bondAmount),
+    );
     return {
-      totalVolume:
-        sumBigInt(openLongEvents.map((event) => event.args.bondAmount)) +
-        sumBigInt(openShortEvents.map((event) => event.args.bondAmount)),
-      longVolume: sumBigInt(
-        openLongEvents.map((event) => event.args.bondAmount),
-      ),
-      shortVolume: sumBigInt(
-        openShortEvents.map((event) => event.args.bondAmount),
-      ),
+      totalVolume: longVolume + shortVolume,
+      longVolume,
+      shortVolume: shortVolume,
     };
   }
 
