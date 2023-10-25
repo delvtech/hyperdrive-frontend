@@ -1,3 +1,4 @@
+import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import { Long } from "@hyperdrive/sdk";
 import { useQuery } from "@tanstack/react-query";
 import {
@@ -5,6 +6,7 @@ import {
   createColumnHelper,
   flexRender,
   getCoreRowModel,
+  getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
 import classNames from "classnames";
@@ -20,7 +22,6 @@ import { CloseLongModalButton } from "src/ui/hyperdrive/longs/CloseLongModalButt
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
 import { parseUnits } from "viem";
 import { useAccount } from "wagmi";
-
 interface OpenLongsTableProps {
   hyperdrive: Hyperdrive;
 }
@@ -33,14 +34,15 @@ function getColumns(hyperdrive: Hyperdrive) {
       header: `ID`,
       cell: ({ row }) => <span>{Number(row.original.maturity)}</span>,
     }),
-    columnHelper.display({
+    columnHelper.accessor("assetId", {
+      id: "maturationDate",
       header: `Matures on`,
       cell: ({ row }) => {
         const maturity = new Date(Number(row.original.maturity * 1000n));
         return <span>{maturity.toLocaleDateString()}</span>;
       },
     }),
-    columnHelper.display({
+    columnHelper.accessor("bondAmount", {
       id: "size",
       header: `Size (hy${hyperdrive.baseToken.symbol})`,
       cell: ({ row }) => {
@@ -67,11 +69,24 @@ function getColumns(hyperdrive: Hyperdrive) {
         });
       },
     }),
-    columnHelper.display({
+    columnHelper.accessor("assetId", {
       id: "fixedRate",
       header: `Fixed rate (APR)`,
       cell: ({ row }) => {
         return <FixedRateCell hyperdrive={hyperdrive} row={row} />;
+      },
+      sortingFn: (rowA, rowB) => {
+        const aFixedRate = calculateAnnualizedPercentageChange({
+          amountBefore: rowA.original.baseAmountPaid,
+          amountAfter: rowA.original.bondAmount,
+          days: convertMillisecondsToDays(hyperdrive.termLengthMS),
+        });
+        const bFixedRate = calculateAnnualizedPercentageChange({
+          amountBefore: rowB.original.baseAmountPaid,
+          amountAfter: rowB.original.bondAmount,
+          days: convertMillisecondsToDays(hyperdrive.termLengthMS),
+        });
+        return Number(aFixedRate) - Number(bFixedRate);
       },
     }),
     columnHelper.display({
@@ -137,6 +152,7 @@ export function OpenLongsTable({
     columns: getColumns(hyperdrive),
     data: longs || [],
     getCoreRowModel: getCoreRowModel(),
+    getSortedRowModel: getSortedRowModel(),
   });
 
   return (
@@ -159,12 +175,22 @@ export function OpenLongsTable({
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
                 <th className="sticky top-0 z-10 bg-base-100" key={header.id}>
-                  {header.isPlaceholder
-                    ? null
-                    : flexRender(
-                        header.column.columnDef.header,
-                        header.getContext(),
-                      )}
+                  <div
+                    className={classNames({
+                      "flex cursor-pointer select-none items-center gap-2":
+                        header.column.getCanSort(),
+                    })}
+                    onClick={header.column.getToggleSortingHandler()}
+                  >
+                    {flexRender(
+                      header.column.columnDef.header,
+                      header.getContext(),
+                    )}
+                    {{
+                      asc: <ChevronUpIcon height={15} />,
+                      desc: <ChevronDownIcon height={15} />,
+                    }[header.column.getIsSorted() as string] ?? null}
+                  </div>
                 </th>
               ))}
             </tr>
