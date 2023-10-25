@@ -38,7 +38,7 @@ test("Should return the PoolInfo from the contract as-is when getPoolInfo is cal
 
 // The sdk should return the exact APR from the contracts. It should not do any
 // conversions or transformations, eg: formatting bigints, etc..
-test("Should get the fixed rate when getFixedRate is called", async () => {
+test("Should get the fixed rate as-is when getFixedRate is called", async () => {
   const { contract, mathContract, readHyperdrive } = setupReadHyperdrive();
 
   // These are necessary to stub, but the values won't be used since we stub
@@ -104,9 +104,9 @@ test("Should get the trading volume in terms of bonds when getTradingVolume is c
   const value = await readHyperdrive.getTradingVolume();
 
   expect(value).toEqual({
+    shortVolume: dnum.from("290", 18)[0], // sum of bondAmount in short events
+    longVolume: dnum.from("2.7", 18)[0], // sum of bondAmount in long events
     totalVolume: dnum.from("292.7", 18)[0],
-    shortVolume: dnum.from("290", 18)[0],
-    longVolume: dnum.from("2.7", 18)[0],
   });
 });
 
