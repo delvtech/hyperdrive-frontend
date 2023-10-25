@@ -5,12 +5,12 @@ import { makeQueryKey } from "src/base/makeQueryKey";
 import { Transaction } from "src/ui/hyperdrive/TransactionTable/TransactionsTable";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
+import { useBlockNumber } from "wagmi";
 type TransactionData = {
   assetId?: bigint;
   baseAmount: bigint;
   bondAmount?: bigint;
   eventName: string;
-  timestamp: bigint;
   trader: Address;
   blockNumber: bigint | undefined;
 };
@@ -50,7 +50,6 @@ function mapEventsToRowType(events: TransactionData[]) {
         { digits: 2 },
       ),
       account: event.trader,
-      time: new Date(Number(event.timestamp) * 1000).toLocaleDateString(),
       blockNumber: event.blockNumber,
     }))
     .sort((a, b) => Number(b.blockNumber) - Number(a.blockNumber));
@@ -60,19 +59,32 @@ export function useTransactionData({ address }: Hyperdrive): {
   data: Transaction[] | undefined;
 } {
   const readHyperdrive = useReadHyperdrive(address);
+  const { data: blockNumber } = useBlockNumber();
 
+  const queryEnabled = !!readHyperdrive && !!blockNumber;
   const { data: longs } = useQuery({
     queryKey: makeQueryKey("longEvents", { address }),
-    queryFn: async () => readHyperdrive?.getLongEvents(),
+    queryFn: queryEnabled
+      ? async () => {
+          return readHyperdrive.getLongEvents();
+        }
+      : undefined,
+    enabled: queryEnabled,
   });
 
   const { data: shorts } = useQuery({
     queryKey: makeQueryKey("shortEvents", { address }),
-    queryFn: async () => readHyperdrive?.getShortEvents(),
+    queryFn: queryEnabled
+      ? async () => readHyperdrive.getShortEvents()
+      : undefined,
+    enabled: queryEnabled,
   });
   const { data: lpEvents } = useQuery({
     queryKey: makeQueryKey("lpEvents", { address }),
-    queryFn: async () => readHyperdrive?.getLpEvents(),
+    queryFn: queryEnabled
+      ? async () => readHyperdrive.getLpEvents()
+      : undefined,
+    enabled: !!readHyperdrive,
   });
 
   const data = [];

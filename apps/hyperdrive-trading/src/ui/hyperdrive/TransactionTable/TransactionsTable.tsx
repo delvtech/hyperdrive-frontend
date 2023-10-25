@@ -18,7 +18,6 @@ export type Transaction = {
   type: string;
   value: string;
   account: Address;
-  time: string;
   blockNumber: bigint | undefined;
 };
 

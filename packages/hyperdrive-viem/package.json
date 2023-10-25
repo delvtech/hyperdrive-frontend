@@ -17,6 +17,9 @@
     "@hyperdrive/sdk": "*",
     "viem": "^1.5"
   },
+  "dependencies": {
+    "fast-json-stable-stringify": "^2.1.0"
+  },
   "devDependencies": {
     "@hyperdrive/eslint-config": "*",
     "@hyperdrive/prettier-config": "*",

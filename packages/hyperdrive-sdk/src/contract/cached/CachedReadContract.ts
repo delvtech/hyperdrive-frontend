@@ -15,6 +15,7 @@ import {
   FunctionReturnType,
 } from "src/base/abitype";
 import { createSimpleCacheKey } from "src/cache/utils/createSimpleCacheKey";
+import stringify from "fast-json-stable-stringify";
 
 /**
  * Extended readable contract interface that provides capabilities
@@ -191,12 +192,13 @@ export class CachedReadContract<TAbi extends Abi = Abi>
     key: SimpleCacheKey;
     callback: () => Promise<TValue> | TValue;
   }): Promise<TValue> {
-    let value = this._cache.get(key);
+    const cacheKey = stringify(key);
+    let value = this._cache.get(cacheKey);
     if (value) {
       return value;
     }
 
-    const pendingPromise = this._pendingPromises.get(key);
+    const pendingPromise = this._pendingPromises.get(cacheKey);
     if (pendingPromise) {
       const value = await pendingPromise;
       return value;
@@ -204,26 +206,12 @@ export class CachedReadContract<TAbi extends Abi = Abi>
 
     // No pending promise or cache entry found, make the request
     const requestPromise = callback();
-    this._pendingPromises.set(key, requestPromise as any);
+    this._pendingPromises.set(cacheKey, requestPromise as any);
 
-    if ((key as any)[2 as any]?.functionName === "getPoolConfig") {
-      console.log(
-        "cache miss and no pending promise, making request:",
-        value,
-        key,
-      );
-      console.log(
-        "keys in pending promises",
-        this._pendingPromises.size,
-        this._pendingPromises.keys(),
-      );
-    }
-
-    // console.log("fresh request promise value", this._pendingPromises.get(key));
     value = await requestPromise;
 
-    this._cache.set(key, value);
-    // this._pendingPromises.delete(key);
+    this._cache.set(cacheKey, value);
+    this._pendingPromises.delete(cacheKey);
 
     return value;
   }

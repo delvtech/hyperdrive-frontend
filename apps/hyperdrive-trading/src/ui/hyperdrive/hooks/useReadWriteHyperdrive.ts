@@ -3,6 +3,7 @@ import { ViemReadWriteHyperdrive } from "@hyperdrive/sdk-viem";
 import { useMemo } from "react";
 import { querySdkCache } from "src/sdk/sdkCache";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import { pendingPromisesMap } from "src/ui/hyperdrive/hooks/pendingPromisesMap";
 import { Address, useChainId, usePublicClient, useWalletClient } from "wagmi";
 
 export function useReadWriteHyperdrive(
@@ -26,6 +27,7 @@ export function useReadWriteHyperdrive(
       walletClient,
       cache: querySdkCache,
       id: chainId.toString(),
+      pendingPromisesMap,
     });
   }, [address, appConfig, chainId, publicClient, walletClient]);
 }

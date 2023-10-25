@@ -44,7 +44,7 @@ export class ViemReadHyperdrive extends ReadHyperdrive {
         id,
         pendingPromisesMap,
       }),
-      network: new ViemNetwork(publicClient),
+      network: new ViemNetwork({ publicClient, pendingPromisesMap }),
     });
   }
 }

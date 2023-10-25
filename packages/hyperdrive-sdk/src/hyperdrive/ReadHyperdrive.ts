@@ -258,32 +258,35 @@ export interface IReadHyperdrive {
       assetId: bigint;
       bondAmount: bigint;
       baseAmount: bigint;
-      timestamp: bigint;
       eventName: "OpenLong" | "CloseLong";
       blockNumber: bigint | undefined;
     }[]
   >;
   getShortEvents(
-    options?:
-      | ContractGetEventsOptions<typeof HyperdriveABI, "OpenShort">
-      | ContractGetEventsOptions<typeof HyperdriveABI, "CloseShort">,
+    options?: ContractGetEventsOptions<
+      typeof HyperdriveABI,
+      "OpenShort" | "CloseShort"
+    >,
   ): Promise<
     {
       trader: Address;
       assetId: bigint;
       bondAmount: bigint;
       baseAmount: bigint;
-      timestamp: bigint;
       eventName: "OpenShort" | "CloseShort";
       blockNumber: bigint | undefined;
     }[]
   >;
 
-  getLpEvents(): Promise<
+  getLpEvents(
+    options?: ContractGetEventsOptions<
+      typeof HyperdriveABI,
+      "AddLiquidity" | "RemoveLiquidity" | "RedeemWithdrawalShares"
+    >,
+  ): Promise<
     {
       trader: Address;
       baseAmount: bigint;
-      timestamp: bigint;
       eventName: "AddLiquidity" | "RemoveLiquidity" | "RedeemWithdrawalShares";
       blockNumber: bigint | undefined;
     }[]
@@ -454,24 +457,23 @@ export class ReadHyperdrive implements IReadHyperdrive {
       assetId: bigint;
       bondAmount: bigint;
       baseAmount: bigint;
-      timestamp: bigint;
       eventName: "OpenLong" | "CloseLong";
       blockNumber: bigint | undefined;
     }[]
   > {
     const openLongEvents = await this.contract.getEvents("OpenLong", options);
     const closeLongEvents = await this.contract.getEvents("CloseLong", options);
-    return [...openLongEvents, ...closeLongEvents].map(
-      ({ data, args, eventName, blockNumber }) => ({
-        trader: args.trader,
-        assetId: args.assetId,
-        bondAmount: args.bondAmount,
-        baseAmount: args.baseAmount,
-        timestamp: decodeAssetFromTransferSingleEventData(data as `0x${string}`)
-          .timestamp,
-        eventName,
-        blockNumber,
-      }),
+    return Promise.all(
+      [...openLongEvents, ...closeLongEvents].map(
+        async ({ args, eventName, blockNumber }) => ({
+          trader: args.trader,
+          assetId: args.assetId,
+          bondAmount: args.bondAmount,
+          baseAmount: args.baseAmount,
+          eventName,
+          blockNumber,
+        }),
+      ),
     );
   }
 
@@ -485,7 +487,6 @@ export class ReadHyperdrive implements IReadHyperdrive {
       assetId: bigint;
       bondAmount: bigint;
       baseAmount: bigint;
-      timestamp: bigint;
       eventName: "OpenShort" | "CloseShort";
       blockNumber: bigint | undefined;
     }[]
@@ -495,34 +496,43 @@ export class ReadHyperdrive implements IReadHyperdrive {
       "CloseShort",
       options,
     );
-    return [...openShortEvents, ...closeShortEvents].map(
-      ({ data, args, eventName, blockNumber }) => ({
-        trader: args.trader,
-        assetId: args.assetId,
-        bondAmount: args.bondAmount,
-        baseAmount: args.baseAmount,
-        timestamp: decodeAssetFromTransferSingleEventData(data as `0x${string}`)
-          .timestamp,
-        eventName,
-        blockNumber,
-      }),
+    return Promise.all(
+      [...openShortEvents, ...closeShortEvents].map(
+        async ({ args, eventName, blockNumber }) => ({
+          trader: args.trader,
+          assetId: args.assetId,
+          bondAmount: args.bondAmount,
+          baseAmount: args.baseAmount,
+          eventName,
+          blockNumber,
+        }),
+      ),
     );
   }
-  async getLpEvents(): Promise<
+  async getLpEvents(
+    options?: ContractGetEventsOptions<
+      typeof HyperdriveABI,
+      "AddLiquidity" | "RemoveLiquidity" | "RedeemWithdrawalShares"
+    >,
+  ): Promise<
     {
       trader: Address;
       baseAmount: bigint;
-      timestamp: bigint;
       eventName: "AddLiquidity" | "RemoveLiquidity" | "RedeemWithdrawalShares";
       blockNumber: bigint | undefined;
     }[]
   > {
-    const addLiquidtyEvents = await this.contract.getEvents("AddLiquidity");
+    const addLiquidtyEvents = await this.contract.getEvents(
+      "AddLiquidity",
+      options,
+    );
     const removeLiquidityEvents = await this.contract.getEvents(
       "RemoveLiquidity",
+      options,
     );
     const redeemWithdrawalSharesEvents = await this.contract.getEvents(
       "RedeemWithdrawalShares",
+      options,
     );
     return Promise.all(
       [
@@ -532,11 +542,6 @@ export class ReadHyperdrive implements IReadHyperdrive {
       ].map(async ({ args, eventName, blockNumber }) => ({
         trader: args.provider,
         baseAmount: args.baseAmount,
-        timestamp: (
-          await this.network.getBlock({
-            blockNumber,
-          })
-        ).timestamp,
         eventName,
         blockNumber,
       })),

@@ -2,10 +2,8 @@ import { ViemReadHyperdrive } from "@hyperdrive/sdk-viem";
 import { useMemo } from "react";
 import { querySdkCache } from "src/sdk/sdkCache";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import { pendingPromisesMap } from "src/ui/hyperdrive/hooks/pendingPromisesMap";
 import { Address, useChainId, usePublicClient } from "wagmi";
-
-const pendingPromisesMap = new Map();
-pendingPromisesMap.set("asdf", true);
 
 export function useReadHyperdrive(
   address: Address | undefined,

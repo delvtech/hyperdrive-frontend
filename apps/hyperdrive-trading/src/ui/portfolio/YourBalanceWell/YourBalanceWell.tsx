@@ -12,6 +12,7 @@ export function YourBalanceWell({ token }: { token: Token }): ReactElement {
   const { data: balance } = useBalance({
     address: account,
     token: token.address,
+    staleTime: Infinity,
   });
   const chainId = useChainId();
   const { mint } = useMintBaseToken({

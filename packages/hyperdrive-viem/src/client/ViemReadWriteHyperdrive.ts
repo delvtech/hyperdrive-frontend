@@ -3,6 +3,7 @@ import {
   HyperdriveMathABI,
   ReadWriteHyperdrive,
   SimpleCache,
+  SimpleCacheKey,
 } from "@hyperdrive/sdk";
 import { ViemCachedReadContract } from "src/contract/ViemCachedReadContract";
 import { ViemCachedReadWriteContract } from "src/contract/ViemCachedReadWriteContract";
@@ -15,6 +16,7 @@ interface ViemReadWriteHyperdriveOptions {
   publicClient: PublicClient;
   walletClient: WalletClient;
   cache?: SimpleCache;
+  pendingPromisesMap?: Map<SimpleCacheKey, Promise<any>>;
   id?: string;
 }
 
@@ -26,6 +28,7 @@ export class ViemReadWriteHyperdrive extends ReadWriteHyperdrive {
     walletClient,
     cache,
     id,
+    pendingPromisesMap,
   }: ViemReadWriteHyperdriveOptions) {
     super({
       contract: new ViemCachedReadWriteContract({
@@ -35,6 +38,7 @@ export class ViemReadWriteHyperdrive extends ReadWriteHyperdrive {
         walletClient,
         cache,
         id,
+        pendingPromisesMap,
       }),
       mathContract: new ViemCachedReadContract({
         abi: HyperdriveMathABI,
@@ -42,8 +46,9 @@ export class ViemReadWriteHyperdrive extends ReadWriteHyperdrive {
         publicClient,
         cache,
         id,
+        pendingPromisesMap,
       }),
-      network: new ViemNetwork(publicClient),
+      network: new ViemNetwork({ publicClient }),
     });
   }
 }
