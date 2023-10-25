@@ -7,6 +7,7 @@ import { Stat } from "src/ui/base/components/Stat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useCurrentFixedAPR } from "src/ui/hyperdrive/hooks/useCurrentFixedAPR";
 import { useLiquidity } from "src/ui/hyperdrive/hooks/useLiquidity";
+import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
 import { useTradingVolume } from "src/ui/hyperdrive/hooks/useTradingVolume";
 import { useVaultRate } from "src/ui/vaults/useVaultRate";
 import { useBlockNumber, useChainId } from "wagmi";
@@ -27,6 +28,8 @@ export function MarketStats({
 
   const { liquidity } = useLiquidity(hyperdrive.address);
   const { fixedAPR } = useCurrentFixedAPR(hyperdrive);
+  const lpApy = useLpApy(hyperdrive.address);
+  console.log("lpApy", lpApy);
   const { vaultRate } = useVaultRate({
     // TODO: temporary for now until this available via addresses.json
     vaultAddress: "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
