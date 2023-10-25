@@ -7,11 +7,14 @@ import { useBlockNumber } from "wagmi";
 
 export function useLpApy(hyperdriveAddress: Address): any {
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
-  const queryEnabled = !!readHyperdrive;
   const { data: blockNumber } = useBlockNumber();
+  const queryEnabled = !!readHyperdrive && !!blockNumber;
 
   const { data: currentPoolInfo, status: poolInfoStatus } = useQuery({
-    queryKey: makeQueryKey("poolInfo", { marketAddress: hyperdriveAddress }),
+    queryKey: makeQueryKey("poolInfo", {
+      marketAddress: hyperdriveAddress,
+      blockNumber: blockNumber?.toString(),
+    }),
     queryFn: queryEnabled
       ? () => readHyperdrive.getPoolInfo({ blockNumber })
       : undefined,
@@ -19,12 +22,15 @@ export function useLpApy(hyperdriveAddress: Address): any {
   });
 
   const blocksPerDay = 10n;
-  const blockNumber7DaysAgo = blockNumber && blockNumber - blocksPerDay * 7n;
+  const blockNumber7DaysAgo = blockNumber && blockNumber - blocksPerDay;
 
   const { data: previousPoolInfo } = useQuery({
-    queryKey: makeQueryKey("poolInfo", { marketAddress: hyperdriveAddress }),
+    queryKey: makeQueryKey("poolInfo", {
+      marketAddress: hyperdriveAddress,
+      blockNumber: blockNumber7DaysAgo?.toString(),
+    }),
     queryFn: queryEnabled
-      ? () => readHyperdrive.getPoolInfo({ blockNumber: blockNumber7DaysAgo })
+      ? () => readHyperdrive.getPoolInfo({ blockTag: "earliest" })
       : undefined,
     enabled: queryEnabled,
   });
@@ -36,6 +42,7 @@ export function useLpApy(hyperdriveAddress: Address): any {
     blockNumber7DaysAgo,
   );
 
+  // Todo: If its on local set it to earliest.
   return calculateAnnualizedPercentageChange({
     amountBefore: previousPoolInfo?.lpSharePrice ?? 0n,
     amountAfter: currentPoolInfo?.lpSharePrice ?? 0n,
