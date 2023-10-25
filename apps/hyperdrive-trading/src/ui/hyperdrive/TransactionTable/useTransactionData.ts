@@ -10,7 +10,6 @@ type TransactionData = {
   baseAmount: bigint;
   bondAmount?: bigint;
   eventName: string;
-  timestamp: bigint;
   trader: Address;
   blockNumber: bigint | undefined;
 };
@@ -50,7 +49,6 @@ function mapEventsToRowType(events: TransactionData[]) {
         { digits: 2 },
       ),
       account: event.trader,
-      time: new Date(Number(event.timestamp) * 1000).toLocaleDateString(),
       blockNumber: event.blockNumber,
     }))
     .sort((a, b) => Number(b.blockNumber) - Number(a.blockNumber));
