@@ -9,7 +9,6 @@ import { NetworkStub } from "src/network/stubs/NetworkStub";
 import { simplePoolConfig } from "src/pool/testing/simplePoolConfig";
 import { simplePoolInfo } from "src/pool/testing/simplePoolInfo";
 import { ALICE, BOB } from "src/base/testing/accounts";
-import { formatUnits, parseUnits } from "viem";
 
 // The sdk should return the exact PoolConfig from the contracts. It should not
 // do any conversions or transformations, eg: converting seconds to ms,
