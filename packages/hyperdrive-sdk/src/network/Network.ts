@@ -1,4 +1,4 @@
-import { BlockTag } from "src/contract/Contract";
+import { BlockTag } from "src/network/BlockTag";
 export type GetBlockParameters =
   | {
       /** Hash of the block. */

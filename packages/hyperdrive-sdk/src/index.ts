@@ -16,14 +16,18 @@ export { LruSimpleCache } from "src/cache/LruSimpleCache";
 // Contract
 export type {
   IReadContract,
-  IReadWriteContract,
-  Contract,
-  ContractEvent,
   ContractReadOptions,
+} from "src/contract/IReadContract";
+export type {
+  IReadWriteContract,
   ContractWriteOptions,
   ContractWriteOptionsWithCallback,
+} from "src/contract/IReadWriteContract";
+export type { Contract } from "src/contract/Contract";
+export type {
+  ContractEvent,
   ContractGetEventsOptions,
-} from "src/contract/Contract";
+} from "src/contract/ContractEvents";
 export {
   CachedReadContract,
   type CachedReadContractOptions,

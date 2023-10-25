@@ -1,13 +1,13 @@
 import { Abi } from "abitype";
 import {
-  ContractWriteOptions,
-  IReadWriteContract,
-} from "src/contract/Contract";
-import {
   FunctionArgs,
   FunctionName,
   FunctionReturnType,
 } from "src/base/abitype";
+import {
+  ContractWriteOptions,
+  IReadWriteContract,
+} from "src/contract/IReadWriteContract";
 import {
   CachedReadContract,
   CachedReadContractOptions,

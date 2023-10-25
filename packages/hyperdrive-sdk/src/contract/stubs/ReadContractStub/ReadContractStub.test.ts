@@ -1,5 +1,5 @@
 import { expect, test } from "vitest";
-import { ContractEvent } from "src/contract/Contract";
+import { ContractEvent } from "src/contract/ContractEvents";
 import { ReadContractStub } from "src/contract/stubs/ReadContractStub/ReadContractStub";
 import { HyperdriveABI } from "src/abis/Hyperdrive";
 

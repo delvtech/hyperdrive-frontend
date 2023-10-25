@@ -1,9 +1,9 @@
 import { IReadWriteHyperdriveContract } from "src/hyperdrive/HyperdriveContract";
 import { Address } from "abitype";
 import {
-  ContractWriteOptions,
   ContractWriteOptionsWithCallback,
-} from "src/contract/Contract";
+  ContractWriteOptions,
+} from "src/contract/IReadWriteContract";
 import {
   IReadHyperdrive,
   ReadHyperdrive,

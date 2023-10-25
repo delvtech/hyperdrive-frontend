@@ -2,13 +2,13 @@ import { Address } from "abitype";
 import groupBy from "lodash.groupby";
 import mapValues from "lodash.mapvalues";
 import { sumBigInt } from "src/base/sumBigInt";
+import { BlockTag } from "src/network/BlockTag";
 import {
-  BlockTag,
   ContractEvent,
   ContractGetEventsOptions,
-  ContractReadOptions,
-  ContractWriteOptions,
-} from "src/contract/Contract";
+} from "src/contract/ContractEvents";
+import { ContractWriteOptions } from "src/contract/IReadWriteContract";
+import { ContractReadOptions } from "src/contract/IReadContract";
 import { IReadHyperdriveContract } from "src/hyperdrive/HyperdriveContract";
 import { IReadHyperdriveMathContract } from "src/hyperdrive/HyperdriveMathContract";
 import { PoolConfig } from "src/pool/PoolConfig";
