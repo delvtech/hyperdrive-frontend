@@ -14,13 +14,12 @@ import { Hyperdrive } from "src/appconfig/types";
 import { formatAddress } from "src/ui/base/formatting/formatAddress";
 import { Address } from "viem";
 
-export type Transaction = {
+export interface Transaction {
   type: string;
   value: string;
   account: Address;
-  time: string;
   blockNumber: bigint | undefined;
-};
+}
 
 const columnHelper = createColumnHelper<Transaction>();
 const getColumns = (hyperdrive: Hyperdrive) => [

@@ -58,7 +58,7 @@ export function OpenLongPreview({
             <>
               <span
                 className="daisy-tooltip daisy-tooltip-top cursor-help border-b border-dashed border-current"
-                data-tip={`Your effective fixed rate after pool fees and slippage are applied.`}
+                data-tip={`Your net fixed rate after pool fees and slippage are applied.`}
               >
                 <span className="font-bold">
                   {calculateAnnualizedPercentageChange({

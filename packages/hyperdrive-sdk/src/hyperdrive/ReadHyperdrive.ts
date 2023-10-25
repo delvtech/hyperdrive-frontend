@@ -258,7 +258,6 @@ export interface IReadHyperdrive {
       assetId: bigint;
       bondAmount: bigint;
       baseAmount: bigint;
-      timestamp: bigint;
       eventName: "OpenLong" | "CloseLong";
       blockNumber: bigint | undefined;
     }[]
@@ -273,7 +272,6 @@ export interface IReadHyperdrive {
       assetId: bigint;
       bondAmount: bigint;
       baseAmount: bigint;
-      timestamp: bigint;
       eventName: "OpenShort" | "CloseShort";
       blockNumber: bigint | undefined;
     }[]
@@ -283,7 +281,6 @@ export interface IReadHyperdrive {
     {
       trader: Address;
       baseAmount: bigint;
-      timestamp: bigint;
       eventName: "AddLiquidity" | "RemoveLiquidity" | "RedeemWithdrawalShares";
       blockNumber: bigint | undefined;
     }[]
@@ -454,7 +451,6 @@ export class ReadHyperdrive implements IReadHyperdrive {
       assetId: bigint;
       bondAmount: bigint;
       baseAmount: bigint;
-      timestamp: bigint;
       eventName: "OpenLong" | "CloseLong";
       blockNumber: bigint | undefined;
     }[]
@@ -462,13 +458,11 @@ export class ReadHyperdrive implements IReadHyperdrive {
     const openLongEvents = await this.contract.getEvents("OpenLong", options);
     const closeLongEvents = await this.contract.getEvents("CloseLong", options);
     return [...openLongEvents, ...closeLongEvents].map(
-      ({ data, args, eventName, blockNumber }) => ({
+      ({ args, eventName, blockNumber }) => ({
         trader: args.trader,
         assetId: args.assetId,
         bondAmount: args.bondAmount,
         baseAmount: args.baseAmount,
-        timestamp: decodeAssetFromTransferSingleEventData(data as `0x${string}`)
-          .timestamp,
         eventName,
         blockNumber,
       }),
@@ -485,7 +479,6 @@ export class ReadHyperdrive implements IReadHyperdrive {
       assetId: bigint;
       bondAmount: bigint;
       baseAmount: bigint;
-      timestamp: bigint;
       eventName: "OpenShort" | "CloseShort";
       blockNumber: bigint | undefined;
     }[]
@@ -501,8 +494,6 @@ export class ReadHyperdrive implements IReadHyperdrive {
         assetId: args.assetId,
         bondAmount: args.bondAmount,
         baseAmount: args.baseAmount,
-        timestamp: decodeAssetFromTransferSingleEventData(data as `0x${string}`)
-          .timestamp,
         eventName,
         blockNumber,
       }),
@@ -512,7 +503,6 @@ export class ReadHyperdrive implements IReadHyperdrive {
     {
       trader: Address;
       baseAmount: bigint;
-      timestamp: bigint;
       eventName: "AddLiquidity" | "RemoveLiquidity" | "RedeemWithdrawalShares";
       blockNumber: bigint | undefined;
     }[]
@@ -532,11 +522,6 @@ export class ReadHyperdrive implements IReadHyperdrive {
       ].map(async ({ args, eventName, blockNumber }) => ({
         trader: args.provider,
         baseAmount: args.baseAmount,
-        timestamp: (
-          await this.network.getBlock({
-            blockNumber,
-          })
-        ).timestamp,
         eventName,
         blockNumber,
       })),
