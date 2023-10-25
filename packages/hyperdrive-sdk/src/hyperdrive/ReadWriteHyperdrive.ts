@@ -8,7 +8,7 @@ import {
   IReadHyperdrive,
   ReadHyperdrive,
   ReadHyperdriveOptions,
-} from "src/hyperdrive/ReadHyperdrive";
+} from "src/hyperdrive/ReadHyperdrive/ReadHyperdrive";
 import { Long } from "src/longs/types";
 import { Short } from "src/shorts/types";
 import { ZERO_ADDRESS } from "src/base/numbers";

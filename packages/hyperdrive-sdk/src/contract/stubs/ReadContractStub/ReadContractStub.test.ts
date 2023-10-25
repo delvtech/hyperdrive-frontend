@@ -1,6 +1,6 @@
 import { expect, test } from "vitest";
 import { ContractEvent } from "src/contract/Contract";
-import { ReadContractStub } from "src/contract/stubs/ReadContractStub";
+import { ReadContractStub } from "src/contract/stubs/ReadContractStub/ReadContractStub";
 import { HyperdriveABI } from "src/abis/Hyperdrive";
 
 test("It stubs the read function", async () => {

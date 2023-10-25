@@ -1,9 +1,9 @@
 import { expect, test } from "vitest";
-import { ReadContractStub } from "src/contract/stubs/ReadContractStub";
+import { ReadContractStub } from "src/contract/stubs/ReadContractStub/ReadContractStub";
 import { HyperdriveABI } from "src/abis/Hyperdrive";
-import { ReadHyperdrive } from "src/hyperdrive/ReadHyperdrive";
+import { ReadHyperdrive } from "src/hyperdrive/ReadHyperdrive/ReadHyperdrive";
 import { HyperdriveMathABI } from "src/abis/HyperdriveMath";
-import { CachedReadContract } from "src/contract/cached/CachedReadContract";
+import { CachedReadContract } from "src/contract/cached/CachedReadContract/CachedReadContract";
 import { NetworkStub } from "src/network/stubs/NetworkStub";
 import { simplePoolConfig } from "src/pool/testing/simplePoolConfig";
 import { simplePoolInfo } from "src/pool/testing/simplePoolInfo";

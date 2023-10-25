@@ -12,7 +12,7 @@ import {
   CachedReadContract,
   CachedReadContractOptions,
   ICachedReadContract,
-} from "src/contract/cached/CachedReadContract";
+} from "src/contract/cached/CachedReadContract/CachedReadContract";
 
 /**
  * Interface for a writable contract that also provides caching capabilities.

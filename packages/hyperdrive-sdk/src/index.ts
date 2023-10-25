@@ -1,5 +1,5 @@
 // Main Hyperdrive sdk entrypoint for consumers
-export { ReadHyperdrive } from "src/hyperdrive/ReadHyperdrive";
+export { ReadHyperdrive } from "src/hyperdrive/ReadHyperdrive/ReadHyperdrive";
 export { ReadWriteHyperdrive } from "src/hyperdrive/ReadWriteHyperdrive";
 
 // ABIs
@@ -28,7 +28,7 @@ export {
   CachedReadContract,
   type CachedReadContractOptions,
   type ICachedReadContract,
-} from "src/contract/cached/CachedReadContract";
+} from "src/contract/cached/CachedReadContract/CachedReadContract";
 export {
   CachedReadWriteContract,
   type CachedReadWriteContractOptions,
