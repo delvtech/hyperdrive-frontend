@@ -9,10 +9,9 @@ import {
 import {
   ContractEvent,
   ContractGetEventsOptions,
-  ContractReadOptions,
-  ContractWriteOptions,
-  IReadContract,
-} from "src/contract/Contract";
+} from "src/contract/ContractEvents";
+import { ContractWriteOptions } from "src/contract/IReadWriteContract";
+import { ContractReadOptions, IReadContract } from "src/contract/IReadContract";
 
 /**
  * A mock implementation of a `ReadContract` designed to facilitate unit

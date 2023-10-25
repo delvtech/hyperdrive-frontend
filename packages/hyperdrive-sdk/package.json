@@ -12,6 +12,7 @@
     "build": "tsup src/index.ts --minify --format esm --clean --dts",
     "watch": "npm run build -- --watch",
     "test": "vitest run",
+    "test:watch": "vitest",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {

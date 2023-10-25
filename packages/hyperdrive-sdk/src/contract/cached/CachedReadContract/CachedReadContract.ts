@@ -2,10 +2,9 @@ import { Abi } from "abitype";
 import {
   ContractEvent,
   ContractGetEventsOptions,
-  ContractReadOptions,
-  ContractWriteOptions,
-  IReadContract,
-} from "src/contract/Contract";
+} from "src/contract/ContractEvents";
+import { ContractWriteOptions } from "src/contract/IReadWriteContract";
+import { ContractReadOptions, IReadContract } from "src/contract/IReadContract";
 import { SimpleCache, SimpleCacheKey } from "src/cache/SimpleCache";
 import { LruSimpleCache } from "src/cache/LruSimpleCache";
 import {
