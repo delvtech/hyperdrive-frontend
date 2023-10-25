@@ -1,51 +1,32 @@
-import { useQuery } from "@tanstack/react-query";
+import { ContractReadOptions } from "@hyperdrive/sdk";
 import { calculateAnnualizedPercentageChange } from "src/base/calculateAnnualizedPercentageChange";
-import { makeQueryKey } from "src/base/makeQueryKey";
-import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
-import { useBlockNumber } from "wagmi";
+import { useBlockNumber, useChainId } from "wagmi";
+import { usePoolInfo } from "./usePoolInfo";
 
-export function useLpApy(hyperdriveAddress: Address): any {
-  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
+export function useLpApy(hyperdriveAddress: Address): { LpApy: string } {
+  const chainId = useChainId();
   const { data: blockNumber } = useBlockNumber();
-  const queryEnabled = !!readHyperdrive && !!blockNumber;
+  const { poolInfo: currentPoolInfo } = usePoolInfo(hyperdriveAddress);
 
-  const { data: currentPoolInfo, status: poolInfoStatus } = useQuery({
-    queryKey: makeQueryKey("poolInfo", {
-      marketAddress: hyperdriveAddress,
-      blockNumber: blockNumber?.toString(),
-    }),
-    queryFn: queryEnabled
-      ? () => readHyperdrive.getPoolInfo({ blockNumber })
-      : undefined,
-    enabled: queryEnabled,
-  });
+  //TODO: Change this to blocks per day for the chain currently in use.
+  const blocksPerDay = 4175n;
+  const blockNumber7DaysAgo = blockNumber && blockNumber - blocksPerDay * 7n;
+  const poolInfoArgs =
+    chainId === +import.meta.env.VITE_CUSTOM_CHAIN_CHAIN_ID
+      ? { blockNumber: blockNumber7DaysAgo }
+      : { blockTag: "earliest" };
 
-  const blocksPerDay = 10n;
-  const blockNumber7DaysAgo = blockNumber && blockNumber - blocksPerDay;
-
-  const { data: previousPoolInfo } = useQuery({
-    queryKey: makeQueryKey("poolInfo", {
-      marketAddress: hyperdriveAddress,
-      blockNumber: blockNumber7DaysAgo?.toString(),
-    }),
-    queryFn: queryEnabled
-      ? () => readHyperdrive.getPoolInfo({ blockTag: "earliest" })
-      : undefined,
-    enabled: queryEnabled,
-  });
-
-  console.log(
-    previousPoolInfo?.lpSharePrice,
-    currentPoolInfo?.lpSharePrice,
-    blockNumber,
-    blockNumber7DaysAgo,
+  const { poolInfo: previousPoolInfo } = usePoolInfo(
+    hyperdriveAddress,
+    poolInfoArgs as ContractReadOptions,
   );
 
-  // Todo: If its on local set it to earliest.
-  return calculateAnnualizedPercentageChange({
-    amountBefore: previousPoolInfo?.lpSharePrice ?? 0n,
-    amountAfter: currentPoolInfo?.lpSharePrice ?? 0n,
-    days: 7,
-  });
+  return {
+    LpApy: calculateAnnualizedPercentageChange({
+      amountBefore: previousPoolInfo?.lpSharePrice ?? 0n,
+      amountAfter: currentPoolInfo?.lpSharePrice ?? 0n,
+      days: 365,
+    }),
+  };
 }

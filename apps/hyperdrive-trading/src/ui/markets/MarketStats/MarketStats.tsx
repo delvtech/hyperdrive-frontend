@@ -28,8 +28,8 @@ export function MarketStats({
 
   const { liquidity } = useLiquidity(hyperdrive.address);
   const { fixedAPR } = useCurrentFixedAPR(hyperdrive);
-  const lpApy = useLpApy(hyperdrive.address);
-  console.log("lpApy", lpApy);
+  const { LpApy } = useLpApy(hyperdrive.address);
+
   const { vaultRate } = useVaultRate({
     // TODO: temporary for now until this available via addresses.json
     vaultAddress: "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
@@ -72,6 +72,19 @@ export function MarketStats({
           )
         }
         description={`Fixed rate earned from purchasing hy${hyperdrive.baseToken.symbol}, before fees and slippage are applied`}
+      />
+      <Stat
+        label="LP Apy (7 days)"
+        value={
+          LpApy ? (
+            <span className="flex items-center gap-1.5">
+              {LpApy || "0"}% APY
+            </span>
+          ) : (
+            <Skeleton className="opacity-50" />
+          )
+        }
+        description={`The rate earned from providing liquidity to the current hyperdrive pool.`}
       />
       <Stat
         description={`The amount of hy${hyperdrive.baseToken.symbol} (either longs or shorts) that have been traded in the last 24 hours. `}
