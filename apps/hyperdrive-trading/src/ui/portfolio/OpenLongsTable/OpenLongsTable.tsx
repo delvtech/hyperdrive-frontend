@@ -20,6 +20,7 @@ import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { CloseLongModalButton } from "src/ui/hyperdrive/longs/CloseLongModalButton/CloseLongModalButton";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
+import { useCurrentBlock } from "src/ui/network/useCurrentBlock";
 import { parseUnits } from "viem";
 import { useAccount } from "wagmi";
 interface OpenLongsTableProps {
@@ -28,7 +29,7 @@ interface OpenLongsTableProps {
 
 const columnHelper = createColumnHelper<Long>();
 
-function getColumns(hyperdrive: Hyperdrive) {
+function getColumns({ hyperdrive }: { hyperdrive: Hyperdrive }) {
   return [
     columnHelper.display({
       header: `ID`,
@@ -38,8 +39,9 @@ function getColumns(hyperdrive: Hyperdrive) {
       id: "maturationDate",
       header: `Matures on`,
       cell: ({ row }) => {
-        const maturity = new Date(Number(row.original.maturity * 1000n));
-        return <span>{maturity.toLocaleDateString()}</span>;
+        return <MaturesOnCell row={row} />;
+        // const maturity = new Date(Number(row.original.maturity * 1000n));
+        // return <span>{maturity.toLocaleDateString()}</span>;
       },
     }),
     columnHelper.accessor("bondAmount", {
@@ -99,6 +101,31 @@ function getColumns(hyperdrive: Hyperdrive) {
   ];
 }
 
+function MaturesOnCell({ row }: { row: Row<Long> }) {
+  const { currentBlock } = useCurrentBlock();
+  const isTermComplete =
+    row.original.maturity < (currentBlock?.timestamp || 0n);
+  const maturityDateMS = row.original.maturity * 1000n;
+  const termEndDate = new Date(Number(maturityDateMS));
+  const daysLeft = convertMillisecondsToDays(
+    Number(maturityDateMS - (currentBlock?.timestamp || 0n) * 1000n),
+  );
+
+  return (
+    <div className="flex flex-col gap-1">
+      <span className="ml-2">{termEndDate.toLocaleDateString()}</span>
+      {isTermComplete ? (
+        <div className={"daisy-badge daisy-badge-md inline-flex"}>
+          <span>{"Term complete"}</span>
+        </div>
+      ) : (
+        <div className={"daisy-badge daisy-badge-md inline-flex"}>
+          <span>{daysLeft} days left</span>
+        </div>
+      )}
+    </div>
+  );
+}
 function FixedRateCell({
   row,
   hyperdrive,
@@ -140,16 +167,17 @@ export function OpenLongsTable({
   const { address: account } = useAccount();
 
   const readHyperdrive = useReadHyperdrive(hyperdrive.address);
+  // Get the current block and check it's timestamp agains the
   const queryEnabled = !!readHyperdrive && !!account;
   const { data: longs } = useQuery({
     queryKey: makeQueryKey("longPositions", { account }),
     queryFn: queryEnabled
-      ? () => readHyperdrive?.getOpenLongs({ account })
+      ? () => readHyperdrive.getOpenLongs({ account })
       : undefined,
     enabled: queryEnabled,
   });
   const tableInstance = useReactTable({
-    columns: getColumns(hyperdrive),
+    columns: getColumns({ hyperdrive }),
     data: longs || [],
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
