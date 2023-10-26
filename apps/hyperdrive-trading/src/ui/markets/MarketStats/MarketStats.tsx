@@ -75,7 +75,7 @@ export function MarketStats({
         label="Volume (24h)"
         value={
           <FormattedDaiValue
-            symbol={hyperdrive.baseToken.symbol}
+            symbol={`hy${hyperdrive.baseToken.symbol}`}
             value={formatBalance({
               balance: totalVolume || 0n,
               decimals: hyperdrive.baseToken.decimals,
