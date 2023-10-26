@@ -65,7 +65,7 @@ export function OpenLongPreview({
                     amountBefore: long.baseAmountPaid,
                     amountAfter: long.bondAmount,
                     days: numDays,
-                  })}
+                  }).toFixed(2)}
                   % APR
                 </span>
               </span>
