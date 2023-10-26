@@ -10,6 +10,7 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import classNames from "classnames";
+import * as dnum from "dnum";
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { calculateAnnualizedPercentageChange } from "src/base/calculateAnnualizedPercentageChange";
@@ -17,6 +18,7 @@ import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { usePoolConfig } from "src/ui/hyperdrive/hooks/usePoolConfig";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { CloseLongModalButton } from "src/ui/hyperdrive/longs/CloseLongModalButton/CloseLongModalButton";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
@@ -86,7 +88,7 @@ function getColumns({ hyperdrive }: { hyperdrive: Hyperdrive }) {
           amountAfter: rowB.original.bondAmount,
           days: convertMillisecondsToDays(hyperdrive.termLengthMS),
         });
-        return Number(aFixedRate) - Number(bFixedRate);
+        return aFixedRate - bFixedRate;
       },
     }),
     columnHelper.display({
@@ -106,6 +108,16 @@ function FixedRateCell({
   row: Row<Long>;
   hyperdrive: Hyperdrive;
 }) {
+  const { poolConfig } = usePoolConfig(hyperdrive.address);
+  // Only the flat fee applies if you hold this position to maturity, which is
+  // what the Fixed Rate Cell is all about.
+  const poolFee = dnum.mul(
+    [row.original.bondAmount || 1n, 18],
+    [poolConfig?.fees.flat || 0n, 18],
+  );
+  const yieldAmount = row.original.bondAmount - row.original.baseAmountPaid;
+  const yieldAfterFlatFee = dnum.sub([yieldAmount, 18], poolFee, 18)[0];
+
   return (
     <div className="flex flex-col gap-1">
       <span className="ml-2 font-bold">
@@ -113,18 +125,18 @@ function FixedRateCell({
           amountBefore: row.original.baseAmountPaid,
           amountAfter: row.original.bondAmount,
           days: convertMillisecondsToDays(hyperdrive.termLengthMS),
-        })}
+        }).toFixed(2)}
         %
       </span>
       <div
-        data-tip={"Yield guaranteed if held to maturity"}
+        data-tip={"Yield after fees if held to maturity"}
         className={
           "daisy-badge daisy-badge-md daisy-tooltip inline-flex text-success"
         }
       >
         <span>{"+"}</span>
         {formatBalance({
-          balance: row.original.bondAmount - row.original.baseAmountPaid,
+          balance: yieldAfterFlatFee,
           decimals: hyperdrive.baseToken.decimals,
           places: 4,
         })}{" "}
