@@ -20,6 +20,7 @@ import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { CloseLongModalButton } from "src/ui/hyperdrive/longs/CloseLongModalButton/CloseLongModalButton";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
+import { MaturesOnCell } from "src/ui/portfolio/MaturesOnCell/MaturesOnCell";
 import { parseUnits } from "viem";
 import { useAccount } from "wagmi";
 interface OpenLongsTableProps {
@@ -28,7 +29,7 @@ interface OpenLongsTableProps {
 
 const columnHelper = createColumnHelper<Long>();
 
-function getColumns(hyperdrive: Hyperdrive) {
+function getColumns({ hyperdrive }: { hyperdrive: Hyperdrive }) {
   return [
     columnHelper.display({
       header: `ID`,
@@ -38,8 +39,7 @@ function getColumns(hyperdrive: Hyperdrive) {
       id: "maturationDate",
       header: `Matures on`,
       cell: ({ row }) => {
-        const maturity = new Date(Number(row.original.maturity * 1000n));
-        return <span>{maturity.toLocaleDateString()}</span>;
+        return <MaturesOnCell maturity={row.original.maturity} />;
       },
     }),
     columnHelper.accessor("bondAmount", {
@@ -140,16 +140,17 @@ export function OpenLongsTable({
   const { address: account } = useAccount();
 
   const readHyperdrive = useReadHyperdrive(hyperdrive.address);
+  // Get the current block and check it's timestamp agains the
   const queryEnabled = !!readHyperdrive && !!account;
   const { data: longs } = useQuery({
     queryKey: makeQueryKey("longPositions", { account }),
     queryFn: queryEnabled
-      ? () => readHyperdrive?.getOpenLongs({ account })
+      ? () => readHyperdrive.getOpenLongs({ account })
       : undefined,
     enabled: queryEnabled,
   });
   const tableInstance = useReactTable({
-    columns: getColumns(hyperdrive),
+    columns: getColumns({ hyperdrive }),
     data: longs || [],
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
