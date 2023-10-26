@@ -24,6 +24,7 @@ import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { getProfitLossText } from "src/ui/hyperdrive/shorts/CloseShortForm/getProfitLossText";
 import { CloseShortModalButton } from "src/ui/hyperdrive/shorts/CloseShortModalButton/CloseShortModalButton";
 import { usePreviewCloseShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewCloseShort";
+import { MaturesOnCell } from "src/ui/portfolio/MaturesOnCell/MaturesOnCell";
 import { useAccount } from "wagmi";
 
 const columnHelper = createColumnHelper<OpenShort>();
@@ -36,8 +37,7 @@ const getColumns = (hyperdrive: Hyperdrive) => [
     id: "maturationDate",
     header: `Matures on`,
     cell: ({ row }) => {
-      const maturity = new Date(Number(row.original.maturity * 1000n));
-      return <span>{maturity.toLocaleDateString()}</span>;
+      return <MaturesOnCell maturity={row.original.maturity} />;
     },
   }),
   columnHelper.accessor("bondAmount", {
