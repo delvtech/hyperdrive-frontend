@@ -74,22 +74,24 @@ export function MarketStats({
         description={`The amount of hy${hyperdrive.baseToken.symbol} (either longs or shorts) that have been traded in the last 24 hours. `}
         label="Volume (24h)"
         value={
-          <FormattedDaiValue
+          <AmountLabel
             symbol={`hy${hyperdrive.baseToken.symbol}`}
             value={formatBalance({
               balance: totalVolume || 0n,
               decimals: hyperdrive.baseToken.decimals,
               places: 0,
             })}
-            tooltip={`Long Volume: ${formatBalance({
+            tooltip={`Long volume: ${formatBalance({
               balance: longVolume || 0n,
               decimals: hyperdrive.baseToken.decimals,
               places: 0,
-            })} ${hyperdrive.baseToken.symbol} / Short Volume: ${formatBalance({
+            })} hy${
+              hyperdrive.baseToken.symbol
+            } \n Short volume: ${formatBalance({
               balance: shortVolume || 0n,
               decimals: hyperdrive.baseToken.decimals,
               places: 0,
-            })} ${hyperdrive.baseToken.symbol}`}
+            })} hy${hyperdrive.baseToken.symbol}`}
           />
         }
       />
@@ -97,7 +99,7 @@ export function MarketStats({
         label="Liquidity"
         description="The amount of capital that has been deployed by LPs to the pool"
         value={
-          <FormattedDaiValue
+          <AmountLabel
             symbol={hyperdrive.baseToken.symbol}
             value={liquidity?.formatted || "0"}
           />
@@ -112,7 +114,7 @@ function formatTermLength(termLengthMS: number) {
   return `${numDays} days`;
 }
 
-function FormattedDaiValue({
+function AmountLabel({
   value,
   symbol,
   tooltip,
@@ -126,7 +128,7 @@ function FormattedDaiValue({
       data-tip={tooltip}
       className={
         // Note: Tooltip-bottom not wrapping properly. See: https://github.com/saadeghi/daisyui/issues/84#issuecomment-1444067972
-        "daisy-tooltip daisy-tooltip-bottom flex flex-row items-center justify-start before:whitespace-pre-wrap before:content-[attr(data-tip)]"
+        "daisy-tooltip daisy-tooltip-bottom flex flex-row items-center justify-start before:whitespace-pre-wrap before:font-normal before:content-[attr(data-tip)]"
       }
     >
       {value}
