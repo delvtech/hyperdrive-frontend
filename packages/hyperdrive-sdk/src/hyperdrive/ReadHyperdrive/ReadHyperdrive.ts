@@ -27,6 +27,7 @@ import { getCheckpointId } from "src/pool/getCheckpointId";
 import { WITHDRAW_SHARES_ASSET_ID } from "src/withdrawalShares/assetId";
 import { Checkpoint } from "src/pool/Checkpoint";
 import { MarketState } from "src/pool/MarketState";
+import { from } from "dnum";
 
 export interface ReadHyperdriveOptions {
   contract: IReadHyperdriveContract;
@@ -57,6 +58,8 @@ export interface IReadHyperdrive {
    * marketLiquidity = lpSharePrice * effectiveShareReserves - longsOutstanding
    */
   getLiquidity(options?: ContractReadOptions): Promise<bigint>;
+
+  getLpApy(args: { fromBlock?: bigint; toBlock?: bigint }): Promise<number>;
 
   getCheckpoint(args: {
     checkpointId: bigint;
@@ -527,6 +530,25 @@ export class ReadHyperdrive implements IReadHyperdrive {
         blockNumber,
       })),
     );
+  }
+
+  async getLpApy({
+    fromBlock,
+    toBlock,
+  }: {
+    fromBlock: bigint;
+    toBlock: bigint;
+  }): Promise<number> {
+    const fromPoolInfo = await this.getPoolInfo({ blockNumber: fromBlock });
+    const toPoolInfo = await this.getPoolInfo({
+      blockNumber: toBlock,
+    });
+
+    const profitOrLoss =
+      Number(toPoolInfo.lpSharePrice - fromPoolInfo.lpSharePrice) /
+      Number(fromPoolInfo.lpSharePrice);
+    const annualizedProfitOrLoss = ((1 + profitOrLoss) ** (365 / 7) - 1) * 100;
+    return annualizedProfitOrLoss;
   }
 
   private async getTransferSingleEvents({
