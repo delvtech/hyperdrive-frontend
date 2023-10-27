@@ -1,11 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
-import * as dnum from "dnum";
 import { Hyperdrive } from "src/appconfig/types";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { Transaction } from "src/ui/hyperdrive/TransactionTable/TransactionsTable";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
-type TransactionData = {
+export type TransactionData = {
   assetId?: bigint;
   baseAmount: bigint;
   bondAmount?: bigint;
@@ -14,48 +12,8 @@ type TransactionData = {
   blockNumber: bigint | undefined;
 };
 
-function mapEventName(eventName: string): string {
-  switch (eventName) {
-    case "OpenLong":
-      return "Open Long";
-    case "OpenShort":
-      return "Open Short";
-    case "CloseLong":
-      return "Close Long";
-    case "CloseShort":
-      return "Close Short";
-    case "AddLiquidity":
-      return "Add Liquidity";
-    case "RemoveLiquidity":
-      return "Remove Liquidity";
-    case "RedeemWithdrawalShares":
-      return "Redeem Withdrawal Shares";
-    default:
-      return eventName;
-  }
-}
-
-function mapEventsToRowType(events: TransactionData[]) {
-  return events
-    .map((event) => ({
-      type: mapEventName(event.eventName),
-      value: dnum.format(
-        [
-          event.eventName === "OpenShort" || event.eventName === "CloseShort"
-            ? event.bondAmount || 0n
-            : event.baseAmount || 0n,
-          18,
-        ],
-        { digits: 2 },
-      ),
-      account: event.trader,
-      blockNumber: event.blockNumber,
-    }))
-    .sort((a, b) => Number(b.blockNumber) - Number(a.blockNumber));
-}
-
 export function useTransactionData({ address }: Hyperdrive): {
-  data: Transaction[] | undefined;
+  data: TransactionData[] | undefined;
 } {
   const readHyperdrive = useReadHyperdrive(address);
 
@@ -84,5 +42,5 @@ export function useTransactionData({ address }: Hyperdrive): {
     data.push(...lpEvents);
   }
 
-  return { data: data.length ? mapEventsToRowType(data) : undefined };
+  return { data };
 }
