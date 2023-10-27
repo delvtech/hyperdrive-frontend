@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import { calculateAnnualizedPercentageChange } from "src/base/calculateAnnualizedPercentageChange";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { Address } from "viem";
 import { useBlockNumber, useChainId } from "wagmi";
@@ -14,7 +15,7 @@ export function useLpApy(hyperdriveAddress: Address): {
   const { poolInfo: currentPoolInfo } = usePoolInfo(hyperdriveAddress);
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
   const queryEnabled = !!readHyperdrive && !!blockNumber && !!currentPoolInfo;
-  const { data: lpApy } = useQuery({
+  const { data } = useQuery({
     queryKey: makeQueryKey("getLpApy", {
       chainId,
       blockNumber: blockNumber?.toString(),
@@ -31,6 +32,11 @@ export function useLpApy(hyperdriveAddress: Address): {
           })
       : undefined,
     enabled: queryEnabled,
+  });
+  const lpApy = calculateAnnualizedPercentageChange({
+    amountBefore: data?.fromSharePrice ?? 0n,
+    amountAfter: data?.toSharePrice ?? 0n,
+    days: 3.5,
   });
   return { lpApy };
 }

@@ -59,7 +59,10 @@ export interface IReadHyperdrive {
    */
   getLiquidity(options?: ContractReadOptions): Promise<bigint>;
 
-  getLpApy(args: { fromBlock?: bigint; toBlock?: bigint }): Promise<number>;
+  getLpApy(args: {
+    fromBlock?: bigint;
+    toBlock?: bigint;
+  }): Promise<{ fromSharePrice: bigint; toSharePrice: bigint }>;
 
   getCheckpoint(args: {
     checkpointId: bigint;
@@ -538,27 +541,26 @@ export class ReadHyperdrive implements IReadHyperdrive {
   }: {
     fromBlock: bigint;
     toBlock: bigint;
-  }): Promise<number> {
+  }): Promise<{ fromSharePrice: bigint; toSharePrice: bigint }> {
     const fromPoolInfo = await this.getPoolInfo({ blockNumber: fromBlock });
     const toPoolInfo = await this.getPoolInfo({ blockNumber: toBlock });
 
-    const fromLpSharePrice = fromPoolInfo.lpSharePrice;
-    const toLpSharePrice = toPoolInfo.lpSharePrice;
+    const fromSharePrice = fromPoolInfo.lpSharePrice;
+    const toSharePrice = toPoolInfo.lpSharePrice;
 
     const divisor = 10n ** 18n;
 
-    const fromSharePriceFormatted = Number(fromLpSharePrice) / Number(divisor);
-    const toSharePriceFormatted = Number(toLpSharePrice) / Number(divisor);
-    // Calculate growth factor
-    const growthFactor = toSharePriceFormatted / fromSharePriceFormatted;
+    // const fromSharePriceFormatted = Number(fromLpSharePrice) / Number(divisor);
+    // const toSharePriceFormatted = Number(toLpSharePrice) / Number(divisor);
+    // // Calculate growth factor
+    // const growthFactor = toSharePriceFormatted / fromSharePriceFormatted;
 
-    // Extrapolate the growth factor to a full year
-    const annualGrowthFactor = Math.pow(growthFactor, 730);
+    // // Extrapolate the growth factor to a full year
+    // const annualGrowthFactor = Math.pow(growthFactor, 730);
 
     // Calculate the APY
-    const annualizedProfitOrLoss = (annualGrowthFactor - 1) * 100;
 
-    return annualizedProfitOrLoss;
+    return { fromSharePrice, toSharePrice };
   }
 
   private async getTransferSingleEvents({
