@@ -1,4 +1,5 @@
 /* eslint-disable react/jsx-key */
+import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import { OpenShort } from "@hyperdrive/sdk";
 import { useQuery } from "@tanstack/react-query";
 import {
@@ -6,6 +7,7 @@ import {
   createColumnHelper,
   flexRender,
   getCoreRowModel,
+  getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
 import classNames from "classnames";
@@ -22,6 +24,7 @@ import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { getProfitLossText } from "src/ui/hyperdrive/shorts/CloseShortForm/getProfitLossText";
 import { CloseShortModalButton } from "src/ui/hyperdrive/shorts/CloseShortModalButton/CloseShortModalButton";
 import { usePreviewCloseShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewCloseShort";
+import { MaturesOnCell } from "src/ui/portfolio/MaturesOnCell/MaturesOnCell";
 import { useAccount } from "wagmi";
 
 const columnHelper = createColumnHelper<OpenShort>();
@@ -30,11 +33,11 @@ const getColumns = (hyperdrive: Hyperdrive) => [
     header: `ID`,
     cell: ({ row }) => <span>{Number(row.original.maturity)}</span>,
   }),
-  columnHelper.display({
+  columnHelper.accessor("assetId", {
+    id: "maturationDate",
     header: `Matures on`,
     cell: ({ row }) => {
-      const maturity = new Date(Number(row.original.maturity * 1000n));
-      return <span>{maturity.toLocaleDateString()}</span>;
+      return <MaturesOnCell maturity={row.original.maturity} />;
     },
   }),
   columnHelper.accessor("bondAmount", {
@@ -183,6 +186,7 @@ export function OpenShortsTable({
     columns: getColumns(hyperdrive),
     data: shorts || [],
     getCoreRowModel: getCoreRowModel(),
+    getSortedRowModel: getSortedRowModel(),
   });
 
   return (
@@ -205,12 +209,22 @@ export function OpenShortsTable({
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
                 <th className="sticky top-0 z-10 bg-base-100" key={header.id}>
-                  {header.isPlaceholder
-                    ? null
-                    : flexRender(
-                        header.column.columnDef.header,
-                        header.getContext(),
-                      )}
+                  <div
+                    className={classNames({
+                      "flex cursor-pointer select-none items-center gap-2":
+                        header.column.getCanSort(),
+                    })}
+                    onClick={header.column.getToggleSortingHandler()}
+                  >
+                    {flexRender(
+                      header.column.columnDef.header,
+                      header.getContext(),
+                    )}
+                    {{
+                      asc: <ChevronUpIcon height={15} />,
+                      desc: <ChevronDownIcon height={15} />,
+                    }[header.column.getIsSorted() as string] ?? null}
+                  </div>
                 </th>
               ))}
             </tr>
@@ -221,7 +235,7 @@ export function OpenShortsTable({
             return (
               <tr
                 key={row.id}
-                className="daisy-hover h-16 cursor-pointer transition duration-300 ease-in-out"
+                className="daisy-hover h-16 cursor-pointer items-center transition duration-300 ease-in-out"
                 onClick={() => {
                   const modalId = `${row.original.assetId}`;
                   (window as any)[modalId].showModal();

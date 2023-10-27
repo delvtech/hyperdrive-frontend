@@ -1,18 +1,18 @@
 import { Abi } from "abitype";
 import {
-  ContractWriteOptions,
-  IReadWriteContract,
-} from "src/contract/Contract";
-import {
   FunctionArgs,
   FunctionName,
   FunctionReturnType,
 } from "src/base/abitype";
 import {
+  ContractWriteOptions,
+  IReadWriteContract,
+} from "src/contract/IReadWriteContract";
+import {
   CachedReadContract,
   CachedReadContractOptions,
   ICachedReadContract,
-} from "src/contract/cached/CachedReadContract";
+} from "src/contract/cached/CachedReadContract/CachedReadContract";
 
 /**
  * Interface for a writable contract that also provides caching capabilities.

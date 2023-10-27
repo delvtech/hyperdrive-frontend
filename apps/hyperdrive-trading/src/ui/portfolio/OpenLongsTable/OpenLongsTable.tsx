@@ -1,3 +1,4 @@
+import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import { Long } from "@hyperdrive/sdk";
 import { useQuery } from "@tanstack/react-query";
 import {
@@ -5,9 +6,11 @@ import {
   createColumnHelper,
   flexRender,
   getCoreRowModel,
+  getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
 import classNames from "classnames";
+import * as dnum from "dnum";
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { calculateAnnualizedPercentageChange } from "src/base/calculateAnnualizedPercentageChange";
@@ -15,32 +18,33 @@ import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { usePoolConfig } from "src/ui/hyperdrive/hooks/usePoolConfig";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { CloseLongModalButton } from "src/ui/hyperdrive/longs/CloseLongModalButton/CloseLongModalButton";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
+import { MaturesOnCell } from "src/ui/portfolio/MaturesOnCell/MaturesOnCell";
 import { parseUnits } from "viem";
 import { useAccount } from "wagmi";
-
 interface OpenLongsTableProps {
   hyperdrive: Hyperdrive;
 }
 
 const columnHelper = createColumnHelper<Long>();
 
-function getColumns(hyperdrive: Hyperdrive) {
+function getColumns({ hyperdrive }: { hyperdrive: Hyperdrive }) {
   return [
     columnHelper.display({
       header: `ID`,
       cell: ({ row }) => <span>{Number(row.original.maturity)}</span>,
     }),
-    columnHelper.display({
+    columnHelper.accessor("assetId", {
+      id: "maturationDate",
       header: `Matures on`,
       cell: ({ row }) => {
-        const maturity = new Date(Number(row.original.maturity * 1000n));
-        return <span>{maturity.toLocaleDateString()}</span>;
+        return <MaturesOnCell maturity={row.original.maturity} />;
       },
     }),
-    columnHelper.display({
+    columnHelper.accessor("bondAmount", {
       id: "size",
       header: `Size (hy${hyperdrive.baseToken.symbol})`,
       cell: ({ row }) => {
@@ -67,11 +71,24 @@ function getColumns(hyperdrive: Hyperdrive) {
         });
       },
     }),
-    columnHelper.display({
+    columnHelper.accessor("assetId", {
       id: "fixedRate",
       header: `Fixed rate (APR)`,
       cell: ({ row }) => {
         return <FixedRateCell hyperdrive={hyperdrive} row={row} />;
+      },
+      sortingFn: (rowA, rowB) => {
+        const aFixedRate = calculateAnnualizedPercentageChange({
+          amountBefore: rowA.original.baseAmountPaid,
+          amountAfter: rowA.original.bondAmount,
+          days: convertMillisecondsToDays(hyperdrive.termLengthMS),
+        });
+        const bFixedRate = calculateAnnualizedPercentageChange({
+          amountBefore: rowB.original.baseAmountPaid,
+          amountAfter: rowB.original.bondAmount,
+          days: convertMillisecondsToDays(hyperdrive.termLengthMS),
+        });
+        return aFixedRate - bFixedRate;
       },
     }),
     columnHelper.display({
@@ -91,6 +108,16 @@ function FixedRateCell({
   row: Row<Long>;
   hyperdrive: Hyperdrive;
 }) {
+  const { poolConfig } = usePoolConfig(hyperdrive.address);
+  // Only the flat fee applies if you hold this position to maturity, which is
+  // what the Fixed Rate Cell is all about.
+  const poolFee = dnum.mul(
+    [row.original.bondAmount || 1n, 18],
+    [poolConfig?.fees.flat || 0n, 18],
+  );
+  const yieldAmount = row.original.bondAmount - row.original.baseAmountPaid;
+  const yieldAfterFlatFee = dnum.sub([yieldAmount, 18], poolFee, 18)[0];
+
   return (
     <div className="flex flex-col gap-1">
       <span className="ml-2 font-bold">
@@ -98,18 +125,18 @@ function FixedRateCell({
           amountBefore: row.original.baseAmountPaid,
           amountAfter: row.original.bondAmount,
           days: convertMillisecondsToDays(hyperdrive.termLengthMS),
-        })}
+        }).toFixed(2)}
         %
       </span>
       <div
-        data-tip={"Yield guaranteed if held to maturity"}
+        data-tip={"Yield after fees if held to maturity"}
         className={
           "daisy-badge daisy-badge-md daisy-tooltip inline-flex text-success"
         }
       >
         <span>{"+"}</span>
         {formatBalance({
-          balance: row.original.bondAmount - row.original.baseAmountPaid,
+          balance: yieldAfterFlatFee,
           decimals: hyperdrive.baseToken.decimals,
           places: 4,
         })}{" "}
@@ -125,18 +152,20 @@ export function OpenLongsTable({
   const { address: account } = useAccount();
 
   const readHyperdrive = useReadHyperdrive(hyperdrive.address);
+  // Get the current block and check it's timestamp agains the
   const queryEnabled = !!readHyperdrive && !!account;
   const { data: longs } = useQuery({
     queryKey: makeQueryKey("longPositions", { account }),
     queryFn: queryEnabled
-      ? () => readHyperdrive?.getOpenLongs({ account })
+      ? () => readHyperdrive.getOpenLongs({ account })
       : undefined,
     enabled: queryEnabled,
   });
   const tableInstance = useReactTable({
-    columns: getColumns(hyperdrive),
+    columns: getColumns({ hyperdrive }),
     data: longs || [],
     getCoreRowModel: getCoreRowModel(),
+    getSortedRowModel: getSortedRowModel(),
   });
 
   return (
@@ -159,12 +188,22 @@ export function OpenLongsTable({
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
                 <th className="sticky top-0 z-10 bg-base-100" key={header.id}>
-                  {header.isPlaceholder
-                    ? null
-                    : flexRender(
-                        header.column.columnDef.header,
-                        header.getContext(),
-                      )}
+                  <div
+                    className={classNames({
+                      "flex cursor-pointer select-none items-center gap-2":
+                        header.column.getCanSort(),
+                    })}
+                    onClick={header.column.getToggleSortingHandler()}
+                  >
+                    {flexRender(
+                      header.column.columnDef.header,
+                      header.getContext(),
+                    )}
+                    {{
+                      asc: <ChevronUpIcon height={15} />,
+                      desc: <ChevronDownIcon height={15} />,
+                    }[header.column.getIsSorted() as string] ?? null}
+                  </div>
                 </th>
               ))}
             </tr>

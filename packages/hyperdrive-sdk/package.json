@@ -11,8 +11,8 @@
   "scripts": {
     "build": "tsup src/index.ts --minify --format esm --clean --dts",
     "watch": "npm run build -- --watch",
-    "test": "vitest --no-threads",
-    "test:run": "vitest run",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
@@ -20,10 +20,8 @@
     "@hyperdrive/prettier-config": "*",
     "@hyperdrive/tsconfig": "*",
     "@types/sinon": "^10.0.16",
-    "@viem/anvil": "^0.0.6",
     "abitype": "^0.9.8",
     "dotenv": "^16.0.3",
-    "happy-dom": "^10.7.0",
     "prettier-plugin-organize-imports": "^3.2.2",
     "sinon": "^15.2.0",
     "ts-node": "^10.9.1",

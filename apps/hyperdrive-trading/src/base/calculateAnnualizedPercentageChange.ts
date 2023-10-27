@@ -13,13 +13,13 @@ export function calculateAnnualizedPercentageChange({
   amountBefore: bigint;
   amountAfter: bigint;
   days: number;
-}): string {
+}): number {
   if (amountBefore === 0n) {
-    return "0"; // Prevent division by zero
+    return 0; // Prevent division by zero
   }
 
   const profitOrLoss =
     Number(amountAfter - amountBefore) / Number(amountBefore);
   const annualizedProfitOrLoss = ((1 + profitOrLoss) ** (365 / days) - 1) * 100;
-  return annualizedProfitOrLoss.toFixed(2);
+  return annualizedProfitOrLoss;
 }

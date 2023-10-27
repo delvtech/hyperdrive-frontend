@@ -1,8 +1,8 @@
 import {
   ContractWriteOptions,
   IReadWriteContract,
-} from "src/contract/Contract";
-import { ReadContractStub } from "src/contract/stubs/ReadContractStub";
+} from "src/contract/IReadWriteContract";
+import { ReadContractStub } from "src/contract/stubs/ReadContractStub/ReadContractStub";
 import { Abi } from "abitype";
 import { FunctionArgs, FunctionName } from "src/base/abitype";
 import { stub } from "sinon";

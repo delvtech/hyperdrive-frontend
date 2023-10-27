@@ -1,7 +1,7 @@
 import { expect, test } from "vitest";
-import { ContractEvent } from "src/contract/Contract";
-import { ReadContractStub } from "src/contract/stubs/ReadContractStub";
-import { CachedReadContract } from "src/contract/cached/CachedReadContract";
+import { ContractEvent } from "src/contract/ContractEvents";
+import { ReadContractStub } from "src/contract/stubs/ReadContractStub/ReadContractStub";
+import { CachedReadContract } from "src/contract/cached/CachedReadContract/CachedReadContract";
 import { HyperdriveABI } from "src/abis/Hyperdrive";
 
 test("It caches the read function", async () => {
