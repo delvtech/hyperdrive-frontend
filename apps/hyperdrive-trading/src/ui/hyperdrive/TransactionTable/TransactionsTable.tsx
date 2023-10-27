@@ -41,31 +41,20 @@ const getColumns = (hyperdrive: Hyperdrive) => [
     enableSorting: false,
     enableColumnFilter: true,
     header: () => null,
-    cell: ({ getValue }) => {
-      const eventName = getValue() as EventName;
-      return eventMap[eventName] || eventName;
-    },
-
+    cell: ({ getValue }) => eventMap[getValue() as EventName] || getValue(),
     filterFn: (row, _, filterValue) => {
       const type = row.getValue("eventName") as string;
-
-      if (filterValue === "All") {
-        return true;
-      }
-      if (filterValue === "Longs") {
-        return ["OpenLong", "CloseLong"].includes(type);
-      }
-      if (filterValue === "Shorts") {
-        return ["OpenShort", "CloseShort"].includes(type);
-      }
-      if (filterValue === "LP") {
-        return [
+      const filters = {
+        All: true,
+        Longs: ["OpenLong", "CloseLong"].includes(type),
+        Shorts: ["OpenShort", "CloseShort"].includes(type),
+        LP: [
           "AddLiquidity",
           "RemoveLiquidity",
           "RedeemWithdrawalShares",
-        ].includes(type);
-      }
-      return true;
+        ].includes(type),
+      } as const;
+      return filters[filterValue as keyof typeof filters];
     },
   }),
   columnHelper.accessor("bondAmount", {
