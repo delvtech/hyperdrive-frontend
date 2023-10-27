@@ -27,7 +27,6 @@ import { getCheckpointId } from "src/pool/getCheckpointId";
 import { WITHDRAW_SHARES_ASSET_ID } from "src/withdrawalShares/assetId";
 import { Checkpoint } from "src/pool/Checkpoint";
 import { MarketState } from "src/pool/MarketState";
-import { from } from "dnum";
 
 export interface ReadHyperdriveOptions {
   contract: IReadHyperdriveContract;
