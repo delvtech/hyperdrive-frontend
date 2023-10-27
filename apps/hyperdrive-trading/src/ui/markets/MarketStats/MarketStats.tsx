@@ -76,9 +76,9 @@ export function MarketStats({
       <Stat
         label="LP APY (12 Hour)"
         value={
-          lpApy ? (
+          lpApy || lpApy === 0 ? (
             <span className="flex items-center gap-1.5">
-              {lpApy.toFixed(2) || "0"}% APY
+              {lpApy.toFixed(2)}% APY
             </span>
           ) : (
             <Skeleton className="opacity-50" />

@@ -36,6 +36,7 @@ export function useLpApy(hyperdriveAddress: Address): {
   const lpApy = calculateAnnualizedPercentageChange({
     amountBefore: data?.fromSharePrice ?? 0n,
     amountAfter: data?.toSharePrice ?? 0n,
+    // 3.5 is the equivilant of 12 hours on cloudchain, which is the minimum
     days: 3.5,
   });
   return { lpApy };

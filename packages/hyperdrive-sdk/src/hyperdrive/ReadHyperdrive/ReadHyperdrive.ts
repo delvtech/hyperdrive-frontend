@@ -544,23 +544,10 @@ export class ReadHyperdrive implements IReadHyperdrive {
   }): Promise<{ fromSharePrice: bigint; toSharePrice: bigint }> {
     const fromPoolInfo = await this.getPoolInfo({ blockNumber: fromBlock });
     const toPoolInfo = await this.getPoolInfo({ blockNumber: toBlock });
-
-    const fromSharePrice = fromPoolInfo.lpSharePrice;
-    const toSharePrice = toPoolInfo.lpSharePrice;
-
-    const divisor = 10n ** 18n;
-
-    // const fromSharePriceFormatted = Number(fromLpSharePrice) / Number(divisor);
-    // const toSharePriceFormatted = Number(toLpSharePrice) / Number(divisor);
-    // // Calculate growth factor
-    // const growthFactor = toSharePriceFormatted / fromSharePriceFormatted;
-
-    // // Extrapolate the growth factor to a full year
-    // const annualGrowthFactor = Math.pow(growthFactor, 730);
-
-    // Calculate the APY
-
-    return { fromSharePrice, toSharePrice };
+    return {
+      fromSharePrice: fromPoolInfo.lpSharePrice,
+      toSharePrice: toPoolInfo.lpSharePrice,
+    };
   }
 
   private async getTransferSingleEvents({
