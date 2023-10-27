@@ -722,10 +722,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
         maturity: decodeAssetFromTransferSingleEventData(
           eventLog as `0x${string}`,
         ).timestamp,
-        //Can we use this of closedTimestamp?
-        closedTimestamp: decodeAssetFromTransferSingleEventData(
-          eventLog as `0x${string}`,
-        ).timestamp,
+        closedTimestamp: timestamp,
       };
     }
 
@@ -778,9 +775,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
         bondAmount:
           eventData.value - (closedShortsById[assetId]?.bondAmount ?? 0n),
         baseAmountPaid: netAmountPaid > 0n ? netAmountPaid : 0n,
-        openedTimestamp: decodeAssetFromTransferSingleEventData(
-          eventLog as `0x${string}`,
-        ).timestamp,
+        openedTimestamp: timestamp,
         maturity: decodeAssetFromTransferSingleEventData(
           eventLog as `0x${string}`,
         ).timestamp,
