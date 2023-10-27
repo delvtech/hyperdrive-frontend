@@ -84,7 +84,7 @@ export function MarketStats({
             <Skeleton className="opacity-50" />
           )
         }
-        description={`This represents the LP projected annual return based on the performance observed over the past 12 hours. It assumes the rate of return seen in this 100-block period continues consistently for an entire year.`}
+        description={`This represents the LP projected annual return based on the performance observed over the past 12 hours. It assumes the rate of return seen in this period continues consistently for an entire year.`}
       />
       <Stat
         description={`The amount of hy${hyperdrive.baseToken.symbol} (either longs or shorts) that have been traded in the last 24 hours. `}

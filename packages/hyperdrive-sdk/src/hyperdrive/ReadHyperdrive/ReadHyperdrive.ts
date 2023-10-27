@@ -540,14 +540,24 @@ export class ReadHyperdrive implements IReadHyperdrive {
     toBlock: bigint;
   }): Promise<number> {
     const fromPoolInfo = await this.getPoolInfo({ blockNumber: fromBlock });
-    const toPoolInfo = await this.getPoolInfo({
-      blockNumber: toBlock,
-    });
+    const toPoolInfo = await this.getPoolInfo({ blockNumber: toBlock });
 
-    const profitOrLoss =
-      Number(toPoolInfo.lpSharePrice - fromPoolInfo.lpSharePrice) /
-      Number(fromPoolInfo.lpSharePrice);
-    const annualizedProfitOrLoss = ((1 + profitOrLoss) ** (365 / 7) - 1) * 100;
+    const fromLpSharePrice = fromPoolInfo.lpSharePrice;
+    const toLpSharePrice = toPoolInfo.lpSharePrice;
+
+    const divisor = 10n ** 18n;
+
+    const fromSharePriceFormatted = Number(fromLpSharePrice) / Number(divisor);
+    const toSharePriceFormatted = Number(toLpSharePrice) / Number(divisor);
+    // Calculate growth factor
+    const growthFactor = toSharePriceFormatted / fromSharePriceFormatted;
+
+    // Extrapolate the growth factor to a full year
+    const annualGrowthFactor = Math.pow(growthFactor, 730);
+
+    // Calculate the APY
+    const annualizedProfitOrLoss = (annualGrowthFactor - 1) * 100;
+
     return annualizedProfitOrLoss;
   }
 
