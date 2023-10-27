@@ -9,9 +9,11 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import classNames from "classnames";
+import * as dnum from "dnum";
 import { useState } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { formatAddress } from "src/ui/base/formatting/formatAddress";
+import { TransactionData } from "src/ui/hyperdrive/TransactionTable/useTransactionData";
 import { Address } from "viem";
 
 export interface Transaction {
@@ -21,41 +23,70 @@ export interface Transaction {
   blockNumber: bigint | undefined;
 }
 
-const columnHelper = createColumnHelper<Transaction>();
+const eventMap = {
+  OpenLong: "Open Long",
+  OpenShort: "Open Short",
+  CloseLong: "Close Long",
+  CloseShort: "Close Short",
+  AddLiquidity: "Add Liquidity",
+  RemoveLiquidity: "Remove Liquidity",
+  RedeemWithdrawalShares: "Redeem Withdrawal Shares",
+} as const;
+type EventName = keyof typeof eventMap;
+
+const columnHelper = createColumnHelper<TransactionData>();
 const getColumns = (hyperdrive: Hyperdrive) => [
-  columnHelper.accessor("type", {
+  columnHelper.accessor("eventName", {
+    id: "eventName",
     enableSorting: false,
     enableColumnFilter: true,
     header: () => null,
+    cell: ({ getValue }) => {
+      const eventName = getValue() as EventName;
+      return eventMap[eventName] || eventName;
+    },
+
     filterFn: (row, _, filterValue) => {
-      const type = row.getValue("type") as string;
+      const type = row.getValue("eventName") as string;
+
       if (filterValue === "All") {
         return true;
       }
       if (filterValue === "Longs") {
-        return ["Open Long", "Close Long"].includes(type);
+        return ["OpenLong", "CloseLong"].includes(type);
       }
       if (filterValue === "Shorts") {
-        return ["Open Short", "Close Short"].includes(type);
+        return ["OpenShort", "CloseShort"].includes(type);
       }
       if (filterValue === "LP") {
         return [
-          "Add Liquidity",
-          "Remove Liquidity",
-          "Redeem Withdrawal Shares",
+          "AddLiquidity",
+          "RemoveLiquidity",
+          "RedeemWithdrawalShares",
         ].includes(type);
       }
       return true;
     },
   }),
-  columnHelper.accessor("value", {
+  columnHelper.accessor("bondAmount", {
+    id: "bondAmount",
     header: `Size`,
     cell: ({ getValue, row }) => {
-      const size = getValue();
+      const bondAmount = getValue();
+      const size = dnum.format(
+        [
+          row.original.eventName === "OpenShort" ||
+          row.original.eventName === "CloseShort"
+            ? bondAmount || 0n
+            : row.original.baseAmount || 0n,
+          18,
+        ],
+        { digits: 2 },
+      );
       const isLpRow =
-        row.getValue("type") === "Add Liquidity" ||
-        row.getValue("type") === "Remove Liquidity" ||
-        row.getValue("type") === "Redeem Withdrawal Shares";
+        row.getValue("eventName") === "Add Liquidity" ||
+        row.getValue("eventName") === "Remove Liquidity" ||
+        row.getValue("eventName") === "Redeem Withdrawal Shares";
       return (
         <span>
           {size}{" "}
@@ -69,7 +100,7 @@ const getColumns = (hyperdrive: Hyperdrive) => [
     sortingFn: (a, b) =>
       Number(a?.getValue("value") ?? 0) - Number(b?.getValue("value") ?? 0),
   }),
-  columnHelper.accessor("account", {
+  columnHelper.accessor("trader", {
     header: "Account",
     enableColumnFilter: false,
     cell: (account) => formatAddress(account.getValue()),
@@ -85,7 +116,7 @@ export function TransactionTable({
   data: transactionData,
 }: {
   hyperdrive: Hyperdrive;
-  data: Transaction[];
+  data: TransactionData[];
 }): JSX.Element {
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const tableInstance = useReactTable({
