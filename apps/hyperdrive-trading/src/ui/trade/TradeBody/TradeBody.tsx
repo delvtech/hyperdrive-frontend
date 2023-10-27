@@ -13,6 +13,7 @@ import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { ActionModalButton } from "src/ui/hyperdrive/ActionModalButton";
 import { TransactionTable } from "src/ui/hyperdrive/TransactionTable/TransactionsTable";
 import { useTransactionData } from "src/ui/hyperdrive/TransactionTable/useTransactionData";
+import { useCurrentFixedAPR } from "src/ui/hyperdrive/hooks/useCurrentFixedAPR";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { OpenLongForm } from "src/ui/hyperdrive/longs/OpenLongForm/OpenLongForm";
 import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
@@ -23,6 +24,7 @@ import { MarketStats } from "src/ui/markets/MarketStats/MarketStats";
 import { FAQ } from "src/ui/onboarding/FAQ/FAQ";
 import { PositionsSection } from "src/ui/portfolio/PositionsSection/PositionsSection";
 import { YourBalanceWell } from "src/ui/portfolio/YourBalanceWell/YourBalanceWell";
+import { useVaultRate } from "src/ui/vaults/useVaultRate";
 
 interface PositionsTableProps {
   hyperdrive: Hyperdrive;
@@ -31,6 +33,11 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
   const { data: transactionData } = useTransactionData(hyperdrive);
   const { longPrice } = useCurrentLongPrice(hyperdrive);
   const { marketState } = useMarketState(hyperdrive.address);
+  const { fixedAPR } = useCurrentFixedAPR(hyperdrive);
+  const { vaultRate } = useVaultRate({
+    // TODO: temporary for now until this available via addresses.json
+    vaultAddress: "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+  });
   return (
     <div className="flex max-w-6xl flex-col gap-16">
       <div className="flex w-full flex-col gap-6">
@@ -55,8 +62,13 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
 
       <div className="flex flex-wrap justify-center gap-16">
         <ActionModalButton
-          title="Long hy"
-          description="It's a predictable fixed rate yield."
+          title={`Long hy${hyperdrive.baseToken.symbol}`}
+          subtitle={`Earn ${fixedAPR?.formatted || "-"}% APR on ${
+            hyperdrive.baseToken.symbol
+          } `}
+          description={`1 hy${hyperdrive.baseToken.symbol} is always worth 1
+          ${hyperdrive.baseToken.symbol} at maturity. It's a predictable
+          fixed rate yield.`}
           modalId="openLongModal"
           icon={<ClockIcon className="mb-2 h-16" />}
           modalContent={<OpenLongForm hyperdrive={hyperdrive} />}
@@ -66,37 +78,40 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
             "Redeemable before term ends",
           ]}
           buttonText="Long"
-          hyperdrive={hyperdrive}
         />
 
         <ActionModalButton
-          title="Short hy"
-          description="Profit when hy price drops, while maximizing exposure to the yield source."
+          title={`Short hy${hyperdrive.baseToken.symbol}`}
+          subtitle={`Earn ${vaultRate?.formatted || "-"}% APY on ${
+            hyperdrive.baseToken.symbol
+          }`}
+          description={`Profit when hy${hyperdrive.baseToken.symbol} price drops, while
+          maximizing exposure to the yield source.`}
           modalId="openShortModal"
           icon={<BoltIcon className="mb-2 h-16" />}
           modalContent={<OpenShortForm market={hyperdrive} />}
           checklist={[
-            "Fixed rate up, hy price down",
+            `Fixed rate up, hy${hyperdrive.baseToken.symbol} price down`,
             "Maximize exposure to yield source",
             "Redeemable before term ends",
           ]}
           buttonText="Short"
-          hyperdrive={hyperdrive}
         />
 
         <ActionModalButton
           title="Add Liquidity"
-          description="Take the other side of every Long and Short. Earn fees and the yield source rate."
+          subtitle={`Earn trading fees and interest`}
+          description="Take the other side of every Long and Short. Earn fees and the
+          yield source rate."
           modalId="addLpModal"
           icon={<SquaresPlusIcon className="mb-2 h-16" />}
           modalContent={<AddLiquidityForm market={hyperdrive} />}
           checklist={[
-            "Single-sided deposit with ",
+            `Single-sided deposit with ${hyperdrive.baseToken.symbol}`,
             "Idle liquidity earns yield source rate",
             "No terms or manual LP rollovers",
           ]}
           buttonText="Add liquidity"
-          hyperdrive={hyperdrive}
         />
       </div>
 
