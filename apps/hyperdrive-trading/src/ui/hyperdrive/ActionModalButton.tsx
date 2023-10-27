@@ -17,7 +17,7 @@ interface ActionConfig {
   title: string;
   description: string;
   modalId: string;
-  icon: any;
+  icon: ReactElement;
   content: (hyperdrive: Hyperdrive) => ReactElement;
   checklist: string[];
   buttonText: string;
