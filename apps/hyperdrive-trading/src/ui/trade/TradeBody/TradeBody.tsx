@@ -1,4 +1,9 @@
-import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
+import {
+  BoltIcon,
+  ClockIcon,
+  ExclamationTriangleIcon,
+  SquaresPlusIcon,
+} from "@heroicons/react/24/outline";
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { divideBigInt } from "src/base/divideBigInt";
@@ -9,7 +14,10 @@ import { ActionModalButton } from "src/ui/hyperdrive/ActionModalButton";
 import { TransactionTable } from "src/ui/hyperdrive/TransactionTable/TransactionsTable";
 import { useTransactionData } from "src/ui/hyperdrive/TransactionTable/useTransactionData";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
+import { OpenLongForm } from "src/ui/hyperdrive/longs/OpenLongForm/OpenLongForm";
 import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
+import { AddLiquidityForm } from "src/ui/hyperdrive/lp/AddLiquidityForm/AddLiquidityForm";
+import { OpenShortForm } from "src/ui/hyperdrive/shorts/OpenShortForm/OpenShortForm";
 import { AllMarketsBreadcrumb } from "src/ui/markets/MarketSelect/AllMarketsBreadcrumb";
 import { MarketStats } from "src/ui/markets/MarketStats/MarketStats";
 import { FAQ } from "src/ui/onboarding/FAQ/FAQ";
@@ -45,20 +53,51 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
         )}
       </div>
 
-      <div>
-        <div className="flex flex-wrap justify-center gap-16">
-          <div className="flex flex-wrap justify-center gap-16">
-            {(["OpenLong", "OpenShort", "AddLiquidity"] as const).map(
-              (action) => (
-                <ActionModalButton
-                  key={action}
-                  action={action}
-                  hyperdrive={hyperdrive}
-                />
-              ),
-            )}
-          </div>
-        </div>
+      <div className="flex flex-wrap justify-center gap-16">
+        <ActionModalButton
+          title="Long hy"
+          description="It's a predictable fixed rate yield."
+          modalId="openLongModal"
+          icon={<ClockIcon className="mb-2 h-16" />}
+          modalContent={<OpenLongForm hyperdrive={hyperdrive} />}
+          checklist={[
+            "Fixed rate included in the price",
+            "Minimal risk and maintenance",
+            "Redeemable before term ends",
+          ]}
+          buttonText="Long"
+          hyperdrive={hyperdrive}
+        />
+
+        <ActionModalButton
+          title="Short hy"
+          description="Profit when hy price drops, while maximizing exposure to the yield source."
+          modalId="openShortModal"
+          icon={<BoltIcon className="mb-2 h-16" />}
+          modalContent={<OpenShortForm market={hyperdrive} />}
+          checklist={[
+            "Fixed rate up, hy price down",
+            "Maximize exposure to yield source",
+            "Redeemable before term ends",
+          ]}
+          buttonText="Short"
+          hyperdrive={hyperdrive}
+        />
+
+        <ActionModalButton
+          title="Add Liquidity"
+          description="Take the other side of every Long and Short. Earn fees and the yield source rate."
+          modalId="addLpModal"
+          icon={<SquaresPlusIcon className="mb-2 h-16" />}
+          modalContent={<AddLiquidityForm market={hyperdrive} />}
+          checklist={[
+            "Single-sided deposit with ",
+            "Idle liquidity earns yield source rate",
+            "No terms or manual LP rollovers",
+          ]}
+          buttonText="Add liquidity"
+          hyperdrive={hyperdrive}
+        />
       </div>
 
       <PositionsSection hyperdrive={hyperdrive} />
