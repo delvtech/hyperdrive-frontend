@@ -5,13 +5,11 @@ import { divideBigInt } from "src/base/divideBigInt";
 import { parseUnits } from "src/base/parseUnits";
 import CustomBanner from "src/ui/base/components/CustomBanner";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { ActionModalButton } from "src/ui/hyperdrive/ActionModalButton";
 import { TransactionTable } from "src/ui/hyperdrive/TransactionTable/TransactionsTable";
 import { useTransactionData } from "src/ui/hyperdrive/TransactionTable/useTransactionData";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
-import { OpenLongModalButton } from "src/ui/hyperdrive/longs/OpenLongModalButton/OpenLongModalButton";
 import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
-import { AddLiquidityModalButton } from "src/ui/hyperdrive/lp/AddLiquidityModalButton/AddLiquidityModalButton";
-import { OpenShortModalButton } from "src/ui/hyperdrive/shorts/OpenShortModalButton/OpenShortModalButton";
 import { AllMarketsBreadcrumb } from "src/ui/markets/MarketSelect/AllMarketsBreadcrumb";
 import { MarketStats } from "src/ui/markets/MarketStats/MarketStats";
 import { FAQ } from "src/ui/onboarding/FAQ/FAQ";
@@ -49,9 +47,17 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
 
       <div>
         <div className="flex flex-wrap justify-center gap-16">
-          <OpenLongModalButton hyperdrive={hyperdrive} />
-          <OpenShortModalButton hyperdrive={hyperdrive} />
-          <AddLiquidityModalButton hyperdrive={hyperdrive} />
+          <div className="flex flex-wrap justify-center gap-16">
+            {(["OpenLong", "OpenShort", "AddLiquidity"] as const).map(
+              (action) => (
+                <ActionModalButton
+                  key={action}
+                  action={action}
+                  hyperdrive={hyperdrive}
+                />
+              ),
+            )}
+          </div>
         </div>
       </div>
 
