@@ -1,0 +1,55 @@
+{
+  "name": "@hyperdrive/cli",
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "bin": "dist/index.js",
+  "scripts": {
+    "dev": "ts-node -r dotenv/config -r tsconfig-paths/register --files src/hyperdrive",
+    "build": "tsup src/index.ts --minify --format esm --clean --dts",
+    "watch": "npm run build -- --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "docs": "typedoc",
+    "watch:docs": "typedoc --watch"
+  },
+  "dependencies": {
+    "@types/cli-table": "^0.3.3",
+    "@types/prompts": "^2.4.7",
+    "@types/signale": "^1.4.6",
+    "@types/yargs": "^17.0.29",
+    "ajv": "^8.12.0",
+    "cfonts": "^3.2.0",
+    "cli-table": "^0.3.11",
+    "colors": "^1.4.0",
+    "prompts": "^2.4.2",
+    "signale": "^1.4.0",
+    "typedoc-plugin-markdown": "^3.16.0",
+    "viem": "^1.18.0",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@hyperdrive/eslint-config": "*",
+    "@hyperdrive/prettier-config": "*",
+    "@hyperdrive/tsconfig": "*",
+    "@types/sinon": "^10.0.16",
+    "dotenv": "^16.0.3",
+    "hardhat": "^2.18.3",
+    "prettier-plugin-organize-imports": "^3.2.2",
+    "sinon": "^15.2.0",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.1.0",
+    "tsup": "^7.2.0",
+    "typescript": "^5.0.2",
+    "vite-tsconfig-paths": "^4.2.0",
+    "vitest": "^0.28.5"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
