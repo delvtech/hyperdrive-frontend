@@ -10,10 +10,6 @@
   "bin": "dist/index.js",
   "scripts": {
     "dev": "ts-node -r dotenv/config -r tsconfig-paths/register --files src/hyperdrive",
-    "build": "tsup src/index.ts --minify --format esm --clean --dts",
-    "watch": "npm run build -- --watch",
-    "test": "vitest run",
-    "test:watch": "vitest",
     "typecheck": "tsc --noEmit",
     "docs": "typedoc",
     "watch:docs": "typedoc --watch"
