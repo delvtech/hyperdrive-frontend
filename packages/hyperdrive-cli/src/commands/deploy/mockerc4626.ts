@@ -117,8 +117,6 @@ export const { command, aliases, describe, builder, handler } =
         functionName: "decimals",
       })) as number;
 
-      // const token;
-
       signale.pending("Deploying MockERC4626...");
 
       const { address } = await deployMockERC4626({
