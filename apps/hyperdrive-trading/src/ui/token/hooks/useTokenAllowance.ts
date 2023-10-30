@@ -1,5 +1,4 @@
-import { ERC20_ABI } from "@hyperdrive/sdk";
-import { Address, useContractRead } from "wagmi";
+import { Address, erc20ABI, useContractRead } from "wagmi";
 
 interface UseTokenAllowanceOptions {
   account: Address | undefined;
@@ -22,7 +21,7 @@ export function useTokenAllowance({
   const { data, status } = useContractRead({
     enabled,
     address: tokenAddress,
-    abi: ERC20_ABI,
+    abi: erc20ABI,
     functionName: "allowance",
     args: enabled ? [account, spender] : undefined,
   });

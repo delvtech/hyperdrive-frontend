@@ -1,5 +1,4 @@
 import {
-  HyperdriveABI,
   HyperdriveMathABI,
   ReadHyperdrive,
   SimpleCache,
@@ -7,6 +6,7 @@ import {
 import { ViemCachedReadContract } from "src/contract/ViemCachedReadContract";
 import { Address, PublicClient } from "viem";
 import { ViemNetwork } from "src/network/ViemNetwork";
+import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
 
 interface ViemReadHyperdriveOptions {
   address: Address;
@@ -26,7 +26,7 @@ export class ViemReadHyperdrive extends ReadHyperdrive {
   }: ViemReadHyperdriveOptions) {
     super({
       contract: new ViemCachedReadContract({
-        abi: HyperdriveABI,
+        abi: IHyperdrive.abi,
         address,
         publicClient,
         cache,

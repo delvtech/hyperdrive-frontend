@@ -2,7 +2,9 @@ import { expect, test } from "vitest";
 import { ContractEvent } from "src/contract/ContractEvents";
 import { ReadContractStub } from "src/contract/stubs/ReadContractStub/ReadContractStub";
 import { CachedReadContract } from "src/contract/cached/CachedReadContract/CachedReadContract";
-import { HyperdriveABI } from "src/abis/Hyperdrive";
+import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
+
+const HyperdriveABI = IHyperdrive.abi;
 
 test("It caches the read function", async () => {
   const contract = new ReadContractStub(HyperdriveABI);

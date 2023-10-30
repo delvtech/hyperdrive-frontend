@@ -16,6 +16,7 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
+    "@hyperdrive/artifacts": "*",
     "@hyperdrive/eslint-config": "*",
     "@hyperdrive/prettier-config": "*",
     "@hyperdrive/tsconfig": "*",
