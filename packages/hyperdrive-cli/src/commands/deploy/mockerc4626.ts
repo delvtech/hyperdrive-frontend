@@ -13,6 +13,7 @@ import {
   Hex,
   PrivateKeyAccount,
   createPublicClient,
+  createWalletClient,
   http,
   parseUnits,
 } from "viem";
@@ -133,6 +134,50 @@ export const { command, aliases, describe, builder, handler } =
           signale.pending(`MockERC4626 deployment tx submitted: ${txHash}`);
         },
       });
+
+      if (isCompetitionMode) {
+        const walletClient = createWalletClient({
+          account,
+          transport: http(rpcUrl),
+          chain,
+        });
+
+        signale.pending("Setting vault role");
+        const userRoleHash = await walletClient.writeContract({
+          abi: ERC20Mintable.abi,
+          address: address as `0x${string}`,
+          functionName: "setUserRole",
+          args: [address, 1, true],
+          account,
+        });
+        signale.pending(`Vault role tx submitted: ${userRoleHash}`);
+        await publicClient.waitForTransactionReceipt({ hash: userRoleHash });
+        signale.success(`Successfully set vault role`);
+
+        signale.pending("Giving vault mint capability");
+        const mintHash = await walletClient.writeContract({
+          abi: ERC20Mintable.abi,
+          address: address as `0x${string}`,
+          functionName: "setUserRole",
+          args: [address, 1, true],
+          account,
+        });
+        signale.pending(`Vault mint capability tx submitted: ${mintHash}`);
+        await publicClient.waitForTransactionReceipt({ hash: mintHash });
+        signale.success(`Successfully gave vault mint capability`);
+
+        signale.pending("Giving vault burn capability");
+        const burnHash = await walletClient.writeContract({
+          abi: ERC20Mintable.abi,
+          address: address as `0x${string}`,
+          functionName: "setUserRole",
+          args: [address, 1, true],
+          account,
+        });
+        signale.pending(`Vault burn capability tx submitted: ${burnHash}`);
+        await publicClient.waitForTransactionReceipt({ hash: burnHash });
+        signale.success(`Successfully gave vault burn capability`);
+      }
 
       signale.success(`MockERC4626 deployed @ ${address}`);
     },
