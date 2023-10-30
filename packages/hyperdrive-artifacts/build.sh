@@ -1,5 +1,9 @@
 #!/bin/bash
 
+script_dir="$(dirname "$0")"
+
+cd $script_dir
+
 # Clone the hyperdrive repo if the hyperdrive folder doesn't exist
 if [ ! -d "hyperdrive" ]; then
   git clone --depth 1 --branch v0.0.16 git@github.com:delvtech/hyperdrive.git hyperdrive
