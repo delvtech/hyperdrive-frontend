@@ -7,6 +7,9 @@
     "baseUrl": ".",
     "allowSyntheticDefaultImports": true,
 
+    // important to import JSON files from @hyperdrive/artifacts
+    "resolveJsonModule": true,
+
     // we don't need declaration files for a CLI
     "declaration": false,
     "declarationMap": false,
