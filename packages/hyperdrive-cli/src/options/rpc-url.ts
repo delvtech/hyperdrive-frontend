@@ -10,5 +10,6 @@ export async function requiredRpcUrl(rpcUrl?: string): Promise<string> {
   return await requiredString(rpcUrl, {
     name: "rpc-url",
     message: "Enter RPC URL",
+    initial: "http://127.0.0.1:8545",
   });
 }
