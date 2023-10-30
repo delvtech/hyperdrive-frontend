@@ -1,4 +1,5 @@
-import ERC4626HyperdriveFactory from "@hyperdrive/artifacts/dist/ERC4626HyperdriveFactory.json";
+import { ERC4626HyperdriveFactory } from "@hyperdrive/artifacts/dist/ERC4626HyperdriveFactory";
+import { MockERC4626 } from "@hyperdrive/artifacts/dist/MockERC4626";
 import signale from "signale";
 import { chainOption, requiredChain } from "src/options/chain";
 import { requiredRpcUrl, rpcUrlOption } from "src/options/rpc-url";
@@ -7,7 +8,13 @@ import { requiredString } from "src/options/utils/requiredString";
 import { requiredWalletKey, walletKeyOption } from "src/options/wallet-key";
 import { createCommandModule } from "src/utils/createCommandModule";
 import { DeployedContract, deployContract } from "src/utils/deployContract";
-import { Hex, PrivateKeyAccount } from "viem";
+import {
+  Hex,
+  PrivateKeyAccount,
+  createPublicClient,
+  http,
+  parseUnits,
+} from "viem";
 import { privateKeyToAccount } from "viem/accounts";
 import { Chain } from "viem/chains";
 
@@ -19,81 +26,73 @@ export const { command, aliases, describe, builder, handler } =
 
     builder: (yargs) => {
       return yargs.options({
-        g: {
-          alias: ["governance"],
+        governance: {
           describe: "The address which can update a factory",
           type: "string",
         },
-        h: {
-          alias: ["hyperdrive-governance"],
+        "hyperdrive-governance": {
           describe: "The address which is set as the governor of hyperdrive",
           type: "string",
         },
-        o: {
-          alias: ["collector", "fee-collector"],
+        collector: {
+          alias: ["fee-collector"],
           describe:
             "The address which should be set as the fee collector in new deployments",
           type: "string",
         },
-        u: {
-          alias: ["curve-fee"],
+        "curve-fee": {
           describe: "The LP fee applied to the curve portion of a trade",
           type: "string",
         },
-        "max-curve": {
-          alias: ["max-curve-fee"],
+        "max-curve-fee": {
           describe:
             "The maximum LP fee applied to the curve portion of a trade",
           type: "string",
         },
-        f: {
-          alias: ["flat-fee"],
+        "flat-fee": {
           describe: "The LP fee applied to the flat portion of a trade",
           type: "string",
         },
-        "max-flat": {
-          alias: ["max-flat-fee"],
+        "max-flat-fee": {
           describe: "The maximum LP fee applied to the flat portion of a trade",
           type: "string",
         },
-        v: {
+        "gov-fee": {
           alias: ["governance-fee"],
           describe: "The portion of the LP fee that goes to governance",
           type: "string",
         },
-        "max-governance": {
+        "max-gov-fee": {
           alias: ["max-governance-fee"],
           describe: "The maximum portion of the LP fee that goes to governance",
           type: "string",
         },
-        e: {
-          alias: ["pausers", "default-pausers"],
+        pausers: {
+          alias: ["default-pausers"],
           describe:
             "The default addresses which will be set to have the pauser role",
           type: "array",
         },
-        d: {
-          alias: ["deployer"],
+        deployer: {
           describe: "The contract that deploys new hyperdrive instances",
           type: "string",
         },
-        l: {
-          alias: ["linker", "linker-factory"],
+        linker: {
+          alias: ["linker-factory"],
           describe: "The linker factory",
           type: "string",
         },
-        s: {
+        "linker-hash": {
           alias: ["linker-code-hash"],
           describe: "The admin of the token",
           type: "string",
         },
-        p: {
-          alias: ["pool"],
+        pool: {
           describe: "The ERC4626 pool",
           type: "string",
         },
-        t: {
-          alias: ["targets", "sweep-targets"],
+        targets: {
+          alias: ["sweep-targets"],
           describe: "The addresses that can be swept by the fee collector",
           type: "array",
         },
@@ -197,19 +196,30 @@ export const { command, aliases, describe, builder, handler } =
 
       signale.pending("Deploying ERC4626HyperdriveFactory...");
 
+      const publicClient = await createPublicClient({
+        transport: http(rpcUrl),
+        chain,
+      });
+
+      const decimals = await publicClient.readContract({
+        abi: MockERC4626.abi,
+        address: pool as `0x${string}`,
+        functionName: "decimals",
+      });
+
       const { address } = await deployERC4626HyperdriveFactory({
         governance,
         hyperdriveGovernance,
         feeCollector,
         fees: {
-          curve: BigInt(curveFee),
-          flat: BigInt(flatFee),
-          governance: BigInt(governanceFee),
+          curve: parseUnits(curveFee.toString(), decimals),
+          flat: parseUnits(flatFee.toString(), decimals),
+          governance: parseUnits(governanceFee.toString(), decimals),
         },
         maxFees: {
-          curve: BigInt(maxCurveFee),
-          flat: BigInt(maxFlatFee),
-          governance: BigInt(maxGovernanceFee),
+          curve: parseUnits(maxCurveFee.toString(), decimals),
+          flat: parseUnits(maxFlatFee.toString(), decimals),
+          governance: parseUnits(maxGovernanceFee.toString(), decimals),
         },
         pausers,
         deployer,
