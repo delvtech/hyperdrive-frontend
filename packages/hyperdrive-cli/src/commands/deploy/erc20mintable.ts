@@ -134,7 +134,13 @@ export async function deployERC20Mintable({
 }: DeployERC20MintableOptions): Promise<DeployedContract> {
   return await deployContract({
     abi: ERC20Mintable.abi,
-    args: [tokenName, tokenSymbol, decimals, admin, isCompetitionMode],
+    args: [
+      tokenName,
+      tokenSymbol,
+      decimals,
+      admin as `0x${string}`,
+      isCompetitionMode,
+    ],
     bytecode: ERC20Mintable.bytecode.object as `0x${string}`,
     account,
     rpcUrl,
