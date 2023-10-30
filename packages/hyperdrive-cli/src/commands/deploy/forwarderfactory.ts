@@ -1,4 +1,4 @@
-import ForwarderFactory from "@hyperdrive/artifacts/dist/ForwarderFactory.json";
+import { ForwarderFactory } from "@hyperdrive/artifacts/dist/ForwarderFactory";
 import signale from "signale";
 import { chainOption, requiredChain } from "src/options/chain";
 import { requiredRpcUrl, rpcUrlOption } from "src/options/rpc-url";
@@ -62,7 +62,7 @@ export async function deployForwarderFactory({
 }: DeployForwarderFactoryOptions): Promise<DeployedContract> {
   return await deployContract({
     abi: ForwarderFactory.abi,
-    args: [],
+    args: undefined,
     bytecode: ForwarderFactory.bytecode.object as `0x${string}`,
     account,
     rpcUrl,

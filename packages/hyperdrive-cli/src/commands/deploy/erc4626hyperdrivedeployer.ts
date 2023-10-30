@@ -1,4 +1,4 @@
-import ERC4626HyperdriveDeployer from "@hyperdrive/artifacts/dist/ERC4626HyperdriveDeployer.json";
+import { ERC4626HyperdriveDeployer } from "@hyperdrive/artifacts/dist/ERC4626HyperdriveDeployer";
 import signale from "signale";
 import { chainOption, requiredChain } from "src/options/chain";
 import { requiredRpcUrl, rpcUrlOption } from "src/options/rpc-url";
@@ -76,7 +76,7 @@ export async function deployForwarderFactory({
 }: DeployForwarderFactoryOptions): Promise<DeployedContract> {
   return await deployContract({
     abi: ERC4626HyperdriveDeployer.abi,
-    args: [pool],
+    args: [pool as `0x${string}`],
     bytecode: ERC4626HyperdriveDeployer.bytecode.object as `0x${string}`,
     account,
     rpcUrl,
