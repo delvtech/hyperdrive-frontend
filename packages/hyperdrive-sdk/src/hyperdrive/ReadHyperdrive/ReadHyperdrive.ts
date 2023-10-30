@@ -676,18 +676,57 @@ export class ReadHyperdrive implements IReadHyperdrive {
     const fromBlock = "earliest";
     const toBlock = options?.blockNumber || options?.blockTag || "latest";
 
-    const { checkpointDuration } = await this.getPoolConfig(options);
+    // To discover all the open shorts a user has, we must look at both
+    // OpenShort _and_ TransferSingle events where the user was the recipient.
+    // Then we net those positions against any CloseShort or TransferSingle
+    // events where the user was the sender.
+
+    // Fetch all "OpenShort" events for the given user
+    const openShortEvents = await this.contract.getEvents("OpenShort", {
+      filter: { trader: account },
+      fromBlock,
+      toBlock,
+    });
+
+    // Get the total amount paid for each short. This is grouped by asset id in
+    // case the user opened shorts multiple times within a single checkpoint.
+    const amountPaidByAssetId = mapValues(
+      groupBy(openShortEvents, (event) => event.args.assetId),
+      (events) => sumBigInt(events.map((event) => event.args.baseAmount)),
+    );
+
+    // Fetch all "TransferSingle" events where the user received shorts. These
+    // will mostly all match the OpenShort events, however if a user transfers
+    // between wallets this is the only way to find their position.
+    const transferInEvents = (
+      await this.getTransferSingleEvents({
+        filter: { to: account },
+        fromBlock,
+        toBlock,
+      })
+    ).filter(
+      ({ data: eventLog }) =>
+        decodeAssetFromTransferSingleEventData(eventLog as `0x{$string}`)
+          .assetType === "SHORT",
+    );
+
+    // Fetch all "CloseShort" events for the given user
     const closeShortEvents = await this.contract.getEvents("CloseShort", {
       filter: { trader: account },
       fromBlock,
       toBlock,
     });
 
+    // Get the total amount received for each short. This is grouped by asset id
+    // in case the user closed portions of their position at different times.
     const amountReceivedByAssetId = mapValues(
       groupBy(closeShortEvents, (event) => event.args.assetId.toString()),
       (events) => sumBigInt(events.map((event) => event.args.baseAmount)),
     );
 
+    // Fetch all "TransferSingle" events where the user sent shorts. These will
+    // mostly all match the CloseShort events, however if a user transfers
+    // between wallets this is the only way to find their position.
     const transferOutEvents = (
       await this.getTransferSingleEvents({
         filter: { from: account },
@@ -700,8 +739,14 @@ export class ReadHyperdrive implements IReadHyperdrive {
           .assetType === "SHORT",
     );
 
-    const closedShortsById: Record<string, ClosedShort> = {};
+    // Fetch pool config to understand how time is divided into checkpoints. We
+    // only need to request this once, as it's used to construct checkpoint ids
+    // from block numbers.
+    const { checkpointDuration } = await this.getPoolConfig(options);
 
+    // Process the closed shorts first, then we can easily net out open
+    // positions against them.
+    const closedShortsById: Record<string, ClosedShort> = {};
     for (const {
       args: eventData,
       data: eventLog,
@@ -709,12 +754,15 @@ export class ReadHyperdrive implements IReadHyperdrive {
     } of transferOutEvents) {
       const assetId = eventData.id.toString();
 
+      // Accumulate bondAmount if this is an existing entry
       if (closedShortsById[assetId]) {
         closedShortsById[assetId].bondAmount += eventData.value;
         continue;
       }
 
       const { timestamp } = await this.network.getBlock({ blockNumber });
+
+      // Create a new entry for the closed short
       closedShortsById[assetId] = {
         hyperdriveAddress: this.contract.address,
         assetId: eventData.id,
@@ -728,47 +776,27 @@ export class ReadHyperdrive implements IReadHyperdrive {
       };
     }
 
-    const openShortEvents = await this.contract.getEvents("OpenShort", {
-      filter: { trader: account },
-      fromBlock,
-      toBlock,
-    });
-
-    const amountPaidByAssetId = mapValues(
-      groupBy(openShortEvents, (event) => event.args.assetId),
-      (events) => sumBigInt(events.map((event) => event.args.baseAmount)),
-    );
-
-    const transferInEvents = (
-      await this.getTransferSingleEvents({
-        filter: { to: account },
-        fromBlock,
-        toBlock,
-      })
-    ).filter(
-      ({ data: eventLog }) =>
-        decodeAssetFromTransferSingleEventData(eventLog as `0x{$string}`)
-          .assetType === "SHORT",
-    );
-
+    // Now process the open shorts
     const openShortsById: Record<string, OpenShort> = {};
-
     for (const {
       data: eventLog,
       args: eventData,
       blockNumber,
     } of transferInEvents) {
       const assetId = eventData.id.toString();
-      const { timestamp } = await this.network.getBlock({ blockNumber });
 
+      // Accumulate bondAmount if this is an existing entry
       if (openShortsById[assetId]) {
         openShortsById[assetId].bondAmount += eventData.value;
         continue;
       }
 
+      // Create a new entry for the open short, netting out any closed amounts
       const netAmountPaid =
         (amountPaidByAssetId[assetId] ?? 0n) -
         (amountReceivedByAssetId[assetId] ?? 0n);
+
+      const { timestamp } = await this.network.getBlock({ blockNumber });
 
       openShortsById[assetId] = {
         hyperdriveAddress: this.contract.address,
@@ -784,6 +812,8 @@ export class ReadHyperdrive implements IReadHyperdrive {
       };
     }
 
+    // Filter out any shorts that have zero bond amount, as these are
+    // effectively closed
     return Object.values(openShortsById).filter((short) => short.bondAmount);
   }
 
