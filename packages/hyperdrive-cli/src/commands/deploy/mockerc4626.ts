@@ -147,7 +147,7 @@ export const { command, aliases, describe, builder, handler } =
           abi: ERC20Mintable.abi,
           address: address as `0x${string}`,
           functionName: "setUserRole",
-          args: [address, 1, true],
+          args: [address as `0x${string}`, 1, true],
           account,
         });
         signale.pending(`Vault role tx submitted: ${userRoleHash}`);
@@ -159,7 +159,7 @@ export const { command, aliases, describe, builder, handler } =
           abi: ERC20Mintable.abi,
           address: address as `0x${string}`,
           functionName: "setUserRole",
-          args: [address, 1, true],
+          args: [address as `0x${string}`, 1, true],
           account,
         });
         signale.pending(`Vault mint capability tx submitted: ${mintHash}`);
@@ -171,7 +171,7 @@ export const { command, aliases, describe, builder, handler } =
           abi: ERC20Mintable.abi,
           address: address as `0x${string}`,
           functionName: "setUserRole",
-          args: [address, 1, true],
+          args: [address as `0x${string}`, 1, true],
           account,
         });
         signale.pending(`Vault burn capability tx submitted: ${burnHash}`);
