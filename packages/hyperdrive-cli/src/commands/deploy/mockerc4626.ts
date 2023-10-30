@@ -112,11 +112,11 @@ export const { command, aliases, describe, builder, handler } =
         chain,
       });
 
-      const decimals = (await publicClient.readContract({
+      const decimals = await publicClient.readContract({
         abi: ERC20Mintable.abi,
         address: token as `0x${string}`,
         functionName: "decimals",
-      })) as number;
+      });
 
       signale.pending("Deploying MockERC4626...");
 
