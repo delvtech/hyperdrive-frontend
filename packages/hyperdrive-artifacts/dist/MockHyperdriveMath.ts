@@ -1,1544 +1,1529 @@
-export const MockHyperdriveMath = {
-  abi: [
+{
+  "abi": [
     {
-      inputs: [],
-      name: "FixedPointMath_InvalidExponent",
-      type: "error",
+      "inputs": [],
+      "name": "FixedPointMath_InvalidExponent",
+      "type": "error"
     },
     {
-      inputs: [],
-      name: "FixedPointMath_InvalidInput",
-      type: "error",
+      "inputs": [],
+      "name": "FixedPointMath_InvalidInput",
+      "type": "error"
     },
     {
-      inputs: [],
-      name: "InvalidTradeSize",
-      type: "error",
+      "inputs": [],
+      "name": "InvalidTradeSize",
+      "type": "error"
     },
     {
-      inputs: [],
-      name: "NegativePresentValue",
-      type: "error",
+      "inputs": [],
+      "name": "NegativePresentValue",
+      "type": "error"
     },
     {
-      inputs: [
+      "inputs": [
         {
-          internalType: "uint256",
-          name: "_effectiveShareReserves",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_effectiveShareReserves",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "_bondReserves",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_bondReserves",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "_initialSharePrice",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_initialSharePrice",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "_positionDuration",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_positionDuration",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "_timeStretch",
-          type: "uint256",
-        },
+          "internalType": "uint256",
+          "name": "_timeStretch",
+          "type": "uint256"
+        }
       ],
-      name: "calculateAPRFromReserves",
-      outputs: [
+      "name": "calculateAPRFromReserves",
+      "outputs": [
         {
-          internalType: "uint256",
-          name: "",
-          type: "uint256",
-        },
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
       ],
-      stateMutability: "pure",
-      type: "function",
+      "stateMutability": "pure",
+      "type": "function"
     },
     {
-      inputs: [
+      "inputs": [
         {
-          internalType: "uint256",
-          name: "_effectiveShareReserves",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_effectiveShareReserves",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "_bondReserves",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_bondReserves",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "_amountIn",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_amountIn",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "_normalizedTimeRemaining",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_normalizedTimeRemaining",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "_timeStretch",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_timeStretch",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "_sharePrice",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_sharePrice",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "_initialSharePrice",
-          type: "uint256",
-        },
+          "internalType": "uint256",
+          "name": "_initialSharePrice",
+          "type": "uint256"
+        }
       ],
-      name: "calculateCloseLong",
-      outputs: [
+      "name": "calculateCloseLong",
+      "outputs": [
         {
-          internalType: "uint256",
-          name: "",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "",
-          type: "uint256",
-        },
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
       ],
-      stateMutability: "pure",
-      type: "function",
+      "stateMutability": "pure",
+      "type": "function"
     },
     {
-      inputs: [
+      "inputs": [
         {
-          internalType: "uint256",
-          name: "_effectiveShareReserves",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_effectiveShareReserves",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "_bondReserves",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_bondReserves",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "_amountOut",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_amountOut",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "_normalizedTimeRemaining",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_normalizedTimeRemaining",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "_timeStretch",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_timeStretch",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "_sharePrice",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_sharePrice",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "_initialSharePrice",
-          type: "uint256",
-        },
+          "internalType": "uint256",
+          "name": "_initialSharePrice",
+          "type": "uint256"
+        }
       ],
-      name: "calculateCloseShort",
-      outputs: [
+      "name": "calculateCloseShort",
+      "outputs": [
         {
-          internalType: "uint256",
-          name: "",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "",
-          type: "uint256",
-        },
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
       ],
-      stateMutability: "pure",
-      type: "function",
+      "stateMutability": "pure",
+      "type": "function"
     },
     {
-      inputs: [
+      "inputs": [
         {
-          internalType: "uint256",
-          name: "_effectiveShareReserves",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_effectiveShareReserves",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "_initialSharePrice",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_initialSharePrice",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "_apr",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_apr",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "_positionDuration",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_positionDuration",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "_timeStretch",
-          type: "uint256",
-        },
+          "internalType": "uint256",
+          "name": "_timeStretch",
+          "type": "uint256"
+        }
       ],
-      name: "calculateInitialBondReserves",
-      outputs: [
+      "name": "calculateInitialBondReserves",
+      "outputs": [
         {
-          internalType: "uint256",
-          name: "",
-          type: "uint256",
-        },
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
       ],
-      stateMutability: "pure",
-      type: "function",
+      "stateMutability": "pure",
+      "type": "function"
     },
     {
-      inputs: [
+      "inputs": [
         {
-          components: [
+          "components": [
             {
-              internalType: "uint256",
-              name: "shareReserves",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "shareReserves",
+              "type": "uint256"
             },
             {
-              internalType: "int256",
-              name: "shareAdjustment",
-              type: "int256",
+              "internalType": "int256",
+              "name": "shareAdjustment",
+              "type": "int256"
             },
             {
-              internalType: "uint256",
-              name: "bondReserves",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "bondReserves",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "longsOutstanding",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "longsOutstanding",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "longExposure",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "longExposure",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "timeStretch",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "timeStretch",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "sharePrice",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "sharePrice",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "initialSharePrice",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "initialSharePrice",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "minimumShareReserves",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "minimumShareReserves",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "curveFee",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "curveFee",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "governanceFee",
-              type: "uint256",
-            },
+              "internalType": "uint256",
+              "name": "governanceFee",
+              "type": "uint256"
+            }
           ],
-          internalType: "struct HyperdriveMath.MaxTradeParams",
-          name: "_params",
-          type: "tuple",
+          "internalType": "struct HyperdriveMath.MaxTradeParams",
+          "name": "_params",
+          "type": "tuple"
         },
         {
-          internalType: "int256",
-          name: "_checkpointLongExposure",
-          type: "int256",
+          "internalType": "int256",
+          "name": "_checkpointLongExposure",
+          "type": "int256"
         },
         {
-          internalType: "uint256",
-          name: "_maxIterations",
-          type: "uint256",
-        },
+          "internalType": "uint256",
+          "name": "_maxIterations",
+          "type": "uint256"
+        }
       ],
-      name: "calculateMaxLong",
-      outputs: [
+      "name": "calculateMaxLong",
+      "outputs": [
         {
-          internalType: "uint256",
-          name: "",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "",
-          type: "uint256",
-        },
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
       ],
-      stateMutability: "pure",
-      type: "function",
+      "stateMutability": "pure",
+      "type": "function"
     },
     {
-      inputs: [
+      "inputs": [
         {
-          components: [
+          "components": [
             {
-              internalType: "uint256",
-              name: "shareReserves",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "shareReserves",
+              "type": "uint256"
             },
             {
-              internalType: "int256",
-              name: "shareAdjustment",
-              type: "int256",
+              "internalType": "int256",
+              "name": "shareAdjustment",
+              "type": "int256"
             },
             {
-              internalType: "uint256",
-              name: "bondReserves",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "bondReserves",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "longsOutstanding",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "longsOutstanding",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "longExposure",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "longExposure",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "timeStretch",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "timeStretch",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "sharePrice",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "sharePrice",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "initialSharePrice",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "initialSharePrice",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "minimumShareReserves",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "minimumShareReserves",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "curveFee",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "curveFee",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "governanceFee",
-              type: "uint256",
-            },
+              "internalType": "uint256",
+              "name": "governanceFee",
+              "type": "uint256"
+            }
           ],
-          internalType: "struct HyperdriveMath.MaxTradeParams",
-          name: "_params",
-          type: "tuple",
+          "internalType": "struct HyperdriveMath.MaxTradeParams",
+          "name": "_params",
+          "type": "tuple"
         },
         {
-          internalType: "int256",
-          name: "_checkpointExposure",
-          type: "int256",
+          "internalType": "int256",
+          "name": "_checkpointExposure",
+          "type": "int256"
         },
         {
-          internalType: "uint256",
-          name: "_maxIterations",
-          type: "uint256",
-        },
+          "internalType": "uint256",
+          "name": "_maxIterations",
+          "type": "uint256"
+        }
       ],
-      name: "calculateMaxShort",
-      outputs: [
+      "name": "calculateMaxShort",
+      "outputs": [
         {
-          internalType: "uint256",
-          name: "",
-          type: "uint256",
-        },
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
       ],
-      stateMutability: "pure",
-      type: "function",
+      "stateMutability": "pure",
+      "type": "function"
     },
     {
-      inputs: [
+      "inputs": [
         {
-          internalType: "uint256",
-          name: "_shareProceeds",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_shareProceeds",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "_shareReservesDelta",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_shareReservesDelta",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "_shareCurveDelta",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_shareCurveDelta",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "_totalGovernanceFee",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_totalGovernanceFee",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "_openSharePrice",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_openSharePrice",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "_closeSharePrice",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_closeSharePrice",
+          "type": "uint256"
         },
         {
-          internalType: "bool",
-          name: "_isLong",
-          type: "bool",
-        },
+          "internalType": "bool",
+          "name": "_isLong",
+          "type": "bool"
+        }
       ],
-      name: "calculateNegativeInterestOnClose",
-      outputs: [
+      "name": "calculateNegativeInterestOnClose",
+      "outputs": [
         {
-          internalType: "uint256",
-          name: "",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
         },
         {
-          internalType: "int256",
-          name: "",
-          type: "int256",
+          "internalType": "int256",
+          "name": "",
+          "type": "int256"
         },
         {
-          internalType: "uint256",
-          name: "",
-          type: "uint256",
-        },
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
       ],
-      stateMutability: "pure",
-      type: "function",
+      "stateMutability": "pure",
+      "type": "function"
     },
     {
-      inputs: [
+      "inputs": [
         {
-          internalType: "uint256",
-          name: "_effectiveShareReserves",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_effectiveShareReserves",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "_bondReserves",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_bondReserves",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "_amountIn",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_amountIn",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "_timeStretch",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_timeStretch",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "_sharePrice",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_sharePrice",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "_initialSharePrice",
-          type: "uint256",
-        },
+          "internalType": "uint256",
+          "name": "_initialSharePrice",
+          "type": "uint256"
+        }
       ],
-      name: "calculateOpenLong",
-      outputs: [
+      "name": "calculateOpenLong",
+      "outputs": [
         {
-          internalType: "uint256",
-          name: "",
-          type: "uint256",
-        },
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
       ],
-      stateMutability: "pure",
-      type: "function",
+      "stateMutability": "pure",
+      "type": "function"
     },
     {
-      inputs: [
+      "inputs": [
         {
-          internalType: "uint256",
-          name: "_effectiveShareReserves",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_effectiveShareReserves",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "_bondReserves",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_bondReserves",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "_amountIn",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_amountIn",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "_timeStretch",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_timeStretch",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "_sharePrice",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_sharePrice",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "_initialSharePrice",
-          type: "uint256",
-        },
+          "internalType": "uint256",
+          "name": "_initialSharePrice",
+          "type": "uint256"
+        }
       ],
-      name: "calculateOpenShort",
-      outputs: [
+      "name": "calculateOpenShort",
+      "outputs": [
         {
-          internalType: "uint256",
-          name: "",
-          type: "uint256",
-        },
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
       ],
-      stateMutability: "pure",
-      type: "function",
+      "stateMutability": "pure",
+      "type": "function"
     },
     {
-      inputs: [
+      "inputs": [
         {
-          components: [
+          "components": [
             {
-              internalType: "uint256",
-              name: "shareReserves",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "shareReserves",
+              "type": "uint256"
             },
             {
-              internalType: "int256",
-              name: "shareAdjustment",
-              type: "int256",
+              "internalType": "int256",
+              "name": "shareAdjustment",
+              "type": "int256"
             },
             {
-              internalType: "uint256",
-              name: "bondReserves",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "bondReserves",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "sharePrice",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "sharePrice",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "initialSharePrice",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "initialSharePrice",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "minimumShareReserves",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "minimumShareReserves",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "timeStretch",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "timeStretch",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "longsOutstanding",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "longsOutstanding",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "longAverageTimeRemaining",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "longAverageTimeRemaining",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "shortsOutstanding",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "shortsOutstanding",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "shortAverageTimeRemaining",
-              type: "uint256",
-            },
+              "internalType": "uint256",
+              "name": "shortAverageTimeRemaining",
+              "type": "uint256"
+            }
           ],
-          internalType: "struct HyperdriveMath.PresentValueParams",
-          name: "_params",
-          type: "tuple",
-        },
+          "internalType": "struct HyperdriveMath.PresentValueParams",
+          "name": "_params",
+          "type": "tuple"
+        }
       ],
-      name: "calculatePresentValue",
-      outputs: [
+      "name": "calculatePresentValue",
+      "outputs": [
         {
-          internalType: "uint256",
-          name: "",
-          type: "uint256",
-        },
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
       ],
-      stateMutability: "pure",
-      type: "function",
+      "stateMutability": "pure",
+      "type": "function"
     },
     {
-      inputs: [
+      "inputs": [
         {
-          internalType: "uint256",
-          name: "_bondAmount",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_bondAmount",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "_openSharePrice",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_openSharePrice",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "_closeSharePrice",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_closeSharePrice",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "_sharePrice",
-          type: "uint256",
-        },
+          "internalType": "uint256",
+          "name": "_sharePrice",
+          "type": "uint256"
+        }
       ],
-      name: "calculateShortInterest",
-      outputs: [
+      "name": "calculateShortInterest",
+      "outputs": [
         {
-          internalType: "uint256",
-          name: "",
-          type: "uint256",
-        },
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
       ],
-      stateMutability: "pure",
-      type: "function",
+      "stateMutability": "pure",
+      "type": "function"
     },
     {
-      inputs: [
+      "inputs": [
         {
-          internalType: "uint256",
-          name: "_bondAmount",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_bondAmount",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "_shareAmount",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_shareAmount",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "_openSharePrice",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_openSharePrice",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "_closeSharePrice",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_closeSharePrice",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "_sharePrice",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_sharePrice",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "_flatFee",
-          type: "uint256",
-        },
+          "internalType": "uint256",
+          "name": "_flatFee",
+          "type": "uint256"
+        }
       ],
-      name: "calculateShortProceeds",
-      outputs: [
+      "name": "calculateShortProceeds",
+      "outputs": [
         {
-          internalType: "uint256",
-          name: "",
-          type: "uint256",
-        },
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
       ],
-      stateMutability: "pure",
-      type: "function",
+      "stateMutability": "pure",
+      "type": "function"
     },
     {
-      inputs: [
+      "inputs": [
         {
-          internalType: "uint256",
-          name: "_shareReserves",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_shareReserves",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "_bondReserves",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_bondReserves",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "_initialSharePrice",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_initialSharePrice",
+          "type": "uint256"
         },
         {
-          internalType: "uint256",
-          name: "_timeStretch",
-          type: "uint256",
-        },
+          "internalType": "uint256",
+          "name": "_timeStretch",
+          "type": "uint256"
+        }
       ],
-      name: "calculateSpotPrice",
-      outputs: [
+      "name": "calculateSpotPrice",
+      "outputs": [
         {
-          internalType: "uint256",
-          name: "",
-          type: "uint256",
-        },
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
       ],
-      stateMutability: "pure",
-      type: "function",
-    },
+      "stateMutability": "pure",
+      "type": "function"
+    }
   ],
-  bytecode: {
-    object:
-      "0x608060405234801561001057600080fd5b506122d0806100206000396000f3fe608060405234801561001057600080fd5b50600436106100cf5760003560e01c806382a4d3061161008c578063a40a6be811610066578063a40a6be8146101d5578063de31b2ab146101fd578063f87845f214610210578063fdc30d611461022357600080fd5b806382a4d3061461018157806386ad02af1461019457806394169d49146101a757600080fd5b80632471caed146100d457806337043a53146100fa5780633fa2c8fc1461010d5780635e6d9d36146101205780636ceebe1d146101335780637ef99f8714610146575b600080fd5b6100e76100e2366004611f09565b610236565b6040519081526020015b60405180910390f35b6100e7610108366004612004565b610251565b6100e761011b366004612021565b610262565b6100e761012e36600461205c565b61027d565b6100e761014136600461205c565b61029a565b61015961015436600461209f565b6102ab565b604080519586526020860194909452928401919091526060830152608082015260a0016100f1565b6100e761018f366004612021565b61032f565b6100e76101a2366004612104565b61033f565b6101ba6101b536600461213b565b610356565b604080519384526020840192909252908201526060016100f1565b6101e86101e3366004612104565b610386565b604080519283526020830191909152016100f1565b6100e761020b36600461205c565b6103a7565b6101ba61021e36600461213b565b6103b8565b6100e7610231366004611f09565b6103d0565b600080610245868686866103df565b9150505b949350505050565b600061025c826103ff565b92915050565b6000806102728787878787610671565b979650505050505050565b60008061028e8888888888886106ac565b98975050505050505050565b60008061028e8888888888886106cd565b60008060008060006102e56040518060a0016040528060008152602001600081526020016000815260200160008152602001600081525090565b6102f48d8d8d8d8d8d8d6106ee565b608086018190526060860182905260408601839052602086018490529484905292985090965094509250905097509750975097509792505050565b6000806102728787878787610769565b600061034c8484846107c0565b90505b9392505050565b60008060008060008061036e8d8d8d8d8d8d8d610977565b919750955093505050505b9750975097945050505050565b6000806000806103978787876109e6565b909450925050505b935093915050565b60008061028e888888888888610c4d565b60008060008060008061036e8d8d8d8d8d8d8d610c9c565b60008061024586868686610ce8565b60006103f6826103f0858888610d0d565b90610d2b565b95945050505050565b60008061041f836101400151846101200151610d8290919063ffffffff16565b61010084015160e085015161043391610d82565b61043d919061219d565b9050600061045384600001518560200151610d97565b905060008213156104f55760006104958286604001518760a001518860c00151670de0b6b3a764000061048691906121c4565b89606001518a60800151610db4565b91506104a390508184610e37565b905080156104ef576104dc828660400151838860c00151670de0b6b3a76400006104cd91906121c4565b89606001518a60800151610e4c565b855186906104eb9083906121c4565b9052505b506105b3565b60008212156105b357610507826121d7565b9150600061053b8286604001518760c00151670de0b6b3a764000061052c91906121c4565b88606001518960800151610e80565b915061054990508184610e37565b9050801561059557610582828660400151838860c00151670de0b6b3a764000061057391906121c4565b89606001518a60800151610f0b565b855186906105919083906121f3565b9052505b61059f81846121c4565b855186906105ae9083906121f3565b905250505b60006105e2856101000151670de0b6b3a76400006105d191906121c4565b606087015160e08801519190610d0d565b610610866101400151670de0b6b3a76400006105fe91906121c4565b60608801516101208901519190610d0d565b61061a919061219d565b9050600081866000015161062e9190612206565b90508560a001518112156106555760405163aeeb825d60e01b815260040160405180910390fd5b80865260a086015161066790826121c4565b9695505050505050565b600080610680878787866103df565b905061027261069482866301e13380610f86565b6106a683670de0b6b3a76400006121c4565b90610fac565b60006102728787876106c688670de0b6b3a76400006121c4565b8787610fc1565b60006102728787876106e788670de0b6b3a76400006121c4565b8787610e4c565b6000806000806000808888101561074b578615610713576107108d898b610d0d565b9c505b61071e8c898b610d0d565b9b5061072a8b8d61219d565b90506107378b898b610d0d565b9a506107448a898b610d0d565b9950610758565b6107558b8d61219d565b90505b9b9c9a9b999a975050505050505050565b60008061077a846301e13380610fac565b90506102726107b0610794670de0b6b3a764000086611034565b61079e8885610d82565b6103f090670de0b6b3a76400006121f3565b6107ba888a610d82565b90610d82565b6040805160608101825260008082526020820181905291810182905260006107f086600001518760200151610d97565b9050600061080c8288604001518960e001518a60a001516103df565b9050600061081a8884611049565b9050610829888285858b61114a565b158015604087015290855261084357935061034f92505050565b600061085089848a611269565b905061085f898286868c61114a565b1515604087018190529086526108d65760405162461bcd60e51b815260206004820152603160248201527f496e697469616c20677565737320696e206063616c63756c6174654d617853686044820152701bdc9d18081a5cc81a5b9cdbdb1d995b9d607a1b60648201526084015b60405180910390fd5b60005b8781101561096a576108ed8a83868861133f565b1580156040890152602088019190915261096a57602086015186516000916109159190610fac565b61091f90846121f3565b90508381111561092f575061096a565b61093c8b8288888e61114a565b15801560408a015290885261095357809250610959565b5061096a565b506109638161222e565b90506108d9565b5098975050505050505050565b6000808061099861099088670de0b6b3a76400006121c4565b899087610d0d565b90508615610379576109aa8888610d82565b91506109cb8a8a846109c48a670de0b6b3a76400006121c4565b8989610e4c565b92506109d783826121f3565b90509750975097945050505050565b60008060006109fd86600001518760200151610d97565b90506000610a198288604001518960e001518a60a001516103df565b90506000806000610a50858b604001518c60a00151670de0b6b3a7640000610a4191906121c4565b8d60c001518e60e00151610e80565b60c08c0151909350909150610a66908290610d82565b9250610a7883858c61012001516113cb565b610a8290836121c4565b91506000610a938b8b8686896113f8565b9150508015610aab5750919550935061039f92505050565b5050610ab989838a86611521565b9550610ac7898786866115ab565b9450600080610ad98b8b8a8a896113f8565b9150915080610b445760405162461bcd60e51b815260206004820152603160248201527f496e697469616c20677565737320696e206063616c63756c6174654d61784c6f6044820152703733b01034b99034b739b7b63b32b73a1760791b60648201526084016108cd565b60005b89811015610c3e57848910610bba5760405162461bcd60e51b815260206004820152603360248201527f52656163686564206162736f6c757465206d617820626f6e6420616d6f756e746044820152721034b7103033b2ba2fb6b0bc2fb637b733b01760691b60648201526084016108cd565b6000610bc88d8b8a8a611610565b9350905082610bd75750610c3e565b6000610be38583610fac565b610bed908c6121f3565b90506000610bfd8f838c8c6115ab565b9050610c0c8f8f84848d6113f8565b90965094508415610c2257819b50809a50610c2a565b505050610c3e565b50505080610c379061222e565b9050610b47565b50505050505050935093915050565b600080610c6685610c5e88876116a8565b8a9190610d0d565b9050610c73888486610d0d565b610c7d90826121f3565b905086811115610c915761028e87826121c4565b509695505050505050565b60008080610cb561099088670de0b6b3a76400006121c4565b9050610cc18888610d82565b91508115610379576109cb8a8a84610ce18a670de0b6b3a76400006121c4565b8989610f0b565b600083831115610249576103f6610cff85856121c4565b610d0986856116a8565b8791905b6000826000190484118302158202610d2457600080fd5b5091020490565b600081600003610d445750670de0b6b3a764000061025c565b82600003610d545750600061025c565b816000610d60856116bd565b9050818102610d77670de0b6b3a764000082612247565b9050610667816118d9565b600061034f8383670de0b6b3a7640000610d0d565b600080610da4838561219d565b9050600081121561034f57600080fd5b60008080610dc28585610fac565b90506000610dd382868c8a8d611a64565b90506000610e0e610dec670de0b6b3a76400008a610fac565b610e04610dfd8b6103f08b8f610d82565b8690610d82565b6103f090856121c4565b9050610e1a898c6121c4565b610e248b836121c4565b945094505050505b965096945050505050565b6000818311610e46578261034f565b50919050565b600080610e5d888888888888611a92565b909250905080610c9157604051637ac17d2560e01b815260040160405180910390fd5b60008080610e8e8585610fac565b90506000610e9f82868b8a8c611a64565b90506000610ed4610eb8670de0b6b3a76400008a610fac565b6103f0610ecd670de0b6b3a7640000876121f3565b8590610fac565b90506000610ee28288610fac565b9050610eee8b826121c4565b610ef8838c6121c4565b95509550505050505b9550959350505050565b600080610f188484610fac565b90506000610f2982858b898c611a64565b9050610f39866103f0898b6121c4565b97506000610f60610f52670de0b6b3a764000089611034565b6103f0856106a68d876121c4565b9050610f6c8186610fac565b9050610f788a826121c4565b9a9950505050505050505050565b6000826000190484118302158202610f9d57600080fd5b50910281810615159190040190565b600061034f83670de0b6b3a764000084610d0d565b600080610fce8484610fac565b90506000610fdf82858b898c611a64565b9050610ff9866103f0610ff28a8d6121f3565b8790610d82565b9850611005828a610d82565b9850600061102861101e670de0b6b3a764000089611034565b6103f08c856121c4565b9050610f78818a6121c4565b600061034f83670de0b6b3a764000084610f86565b60008061107084610100015185602001516110649190612206565b61010086015190611b33565b905060006110ba6110928660e001518760c00151610fac90919063ffffffff16565b8660e00151868860a00151670de0b6b3a76400006110b091906121c4565b8960400151611a64565b905060006111386110eb8760a00151670de0b6b3a76400006110dc91906121c4565b670de0b6b3a764000090611034565b610e046111258960a00151670de0b6b3a764000061110991906121c4565b6103f061111a898d60200151610d97565b60e08d015190610d82565b60e08a015160c08b01516107ba91610fac565b905085604001518161066791906121c4565b600080600080611181878a604001518a8c60a00151670de0b6b3a764000061117291906121c4565b8d60c001518e60e00151611a92565b915091508061119857600080935093505050610f01565b60006111d28a60c001516111b88b8a8e61012001518f6101400151611b49565b6111c88c8b8f6101200151611b60565b6106a691906121c4565b6111dc90846121c4565b8a516111e891906121c4565b905060006112178b60c0015161120860008a611b3390919063ffffffff16565b8d608001516106a691906121c4565b90508a61010001518161122a91906121f3565b8210611259576101008b015161124082846121c4565b61124a91906121c4565b60019550955050505050610f01565b6000809550955050505050610f01565b60008083905060006112d48661010001516112958860c001518960800151610fac90919063ffffffff16565b60c08901516112a9906106a6896000611b33565b89516112b591906121f3565b6112bf91906121c4565b6112c991906121c4565b60c088015190610d82565b90506106676113036112ee87670de0b6b3a76400006121c4565b6101208901516101408a01516107ba91610d82565b61132461131888670de0b6b3a76400006121c4565b6101208a015190610d82565b61132e90856121c4565b61133891906121f3565b8290610fac565b600080600061134f878786611b7b565b905060006113988860c001516106a68a6101400151670de0b6b3a764000061137791906121c4565b6107ba61138c8b670de0b6b3a76400006121c4565b6101208e015190610d82565b90508082106113b8576113ab81836121c4565b60019350935050506113c2565b6000809350935050505b94509492505050565b600061034c846107ba670de0b6b3a76400006113e78188610fac565b6113f191906121c4565b8590610d82565b600080600061141386858a61012001518b6101400151611c7a565b9050600061142e8960c0015183610fac90919063ffffffff16565b60c08a015161143e908990610fac565b8a5161144a91906121f3565b61145491906121c4565b905060008288611465896002612283565b8c6080015161147491906121f3565b61147e91906121c4565b61148891906121f3565b905060006114968a82611c94565b61149f906121d7565b90508a61010001516114be8c60c0015184610fac90919063ffffffff16565b6114c891906121f3565b60c08c01516114d8908390610fac565b6114e290856121f3565b10611259576101008b015160c08c01516114fd908490610fac565b60c08d015161150d908490610fac565b61151790866121f3565b61124091906121c4565b60008061153086858586611ca3565b90506000611568670b1a2bc2ec5000006107ba61155e8a60a00151670de0b6b3a76400006110dc91906121c4565b6103f0868b610fac565b9050600061157e670de0b6b3a764000083610d82565b611593610ff284670de0b6b3a76400006121c4565b61159d91906121f3565b905061028e88878784611ca3565b6000806115f48487604001516115ce8960c0015189610fac90919063ffffffff16565b60a08a01516115e590670de0b6b3a76400006121c4565b8a60c001518b60e00151610fc1565b905061160685848861012001516113cb565b61024590826121c4565b60008061161f86868686611da6565b90925090508061163257600091506113c2565b61165c61164784670de0b6b3a76400006121c4565b6101208801516101408901516107ba91610d82565b61166690836121f3565b915061167a670de0b6b3a7640000836121c4565b915061169d671bc16d674ec800008760c0015184610d0d9092919063ffffffff16565b915094509492505050565b600061034f8383670de0b6b3a7640000610f86565b60008082136116df57604051636838feed60e11b815260040160405180910390fd5b5060606fffffffffffffffffffffffffffffffff821160071b82811c67ffffffffffffffff1060061b1782811c63ffffffff1060051b1782811c61ffff1060041b1782811c60ff10600390811b90911783811c600f1060021b1783811c909110600190811b90911783811c90911017609f81810383019390931b90921c6c465772b2bbbb5f824b15207a3081018102821d6d0388eaa27412d5aca026815d636e018102821d6d0df99ac502031bf953eff472fdcc018102821d6d13cdffb29d51d99322bdff5f2211018102821d6d0a0f742023def783a307a986912e018102821d6d01920d8043ca89b5239253284e42018102821d6c0b7a86d7375468fac667a0a527016c29508e458543d8aa4df2abee7882018202831d6d0139601a2efabe717e604cbb4894018202831d6d02247f7a7b6594320649aa03aba1018202831d6c8c3f38e95a6b1ff2ab1c3b343619018202831d6d02384773bdf1ac5676facced60901901820290921d6cb9a025d814b29c212b8b1a07cd190102780a09507084cc699bb0e71ea869ffffffffffffffffffffffff190105711340daa0d5f769dba1915cef59f0815a550602605f19919091017d0267a36c0c95b3975ab3ee5b203a7614a3f75373f047d803ae7b6687f2b302017d57115e47018c7177eebf7cd370a3356a1b7863008a5ae8028c72b88642840160ae1d90565b6000680248ce36a70cb26b3e1982136118f457506000919050565b680755bf798b4a1bf1e5821261191d5760405163df92cc9d60e01b815260040160405180910390fd5b6503782dace9d9604e83901b059150600060606bb17217f7d1cf79abc9e3b39884821b056001605f1b01901d6bb17217f7d1cf79abc9e3b39881029093036c240c330e9fb2d9cbaf0fd5aafb1981018102606090811d6d0277594991cfc85f6e2461837cd9018202811d6d1a521255e34f6a5061b25ef1c9c319018202811d6db1bbb201f443cf962f1a1d3db4a5018202811d6e02c72388d9f74f51a9331fed693f1419018202811d6e05180bb14799ab47a8a8cb2a527d57016d02d16720577bd19bf614176fe9ea6c10fe68e7fd37d0007b713f765084018402831d9081019084016d01d3967ed30fc4f89c02bab5708119010290911d6e0587f503bb6ea29d25fcb740196450019091026d360d7aeea093263ecc6e0ecb291760621b010574029d9dc38563c32e5c2f6dc192ee70ef65f9978af30260c3939093039290921c92915050565b6000611a708284610d2b565b611a88611a81856103f08989610d82565b8890610d82565b61066791906121f3565b60008080611aa08585610fac565b90506000611ab182868c8a8d611a64565b9050611ac1876103f08a8c6121f3565b985088811015611ad957600080935093505050610e2c565b6000611afe611af0670de0b6b3a76400008a611034565b6103f0856106a68e876121c4565b9050611b0a8187610fac565b9050808b1115611b2157611b1e818c6121c4565b94505b60019350505050965096945050505050565b6000818313611b42578161034f565b5090919050565b60006103f6611b59868686611b60565b8390610d82565b600061034c846107ba6113f186670de0b6b3a76400006121c4565b600080611bba611b9c8660e001518760c00151610fac90919063ffffffff16565b8660e00151858860a00151670de0b6b3a76400006110b091906121c4565b90506000611bf6611be7611bdc8860a00151888a604001516103f091906121f3565b60c0890151906116a8565b670de0b6b3a764000090610fac565b90506000611c6e611c238860a00151670de0b6b3a7640000611c1891906121c4565b60a08a015190611034565b6103f0611c518a60a00151670de0b6b3a7640000611c4191906121c4565b8a8c604001516103f091906121f3565b611c5b90876121c4565b60c08b015160e08c01516107ba91610fac565b90506102728282610d82565b60006103f6611c8a8686866113cb565b6107ba8487610d82565b6000818313610e46578261034f565b600080611cb08582611c94565b611cb9906121d7565b90506000611d268760c00151671bc16d674ec80000896101000151611cef8b60c001518c60800151610fac90919063ffffffff16565b60c08c0151611cff908890610fac565b8c51611d0b91906121f3565b611d1591906121c4565b611d1f91906121c4565b9190610d0d565b9050610272611d4b670de0b6b3a7640000611d418189610fac565b61131891906121c4565b670de0b6b3a7640000611d76611d6189836121c4565b6101208c01516101408d01516107ba91610d82565b611d88670de0b6b3a764000089610fac565b611d9291906121f3565b611d9c91906121c4565b61133891906121c4565b6000806000611dc28760c0015187610fac90919063ffffffff16565b90506000611dde611dd383886121f3565b60e08a015190610d82565b90506000611dfd8960e001518a60c00151610fac90919063ffffffff16565b90506000611e2d828b60e001518a8d60a00151670de0b6b3a7640000611e2391906121c4565b8e60400151611a64565b9050611e49611be78b60a0015185610d2b90919063ffffffff16565b95506000611e6e611e678c60a0015186610d2b90919063ffffffff16565b8490610d82565b905080821015611e89576000809650965050505050506113c2565b611ebf611a81611eb58d60a00151670de0b6b3a7640000611eaa91906121c4565b60a08f015190611034565b6103f084866121c4565b9650611eed670de0b6b3a7640000611ed7818b610fac565b611ee191906121c4565b6101208d015190610d82565b611ef790886121c4565b9b60019b509950505050505050505050565b60008060008060808587031215611f1f57600080fd5b5050823594602084013594506040840135936060013592509050565b604051610160810167ffffffffffffffff81118282101715611f6d57634e487b7160e01b600052604160045260246000fd5b60405290565b60006101608284031215611f8657600080fd5b611f8e611f3b565b9050813581526020820135602082015260408201356040820152606082013560608201526080820135608082015260a082013560a082015260c082013560c082015260e082013560e082015261010080830135818301525061012080830135818301525061014080830135818301525092915050565b6000610160828403121561201757600080fd5b61034f8383611f73565b600080600080600060a0868803121561203957600080fd5b505083359560208501359550604085013594606081013594506080013592509050565b60008060008060008060c0878903121561207557600080fd5b505084359660208601359650604086013595606081013595506080810135945060a0013592509050565b600080600080600080600060e0888a0312156120ba57600080fd5b873596506020880135955060408801359450606088013593506080880135925060a0880135915060c088013580151581146120f457600080fd5b8091505092959891949750929550565b60008060006101a0848603121561211a57600080fd5b6121248585611f73565b956101608501359550610180909401359392505050565b600080600080600080600060e0888a03121561215657600080fd5b505085359760208701359750604087013596606081013596506080810135955060a0810135945060c0013592509050565b634e487b7160e01b600052601160045260246000fd5b81810360008312801583831316838312821617156121bd576121bd612187565b5092915050565b8181038181111561025c5761025c612187565b6000600160ff1b82016121ec576121ec612187565b5060000390565b8082018082111561025c5761025c612187565b808201828112600083128015821682158216171561222657612226612187565b505092915050565b60006001820161224057612240612187565b5060010190565b60008261226457634e487b7160e01b600052601260045260246000fd5b600160ff1b82146000198414161561227e5761227e612187565b500590565b808202811582820484141761025c5761025c61218756fea2646970667358221220fed595ea71683d7e79ded50830ad0aa085fcc08ccdc3145f20b424889bfa064064736f6c63430008130033",
-    sourceMap: "135:7248:46:-:0;;;;;;;;;;;;;;;;;;;",
-    linkReferences: {},
+  "bytecode": {
+    "object": "0x608060405234801561001057600080fd5b506122d0806100206000396000f3fe608060405234801561001057600080fd5b50600436106100cf5760003560e01c806382a4d3061161008c578063a40a6be811610066578063a40a6be8146101d5578063de31b2ab146101fd578063f87845f214610210578063fdc30d611461022357600080fd5b806382a4d3061461018157806386ad02af1461019457806394169d49146101a757600080fd5b80632471caed146100d457806337043a53146100fa5780633fa2c8fc1461010d5780635e6d9d36146101205780636ceebe1d146101335780637ef99f8714610146575b600080fd5b6100e76100e2366004611f09565b610236565b6040519081526020015b60405180910390f35b6100e7610108366004612004565b610251565b6100e761011b366004612021565b610262565b6100e761012e36600461205c565b61027d565b6100e761014136600461205c565b61029a565b61015961015436600461209f565b6102ab565b604080519586526020860194909452928401919091526060830152608082015260a0016100f1565b6100e761018f366004612021565b61032f565b6100e76101a2366004612104565b61033f565b6101ba6101b536600461213b565b610356565b604080519384526020840192909252908201526060016100f1565b6101e86101e3366004612104565b610386565b604080519283526020830191909152016100f1565b6100e761020b36600461205c565b6103a7565b6101ba61021e36600461213b565b6103b8565b6100e7610231366004611f09565b6103d0565b600080610245868686866103df565b9150505b949350505050565b600061025c826103ff565b92915050565b6000806102728787878787610671565b979650505050505050565b60008061028e8888888888886106ac565b98975050505050505050565b60008061028e8888888888886106cd565b60008060008060006102e56040518060a0016040528060008152602001600081526020016000815260200160008152602001600081525090565b6102f48d8d8d8d8d8d8d6106ee565b608086018190526060860182905260408601839052602086018490529484905292985090965094509250905097509750975097509792505050565b6000806102728787878787610769565b600061034c8484846107c0565b90505b9392505050565b60008060008060008061036e8d8d8d8d8d8d8d610977565b919750955093505050505b9750975097945050505050565b6000806000806103978787876109e6565b909450925050505b935093915050565b60008061028e888888888888610c4d565b60008060008060008061036e8d8d8d8d8d8d8d610c9c565b60008061024586868686610ce8565b60006103f6826103f0858888610d0d565b90610d2b565b95945050505050565b60008061041f836101400151846101200151610d8290919063ffffffff16565b61010084015160e085015161043391610d82565b61043d919061219d565b9050600061045384600001518560200151610d97565b905060008213156104f55760006104958286604001518760a001518860c00151670de0b6b3a764000061048691906121c4565b89606001518a60800151610db4565b91506104a390508184610e37565b905080156104ef576104dc828660400151838860c00151670de0b6b3a76400006104cd91906121c4565b89606001518a60800151610e4c565b855186906104eb9083906121c4565b9052505b506105b3565b60008212156105b357610507826121d7565b9150600061053b8286604001518760c00151670de0b6b3a764000061052c91906121c4565b88606001518960800151610e80565b915061054990508184610e37565b9050801561059557610582828660400151838860c00151670de0b6b3a764000061057391906121c4565b89606001518a60800151610f0b565b855186906105919083906121f3565b9052505b61059f81846121c4565b855186906105ae9083906121f3565b905250505b60006105e2856101000151670de0b6b3a76400006105d191906121c4565b606087015160e08801519190610d0d565b610610866101400151670de0b6b3a76400006105fe91906121c4565b60608801516101208901519190610d0d565b61061a919061219d565b9050600081866000015161062e9190612206565b90508560a001518112156106555760405163aeeb825d60e01b815260040160405180910390fd5b80865260a086015161066790826121c4565b9695505050505050565b600080610680878787866103df565b905061027261069482866301e13380610f86565b6106a683670de0b6b3a76400006121c4565b90610fac565b60006102728787876106c688670de0b6b3a76400006121c4565b8787610fc1565b60006102728787876106e788670de0b6b3a76400006121c4565b8787610e4c565b6000806000806000808888101561074b578615610713576107108d898b610d0d565b9c505b61071e8c898b610d0d565b9b5061072a8b8d61219d565b90506107378b898b610d0d565b9a506107448a898b610d0d565b9950610758565b6107558b8d61219d565b90505b9b9c9a9b999a975050505050505050565b60008061077a846301e13380610fac565b90506102726107b0610794670de0b6b3a764000086611034565b61079e8885610d82565b6103f090670de0b6b3a76400006121f3565b6107ba888a610d82565b90610d82565b6040805160608101825260008082526020820181905291810182905260006107f086600001518760200151610d97565b9050600061080c8288604001518960e001518a60a001516103df565b9050600061081a8884611049565b9050610829888285858b61114a565b158015604087015290855261084357935061034f92505050565b600061085089848a611269565b905061085f898286868c61114a565b1515604087018190529086526108d65760405162461bcd60e51b815260206004820152603160248201527f496e697469616c20677565737320696e206063616c63756c6174654d617853686044820152701bdc9d18081a5cc81a5b9cdbdb1d995b9d607a1b60648201526084015b60405180910390fd5b60005b8781101561096a576108ed8a83868861133f565b1580156040890152602088019190915261096a57602086015186516000916109159190610fac565b61091f90846121f3565b90508381111561092f575061096a565b61093c8b8288888e61114a565b15801560408a015290885261095357809250610959565b5061096a565b506109638161222e565b90506108d9565b5098975050505050505050565b6000808061099861099088670de0b6b3a76400006121c4565b899087610d0d565b90508615610379576109aa8888610d82565b91506109cb8a8a846109c48a670de0b6b3a76400006121c4565b8989610e4c565b92506109d783826121f3565b90509750975097945050505050565b60008060006109fd86600001518760200151610d97565b90506000610a198288604001518960e001518a60a001516103df565b90506000806000610a50858b604001518c60a00151670de0b6b3a7640000610a4191906121c4565b8d60c001518e60e00151610e80565b60c08c0151909350909150610a66908290610d82565b9250610a7883858c61012001516113cb565b610a8290836121c4565b91506000610a938b8b8686896113f8565b9150508015610aab5750919550935061039f92505050565b5050610ab989838a86611521565b9550610ac7898786866115ab565b9450600080610ad98b8b8a8a896113f8565b9150915080610b445760405162461bcd60e51b815260206004820152603160248201527f496e697469616c20677565737320696e206063616c63756c6174654d61784c6f6044820152703733b01034b99034b739b7b63b32b73a1760791b60648201526084016108cd565b60005b89811015610c3e57848910610bba5760405162461bcd60e51b815260206004820152603360248201527f52656163686564206162736f6c757465206d617820626f6e6420616d6f756e746044820152721034b7103033b2ba2fb6b0bc2fb637b733b01760691b60648201526084016108cd565b6000610bc88d8b8a8a611610565b9350905082610bd75750610c3e565b6000610be38583610fac565b610bed908c6121f3565b90506000610bfd8f838c8c6115ab565b9050610c0c8f8f84848d6113f8565b90965094508415610c2257819b50809a50610c2a565b505050610c3e565b50505080610c379061222e565b9050610b47565b50505050505050935093915050565b600080610c6685610c5e88876116a8565b8a9190610d0d565b9050610c73888486610d0d565b610c7d90826121f3565b905086811115610c915761028e87826121c4565b509695505050505050565b60008080610cb561099088670de0b6b3a76400006121c4565b9050610cc18888610d82565b91508115610379576109cb8a8a84610ce18a670de0b6b3a76400006121c4565b8989610f0b565b600083831115610249576103f6610cff85856121c4565b610d0986856116a8565b8791905b6000826000190484118302158202610d2457600080fd5b5091020490565b600081600003610d445750670de0b6b3a764000061025c565b82600003610d545750600061025c565b816000610d60856116bd565b9050818102610d77670de0b6b3a764000082612247565b9050610667816118d9565b600061034f8383670de0b6b3a7640000610d0d565b600080610da4838561219d565b9050600081121561034f57600080fd5b60008080610dc28585610fac565b90506000610dd382868c8a8d611a64565b90506000610e0e610dec670de0b6b3a76400008a610fac565b610e04610dfd8b6103f08b8f610d82565b8690610d82565b6103f090856121c4565b9050610e1a898c6121c4565b610e248b836121c4565b945094505050505b965096945050505050565b6000818311610e46578261034f565b50919050565b600080610e5d888888888888611a92565b909250905080610c9157604051637ac17d2560e01b815260040160405180910390fd5b60008080610e8e8585610fac565b90506000610e9f82868b8a8c611a64565b90506000610ed4610eb8670de0b6b3a76400008a610fac565b6103f0610ecd670de0b6b3a7640000876121f3565b8590610fac565b90506000610ee28288610fac565b9050610eee8b826121c4565b610ef8838c6121c4565b95509550505050505b9550959350505050565b600080610f188484610fac565b90506000610f2982858b898c611a64565b9050610f39866103f0898b6121c4565b97506000610f60610f52670de0b6b3a764000089611034565b6103f0856106a68d876121c4565b9050610f6c8186610fac565b9050610f788a826121c4565b9a9950505050505050505050565b6000826000190484118302158202610f9d57600080fd5b50910281810615159190040190565b600061034f83670de0b6b3a764000084610d0d565b600080610fce8484610fac565b90506000610fdf82858b898c611a64565b9050610ff9866103f0610ff28a8d6121f3565b8790610d82565b9850611005828a610d82565b9850600061102861101e670de0b6b3a764000089611034565b6103f08c856121c4565b9050610f78818a6121c4565b600061034f83670de0b6b3a764000084610f86565b60008061107084610100015185602001516110649190612206565b61010086015190611b33565b905060006110ba6110928660e001518760c00151610fac90919063ffffffff16565b8660e00151868860a00151670de0b6b3a76400006110b091906121c4565b8960400151611a64565b905060006111386110eb8760a00151670de0b6b3a76400006110dc91906121c4565b670de0b6b3a764000090611034565b610e046111258960a00151670de0b6b3a764000061110991906121c4565b6103f061111a898d60200151610d97565b60e08d015190610d82565b60e08a015160c08b01516107ba91610fac565b905085604001518161066791906121c4565b600080600080611181878a604001518a8c60a00151670de0b6b3a764000061117291906121c4565b8d60c001518e60e00151611a92565b915091508061119857600080935093505050610f01565b60006111d28a60c001516111b88b8a8e61012001518f6101400151611b49565b6111c88c8b8f6101200151611b60565b6106a691906121c4565b6111dc90846121c4565b8a516111e891906121c4565b905060006112178b60c0015161120860008a611b3390919063ffffffff16565b8d608001516106a691906121c4565b90508a61010001518161122a91906121f3565b8210611259576101008b015161124082846121c4565b61124a91906121c4565b60019550955050505050610f01565b6000809550955050505050610f01565b60008083905060006112d48661010001516112958860c001518960800151610fac90919063ffffffff16565b60c08901516112a9906106a6896000611b33565b89516112b591906121f3565b6112bf91906121c4565b6112c991906121c4565b60c088015190610d82565b90506106676113036112ee87670de0b6b3a76400006121c4565b6101208901516101408a01516107ba91610d82565b61132461131888670de0b6b3a76400006121c4565b6101208a015190610d82565b61132e90856121c4565b61133891906121f3565b8290610fac565b600080600061134f878786611b7b565b905060006113988860c001516106a68a6101400151670de0b6b3a764000061137791906121c4565b6107ba61138c8b670de0b6b3a76400006121c4565b6101208e015190610d82565b90508082106113b8576113ab81836121c4565b60019350935050506113c2565b6000809350935050505b94509492505050565b600061034c846107ba670de0b6b3a76400006113e78188610fac565b6113f191906121c4565b8590610d82565b600080600061141386858a61012001518b6101400151611c7a565b9050600061142e8960c0015183610fac90919063ffffffff16565b60c08a015161143e908990610fac565b8a5161144a91906121f3565b61145491906121c4565b905060008288611465896002612283565b8c6080015161147491906121f3565b61147e91906121c4565b61148891906121f3565b905060006114968a82611c94565b61149f906121d7565b90508a61010001516114be8c60c0015184610fac90919063ffffffff16565b6114c891906121f3565b60c08c01516114d8908390610fac565b6114e290856121f3565b10611259576101008b015160c08c01516114fd908490610fac565b60c08d015161150d908490610fac565b61151790866121f3565b61124091906121c4565b60008061153086858586611ca3565b90506000611568670b1a2bc2ec5000006107ba61155e8a60a00151670de0b6b3a76400006110dc91906121c4565b6103f0868b610fac565b9050600061157e670de0b6b3a764000083610d82565b611593610ff284670de0b6b3a76400006121c4565b61159d91906121f3565b905061028e88878784611ca3565b6000806115f48487604001516115ce8960c0015189610fac90919063ffffffff16565b60a08a01516115e590670de0b6b3a76400006121c4565b8a60c001518b60e00151610fc1565b905061160685848861012001516113cb565b61024590826121c4565b60008061161f86868686611da6565b90925090508061163257600091506113c2565b61165c61164784670de0b6b3a76400006121c4565b6101208801516101408901516107ba91610d82565b61166690836121f3565b915061167a670de0b6b3a7640000836121c4565b915061169d671bc16d674ec800008760c0015184610d0d9092919063ffffffff16565b915094509492505050565b600061034f8383670de0b6b3a7640000610f86565b60008082136116df57604051636838feed60e11b815260040160405180910390fd5b5060606fffffffffffffffffffffffffffffffff821160071b82811c67ffffffffffffffff1060061b1782811c63ffffffff1060051b1782811c61ffff1060041b1782811c60ff10600390811b90911783811c600f1060021b1783811c909110600190811b90911783811c90911017609f81810383019390931b90921c6c465772b2bbbb5f824b15207a3081018102821d6d0388eaa27412d5aca026815d636e018102821d6d0df99ac502031bf953eff472fdcc018102821d6d13cdffb29d51d99322bdff5f2211018102821d6d0a0f742023def783a307a986912e018102821d6d01920d8043ca89b5239253284e42018102821d6c0b7a86d7375468fac667a0a527016c29508e458543d8aa4df2abee7882018202831d6d0139601a2efabe717e604cbb4894018202831d6d02247f7a7b6594320649aa03aba1018202831d6c8c3f38e95a6b1ff2ab1c3b343619018202831d6d02384773bdf1ac5676facced60901901820290921d6cb9a025d814b29c212b8b1a07cd190102780a09507084cc699bb0e71ea869ffffffffffffffffffffffff190105711340daa0d5f769dba1915cef59f0815a550602605f19919091017d0267a36c0c95b3975ab3ee5b203a7614a3f75373f047d803ae7b6687f2b302017d57115e47018c7177eebf7cd370a3356a1b7863008a5ae8028c72b88642840160ae1d90565b6000680248ce36a70cb26b3e1982136118f457506000919050565b680755bf798b4a1bf1e5821261191d5760405163df92cc9d60e01b815260040160405180910390fd5b6503782dace9d9604e83901b059150600060606bb17217f7d1cf79abc9e3b39884821b056001605f1b01901d6bb17217f7d1cf79abc9e3b39881029093036c240c330e9fb2d9cbaf0fd5aafb1981018102606090811d6d0277594991cfc85f6e2461837cd9018202811d6d1a521255e34f6a5061b25ef1c9c319018202811d6db1bbb201f443cf962f1a1d3db4a5018202811d6e02c72388d9f74f51a9331fed693f1419018202811d6e05180bb14799ab47a8a8cb2a527d57016d02d16720577bd19bf614176fe9ea6c10fe68e7fd37d0007b713f765084018402831d9081019084016d01d3967ed30fc4f89c02bab5708119010290911d6e0587f503bb6ea29d25fcb740196450019091026d360d7aeea093263ecc6e0ecb291760621b010574029d9dc38563c32e5c2f6dc192ee70ef65f9978af30260c3939093039290921c92915050565b6000611a708284610d2b565b611a88611a81856103f08989610d82565b8890610d82565b61066791906121f3565b60008080611aa08585610fac565b90506000611ab182868c8a8d611a64565b9050611ac1876103f08a8c6121f3565b985088811015611ad957600080935093505050610e2c565b6000611afe611af0670de0b6b3a76400008a611034565b6103f0856106a68e876121c4565b9050611b0a8187610fac565b9050808b1115611b2157611b1e818c6121c4565b94505b60019350505050965096945050505050565b6000818313611b42578161034f565b5090919050565b60006103f6611b59868686611b60565b8390610d82565b600061034c846107ba6113f186670de0b6b3a76400006121c4565b600080611bba611b9c8660e001518760c00151610fac90919063ffffffff16565b8660e00151858860a00151670de0b6b3a76400006110b091906121c4565b90506000611bf6611be7611bdc8860a00151888a604001516103f091906121f3565b60c0890151906116a8565b670de0b6b3a764000090610fac565b90506000611c6e611c238860a00151670de0b6b3a7640000611c1891906121c4565b60a08a015190611034565b6103f0611c518a60a00151670de0b6b3a7640000611c4191906121c4565b8a8c604001516103f091906121f3565b611c5b90876121c4565b60c08b015160e08c01516107ba91610fac565b90506102728282610d82565b60006103f6611c8a8686866113cb565b6107ba8487610d82565b6000818313610e46578261034f565b600080611cb08582611c94565b611cb9906121d7565b90506000611d268760c00151671bc16d674ec80000896101000151611cef8b60c001518c60800151610fac90919063ffffffff16565b60c08c0151611cff908890610fac565b8c51611d0b91906121f3565b611d1591906121c4565b611d1f91906121c4565b9190610d0d565b9050610272611d4b670de0b6b3a7640000611d418189610fac565b61131891906121c4565b670de0b6b3a7640000611d76611d6189836121c4565b6101208c01516101408d01516107ba91610d82565b611d88670de0b6b3a764000089610fac565b611d9291906121f3565b611d9c91906121c4565b61133891906121c4565b6000806000611dc28760c0015187610fac90919063ffffffff16565b90506000611dde611dd383886121f3565b60e08a015190610d82565b90506000611dfd8960e001518a60c00151610fac90919063ffffffff16565b90506000611e2d828b60e001518a8d60a00151670de0b6b3a7640000611e2391906121c4565b8e60400151611a64565b9050611e49611be78b60a0015185610d2b90919063ffffffff16565b95506000611e6e611e678c60a0015186610d2b90919063ffffffff16565b8490610d82565b905080821015611e89576000809650965050505050506113c2565b611ebf611a81611eb58d60a00151670de0b6b3a7640000611eaa91906121c4565b60a08f015190611034565b6103f084866121c4565b9650611eed670de0b6b3a7640000611ed7818b610fac565b611ee191906121c4565b6101208d015190610d82565b611ef790886121c4565b9b60019b509950505050505050505050565b60008060008060808587031215611f1f57600080fd5b5050823594602084013594506040840135936060013592509050565b604051610160810167ffffffffffffffff81118282101715611f6d57634e487b7160e01b600052604160045260246000fd5b60405290565b60006101608284031215611f8657600080fd5b611f8e611f3b565b9050813581526020820135602082015260408201356040820152606082013560608201526080820135608082015260a082013560a082015260c082013560c082015260e082013560e082015261010080830135818301525061012080830135818301525061014080830135818301525092915050565b6000610160828403121561201757600080fd5b61034f8383611f73565b600080600080600060a0868803121561203957600080fd5b505083359560208501359550604085013594606081013594506080013592509050565b60008060008060008060c0878903121561207557600080fd5b505084359660208601359650604086013595606081013595506080810135945060a0013592509050565b600080600080600080600060e0888a0312156120ba57600080fd5b873596506020880135955060408801359450606088013593506080880135925060a0880135915060c088013580151581146120f457600080fd5b8091505092959891949750929550565b60008060006101a0848603121561211a57600080fd5b6121248585611f73565b956101608501359550610180909401359392505050565b600080600080600080600060e0888a03121561215657600080fd5b505085359760208701359750604087013596606081013596506080810135955060a0810135945060c0013592509050565b634e487b7160e01b600052601160045260246000fd5b81810360008312801583831316838312821617156121bd576121bd612187565b5092915050565b8181038181111561025c5761025c612187565b6000600160ff1b82016121ec576121ec612187565b5060000390565b8082018082111561025c5761025c612187565b808201828112600083128015821682158216171561222657612226612187565b505092915050565b60006001820161224057612240612187565b5060010190565b60008261226457634e487b7160e01b600052601260045260246000fd5b600160ff1b82146000198414161561227e5761227e612187565b500590565b808202811582820484141761025c5761025c61218756fea2646970667358221220fed595ea71683d7e79ded50830ad0aa085fcc08ccdc3145f20b424889bfa064064736f6c63430008130033",
+    "sourceMap": "135:7248:46:-:0;;;;;;;;;;;;;;;;;;;",
+    "linkReferences": {}
   },
-  deployedBytecode: {
-    object:
-      "0x608060405234801561001057600080fd5b50600436106100cf5760003560e01c806382a4d3061161008c578063a40a6be811610066578063a40a6be8146101d5578063de31b2ab146101fd578063f87845f214610210578063fdc30d611461022357600080fd5b806382a4d3061461018157806386ad02af1461019457806394169d49146101a757600080fd5b80632471caed146100d457806337043a53146100fa5780633fa2c8fc1461010d5780635e6d9d36146101205780636ceebe1d146101335780637ef99f8714610146575b600080fd5b6100e76100e2366004611f09565b610236565b6040519081526020015b60405180910390f35b6100e7610108366004612004565b610251565b6100e761011b366004612021565b610262565b6100e761012e36600461205c565b61027d565b6100e761014136600461205c565b61029a565b61015961015436600461209f565b6102ab565b604080519586526020860194909452928401919091526060830152608082015260a0016100f1565b6100e761018f366004612021565b61032f565b6100e76101a2366004612104565b61033f565b6101ba6101b536600461213b565b610356565b604080519384526020840192909252908201526060016100f1565b6101e86101e3366004612104565b610386565b604080519283526020830191909152016100f1565b6100e761020b36600461205c565b6103a7565b6101ba61021e36600461213b565b6103b8565b6100e7610231366004611f09565b6103d0565b600080610245868686866103df565b9150505b949350505050565b600061025c826103ff565b92915050565b6000806102728787878787610671565b979650505050505050565b60008061028e8888888888886106ac565b98975050505050505050565b60008061028e8888888888886106cd565b60008060008060006102e56040518060a0016040528060008152602001600081526020016000815260200160008152602001600081525090565b6102f48d8d8d8d8d8d8d6106ee565b608086018190526060860182905260408601839052602086018490529484905292985090965094509250905097509750975097509792505050565b6000806102728787878787610769565b600061034c8484846107c0565b90505b9392505050565b60008060008060008061036e8d8d8d8d8d8d8d610977565b919750955093505050505b9750975097945050505050565b6000806000806103978787876109e6565b909450925050505b935093915050565b60008061028e888888888888610c4d565b60008060008060008061036e8d8d8d8d8d8d8d610c9c565b60008061024586868686610ce8565b60006103f6826103f0858888610d0d565b90610d2b565b95945050505050565b60008061041f836101400151846101200151610d8290919063ffffffff16565b61010084015160e085015161043391610d82565b61043d919061219d565b9050600061045384600001518560200151610d97565b905060008213156104f55760006104958286604001518760a001518860c00151670de0b6b3a764000061048691906121c4565b89606001518a60800151610db4565b91506104a390508184610e37565b905080156104ef576104dc828660400151838860c00151670de0b6b3a76400006104cd91906121c4565b89606001518a60800151610e4c565b855186906104eb9083906121c4565b9052505b506105b3565b60008212156105b357610507826121d7565b9150600061053b8286604001518760c00151670de0b6b3a764000061052c91906121c4565b88606001518960800151610e80565b915061054990508184610e37565b9050801561059557610582828660400151838860c00151670de0b6b3a764000061057391906121c4565b89606001518a60800151610f0b565b855186906105919083906121f3565b9052505b61059f81846121c4565b855186906105ae9083906121f3565b905250505b60006105e2856101000151670de0b6b3a76400006105d191906121c4565b606087015160e08801519190610d0d565b610610866101400151670de0b6b3a76400006105fe91906121c4565b60608801516101208901519190610d0d565b61061a919061219d565b9050600081866000015161062e9190612206565b90508560a001518112156106555760405163aeeb825d60e01b815260040160405180910390fd5b80865260a086015161066790826121c4565b9695505050505050565b600080610680878787866103df565b905061027261069482866301e13380610f86565b6106a683670de0b6b3a76400006121c4565b90610fac565b60006102728787876106c688670de0b6b3a76400006121c4565b8787610fc1565b60006102728787876106e788670de0b6b3a76400006121c4565b8787610e4c565b6000806000806000808888101561074b578615610713576107108d898b610d0d565b9c505b61071e8c898b610d0d565b9b5061072a8b8d61219d565b90506107378b898b610d0d565b9a506107448a898b610d0d565b9950610758565b6107558b8d61219d565b90505b9b9c9a9b999a975050505050505050565b60008061077a846301e13380610fac565b90506102726107b0610794670de0b6b3a764000086611034565b61079e8885610d82565b6103f090670de0b6b3a76400006121f3565b6107ba888a610d82565b90610d82565b6040805160608101825260008082526020820181905291810182905260006107f086600001518760200151610d97565b9050600061080c8288604001518960e001518a60a001516103df565b9050600061081a8884611049565b9050610829888285858b61114a565b158015604087015290855261084357935061034f92505050565b600061085089848a611269565b905061085f898286868c61114a565b1515604087018190529086526108d65760405162461bcd60e51b815260206004820152603160248201527f496e697469616c20677565737320696e206063616c63756c6174654d617853686044820152701bdc9d18081a5cc81a5b9cdbdb1d995b9d607a1b60648201526084015b60405180910390fd5b60005b8781101561096a576108ed8a83868861133f565b1580156040890152602088019190915261096a57602086015186516000916109159190610fac565b61091f90846121f3565b90508381111561092f575061096a565b61093c8b8288888e61114a565b15801560408a015290885261095357809250610959565b5061096a565b506109638161222e565b90506108d9565b5098975050505050505050565b6000808061099861099088670de0b6b3a76400006121c4565b899087610d0d565b90508615610379576109aa8888610d82565b91506109cb8a8a846109c48a670de0b6b3a76400006121c4565b8989610e4c565b92506109d783826121f3565b90509750975097945050505050565b60008060006109fd86600001518760200151610d97565b90506000610a198288604001518960e001518a60a001516103df565b90506000806000610a50858b604001518c60a00151670de0b6b3a7640000610a4191906121c4565b8d60c001518e60e00151610e80565b60c08c0151909350909150610a66908290610d82565b9250610a7883858c61012001516113cb565b610a8290836121c4565b91506000610a938b8b8686896113f8565b9150508015610aab5750919550935061039f92505050565b5050610ab989838a86611521565b9550610ac7898786866115ab565b9450600080610ad98b8b8a8a896113f8565b9150915080610b445760405162461bcd60e51b815260206004820152603160248201527f496e697469616c20677565737320696e206063616c63756c6174654d61784c6f6044820152703733b01034b99034b739b7b63b32b73a1760791b60648201526084016108cd565b60005b89811015610c3e57848910610bba5760405162461bcd60e51b815260206004820152603360248201527f52656163686564206162736f6c757465206d617820626f6e6420616d6f756e746044820152721034b7103033b2ba2fb6b0bc2fb637b733b01760691b60648201526084016108cd565b6000610bc88d8b8a8a611610565b9350905082610bd75750610c3e565b6000610be38583610fac565b610bed908c6121f3565b90506000610bfd8f838c8c6115ab565b9050610c0c8f8f84848d6113f8565b90965094508415610c2257819b50809a50610c2a565b505050610c3e565b50505080610c379061222e565b9050610b47565b50505050505050935093915050565b600080610c6685610c5e88876116a8565b8a9190610d0d565b9050610c73888486610d0d565b610c7d90826121f3565b905086811115610c915761028e87826121c4565b509695505050505050565b60008080610cb561099088670de0b6b3a76400006121c4565b9050610cc18888610d82565b91508115610379576109cb8a8a84610ce18a670de0b6b3a76400006121c4565b8989610f0b565b600083831115610249576103f6610cff85856121c4565b610d0986856116a8565b8791905b6000826000190484118302158202610d2457600080fd5b5091020490565b600081600003610d445750670de0b6b3a764000061025c565b82600003610d545750600061025c565b816000610d60856116bd565b9050818102610d77670de0b6b3a764000082612247565b9050610667816118d9565b600061034f8383670de0b6b3a7640000610d0d565b600080610da4838561219d565b9050600081121561034f57600080fd5b60008080610dc28585610fac565b90506000610dd382868c8a8d611a64565b90506000610e0e610dec670de0b6b3a76400008a610fac565b610e04610dfd8b6103f08b8f610d82565b8690610d82565b6103f090856121c4565b9050610e1a898c6121c4565b610e248b836121c4565b945094505050505b965096945050505050565b6000818311610e46578261034f565b50919050565b600080610e5d888888888888611a92565b909250905080610c9157604051637ac17d2560e01b815260040160405180910390fd5b60008080610e8e8585610fac565b90506000610e9f82868b8a8c611a64565b90506000610ed4610eb8670de0b6b3a76400008a610fac565b6103f0610ecd670de0b6b3a7640000876121f3565b8590610fac565b90506000610ee28288610fac565b9050610eee8b826121c4565b610ef8838c6121c4565b95509550505050505b9550959350505050565b600080610f188484610fac565b90506000610f2982858b898c611a64565b9050610f39866103f0898b6121c4565b97506000610f60610f52670de0b6b3a764000089611034565b6103f0856106a68d876121c4565b9050610f6c8186610fac565b9050610f788a826121c4565b9a9950505050505050505050565b6000826000190484118302158202610f9d57600080fd5b50910281810615159190040190565b600061034f83670de0b6b3a764000084610d0d565b600080610fce8484610fac565b90506000610fdf82858b898c611a64565b9050610ff9866103f0610ff28a8d6121f3565b8790610d82565b9850611005828a610d82565b9850600061102861101e670de0b6b3a764000089611034565b6103f08c856121c4565b9050610f78818a6121c4565b600061034f83670de0b6b3a764000084610f86565b60008061107084610100015185602001516110649190612206565b61010086015190611b33565b905060006110ba6110928660e001518760c00151610fac90919063ffffffff16565b8660e00151868860a00151670de0b6b3a76400006110b091906121c4565b8960400151611a64565b905060006111386110eb8760a00151670de0b6b3a76400006110dc91906121c4565b670de0b6b3a764000090611034565b610e046111258960a00151670de0b6b3a764000061110991906121c4565b6103f061111a898d60200151610d97565b60e08d015190610d82565b60e08a015160c08b01516107ba91610fac565b905085604001518161066791906121c4565b600080600080611181878a604001518a8c60a00151670de0b6b3a764000061117291906121c4565b8d60c001518e60e00151611a92565b915091508061119857600080935093505050610f01565b60006111d28a60c001516111b88b8a8e61012001518f6101400151611b49565b6111c88c8b8f6101200151611b60565b6106a691906121c4565b6111dc90846121c4565b8a516111e891906121c4565b905060006112178b60c0015161120860008a611b3390919063ffffffff16565b8d608001516106a691906121c4565b90508a61010001518161122a91906121f3565b8210611259576101008b015161124082846121c4565b61124a91906121c4565b60019550955050505050610f01565b6000809550955050505050610f01565b60008083905060006112d48661010001516112958860c001518960800151610fac90919063ffffffff16565b60c08901516112a9906106a6896000611b33565b89516112b591906121f3565b6112bf91906121c4565b6112c991906121c4565b60c088015190610d82565b90506106676113036112ee87670de0b6b3a76400006121c4565b6101208901516101408a01516107ba91610d82565b61132461131888670de0b6b3a76400006121c4565b6101208a015190610d82565b61132e90856121c4565b61133891906121f3565b8290610fac565b600080600061134f878786611b7b565b905060006113988860c001516106a68a6101400151670de0b6b3a764000061137791906121c4565b6107ba61138c8b670de0b6b3a76400006121c4565b6101208e015190610d82565b90508082106113b8576113ab81836121c4565b60019350935050506113c2565b6000809350935050505b94509492505050565b600061034c846107ba670de0b6b3a76400006113e78188610fac565b6113f191906121c4565b8590610d82565b600080600061141386858a61012001518b6101400151611c7a565b9050600061142e8960c0015183610fac90919063ffffffff16565b60c08a015161143e908990610fac565b8a5161144a91906121f3565b61145491906121c4565b905060008288611465896002612283565b8c6080015161147491906121f3565b61147e91906121c4565b61148891906121f3565b905060006114968a82611c94565b61149f906121d7565b90508a61010001516114be8c60c0015184610fac90919063ffffffff16565b6114c891906121f3565b60c08c01516114d8908390610fac565b6114e290856121f3565b10611259576101008b015160c08c01516114fd908490610fac565b60c08d015161150d908490610fac565b61151790866121f3565b61124091906121c4565b60008061153086858586611ca3565b90506000611568670b1a2bc2ec5000006107ba61155e8a60a00151670de0b6b3a76400006110dc91906121c4565b6103f0868b610fac565b9050600061157e670de0b6b3a764000083610d82565b611593610ff284670de0b6b3a76400006121c4565b61159d91906121f3565b905061028e88878784611ca3565b6000806115f48487604001516115ce8960c0015189610fac90919063ffffffff16565b60a08a01516115e590670de0b6b3a76400006121c4565b8a60c001518b60e00151610fc1565b905061160685848861012001516113cb565b61024590826121c4565b60008061161f86868686611da6565b90925090508061163257600091506113c2565b61165c61164784670de0b6b3a76400006121c4565b6101208801516101408901516107ba91610d82565b61166690836121f3565b915061167a670de0b6b3a7640000836121c4565b915061169d671bc16d674ec800008760c0015184610d0d9092919063ffffffff16565b915094509492505050565b600061034f8383670de0b6b3a7640000610f86565b60008082136116df57604051636838feed60e11b815260040160405180910390fd5b5060606fffffffffffffffffffffffffffffffff821160071b82811c67ffffffffffffffff1060061b1782811c63ffffffff1060051b1782811c61ffff1060041b1782811c60ff10600390811b90911783811c600f1060021b1783811c909110600190811b90911783811c90911017609f81810383019390931b90921c6c465772b2bbbb5f824b15207a3081018102821d6d0388eaa27412d5aca026815d636e018102821d6d0df99ac502031bf953eff472fdcc018102821d6d13cdffb29d51d99322bdff5f2211018102821d6d0a0f742023def783a307a986912e018102821d6d01920d8043ca89b5239253284e42018102821d6c0b7a86d7375468fac667a0a527016c29508e458543d8aa4df2abee7882018202831d6d0139601a2efabe717e604cbb4894018202831d6d02247f7a7b6594320649aa03aba1018202831d6c8c3f38e95a6b1ff2ab1c3b343619018202831d6d02384773bdf1ac5676facced60901901820290921d6cb9a025d814b29c212b8b1a07cd190102780a09507084cc699bb0e71ea869ffffffffffffffffffffffff190105711340daa0d5f769dba1915cef59f0815a550602605f19919091017d0267a36c0c95b3975ab3ee5b203a7614a3f75373f047d803ae7b6687f2b302017d57115e47018c7177eebf7cd370a3356a1b7863008a5ae8028c72b88642840160ae1d90565b6000680248ce36a70cb26b3e1982136118f457506000919050565b680755bf798b4a1bf1e5821261191d5760405163df92cc9d60e01b815260040160405180910390fd5b6503782dace9d9604e83901b059150600060606bb17217f7d1cf79abc9e3b39884821b056001605f1b01901d6bb17217f7d1cf79abc9e3b39881029093036c240c330e9fb2d9cbaf0fd5aafb1981018102606090811d6d0277594991cfc85f6e2461837cd9018202811d6d1a521255e34f6a5061b25ef1c9c319018202811d6db1bbb201f443cf962f1a1d3db4a5018202811d6e02c72388d9f74f51a9331fed693f1419018202811d6e05180bb14799ab47a8a8cb2a527d57016d02d16720577bd19bf614176fe9ea6c10fe68e7fd37d0007b713f765084018402831d9081019084016d01d3967ed30fc4f89c02bab5708119010290911d6e0587f503bb6ea29d25fcb740196450019091026d360d7aeea093263ecc6e0ecb291760621b010574029d9dc38563c32e5c2f6dc192ee70ef65f9978af30260c3939093039290921c92915050565b6000611a708284610d2b565b611a88611a81856103f08989610d82565b8890610d82565b61066791906121f3565b60008080611aa08585610fac565b90506000611ab182868c8a8d611a64565b9050611ac1876103f08a8c6121f3565b985088811015611ad957600080935093505050610e2c565b6000611afe611af0670de0b6b3a76400008a611034565b6103f0856106a68e876121c4565b9050611b0a8187610fac565b9050808b1115611b2157611b1e818c6121c4565b94505b60019350505050965096945050505050565b6000818313611b42578161034f565b5090919050565b60006103f6611b59868686611b60565b8390610d82565b600061034c846107ba6113f186670de0b6b3a76400006121c4565b600080611bba611b9c8660e001518760c00151610fac90919063ffffffff16565b8660e00151858860a00151670de0b6b3a76400006110b091906121c4565b90506000611bf6611be7611bdc8860a00151888a604001516103f091906121f3565b60c0890151906116a8565b670de0b6b3a764000090610fac565b90506000611c6e611c238860a00151670de0b6b3a7640000611c1891906121c4565b60a08a015190611034565b6103f0611c518a60a00151670de0b6b3a7640000611c4191906121c4565b8a8c604001516103f091906121f3565b611c5b90876121c4565b60c08b015160e08c01516107ba91610fac565b90506102728282610d82565b60006103f6611c8a8686866113cb565b6107ba8487610d82565b6000818313610e46578261034f565b600080611cb08582611c94565b611cb9906121d7565b90506000611d268760c00151671bc16d674ec80000896101000151611cef8b60c001518c60800151610fac90919063ffffffff16565b60c08c0151611cff908890610fac565b8c51611d0b91906121f3565b611d1591906121c4565b611d1f91906121c4565b9190610d0d565b9050610272611d4b670de0b6b3a7640000611d418189610fac565b61131891906121c4565b670de0b6b3a7640000611d76611d6189836121c4565b6101208c01516101408d01516107ba91610d82565b611d88670de0b6b3a764000089610fac565b611d9291906121f3565b611d9c91906121c4565b61133891906121c4565b6000806000611dc28760c0015187610fac90919063ffffffff16565b90506000611dde611dd383886121f3565b60e08a015190610d82565b90506000611dfd8960e001518a60c00151610fac90919063ffffffff16565b90506000611e2d828b60e001518a8d60a00151670de0b6b3a7640000611e2391906121c4565b8e60400151611a64565b9050611e49611be78b60a0015185610d2b90919063ffffffff16565b95506000611e6e611e678c60a0015186610d2b90919063ffffffff16565b8490610d82565b905080821015611e89576000809650965050505050506113c2565b611ebf611a81611eb58d60a00151670de0b6b3a7640000611eaa91906121c4565b60a08f015190611034565b6103f084866121c4565b9650611eed670de0b6b3a7640000611ed7818b610fac565b611ee191906121c4565b6101208d015190610d82565b611ef790886121c4565b9b60019b509950505050505050505050565b60008060008060808587031215611f1f57600080fd5b5050823594602084013594506040840135936060013592509050565b604051610160810167ffffffffffffffff81118282101715611f6d57634e487b7160e01b600052604160045260246000fd5b60405290565b60006101608284031215611f8657600080fd5b611f8e611f3b565b9050813581526020820135602082015260408201356040820152606082013560608201526080820135608082015260a082013560a082015260c082013560c082015260e082013560e082015261010080830135818301525061012080830135818301525061014080830135818301525092915050565b6000610160828403121561201757600080fd5b61034f8383611f73565b600080600080600060a0868803121561203957600080fd5b505083359560208501359550604085013594606081013594506080013592509050565b60008060008060008060c0878903121561207557600080fd5b505084359660208601359650604086013595606081013595506080810135945060a0013592509050565b600080600080600080600060e0888a0312156120ba57600080fd5b873596506020880135955060408801359450606088013593506080880135925060a0880135915060c088013580151581146120f457600080fd5b8091505092959891949750929550565b60008060006101a0848603121561211a57600080fd5b6121248585611f73565b956101608501359550610180909401359392505050565b600080600080600080600060e0888a03121561215657600080fd5b505085359760208701359750604087013596606081013596506080810135955060a0810135945060c0013592509050565b634e487b7160e01b600052601160045260246000fd5b81810360008312801583831316838312821617156121bd576121bd612187565b5092915050565b8181038181111561025c5761025c612187565b6000600160ff1b82016121ec576121ec612187565b5060000390565b8082018082111561025c5761025c612187565b808201828112600083128015821682158216171561222657612226612187565b505092915050565b60006001820161224057612240612187565b5060010190565b60008261226457634e487b7160e01b600052601260045260246000fd5b600160ff1b82146000198414161561227e5761227e612187565b500590565b808202811582820484141761025c5761025c61218756fea2646970667358221220fed595ea71683d7e79ded50830ad0aa085fcc08ccdc3145f20b424889bfa064064736f6c63430008130033",
-    sourceMap:
-      "135:7248:46:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5839:408;;;;;;:::i;:::-;;:::i;:::-;;;550:25:165;;;538:2;523:18;5839:408:46;;;;;;;;6253:196;;;;;;:::i;:::-;;:::i;169:504::-;;;;;;:::i;:::-;;:::i;1179:528::-;;;;;;:::i;:::-;;:::i;2450:530::-;;;;;;:::i;:::-;;:::i;3950:1093::-;;;;;;:::i;:::-;;:::i;:::-;;;;4082:25:165;;;4138:2;4123:18;;4116:34;;;;4166:18;;;4159:34;;;;4224:2;4209:18;;4202:34;4267:3;4252:19;;4245:35;4069:3;4054:19;3950:1093:46;3825:461:165;679:494:46;;;;;;:::i;:::-;;:::i;5470:363::-;;;;;;:::i;:::-;;:::i;1713:731::-;;;;;;:::i;:::-;;:::i;:::-;;;;5478:25:165;;;5534:2;5519:18;;5512:34;;;;5562:18;;;5555:34;5466:2;5451:18;1713:731:46;5276:319:165;5049:415:46;;;;;;:::i;:::-;;:::i;:::-;;;;5774:25:165;;;5830:2;5815:18;;5808:34;;;;5747:18;5049:415:46;5600:248:165;6455:512:46;;;;;;:::i;:::-;;:::i;2986:735::-;;;;;;:::i;:::-;;:::i;6973:408::-;;;;;;:::i;:::-;;:::i;5839:::-;6025:7;6044:14;6061:156;6108:14;6136:13;6163:18;6195:12;6061:33;:156::i;:::-;6044:173;-1:-1:-1;;5839:408:46;;;;;;;:::o;6253:196::-;6371:7;6397:45;6434:7;6397:36;:45::i;:::-;6390:52;6253:196;-1:-1:-1;;6253:196:46:o;169:504::-;405:7;424:14;441:202;494:23;531:13;558:18;590:17;621:12;441:39;:202::i;:::-;424:219;169:504;-1:-1:-1;;;;;;;169:504:46:o;1179:528::-;1429:7;1448:14;1465:212;1511:23;1548:13;1575:9;1598:12;1624:11;1649:18;1465:32;:212::i;:::-;1448:229;1179:528;-1:-1:-1;;;;;;;;1179:528:46:o;2450:530::-;2701:7;2720:14;2737:213;2784:23;2821:13;2848:9;2871:12;2897:11;2922:18;2737:33;:213::i;3950:1093::-;4250:7;4259;4268;4277:6;4285:7;4304:43;-1:-1:-1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4304:43:46;4559:261;4620:14;4648:19;4681:16;4711:19;4744:15;4773:16;4803:7;4559:47;:261::i;:::-;4521:25;;;4357:463;;;4480:27;;;4357:463;;;4444:22;;;4357:463;;;4405:25;;;4357:463;;;;;;;;;-1:-1:-1;4357:463:46;;-1:-1:-1;4357:463:46;-1:-1:-1;4357:463:46;-1:-1:-1;4357:463:46;-1:-1:-1;3950:1093:46;;;;;;;;;;;;;:::o;679:494::-;910:7;929:14;946:197;1003:23;1040:18;1072:4;1090:17;1121:12;946:43;:197::i;5470:363::-;5648:7;5686:140;5736:7;5761:19;5798:14;5686:32;:140::i;:::-;5667:159;;5470:363;;;;;;:::o;1713:731::-;2006:7;2015;2024;2044:15;2061;2078;2097:296;2161:23;2202:13;2233:9;2260:24;2302:12;2332:11;2361:18;2097:46;:296::i;:::-;2043:350;;-1:-1:-1;2043:350:46;-1:-1:-1;2043:350:46;-1:-1:-1;;;;1713:731:46;;;;;;;;;;;;:::o;5049:415::-;5230:7;5239;5259:15;5276;5295:127;5340:7;5361:23;5398:14;5295:31;:127::i;:::-;5258:164;;-1:-1:-1;5258:164:46;-1:-1:-1;;;5049:415:46;;;;;;;:::o;6455:512::-;6697:7;6716:14;6733:204;6784:11;6809:12;6835:15;6864:16;6894:11;6919:8;6733:37;:204::i;2986:735::-;3281:7;3290;3299;3319:15;3336;3353;3372:298;3437:23;3478:13;3509:10;3537:24;3579:12;3609:11;3638:18;3372:47;:298::i;6973:408::-;7159:7;7178:14;7195:156;7246:11;7271:15;7300:16;7330:11;7195:37;:156::i;1246:449:33:-;1441:17;1575:113;1675:12;1575:82;:18;1618:23;1643:13;1575:42;:82::i;:::-;:99;;:113::i;:::-;1563:125;1246:449;-1:-1:-1;;;;;1246:449:33:o;58989:5242::-;59092:7;59242:20;59400:106;59455:7;:33;;;59400:7;:25;;;:33;;:106;;;;:::i;:::-;59318:32;;;;59285:24;;;;:66;;:32;:66::i;:::-;59265:255;;;;:::i;:::-;59242:278;;59530:30;59563:113;59608:7;:21;;;59643:7;:23;;;59563:31;:113::i;:::-;59530:146;;59706:1;59690:13;:17;59686:3447;;;60378:21;60403:291;60452:22;60492:7;:20;;;60530:7;:28;;;60582:7;:19;;;150:4:32;60576:25:33;;;;:::i;:::-;60619:7;:18;;;60655:7;:25;;;60403:31;:291::i;:::-;60375:319;-1:-1:-1;60724:41:33;;-1:-1:-1;60375:319:33;60750:13;60724:17;:41::i;:::-;60708:57;-1:-1:-1;60834:17:33;;60830:448;;60896:367;60988:22;61036:7;:20;;;61082:13;61127:7;:19;;;150:4:32;61121:25:33;;;;:::i;:::-;61172:7;:18;;;61216:7;:25;;;60896:66;:367::i;:::-;60871:392;;:7;;:392;;;;;:::i;:::-;;;-1:-1:-1;60830:448:33;59709:1579;59686:3447;;;61314:1;61298:13;:17;61294:1839;;;62119:14;62120:13;62119:14;:::i;:::-;62103:30;;62197:21;62222:244;62270:22;62310:7;:20;;;62354:7;:19;;;150:4:32;62348:25:33;;;;:::i;:::-;62391:7;:18;;;62427:7;:25;;;62222:30;:244::i;:::-;62194:272;-1:-1:-1;62496:41:33;;-1:-1:-1;62194:272:33;62522:13;62496:17;:41::i;:::-;62480:57;-1:-1:-1;62602:17:33;;62598:448;;62664:367;62756:22;62804:7;:20;;;62850:13;62895:7;:19;;;150:4:32;62889:25:33;;;;:::i;:::-;62940:7;:18;;;62984:7;:25;;;62664:66;:367::i;:::-;62639:392;;:7;;:392;;;;;:::i;:::-;;;-1:-1:-1;62598:448:33;63084:38;63109:13;63092;63084:38;:::i;:::-;63059:63;;:7;;:63;;;;;:::i;:::-;;;-1:-1:-1;;61294:1839:33;63266:19;63500:153;63563:7;:32;;;150:4:32;63557:38:33;;;;:::i;:::-;63617:18;;;;63500:24;;;;;:153;:35;:153::i;:::-;63308:143;63368:7;:33;;;150:4:32;63362:39:33;;;;:::i;:::-;63419:18;;;;63308:25;;;;;:143;:36;:143::i;:::-;63288:379;;;;:::i;:::-;63266:401;;63677:27;63751:12;63714:7;:21;;;63707:56;;;;:::i;:::-;63677:86;;63807:7;:28;;;63777:20;:59;63773:131;;;63859:34;;-1:-1:-1;;;63859:34:33;;;;;;;;;;;63773:131;63913:53;;;64196:28;;;;64172:52;;63945:20;64172:52;:::i;:::-;64165:59;58989:5242;-1:-1:-1;;;;;;58989:5242:33:o;2312:782::-;2548:11;2784:17;2804:150;2836:23;2873:13;2900:18;2932:12;2804:18;:150::i;:::-;2784:170;-1:-1:-1;2983:104:33;3026:47;2784:170;3045:17;3064:8;3026:18;:47::i;:::-;2984:15;2990:9;150:4:32;2984:15:33;:::i;:::-;2983:25;;:104::i;5385:642::-;5638:7;5758:262;5821:23;5862:13;5893:12;5923:18;5929:12;150:4:32;5923:18:33;:::i;:::-;5959:11;5988:18;5758:45;:262::i;9270:637::-;9521:7;9641:259;9704:23;9745:13;9776:9;9803:18;9809:12;150:4:32;9803:18:33;:::i;:::-;9839:11;9868:18;9641:45;:259::i;14234:2717::-;14534:7;14543;14552;14561:6;14569:7;15503:27;15563:15;15544:16;:34;15540:1219;;;15779:7;15775:181;;;15823:118;:14;15870:16;15908:15;15823:25;:118::i;:::-;15806:135;;15775:181;16031:111;:19;16079:16;16113:15;16031:30;:111::i;:::-;16009:133;-1:-1:-1;16250:70:33;16303:16;16009:133;16250:70;:::i;:::-;16211:109;-1:-1:-1;16353:108:33;:16;16398;16432:15;16353:27;:108::i;:::-;16334:127;-1:-1:-1;16497:111:33;:19;16545:16;16579:15;16497:30;:111::i;:::-;16475:133;;15540:1219;;;16678:70;16731:16;16685:19;16678:70;:::i;:::-;16639:109;;15540:1219;16790:14;;16818:19;;16851:16;;14234:2717;-1:-1:-1;;;;;;;;14234:2717:33:o;4089:611::-;4320:20;;4429:35;:17;4455:8;4429:25;:35::i;:::-;4417:47;-1:-1:-1;4550:143:33;4627:52;4655:23;150:4:32;4665:12:33;4655:9;:23::i;:::-;4634:15;:4;4647:1;4634:12;:15::i;:::-;4628:21;;150:4:32;4628:21:33;:::i;4627:52::-;4550:51;:18;4577:23;4550:26;:51::i;:::-;:59;;:143::i;40850:4432::-;-1:-1:-1;;;;;;;;41013:7:33;-1:-1:-1;;;;;;;;;;;;;;;41332:30:33;41365:113;41410:7;:21;;;41445:7;:23;;;41365:31;:113::i;:::-;41332:146;;41488:17;41508:170;41540:22;41576:7;:20;;;41610:7;:25;;;41649:7;:19;;;41508:18;:170::i;:::-;41488:190;;41688:29;41720:94;41761:7;41782:22;41720:27;:94::i;:::-;41688:126;;41866:185;41907:7;41928:21;41963:22;41999:9;42022:19;41866:27;:185::i;:::-;41824:227;;;41845:17;;;41824:227;;;;42061:76;;42105:21;-1:-1:-1;42098:28:33;;-1:-1:-1;;;42098:28:33;42061:76;43031:21;43055:109;43091:7;43112:9;43135:19;43055:22;:109::i;:::-;43031:133;;43216:177;43257:7;43278:13;43305:22;43341:9;43364:19;43216:27;:177::i;:::-;43174:219;;43195:17;;;43174:219;;;;;;43403:113;;;;-1:-1:-1;;;43403:113:33;;7017:2:165;43403:113:33;;;6999:21:165;7056:2;7036:18;;;7029:30;7095:34;7075:18;;;7068:62;-1:-1:-1;;;7146:18:165;;;7139:47;7203:19;;43403:113:33;;;;;;;;;43531:9;43526:1719;43550:14;43546:1;:18;43526:1719;;;44146:174;44201:7;44226:13;44257:9;44284:22;44146:37;:174::i;:::-;44056:264;;;44112:17;;;44056:264;44074:20;;;44056:264;;;;44376:5;44334:62;44500:20;;;;44473:18;;44409:29;;44473:48;;:18;:26;:48::i;:::-;44441:80;;:13;:80;:::i;:::-;44409:112;;44563:21;44539;:45;44535:89;;;44604:5;;;44535:89;44875:209;44920:7;44945:21;44984:22;45024:9;45051:19;44875:27;:209::i;:::-;44787:297;;;44841:17;;;44787:297;;;;45098:137;;45155:21;45139:37;;45098:137;;;45215:5;;;45098:137;-1:-1:-1;43566:3:33;;;:::i;:::-;;;43526:1719;;;-1:-1:-1;45262:13:33;40850:4432;-1:-1:-1;;;;;;;;40850:4432:33:o;6971:1627::-;7301:23;;;7880:99;7914:30;7920:24;150:4:32;7914:30:33;:::i;:::-;7880:9;;7958:11;7880:20;:99::i;:::-;7864:115;-1:-1:-1;7993:28:33;;7989:603;;8109:43;:9;8127:24;8109:17;:43::i;:::-;8092:60;-1:-1:-1;8271:264:33;8334:23;8375:13;8092:60;8438:18;8444:12;150:4:32;8438:18:33;:::i;:::-;8474:11;8503:18;8271:45;:264::i;:::-;8253:282;-1:-1:-1;8549:32:33;8253:282;8549:32;;:::i;:::-;;;6971:1627;;;;;;;;;;;:::o;18026:5381::-;18192:21;18215;18389:30;18422:113;18467:7;:21;;;18502:7;:23;;;18422:31;:113::i;:::-;18389:146;;18545:17;18565:170;18597:22;18633:7;:20;;;18667:7;:25;;;18706:7;:19;;;18565:18;:170::i;:::-;18545:190;;18745:29;18784;18837:22;18915:285;18984:22;19028:7;:20;;;19076:7;:19;;;150:4:32;19070:25:33;;;;:::i;:::-;19117:7;:18;;;19157:7;:25;;;18915:47;:285::i;:::-;19261:18;;;;18873:327;;-1:-1:-1;18873:327:33;;-1:-1:-1;19238:42:33;;18873:327;;19238:22;:42::i;:::-;19214:66;;19319:135;19358:21;19397:9;19424:7;:16;;;19319:21;:135::i;:::-;19294:160;;;;:::i;:::-;;;19471:15;19490:211;19534:7;19559:23;19600:21;19639;19678:9;19490:26;:211::i;:::-;19468:233;;;19719:10;19715:102;;;-1:-1:-1;19757:21:33;;-1:-1:-1;19780:21:33;-1:-1:-1;19749:53:33;;-1:-1:-1;;;19749:53:33;19715:102;18823:1004;;20722:147;20757:7;20778:21;20813:23;20850:9;20722:21;:147::i;:::-;20706:163;;20895:136;20928:7;20949:13;20976:22;21012:9;20895:19;:136::i;:::-;20879:152;;21042:16;21060:12;21076:171;21116:7;21137:23;21174:13;21201;21228:9;21076:26;:171::i;:::-;21041:206;;;;21265:7;21257:69;;;;-1:-1:-1;;;21257:69:33;;7575:2:165;21257:69:33;;;7557:21:165;7614:2;7594:18;;;7587:30;7653:34;7633:18;;;7626:62;-1:-1:-1;;;7704:18:165;;;7697:47;7761:19;;21257:69:33;7373:413:165;21257:69:33;21341:9;21336:2017;21360:14;21356:1;:18;21336:2017;;;21621:21;21605:13;:37;21580:147;;;;-1:-1:-1;;;21580:147:33;;7993:2:165;21580:147:33;;;7975:21:165;8032:2;8012:18;;;8005:30;8071:34;8051:18;;;8044:62;-1:-1:-1;;;8122:18:165;;;8115:49;8181:19;;21580:147:33;7791:415:165;21580:147:33;22290:18;22346:173;22400:7;22425:13;22456:22;22496:9;22346:36;:173::i;:::-;22322:197;-1:-1:-1;22322:197:33;-1:-1:-1;22322:197:33;22533:52;;22565:5;;;22533:52;22598:29;22662:28;:8;22679:10;22662:16;:28::i;:::-;22630:60;;:13;:60;:::i;:::-;22598:92;;22704:29;22736:164;22773:7;22798:21;22837:22;22877:9;22736:19;:164::i;:::-;22704:196;;22936:211;22980:7;23005:23;23046:21;23085;23124:9;22936:26;:211::i;:::-;22914:233;;-1:-1:-1;22914:233:33;-1:-1:-1;23161:182:33;;;;23208:21;23192:37;;23263:21;23247:37;;23161:182;;;23323:5;;;;;23161:182;21381:1972;;;21376:3;;;;:::i;:::-;;;21336:2017;;;;23363:37;;;;;;18026:5381;;;;;;:::o;65520:1230::-;65762:21;;66104:186;66140:16;66246:34;:15;66268:11;66246:21;:34::i;:::-;66104:11;;:186;:22;:186::i;:::-;66083:207;-1:-1:-1;66511:45:33;:11;66534:8;66544:11;66511:22;:45::i;:::-;66497:59;;;;:::i;:::-;;;66584:12;66571:10;:25;66567:147;;;66678:25;66691:12;66678:10;:25;:::i;66567:147::-;66723:20;65520:1230;;;;;;;;:::o;10814:1571::-;11146:23;;;11822:100;11857:30;11863:24;150:4:32;11857:30:33;:::i;11822:100::-;11807:115;-1:-1:-1;11949:44:33;:10;11968:24;11949:18;:44::i;:::-;11932:61;-1:-1:-1;12007:18:33;;12003:376;;12059:264;12122:23;12163:13;12194:14;12226:18;12232:12;150:4:32;12226:18:33;:::i;:::-;12262:11;12291:18;12059:45;:264::i;67496:640::-;67682:21;67798:15;67779:16;:34;67775:355;;;67899:220;67939:34;67958:15;67939:16;:34;:::i;:::-;68071;:15;68093:11;68071:21;:34::i;:::-;67899:11;;:220;984:556:32;1100:9;1365:1;-1:-1:-1;;1348:19:32;1345:1;1342:26;1339:1;1335:34;1328:42;1315:11;1311:60;1284:146;;1414:1;1411;1404:12;1284:146;-1:-1:-1;1501:9:32;;1497:27;;984:556::o;4671:846::-;4729:7;4795:1;4800;4795:6;4791:50;;-1:-1:-1;565:4:32;4817:13;;4791:50;4894:1;4899;4894:6;4890:45;;-1:-1:-1;4923:1:32;4916:8;;4890:45;5098:1;5073:15;5276:14;5287:1;5276:3;:14::i;:::-;5263:27;-1:-1:-1;5368:18:32;;;5405:22;565:4;5368:18;5405:22;:::i;:::-;;;5500:9;5504:4;5500:3;:9::i;1814:119::-;1876:7;1903:22;1914:1;1917;1920:4;1903:10;:22::i;68721:340:33:-;68856:7;;68907:53;68944:16;68914:14;68907:53;:::i;:::-;68875:85;;69004:1;68978:22;:27;;68970:36;;;;;9241:983:35;9414:7;;;9880:13;:1;9890:2;9880:9;:13::i;:::-;9863:30;;9903:9;9915:47;9942:6;9950:2;9954:1;9957;9960;9915:26;:47::i;:::-;9903:59;-1:-1:-1;9972:16:35;9991:105;10054:32;565:4:32;10084:1:35;10054:29;:32::i;:::-;9996:39;10011:23;10032:1;10011:16;:2;10022:4;10011:10;:16::i;:23::-;9996:6;;:14;:39::i;:::-;9992:43;;:1;:43;:::i;9991:105::-;9972:124;-1:-1:-1;10194:8:35;10198:4;10194:1;:8;:::i;:::-;10204:12;10215:1;10204:8;:12;:::i;:::-;10186:31;;;;;;;9241:983;;;;;;;;;;:::o;14433:104:32:-;14491:7;14521:1;14517;:5;:13;;14529:1;14517:13;;;-1:-1:-1;14525:1:32;14433:104;-1:-1:-1;14433:104:32:o;4871:481:35:-;5056:14;5082:12;5124:136;5172:1;5187;5202:2;5218:1;5233;5248:2;5124:34;:136::i;:::-;5104:156;;-1:-1:-1;5104:156:35;-1:-1:-1;5104:156:35;5270:76;;5305:30;;-1:-1:-1;;;5305:30:35;;;;;;;;;;;7623:1046;7773:7;;;8276:13;:1;8286:2;8276:9;:13::i;:::-;8259:30;;8299:9;8311:47;8338:6;8346:2;8350:1;8353;8356;8311:26;:47::i;:::-;8299:59;-1:-1:-1;8368:16:35;8387:103;8448:32;565:4:32;8478:1:35;8448:29;:32::i;:::-;8388:41;8398:30;565:4:32;8398:6:35;:30;:::i;:::-;8388:1;;:9;:41::i;8387:103::-;8368:122;-1:-1:-1;8500:16:35;8519:20;8368:122;8536:2;8519:16;:20::i;:::-;8500:39;-1:-1:-1;8635:12:35;8646:1;8500:39;8635:12;:::i;:::-;8649;8653:8;8649:1;:12;:::i;:::-;8627:35;;;;;;;;7623:1046;;;;;;;;;:::o;3358:892::-;3543:7;;3595:13;:1;3605:2;3595:9;:13::i;:::-;3578:30;;3669:9;3681:47;3708:6;3716:2;3720:1;3723;3726;3681:26;:47::i;:::-;3669:59;-1:-1:-1;3770:15:35;3783:1;3771:6;3775:2;3771:1;:6;:::i;3770:15::-;3766:19;-1:-1:-1;3884:10:35;3897:81;3938:30;565:4:32;3966:1:35;3938:27;:30::i;:::-;3897:23;3913:6;3898:5;3902:1;3898;:5;:::i;3897:81::-;3884:94;-1:-1:-1;4088:14:35;3884:94;4099:2;4088:10;:14::i;:::-;4083:19;-1:-1:-1;4237:6:35;4242:1;4083:19;4237:6;:::i;:::-;4230:13;3358:892;-1:-1:-1;;;;;;;;;;3358:892:35:o;2726:748:32:-;2840:9;3105:1;-1:-1:-1;;3088:19:32;3085:1;3082:26;3079:1;3075:34;3068:42;3055:11;3051:60;3024:146;;3154:1;3151;3144:12;3024:146;-1:-1:-1;3421:9:32;;3368:27;;;3365:34;;3417:27;;;3344:114;;2726:748::o;2207:165::-;2269:7;2296:22;2307:1;2310:4;2316:1;2296:10;:22::i;2008:837:35:-;2193:7;;2245:13;:1;2255:2;2245:9;:13::i;:::-;2228:30;;2319:9;2331:47;2358:6;2366:2;2370:1;2373;2376;2331:26;:47::i;:::-;2319:59;-1:-1:-1;2427:25:35;2450:1;2427:18;2438:6;2442:2;2438:1;:6;:::i;:::-;2427:2;;:10;:18::i;:25::-;2423:29;-1:-1:-1;2512:17:35;:6;2423:29;2512:14;:17::i;:::-;2508:21;-1:-1:-1;2644:10:35;2657:43;2669:30;565:4:32;2697:1:35;2669:27;:30::i;:::-;2658:5;2662:1;2658;:5;:::i;2657:43::-;2644:56;-1:-1:-1;2832:6:35;2644:56;2832:1;:6;:::i;4141:115:32:-;4201:7;4228:20;4237:1;4240:4;4246:1;4228:8;:20::i;45707:2348:33:-;45853:7;46290:28;46342:134;46433:7;:28;;;46400:7;:23;;;:62;;;;:::i;:::-;46349:28;;;;;46342:40;:134::i;:::-;46290:196;;47179:9;47191:267;47246:53;47273:7;:25;;;47246:7;:18;;;:26;;:53;;;;:::i;:::-;47313:7;:25;;;47352:23;47395:7;:19;;;150:4:32;47389:25:33;;;;:::i;:::-;47428:7;:20;;;47191:41;:267::i;:::-;47179:279;;47468:27;47498:490;47951:36;47967:7;:19;;;150:4:32;47961:25:33;;;;:::i;:::-;150:4:32;;47951:9:33;:36::i;:::-;47515:430;47596:335;47911:7;:19;;;150:4:32;47905:25:33;;;;:::i;:::-;47596:283;47697:160;47758:20;47808:7;:23;;;47697:31;:160::i;:::-;47596:46;;;;;:75;:283::i;:335::-;47543:25;;;;47516:18;;;;:53;;:26;:53::i;47498:490::-;47468:520;;48028:7;:20;;;48006:19;:42;;;;:::i;52162:1774::-;52402:7;52411:4;52555:18;52575:12;52591:307;52671:23;52712:7;:20;;;52750:12;52786:7;:19;;;150:4:32;52780:25:33;;;;:::i;:::-;52823:7;:18;;;52859:7;:25;;;52591:62;:307::i;:::-;52554:344;;;;52913:7;52908:56;;52944:1;52947:5;52936:17;;;;;;;;52908:56;53040:21;53130:409;53520:7;:18;;;53298:212;53351:12;53389:10;53425:7;:16;;;53467:7;:21;;;53298:27;:212::i;:::-;53131:144;53175:12;53209:10;53241:7;:16;;;53131:22;:144::i;:::-;:379;;;;:::i;53130:409::-;53101:438;;:10;:438;:::i;:::-;53064:21;;:476;;;;:::i;:::-;53040:500;;53550:16;53569:100;53650:7;:18;;;53613:26;53637:1;53613:19;:23;;:26;;;;:::i;:::-;53570:7;:20;;;:70;;;;:::i;53569:100::-;53550:119;;53711:7;:28;;;53700:8;:39;;;;:::i;:::-;53683:13;:56;53679:251;;53807:28;;;;53780:24;53796:8;53780:13;:24;:::i;:::-;:55;;;;:::i;:::-;53853:4;53755:116;;;;;;;;;;53679:251;53910:1;53913:5;53902:17;;;;;;;;;;49517:849;49681:7;49700:21;49724:10;49700:34;;49744:13;49760:305;50027:7;:28;;;49960:48;49989:7;:18;;;49960:7;:20;;;:28;;:48;;;;:::i;:::-;49905:18;;;;49840:101;;49848:26;:19;49872:1;49848:23;:26::i;49840:101::-;49800:21;;:141;;;;:::i;:::-;:208;;;;:::i;:::-;:255;;;;:::i;:::-;49760:18;;;;;:26;:305::i;:::-;49744:321;-1:-1:-1;50094:265:33;50226:119;50307:16;50313:10;150:4:32;50307:16:33;:::i;:::-;50256;;;;50226:21;;;;:47;;:29;:47::i;:119::-;50161:42;50186:16;50192:10;150:4:32;50186:16:33;:::i;:::-;50161;;;;;:24;:42::i;:::-;50125:78;;:13;:78;:::i;:::-;:220;;;;:::i;:::-;50094:5;;:13;:265::i;54820:692::-;55034:7;55043:4;55059:11;55073:127;55120:7;55141:12;55167:23;55073:33;:127::i;:::-;55059:141;;55210:11;55224:159;55364:7;:18;;;55224:118;55320:7;:21;;;150:4:32;55314:27:33;;;;:::i;:::-;55224:68;55275:16;55281:10;150:4:32;55275:16:33;:::i;:::-;55224:29;;;;;:50;:68::i;:159::-;55210:173;;55404:3;55397;:10;55393:113;;55431:9;55437:3;55431;:9;:::i;:::-;55442:4;55423:24;;;;;;;;55393:113;55486:1;55489:5;55478:17;;;;;;54820:692;;;;;;;;:::o;39049:330::-;39193:7;39273:99;39347:11;39273:48;150:4:32;39291:23:33;150:4:32;39303:10:33;39291:11;:23::i;:::-;:29;;;;:::i;:::-;39273:9;;:17;:48::i;30480:1333::-;30710:7;30719:4;30735:21;30759:150;30799:11;30824:10;30848:7;:16;;;30878:7;:21;;;30759:26;:150::i;:::-;30735:174;;30919:21;31033:41;31055:7;:18;;;31033:13;:21;;:41;;;;:::i;:::-;30999:18;;;;30979:39;;:11;;:19;:39::i;:::-;30943:21;;:75;;;;:::i;:::-;:131;;;;:::i;:::-;30919:155;-1:-1:-1;31084:16:33;31206:13;31180:11;31138:27;31154:11;31138:1;:27;:::i;:::-;31103:7;:20;;;:62;;;;:::i;:::-;:88;;;;:::i;:::-;:116;;;;:::i;:::-;31084:135;-1:-1:-1;31229:26:33;31267:30;:23;31229:26;31267:27;:30::i;:::-;31266:31;;;:::i;:::-;31229:69;;31442:7;:28;;;31403:36;31420:7;:18;;;31403:8;:16;;:36;;;;:::i;:::-;:67;;;;:::i;:::-;31368:18;;;;31341:46;;:18;;:26;:46::i;:::-;31325:62;;:13;:62;:::i;:::-;:145;31308:499;;31684:28;;;;31642:18;;;;31625:36;;:8;;:16;:36::i;:::-;31583:18;;;;31556:46;;:18;;:26;:46::i;:::-;31520:82;;:13;:82;:::i;:::-;:141;;;;:::i;24066:1494::-;24273:7;24405:13;24421:140;24459:7;24480:23;24517:10;24541;24421:24;:140::i;:::-;24405:156;;25005:9;25017:134;25144:6;25017:105;25085:36;25101:7;:19;;;150:4:32;25095:25:33;;;;:::i;25085:36::-;25017:50;:5;25044:22;25017:26;:50::i;:134::-;25005:146;-1:-1:-1;25161:25:33;25231:14;150:4:32;25005:146:33;25231:11;:14::i;:::-;25189:27;25208:7;25214:1;150:4:32;25208:7:33;:::i;25189:27::-;:56;;;;:::i;:::-;25161:84;;25383:147;25421:7;25442:23;25479:10;25503:17;25383:24;:147::i;35079:649::-;35274:7;35293:18;35314:289;35373:23;35410:7;:20;;;35444:39;35464:7;:18;;;35444:11;:19;;:39;;;;:::i;:::-;35503:19;;;;35497:25;;150:4:32;35497:25:33;:::i;:::-;35536:7;:18;;;35568:7;:25;;;35314:45;:289::i;:::-;35293:310;;35657:64;35679:11;35692:10;35704:7;:16;;;35657:21;:64::i;:::-;35632:89;;:10;:89;:::i;33144:922::-;33356:18;33376:12;33579:146;33622:7;33643:11;33668:23;33705:10;33579:29;:146::i;:::-;33555:170;;-1:-1:-1;33555:170:33;-1:-1:-1;33555:170:33;33735:58;;33771:1;33763:19;;;;33735:58;33861:95;33930:16;33936:10;150:4:32;33930:16:33;:::i;:::-;33891;;;;33861:21;;;;:47;;:29;:47::i;:95::-;33847:109;;;;:::i;:::-;;-1:-1:-1;33966:17:33;150:4:32;33847:109:33;33966:17;:::i;:::-;;;34002:47;34024:4;34030:7;:18;;;34002:10;:21;;:47;;;;;:::i;:::-;33994:65;;33144:922;;;;;;;:::o;3750:115:32:-;3810:7;3837:20;3846:1;3849;3852:4;3837:8;:20::i;9632:3592::-;9677:8;9730:1;9725;:6;9721:60;;9740:41;;-1:-1:-1;;;9740:41:32;;;;;;;;;;;9721:60;-1:-1:-1;10747:2:32;10164:34;-1:-1:-1;;10158:1:32;10154:49;10261:9;;;10241:18;10238:33;10235:1;10231:41;10225:48;10323:9;;;10311:10;10308:25;10305:1;10301:33;10295:40;10381:9;;;10373:6;10370:21;10367:1;10363:29;10357:36;10437:9;;;10431:4;10428:19;10425:1;10421:27;;;10415:34;;;10492:9;;;10487:3;10484:18;10481:1;10477:26;10471:33;10547:9;;;10539:18;;;10536:1;10532:26;;;10526:33;;;10595:9;;;10587:18;;;10581:25;10777:3;:7;;;;;10763:22;;;;10810:17;;;11603:31;11599:35;;11654:5;;11653:13;;11670:32;11652:50;11722:5;;11721:13;;11738:33;11720:51;11791:5;;11790:13;;11807:33;11789:51;11860:5;;11859:13;;11876:33;11858:51;11929:5;;11928:13;;11945:32;11927:50;11997:5;;11996:13;;12013:30;11995:48;11000:31;10996:35;;11051:5;;11050:13;;11067:32;11049:50;11119:5;;11118:13;;11135:32;11117:50;11187:5;;11186:13;;-1:-1:-1;;11185:50:32;11255:5;;11254:13;;-1:-1:-1;;11253:50:32;11323:5;;11322:13;;;-1:-1:-1;;11321:50:32;11389:5;-1:-1:-1;;11389:46:32;12384:10;12774:43;12769:48;-1:-1:-1;;10743:6:32;;;;12897:71;:91;12876:112;13061:72;13056:77;13204:3;13198:9;;9632:3592::o;5773:3347::-;5819:8;-1:-1:-1;;5996:1:32;:26;5992:40;;-1:-1:-1;6031:1:32;;5773:3347;-1:-1:-1;5773:3347:32:o;5992:40::-;6231:21;6226:1;:26;6222:99;;6277:44;;-1:-1:-1;;;6277:44:32;;;;;;;;;;;6222:99;6594:7;6588:2;6583:7;;;6582:19;;-1:-1:-1;6930:8:32;7014:2;6954:29;6943:7;;;6942:41;-1:-1:-1;;;6942:51:32;6941:75;;7042:29;7038:33;;7034:37;;;-1:-1:-1;;7713:35:32;;7768:5;;7348:2;7767:13;;;7784:32;7766:50;7836:5;;7835:13;;-1:-1:-1;;7834:51:32;7905:5;;7904:13;;7921:34;7903:52;7975:5;;7974:13;;-1:-1:-1;;7973:53:32;8046:5;;8045:13;;8062:35;8044:53;7354:32;7287:31;7283:35;;7338:5;;7337:13;;7336:50;;;7411:5;;;-1:-1:-1;;7411:40:32;7471:5;7470:13;;;7487:35;7469:53;7540:5;;;-1:-1:-1;;;7540:50:32;8462:10;8999:49;8966:82;9081:3;:7;;;;8965:124;;;;;;-1:-1:-1;;5773:3347:32:o;10669:302:35:-;10835:7;10956:8;:1;10962;10956:5;:8::i;:::-;10917:36;10932:20;10950:1;10932:13;:2;10943:1;10932:10;:13::i;:20::-;10917:6;;:14;:36::i;:::-;:47;;;;:::i;6050:1039::-;6239:14;;;6312:13;:1;6322:2;6312:9;:13::i;:::-;6295:30;;6386:9;6398:47;6425:6;6433:2;6437:1;6440;6443;6398:26;:47::i;:::-;6386:59;-1:-1:-1;6487:15:35;6500:1;6488:6;6492:2;6488:1;:6;:::i;6487:15::-;6483:19;;6520:1;6516;:5;6512:53;;;6545:1;6548:5;6537:17;;;;;;;;6512:53;6663:10;6676:81;6717:30;565:4:32;6745:1:35;6717:27;:30::i;:::-;6676:23;6692:6;6677:5;6681:1;6677;:5;:::i;6676:81::-;6663:94;-1:-1:-1;6867:14:35;6663:94;6878:2;6867:10;:14::i;:::-;6862:19;;7015:2;7011:1;:6;7007:52;;;7042:6;7046:2;7042:1;:6;:::i;:::-;7033:15;;7007:52;7078:4;7068:14;;6269:820;;;6050:1039;;;;;;;;;:::o;15261:101:32:-;15317:6;15346:1;15342;:5;:13;;15354:1;15342:13;;;-1:-1:-1;15350:1:32;;15261:101;-1:-1:-1;15261:101:32:o;58041:339:33:-;58223:7;58261:112;58301:58;58324:11;58337:10;58349:9;58301:22;:58::i;:::-;58261:14;;:22;:112::i;57489:234::-;57634:7;57660:56;57704:11;57660:35;57678:16;57684:10;150:4:32;57678:16:33;:::i;56179:1062::-;56361:7;56380:9;56392:267;56447:53;56474:7;:25;;;56447:7;:18;;;:26;;:53;;;;:::i;:::-;56514:7;:25;;;56553:23;56596:7;:19;;;150:4:32;56590:25:33;;;;:::i;56392:267::-;56380:279;;56669:11;56683:153;56708:118;56750:62;56792:7;:19;;;56774:12;56751:7;:20;;;:35;;;;:::i;56750:62::-;56708:18;;;;;:24;:118::i;:::-;150:4:32;;56683:11:33;:153::i;:::-;56669:167;;56846:11;56860:341;57148:52;57180:7;:19;;;150:4:32;57174:25:33;;;;:::i;:::-;57148:19;;;;;:25;:52::i;:::-;56860:270;57002:114;57075:7;:19;;;150:4:32;57069:25:33;;;;:::i;:::-;57026:12;57003:7;:20;;;:35;;;;:::i;57002:114::-;56978:138;;:1;:138;:::i;:::-;56920:18;;;;56860:38;;;;:79;;:59;:79::i;:341::-;56846:355;-1:-1:-1;57218:16:33;:3;56846:355;57218:11;:16::i;39958:357::-;40139:7;40177:131;40237:57;40259:11;40272:10;40284:9;40237:21;:57::i;:::-;40177:34;:14;40200:10;40177:22;:34::i;14987:101:32:-;15043:6;15072:1;15068;:5;:13;;15080:1;15068:13;;27502:892:33;27704:7;;27761:30;:23;27704:7;27761:27;:30::i;:::-;27760:31;;;:::i;:::-;27723:69;;27802:16;27821:227;28023:7;:18;;;28043:4;27982:7;:28;;;27919:48;27948:7;:18;;;27919:7;:20;;;:28;;:48;;;;:::i;:::-;27885:18;;;;27858:46;;:18;;:26;:46::i;:::-;27822:21;;:82;;;;:::i;:::-;:145;;;;:::i;:::-;:188;;;;:::i;:::-;27821:201;:227;:201;:227::i;:::-;27802:246;-1:-1:-1;28069:293:33;28297:55;150:4:32;28322:23:33;150:4:32;28334:10:33;28322:11;:23::i;:::-;:29;;;;:::i;28297:55::-;150:4:32;28145:111:33;28222:16;28228:10;150:4:32;28222:16:33;:::i;:::-;28175;;;;28145:21;;;;:47;;:29;:47::i;:111::-;28099:27;150:4:32;28111:14:33;28099:11;:27::i;:::-;:157;;;;:::i;:::-;:179;;;;:::i;:::-;:253;;;;:::i;37166:1474::-;37371:18;37391:4;37460:19;37482:39;37502:7;:18;;;37482:11;:19;;:39;;;;:::i;:::-;37460:61;-1:-1:-1;37531:13:33;37547:94;37594:37;37460:61;37594:23;:37;:::i;:::-;37547:25;;;;;:33;:94::i;:::-;37531:110;;37651:14;37668:53;37695:7;:25;;;37668:7;:18;;;:26;;:53;;;;:::i;:::-;37651:70;;37731:9;37743:220;37798:6;37818:7;:25;;;37857:23;37900:7;:19;;;150:4:32;37894:25:33;;;;:::i;:::-;37933:7;:20;;;37743:41;:220::i;:::-;37731:232;;37986:43;37998:30;38008:7;:19;;;37998:5;:9;;:30;;;;:::i;37986:43::-;37973:56;;38217:11;38231:46;38246:30;38256:7;:19;;;38246:5;:9;;:30;;;;:::i;:::-;38231:6;;:14;:46::i;:::-;38217:60;;38295:3;38291:1;:7;38287:55;;;38322:1;38325:5;38314:17;;;;;;;;;;;38287:55;38364:109;38396:67;38410:52;38442:7;:19;;;150:4:32;38436:25:33;;;;:::i;:::-;38410:19;;;;;:25;:52::i;:::-;38397:7;38401:3;38397:1;:7;:::i;38364:109::-;38351:122;-1:-1:-1;38542:55:33;150:4:32;38567:23:33;150:4:32;38579:10:33;38567:11;:23::i;:::-;:29;;;;:::i;:::-;38542:16;;;;;:24;:55::i;:::-;38528:69;;;;:::i;:::-;;38628:4;;-1:-1:-1;37166:1474:33;-1:-1:-1;;;;;;;;;;37166:1474:33:o;14:385:165:-;100:6;108;116;124;177:3;165:9;156:7;152:23;148:33;145:53;;;194:1;191;184:12;145:53;-1:-1:-1;;217:23:165;;;287:2;272:18;;259:32;;-1:-1:-1;338:2:165;323:18;;310:32;;389:2;374:18;361:32;;-1:-1:-1;14:385:165;-1:-1:-1;14:385:165:o;586:347::-;653:2;647:9;695:6;683:19;;732:18;717:34;;753:22;;;714:62;711:185;;;818:10;813:3;809:20;806:1;799:31;853:4;850:1;843:15;881:4;878:1;871:15;711:185;912:2;905:22;586:347;:::o;938:949::-;1003:5;1051:6;1039:9;1034:3;1030:19;1026:32;1023:52;;;1071:1;1068;1061:12;1023:52;1093:17;;:::i;:::-;1084:26;;1146:9;1133:23;1126:5;1119:38;1217:2;1206:9;1202:18;1189:32;1184:2;1177:5;1173:14;1166:56;1282:2;1271:9;1267:18;1254:32;1249:2;1242:5;1238:14;1231:56;1347:2;1336:9;1332:18;1319:32;1314:2;1307:5;1303:14;1296:56;1413:3;1402:9;1398:19;1385:33;1379:3;1372:5;1368:15;1361:58;1480:3;1469:9;1465:19;1452:33;1446:3;1439:5;1435:15;1428:58;1547:3;1536:9;1532:19;1519:33;1513:3;1506:5;1502:15;1495:58;1614:3;1603:9;1599:19;1586:33;1580:3;1573:5;1569:15;1562:58;1639:3;1702:2;1691:9;1687:18;1674:32;1669:2;1662:5;1658:14;1651:56;;1726:3;1789:2;1778:9;1774:18;1761:32;1756:2;1749:5;1745:14;1738:56;;1813:3;1876:2;1865:9;1861:18;1848:32;1843:2;1836:5;1832:14;1825:56;;938:949;;;;:::o;1892:251::-;1988:6;2041:3;2029:9;2020:7;2016:23;2012:33;2009:53;;;2058:1;2055;2048:12;2009:53;2081:56;2129:7;2118:9;2081:56;:::i;2148:454::-;2243:6;2251;2259;2267;2275;2328:3;2316:9;2307:7;2303:23;2299:33;2296:53;;;2345:1;2342;2335:12;2296:53;-1:-1:-1;;2368:23:165;;;2438:2;2423:18;;2410:32;;-1:-1:-1;2489:2:165;2474:18;;2461:32;;2540:2;2525:18;;2512:32;;-1:-1:-1;2591:3:165;2576:19;2563:33;;-1:-1:-1;2148:454:165;-1:-1:-1;2148:454:165:o;2607:523::-;2711:6;2719;2727;2735;2743;2751;2804:3;2792:9;2783:7;2779:23;2775:33;2772:53;;;2821:1;2818;2811:12;2772:53;-1:-1:-1;;2844:23:165;;;2914:2;2899:18;;2886:32;;-1:-1:-1;2965:2:165;2950:18;;2937:32;;3016:2;3001:18;;2988:32;;-1:-1:-1;3067:3:165;3052:19;;3039:33;;-1:-1:-1;3119:3:165;3104:19;3091:33;;-1:-1:-1;2607:523:165;-1:-1:-1;2607:523:165:o;3135:685::-;3245:6;3253;3261;3269;3277;3285;3293;3346:3;3334:9;3325:7;3321:23;3317:33;3314:53;;;3363:1;3360;3353:12;3314:53;3399:9;3386:23;3376:33;;3456:2;3445:9;3441:18;3428:32;3418:42;;3507:2;3496:9;3492:18;3479:32;3469:42;;3558:2;3547:9;3543:18;3530:32;3520:42;;3609:3;3598:9;3594:19;3581:33;3571:43;;3661:3;3650:9;3646:19;3633:33;3623:43;;3716:3;3705:9;3701:19;3688:33;3764:5;3757:13;3750:21;3743:5;3740:32;3730:60;;3786:1;3783;3776:12;3730:60;3809:5;3799:15;;;3135:685;;;;;;;;;;:::o;4291:383::-;4399:6;4407;4415;4468:3;4456:9;4447:7;4443:23;4439:33;4436:53;;;4485:1;4482;4475:12;4436:53;4508:56;4556:7;4545:9;4508:56;:::i;:::-;4498:66;4611:3;4596:19;;4583:33;;-1:-1:-1;4663:3:165;4648:19;;;4635:33;;4291:383;-1:-1:-1;;;4291:383:165:o;4679:592::-;4792:6;4800;4808;4816;4824;4832;4840;4893:3;4881:9;4872:7;4868:23;4864:33;4861:53;;;4910:1;4907;4900:12;4861:53;-1:-1:-1;;4933:23:165;;;5003:2;4988:18;;4975:32;;-1:-1:-1;5054:2:165;5039:18;;5026:32;;5105:2;5090:18;;5077:32;;-1:-1:-1;5156:3:165;5141:19;;5128:33;;-1:-1:-1;5208:3:165;5193:19;;5180:33;;-1:-1:-1;5260:3:165;5245:19;5232:33;;-1:-1:-1;4679:592:165;-1:-1:-1;4679:592:165:o;5853:127::-;5914:10;5909:3;5905:20;5902:1;5895:31;5945:4;5942:1;5935:15;5969:4;5966:1;5959:15;5985:200;6051:9;;;6024:4;6079:9;;6107:10;;6119:12;;;6103:29;6142:12;;;6134:21;;6100:56;6097:82;;;6159:18;;:::i;:::-;6097:82;5985:200;;;;:::o;6190:128::-;6257:9;;;6278:11;;;6275:37;;;6292:18;;:::i;6323:136::-;6358:3;-1:-1:-1;;;6379:22:165;;6376:48;;6404:18;;:::i;:::-;-1:-1:-1;6444:1:165;6440:13;;6323:136::o;6464:125::-;6529:9;;;6550:10;;;6547:36;;;6563:18;;:::i;6594:216::-;6658:9;;;6686:11;;;6633:3;6716:9;;6744:10;;6740:19;;6769:10;;6761:19;;6737:44;6734:70;;;6784:18;;:::i;:::-;6734:70;;6594:216;;;;:::o;7233:135::-;7272:3;7293:17;;;7290:43;;7313:18;;:::i;:::-;-1:-1:-1;7360:1:165;7349:13;;7233:135::o;8343:290::-;8382:1;8408;8398:132;;8452:10;8447:3;8443:20;8440:1;8433:31;8487:4;8484:1;8477:15;8515:4;8512:1;8505:15;8398:132;-1:-1:-1;;;8546:18:165;;-1:-1:-1;;8566:13:165;;8542:38;8539:64;;;8583:18;;:::i;:::-;-1:-1:-1;8617:10:165;;8343:290::o;8638:168::-;8711:9;;;8742;;8759:15;;;8753:22;;8739:37;8729:71;;8780:18;;:::i",
-    linkReferences: {},
+  "deployedBytecode": {
+    "object": "0x608060405234801561001057600080fd5b50600436106100cf5760003560e01c806382a4d3061161008c578063a40a6be811610066578063a40a6be8146101d5578063de31b2ab146101fd578063f87845f214610210578063fdc30d611461022357600080fd5b806382a4d3061461018157806386ad02af1461019457806394169d49146101a757600080fd5b80632471caed146100d457806337043a53146100fa5780633fa2c8fc1461010d5780635e6d9d36146101205780636ceebe1d146101335780637ef99f8714610146575b600080fd5b6100e76100e2366004611f09565b610236565b6040519081526020015b60405180910390f35b6100e7610108366004612004565b610251565b6100e761011b366004612021565b610262565b6100e761012e36600461205c565b61027d565b6100e761014136600461205c565b61029a565b61015961015436600461209f565b6102ab565b604080519586526020860194909452928401919091526060830152608082015260a0016100f1565b6100e761018f366004612021565b61032f565b6100e76101a2366004612104565b61033f565b6101ba6101b536600461213b565b610356565b604080519384526020840192909252908201526060016100f1565b6101e86101e3366004612104565b610386565b604080519283526020830191909152016100f1565b6100e761020b36600461205c565b6103a7565b6101ba61021e36600461213b565b6103b8565b6100e7610231366004611f09565b6103d0565b600080610245868686866103df565b9150505b949350505050565b600061025c826103ff565b92915050565b6000806102728787878787610671565b979650505050505050565b60008061028e8888888888886106ac565b98975050505050505050565b60008061028e8888888888886106cd565b60008060008060006102e56040518060a0016040528060008152602001600081526020016000815260200160008152602001600081525090565b6102f48d8d8d8d8d8d8d6106ee565b608086018190526060860182905260408601839052602086018490529484905292985090965094509250905097509750975097509792505050565b6000806102728787878787610769565b600061034c8484846107c0565b90505b9392505050565b60008060008060008061036e8d8d8d8d8d8d8d610977565b919750955093505050505b9750975097945050505050565b6000806000806103978787876109e6565b909450925050505b935093915050565b60008061028e888888888888610c4d565b60008060008060008061036e8d8d8d8d8d8d8d610c9c565b60008061024586868686610ce8565b60006103f6826103f0858888610d0d565b90610d2b565b95945050505050565b60008061041f836101400151846101200151610d8290919063ffffffff16565b61010084015160e085015161043391610d82565b61043d919061219d565b9050600061045384600001518560200151610d97565b905060008213156104f55760006104958286604001518760a001518860c00151670de0b6b3a764000061048691906121c4565b89606001518a60800151610db4565b91506104a390508184610e37565b905080156104ef576104dc828660400151838860c00151670de0b6b3a76400006104cd91906121c4565b89606001518a60800151610e4c565b855186906104eb9083906121c4565b9052505b506105b3565b60008212156105b357610507826121d7565b9150600061053b8286604001518760c00151670de0b6b3a764000061052c91906121c4565b88606001518960800151610e80565b915061054990508184610e37565b9050801561059557610582828660400151838860c00151670de0b6b3a764000061057391906121c4565b89606001518a60800151610f0b565b855186906105919083906121f3565b9052505b61059f81846121c4565b855186906105ae9083906121f3565b905250505b60006105e2856101000151670de0b6b3a76400006105d191906121c4565b606087015160e08801519190610d0d565b610610866101400151670de0b6b3a76400006105fe91906121c4565b60608801516101208901519190610d0d565b61061a919061219d565b9050600081866000015161062e9190612206565b90508560a001518112156106555760405163aeeb825d60e01b815260040160405180910390fd5b80865260a086015161066790826121c4565b9695505050505050565b600080610680878787866103df565b905061027261069482866301e13380610f86565b6106a683670de0b6b3a76400006121c4565b90610fac565b60006102728787876106c688670de0b6b3a76400006121c4565b8787610fc1565b60006102728787876106e788670de0b6b3a76400006121c4565b8787610e4c565b6000806000806000808888101561074b578615610713576107108d898b610d0d565b9c505b61071e8c898b610d0d565b9b5061072a8b8d61219d565b90506107378b898b610d0d565b9a506107448a898b610d0d565b9950610758565b6107558b8d61219d565b90505b9b9c9a9b999a975050505050505050565b60008061077a846301e13380610fac565b90506102726107b0610794670de0b6b3a764000086611034565b61079e8885610d82565b6103f090670de0b6b3a76400006121f3565b6107ba888a610d82565b90610d82565b6040805160608101825260008082526020820181905291810182905260006107f086600001518760200151610d97565b9050600061080c8288604001518960e001518a60a001516103df565b9050600061081a8884611049565b9050610829888285858b61114a565b158015604087015290855261084357935061034f92505050565b600061085089848a611269565b905061085f898286868c61114a565b1515604087018190529086526108d65760405162461bcd60e51b815260206004820152603160248201527f496e697469616c20677565737320696e206063616c63756c6174654d617853686044820152701bdc9d18081a5cc81a5b9cdbdb1d995b9d607a1b60648201526084015b60405180910390fd5b60005b8781101561096a576108ed8a83868861133f565b1580156040890152602088019190915261096a57602086015186516000916109159190610fac565b61091f90846121f3565b90508381111561092f575061096a565b61093c8b8288888e61114a565b15801560408a015290885261095357809250610959565b5061096a565b506109638161222e565b90506108d9565b5098975050505050505050565b6000808061099861099088670de0b6b3a76400006121c4565b899087610d0d565b90508615610379576109aa8888610d82565b91506109cb8a8a846109c48a670de0b6b3a76400006121c4565b8989610e4c565b92506109d783826121f3565b90509750975097945050505050565b60008060006109fd86600001518760200151610d97565b90506000610a198288604001518960e001518a60a001516103df565b90506000806000610a50858b604001518c60a00151670de0b6b3a7640000610a4191906121c4565b8d60c001518e60e00151610e80565b60c08c0151909350909150610a66908290610d82565b9250610a7883858c61012001516113cb565b610a8290836121c4565b91506000610a938b8b8686896113f8565b9150508015610aab5750919550935061039f92505050565b5050610ab989838a86611521565b9550610ac7898786866115ab565b9450600080610ad98b8b8a8a896113f8565b9150915080610b445760405162461bcd60e51b815260206004820152603160248201527f496e697469616c20677565737320696e206063616c63756c6174654d61784c6f6044820152703733b01034b99034b739b7b63b32b73a1760791b60648201526084016108cd565b60005b89811015610c3e57848910610bba5760405162461bcd60e51b815260206004820152603360248201527f52656163686564206162736f6c757465206d617820626f6e6420616d6f756e746044820152721034b7103033b2ba2fb6b0bc2fb637b733b01760691b60648201526084016108cd565b6000610bc88d8b8a8a611610565b9350905082610bd75750610c3e565b6000610be38583610fac565b610bed908c6121f3565b90506000610bfd8f838c8c6115ab565b9050610c0c8f8f84848d6113f8565b90965094508415610c2257819b50809a50610c2a565b505050610c3e565b50505080610c379061222e565b9050610b47565b50505050505050935093915050565b600080610c6685610c5e88876116a8565b8a9190610d0d565b9050610c73888486610d0d565b610c7d90826121f3565b905086811115610c915761028e87826121c4565b509695505050505050565b60008080610cb561099088670de0b6b3a76400006121c4565b9050610cc18888610d82565b91508115610379576109cb8a8a84610ce18a670de0b6b3a76400006121c4565b8989610f0b565b600083831115610249576103f6610cff85856121c4565b610d0986856116a8565b8791905b6000826000190484118302158202610d2457600080fd5b5091020490565b600081600003610d445750670de0b6b3a764000061025c565b82600003610d545750600061025c565b816000610d60856116bd565b9050818102610d77670de0b6b3a764000082612247565b9050610667816118d9565b600061034f8383670de0b6b3a7640000610d0d565b600080610da4838561219d565b9050600081121561034f57600080fd5b60008080610dc28585610fac565b90506000610dd382868c8a8d611a64565b90506000610e0e610dec670de0b6b3a76400008a610fac565b610e04610dfd8b6103f08b8f610d82565b8690610d82565b6103f090856121c4565b9050610e1a898c6121c4565b610e248b836121c4565b945094505050505b965096945050505050565b6000818311610e46578261034f565b50919050565b600080610e5d888888888888611a92565b909250905080610c9157604051637ac17d2560e01b815260040160405180910390fd5b60008080610e8e8585610fac565b90506000610e9f82868b8a8c611a64565b90506000610ed4610eb8670de0b6b3a76400008a610fac565b6103f0610ecd670de0b6b3a7640000876121f3565b8590610fac565b90506000610ee28288610fac565b9050610eee8b826121c4565b610ef8838c6121c4565b95509550505050505b9550959350505050565b600080610f188484610fac565b90506000610f2982858b898c611a64565b9050610f39866103f0898b6121c4565b97506000610f60610f52670de0b6b3a764000089611034565b6103f0856106a68d876121c4565b9050610f6c8186610fac565b9050610f788a826121c4565b9a9950505050505050505050565b6000826000190484118302158202610f9d57600080fd5b50910281810615159190040190565b600061034f83670de0b6b3a764000084610d0d565b600080610fce8484610fac565b90506000610fdf82858b898c611a64565b9050610ff9866103f0610ff28a8d6121f3565b8790610d82565b9850611005828a610d82565b9850600061102861101e670de0b6b3a764000089611034565b6103f08c856121c4565b9050610f78818a6121c4565b600061034f83670de0b6b3a764000084610f86565b60008061107084610100015185602001516110649190612206565b61010086015190611b33565b905060006110ba6110928660e001518760c00151610fac90919063ffffffff16565b8660e00151868860a00151670de0b6b3a76400006110b091906121c4565b8960400151611a64565b905060006111386110eb8760a00151670de0b6b3a76400006110dc91906121c4565b670de0b6b3a764000090611034565b610e046111258960a00151670de0b6b3a764000061110991906121c4565b6103f061111a898d60200151610d97565b60e08d015190610d82565b60e08a015160c08b01516107ba91610fac565b905085604001518161066791906121c4565b600080600080611181878a604001518a8c60a00151670de0b6b3a764000061117291906121c4565b8d60c001518e60e00151611a92565b915091508061119857600080935093505050610f01565b60006111d28a60c001516111b88b8a8e61012001518f6101400151611b49565b6111c88c8b8f6101200151611b60565b6106a691906121c4565b6111dc90846121c4565b8a516111e891906121c4565b905060006112178b60c0015161120860008a611b3390919063ffffffff16565b8d608001516106a691906121c4565b90508a61010001518161122a91906121f3565b8210611259576101008b015161124082846121c4565b61124a91906121c4565b60019550955050505050610f01565b6000809550955050505050610f01565b60008083905060006112d48661010001516112958860c001518960800151610fac90919063ffffffff16565b60c08901516112a9906106a6896000611b33565b89516112b591906121f3565b6112bf91906121c4565b6112c991906121c4565b60c088015190610d82565b90506106676113036112ee87670de0b6b3a76400006121c4565b6101208901516101408a01516107ba91610d82565b61132461131888670de0b6b3a76400006121c4565b6101208a015190610d82565b61132e90856121c4565b61133891906121f3565b8290610fac565b600080600061134f878786611b7b565b905060006113988860c001516106a68a6101400151670de0b6b3a764000061137791906121c4565b6107ba61138c8b670de0b6b3a76400006121c4565b6101208e015190610d82565b90508082106113b8576113ab81836121c4565b60019350935050506113c2565b6000809350935050505b94509492505050565b600061034c846107ba670de0b6b3a76400006113e78188610fac565b6113f191906121c4565b8590610d82565b600080600061141386858a61012001518b6101400151611c7a565b9050600061142e8960c0015183610fac90919063ffffffff16565b60c08a015161143e908990610fac565b8a5161144a91906121f3565b61145491906121c4565b905060008288611465896002612283565b8c6080015161147491906121f3565b61147e91906121c4565b61148891906121f3565b905060006114968a82611c94565b61149f906121d7565b90508a61010001516114be8c60c0015184610fac90919063ffffffff16565b6114c891906121f3565b60c08c01516114d8908390610fac565b6114e290856121f3565b10611259576101008b015160c08c01516114fd908490610fac565b60c08d015161150d908490610fac565b61151790866121f3565b61124091906121c4565b60008061153086858586611ca3565b90506000611568670b1a2bc2ec5000006107ba61155e8a60a00151670de0b6b3a76400006110dc91906121c4565b6103f0868b610fac565b9050600061157e670de0b6b3a764000083610d82565b611593610ff284670de0b6b3a76400006121c4565b61159d91906121f3565b905061028e88878784611ca3565b6000806115f48487604001516115ce8960c0015189610fac90919063ffffffff16565b60a08a01516115e590670de0b6b3a76400006121c4565b8a60c001518b60e00151610fc1565b905061160685848861012001516113cb565b61024590826121c4565b60008061161f86868686611da6565b90925090508061163257600091506113c2565b61165c61164784670de0b6b3a76400006121c4565b6101208801516101408901516107ba91610d82565b61166690836121f3565b915061167a670de0b6b3a7640000836121c4565b915061169d671bc16d674ec800008760c0015184610d0d9092919063ffffffff16565b915094509492505050565b600061034f8383670de0b6b3a7640000610f86565b60008082136116df57604051636838feed60e11b815260040160405180910390fd5b5060606fffffffffffffffffffffffffffffffff821160071b82811c67ffffffffffffffff1060061b1782811c63ffffffff1060051b1782811c61ffff1060041b1782811c60ff10600390811b90911783811c600f1060021b1783811c909110600190811b90911783811c90911017609f81810383019390931b90921c6c465772b2bbbb5f824b15207a3081018102821d6d0388eaa27412d5aca026815d636e018102821d6d0df99ac502031bf953eff472fdcc018102821d6d13cdffb29d51d99322bdff5f2211018102821d6d0a0f742023def783a307a986912e018102821d6d01920d8043ca89b5239253284e42018102821d6c0b7a86d7375468fac667a0a527016c29508e458543d8aa4df2abee7882018202831d6d0139601a2efabe717e604cbb4894018202831d6d02247f7a7b6594320649aa03aba1018202831d6c8c3f38e95a6b1ff2ab1c3b343619018202831d6d02384773bdf1ac5676facced60901901820290921d6cb9a025d814b29c212b8b1a07cd190102780a09507084cc699bb0e71ea869ffffffffffffffffffffffff190105711340daa0d5f769dba1915cef59f0815a550602605f19919091017d0267a36c0c95b3975ab3ee5b203a7614a3f75373f047d803ae7b6687f2b302017d57115e47018c7177eebf7cd370a3356a1b7863008a5ae8028c72b88642840160ae1d90565b6000680248ce36a70cb26b3e1982136118f457506000919050565b680755bf798b4a1bf1e5821261191d5760405163df92cc9d60e01b815260040160405180910390fd5b6503782dace9d9604e83901b059150600060606bb17217f7d1cf79abc9e3b39884821b056001605f1b01901d6bb17217f7d1cf79abc9e3b39881029093036c240c330e9fb2d9cbaf0fd5aafb1981018102606090811d6d0277594991cfc85f6e2461837cd9018202811d6d1a521255e34f6a5061b25ef1c9c319018202811d6db1bbb201f443cf962f1a1d3db4a5018202811d6e02c72388d9f74f51a9331fed693f1419018202811d6e05180bb14799ab47a8a8cb2a527d57016d02d16720577bd19bf614176fe9ea6c10fe68e7fd37d0007b713f765084018402831d9081019084016d01d3967ed30fc4f89c02bab5708119010290911d6e0587f503bb6ea29d25fcb740196450019091026d360d7aeea093263ecc6e0ecb291760621b010574029d9dc38563c32e5c2f6dc192ee70ef65f9978af30260c3939093039290921c92915050565b6000611a708284610d2b565b611a88611a81856103f08989610d82565b8890610d82565b61066791906121f3565b60008080611aa08585610fac565b90506000611ab182868c8a8d611a64565b9050611ac1876103f08a8c6121f3565b985088811015611ad957600080935093505050610e2c565b6000611afe611af0670de0b6b3a76400008a611034565b6103f0856106a68e876121c4565b9050611b0a8187610fac565b9050808b1115611b2157611b1e818c6121c4565b94505b60019350505050965096945050505050565b6000818313611b42578161034f565b5090919050565b60006103f6611b59868686611b60565b8390610d82565b600061034c846107ba6113f186670de0b6b3a76400006121c4565b600080611bba611b9c8660e001518760c00151610fac90919063ffffffff16565b8660e00151858860a00151670de0b6b3a76400006110b091906121c4565b90506000611bf6611be7611bdc8860a00151888a604001516103f091906121f3565b60c0890151906116a8565b670de0b6b3a764000090610fac565b90506000611c6e611c238860a00151670de0b6b3a7640000611c1891906121c4565b60a08a015190611034565b6103f0611c518a60a00151670de0b6b3a7640000611c4191906121c4565b8a8c604001516103f091906121f3565b611c5b90876121c4565b60c08b015160e08c01516107ba91610fac565b90506102728282610d82565b60006103f6611c8a8686866113cb565b6107ba8487610d82565b6000818313610e46578261034f565b600080611cb08582611c94565b611cb9906121d7565b90506000611d268760c00151671bc16d674ec80000896101000151611cef8b60c001518c60800151610fac90919063ffffffff16565b60c08c0151611cff908890610fac565b8c51611d0b91906121f3565b611d1591906121c4565b611d1f91906121c4565b9190610d0d565b9050610272611d4b670de0b6b3a7640000611d418189610fac565b61131891906121c4565b670de0b6b3a7640000611d76611d6189836121c4565b6101208c01516101408d01516107ba91610d82565b611d88670de0b6b3a764000089610fac565b611d9291906121f3565b611d9c91906121c4565b61133891906121c4565b6000806000611dc28760c0015187610fac90919063ffffffff16565b90506000611dde611dd383886121f3565b60e08a015190610d82565b90506000611dfd8960e001518a60c00151610fac90919063ffffffff16565b90506000611e2d828b60e001518a8d60a00151670de0b6b3a7640000611e2391906121c4565b8e60400151611a64565b9050611e49611be78b60a0015185610d2b90919063ffffffff16565b95506000611e6e611e678c60a0015186610d2b90919063ffffffff16565b8490610d82565b905080821015611e89576000809650965050505050506113c2565b611ebf611a81611eb58d60a00151670de0b6b3a7640000611eaa91906121c4565b60a08f015190611034565b6103f084866121c4565b9650611eed670de0b6b3a7640000611ed7818b610fac565b611ee191906121c4565b6101208d015190610d82565b611ef790886121c4565b9b60019b509950505050505050505050565b60008060008060808587031215611f1f57600080fd5b5050823594602084013594506040840135936060013592509050565b604051610160810167ffffffffffffffff81118282101715611f6d57634e487b7160e01b600052604160045260246000fd5b60405290565b60006101608284031215611f8657600080fd5b611f8e611f3b565b9050813581526020820135602082015260408201356040820152606082013560608201526080820135608082015260a082013560a082015260c082013560c082015260e082013560e082015261010080830135818301525061012080830135818301525061014080830135818301525092915050565b6000610160828403121561201757600080fd5b61034f8383611f73565b600080600080600060a0868803121561203957600080fd5b505083359560208501359550604085013594606081013594506080013592509050565b60008060008060008060c0878903121561207557600080fd5b505084359660208601359650604086013595606081013595506080810135945060a0013592509050565b600080600080600080600060e0888a0312156120ba57600080fd5b873596506020880135955060408801359450606088013593506080880135925060a0880135915060c088013580151581146120f457600080fd5b8091505092959891949750929550565b60008060006101a0848603121561211a57600080fd5b6121248585611f73565b956101608501359550610180909401359392505050565b600080600080600080600060e0888a03121561215657600080fd5b505085359760208701359750604087013596606081013596506080810135955060a0810135945060c0013592509050565b634e487b7160e01b600052601160045260246000fd5b81810360008312801583831316838312821617156121bd576121bd612187565b5092915050565b8181038181111561025c5761025c612187565b6000600160ff1b82016121ec576121ec612187565b5060000390565b8082018082111561025c5761025c612187565b808201828112600083128015821682158216171561222657612226612187565b505092915050565b60006001820161224057612240612187565b5060010190565b60008261226457634e487b7160e01b600052601260045260246000fd5b600160ff1b82146000198414161561227e5761227e612187565b500590565b808202811582820484141761025c5761025c61218756fea2646970667358221220fed595ea71683d7e79ded50830ad0aa085fcc08ccdc3145f20b424889bfa064064736f6c63430008130033",
+    "sourceMap": "135:7248:46:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5839:408;;;;;;:::i;:::-;;:::i;:::-;;;550:25:165;;;538:2;523:18;5839:408:46;;;;;;;;6253:196;;;;;;:::i;:::-;;:::i;169:504::-;;;;;;:::i;:::-;;:::i;1179:528::-;;;;;;:::i;:::-;;:::i;2450:530::-;;;;;;:::i;:::-;;:::i;3950:1093::-;;;;;;:::i;:::-;;:::i;:::-;;;;4082:25:165;;;4138:2;4123:18;;4116:34;;;;4166:18;;;4159:34;;;;4224:2;4209:18;;4202:34;4267:3;4252:19;;4245:35;4069:3;4054:19;3950:1093:46;3825:461:165;679:494:46;;;;;;:::i;:::-;;:::i;5470:363::-;;;;;;:::i;:::-;;:::i;1713:731::-;;;;;;:::i;:::-;;:::i;:::-;;;;5478:25:165;;;5534:2;5519:18;;5512:34;;;;5562:18;;;5555:34;5466:2;5451:18;1713:731:46;5276:319:165;5049:415:46;;;;;;:::i;:::-;;:::i;:::-;;;;5774:25:165;;;5830:2;5815:18;;5808:34;;;;5747:18;5049:415:46;5600:248:165;6455:512:46;;;;;;:::i;:::-;;:::i;2986:735::-;;;;;;:::i;:::-;;:::i;6973:408::-;;;;;;:::i;:::-;;:::i;5839:::-;6025:7;6044:14;6061:156;6108:14;6136:13;6163:18;6195:12;6061:33;:156::i;:::-;6044:173;-1:-1:-1;;5839:408:46;;;;;;;:::o;6253:196::-;6371:7;6397:45;6434:7;6397:36;:45::i;:::-;6390:52;6253:196;-1:-1:-1;;6253:196:46:o;169:504::-;405:7;424:14;441:202;494:23;531:13;558:18;590:17;621:12;441:39;:202::i;:::-;424:219;169:504;-1:-1:-1;;;;;;;169:504:46:o;1179:528::-;1429:7;1448:14;1465:212;1511:23;1548:13;1575:9;1598:12;1624:11;1649:18;1465:32;:212::i;:::-;1448:229;1179:528;-1:-1:-1;;;;;;;;1179:528:46:o;2450:530::-;2701:7;2720:14;2737:213;2784:23;2821:13;2848:9;2871:12;2897:11;2922:18;2737:33;:213::i;3950:1093::-;4250:7;4259;4268;4277:6;4285:7;4304:43;-1:-1:-1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4304:43:46;4559:261;4620:14;4648:19;4681:16;4711:19;4744:15;4773:16;4803:7;4559:47;:261::i;:::-;4521:25;;;4357:463;;;4480:27;;;4357:463;;;4444:22;;;4357:463;;;4405:25;;;4357:463;;;;;;;;;-1:-1:-1;4357:463:46;;-1:-1:-1;4357:463:46;-1:-1:-1;4357:463:46;-1:-1:-1;4357:463:46;-1:-1:-1;3950:1093:46;;;;;;;;;;;;;:::o;679:494::-;910:7;929:14;946:197;1003:23;1040:18;1072:4;1090:17;1121:12;946:43;:197::i;5470:363::-;5648:7;5686:140;5736:7;5761:19;5798:14;5686:32;:140::i;:::-;5667:159;;5470:363;;;;;;:::o;1713:731::-;2006:7;2015;2024;2044:15;2061;2078;2097:296;2161:23;2202:13;2233:9;2260:24;2302:12;2332:11;2361:18;2097:46;:296::i;:::-;2043:350;;-1:-1:-1;2043:350:46;-1:-1:-1;2043:350:46;-1:-1:-1;;;;1713:731:46;;;;;;;;;;;;:::o;5049:415::-;5230:7;5239;5259:15;5276;5295:127;5340:7;5361:23;5398:14;5295:31;:127::i;:::-;5258:164;;-1:-1:-1;5258:164:46;-1:-1:-1;;;5049:415:46;;;;;;;:::o;6455:512::-;6697:7;6716:14;6733:204;6784:11;6809:12;6835:15;6864:16;6894:11;6919:8;6733:37;:204::i;2986:735::-;3281:7;3290;3299;3319:15;3336;3353;3372:298;3437:23;3478:13;3509:10;3537:24;3579:12;3609:11;3638:18;3372:47;:298::i;6973:408::-;7159:7;7178:14;7195:156;7246:11;7271:15;7300:16;7330:11;7195:37;:156::i;1246:449:33:-;1441:17;1575:113;1675:12;1575:82;:18;1618:23;1643:13;1575:42;:82::i;:::-;:99;;:113::i;:::-;1563:125;1246:449;-1:-1:-1;;;;;1246:449:33:o;58989:5242::-;59092:7;59242:20;59400:106;59455:7;:33;;;59400:7;:25;;;:33;;:106;;;;:::i;:::-;59318:32;;;;59285:24;;;;:66;;:32;:66::i;:::-;59265:255;;;;:::i;:::-;59242:278;;59530:30;59563:113;59608:7;:21;;;59643:7;:23;;;59563:31;:113::i;:::-;59530:146;;59706:1;59690:13;:17;59686:3447;;;60378:21;60403:291;60452:22;60492:7;:20;;;60530:7;:28;;;60582:7;:19;;;150:4:32;60576:25:33;;;;:::i;:::-;60619:7;:18;;;60655:7;:25;;;60403:31;:291::i;:::-;60375:319;-1:-1:-1;60724:41:33;;-1:-1:-1;60375:319:33;60750:13;60724:17;:41::i;:::-;60708:57;-1:-1:-1;60834:17:33;;60830:448;;60896:367;60988:22;61036:7;:20;;;61082:13;61127:7;:19;;;150:4:32;61121:25:33;;;;:::i;:::-;61172:7;:18;;;61216:7;:25;;;60896:66;:367::i;:::-;60871:392;;:7;;:392;;;;;:::i;:::-;;;-1:-1:-1;60830:448:33;59709:1579;59686:3447;;;61314:1;61298:13;:17;61294:1839;;;62119:14;62120:13;62119:14;:::i;:::-;62103:30;;62197:21;62222:244;62270:22;62310:7;:20;;;62354:7;:19;;;150:4:32;62348:25:33;;;;:::i;:::-;62391:7;:18;;;62427:7;:25;;;62222:30;:244::i;:::-;62194:272;-1:-1:-1;62496:41:33;;-1:-1:-1;62194:272:33;62522:13;62496:17;:41::i;:::-;62480:57;-1:-1:-1;62602:17:33;;62598:448;;62664:367;62756:22;62804:7;:20;;;62850:13;62895:7;:19;;;150:4:32;62889:25:33;;;;:::i;:::-;62940:7;:18;;;62984:7;:25;;;62664:66;:367::i;:::-;62639:392;;:7;;:392;;;;;:::i;:::-;;;-1:-1:-1;62598:448:33;63084:38;63109:13;63092;63084:38;:::i;:::-;63059:63;;:7;;:63;;;;;:::i;:::-;;;-1:-1:-1;;61294:1839:33;63266:19;63500:153;63563:7;:32;;;150:4:32;63557:38:33;;;;:::i;:::-;63617:18;;;;63500:24;;;;;:153;:35;:153::i;:::-;63308:143;63368:7;:33;;;150:4:32;63362:39:33;;;;:::i;:::-;63419:18;;;;63308:25;;;;;:143;:36;:143::i;:::-;63288:379;;;;:::i;:::-;63266:401;;63677:27;63751:12;63714:7;:21;;;63707:56;;;;:::i;:::-;63677:86;;63807:7;:28;;;63777:20;:59;63773:131;;;63859:34;;-1:-1:-1;;;63859:34:33;;;;;;;;;;;63773:131;63913:53;;;64196:28;;;;64172:52;;63945:20;64172:52;:::i;:::-;64165:59;58989:5242;-1:-1:-1;;;;;;58989:5242:33:o;2312:782::-;2548:11;2784:17;2804:150;2836:23;2873:13;2900:18;2932:12;2804:18;:150::i;:::-;2784:170;-1:-1:-1;2983:104:33;3026:47;2784:170;3045:17;3064:8;3026:18;:47::i;:::-;2984:15;2990:9;150:4:32;2984:15:33;:::i;:::-;2983:25;;:104::i;5385:642::-;5638:7;5758:262;5821:23;5862:13;5893:12;5923:18;5929:12;150:4:32;5923:18:33;:::i;:::-;5959:11;5988:18;5758:45;:262::i;9270:637::-;9521:7;9641:259;9704:23;9745:13;9776:9;9803:18;9809:12;150:4:32;9803:18:33;:::i;:::-;9839:11;9868:18;9641:45;:259::i;14234:2717::-;14534:7;14543;14552;14561:6;14569:7;15503:27;15563:15;15544:16;:34;15540:1219;;;15779:7;15775:181;;;15823:118;:14;15870:16;15908:15;15823:25;:118::i;:::-;15806:135;;15775:181;16031:111;:19;16079:16;16113:15;16031:30;:111::i;:::-;16009:133;-1:-1:-1;16250:70:33;16303:16;16009:133;16250:70;:::i;:::-;16211:109;-1:-1:-1;16353:108:33;:16;16398;16432:15;16353:27;:108::i;:::-;16334:127;-1:-1:-1;16497:111:33;:19;16545:16;16579:15;16497:30;:111::i;:::-;16475:133;;15540:1219;;;16678:70;16731:16;16685:19;16678:70;:::i;:::-;16639:109;;15540:1219;16790:14;;16818:19;;16851:16;;14234:2717;-1:-1:-1;;;;;;;;14234:2717:33:o;4089:611::-;4320:20;;4429:35;:17;4455:8;4429:25;:35::i;:::-;4417:47;-1:-1:-1;4550:143:33;4627:52;4655:23;150:4:32;4665:12:33;4655:9;:23::i;:::-;4634:15;:4;4647:1;4634:12;:15::i;:::-;4628:21;;150:4:32;4628:21:33;:::i;4627:52::-;4550:51;:18;4577:23;4550:26;:51::i;:::-;:59;;:143::i;40850:4432::-;-1:-1:-1;;;;;;;;41013:7:33;-1:-1:-1;;;;;;;;;;;;;;;41332:30:33;41365:113;41410:7;:21;;;41445:7;:23;;;41365:31;:113::i;:::-;41332:146;;41488:17;41508:170;41540:22;41576:7;:20;;;41610:7;:25;;;41649:7;:19;;;41508:18;:170::i;:::-;41488:190;;41688:29;41720:94;41761:7;41782:22;41720:27;:94::i;:::-;41688:126;;41866:185;41907:7;41928:21;41963:22;41999:9;42022:19;41866:27;:185::i;:::-;41824:227;;;41845:17;;;41824:227;;;;42061:76;;42105:21;-1:-1:-1;42098:28:33;;-1:-1:-1;;;42098:28:33;42061:76;43031:21;43055:109;43091:7;43112:9;43135:19;43055:22;:109::i;:::-;43031:133;;43216:177;43257:7;43278:13;43305:22;43341:9;43364:19;43216:27;:177::i;:::-;43174:219;;43195:17;;;43174:219;;;;;;43403:113;;;;-1:-1:-1;;;43403:113:33;;7017:2:165;43403:113:33;;;6999:21:165;7056:2;7036:18;;;7029:30;7095:34;7075:18;;;7068:62;-1:-1:-1;;;7146:18:165;;;7139:47;7203:19;;43403:113:33;;;;;;;;;43531:9;43526:1719;43550:14;43546:1;:18;43526:1719;;;44146:174;44201:7;44226:13;44257:9;44284:22;44146:37;:174::i;:::-;44056:264;;;44112:17;;;44056:264;44074:20;;;44056:264;;;;44376:5;44334:62;44500:20;;;;44473:18;;44409:29;;44473:48;;:18;:26;:48::i;:::-;44441:80;;:13;:80;:::i;:::-;44409:112;;44563:21;44539;:45;44535:89;;;44604:5;;;44535:89;44875:209;44920:7;44945:21;44984:22;45024:9;45051:19;44875:27;:209::i;:::-;44787:297;;;44841:17;;;44787:297;;;;45098:137;;45155:21;45139:37;;45098:137;;;45215:5;;;45098:137;-1:-1:-1;43566:3:33;;;:::i;:::-;;;43526:1719;;;-1:-1:-1;45262:13:33;40850:4432;-1:-1:-1;;;;;;;;40850:4432:33:o;6971:1627::-;7301:23;;;7880:99;7914:30;7920:24;150:4:32;7914:30:33;:::i;:::-;7880:9;;7958:11;7880:20;:99::i;:::-;7864:115;-1:-1:-1;7993:28:33;;7989:603;;8109:43;:9;8127:24;8109:17;:43::i;:::-;8092:60;-1:-1:-1;8271:264:33;8334:23;8375:13;8092:60;8438:18;8444:12;150:4:32;8438:18:33;:::i;:::-;8474:11;8503:18;8271:45;:264::i;:::-;8253:282;-1:-1:-1;8549:32:33;8253:282;8549:32;;:::i;:::-;;;6971:1627;;;;;;;;;;;:::o;18026:5381::-;18192:21;18215;18389:30;18422:113;18467:7;:21;;;18502:7;:23;;;18422:31;:113::i;:::-;18389:146;;18545:17;18565:170;18597:22;18633:7;:20;;;18667:7;:25;;;18706:7;:19;;;18565:18;:170::i;:::-;18545:190;;18745:29;18784;18837:22;18915:285;18984:22;19028:7;:20;;;19076:7;:19;;;150:4:32;19070:25:33;;;;:::i;:::-;19117:7;:18;;;19157:7;:25;;;18915:47;:285::i;:::-;19261:18;;;;18873:327;;-1:-1:-1;18873:327:33;;-1:-1:-1;19238:42:33;;18873:327;;19238:22;:42::i;:::-;19214:66;;19319:135;19358:21;19397:9;19424:7;:16;;;19319:21;:135::i;:::-;19294:160;;;;:::i;:::-;;;19471:15;19490:211;19534:7;19559:23;19600:21;19639;19678:9;19490:26;:211::i;:::-;19468:233;;;19719:10;19715:102;;;-1:-1:-1;19757:21:33;;-1:-1:-1;19780:21:33;-1:-1:-1;19749:53:33;;-1:-1:-1;;;19749:53:33;19715:102;18823:1004;;20722:147;20757:7;20778:21;20813:23;20850:9;20722:21;:147::i;:::-;20706:163;;20895:136;20928:7;20949:13;20976:22;21012:9;20895:19;:136::i;:::-;20879:152;;21042:16;21060:12;21076:171;21116:7;21137:23;21174:13;21201;21228:9;21076:26;:171::i;:::-;21041:206;;;;21265:7;21257:69;;;;-1:-1:-1;;;21257:69:33;;7575:2:165;21257:69:33;;;7557:21:165;7614:2;7594:18;;;7587:30;7653:34;7633:18;;;7626:62;-1:-1:-1;;;7704:18:165;;;7697:47;7761:19;;21257:69:33;7373:413:165;21257:69:33;21341:9;21336:2017;21360:14;21356:1;:18;21336:2017;;;21621:21;21605:13;:37;21580:147;;;;-1:-1:-1;;;21580:147:33;;7993:2:165;21580:147:33;;;7975:21:165;8032:2;8012:18;;;8005:30;8071:34;8051:18;;;8044:62;-1:-1:-1;;;8122:18:165;;;8115:49;8181:19;;21580:147:33;7791:415:165;21580:147:33;22290:18;22346:173;22400:7;22425:13;22456:22;22496:9;22346:36;:173::i;:::-;22322:197;-1:-1:-1;22322:197:33;-1:-1:-1;22322:197:33;22533:52;;22565:5;;;22533:52;22598:29;22662:28;:8;22679:10;22662:16;:28::i;:::-;22630:60;;:13;:60;:::i;:::-;22598:92;;22704:29;22736:164;22773:7;22798:21;22837:22;22877:9;22736:19;:164::i;:::-;22704:196;;22936:211;22980:7;23005:23;23046:21;23085;23124:9;22936:26;:211::i;:::-;22914:233;;-1:-1:-1;22914:233:33;-1:-1:-1;23161:182:33;;;;23208:21;23192:37;;23263:21;23247:37;;23161:182;;;23323:5;;;;;23161:182;21381:1972;;;21376:3;;;;:::i;:::-;;;21336:2017;;;;23363:37;;;;;;18026:5381;;;;;;:::o;65520:1230::-;65762:21;;66104:186;66140:16;66246:34;:15;66268:11;66246:21;:34::i;:::-;66104:11;;:186;:22;:186::i;:::-;66083:207;-1:-1:-1;66511:45:33;:11;66534:8;66544:11;66511:22;:45::i;:::-;66497:59;;;;:::i;:::-;;;66584:12;66571:10;:25;66567:147;;;66678:25;66691:12;66678:10;:25;:::i;66567:147::-;66723:20;65520:1230;;;;;;;;:::o;10814:1571::-;11146:23;;;11822:100;11857:30;11863:24;150:4:32;11857:30:33;:::i;11822:100::-;11807:115;-1:-1:-1;11949:44:33;:10;11968:24;11949:18;:44::i;:::-;11932:61;-1:-1:-1;12007:18:33;;12003:376;;12059:264;12122:23;12163:13;12194:14;12226:18;12232:12;150:4:32;12226:18:33;:::i;:::-;12262:11;12291:18;12059:45;:264::i;67496:640::-;67682:21;67798:15;67779:16;:34;67775:355;;;67899:220;67939:34;67958:15;67939:16;:34;:::i;:::-;68071;:15;68093:11;68071:21;:34::i;:::-;67899:11;;:220;984:556:32;1100:9;1365:1;-1:-1:-1;;1348:19:32;1345:1;1342:26;1339:1;1335:34;1328:42;1315:11;1311:60;1284:146;;1414:1;1411;1404:12;1284:146;-1:-1:-1;1501:9:32;;1497:27;;984:556::o;4671:846::-;4729:7;4795:1;4800;4795:6;4791:50;;-1:-1:-1;565:4:32;4817:13;;4791:50;4894:1;4899;4894:6;4890:45;;-1:-1:-1;4923:1:32;4916:8;;4890:45;5098:1;5073:15;5276:14;5287:1;5276:3;:14::i;:::-;5263:27;-1:-1:-1;5368:18:32;;;5405:22;565:4;5368:18;5405:22;:::i;:::-;;;5500:9;5504:4;5500:3;:9::i;1814:119::-;1876:7;1903:22;1914:1;1917;1920:4;1903:10;:22::i;68721:340:33:-;68856:7;;68907:53;68944:16;68914:14;68907:53;:::i;:::-;68875:85;;69004:1;68978:22;:27;;68970:36;;;;;9241:983:35;9414:7;;;9880:13;:1;9890:2;9880:9;:13::i;:::-;9863:30;;9903:9;9915:47;9942:6;9950:2;9954:1;9957;9960;9915:26;:47::i;:::-;9903:59;-1:-1:-1;9972:16:35;9991:105;10054:32;565:4:32;10084:1:35;10054:29;:32::i;:::-;9996:39;10011:23;10032:1;10011:16;:2;10022:4;10011:10;:16::i;:23::-;9996:6;;:14;:39::i;:::-;9992:43;;:1;:43;:::i;9991:105::-;9972:124;-1:-1:-1;10194:8:35;10198:4;10194:1;:8;:::i;:::-;10204:12;10215:1;10204:8;:12;:::i;:::-;10186:31;;;;;;;9241:983;;;;;;;;;;:::o;14433:104:32:-;14491:7;14521:1;14517;:5;:13;;14529:1;14517:13;;;-1:-1:-1;14525:1:32;14433:104;-1:-1:-1;14433:104:32:o;4871:481:35:-;5056:14;5082:12;5124:136;5172:1;5187;5202:2;5218:1;5233;5248:2;5124:34;:136::i;:::-;5104:156;;-1:-1:-1;5104:156:35;-1:-1:-1;5104:156:35;5270:76;;5305:30;;-1:-1:-1;;;5305:30:35;;;;;;;;;;;7623:1046;7773:7;;;8276:13;:1;8286:2;8276:9;:13::i;:::-;8259:30;;8299:9;8311:47;8338:6;8346:2;8350:1;8353;8356;8311:26;:47::i;:::-;8299:59;-1:-1:-1;8368:16:35;8387:103;8448:32;565:4:32;8478:1:35;8448:29;:32::i;:::-;8388:41;8398:30;565:4:32;8398:6:35;:30;:::i;:::-;8388:1;;:9;:41::i;8387:103::-;8368:122;-1:-1:-1;8500:16:35;8519:20;8368:122;8536:2;8519:16;:20::i;:::-;8500:39;-1:-1:-1;8635:12:35;8646:1;8500:39;8635:12;:::i;:::-;8649;8653:8;8649:1;:12;:::i;:::-;8627:35;;;;;;;;7623:1046;;;;;;;;;:::o;3358:892::-;3543:7;;3595:13;:1;3605:2;3595:9;:13::i;:::-;3578:30;;3669:9;3681:47;3708:6;3716:2;3720:1;3723;3726;3681:26;:47::i;:::-;3669:59;-1:-1:-1;3770:15:35;3783:1;3771:6;3775:2;3771:1;:6;:::i;3770:15::-;3766:19;-1:-1:-1;3884:10:35;3897:81;3938:30;565:4:32;3966:1:35;3938:27;:30::i;:::-;3897:23;3913:6;3898:5;3902:1;3898;:5;:::i;3897:81::-;3884:94;-1:-1:-1;4088:14:35;3884:94;4099:2;4088:10;:14::i;:::-;4083:19;-1:-1:-1;4237:6:35;4242:1;4083:19;4237:6;:::i;:::-;4230:13;3358:892;-1:-1:-1;;;;;;;;;;3358:892:35:o;2726:748:32:-;2840:9;3105:1;-1:-1:-1;;3088:19:32;3085:1;3082:26;3079:1;3075:34;3068:42;3055:11;3051:60;3024:146;;3154:1;3151;3144:12;3024:146;-1:-1:-1;3421:9:32;;3368:27;;;3365:34;;3417:27;;;3344:114;;2726:748::o;2207:165::-;2269:7;2296:22;2307:1;2310:4;2316:1;2296:10;:22::i;2008:837:35:-;2193:7;;2245:13;:1;2255:2;2245:9;:13::i;:::-;2228:30;;2319:9;2331:47;2358:6;2366:2;2370:1;2373;2376;2331:26;:47::i;:::-;2319:59;-1:-1:-1;2427:25:35;2450:1;2427:18;2438:6;2442:2;2438:1;:6;:::i;:::-;2427:2;;:10;:18::i;:25::-;2423:29;-1:-1:-1;2512:17:35;:6;2423:29;2512:14;:17::i;:::-;2508:21;-1:-1:-1;2644:10:35;2657:43;2669:30;565:4:32;2697:1:35;2669:27;:30::i;:::-;2658:5;2662:1;2658;:5;:::i;2657:43::-;2644:56;-1:-1:-1;2832:6:35;2644:56;2832:1;:6;:::i;4141:115:32:-;4201:7;4228:20;4237:1;4240:4;4246:1;4228:8;:20::i;45707:2348:33:-;45853:7;46290:28;46342:134;46433:7;:28;;;46400:7;:23;;;:62;;;;:::i;:::-;46349:28;;;;;46342:40;:134::i;:::-;46290:196;;47179:9;47191:267;47246:53;47273:7;:25;;;47246:7;:18;;;:26;;:53;;;;:::i;:::-;47313:7;:25;;;47352:23;47395:7;:19;;;150:4:32;47389:25:33;;;;:::i;:::-;47428:7;:20;;;47191:41;:267::i;:::-;47179:279;;47468:27;47498:490;47951:36;47967:7;:19;;;150:4:32;47961:25:33;;;;:::i;:::-;150:4:32;;47951:9:33;:36::i;:::-;47515:430;47596:335;47911:7;:19;;;150:4:32;47905:25:33;;;;:::i;:::-;47596:283;47697:160;47758:20;47808:7;:23;;;47697:31;:160::i;:::-;47596:46;;;;;:75;:283::i;:335::-;47543:25;;;;47516:18;;;;:53;;:26;:53::i;47498:490::-;47468:520;;48028:7;:20;;;48006:19;:42;;;;:::i;52162:1774::-;52402:7;52411:4;52555:18;52575:12;52591:307;52671:23;52712:7;:20;;;52750:12;52786:7;:19;;;150:4:32;52780:25:33;;;;:::i;:::-;52823:7;:18;;;52859:7;:25;;;52591:62;:307::i;:::-;52554:344;;;;52913:7;52908:56;;52944:1;52947:5;52936:17;;;;;;;;52908:56;53040:21;53130:409;53520:7;:18;;;53298:212;53351:12;53389:10;53425:7;:16;;;53467:7;:21;;;53298:27;:212::i;:::-;53131:144;53175:12;53209:10;53241:7;:16;;;53131:22;:144::i;:::-;:379;;;;:::i;53130:409::-;53101:438;;:10;:438;:::i;:::-;53064:21;;:476;;;;:::i;:::-;53040:500;;53550:16;53569:100;53650:7;:18;;;53613:26;53637:1;53613:19;:23;;:26;;;;:::i;:::-;53570:7;:20;;;:70;;;;:::i;53569:100::-;53550:119;;53711:7;:28;;;53700:8;:39;;;;:::i;:::-;53683:13;:56;53679:251;;53807:28;;;;53780:24;53796:8;53780:13;:24;:::i;:::-;:55;;;;:::i;:::-;53853:4;53755:116;;;;;;;;;;53679:251;53910:1;53913:5;53902:17;;;;;;;;;;49517:849;49681:7;49700:21;49724:10;49700:34;;49744:13;49760:305;50027:7;:28;;;49960:48;49989:7;:18;;;49960:7;:20;;;:28;;:48;;;;:::i;:::-;49905:18;;;;49840:101;;49848:26;:19;49872:1;49848:23;:26::i;49840:101::-;49800:21;;:141;;;;:::i;:::-;:208;;;;:::i;:::-;:255;;;;:::i;:::-;49760:18;;;;;:26;:305::i;:::-;49744:321;-1:-1:-1;50094:265:33;50226:119;50307:16;50313:10;150:4:32;50307:16:33;:::i;:::-;50256;;;;50226:21;;;;:47;;:29;:47::i;:119::-;50161:42;50186:16;50192:10;150:4:32;50186:16:33;:::i;:::-;50161;;;;;:24;:42::i;:::-;50125:78;;:13;:78;:::i;:::-;:220;;;;:::i;:::-;50094:5;;:13;:265::i;54820:692::-;55034:7;55043:4;55059:11;55073:127;55120:7;55141:12;55167:23;55073:33;:127::i;:::-;55059:141;;55210:11;55224:159;55364:7;:18;;;55224:118;55320:7;:21;;;150:4:32;55314:27:33;;;;:::i;:::-;55224:68;55275:16;55281:10;150:4:32;55275:16:33;:::i;:::-;55224:29;;;;;:50;:68::i;:159::-;55210:173;;55404:3;55397;:10;55393:113;;55431:9;55437:3;55431;:9;:::i;:::-;55442:4;55423:24;;;;;;;;55393:113;55486:1;55489:5;55478:17;;;;;;54820:692;;;;;;;;:::o;39049:330::-;39193:7;39273:99;39347:11;39273:48;150:4:32;39291:23:33;150:4:32;39303:10:33;39291:11;:23::i;:::-;:29;;;;:::i;:::-;39273:9;;:17;:48::i;30480:1333::-;30710:7;30719:4;30735:21;30759:150;30799:11;30824:10;30848:7;:16;;;30878:7;:21;;;30759:26;:150::i;:::-;30735:174;;30919:21;31033:41;31055:7;:18;;;31033:13;:21;;:41;;;;:::i;:::-;30999:18;;;;30979:39;;:11;;:19;:39::i;:::-;30943:21;;:75;;;;:::i;:::-;:131;;;;:::i;:::-;30919:155;-1:-1:-1;31084:16:33;31206:13;31180:11;31138:27;31154:11;31138:1;:27;:::i;:::-;31103:7;:20;;;:62;;;;:::i;:::-;:88;;;;:::i;:::-;:116;;;;:::i;:::-;31084:135;-1:-1:-1;31229:26:33;31267:30;:23;31229:26;31267:27;:30::i;:::-;31266:31;;;:::i;:::-;31229:69;;31442:7;:28;;;31403:36;31420:7;:18;;;31403:8;:16;;:36;;;;:::i;:::-;:67;;;;:::i;:::-;31368:18;;;;31341:46;;:18;;:26;:46::i;:::-;31325:62;;:13;:62;:::i;:::-;:145;31308:499;;31684:28;;;;31642:18;;;;31625:36;;:8;;:16;:36::i;:::-;31583:18;;;;31556:46;;:18;;:26;:46::i;:::-;31520:82;;:13;:82;:::i;:::-;:141;;;;:::i;24066:1494::-;24273:7;24405:13;24421:140;24459:7;24480:23;24517:10;24541;24421:24;:140::i;:::-;24405:156;;25005:9;25017:134;25144:6;25017:105;25085:36;25101:7;:19;;;150:4:32;25095:25:33;;;;:::i;25085:36::-;25017:50;:5;25044:22;25017:26;:50::i;:134::-;25005:146;-1:-1:-1;25161:25:33;25231:14;150:4:32;25005:146:33;25231:11;:14::i;:::-;25189:27;25208:7;25214:1;150:4:32;25208:7:33;:::i;25189:27::-;:56;;;;:::i;:::-;25161:84;;25383:147;25421:7;25442:23;25479:10;25503:17;25383:24;:147::i;35079:649::-;35274:7;35293:18;35314:289;35373:23;35410:7;:20;;;35444:39;35464:7;:18;;;35444:11;:19;;:39;;;;:::i;:::-;35503:19;;;;35497:25;;150:4:32;35497:25:33;:::i;:::-;35536:7;:18;;;35568:7;:25;;;35314:45;:289::i;:::-;35293:310;;35657:64;35679:11;35692:10;35704:7;:16;;;35657:21;:64::i;:::-;35632:89;;:10;:89;:::i;33144:922::-;33356:18;33376:12;33579:146;33622:7;33643:11;33668:23;33705:10;33579:29;:146::i;:::-;33555:170;;-1:-1:-1;33555:170:33;-1:-1:-1;33555:170:33;33735:58;;33771:1;33763:19;;;;33735:58;33861:95;33930:16;33936:10;150:4:32;33930:16:33;:::i;:::-;33891;;;;33861:21;;;;:47;;:29;:47::i;:95::-;33847:109;;;;:::i;:::-;;-1:-1:-1;33966:17:33;150:4:32;33847:109:33;33966:17;:::i;:::-;;;34002:47;34024:4;34030:7;:18;;;34002:10;:21;;:47;;;;;:::i;:::-;33994:65;;33144:922;;;;;;;:::o;3750:115:32:-;3810:7;3837:20;3846:1;3849;3852:4;3837:8;:20::i;9632:3592::-;9677:8;9730:1;9725;:6;9721:60;;9740:41;;-1:-1:-1;;;9740:41:32;;;;;;;;;;;9721:60;-1:-1:-1;10747:2:32;10164:34;-1:-1:-1;;10158:1:32;10154:49;10261:9;;;10241:18;10238:33;10235:1;10231:41;10225:48;10323:9;;;10311:10;10308:25;10305:1;10301:33;10295:40;10381:9;;;10373:6;10370:21;10367:1;10363:29;10357:36;10437:9;;;10431:4;10428:19;10425:1;10421:27;;;10415:34;;;10492:9;;;10487:3;10484:18;10481:1;10477:26;10471:33;10547:9;;;10539:18;;;10536:1;10532:26;;;10526:33;;;10595:9;;;10587:18;;;10581:25;10777:3;:7;;;;;10763:22;;;;10810:17;;;11603:31;11599:35;;11654:5;;11653:13;;11670:32;11652:50;11722:5;;11721:13;;11738:33;11720:51;11791:5;;11790:13;;11807:33;11789:51;11860:5;;11859:13;;11876:33;11858:51;11929:5;;11928:13;;11945:32;11927:50;11997:5;;11996:13;;12013:30;11995:48;11000:31;10996:35;;11051:5;;11050:13;;11067:32;11049:50;11119:5;;11118:13;;11135:32;11117:50;11187:5;;11186:13;;-1:-1:-1;;11185:50:32;11255:5;;11254:13;;-1:-1:-1;;11253:50:32;11323:5;;11322:13;;;-1:-1:-1;;11321:50:32;11389:5;-1:-1:-1;;11389:46:32;12384:10;12774:43;12769:48;-1:-1:-1;;10743:6:32;;;;12897:71;:91;12876:112;13061:72;13056:77;13204:3;13198:9;;9632:3592::o;5773:3347::-;5819:8;-1:-1:-1;;5996:1:32;:26;5992:40;;-1:-1:-1;6031:1:32;;5773:3347;-1:-1:-1;5773:3347:32:o;5992:40::-;6231:21;6226:1;:26;6222:99;;6277:44;;-1:-1:-1;;;6277:44:32;;;;;;;;;;;6222:99;6594:7;6588:2;6583:7;;;6582:19;;-1:-1:-1;6930:8:32;7014:2;6954:29;6943:7;;;6942:41;-1:-1:-1;;;6942:51:32;6941:75;;7042:29;7038:33;;7034:37;;;-1:-1:-1;;7713:35:32;;7768:5;;7348:2;7767:13;;;7784:32;7766:50;7836:5;;7835:13;;-1:-1:-1;;7834:51:32;7905:5;;7904:13;;7921:34;7903:52;7975:5;;7974:13;;-1:-1:-1;;7973:53:32;8046:5;;8045:13;;8062:35;8044:53;7354:32;7287:31;7283:35;;7338:5;;7337:13;;7336:50;;;7411:5;;;-1:-1:-1;;7411:40:32;7471:5;7470:13;;;7487:35;7469:53;7540:5;;;-1:-1:-1;;;7540:50:32;8462:10;8999:49;8966:82;9081:3;:7;;;;8965:124;;;;;;-1:-1:-1;;5773:3347:32:o;10669:302:35:-;10835:7;10956:8;:1;10962;10956:5;:8::i;:::-;10917:36;10932:20;10950:1;10932:13;:2;10943:1;10932:10;:13::i;:20::-;10917:6;;:14;:36::i;:::-;:47;;;;:::i;6050:1039::-;6239:14;;;6312:13;:1;6322:2;6312:9;:13::i;:::-;6295:30;;6386:9;6398:47;6425:6;6433:2;6437:1;6440;6443;6398:26;:47::i;:::-;6386:59;-1:-1:-1;6487:15:35;6500:1;6488:6;6492:2;6488:1;:6;:::i;6487:15::-;6483:19;;6520:1;6516;:5;6512:53;;;6545:1;6548:5;6537:17;;;;;;;;6512:53;6663:10;6676:81;6717:30;565:4:32;6745:1:35;6717:27;:30::i;:::-;6676:23;6692:6;6677:5;6681:1;6677;:5;:::i;6676:81::-;6663:94;-1:-1:-1;6867:14:35;6663:94;6878:2;6867:10;:14::i;:::-;6862:19;;7015:2;7011:1;:6;7007:52;;;7042:6;7046:2;7042:1;:6;:::i;:::-;7033:15;;7007:52;7078:4;7068:14;;6269:820;;;6050:1039;;;;;;;;;:::o;15261:101:32:-;15317:6;15346:1;15342;:5;:13;;15354:1;15342:13;;;-1:-1:-1;15350:1:32;;15261:101;-1:-1:-1;15261:101:32:o;58041:339:33:-;58223:7;58261:112;58301:58;58324:11;58337:10;58349:9;58301:22;:58::i;:::-;58261:14;;:22;:112::i;57489:234::-;57634:7;57660:56;57704:11;57660:35;57678:16;57684:10;150:4:32;57678:16:33;:::i;56179:1062::-;56361:7;56380:9;56392:267;56447:53;56474:7;:25;;;56447:7;:18;;;:26;;:53;;;;:::i;:::-;56514:7;:25;;;56553:23;56596:7;:19;;;150:4:32;56590:25:33;;;;:::i;56392:267::-;56380:279;;56669:11;56683:153;56708:118;56750:62;56792:7;:19;;;56774:12;56751:7;:20;;;:35;;;;:::i;56750:62::-;56708:18;;;;;:24;:118::i;:::-;150:4:32;;56683:11:33;:153::i;:::-;56669:167;;56846:11;56860:341;57148:52;57180:7;:19;;;150:4:32;57174:25:33;;;;:::i;:::-;57148:19;;;;;:25;:52::i;:::-;56860:270;57002:114;57075:7;:19;;;150:4:32;57069:25:33;;;;:::i;:::-;57026:12;57003:7;:20;;;:35;;;;:::i;57002:114::-;56978:138;;:1;:138;:::i;:::-;56920:18;;;;56860:38;;;;:79;;:59;:79::i;:341::-;56846:355;-1:-1:-1;57218:16:33;:3;56846:355;57218:11;:16::i;39958:357::-;40139:7;40177:131;40237:57;40259:11;40272:10;40284:9;40237:21;:57::i;:::-;40177:34;:14;40200:10;40177:22;:34::i;14987:101:32:-;15043:6;15072:1;15068;:5;:13;;15080:1;15068:13;;27502:892:33;27704:7;;27761:30;:23;27704:7;27761:27;:30::i;:::-;27760:31;;;:::i;:::-;27723:69;;27802:16;27821:227;28023:7;:18;;;28043:4;27982:7;:28;;;27919:48;27948:7;:18;;;27919:7;:20;;;:28;;:48;;;;:::i;:::-;27885:18;;;;27858:46;;:18;;:26;:46::i;:::-;27822:21;;:82;;;;:::i;:::-;:145;;;;:::i;:::-;:188;;;;:::i;:::-;27821:201;:227;:201;:227::i;:::-;27802:246;-1:-1:-1;28069:293:33;28297:55;150:4:32;28322:23:33;150:4:32;28334:10:33;28322:11;:23::i;:::-;:29;;;;:::i;28297:55::-;150:4:32;28145:111:33;28222:16;28228:10;150:4:32;28222:16:33;:::i;:::-;28175;;;;28145:21;;;;:47;;:29;:47::i;:111::-;28099:27;150:4:32;28111:14:33;28099:11;:27::i;:::-;:157;;;;:::i;:::-;:179;;;;:::i;:::-;:253;;;;:::i;37166:1474::-;37371:18;37391:4;37460:19;37482:39;37502:7;:18;;;37482:11;:19;;:39;;;;:::i;:::-;37460:61;-1:-1:-1;37531:13:33;37547:94;37594:37;37460:61;37594:23;:37;:::i;:::-;37547:25;;;;;:33;:94::i;:::-;37531:110;;37651:14;37668:53;37695:7;:25;;;37668:7;:18;;;:26;;:53;;;;:::i;:::-;37651:70;;37731:9;37743:220;37798:6;37818:7;:25;;;37857:23;37900:7;:19;;;150:4:32;37894:25:33;;;;:::i;:::-;37933:7;:20;;;37743:41;:220::i;:::-;37731:232;;37986:43;37998:30;38008:7;:19;;;37998:5;:9;;:30;;;;:::i;37986:43::-;37973:56;;38217:11;38231:46;38246:30;38256:7;:19;;;38246:5;:9;;:30;;;;:::i;:::-;38231:6;;:14;:46::i;:::-;38217:60;;38295:3;38291:1;:7;38287:55;;;38322:1;38325:5;38314:17;;;;;;;;;;;38287:55;38364:109;38396:67;38410:52;38442:7;:19;;;150:4:32;38436:25:33;;;;:::i;:::-;38410:19;;;;;:25;:52::i;:::-;38397:7;38401:3;38397:1;:7;:::i;38364:109::-;38351:122;-1:-1:-1;38542:55:33;150:4:32;38567:23:33;150:4:32;38579:10:33;38567:11;:23::i;:::-;:29;;;;:::i;:::-;38542:16;;;;;:24;:55::i;:::-;38528:69;;;;:::i;:::-;;38628:4;;-1:-1:-1;37166:1474:33;-1:-1:-1;;;;;;;;;;37166:1474:33:o;14:385:165:-;100:6;108;116;124;177:3;165:9;156:7;152:23;148:33;145:53;;;194:1;191;184:12;145:53;-1:-1:-1;;217:23:165;;;287:2;272:18;;259:32;;-1:-1:-1;338:2:165;323:18;;310:32;;389:2;374:18;361:32;;-1:-1:-1;14:385:165;-1:-1:-1;14:385:165:o;586:347::-;653:2;647:9;695:6;683:19;;732:18;717:34;;753:22;;;714:62;711:185;;;818:10;813:3;809:20;806:1;799:31;853:4;850:1;843:15;881:4;878:1;871:15;711:185;912:2;905:22;586:347;:::o;938:949::-;1003:5;1051:6;1039:9;1034:3;1030:19;1026:32;1023:52;;;1071:1;1068;1061:12;1023:52;1093:17;;:::i;:::-;1084:26;;1146:9;1133:23;1126:5;1119:38;1217:2;1206:9;1202:18;1189:32;1184:2;1177:5;1173:14;1166:56;1282:2;1271:9;1267:18;1254:32;1249:2;1242:5;1238:14;1231:56;1347:2;1336:9;1332:18;1319:32;1314:2;1307:5;1303:14;1296:56;1413:3;1402:9;1398:19;1385:33;1379:3;1372:5;1368:15;1361:58;1480:3;1469:9;1465:19;1452:33;1446:3;1439:5;1435:15;1428:58;1547:3;1536:9;1532:19;1519:33;1513:3;1506:5;1502:15;1495:58;1614:3;1603:9;1599:19;1586:33;1580:3;1573:5;1569:15;1562:58;1639:3;1702:2;1691:9;1687:18;1674:32;1669:2;1662:5;1658:14;1651:56;;1726:3;1789:2;1778:9;1774:18;1761:32;1756:2;1749:5;1745:14;1738:56;;1813:3;1876:2;1865:9;1861:18;1848:32;1843:2;1836:5;1832:14;1825:56;;938:949;;;;:::o;1892:251::-;1988:6;2041:3;2029:9;2020:7;2016:23;2012:33;2009:53;;;2058:1;2055;2048:12;2009:53;2081:56;2129:7;2118:9;2081:56;:::i;2148:454::-;2243:6;2251;2259;2267;2275;2328:3;2316:9;2307:7;2303:23;2299:33;2296:53;;;2345:1;2342;2335:12;2296:53;-1:-1:-1;;2368:23:165;;;2438:2;2423:18;;2410:32;;-1:-1:-1;2489:2:165;2474:18;;2461:32;;2540:2;2525:18;;2512:32;;-1:-1:-1;2591:3:165;2576:19;2563:33;;-1:-1:-1;2148:454:165;-1:-1:-1;2148:454:165:o;2607:523::-;2711:6;2719;2727;2735;2743;2751;2804:3;2792:9;2783:7;2779:23;2775:33;2772:53;;;2821:1;2818;2811:12;2772:53;-1:-1:-1;;2844:23:165;;;2914:2;2899:18;;2886:32;;-1:-1:-1;2965:2:165;2950:18;;2937:32;;3016:2;3001:18;;2988:32;;-1:-1:-1;3067:3:165;3052:19;;3039:33;;-1:-1:-1;3119:3:165;3104:19;3091:33;;-1:-1:-1;2607:523:165;-1:-1:-1;2607:523:165:o;3135:685::-;3245:6;3253;3261;3269;3277;3285;3293;3346:3;3334:9;3325:7;3321:23;3317:33;3314:53;;;3363:1;3360;3353:12;3314:53;3399:9;3386:23;3376:33;;3456:2;3445:9;3441:18;3428:32;3418:42;;3507:2;3496:9;3492:18;3479:32;3469:42;;3558:2;3547:9;3543:18;3530:32;3520:42;;3609:3;3598:9;3594:19;3581:33;3571:43;;3661:3;3650:9;3646:19;3633:33;3623:43;;3716:3;3705:9;3701:19;3688:33;3764:5;3757:13;3750:21;3743:5;3740:32;3730:60;;3786:1;3783;3776:12;3730:60;3809:5;3799:15;;;3135:685;;;;;;;;;;:::o;4291:383::-;4399:6;4407;4415;4468:3;4456:9;4447:7;4443:23;4439:33;4436:53;;;4485:1;4482;4475:12;4436:53;4508:56;4556:7;4545:9;4508:56;:::i;:::-;4498:66;4611:3;4596:19;;4583:33;;-1:-1:-1;4663:3:165;4648:19;;;4635:33;;4291:383;-1:-1:-1;;;4291:383:165:o;4679:592::-;4792:6;4800;4808;4816;4824;4832;4840;4893:3;4881:9;4872:7;4868:23;4864:33;4861:53;;;4910:1;4907;4900:12;4861:53;-1:-1:-1;;4933:23:165;;;5003:2;4988:18;;4975:32;;-1:-1:-1;5054:2:165;5039:18;;5026:32;;5105:2;5090:18;;5077:32;;-1:-1:-1;5156:3:165;5141:19;;5128:33;;-1:-1:-1;5208:3:165;5193:19;;5180:33;;-1:-1:-1;5260:3:165;5245:19;5232:33;;-1:-1:-1;4679:592:165;-1:-1:-1;4679:592:165:o;5853:127::-;5914:10;5909:3;5905:20;5902:1;5895:31;5945:4;5942:1;5935:15;5969:4;5966:1;5959:15;5985:200;6051:9;;;6024:4;6079:9;;6107:10;;6119:12;;;6103:29;6142:12;;;6134:21;;6100:56;6097:82;;;6159:18;;:::i;:::-;6097:82;5985:200;;;;:::o;6190:128::-;6257:9;;;6278:11;;;6275:37;;;6292:18;;:::i;6323:136::-;6358:3;-1:-1:-1;;;6379:22:165;;6376:48;;6404:18;;:::i;:::-;-1:-1:-1;6444:1:165;6440:13;;6323:136::o;6464:125::-;6529:9;;;6550:10;;;6547:36;;;6563:18;;:::i;6594:216::-;6658:9;;;6686:11;;;6633:3;6716:9;;6744:10;;6740:19;;6769:10;;6761:19;;6737:44;6734:70;;;6784:18;;:::i;:::-;6734:70;;6594:216;;;;:::o;7233:135::-;7272:3;7293:17;;;7290:43;;7313:18;;:::i;:::-;-1:-1:-1;7360:1:165;7349:13;;7233:135::o;8343:290::-;8382:1;8408;8398:132;;8452:10;8447:3;8443:20;8440:1;8433:31;8487:4;8484:1;8477:15;8515:4;8512:1;8505:15;8398:132;-1:-1:-1;;;8546:18:165;;-1:-1:-1;;8566:13:165;;8542:38;8539:64;;;8583:18;;:::i;:::-;-1:-1:-1;8617:10:165;;8343:290::o;8638:168::-;8711:9;;;8742;;8759:15;;;8753:22;;8739:37;8729:71;;8780:18;;:::i",
+    "linkReferences": {}
   },
-  methodIdentifiers: {
-    "calculateAPRFromReserves(uint256,uint256,uint256,uint256,uint256)":
-      "3fa2c8fc",
-    "calculateCloseLong(uint256,uint256,uint256,uint256,uint256,uint256,uint256)":
-      "94169d49",
-    "calculateCloseShort(uint256,uint256,uint256,uint256,uint256,uint256,uint256)":
-      "f87845f2",
-    "calculateInitialBondReserves(uint256,uint256,uint256,uint256,uint256)":
-      "82a4d306",
-    "calculateMaxLong((uint256,int256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256),int256,uint256)":
-      "a40a6be8",
-    "calculateMaxShort((uint256,int256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256),int256,uint256)":
-      "86ad02af",
-    "calculateNegativeInterestOnClose(uint256,uint256,uint256,uint256,uint256,uint256,bool)":
-      "7ef99f87",
-    "calculateOpenLong(uint256,uint256,uint256,uint256,uint256,uint256)":
-      "5e6d9d36",
-    "calculateOpenShort(uint256,uint256,uint256,uint256,uint256,uint256)":
-      "6ceebe1d",
-    "calculatePresentValue((uint256,int256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256))":
-      "37043a53",
+  "methodIdentifiers": {
+    "calculateAPRFromReserves(uint256,uint256,uint256,uint256,uint256)": "3fa2c8fc",
+    "calculateCloseLong(uint256,uint256,uint256,uint256,uint256,uint256,uint256)": "94169d49",
+    "calculateCloseShort(uint256,uint256,uint256,uint256,uint256,uint256,uint256)": "f87845f2",
+    "calculateInitialBondReserves(uint256,uint256,uint256,uint256,uint256)": "82a4d306",
+    "calculateMaxLong((uint256,int256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256),int256,uint256)": "a40a6be8",
+    "calculateMaxShort((uint256,int256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256),int256,uint256)": "86ad02af",
+    "calculateNegativeInterestOnClose(uint256,uint256,uint256,uint256,uint256,uint256,bool)": "7ef99f87",
+    "calculateOpenLong(uint256,uint256,uint256,uint256,uint256,uint256)": "5e6d9d36",
+    "calculateOpenShort(uint256,uint256,uint256,uint256,uint256,uint256)": "6ceebe1d",
+    "calculatePresentValue((uint256,int256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256))": "37043a53",
     "calculateShortInterest(uint256,uint256,uint256,uint256)": "fdc30d61",
-    "calculateShortProceeds(uint256,uint256,uint256,uint256,uint256,uint256)":
-      "de31b2ab",
-    "calculateSpotPrice(uint256,uint256,uint256,uint256)": "2471caed",
+    "calculateShortProceeds(uint256,uint256,uint256,uint256,uint256,uint256)": "de31b2ab",
+    "calculateSpotPrice(uint256,uint256,uint256,uint256)": "2471caed"
   },
-  rawMetadata:
-    '{"compiler":{"version":"0.8.19+commit.7dd6d404"},"language":"Solidity","output":{"abi":[{"inputs":[],"name":"FixedPointMath_InvalidExponent","type":"error"},{"inputs":[],"name":"FixedPointMath_InvalidInput","type":"error"},{"inputs":[],"name":"InvalidTradeSize","type":"error"},{"inputs":[],"name":"NegativePresentValue","type":"error"},{"inputs":[{"internalType":"uint256","name":"_effectiveShareReserves","type":"uint256"},{"internalType":"uint256","name":"_bondReserves","type":"uint256"},{"internalType":"uint256","name":"_initialSharePrice","type":"uint256"},{"internalType":"uint256","name":"_positionDuration","type":"uint256"},{"internalType":"uint256","name":"_timeStretch","type":"uint256"}],"name":"calculateAPRFromReserves","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"pure","type":"function"},{"inputs":[{"internalType":"uint256","name":"_effectiveShareReserves","type":"uint256"},{"internalType":"uint256","name":"_bondReserves","type":"uint256"},{"internalType":"uint256","name":"_amountIn","type":"uint256"},{"internalType":"uint256","name":"_normalizedTimeRemaining","type":"uint256"},{"internalType":"uint256","name":"_timeStretch","type":"uint256"},{"internalType":"uint256","name":"_sharePrice","type":"uint256"},{"internalType":"uint256","name":"_initialSharePrice","type":"uint256"}],"name":"calculateCloseLong","outputs":[{"internalType":"uint256","name":"","type":"uint256"},{"internalType":"uint256","name":"","type":"uint256"},{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"pure","type":"function"},{"inputs":[{"internalType":"uint256","name":"_effectiveShareReserves","type":"uint256"},{"internalType":"uint256","name":"_bondReserves","type":"uint256"},{"internalType":"uint256","name":"_amountOut","type":"uint256"},{"internalType":"uint256","name":"_normalizedTimeRemaining","type":"uint256"},{"internalType":"uint256","name":"_timeStretch","type":"uint256"},{"internalType":"uint256","name":"_sharePrice","type":"uint256"},{"internalType":"uint256","name":"_initialSharePrice","type":"uint256"}],"name":"calculateCloseShort","outputs":[{"internalType":"uint256","name":"","type":"uint256"},{"internalType":"uint256","name":"","type":"uint256"},{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"pure","type":"function"},{"inputs":[{"internalType":"uint256","name":"_effectiveShareReserves","type":"uint256"},{"internalType":"uint256","name":"_initialSharePrice","type":"uint256"},{"internalType":"uint256","name":"_apr","type":"uint256"},{"internalType":"uint256","name":"_positionDuration","type":"uint256"},{"internalType":"uint256","name":"_timeStretch","type":"uint256"}],"name":"calculateInitialBondReserves","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"pure","type":"function"},{"inputs":[{"components":[{"internalType":"uint256","name":"shareReserves","type":"uint256"},{"internalType":"int256","name":"shareAdjustment","type":"int256"},{"internalType":"uint256","name":"bondReserves","type":"uint256"},{"internalType":"uint256","name":"longsOutstanding","type":"uint256"},{"internalType":"uint256","name":"longExposure","type":"uint256"},{"internalType":"uint256","name":"timeStretch","type":"uint256"},{"internalType":"uint256","name":"sharePrice","type":"uint256"},{"internalType":"uint256","name":"initialSharePrice","type":"uint256"},{"internalType":"uint256","name":"minimumShareReserves","type":"uint256"},{"internalType":"uint256","name":"curveFee","type":"uint256"},{"internalType":"uint256","name":"governanceFee","type":"uint256"}],"internalType":"struct HyperdriveMath.MaxTradeParams","name":"_params","type":"tuple"},{"internalType":"int256","name":"_checkpointLongExposure","type":"int256"},{"internalType":"uint256","name":"_maxIterations","type":"uint256"}],"name":"calculateMaxLong","outputs":[{"internalType":"uint256","name":"","type":"uint256"},{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"pure","type":"function"},{"inputs":[{"components":[{"internalType":"uint256","name":"shareReserves","type":"uint256"},{"internalType":"int256","name":"shareAdjustment","type":"int256"},{"internalType":"uint256","name":"bondReserves","type":"uint256"},{"internalType":"uint256","name":"longsOutstanding","type":"uint256"},{"internalType":"uint256","name":"longExposure","type":"uint256"},{"internalType":"uint256","name":"timeStretch","type":"uint256"},{"internalType":"uint256","name":"sharePrice","type":"uint256"},{"internalType":"uint256","name":"initialSharePrice","type":"uint256"},{"internalType":"uint256","name":"minimumShareReserves","type":"uint256"},{"internalType":"uint256","name":"curveFee","type":"uint256"},{"internalType":"uint256","name":"governanceFee","type":"uint256"}],"internalType":"struct HyperdriveMath.MaxTradeParams","name":"_params","type":"tuple"},{"internalType":"int256","name":"_checkpointExposure","type":"int256"},{"internalType":"uint256","name":"_maxIterations","type":"uint256"}],"name":"calculateMaxShort","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"pure","type":"function"},{"inputs":[{"internalType":"uint256","name":"_shareProceeds","type":"uint256"},{"internalType":"uint256","name":"_shareReservesDelta","type":"uint256"},{"internalType":"uint256","name":"_shareCurveDelta","type":"uint256"},{"internalType":"uint256","name":"_totalGovernanceFee","type":"uint256"},{"internalType":"uint256","name":"_openSharePrice","type":"uint256"},{"internalType":"uint256","name":"_closeSharePrice","type":"uint256"},{"internalType":"bool","name":"_isLong","type":"bool"}],"name":"calculateNegativeInterestOnClose","outputs":[{"internalType":"uint256","name":"","type":"uint256"},{"internalType":"uint256","name":"","type":"uint256"},{"internalType":"uint256","name":"","type":"uint256"},{"internalType":"int256","name":"","type":"int256"},{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"pure","type":"function"},{"inputs":[{"internalType":"uint256","name":"_effectiveShareReserves","type":"uint256"},{"internalType":"uint256","name":"_bondReserves","type":"uint256"},{"internalType":"uint256","name":"_amountIn","type":"uint256"},{"internalType":"uint256","name":"_timeStretch","type":"uint256"},{"internalType":"uint256","name":"_sharePrice","type":"uint256"},{"internalType":"uint256","name":"_initialSharePrice","type":"uint256"}],"name":"calculateOpenLong","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"pure","type":"function"},{"inputs":[{"internalType":"uint256","name":"_effectiveShareReserves","type":"uint256"},{"internalType":"uint256","name":"_bondReserves","type":"uint256"},{"internalType":"uint256","name":"_amountIn","type":"uint256"},{"internalType":"uint256","name":"_timeStretch","type":"uint256"},{"internalType":"uint256","name":"_sharePrice","type":"uint256"},{"internalType":"uint256","name":"_initialSharePrice","type":"uint256"}],"name":"calculateOpenShort","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"pure","type":"function"},{"inputs":[{"components":[{"internalType":"uint256","name":"shareReserves","type":"uint256"},{"internalType":"int256","name":"shareAdjustment","type":"int256"},{"internalType":"uint256","name":"bondReserves","type":"uint256"},{"internalType":"uint256","name":"sharePrice","type":"uint256"},{"internalType":"uint256","name":"initialSharePrice","type":"uint256"},{"internalType":"uint256","name":"minimumShareReserves","type":"uint256"},{"internalType":"uint256","name":"timeStretch","type":"uint256"},{"internalType":"uint256","name":"longsOutstanding","type":"uint256"},{"internalType":"uint256","name":"longAverageTimeRemaining","type":"uint256"},{"internalType":"uint256","name":"shortsOutstanding","type":"uint256"},{"internalType":"uint256","name":"shortAverageTimeRemaining","type":"uint256"}],"internalType":"struct HyperdriveMath.PresentValueParams","name":"_params","type":"tuple"}],"name":"calculatePresentValue","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"pure","type":"function"},{"inputs":[{"internalType":"uint256","name":"_bondAmount","type":"uint256"},{"internalType":"uint256","name":"_openSharePrice","type":"uint256"},{"internalType":"uint256","name":"_closeSharePrice","type":"uint256"},{"internalType":"uint256","name":"_sharePrice","type":"uint256"}],"name":"calculateShortInterest","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"pure","type":"function"},{"inputs":[{"internalType":"uint256","name":"_bondAmount","type":"uint256"},{"internalType":"uint256","name":"_shareAmount","type":"uint256"},{"internalType":"uint256","name":"_openSharePrice","type":"uint256"},{"internalType":"uint256","name":"_closeSharePrice","type":"uint256"},{"internalType":"uint256","name":"_sharePrice","type":"uint256"},{"internalType":"uint256","name":"_flatFee","type":"uint256"}],"name":"calculateShortProceeds","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"pure","type":"function"},{"inputs":[{"internalType":"uint256","name":"_shareReserves","type":"uint256"},{"internalType":"uint256","name":"_bondReserves","type":"uint256"},{"internalType":"uint256","name":"_initialSharePrice","type":"uint256"},{"internalType":"uint256","name":"_timeStretch","type":"uint256"}],"name":"calculateSpotPrice","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"pure","type":"function"}],"devdoc":{"kind":"dev","methods":{},"version":1},"userdoc":{"errors":{"FixedPointMath_InvalidExponent()":[{"notice":"###################### ### FixedPointMath ### ######################"}],"InvalidTradeSize()":[{"notice":"###################### ### YieldSpaceMath ### ######################"}]},"kind":"user","methods":{},"version":1}},"settings":{"compilationTarget":{"contracts/test/MockHyperdriveMath.sol":"MockHyperdriveMath"},"evmVersion":"paris","libraries":{},"metadata":{"bytecodeHash":"ipfs"},"optimizer":{"enabled":true,"runs":200},"remappings":[":@aave/=lib/aave-v3-core/contracts/",":aave-v3-core/=lib/aave-v3-core/",":create3-factory/=lib/yield-daddy/lib/create3-factory/",":ds-test/=lib/forge-std/lib/ds-test/src/",":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/",":forge-std/=lib/forge-std/src/",":openzeppelin-contracts/=lib/openzeppelin-contracts/",":solmate/=lib/solmate/src/",":yield-daddy/=lib/yield-daddy/","lib/openzeppelin-contracts:openzeppelin/=lib/openzeppelin-contracts/contracts/"]},"sources":{"contracts/src/interfaces/IERC20.sol":{"keccak256":"0x4642a027efffb3aa6cdc85e31796fb3b1bc4fff4316e6390874e6f4add37b86c","license":"MIT","urls":["bzz-raw://3720a6c1c427dcfcbdeeec15cbdb682115e44e0a9136af7e0ad9e5af2ea40672","dweb:/ipfs/QmP4bmaHw8MfX9MQLhhgnVQ9U9BTQAR3e5cCCE9RcoeX7w"]},"contracts/src/interfaces/IHyperdrive.sol":{"keccak256":"0x3336dbc3128174594baa25c95f3be485aa61a77a06afbb75e2708987247a5bb5","license":"Apache-2.0","urls":["bzz-raw://2e189558d4f78633d90ecdb3ff8d775109394a98cb18d19507642cb56c43dc1e","dweb:/ipfs/QmZMVsor78To4nbXwLDBaZKD8m68PT53C9mxvR8iUkM5i5"]},"contracts/src/interfaces/IHyperdriveRead.sol":{"keccak256":"0x837939af4a9224c5f4ea564e9b33a5612442b7d7d50b7f8bb32be6bb3ce239b3","license":"Apache-2.0","urls":["bzz-raw://3bfebedcb31d2edf86a69f0dfbcc5aa7b96edc2d8197b4a4681a200cb6ffe993","dweb:/ipfs/Qmeq4oAGxKv3mvRRWkqYBjfdozPkhi3MqBRFNnNkmAwCtt"]},"contracts/src/interfaces/IHyperdriveWrite.sol":{"keccak256":"0xe2ba8031ab98a81026010af00de9935b79ade6701dc486fd1c02d67f4eb81bf8","license":"Apache-2.0","urls":["bzz-raw://2e6acf863128f355e6ad26130037797a08321054ac8e202274debf6730162467","dweb:/ipfs/Qmbf6882o3a7mci1j4w2XJtUDfsJvECGF6Yz3PG8q4LQgk"]},"contracts/src/interfaces/IMultiToken.sol":{"keccak256":"0xe3d64871148bdae5a714107b8b1a55f39cd4ede601436d2777a165d20d768a1a","license":"Apache-2.0","urls":["bzz-raw://9ebc0bfda35e9b7299c43f0efff38012b8074fcca867b781c0cedeede10cf3d0","dweb:/ipfs/QmbHRLezFhWavHakK5G26DB4ud5PueU6fNvZf3L3TwXnPb"]},"contracts/src/interfaces/IMultiTokenMetadata.sol":{"keccak256":"0xcdc60ba02194150741a78cb0c52c306f5f577c5c814c63e98a13d46c02d2d9cc","license":"Apache-2.0","urls":["bzz-raw://8f5866cb2c8c4342dba88c0e4d78296fef0e170b18b3613c796c29dc31a5ca87","dweb:/ipfs/QmZcoDTYhhYSB5ds3cNPJpdZTxrz6cF8M2vNVeuAcT8gw6"]},"contracts/src/interfaces/IMultiTokenRead.sol":{"keccak256":"0x2e55fa961123a8bb7284c8388af9bd1302a7153441ffe641804ea79021bdca05","license":"Apache-2.0","urls":["bzz-raw://c7dc03bbab02976609dec59c201e5b57a2998d1c626cef58d7a9fa7c2b06b939","dweb:/ipfs/QmSifWr9cVWaUEmyKpGFcgpKCYdoBYgWtQBLgemtwo4a7x"]},"contracts/src/interfaces/IMultiTokenWrite.sol":{"keccak256":"0xa5ba8812e06fb6d38e1872603c8b80321cfd2f96cecbe7b67b92cb33e93b3fc8","license":"Apache-2.0","urls":["bzz-raw://73afa34919c7d457e925b4be83abb1b1ed2ed731a382ebffad95a3005c04bd5a","dweb:/ipfs/QmauMxmgtYTS7RJQw1mS7Pwe5FUMDPHE2N1MBhFUjk6HPe"]},"contracts/src/libraries/FixedPointMath.sol":{"keccak256":"0x0108762fdecfae06d7b8d76bb52b1a5757669cc2a4e5f3ad701499295ed635bd","license":"Apache-2.0","urls":["bzz-raw://a94cdbab2bdbb0212597f70cebea86fcf69be0702f6d6fe76571ee43992d7d6b","dweb:/ipfs/QmXyncXgKixNzP7rgqoCA2dzehjPTAsEbtAKZGW6CQADFE"]},"contracts/src/libraries/HyperdriveMath.sol":{"keccak256":"0x81bccd15f87d6fb2df7fe455ab94b2f267b0cef1875890d89158f448bb7694b2","license":"Apache-2.0","urls":["bzz-raw://e973fb36a335fa1b7993152f9b051bd52588b1624c3d76f9dd21d35fe45d5c75","dweb:/ipfs/QmbYLW9GPe19dQVCYNdSwvcgqrUZtDRjPyYtF4QtMn49Zb"]},"contracts/src/libraries/SafeCast.sol":{"keccak256":"0x077e800ae4f47bda111e72f8c40d50a57b10a1c5bce81f2e83bb57f94752159f","license":"Apache-2.0","urls":["bzz-raw://8e9433729a73747a65ececae27a8f634300a4e02a66577f796f596e5894a4bb5","dweb:/ipfs/QmT2fC2xaRoFuDBURAtcwqvpqXvw1AQybSgb4khVBzit2S"]},"contracts/src/libraries/YieldSpaceMath.sol":{"keccak256":"0xb8682a4823e01535b6bc73755f6304d0846c44526d882cefc0c3b04b807e2a04","license":"Apache-2.0","urls":["bzz-raw://836744182376d0cd9721e15334c3f972d77564586220b8db7b63737342b410ef","dweb:/ipfs/QmVxEHgnVkDTNggxbC83wMzvDmsQaUq1vTbFosShjzgAmr"]},"contracts/test/MockHyperdriveMath.sol":{"keccak256":"0xe184f7a175cc779d395e19dd47ed0c4afc3e150ae37487593dbbe642cb68ca86","license":"Apache-2.0","urls":["bzz-raw://6237fe67c2df029ba8e595969c5dfcafe3ab35de8cfcb0aa6c1e4c60740cb85d","dweb:/ipfs/QmWmjfMJXq8BV1NTC724R6frAy9QEs1GASuDtpa7az8ss7"]},"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol":{"keccak256":"0x00c839ff53d07d19db2e7cfa1e5133f9ee90a8d64b0e2e57f50446a2d1a3a0e0","license":"MIT","urls":["bzz-raw://3dac621d015a68a5251b1e5d41dda0faf252699bf6e8bcf46a958b29964d9dd1","dweb:/ipfs/QmP9axjgZv4cezAhALoTemM62sdLtMDJ9MGTxECnNwHgSJ"]},"lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Permit.sol":{"keccak256":"0x35e258421ae206f3db37281cea70871b4c3553914734aa76139a41af60ac1abb","license":"MIT","urls":["bzz-raw://2ef94b6bc4ee356db612a1849c615f7dd4b15542d6c8584c86bb9243a7913cf0","dweb:/ipfs/QmaxFj5NFpAjjitZtHPNS9PPtCuBATaRz9ktDDRCQCQ83y"]},"lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol":{"keccak256":"0x8a63ea9ec07788740e51046ca14c61f411aedb901e89749c9d55fa56ed43086a","license":"MIT","urls":["bzz-raw://3035ae3f172ed9e172e1ba4d83bdc70279f63be51ce9218c530132def66ff577","dweb:/ipfs/QmTQ3zfC3YUNeY3KUVFiHgTWDuxfmcEMgpGC6HMoTpgZJL"]},"lib/openzeppelin-contracts/contracts/utils/Address.sol":{"keccak256":"0xa6dfb97ce947b7c846b054ee7d45d12383359778f4f3743654ae0a34fa421b26","license":"MIT","urls":["bzz-raw://b97e7e5a77ea47c08ba422291df887eba76c80982f52a6e94a30106e9377a94f","dweb:/ipfs/Qme7N2XRC7mcDxB8wZxNWPk6T8S2qsnmhAqXeUj4CNvsGD"]}},"version":1}',
-  metadata: {
-    compiler: {
-      version: "0.8.19+commit.7dd6d404",
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"FixedPointMath_InvalidExponent\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"FixedPointMath_InvalidInput\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidTradeSize\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NegativePresentValue\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_effectiveShareReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_bondReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_initialSharePrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_positionDuration\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_timeStretch\",\"type\":\"uint256\"}],\"name\":\"calculateAPRFromReserves\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_effectiveShareReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_bondReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_amountIn\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_normalizedTimeRemaining\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_timeStretch\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_sharePrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_initialSharePrice\",\"type\":\"uint256\"}],\"name\":\"calculateCloseLong\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_effectiveShareReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_bondReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_amountOut\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_normalizedTimeRemaining\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_timeStretch\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_sharePrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_initialSharePrice\",\"type\":\"uint256\"}],\"name\":\"calculateCloseShort\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_effectiveShareReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_initialSharePrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_apr\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_positionDuration\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_timeStretch\",\"type\":\"uint256\"}],\"name\":\"calculateInitialBondReserves\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"shareReserves\",\"type\":\"uint256\"},{\"internalType\":\"int256\",\"name\":\"shareAdjustment\",\"type\":\"int256\"},{\"internalType\":\"uint256\",\"name\":\"bondReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"longsOutstanding\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"longExposure\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"timeStretch\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"sharePrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"initialSharePrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"minimumShareReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"curveFee\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"governanceFee\",\"type\":\"uint256\"}],\"internalType\":\"struct HyperdriveMath.MaxTradeParams\",\"name\":\"_params\",\"type\":\"tuple\"},{\"internalType\":\"int256\",\"name\":\"_checkpointLongExposure\",\"type\":\"int256\"},{\"internalType\":\"uint256\",\"name\":\"_maxIterations\",\"type\":\"uint256\"}],\"name\":\"calculateMaxLong\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"shareReserves\",\"type\":\"uint256\"},{\"internalType\":\"int256\",\"name\":\"shareAdjustment\",\"type\":\"int256\"},{\"internalType\":\"uint256\",\"name\":\"bondReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"longsOutstanding\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"longExposure\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"timeStretch\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"sharePrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"initialSharePrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"minimumShareReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"curveFee\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"governanceFee\",\"type\":\"uint256\"}],\"internalType\":\"struct HyperdriveMath.MaxTradeParams\",\"name\":\"_params\",\"type\":\"tuple\"},{\"internalType\":\"int256\",\"name\":\"_checkpointExposure\",\"type\":\"int256\"},{\"internalType\":\"uint256\",\"name\":\"_maxIterations\",\"type\":\"uint256\"}],\"name\":\"calculateMaxShort\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_shareProceeds\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_shareReservesDelta\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_shareCurveDelta\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_totalGovernanceFee\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_openSharePrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_closeSharePrice\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"_isLong\",\"type\":\"bool\"}],\"name\":\"calculateNegativeInterestOnClose\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"int256\",\"name\":\"\",\"type\":\"int256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_effectiveShareReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_bondReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_amountIn\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_timeStretch\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_sharePrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_initialSharePrice\",\"type\":\"uint256\"}],\"name\":\"calculateOpenLong\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_effectiveShareReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_bondReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_amountIn\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_timeStretch\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_sharePrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_initialSharePrice\",\"type\":\"uint256\"}],\"name\":\"calculateOpenShort\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"shareReserves\",\"type\":\"uint256\"},{\"internalType\":\"int256\",\"name\":\"shareAdjustment\",\"type\":\"int256\"},{\"internalType\":\"uint256\",\"name\":\"bondReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"sharePrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"initialSharePrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"minimumShareReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"timeStretch\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"longsOutstanding\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"longAverageTimeRemaining\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"shortsOutstanding\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"shortAverageTimeRemaining\",\"type\":\"uint256\"}],\"internalType\":\"struct HyperdriveMath.PresentValueParams\",\"name\":\"_params\",\"type\":\"tuple\"}],\"name\":\"calculatePresentValue\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_bondAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_openSharePrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_closeSharePrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_sharePrice\",\"type\":\"uint256\"}],\"name\":\"calculateShortInterest\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_bondAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_shareAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_openSharePrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_closeSharePrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_sharePrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_flatFee\",\"type\":\"uint256\"}],\"name\":\"calculateShortProceeds\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_shareReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_bondReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_initialSharePrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_timeStretch\",\"type\":\"uint256\"}],\"name\":\"calculateSpotPrice\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"errors\":{\"FixedPointMath_InvalidExponent()\":[{\"notice\":\"###################### ### FixedPointMath ### ######################\"}],\"InvalidTradeSize()\":[{\"notice\":\"###################### ### YieldSpaceMath ### ######################\"}]},\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/test/MockHyperdriveMath.sol\":\"MockHyperdriveMath\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@aave/=lib/aave-v3-core/contracts/\",\":aave-v3-core/=lib/aave-v3-core/\",\":create3-factory/=lib/yield-daddy/lib/create3-factory/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":solmate/=lib/solmate/src/\",\":yield-daddy/=lib/yield-daddy/\",\"lib/openzeppelin-contracts:openzeppelin/=lib/openzeppelin-contracts/contracts/\"]},\"sources\":{\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0x4642a027efffb3aa6cdc85e31796fb3b1bc4fff4316e6390874e6f4add37b86c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://3720a6c1c427dcfcbdeeec15cbdb682115e44e0a9136af7e0ad9e5af2ea40672\",\"dweb:/ipfs/QmP4bmaHw8MfX9MQLhhgnVQ9U9BTQAR3e5cCCE9RcoeX7w\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0x3336dbc3128174594baa25c95f3be485aa61a77a06afbb75e2708987247a5bb5\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://2e189558d4f78633d90ecdb3ff8d775109394a98cb18d19507642cb56c43dc1e\",\"dweb:/ipfs/QmZMVsor78To4nbXwLDBaZKD8m68PT53C9mxvR8iUkM5i5\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0x837939af4a9224c5f4ea564e9b33a5612442b7d7d50b7f8bb32be6bb3ce239b3\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3bfebedcb31d2edf86a69f0dfbcc5aa7b96edc2d8197b4a4681a200cb6ffe993\",\"dweb:/ipfs/Qmeq4oAGxKv3mvRRWkqYBjfdozPkhi3MqBRFNnNkmAwCtt\"]},\"contracts/src/interfaces/IHyperdriveWrite.sol\":{\"keccak256\":\"0xe2ba8031ab98a81026010af00de9935b79ade6701dc486fd1c02d67f4eb81bf8\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://2e6acf863128f355e6ad26130037797a08321054ac8e202274debf6730162467\",\"dweb:/ipfs/Qmbf6882o3a7mci1j4w2XJtUDfsJvECGF6Yz3PG8q4LQgk\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xe3d64871148bdae5a714107b8b1a55f39cd4ede601436d2777a165d20d768a1a\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://9ebc0bfda35e9b7299c43f0efff38012b8074fcca867b781c0cedeede10cf3d0\",\"dweb:/ipfs/QmbHRLezFhWavHakK5G26DB4ud5PueU6fNvZf3L3TwXnPb\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0xcdc60ba02194150741a78cb0c52c306f5f577c5c814c63e98a13d46c02d2d9cc\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://8f5866cb2c8c4342dba88c0e4d78296fef0e170b18b3613c796c29dc31a5ca87\",\"dweb:/ipfs/QmZcoDTYhhYSB5ds3cNPJpdZTxrz6cF8M2vNVeuAcT8gw6\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0x2e55fa961123a8bb7284c8388af9bd1302a7153441ffe641804ea79021bdca05\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://c7dc03bbab02976609dec59c201e5b57a2998d1c626cef58d7a9fa7c2b06b939\",\"dweb:/ipfs/QmSifWr9cVWaUEmyKpGFcgpKCYdoBYgWtQBLgemtwo4a7x\"]},\"contracts/src/interfaces/IMultiTokenWrite.sol\":{\"keccak256\":\"0xa5ba8812e06fb6d38e1872603c8b80321cfd2f96cecbe7b67b92cb33e93b3fc8\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://73afa34919c7d457e925b4be83abb1b1ed2ed731a382ebffad95a3005c04bd5a\",\"dweb:/ipfs/QmauMxmgtYTS7RJQw1mS7Pwe5FUMDPHE2N1MBhFUjk6HPe\"]},\"contracts/src/libraries/FixedPointMath.sol\":{\"keccak256\":\"0x0108762fdecfae06d7b8d76bb52b1a5757669cc2a4e5f3ad701499295ed635bd\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a94cdbab2bdbb0212597f70cebea86fcf69be0702f6d6fe76571ee43992d7d6b\",\"dweb:/ipfs/QmXyncXgKixNzP7rgqoCA2dzehjPTAsEbtAKZGW6CQADFE\"]},\"contracts/src/libraries/HyperdriveMath.sol\":{\"keccak256\":\"0x81bccd15f87d6fb2df7fe455ab94b2f267b0cef1875890d89158f448bb7694b2\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://e973fb36a335fa1b7993152f9b051bd52588b1624c3d76f9dd21d35fe45d5c75\",\"dweb:/ipfs/QmbYLW9GPe19dQVCYNdSwvcgqrUZtDRjPyYtF4QtMn49Zb\"]},\"contracts/src/libraries/SafeCast.sol\":{\"keccak256\":\"0x077e800ae4f47bda111e72f8c40d50a57b10a1c5bce81f2e83bb57f94752159f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://8e9433729a73747a65ececae27a8f634300a4e02a66577f796f596e5894a4bb5\",\"dweb:/ipfs/QmT2fC2xaRoFuDBURAtcwqvpqXvw1AQybSgb4khVBzit2S\"]},\"contracts/src/libraries/YieldSpaceMath.sol\":{\"keccak256\":\"0xb8682a4823e01535b6bc73755f6304d0846c44526d882cefc0c3b04b807e2a04\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://836744182376d0cd9721e15334c3f972d77564586220b8db7b63737342b410ef\",\"dweb:/ipfs/QmVxEHgnVkDTNggxbC83wMzvDmsQaUq1vTbFosShjzgAmr\"]},\"contracts/test/MockHyperdriveMath.sol\":{\"keccak256\":\"0xe184f7a175cc779d395e19dd47ed0c4afc3e150ae37487593dbbe642cb68ca86\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://6237fe67c2df029ba8e595969c5dfcafe3ab35de8cfcb0aa6c1e4c60740cb85d\",\"dweb:/ipfs/QmWmjfMJXq8BV1NTC724R6frAy9QEs1GASuDtpa7az8ss7\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x00c839ff53d07d19db2e7cfa1e5133f9ee90a8d64b0e2e57f50446a2d1a3a0e0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://3dac621d015a68a5251b1e5d41dda0faf252699bf6e8bcf46a958b29964d9dd1\",\"dweb:/ipfs/QmP9axjgZv4cezAhALoTemM62sdLtMDJ9MGTxECnNwHgSJ\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Permit.sol\":{\"keccak256\":\"0x35e258421ae206f3db37281cea70871b4c3553914734aa76139a41af60ac1abb\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2ef94b6bc4ee356db612a1849c615f7dd4b15542d6c8584c86bb9243a7913cf0\",\"dweb:/ipfs/QmaxFj5NFpAjjitZtHPNS9PPtCuBATaRz9ktDDRCQCQ83y\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol\":{\"keccak256\":\"0x8a63ea9ec07788740e51046ca14c61f411aedb901e89749c9d55fa56ed43086a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://3035ae3f172ed9e172e1ba4d83bdc70279f63be51ce9218c530132def66ff577\",\"dweb:/ipfs/QmTQ3zfC3YUNeY3KUVFiHgTWDuxfmcEMgpGC6HMoTpgZJL\"]},\"lib/openzeppelin-contracts/contracts/utils/Address.sol\":{\"keccak256\":\"0xa6dfb97ce947b7c846b054ee7d45d12383359778f4f3743654ae0a34fa421b26\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b97e7e5a77ea47c08ba422291df887eba76c80982f52a6e94a30106e9377a94f\",\"dweb:/ipfs/Qme7N2XRC7mcDxB8wZxNWPk6T8S2qsnmhAqXeUj4CNvsGD\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.19+commit.7dd6d404"
     },
-    language: "Solidity",
-    output: {
-      abi: [
+    "language": "Solidity",
+    "output": {
+      "abi": [
         {
-          inputs: [],
-          type: "error",
-          name: "FixedPointMath_InvalidExponent",
+          "inputs": [],
+          "type": "error",
+          "name": "FixedPointMath_InvalidExponent"
         },
         {
-          inputs: [],
-          type: "error",
-          name: "FixedPointMath_InvalidInput",
+          "inputs": [],
+          "type": "error",
+          "name": "FixedPointMath_InvalidInput"
         },
         {
-          inputs: [],
-          type: "error",
-          name: "InvalidTradeSize",
+          "inputs": [],
+          "type": "error",
+          "name": "InvalidTradeSize"
         },
         {
-          inputs: [],
-          type: "error",
-          name: "NegativePresentValue",
+          "inputs": [],
+          "type": "error",
+          "name": "NegativePresentValue"
         },
         {
-          inputs: [
+          "inputs": [
             {
-              internalType: "uint256",
-              name: "_effectiveShareReserves",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_effectiveShareReserves",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "_bondReserves",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_bondReserves",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "_initialSharePrice",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_initialSharePrice",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "_positionDuration",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_positionDuration",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "_timeStretch",
-              type: "uint256",
-            },
+              "internalType": "uint256",
+              "name": "_timeStretch",
+              "type": "uint256"
+            }
           ],
-          stateMutability: "pure",
-          type: "function",
-          name: "calculateAPRFromReserves",
-          outputs: [
+          "stateMutability": "pure",
+          "type": "function",
+          "name": "calculateAPRFromReserves",
+          "outputs": [
             {
-              internalType: "uint256",
-              name: "",
-              type: "uint256",
-            },
-          ],
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
         },
         {
-          inputs: [
+          "inputs": [
             {
-              internalType: "uint256",
-              name: "_effectiveShareReserves",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_effectiveShareReserves",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "_bondReserves",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_bondReserves",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "_amountIn",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_amountIn",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "_normalizedTimeRemaining",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_normalizedTimeRemaining",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "_timeStretch",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_timeStretch",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "_sharePrice",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_sharePrice",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "_initialSharePrice",
-              type: "uint256",
-            },
+              "internalType": "uint256",
+              "name": "_initialSharePrice",
+              "type": "uint256"
+            }
           ],
-          stateMutability: "pure",
-          type: "function",
-          name: "calculateCloseLong",
-          outputs: [
+          "stateMutability": "pure",
+          "type": "function",
+          "name": "calculateCloseLong",
+          "outputs": [
             {
-              internalType: "uint256",
-              name: "",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "",
-              type: "uint256",
-            },
-          ],
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
         },
         {
-          inputs: [
+          "inputs": [
             {
-              internalType: "uint256",
-              name: "_effectiveShareReserves",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_effectiveShareReserves",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "_bondReserves",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_bondReserves",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "_amountOut",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_amountOut",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "_normalizedTimeRemaining",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_normalizedTimeRemaining",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "_timeStretch",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_timeStretch",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "_sharePrice",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_sharePrice",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "_initialSharePrice",
-              type: "uint256",
-            },
+              "internalType": "uint256",
+              "name": "_initialSharePrice",
+              "type": "uint256"
+            }
           ],
-          stateMutability: "pure",
-          type: "function",
-          name: "calculateCloseShort",
-          outputs: [
+          "stateMutability": "pure",
+          "type": "function",
+          "name": "calculateCloseShort",
+          "outputs": [
             {
-              internalType: "uint256",
-              name: "",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "",
-              type: "uint256",
-            },
-          ],
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
         },
         {
-          inputs: [
+          "inputs": [
             {
-              internalType: "uint256",
-              name: "_effectiveShareReserves",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_effectiveShareReserves",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "_initialSharePrice",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_initialSharePrice",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "_apr",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_apr",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "_positionDuration",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_positionDuration",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "_timeStretch",
-              type: "uint256",
-            },
+              "internalType": "uint256",
+              "name": "_timeStretch",
+              "type": "uint256"
+            }
           ],
-          stateMutability: "pure",
-          type: "function",
-          name: "calculateInitialBondReserves",
-          outputs: [
+          "stateMutability": "pure",
+          "type": "function",
+          "name": "calculateInitialBondReserves",
+          "outputs": [
             {
-              internalType: "uint256",
-              name: "",
-              type: "uint256",
-            },
-          ],
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
         },
         {
-          inputs: [
+          "inputs": [
             {
-              internalType: "struct HyperdriveMath.MaxTradeParams",
-              name: "_params",
-              type: "tuple",
-              components: [
+              "internalType": "struct HyperdriveMath.MaxTradeParams",
+              "name": "_params",
+              "type": "tuple",
+              "components": [
                 {
-                  internalType: "uint256",
-                  name: "shareReserves",
-                  type: "uint256",
+                  "internalType": "uint256",
+                  "name": "shareReserves",
+                  "type": "uint256"
                 },
                 {
-                  internalType: "int256",
-                  name: "shareAdjustment",
-                  type: "int256",
+                  "internalType": "int256",
+                  "name": "shareAdjustment",
+                  "type": "int256"
                 },
                 {
-                  internalType: "uint256",
-                  name: "bondReserves",
-                  type: "uint256",
+                  "internalType": "uint256",
+                  "name": "bondReserves",
+                  "type": "uint256"
                 },
                 {
-                  internalType: "uint256",
-                  name: "longsOutstanding",
-                  type: "uint256",
+                  "internalType": "uint256",
+                  "name": "longsOutstanding",
+                  "type": "uint256"
                 },
                 {
-                  internalType: "uint256",
-                  name: "longExposure",
-                  type: "uint256",
+                  "internalType": "uint256",
+                  "name": "longExposure",
+                  "type": "uint256"
                 },
                 {
-                  internalType: "uint256",
-                  name: "timeStretch",
-                  type: "uint256",
+                  "internalType": "uint256",
+                  "name": "timeStretch",
+                  "type": "uint256"
                 },
                 {
-                  internalType: "uint256",
-                  name: "sharePrice",
-                  type: "uint256",
+                  "internalType": "uint256",
+                  "name": "sharePrice",
+                  "type": "uint256"
                 },
                 {
-                  internalType: "uint256",
-                  name: "initialSharePrice",
-                  type: "uint256",
+                  "internalType": "uint256",
+                  "name": "initialSharePrice",
+                  "type": "uint256"
                 },
                 {
-                  internalType: "uint256",
-                  name: "minimumShareReserves",
-                  type: "uint256",
+                  "internalType": "uint256",
+                  "name": "minimumShareReserves",
+                  "type": "uint256"
                 },
                 {
-                  internalType: "uint256",
-                  name: "curveFee",
-                  type: "uint256",
+                  "internalType": "uint256",
+                  "name": "curveFee",
+                  "type": "uint256"
                 },
                 {
-                  internalType: "uint256",
-                  name: "governanceFee",
-                  type: "uint256",
-                },
-              ],
+                  "internalType": "uint256",
+                  "name": "governanceFee",
+                  "type": "uint256"
+                }
+              ]
             },
             {
-              internalType: "int256",
-              name: "_checkpointLongExposure",
-              type: "int256",
+              "internalType": "int256",
+              "name": "_checkpointLongExposure",
+              "type": "int256"
             },
             {
-              internalType: "uint256",
-              name: "_maxIterations",
-              type: "uint256",
-            },
+              "internalType": "uint256",
+              "name": "_maxIterations",
+              "type": "uint256"
+            }
           ],
-          stateMutability: "pure",
-          type: "function",
-          name: "calculateMaxLong",
-          outputs: [
+          "stateMutability": "pure",
+          "type": "function",
+          "name": "calculateMaxLong",
+          "outputs": [
             {
-              internalType: "uint256",
-              name: "",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "",
-              type: "uint256",
-            },
-          ],
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
         },
         {
-          inputs: [
+          "inputs": [
             {
-              internalType: "struct HyperdriveMath.MaxTradeParams",
-              name: "_params",
-              type: "tuple",
-              components: [
+              "internalType": "struct HyperdriveMath.MaxTradeParams",
+              "name": "_params",
+              "type": "tuple",
+              "components": [
                 {
-                  internalType: "uint256",
-                  name: "shareReserves",
-                  type: "uint256",
+                  "internalType": "uint256",
+                  "name": "shareReserves",
+                  "type": "uint256"
                 },
                 {
-                  internalType: "int256",
-                  name: "shareAdjustment",
-                  type: "int256",
+                  "internalType": "int256",
+                  "name": "shareAdjustment",
+                  "type": "int256"
                 },
                 {
-                  internalType: "uint256",
-                  name: "bondReserves",
-                  type: "uint256",
+                  "internalType": "uint256",
+                  "name": "bondReserves",
+                  "type": "uint256"
                 },
                 {
-                  internalType: "uint256",
-                  name: "longsOutstanding",
-                  type: "uint256",
+                  "internalType": "uint256",
+                  "name": "longsOutstanding",
+                  "type": "uint256"
                 },
                 {
-                  internalType: "uint256",
-                  name: "longExposure",
-                  type: "uint256",
+                  "internalType": "uint256",
+                  "name": "longExposure",
+                  "type": "uint256"
                 },
                 {
-                  internalType: "uint256",
-                  name: "timeStretch",
-                  type: "uint256",
+                  "internalType": "uint256",
+                  "name": "timeStretch",
+                  "type": "uint256"
                 },
                 {
-                  internalType: "uint256",
-                  name: "sharePrice",
-                  type: "uint256",
+                  "internalType": "uint256",
+                  "name": "sharePrice",
+                  "type": "uint256"
                 },
                 {
-                  internalType: "uint256",
-                  name: "initialSharePrice",
-                  type: "uint256",
+                  "internalType": "uint256",
+                  "name": "initialSharePrice",
+                  "type": "uint256"
                 },
                 {
-                  internalType: "uint256",
-                  name: "minimumShareReserves",
-                  type: "uint256",
+                  "internalType": "uint256",
+                  "name": "minimumShareReserves",
+                  "type": "uint256"
                 },
                 {
-                  internalType: "uint256",
-                  name: "curveFee",
-                  type: "uint256",
+                  "internalType": "uint256",
+                  "name": "curveFee",
+                  "type": "uint256"
                 },
                 {
-                  internalType: "uint256",
-                  name: "governanceFee",
-                  type: "uint256",
-                },
-              ],
+                  "internalType": "uint256",
+                  "name": "governanceFee",
+                  "type": "uint256"
+                }
+              ]
             },
             {
-              internalType: "int256",
-              name: "_checkpointExposure",
-              type: "int256",
+              "internalType": "int256",
+              "name": "_checkpointExposure",
+              "type": "int256"
             },
             {
-              internalType: "uint256",
-              name: "_maxIterations",
-              type: "uint256",
-            },
+              "internalType": "uint256",
+              "name": "_maxIterations",
+              "type": "uint256"
+            }
           ],
-          stateMutability: "pure",
-          type: "function",
-          name: "calculateMaxShort",
-          outputs: [
+          "stateMutability": "pure",
+          "type": "function",
+          "name": "calculateMaxShort",
+          "outputs": [
             {
-              internalType: "uint256",
-              name: "",
-              type: "uint256",
-            },
-          ],
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
         },
         {
-          inputs: [
+          "inputs": [
             {
-              internalType: "uint256",
-              name: "_shareProceeds",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_shareProceeds",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "_shareReservesDelta",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_shareReservesDelta",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "_shareCurveDelta",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_shareCurveDelta",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "_totalGovernanceFee",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_totalGovernanceFee",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "_openSharePrice",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_openSharePrice",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "_closeSharePrice",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_closeSharePrice",
+              "type": "uint256"
             },
             {
-              internalType: "bool",
-              name: "_isLong",
-              type: "bool",
-            },
+              "internalType": "bool",
+              "name": "_isLong",
+              "type": "bool"
+            }
           ],
-          stateMutability: "pure",
-          type: "function",
-          name: "calculateNegativeInterestOnClose",
-          outputs: [
+          "stateMutability": "pure",
+          "type": "function",
+          "name": "calculateNegativeInterestOnClose",
+          "outputs": [
             {
-              internalType: "uint256",
-              name: "",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
             },
             {
-              internalType: "int256",
-              name: "",
-              type: "int256",
+              "internalType": "int256",
+              "name": "",
+              "type": "int256"
             },
             {
-              internalType: "uint256",
-              name: "",
-              type: "uint256",
-            },
-          ],
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
         },
         {
-          inputs: [
+          "inputs": [
             {
-              internalType: "uint256",
-              name: "_effectiveShareReserves",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_effectiveShareReserves",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "_bondReserves",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_bondReserves",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "_amountIn",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_amountIn",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "_timeStretch",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_timeStretch",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "_sharePrice",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_sharePrice",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "_initialSharePrice",
-              type: "uint256",
-            },
+              "internalType": "uint256",
+              "name": "_initialSharePrice",
+              "type": "uint256"
+            }
           ],
-          stateMutability: "pure",
-          type: "function",
-          name: "calculateOpenLong",
-          outputs: [
+          "stateMutability": "pure",
+          "type": "function",
+          "name": "calculateOpenLong",
+          "outputs": [
             {
-              internalType: "uint256",
-              name: "",
-              type: "uint256",
-            },
-          ],
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
         },
         {
-          inputs: [
+          "inputs": [
             {
-              internalType: "uint256",
-              name: "_effectiveShareReserves",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_effectiveShareReserves",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "_bondReserves",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_bondReserves",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "_amountIn",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_amountIn",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "_timeStretch",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_timeStretch",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "_sharePrice",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_sharePrice",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "_initialSharePrice",
-              type: "uint256",
-            },
+              "internalType": "uint256",
+              "name": "_initialSharePrice",
+              "type": "uint256"
+            }
           ],
-          stateMutability: "pure",
-          type: "function",
-          name: "calculateOpenShort",
-          outputs: [
+          "stateMutability": "pure",
+          "type": "function",
+          "name": "calculateOpenShort",
+          "outputs": [
             {
-              internalType: "uint256",
-              name: "",
-              type: "uint256",
-            },
-          ],
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
         },
         {
-          inputs: [
+          "inputs": [
             {
-              internalType: "struct HyperdriveMath.PresentValueParams",
-              name: "_params",
-              type: "tuple",
-              components: [
+              "internalType": "struct HyperdriveMath.PresentValueParams",
+              "name": "_params",
+              "type": "tuple",
+              "components": [
                 {
-                  internalType: "uint256",
-                  name: "shareReserves",
-                  type: "uint256",
+                  "internalType": "uint256",
+                  "name": "shareReserves",
+                  "type": "uint256"
                 },
                 {
-                  internalType: "int256",
-                  name: "shareAdjustment",
-                  type: "int256",
+                  "internalType": "int256",
+                  "name": "shareAdjustment",
+                  "type": "int256"
                 },
                 {
-                  internalType: "uint256",
-                  name: "bondReserves",
-                  type: "uint256",
+                  "internalType": "uint256",
+                  "name": "bondReserves",
+                  "type": "uint256"
                 },
                 {
-                  internalType: "uint256",
-                  name: "sharePrice",
-                  type: "uint256",
+                  "internalType": "uint256",
+                  "name": "sharePrice",
+                  "type": "uint256"
                 },
                 {
-                  internalType: "uint256",
-                  name: "initialSharePrice",
-                  type: "uint256",
+                  "internalType": "uint256",
+                  "name": "initialSharePrice",
+                  "type": "uint256"
                 },
                 {
-                  internalType: "uint256",
-                  name: "minimumShareReserves",
-                  type: "uint256",
+                  "internalType": "uint256",
+                  "name": "minimumShareReserves",
+                  "type": "uint256"
                 },
                 {
-                  internalType: "uint256",
-                  name: "timeStretch",
-                  type: "uint256",
+                  "internalType": "uint256",
+                  "name": "timeStretch",
+                  "type": "uint256"
                 },
                 {
-                  internalType: "uint256",
-                  name: "longsOutstanding",
-                  type: "uint256",
+                  "internalType": "uint256",
+                  "name": "longsOutstanding",
+                  "type": "uint256"
                 },
                 {
-                  internalType: "uint256",
-                  name: "longAverageTimeRemaining",
-                  type: "uint256",
+                  "internalType": "uint256",
+                  "name": "longAverageTimeRemaining",
+                  "type": "uint256"
                 },
                 {
-                  internalType: "uint256",
-                  name: "shortsOutstanding",
-                  type: "uint256",
+                  "internalType": "uint256",
+                  "name": "shortsOutstanding",
+                  "type": "uint256"
                 },
                 {
-                  internalType: "uint256",
-                  name: "shortAverageTimeRemaining",
-                  type: "uint256",
-                },
-              ],
-            },
+                  "internalType": "uint256",
+                  "name": "shortAverageTimeRemaining",
+                  "type": "uint256"
+                }
+              ]
+            }
           ],
-          stateMutability: "pure",
-          type: "function",
-          name: "calculatePresentValue",
-          outputs: [
+          "stateMutability": "pure",
+          "type": "function",
+          "name": "calculatePresentValue",
+          "outputs": [
             {
-              internalType: "uint256",
-              name: "",
-              type: "uint256",
-            },
-          ],
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
         },
         {
-          inputs: [
+          "inputs": [
             {
-              internalType: "uint256",
-              name: "_bondAmount",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_bondAmount",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "_openSharePrice",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_openSharePrice",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "_closeSharePrice",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_closeSharePrice",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "_sharePrice",
-              type: "uint256",
-            },
+              "internalType": "uint256",
+              "name": "_sharePrice",
+              "type": "uint256"
+            }
           ],
-          stateMutability: "pure",
-          type: "function",
-          name: "calculateShortInterest",
-          outputs: [
+          "stateMutability": "pure",
+          "type": "function",
+          "name": "calculateShortInterest",
+          "outputs": [
             {
-              internalType: "uint256",
-              name: "",
-              type: "uint256",
-            },
-          ],
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
         },
         {
-          inputs: [
+          "inputs": [
             {
-              internalType: "uint256",
-              name: "_bondAmount",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_bondAmount",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "_shareAmount",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_shareAmount",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "_openSharePrice",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_openSharePrice",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "_closeSharePrice",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_closeSharePrice",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "_sharePrice",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_sharePrice",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "_flatFee",
-              type: "uint256",
-            },
+              "internalType": "uint256",
+              "name": "_flatFee",
+              "type": "uint256"
+            }
           ],
-          stateMutability: "pure",
-          type: "function",
-          name: "calculateShortProceeds",
-          outputs: [
+          "stateMutability": "pure",
+          "type": "function",
+          "name": "calculateShortProceeds",
+          "outputs": [
             {
-              internalType: "uint256",
-              name: "",
-              type: "uint256",
-            },
-          ],
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
         },
         {
-          inputs: [
+          "inputs": [
             {
-              internalType: "uint256",
-              name: "_shareReserves",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_shareReserves",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "_bondReserves",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_bondReserves",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "_initialSharePrice",
-              type: "uint256",
+              "internalType": "uint256",
+              "name": "_initialSharePrice",
+              "type": "uint256"
             },
             {
-              internalType: "uint256",
-              name: "_timeStretch",
-              type: "uint256",
-            },
+              "internalType": "uint256",
+              "name": "_timeStretch",
+              "type": "uint256"
+            }
           ],
-          stateMutability: "pure",
-          type: "function",
-          name: "calculateSpotPrice",
-          outputs: [
+          "stateMutability": "pure",
+          "type": "function",
+          "name": "calculateSpotPrice",
+          "outputs": [
             {
-              internalType: "uint256",
-              name: "",
-              type: "uint256",
-            },
-          ],
-        },
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
+        }
       ],
-      devdoc: {
-        kind: "dev",
-        methods: {},
-        version: 1,
+      "devdoc": {
+        "kind": "dev",
+        "methods": {},
+        "version": 1
       },
-      userdoc: {
-        kind: "user",
-        methods: {},
-        version: 1,
-      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
     },
-    settings: {
-      remappings: [
+    "settings": {
+      "remappings": [
         "@aave/=lib/aave-v3-core/contracts/",
         "aave-v3-core/=lib/aave-v3-core/",
         "create3-factory/=lib/yield-daddy/lib/create3-factory/",
@@ -1548,6144 +1533,6090 @@ export const MockHyperdriveMath = {
         "openzeppelin-contracts/=lib/openzeppelin-contracts/",
         "solmate/=lib/solmate/src/",
         "yield-daddy/=lib/yield-daddy/",
-        "lib/openzeppelin-contracts:openzeppelin/=lib/openzeppelin-contracts/contracts/",
+        "lib/openzeppelin-contracts:openzeppelin/=lib/openzeppelin-contracts/contracts/"
       ],
-      optimizer: {
-        enabled: true,
-        runs: 200,
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
       },
-      metadata: {
-        bytecodeHash: "ipfs",
+      "metadata": {
+        "bytecodeHash": "ipfs"
       },
-      compilationTarget: {
-        "contracts/test/MockHyperdriveMath.sol": "MockHyperdriveMath",
+      "compilationTarget": {
+        "contracts/test/MockHyperdriveMath.sol": "MockHyperdriveMath"
       },
-      libraries: {},
+      "libraries": {}
     },
-    sources: {
+    "sources": {
       "contracts/src/interfaces/IERC20.sol": {
-        keccak256:
-          "0x4642a027efffb3aa6cdc85e31796fb3b1bc4fff4316e6390874e6f4add37b86c",
-        urls: [
+        "keccak256": "0x4642a027efffb3aa6cdc85e31796fb3b1bc4fff4316e6390874e6f4add37b86c",
+        "urls": [
           "bzz-raw://3720a6c1c427dcfcbdeeec15cbdb682115e44e0a9136af7e0ad9e5af2ea40672",
-          "dweb:/ipfs/QmP4bmaHw8MfX9MQLhhgnVQ9U9BTQAR3e5cCCE9RcoeX7w",
+          "dweb:/ipfs/QmP4bmaHw8MfX9MQLhhgnVQ9U9BTQAR3e5cCCE9RcoeX7w"
         ],
-        license: "MIT",
+        "license": "MIT"
       },
       "contracts/src/interfaces/IHyperdrive.sol": {
-        keccak256:
-          "0x3336dbc3128174594baa25c95f3be485aa61a77a06afbb75e2708987247a5bb5",
-        urls: [
+        "keccak256": "0x3336dbc3128174594baa25c95f3be485aa61a77a06afbb75e2708987247a5bb5",
+        "urls": [
           "bzz-raw://2e189558d4f78633d90ecdb3ff8d775109394a98cb18d19507642cb56c43dc1e",
-          "dweb:/ipfs/QmZMVsor78To4nbXwLDBaZKD8m68PT53C9mxvR8iUkM5i5",
+          "dweb:/ipfs/QmZMVsor78To4nbXwLDBaZKD8m68PT53C9mxvR8iUkM5i5"
         ],
-        license: "Apache-2.0",
+        "license": "Apache-2.0"
       },
       "contracts/src/interfaces/IHyperdriveRead.sol": {
-        keccak256:
-          "0x837939af4a9224c5f4ea564e9b33a5612442b7d7d50b7f8bb32be6bb3ce239b3",
-        urls: [
+        "keccak256": "0x837939af4a9224c5f4ea564e9b33a5612442b7d7d50b7f8bb32be6bb3ce239b3",
+        "urls": [
           "bzz-raw://3bfebedcb31d2edf86a69f0dfbcc5aa7b96edc2d8197b4a4681a200cb6ffe993",
-          "dweb:/ipfs/Qmeq4oAGxKv3mvRRWkqYBjfdozPkhi3MqBRFNnNkmAwCtt",
+          "dweb:/ipfs/Qmeq4oAGxKv3mvRRWkqYBjfdozPkhi3MqBRFNnNkmAwCtt"
         ],
-        license: "Apache-2.0",
+        "license": "Apache-2.0"
       },
       "contracts/src/interfaces/IHyperdriveWrite.sol": {
-        keccak256:
-          "0xe2ba8031ab98a81026010af00de9935b79ade6701dc486fd1c02d67f4eb81bf8",
-        urls: [
+        "keccak256": "0xe2ba8031ab98a81026010af00de9935b79ade6701dc486fd1c02d67f4eb81bf8",
+        "urls": [
           "bzz-raw://2e6acf863128f355e6ad26130037797a08321054ac8e202274debf6730162467",
-          "dweb:/ipfs/Qmbf6882o3a7mci1j4w2XJtUDfsJvECGF6Yz3PG8q4LQgk",
+          "dweb:/ipfs/Qmbf6882o3a7mci1j4w2XJtUDfsJvECGF6Yz3PG8q4LQgk"
         ],
-        license: "Apache-2.0",
+        "license": "Apache-2.0"
       },
       "contracts/src/interfaces/IMultiToken.sol": {
-        keccak256:
-          "0xe3d64871148bdae5a714107b8b1a55f39cd4ede601436d2777a165d20d768a1a",
-        urls: [
+        "keccak256": "0xe3d64871148bdae5a714107b8b1a55f39cd4ede601436d2777a165d20d768a1a",
+        "urls": [
           "bzz-raw://9ebc0bfda35e9b7299c43f0efff38012b8074fcca867b781c0cedeede10cf3d0",
-          "dweb:/ipfs/QmbHRLezFhWavHakK5G26DB4ud5PueU6fNvZf3L3TwXnPb",
+          "dweb:/ipfs/QmbHRLezFhWavHakK5G26DB4ud5PueU6fNvZf3L3TwXnPb"
         ],
-        license: "Apache-2.0",
+        "license": "Apache-2.0"
       },
       "contracts/src/interfaces/IMultiTokenMetadata.sol": {
-        keccak256:
-          "0xcdc60ba02194150741a78cb0c52c306f5f577c5c814c63e98a13d46c02d2d9cc",
-        urls: [
+        "keccak256": "0xcdc60ba02194150741a78cb0c52c306f5f577c5c814c63e98a13d46c02d2d9cc",
+        "urls": [
           "bzz-raw://8f5866cb2c8c4342dba88c0e4d78296fef0e170b18b3613c796c29dc31a5ca87",
-          "dweb:/ipfs/QmZcoDTYhhYSB5ds3cNPJpdZTxrz6cF8M2vNVeuAcT8gw6",
+          "dweb:/ipfs/QmZcoDTYhhYSB5ds3cNPJpdZTxrz6cF8M2vNVeuAcT8gw6"
         ],
-        license: "Apache-2.0",
+        "license": "Apache-2.0"
       },
       "contracts/src/interfaces/IMultiTokenRead.sol": {
-        keccak256:
-          "0x2e55fa961123a8bb7284c8388af9bd1302a7153441ffe641804ea79021bdca05",
-        urls: [
+        "keccak256": "0x2e55fa961123a8bb7284c8388af9bd1302a7153441ffe641804ea79021bdca05",
+        "urls": [
           "bzz-raw://c7dc03bbab02976609dec59c201e5b57a2998d1c626cef58d7a9fa7c2b06b939",
-          "dweb:/ipfs/QmSifWr9cVWaUEmyKpGFcgpKCYdoBYgWtQBLgemtwo4a7x",
+          "dweb:/ipfs/QmSifWr9cVWaUEmyKpGFcgpKCYdoBYgWtQBLgemtwo4a7x"
         ],
-        license: "Apache-2.0",
+        "license": "Apache-2.0"
       },
       "contracts/src/interfaces/IMultiTokenWrite.sol": {
-        keccak256:
-          "0xa5ba8812e06fb6d38e1872603c8b80321cfd2f96cecbe7b67b92cb33e93b3fc8",
-        urls: [
+        "keccak256": "0xa5ba8812e06fb6d38e1872603c8b80321cfd2f96cecbe7b67b92cb33e93b3fc8",
+        "urls": [
           "bzz-raw://73afa34919c7d457e925b4be83abb1b1ed2ed731a382ebffad95a3005c04bd5a",
-          "dweb:/ipfs/QmauMxmgtYTS7RJQw1mS7Pwe5FUMDPHE2N1MBhFUjk6HPe",
+          "dweb:/ipfs/QmauMxmgtYTS7RJQw1mS7Pwe5FUMDPHE2N1MBhFUjk6HPe"
         ],
-        license: "Apache-2.0",
+        "license": "Apache-2.0"
       },
       "contracts/src/libraries/FixedPointMath.sol": {
-        keccak256:
-          "0x0108762fdecfae06d7b8d76bb52b1a5757669cc2a4e5f3ad701499295ed635bd",
-        urls: [
+        "keccak256": "0x0108762fdecfae06d7b8d76bb52b1a5757669cc2a4e5f3ad701499295ed635bd",
+        "urls": [
           "bzz-raw://a94cdbab2bdbb0212597f70cebea86fcf69be0702f6d6fe76571ee43992d7d6b",
-          "dweb:/ipfs/QmXyncXgKixNzP7rgqoCA2dzehjPTAsEbtAKZGW6CQADFE",
+          "dweb:/ipfs/QmXyncXgKixNzP7rgqoCA2dzehjPTAsEbtAKZGW6CQADFE"
         ],
-        license: "Apache-2.0",
+        "license": "Apache-2.0"
       },
       "contracts/src/libraries/HyperdriveMath.sol": {
-        keccak256:
-          "0x81bccd15f87d6fb2df7fe455ab94b2f267b0cef1875890d89158f448bb7694b2",
-        urls: [
+        "keccak256": "0x81bccd15f87d6fb2df7fe455ab94b2f267b0cef1875890d89158f448bb7694b2",
+        "urls": [
           "bzz-raw://e973fb36a335fa1b7993152f9b051bd52588b1624c3d76f9dd21d35fe45d5c75",
-          "dweb:/ipfs/QmbYLW9GPe19dQVCYNdSwvcgqrUZtDRjPyYtF4QtMn49Zb",
+          "dweb:/ipfs/QmbYLW9GPe19dQVCYNdSwvcgqrUZtDRjPyYtF4QtMn49Zb"
         ],
-        license: "Apache-2.0",
+        "license": "Apache-2.0"
       },
       "contracts/src/libraries/SafeCast.sol": {
-        keccak256:
-          "0x077e800ae4f47bda111e72f8c40d50a57b10a1c5bce81f2e83bb57f94752159f",
-        urls: [
+        "keccak256": "0x077e800ae4f47bda111e72f8c40d50a57b10a1c5bce81f2e83bb57f94752159f",
+        "urls": [
           "bzz-raw://8e9433729a73747a65ececae27a8f634300a4e02a66577f796f596e5894a4bb5",
-          "dweb:/ipfs/QmT2fC2xaRoFuDBURAtcwqvpqXvw1AQybSgb4khVBzit2S",
+          "dweb:/ipfs/QmT2fC2xaRoFuDBURAtcwqvpqXvw1AQybSgb4khVBzit2S"
         ],
-        license: "Apache-2.0",
+        "license": "Apache-2.0"
       },
       "contracts/src/libraries/YieldSpaceMath.sol": {
-        keccak256:
-          "0xb8682a4823e01535b6bc73755f6304d0846c44526d882cefc0c3b04b807e2a04",
-        urls: [
+        "keccak256": "0xb8682a4823e01535b6bc73755f6304d0846c44526d882cefc0c3b04b807e2a04",
+        "urls": [
           "bzz-raw://836744182376d0cd9721e15334c3f972d77564586220b8db7b63737342b410ef",
-          "dweb:/ipfs/QmVxEHgnVkDTNggxbC83wMzvDmsQaUq1vTbFosShjzgAmr",
+          "dweb:/ipfs/QmVxEHgnVkDTNggxbC83wMzvDmsQaUq1vTbFosShjzgAmr"
         ],
-        license: "Apache-2.0",
+        "license": "Apache-2.0"
       },
       "contracts/test/MockHyperdriveMath.sol": {
-        keccak256:
-          "0xe184f7a175cc779d395e19dd47ed0c4afc3e150ae37487593dbbe642cb68ca86",
-        urls: [
+        "keccak256": "0xe184f7a175cc779d395e19dd47ed0c4afc3e150ae37487593dbbe642cb68ca86",
+        "urls": [
           "bzz-raw://6237fe67c2df029ba8e595969c5dfcafe3ab35de8cfcb0aa6c1e4c60740cb85d",
-          "dweb:/ipfs/QmWmjfMJXq8BV1NTC724R6frAy9QEs1GASuDtpa7az8ss7",
+          "dweb:/ipfs/QmWmjfMJXq8BV1NTC724R6frAy9QEs1GASuDtpa7az8ss7"
         ],
-        license: "Apache-2.0",
+        "license": "Apache-2.0"
       },
       "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol": {
-        keccak256:
-          "0x00c839ff53d07d19db2e7cfa1e5133f9ee90a8d64b0e2e57f50446a2d1a3a0e0",
-        urls: [
+        "keccak256": "0x00c839ff53d07d19db2e7cfa1e5133f9ee90a8d64b0e2e57f50446a2d1a3a0e0",
+        "urls": [
           "bzz-raw://3dac621d015a68a5251b1e5d41dda0faf252699bf6e8bcf46a958b29964d9dd1",
-          "dweb:/ipfs/QmP9axjgZv4cezAhALoTemM62sdLtMDJ9MGTxECnNwHgSJ",
+          "dweb:/ipfs/QmP9axjgZv4cezAhALoTemM62sdLtMDJ9MGTxECnNwHgSJ"
         ],
-        license: "MIT",
+        "license": "MIT"
       },
-      "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Permit.sol":
-        {
-          keccak256:
-            "0x35e258421ae206f3db37281cea70871b4c3553914734aa76139a41af60ac1abb",
-          urls: [
-            "bzz-raw://2ef94b6bc4ee356db612a1849c615f7dd4b15542d6c8584c86bb9243a7913cf0",
-            "dweb:/ipfs/QmaxFj5NFpAjjitZtHPNS9PPtCuBATaRz9ktDDRCQCQ83y",
-          ],
-          license: "MIT",
-        },
-      "lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol": {
-        keccak256:
-          "0x8a63ea9ec07788740e51046ca14c61f411aedb901e89749c9d55fa56ed43086a",
-        urls: [
-          "bzz-raw://3035ae3f172ed9e172e1ba4d83bdc70279f63be51ce9218c530132def66ff577",
-          "dweb:/ipfs/QmTQ3zfC3YUNeY3KUVFiHgTWDuxfmcEMgpGC6HMoTpgZJL",
+      "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Permit.sol": {
+        "keccak256": "0x35e258421ae206f3db37281cea70871b4c3553914734aa76139a41af60ac1abb",
+        "urls": [
+          "bzz-raw://2ef94b6bc4ee356db612a1849c615f7dd4b15542d6c8584c86bb9243a7913cf0",
+          "dweb:/ipfs/QmaxFj5NFpAjjitZtHPNS9PPtCuBATaRz9ktDDRCQCQ83y"
         ],
-        license: "MIT",
+        "license": "MIT"
+      },
+      "lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol": {
+        "keccak256": "0x8a63ea9ec07788740e51046ca14c61f411aedb901e89749c9d55fa56ed43086a",
+        "urls": [
+          "bzz-raw://3035ae3f172ed9e172e1ba4d83bdc70279f63be51ce9218c530132def66ff577",
+          "dweb:/ipfs/QmTQ3zfC3YUNeY3KUVFiHgTWDuxfmcEMgpGC6HMoTpgZJL"
+        ],
+        "license": "MIT"
       },
       "lib/openzeppelin-contracts/contracts/utils/Address.sol": {
-        keccak256:
-          "0xa6dfb97ce947b7c846b054ee7d45d12383359778f4f3743654ae0a34fa421b26",
-        urls: [
+        "keccak256": "0xa6dfb97ce947b7c846b054ee7d45d12383359778f4f3743654ae0a34fa421b26",
+        "urls": [
           "bzz-raw://b97e7e5a77ea47c08ba422291df887eba76c80982f52a6e94a30106e9377a94f",
-          "dweb:/ipfs/Qme7N2XRC7mcDxB8wZxNWPk6T8S2qsnmhAqXeUj4CNvsGD",
+          "dweb:/ipfs/Qme7N2XRC7mcDxB8wZxNWPk6T8S2qsnmhAqXeUj4CNvsGD"
         ],
-        license: "MIT",
-      },
+        "license": "MIT"
+      }
     },
-    version: 1,
+    "version": 1
   },
-  ast: {
-    absolutePath: "contracts/test/MockHyperdriveMath.sol",
-    id: 14384,
-    exportedSymbols: {
-      HyperdriveMath: [10772],
-      MockHyperdriveMath: [14383],
+  "ast": {
+    "absolutePath": "contracts/test/MockHyperdriveMath.sol",
+    "id": 14384,
+    "exportedSymbols": {
+      "HyperdriveMath": [
+        10772
+      ],
+      "MockHyperdriveMath": [
+        14383
+      ]
     },
-    nodeType: "SourceUnit",
-    src: "39:7345:46",
-    nodes: [
+    "nodeType": "SourceUnit",
+    "src": "39:7345:46",
+    "nodes": [
       {
-        id: 13939,
-        nodeType: "PragmaDirective",
-        src: "39:23:46",
-        nodes: [],
-        literals: ["solidity", "0.8", ".19"],
+        "id": 13939,
+        "nodeType": "PragmaDirective",
+        "src": "39:23:46",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "0.8",
+          ".19"
+        ]
       },
       {
-        id: 13941,
-        nodeType: "ImportDirective",
-        src: "64:69:46",
-        nodes: [],
-        absolutePath: "contracts/src/libraries/HyperdriveMath.sol",
-        file: "../src/libraries/HyperdriveMath.sol",
-        nameLocation: "-1:-1:-1",
-        scope: 14384,
-        sourceUnit: 10773,
-        symbolAliases: [
+        "id": 13941,
+        "nodeType": "ImportDirective",
+        "src": "64:69:46",
+        "nodes": [],
+        "absolutePath": "contracts/src/libraries/HyperdriveMath.sol",
+        "file": "../src/libraries/HyperdriveMath.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 14384,
+        "sourceUnit": 10773,
+        "symbolAliases": [
           {
-            foreign: {
-              id: 13940,
-              name: "HyperdriveMath",
-              nodeType: "Identifier",
-              overloadedDeclarations: [],
-              referencedDeclaration: 10772,
-              src: "73:14:46",
-              typeDescriptions: {},
+            "foreign": {
+              "id": 13940,
+              "name": "HyperdriveMath",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 10772,
+              "src": "73:14:46",
+              "typeDescriptions": {}
             },
-            nameLocation: "-1:-1:-1",
-          },
+            "nameLocation": "-1:-1:-1"
+          }
         ],
-        unitAlias: "",
+        "unitAlias": ""
       },
       {
-        id: 14383,
-        nodeType: "ContractDefinition",
-        src: "135:7248:46",
-        nodes: [
+        "id": 14383,
+        "nodeType": "ContractDefinition",
+        "src": "135:7248:46",
+        "nodes": [
           {
-            id: 13970,
-            nodeType: "FunctionDefinition",
-            src: "169:504:46",
-            nodes: [],
-            body: {
-              id: 13969,
-              nodeType: "Block",
-              src: "414:259:46",
-              nodes: [],
-              statements: [
+            "id": 13970,
+            "nodeType": "FunctionDefinition",
+            "src": "169:504:46",
+            "nodes": [],
+            "body": {
+              "id": 13969,
+              "nodeType": "Block",
+              "src": "414:259:46",
+              "nodes": [],
+              "statements": [
                 {
-                  assignments: [13957],
-                  declarations: [
-                    {
-                      constant: false,
-                      id: 13957,
-                      mutability: "mutable",
-                      name: "result",
-                      nameLocation: "432:6:46",
-                      nodeType: "VariableDeclaration",
-                      scope: 13969,
-                      src: "424:14:46",
-                      stateVariable: false,
-                      storageLocation: "default",
-                      typeDescriptions: {
-                        typeIdentifier: "t_uint256",
-                        typeString: "uint256",
-                      },
-                      typeName: {
-                        id: 13956,
-                        name: "uint256",
-                        nodeType: "ElementaryTypeName",
-                        src: "424:7:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
-                      },
-                      visibility: "internal",
-                    },
+                  "assignments": [
+                    13957
                   ],
-                  id: 13966,
-                  initialValue: {
-                    arguments: [
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 13957,
+                      "mutability": "mutable",
+                      "name": "result",
+                      "nameLocation": "432:6:46",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 13969,
+                      "src": "424:14:46",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 13956,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "424:7:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 13966,
+                  "initialValue": {
+                    "arguments": [
                       {
-                        id: 13960,
-                        name: "_effectiveShareReserves",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 13943,
-                        src: "494:23:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                        "id": 13960,
+                        "name": "_effectiveShareReserves",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13943,
+                        "src": "494:23:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       },
                       {
-                        id: 13961,
-                        name: "_bondReserves",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 13945,
-                        src: "531:13:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                        "id": 13961,
+                        "name": "_bondReserves",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13945,
+                        "src": "531:13:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       },
                       {
-                        id: 13962,
-                        name: "_initialSharePrice",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 13947,
-                        src: "558:18:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                        "id": 13962,
+                        "name": "_initialSharePrice",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13947,
+                        "src": "558:18:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       },
                       {
-                        id: 13963,
-                        name: "_positionDuration",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 13949,
-                        src: "590:17:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                        "id": 13963,
+                        "name": "_positionDuration",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13949,
+                        "src": "590:17:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       },
                       {
-                        id: 13964,
-                        name: "_timeStretch",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 13951,
-                        src: "621:12:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
-                      },
+                        "id": 13964,
+                        "name": "_timeStretch",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13951,
+                        "src": "621:12:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
                     ],
-                    expression: {
-                      argumentTypes: [
+                    "expression": {
+                      "argumentTypes": [
                         {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
                         },
                         {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
                         },
                         {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
                         },
                         {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
                         },
                         {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       ],
-                      expression: {
-                        id: 13958,
-                        name: "HyperdriveMath",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 10772,
-                        src: "441:14:46",
-                        typeDescriptions: {
-                          typeIdentifier:
-                            "t_type$_t_contract$_HyperdriveMath_$10772_$",
-                          typeString: "type(library HyperdriveMath)",
-                        },
+                      "expression": {
+                        "id": 13958,
+                        "name": "HyperdriveMath",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10772,
+                        "src": "441:14:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$10772_$",
+                          "typeString": "type(library HyperdriveMath)"
+                        }
                       },
-                      id: 13959,
-                      isConstant: false,
-                      isLValue: false,
-                      isPure: false,
-                      lValueRequested: false,
-                      memberLocation: "456:24:46",
-                      memberName: "calculateAPRFromReserves",
-                      nodeType: "MemberAccess",
-                      referencedDeclaration: 8571,
-                      src: "441:39:46",
-                      typeDescriptions: {
-                        typeIdentifier:
-                          "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
-                        typeString:
-                          "function (uint256,uint256,uint256,uint256,uint256) pure returns (uint256)",
-                      },
+                      "id": 13959,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "456:24:46",
+                      "memberName": "calculateAPRFromReserves",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 8571,
+                      "src": "441:39:46",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
+                        "typeString": "function (uint256,uint256,uint256,uint256,uint256) pure returns (uint256)"
+                      }
                     },
-                    id: 13965,
-                    isConstant: false,
-                    isLValue: false,
-                    isPure: false,
-                    kind: "functionCall",
-                    lValueRequested: false,
-                    nameLocations: [],
-                    names: [],
-                    nodeType: "FunctionCall",
-                    src: "441:202:46",
-                    tryCall: false,
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                    "id": 13965,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "441:202:46",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  nodeType: "VariableDeclarationStatement",
-                  src: "424:219:46",
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "424:219:46"
                 },
                 {
-                  expression: {
-                    id: 13967,
-                    name: "result",
-                    nodeType: "Identifier",
-                    overloadedDeclarations: [],
-                    referencedDeclaration: 13957,
-                    src: "660:6:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "expression": {
+                    "id": 13967,
+                    "name": "result",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 13957,
+                    "src": "660:6:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  functionReturnParameters: 13955,
-                  id: 13968,
-                  nodeType: "Return",
-                  src: "653:13:46",
-                },
-              ],
+                  "functionReturnParameters": 13955,
+                  "id": 13968,
+                  "nodeType": "Return",
+                  "src": "653:13:46"
+                }
+              ]
             },
-            functionSelector: "3fa2c8fc",
-            implemented: true,
-            kind: "function",
-            modifiers: [],
-            name: "calculateAPRFromReserves",
-            nameLocation: "178:24:46",
-            parameters: {
-              id: 13952,
-              nodeType: "ParameterList",
-              parameters: [
+            "functionSelector": "3fa2c8fc",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "calculateAPRFromReserves",
+            "nameLocation": "178:24:46",
+            "parameters": {
+              "id": 13952,
+              "nodeType": "ParameterList",
+              "parameters": [
                 {
-                  constant: false,
-                  id: 13943,
-                  mutability: "mutable",
-                  name: "_effectiveShareReserves",
-                  nameLocation: "220:23:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 13970,
-                  src: "212:31:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 13943,
+                  "mutability": "mutable",
+                  "name": "_effectiveShareReserves",
+                  "nameLocation": "220:23:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13970,
+                  "src": "212:31:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 13942,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "212:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 13942,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "212:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 13945,
-                  mutability: "mutable",
-                  name: "_bondReserves",
-                  nameLocation: "261:13:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 13970,
-                  src: "253:21:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 13945,
+                  "mutability": "mutable",
+                  "name": "_bondReserves",
+                  "nameLocation": "261:13:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13970,
+                  "src": "253:21:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 13944,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "253:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 13944,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "253:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 13947,
-                  mutability: "mutable",
-                  name: "_initialSharePrice",
-                  nameLocation: "292:18:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 13970,
-                  src: "284:26:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 13947,
+                  "mutability": "mutable",
+                  "name": "_initialSharePrice",
+                  "nameLocation": "292:18:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13970,
+                  "src": "284:26:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 13946,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "284:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 13946,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "284:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 13949,
-                  mutability: "mutable",
-                  name: "_positionDuration",
-                  nameLocation: "328:17:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 13970,
-                  src: "320:25:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 13949,
+                  "mutability": "mutable",
+                  "name": "_positionDuration",
+                  "nameLocation": "328:17:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13970,
+                  "src": "320:25:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 13948,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "320:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 13948,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "320:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 13951,
-                  mutability: "mutable",
-                  name: "_timeStretch",
-                  nameLocation: "363:12:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 13970,
-                  src: "355:20:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 13951,
+                  "mutability": "mutable",
+                  "name": "_timeStretch",
+                  "nameLocation": "363:12:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13970,
+                  "src": "355:20:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 13950,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "355:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 13950,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "355:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
-                },
+                  "visibility": "internal"
+                }
               ],
-              src: "202:179:46",
+              "src": "202:179:46"
             },
-            returnParameters: {
-              id: 13955,
-              nodeType: "ParameterList",
-              parameters: [
+            "returnParameters": {
+              "id": 13955,
+              "nodeType": "ParameterList",
+              "parameters": [
                 {
-                  constant: false,
-                  id: 13954,
-                  mutability: "mutable",
-                  name: "",
-                  nameLocation: "-1:-1:-1",
-                  nodeType: "VariableDeclaration",
-                  scope: 13970,
-                  src: "405:7:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 13954,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13970,
+                  "src": "405:7:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 13953,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "405:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 13953,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "405:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
-                },
+                  "visibility": "internal"
+                }
               ],
-              src: "404:9:46",
+              "src": "404:9:46"
             },
-            scope: 14383,
-            stateMutability: "pure",
-            virtual: false,
-            visibility: "external",
+            "scope": 14383,
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "external"
           },
           {
-            id: 13999,
-            nodeType: "FunctionDefinition",
-            src: "679:494:46",
-            nodes: [],
-            body: {
-              id: 13998,
-              nodeType: "Block",
-              src: "919:254:46",
-              nodes: [],
-              statements: [
+            "id": 13999,
+            "nodeType": "FunctionDefinition",
+            "src": "679:494:46",
+            "nodes": [],
+            "body": {
+              "id": 13998,
+              "nodeType": "Block",
+              "src": "919:254:46",
+              "nodes": [],
+              "statements": [
                 {
-                  assignments: [13986],
-                  declarations: [
-                    {
-                      constant: false,
-                      id: 13986,
-                      mutability: "mutable",
-                      name: "result",
-                      nameLocation: "937:6:46",
-                      nodeType: "VariableDeclaration",
-                      scope: 13998,
-                      src: "929:14:46",
-                      stateVariable: false,
-                      storageLocation: "default",
-                      typeDescriptions: {
-                        typeIdentifier: "t_uint256",
-                        typeString: "uint256",
-                      },
-                      typeName: {
-                        id: 13985,
-                        name: "uint256",
-                        nodeType: "ElementaryTypeName",
-                        src: "929:7:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
-                      },
-                      visibility: "internal",
-                    },
+                  "assignments": [
+                    13986
                   ],
-                  id: 13995,
-                  initialValue: {
-                    arguments: [
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 13986,
+                      "mutability": "mutable",
+                      "name": "result",
+                      "nameLocation": "937:6:46",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 13998,
+                      "src": "929:14:46",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 13985,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "929:7:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 13995,
+                  "initialValue": {
+                    "arguments": [
                       {
-                        id: 13989,
-                        name: "_effectiveShareReserves",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 13972,
-                        src: "1003:23:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                        "id": 13989,
+                        "name": "_effectiveShareReserves",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13972,
+                        "src": "1003:23:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       },
                       {
-                        id: 13990,
-                        name: "_initialSharePrice",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 13974,
-                        src: "1040:18:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                        "id": 13990,
+                        "name": "_initialSharePrice",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13974,
+                        "src": "1040:18:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       },
                       {
-                        id: 13991,
-                        name: "_apr",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 13976,
-                        src: "1072:4:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                        "id": 13991,
+                        "name": "_apr",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13976,
+                        "src": "1072:4:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       },
                       {
-                        id: 13992,
-                        name: "_positionDuration",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 13978,
-                        src: "1090:17:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                        "id": 13992,
+                        "name": "_positionDuration",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13978,
+                        "src": "1090:17:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       },
                       {
-                        id: 13993,
-                        name: "_timeStretch",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 13980,
-                        src: "1121:12:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
-                      },
+                        "id": 13993,
+                        "name": "_timeStretch",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13980,
+                        "src": "1121:12:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
                     ],
-                    expression: {
-                      argumentTypes: [
+                    "expression": {
+                      "argumentTypes": [
                         {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
                         },
                         {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
                         },
                         {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
                         },
                         {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
                         },
                         {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       ],
-                      expression: {
-                        id: 13987,
-                        name: "HyperdriveMath",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 10772,
-                        src: "946:14:46",
-                        typeDescriptions: {
-                          typeIdentifier:
-                            "t_type$_t_contract$_HyperdriveMath_$10772_$",
-                          typeString: "type(library HyperdriveMath)",
-                        },
+                      "expression": {
+                        "id": 13987,
+                        "name": "HyperdriveMath",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10772,
+                        "src": "946:14:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$10772_$",
+                          "typeString": "type(library HyperdriveMath)"
+                        }
                       },
-                      id: 13988,
-                      isConstant: false,
-                      isLValue: false,
-                      isPure: false,
-                      lValueRequested: false,
-                      memberLocation: "961:28:46",
-                      memberName: "calculateInitialBondReserves",
-                      nodeType: "MemberAccess",
-                      referencedDeclaration: 8615,
-                      src: "946:43:46",
-                      typeDescriptions: {
-                        typeIdentifier:
-                          "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
-                        typeString:
-                          "function (uint256,uint256,uint256,uint256,uint256) pure returns (uint256)",
-                      },
+                      "id": 13988,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "961:28:46",
+                      "memberName": "calculateInitialBondReserves",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 8615,
+                      "src": "946:43:46",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
+                        "typeString": "function (uint256,uint256,uint256,uint256,uint256) pure returns (uint256)"
+                      }
                     },
-                    id: 13994,
-                    isConstant: false,
-                    isLValue: false,
-                    isPure: false,
-                    kind: "functionCall",
-                    lValueRequested: false,
-                    nameLocations: [],
-                    names: [],
-                    nodeType: "FunctionCall",
-                    src: "946:197:46",
-                    tryCall: false,
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                    "id": 13994,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "946:197:46",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  nodeType: "VariableDeclarationStatement",
-                  src: "929:214:46",
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "929:214:46"
                 },
                 {
-                  expression: {
-                    id: 13996,
-                    name: "result",
-                    nodeType: "Identifier",
-                    overloadedDeclarations: [],
-                    referencedDeclaration: 13986,
-                    src: "1160:6:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "expression": {
+                    "id": 13996,
+                    "name": "result",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 13986,
+                    "src": "1160:6:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  functionReturnParameters: 13984,
-                  id: 13997,
-                  nodeType: "Return",
-                  src: "1153:13:46",
-                },
-              ],
+                  "functionReturnParameters": 13984,
+                  "id": 13997,
+                  "nodeType": "Return",
+                  "src": "1153:13:46"
+                }
+              ]
             },
-            functionSelector: "82a4d306",
-            implemented: true,
-            kind: "function",
-            modifiers: [],
-            name: "calculateInitialBondReserves",
-            nameLocation: "688:28:46",
-            parameters: {
-              id: 13981,
-              nodeType: "ParameterList",
-              parameters: [
+            "functionSelector": "82a4d306",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "calculateInitialBondReserves",
+            "nameLocation": "688:28:46",
+            "parameters": {
+              "id": 13981,
+              "nodeType": "ParameterList",
+              "parameters": [
                 {
-                  constant: false,
-                  id: 13972,
-                  mutability: "mutable",
-                  name: "_effectiveShareReserves",
-                  nameLocation: "734:23:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 13999,
-                  src: "726:31:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 13972,
+                  "mutability": "mutable",
+                  "name": "_effectiveShareReserves",
+                  "nameLocation": "734:23:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13999,
+                  "src": "726:31:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 13971,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "726:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 13971,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "726:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 13974,
-                  mutability: "mutable",
-                  name: "_initialSharePrice",
-                  nameLocation: "775:18:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 13999,
-                  src: "767:26:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 13974,
+                  "mutability": "mutable",
+                  "name": "_initialSharePrice",
+                  "nameLocation": "775:18:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13999,
+                  "src": "767:26:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 13973,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "767:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 13973,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "767:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 13976,
-                  mutability: "mutable",
-                  name: "_apr",
-                  nameLocation: "811:4:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 13999,
-                  src: "803:12:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 13976,
+                  "mutability": "mutable",
+                  "name": "_apr",
+                  "nameLocation": "811:4:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13999,
+                  "src": "803:12:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 13975,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "803:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 13975,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "803:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 13978,
-                  mutability: "mutable",
-                  name: "_positionDuration",
-                  nameLocation: "833:17:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 13999,
-                  src: "825:25:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 13978,
+                  "mutability": "mutable",
+                  "name": "_positionDuration",
+                  "nameLocation": "833:17:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13999,
+                  "src": "825:25:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 13977,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "825:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 13977,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "825:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 13980,
-                  mutability: "mutable",
-                  name: "_timeStretch",
-                  nameLocation: "868:12:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 13999,
-                  src: "860:20:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 13980,
+                  "mutability": "mutable",
+                  "name": "_timeStretch",
+                  "nameLocation": "868:12:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13999,
+                  "src": "860:20:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 13979,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "860:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 13979,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "860:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
-                },
+                  "visibility": "internal"
+                }
               ],
-              src: "716:170:46",
+              "src": "716:170:46"
             },
-            returnParameters: {
-              id: 13984,
-              nodeType: "ParameterList",
-              parameters: [
+            "returnParameters": {
+              "id": 13984,
+              "nodeType": "ParameterList",
+              "parameters": [
                 {
-                  constant: false,
-                  id: 13983,
-                  mutability: "mutable",
-                  name: "",
-                  nameLocation: "-1:-1:-1",
-                  nodeType: "VariableDeclaration",
-                  scope: 13999,
-                  src: "910:7:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 13983,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13999,
+                  "src": "910:7:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 13982,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "910:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 13982,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "910:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
-                },
+                  "visibility": "internal"
+                }
               ],
-              src: "909:9:46",
+              "src": "909:9:46"
             },
-            scope: 14383,
-            stateMutability: "pure",
-            virtual: false,
-            visibility: "external",
+            "scope": 14383,
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "external"
           },
           {
-            id: 14031,
-            nodeType: "FunctionDefinition",
-            src: "1179:528:46",
-            nodes: [],
-            body: {
-              id: 14030,
-              nodeType: "Block",
-              src: "1438:269:46",
-              nodes: [],
-              statements: [
+            "id": 14031,
+            "nodeType": "FunctionDefinition",
+            "src": "1179:528:46",
+            "nodes": [],
+            "body": {
+              "id": 14030,
+              "nodeType": "Block",
+              "src": "1438:269:46",
+              "nodes": [],
+              "statements": [
                 {
-                  assignments: [14017],
-                  declarations: [
-                    {
-                      constant: false,
-                      id: 14017,
-                      mutability: "mutable",
-                      name: "result",
-                      nameLocation: "1456:6:46",
-                      nodeType: "VariableDeclaration",
-                      scope: 14030,
-                      src: "1448:14:46",
-                      stateVariable: false,
-                      storageLocation: "default",
-                      typeDescriptions: {
-                        typeIdentifier: "t_uint256",
-                        typeString: "uint256",
-                      },
-                      typeName: {
-                        id: 14016,
-                        name: "uint256",
-                        nodeType: "ElementaryTypeName",
-                        src: "1448:7:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
-                      },
-                      visibility: "internal",
-                    },
+                  "assignments": [
+                    14017
                   ],
-                  id: 14027,
-                  initialValue: {
-                    arguments: [
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 14017,
+                      "mutability": "mutable",
+                      "name": "result",
+                      "nameLocation": "1456:6:46",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 14030,
+                      "src": "1448:14:46",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 14016,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "1448:7:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 14027,
+                  "initialValue": {
+                    "arguments": [
                       {
-                        id: 14020,
-                        name: "_effectiveShareReserves",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14001,
-                        src: "1511:23:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                        "id": 14020,
+                        "name": "_effectiveShareReserves",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14001,
+                        "src": "1511:23:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       },
                       {
-                        id: 14021,
-                        name: "_bondReserves",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14003,
-                        src: "1548:13:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                        "id": 14021,
+                        "name": "_bondReserves",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14003,
+                        "src": "1548:13:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       },
                       {
-                        id: 14022,
-                        name: "_amountIn",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14005,
-                        src: "1575:9:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                        "id": 14022,
+                        "name": "_amountIn",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14005,
+                        "src": "1575:9:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       },
                       {
-                        id: 14023,
-                        name: "_timeStretch",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14007,
-                        src: "1598:12:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                        "id": 14023,
+                        "name": "_timeStretch",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14007,
+                        "src": "1598:12:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       },
                       {
-                        id: 14024,
-                        name: "_sharePrice",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14009,
-                        src: "1624:11:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                        "id": 14024,
+                        "name": "_sharePrice",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14009,
+                        "src": "1624:11:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       },
                       {
-                        id: 14025,
-                        name: "_initialSharePrice",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14011,
-                        src: "1649:18:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
-                      },
+                        "id": 14025,
+                        "name": "_initialSharePrice",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14011,
+                        "src": "1649:18:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
                     ],
-                    expression: {
-                      argumentTypes: [
+                    "expression": {
+                      "argumentTypes": [
                         {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
                         },
                         {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
                         },
                         {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
                         },
                         {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
                         },
                         {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
                         },
                         {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       ],
-                      expression: {
-                        id: 14018,
-                        name: "HyperdriveMath",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 10772,
-                        src: "1465:14:46",
-                        typeDescriptions: {
-                          typeIdentifier:
-                            "t_type$_t_contract$_HyperdriveMath_$10772_$",
-                          typeString: "type(library HyperdriveMath)",
-                        },
+                      "expression": {
+                        "id": 14018,
+                        "name": "HyperdriveMath",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10772,
+                        "src": "1465:14:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$10772_$",
+                          "typeString": "type(library HyperdriveMath)"
+                        }
                       },
-                      id: 14019,
-                      isConstant: false,
-                      isLValue: false,
-                      isPure: false,
-                      lValueRequested: false,
-                      memberLocation: "1480:17:46",
-                      memberName: "calculateOpenLong",
-                      nodeType: "MemberAccess",
-                      referencedDeclaration: 8646,
-                      src: "1465:32:46",
-                      typeDescriptions: {
-                        typeIdentifier:
-                          "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
-                        typeString:
-                          "function (uint256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256)",
-                      },
+                      "id": 14019,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "1480:17:46",
+                      "memberName": "calculateOpenLong",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 8646,
+                      "src": "1465:32:46",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
+                        "typeString": "function (uint256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256)"
+                      }
                     },
-                    id: 14026,
-                    isConstant: false,
-                    isLValue: false,
-                    isPure: false,
-                    kind: "functionCall",
-                    lValueRequested: false,
-                    nameLocations: [],
-                    names: [],
-                    nodeType: "FunctionCall",
-                    src: "1465:212:46",
-                    tryCall: false,
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                    "id": 14026,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1465:212:46",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  nodeType: "VariableDeclarationStatement",
-                  src: "1448:229:46",
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1448:229:46"
                 },
                 {
-                  expression: {
-                    id: 14028,
-                    name: "result",
-                    nodeType: "Identifier",
-                    overloadedDeclarations: [],
-                    referencedDeclaration: 14017,
-                    src: "1694:6:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "expression": {
+                    "id": 14028,
+                    "name": "result",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 14017,
+                    "src": "1694:6:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  functionReturnParameters: 14015,
-                  id: 14029,
-                  nodeType: "Return",
-                  src: "1687:13:46",
-                },
-              ],
+                  "functionReturnParameters": 14015,
+                  "id": 14029,
+                  "nodeType": "Return",
+                  "src": "1687:13:46"
+                }
+              ]
             },
-            functionSelector: "5e6d9d36",
-            implemented: true,
-            kind: "function",
-            modifiers: [],
-            name: "calculateOpenLong",
-            nameLocation: "1188:17:46",
-            parameters: {
-              id: 14012,
-              nodeType: "ParameterList",
-              parameters: [
+            "functionSelector": "5e6d9d36",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "calculateOpenLong",
+            "nameLocation": "1188:17:46",
+            "parameters": {
+              "id": 14012,
+              "nodeType": "ParameterList",
+              "parameters": [
                 {
-                  constant: false,
-                  id: 14001,
-                  mutability: "mutable",
-                  name: "_effectiveShareReserves",
-                  nameLocation: "1223:23:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14031,
-                  src: "1215:31:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14001,
+                  "mutability": "mutable",
+                  "name": "_effectiveShareReserves",
+                  "nameLocation": "1223:23:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14031,
+                  "src": "1215:31:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14000,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "1215:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14000,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1215:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 14003,
-                  mutability: "mutable",
-                  name: "_bondReserves",
-                  nameLocation: "1264:13:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14031,
-                  src: "1256:21:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14003,
+                  "mutability": "mutable",
+                  "name": "_bondReserves",
+                  "nameLocation": "1264:13:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14031,
+                  "src": "1256:21:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14002,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "1256:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14002,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1256:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 14005,
-                  mutability: "mutable",
-                  name: "_amountIn",
-                  nameLocation: "1295:9:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14031,
-                  src: "1287:17:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14005,
+                  "mutability": "mutable",
+                  "name": "_amountIn",
+                  "nameLocation": "1295:9:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14031,
+                  "src": "1287:17:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14004,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "1287:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14004,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1287:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 14007,
-                  mutability: "mutable",
-                  name: "_timeStretch",
-                  nameLocation: "1322:12:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14031,
-                  src: "1314:20:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14007,
+                  "mutability": "mutable",
+                  "name": "_timeStretch",
+                  "nameLocation": "1322:12:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14031,
+                  "src": "1314:20:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14006,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "1314:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14006,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1314:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 14009,
-                  mutability: "mutable",
-                  name: "_sharePrice",
-                  nameLocation: "1352:11:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14031,
-                  src: "1344:19:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14009,
+                  "mutability": "mutable",
+                  "name": "_sharePrice",
+                  "nameLocation": "1352:11:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14031,
+                  "src": "1344:19:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14008,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "1344:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14008,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1344:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 14011,
-                  mutability: "mutable",
-                  name: "_initialSharePrice",
-                  nameLocation: "1381:18:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14031,
-                  src: "1373:26:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14011,
+                  "mutability": "mutable",
+                  "name": "_initialSharePrice",
+                  "nameLocation": "1381:18:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14031,
+                  "src": "1373:26:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14010,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "1373:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14010,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1373:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
-                },
+                  "visibility": "internal"
+                }
               ],
-              src: "1205:200:46",
+              "src": "1205:200:46"
             },
-            returnParameters: {
-              id: 14015,
-              nodeType: "ParameterList",
-              parameters: [
+            "returnParameters": {
+              "id": 14015,
+              "nodeType": "ParameterList",
+              "parameters": [
                 {
-                  constant: false,
-                  id: 14014,
-                  mutability: "mutable",
-                  name: "",
-                  nameLocation: "-1:-1:-1",
-                  nodeType: "VariableDeclaration",
-                  scope: 14031,
-                  src: "1429:7:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14014,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14031,
+                  "src": "1429:7:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14013,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "1429:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14013,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1429:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
-                },
+                  "visibility": "internal"
+                }
               ],
-              src: "1428:9:46",
+              "src": "1428:9:46"
             },
-            scope: 14383,
-            stateMutability: "pure",
-            virtual: false,
-            visibility: "external",
+            "scope": 14383,
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "external"
           },
           {
-            id: 14077,
-            nodeType: "FunctionDefinition",
-            src: "1713:731:46",
-            nodes: [],
-            body: {
-              id: 14076,
-              nodeType: "Block",
-              src: "2033:411:46",
-              nodes: [],
-              statements: [
+            "id": 14077,
+            "nodeType": "FunctionDefinition",
+            "src": "1713:731:46",
+            "nodes": [],
+            "body": {
+              "id": 14076,
+              "nodeType": "Block",
+              "src": "2033:411:46",
+              "nodes": [],
+              "statements": [
                 {
-                  assignments: [14055, 14057, 14059],
-                  declarations: [
-                    {
-                      constant: false,
-                      id: 14055,
-                      mutability: "mutable",
-                      name: "result1",
-                      nameLocation: "2052:7:46",
-                      nodeType: "VariableDeclaration",
-                      scope: 14076,
-                      src: "2044:15:46",
-                      stateVariable: false,
-                      storageLocation: "default",
-                      typeDescriptions: {
-                        typeIdentifier: "t_uint256",
-                        typeString: "uint256",
-                      },
-                      typeName: {
-                        id: 14054,
-                        name: "uint256",
-                        nodeType: "ElementaryTypeName",
-                        src: "2044:7:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
-                      },
-                      visibility: "internal",
-                    },
-                    {
-                      constant: false,
-                      id: 14057,
-                      mutability: "mutable",
-                      name: "result2",
-                      nameLocation: "2069:7:46",
-                      nodeType: "VariableDeclaration",
-                      scope: 14076,
-                      src: "2061:15:46",
-                      stateVariable: false,
-                      storageLocation: "default",
-                      typeDescriptions: {
-                        typeIdentifier: "t_uint256",
-                        typeString: "uint256",
-                      },
-                      typeName: {
-                        id: 14056,
-                        name: "uint256",
-                        nodeType: "ElementaryTypeName",
-                        src: "2061:7:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
-                      },
-                      visibility: "internal",
-                    },
-                    {
-                      constant: false,
-                      id: 14059,
-                      mutability: "mutable",
-                      name: "result3",
-                      nameLocation: "2086:7:46",
-                      nodeType: "VariableDeclaration",
-                      scope: 14076,
-                      src: "2078:15:46",
-                      stateVariable: false,
-                      storageLocation: "default",
-                      typeDescriptions: {
-                        typeIdentifier: "t_uint256",
-                        typeString: "uint256",
-                      },
-                      typeName: {
-                        id: 14058,
-                        name: "uint256",
-                        nodeType: "ElementaryTypeName",
-                        src: "2078:7:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
-                      },
-                      visibility: "internal",
-                    },
+                  "assignments": [
+                    14055,
+                    14057,
+                    14059
                   ],
-                  id: 14070,
-                  initialValue: {
-                    arguments: [
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 14055,
+                      "mutability": "mutable",
+                      "name": "result1",
+                      "nameLocation": "2052:7:46",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 14076,
+                      "src": "2044:15:46",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 14054,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "2044:7:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    },
+                    {
+                      "constant": false,
+                      "id": 14057,
+                      "mutability": "mutable",
+                      "name": "result2",
+                      "nameLocation": "2069:7:46",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 14076,
+                      "src": "2061:15:46",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 14056,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "2061:7:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    },
+                    {
+                      "constant": false,
+                      "id": 14059,
+                      "mutability": "mutable",
+                      "name": "result3",
+                      "nameLocation": "2086:7:46",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 14076,
+                      "src": "2078:15:46",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 14058,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "2078:7:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 14070,
+                  "initialValue": {
+                    "arguments": [
                       {
-                        id: 14062,
-                        name: "_effectiveShareReserves",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14033,
-                        src: "2161:23:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                        "id": 14062,
+                        "name": "_effectiveShareReserves",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14033,
+                        "src": "2161:23:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       },
                       {
-                        id: 14063,
-                        name: "_bondReserves",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14035,
-                        src: "2202:13:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                        "id": 14063,
+                        "name": "_bondReserves",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14035,
+                        "src": "2202:13:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       },
                       {
-                        id: 14064,
-                        name: "_amountIn",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14037,
-                        src: "2233:9:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                        "id": 14064,
+                        "name": "_amountIn",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14037,
+                        "src": "2233:9:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       },
                       {
-                        id: 14065,
-                        name: "_normalizedTimeRemaining",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14039,
-                        src: "2260:24:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                        "id": 14065,
+                        "name": "_normalizedTimeRemaining",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14039,
+                        "src": "2260:24:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       },
                       {
-                        id: 14066,
-                        name: "_timeStretch",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14041,
-                        src: "2302:12:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                        "id": 14066,
+                        "name": "_timeStretch",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14041,
+                        "src": "2302:12:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       },
                       {
-                        id: 14067,
-                        name: "_sharePrice",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14043,
-                        src: "2332:11:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                        "id": 14067,
+                        "name": "_sharePrice",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14043,
+                        "src": "2332:11:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       },
                       {
-                        id: 14068,
-                        name: "_initialSharePrice",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14045,
-                        src: "2361:18:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
-                      },
+                        "id": 14068,
+                        "name": "_initialSharePrice",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14045,
+                        "src": "2361:18:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
                     ],
-                    expression: {
-                      argumentTypes: [
+                    "expression": {
+                      "argumentTypes": [
                         {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
                         },
                         {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
                         },
                         {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
                         },
                         {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
                         },
                         {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
                         },
                         {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
                         },
                         {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       ],
-                      expression: {
-                        id: 14060,
-                        name: "HyperdriveMath",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 10772,
-                        src: "2097:14:46",
-                        typeDescriptions: {
-                          typeIdentifier:
-                            "t_type$_t_contract$_HyperdriveMath_$10772_$",
-                          typeString: "type(library HyperdriveMath)",
-                        },
+                      "expression": {
+                        "id": 14060,
+                        "name": "HyperdriveMath",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10772,
+                        "src": "2097:14:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$10772_$",
+                          "typeString": "type(library HyperdriveMath)"
+                        }
                       },
-                      id: 14061,
-                      isConstant: false,
-                      isLValue: false,
-                      isPure: false,
-                      lValueRequested: false,
-                      memberLocation: "2125:18:46",
-                      memberName: "calculateCloseLong",
-                      nodeType: "MemberAccess",
-                      referencedDeclaration: 8711,
-                      src: "2097:46:46",
-                      typeDescriptions: {
-                        typeIdentifier:
-                          "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$_t_uint256_$_t_uint256_$",
-                        typeString:
-                          "function (uint256,uint256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256,uint256,uint256)",
-                      },
+                      "id": 14061,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "2125:18:46",
+                      "memberName": "calculateCloseLong",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 8711,
+                      "src": "2097:46:46",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$_t_uint256_$_t_uint256_$",
+                        "typeString": "function (uint256,uint256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256,uint256,uint256)"
+                      }
                     },
-                    id: 14069,
-                    isConstant: false,
-                    isLValue: false,
-                    isPure: false,
-                    kind: "functionCall",
-                    lValueRequested: false,
-                    nameLocations: [],
-                    names: [],
-                    nodeType: "FunctionCall",
-                    src: "2097:296:46",
-                    tryCall: false,
-                    typeDescriptions: {
-                      typeIdentifier:
-                        "t_tuple$_t_uint256_$_t_uint256_$_t_uint256_$",
-                      typeString: "tuple(uint256,uint256,uint256)",
-                    },
+                    "id": 14069,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2097:296:46",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$_t_uint256_$_t_uint256_$_t_uint256_$",
+                      "typeString": "tuple(uint256,uint256,uint256)"
+                    }
                   },
-                  nodeType: "VariableDeclarationStatement",
-                  src: "2043:350:46",
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "2043:350:46"
                 },
                 {
-                  expression: {
-                    components: [
+                  "expression": {
+                    "components": [
                       {
-                        id: 14071,
-                        name: "result1",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14055,
-                        src: "2411:7:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                        "id": 14071,
+                        "name": "result1",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14055,
+                        "src": "2411:7:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       },
                       {
-                        id: 14072,
-                        name: "result2",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14057,
-                        src: "2420:7:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                        "id": 14072,
+                        "name": "result2",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14057,
+                        "src": "2420:7:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       },
                       {
-                        id: 14073,
-                        name: "result3",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14059,
-                        src: "2429:7:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
-                      },
+                        "id": 14073,
+                        "name": "result3",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14059,
+                        "src": "2429:7:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
                     ],
-                    id: 14074,
-                    isConstant: false,
-                    isInlineArray: false,
-                    isLValue: false,
-                    isPure: false,
-                    lValueRequested: false,
-                    nodeType: "TupleExpression",
-                    src: "2410:27:46",
-                    typeDescriptions: {
-                      typeIdentifier:
-                        "t_tuple$_t_uint256_$_t_uint256_$_t_uint256_$",
-                      typeString: "tuple(uint256,uint256,uint256)",
-                    },
+                    "id": 14074,
+                    "isConstant": false,
+                    "isInlineArray": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "TupleExpression",
+                    "src": "2410:27:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$_t_uint256_$_t_uint256_$_t_uint256_$",
+                      "typeString": "tuple(uint256,uint256,uint256)"
+                    }
                   },
-                  functionReturnParameters: 14053,
-                  id: 14075,
-                  nodeType: "Return",
-                  src: "2403:34:46",
-                },
-              ],
+                  "functionReturnParameters": 14053,
+                  "id": 14075,
+                  "nodeType": "Return",
+                  "src": "2403:34:46"
+                }
+              ]
             },
-            functionSelector: "94169d49",
-            implemented: true,
-            kind: "function",
-            modifiers: [],
-            name: "calculateCloseLong",
-            nameLocation: "1722:18:46",
-            parameters: {
-              id: 14046,
-              nodeType: "ParameterList",
-              parameters: [
+            "functionSelector": "94169d49",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "calculateCloseLong",
+            "nameLocation": "1722:18:46",
+            "parameters": {
+              "id": 14046,
+              "nodeType": "ParameterList",
+              "parameters": [
                 {
-                  constant: false,
-                  id: 14033,
-                  mutability: "mutable",
-                  name: "_effectiveShareReserves",
-                  nameLocation: "1758:23:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14077,
-                  src: "1750:31:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14033,
+                  "mutability": "mutable",
+                  "name": "_effectiveShareReserves",
+                  "nameLocation": "1758:23:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14077,
+                  "src": "1750:31:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14032,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "1750:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14032,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1750:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 14035,
-                  mutability: "mutable",
-                  name: "_bondReserves",
-                  nameLocation: "1799:13:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14077,
-                  src: "1791:21:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14035,
+                  "mutability": "mutable",
+                  "name": "_bondReserves",
+                  "nameLocation": "1799:13:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14077,
+                  "src": "1791:21:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14034,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "1791:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14034,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1791:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 14037,
-                  mutability: "mutable",
-                  name: "_amountIn",
-                  nameLocation: "1830:9:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14077,
-                  src: "1822:17:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14037,
+                  "mutability": "mutable",
+                  "name": "_amountIn",
+                  "nameLocation": "1830:9:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14077,
+                  "src": "1822:17:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14036,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "1822:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14036,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1822:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 14039,
-                  mutability: "mutable",
-                  name: "_normalizedTimeRemaining",
-                  nameLocation: "1857:24:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14077,
-                  src: "1849:32:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14039,
+                  "mutability": "mutable",
+                  "name": "_normalizedTimeRemaining",
+                  "nameLocation": "1857:24:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14077,
+                  "src": "1849:32:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14038,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "1849:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14038,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1849:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 14041,
-                  mutability: "mutable",
-                  name: "_timeStretch",
-                  nameLocation: "1899:12:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14077,
-                  src: "1891:20:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14041,
+                  "mutability": "mutable",
+                  "name": "_timeStretch",
+                  "nameLocation": "1899:12:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14077,
+                  "src": "1891:20:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14040,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "1891:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14040,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1891:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 14043,
-                  mutability: "mutable",
-                  name: "_sharePrice",
-                  nameLocation: "1929:11:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14077,
-                  src: "1921:19:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14043,
+                  "mutability": "mutable",
+                  "name": "_sharePrice",
+                  "nameLocation": "1929:11:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14077,
+                  "src": "1921:19:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14042,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "1921:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14042,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1921:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 14045,
-                  mutability: "mutable",
-                  name: "_initialSharePrice",
-                  nameLocation: "1958:18:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14077,
-                  src: "1950:26:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14045,
+                  "mutability": "mutable",
+                  "name": "_initialSharePrice",
+                  "nameLocation": "1958:18:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14077,
+                  "src": "1950:26:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14044,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "1950:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14044,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1950:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
-                },
+                  "visibility": "internal"
+                }
               ],
-              src: "1740:242:46",
+              "src": "1740:242:46"
             },
-            returnParameters: {
-              id: 14053,
-              nodeType: "ParameterList",
-              parameters: [
+            "returnParameters": {
+              "id": 14053,
+              "nodeType": "ParameterList",
+              "parameters": [
                 {
-                  constant: false,
-                  id: 14048,
-                  mutability: "mutable",
-                  name: "",
-                  nameLocation: "-1:-1:-1",
-                  nodeType: "VariableDeclaration",
-                  scope: 14077,
-                  src: "2006:7:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14048,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14077,
+                  "src": "2006:7:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14047,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "2006:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14047,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2006:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 14050,
-                  mutability: "mutable",
-                  name: "",
-                  nameLocation: "-1:-1:-1",
-                  nodeType: "VariableDeclaration",
-                  scope: 14077,
-                  src: "2015:7:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14050,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14077,
+                  "src": "2015:7:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14049,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "2015:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14049,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2015:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 14052,
-                  mutability: "mutable",
-                  name: "",
-                  nameLocation: "-1:-1:-1",
-                  nodeType: "VariableDeclaration",
-                  scope: 14077,
-                  src: "2024:7:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14052,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14077,
+                  "src": "2024:7:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14051,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "2024:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14051,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2024:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
-                },
+                  "visibility": "internal"
+                }
               ],
-              src: "2005:27:46",
+              "src": "2005:27:46"
             },
-            scope: 14383,
-            stateMutability: "pure",
-            virtual: false,
-            visibility: "external",
+            "scope": 14383,
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "external"
           },
           {
-            id: 14109,
-            nodeType: "FunctionDefinition",
-            src: "2450:530:46",
-            nodes: [],
-            body: {
-              id: 14108,
-              nodeType: "Block",
-              src: "2710:270:46",
-              nodes: [],
-              statements: [
+            "id": 14109,
+            "nodeType": "FunctionDefinition",
+            "src": "2450:530:46",
+            "nodes": [],
+            "body": {
+              "id": 14108,
+              "nodeType": "Block",
+              "src": "2710:270:46",
+              "nodes": [],
+              "statements": [
                 {
-                  assignments: [14095],
-                  declarations: [
-                    {
-                      constant: false,
-                      id: 14095,
-                      mutability: "mutable",
-                      name: "result",
-                      nameLocation: "2728:6:46",
-                      nodeType: "VariableDeclaration",
-                      scope: 14108,
-                      src: "2720:14:46",
-                      stateVariable: false,
-                      storageLocation: "default",
-                      typeDescriptions: {
-                        typeIdentifier: "t_uint256",
-                        typeString: "uint256",
-                      },
-                      typeName: {
-                        id: 14094,
-                        name: "uint256",
-                        nodeType: "ElementaryTypeName",
-                        src: "2720:7:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
-                      },
-                      visibility: "internal",
-                    },
+                  "assignments": [
+                    14095
                   ],
-                  id: 14105,
-                  initialValue: {
-                    arguments: [
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 14095,
+                      "mutability": "mutable",
+                      "name": "result",
+                      "nameLocation": "2728:6:46",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 14108,
+                      "src": "2720:14:46",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 14094,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "2720:7:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 14105,
+                  "initialValue": {
+                    "arguments": [
                       {
-                        id: 14098,
-                        name: "_effectiveShareReserves",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14079,
-                        src: "2784:23:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                        "id": 14098,
+                        "name": "_effectiveShareReserves",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14079,
+                        "src": "2784:23:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       },
                       {
-                        id: 14099,
-                        name: "_bondReserves",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14081,
-                        src: "2821:13:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                        "id": 14099,
+                        "name": "_bondReserves",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14081,
+                        "src": "2821:13:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       },
                       {
-                        id: 14100,
-                        name: "_amountIn",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14083,
-                        src: "2848:9:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                        "id": 14100,
+                        "name": "_amountIn",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14083,
+                        "src": "2848:9:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       },
                       {
-                        id: 14101,
-                        name: "_timeStretch",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14085,
-                        src: "2871:12:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                        "id": 14101,
+                        "name": "_timeStretch",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14085,
+                        "src": "2871:12:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       },
                       {
-                        id: 14102,
-                        name: "_sharePrice",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14087,
-                        src: "2897:11:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                        "id": 14102,
+                        "name": "_sharePrice",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14087,
+                        "src": "2897:11:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       },
                       {
-                        id: 14103,
-                        name: "_initialSharePrice",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14089,
-                        src: "2922:18:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
-                      },
+                        "id": 14103,
+                        "name": "_initialSharePrice",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14089,
+                        "src": "2922:18:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
                     ],
-                    expression: {
-                      argumentTypes: [
+                    "expression": {
+                      "argumentTypes": [
                         {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
                         },
                         {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
                         },
                         {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
                         },
                         {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
                         },
                         {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
                         },
                         {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       ],
-                      expression: {
-                        id: 14096,
-                        name: "HyperdriveMath",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 10772,
-                        src: "2737:14:46",
-                        typeDescriptions: {
-                          typeIdentifier:
-                            "t_type$_t_contract$_HyperdriveMath_$10772_$",
-                          typeString: "type(library HyperdriveMath)",
-                        },
+                      "expression": {
+                        "id": 14096,
+                        "name": "HyperdriveMath",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10772,
+                        "src": "2737:14:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$10772_$",
+                          "typeString": "type(library HyperdriveMath)"
+                        }
                       },
-                      id: 14097,
-                      isConstant: false,
-                      isLValue: false,
-                      isPure: false,
-                      lValueRequested: false,
-                      memberLocation: "2752:18:46",
-                      memberName: "calculateOpenShort",
-                      nodeType: "MemberAccess",
-                      referencedDeclaration: 8742,
-                      src: "2737:33:46",
-                      typeDescriptions: {
-                        typeIdentifier:
-                          "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
-                        typeString:
-                          "function (uint256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256)",
-                      },
+                      "id": 14097,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "2752:18:46",
+                      "memberName": "calculateOpenShort",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 8742,
+                      "src": "2737:33:46",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
+                        "typeString": "function (uint256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256)"
+                      }
                     },
-                    id: 14104,
-                    isConstant: false,
-                    isLValue: false,
-                    isPure: false,
-                    kind: "functionCall",
-                    lValueRequested: false,
-                    nameLocations: [],
-                    names: [],
-                    nodeType: "FunctionCall",
-                    src: "2737:213:46",
-                    tryCall: false,
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                    "id": 14104,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2737:213:46",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  nodeType: "VariableDeclarationStatement",
-                  src: "2720:230:46",
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "2720:230:46"
                 },
                 {
-                  expression: {
-                    id: 14106,
-                    name: "result",
-                    nodeType: "Identifier",
-                    overloadedDeclarations: [],
-                    referencedDeclaration: 14095,
-                    src: "2967:6:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "expression": {
+                    "id": 14106,
+                    "name": "result",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 14095,
+                    "src": "2967:6:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  functionReturnParameters: 14093,
-                  id: 14107,
-                  nodeType: "Return",
-                  src: "2960:13:46",
-                },
-              ],
+                  "functionReturnParameters": 14093,
+                  "id": 14107,
+                  "nodeType": "Return",
+                  "src": "2960:13:46"
+                }
+              ]
             },
-            functionSelector: "6ceebe1d",
-            implemented: true,
-            kind: "function",
-            modifiers: [],
-            name: "calculateOpenShort",
-            nameLocation: "2459:18:46",
-            parameters: {
-              id: 14090,
-              nodeType: "ParameterList",
-              parameters: [
+            "functionSelector": "6ceebe1d",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "calculateOpenShort",
+            "nameLocation": "2459:18:46",
+            "parameters": {
+              "id": 14090,
+              "nodeType": "ParameterList",
+              "parameters": [
                 {
-                  constant: false,
-                  id: 14079,
-                  mutability: "mutable",
-                  name: "_effectiveShareReserves",
-                  nameLocation: "2495:23:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14109,
-                  src: "2487:31:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14079,
+                  "mutability": "mutable",
+                  "name": "_effectiveShareReserves",
+                  "nameLocation": "2495:23:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14109,
+                  "src": "2487:31:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14078,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "2487:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14078,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2487:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 14081,
-                  mutability: "mutable",
-                  name: "_bondReserves",
-                  nameLocation: "2536:13:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14109,
-                  src: "2528:21:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14081,
+                  "mutability": "mutable",
+                  "name": "_bondReserves",
+                  "nameLocation": "2536:13:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14109,
+                  "src": "2528:21:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14080,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "2528:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14080,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2528:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 14083,
-                  mutability: "mutable",
-                  name: "_amountIn",
-                  nameLocation: "2567:9:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14109,
-                  src: "2559:17:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14083,
+                  "mutability": "mutable",
+                  "name": "_amountIn",
+                  "nameLocation": "2567:9:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14109,
+                  "src": "2559:17:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14082,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "2559:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14082,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2559:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 14085,
-                  mutability: "mutable",
-                  name: "_timeStretch",
-                  nameLocation: "2594:12:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14109,
-                  src: "2586:20:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14085,
+                  "mutability": "mutable",
+                  "name": "_timeStretch",
+                  "nameLocation": "2594:12:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14109,
+                  "src": "2586:20:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14084,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "2586:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14084,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2586:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 14087,
-                  mutability: "mutable",
-                  name: "_sharePrice",
-                  nameLocation: "2624:11:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14109,
-                  src: "2616:19:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14087,
+                  "mutability": "mutable",
+                  "name": "_sharePrice",
+                  "nameLocation": "2624:11:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14109,
+                  "src": "2616:19:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14086,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "2616:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14086,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2616:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 14089,
-                  mutability: "mutable",
-                  name: "_initialSharePrice",
-                  nameLocation: "2653:18:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14109,
-                  src: "2645:26:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14089,
+                  "mutability": "mutable",
+                  "name": "_initialSharePrice",
+                  "nameLocation": "2653:18:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14109,
+                  "src": "2645:26:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14088,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "2645:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14088,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2645:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
-                },
+                  "visibility": "internal"
+                }
               ],
-              src: "2477:200:46",
+              "src": "2477:200:46"
             },
-            returnParameters: {
-              id: 14093,
-              nodeType: "ParameterList",
-              parameters: [
+            "returnParameters": {
+              "id": 14093,
+              "nodeType": "ParameterList",
+              "parameters": [
                 {
-                  constant: false,
-                  id: 14092,
-                  mutability: "mutable",
-                  name: "",
-                  nameLocation: "-1:-1:-1",
-                  nodeType: "VariableDeclaration",
-                  scope: 14109,
-                  src: "2701:7:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14092,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14109,
+                  "src": "2701:7:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14091,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "2701:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14091,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2701:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
-                },
+                  "visibility": "internal"
+                }
               ],
-              src: "2700:9:46",
+              "src": "2700:9:46"
             },
-            scope: 14383,
-            stateMutability: "pure",
-            virtual: false,
-            visibility: "external",
+            "scope": 14383,
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "external"
           },
           {
-            id: 14155,
-            nodeType: "FunctionDefinition",
-            src: "2986:735:46",
-            nodes: [],
-            body: {
-              id: 14154,
-              nodeType: "Block",
-              src: "3308:413:46",
-              nodes: [],
-              statements: [
+            "id": 14155,
+            "nodeType": "FunctionDefinition",
+            "src": "2986:735:46",
+            "nodes": [],
+            "body": {
+              "id": 14154,
+              "nodeType": "Block",
+              "src": "3308:413:46",
+              "nodes": [],
+              "statements": [
                 {
-                  assignments: [14133, 14135, 14137],
-                  declarations: [
-                    {
-                      constant: false,
-                      id: 14133,
-                      mutability: "mutable",
-                      name: "result1",
-                      nameLocation: "3327:7:46",
-                      nodeType: "VariableDeclaration",
-                      scope: 14154,
-                      src: "3319:15:46",
-                      stateVariable: false,
-                      storageLocation: "default",
-                      typeDescriptions: {
-                        typeIdentifier: "t_uint256",
-                        typeString: "uint256",
-                      },
-                      typeName: {
-                        id: 14132,
-                        name: "uint256",
-                        nodeType: "ElementaryTypeName",
-                        src: "3319:7:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
-                      },
-                      visibility: "internal",
-                    },
-                    {
-                      constant: false,
-                      id: 14135,
-                      mutability: "mutable",
-                      name: "result2",
-                      nameLocation: "3344:7:46",
-                      nodeType: "VariableDeclaration",
-                      scope: 14154,
-                      src: "3336:15:46",
-                      stateVariable: false,
-                      storageLocation: "default",
-                      typeDescriptions: {
-                        typeIdentifier: "t_uint256",
-                        typeString: "uint256",
-                      },
-                      typeName: {
-                        id: 14134,
-                        name: "uint256",
-                        nodeType: "ElementaryTypeName",
-                        src: "3336:7:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
-                      },
-                      visibility: "internal",
-                    },
-                    {
-                      constant: false,
-                      id: 14137,
-                      mutability: "mutable",
-                      name: "result3",
-                      nameLocation: "3361:7:46",
-                      nodeType: "VariableDeclaration",
-                      scope: 14154,
-                      src: "3353:15:46",
-                      stateVariable: false,
-                      storageLocation: "default",
-                      typeDescriptions: {
-                        typeIdentifier: "t_uint256",
-                        typeString: "uint256",
-                      },
-                      typeName: {
-                        id: 14136,
-                        name: "uint256",
-                        nodeType: "ElementaryTypeName",
-                        src: "3353:7:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
-                      },
-                      visibility: "internal",
-                    },
+                  "assignments": [
+                    14133,
+                    14135,
+                    14137
                   ],
-                  id: 14148,
-                  initialValue: {
-                    arguments: [
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 14133,
+                      "mutability": "mutable",
+                      "name": "result1",
+                      "nameLocation": "3327:7:46",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 14154,
+                      "src": "3319:15:46",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 14132,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "3319:7:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    },
+                    {
+                      "constant": false,
+                      "id": 14135,
+                      "mutability": "mutable",
+                      "name": "result2",
+                      "nameLocation": "3344:7:46",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 14154,
+                      "src": "3336:15:46",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 14134,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "3336:7:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    },
+                    {
+                      "constant": false,
+                      "id": 14137,
+                      "mutability": "mutable",
+                      "name": "result3",
+                      "nameLocation": "3361:7:46",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 14154,
+                      "src": "3353:15:46",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 14136,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "3353:7:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 14148,
+                  "initialValue": {
+                    "arguments": [
                       {
-                        id: 14140,
-                        name: "_effectiveShareReserves",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14111,
-                        src: "3437:23:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                        "id": 14140,
+                        "name": "_effectiveShareReserves",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14111,
+                        "src": "3437:23:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       },
                       {
-                        id: 14141,
-                        name: "_bondReserves",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14113,
-                        src: "3478:13:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                        "id": 14141,
+                        "name": "_bondReserves",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14113,
+                        "src": "3478:13:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       },
                       {
-                        id: 14142,
-                        name: "_amountOut",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14115,
-                        src: "3509:10:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                        "id": 14142,
+                        "name": "_amountOut",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14115,
+                        "src": "3509:10:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       },
                       {
-                        id: 14143,
-                        name: "_normalizedTimeRemaining",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14117,
-                        src: "3537:24:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                        "id": 14143,
+                        "name": "_normalizedTimeRemaining",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14117,
+                        "src": "3537:24:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       },
                       {
-                        id: 14144,
-                        name: "_timeStretch",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14119,
-                        src: "3579:12:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                        "id": 14144,
+                        "name": "_timeStretch",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14119,
+                        "src": "3579:12:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       },
                       {
-                        id: 14145,
-                        name: "_sharePrice",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14121,
-                        src: "3609:11:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                        "id": 14145,
+                        "name": "_sharePrice",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14121,
+                        "src": "3609:11:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       },
                       {
-                        id: 14146,
-                        name: "_initialSharePrice",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14123,
-                        src: "3638:18:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
-                      },
+                        "id": 14146,
+                        "name": "_initialSharePrice",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14123,
+                        "src": "3638:18:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
                     ],
-                    expression: {
-                      argumentTypes: [
+                    "expression": {
+                      "argumentTypes": [
                         {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
                         },
                         {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
                         },
                         {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
                         },
                         {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
                         },
                         {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
                         },
                         {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
                         },
                         {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       ],
-                      expression: {
-                        id: 14138,
-                        name: "HyperdriveMath",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 10772,
-                        src: "3372:14:46",
-                        typeDescriptions: {
-                          typeIdentifier:
-                            "t_type$_t_contract$_HyperdriveMath_$10772_$",
-                          typeString: "type(library HyperdriveMath)",
-                        },
+                      "expression": {
+                        "id": 14138,
+                        "name": "HyperdriveMath",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10772,
+                        "src": "3372:14:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$10772_$",
+                          "typeString": "type(library HyperdriveMath)"
+                        }
                       },
-                      id: 14139,
-                      isConstant: false,
-                      isLValue: false,
-                      isPure: false,
-                      lValueRequested: false,
-                      memberLocation: "3400:19:46",
-                      memberName: "calculateCloseShort",
-                      nodeType: "MemberAccess",
-                      referencedDeclaration: 8807,
-                      src: "3372:47:46",
-                      typeDescriptions: {
-                        typeIdentifier:
-                          "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$_t_uint256_$_t_uint256_$",
-                        typeString:
-                          "function (uint256,uint256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256,uint256,uint256)",
-                      },
+                      "id": 14139,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "3400:19:46",
+                      "memberName": "calculateCloseShort",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 8807,
+                      "src": "3372:47:46",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$_t_uint256_$_t_uint256_$",
+                        "typeString": "function (uint256,uint256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256,uint256,uint256)"
+                      }
                     },
-                    id: 14147,
-                    isConstant: false,
-                    isLValue: false,
-                    isPure: false,
-                    kind: "functionCall",
-                    lValueRequested: false,
-                    nameLocations: [],
-                    names: [],
-                    nodeType: "FunctionCall",
-                    src: "3372:298:46",
-                    tryCall: false,
-                    typeDescriptions: {
-                      typeIdentifier:
-                        "t_tuple$_t_uint256_$_t_uint256_$_t_uint256_$",
-                      typeString: "tuple(uint256,uint256,uint256)",
-                    },
+                    "id": 14147,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "3372:298:46",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$_t_uint256_$_t_uint256_$_t_uint256_$",
+                      "typeString": "tuple(uint256,uint256,uint256)"
+                    }
                   },
-                  nodeType: "VariableDeclarationStatement",
-                  src: "3318:352:46",
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "3318:352:46"
                 },
                 {
-                  expression: {
-                    components: [
+                  "expression": {
+                    "components": [
                       {
-                        id: 14149,
-                        name: "result1",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14133,
-                        src: "3688:7:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                        "id": 14149,
+                        "name": "result1",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14133,
+                        "src": "3688:7:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       },
                       {
-                        id: 14150,
-                        name: "result2",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14135,
-                        src: "3697:7:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                        "id": 14150,
+                        "name": "result2",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14135,
+                        "src": "3697:7:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       },
                       {
-                        id: 14151,
-                        name: "result3",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14137,
-                        src: "3706:7:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
-                      },
+                        "id": 14151,
+                        "name": "result3",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14137,
+                        "src": "3706:7:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
                     ],
-                    id: 14152,
-                    isConstant: false,
-                    isInlineArray: false,
-                    isLValue: false,
-                    isPure: false,
-                    lValueRequested: false,
-                    nodeType: "TupleExpression",
-                    src: "3687:27:46",
-                    typeDescriptions: {
-                      typeIdentifier:
-                        "t_tuple$_t_uint256_$_t_uint256_$_t_uint256_$",
-                      typeString: "tuple(uint256,uint256,uint256)",
-                    },
+                    "id": 14152,
+                    "isConstant": false,
+                    "isInlineArray": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "TupleExpression",
+                    "src": "3687:27:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$_t_uint256_$_t_uint256_$_t_uint256_$",
+                      "typeString": "tuple(uint256,uint256,uint256)"
+                    }
                   },
-                  functionReturnParameters: 14131,
-                  id: 14153,
-                  nodeType: "Return",
-                  src: "3680:34:46",
-                },
-              ],
+                  "functionReturnParameters": 14131,
+                  "id": 14153,
+                  "nodeType": "Return",
+                  "src": "3680:34:46"
+                }
+              ]
             },
-            functionSelector: "f87845f2",
-            implemented: true,
-            kind: "function",
-            modifiers: [],
-            name: "calculateCloseShort",
-            nameLocation: "2995:19:46",
-            parameters: {
-              id: 14124,
-              nodeType: "ParameterList",
-              parameters: [
+            "functionSelector": "f87845f2",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "calculateCloseShort",
+            "nameLocation": "2995:19:46",
+            "parameters": {
+              "id": 14124,
+              "nodeType": "ParameterList",
+              "parameters": [
                 {
-                  constant: false,
-                  id: 14111,
-                  mutability: "mutable",
-                  name: "_effectiveShareReserves",
-                  nameLocation: "3032:23:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14155,
-                  src: "3024:31:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14111,
+                  "mutability": "mutable",
+                  "name": "_effectiveShareReserves",
+                  "nameLocation": "3032:23:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14155,
+                  "src": "3024:31:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14110,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "3024:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14110,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3024:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 14113,
-                  mutability: "mutable",
-                  name: "_bondReserves",
-                  nameLocation: "3073:13:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14155,
-                  src: "3065:21:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14113,
+                  "mutability": "mutable",
+                  "name": "_bondReserves",
+                  "nameLocation": "3073:13:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14155,
+                  "src": "3065:21:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14112,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "3065:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14112,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3065:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 14115,
-                  mutability: "mutable",
-                  name: "_amountOut",
-                  nameLocation: "3104:10:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14155,
-                  src: "3096:18:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14115,
+                  "mutability": "mutable",
+                  "name": "_amountOut",
+                  "nameLocation": "3104:10:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14155,
+                  "src": "3096:18:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14114,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "3096:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14114,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3096:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 14117,
-                  mutability: "mutable",
-                  name: "_normalizedTimeRemaining",
-                  nameLocation: "3132:24:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14155,
-                  src: "3124:32:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14117,
+                  "mutability": "mutable",
+                  "name": "_normalizedTimeRemaining",
+                  "nameLocation": "3132:24:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14155,
+                  "src": "3124:32:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14116,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "3124:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14116,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3124:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 14119,
-                  mutability: "mutable",
-                  name: "_timeStretch",
-                  nameLocation: "3174:12:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14155,
-                  src: "3166:20:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14119,
+                  "mutability": "mutable",
+                  "name": "_timeStretch",
+                  "nameLocation": "3174:12:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14155,
+                  "src": "3166:20:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14118,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "3166:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14118,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3166:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 14121,
-                  mutability: "mutable",
-                  name: "_sharePrice",
-                  nameLocation: "3204:11:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14155,
-                  src: "3196:19:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14121,
+                  "mutability": "mutable",
+                  "name": "_sharePrice",
+                  "nameLocation": "3204:11:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14155,
+                  "src": "3196:19:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14120,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "3196:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14120,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3196:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 14123,
-                  mutability: "mutable",
-                  name: "_initialSharePrice",
-                  nameLocation: "3233:18:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14155,
-                  src: "3225:26:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14123,
+                  "mutability": "mutable",
+                  "name": "_initialSharePrice",
+                  "nameLocation": "3233:18:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14155,
+                  "src": "3225:26:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14122,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "3225:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14122,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3225:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
-                },
+                  "visibility": "internal"
+                }
               ],
-              src: "3014:243:46",
+              "src": "3014:243:46"
             },
-            returnParameters: {
-              id: 14131,
-              nodeType: "ParameterList",
-              parameters: [
+            "returnParameters": {
+              "id": 14131,
+              "nodeType": "ParameterList",
+              "parameters": [
                 {
-                  constant: false,
-                  id: 14126,
-                  mutability: "mutable",
-                  name: "",
-                  nameLocation: "-1:-1:-1",
-                  nodeType: "VariableDeclaration",
-                  scope: 14155,
-                  src: "3281:7:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14126,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14155,
+                  "src": "3281:7:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14125,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "3281:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14125,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3281:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 14128,
-                  mutability: "mutable",
-                  name: "",
-                  nameLocation: "-1:-1:-1",
-                  nodeType: "VariableDeclaration",
-                  scope: 14155,
-                  src: "3290:7:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14128,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14155,
+                  "src": "3290:7:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14127,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "3290:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14127,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3290:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 14130,
-                  mutability: "mutable",
-                  name: "",
-                  nameLocation: "-1:-1:-1",
-                  nodeType: "VariableDeclaration",
-                  scope: 14155,
-                  src: "3299:7:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14130,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14155,
+                  "src": "3299:7:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14129,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "3299:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14129,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3299:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
-                },
+                  "visibility": "internal"
+                }
               ],
-              src: "3280:27:46",
+              "src": "3280:27:46"
             },
-            scope: 14383,
-            stateMutability: "pure",
-            virtual: false,
-            visibility: "external",
+            "scope": 14383,
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "external"
           },
           {
-            id: 14166,
-            nodeType: "StructDefinition",
-            src: "3727:217:46",
-            nodes: [],
-            canonicalName: "MockHyperdriveMath.NegativeInterestOnCloseOutput",
-            members: [
+            "id": 14166,
+            "nodeType": "StructDefinition",
+            "src": "3727:217:46",
+            "nodes": [],
+            "canonicalName": "MockHyperdriveMath.NegativeInterestOnCloseOutput",
+            "members": [
               {
-                constant: false,
-                id: 14157,
-                mutability: "mutable",
-                name: "shareProceeds",
-                nameLocation: "3782:13:46",
-                nodeType: "VariableDeclaration",
-                scope: 14166,
-                src: "3774:21:46",
-                stateVariable: false,
-                storageLocation: "default",
-                typeDescriptions: {
-                  typeIdentifier: "t_uint256",
-                  typeString: "uint256",
+                "constant": false,
+                "id": 14157,
+                "mutability": "mutable",
+                "name": "shareProceeds",
+                "nameLocation": "3782:13:46",
+                "nodeType": "VariableDeclaration",
+                "scope": 14166,
+                "src": "3774:21:46",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
                 },
-                typeName: {
-                  id: 14156,
-                  name: "uint256",
-                  nodeType: "ElementaryTypeName",
-                  src: "3774:7:46",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
-                  },
+                "typeName": {
+                  "id": 14156,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "3774:7:46",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
                 },
-                visibility: "internal",
+                "visibility": "internal"
               },
               {
-                constant: false,
-                id: 14159,
-                mutability: "mutable",
-                name: "shareReservesDelta",
-                nameLocation: "3813:18:46",
-                nodeType: "VariableDeclaration",
-                scope: 14166,
-                src: "3805:26:46",
-                stateVariable: false,
-                storageLocation: "default",
-                typeDescriptions: {
-                  typeIdentifier: "t_uint256",
-                  typeString: "uint256",
+                "constant": false,
+                "id": 14159,
+                "mutability": "mutable",
+                "name": "shareReservesDelta",
+                "nameLocation": "3813:18:46",
+                "nodeType": "VariableDeclaration",
+                "scope": 14166,
+                "src": "3805:26:46",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
                 },
-                typeName: {
-                  id: 14158,
-                  name: "uint256",
-                  nodeType: "ElementaryTypeName",
-                  src: "3805:7:46",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
-                  },
+                "typeName": {
+                  "id": 14158,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "3805:7:46",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
                 },
-                visibility: "internal",
+                "visibility": "internal"
               },
               {
-                constant: false,
-                id: 14161,
-                mutability: "mutable",
-                name: "shareCurveDelta",
-                nameLocation: "3849:15:46",
-                nodeType: "VariableDeclaration",
-                scope: 14166,
-                src: "3841:23:46",
-                stateVariable: false,
-                storageLocation: "default",
-                typeDescriptions: {
-                  typeIdentifier: "t_uint256",
-                  typeString: "uint256",
+                "constant": false,
+                "id": 14161,
+                "mutability": "mutable",
+                "name": "shareCurveDelta",
+                "nameLocation": "3849:15:46",
+                "nodeType": "VariableDeclaration",
+                "scope": 14166,
+                "src": "3841:23:46",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
                 },
-                typeName: {
-                  id: 14160,
-                  name: "uint256",
-                  nodeType: "ElementaryTypeName",
-                  src: "3841:7:46",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
-                  },
+                "typeName": {
+                  "id": 14160,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "3841:7:46",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
                 },
-                visibility: "internal",
+                "visibility": "internal"
               },
               {
-                constant: false,
-                id: 14163,
-                mutability: "mutable",
-                name: "shareAdjustmentDelta",
-                nameLocation: "3881:20:46",
-                nodeType: "VariableDeclaration",
-                scope: 14166,
-                src: "3874:27:46",
-                stateVariable: false,
-                storageLocation: "default",
-                typeDescriptions: {
-                  typeIdentifier: "t_int256",
-                  typeString: "int256",
+                "constant": false,
+                "id": 14163,
+                "mutability": "mutable",
+                "name": "shareAdjustmentDelta",
+                "nameLocation": "3881:20:46",
+                "nodeType": "VariableDeclaration",
+                "scope": 14166,
+                "src": "3874:27:46",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_int256",
+                  "typeString": "int256"
                 },
-                typeName: {
-                  id: 14162,
-                  name: "int256",
-                  nodeType: "ElementaryTypeName",
-                  src: "3874:6:46",
-                  typeDescriptions: {
-                    typeIdentifier: "t_int256",
-                    typeString: "int256",
-                  },
+                "typeName": {
+                  "id": 14162,
+                  "name": "int256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "3874:6:46",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  }
                 },
-                visibility: "internal",
+                "visibility": "internal"
               },
               {
-                constant: false,
-                id: 14165,
-                mutability: "mutable",
-                name: "totalGovernanceFee",
-                nameLocation: "3919:18:46",
-                nodeType: "VariableDeclaration",
-                scope: 14166,
-                src: "3911:26:46",
-                stateVariable: false,
-                storageLocation: "default",
-                typeDescriptions: {
-                  typeIdentifier: "t_uint256",
-                  typeString: "uint256",
+                "constant": false,
+                "id": 14165,
+                "mutability": "mutable",
+                "name": "totalGovernanceFee",
+                "nameLocation": "3919:18:46",
+                "nodeType": "VariableDeclaration",
+                "scope": 14166,
+                "src": "3911:26:46",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
                 },
-                typeName: {
-                  id: 14164,
-                  name: "uint256",
-                  nodeType: "ElementaryTypeName",
-                  src: "3911:7:46",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
-                  },
+                "typeName": {
+                  "id": 14164,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "3911:7:46",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
                 },
-                visibility: "internal",
-              },
+                "visibility": "internal"
+              }
             ],
-            name: "NegativeInterestOnCloseOutput",
-            nameLocation: "3734:29:46",
-            scope: 14383,
-            visibility: "public",
+            "name": "NegativeInterestOnCloseOutput",
+            "nameLocation": "3734:29:46",
+            "scope": 14383,
+            "visibility": "public"
           },
           {
-            id: 14234,
-            nodeType: "FunctionDefinition",
-            src: "3950:1093:46",
-            nodes: [],
-            body: {
-              id: 14233,
-              nodeType: "Block",
-              src: "4294:749:46",
-              nodes: [],
-              statements: [
+            "id": 14234,
+            "nodeType": "FunctionDefinition",
+            "src": "3950:1093:46",
+            "nodes": [],
+            "body": {
+              "id": 14233,
+              "nodeType": "Block",
+              "src": "4294:749:46",
+              "nodes": [],
+              "statements": [
                 {
-                  assignments: [14195],
-                  declarations: [
-                    {
-                      constant: false,
-                      id: 14195,
-                      mutability: "mutable",
-                      name: "output",
-                      nameLocation: "4341:6:46",
-                      nodeType: "VariableDeclaration",
-                      scope: 14233,
-                      src: "4304:43:46",
-                      stateVariable: false,
-                      storageLocation: "memory",
-                      typeDescriptions: {
-                        typeIdentifier:
-                          "t_struct$_NegativeInterestOnCloseOutput_$14166_memory_ptr",
-                        typeString:
-                          "struct MockHyperdriveMath.NegativeInterestOnCloseOutput",
-                      },
-                      typeName: {
-                        id: 14194,
-                        nodeType: "UserDefinedTypeName",
-                        pathNode: {
-                          id: 14193,
-                          name: "NegativeInterestOnCloseOutput",
-                          nameLocations: ["4304:29:46"],
-                          nodeType: "IdentifierPath",
-                          referencedDeclaration: 14166,
-                          src: "4304:29:46",
-                        },
-                        referencedDeclaration: 14166,
-                        src: "4304:29:46",
-                        typeDescriptions: {
-                          typeIdentifier:
-                            "t_struct$_NegativeInterestOnCloseOutput_$14166_storage_ptr",
-                          typeString:
-                            "struct MockHyperdriveMath.NegativeInterestOnCloseOutput",
-                        },
-                      },
-                      visibility: "internal",
-                    },
+                  "assignments": [
+                    14195
                   ],
-                  id: 14196,
-                  nodeType: "VariableDeclarationStatement",
-                  src: "4304:43:46",
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 14195,
+                      "mutability": "mutable",
+                      "name": "output",
+                      "nameLocation": "4341:6:46",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 14233,
+                      "src": "4304:43:46",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_NegativeInterestOnCloseOutput_$14166_memory_ptr",
+                        "typeString": "struct MockHyperdriveMath.NegativeInterestOnCloseOutput"
+                      },
+                      "typeName": {
+                        "id": 14194,
+                        "nodeType": "UserDefinedTypeName",
+                        "pathNode": {
+                          "id": 14193,
+                          "name": "NegativeInterestOnCloseOutput",
+                          "nameLocations": [
+                            "4304:29:46"
+                          ],
+                          "nodeType": "IdentifierPath",
+                          "referencedDeclaration": 14166,
+                          "src": "4304:29:46"
+                        },
+                        "referencedDeclaration": 14166,
+                        "src": "4304:29:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_NegativeInterestOnCloseOutput_$14166_storage_ptr",
+                          "typeString": "struct MockHyperdriveMath.NegativeInterestOnCloseOutput"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 14196,
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "4304:43:46"
                 },
                 {
-                  expression: {
-                    id: 14219,
-                    isConstant: false,
-                    isLValue: false,
-                    isPure: false,
-                    lValueRequested: false,
-                    leftHandSide: {
-                      components: [
+                  "expression": {
+                    "id": 14219,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "components": [
                         {
-                          expression: {
-                            id: 14197,
-                            name: "output",
-                            nodeType: "Identifier",
-                            overloadedDeclarations: [],
-                            referencedDeclaration: 14195,
-                            src: "4371:6:46",
-                            typeDescriptions: {
-                              typeIdentifier:
-                                "t_struct$_NegativeInterestOnCloseOutput_$14166_memory_ptr",
-                              typeString:
-                                "struct MockHyperdriveMath.NegativeInterestOnCloseOutput memory",
-                            },
+                          "expression": {
+                            "id": 14197,
+                            "name": "output",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 14195,
+                            "src": "4371:6:46",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_NegativeInterestOnCloseOutput_$14166_memory_ptr",
+                              "typeString": "struct MockHyperdriveMath.NegativeInterestOnCloseOutput memory"
+                            }
                           },
-                          id: 14199,
-                          isConstant: false,
-                          isLValue: true,
-                          isPure: false,
-                          lValueRequested: true,
-                          memberLocation: "4378:13:46",
-                          memberName: "shareProceeds",
-                          nodeType: "MemberAccess",
-                          referencedDeclaration: 14157,
-                          src: "4371:20:46",
-                          typeDescriptions: {
-                            typeIdentifier: "t_uint256",
-                            typeString: "uint256",
-                          },
+                          "id": 14199,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": true,
+                          "memberLocation": "4378:13:46",
+                          "memberName": "shareProceeds",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 14157,
+                          "src": "4371:20:46",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
                         },
                         {
-                          expression: {
-                            id: 14200,
-                            name: "output",
-                            nodeType: "Identifier",
-                            overloadedDeclarations: [],
-                            referencedDeclaration: 14195,
-                            src: "4405:6:46",
-                            typeDescriptions: {
-                              typeIdentifier:
-                                "t_struct$_NegativeInterestOnCloseOutput_$14166_memory_ptr",
-                              typeString:
-                                "struct MockHyperdriveMath.NegativeInterestOnCloseOutput memory",
-                            },
+                          "expression": {
+                            "id": 14200,
+                            "name": "output",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 14195,
+                            "src": "4405:6:46",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_NegativeInterestOnCloseOutput_$14166_memory_ptr",
+                              "typeString": "struct MockHyperdriveMath.NegativeInterestOnCloseOutput memory"
+                            }
                           },
-                          id: 14201,
-                          isConstant: false,
-                          isLValue: true,
-                          isPure: false,
-                          lValueRequested: true,
-                          memberLocation: "4412:18:46",
-                          memberName: "shareReservesDelta",
-                          nodeType: "MemberAccess",
-                          referencedDeclaration: 14159,
-                          src: "4405:25:46",
-                          typeDescriptions: {
-                            typeIdentifier: "t_uint256",
-                            typeString: "uint256",
-                          },
+                          "id": 14201,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": true,
+                          "memberLocation": "4412:18:46",
+                          "memberName": "shareReservesDelta",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 14159,
+                          "src": "4405:25:46",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
                         },
                         {
-                          expression: {
-                            id: 14202,
-                            name: "output",
-                            nodeType: "Identifier",
-                            overloadedDeclarations: [],
-                            referencedDeclaration: 14195,
-                            src: "4444:6:46",
-                            typeDescriptions: {
-                              typeIdentifier:
-                                "t_struct$_NegativeInterestOnCloseOutput_$14166_memory_ptr",
-                              typeString:
-                                "struct MockHyperdriveMath.NegativeInterestOnCloseOutput memory",
-                            },
+                          "expression": {
+                            "id": 14202,
+                            "name": "output",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 14195,
+                            "src": "4444:6:46",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_NegativeInterestOnCloseOutput_$14166_memory_ptr",
+                              "typeString": "struct MockHyperdriveMath.NegativeInterestOnCloseOutput memory"
+                            }
                           },
-                          id: 14203,
-                          isConstant: false,
-                          isLValue: true,
-                          isPure: false,
-                          lValueRequested: true,
-                          memberLocation: "4451:15:46",
-                          memberName: "shareCurveDelta",
-                          nodeType: "MemberAccess",
-                          referencedDeclaration: 14161,
-                          src: "4444:22:46",
-                          typeDescriptions: {
-                            typeIdentifier: "t_uint256",
-                            typeString: "uint256",
-                          },
+                          "id": 14203,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": true,
+                          "memberLocation": "4451:15:46",
+                          "memberName": "shareCurveDelta",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 14161,
+                          "src": "4444:22:46",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
                         },
                         {
-                          expression: {
-                            id: 14204,
-                            name: "output",
-                            nodeType: "Identifier",
-                            overloadedDeclarations: [],
-                            referencedDeclaration: 14195,
-                            src: "4480:6:46",
-                            typeDescriptions: {
-                              typeIdentifier:
-                                "t_struct$_NegativeInterestOnCloseOutput_$14166_memory_ptr",
-                              typeString:
-                                "struct MockHyperdriveMath.NegativeInterestOnCloseOutput memory",
-                            },
+                          "expression": {
+                            "id": 14204,
+                            "name": "output",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 14195,
+                            "src": "4480:6:46",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_NegativeInterestOnCloseOutput_$14166_memory_ptr",
+                              "typeString": "struct MockHyperdriveMath.NegativeInterestOnCloseOutput memory"
+                            }
                           },
-                          id: 14205,
-                          isConstant: false,
-                          isLValue: true,
-                          isPure: false,
-                          lValueRequested: true,
-                          memberLocation: "4487:20:46",
-                          memberName: "shareAdjustmentDelta",
-                          nodeType: "MemberAccess",
-                          referencedDeclaration: 14163,
-                          src: "4480:27:46",
-                          typeDescriptions: {
-                            typeIdentifier: "t_int256",
-                            typeString: "int256",
-                          },
+                          "id": 14205,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": true,
+                          "memberLocation": "4487:20:46",
+                          "memberName": "shareAdjustmentDelta",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 14163,
+                          "src": "4480:27:46",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_int256",
+                            "typeString": "int256"
+                          }
                         },
                         {
-                          expression: {
-                            id: 14206,
-                            name: "output",
-                            nodeType: "Identifier",
-                            overloadedDeclarations: [],
-                            referencedDeclaration: 14195,
-                            src: "4521:6:46",
-                            typeDescriptions: {
-                              typeIdentifier:
-                                "t_struct$_NegativeInterestOnCloseOutput_$14166_memory_ptr",
-                              typeString:
-                                "struct MockHyperdriveMath.NegativeInterestOnCloseOutput memory",
-                            },
+                          "expression": {
+                            "id": 14206,
+                            "name": "output",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 14195,
+                            "src": "4521:6:46",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_NegativeInterestOnCloseOutput_$14166_memory_ptr",
+                              "typeString": "struct MockHyperdriveMath.NegativeInterestOnCloseOutput memory"
+                            }
                           },
-                          id: 14207,
-                          isConstant: false,
-                          isLValue: true,
-                          isPure: false,
-                          lValueRequested: true,
-                          memberLocation: "4528:18:46",
-                          memberName: "totalGovernanceFee",
-                          nodeType: "MemberAccess",
-                          referencedDeclaration: 14165,
-                          src: "4521:25:46",
-                          typeDescriptions: {
-                            typeIdentifier: "t_uint256",
-                            typeString: "uint256",
-                          },
-                        },
+                          "id": 14207,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": true,
+                          "memberLocation": "4528:18:46",
+                          "memberName": "totalGovernanceFee",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 14165,
+                          "src": "4521:25:46",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        }
                       ],
-                      id: 14208,
-                      isConstant: false,
-                      isInlineArray: false,
-                      isLValue: true,
-                      isPure: false,
-                      lValueRequested: true,
-                      nodeType: "TupleExpression",
-                      src: "4357:199:46",
-                      typeDescriptions: {
-                        typeIdentifier:
-                          "t_tuple$_t_uint256_$_t_uint256_$_t_uint256_$_t_int256_$_t_uint256_$",
-                        typeString:
-                          "tuple(uint256,uint256,uint256,int256,uint256)",
-                      },
+                      "id": 14208,
+                      "isConstant": false,
+                      "isInlineArray": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "TupleExpression",
+                      "src": "4357:199:46",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_tuple$_t_uint256_$_t_uint256_$_t_uint256_$_t_int256_$_t_uint256_$",
+                        "typeString": "tuple(uint256,uint256,uint256,int256,uint256)"
+                      }
                     },
-                    nodeType: "Assignment",
-                    operator: "=",
-                    rightHandSide: {
-                      arguments: [
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "arguments": [
                         {
-                          id: 14211,
-                          name: "_shareProceeds",
-                          nodeType: "Identifier",
-                          overloadedDeclarations: [],
-                          referencedDeclaration: 14168,
-                          src: "4620:14:46",
-                          typeDescriptions: {
-                            typeIdentifier: "t_uint256",
-                            typeString: "uint256",
-                          },
+                          "id": 14211,
+                          "name": "_shareProceeds",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 14168,
+                          "src": "4620:14:46",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
                         },
                         {
-                          id: 14212,
-                          name: "_shareReservesDelta",
-                          nodeType: "Identifier",
-                          overloadedDeclarations: [],
-                          referencedDeclaration: 14170,
-                          src: "4648:19:46",
-                          typeDescriptions: {
-                            typeIdentifier: "t_uint256",
-                            typeString: "uint256",
-                          },
+                          "id": 14212,
+                          "name": "_shareReservesDelta",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 14170,
+                          "src": "4648:19:46",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
                         },
                         {
-                          id: 14213,
-                          name: "_shareCurveDelta",
-                          nodeType: "Identifier",
-                          overloadedDeclarations: [],
-                          referencedDeclaration: 14172,
-                          src: "4681:16:46",
-                          typeDescriptions: {
-                            typeIdentifier: "t_uint256",
-                            typeString: "uint256",
-                          },
+                          "id": 14213,
+                          "name": "_shareCurveDelta",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 14172,
+                          "src": "4681:16:46",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
                         },
                         {
-                          id: 14214,
-                          name: "_totalGovernanceFee",
-                          nodeType: "Identifier",
-                          overloadedDeclarations: [],
-                          referencedDeclaration: 14174,
-                          src: "4711:19:46",
-                          typeDescriptions: {
-                            typeIdentifier: "t_uint256",
-                            typeString: "uint256",
-                          },
+                          "id": 14214,
+                          "name": "_totalGovernanceFee",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 14174,
+                          "src": "4711:19:46",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
                         },
                         {
-                          id: 14215,
-                          name: "_openSharePrice",
-                          nodeType: "Identifier",
-                          overloadedDeclarations: [],
-                          referencedDeclaration: 14176,
-                          src: "4744:15:46",
-                          typeDescriptions: {
-                            typeIdentifier: "t_uint256",
-                            typeString: "uint256",
-                          },
+                          "id": 14215,
+                          "name": "_openSharePrice",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 14176,
+                          "src": "4744:15:46",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
                         },
                         {
-                          id: 14216,
-                          name: "_closeSharePrice",
-                          nodeType: "Identifier",
-                          overloadedDeclarations: [],
-                          referencedDeclaration: 14178,
-                          src: "4773:16:46",
-                          typeDescriptions: {
-                            typeIdentifier: "t_uint256",
-                            typeString: "uint256",
-                          },
+                          "id": 14216,
+                          "name": "_closeSharePrice",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 14178,
+                          "src": "4773:16:46",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
                         },
                         {
-                          id: 14217,
-                          name: "_isLong",
-                          nodeType: "Identifier",
-                          overloadedDeclarations: [],
-                          referencedDeclaration: 14180,
-                          src: "4803:7:46",
-                          typeDescriptions: {
-                            typeIdentifier: "t_bool",
-                            typeString: "bool",
-                          },
-                        },
+                          "id": 14217,
+                          "name": "_isLong",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 14180,
+                          "src": "4803:7:46",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        }
                       ],
-                      expression: {
-                        argumentTypes: [
+                      "expression": {
+                        "argumentTypes": [
                           {
-                            typeIdentifier: "t_uint256",
-                            typeString: "uint256",
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
                           },
                           {
-                            typeIdentifier: "t_uint256",
-                            typeString: "uint256",
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
                           },
                           {
-                            typeIdentifier: "t_uint256",
-                            typeString: "uint256",
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
                           },
                           {
-                            typeIdentifier: "t_uint256",
-                            typeString: "uint256",
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
                           },
                           {
-                            typeIdentifier: "t_uint256",
-                            typeString: "uint256",
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
                           },
                           {
-                            typeIdentifier: "t_uint256",
-                            typeString: "uint256",
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
                           },
                           {
-                            typeIdentifier: "t_bool",
-                            typeString: "bool",
-                          },
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
                         ],
-                        expression: {
-                          id: 14209,
-                          name: "HyperdriveMath",
-                          nodeType: "Identifier",
-                          overloadedDeclarations: [],
-                          referencedDeclaration: 10772,
-                          src: "4559:14:46",
-                          typeDescriptions: {
-                            typeIdentifier:
-                              "t_type$_t_contract$_HyperdriveMath_$10772_$",
-                            typeString: "type(library HyperdriveMath)",
-                          },
+                        "expression": {
+                          "id": 14209,
+                          "name": "HyperdriveMath",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10772,
+                          "src": "4559:14:46",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$10772_$",
+                            "typeString": "type(library HyperdriveMath)"
+                          }
                         },
-                        id: 14210,
-                        isConstant: false,
-                        isLValue: false,
-                        isPure: false,
-                        lValueRequested: false,
-                        memberLocation: "4574:32:46",
-                        memberName: "calculateNegativeInterestOnClose",
-                        nodeType: "MemberAccess",
-                        referencedDeclaration: 8911,
-                        src: "4559:47:46",
-                        typeDescriptions: {
-                          typeIdentifier:
-                            "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_bool_$returns$_t_uint256_$_t_uint256_$_t_uint256_$_t_int256_$_t_uint256_$",
-                          typeString:
-                            "function (uint256,uint256,uint256,uint256,uint256,uint256,bool) pure returns (uint256,uint256,uint256,int256,uint256)",
-                        },
+                        "id": 14210,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "4574:32:46",
+                        "memberName": "calculateNegativeInterestOnClose",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 8911,
+                        "src": "4559:47:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_bool_$returns$_t_uint256_$_t_uint256_$_t_uint256_$_t_int256_$_t_uint256_$",
+                          "typeString": "function (uint256,uint256,uint256,uint256,uint256,uint256,bool) pure returns (uint256,uint256,uint256,int256,uint256)"
+                        }
                       },
-                      id: 14218,
-                      isConstant: false,
-                      isLValue: false,
-                      isPure: false,
-                      kind: "functionCall",
-                      lValueRequested: false,
-                      nameLocations: [],
-                      names: [],
-                      nodeType: "FunctionCall",
-                      src: "4559:261:46",
-                      tryCall: false,
-                      typeDescriptions: {
-                        typeIdentifier:
-                          "t_tuple$_t_uint256_$_t_uint256_$_t_uint256_$_t_int256_$_t_uint256_$",
-                        typeString:
-                          "tuple(uint256,uint256,uint256,int256,uint256)",
-                      },
+                      "id": 14218,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "nameLocations": [],
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "4559:261:46",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_tuple$_t_uint256_$_t_uint256_$_t_uint256_$_t_int256_$_t_uint256_$",
+                        "typeString": "tuple(uint256,uint256,uint256,int256,uint256)"
+                      }
                     },
-                    src: "4357:463:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_tuple$__$",
-                      typeString: "tuple()",
-                    },
+                    "src": "4357:463:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
                   },
-                  id: 14220,
-                  nodeType: "ExpressionStatement",
-                  src: "4357:463:46",
+                  "id": 14220,
+                  "nodeType": "ExpressionStatement",
+                  "src": "4357:463:46"
                 },
                 {
-                  expression: {
-                    components: [
+                  "expression": {
+                    "components": [
                       {
-                        expression: {
-                          id: 14221,
-                          name: "output",
-                          nodeType: "Identifier",
-                          overloadedDeclarations: [],
-                          referencedDeclaration: 14195,
-                          src: "4851:6:46",
-                          typeDescriptions: {
-                            typeIdentifier:
-                              "t_struct$_NegativeInterestOnCloseOutput_$14166_memory_ptr",
-                            typeString:
-                              "struct MockHyperdriveMath.NegativeInterestOnCloseOutput memory",
-                          },
+                        "expression": {
+                          "id": 14221,
+                          "name": "output",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 14195,
+                          "src": "4851:6:46",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_NegativeInterestOnCloseOutput_$14166_memory_ptr",
+                            "typeString": "struct MockHyperdriveMath.NegativeInterestOnCloseOutput memory"
+                          }
                         },
-                        id: 14222,
-                        isConstant: false,
-                        isLValue: true,
-                        isPure: false,
-                        lValueRequested: false,
-                        memberLocation: "4858:13:46",
-                        memberName: "shareProceeds",
-                        nodeType: "MemberAccess",
-                        referencedDeclaration: 14157,
-                        src: "4851:20:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                        "id": 14222,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "4858:13:46",
+                        "memberName": "shareProceeds",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 14157,
+                        "src": "4851:20:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       },
                       {
-                        expression: {
-                          id: 14223,
-                          name: "output",
-                          nodeType: "Identifier",
-                          overloadedDeclarations: [],
-                          referencedDeclaration: 14195,
-                          src: "4885:6:46",
-                          typeDescriptions: {
-                            typeIdentifier:
-                              "t_struct$_NegativeInterestOnCloseOutput_$14166_memory_ptr",
-                            typeString:
-                              "struct MockHyperdriveMath.NegativeInterestOnCloseOutput memory",
-                          },
+                        "expression": {
+                          "id": 14223,
+                          "name": "output",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 14195,
+                          "src": "4885:6:46",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_NegativeInterestOnCloseOutput_$14166_memory_ptr",
+                            "typeString": "struct MockHyperdriveMath.NegativeInterestOnCloseOutput memory"
+                          }
                         },
-                        id: 14224,
-                        isConstant: false,
-                        isLValue: true,
-                        isPure: false,
-                        lValueRequested: false,
-                        memberLocation: "4892:18:46",
-                        memberName: "shareReservesDelta",
-                        nodeType: "MemberAccess",
-                        referencedDeclaration: 14159,
-                        src: "4885:25:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                        "id": 14224,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "4892:18:46",
+                        "memberName": "shareReservesDelta",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 14159,
+                        "src": "4885:25:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       },
                       {
-                        expression: {
-                          id: 14225,
-                          name: "output",
-                          nodeType: "Identifier",
-                          overloadedDeclarations: [],
-                          referencedDeclaration: 14195,
-                          src: "4924:6:46",
-                          typeDescriptions: {
-                            typeIdentifier:
-                              "t_struct$_NegativeInterestOnCloseOutput_$14166_memory_ptr",
-                            typeString:
-                              "struct MockHyperdriveMath.NegativeInterestOnCloseOutput memory",
-                          },
+                        "expression": {
+                          "id": 14225,
+                          "name": "output",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 14195,
+                          "src": "4924:6:46",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_NegativeInterestOnCloseOutput_$14166_memory_ptr",
+                            "typeString": "struct MockHyperdriveMath.NegativeInterestOnCloseOutput memory"
+                          }
                         },
-                        id: 14226,
-                        isConstant: false,
-                        isLValue: true,
-                        isPure: false,
-                        lValueRequested: false,
-                        memberLocation: "4931:15:46",
-                        memberName: "shareCurveDelta",
-                        nodeType: "MemberAccess",
-                        referencedDeclaration: 14161,
-                        src: "4924:22:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                        "id": 14226,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "4931:15:46",
+                        "memberName": "shareCurveDelta",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 14161,
+                        "src": "4924:22:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       },
                       {
-                        expression: {
-                          id: 14227,
-                          name: "output",
-                          nodeType: "Identifier",
-                          overloadedDeclarations: [],
-                          referencedDeclaration: 14195,
-                          src: "4960:6:46",
-                          typeDescriptions: {
-                            typeIdentifier:
-                              "t_struct$_NegativeInterestOnCloseOutput_$14166_memory_ptr",
-                            typeString:
-                              "struct MockHyperdriveMath.NegativeInterestOnCloseOutput memory",
-                          },
+                        "expression": {
+                          "id": 14227,
+                          "name": "output",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 14195,
+                          "src": "4960:6:46",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_NegativeInterestOnCloseOutput_$14166_memory_ptr",
+                            "typeString": "struct MockHyperdriveMath.NegativeInterestOnCloseOutput memory"
+                          }
                         },
-                        id: 14228,
-                        isConstant: false,
-                        isLValue: true,
-                        isPure: false,
-                        lValueRequested: false,
-                        memberLocation: "4967:20:46",
-                        memberName: "shareAdjustmentDelta",
-                        nodeType: "MemberAccess",
-                        referencedDeclaration: 14163,
-                        src: "4960:27:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_int256",
-                          typeString: "int256",
-                        },
+                        "id": 14228,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "4967:20:46",
+                        "memberName": "shareAdjustmentDelta",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 14163,
+                        "src": "4960:27:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_int256",
+                          "typeString": "int256"
+                        }
                       },
                       {
-                        expression: {
-                          id: 14229,
-                          name: "output",
-                          nodeType: "Identifier",
-                          overloadedDeclarations: [],
-                          referencedDeclaration: 14195,
-                          src: "5001:6:46",
-                          typeDescriptions: {
-                            typeIdentifier:
-                              "t_struct$_NegativeInterestOnCloseOutput_$14166_memory_ptr",
-                            typeString:
-                              "struct MockHyperdriveMath.NegativeInterestOnCloseOutput memory",
-                          },
+                        "expression": {
+                          "id": 14229,
+                          "name": "output",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 14195,
+                          "src": "5001:6:46",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_NegativeInterestOnCloseOutput_$14166_memory_ptr",
+                            "typeString": "struct MockHyperdriveMath.NegativeInterestOnCloseOutput memory"
+                          }
                         },
-                        id: 14230,
-                        isConstant: false,
-                        isLValue: true,
-                        isPure: false,
-                        lValueRequested: false,
-                        memberLocation: "5008:18:46",
-                        memberName: "totalGovernanceFee",
-                        nodeType: "MemberAccess",
-                        referencedDeclaration: 14165,
-                        src: "5001:25:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
-                      },
+                        "id": 14230,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "5008:18:46",
+                        "memberName": "totalGovernanceFee",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 14165,
+                        "src": "5001:25:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
                     ],
-                    id: 14231,
-                    isConstant: false,
-                    isInlineArray: false,
-                    isLValue: false,
-                    isPure: false,
-                    lValueRequested: false,
-                    nodeType: "TupleExpression",
-                    src: "4837:199:46",
-                    typeDescriptions: {
-                      typeIdentifier:
-                        "t_tuple$_t_uint256_$_t_uint256_$_t_uint256_$_t_int256_$_t_uint256_$",
-                      typeString:
-                        "tuple(uint256,uint256,uint256,int256,uint256)",
-                    },
+                    "id": 14231,
+                    "isConstant": false,
+                    "isInlineArray": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "TupleExpression",
+                    "src": "4837:199:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$_t_uint256_$_t_uint256_$_t_uint256_$_t_int256_$_t_uint256_$",
+                      "typeString": "tuple(uint256,uint256,uint256,int256,uint256)"
+                    }
                   },
-                  functionReturnParameters: 14192,
-                  id: 14232,
-                  nodeType: "Return",
-                  src: "4830:206:46",
-                },
-              ],
+                  "functionReturnParameters": 14192,
+                  "id": 14232,
+                  "nodeType": "Return",
+                  "src": "4830:206:46"
+                }
+              ]
             },
-            functionSelector: "7ef99f87",
-            implemented: true,
-            kind: "function",
-            modifiers: [],
-            name: "calculateNegativeInterestOnClose",
-            nameLocation: "3959:32:46",
-            parameters: {
-              id: 14181,
-              nodeType: "ParameterList",
-              parameters: [
+            "functionSelector": "7ef99f87",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "calculateNegativeInterestOnClose",
+            "nameLocation": "3959:32:46",
+            "parameters": {
+              "id": 14181,
+              "nodeType": "ParameterList",
+              "parameters": [
                 {
-                  constant: false,
-                  id: 14168,
-                  mutability: "mutable",
-                  name: "_shareProceeds",
-                  nameLocation: "4009:14:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14234,
-                  src: "4001:22:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14168,
+                  "mutability": "mutable",
+                  "name": "_shareProceeds",
+                  "nameLocation": "4009:14:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14234,
+                  "src": "4001:22:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14167,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "4001:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14167,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4001:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 14170,
-                  mutability: "mutable",
-                  name: "_shareReservesDelta",
-                  nameLocation: "4041:19:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14234,
-                  src: "4033:27:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14170,
+                  "mutability": "mutable",
+                  "name": "_shareReservesDelta",
+                  "nameLocation": "4041:19:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14234,
+                  "src": "4033:27:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14169,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "4033:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14169,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4033:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 14172,
-                  mutability: "mutable",
-                  name: "_shareCurveDelta",
-                  nameLocation: "4078:16:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14234,
-                  src: "4070:24:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14172,
+                  "mutability": "mutable",
+                  "name": "_shareCurveDelta",
+                  "nameLocation": "4078:16:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14234,
+                  "src": "4070:24:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14171,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "4070:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14171,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4070:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 14174,
-                  mutability: "mutable",
-                  name: "_totalGovernanceFee",
-                  nameLocation: "4112:19:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14234,
-                  src: "4104:27:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14174,
+                  "mutability": "mutable",
+                  "name": "_totalGovernanceFee",
+                  "nameLocation": "4112:19:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14234,
+                  "src": "4104:27:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14173,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "4104:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14173,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4104:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 14176,
-                  mutability: "mutable",
-                  name: "_openSharePrice",
-                  nameLocation: "4149:15:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14234,
-                  src: "4141:23:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14176,
+                  "mutability": "mutable",
+                  "name": "_openSharePrice",
+                  "nameLocation": "4149:15:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14234,
+                  "src": "4141:23:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14175,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "4141:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14175,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4141:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 14178,
-                  mutability: "mutable",
-                  name: "_closeSharePrice",
-                  nameLocation: "4182:16:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14234,
-                  src: "4174:24:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14178,
+                  "mutability": "mutable",
+                  "name": "_closeSharePrice",
+                  "nameLocation": "4182:16:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14234,
+                  "src": "4174:24:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14177,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "4174:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14177,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4174:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 14180,
-                  mutability: "mutable",
-                  name: "_isLong",
-                  nameLocation: "4213:7:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14234,
-                  src: "4208:12:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_bool",
-                    typeString: "bool",
+                  "constant": false,
+                  "id": 14180,
+                  "mutability": "mutable",
+                  "name": "_isLong",
+                  "nameLocation": "4213:7:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14234,
+                  "src": "4208:12:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
                   },
-                  typeName: {
-                    id: 14179,
-                    name: "bool",
-                    nodeType: "ElementaryTypeName",
-                    src: "4208:4:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_bool",
-                      typeString: "bool",
-                    },
+                  "typeName": {
+                    "id": 14179,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4208:4:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
                   },
-                  visibility: "internal",
-                },
+                  "visibility": "internal"
+                }
               ],
-              src: "3991:235:46",
+              "src": "3991:235:46"
             },
-            returnParameters: {
-              id: 14192,
-              nodeType: "ParameterList",
-              parameters: [
+            "returnParameters": {
+              "id": 14192,
+              "nodeType": "ParameterList",
+              "parameters": [
                 {
-                  constant: false,
-                  id: 14183,
-                  mutability: "mutable",
-                  name: "",
-                  nameLocation: "-1:-1:-1",
-                  nodeType: "VariableDeclaration",
-                  scope: 14234,
-                  src: "4250:7:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14183,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14234,
+                  "src": "4250:7:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14182,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "4250:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14182,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4250:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 14185,
-                  mutability: "mutable",
-                  name: "",
-                  nameLocation: "-1:-1:-1",
-                  nodeType: "VariableDeclaration",
-                  scope: 14234,
-                  src: "4259:7:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14185,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14234,
+                  "src": "4259:7:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14184,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "4259:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14184,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4259:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 14187,
-                  mutability: "mutable",
-                  name: "",
-                  nameLocation: "-1:-1:-1",
-                  nodeType: "VariableDeclaration",
-                  scope: 14234,
-                  src: "4268:7:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14187,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14234,
+                  "src": "4268:7:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14186,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "4268:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14186,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4268:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 14189,
-                  mutability: "mutable",
-                  name: "",
-                  nameLocation: "-1:-1:-1",
-                  nodeType: "VariableDeclaration",
-                  scope: 14234,
-                  src: "4277:6:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_int256",
-                    typeString: "int256",
+                  "constant": false,
+                  "id": 14189,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14234,
+                  "src": "4277:6:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
                   },
-                  typeName: {
-                    id: 14188,
-                    name: "int256",
-                    nodeType: "ElementaryTypeName",
-                    src: "4277:6:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_int256",
-                      typeString: "int256",
-                    },
+                  "typeName": {
+                    "id": 14188,
+                    "name": "int256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4277:6:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 14191,
-                  mutability: "mutable",
-                  name: "",
-                  nameLocation: "-1:-1:-1",
-                  nodeType: "VariableDeclaration",
-                  scope: 14234,
-                  src: "4285:7:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14191,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14234,
+                  "src": "4285:7:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14190,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "4285:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14190,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4285:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
-                },
+                  "visibility": "internal"
+                }
               ],
-              src: "4249:44:46",
+              "src": "4249:44:46"
             },
-            scope: 14383,
-            stateMutability: "pure",
-            virtual: false,
-            visibility: "external",
+            "scope": 14383,
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "external"
           },
           {
-            id: 14264,
-            nodeType: "FunctionDefinition",
-            src: "5049:415:46",
-            nodes: [],
-            body: {
-              id: 14263,
-              nodeType: "Block",
-              src: "5248:216:46",
-              nodes: [],
-              statements: [
+            "id": 14264,
+            "nodeType": "FunctionDefinition",
+            "src": "5049:415:46",
+            "nodes": [],
+            "body": {
+              "id": 14263,
+              "nodeType": "Block",
+              "src": "5248:216:46",
+              "nodes": [],
+              "statements": [
                 {
-                  assignments: [14249, 14251],
-                  declarations: [
-                    {
-                      constant: false,
-                      id: 14249,
-                      mutability: "mutable",
-                      name: "result1",
-                      nameLocation: "5267:7:46",
-                      nodeType: "VariableDeclaration",
-                      scope: 14263,
-                      src: "5259:15:46",
-                      stateVariable: false,
-                      storageLocation: "default",
-                      typeDescriptions: {
-                        typeIdentifier: "t_uint256",
-                        typeString: "uint256",
-                      },
-                      typeName: {
-                        id: 14248,
-                        name: "uint256",
-                        nodeType: "ElementaryTypeName",
-                        src: "5259:7:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
-                      },
-                      visibility: "internal",
-                    },
-                    {
-                      constant: false,
-                      id: 14251,
-                      mutability: "mutable",
-                      name: "result2",
-                      nameLocation: "5284:7:46",
-                      nodeType: "VariableDeclaration",
-                      scope: 14263,
-                      src: "5276:15:46",
-                      stateVariable: false,
-                      storageLocation: "default",
-                      typeDescriptions: {
-                        typeIdentifier: "t_uint256",
-                        typeString: "uint256",
-                      },
-                      typeName: {
-                        id: 14250,
-                        name: "uint256",
-                        nodeType: "ElementaryTypeName",
-                        src: "5276:7:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
-                      },
-                      visibility: "internal",
-                    },
+                  "assignments": [
+                    14249,
+                    14251
                   ],
-                  id: 14258,
-                  initialValue: {
-                    arguments: [
-                      {
-                        id: 14254,
-                        name: "_params",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14237,
-                        src: "5340:7:46",
-                        typeDescriptions: {
-                          typeIdentifier:
-                            "t_struct$_MaxTradeParams_$8934_memory_ptr",
-                          typeString:
-                            "struct HyperdriveMath.MaxTradeParams memory",
-                        },
-                      },
-                      {
-                        id: 14255,
-                        name: "_checkpointLongExposure",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14239,
-                        src: "5361:23:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_int256",
-                          typeString: "int256",
-                        },
-                      },
-                      {
-                        id: 14256,
-                        name: "_maxIterations",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14241,
-                        src: "5398:14:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
-                      },
-                    ],
-                    expression: {
-                      argumentTypes: [
-                        {
-                          typeIdentifier:
-                            "t_struct$_MaxTradeParams_$8934_memory_ptr",
-                          typeString:
-                            "struct HyperdriveMath.MaxTradeParams memory",
-                        },
-                        {
-                          typeIdentifier: "t_int256",
-                          typeString: "int256",
-                        },
-                        {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
-                      ],
-                      expression: {
-                        id: 14252,
-                        name: "HyperdriveMath",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 10772,
-                        src: "5295:14:46",
-                        typeDescriptions: {
-                          typeIdentifier:
-                            "t_type$_t_contract$_HyperdriveMath_$10772_$",
-                          typeString: "type(library HyperdriveMath)",
-                        },
-                      },
-                      id: 14253,
-                      isConstant: false,
-                      isLValue: false,
-                      isPure: false,
-                      lValueRequested: false,
-                      memberLocation: "5310:16:46",
-                      memberName: "calculateMaxLong",
-                      nodeType: "MemberAccess",
-                      referencedDeclaration: 9154,
-                      src: "5295:31:46",
-                      typeDescriptions: {
-                        typeIdentifier:
-                          "t_function_internal_pure$_t_struct$_MaxTradeParams_$8934_memory_ptr_$_t_int256_$_t_uint256_$returns$_t_uint256_$_t_uint256_$",
-                        typeString:
-                          "function (struct HyperdriveMath.MaxTradeParams memory,int256,uint256) pure returns (uint256,uint256)",
-                      },
-                    },
-                    id: 14257,
-                    isConstant: false,
-                    isLValue: false,
-                    isPure: false,
-                    kind: "functionCall",
-                    lValueRequested: false,
-                    nameLocations: [],
-                    names: [],
-                    nodeType: "FunctionCall",
-                    src: "5295:127:46",
-                    tryCall: false,
-                    typeDescriptions: {
-                      typeIdentifier: "t_tuple$_t_uint256_$_t_uint256_$",
-                      typeString: "tuple(uint256,uint256)",
-                    },
-                  },
-                  nodeType: "VariableDeclarationStatement",
-                  src: "5258:164:46",
-                },
-                {
-                  expression: {
-                    components: [
-                      {
-                        id: 14259,
-                        name: "result1",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14249,
-                        src: "5440:7:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
-                      },
-                      {
-                        id: 14260,
-                        name: "result2",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14251,
-                        src: "5449:7:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
-                      },
-                    ],
-                    id: 14261,
-                    isConstant: false,
-                    isInlineArray: false,
-                    isLValue: false,
-                    isPure: false,
-                    lValueRequested: false,
-                    nodeType: "TupleExpression",
-                    src: "5439:18:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_tuple$_t_uint256_$_t_uint256_$",
-                      typeString: "tuple(uint256,uint256)",
-                    },
-                  },
-                  functionReturnParameters: 14247,
-                  id: 14262,
-                  nodeType: "Return",
-                  src: "5432:25:46",
-                },
-              ],
-            },
-            functionSelector: "a40a6be8",
-            implemented: true,
-            kind: "function",
-            modifiers: [],
-            name: "calculateMaxLong",
-            nameLocation: "5058:16:46",
-            parameters: {
-              id: 14242,
-              nodeType: "ParameterList",
-              parameters: [
-                {
-                  constant: false,
-                  id: 14237,
-                  mutability: "mutable",
-                  name: "_params",
-                  nameLocation: "5121:7:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14264,
-                  src: "5084:44:46",
-                  stateVariable: false,
-                  storageLocation: "memory",
-                  typeDescriptions: {
-                    typeIdentifier: "t_struct$_MaxTradeParams_$8934_memory_ptr",
-                    typeString: "struct HyperdriveMath.MaxTradeParams",
-                  },
-                  typeName: {
-                    id: 14236,
-                    nodeType: "UserDefinedTypeName",
-                    pathNode: {
-                      id: 14235,
-                      name: "HyperdriveMath.MaxTradeParams",
-                      nameLocations: ["5084:14:46", "5099:14:46"],
-                      nodeType: "IdentifierPath",
-                      referencedDeclaration: 8934,
-                      src: "5084:29:46",
-                    },
-                    referencedDeclaration: 8934,
-                    src: "5084:29:46",
-                    typeDescriptions: {
-                      typeIdentifier:
-                        "t_struct$_MaxTradeParams_$8934_storage_ptr",
-                      typeString: "struct HyperdriveMath.MaxTradeParams",
-                    },
-                  },
-                  visibility: "internal",
-                },
-                {
-                  constant: false,
-                  id: 14239,
-                  mutability: "mutable",
-                  name: "_checkpointLongExposure",
-                  nameLocation: "5145:23:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14264,
-                  src: "5138:30:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_int256",
-                    typeString: "int256",
-                  },
-                  typeName: {
-                    id: 14238,
-                    name: "int256",
-                    nodeType: "ElementaryTypeName",
-                    src: "5138:6:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_int256",
-                      typeString: "int256",
-                    },
-                  },
-                  visibility: "internal",
-                },
-                {
-                  constant: false,
-                  id: 14241,
-                  mutability: "mutable",
-                  name: "_maxIterations",
-                  nameLocation: "5186:14:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14264,
-                  src: "5178:22:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
-                  },
-                  typeName: {
-                    id: 14240,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "5178:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
-                  },
-                  visibility: "internal",
-                },
-              ],
-              src: "5074:132:46",
-            },
-            returnParameters: {
-              id: 14247,
-              nodeType: "ParameterList",
-              parameters: [
-                {
-                  constant: false,
-                  id: 14244,
-                  mutability: "mutable",
-                  name: "",
-                  nameLocation: "-1:-1:-1",
-                  nodeType: "VariableDeclaration",
-                  scope: 14264,
-                  src: "5230:7:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
-                  },
-                  typeName: {
-                    id: 14243,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "5230:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
-                  },
-                  visibility: "internal",
-                },
-                {
-                  constant: false,
-                  id: 14246,
-                  mutability: "mutable",
-                  name: "",
-                  nameLocation: "-1:-1:-1",
-                  nodeType: "VariableDeclaration",
-                  scope: 14264,
-                  src: "5239:7:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
-                  },
-                  typeName: {
-                    id: 14245,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "5239:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
-                  },
-                  visibility: "internal",
-                },
-              ],
-              src: "5229:18:46",
-            },
-            scope: 14383,
-            stateMutability: "pure",
-            virtual: false,
-            visibility: "external",
-          },
-          {
-            id: 14284,
-            nodeType: "FunctionDefinition",
-            src: "5470:363:46",
-            nodes: [],
-            body: {
-              id: 14283,
-              nodeType: "Block",
-              src: "5657:176:46",
-              nodes: [],
-              statements: [
-                {
-                  expression: {
-                    arguments: [
-                      {
-                        id: 14278,
-                        name: "_params",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14267,
-                        src: "5736:7:46",
-                        typeDescriptions: {
-                          typeIdentifier:
-                            "t_struct$_MaxTradeParams_$8934_memory_ptr",
-                          typeString:
-                            "struct HyperdriveMath.MaxTradeParams memory",
-                        },
-                      },
-                      {
-                        id: 14279,
-                        name: "_checkpointExposure",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14269,
-                        src: "5761:19:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_int256",
-                          typeString: "int256",
-                        },
-                      },
-                      {
-                        id: 14280,
-                        name: "_maxIterations",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14271,
-                        src: "5798:14:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
-                      },
-                    ],
-                    expression: {
-                      argumentTypes: [
-                        {
-                          typeIdentifier:
-                            "t_struct$_MaxTradeParams_$8934_memory_ptr",
-                          typeString:
-                            "struct HyperdriveMath.MaxTradeParams memory",
-                        },
-                        {
-                          typeIdentifier: "t_int256",
-                          typeString: "int256",
-                        },
-                        {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
-                      ],
-                      expression: {
-                        id: 14276,
-                        name: "HyperdriveMath",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 10772,
-                        src: "5686:14:46",
-                        typeDescriptions: {
-                          typeIdentifier:
-                            "t_type$_t_contract$_HyperdriveMath_$10772_$",
-                          typeString: "type(library HyperdriveMath)",
-                        },
-                      },
-                      id: 14277,
-                      isConstant: false,
-                      isLValue: false,
-                      isPure: false,
-                      lValueRequested: false,
-                      memberLocation: "5701:17:46",
-                      memberName: "calculateMaxShort",
-                      nodeType: "MemberAccess",
-                      referencedDeclaration: 9900,
-                      src: "5686:32:46",
-                      typeDescriptions: {
-                        typeIdentifier:
-                          "t_function_internal_pure$_t_struct$_MaxTradeParams_$8934_memory_ptr_$_t_int256_$_t_uint256_$returns$_t_uint256_$",
-                        typeString:
-                          "function (struct HyperdriveMath.MaxTradeParams memory,int256,uint256) pure returns (uint256)",
-                      },
-                    },
-                    id: 14281,
-                    isConstant: false,
-                    isLValue: false,
-                    isPure: false,
-                    kind: "functionCall",
-                    lValueRequested: false,
-                    nameLocations: [],
-                    names: [],
-                    nodeType: "FunctionCall",
-                    src: "5686:140:46",
-                    tryCall: false,
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
-                  },
-                  functionReturnParameters: 14275,
-                  id: 14282,
-                  nodeType: "Return",
-                  src: "5667:159:46",
-                },
-              ],
-            },
-            functionSelector: "86ad02af",
-            implemented: true,
-            kind: "function",
-            modifiers: [],
-            name: "calculateMaxShort",
-            nameLocation: "5479:17:46",
-            parameters: {
-              id: 14272,
-              nodeType: "ParameterList",
-              parameters: [
-                {
-                  constant: false,
-                  id: 14267,
-                  mutability: "mutable",
-                  name: "_params",
-                  nameLocation: "5543:7:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14284,
-                  src: "5506:44:46",
-                  stateVariable: false,
-                  storageLocation: "memory",
-                  typeDescriptions: {
-                    typeIdentifier: "t_struct$_MaxTradeParams_$8934_memory_ptr",
-                    typeString: "struct HyperdriveMath.MaxTradeParams",
-                  },
-                  typeName: {
-                    id: 14266,
-                    nodeType: "UserDefinedTypeName",
-                    pathNode: {
-                      id: 14265,
-                      name: "HyperdriveMath.MaxTradeParams",
-                      nameLocations: ["5506:14:46", "5521:14:46"],
-                      nodeType: "IdentifierPath",
-                      referencedDeclaration: 8934,
-                      src: "5506:29:46",
-                    },
-                    referencedDeclaration: 8934,
-                    src: "5506:29:46",
-                    typeDescriptions: {
-                      typeIdentifier:
-                        "t_struct$_MaxTradeParams_$8934_storage_ptr",
-                      typeString: "struct HyperdriveMath.MaxTradeParams",
-                    },
-                  },
-                  visibility: "internal",
-                },
-                {
-                  constant: false,
-                  id: 14269,
-                  mutability: "mutable",
-                  name: "_checkpointExposure",
-                  nameLocation: "5567:19:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14284,
-                  src: "5560:26:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_int256",
-                    typeString: "int256",
-                  },
-                  typeName: {
-                    id: 14268,
-                    name: "int256",
-                    nodeType: "ElementaryTypeName",
-                    src: "5560:6:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_int256",
-                      typeString: "int256",
-                    },
-                  },
-                  visibility: "internal",
-                },
-                {
-                  constant: false,
-                  id: 14271,
-                  mutability: "mutable",
-                  name: "_maxIterations",
-                  nameLocation: "5604:14:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14284,
-                  src: "5596:22:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
-                  },
-                  typeName: {
-                    id: 14270,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "5596:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
-                  },
-                  visibility: "internal",
-                },
-              ],
-              src: "5496:128:46",
-            },
-            returnParameters: {
-              id: 14275,
-              nodeType: "ParameterList",
-              parameters: [
-                {
-                  constant: false,
-                  id: 14274,
-                  mutability: "mutable",
-                  name: "",
-                  nameLocation: "-1:-1:-1",
-                  nodeType: "VariableDeclaration",
-                  scope: 14284,
-                  src: "5648:7:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
-                  },
-                  typeName: {
-                    id: 14273,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "5648:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
-                  },
-                  visibility: "internal",
-                },
-              ],
-              src: "5647:9:46",
-            },
-            scope: 14383,
-            stateMutability: "pure",
-            virtual: false,
-            visibility: "external",
-          },
-          {
-            id: 14310,
-            nodeType: "FunctionDefinition",
-            src: "5839:408:46",
-            nodes: [],
-            body: {
-              id: 14309,
-              nodeType: "Block",
-              src: "6034:213:46",
-              nodes: [],
-              statements: [
-                {
-                  assignments: [14298],
-                  declarations: [
+                  "declarations": [
                     {
-                      constant: false,
-                      id: 14298,
-                      mutability: "mutable",
-                      name: "result",
-                      nameLocation: "6052:6:46",
-                      nodeType: "VariableDeclaration",
-                      scope: 14309,
-                      src: "6044:14:46",
-                      stateVariable: false,
-                      storageLocation: "default",
-                      typeDescriptions: {
-                        typeIdentifier: "t_uint256",
-                        typeString: "uint256",
+                      "constant": false,
+                      "id": 14249,
+                      "mutability": "mutable",
+                      "name": "result1",
+                      "nameLocation": "5267:7:46",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 14263,
+                      "src": "5259:15:46",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
                       },
-                      typeName: {
-                        id: 14297,
-                        name: "uint256",
-                        nodeType: "ElementaryTypeName",
-                        src: "6044:7:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                      "typeName": {
+                        "id": 14248,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "5259:7:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       },
-                      visibility: "internal",
+                      "visibility": "internal"
                     },
-                  ],
-                  id: 14306,
-                  initialValue: {
-                    arguments: [
-                      {
-                        id: 14301,
-                        name: "_shareReserves",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14286,
-                        src: "6108:14:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
-                      },
-                      {
-                        id: 14302,
-                        name: "_bondReserves",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14288,
-                        src: "6136:13:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
-                      },
-                      {
-                        id: 14303,
-                        name: "_initialSharePrice",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14290,
-                        src: "6163:18:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
-                      },
-                      {
-                        id: 14304,
-                        name: "_timeStretch",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14292,
-                        src: "6195:12:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
-                      },
-                    ],
-                    expression: {
-                      argumentTypes: [
-                        {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
-                        {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
-                        {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
-                        {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
-                      ],
-                      expression: {
-                        id: 14299,
-                        name: "HyperdriveMath",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 10772,
-                        src: "6061:14:46",
-                        typeDescriptions: {
-                          typeIdentifier:
-                            "t_type$_t_contract$_HyperdriveMath_$10772_$",
-                          typeString: "type(library HyperdriveMath)",
-                        },
-                      },
-                      id: 14300,
-                      isConstant: false,
-                      isLValue: false,
-                      isPure: false,
-                      lValueRequested: false,
-                      memberLocation: "6076:18:46",
-                      memberName: "calculateSpotPrice",
-                      nodeType: "MemberAccess",
-                      referencedDeclaration: 8533,
-                      src: "6061:33:46",
-                      typeDescriptions: {
-                        typeIdentifier:
-                          "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
-                        typeString:
-                          "function (uint256,uint256,uint256,uint256) pure returns (uint256)",
-                      },
-                    },
-                    id: 14305,
-                    isConstant: false,
-                    isLValue: false,
-                    isPure: false,
-                    kind: "functionCall",
-                    lValueRequested: false,
-                    nameLocations: [],
-                    names: [],
-                    nodeType: "FunctionCall",
-                    src: "6061:156:46",
-                    tryCall: false,
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
-                  },
-                  nodeType: "VariableDeclarationStatement",
-                  src: "6044:173:46",
-                },
-                {
-                  expression: {
-                    id: 14307,
-                    name: "result",
-                    nodeType: "Identifier",
-                    overloadedDeclarations: [],
-                    referencedDeclaration: 14298,
-                    src: "6234:6:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
-                  },
-                  functionReturnParameters: 14296,
-                  id: 14308,
-                  nodeType: "Return",
-                  src: "6227:13:46",
-                },
-              ],
-            },
-            functionSelector: "2471caed",
-            implemented: true,
-            kind: "function",
-            modifiers: [],
-            name: "calculateSpotPrice",
-            nameLocation: "5848:18:46",
-            parameters: {
-              id: 14293,
-              nodeType: "ParameterList",
-              parameters: [
-                {
-                  constant: false,
-                  id: 14286,
-                  mutability: "mutable",
-                  name: "_shareReserves",
-                  nameLocation: "5884:14:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14310,
-                  src: "5876:22:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
-                  },
-                  typeName: {
-                    id: 14285,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "5876:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
-                  },
-                  visibility: "internal",
-                },
-                {
-                  constant: false,
-                  id: 14288,
-                  mutability: "mutable",
-                  name: "_bondReserves",
-                  nameLocation: "5916:13:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14310,
-                  src: "5908:21:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
-                  },
-                  typeName: {
-                    id: 14287,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "5908:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
-                  },
-                  visibility: "internal",
-                },
-                {
-                  constant: false,
-                  id: 14290,
-                  mutability: "mutable",
-                  name: "_initialSharePrice",
-                  nameLocation: "5947:18:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14310,
-                  src: "5939:26:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
-                  },
-                  typeName: {
-                    id: 14289,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "5939:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
-                  },
-                  visibility: "internal",
-                },
-                {
-                  constant: false,
-                  id: 14292,
-                  mutability: "mutable",
-                  name: "_timeStretch",
-                  nameLocation: "5983:12:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14310,
-                  src: "5975:20:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
-                  },
-                  typeName: {
-                    id: 14291,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "5975:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
-                  },
-                  visibility: "internal",
-                },
-              ],
-              src: "5866:135:46",
-            },
-            returnParameters: {
-              id: 14296,
-              nodeType: "ParameterList",
-              parameters: [
-                {
-                  constant: false,
-                  id: 14295,
-                  mutability: "mutable",
-                  name: "",
-                  nameLocation: "-1:-1:-1",
-                  nodeType: "VariableDeclaration",
-                  scope: 14310,
-                  src: "6025:7:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
-                  },
-                  typeName: {
-                    id: 14294,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "6025:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
-                  },
-                  visibility: "internal",
-                },
-              ],
-              src: "6024:9:46",
-            },
-            scope: 14383,
-            stateMutability: "pure",
-            virtual: false,
-            visibility: "external",
-          },
-          {
-            id: 14324,
-            nodeType: "FunctionDefinition",
-            src: "6253:196:46",
-            nodes: [],
-            body: {
-              id: 14323,
-              nodeType: "Block",
-              src: "6380:69:46",
-              nodes: [],
-              statements: [
-                {
-                  expression: {
-                    arguments: [
-                      {
-                        id: 14320,
-                        name: "_params",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14313,
-                        src: "6434:7:46",
-                        typeDescriptions: {
-                          typeIdentifier:
-                            "t_struct$_PresentValueParams_$10414_memory_ptr",
-                          typeString:
-                            "struct HyperdriveMath.PresentValueParams memory",
-                        },
-                      },
-                    ],
-                    expression: {
-                      argumentTypes: [
-                        {
-                          typeIdentifier:
-                            "t_struct$_PresentValueParams_$10414_memory_ptr",
-                          typeString:
-                            "struct HyperdriveMath.PresentValueParams memory",
-                        },
-                      ],
-                      expression: {
-                        id: 14318,
-                        name: "HyperdriveMath",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 10772,
-                        src: "6397:14:46",
-                        typeDescriptions: {
-                          typeIdentifier:
-                            "t_type$_t_contract$_HyperdriveMath_$10772_$",
-                          typeString: "type(library HyperdriveMath)",
-                        },
-                      },
-                      id: 14319,
-                      isConstant: false,
-                      isLValue: false,
-                      isPure: false,
-                      lValueRequested: false,
-                      memberLocation: "6412:21:46",
-                      memberName: "calculatePresentValue",
-                      nodeType: "MemberAccess",
-                      referencedDeclaration: 10656,
-                      src: "6397:36:46",
-                      typeDescriptions: {
-                        typeIdentifier:
-                          "t_function_internal_pure$_t_struct$_PresentValueParams_$10414_memory_ptr_$returns$_t_uint256_$",
-                        typeString:
-                          "function (struct HyperdriveMath.PresentValueParams memory) pure returns (uint256)",
-                      },
-                    },
-                    id: 14321,
-                    isConstant: false,
-                    isLValue: false,
-                    isPure: false,
-                    kind: "functionCall",
-                    lValueRequested: false,
-                    nameLocations: [],
-                    names: [],
-                    nodeType: "FunctionCall",
-                    src: "6397:45:46",
-                    tryCall: false,
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
-                  },
-                  functionReturnParameters: 14317,
-                  id: 14322,
-                  nodeType: "Return",
-                  src: "6390:52:46",
-                },
-              ],
-            },
-            functionSelector: "37043a53",
-            implemented: true,
-            kind: "function",
-            modifiers: [],
-            name: "calculatePresentValue",
-            nameLocation: "6262:21:46",
-            parameters: {
-              id: 14314,
-              nodeType: "ParameterList",
-              parameters: [
-                {
-                  constant: false,
-                  id: 14313,
-                  mutability: "mutable",
-                  name: "_params",
-                  nameLocation: "6334:7:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14324,
-                  src: "6293:48:46",
-                  stateVariable: false,
-                  storageLocation: "memory",
-                  typeDescriptions: {
-                    typeIdentifier:
-                      "t_struct$_PresentValueParams_$10414_memory_ptr",
-                    typeString: "struct HyperdriveMath.PresentValueParams",
-                  },
-                  typeName: {
-                    id: 14312,
-                    nodeType: "UserDefinedTypeName",
-                    pathNode: {
-                      id: 14311,
-                      name: "HyperdriveMath.PresentValueParams",
-                      nameLocations: ["6293:14:46", "6308:18:46"],
-                      nodeType: "IdentifierPath",
-                      referencedDeclaration: 10414,
-                      src: "6293:33:46",
-                    },
-                    referencedDeclaration: 10414,
-                    src: "6293:33:46",
-                    typeDescriptions: {
-                      typeIdentifier:
-                        "t_struct$_PresentValueParams_$10414_storage_ptr",
-                      typeString: "struct HyperdriveMath.PresentValueParams",
-                    },
-                  },
-                  visibility: "internal",
-                },
-              ],
-              src: "6283:64:46",
-            },
-            returnParameters: {
-              id: 14317,
-              nodeType: "ParameterList",
-              parameters: [
-                {
-                  constant: false,
-                  id: 14316,
-                  mutability: "mutable",
-                  name: "",
-                  nameLocation: "-1:-1:-1",
-                  nodeType: "VariableDeclaration",
-                  scope: 14324,
-                  src: "6371:7:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
-                  },
-                  typeName: {
-                    id: 14315,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "6371:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
-                  },
-                  visibility: "internal",
-                },
-              ],
-              src: "6370:9:46",
-            },
-            scope: 14383,
-            stateMutability: "pure",
-            virtual: false,
-            visibility: "external",
-          },
-          {
-            id: 14356,
-            nodeType: "FunctionDefinition",
-            src: "6455:512:46",
-            nodes: [],
-            body: {
-              id: 14355,
-              nodeType: "Block",
-              src: "6706:261:46",
-              nodes: [],
-              statements: [
-                {
-                  assignments: [14342],
-                  declarations: [
                     {
-                      constant: false,
-                      id: 14342,
-                      mutability: "mutable",
-                      name: "result",
-                      nameLocation: "6724:6:46",
-                      nodeType: "VariableDeclaration",
-                      scope: 14355,
-                      src: "6716:14:46",
-                      stateVariable: false,
-                      storageLocation: "default",
-                      typeDescriptions: {
-                        typeIdentifier: "t_uint256",
-                        typeString: "uint256",
+                      "constant": false,
+                      "id": 14251,
+                      "mutability": "mutable",
+                      "name": "result2",
+                      "nameLocation": "5284:7:46",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 14263,
+                      "src": "5276:15:46",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
                       },
-                      typeName: {
-                        id: 14341,
-                        name: "uint256",
-                        nodeType: "ElementaryTypeName",
-                        src: "6716:7:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                      "typeName": {
+                        "id": 14250,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "5276:7:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       },
-                      visibility: "internal",
-                    },
+                      "visibility": "internal"
+                    }
                   ],
-                  id: 14352,
-                  initialValue: {
-                    arguments: [
+                  "id": 14258,
+                  "initialValue": {
+                    "arguments": [
                       {
-                        id: 14345,
-                        name: "_bondAmount",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14326,
-                        src: "6784:11:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                        "id": 14254,
+                        "name": "_params",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14237,
+                        "src": "5340:7:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_MaxTradeParams_$8934_memory_ptr",
+                          "typeString": "struct HyperdriveMath.MaxTradeParams memory"
+                        }
                       },
                       {
-                        id: 14346,
-                        name: "_shareAmount",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14328,
-                        src: "6809:12:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                        "id": 14255,
+                        "name": "_checkpointLongExposure",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14239,
+                        "src": "5361:23:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_int256",
+                          "typeString": "int256"
+                        }
                       },
                       {
-                        id: 14347,
-                        name: "_openSharePrice",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14330,
-                        src: "6835:15:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
-                      },
-                      {
-                        id: 14348,
-                        name: "_closeSharePrice",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14332,
-                        src: "6864:16:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
-                      },
-                      {
-                        id: 14349,
-                        name: "_sharePrice",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14334,
-                        src: "6894:11:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
-                      },
-                      {
-                        id: 14350,
-                        name: "_flatFee",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14336,
-                        src: "6919:8:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
-                      },
+                        "id": 14256,
+                        "name": "_maxIterations",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14241,
+                        "src": "5398:14:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
                     ],
-                    expression: {
-                      argumentTypes: [
+                    "expression": {
+                      "argumentTypes": [
                         {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
+                          "typeIdentifier": "t_struct$_MaxTradeParams_$8934_memory_ptr",
+                          "typeString": "struct HyperdriveMath.MaxTradeParams memory"
                         },
                         {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
+                          "typeIdentifier": "t_int256",
+                          "typeString": "int256"
                         },
                         {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
-                        {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
-                        {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
-                        {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       ],
-                      expression: {
-                        id: 14343,
-                        name: "HyperdriveMath",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 10772,
-                        src: "6733:14:46",
-                        typeDescriptions: {
-                          typeIdentifier:
-                            "t_type$_t_contract$_HyperdriveMath_$10772_$",
-                          typeString: "type(library HyperdriveMath)",
-                        },
+                      "expression": {
+                        "id": 14252,
+                        "name": "HyperdriveMath",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10772,
+                        "src": "5295:14:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$10772_$",
+                          "typeString": "type(library HyperdriveMath)"
+                        }
                       },
-                      id: 14344,
-                      isConstant: false,
-                      isLValue: false,
-                      isPure: false,
-                      lValueRequested: false,
-                      memberLocation: "6748:22:46",
-                      memberName: "calculateShortProceeds",
-                      nodeType: "MemberAccess",
-                      referencedDeclaration: 10707,
-                      src: "6733:37:46",
-                      typeDescriptions: {
-                        typeIdentifier:
-                          "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
-                        typeString:
-                          "function (uint256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256)",
+                      "id": 14253,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "5310:16:46",
+                      "memberName": "calculateMaxLong",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 9154,
+                      "src": "5295:31:46",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_struct$_MaxTradeParams_$8934_memory_ptr_$_t_int256_$_t_uint256_$returns$_t_uint256_$_t_uint256_$",
+                        "typeString": "function (struct HyperdriveMath.MaxTradeParams memory,int256,uint256) pure returns (uint256,uint256)"
+                      }
+                    },
+                    "id": 14257,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "5295:127:46",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$_t_uint256_$_t_uint256_$",
+                      "typeString": "tuple(uint256,uint256)"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "5258:164:46"
+                },
+                {
+                  "expression": {
+                    "components": [
+                      {
+                        "id": 14259,
+                        "name": "result1",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14249,
+                        "src": "5440:7:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       },
-                    },
-                    id: 14351,
-                    isConstant: false,
-                    isLValue: false,
-                    isPure: false,
-                    kind: "functionCall",
-                    lValueRequested: false,
-                    nameLocations: [],
-                    names: [],
-                    nodeType: "FunctionCall",
-                    src: "6733:204:46",
-                    tryCall: false,
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                      {
+                        "id": 14260,
+                        "name": "result2",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14251,
+                        "src": "5449:7:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "id": 14261,
+                    "isConstant": false,
+                    "isInlineArray": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "TupleExpression",
+                    "src": "5439:18:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$_t_uint256_$_t_uint256_$",
+                      "typeString": "tuple(uint256,uint256)"
+                    }
                   },
-                  nodeType: "VariableDeclarationStatement",
-                  src: "6716:221:46",
-                },
-                {
-                  expression: {
-                    id: 14353,
-                    name: "result",
-                    nodeType: "Identifier",
-                    overloadedDeclarations: [],
-                    referencedDeclaration: 14342,
-                    src: "6954:6:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
-                  },
-                  functionReturnParameters: 14340,
-                  id: 14354,
-                  nodeType: "Return",
-                  src: "6947:13:46",
-                },
-              ],
+                  "functionReturnParameters": 14247,
+                  "id": 14262,
+                  "nodeType": "Return",
+                  "src": "5432:25:46"
+                }
+              ]
             },
-            functionSelector: "de31b2ab",
-            implemented: true,
-            kind: "function",
-            modifiers: [],
-            name: "calculateShortProceeds",
-            nameLocation: "6464:22:46",
-            parameters: {
-              id: 14337,
-              nodeType: "ParameterList",
-              parameters: [
+            "functionSelector": "a40a6be8",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "calculateMaxLong",
+            "nameLocation": "5058:16:46",
+            "parameters": {
+              "id": 14242,
+              "nodeType": "ParameterList",
+              "parameters": [
                 {
-                  constant: false,
-                  id: 14326,
-                  mutability: "mutable",
-                  name: "_bondAmount",
-                  nameLocation: "6504:11:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14356,
-                  src: "6496:19:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14237,
+                  "mutability": "mutable",
+                  "name": "_params",
+                  "nameLocation": "5121:7:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14264,
+                  "src": "5084:44:46",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_MaxTradeParams_$8934_memory_ptr",
+                    "typeString": "struct HyperdriveMath.MaxTradeParams"
                   },
-                  typeName: {
-                    id: 14325,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "6496:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
+                  "typeName": {
+                    "id": 14236,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 14235,
+                      "name": "HyperdriveMath.MaxTradeParams",
+                      "nameLocations": [
+                        "5084:14:46",
+                        "5099:14:46"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 8934,
+                      "src": "5084:29:46"
                     },
+                    "referencedDeclaration": 8934,
+                    "src": "5084:29:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_MaxTradeParams_$8934_storage_ptr",
+                      "typeString": "struct HyperdriveMath.MaxTradeParams"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 14328,
-                  mutability: "mutable",
-                  name: "_shareAmount",
-                  nameLocation: "6533:12:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14356,
-                  src: "6525:20:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14239,
+                  "mutability": "mutable",
+                  "name": "_checkpointLongExposure",
+                  "nameLocation": "5145:23:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14264,
+                  "src": "5138:30:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
                   },
-                  typeName: {
-                    id: 14327,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "6525:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14238,
+                    "name": "int256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5138:6:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 14330,
-                  mutability: "mutable",
-                  name: "_openSharePrice",
-                  nameLocation: "6563:15:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14356,
-                  src: "6555:23:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14241,
+                  "mutability": "mutable",
+                  "name": "_maxIterations",
+                  "nameLocation": "5186:14:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14264,
+                  "src": "5178:22:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14329,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "6555:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14240,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5178:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
-                },
-                {
-                  constant: false,
-                  id: 14332,
-                  mutability: "mutable",
-                  name: "_closeSharePrice",
-                  nameLocation: "6596:16:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14356,
-                  src: "6588:24:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
-                  },
-                  typeName: {
-                    id: 14331,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "6588:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
-                  },
-                  visibility: "internal",
-                },
-                {
-                  constant: false,
-                  id: 14334,
-                  mutability: "mutable",
-                  name: "_sharePrice",
-                  nameLocation: "6630:11:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14356,
-                  src: "6622:19:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
-                  },
-                  typeName: {
-                    id: 14333,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "6622:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
-                  },
-                  visibility: "internal",
-                },
-                {
-                  constant: false,
-                  id: 14336,
-                  mutability: "mutable",
-                  name: "_flatFee",
-                  nameLocation: "6659:8:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14356,
-                  src: "6651:16:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
-                  },
-                  typeName: {
-                    id: 14335,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "6651:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
-                  },
-                  visibility: "internal",
-                },
+                  "visibility": "internal"
+                }
               ],
-              src: "6486:187:46",
+              "src": "5074:132:46"
             },
-            returnParameters: {
-              id: 14340,
-              nodeType: "ParameterList",
-              parameters: [
+            "returnParameters": {
+              "id": 14247,
+              "nodeType": "ParameterList",
+              "parameters": [
                 {
-                  constant: false,
-                  id: 14339,
-                  mutability: "mutable",
-                  name: "",
-                  nameLocation: "-1:-1:-1",
-                  nodeType: "VariableDeclaration",
-                  scope: 14356,
-                  src: "6697:7:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14244,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14264,
+                  "src": "5230:7:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14338,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "6697:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14243,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5230:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
+                {
+                  "constant": false,
+                  "id": 14246,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14264,
+                  "src": "5239:7:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14245,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5239:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
               ],
-              src: "6696:9:46",
+              "src": "5229:18:46"
             },
-            scope: 14383,
-            stateMutability: "pure",
-            virtual: false,
-            visibility: "external",
+            "scope": 14383,
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "external"
           },
           {
-            id: 14382,
-            nodeType: "FunctionDefinition",
-            src: "6973:408:46",
-            nodes: [],
-            body: {
-              id: 14381,
-              nodeType: "Block",
-              src: "7168:213:46",
-              nodes: [],
-              statements: [
+            "id": 14284,
+            "nodeType": "FunctionDefinition",
+            "src": "5470:363:46",
+            "nodes": [],
+            "body": {
+              "id": 14283,
+              "nodeType": "Block",
+              "src": "5657:176:46",
+              "nodes": [],
+              "statements": [
                 {
-                  assignments: [14370],
-                  declarations: [
-                    {
-                      constant: false,
-                      id: 14370,
-                      mutability: "mutable",
-                      name: "result",
-                      nameLocation: "7186:6:46",
-                      nodeType: "VariableDeclaration",
-                      scope: 14381,
-                      src: "7178:14:46",
-                      stateVariable: false,
-                      storageLocation: "default",
-                      typeDescriptions: {
-                        typeIdentifier: "t_uint256",
-                        typeString: "uint256",
-                      },
-                      typeName: {
-                        id: 14369,
-                        name: "uint256",
-                        nodeType: "ElementaryTypeName",
-                        src: "7178:7:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
-                      },
-                      visibility: "internal",
-                    },
-                  ],
-                  id: 14378,
-                  initialValue: {
-                    arguments: [
+                  "expression": {
+                    "arguments": [
                       {
-                        id: 14373,
-                        name: "_bondAmount",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14358,
-                        src: "7246:11:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                        "id": 14278,
+                        "name": "_params",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14267,
+                        "src": "5736:7:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_MaxTradeParams_$8934_memory_ptr",
+                          "typeString": "struct HyperdriveMath.MaxTradeParams memory"
+                        }
                       },
                       {
-                        id: 14374,
-                        name: "_openSharePrice",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14360,
-                        src: "7271:15:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                        "id": 14279,
+                        "name": "_checkpointExposure",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14269,
+                        "src": "5761:19:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_int256",
+                          "typeString": "int256"
+                        }
                       },
                       {
-                        id: 14375,
-                        name: "_closeSharePrice",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14362,
-                        src: "7300:16:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
-                      },
-                      {
-                        id: 14376,
-                        name: "_sharePrice",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 14364,
-                        src: "7330:11:46",
-                        typeDescriptions: {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
-                      },
+                        "id": 14280,
+                        "name": "_maxIterations",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14271,
+                        "src": "5798:14:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
                     ],
-                    expression: {
-                      argumentTypes: [
+                    "expression": {
+                      "argumentTypes": [
                         {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
+                          "typeIdentifier": "t_struct$_MaxTradeParams_$8934_memory_ptr",
+                          "typeString": "struct HyperdriveMath.MaxTradeParams memory"
                         },
                         {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
+                          "typeIdentifier": "t_int256",
+                          "typeString": "int256"
                         },
                         {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
-                        {
-                          typeIdentifier: "t_uint256",
-                          typeString: "uint256",
-                        },
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
                       ],
-                      expression: {
-                        id: 14371,
-                        name: "HyperdriveMath",
-                        nodeType: "Identifier",
-                        overloadedDeclarations: [],
-                        referencedDeclaration: 10772,
-                        src: "7195:14:46",
-                        typeDescriptions: {
-                          typeIdentifier:
-                            "t_type$_t_contract$_HyperdriveMath_$10772_$",
-                          typeString: "type(library HyperdriveMath)",
-                        },
+                      "expression": {
+                        "id": 14276,
+                        "name": "HyperdriveMath",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10772,
+                        "src": "5686:14:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$10772_$",
+                          "typeString": "type(library HyperdriveMath)"
+                        }
                       },
-                      id: 14372,
-                      isConstant: false,
-                      isLValue: false,
-                      isPure: false,
-                      lValueRequested: false,
-                      memberLocation: "7210:22:46",
-                      memberName: "calculateShortInterest",
-                      nodeType: "MemberAccess",
-                      referencedDeclaration: 10740,
-                      src: "7195:37:46",
-                      typeDescriptions: {
-                        typeIdentifier:
-                          "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
-                        typeString:
-                          "function (uint256,uint256,uint256,uint256) pure returns (uint256)",
-                      },
+                      "id": 14277,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "5701:17:46",
+                      "memberName": "calculateMaxShort",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 9900,
+                      "src": "5686:32:46",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_struct$_MaxTradeParams_$8934_memory_ptr_$_t_int256_$_t_uint256_$returns$_t_uint256_$",
+                        "typeString": "function (struct HyperdriveMath.MaxTradeParams memory,int256,uint256) pure returns (uint256)"
+                      }
                     },
-                    id: 14377,
-                    isConstant: false,
-                    isLValue: false,
-                    isPure: false,
-                    kind: "functionCall",
-                    lValueRequested: false,
-                    nameLocations: [],
-                    names: [],
-                    nodeType: "FunctionCall",
-                    src: "7195:156:46",
-                    tryCall: false,
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                    "id": 14281,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "5686:140:46",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  nodeType: "VariableDeclarationStatement",
-                  src: "7178:173:46",
-                },
-                {
-                  expression: {
-                    id: 14379,
-                    name: "result",
-                    nodeType: "Identifier",
-                    overloadedDeclarations: [],
-                    referencedDeclaration: 14370,
-                    src: "7368:6:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
-                  },
-                  functionReturnParameters: 14368,
-                  id: 14380,
-                  nodeType: "Return",
-                  src: "7361:13:46",
-                },
-              ],
+                  "functionReturnParameters": 14275,
+                  "id": 14282,
+                  "nodeType": "Return",
+                  "src": "5667:159:46"
+                }
+              ]
             },
-            functionSelector: "fdc30d61",
-            implemented: true,
-            kind: "function",
-            modifiers: [],
-            name: "calculateShortInterest",
-            nameLocation: "6982:22:46",
-            parameters: {
-              id: 14365,
-              nodeType: "ParameterList",
-              parameters: [
+            "functionSelector": "86ad02af",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "calculateMaxShort",
+            "nameLocation": "5479:17:46",
+            "parameters": {
+              "id": 14272,
+              "nodeType": "ParameterList",
+              "parameters": [
                 {
-                  constant: false,
-                  id: 14358,
-                  mutability: "mutable",
-                  name: "_bondAmount",
-                  nameLocation: "7022:11:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14382,
-                  src: "7014:19:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14267,
+                  "mutability": "mutable",
+                  "name": "_params",
+                  "nameLocation": "5543:7:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14284,
+                  "src": "5506:44:46",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_MaxTradeParams_$8934_memory_ptr",
+                    "typeString": "struct HyperdriveMath.MaxTradeParams"
                   },
-                  typeName: {
-                    id: 14357,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "7014:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
+                  "typeName": {
+                    "id": 14266,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 14265,
+                      "name": "HyperdriveMath.MaxTradeParams",
+                      "nameLocations": [
+                        "5506:14:46",
+                        "5521:14:46"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 8934,
+                      "src": "5506:29:46"
                     },
+                    "referencedDeclaration": 8934,
+                    "src": "5506:29:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_MaxTradeParams_$8934_storage_ptr",
+                      "typeString": "struct HyperdriveMath.MaxTradeParams"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 14360,
-                  mutability: "mutable",
-                  name: "_openSharePrice",
-                  nameLocation: "7051:15:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14382,
-                  src: "7043:23:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14269,
+                  "mutability": "mutable",
+                  "name": "_checkpointExposure",
+                  "nameLocation": "5567:19:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14284,
+                  "src": "5560:26:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
                   },
-                  typeName: {
-                    id: 14359,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "7043:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14268,
+                    "name": "int256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5560:6:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
                   },
-                  visibility: "internal",
+                  "visibility": "internal"
                 },
                 {
-                  constant: false,
-                  id: 14362,
-                  mutability: "mutable",
-                  name: "_closeSharePrice",
-                  nameLocation: "7084:16:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14382,
-                  src: "7076:24:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14271,
+                  "mutability": "mutable",
+                  "name": "_maxIterations",
+                  "nameLocation": "5604:14:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14284,
+                  "src": "5596:22:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14361,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "7076:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14270,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5596:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
-                },
-                {
-                  constant: false,
-                  id: 14364,
-                  mutability: "mutable",
-                  name: "_sharePrice",
-                  nameLocation: "7118:11:46",
-                  nodeType: "VariableDeclaration",
-                  scope: 14382,
-                  src: "7110:19:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
-                  },
-                  typeName: {
-                    id: 14363,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "7110:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
-                  },
-                  visibility: "internal",
-                },
+                  "visibility": "internal"
+                }
               ],
-              src: "7004:131:46",
+              "src": "5496:128:46"
             },
-            returnParameters: {
-              id: 14368,
-              nodeType: "ParameterList",
-              parameters: [
+            "returnParameters": {
+              "id": 14275,
+              "nodeType": "ParameterList",
+              "parameters": [
                 {
-                  constant: false,
-                  id: 14367,
-                  mutability: "mutable",
-                  name: "",
-                  nameLocation: "-1:-1:-1",
-                  nodeType: "VariableDeclaration",
-                  scope: 14382,
-                  src: "7159:7:46",
-                  stateVariable: false,
-                  storageLocation: "default",
-                  typeDescriptions: {
-                    typeIdentifier: "t_uint256",
-                    typeString: "uint256",
+                  "constant": false,
+                  "id": 14274,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14284,
+                  "src": "5648:7:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
                   },
-                  typeName: {
-                    id: 14366,
-                    name: "uint256",
-                    nodeType: "ElementaryTypeName",
-                    src: "7159:7:46",
-                    typeDescriptions: {
-                      typeIdentifier: "t_uint256",
-                      typeString: "uint256",
-                    },
+                  "typeName": {
+                    "id": 14273,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5648:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  visibility: "internal",
-                },
+                  "visibility": "internal"
+                }
               ],
-              src: "7158:9:46",
+              "src": "5647:9:46"
             },
-            scope: 14383,
-            stateMutability: "pure",
-            virtual: false,
-            visibility: "external",
+            "scope": 14383,
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "external"
           },
+          {
+            "id": 14310,
+            "nodeType": "FunctionDefinition",
+            "src": "5839:408:46",
+            "nodes": [],
+            "body": {
+              "id": 14309,
+              "nodeType": "Block",
+              "src": "6034:213:46",
+              "nodes": [],
+              "statements": [
+                {
+                  "assignments": [
+                    14298
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 14298,
+                      "mutability": "mutable",
+                      "name": "result",
+                      "nameLocation": "6052:6:46",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 14309,
+                      "src": "6044:14:46",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 14297,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "6044:7:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 14306,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "id": 14301,
+                        "name": "_shareReserves",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14286,
+                        "src": "6108:14:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 14302,
+                        "name": "_bondReserves",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14288,
+                        "src": "6136:13:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 14303,
+                        "name": "_initialSharePrice",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14290,
+                        "src": "6163:18:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 14304,
+                        "name": "_timeStretch",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14292,
+                        "src": "6195:12:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "id": 14299,
+                        "name": "HyperdriveMath",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10772,
+                        "src": "6061:14:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$10772_$",
+                          "typeString": "type(library HyperdriveMath)"
+                        }
+                      },
+                      "id": 14300,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "6076:18:46",
+                      "memberName": "calculateSpotPrice",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 8533,
+                      "src": "6061:33:46",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
+                        "typeString": "function (uint256,uint256,uint256,uint256) pure returns (uint256)"
+                      }
+                    },
+                    "id": 14305,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "6061:156:46",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "6044:173:46"
+                },
+                {
+                  "expression": {
+                    "id": 14307,
+                    "name": "result",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 14298,
+                    "src": "6234:6:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 14296,
+                  "id": 14308,
+                  "nodeType": "Return",
+                  "src": "6227:13:46"
+                }
+              ]
+            },
+            "functionSelector": "2471caed",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "calculateSpotPrice",
+            "nameLocation": "5848:18:46",
+            "parameters": {
+              "id": 14293,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14286,
+                  "mutability": "mutable",
+                  "name": "_shareReserves",
+                  "nameLocation": "5884:14:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14310,
+                  "src": "5876:22:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14285,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5876:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14288,
+                  "mutability": "mutable",
+                  "name": "_bondReserves",
+                  "nameLocation": "5916:13:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14310,
+                  "src": "5908:21:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14287,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5908:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14290,
+                  "mutability": "mutable",
+                  "name": "_initialSharePrice",
+                  "nameLocation": "5947:18:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14310,
+                  "src": "5939:26:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14289,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5939:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14292,
+                  "mutability": "mutable",
+                  "name": "_timeStretch",
+                  "nameLocation": "5983:12:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14310,
+                  "src": "5975:20:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14291,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5975:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5866:135:46"
+            },
+            "returnParameters": {
+              "id": 14296,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14295,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14310,
+                  "src": "6025:7:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14294,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6025:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6024:9:46"
+            },
+            "scope": 14383,
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 14324,
+            "nodeType": "FunctionDefinition",
+            "src": "6253:196:46",
+            "nodes": [],
+            "body": {
+              "id": 14323,
+              "nodeType": "Block",
+              "src": "6380:69:46",
+              "nodes": [],
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 14320,
+                        "name": "_params",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14313,
+                        "src": "6434:7:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_PresentValueParams_$10414_memory_ptr",
+                          "typeString": "struct HyperdriveMath.PresentValueParams memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_struct$_PresentValueParams_$10414_memory_ptr",
+                          "typeString": "struct HyperdriveMath.PresentValueParams memory"
+                        }
+                      ],
+                      "expression": {
+                        "id": 14318,
+                        "name": "HyperdriveMath",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10772,
+                        "src": "6397:14:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$10772_$",
+                          "typeString": "type(library HyperdriveMath)"
+                        }
+                      },
+                      "id": 14319,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "6412:21:46",
+                      "memberName": "calculatePresentValue",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 10656,
+                      "src": "6397:36:46",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_struct$_PresentValueParams_$10414_memory_ptr_$returns$_t_uint256_$",
+                        "typeString": "function (struct HyperdriveMath.PresentValueParams memory) pure returns (uint256)"
+                      }
+                    },
+                    "id": 14321,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "6397:45:46",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 14317,
+                  "id": 14322,
+                  "nodeType": "Return",
+                  "src": "6390:52:46"
+                }
+              ]
+            },
+            "functionSelector": "37043a53",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "calculatePresentValue",
+            "nameLocation": "6262:21:46",
+            "parameters": {
+              "id": 14314,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14313,
+                  "mutability": "mutable",
+                  "name": "_params",
+                  "nameLocation": "6334:7:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14324,
+                  "src": "6293:48:46",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_PresentValueParams_$10414_memory_ptr",
+                    "typeString": "struct HyperdriveMath.PresentValueParams"
+                  },
+                  "typeName": {
+                    "id": 14312,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 14311,
+                      "name": "HyperdriveMath.PresentValueParams",
+                      "nameLocations": [
+                        "6293:14:46",
+                        "6308:18:46"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 10414,
+                      "src": "6293:33:46"
+                    },
+                    "referencedDeclaration": 10414,
+                    "src": "6293:33:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_PresentValueParams_$10414_storage_ptr",
+                      "typeString": "struct HyperdriveMath.PresentValueParams"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6283:64:46"
+            },
+            "returnParameters": {
+              "id": 14317,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14316,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14324,
+                  "src": "6371:7:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14315,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6371:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6370:9:46"
+            },
+            "scope": 14383,
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 14356,
+            "nodeType": "FunctionDefinition",
+            "src": "6455:512:46",
+            "nodes": [],
+            "body": {
+              "id": 14355,
+              "nodeType": "Block",
+              "src": "6706:261:46",
+              "nodes": [],
+              "statements": [
+                {
+                  "assignments": [
+                    14342
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 14342,
+                      "mutability": "mutable",
+                      "name": "result",
+                      "nameLocation": "6724:6:46",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 14355,
+                      "src": "6716:14:46",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 14341,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "6716:7:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 14352,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "id": 14345,
+                        "name": "_bondAmount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14326,
+                        "src": "6784:11:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 14346,
+                        "name": "_shareAmount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14328,
+                        "src": "6809:12:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 14347,
+                        "name": "_openSharePrice",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14330,
+                        "src": "6835:15:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 14348,
+                        "name": "_closeSharePrice",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14332,
+                        "src": "6864:16:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 14349,
+                        "name": "_sharePrice",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14334,
+                        "src": "6894:11:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 14350,
+                        "name": "_flatFee",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14336,
+                        "src": "6919:8:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "id": 14343,
+                        "name": "HyperdriveMath",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10772,
+                        "src": "6733:14:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$10772_$",
+                          "typeString": "type(library HyperdriveMath)"
+                        }
+                      },
+                      "id": 14344,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "6748:22:46",
+                      "memberName": "calculateShortProceeds",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 10707,
+                      "src": "6733:37:46",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
+                        "typeString": "function (uint256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256)"
+                      }
+                    },
+                    "id": 14351,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "6733:204:46",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "6716:221:46"
+                },
+                {
+                  "expression": {
+                    "id": 14353,
+                    "name": "result",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 14342,
+                    "src": "6954:6:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 14340,
+                  "id": 14354,
+                  "nodeType": "Return",
+                  "src": "6947:13:46"
+                }
+              ]
+            },
+            "functionSelector": "de31b2ab",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "calculateShortProceeds",
+            "nameLocation": "6464:22:46",
+            "parameters": {
+              "id": 14337,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14326,
+                  "mutability": "mutable",
+                  "name": "_bondAmount",
+                  "nameLocation": "6504:11:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14356,
+                  "src": "6496:19:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14325,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6496:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14328,
+                  "mutability": "mutable",
+                  "name": "_shareAmount",
+                  "nameLocation": "6533:12:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14356,
+                  "src": "6525:20:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14327,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6525:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14330,
+                  "mutability": "mutable",
+                  "name": "_openSharePrice",
+                  "nameLocation": "6563:15:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14356,
+                  "src": "6555:23:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14329,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6555:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14332,
+                  "mutability": "mutable",
+                  "name": "_closeSharePrice",
+                  "nameLocation": "6596:16:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14356,
+                  "src": "6588:24:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14331,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6588:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14334,
+                  "mutability": "mutable",
+                  "name": "_sharePrice",
+                  "nameLocation": "6630:11:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14356,
+                  "src": "6622:19:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14333,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6622:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14336,
+                  "mutability": "mutable",
+                  "name": "_flatFee",
+                  "nameLocation": "6659:8:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14356,
+                  "src": "6651:16:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14335,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6651:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6486:187:46"
+            },
+            "returnParameters": {
+              "id": 14340,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14339,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14356,
+                  "src": "6697:7:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14338,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6697:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6696:9:46"
+            },
+            "scope": 14383,
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 14382,
+            "nodeType": "FunctionDefinition",
+            "src": "6973:408:46",
+            "nodes": [],
+            "body": {
+              "id": 14381,
+              "nodeType": "Block",
+              "src": "7168:213:46",
+              "nodes": [],
+              "statements": [
+                {
+                  "assignments": [
+                    14370
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 14370,
+                      "mutability": "mutable",
+                      "name": "result",
+                      "nameLocation": "7186:6:46",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 14381,
+                      "src": "7178:14:46",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 14369,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "7178:7:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 14378,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "id": 14373,
+                        "name": "_bondAmount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14358,
+                        "src": "7246:11:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 14374,
+                        "name": "_openSharePrice",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14360,
+                        "src": "7271:15:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 14375,
+                        "name": "_closeSharePrice",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14362,
+                        "src": "7300:16:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 14376,
+                        "name": "_sharePrice",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14364,
+                        "src": "7330:11:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "id": 14371,
+                        "name": "HyperdriveMath",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10772,
+                        "src": "7195:14:46",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$10772_$",
+                          "typeString": "type(library HyperdriveMath)"
+                        }
+                      },
+                      "id": 14372,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "7210:22:46",
+                      "memberName": "calculateShortInterest",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 10740,
+                      "src": "7195:37:46",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
+                        "typeString": "function (uint256,uint256,uint256,uint256) pure returns (uint256)"
+                      }
+                    },
+                    "id": 14377,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "7195:156:46",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "7178:173:46"
+                },
+                {
+                  "expression": {
+                    "id": 14379,
+                    "name": "result",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 14370,
+                    "src": "7368:6:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 14368,
+                  "id": 14380,
+                  "nodeType": "Return",
+                  "src": "7361:13:46"
+                }
+              ]
+            },
+            "functionSelector": "fdc30d61",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "calculateShortInterest",
+            "nameLocation": "6982:22:46",
+            "parameters": {
+              "id": 14365,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14358,
+                  "mutability": "mutable",
+                  "name": "_bondAmount",
+                  "nameLocation": "7022:11:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14382,
+                  "src": "7014:19:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14357,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "7014:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14360,
+                  "mutability": "mutable",
+                  "name": "_openSharePrice",
+                  "nameLocation": "7051:15:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14382,
+                  "src": "7043:23:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14359,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "7043:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14362,
+                  "mutability": "mutable",
+                  "name": "_closeSharePrice",
+                  "nameLocation": "7084:16:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14382,
+                  "src": "7076:24:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14361,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "7076:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14364,
+                  "mutability": "mutable",
+                  "name": "_sharePrice",
+                  "nameLocation": "7118:11:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14382,
+                  "src": "7110:19:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14363,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "7110:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "7004:131:46"
+            },
+            "returnParameters": {
+              "id": 14368,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14367,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14382,
+                  "src": "7159:7:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14366,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "7159:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "7158:9:46"
+            },
+            "scope": 14383,
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "external"
+          }
         ],
-        abstract: false,
-        baseContracts: [],
-        canonicalName: "MockHyperdriveMath",
-        contractDependencies: [],
-        contractKind: "contract",
-        fullyImplemented: true,
-        linearizedBaseContracts: [14383],
-        name: "MockHyperdriveMath",
-        nameLocation: "144:18:46",
-        scope: 14384,
-        usedErrors: [7004, 7088, 7090, 7097],
-      },
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "MockHyperdriveMath",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "linearizedBaseContracts": [
+          14383
+        ],
+        "name": "MockHyperdriveMath",
+        "nameLocation": "144:18:46",
+        "scope": 14384,
+        "usedErrors": [
+          7004,
+          7088,
+          7090,
+          7097
+        ]
+      }
     ],
-    license: "Apache-2.0",
+    "license": "Apache-2.0"
   },
-  id: 46,
-} as const;
+  "id": 46
+}

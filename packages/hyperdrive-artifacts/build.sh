@@ -19,19 +19,33 @@ fi
 
 out_path=../dist
 
-# Reset the dist folder
+# # Reset the dist folder
 rm -rf $out_path
 mkdir -p $out_path
 
-# Loop through all json files in compiled contracts
-for file in $(find out -name '*.json'); do
-  # Get the name of the file
-  contract_name=$(basename $file | sed 's/.json//g')
+# Loop through each subfolder in the out folder
+for dir in out/*; do
 
-  # Create a new file in the dist folder with the artifact exported as a const
+  # Get the name of the contract
+  dir_name=$(basename $dir)
+
+  # Ignore test contract directories which end with ".t.sol"
+  if [[ $dir_name == *".t.sol" ]]; then
+    continue
+  fi
+
+  # Get the name of the contract by removing ".sol" from the end of the
+  # directory name
+  contract_name=${dir_name%.sol}
+
+  in_file=$dir/$contract_name.json
+  out_file=$out_path/$contract_name.ts
   {
     echo "export const $contract_name = "
-    cat $file
+    cat $in_file
     echo " as const;"
-  } >$out_path/$contract_name.ts
+  } >$out_file
+
+  # Copy the contract to the dist folder
+  cp -r $in_file $out_file
 done
