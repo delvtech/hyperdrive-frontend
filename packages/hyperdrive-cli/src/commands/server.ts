@@ -50,7 +50,7 @@ export const { command, describe, builder, handler } = createCommandModule({
   handler: async (args) => {
     hre.config.networks.hardhat = {
       ...hre.config.networks.hardhat,
-      chainId: args.chainId,
+      chainId: args.chainId || 31337,
 
       // TODO: Figure out how to set host
       // host: args.host,

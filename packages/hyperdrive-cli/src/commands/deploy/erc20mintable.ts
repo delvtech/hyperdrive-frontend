@@ -141,7 +141,7 @@ export async function deployERC20Mintable({
       admin as `0x${string}`,
       isCompetitionMode,
     ],
-    bytecode: ERC20Mintable.bytecode.object as `0x${string}`,
+    bytecode: ERC20Mintable.bytecode.object,
     account,
     rpcUrl,
     chain,
