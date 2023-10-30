@@ -1,15 +1,17 @@
 import {
+  Abi,
   Chain,
   createPublicClient,
   createWalletClient,
+  DeployContractParameters,
   Hex,
   http,
   PrivateKeyAccount,
 } from "viem";
 
-interface DeployContractOptions {
-  abi: any;
-  args: any[];
+interface DeployContractOptions<TAbi extends Abi | readonly unknown[]> {
+  abi: TAbi;
+  args: DeployContractParameters<TAbi>["args"];
   bytecode: Hex;
   account: PrivateKeyAccount;
   rpcUrl: string;
@@ -17,7 +19,7 @@ interface DeployContractOptions {
   onSubmitted?: (txHash: string) => void;
 }
 
-export async function deployContract({
+export async function deployContract<TAbi extends Abi | readonly unknown[]>({
   abi,
   args,
   bytecode,
@@ -25,7 +27,7 @@ export async function deployContract({
   rpcUrl,
   chain,
   onSubmitted,
-}: DeployContractOptions): Promise<DeployedContract> {
+}: DeployContractOptions<TAbi>): Promise<DeployedContract> {
   const publicClient = createPublicClient({
     transport: http(rpcUrl),
     chain,
@@ -42,7 +44,7 @@ export async function deployContract({
     account,
     args,
     bytecode,
-  });
+  } as any);
   onSubmitted?.(hash);
 
   const { contractAddress } = await publicClient.waitForTransactionReceipt({
@@ -58,7 +60,7 @@ export async function deployContract({
   return {
     address: contractAddress,
     hash,
-    deploymentArgs: args,
+    deploymentArgs: args as any[],
   };
 }
 
