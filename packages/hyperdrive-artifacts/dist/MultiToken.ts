@@ -1,3 +1,4 @@
+export const MultiToken = 
 {
   "abi": [
     {
@@ -9117,4 +9118,4 @@
     "license": "Apache-2.0"
   },
   "id": 39
-}
+} as const;

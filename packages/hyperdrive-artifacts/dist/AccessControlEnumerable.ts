@@ -1,3 +1,4 @@
+export const AccessControlEnumerable = 
 {
   "abi": [
     {
@@ -2214,4 +2215,4 @@
     "license": "MIT"
   },
   "id": 70
-}
+} as const;

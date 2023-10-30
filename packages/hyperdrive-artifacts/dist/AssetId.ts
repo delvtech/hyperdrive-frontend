@@ -1,3 +1,4 @@
+export const AssetId = 
 {
   "abi": [],
   "bytecode": {
@@ -1041,4 +1042,4 @@
     "license": "Apache-2.0"
   },
   "id": 31
-}
+} as const;

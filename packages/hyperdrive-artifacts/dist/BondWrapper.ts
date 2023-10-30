@@ -1,3 +1,4 @@
+export const BondWrapper = 
 {
   "abi": [
     {
@@ -6412,4 +6413,4 @@
     "license": "Apache-2.0"
   },
   "id": 36
-}
+} as const;

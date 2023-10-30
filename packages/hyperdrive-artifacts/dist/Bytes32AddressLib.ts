@@ -1,3 +1,4 @@
+export const Bytes32AddressLib = 
 {
   "abi": [],
   "bytecode": {
@@ -565,4 +566,4 @@
     "license": "AGPL-3.0-only"
   },
   "id": 95
-}
+} as const;

@@ -1,3 +1,4 @@
+export const SafeTransferLib = 
 {
   "abi": [],
   "bytecode": {
@@ -2394,4 +2395,4 @@
     "license": "AGPL-3.0-only"
   },
   "id": 98
-}
+} as const;

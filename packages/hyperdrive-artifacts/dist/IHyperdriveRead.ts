@@ -1,3 +1,4 @@
+export const IHyperdriveRead = 
 {
   "abi": [
     {
@@ -1908,4 +1909,4 @@
     "license": "Apache-2.0"
   },
   "id": 22
-}
+} as const;

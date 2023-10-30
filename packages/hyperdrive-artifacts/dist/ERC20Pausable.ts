@@ -1,3 +1,4 @@
+export const ERC20Pausable = 
 {
   "abi": [
     {
@@ -1254,4 +1255,4 @@
     "license": "MIT"
   },
   "id": 77
-}
+} as const;

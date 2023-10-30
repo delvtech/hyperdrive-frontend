@@ -1,3 +1,4 @@
+export const SafeCast = 
 {
   "abi": [],
   "bytecode": {
@@ -1106,4 +1107,4 @@
     "license": "Apache-2.0"
   },
   "id": 34
-}
+} as const;

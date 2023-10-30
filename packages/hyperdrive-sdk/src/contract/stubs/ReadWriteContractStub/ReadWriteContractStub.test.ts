@@ -1,9 +1,9 @@
-import { HyperdriveABI } from "src/abis/Hyperdrive";
+import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
 import { ReadWriteContractStub } from "src/contract/stubs/ReadWriteContractStub/ReadWriteContractStub";
 import { expect, test } from "vitest";
 
 test("It stubs the write function", async () => {
-  const contract = new ReadWriteContractStub(HyperdriveABI);
+  const contract = new ReadWriteContractStub(IHyperdrive.abi);
 
   const stubbedValue = [100n] as const;
   contract.stubWrite("addLiquidity", stubbedValue);

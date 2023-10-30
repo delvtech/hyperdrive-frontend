@@ -1,3 +1,4 @@
+export const IAccessControl = 
 {
   "abi": [
     {
@@ -1288,4 +1289,4 @@
     "license": "MIT"
   },
   "id": 71
-}
+} as const;

@@ -1,3 +1,4 @@
+export const Pausable = 
 {
   "abi": [
     {
@@ -1345,4 +1346,4 @@
     "license": "MIT"
   },
   "id": 73
-}
+} as const;

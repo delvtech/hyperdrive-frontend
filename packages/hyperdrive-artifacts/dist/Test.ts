@@ -1,3 +1,4 @@
+export const test = 
 {
   "abi": [
     {
@@ -1905,4 +1906,4 @@
     "license": "MIT"
   },
   "id": 63
-}
+} as const;

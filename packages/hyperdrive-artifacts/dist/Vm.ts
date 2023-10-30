@@ -1,3 +1,4 @@
+export const Vm = 
 {
   "abi": [
     {
@@ -26438,4 +26439,4 @@
     "license": "MIT"
   },
   "id": 64
-}
+} as const;

@@ -1,10 +1,10 @@
 import { expect, test } from "vitest";
 import { ContractEvent } from "src/contract/ContractEvents";
 import { ReadContractStub } from "src/contract/stubs/ReadContractStub/ReadContractStub";
-import { HyperdriveABI } from "src/abis/Hyperdrive";
+import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
 
 test("It stubs the read function", async () => {
-  const contract = new ReadContractStub(HyperdriveABI);
+  const contract = new ReadContractStub(IHyperdrive.abi);
 
   expect(() => contract.read("baseToken", [])).toThrowError();
 
@@ -19,7 +19,7 @@ test("It stubs the read function", async () => {
 });
 
 test("It stubs the simulateWrite function", async () => {
-  const contract = new ReadContractStub(HyperdriveABI);
+  const contract = new ReadContractStub(IHyperdrive.abi);
 
   expect(() => contract.simulateWrite("addLiquidity", [])).toThrowError();
 
@@ -34,23 +34,24 @@ test("It stubs the simulateWrite function", async () => {
 });
 
 test("It stubs the getEvents function", async () => {
-  const contract = new ReadContractStub(HyperdriveABI);
+  const contract = new ReadContractStub(IHyperdrive.abi);
 
   expect(() => contract.getEvents("addLiquidity")).toThrowError();
 
-  const stubbedEvents: ContractEvent<typeof HyperdriveABI, "AddLiquidity">[] = [
-    {
-      eventName: "AddLiquidity",
-      args: {
-        baseAmount: 100n,
-        lpAmount: 100n,
-        provider: "0x123abc",
+  const stubbedEvents: ContractEvent<typeof IHyperdrive.abi, "AddLiquidity">[] =
+    [
+      {
+        eventName: "AddLiquidity",
+        args: {
+          baseAmount: 100n,
+          lpAmount: 100n,
+          provider: "0x123abc",
+        },
+        blockNumber: 1n,
+        data: "0x123abc",
+        transactionHash: "0x123abc",
       },
-      blockNumber: 1n,
-      data: "0x123abc",
-      transactionHash: "0x123abc",
-    },
-  ];
+    ];
   contract.stubEvents("AddLiquidity", stubbedEvents);
 
   const events = await contract.getEvents("AddLiquidity");

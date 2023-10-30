@@ -1,3 +1,4 @@
+export const FixedPointMathLib = 
 {
   "abi": [],
   "bytecode": {
@@ -5334,4 +5335,4 @@
     "license": "AGPL-3.0-only"
   },
   "id": 96
-}
+} as const;

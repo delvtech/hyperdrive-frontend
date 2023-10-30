@@ -1,3 +1,4 @@
+export const SafeERC20 = 
 {
   "abi": [],
   "bytecode": {
@@ -5302,4 +5303,4 @@
     "license": "MIT"
   },
   "id": 82
-}
+} as const;

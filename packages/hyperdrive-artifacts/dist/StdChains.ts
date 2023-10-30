@@ -1,3 +1,4 @@
+export const StdChains = 
 {
   "abi": [],
   "bytecode": {
@@ -10465,4 +10466,4 @@
     "license": "MIT"
   },
   "id": 54
-}
+} as const;

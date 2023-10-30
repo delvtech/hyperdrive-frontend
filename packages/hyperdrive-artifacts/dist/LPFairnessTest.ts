@@ -1,3 +1,4 @@
+export const LpFairnessTest = 
 {
   "abi": [
     {
@@ -14485,4 +14486,4 @@
     "license": "Apache-2.0"
   },
   "id": 118
-}
+} as const;

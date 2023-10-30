@@ -1,3 +1,4 @@
+export const StdError = 
 {
   "abi": [
     {
@@ -1416,4 +1417,4 @@
     "license": "MIT"
   },
   "id": 56
-}
+} as const;

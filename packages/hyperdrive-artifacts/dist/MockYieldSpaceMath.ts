@@ -1,3 +1,4 @@
+export const MockYieldSpaceMath = 
 {
   "abi": [
     {
@@ -2874,4 +2875,4 @@
     "license": "Apache-2.0"
   },
   "id": 49
-}
+} as const;

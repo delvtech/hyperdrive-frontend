@@ -1,3 +1,4 @@
+export const ReentrancyGuard = 
 {
   "abi": [],
   "bytecode": {
@@ -398,4 +399,4 @@
     "license": "AGPL-3.0-only"
   },
   "id": 97
-}
+} as const;

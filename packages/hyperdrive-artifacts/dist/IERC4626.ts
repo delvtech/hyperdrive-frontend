@@ -1,3 +1,4 @@
+export const IERC4626 = 
 {
   "abi": [
     {
@@ -3345,4 +3346,4 @@
     "license": "GPL-2.0-or-later"
   },
   "id": 17
-}
+} as const;

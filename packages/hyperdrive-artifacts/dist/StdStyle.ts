@@ -1,3 +1,4 @@
+export const StdStyle = 
 {
   "abi": [],
   "bytecode": {
@@ -16533,4 +16534,4 @@
     "license": "MIT"
   },
   "id": 61
-}
+} as const;

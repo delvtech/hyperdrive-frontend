@@ -1,3 +1,4 @@
+export const LogExpMath = 
 {
   "abi": [],
   "bytecode": {
@@ -16824,4 +16825,4 @@
     "license": "MIT"
   },
   "id": 108
-}
+} as const;

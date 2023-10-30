@@ -1,3 +1,4 @@
+export const Address = 
 {
   "abi": [],
   "bytecode": {
@@ -4449,4 +4450,4 @@
     "license": "MIT"
   },
   "id": 83
-}
+} as const;

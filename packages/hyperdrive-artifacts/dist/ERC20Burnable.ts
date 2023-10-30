@@ -1,3 +1,4 @@
+export const ERC20Burnable = 
 {
   "abi": [
     {
@@ -1313,4 +1314,4 @@
     "license": "MIT"
   },
   "id": 76
-}
+} as const;

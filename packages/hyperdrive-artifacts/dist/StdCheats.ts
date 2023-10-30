@@ -1,3 +1,4 @@
+export const StdCheats = 
 {
   "abi": [],
   "bytecode": {
@@ -37195,4 +37196,4 @@
     "license": "MIT"
   },
   "id": 55
-}
+} as const;

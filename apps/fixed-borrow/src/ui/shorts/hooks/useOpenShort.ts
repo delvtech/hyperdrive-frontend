@@ -1,4 +1,4 @@
-import { HyperdriveABI } from "@hyperdrive/sdk";
+import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
 import {
   Address,
   useContractRead,
@@ -25,14 +25,14 @@ export function useOpenShort({
   openShortStatus: "error" | "idle" | "success" | "loading";
 } {
   const { data: poolInfo } = useContractRead({
-    abi: HyperdriveABI,
+    abi: IHyperdrive.abi,
     address: hyperdrivePool,
     functionName: "getPoolInfo",
   });
   const queryEnabled =
     !!bondAmount && !!maxDeposit && !!destination && !!poolInfo;
   const { config } = usePrepareContractWrite({
-    abi: HyperdriveABI,
+    abi: IHyperdrive.abi,
     address: hyperdrivePool,
     functionName: "openShort",
     enabled: queryEnabled,

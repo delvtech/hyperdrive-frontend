@@ -1,3 +1,4 @@
+export const ERC20PresetMinterPauser = 
 {
   "abi": [
     {
@@ -3463,4 +3464,4 @@
     "license": "MIT"
   },
   "id": 81
-}
+} as const;

@@ -1,3 +1,4 @@
+export const IERC20Permit = 
 {
   "abi": [
     {
@@ -1221,4 +1222,4 @@
     "license": "MIT"
   },
   "id": 16
-}
+} as const;

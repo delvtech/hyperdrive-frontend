@@ -1,3 +1,4 @@
+export const CombinatorialTest = 
 {
   "abi": [
     {
@@ -20236,4 +20237,4 @@
     "license": "Apache-2.0"
   },
   "id": 160
-}
+} as const;

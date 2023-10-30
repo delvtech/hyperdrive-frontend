@@ -1,3 +1,4 @@
+export const StdStorage = 
 {
   "abi": [],
   "bytecode": {
@@ -19512,4 +19513,4 @@
     "license": "MIT"
   },
   "id": 60
-}
+} as const;

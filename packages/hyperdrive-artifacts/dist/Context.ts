@@ -1,3 +1,4 @@
+export const Context = 
 {
   "abi": [],
   "bytecode": {
@@ -313,4 +314,4 @@
     "license": "MIT"
   },
   "id": 84
-}
+} as const;

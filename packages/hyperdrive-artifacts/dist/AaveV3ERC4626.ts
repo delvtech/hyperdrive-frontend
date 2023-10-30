@@ -1,3 +1,4 @@
+export const AaveV3ERC4626 = 
 {
   "abi": [
     {
@@ -12035,4 +12036,4 @@
     "license": "AGPL-3.0"
   },
   "id": 99
-}
+} as const;

@@ -45,7 +45,4 @@ for dir in out/*; do
     cat $in_file
     echo " as const;"
   } >$out_file
-
-  # Copy the contract to the dist folder
-  cp -r $in_file $out_file
 done

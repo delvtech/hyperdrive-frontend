@@ -16,7 +16,6 @@ import { PoolInfo } from "src/pool/PoolInfo";
 import { calculateLiquidity } from "src/pool/calculateLiquidity";
 import { LP_ASSET_ID } from "src/lp/assetId";
 import { decodeAssetFromTransferSingleEventData } from "src/pool/decodeAssetFromTransferSingleEventData";
-import { HyperdriveABI } from "src/abis/Hyperdrive";
 import { ClosedLong, Long } from "src/longs/types";
 import { ClosedLpShares } from "src/lp/ClosedLpShares";
 import { RedeemedWithdrawalShares } from "src/withdrawalShares/RedeemedWithdrawalShares";
@@ -27,6 +26,9 @@ import { getCheckpointId } from "src/pool/getCheckpointId";
 import { WITHDRAW_SHARES_ASSET_ID } from "src/withdrawalShares/assetId";
 import { Checkpoint } from "src/pool/Checkpoint";
 import { MarketState } from "src/pool/MarketState";
+import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
+
+const HyperdriveABI = IHyperdrive.abi;
 
 export interface ReadHyperdriveOptions {
   contract: IReadHyperdriveContract;

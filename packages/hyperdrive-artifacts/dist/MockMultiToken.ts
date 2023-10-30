@@ -1,3 +1,4 @@
+export const MockMultiToken = 
 {
   "abi": [
     {
@@ -3471,4 +3472,4 @@
     "license": "Apache-2.0"
   },
   "id": 47
-}
+} as const;

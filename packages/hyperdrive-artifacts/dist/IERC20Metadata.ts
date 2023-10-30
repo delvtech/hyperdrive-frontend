@@ -1,3 +1,4 @@
+export const IERC20Metadata = 
 {
   "abi": [
     {
@@ -831,4 +832,4 @@
     "license": "MIT"
   },
   "id": 78
-}
+} as const;

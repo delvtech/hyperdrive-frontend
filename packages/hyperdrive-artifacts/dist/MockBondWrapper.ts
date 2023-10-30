@@ -1,3 +1,4 @@
+export const MockBondWrapper = 
 {
   "abi": [
     {
@@ -3012,4 +3013,4 @@
     "license": "Apache-2.0"
   },
   "id": 43
-}
+} as const;

@@ -1,3 +1,4 @@
+export const StdAssertions = 
 {
   "abi": [
     {
@@ -20467,4 +20468,4 @@
     "license": "MIT"
   },
   "id": 53
-}
+} as const;

@@ -1,3 +1,4 @@
+export const ERC4626Factory = 
 {
   "abi": [
     {
@@ -1168,4 +1169,4 @@
     "license": "AGPL-3.0"
   },
   "id": 103
-}
+} as const;

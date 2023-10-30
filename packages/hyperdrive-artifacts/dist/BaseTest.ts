@@ -1,3 +1,4 @@
+export const BaseTest = 
 {
   "abi": [
     {
@@ -9295,4 +9296,4 @@
     "license": "Apache-2.0"
   },
   "id": 159
-}
+} as const;

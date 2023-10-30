@@ -1,3 +1,4 @@
+export const MockHyperdriveFactory = 
 {
   "abi": [
     {
@@ -2860,4 +2861,4 @@
     "license": "Apache-2.0"
   },
   "id": 134
-}
+} as const;

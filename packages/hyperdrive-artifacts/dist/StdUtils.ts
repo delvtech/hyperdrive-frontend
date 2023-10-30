@@ -1,3 +1,4 @@
+export const StdUtils = 
 {
   "abi": [],
   "bytecode": {
@@ -11970,4 +11971,4 @@
     "license": "MIT"
   },
   "id": 62
-}
+} as const;

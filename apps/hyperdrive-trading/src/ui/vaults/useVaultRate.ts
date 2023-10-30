@@ -1,4 +1,4 @@
-import { mockErc4626Abi } from "@hyperdrive/sdk";
+import { MockERC4626 } from "@hyperdrive/artifacts/dist/MockERC4626";
 import { useQuery } from "@tanstack/react-query";
 import { formatRate } from "src/base/formatRate";
 import { makeQueryKey } from "src/base/makeQueryKey";
@@ -22,7 +22,7 @@ export function useVaultRate({ vaultAddress }: UseVaultRateOptions): {
       ? async () => {
           const rate = await publicClient.readContract({
             address: vaultAddress,
-            abi: mockErc4626Abi,
+            abi: MockERC4626.abi,
             functionName: "getRate",
           });
           return {

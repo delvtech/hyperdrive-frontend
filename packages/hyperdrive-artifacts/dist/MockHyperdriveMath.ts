@@ -1,3 +1,4 @@
+export const MockHyperdriveMath = 
 {
   "abi": [
     {
@@ -7619,4 +7620,4 @@
     "license": "Apache-2.0"
   },
   "id": 46
-}
+} as const;

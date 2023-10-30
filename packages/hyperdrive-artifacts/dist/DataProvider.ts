@@ -1,3 +1,4 @@
+export const DataProvider = 
 {
   "abi": [
     {
@@ -1313,4 +1314,4 @@
     "license": "Apache-2.0"
   },
   "id": 0
-}
+} as const;

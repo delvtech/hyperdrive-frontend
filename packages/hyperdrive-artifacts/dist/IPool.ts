@@ -1,3 +1,4 @@
+export const IPool = 
 {
   "abi": [
     {
@@ -1346,4 +1347,4 @@
     "license": "AGPL-3.0"
   },
   "id": 101
-}
+} as const;

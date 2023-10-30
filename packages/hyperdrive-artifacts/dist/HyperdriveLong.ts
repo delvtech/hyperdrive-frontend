@@ -1,3 +1,4 @@
+export const HyperdriveLong = 
 {
   "abi": [
     {
@@ -13342,4 +13343,4 @@
     "license": "Apache-2.0"
   },
   "id": 5
-}
+} as const;

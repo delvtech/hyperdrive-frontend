@@ -1,3 +1,4 @@
+export const IERC4626Hyperdrive = 
 {
   "abi": [
     {
@@ -4271,4 +4272,4 @@
     "license": "Apache-2.0"
   },
   "id": 18
-}
+} as const;

@@ -1,3 +1,4 @@
+export const HyperdriveDataProvider = 
 {
   "abi": [
     {
@@ -7793,4 +7794,4 @@
     "license": "Apache-2.0"
   },
   "id": 3
-}
+} as const;

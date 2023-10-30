@@ -1,3 +1,4 @@
+export const IWETH = 
 {
   "abi": [
     {
@@ -799,4 +800,4 @@
     "license": "Apache-2.0"
   },
   "id": 30
-}
+} as const;

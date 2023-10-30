@@ -1,3 +1,4 @@
+export const IERC165 = 
 {
   "abi": [
     {
@@ -256,4 +257,4 @@
     "license": "MIT"
   },
   "id": 87
-}
+} as const;

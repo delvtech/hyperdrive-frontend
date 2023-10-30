@@ -1,3 +1,4 @@
+export const IMulticall3 = 
 {
   "abi": [
     {
@@ -2903,4 +2904,4 @@
     "license": "MIT"
   },
   "id": 67
-}
+} as const;

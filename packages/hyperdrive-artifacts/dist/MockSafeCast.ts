@@ -1,3 +1,4 @@
+export const MockSafeCast = 
 {
   "abi": [
     {
@@ -479,4 +480,4 @@
     "license": "Apache-2.0"
   },
   "id": 48
-}
+} as const;

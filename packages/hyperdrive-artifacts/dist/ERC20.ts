@@ -1,3 +1,4 @@
+export const ERC20 = 
 {
   "abi": [
     {
@@ -5771,4 +5772,4 @@
     "license": "AGPL-3.0-only"
   },
   "id": 94
-}
+} as const;

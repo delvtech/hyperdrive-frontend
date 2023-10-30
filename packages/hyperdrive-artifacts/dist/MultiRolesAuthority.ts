@@ -1,3 +1,4 @@
+export const MultiRolesAuthority = 
 {
   "abi": [
     {
@@ -4782,4 +4783,4 @@
     "license": "AGPL-3.0-only"
   },
   "id": 92
-}
+} as const;

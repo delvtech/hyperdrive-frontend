@@ -1,3 +1,4 @@
+export const Mock4626 = 
 {
   "abi": [
     {
@@ -15833,4 +15834,4 @@
     "license": "AGPL-3.0-only"
   },
   "id": 130
-}
+} as const;

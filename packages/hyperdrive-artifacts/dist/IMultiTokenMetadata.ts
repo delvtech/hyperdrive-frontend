@@ -1,3 +1,4 @@
+export const IMultiTokenMetadata = 
 {
   "abi": [
     {
@@ -199,4 +200,4 @@
     "license": "Apache-2.0"
   },
   "id": 27
-}
+} as const;

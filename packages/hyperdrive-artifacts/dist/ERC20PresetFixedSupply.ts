@@ -1,3 +1,4 @@
+export const ERC20PresetFixedSupply = 
 {
   "abi": [
     {
@@ -1184,4 +1185,4 @@
     "license": "MIT"
   },
   "id": 80
-}
+} as const;

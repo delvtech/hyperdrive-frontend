@@ -1,3 +1,4 @@
+export const ERC20Forwarder = 
 {
   "abi": [
     {
@@ -6233,4 +6234,4 @@
     "license": "Apache-2.0"
   },
   "id": 37
-}
+} as const;

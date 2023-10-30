@@ -1,3 +1,4 @@
+export const StdInvariant = 
 {
   "abi": [
     {
@@ -2823,4 +2824,4 @@
     "license": "MIT"
   },
   "id": 57
-}
+} as const;

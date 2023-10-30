@@ -1,3 +1,4 @@
+export const ERC4626 = 
 {
   "abi": [
     {
@@ -8245,4 +8246,4 @@
     "license": "AGPL-3.0-only"
   },
   "id": 93
-}
+} as const;

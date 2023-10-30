@@ -1,3 +1,4 @@
+export const ERC165 = 
 {
   "abi": [
     {
@@ -414,4 +415,4 @@
     "license": "MIT"
   },
   "id": 86
-}
+} as const;

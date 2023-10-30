@@ -1,3 +1,4 @@
+export const StdJson = 
 {
   "abi": [],
   "bytecode": {
@@ -7499,4 +7500,4 @@
     "license": "MIT"
   },
   "id": 58
-}
+} as const;

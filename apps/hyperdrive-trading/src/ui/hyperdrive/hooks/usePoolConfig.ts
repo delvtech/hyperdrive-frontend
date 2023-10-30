@@ -1,4 +1,4 @@
-import { HyperdriveABI } from "@hyperdrive/sdk";
+import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
 import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
@@ -7,7 +7,7 @@ import { Address } from "wagmi";
 
 export function usePoolConfig(hyperdriveAddress: Address): {
   poolConfig:
-    | ContractFunctionResult<typeof HyperdriveABI, "getPoolConfig">
+    | ContractFunctionResult<typeof IHyperdrive.abi, "getPoolConfig">
     | undefined;
   poolConfigStatus: QueryStatus;
 } {

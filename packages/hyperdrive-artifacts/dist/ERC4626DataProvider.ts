@@ -1,3 +1,4 @@
+export const ERC4626DataProvider = 
 {
   "abi": [
     {
@@ -3305,4 +3306,4 @@
     "license": "Apache-2.0"
   },
   "id": 12
-}
+} as const;

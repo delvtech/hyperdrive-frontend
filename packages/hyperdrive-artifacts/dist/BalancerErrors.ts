@@ -1,3 +1,4 @@
+export const BalancerErrors = 
 {
   "abi": [],
   "bytecode": {
@@ -8941,4 +8942,4 @@
     "license": "GPL-3.0-or-later"
   },
   "id": 107
-}
+} as const;

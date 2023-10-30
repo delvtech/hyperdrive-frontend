@@ -1,3 +1,4 @@
+export const ERC4626Hyperdrive = 
 {
   "abi": [
     {
@@ -8149,4 +8150,4 @@
     "license": "Apache-2.0"
   },
   "id": 13
-}
+} as const;

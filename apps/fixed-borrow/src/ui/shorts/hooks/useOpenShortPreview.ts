@@ -1,5 +1,4 @@
-import { HyperdriveABI } from "@hyperdrive/sdk";
-import { SparkGoerliAddresses } from "@hyperdrive/spark";
+import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
 import { useQuery } from "@tanstack/react-query";
 import { HyperdriveGoerliAddresses } from "src/addresses/goerli";
 import { Address, useAccount, useContractRead, usePublicClient } from "wagmi";
@@ -31,7 +30,7 @@ export function useOpenShortPreview({
   const publicClient = usePublicClient();
 
   const { data: poolInfo } = useContractRead({
-    abi: HyperdriveABI,
+    abi: IHyperdrive.abi,
     address: hyperdrivePool,
     functionName: "getPoolInfo",
   });
@@ -55,7 +54,7 @@ export function useOpenShortPreview({
           const {
             result: [short],
           } = await publicClient.simulateContract({
-            abi: HyperdriveABI,
+            abi: IHyperdrive.abi,
             address: hyperdrivePool,
             functionName: "openShort",
             account,

@@ -1,3 +1,4 @@
+export const SignedMath = 
 {
   "abi": [],
   "bytecode": {
@@ -1400,4 +1401,4 @@
     "license": "MIT"
   },
   "id": 89
-}
+} as const;

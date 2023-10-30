@@ -1,3 +1,4 @@
+export const Math = 
 {
   "abi": [],
   "bytecode": {
@@ -11774,4 +11775,4 @@
     "license": "MIT"
   },
   "id": 88
-}
+} as const;

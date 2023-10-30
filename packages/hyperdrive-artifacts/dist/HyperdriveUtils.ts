@@ -1,3 +1,4 @@
+export const HyperdriveUtils = 
 {
   "abi": [],
   "bytecode": {
@@ -19956,4 +19957,4 @@
     "license": "Apache-2.0"
   },
   "id": 163
-}
+} as const;

@@ -1,3 +1,4 @@
+export const Script = 
 {
   "abi": [
     {
@@ -725,4 +726,4 @@
     "license": "MIT"
   },
   "id": 52
-}
+} as const;

@@ -1,3 +1,4 @@
+export const IRewardsController = 
 {
   "abi": [
     {
@@ -368,4 +369,4 @@
     "license": "AGPL-3.0"
   },
   "id": 102
-}
+} as const;

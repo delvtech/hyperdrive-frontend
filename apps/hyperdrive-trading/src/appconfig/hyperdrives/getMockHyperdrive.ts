@@ -1,4 +1,4 @@
-import { HyperdriveABI } from "@hyperdrive/sdk";
+import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
 import { Hyperdrive } from "src/appconfig/types";
 import { Address, PublicClient } from "viem";
 import { erc20ABI } from "wagmi";
@@ -8,14 +8,14 @@ export async function getMockHyperdrive(
   publicClient: PublicClient,
 ): Promise<Hyperdrive> {
   const baseToken = await publicClient.readContract({
-    abi: HyperdriveABI,
+    abi: IHyperdrive.abi,
     functionName: "baseToken",
     address: hyperdriveAddress,
   });
 
   // Time in seconds
   const { positionDuration } = await publicClient.readContract({
-    abi: HyperdriveABI,
+    abi: IHyperdrive.abi,
     functionName: "getPoolConfig",
     address: hyperdriveAddress,
   });

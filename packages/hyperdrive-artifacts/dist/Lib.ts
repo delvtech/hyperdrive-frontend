@@ -1,3 +1,4 @@
+export const Lib = 
 {
   "abi": [
     {
@@ -8413,4 +8414,4 @@
     "license": "Apache-2.0"
   },
   "id": 164
-}
+} as const;
