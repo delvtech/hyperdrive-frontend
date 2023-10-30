@@ -1,0 +1,18 @@
+{
+  "extends": "@hyperdrive/tsconfig/base.json",
+  "include": ["src"],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "rootDir": ".",
+    "baseUrl": ".",
+    "allowSyntheticDefaultImports": true,
+
+    // we don't need declaration files for a CLI
+    "declaration": false,
+    "declarationMap": false,
+
+    "paths": {
+      "src/*": ["src/*"]
+    }
+  }
+}
