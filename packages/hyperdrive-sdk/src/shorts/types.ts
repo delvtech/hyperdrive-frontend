@@ -5,6 +5,7 @@ export interface Short {
   assetId: bigint;
   bondAmount: bigint;
   checkpointId: bigint;
+  maturityCheckpointId: bigint;
   /**
    * Time in seconds when this short will mature
    */

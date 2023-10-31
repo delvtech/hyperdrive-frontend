@@ -26,9 +26,6 @@ import { getCheckpointId } from "src/pool/getCheckpointId";
 import { WITHDRAW_SHARES_ASSET_ID } from "src/withdrawalShares/assetId";
 import { Checkpoint } from "src/pool/Checkpoint";
 import { MarketState } from "src/pool/MarketState";
-import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
-
-const HyperdriveABI = IHyperdrive.abi;
 
 export interface ReadHyperdriveOptions {
   contract: IReadHyperdriveContract;
@@ -106,6 +103,17 @@ export interface IReadHyperdrive {
     account: Address;
     options?: ContractReadOptions;
   }): Promise<OpenShort[]>;
+
+  /**
+   * Gets the yield accrued on an amount of bonds in a given checkpoint
+   */
+  getShortAccruedYield(args: {
+    bondAmount: bigint;
+    decimals: number;
+    checkpointId: bigint;
+    maturityTimestamp: bigint;
+    maturityCheckpointId: bigint;
+  }): Promise<bigint>;
 
   /**
    * Gets the closed longs by a specific user.
@@ -302,6 +310,46 @@ export class ReadHyperdrive implements IReadHyperdrive {
     this.contract = contract;
     this.mathContract = mathContract;
     this.network = network;
+  }
+  async getShortAccruedYield({
+    maturityTimestamp,
+    maturityCheckpointId,
+    checkpointId,
+    bondAmount,
+    decimals,
+  }: {
+    maturityTimestamp: bigint;
+    maturityCheckpointId: bigint;
+    checkpointId: bigint;
+    bondAmount: bigint;
+    decimals: number;
+  }): Promise<bigint> {
+    const currentBlock = await this.network.getBlock();
+
+    const { sharePrice: startSharePrice } = await this.getCheckpoint({
+      checkpointId,
+    });
+
+    let endSharePrice;
+    if (maturityTimestamp > currentBlock.timestamp) {
+      //  for mature positions use the price at maturity as the end price
+      endSharePrice = (
+        await this.getCheckpoint({ checkpointId: maturityCheckpointId })
+      ).sharePrice;
+    } else {
+      // otherwise just use the current price
+      const { sharePrice: currentSharePrice } = await this.getPoolInfo();
+      endSharePrice = currentSharePrice;
+    }
+
+    const accruedYield = calculateAccruedYield({
+      bondAmount,
+      decimals,
+      startSharePrice,
+      endSharePrice,
+    });
+
+    return accruedYield;
   }
   async getCheckpoint({
     checkpointId,
@@ -742,7 +790,9 @@ export class ReadHyperdrive implements IReadHyperdrive {
     // Fetch pool config to understand how time is divided into checkpoints. We
     // only need to request this once, as it's used to construct checkpoint ids
     // from block numbers.
-    const { checkpointDuration } = await this.getPoolConfig(options);
+    const { checkpointDuration, positionDuration } = await this.getPoolConfig(
+      options,
+    );
 
     // Process the closed shorts first, then we can easily net out open
     // positions against them.
@@ -769,6 +819,10 @@ export class ReadHyperdrive implements IReadHyperdrive {
         bondAmount: eventData.value ?? 0n,
         checkpointId: getCheckpointId(timestamp, checkpointDuration),
         baseAmountReceived: amountReceivedByAssetId[assetId] ?? 0n,
+        maturityCheckpointId: getCheckpointId(
+          positionDuration + timestamp,
+          checkpointDuration,
+        ),
         maturity: decodeAssetFromTransferSingleEventData(
           eventLog as `0x${string}`,
         ).timestamp,
@@ -802,6 +856,10 @@ export class ReadHyperdrive implements IReadHyperdrive {
         hyperdriveAddress: this.contract.address,
         assetId: eventData.id,
         checkpointId: getCheckpointId(timestamp, checkpointDuration),
+        maturityCheckpointId: getCheckpointId(
+          positionDuration + timestamp,
+          checkpointDuration,
+        ),
         bondAmount:
           eventData.value - (closedShortsById[assetId]?.bondAmount ?? 0n),
         baseAmountPaid: netAmountPaid > 0n ? netAmountPaid : 0n,
@@ -872,7 +930,9 @@ export class ReadHyperdrive implements IReadHyperdrive {
       toBlock,
     });
 
-    const { checkpointDuration } = await this.getPoolConfig(options);
+    const { checkpointDuration, positionDuration } = await this.getPoolConfig(
+      options,
+    );
     const closedShortsList: ClosedShort[] = await Promise.all(
       closedShorts.map(async (event) => {
         const { assetId } = event.args;
@@ -890,6 +950,10 @@ export class ReadHyperdrive implements IReadHyperdrive {
           maturity: decoded.timestamp,
           closedTimestamp: timestamp,
           checkpointId: getCheckpointId(timestamp, checkpointDuration),
+          maturityCheckpointId: getCheckpointId(
+            positionDuration + timestamp,
+            checkpointDuration,
+          ),
         };
       }),
     );
