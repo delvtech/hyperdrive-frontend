@@ -10,6 +10,7 @@ import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
+import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { useAccount } from "wagmi";
@@ -72,7 +73,7 @@ export function ClosedShortsTable({
   const { address: account } = useAccount();
   const readHyperdrive = useReadHyperdrive(hyperdrive.address);
   const queryEnabled = !!readHyperdrive && !!account;
-  const { data: closedShorts } = useQuery({
+  const { data: closedShorts, isLoading } = useQuery({
     queryKey: makeQueryKey("closedShortPositions", { account }),
     queryFn: queryEnabled
       ? () => readHyperdrive?.getClosedShorts({ account })
@@ -104,27 +105,31 @@ export function ClosedShortsTable({
           ))}
         </thead>
         <tbody>
-          {tableInstance.getRowModel().rows.map((row) => {
-            return (
-              <tr key={row.id} className="h-16 grid-cols-4 items-center">
-                <>
-                  {row.getVisibleCells().map((cell) => {
-                    return (
-                      <td key={cell.id}>
-                        {flexRender(
-                          cell.column.columnDef.cell,
-                          cell.getContext(),
-                        )}
-                      </td>
-                    );
-                  })}
-                </>
-              </tr>
-            );
-          })}
+          {isLoading ? (
+            <TableSkeleton numColumns={5} />
+          ) : (
+            tableInstance.getRowModel().rows.map((row) => {
+              return (
+                <tr key={row.id} className="h-16 grid-cols-4 items-center">
+                  <>
+                    {row.getVisibleCells().map((cell) => {
+                      return (
+                        <td key={cell.id}>
+                          {flexRender(
+                            cell.column.columnDef.cell,
+                            cell.getContext(),
+                          )}
+                        </td>
+                      );
+                    })}
+                  </>
+                </tr>
+              );
+            })
+          )}
         </tbody>
       </table>
-      {!closedShorts?.length ? <NonIdealState /> : null}
+      {!closedShorts?.length && !isLoading ? <NonIdealState /> : null}
     </div>
   );
 }

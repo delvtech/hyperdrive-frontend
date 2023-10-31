@@ -10,6 +10,7 @@ import { ReactElement, useMemo } from "react";
 import Skeleton from "react-loading-skeleton";
 import { Hyperdrive } from "src/appconfig/types";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
+import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { RedeemWithdrawalSharesModalButton } from "src/ui/hyperdrive/lp/RedeemWithdrawalSharesModalButton/RedeemWithdrawalSharesModalButton";
@@ -221,7 +222,7 @@ export function OpenLpTable({
   hyperdrive,
 }: OpenOrdersTableProps): ReactElement {
   const { address: account } = useAccount();
-  const { lpShares } = useLpShares({
+  const { lpShares, lpSharesStatus } = useLpShares({
     hyperdriveAddress: hyperdrive.address,
     account,
   });
@@ -267,27 +268,33 @@ export function OpenLpTable({
           ))}
         </thead>
         <tbody>
-          {tableInstance.getRowModel().rows.map((row) => {
-            return (
-              <tr key={row.id} className="h-16 grid-cols-4 items-center">
-                <>
-                  {row.getVisibleCells().map((cell) => {
-                    return (
-                      <td key={cell.id}>
-                        {flexRender(
-                          cell.column.columnDef.cell,
-                          cell.getContext(),
-                        )}
-                      </td>
-                    );
-                  })}
-                </>
-              </tr>
-            );
-          })}
+          {lpSharesStatus === "loading" ? (
+            <TableSkeleton numColumns={4} />
+          ) : (
+            tableInstance.getRowModel().rows.map((row) => {
+              return (
+                <tr key={row.id} className="h-16 grid-cols-4 items-center">
+                  <>
+                    {row.getVisibleCells().map((cell) => {
+                      return (
+                        <td key={cell.id}>
+                          {flexRender(
+                            cell.column.columnDef.cell,
+                            cell.getContext(),
+                          )}
+                        </td>
+                      );
+                    })}
+                  </>
+                </tr>
+              );
+            })
+          )}
         </tbody>
       </table>
-      {!lpShares && !withdrawalShares ? <NonIdealState /> : null}
+      {!lpShares && !withdrawalShares && lpSharesStatus === "success" ? (
+        <NonIdealState />
+      ) : null}
     </div>
   );
 }

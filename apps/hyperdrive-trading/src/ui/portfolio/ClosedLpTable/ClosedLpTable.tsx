@@ -8,6 +8,7 @@ import {
 import { ReactElement, useMemo } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
+import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useClosedLpShares } from "src/ui/hyperdrive/lp/hooks/useClosedLpShares";
 import { useRedeemedWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useRedeemedWithdrawalShares";
@@ -106,7 +107,7 @@ export function ClosedLpTable({
 }: ClosedLpTablePRops): ReactElement {
   const { address: account } = useAccount();
 
-  const { closedLpShares } = useClosedLpShares({
+  const { closedLpShares, closedLpSharesStatus } = useClosedLpShares({
     hyperdriveAddress: hyperdrive.address,
     account,
   });
@@ -151,30 +152,38 @@ export function ClosedLpTable({
           ))}
         </thead>
         <tbody>
-          {tableInstance.getRowModel().rows.map((row) => {
-            return (
-              <tr
-                key={row.id}
-                className="h-16 cursor-pointer grid-cols-4 items-center"
-              >
-                <>
-                  {row.getVisibleCells().map((cell) => {
-                    return (
-                      <td key={cell.id}>
-                        {flexRender(
-                          cell.column.columnDef.cell,
-                          cell.getContext(),
-                        )}
-                      </td>
-                    );
-                  })}
-                </>
-              </tr>
-            );
-          })}
+          {closedLpSharesStatus === "loading" ? (
+            <TableSkeleton numColumns={5} />
+          ) : (
+            tableInstance.getRowModel().rows.map((row) => {
+              return (
+                <tr
+                  key={row.id}
+                  className="h-16 cursor-pointer grid-cols-4 items-center"
+                >
+                  <>
+                    {row.getVisibleCells().map((cell) => {
+                      return (
+                        <td key={cell.id}>
+                          {flexRender(
+                            cell.column.columnDef.cell,
+                            cell.getContext(),
+                          )}
+                        </td>
+                      );
+                    })}
+                  </>
+                </tr>
+              );
+            })
+          )}
         </tbody>
       </table>
-      {!closedLpShares && !redeemedWithdrawalShares ? <NonIdealState /> : null}
+      {!closedLpShares?.length &&
+      !redeemedWithdrawalShares?.length &&
+      closedLpSharesStatus === "success" ? (
+        <NonIdealState />
+      ) : null}
     </div>
   );
 }
