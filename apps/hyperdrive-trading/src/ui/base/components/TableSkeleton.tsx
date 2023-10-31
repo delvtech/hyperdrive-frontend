@@ -1,17 +1,24 @@
+import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 
 export function TableSkeleton({
   numColumns,
+  numRows = 1,
 }: {
   numColumns: number;
-}): JSX.Element {
+  numRows?: number;
+}): ReactElement {
   return (
-    <tr>
-      {Array.from({ length: numColumns }).map((_, i) => (
-        <td key={i}>
-          <Skeleton />
-        </td>
+    <>
+      {Array.from({ length: numRows }).map((_, rowIndex) => (
+        <tr key={rowIndex}>
+          {Array.from({ length: numColumns }).map((_, colIndex) => (
+            <td key={colIndex}>
+              <Skeleton />
+            </td>
+          ))}
+        </tr>
       ))}
-    </tr>
+    </>
   );
 }

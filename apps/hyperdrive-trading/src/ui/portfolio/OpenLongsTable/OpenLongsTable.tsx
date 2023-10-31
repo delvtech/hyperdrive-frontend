@@ -212,7 +212,7 @@ export function OpenLongsTable({
         </thead>
 
         <tbody>
-          {isLoading ? (
+          {!isLoading ? (
             <TableSkeleton numColumns={6} />
           ) : (
             tableInstance.getRowModel().rows.map((row) => {
