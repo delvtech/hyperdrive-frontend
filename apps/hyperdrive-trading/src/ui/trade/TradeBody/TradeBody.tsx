@@ -53,7 +53,7 @@ export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
         <MarketStats hyperdrive={hyperdrive} />
         <CustomBanner
           icon={<ExclamationTriangleIcon className="h-6 w-6 text-warning" />}
-          description="No new positions can be opened as of October 31st 12pm. Please close all your positions prior to this date/time or they will be forfeited in the trading competition scoring."
+          description="No new positions can be opened as of October 31st at 2pm (EDT). Please close all your positions before November 1st or they will be forfeited in the trading competition scoring calculations."
         />
         {marketState?.isPaused && (
           <CustomBanner description="This market has been paused. You may close your positions, but no new positions may be opened." />
