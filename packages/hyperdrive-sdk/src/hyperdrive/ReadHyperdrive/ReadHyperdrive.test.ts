@@ -110,6 +110,30 @@ test("Should get the trading volume in terms of bonds when getTradingVolume is c
   });
 });
 
+test("Should get the accrued yield on not-yet matured shorts when getShortAccruedYield is called", async () => {
+  const { contract, readHyperdrive, network } = setupReadHyperdrive();
+
+  const value = await readHyperdrive.getShortAccruedYield({
+    bondAmount: 20000000000000000000n,
+    checkpointId: 1697673600n,
+    decimals: 18,
+    maturityCheckpointId: 1729209600n,
+    maturityTimestamp: 1729209600n,
+  });
+
+  // Stub getBlock
+  network.getBlock;
+  // Stub the current share price
+  contract.stubRead(
+    "getPoolInfo",
+    [],
+    [{ ...simplePoolInfo, sharePrice: 1027107359795749578n }],
+  );
+  // startSharePrice: 1000224117971442924n,
+
+  expect(value).toEqual(0n);
+});
+
 function setupReadHyperdrive() {
   const contract = new ReadContractStub(IHyperdrive.abi);
   const cachedContract = new CachedReadContract({ contract });

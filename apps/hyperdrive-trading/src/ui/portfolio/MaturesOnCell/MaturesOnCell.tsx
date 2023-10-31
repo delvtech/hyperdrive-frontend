@@ -9,6 +9,7 @@ export function MaturesOnCell({
 }): ReactElement {
   const { currentBlock } = useCurrentBlock();
   const isTermComplete = maturity < (currentBlock?.timestamp || 0n);
+  console.log("maturity", maturity);
   const maturityDateMS = maturity * 1000n;
   const termEndDate = new Date(Number(maturityDateMS));
   const daysLeft = convertMillisecondsToDays(

@@ -7,15 +7,17 @@ import { Address } from "wagmi";
 export function useCheckpoint({
   checkpointId,
   hyperdriveAddress,
+  enabled = true,
 }: {
   hyperdriveAddress: Address;
   checkpointId: bigint;
+  enabled?: boolean;
 }): {
   checkpoint: Checkpoint | undefined;
   checkpointStatus: QueryStatus;
 } {
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
-  const queryEnabled = !!readHyperdrive;
+  const queryEnabled = !!readHyperdrive && enabled;
   const { data, status } = useQuery({
     queryKey: makeQueryKey("getCheckpoint", {
       hyperdriveAddress,

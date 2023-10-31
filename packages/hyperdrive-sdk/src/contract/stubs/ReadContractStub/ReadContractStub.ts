@@ -12,6 +12,7 @@ import {
 } from "src/contract/ContractEvents";
 import { ContractWriteOptions } from "src/contract/IReadWriteContract";
 import { ContractReadOptions, IReadContract } from "src/contract/IReadContract";
+import stringify from "fast-json-stable-stringify";
 
 /**
  * A mock implementation of a `ReadContract` designed to facilitate unit
@@ -120,11 +121,21 @@ export class ReadContractStub<TAbi extends Abi = Abi>
    */
   stubRead<TFunctionName extends FunctionName<TAbi>>(
     functionName: TFunctionName,
+    args: FunctionArgs<TAbi, TFunctionName>,
     value: MaybePromise<FunctionReturnType<TAbi, TFunctionName>>,
   ): void {
     this.readStubMap.set(
-      functionName,
-      stub().resolves(value) as ReadStub<TAbi, FunctionName<TAbi>>,
+      (stringify as any)(
+        { functionName, args },
+        {
+          replacer: (_key: any, value: any) =>
+            typeof value === "bigint" ? value.toString() : value,
+        },
+      ),
+      stub().withArgs(args).resolves(value) as ReadStub<
+        TAbi,
+        FunctionName<TAbi>
+      >,
     );
   }
 

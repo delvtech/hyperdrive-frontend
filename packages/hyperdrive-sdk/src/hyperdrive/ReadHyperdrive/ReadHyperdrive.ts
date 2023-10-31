@@ -331,14 +331,25 @@ export class ReadHyperdrive implements IReadHyperdrive {
     });
 
     let endSharePrice;
-    if (maturityTimestamp > currentBlock.timestamp) {
+    if (maturityTimestamp < currentBlock.timestamp) {
       //  for mature positions use the price at maturity as the end price
       endSharePrice = (
         await this.getCheckpoint({ checkpointId: maturityCheckpointId })
       ).sharePrice;
+      console.log({
+        currentBlockTimestamp: currentBlock.timestamp,
+        maturityTimestamp,
+        maturityCheckpointId,
+        checkpointId,
+        bondAmount,
+        decimals,
+        startSharePrice,
+        endSharePrice,
+      });
     } else {
       // otherwise just use the current price
       const { sharePrice: currentSharePrice } = await this.getPoolInfo();
+      console.log("currentSharePrice", currentSharePrice);
       endSharePrice = currentSharePrice;
     }
 
