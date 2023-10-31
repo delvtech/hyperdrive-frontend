@@ -17,6 +17,7 @@ import { calculateAnnualizedPercentageChange } from "src/base/calculateAnnualize
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
+import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { usePoolConfig } from "src/ui/hyperdrive/hooks/usePoolConfig";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
@@ -154,7 +155,7 @@ export function OpenLongsTable({
   const readHyperdrive = useReadHyperdrive(hyperdrive.address);
   // Get the current block and check it's timestamp agains the
   const queryEnabled = !!readHyperdrive && !!account;
-  const { data: longs } = useQuery({
+  const { data: longs, isLoading } = useQuery({
     queryKey: makeQueryKey("longPositions", { account }),
     queryFn: queryEnabled
       ? () => readHyperdrive.getOpenLongs({ account })
@@ -209,35 +210,40 @@ export function OpenLongsTable({
             </tr>
           ))}
         </thead>
+
         <tbody>
-          {tableInstance.getRowModel().rows.map((row) => {
-            return (
-              <tr
-                key={row.id}
-                className="daisy-hover h-16 cursor-pointer items-center transition duration-300 ease-in-out"
-                onClick={() => {
-                  const modalId = `${row.original.assetId}`;
-                  (window as any)[modalId].showModal();
-                }}
-              >
-                <>
-                  {row.getVisibleCells().map((cell) => {
-                    return (
-                      <td key={cell.id}>
-                        {flexRender(
-                          cell.column.columnDef.cell,
-                          cell.getContext(),
-                        )}
-                      </td>
-                    );
-                  })}
-                </>
-              </tr>
-            );
-          })}
+          {isLoading ? (
+            <TableSkeleton numColumns={6} />
+          ) : (
+            tableInstance.getRowModel().rows.map((row) => {
+              return (
+                <tr
+                  key={row.id}
+                  className="daisy-hover h-16 cursor-pointer items-center transition duration-300 ease-in-out"
+                  onClick={() => {
+                    const modalId = `${row.original.assetId}`;
+                    (window as any)[modalId].showModal();
+                  }}
+                >
+                  <>
+                    {row.getVisibleCells().map((cell) => {
+                      return (
+                        <td key={cell.id}>
+                          {flexRender(
+                            cell.column.columnDef.cell,
+                            cell.getContext(),
+                          )}
+                        </td>
+                      );
+                    })}
+                  </>
+                </tr>
+              );
+            })
+          )}
         </tbody>
       </table>
-      {!longs?.length ? <NonIdealState /> : null}
+      {!longs?.length && !isLoading ? <NonIdealState /> : null}
     </div>
   );
 }
