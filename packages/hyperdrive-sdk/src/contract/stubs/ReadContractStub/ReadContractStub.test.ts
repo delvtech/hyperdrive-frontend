@@ -1,21 +1,40 @@
 import { expect, test } from "vitest";
 import { ContractEvent } from "src/contract/ContractEvents";
 import { ReadContractStub } from "src/contract/stubs/ReadContractStub/ReadContractStub";
+import { ERC20 } from "@hyperdrive/artifacts/dist/ERC20";
+import { ALICE, BOB } from "src/base/testing/accounts";
 import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
 
 test("It stubs the read function", async () => {
-  const contract = new ReadContractStub(IHyperdrive.abi);
+  const contract = new ReadContractStub(ERC20.abi);
 
-  expect(() => contract.read("baseToken", [])).toThrowError();
+  expect(() => contract.read("balanceOf", [])).toThrowError();
 
-  const stubbedValue = ["0x123abc"] as const;
-  contract.stubRead("baseToken", stubbedValue);
+  // Stub bob and alice's balances first
+  const bobArgs = [BOB] as const;
+  const bobValue = [10n] as const;
+  contract.stubRead({
+    functionName: "balanceOf",
+    args: bobArgs,
+    value: bobValue,
+  });
 
-  const value = await contract.read("baseToken", []);
-  expect(value).toBe(stubbedValue);
+  const aliceArgs = [ALICE] as const;
+  const aliceValue = [20n] as const;
+  contract.stubRead({
+    functionName: "balanceOf",
+    args: aliceArgs,
+    value: aliceValue,
+  });
 
-  const stub = contract.getReadStub("baseToken");
-  expect(stub?.callCount).toBe(1);
+  // Now try and read them based on their args
+  const bobResult = await contract.read("balanceOf", [BOB]);
+  const aliceResult = await contract.read("balanceOf", [ALICE]);
+  expect(bobResult).toBe(bobValue);
+  expect(aliceResult).toBe(aliceValue);
+
+  const stub = contract.getReadStub("balanceOf");
+  expect(stub?.callCount).toBe(2);
 });
 
 test("It stubs the simulateWrite function", async () => {
