@@ -10,7 +10,7 @@ export const { command, aliases, describe, builder, handler } =
   createCommandModule({
     command: "deploy [OPTIONS]",
     aliases: ["deployAndInitialize"],
-    describe: "Fetch the ERC20LINK_HASH from a ForwarderFactory contract",
+    describe: "Get the ERC20LINK_HASH from a ForwarderFactory contract",
 
     builder: (yargs) => {
       return yargs.options({
