@@ -4,7 +4,6 @@ import signale from "signale";
 import { chainOption, requiredChain } from "src/options/chain";
 import { requiredRpcUrl, rpcUrlOption } from "src/options/rpc-url";
 import { requiredBoolean } from "src/options/utils/requiredBoolean";
-import { requiredNumber } from "src/options/utils/requiredNumber";
 import { requiredString } from "src/options/utils/requiredString";
 import { requiredWalletKey, walletKeyOption } from "src/options/wallet-key";
 import { createCommandModule } from "src/utils/createCommandModule";
@@ -46,7 +45,7 @@ export const { command, aliases, describe, builder, handler } =
         i: {
           alias: ["rate", "initial-rate"],
           describe: "The rate to start the contract at",
-          type: "number",
+          type: "string",
         },
         a: {
           alias: ["admin"],
@@ -89,7 +88,7 @@ export const { command, aliases, describe, builder, handler } =
         initial: "DELV",
       });
 
-      const rate = await requiredNumber(args.rate, {
+      const rate = await requiredString(args.rate, {
         name: "rate",
         message: "Enter initial rate",
         initial: 0.05,
