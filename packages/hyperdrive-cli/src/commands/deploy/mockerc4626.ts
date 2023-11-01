@@ -123,7 +123,7 @@ export const { command, aliases, describe, builder, handler } =
         token,
         vaultName: name,
         vaultSymbol: symbol,
-        initialRate: parseUnits(rate, decimals),
+        initialRate: parseUnits(rate.toString(), decimals),
         admin,
         isCompetitionMode,
         account,
