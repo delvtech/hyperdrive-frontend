@@ -1,5 +1,5 @@
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
-import { Long } from "@hyperdrive/sdk";
+import { Long, calculateFixedRate } from "@hyperdrive/sdk";
 import { useQuery } from "@tanstack/react-query";
 import {
   Row,
@@ -10,7 +10,6 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import classNames from "classnames";
-import * as dnum from "dnum";
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { calculateAnnualizedPercentageChange } from "src/base/calculateAnnualizedPercentageChange";
@@ -109,14 +108,13 @@ function FixedRateCell({
   hyperdrive: Hyperdrive;
 }) {
   const { poolConfig } = usePoolConfig(hyperdrive.address);
-  // Only the flat fee applies if you hold this position to maturity, which is
-  // what the Fixed Rate Cell is all about.
-  const poolFee = dnum.mul(
-    [row.original.bondAmount || 1n, 18],
-    [poolConfig?.fees.flat || 0n, 18],
-  );
-  const yieldAmount = row.original.bondAmount - row.original.baseAmountPaid;
-  const yieldAfterFlatFee = dnum.sub([yieldAmount, 18], poolFee, 18)[0];
+  const { baseAmountPaid, bondAmount } = row.original;
+
+  const yieldAfterFlatFee = calculateFixedRate({
+    flatFee: poolConfig?.fees.flat || 0n,
+    bondAmount,
+    baseAmountPaid,
+  });
 
   return (
     <div className="flex flex-col gap-1">
