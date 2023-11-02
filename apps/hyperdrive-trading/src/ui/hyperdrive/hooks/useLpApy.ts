@@ -1,25 +1,25 @@
 import { useQuery } from "@tanstack/react-query";
-import { calculateAnnualizedPercentageChange } from "src/base/calculateAnnualizedPercentageChange";
+import { Hyperdrive } from "src/appconfig/types";
+import { convertMillisecondsToYearFraction } from "src/base/convertMillisecondsToDays";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { Address } from "viem";
 import { useBlockNumber, useChainId } from "wagmi";
 import { usePoolInfo } from "./usePoolInfo";
 import { useReadHyperdrive } from "./useReadHyperdrive";
 
-export function useLpApy(hyperdriveAddress: Address): {
+export function useLpApy(hyperdrive: Hyperdrive): {
   lpApy: number | undefined;
 } {
   const chainId = useChainId();
   const isCloudchain = chainId && +import.meta.env.VITE_CUSTOM_CHAIN_CHAIN_ID;
   const { data: blockNumber } = useBlockNumber();
-  const { poolInfo: currentPoolInfo } = usePoolInfo(hyperdriveAddress);
-  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
+  const { poolInfo: currentPoolInfo } = usePoolInfo(hyperdrive.address);
+  const readHyperdrive = useReadHyperdrive(hyperdrive.address);
   const queryEnabled = !!readHyperdrive && !!blockNumber && !!currentPoolInfo;
   const { data } = useQuery({
     queryKey: makeQueryKey("getLpApy", {
       chainId,
       blockNumber: blockNumber?.toString(),
-      hyperdriveAddress,
+      hyperdrive: hyperdrive.address,
     }),
     queryFn: queryEnabled
       ? async () =>
@@ -33,11 +33,9 @@ export function useLpApy(hyperdriveAddress: Address): {
       : undefined,
     enabled: queryEnabled,
   });
-  const lpApy = calculateAnnualizedPercentageChange({
-    amountBefore: data?.fromSharePrice ?? 0n,
-    amountAfter: data?.toSharePrice ?? 0n,
-    // 3.5 is the equivilant of 12 hours on cloudchain, which is the minimum
-    days: 3.5,
-  });
+
+  const lpApy =
+    Math.log(Number(data?.toSharePrice) / Number(data?.fromSharePrice)) /
+    convertMillisecondsToYearFraction(hyperdrive.termLengthMS);
   return { lpApy };
 }

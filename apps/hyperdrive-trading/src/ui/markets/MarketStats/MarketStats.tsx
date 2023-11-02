@@ -28,7 +28,7 @@ export function MarketStats({
 
   const { liquidity } = useLiquidity(hyperdrive.address);
   const { fixedAPR } = useCurrentFixedAPR(hyperdrive);
-  const { lpApy } = useLpApy(hyperdrive.address);
+  const { lpApy } = useLpApy(hyperdrive);
 
   const { vaultRate } = useVaultRate({
     // TODO: temporary for now until this available via addresses.json
@@ -78,7 +78,7 @@ export function MarketStats({
         value={
           lpApy || lpApy === 0 ? (
             <span className="flex items-center gap-1.5">
-              {lpApy.toFixed(2)}% APY
+              {lpApy.toFixed(4)}% APY
             </span>
           ) : (
             <Skeleton className="opacity-50" />
