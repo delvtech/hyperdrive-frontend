@@ -81,22 +81,22 @@ function AccruedYieldCell({
   row: Row<OpenShort>;
   hyperdrive: Hyperdrive;
 }) {
-  const { accruedYield } = useAccruedYield({
+  const { bondAmount, checkpointId } = row.original;
+  const { accruedYield, accruedYieldStatus } = useAccruedYield({
     hyperdrive,
-    bondAmount: row.original.bondAmount,
-    checkpointId: row.original.checkpointId,
+    bondAmount,
+    checkpointId,
   });
 
   return (
     <div className="flex flex-col gap-1">
       <span>
-        {accruedYield
-          ? formatBalance({
-              balance: accruedYield,
-              decimals: hyperdrive.baseToken.decimals,
-              places: 6,
-            }).toString()
-          : "--"}
+        {accruedYieldStatus === "success" &&
+          formatBalance({
+            balance: accruedYield || 0n,
+            decimals: hyperdrive.baseToken.decimals,
+            places: 6,
+          }).toString()}
       </span>
     </div>
   );
