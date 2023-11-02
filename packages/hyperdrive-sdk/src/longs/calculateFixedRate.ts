@@ -5,13 +5,13 @@ export function calculateFixedRate({
   flatFee,
   bondAmount,
   baseAmountPaid,
+  decimals,
 }: {
   flatFee: bigint;
   bondAmount: bigint;
   baseAmountPaid: bigint;
+  decimals: number;
 }): bigint {
-  const poolFee = multiplyBigInt([bondAmount, flatFee], 18);
-  const yieldAmount = bondAmount - baseAmountPaid;
-  const yieldAfterFlatFee = subtractBigInt([yieldAmount, poolFee]);
-  return yieldAfterFlatFee;
+  const poolFee = multiplyBigInt([bondAmount, flatFee], decimals);
+  return subtractBigInt([bondAmount - baseAmountPaid, poolFee]);
 }

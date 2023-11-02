@@ -114,6 +114,7 @@ function FixedRateCell({
     flatFee: poolConfig?.fees.flat || 0n,
     bondAmount,
     baseAmountPaid,
+    decimals: hyperdrive.baseToken.decimals,
   });
 
   return (
