@@ -1,11 +1,11 @@
-import { HyperdriveABI } from "@hyperdrive/sdk";
+import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
 import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address, ContractFunctionResult } from "viem";
 export function useMarketState(hyperdrive: Address): {
   marketState:
-    | ContractFunctionResult<typeof HyperdriveABI, "getMarketState">
+    | ContractFunctionResult<typeof IHyperdrive.abi, "getMarketState">
     | undefined;
   marketStateStatus: QueryStatus;
 } {

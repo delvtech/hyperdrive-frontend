@@ -1,0 +1,11 @@
+{
+  "name": "@hyperdrive/artifacts",
+  "version": "0.0.0",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "sh build.sh"
+  }
+}

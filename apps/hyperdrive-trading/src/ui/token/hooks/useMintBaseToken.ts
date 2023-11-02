@@ -1,4 +1,4 @@
-import { ERC20MintableABI } from "@hyperdrive/sdk";
+import { ERC20Mintable } from "@hyperdrive/artifacts/dist/ERC20Mintable";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { Address, formatUnits } from "viem";
 import {
@@ -28,7 +28,7 @@ export function useMintBaseToken({
 
   const { config } = usePrepareContractWrite({
     address: baseToken,
-    abi: ERC20MintableABI,
+    abi: ERC20Mintable.abi,
     functionName: "mint",
     enabled: isEnabled,
     args: isEnabled ? [destination, amount] : undefined,

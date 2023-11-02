@@ -1,4 +1,4 @@
-import { HyperdriveABI } from "@hyperdrive/sdk";
+import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
 import { useQuery } from "@tanstack/react-query";
 import { PublicClient, decodeEventLog, Address } from "viem";
 import { usePublicClient } from "wagmi";
@@ -54,7 +54,7 @@ async function getShorts({
   publicClient,
 }: GetShortsOptions): Promise<bigint[]> {
   const openShortFilter = await publicClient.createContractEventFilter({
-    abi: HyperdriveABI,
+    abi: IHyperdrive.abi,
     address: hyperdriveAddress,
     eventName: "OpenShort",
     args: { trader: account },
@@ -69,7 +69,7 @@ async function getShorts({
 
   const mintEvents = openShortFilterLogs.map((log) =>
     decodeEventLog({
-      abi: HyperdriveABI,
+      abi: IHyperdrive.abi,
       data: log.data,
       topics: log.topics,
       eventName: "OpenShort",

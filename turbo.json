@@ -8,6 +8,11 @@
     "build:packages": {
       "outputs": ["dist/**"]
     },
+    "hyperdrive-cli#build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"],
+      "env": ["WALLET_PRIVATE_KEY"]
+    },
     "lint": {
       "dependsOn": ["^build"],
       "outputs": []
@@ -29,6 +34,5 @@
       "dependsOn": ["build"],
       "inputs": ["test/**/*.ts", "test/**/*.tsx"]
     }
-
   }
 }

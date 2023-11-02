@@ -1,5 +1,5 @@
+import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
 import {
-  HyperdriveABI,
   HyperdriveMathABI,
   ReadWriteHyperdrive,
   SimpleCache,
@@ -29,7 +29,7 @@ export class ViemReadWriteHyperdrive extends ReadWriteHyperdrive {
   }: ViemReadWriteHyperdriveOptions) {
     super({
       contract: new ViemCachedReadWriteContract({
-        abi: HyperdriveABI,
+        abi: IHyperdrive.abi,
         address,
         publicClient,
         walletClient,

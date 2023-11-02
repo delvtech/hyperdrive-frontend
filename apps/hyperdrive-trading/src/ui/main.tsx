@@ -21,8 +21,8 @@ root.render(
     <WagmiConfig config={wagmiConfig}>
       <RainbowKitProvider chains={wagmiChains} showRecentTransactions>
         <SkeletonTheme
-          baseColor="hsl(var(--nc))"
-          highlightColor="hsl(var(--bc))"
+          baseColor="hsl(var(--b1))"
+          highlightColor="hsl(var(--b3))"
         >
           <App />
         </SkeletonTheme>
