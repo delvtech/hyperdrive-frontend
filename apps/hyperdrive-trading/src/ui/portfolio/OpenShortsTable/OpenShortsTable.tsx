@@ -95,7 +95,7 @@ function AccruedYieldCell({
           balance: accruedYield || 0n,
           decimals: hyperdrive.baseToken.decimals,
           places: 6,
-        }).toString()}
+        })}
       </span>
     </div>
   );
