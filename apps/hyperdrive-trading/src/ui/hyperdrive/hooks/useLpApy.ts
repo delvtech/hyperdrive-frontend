@@ -34,8 +34,19 @@ export function useLpApy(hyperdrive: Hyperdrive): {
     enabled: queryEnabled,
   });
 
+  /**
+   * This hook returns the LP APY using the following formula for continuous compounding:
+   * r = rate of return
+   * p_0 = from lpSharePrice
+   * p_1 = to lpSharePrice
+   * t = term length in fractions of a year
+   * r = ln(p_1 / p_0) / t
+   */
   const lpApy =
     Math.log(Number(data?.toSharePrice) / Number(data?.fromSharePrice)) /
     convertMillisecondsToYearFraction(hyperdrive.termLengthMS);
-  return { lpApy };
+
+  return {
+    lpApy,
+  };
 }
