@@ -1,7 +1,7 @@
 import { multiplyBigInt } from "src/base/multiplyBigInt/multiplyBigInt";
 import { subtractBigInt } from "src/base/subtractBigInt/subtractBigInt";
 
-export function calculateFixedRate({
+export function calculateMatureLongYieldAfterFees({
   flatFee,
   bondAmount,
   baseAmountPaid,

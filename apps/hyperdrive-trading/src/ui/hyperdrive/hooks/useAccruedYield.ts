@@ -24,7 +24,7 @@ export function useAccruedYield({
     }),
     queryFn: queryEnabled
       ? () =>
-          readHyperdrive.getAccruedYield({
+          readHyperdrive.getShortAccruedYield({
             checkpointId,
             bondAmount,
             decimals: hyperdrive.baseToken.decimals,

@@ -75,12 +75,13 @@ export interface IReadHyperdrive {
 
   /**
    * Calculates the accrued yield for a given bond amount and checkpoint share price.
+   * Accrued yield = (current share price - checkpoint share price) x number of bonds
    * @param checkpointId
    * @param bondAmount
    * @param decimals
    * @param options
    */
-  getAccruedYield({
+  getShortAccruedYield({
     checkpointId,
     bondAmount,
     decimals,
@@ -391,7 +392,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     return liquidity;
   }
 
-  async getAccruedYield({
+  async getShortAccruedYield({
     checkpointId,
     bondAmount,
     decimals,

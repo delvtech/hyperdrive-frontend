@@ -1,5 +1,5 @@
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
-import { Long, calculateFixedRate } from "@hyperdrive/sdk";
+import { Long, calculateMatureLongYieldAfterFees } from "@hyperdrive/sdk";
 import { useQuery } from "@tanstack/react-query";
 import {
   Row,
@@ -110,7 +110,7 @@ function FixedRateCell({
   const { poolConfig } = usePoolConfig(hyperdrive.address);
   const { baseAmountPaid, bondAmount } = row.original;
 
-  const yieldAfterFlatFee = calculateFixedRate({
+  const yieldAfterFlatFee = calculateMatureLongYieldAfterFees({
     flatFee: poolConfig?.fees.flat || 0n,
     bondAmount,
     baseAmountPaid,
