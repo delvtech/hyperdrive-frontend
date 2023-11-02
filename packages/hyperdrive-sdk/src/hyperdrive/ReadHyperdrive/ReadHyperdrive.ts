@@ -27,6 +27,8 @@ import { WITHDRAW_SHARES_ASSET_ID } from "src/withdrawalShares/assetId";
 import { Checkpoint } from "src/pool/Checkpoint";
 import { MarketState } from "src/pool/MarketState";
 import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
+import { multiplyBigInt } from "src/base/multiplyBigInt/multiplyBigInt";
+import { subtractBigInt } from "src/base/subtractBigInt/subtractBigInt";
 
 const HyperdriveABI = IHyperdrive.abi;
 
@@ -70,6 +72,25 @@ export interface IReadHyperdrive {
    * This function retrieves the market state. This is helpful for retrieving general market state statistics, such as whether the market has been paused.
    */
   getMarketState(options?: ContractReadOptions): Promise<MarketState>;
+
+  /**
+   * Calculates the accrued yield for a given bond amount and checkpoint share price.
+   * @param checkpointId
+   * @param bondAmount
+   * @param decimals
+   * @param options
+   */
+  getAccruedYield({
+    checkpointId,
+    bondAmount,
+    decimals,
+    options,
+  }: {
+    checkpointId: bigint;
+    bondAmount: bigint;
+    decimals: number;
+    options?: ContractReadOptions;
+  }): Promise<bigint>;
 
   /**
    * Calculates the total trading volume in bonds given a block window.
@@ -368,6 +389,26 @@ export class ReadHyperdrive implements IReadHyperdrive {
     );
 
     return liquidity;
+  }
+
+  async getAccruedYield({
+    checkpointId,
+    bondAmount,
+    decimals,
+    options,
+  }: {
+    checkpointId: bigint;
+    bondAmount: bigint;
+    decimals: number;
+    options?: ContractReadOptions;
+  }): Promise<bigint> {
+    const { sharePrice } = await this.getPoolInfo(options);
+    const checkpoint = await this.getCheckpoint({ checkpointId });
+    const accruedYield = multiplyBigInt(
+      [subtractBigInt([sharePrice, checkpoint.sharePrice]), bondAmount],
+      decimals,
+    );
+    return accruedYield;
   }
 
   async getTradingVolume(options?: {

@@ -11,15 +11,13 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import classNames from "classnames";
-import * as dnum from "dnum";
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { parseUnits } from "src/base/parseUnits";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { useCheckpoint } from "src/ui/hyperdrive/hooks/useCheckpoint";
-import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
+import { useAccruedYield } from "src/ui/hyperdrive/hooks/useAccruedYield";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { getProfitLossText } from "src/ui/hyperdrive/shorts/CloseShortForm/getProfitLossText";
 import { CloseShortModalButton } from "src/ui/hyperdrive/shorts/CloseShortModalButton/CloseShortModalButton";
@@ -83,33 +81,23 @@ function AccruedYieldCell({
   row: Row<OpenShort>;
   hyperdrive: Hyperdrive;
 }) {
-  const { poolInfo } = usePoolInfo(hyperdrive.address);
-  const { checkpoint } = useCheckpoint({
+  const { accruedYield } = useAccruedYield({
+    hyperdrive,
+    bondAmount: row.original.bondAmount,
     checkpointId: row.original.checkpointId,
-    hyperdriveAddress: hyperdrive.address,
   });
-
-  // Accrued yield = (current share price - checkpoint share price) x number of bonds
-  const accruedYield = dnum.mul(
-    dnum.sub(
-      [poolInfo?.sharePrice || 0n, hyperdrive.baseToken.decimals],
-      [checkpoint?.sharePrice || 0n, 18],
-    ),
-    [row.original.bondAmount, hyperdrive.baseToken.decimals],
-    hyperdrive.baseToken.decimals,
-  );
-
-  const currentValue =
-    accruedYield &&
-    formatBalance({
-      balance: accruedYield[0],
-      decimals: hyperdrive.baseToken.decimals,
-      places: 6,
-    });
 
   return (
     <div className="flex flex-col gap-1">
-      <span>{currentValue?.toString()}</span>
+      <span>
+        {accruedYield
+          ? formatBalance({
+              balance: accruedYield,
+              decimals: hyperdrive.baseToken.decimals,
+              places: 6,
+            }).toString()
+          : "--"}
+      </span>
     </div>
   );
 }
