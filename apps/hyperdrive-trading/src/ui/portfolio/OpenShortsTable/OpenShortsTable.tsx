@@ -17,6 +17,7 @@ import { Hyperdrive } from "src/appconfig/types";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { parseUnits } from "src/base/parseUnits";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
+import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useCheckpoint } from "src/ui/hyperdrive/hooks/useCheckpoint";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
@@ -175,7 +176,7 @@ export function OpenShortsTable({
   const { address: account } = useAccount();
   const readHyperdrive = useReadHyperdrive(hyperdrive.address);
   const queryEnabled = !!readHyperdrive && !!account;
-  const { data: shorts } = useQuery({
+  const { data: shorts, isLoading } = useQuery({
     queryKey: makeQueryKey("shortPositions", { account }),
     queryFn: queryEnabled
       ? () => readHyperdrive?.getOpenShorts({ account })
@@ -231,34 +232,38 @@ export function OpenShortsTable({
           ))}
         </thead>
         <tbody>
-          {tableInstance.getRowModel().rows.map((row) => {
-            return (
-              <tr
-                key={row.id}
-                className="daisy-hover h-16 cursor-pointer items-center transition duration-300 ease-in-out"
-                onClick={() => {
-                  const modalId = `${row.original.assetId}`;
-                  (window as any)[modalId].showModal();
-                }}
-              >
-                <>
-                  {row.getVisibleCells().map((cell) => {
-                    return (
-                      <td key={cell.id}>
-                        {flexRender(
-                          cell.column.columnDef.cell,
-                          cell.getContext(),
-                        )}
-                      </td>
-                    );
-                  })}
-                </>
-              </tr>
-            );
-          })}
+          {isLoading ? (
+            <TableSkeleton numColumns={6} />
+          ) : (
+            tableInstance.getRowModel().rows.map((row) => {
+              return (
+                <tr
+                  key={row.id}
+                  className="daisy-hover h-16 cursor-pointer items-center transition duration-300 ease-in-out"
+                  onClick={() => {
+                    const modalId = `${row.original.assetId}`;
+                    (window as any)[modalId].showModal();
+                  }}
+                >
+                  <>
+                    {row.getVisibleCells().map((cell) => {
+                      return (
+                        <td key={cell.id}>
+                          {flexRender(
+                            cell.column.columnDef.cell,
+                            cell.getContext(),
+                          )}
+                        </td>
+                      );
+                    })}
+                  </>
+                </tr>
+              );
+            })
+          )}
         </tbody>
       </table>
-      {!shorts?.length ? <NonIdealState /> : null}
+      {!shorts?.length && !isLoading ? <NonIdealState /> : null}
     </div>
   );
 }
