@@ -17,7 +17,11 @@ test("Should return the PoolConfig from the contract as-is when getPoolConfig is
   const { contract, readHyperdrive } = setupReadHyperdrive();
 
   // stub out the contract call the sdk is going to make
-  contract.stubRead("getPoolConfig", [simplePoolConfig]);
+  contract.stubRead({
+    functionName: "getPoolConfig",
+    args: [],
+    value: [simplePoolConfig],
+  });
 
   // The sdk should return the correct data
   const value = await readHyperdrive.getPoolConfig();
@@ -30,7 +34,11 @@ test("Should return the PoolConfig from the contract as-is when getPoolConfig is
 test("Should return the PoolInfo from the contract as-is when getPoolInfo is called", async () => {
   const { contract, readHyperdrive } = setupReadHyperdrive();
 
-  contract.stubRead("getPoolInfo", [simplePoolInfo]);
+  contract.stubRead({
+    functionName: "getPoolInfo",
+    args: [],
+    value: [simplePoolInfo],
+  });
 
   const value = await readHyperdrive.getPoolInfo();
   expect(value).toBe(simplePoolInfo);
@@ -38,15 +46,28 @@ test("Should return the PoolInfo from the contract as-is when getPoolInfo is cal
 
 // The sdk should return the exact APR from the contracts. It should not do any
 // conversions or transformations, eg: formatting bigints, etc..
+// TODO: Refactor this test once the Rust SDK available
 test("Should get the fixed rate as-is when getFixedRate is called", async () => {
   const { contract, mathContract, readHyperdrive } = setupReadHyperdrive();
 
   // These are necessary to stub, but the values won't be used since we stub
   // calculateAPRFromReserves directly
-  contract.stubRead("getPoolConfig", [simplePoolConfig]);
-  contract.stubRead("getPoolInfo", [simplePoolInfo]);
+  contract.stubRead({
+    functionName: "getPoolConfig",
+    args: [],
+    value: [simplePoolConfig],
+  });
+  contract.stubRead({
+    functionName: "getPoolInfo",
+    args: [],
+    value: [simplePoolInfo],
+  });
 
-  mathContract.stubRead("calculateAPRFromReserves", [1n]);
+  mathContract.stubRead({
+    functionName: "calculateAPRFromReserves",
+    args: [0n, 0n, 0n, 0n, 0n],
+    value: [1n],
+  });
 
   const value = await readHyperdrive.getFixedRate();
   expect(value).toBe(1n);
