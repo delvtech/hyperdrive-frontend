@@ -2,7 +2,7 @@ import { expect, test } from "vitest";
 import { ContractEvent } from "src/contract/ContractEvents";
 import { ReadContractStub } from "src/contract/stubs/ReadContractStub/ReadContractStub";
 import { ERC20 } from "@hyperdrive/artifacts/dist/ERC20";
-import { ALICE, BOB } from "src/base/testing/accounts";
+import { ALICE, BOB, NANCY } from "src/base/testing/accounts";
 import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
 
 test("It stubs the read function", async () => {
@@ -33,8 +33,17 @@ test("It stubs the read function", async () => {
   expect(bobResult).toBe(bobValue);
   expect(aliceResult).toBe(aliceValue);
 
+  // Now stub w/out any args and see if we get the default value back
+  const defaultValue = [30n] as const;
+  contract.stubRead({
+    functionName: "balanceOf",
+    value: defaultValue,
+  });
+  const defaultResult = await contract.read("balanceOf", [NANCY]);
+  expect(defaultResult).toBe(defaultValue);
+
   const stub = contract.getReadStub("balanceOf");
-  expect(stub?.callCount).toBe(2);
+  expect(stub?.callCount).toBe(3);
 });
 
 test("It stubs the simulateWrite function", async () => {
