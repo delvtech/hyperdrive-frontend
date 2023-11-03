@@ -341,7 +341,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     const [poolInfo] = await this.contract.read("getPoolInfo", [], options);
     return poolInfo;
   }
-
+  // TODO: Rename to getSpotRate
   async getFixedRate(options?: ContractReadOptions): Promise<bigint> {
     const { positionDuration, initialSharePrice, timeStretch } =
       await this.getPoolConfig(options);
