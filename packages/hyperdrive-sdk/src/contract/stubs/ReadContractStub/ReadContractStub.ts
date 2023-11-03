@@ -114,18 +114,35 @@ export class ReadContractStub<TAbi extends Abi = Abi>
    * Stubs the return value for a given function when `read` is called with that
    * function name. This method overrides any previously stubbed values for the
    * same function.
-   *
-   * *Note: The stub doesn't account for dynamic values based on provided
-   * arguments/options.*
    */
-  stubRead<TFunctionName extends FunctionName<TAbi>>(
-    functionName: TFunctionName,
-    value: MaybePromise<FunctionReturnType<TAbi, TFunctionName>>,
-  ): void {
-    this.readStubMap.set(
-      functionName,
-      stub().resolves(value) as ReadStub<TAbi, FunctionName<TAbi>>,
-    );
+  stubRead<TFunctionName extends FunctionName<TAbi>>({
+    functionName,
+    args,
+    value,
+  }: {
+    functionName: TFunctionName;
+    args?: FunctionArgs<TAbi, TFunctionName>;
+    value: MaybePromise<FunctionReturnType<TAbi, TFunctionName>>;
+  }): void {
+    let readStubFromMap = this.readStubMap.get(functionName);
+    if (!readStubFromMap) {
+      readStubFromMap = stub() as ReadStub<TAbi, FunctionName<TAbi>>;
+      this.readStubMap.set(functionName, readStubFromMap);
+    }
+
+    // Account for dynamic args if provied
+    if (args) {
+      readStubFromMap.withArgs(args).resolves(value as any) as ReadStub<
+        TAbi,
+        FunctionName<TAbi>
+      >;
+      return;
+    }
+
+    readStubFromMap.resolves(value as any) as ReadStub<
+      TAbi,
+      FunctionName<TAbi>
+    >;
   }
 
   /**
