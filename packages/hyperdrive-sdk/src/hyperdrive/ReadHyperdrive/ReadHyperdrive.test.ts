@@ -71,7 +71,7 @@ test("Should get the fixed rate as-is when getFixedRate is called", async () => 
     value: [1n],
   });
 
-  const value = await readHyperdrive.getFixedRate();
+  const value = await readHyperdrive.getSpotRate();
   expect(value).toBe(1n);
 });
 

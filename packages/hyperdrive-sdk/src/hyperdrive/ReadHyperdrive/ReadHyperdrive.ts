@@ -54,7 +54,7 @@ export interface IReadHyperdrive {
    * Gets the pool's fixed APR, i.e. the fixed rate a user locks in when they
    * open a long.
    */
-  getFixedRate(options?: ContractReadOptions): Promise<bigint>;
+  getSpotRate(options?: ContractReadOptions): Promise<bigint>;
 
   /**
    * This function retrieves the market liquidity by using the following formula:
@@ -372,8 +372,8 @@ export class ReadHyperdrive implements IReadHyperdrive {
     const [poolInfo] = await this.contract.read("getPoolInfo", [], options);
     return poolInfo;
   }
-  // TODO: Rename to getSpotRate
-  async getFixedRate(options?: ContractReadOptions): Promise<bigint> {
+
+  async getSpotRate(options?: ContractReadOptions): Promise<bigint> {
     const { positionDuration, initialSharePrice, timeStretch } =
       await this.getPoolConfig(options);
     const { shareReserves, bondReserves, shareAdjustment } =

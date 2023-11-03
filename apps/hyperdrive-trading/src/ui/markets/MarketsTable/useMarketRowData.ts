@@ -39,7 +39,7 @@ export function useMarketRowData(
                 cache: querySdkCache,
               });
               const liquidity = await readHyperdrive.getLiquidity();
-              const longApr = await readHyperdrive.getFixedRate();
+              const longApr = await readHyperdrive.getSpotRate();
               return {
                 market: hyperdrive,
                 liquidity,

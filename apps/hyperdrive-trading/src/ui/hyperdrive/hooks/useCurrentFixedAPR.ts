@@ -18,7 +18,7 @@ export function useCurrentFixedAPR(hyperdrive: Hyperdrive): {
     queryKey: makeQueryKey("fixedAPR", { appConfig }),
     queryFn: queryEnabled
       ? async () => {
-          const fixedRate = await readHyperdrive.getFixedRate();
+          const fixedRate = await readHyperdrive.getSpotRate();
           return { apr: fixedRate, formatted: formatRate(fixedRate) };
         }
       : undefined,
