@@ -1,6 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
-import { convertMillisecondsToYearFraction } from "src/base/convertMillisecondsToDays";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useBlockNumber, useChainId } from "wagmi";
 import { usePoolInfo } from "./usePoolInfo";
@@ -29,24 +28,13 @@ export function useLpApy(hyperdrive: Hyperdrive): {
             // there won't be enough blocks to start.
             fromBlock: isCloudchain ? blockNumber - 3500n : 0n,
             toBlock: blockNumber,
+            termLength: hyperdrive.termLengthMS,
           })
       : undefined,
     enabled: queryEnabled,
   });
 
-  /**
-   * This hook returns the LP APY using the following formula for continuous compounding:
-   * r = rate of return
-   * p_0 = from lpSharePrice
-   * p_1 = to lpSharePrice
-   * t = term length in fractions of a year
-   * r = ln(p_1 / p_0) / t
-   */
-  const lpApy =
-    Math.log(Number(data?.toSharePrice) / Number(data?.fromSharePrice)) /
-    convertMillisecondsToYearFraction(hyperdrive.termLengthMS);
-
   return {
-    lpApy,
+    lpApy: data?.lpApy,
   };
 }

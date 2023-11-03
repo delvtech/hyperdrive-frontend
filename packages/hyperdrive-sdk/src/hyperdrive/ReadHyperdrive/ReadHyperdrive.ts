@@ -62,10 +62,19 @@ export interface IReadHyperdrive {
    */
   getLiquidity(options?: ContractReadOptions): Promise<bigint>;
 
+  /**
+   * This  returns the LP APY using the following formula for continuous compounding:
+   * r = rate of return
+   * p_0 = from lpSharePrice
+   * p_1 = to lpSharePrice
+   * t = term length in fractions of a year
+   * r = ln(p_1 / p_0) / t
+   */
   getLpApy(args: {
     fromBlock?: bigint;
     toBlock?: bigint;
-  }): Promise<{ fromSharePrice: bigint; toSharePrice: bigint }>;
+    termLength: number;
+  }): Promise<{ lpApy: number }>;
 
   getCheckpoint(args: {
     checkpointId: bigint;
@@ -581,16 +590,24 @@ export class ReadHyperdrive implements IReadHyperdrive {
   async getLpApy({
     fromBlock,
     toBlock,
+    termLength,
   }: {
     fromBlock: bigint;
     toBlock: bigint;
-  }): Promise<{ fromSharePrice: bigint; toSharePrice: bigint }> {
-    const fromPoolInfo = await this.getPoolInfo({ blockNumber: fromBlock });
-    const toPoolInfo = await this.getPoolInfo({ blockNumber: toBlock });
-    return {
-      fromSharePrice: fromPoolInfo.lpSharePrice,
-      toSharePrice: toPoolInfo.lpSharePrice,
-    };
+    termLength: number;
+  }): Promise<{ lpApy: number }> {
+    const { sharePrice: fromSharePrice } = await this.getPoolInfo({
+      blockNumber: fromBlock,
+    });
+    const { sharePrice: toSharePrice } = await this.getPoolInfo({
+      blockNumber: toBlock,
+    });
+
+    const days = Math.floor(Number(termLength) / (24 * 60 * 60 * 1000));
+    const yearFraction = days / 365;
+    const lpApy =
+      Math.log(Number(toSharePrice) / Number(fromSharePrice)) / yearFraction;
+    return { lpApy };
   }
 
   private async getTransferSingleEvents({
