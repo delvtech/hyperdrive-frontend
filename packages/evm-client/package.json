@@ -1,5 +1,5 @@
 {
-  "name": "@hyperdrive/sdk-viem",
+  "name": "@hyperdrive/evm-client",
   "version": "0.0.0",
   "license": "MIT",
   "type": "module",
@@ -11,25 +11,32 @@
   "scripts": {
     "build": "tsup src/index.ts --minify --format esm --clean --dts",
     "watch": "npm run build -- --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "typecheck": "tsc --noEmit"
   },
-  "peerDependencies": {
-    "@hyperdrive/sdk": "*",
-    "viem": "^1.5"
-  },
   "devDependencies": {
-    "@hyperdrive/artifacts": "*",
-    "@hyperdrive/evm-client": "*",
     "@hyperdrive/eslint-config": "*",
     "@hyperdrive/prettier-config": "*",
-    "@hyperdrive/sdk": "*",
     "@hyperdrive/tsconfig": "*",
+    "@types/sinon": "^10.0.16",
+    "abitype": "^0.9.8",
+    "dotenv": "^16.0.3",
     "prettier-plugin-organize-imports": "^3.2.2",
+    "sinon": "^15.2.0",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.1.0",
     "tsup": "^7.2.0",
     "typescript": "^5.0.2",
-    "viem": "^1.10.14"
+    "vite-tsconfig-paths": "^4.2.0",
+    "vitest": "^0.28.5"
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "@tanstack/query-core": "^4.29.11",
+    "dnum": "^2.9.0",
+    "lru-cache": "^10.0.1"
   }
 }

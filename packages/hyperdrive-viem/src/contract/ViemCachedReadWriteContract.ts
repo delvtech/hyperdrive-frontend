@@ -1,4 +1,4 @@
-import { CachedReadWriteContract, SimpleCache } from "@hyperdrive/sdk";
+import { CachedReadWriteContract, SimpleCache } from "@hyperdrive/evm-client";
 import {
   ViemReadWriteContract,
   ViemReadWriteContractOptions,

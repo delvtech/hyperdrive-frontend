@@ -1,7 +1,9 @@
 import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
-import { ICachedContract } from "src/contract/cached/CachedContract";
-import { ICachedReadContract } from "src/contract/cached/CachedReadContract/CachedReadContract";
-import { ICachedReadWriteContract } from "src/contract/cached/CachedReadWriteContract";
+import {
+  ICachedContract,
+  ICachedReadContract,
+  ICachedReadWriteContract,
+} from "@hyperdrive/evm-client";
 
 export type IReadHyperdriveContract = ICachedReadContract<
   typeof IHyperdrive.abi

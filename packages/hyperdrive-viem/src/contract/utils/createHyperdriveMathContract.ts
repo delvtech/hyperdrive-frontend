@@ -1,4 +1,5 @@
-import { HyperdriveMathABI, SimpleCache } from "@hyperdrive/sdk";
+import { SimpleCache } from "@hyperdrive/evm-client";
+import { HyperdriveMathABI } from "@hyperdrive/sdk";
 import { ViemCachedReadContract } from "src/contract/ViemCachedReadContract";
 import { Address, PublicClient } from "viem";
 
