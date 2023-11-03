@@ -1,5 +1,5 @@
 import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
-import { FunctionReturnType } from "src/base/abitype";
+import { FunctionReturnType } from "@hyperdrive/evm-client";
 
 // Given the unlikely scenario that getPoolConfig will have a second argument,
 // we can infer that the first element is always the PoolConfig. This approach

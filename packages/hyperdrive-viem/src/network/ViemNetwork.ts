@@ -1,4 +1,4 @@
-import { INetwork, GetBlockParameters } from "@hyperdrive/sdk";
+import { GetBlockParameters, INetwork } from "@hyperdrive/evm-client";
 import { PublicClient } from "viem";
 
 export class ViemNetwork implements INetwork {

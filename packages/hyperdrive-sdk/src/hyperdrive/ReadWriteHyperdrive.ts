@@ -1,10 +1,6 @@
 import { IReadWriteHyperdriveContract } from "src/hyperdrive/HyperdriveContract";
 import { Address } from "abitype";
 import {
-  ContractWriteOptionsWithCallback,
-  ContractWriteOptions,
-} from "src/contract/IReadWriteContract";
-import {
   IReadHyperdrive,
   ReadHyperdrive,
   ReadHyperdriveOptions,
@@ -12,6 +8,10 @@ import {
 import { Long } from "src/longs/types";
 import { Short } from "src/shorts/types";
 import { ZERO_ADDRESS } from "src/base/numbers";
+import {
+  ContractWriteOptions,
+  ContractWriteOptionsWithCallback,
+} from "@hyperdrive/evm-client";
 
 export interface IReadWriteHyperdrive extends IReadHyperdrive {
   /**
