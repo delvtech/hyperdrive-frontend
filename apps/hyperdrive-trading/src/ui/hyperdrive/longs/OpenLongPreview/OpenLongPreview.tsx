@@ -1,8 +1,7 @@
-import { Long } from "@hyperdrive/sdk";
+import { calculateFixedRateFromOpenLong, Long } from "@hyperdrive/sdk";
 import * as dnum from "dnum";
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
-import { calculateAnnualizedPercentageChange } from "src/base/calculateAnnualizedPercentageChange";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { formatRate } from "src/base/formatRate";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -61,11 +60,15 @@ export function OpenLongPreview({
                 data-tip={`Your net fixed rate after pool fees and slippage are applied.`}
               >
                 <span className="font-bold">
-                  {calculateAnnualizedPercentageChange({
-                    amountBefore: long.baseAmountPaid,
-                    amountAfter: long.bondAmount,
-                    days: numDays,
-                  }).toFixed(2)}
+                  {formatRate(
+                    calculateFixedRateFromOpenLong({
+                      positionDuration: poolConfig?.positionDuration || 0n,
+                      baseAmount: long.baseAmountPaid,
+                      bondAmount: long.bondAmount,
+                      decimals: hyperdrive.baseToken.decimals,
+                    }),
+                    hyperdrive.baseToken.decimals,
+                  )}
                   % APR
                 </span>
               </span>

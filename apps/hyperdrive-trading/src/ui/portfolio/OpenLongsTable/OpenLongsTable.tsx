@@ -114,7 +114,7 @@ function FixedRateCell({
   hyperdrive: Hyperdrive;
 }) {
   const { poolConfig } = usePoolConfig(hyperdrive.address);
-  const { baseAmountPaid, bondAmount, maturity } = row.original;
+  const { baseAmountPaid, bondAmount } = row.original;
   const fixedRate = calculateFixedRateFromOpenLong({
     baseAmount: baseAmountPaid,
     bondAmount,
