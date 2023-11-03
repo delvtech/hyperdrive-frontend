@@ -1,4 +1,4 @@
-import { SimpleCache, SimpleCacheKey } from "@hyperdrive/sdk";
+import { SimpleCache, SimpleCacheKey } from "@hyperdrive/evm-client";
 import { QueryClient, QueryKey } from "@tanstack/query-core";
 import stringify from "fast-json-stable-stringify";
 
