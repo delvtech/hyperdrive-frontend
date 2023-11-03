@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "@hyperdrive/artifacts": "*",
+    "@hyperdrive/evm-client": "*",
     "@hyperdrive/eslint-config": "*",
     "@hyperdrive/prettier-config": "*",
     "@hyperdrive/sdk": "*",

@@ -1,15 +1,15 @@
 import {
-  ContractEvent,
-  ContractGetEventsOptions,
-  ContractReadOptions,
-  ContractWriteOptions,
-  EventArgs,
-  EventName,
-  FunctionArgs,
-  FunctionName,
-  FunctionReturnType,
   IReadContract,
-} from "@hyperdrive/sdk";
+  FunctionName,
+  FunctionArgs,
+  ContractReadOptions,
+  FunctionReturnType,
+  ContractWriteOptions,
+  EventName,
+  ContractGetEventsOptions,
+  ContractEvent,
+  EventArgs,
+} from "@hyperdrive/evm-client";
 import { createSimulateContractParameters } from "src/contract/utils/createSimulateContractParameters";
 import { Abi, Address, PublicClient } from "viem";
 

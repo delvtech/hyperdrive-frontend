@@ -1,4 +1,4 @@
-import { ContractWriteOptions } from "@hyperdrive/sdk";
+import { ContractWriteOptions } from "@hyperdrive/evm-client";
 
 /**
  * Get parameters for `simulateContract` from `ContractWriteOptions`
