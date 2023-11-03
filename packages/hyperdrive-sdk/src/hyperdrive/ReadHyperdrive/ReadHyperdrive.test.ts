@@ -1,14 +1,16 @@
 import { expect, test } from "vitest";
 import * as dnum from "dnum";
-import { ReadContractStub } from "src/contract/stubs/ReadContractStub/ReadContractStub";
 import { ReadHyperdrive } from "src/hyperdrive/ReadHyperdrive/ReadHyperdrive";
 import { HyperdriveMathABI } from "src/abis/HyperdriveMath";
-import { CachedReadContract } from "src/contract/cached/CachedReadContract/CachedReadContract";
-import { NetworkStub } from "src/network/stubs/NetworkStub";
 import { simplePoolConfig } from "src/pool/testing/simplePoolConfig";
 import { simplePoolInfo } from "src/pool/testing/simplePoolInfo";
 import { ALICE, BOB } from "src/base/testing/accounts";
 import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
+import {
+  CachedReadContract,
+  NetworkStub,
+  ReadContractStub,
+} from "@hyperdrive/evm-client";
 
 // The sdk should return the exact PoolConfig from the contracts. It should not
 // do any conversions or transformations, eg: converting seconds to ms,

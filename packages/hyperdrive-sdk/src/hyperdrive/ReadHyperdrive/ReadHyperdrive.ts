@@ -1,14 +1,14 @@
 import { Address } from "abitype";
-import groupBy from "lodash.groupby";
-import mapValues from "lodash.mapvalues";
-import { sumBigInt } from "src/base/sumBigInt";
-import { BlockTag } from "src/network/BlockTag";
 import {
   ContractEvent,
   ContractGetEventsOptions,
-} from "src/contract/ContractEvents";
-import { ContractWriteOptions } from "src/contract/IReadWriteContract";
-import { ContractReadOptions } from "src/contract/IReadContract";
+  ContractReadOptions,
+  ContractWriteOptions,
+  INetwork,
+} from "@hyperdrive/evm-client";
+import groupBy from "lodash.groupby";
+import mapValues from "lodash.mapvalues";
+import { sumBigInt } from "src/base/sumBigInt";
 import { IReadHyperdriveContract } from "src/hyperdrive/HyperdriveContract";
 import { IReadHyperdriveMathContract } from "src/hyperdrive/HyperdriveMathContract";
 import { PoolConfig } from "src/pool/PoolConfig";
@@ -20,7 +20,6 @@ import { ClosedLong, Long } from "src/longs/types";
 import { ClosedLpShares } from "src/lp/ClosedLpShares";
 import { RedeemedWithdrawalShares } from "src/withdrawalShares/RedeemedWithdrawalShares";
 import { ClosedShort, OpenShort } from "src/shorts/types";
-import { INetwork } from "src/network/Network";
 import { calculateEffectiveShareReserves } from "src/pool/calculateEffectiveShares";
 import { getCheckpointId } from "src/pool/getCheckpointId";
 import { WITHDRAW_SHARES_ASSET_ID } from "src/withdrawalShares/assetId";
@@ -29,6 +28,7 @@ import { MarketState } from "src/pool/MarketState";
 import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
 import { multiplyBigInt } from "src/base/multiplyBigInt/multiplyBigInt";
 import { subtractBigInt } from "src/base/subtractBigInt/subtractBigInt";
+import { BlockTag } from "viem";
 
 const HyperdriveABI = IHyperdrive.abi;
 
