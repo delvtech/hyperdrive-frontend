@@ -1,9 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
 import { makeQueryKey } from "src/base/makeQueryKey";
+import { usePoolConfig } from "src/ui/hyperdrive/hooks/usePoolConfig";
+import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
+import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { useBlockNumber, useChainId } from "wagmi";
-import { usePoolInfo } from "./usePoolInfo";
-import { useReadHyperdrive } from "./useReadHyperdrive";
 
 export function useLpApy(hyperdrive: Hyperdrive): {
   lpApy: number | undefined;
@@ -11,9 +12,13 @@ export function useLpApy(hyperdrive: Hyperdrive): {
   const chainId = useChainId();
   const isCloudchain = chainId && +import.meta.env.VITE_CUSTOM_CHAIN_CHAIN_ID;
   const { data: blockNumber } = useBlockNumber();
+  console.log("blockNumber", blockNumber);
   const { poolInfo: currentPoolInfo } = usePoolInfo(hyperdrive.address);
+  const { poolConfig } = usePoolConfig(hyperdrive.address);
   const readHyperdrive = useReadHyperdrive(hyperdrive.address);
-  const queryEnabled = !!readHyperdrive && !!blockNumber && !!currentPoolInfo;
+  const queryEnabled =
+    !!readHyperdrive && !!blockNumber && !!currentPoolInfo && !!poolConfig;
+
   const { data } = useQuery({
     queryKey: makeQueryKey("getLpApy", {
       chainId,
@@ -28,7 +33,7 @@ export function useLpApy(hyperdrive: Hyperdrive): {
             // there won't be enough blocks to start.
             fromBlock: isCloudchain ? blockNumber - 3500n : 0n,
             toBlock: blockNumber,
-            termLength: hyperdrive.termLengthMS,
+            positionDuration: poolConfig.positionDuration,
           })
       : undefined,
     enabled: queryEnabled,

@@ -29,7 +29,7 @@ import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
 import { multiplyBigInt } from "src/base/multiplyBigInt/multiplyBigInt";
 import { subtractBigInt } from "src/base/subtractBigInt/subtractBigInt";
 import { BlockTag } from "viem";
-
+import * as dnum from "dnum";
 const HyperdriveABI = IHyperdrive.abi;
 
 export interface ReadHyperdriveOptions {
@@ -73,7 +73,7 @@ export interface IReadHyperdrive {
   getLpApy(args: {
     fromBlock?: bigint;
     toBlock?: bigint;
-    termLength: number;
+    positionDuration: bigint;
   }): Promise<{ lpApy: number }>;
 
   getCheckpoint(args: {
@@ -590,11 +590,11 @@ export class ReadHyperdrive implements IReadHyperdrive {
   async getLpApy({
     fromBlock,
     toBlock,
-    termLength,
+    positionDuration,
   }: {
     fromBlock: bigint;
     toBlock: bigint;
-    termLength: number;
+    positionDuration: bigint;
   }): Promise<{ lpApy: number }> {
     const { sharePrice: fromSharePrice } = await this.getPoolInfo({
       blockNumber: fromBlock,
@@ -603,10 +603,15 @@ export class ReadHyperdrive implements IReadHyperdrive {
       blockNumber: toBlock,
     });
 
-    const days = Math.floor(Number(termLength) / (24 * 60 * 60 * 1000));
-    const yearFraction = days / 365;
-    const lpApy =
-      Math.log(Number(toSharePrice) / Number(fromSharePrice)) / yearFraction;
+    const days = positionDuration / (24n * 60n * 60n);
+    const yearFraction = dnum.div([days, 18], [365n, 18]);
+    const toOverFromSharePrice = dnum.div(
+      [toSharePrice, 18],
+      [fromSharePrice, 18],
+    );
+
+    const valueToLog = dnum.div(toOverFromSharePrice, yearFraction);
+    const lpApy = Math.log(Number(valueToLog[0]));
     return { lpApy };
   }
 
