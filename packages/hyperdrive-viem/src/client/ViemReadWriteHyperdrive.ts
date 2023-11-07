@@ -1,9 +1,11 @@
 import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
 import { SimpleCache } from "@hyperdrive/evm-client";
+import {
+  ViemCachedReadContract,
+  ViemCachedReadWriteContract,
+  ViemNetwork,
+} from "@hyperdrive/evm-client-viem";
 import { HyperdriveMathABI, ReadWriteHyperdrive } from "@hyperdrive/sdk";
-import { ViemCachedReadContract } from "src/contract/ViemCachedReadContract";
-import { ViemCachedReadWriteContract } from "src/contract/ViemCachedReadWriteContract";
-import { ViemNetwork } from "src/network/ViemNetwork";
 import { Address, PublicClient, WalletClient } from "viem";
 
 interface ViemReadWriteHyperdriveOptions {
