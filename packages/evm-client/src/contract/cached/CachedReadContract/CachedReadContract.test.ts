@@ -83,7 +83,6 @@ test("It clears the cache", async () => {
   const stubbedValue = ["0x123abc"] as const;
   contract.stubRead({
     functionName: "name",
-    args: [],
     value: stubbedValue,
   });
 
