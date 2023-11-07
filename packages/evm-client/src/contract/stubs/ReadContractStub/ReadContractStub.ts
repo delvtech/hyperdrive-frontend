@@ -20,7 +20,7 @@ import { ContractReadOptions, IReadContract } from "src/contract/IReadContract";
  * on the business logic of the SDK.
  *
  * @example
- * const contract = new ReadContractStub(HyperdriveABI);
+ * const contract = new ReadContractStub(ERC20ABI);
  * contract.stubRead("baseToken", "0x123abc");
  *
  * const value = await contract.read("baseToken", []); // "0x123abc"

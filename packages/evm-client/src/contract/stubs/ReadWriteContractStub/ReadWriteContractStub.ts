@@ -16,7 +16,7 @@ import { stub } from "sinon";
  * interacting with a real Ethereum contract.
  *
  * @example
- * const contract = new ReadWriteContractStub(HyperdriveABI);
+ * const contract = new ReadWriteContractStub(ERC20ABI);
  * contract.stubWrite("addLiquidity", 100n);
  *
  * const result = await contract.write("addLiquidity", []); // 100n
