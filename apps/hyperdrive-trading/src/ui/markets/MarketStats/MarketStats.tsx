@@ -7,6 +7,7 @@ import { Stat } from "src/ui/base/components/Stat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useCurrentFixedAPR } from "src/ui/hyperdrive/hooks/useCurrentFixedAPR";
 import { useLiquidity } from "src/ui/hyperdrive/hooks/useLiquidity";
+import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
 import { useTradingVolume } from "src/ui/hyperdrive/hooks/useTradingVolume";
 import { useVaultRate } from "src/ui/vaults/useVaultRate";
 import { useBlockNumber, useChainId } from "wagmi";
@@ -27,6 +28,8 @@ export function MarketStats({
 
   const { liquidity } = useLiquidity(hyperdrive.address);
   const { fixedAPR } = useCurrentFixedAPR(hyperdrive);
+  const { lpApy } = useLpApy(hyperdrive);
+
   const { vaultRate } = useVaultRate({
     // TODO: temporary for now until this available via addresses.json
     vaultAddress: "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
@@ -69,6 +72,19 @@ export function MarketStats({
           )
         }
         description={`Fixed rate earned from purchasing hy${hyperdrive.baseToken.symbol}, before fees and slippage are applied`}
+      />
+      <Stat
+        label="LP APY (12 Hour)"
+        value={
+          lpApy || lpApy === 0 ? (
+            <span className="flex items-center gap-1.5">
+              {lpApy.toFixed(4)}% APY
+            </span>
+          ) : (
+            <Skeleton className="opacity-50" />
+          )
+        }
+        description={`This represents the LP projected annual return based on the performance observed over the past 12 hours. It assumes the rate of return seen in this period continues consistently for an entire year.`}
       />
       <Stat
         description={`The amount of hy${hyperdrive.baseToken.symbol} (either longs or shorts) that have been traded in the last 24 hours. `}

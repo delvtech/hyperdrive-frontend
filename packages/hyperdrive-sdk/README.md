@@ -59,6 +59,6 @@ export const hyperdrive = new HyperdriveSdk({
 
 // 3. Use the SDK <3
 (async function () {
-  console.log(`The current fixed rate is: ${await hyperdrive.getFixedRate()}`);
+  console.log(`The current fixed rate is: ${await hyperdrive.getSpotRate()}`);
 })();
 ```

@@ -22,6 +22,7 @@ export type { Short, ClosedShort, OpenShort } from "src/shorts/types";
 
 // Longs
 export type { ClosedLong, Long } from "src/longs/types";
+export { calculateFixedRateFromOpenLong } from "src/longs/calculateFixedRateFromOpenLong";
 export { calculateMatureLongYieldAfterFees } from "src/longs/calculateMatureLongYieldAfterFees";
 
 // LP

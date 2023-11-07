@@ -1,5 +1,9 @@
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
-import { Long, calculateMatureLongYieldAfterFees } from "@hyperdrive/sdk";
+import {
+  Long,
+  calculateFixedRateFromOpenLong,
+  calculateMatureLongYieldAfterFees,
+} from "@hyperdrive/sdk";
 import { useQuery } from "@tanstack/react-query";
 import {
   Row,
@@ -14,6 +18,7 @@ import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { calculateAnnualizedPercentageChange } from "src/base/calculateAnnualizedPercentageChange";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
+import { formatRate } from "src/base/formatRate";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
@@ -110,6 +115,12 @@ function FixedRateCell({
 }) {
   const { poolConfig } = usePoolConfig(hyperdrive.address);
   const { baseAmountPaid, bondAmount } = row.original;
+  const fixedRate = calculateFixedRateFromOpenLong({
+    baseAmount: baseAmountPaid,
+    bondAmount,
+    positionDuration: poolConfig?.positionDuration || 0n,
+    decimals: hyperdrive.baseToken.decimals,
+  });
 
   const yieldAfterFlatFee = calculateMatureLongYieldAfterFees({
     flatFee: poolConfig?.fees.flat || 0n,
@@ -120,14 +131,7 @@ function FixedRateCell({
 
   return (
     <div className="flex flex-col gap-1">
-      <span className="ml-2 font-bold">
-        {calculateAnnualizedPercentageChange({
-          amountBefore: row.original.baseAmountPaid,
-          amountAfter: row.original.bondAmount,
-          days: convertMillisecondsToDays(hyperdrive.termLengthMS),
-        }).toFixed(2)}
-        %
-      </span>
+      <span className="ml-2 font-bold">{formatRate(fixedRate)}%</span>
       <div
         data-tip={"Yield after fees if held to maturity"}
         className={

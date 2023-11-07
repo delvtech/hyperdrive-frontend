@@ -1,6 +1,4 @@
-import { multiplyBigInt } from "src/base/multiplyBigInt/multiplyBigInt";
-import { subtractBigInt } from "src/base/subtractBigInt/subtractBigInt";
-
+import * as dnum from "dnum";
 export function calculateMatureLongYieldAfterFees({
   flatFee,
   bondAmount,
@@ -12,6 +10,11 @@ export function calculateMatureLongYieldAfterFees({
   baseAmountPaid: bigint;
   decimals: number;
 }): bigint {
-  const poolFee = multiplyBigInt([bondAmount, flatFee], decimals);
-  return subtractBigInt([bondAmount - baseAmountPaid, poolFee]);
+  const poolFee = dnum.mul([bondAmount, decimals], [flatFee, decimals]);
+  const yieldAmount = dnum.subtract(
+    [bondAmount, decimals],
+    [baseAmountPaid, decimals],
+  );
+
+  return dnum.subtract(yieldAmount, poolFee)[0];
 }

@@ -29,7 +29,7 @@ import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
 import { multiplyBigInt } from "src/base/multiplyBigInt/multiplyBigInt";
 import { subtractBigInt } from "src/base/subtractBigInt/subtractBigInt";
 import { BlockTag } from "viem";
-
+import * as dnum from "dnum";
 const HyperdriveABI = IHyperdrive.abi;
 
 export interface ReadHyperdriveOptions {
@@ -54,13 +54,27 @@ export interface IReadHyperdrive {
    * Gets the pool's fixed APR, i.e. the fixed rate a user locks in when they
    * open a long.
    */
-  getFixedRate(options?: ContractReadOptions): Promise<bigint>;
+  getSpotRate(options?: ContractReadOptions): Promise<bigint>;
 
   /**
    * This function retrieves the market liquidity by using the following formula:
    * marketLiquidity = lpSharePrice * effectiveShareReserves - longsOutstanding
    */
   getLiquidity(options?: ContractReadOptions): Promise<bigint>;
+
+  /**
+   * This  returns the LP APY using the following formula for continuous compounding:
+   * r = rate of return
+   * p_0 = from lpSharePrice
+   * p_1 = to lpSharePrice
+   * t = term length in fractions of a year
+   * r = ln(p_1 / p_0) / t
+   */
+  getLpApy(args: {
+    fromBlock?: bigint;
+    toBlock?: bigint;
+    positionDuration: bigint;
+  }): Promise<{ lpApy: number }>;
 
   getCheckpoint(args: {
     checkpointId: bigint;
@@ -359,7 +373,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     return poolInfo;
   }
 
-  async getFixedRate(options?: ContractReadOptions): Promise<bigint> {
+  async getSpotRate(options?: ContractReadOptions): Promise<bigint> {
     const { positionDuration, initialSharePrice, timeStretch } =
       await this.getPoolConfig(options);
     const { shareReserves, bondReserves, shareAdjustment } =
@@ -571,6 +585,34 @@ export class ReadHyperdrive implements IReadHyperdrive {
         blockNumber,
       })),
     );
+  }
+
+  async getLpApy({
+    fromBlock,
+    toBlock,
+    positionDuration,
+  }: {
+    fromBlock: bigint;
+    toBlock: bigint;
+    positionDuration: bigint;
+  }): Promise<{ lpApy: number }> {
+    const { sharePrice: fromSharePrice } = await this.getPoolInfo({
+      blockNumber: fromBlock,
+    });
+    const { sharePrice: toSharePrice } = await this.getPoolInfo({
+      blockNumber: toBlock,
+    });
+
+    const days = positionDuration / (24n * 60n * 60n);
+    const yearFraction = dnum.div([days, 18], [365n, 18]);
+    const toOverFromSharePrice = dnum.div(
+      [toSharePrice, 18],
+      [fromSharePrice, 18],
+    );
+
+    const valueToLog = dnum.div(toOverFromSharePrice, yearFraction);
+    const lpApy = Math.log(Number(valueToLog[0]));
+    return { lpApy };
   }
 
   private async getTransferSingleEvents({
