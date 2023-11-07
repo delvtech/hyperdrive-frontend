@@ -12,7 +12,6 @@ export function useLpApy(hyperdrive: Hyperdrive): {
   const chainId = useChainId();
   const isCloudchain = chainId && +import.meta.env.VITE_CUSTOM_CHAIN_CHAIN_ID;
   const { data: blockNumber } = useBlockNumber();
-  console.log("blockNumber", blockNumber);
   const { poolInfo: currentPoolInfo } = usePoolInfo(hyperdrive.address);
   const { poolConfig } = usePoolConfig(hyperdrive.address);
   const readHyperdrive = useReadHyperdrive(hyperdrive.address);
@@ -31,7 +30,7 @@ export function useLpApy(hyperdrive: Hyperdrive): {
             // Cloudchain can go back about half a days worth of blocks, whereas
             // we can just start from "earliest" on a local docker chain, since
             // there won't be enough blocks to start.
-            fromBlock: isCloudchain ? blockNumber - 3500n : 0n,
+            fromBlock: isCloudchain ? blockNumber - 3500n : 1n,
             toBlock: blockNumber,
             positionDuration: poolConfig.positionDuration,
           })
