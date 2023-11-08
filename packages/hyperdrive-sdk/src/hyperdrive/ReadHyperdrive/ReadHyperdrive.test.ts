@@ -1,7 +1,6 @@
 import { expect, test } from "vitest";
 import * as dnum from "dnum";
 import { ReadHyperdrive } from "src/hyperdrive/ReadHyperdrive/ReadHyperdrive";
-import { HyperdriveMathABI } from "src/abis/HyperdriveMath";
 import { simplePoolConfig } from "src/pool/testing/simplePoolConfig";
 import { simplePoolInfo } from "src/pool/testing/simplePoolInfo";
 import { ALICE, BOB } from "src/base/testing/accounts";
@@ -11,6 +10,7 @@ import {
   NetworkStub,
   ReadContractStub,
 } from "@hyperdrive/evm-client";
+import { MockHyperdriveMath } from "@hyperdrive/artifacts/dist/MockHyperdriveMath";
 
 // The sdk should return the exact PoolConfig from the contracts. It should not
 // do any conversions or transformations, eg: converting seconds to ms,
@@ -137,7 +137,7 @@ function setupReadHyperdrive() {
   const contract = new ReadContractStub(IHyperdrive.abi);
   const cachedContract = new CachedReadContract({ contract });
 
-  const mathContract = new ReadContractStub(HyperdriveMathABI);
+  const mathContract = new ReadContractStub(MockHyperdriveMath.abi);
   const cachedMathContract = new CachedReadContract({ contract: mathContract });
 
   const network = new NetworkStub();

@@ -2,9 +2,6 @@
 export { ReadHyperdrive } from "src/hyperdrive/ReadHyperdrive/ReadHyperdrive";
 export { ReadWriteHyperdrive } from "src/hyperdrive/ReadWriteHyperdrive";
 
-// ABIs
-export { HyperdriveMathABI } from "src/abis/HyperdriveMath";
-
 export type {
   IHyperdriveContract,
   IReadHyperdriveContract,

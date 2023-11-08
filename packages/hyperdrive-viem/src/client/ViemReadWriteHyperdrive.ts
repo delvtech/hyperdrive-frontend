@@ -1,11 +1,12 @@
 import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
+import { MockHyperdriveMath } from "@hyperdrive/artifacts/dist/MockHyperdriveMath";
 import { SimpleCache } from "@hyperdrive/evm-client";
 import {
   ViemCachedReadContract,
   ViemCachedReadWriteContract,
   ViemNetwork,
 } from "@hyperdrive/evm-client-viem";
-import { HyperdriveMathABI, ReadWriteHyperdrive } from "@hyperdrive/sdk";
+import { ReadWriteHyperdrive } from "@hyperdrive/sdk";
 import { Address, PublicClient, WalletClient } from "viem";
 
 interface ViemReadWriteHyperdriveOptions {
@@ -36,7 +37,7 @@ export class ViemReadWriteHyperdrive extends ReadWriteHyperdrive {
         id,
       }),
       mathContract: new ViemCachedReadContract({
-        abi: HyperdriveMathABI,
+        abi: MockHyperdriveMath.abi,
         address: mathAddress,
         publicClient,
         cache,

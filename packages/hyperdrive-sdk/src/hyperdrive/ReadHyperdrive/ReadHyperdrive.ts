@@ -396,7 +396,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     const { shareReserves, bondReserves, shareAdjustment } =
       await this.getPoolInfo(options);
     const [apr] = await this.mathContract.read(
-      "calculateAPRFromReserves",
+      "calculateSpotAPR",
       [
         calculateEffectiveShareReserves(shareReserves, shareAdjustment),
         bondReserves,
