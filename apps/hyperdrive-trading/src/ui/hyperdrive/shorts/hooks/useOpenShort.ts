@@ -13,7 +13,7 @@ interface UseOpenShortOptions {
   maxBaseAmountIn: bigint | undefined;
   minSharePrice: bigint | undefined;
   destination: Address | undefined;
-  asUnderlying?: boolean;
+  asBase?: boolean;
   enabled?: boolean;
   /** Callback to be invoked when the transaction is finalized */
   onExecuted?: () => void;
@@ -30,7 +30,7 @@ export function useOpenShort({
   maxBaseAmountIn,
   minSharePrice,
   destination,
-  asUnderlying = true,
+  asBase = true,
   enabled,
   onExecuted,
 }: UseOpenShortOptions): UseOpenShortResult {
@@ -53,7 +53,7 @@ export function useOpenShort({
           destination,
           minSharePrice,
           maxDeposit: maxBaseAmountIn,
-          asUnderlying,
+          asBase,
           options: {
             onSubmitted: (hash) => {
               addTransaction({

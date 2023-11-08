@@ -1,4 +1,5 @@
 import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
+import { zeroAddress } from "viem";
 import {
   Address,
   useContractRead,
@@ -11,7 +12,7 @@ interface UseOpenShortOptions {
   bondAmount: bigint | undefined;
   maxDeposit: bigint | undefined;
   destination: Address | undefined;
-  asUnderlying?: boolean;
+  asBase?: boolean;
 }
 
 export function useOpenShort({
@@ -19,7 +20,7 @@ export function useOpenShort({
   bondAmount,
   maxDeposit,
   destination,
-  asUnderlying = true,
+  asBase = true,
 }: UseOpenShortOptions): {
   openShort: (() => void) | undefined;
   openShortStatus: "error" | "idle" | "success" | "loading";
@@ -37,7 +38,12 @@ export function useOpenShort({
     functionName: "openShort",
     enabled: queryEnabled,
     args: queryEnabled
-      ? [bondAmount, maxDeposit, poolInfo.sharePrice, destination, asUnderlying]
+      ? [
+          bondAmount,
+          maxDeposit,
+          poolInfo.sharePrice,
+          { destination, asBase, extraData: zeroAddress },
+        ]
       : undefined,
     // The gas cost estimate is innacurate because openShort also deposits into
     // the DSR, which has a variable gas cost.

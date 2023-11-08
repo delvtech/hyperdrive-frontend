@@ -10,7 +10,7 @@ interface UsePreviewAddLiquidityOptions {
   contribution: bigint | undefined;
   minAPR: bigint | undefined;
   maxAPR: bigint | undefined;
-  asUnderlying?: boolean;
+  asBase?: boolean;
   enabled?: boolean;
 }
 
@@ -25,7 +25,7 @@ export function usePreviewAddLiquidity({
   contribution,
   minAPR,
   maxAPR,
-  asUnderlying = true,
+  asBase = true,
   enabled = true,
 }: UsePreviewAddLiquidityOptions): UsePreviewAddLiquidityResult {
   const publicClient = usePublicClient();
@@ -48,7 +48,7 @@ export function usePreviewAddLiquidity({
       contribution: contribution?.toString(),
       minAPR: minAPR?.toString(),
       maxAPR: maxAPR?.toString(),
-      asUnderlying,
+      asUnderlying: asBase,
     }),
     queryFn: queryEnabled
       ? () =>
@@ -57,7 +57,7 @@ export function usePreviewAddLiquidity({
             contribution,
             minAPR,
             maxAPR,
-            asUnderlying,
+            asBase,
           })
       : undefined,
     enabled: queryEnabled,

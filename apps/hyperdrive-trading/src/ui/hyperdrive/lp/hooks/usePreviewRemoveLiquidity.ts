@@ -9,7 +9,7 @@ interface UsePreviewRemoveLiquidityOptions {
   lpSharesIn: bigint | undefined;
   minBaseAmountOut: bigint | undefined;
   destination: Address | undefined;
-  asUnderlying?: boolean;
+  asBase?: boolean;
   enabled?: boolean;
 }
 
@@ -24,7 +24,7 @@ export function usePreviewRemoveLiquidity({
   lpSharesIn,
   minBaseAmountOut,
   destination,
-  asUnderlying = true,
+  asBase = true,
   enabled = true,
 }: UsePreviewRemoveLiquidityOptions): UsePreviewRemoveLiquidityResult {
   const readWriteHyperdrive = useReadWriteHyperdrive(market.address);
@@ -41,7 +41,7 @@ export function usePreviewRemoveLiquidity({
       lpSharesIn: lpSharesIn?.toString(),
       minBaseAmountOut: minBaseAmountOut?.toString(),
       destination,
-      asUnderlying,
+      asUnderlying: asBase,
     }),
     queryFn: queryEnabled
       ? () =>
@@ -49,7 +49,7 @@ export function usePreviewRemoveLiquidity({
             lpSharesIn,
             minBaseAmountOut,
             destination,
-            asUnderlying,
+            asBase,
           })
       : undefined,
     enabled: queryEnabled,

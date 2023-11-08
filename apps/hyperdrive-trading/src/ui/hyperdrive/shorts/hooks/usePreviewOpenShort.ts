@@ -11,7 +11,7 @@ interface UsePreviewOpenShortOptions {
   maxBaseAmountIn: bigint | undefined;
   minSharePrice: bigint | undefined;
   destination: Address | undefined;
-  asUnderlying?: boolean;
+  asBase?: boolean;
   enabled?: boolean;
 }
 
@@ -26,7 +26,7 @@ export function usePreviewOpenShort({
   maxBaseAmountIn,
   minSharePrice,
   destination,
-  asUnderlying = true,
+  asBase = true,
   enabled = true,
 }: UsePreviewOpenShortOptions): UsePreviewOpenShortResult {
   const readWriteHyperdrive = useReadWriteHyperdrive(market.address);
@@ -49,12 +49,12 @@ export function usePreviewOpenShort({
     queryFn: queryEnabled
       ? async () => {
           const requiresEth =
-            asUnderlying && market.baseToken.address === ZERO_ADDRESS;
+            asBase && market.baseToken.address === ZERO_ADDRESS;
 
           return readWriteHyperdrive.previewOpenShort({
             amountOfBondsToShort: amountBondShorts,
             minSharePrice,
-            asUnderlying,
+            asBase,
             destination,
             maxBaseAmountIn,
             options: {

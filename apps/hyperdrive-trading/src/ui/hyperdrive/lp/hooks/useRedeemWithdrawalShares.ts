@@ -12,7 +12,7 @@ interface UseRedeemWithdrawalSharesOptions {
   withdrawalSharesIn: bigint | undefined;
   minBaseAmountOutPerShare: bigint | undefined;
   destination: Address | undefined;
-  asUnderlying?: boolean;
+  asBase?: boolean;
   enabled?: boolean;
 }
 
@@ -26,7 +26,7 @@ export function useRedeemWithdrawalShares({
   withdrawalSharesIn,
   minBaseAmountOutPerShare,
   destination,
-  asUnderlying = true,
+  asBase = true,
   enabled,
 }: UseRedeemWithdrawalSharesOptions): UseRedeemWithdrawalSharesResult {
   const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
@@ -46,7 +46,7 @@ export function useRedeemWithdrawalShares({
           withdrawalSharesIn,
           minBaseAmountOutPerShare,
           destination,
-          asUnderlying,
+          asBase,
           options: {
             onSubmitted(hash) {
               addTransaction({

@@ -9,7 +9,7 @@ interface UsePreviewCloseShortOptions {
   shortAmountIn: bigint | undefined;
   minBaseAmountOut: bigint | undefined;
   destination: Address | undefined;
-  asUnderlying?: boolean;
+  asBase?: boolean;
   enabled?: boolean;
 }
 
@@ -24,7 +24,7 @@ export function usePreviewCloseShort({
   shortAmountIn,
   minBaseAmountOut,
   destination,
-  asUnderlying = true,
+  asBase = true,
   enabled = true,
 }: UsePreviewCloseShortOptions): UsePreviewCloseShortResult {
   const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
@@ -47,7 +47,7 @@ export function usePreviewCloseShort({
     queryFn: queryEnabled
       ? async () =>
           readWriteHyperdrive.previewCloseShort({
-            asUnderlying,
+            asBase,
             destination,
             maturityTime,
             minBaseAmountOut,
