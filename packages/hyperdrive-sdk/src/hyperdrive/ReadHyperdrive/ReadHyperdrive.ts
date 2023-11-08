@@ -89,10 +89,10 @@ export interface IReadHyperdrive {
   getMarketState(options?: ContractReadOptions): Promise<MarketState>;
 
   /**
-   * Calculates the accrued yield for a given bond amount and checkpoint share price.
-   * Accrued yield = (current share price - checkpoint share price) x number of bonds
-   * @param checkpointId
-   * @param bondAmount
+   * Gets the yield accrued on an amount of bonds shorted in a given checkpoint.
+   * Note that shorts stop accruing yield once they reach maturity.
+   * @param checkpointId - The checkpoint the short was opened in
+   * @param bondAmount - The number of bonds shorted
    * @param decimals
    * @param options
    */
@@ -435,10 +435,12 @@ export class ReadHyperdrive implements IReadHyperdrive {
     decimals: number;
     options?: ContractReadOptions;
   }): ReturnType<IReadHyperdrive, "getShortAccruedYield"> {
-    const { sharePrice } = await this.getPoolInfo(options);
+    // TODO: The currentSharePrice is only if the bonds haven't matured, if
+    // they have we need the share price at their maturity date
+    const { sharePrice: currentSharePrice } = await this.getPoolInfo(options);
     const checkpoint = await this.getCheckpoint({ checkpointId });
     const accruedYield = calculateShortAccruedYield({
-      toSharePrice: sharePrice,
+      toSharePrice: currentSharePrice,
       fromSharePrice: checkpoint.sharePrice,
       bondAmount,
       decimals,

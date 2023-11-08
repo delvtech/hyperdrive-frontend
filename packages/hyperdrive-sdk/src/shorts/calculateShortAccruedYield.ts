@@ -12,6 +12,7 @@ export function calculateShortAccruedYield({
   bondAmount: bigint;
   decimals: number;
 }): bigint {
+  // Current Accrued yield = (current share price - checkpoint share price) x number of bonds
   return multiplyBigInt(
     [subtractBigInt([toSharePrice, fromSharePrice]), bondAmount],
     decimals,
