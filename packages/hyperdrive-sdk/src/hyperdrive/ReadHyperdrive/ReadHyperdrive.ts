@@ -73,7 +73,6 @@ export interface IReadHyperdrive {
   getLpApy(args: {
     fromBlock?: bigint;
     toBlock?: bigint;
-    positionDuration: bigint;
   }): Promise<{ lpApy: number }>;
 
   getCheckpoint(args: {
@@ -590,12 +589,11 @@ export class ReadHyperdrive implements IReadHyperdrive {
   async getLpApy({
     fromBlock,
     toBlock,
-    positionDuration,
   }: {
     fromBlock: bigint;
     toBlock: bigint;
-    positionDuration: bigint;
   }): Promise<{ lpApy: number }> {
+    const { positionDuration } = await this.getPoolConfig();
     const { sharePrice: fromSharePrice } = await this.getPoolInfo({
       blockNumber: fromBlock,
     });

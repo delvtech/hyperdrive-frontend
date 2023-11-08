@@ -32,7 +32,6 @@ export function useLpApy(hyperdrive: Hyperdrive): {
             // there won't be enough blocks to start.
             fromBlock: isCloudchain ? blockNumber - 3500n : 1n,
             toBlock: blockNumber,
-            positionDuration: poolConfig.positionDuration,
           })
       : undefined,
     enabled: queryEnabled,
