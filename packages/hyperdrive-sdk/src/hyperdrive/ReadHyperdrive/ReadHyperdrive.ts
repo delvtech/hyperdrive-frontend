@@ -27,12 +27,11 @@ import { WITHDRAW_SHARES_ASSET_ID } from "src/withdrawalShares/assetId";
 import { Checkpoint } from "src/pool/Checkpoint";
 import { MarketState } from "src/pool/MarketState";
 import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
-import { multiplyBigInt } from "src/base/multiplyBigInt/multiplyBigInt";
-import { subtractBigInt } from "src/base/subtractBigInt/subtractBigInt";
 import { BlockTag } from "viem";
 import * as dnum from "dnum";
 import { ZERO_ADDRESS } from "src/base/numbers";
 import { DEFAULT_EXTRA_DATA } from "src/hyperdrive/constants";
+import { calculateShortAccruedYield } from "src/shorts/calculateShortAccruedYield";
 const HyperdriveABI = IHyperdrive.abi;
 
 export interface ReadHyperdriveOptions {
@@ -438,10 +437,12 @@ export class ReadHyperdrive implements IReadHyperdrive {
   }): ReturnType<IReadHyperdrive, "getShortAccruedYield"> {
     const { sharePrice } = await this.getPoolInfo(options);
     const checkpoint = await this.getCheckpoint({ checkpointId });
-    const accruedYield = multiplyBigInt(
-      [subtractBigInt([sharePrice, checkpoint.sharePrice]), bondAmount],
+    const accruedYield = calculateShortAccruedYield({
+      toSharePrice: sharePrice,
+      fromSharePrice: checkpoint.sharePrice,
+      bondAmount,
       decimals,
-    );
+    });
     return accruedYield;
   }
 
