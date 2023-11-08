@@ -24,7 +24,7 @@ import { ClosedShort, OpenShort } from "src/shorts/types";
 import { calculateEffectiveShareReserves } from "src/pool/calculateEffectiveShares";
 import { getCheckpointId } from "src/pool/getCheckpointId";
 import { WITHDRAW_SHARES_ASSET_ID } from "src/withdrawalShares/assetId";
-import { Checkpoint } from "src/pool/Checkpoint";
+import { Checkpoint, CheckpointEvent } from "src/pool/Checkpoint";
 import { MarketState } from "src/pool/MarketState";
 import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
 import { multiplyBigInt } from "src/base/multiplyBigInt/multiplyBigInt";
@@ -82,6 +82,14 @@ export interface IReadHyperdrive {
     checkpointId: bigint;
     options?: ContractReadOptions;
   }): Promise<Checkpoint>;
+
+  getCheckpointEvents({
+    fromBlock,
+    toBlock,
+  }: {
+    fromBlock?: bigint;
+    toBlock?: bigint;
+  }): Promise<CheckpointEvent[]>;
 
   /**
    *
@@ -593,6 +601,10 @@ export class ReadHyperdrive implements IReadHyperdrive {
     const { sharePrice: toSharePrice } = await this.getPoolInfo({
       blockNumber: toBlock,
     });
+    const checkpointEvents = await this.getCheckpointEvents({
+      fromBlock,
+      toBlock,
+    });
 
     const days = positionDuration / (24n * 60n * 60n);
     const yearFraction = dnum.div([days, 18], [365n, 18]);
@@ -616,6 +628,20 @@ export class ReadHyperdrive implements IReadHyperdrive {
       toBlock,
       filter,
     });
+  }
+
+  async getCheckpointEvents({
+    fromBlock,
+    toBlock,
+  }: {
+    fromBlock?: bigint;
+    toBlock?: bigint;
+  }): ReturnType<IReadHyperdrive, "getCheckpointEvents"> {
+    const checkPointEvents = await this.contract.getEvents("CreateCheckpoint", {
+      fromBlock,
+      toBlock,
+    });
+    return checkPointEvents;
   }
 
   /**
