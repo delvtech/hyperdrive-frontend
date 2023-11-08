@@ -13,6 +13,7 @@ import { IReadHyperdriveContract } from "src/hyperdrive/HyperdriveContract";
 import { IReadHyperdriveMathContract } from "src/hyperdrive/HyperdriveMathContract";
 import { PoolConfig } from "src/pool/PoolConfig";
 import { PoolInfo } from "src/pool/PoolInfo";
+import { ReturnType } from "src/base/ReturnType";
 import { calculateLiquidity } from "src/pool/calculateLiquidity";
 import { LP_ASSET_ID } from "src/lp/assetId";
 import { decodeAssetFromTransferSingleEventData } from "src/pool/decodeAssetFromTransferSingleEventData";
@@ -30,6 +31,8 @@ import { multiplyBigInt } from "src/base/multiplyBigInt/multiplyBigInt";
 import { subtractBigInt } from "src/base/subtractBigInt/subtractBigInt";
 import { BlockTag } from "viem";
 import * as dnum from "dnum";
+import { ZERO_ADDRESS } from "src/base/numbers";
+import { DEFAULT_EXTRA_DATA } from "src/hyperdrive/constants";
 const HyperdriveABI = IHyperdrive.abi;
 
 export interface ReadHyperdriveOptions {
@@ -211,7 +214,8 @@ export interface IReadHyperdrive {
     bondAmountIn: bigint;
     minBaseAmountOut: bigint;
     destination: Address;
-    asUnderlying: boolean;
+    asBase: boolean;
+    extraData?: `0x${string}`;
     options: ContractWriteOptions;
   }): Promise<bigint>;
 
@@ -223,7 +227,8 @@ export interface IReadHyperdrive {
     shortAmountIn: bigint;
     minBaseAmountOut: bigint;
     destination: Address;
-    asUnderlying: boolean;
+    asBase: boolean;
+    extraData?: `0x${string}`;
     options: ContractWriteOptions;
   }): Promise<bigint>;
 
@@ -235,7 +240,8 @@ export interface IReadHyperdrive {
     minBondAmountOut: bigint;
     minSharePrice: bigint;
     destination: Address;
-    asUnderlying: boolean;
+    asBase: boolean;
+    extraData?: `0x${string}`;
     options: ContractWriteOptions;
   }): Promise<{ maturityTime: bigint; bondProceeds: bigint }>;
 
@@ -247,7 +253,8 @@ export interface IReadHyperdrive {
     maxBaseAmountIn: bigint;
     minSharePrice: bigint;
     destination: Address;
-    asUnderlying: boolean;
+    asBase: boolean;
+    extraData?: `0x${string}`;
     options: ContractWriteOptions;
   }): Promise<{ maturityTime: bigint; traderDeposit: bigint }>;
 
@@ -259,7 +266,8 @@ export interface IReadHyperdrive {
     minAPR: bigint;
     maxAPR: bigint;
     destination: Address;
-    asUnderlying: boolean;
+    asBase: boolean;
+    extraData?: `0x${string}`;
     options: ContractWriteOptions;
   }): Promise<bigint>;
 
@@ -270,7 +278,8 @@ export interface IReadHyperdrive {
     lpSharesIn: bigint;
     minBaseAmountOut: bigint;
     destination: Address;
-    asUnderlying: boolean;
+    asBase: boolean;
+    extraData?: `0x${string}`;
     options: ContractWriteOptions;
   }): Promise<{ baseAmountOut: bigint; withdrawalSharesOut: bigint }>;
 
@@ -281,7 +290,8 @@ export interface IReadHyperdrive {
     withdrawalSharesIn: bigint;
     minBaseAmountOutPerShare: bigint;
     destination: Address;
-    asUnderlying: boolean;
+    asBase: boolean;
+    extraData?: `0x${string}`;
     options: ContractWriteOptions;
   }): Promise<{ baseAmountOut: bigint; sharesRedeemed: bigint }>;
 
@@ -344,7 +354,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
   }: {
     checkpointId: bigint;
     options?: ContractReadOptions | undefined;
-  }): Promise<Checkpoint> {
+  }): ReturnType<IReadHyperdrive, "getCheckpoint"> {
     const [checkpoint] = await this.contract.read(
       "getCheckpoint",
       [checkpointId],
@@ -353,7 +363,9 @@ export class ReadHyperdrive implements IReadHyperdrive {
     return checkpoint;
   }
 
-  async getMarketState(options?: ContractReadOptions): Promise<MarketState> {
+  async getMarketState(
+    options?: ContractReadOptions,
+  ): ReturnType<IReadHyperdrive, "getMarketState"> {
     const [marketState] = await this.contract.read(
       "getMarketState",
       [],
@@ -362,23 +374,29 @@ export class ReadHyperdrive implements IReadHyperdrive {
     return marketState;
   }
 
-  async getPoolConfig(options?: ContractReadOptions): Promise<PoolConfig> {
+  async getPoolConfig(
+    options?: ContractReadOptions,
+  ): ReturnType<IReadHyperdrive, "getPoolConfig"> {
     const [poolConfig] = await this.contract.read("getPoolConfig", [], options);
     return poolConfig;
   }
 
-  async getPoolInfo(options?: ContractReadOptions): Promise<PoolInfo> {
+  async getPoolInfo(
+    options?: ContractReadOptions,
+  ): ReturnType<IReadHyperdrive, "getPoolInfo"> {
     const [poolInfo] = await this.contract.read("getPoolInfo", [], options);
     return poolInfo;
   }
 
-  async getSpotRate(options?: ContractReadOptions): Promise<bigint> {
+  async getSpotRate(
+    options?: ContractReadOptions,
+  ): ReturnType<IReadHyperdrive, "getSpotRate"> {
     const { positionDuration, initialSharePrice, timeStretch } =
       await this.getPoolConfig(options);
     const { shareReserves, bondReserves, shareAdjustment } =
       await this.getPoolInfo(options);
     const [apr] = await this.mathContract.read(
-      "calculateAPRFromReserves",
+      "calculateSpotAPR",
       [
         calculateEffectiveShareReserves(shareReserves, shareAdjustment),
         bondReserves,
@@ -392,7 +410,9 @@ export class ReadHyperdrive implements IReadHyperdrive {
     return apr;
   }
 
-  async getLiquidity(options?: ContractReadOptions): Promise<bigint> {
+  async getLiquidity(
+    options?: ContractReadOptions,
+  ): ReturnType<IReadHyperdrive, "getLiquidity"> {
     const { lpSharePrice, shareReserves, longsOutstanding, shareAdjustment } =
       await this.getPoolInfo(options);
 
@@ -415,7 +435,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     bondAmount: bigint;
     decimals: number;
     options?: ContractReadOptions;
-  }): Promise<bigint> {
+  }): ReturnType<IReadHyperdrive, "getShortAccruedYield"> {
     const { sharePrice } = await this.getPoolInfo(options);
     const checkpoint = await this.getCheckpoint({ checkpointId });
     const accruedYield = multiplyBigInt(
@@ -428,11 +448,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
   async getTradingVolume(options?: {
     fromBlock?: BlockTag | bigint;
     toBlock?: BlockTag | bigint;
-  }): Promise<{
-    totalVolume: bigint;
-    longVolume: bigint;
-    shortVolume: bigint;
-  }> {
+  }): ReturnType<IReadHyperdrive, "getTradingVolume"> {
     const { fromBlock = "earliest", toBlock = "latest" } = options || {};
     const openLongEvents = await this.getOpenLongEvents({
       fromBlock,
@@ -467,7 +483,9 @@ export class ReadHyperdrive implements IReadHyperdrive {
    * ```
    *
    */
-  async getLongPrice(options?: ContractReadOptions): Promise<bigint> {
+  async getLongPrice(
+    options?: ContractReadOptions,
+  ): ReturnType<IReadHyperdrive, "getLongPrice"> {
     const { initialSharePrice, timeStretch } = await this.getPoolConfig(
       options,
     );
@@ -503,16 +521,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     options?:
       | ContractGetEventsOptions<typeof HyperdriveABI, "OpenLong">
       | ContractGetEventsOptions<typeof HyperdriveABI, "CloseLong">,
-  ): Promise<
-    {
-      trader: Address;
-      assetId: bigint;
-      bondAmount: bigint;
-      baseAmount: bigint;
-      eventName: "OpenLong" | "CloseLong";
-      blockNumber: bigint | undefined;
-    }[]
-  > {
+  ): ReturnType<IReadHyperdrive, "getLongEvents"> {
     const openLongEvents = await this.contract.getEvents("OpenLong", options);
     const closeLongEvents = await this.contract.getEvents("CloseLong", options);
     return [...openLongEvents, ...closeLongEvents].map(
@@ -531,16 +540,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     options?:
       | ContractGetEventsOptions<typeof HyperdriveABI, "OpenShort">
       | ContractGetEventsOptions<typeof HyperdriveABI, "CloseShort">,
-  ): Promise<
-    {
-      trader: Address;
-      assetId: bigint;
-      bondAmount: bigint;
-      baseAmount: bigint;
-      eventName: "OpenShort" | "CloseShort";
-      blockNumber: bigint | undefined;
-    }[]
-  > {
+  ): ReturnType<IReadHyperdrive, "getShortEvents"> {
     const openShortEvents = await this.contract.getEvents("OpenShort", options);
     const closeShortEvents = await this.contract.getEvents(
       "CloseShort",
@@ -557,14 +557,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
       }),
     );
   }
-  async getLpEvents(): Promise<
-    {
-      trader: Address;
-      baseAmount: bigint;
-      eventName: "AddLiquidity" | "RemoveLiquidity" | "RedeemWithdrawalShares";
-      blockNumber: bigint | undefined;
-    }[]
-  > {
+  async getLpEvents(): ReturnType<IReadHyperdrive, "getLpEvents"> {
     const addLiquidtyEvents = await this.contract.getEvents("AddLiquidity");
     const removeLiquidityEvents = await this.contract.getEvents(
       "RemoveLiquidity",
@@ -592,7 +585,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
   }: {
     fromBlock: bigint;
     toBlock: bigint;
-  }): Promise<{ lpApy: number }> {
+  }): ReturnType<IReadHyperdrive, "getLpApy"> {
     const { positionDuration } = await this.getPoolConfig();
     const { sharePrice: fromSharePrice } = await this.getPoolInfo({
       blockNumber: fromBlock,
@@ -637,7 +630,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
   }: {
     account: Address;
     options?: ContractReadOptions;
-  }): Promise<Long[]> {
+  }): ReturnType<IReadHyperdrive, "getOpenLongs"> {
     const fromBlock = "earliest";
     const toBlock = options?.blockNumber || options?.blockTag || "latest";
 
@@ -754,7 +747,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
   }: {
     account: Address;
     options?: ContractReadOptions;
-  }): Promise<OpenShort[]> {
+  }): ReturnType<IReadHyperdrive, "getOpenShorts"> {
     const fromBlock = "earliest";
     const toBlock = options?.blockNumber || options?.blockTag || "latest";
 
@@ -875,7 +868,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
   }: {
     account: Address;
     options?: ContractReadOptions;
-  }): Promise<ClosedLong[]> {
+  }): ReturnType<IReadHyperdrive, "getClosedLongs"> {
     const fromBlock = "earliest";
     const toBlock = options?.blockNumber || options?.blockTag || "latest";
 
@@ -915,7 +908,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
   }: {
     account: Address;
     options?: ContractReadOptions;
-  }): Promise<ClosedShort[]> {
+  }): ReturnType<IReadHyperdrive, "getClosedShorts"> {
     const fromBlock = "earliest";
     const toBlock = options?.blockNumber || options?.blockTag || "latest";
     const closedShorts = await this.contract.getEvents("CloseShort", {
@@ -948,7 +941,9 @@ export class ReadHyperdrive implements IReadHyperdrive {
     return closedShortsList.filter((short) => short.bondAmount);
   }
 
-  async getMaxShort(options?: ContractReadOptions): Promise<bigint> {
+  async getMaxShort(
+    options?: ContractReadOptions,
+  ): ReturnType<IReadHyperdrive, "getMaxShort"> {
     const {
       minimumShareReserves,
       initialSharePrice,
@@ -995,10 +990,9 @@ export class ReadHyperdrive implements IReadHyperdrive {
     return maxBondsOut;
   }
 
-  async getMaxLong(options?: ContractReadOptions): Promise<{
-    maxBaseIn: bigint;
-    maxBondsOut: bigint;
-  }> {
+  async getMaxLong(
+    options?: ContractReadOptions,
+  ): ReturnType<IReadHyperdrive, "getMaxLong"> {
     const {
       minimumShareReserves,
       initialSharePrice,
@@ -1057,7 +1051,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
   }: {
     account: Address;
     options?: ContractReadOptions;
-  }): Promise<bigint> {
+  }): ReturnType<IReadHyperdrive, "getLpShares"> {
     const [lpShares] = await this.contract.read(
       "balanceOf",
       [LP_ASSET_ID, account],
@@ -1072,7 +1066,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
   }: {
     account: Address;
     options?: ContractReadOptions;
-  }): Promise<ClosedLpShares[]> {
+  }): ReturnType<IReadHyperdrive, "getClosedLpShares"> {
     const removeLiquidityEvents = await this.contract.getEvents(
       "RemoveLiquidity",
       {
@@ -1104,7 +1098,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
   }: {
     account: Address;
     options?: ContractReadOptions;
-  }): Promise<bigint> {
+  }): ReturnType<IReadHyperdrive, "getWithdrawalShares"> {
     const [balanceOf] = await this.contract.read(
       "balanceOf",
       [WITHDRAW_SHARES_ASSET_ID, account],
@@ -1119,7 +1113,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
   }: {
     account: Address;
     options?: ContractReadOptions;
-  }): Promise<RedeemedWithdrawalShares[]> {
+  }): ReturnType<IReadHyperdrive, "getRedeemedWithdrawalShares"> {
     const redeemedWithdrawalShareEvents = await this.contract.getEvents(
       "RedeemWithdrawalShares",
       {
@@ -1147,19 +1141,26 @@ export class ReadHyperdrive implements IReadHyperdrive {
     minBondAmountOut,
     minSharePrice,
     destination,
-    asUnderlying,
+    asBase = true,
+    extraData = DEFAULT_EXTRA_DATA,
     options,
   }: {
     baseAmount: bigint;
     minBondAmountOut: bigint;
     minSharePrice: bigint;
     destination: Address;
-    asUnderlying: boolean;
+    asBase: boolean;
+    extraData?: `0x${string}`;
     options?: ContractWriteOptions;
-  }): Promise<{ maturityTime: bigint; bondProceeds: bigint }> {
+  }): ReturnType<IReadHyperdrive, "previewOpenLong"> {
     const [maturityTime, bondProceeds] = await this.contract.simulateWrite(
       "openLong",
-      [baseAmount, minBondAmountOut, minSharePrice, destination, asUnderlying],
+      [
+        baseAmount,
+        minBondAmountOut,
+        minSharePrice,
+        { destination, asBase, extraData },
+      ],
       options,
     );
     return { maturityTime, bondProceeds };
@@ -1170,24 +1171,29 @@ export class ReadHyperdrive implements IReadHyperdrive {
     maxBaseAmountIn,
     minSharePrice,
     destination,
-    asUnderlying,
+    asBase = true,
+    extraData = DEFAULT_EXTRA_DATA,
     options,
   }: {
     amountOfBondsToShort: bigint;
     maxBaseAmountIn: bigint;
     minSharePrice: bigint;
     destination: Address;
-    asUnderlying: boolean;
+    asBase?: boolean;
+    extraData?: `0x${string}`;
     options?: ContractWriteOptions;
-  }): Promise<{ maturityTime: bigint; traderDeposit: bigint }> {
+  }): ReturnType<IReadHyperdrive, "previewOpenShort"> {
     const [maturityTime, traderDeposit] = await this.contract.simulateWrite(
       "openShort",
       [
         amountOfBondsToShort,
         maxBaseAmountIn,
         minSharePrice,
-        destination,
-        asUnderlying,
+        {
+          destination,
+          asBase,
+          extraData,
+        },
       ],
       options,
     );
@@ -1199,19 +1205,26 @@ export class ReadHyperdrive implements IReadHyperdrive {
     bondAmountIn,
     minBaseAmountOut,
     destination,
-    asUnderlying,
+    asBase,
+    extraData = ZERO_ADDRESS,
     options,
   }: {
     maturityTime: bigint;
     bondAmountIn: bigint;
     minBaseAmountOut: bigint;
     destination: Address;
-    asUnderlying: boolean;
+    asBase: boolean;
+    extraData?: `0x${string}`;
     options?: ContractWriteOptions;
-  }): Promise<bigint> {
+  }): ReturnType<IReadHyperdrive, "previewCloseLong"> {
     const [closeLong] = await this.contract.simulateWrite(
       "closeLong",
-      [maturityTime, bondAmountIn, minBaseAmountOut, destination, asUnderlying],
+      [
+        maturityTime,
+        bondAmountIn,
+        minBaseAmountOut,
+        { destination, asBase, extraData },
+      ],
       options,
     );
     return closeLong;
@@ -1222,24 +1235,25 @@ export class ReadHyperdrive implements IReadHyperdrive {
     shortAmountIn,
     minBaseAmountOut,
     destination,
-    asUnderlying,
+    asBase,
+    extraData = DEFAULT_EXTRA_DATA,
     options,
   }: {
     maturityTime: bigint;
     shortAmountIn: bigint;
     minBaseAmountOut: bigint;
     destination: Address;
-    asUnderlying: boolean;
+    asBase: boolean;
+    extraData?: `0x${string}`;
     options?: ContractWriteOptions;
-  }): Promise<bigint> {
+  }): ReturnType<IReadHyperdrive, "previewCloseShort"> {
     const [closeShort] = await this.contract.simulateWrite(
       "closeShort",
       [
         maturityTime,
         shortAmountIn,
         minBaseAmountOut,
-        destination,
-        asUnderlying,
+        { destination, asBase, extraData },
       ],
       options,
     );
@@ -1251,19 +1265,21 @@ export class ReadHyperdrive implements IReadHyperdrive {
     minAPR,
     maxAPR,
     destination,
-    asUnderlying,
+    asBase,
+    extraData = DEFAULT_EXTRA_DATA,
     options,
   }: {
     contribution: bigint;
     minAPR: bigint;
     maxAPR: bigint;
     destination: Address;
-    asUnderlying: boolean;
+    asBase: boolean;
+    extraData?: `0x${string}`;
     options?: ContractWriteOptions;
-  }): Promise<bigint> {
+  }): ReturnType<IReadHyperdrive, "previewAddLiquidity"> {
     const [lpShares] = await this.contract.simulateWrite(
       "addLiquidity",
-      [contribution, minAPR, maxAPR, destination, asUnderlying],
+      [contribution, minAPR, maxAPR, { destination, asBase, extraData }],
       options,
     );
     return lpShares;
@@ -1273,19 +1289,21 @@ export class ReadHyperdrive implements IReadHyperdrive {
     lpSharesIn,
     minBaseAmountOut,
     destination,
-    asUnderlying,
+    asBase,
+    extraData = DEFAULT_EXTRA_DATA,
     options,
   }: {
     lpSharesIn: bigint;
     minBaseAmountOut: bigint;
     destination: Address;
-    asUnderlying: boolean;
+    asBase: boolean;
+    extraData?: `0x${string}`;
     options?: ContractWriteOptions;
-  }): Promise<{ baseAmountOut: bigint; withdrawalSharesOut: bigint }> {
+  }): ReturnType<IReadHyperdrive, "previewRemoveLiquidity"> {
     const [baseAmountOut, withdrawalSharesOut] =
       await this.contract.simulateWrite(
         "removeLiquidity",
-        [lpSharesIn, minBaseAmountOut, destination, asUnderlying],
+        [lpSharesIn, minBaseAmountOut, { destination, asBase, extraData }],
         options,
       );
     return { baseAmountOut, withdrawalSharesOut };
@@ -1295,18 +1313,24 @@ export class ReadHyperdrive implements IReadHyperdrive {
     withdrawalSharesIn,
     minBaseAmountOutPerShare,
     destination,
-    asUnderlying,
+    asBase,
+    extraData = DEFAULT_EXTRA_DATA,
     options,
   }: {
     withdrawalSharesIn: bigint;
     minBaseAmountOutPerShare: bigint;
     destination: Address;
-    asUnderlying: boolean;
+    asBase: boolean;
+    extraData?: `0x${string}`;
     options?: ContractWriteOptions;
-  }): Promise<{ baseAmountOut: bigint; sharesRedeemed: bigint }> {
+  }): ReturnType<IReadHyperdrive, "previewRedeemWithdrawalShares"> {
     const [baseAmountOut, sharesRedeemed] = await this.contract.simulateWrite(
       "redeemWithdrawalShares",
-      [withdrawalSharesIn, minBaseAmountOutPerShare, destination, asUnderlying],
+      [
+        withdrawalSharesIn,
+        minBaseAmountOutPerShare,
+        { destination, asBase, extraData },
+      ],
       options,
     );
     return { baseAmountOut, sharesRedeemed };

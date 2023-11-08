@@ -12,7 +12,7 @@ interface UseRemoveLiquidityOptions {
   lpSharesIn: bigint | undefined;
   minBaseAmountOut: bigint | undefined;
   destination: Address | undefined;
-  asUnderlying?: boolean;
+  asBase?: boolean;
   enabled?: boolean;
 }
 
@@ -26,7 +26,7 @@ export function useRemoveLiquidity({
   lpSharesIn,
   minBaseAmountOut,
   destination,
-  asUnderlying = true,
+  asBase = true,
   enabled,
 }: UseRemoveLiquidityOptions): UseRemoveLiquidityResult {
   const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
@@ -46,7 +46,7 @@ export function useRemoveLiquidity({
           lpSharesIn,
           minBaseAmountOut,
           destination,
-          asUnderlying,
+          asBase,
           options: {
             onSubmitted(hash) {
               addTransaction({

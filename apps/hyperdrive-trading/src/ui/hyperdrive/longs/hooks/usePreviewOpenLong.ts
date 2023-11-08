@@ -1,16 +1,16 @@
 import { useQuery } from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
+import { ZERO_ADDRESS } from "src/base/constants";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
 import { Address } from "wagmi";
-
 interface UsePreviewOpenLongOptions {
   market: Hyperdrive;
   baseAmount: bigint | undefined;
   minBondAmountOut: bigint | undefined;
   minSharePrice: bigint | undefined;
   destination: Address | undefined;
-  asUnderlying?: boolean;
+  asBase?: boolean;
   enabled?: boolean;
 }
 
@@ -26,7 +26,7 @@ export function usePreviewOpenLong({
   minBondAmountOut,
   minSharePrice,
   destination,
-  asUnderlying = true,
+  asBase = true,
   enabled,
 }: UsePreviewOpenLongOptions): UsePreviewOpenLongResult {
   const readWriteHyperdrive = useReadWriteHyperdrive(market.address);
@@ -53,7 +53,8 @@ export function usePreviewOpenLong({
             minBondAmountOut,
             minSharePrice,
             destination,
-            asUnderlying,
+            asBase,
+            extraData: ZERO_ADDRESS,
           })
       : undefined,
   });

@@ -1,6 +1,6 @@
 import { ICachedReadContract } from "@hyperdrive/evm-client";
-import { HyperdriveMathABI } from "src/abis/HyperdriveMath";
+import { MockHyperdriveMath } from "@hyperdrive/artifacts/dist/MockHyperdriveMath";
 
 export type IReadHyperdriveMathContract = ICachedReadContract<
-  typeof HyperdriveMathABI
+  typeof MockHyperdriveMath.abi
 >;

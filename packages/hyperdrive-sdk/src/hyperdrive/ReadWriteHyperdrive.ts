@@ -12,6 +12,8 @@ import {
   ContractWriteOptions,
   ContractWriteOptionsWithCallback,
 } from "@hyperdrive/evm-client";
+import { DEFAULT_EXTRA_DATA } from "src/hyperdrive/constants";
+import { ReturnType } from "src/base/ReturnType";
 
 export interface IReadWriteHyperdrive extends IReadHyperdrive {
   /**
@@ -254,7 +256,8 @@ export class ReadWriteHyperdrive
       contribution: bigint;
       apr: bigint;
       destination: `0x${string}`;
-      asUnderlying?: boolean;
+      asBase: boolean;
+      extraData: `0x${string}`;
     },
     options?: ContractWriteOptions,
   ): Promise<bigint> {
@@ -263,8 +266,11 @@ export class ReadWriteHyperdrive
       [
         args.contribution,
         args.apr,
-        args.destination,
-        args?.asUnderlying ?? true,
+        {
+          destination: args.destination,
+          asBase: args.asBase,
+          extraData: args.extraData,
+        },
       ],
       options,
     );
@@ -276,25 +282,29 @@ export class ReadWriteHyperdrive
     baseAmount,
     bondAmountOut,
     minSharePrice,
-    asUnderlying = true,
+    asBase = true,
+    extraData = DEFAULT_EXTRA_DATA,
     options,
   }: {
     destination: Address;
     baseAmount: bigint;
     bondAmountOut: bigint;
     minSharePrice: bigint;
-    asUnderlying?: boolean;
+    asBase?: boolean;
+    extraData?: `0x${string}`;
     options?: ContractWriteOptionsWithCallback;
-  }): Promise<{ maturityTime: bigint; bondProceeds: bigint }> {
+  }): ReturnType<IReadWriteHyperdrive, "openLong"> {
     const { baseToken } = await this.getPoolConfig();
-    const requiresEth = asUnderlying && baseToken === ZERO_ADDRESS;
+    const requiresEth = asBase && baseToken === ZERO_ADDRESS;
     const [maturityTime, bondProceeds] = await this.contract.write(
       "openLong",
-      [baseAmount, bondAmountOut, minSharePrice, destination, asUnderlying],
-      {
-        value: requiresEth && baseAmount ? baseAmount : 0n,
-        ...options,
-      },
+      [
+        baseAmount,
+        bondAmountOut,
+        minSharePrice,
+        { destination, asBase, extraData },
+      ],
+      { value: requiresEth && baseAmount ? baseAmount : 0n, ...options },
     );
     return { maturityTime, bondProceeds };
   }
@@ -304,19 +314,26 @@ export class ReadWriteHyperdrive
     bondAmount,
     minSharePrice,
     maxDeposit,
-    asUnderlying = true,
+    asBase = true,
+    extraData = DEFAULT_EXTRA_DATA,
     options,
   }: {
     destination: Address;
     bondAmount: bigint;
     minSharePrice: bigint;
     maxDeposit: bigint;
-    asUnderlying?: boolean;
+    asBase?: boolean;
+    extraData?: `0x${string}`;
     options?: ContractWriteOptionsWithCallback;
-  }): Promise<{ maturityTime: bigint; traderDeposit: bigint }> {
+  }): ReturnType<IReadWriteHyperdrive, "openShort"> {
     const [maturityTime, traderDeposit] = await this.contract.write(
       "openShort",
-      [bondAmount, maxDeposit, minSharePrice, destination, asUnderlying],
+      [
+        bondAmount,
+        maxDeposit,
+        minSharePrice,
+        { destination, asBase, extraData },
+      ],
       // TODO: Do we need to pass value here?
       { value: 0n, ...options },
     );
@@ -328,24 +345,25 @@ export class ReadWriteHyperdrive
     bondAmountIn,
     minBaseAmountOut,
     destination,
-    asUnderlying = true,
+    asBase = true,
+    extraData = DEFAULT_EXTRA_DATA,
     options,
   }: {
     long: Long;
     bondAmountIn: bigint;
     minBaseAmountOut: bigint;
     destination: Address;
-    asUnderlying?: boolean;
+    asBase?: boolean;
+    extraData?: `0x${string}`;
     options?: ContractWriteOptionsWithCallback;
-  }): Promise<bigint> {
+  }): ReturnType<IReadWriteHyperdrive, "closeLong"> {
     const [result] = await this.contract.write(
       "closeLong",
       [
         long.maturity,
         bondAmountIn,
         minBaseAmountOut,
-        destination,
-        asUnderlying,
+        { destination, asBase, extraData },
       ],
       options,
     );
@@ -357,24 +375,25 @@ export class ReadWriteHyperdrive
     bondAmountIn,
     minBaseAmountOut,
     destination,
-    asUnderlying = true,
+    asBase = true,
+    extraData = DEFAULT_EXTRA_DATA,
     options,
   }: {
     short: Short;
     bondAmountIn: bigint;
     minBaseAmountOut: bigint;
     destination: Address;
-    asUnderlying?: boolean;
+    asBase?: boolean;
+    extraData?: `0x${string}`;
     options?: ContractWriteOptionsWithCallback;
-  }): Promise<bigint> {
+  }): ReturnType<IReadWriteHyperdrive, "closeShort"> {
     const [result] = await this.contract.write(
       "closeShort",
       [
         short.maturity,
         bondAmountIn,
         minBaseAmountOut,
-        destination,
-        asUnderlying,
+        { destination, asBase, extraData },
       ],
       options,
     );
@@ -386,21 +405,23 @@ export class ReadWriteHyperdrive
     contribution,
     minAPR,
     maxAPR,
-    asUnderlying = true,
+    asBase = true,
+    extraData = DEFAULT_EXTRA_DATA,
     options,
   }: {
     destination: Address;
     contribution: bigint;
     minAPR: bigint;
     maxAPR: bigint;
-    asUnderlying?: boolean;
+    asBase?: boolean;
+    extraData?: `0x${string}`;
     options?: ContractWriteOptionsWithCallback;
-  }): Promise<bigint> {
+  }): ReturnType<IReadWriteHyperdrive, "addLiquidity"> {
     const { baseToken } = await this.getPoolConfig();
-    const requiresEth = asUnderlying && baseToken === ZERO_ADDRESS;
+    const requiresEth = asBase && baseToken === ZERO_ADDRESS;
     const [lpShares] = await this.contract.write(
       "addLiquidity",
-      [contribution, minAPR, maxAPR, destination, asUnderlying],
+      [contribution, minAPR, maxAPR, { destination, asBase, extraData }],
       {
         value: requiresEth && contribution ? contribution : 0n,
         ...options,
@@ -413,18 +434,20 @@ export class ReadWriteHyperdrive
     destination,
     lpSharesIn,
     minBaseAmountOut,
-    asUnderlying = true,
+    asBase = true,
+    extraData = DEFAULT_EXTRA_DATA,
     options,
   }: {
     destination: Address;
     lpSharesIn: bigint;
     minBaseAmountOut: bigint;
-    asUnderlying?: boolean;
+    asBase?: boolean;
+    extraData?: `0x${string}`;
     options?: ContractWriteOptionsWithCallback;
-  }): Promise<{ baseProceeds: bigint; withdrawShares: bigint }> {
+  }): ReturnType<IReadWriteHyperdrive, "removeLiquidity"> {
     const [baseProceeds, withdrawShares] = await this.contract.write(
       "removeLiquidity",
-      [lpSharesIn, minBaseAmountOut, destination, asUnderlying],
+      [lpSharesIn, minBaseAmountOut, { destination, asBase, extraData }],
       options,
     );
     return { baseProceeds, withdrawShares };
@@ -434,18 +457,24 @@ export class ReadWriteHyperdrive
     withdrawalSharesIn,
     minBaseAmountOutPerShare,
     destination,
-    asUnderlying = true,
+    asBase = true,
+    extraData = DEFAULT_EXTRA_DATA,
     options,
   }: {
     withdrawalSharesIn: bigint;
     minBaseAmountOutPerShare: bigint;
     destination: Address;
-    asUnderlying?: boolean;
+    asBase?: boolean;
+    extraData?: `0x${string}`;
     options?: ContractWriteOptionsWithCallback;
-  }): Promise<{ baseProceeds: bigint; sharesRedeemed: bigint }> {
+  }): ReturnType<IReadWriteHyperdrive, "redeemWithdrawalShares"> {
     const [baseProceeds, sharesRedeemed] = await this.contract.write(
       "redeemWithdrawalShares",
-      [withdrawalSharesIn, minBaseAmountOutPerShare, destination, asUnderlying],
+      [
+        withdrawalSharesIn,
+        minBaseAmountOutPerShare,
+        { destination, asBase, extraData },
+      ],
       options,
     );
     return { baseProceeds, sharesRedeemed };

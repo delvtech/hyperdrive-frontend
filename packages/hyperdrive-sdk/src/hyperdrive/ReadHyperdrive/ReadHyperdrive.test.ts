@@ -1,7 +1,6 @@
 import { expect, test } from "vitest";
 import * as dnum from "dnum";
 import { ReadHyperdrive } from "src/hyperdrive/ReadHyperdrive/ReadHyperdrive";
-import { HyperdriveMathABI } from "src/abis/HyperdriveMath";
 import { simplePoolConfig } from "src/pool/testing/simplePoolConfig";
 import { simplePoolInfo } from "src/pool/testing/simplePoolInfo";
 import { ALICE, BOB } from "src/base/testing/accounts";
@@ -11,6 +10,7 @@ import {
   NetworkStub,
   ReadContractStub,
 } from "@hyperdrive/evm-client";
+import { MockHyperdriveMath } from "@hyperdrive/artifacts/dist/MockHyperdriveMath";
 
 // The sdk should return the exact PoolConfig from the contracts. It should not
 // do any conversions or transformations, eg: converting seconds to ms,
@@ -66,7 +66,7 @@ test("Should get the fixed rate as-is when getFixedRate is called", async () => 
   });
 
   mathContract.stubRead({
-    functionName: "calculateAPRFromReserves",
+    functionName: "calculateSpotAPR",
     args: [0n, 0n, 0n, 0n, 0n],
     value: [1n],
   });
@@ -86,6 +86,7 @@ test("Should get the trading volume in terms of bonds when getTradingVolume is c
         baseAmount: dnum.from("1", 18)[0],
         bondAmount: dnum.from("1.3", 18)[0],
         maturityTime: 1729209600n,
+        sharePrice: 1n,
         trader: BOB,
       },
     },
@@ -96,6 +97,7 @@ test("Should get the trading volume in terms of bonds when getTradingVolume is c
         baseAmount: dnum.from("1", 18)[0],
         bondAmount: dnum.from("1.4", 18)[0],
         maturityTime: 1733961600n,
+        sharePrice: 1n,
         trader: ALICE,
       },
     },
@@ -109,6 +111,7 @@ test("Should get the trading volume in terms of bonds when getTradingVolume is c
         baseAmount: dnum.from("1", 18)[0],
         bondAmount: dnum.from("100", 18)[0],
         maturityTime: 1729296000n,
+        sharePrice: 1n,
         trader: BOB,
       },
     },
@@ -119,6 +122,7 @@ test("Should get the trading volume in terms of bonds when getTradingVolume is c
         baseAmount: dnum.from("2", 18)[0],
         bondAmount: dnum.from("190", 18)[0],
         maturityTime: 1729296000n,
+        sharePrice: 1n,
         trader: BOB,
       },
     },
@@ -137,7 +141,7 @@ function setupReadHyperdrive() {
   const contract = new ReadContractStub(IHyperdrive.abi);
   const cachedContract = new CachedReadContract({ contract });
 
-  const mathContract = new ReadContractStub(HyperdriveMathABI);
+  const mathContract = new ReadContractStub(MockHyperdriveMath.abi);
   const cachedMathContract = new CachedReadContract({ contract: mathContract });
 
   const network = new NetworkStub();

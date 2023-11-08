@@ -9,7 +9,7 @@ interface UsePreviewRedeemWithdrawalSharesOptions {
   withdrawalSharesIn: bigint | undefined;
   minBaseAmountOutPerShare: bigint | undefined;
   destination: Address | undefined;
-  asUnderlying?: boolean;
+  asBase?: boolean;
   enabled?: boolean;
 }
 
@@ -24,7 +24,7 @@ export function usePreviewRedeemWithdrawalShares({
   withdrawalSharesIn,
   minBaseAmountOutPerShare,
   destination,
-  asUnderlying = true,
+  asBase = true,
   enabled = true,
 }: UsePreviewRedeemWithdrawalSharesOptions): UsePreviewRedeemWithdrawalSharesResult {
   const readWriteHyperdrive = useReadWriteHyperdrive(market.address);
@@ -41,7 +41,7 @@ export function usePreviewRedeemWithdrawalShares({
       withdrawalSharesIn: withdrawalSharesIn?.toString(),
       minBaseAmountOutPerShare: minBaseAmountOutPerShare?.toString(),
       destination,
-      asUnderlying,
+      asUnderlying: asBase,
     }),
     queryFn: queryEnabled
       ? () =>
@@ -49,7 +49,7 @@ export function usePreviewRedeemWithdrawalShares({
             withdrawalSharesIn,
             minBaseAmountOutPerShare,
             destination,
-            asUnderlying,
+            asBase,
           })
       : undefined,
     enabled: queryEnabled,

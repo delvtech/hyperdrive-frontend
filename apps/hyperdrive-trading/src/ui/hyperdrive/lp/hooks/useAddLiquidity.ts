@@ -13,7 +13,7 @@ interface UseAddLiquidityOptions {
   contribution: bigint | undefined;
   minAPR: bigint | undefined;
   maxAPR: bigint | undefined;
-  asUnderlying?: boolean;
+  asBase?: boolean;
   /** Controls whether or not an `addLiquidity` callback will be returned to the
    * caller, useful for disabling buttons and other hooks */
   enabled?: boolean;
@@ -30,7 +30,7 @@ export function useAddLiquidity({
   contribution,
   minAPR,
   maxAPR,
-  asUnderlying = true,
+  asBase = true,
   enabled,
 }: UseAddLiquidityOptions): UseAddLiquidityResult {
   const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
@@ -52,7 +52,7 @@ export function useAddLiquidity({
           minAPR,
           maxAPR,
           destination,
-          asUnderlying,
+          asBase,
           options: {
             onSubmitted(hash) {
               addTransaction({

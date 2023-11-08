@@ -9,7 +9,7 @@ interface UseCloseLongOptions {
   bondAmountIn: bigint | undefined;
   minBaseAmountOut: bigint | undefined;
   destination: Address | undefined;
-  asUnderlying?: boolean;
+  asBase?: boolean;
   enabled?: boolean;
 }
 
@@ -24,7 +24,7 @@ export function useCloseLong({
   bondAmountIn,
   minBaseAmountOut,
   destination,
-  asUnderlying = true,
+  asBase = true,
   enabled = true,
 }: UseCloseLongOptions): UseCloseLongResult {
   const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
@@ -45,7 +45,7 @@ export function useCloseLong({
           bondAmountIn,
           minBaseAmountOut,
           destination,
-          asUnderlying,
+          asBase,
           long,
           options: {
             onSubmitted(hash) {

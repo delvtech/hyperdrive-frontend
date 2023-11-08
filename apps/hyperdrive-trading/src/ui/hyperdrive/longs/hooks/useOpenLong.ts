@@ -11,7 +11,7 @@ interface UseOpenLongOptions {
   minSharePrice: bigint | undefined;
   baseAmount: bigint | undefined;
   bondAmountOut: bigint | undefined;
-  asUnderlying?: boolean;
+  asBase?: boolean;
 
   /** Controls whether or not an `openLong` callback will be returned to the
    * caller, useful for disabling buttons and other hooks */
@@ -32,7 +32,7 @@ export function useOpenLong({
   baseAmount,
   bondAmountOut,
   minSharePrice,
-  asUnderlying = true,
+  asBase = true,
   enabled,
   onExecuted,
 }: UseOpenLongOptions): UseOpenLongResult {
@@ -55,7 +55,7 @@ export function useOpenLong({
           bondAmountOut,
           destination,
           minSharePrice,
-          asUnderlying,
+          asBase,
           options: {
             onSubmitted: (hash) => {
               addTransaction({

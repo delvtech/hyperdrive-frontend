@@ -1,6 +1,7 @@
 import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
 import { useQuery } from "@tanstack/react-query";
 import { HyperdriveGoerliAddresses } from "src/addresses/goerli";
+import { zeroAddress } from "viem";
 import { Address, useAccount, useContractRead, usePublicClient } from "wagmi";
 
 const dsrHyperdriveAddress = HyperdriveGoerliAddresses.dsrHyperdrive as Address;
@@ -62,8 +63,7 @@ export function useOpenShortPreview({
               bondAmount,
               maxDeposit,
               poolInfo?.sharePrice,
-              destination,
-              asUnderlying,
+              { destination, asBase: asUnderlying, extraData: zeroAddress },
             ],
             value: 0n,
           });

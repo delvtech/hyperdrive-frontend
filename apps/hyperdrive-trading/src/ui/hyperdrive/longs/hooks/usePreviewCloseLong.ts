@@ -13,7 +13,7 @@ interface UsePreviewCloseLongOptions {
   bondAmountIn: bigint | undefined;
   minBaseAmountOut: bigint | undefined;
   destination: Address | undefined;
-  asUnderlying?: boolean;
+  asBase?: boolean;
   enabled?: boolean;
 }
 
@@ -28,7 +28,7 @@ export function usePreviewCloseLong({
   bondAmountIn,
   minBaseAmountOut,
   destination,
-  asUnderlying = true,
+  asBase = true,
   enabled = true,
 }: UsePreviewCloseLongOptions): UsePreviewCloseLongResult {
   const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
@@ -56,7 +56,7 @@ export function usePreviewCloseLong({
             bondAmountIn,
             minBaseAmountOut,
             destination,
-            asUnderlying,
+            asBase,
           })
       : undefined,
   });
