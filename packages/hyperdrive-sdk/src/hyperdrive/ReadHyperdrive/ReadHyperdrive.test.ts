@@ -66,7 +66,7 @@ test("Should get the fixed rate as-is when getFixedRate is called", async () => 
   });
 
   mathContract.stubRead({
-    functionName: "calculateAPRFromReserves",
+    functionName: "calculateSpotAPR",
     args: [0n, 0n, 0n, 0n, 0n],
     value: [1n],
   });
@@ -86,6 +86,7 @@ test("Should get the trading volume in terms of bonds when getTradingVolume is c
         baseAmount: dnum.from("1", 18)[0],
         bondAmount: dnum.from("1.3", 18)[0],
         maturityTime: 1729209600n,
+        sharePrice: 1n,
         trader: BOB,
       },
     },
@@ -96,6 +97,7 @@ test("Should get the trading volume in terms of bonds when getTradingVolume is c
         baseAmount: dnum.from("1", 18)[0],
         bondAmount: dnum.from("1.4", 18)[0],
         maturityTime: 1733961600n,
+        sharePrice: 1n,
         trader: ALICE,
       },
     },
@@ -109,6 +111,7 @@ test("Should get the trading volume in terms of bonds when getTradingVolume is c
         baseAmount: dnum.from("1", 18)[0],
         bondAmount: dnum.from("100", 18)[0],
         maturityTime: 1729296000n,
+        sharePrice: 1n,
         trader: BOB,
       },
     },
@@ -119,6 +122,7 @@ test("Should get the trading volume in terms of bonds when getTradingVolume is c
         baseAmount: dnum.from("2", 18)[0],
         bondAmount: dnum.from("190", 18)[0],
         maturityTime: 1729296000n,
+        sharePrice: 1n,
         trader: BOB,
       },
     },
