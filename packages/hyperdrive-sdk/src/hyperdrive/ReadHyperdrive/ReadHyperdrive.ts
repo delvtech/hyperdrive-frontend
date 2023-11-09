@@ -595,22 +595,20 @@ export class ReadHyperdrive implements IReadHyperdrive {
     toBlock: bigint;
   }): ReturnType<IReadHyperdrive, "getLpApy"> {
     const { positionDuration } = await this.getPoolConfig();
-    const { sharePrice: fromSharePrice } = await this.getPoolInfo({
-      blockNumber: fromBlock,
-    });
-    const { sharePrice: toSharePrice } = await this.getPoolInfo({
-      blockNumber: toBlock,
-    });
+
     const checkpointEvents = await this.getCheckpointEvents({
       fromBlock,
       toBlock,
     });
+    console.log("checkpointEvents", checkpointEvents);
+    const startingCheckpoint = checkpointEvents[0];
+    const endingCheckpoint = checkpointEvents[checkpointEvents.length - 1];
 
     const days = positionDuration / (24n * 60n * 60n);
     const yearFraction = dnum.div([days, 18], [365n, 18]);
     const toOverFromSharePrice = dnum.div(
-      [toSharePrice, 18],
-      [fromSharePrice, 18],
+      [endingCheckpoint.args.sharePrice, 18],
+      [startingCheckpoint.args.sharePrice, 18],
     );
 
     const valueToLog = dnum.div(toOverFromSharePrice, yearFraction);
