@@ -15,7 +15,7 @@ import { MockHyperdriveMath } from "@hyperdrive/artifacts/dist/MockHyperdriveMat
 // The sdk should return the exact PoolConfig from the contracts. It should not
 // do any conversions or transformations, eg: converting seconds to ms,
 // formatting bigints, etc..
-test("Should return the PoolConfig from the contract as-is when getPoolConfig is called", async () => {
+test("getPoolConfig should return the PoolConfig from the contract as-is", async () => {
   const { contract, readHyperdrive } = setupReadHyperdrive();
 
   // stub out the contract call the sdk is going to make
@@ -33,7 +33,7 @@ test("Should return the PoolConfig from the contract as-is when getPoolConfig is
 // The sdk should return the exact PoolInfo from the contracts. It should not do
 // any conversions or transformations, eg: converting seconds into ms,
 // formatting bigints, etc..
-test("Should return the PoolInfo from the contract as-is when getPoolInfo is called", async () => {
+test("getPoolInfo should return the PoolInfo from the contract as-is", async () => {
   const { contract, readHyperdrive } = setupReadHyperdrive();
 
   contract.stubRead({
@@ -49,7 +49,7 @@ test("Should return the PoolInfo from the contract as-is when getPoolInfo is cal
 // The sdk should return the exact APR from the contracts. It should not do any
 // conversions or transformations, eg: formatting bigints, etc..
 // TODO: Refactor this test once the Rust SDK available
-test("Should get the fixed rate as-is when getFixedRate is called", async () => {
+test("getFixedRate should get the fixed rate as-is", async () => {
   const { contract, mathContract, readHyperdrive } = setupReadHyperdrive();
 
   // These are necessary to stub, but the values won't be used since we stub
@@ -75,7 +75,7 @@ test("Should get the fixed rate as-is when getFixedRate is called", async () => 
   expect(value).toBe(1n);
 });
 
-test("Should get the trading volume in terms of bonds when getTradingVolume is called", async () => {
+test("getTradingVolume should get the trading volume in terms of bonds", async () => {
   const { contract, readHyperdrive } = setupReadHyperdrive();
 
   contract.stubEvents("OpenLong", [

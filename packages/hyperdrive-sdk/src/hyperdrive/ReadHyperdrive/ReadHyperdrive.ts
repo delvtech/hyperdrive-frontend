@@ -27,12 +27,11 @@ import { WITHDRAW_SHARES_ASSET_ID } from "src/withdrawalShares/assetId";
 import { Checkpoint } from "src/pool/Checkpoint";
 import { MarketState } from "src/pool/MarketState";
 import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
-import { multiplyBigInt } from "src/base/multiplyBigInt/multiplyBigInt";
-import { subtractBigInt } from "src/base/subtractBigInt/subtractBigInt";
 import { BlockTag } from "viem";
 import * as dnum from "dnum";
 import { ZERO_ADDRESS } from "src/base/numbers";
 import { DEFAULT_EXTRA_DATA } from "src/hyperdrive/constants";
+import { calculateShortAccruedYield } from "src/shorts/calculateShortAccruedYield";
 const HyperdriveABI = IHyperdrive.abi;
 
 export interface ReadHyperdriveOptions {
@@ -90,10 +89,10 @@ export interface IReadHyperdrive {
   getMarketState(options?: ContractReadOptions): Promise<MarketState>;
 
   /**
-   * Calculates the accrued yield for a given bond amount and checkpoint share price.
-   * Accrued yield = (current share price - checkpoint share price) x number of bonds
-   * @param checkpointId
-   * @param bondAmount
+   * Gets the yield accrued on an amount of bonds shorted in a given checkpoint.
+   * Note that shorts stop accruing yield once they reach maturity.
+   * @param checkpointId - The checkpoint the short was opened in
+   * @param bondAmount - The number of bonds shorted
    * @param decimals
    * @param options
    */
@@ -436,12 +435,16 @@ export class ReadHyperdrive implements IReadHyperdrive {
     decimals: number;
     options?: ContractReadOptions;
   }): ReturnType<IReadHyperdrive, "getShortAccruedYield"> {
-    const { sharePrice } = await this.getPoolInfo(options);
+    // TODO: The currentSharePrice is only if the bonds haven't matured, if
+    // they have we need the share price at their maturity date
+    const { sharePrice: currentSharePrice } = await this.getPoolInfo(options);
     const checkpoint = await this.getCheckpoint({ checkpointId });
-    const accruedYield = multiplyBigInt(
-      [subtractBigInt([sharePrice, checkpoint.sharePrice]), bondAmount],
+    const accruedYield = calculateShortAccruedYield({
+      toSharePrice: currentSharePrice,
+      fromSharePrice: checkpoint.sharePrice,
+      bondAmount,
       decimals,
-    );
+    });
     return accruedYield;
   }
 
