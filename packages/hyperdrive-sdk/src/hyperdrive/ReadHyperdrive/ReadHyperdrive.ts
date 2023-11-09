@@ -435,13 +435,33 @@ export class ReadHyperdrive implements IReadHyperdrive {
     decimals: number;
     options?: ContractReadOptions;
   }): ReturnType<IReadHyperdrive, "getShortAccruedYield"> {
-    // TODO: The currentSharePrice is only if the bonds haven't matured, if
-    // they have we need the share price at their maturity date
-    const { sharePrice: currentSharePrice } = await this.getPoolInfo(options);
+    // Get the vault share price when the short was opened
     const checkpoint = await this.getCheckpoint({ checkpointId });
+
+    const { checkpointDuration, positionDuration } = await this.getPoolConfig();
+    const isCheckpointMature =
+      checkpointId + positionDuration <
+      getCheckpointId(
+        (await this.network.getBlock()).timestamp,
+        checkpointDuration,
+      );
+
+    // If the short is mature, get the vault share price at maturity
+    let finalSharePrice;
+    if (isCheckpointMature) {
+      const checkpointAtMaturity = await this.getCheckpoint({
+        checkpointId: checkpointId + positionDuration,
+      });
+      finalSharePrice = checkpointAtMaturity.sharePrice;
+    } else {
+      // Otherwise get the current vault share price
+      const poolInfo = await this.getPoolInfo(options);
+      finalSharePrice = poolInfo.sharePrice;
+    }
+
     const accruedYield = calculateShortAccruedYield({
-      toSharePrice: currentSharePrice,
       fromSharePrice: checkpoint.sharePrice,
+      toSharePrice: finalSharePrice,
       bondAmount,
       decimals,
     });
