@@ -9198,7 +9198,7 @@ husky@^8.0.1:
 
 "hyperwasm@file:./packages/hyperdrive-sdk/hyperwasm-0.0.0.tgz":
   version "0.0.0"
-  resolved "file:./packages/hyperdrive-sdk/hyperwasm-0.0.0.tgz#a520732ba7bb5e5e2a93b761b365d27ef9eb3bde"
+  resolved "file:./packages/hyperdrive-sdk/hyperwasm-0.0.0.tgz#35fb4bad1688f400870b8e3a0e0f309176832b0f"
 
 iconv-lite@0.4.24:
   version "0.4.24"
