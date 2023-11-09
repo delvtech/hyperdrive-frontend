@@ -137,6 +137,91 @@ test("getTradingVolume should get the trading volume in terms of bonds", async (
   });
 });
 
+test("getShortAccruedYield should return the amount of yield a non-mature position has earned", async () => {
+  const { contract, network, readHyperdrive } = setupReadHyperdrive();
+
+  network.stubGetBlock({
+    value: Promise.resolve({ blockNumber: 1n, timestamp: 100n }),
+  });
+
+  contract.stubRead({
+    functionName: "getPoolConfig",
+    value: [
+      {
+        ...simplePoolConfig,
+        positionDuration: 86400n, // one day in seconds
+        checkpointDuration: 86400n, // one day in seconds
+      },
+    ],
+  });
+
+  // The pool info gives us the current price
+  contract.stubRead({
+    functionName: "getPoolInfo",
+    value: [{ ...simplePoolInfo, sharePrice: dnum.from("1.01", 18)[0] }],
+  });
+
+  // The checkpoint gives us the price when the bond was opened
+  contract.stubRead({
+    functionName: "getCheckpoint",
+    value: [{ longExposure: 0n, sharePrice: dnum.from("1.008", 18)[0] }],
+  });
+
+  const accruedYield = await readHyperdrive.getShortAccruedYield({
+    checkpointId: 0n,
+    bondAmount: dnum.from("100", 18)[0],
+    decimals: 18,
+  });
+
+  // If you opened a short position on 100 bonds at a previous checkpoint price
+  // of 1.008 and the current price is 1.01, your accrued profit would
+  // be 0.20.
+  expect(accruedYield).toEqual(dnum.from("0.20", 18)[0]);
+});
+
+test("getShortAccruedYield should return the amount of yield a mature position has earned", async () => {
+  const { network, contract, readHyperdrive } = setupReadHyperdrive();
+
+  network.stubGetBlock({
+    value: Promise.resolve({ blockNumber: 1n, timestamp: 1699503565n }),
+  });
+  contract.stubRead({
+    functionName: "getPoolConfig",
+    value: [
+      {
+        ...simplePoolConfig,
+        positionDuration: 86400n, // one day in seconds
+        checkpointDuration: 86400n, // one day in seconds
+      },
+    ],
+  });
+
+  // This checkpoint gives us the price when the short was opened
+  contract.stubRead({
+    functionName: "getCheckpoint",
+    args: [1n],
+    value: [{ longExposure: 0n, sharePrice: dnum.from("1.008", 18)[0] }],
+  });
+
+  // This checkpoint gives us the price when the shorts matured
+  contract.stubRead({
+    functionName: "getCheckpoint",
+    args: [86401n],
+    value: [{ longExposure: 0n, sharePrice: dnum.from("1.01", 18)[0] }],
+  });
+
+  const accruedYield = await readHyperdrive.getShortAccruedYield({
+    checkpointId: 1n,
+    bondAmount: dnum.from("100", 18)[0],
+    decimals: 18,
+  });
+
+  // If you opened a short position on 100 bonds at a previous checkpoint price
+  // of 1.008 and the price was 1.01 at maturity, your accrued profit would
+  // be 0.20.
+  expect(accruedYield).toEqual(dnum.from("0.20", 18)[0]);
+});
+
 function setupReadHyperdrive() {
   const contract = new ReadContractStub(IHyperdrive.abi);
   const cachedContract = new CachedReadContract({ contract });
