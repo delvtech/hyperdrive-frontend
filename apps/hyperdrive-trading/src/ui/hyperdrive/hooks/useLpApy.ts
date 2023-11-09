@@ -27,6 +27,7 @@ export function useLpApy(hyperdrive: Hyperdrive): {
       ? async () =>
           readHyperdrive.getLpApy({
             // If on devnet, start from block 1, otherwise start from 7 days ago
+            // TODO: Update this on mainnet and testnet according to average daily blocks
             fromBlock: isDevnet ? 1n : blockNumber - 7000n * 7n,
             toBlock: blockNumber,
           })
