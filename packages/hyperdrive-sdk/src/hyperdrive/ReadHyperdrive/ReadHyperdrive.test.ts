@@ -222,6 +222,58 @@ test("getShortAccruedYield should return the amount of yield a mature position h
   expect(accruedYield).toEqual(dnum.from("0.20", 18)[0]);
 });
 
+test("getCheckpointEvents should return an array of CheckpointEvents", async () => {
+  const { contract, readHyperdrive } = setupReadHyperdrive();
+
+  contract.stubEvents("CreateCheckpoint", [
+    {
+      eventName: "CreateCheckpoint",
+      args: {
+        sharePrice: 423890n,
+        checkpointTime: 1729296000n,
+        lpSharePrice: 86401n,
+        maturedLongs: 1010694n,
+        maturedShorts: 0n,
+      },
+    },
+    {
+      eventName: "CreateCheckpoint",
+      args: {
+        sharePrice: 698543n,
+        checkpointTime: 1729299000n,
+        lpSharePrice: 80120n,
+        maturedLongs: 923162n,
+        maturedShorts: 230904n,
+      },
+    },
+  ]);
+
+  const events = await readHyperdrive.getCheckpointEvents({});
+
+  expect(events).toEqual([
+    {
+      eventName: "CreateCheckpoint",
+      args: {
+        sharePrice: 423890n,
+        checkpointTime: 1729296000n,
+        lpSharePrice: 86401n,
+        maturedLongs: 1010694n,
+        maturedShorts: 0n,
+      },
+    },
+    {
+      eventName: "CreateCheckpoint",
+      args: {
+        sharePrice: 698543n,
+        checkpointTime: 1729299000n,
+        lpSharePrice: 80120n,
+        maturedLongs: 923162n,
+        maturedShorts: 230904n,
+      },
+    },
+  ]);
+});
+
 function setupReadHyperdrive() {
   const contract = new ReadContractStub(IHyperdrive.abi);
   const cachedContract = new CachedReadContract({ contract });
