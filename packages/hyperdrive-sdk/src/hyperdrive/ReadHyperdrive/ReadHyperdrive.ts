@@ -32,14 +32,8 @@ import * as dnum from "dnum";
 import { ZERO_ADDRESS } from "src/base/numbers";
 import { DEFAULT_EXTRA_DATA } from "src/hyperdrive/constants";
 import { calculateShortAccruedYield } from "src/shorts/calculateShortAccruedYield";
-import * as hyperwasm from "hyperwasm";
 import { convertBigIntsToStrings } from "src/base/convertBigIntsToStrings";
-
-// initialize hyperwasm webassembly module
-const wasmArrayBuffer = Uint8Array.from(atob(hyperwasm.wasmBase64), (c) =>
-  c.charCodeAt(0),
-).buffer;
-hyperwasm.initSync(wasmArrayBuffer);
+import { hyperwasm } from "src/hyperwasm";
 
 const HyperdriveABI = IHyperdrive.abi;
 
@@ -1121,7 +1115,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
       },
     );
     return Promise.all(
-      removeLiquidityEvents.map(async ({ blockNumber, data, args }) => {
+      removeLiquidityEvents.map(async ({ blockNumber, args }) => {
         const { baseAmount, lpAmount, withdrawalShareAmount } = args;
         return {
           hyperdriveAddress: this.contract.address,

@@ -9198,7 +9198,7 @@ husky@^8.0.1:
 
 hyperwasm@./hyperwasm-0.0.0.tgz:
   version "0.0.0"
-  resolved "./hyperwasm-0.0.0.tgz#758d4ab933036e04ad4e1823aa61c7fdf9122b85"
+  resolved "./hyperwasm-0.0.0.tgz#a520732ba7bb5e5e2a93b761b365d27ef9eb3bde"
 
 iconv-lite@0.4.24:
   version "0.4.24"
