@@ -230,8 +230,8 @@ test("getCheckpointEvents should return an array of CheckpointEvents", async () 
       eventName: "CreateCheckpoint",
       args: {
         sharePrice: 423890n,
-        checkpointTime: 1729296000n,
-        lpSharePrice: 86401n,
+        checkpointTime: 1699480800n,
+        lpSharePrice: 1000276463406900050n,
         maturedLongs: 1010694n,
         maturedShorts: 0n,
       },
@@ -239,7 +239,7 @@ test("getCheckpointEvents should return an array of CheckpointEvents", async () 
     {
       eventName: "CreateCheckpoint",
       args: {
-        sharePrice: 698543n,
+        sharePrice: 1000378348050038939n,
         checkpointTime: 1729299000n,
         lpSharePrice: 80120n,
         maturedLongs: 923162n,
@@ -255,8 +255,8 @@ test("getCheckpointEvents should return an array of CheckpointEvents", async () 
       eventName: "CreateCheckpoint",
       args: {
         sharePrice: 423890n,
-        checkpointTime: 1729296000n,
-        lpSharePrice: 86401n,
+        checkpointTime: 1699480800n,
+        lpSharePrice: 1000276463406900050n,
         maturedLongs: 1010694n,
         maturedShorts: 0n,
       },
@@ -264,7 +264,7 @@ test("getCheckpointEvents should return an array of CheckpointEvents", async () 
     {
       eventName: "CreateCheckpoint",
       args: {
-        sharePrice: 698543n,
+        sharePrice: 1000378348050038939n,
         checkpointTime: 1729299000n,
         lpSharePrice: 80120n,
         maturedLongs: 923162n,

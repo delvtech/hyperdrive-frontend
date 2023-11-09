@@ -623,15 +623,13 @@ export class ReadHyperdrive implements IReadHyperdrive {
       fromBlock,
       toBlock,
     });
-    console.log("checkpointEvents", checkpointEvents);
     const startingCheckpoint = checkpointEvents[0];
     const endingCheckpoint = checkpointEvents[checkpointEvents.length - 1];
-
     const days = positionDuration / (24n * 60n * 60n);
     const yearFraction = dnum.div([days, 18], [365n, 18]);
     const toOverFromSharePrice = dnum.div(
-      [endingCheckpoint.args.sharePrice, 18],
-      [startingCheckpoint.args.sharePrice, 18],
+      [endingCheckpoint.args.lpSharePrice, 18],
+      [startingCheckpoint.args.lpSharePrice, 18],
     );
 
     const valueToLog = dnum.div(toOverFromSharePrice, yearFraction);
