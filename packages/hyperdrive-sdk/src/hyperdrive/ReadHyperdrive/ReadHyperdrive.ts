@@ -32,6 +32,15 @@ import * as dnum from "dnum";
 import { ZERO_ADDRESS } from "src/base/numbers";
 import { DEFAULT_EXTRA_DATA } from "src/hyperdrive/constants";
 import { calculateShortAccruedYield } from "src/shorts/calculateShortAccruedYield";
+import * as hyperwasm from "hyperwasm";
+import { convertBigIntsToStrings } from "src/base/convertBigIntsToStrings";
+
+// initialize hyperwasm webassembly module
+const wasmArrayBuffer = Uint8Array.from(atob(hyperwasm.wasmBase64), (c) =>
+  c.charCodeAt(0),
+).buffer;
+hyperwasm.initSync(wasmArrayBuffer);
+
 const HyperdriveABI = IHyperdrive.abi;
 
 export interface ReadHyperdriveOptions {
@@ -398,23 +407,15 @@ export class ReadHyperdrive implements IReadHyperdrive {
   async getSpotRate(
     options?: ContractReadOptions,
   ): ReturnType<IReadHyperdrive, "getSpotRate"> {
-    const { positionDuration, initialSharePrice, timeStretch } =
-      await this.getPoolConfig(options);
-    const { shareReserves, bondReserves, shareAdjustment } =
-      await this.getPoolInfo(options);
-    const [apr] = await this.mathContract.read(
-      "calculateSpotAPR",
-      [
-        calculateEffectiveShareReserves(shareReserves, shareAdjustment),
-        bondReserves,
-        initialSharePrice,
-        positionDuration,
-        timeStretch,
-      ],
-      options,
-    );
+    const config = await this.getPoolConfig(options);
+    const info = await this.getPoolInfo(options);
 
-    return apr;
+    const aprDecimalString = await hyperwasm.getSpotRate({
+      info: convertBigIntsToStrings(info),
+      config: convertBigIntsToStrings(config),
+    });
+
+    return dnum.from(aprDecimalString, 18)[0];
   }
 
   async getLiquidity(
@@ -578,7 +579,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
       options,
     );
     return [...openShortEvents, ...closeShortEvents].map(
-      ({ data, args, eventName, blockNumber }) => ({
+      ({ args, eventName, blockNumber }) => ({
         trader: args.trader,
         assetId: args.assetId,
         bondAmount: args.bondAmount,
