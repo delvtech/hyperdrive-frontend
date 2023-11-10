@@ -11,6 +11,7 @@ import {
   ReadContractStub,
 } from "@hyperdrive/evm-client";
 import { MockHyperdriveMath } from "@hyperdrive/artifacts/dist/MockHyperdriveMath";
+import { CheckpointEvent } from "src/pool/Checkpoint";
 
 // The sdk should return the exact PoolConfig from the contracts. It should not
 // do any conversions or transformations, eg: converting seconds to ms,
@@ -220,6 +221,37 @@ test("getShortAccruedYield should return the amount of yield a mature position h
   // of 1.008 and the price was 1.01 at maturity, your accrued profit would
   // be 0.20.
   expect(accruedYield).toEqual(dnum.from("0.20", 18)[0]);
+});
+
+test("getCheckpointEvents should return an array of CheckpointEvents", async () => {
+  const { contract, readHyperdrive } = setupReadHyperdrive();
+  const checkPointEvents = [
+    {
+      eventName: "CreateCheckpoint",
+      args: {
+        sharePrice: 423890n,
+        checkpointTime: 1699480800n,
+        lpSharePrice: 1000276463406900050n,
+        maturedLongs: 1010694n,
+        maturedShorts: 0n,
+      },
+    },
+    {
+      eventName: "CreateCheckpoint",
+      args: {
+        sharePrice: 1000378348050038939n,
+        checkpointTime: 1729299000n,
+        lpSharePrice: 80120n,
+        maturedLongs: 923162n,
+        maturedShorts: 230904n,
+      },
+    },
+  ] as CheckpointEvent[];
+  contract.stubEvents("CreateCheckpoint", checkPointEvents);
+
+  const events = await readHyperdrive.getCheckpointEvents({});
+
+  expect(events).toEqual(checkPointEvents);
 });
 
 function setupReadHyperdrive() {
