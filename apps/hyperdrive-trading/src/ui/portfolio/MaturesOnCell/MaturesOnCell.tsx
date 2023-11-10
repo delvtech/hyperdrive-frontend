@@ -19,8 +19,12 @@ export function MaturesOnCell({
     <div className="flex flex-col gap-1">
       <span className="ml-2">{termEndDate.toLocaleDateString()}</span>
       {isTermComplete ? (
-        <div className={"daisy-badge daisy-badge-md inline-flex"}>
-          <span>{"Term complete"}</span>
+        <div
+          className={
+            "daisy-badge daisy-badge-primary daisy-badge-md inline-flex"
+          }
+        >
+          <span>Term complete</span>
         </div>
       ) : (
         <div className={"daisy-badge daisy-badge-md inline-flex"}>

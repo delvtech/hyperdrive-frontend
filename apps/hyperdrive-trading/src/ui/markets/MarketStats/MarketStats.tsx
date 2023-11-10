@@ -71,7 +71,7 @@ export function MarketStats({
             <Skeleton className="opacity-50" />
           )
         }
-        description={`Fixed rate earned from purchasing hy${hyperdrive.baseToken.symbol}, before fees and slippage are applied`}
+        description={`Fixed rate earned from opening longs, before fees and slippage are applied`}
       />
       <Stat
         label="LP APY (12 Hour)"
