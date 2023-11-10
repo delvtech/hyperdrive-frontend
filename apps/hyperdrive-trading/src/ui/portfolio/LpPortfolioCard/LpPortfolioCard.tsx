@@ -1,7 +1,9 @@
 import { InformationCircleIcon } from "@heroicons/react/24/outline";
 import { ReactElement } from "react";
+import Skeleton from "react-loading-skeleton";
 import { Hyperdrive } from "src/appconfig/types";
 import { Well } from "src/ui/base/components/Well/Well";
+import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useLpShares } from "src/ui/hyperdrive/lp/hooks/useLpShares";
 import { useAccount } from "wagmi";
 
@@ -13,7 +15,7 @@ export function LpPortfolioCard({
   hyperdrive,
 }: LpPortfolioCardProps): ReactElement {
   const { address: account } = useAccount();
-  const { lpShares, lpSharesStatus } = useLpShares({
+  const { lpShares } = useLpShares({
     hyperdriveAddress: hyperdrive.address,
     account,
   });
@@ -32,7 +34,18 @@ export function LpPortfolioCard({
           <div className="flex flex-col">
             <div className="flex justify-between">
               <p className="">LP balance</p>
-              <p className="">5,723.22 Shares</p>
+              <p className="">
+                {!lpShares ? (
+                  <Skeleton />
+                ) : (
+                  formatBalance({
+                    balance: lpShares,
+                    decimals: hyperdrive.baseToken.decimals,
+                    places: 4,
+                  })
+                )}{" "}
+                Shares
+              </p>
             </div>
           </div>
           <div className="flex flex-col">
