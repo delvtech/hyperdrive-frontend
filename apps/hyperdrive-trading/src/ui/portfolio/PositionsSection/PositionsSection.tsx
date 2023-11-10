@@ -6,8 +6,8 @@ import { Hyperdrive } from "src/appconfig/types";
 import { ClosedLongsTable } from "src/ui/portfolio/ClosedLongsTable/ClosedLongsTable";
 import { ClosedLpTable } from "src/ui/portfolio/ClosedLpTable/ClosedLpTable";
 import { ClosedShortsTable } from "src/ui/portfolio/ClosedShortsTable/ClosedShortsTable";
+import { LpPortfolioCard } from "src/ui/portfolio/LpPortfolioCard/LpPortfolioCard";
 import { OpenLongsTable } from "src/ui/portfolio/OpenLongsTable/OpenLongsTable";
-import { OpenLpTable } from "src/ui/portfolio/OpenLpTable/OpenLpTable";
 import { OpenShortsTable } from "src/ui/portfolio/OpenShortsTable/OpenShortsTable";
 import {
   PositionTab,
@@ -99,7 +99,12 @@ export function PositionsSection({
               }
               case "LP":
                 if (activeOpenOrClosedTab === "Open") {
-                  return <OpenLpTable hyperdrive={hyperdrive} />;
+                  return (
+                    <div className="flex">
+                      <LpPortfolioCard hyperdrive={hyperdrive} />
+                    </div>
+                  );
+                  // return <OpenLpTable hyperdrive={hyperdrive} />;
                 }
                 return <ClosedLpTable hyperdrive={hyperdrive} />;
               default:
