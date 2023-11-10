@@ -10,7 +10,7 @@ export function useLpApy(hyperdrive: Hyperdrive): {
   lpApy: number | undefined;
 } {
   const chainId = useChainId();
-  const isDevnet = chainId === 31337;
+  const isDevnet = !!import.meta.env.VITE_LOCALHOST_NODE_RPC_URL;
   const { data: blockNumber } = useBlockNumber();
   const { poolInfo: currentPoolInfo } = usePoolInfo(hyperdrive.address);
   const { poolConfig } = usePoolConfig(hyperdrive.address);
