@@ -191,7 +191,9 @@ export interface IReadHyperdrive {
     account: Address;
     options?: ContractReadOptions;
   }): Promise<bigint>;
-
+  getLpSharesTotalSupply(args?: {
+    options?: ContractReadOptions;
+  }): Promise<bigint>;
   /**
    * Gets the amount of closed LP shares a user has.
    */
@@ -1085,6 +1087,16 @@ export class ReadHyperdrive implements IReadHyperdrive {
     };
   }
 
+  async getLpSharesTotalSupply(args?: {
+    options?: ContractReadOptions;
+  }): ReturnType<IReadHyperdrive, "getLpSharesTotalSupply"> {
+    const [totalSupply] = await this.contract.read(
+      "totalSupply",
+      [LP_ASSET_ID],
+      args?.options,
+    );
+    return totalSupply;
+  }
   async getLpShares({
     account,
     options,
