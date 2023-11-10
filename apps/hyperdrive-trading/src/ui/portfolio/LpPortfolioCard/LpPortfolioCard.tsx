@@ -1,10 +1,18 @@
-import { InformationCircleIcon } from "@heroicons/react/24/outline";
+import * as dnum from "dnum";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { Hyperdrive } from "src/appconfig/types";
+import { formatRate } from "src/base/formatRate";
+import { Modal } from "src/ui/base/components/Modal/Modal";
 import { Well } from "src/ui/base/components/Well/Well";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
+import { AddLiquidityForm } from "src/ui/hyperdrive/lp/AddLiquidityForm/AddLiquidityForm";
+import { RemoveLiquidityForm } from "src/ui/hyperdrive/lp/RemoveLiquidityForm/RemoveLiquidityForm";
 import { useLpShares } from "src/ui/hyperdrive/lp/hooks/useLpShares";
+import { useLpSharesTotalSupply } from "src/ui/hyperdrive/lp/hooks/useLpSharesTotalSupply";
+import { usePreviewRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewRemoveLiquidity";
+import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
 
 interface LpPortfolioCardProps {
@@ -15,20 +23,59 @@ export function LpPortfolioCard({
   hyperdrive,
 }: LpPortfolioCardProps): ReactElement {
   const { address: account } = useAccount();
+  const { poolInfo } = usePoolInfo(hyperdrive.address);
   const { lpShares } = useLpShares({
     hyperdriveAddress: hyperdrive.address,
     account,
   });
+  const { lpSharesTotalSupply } = useLpSharesTotalSupply({
+    hyperdriveAddress: hyperdrive.address,
+  });
+
+  const { baseAmountOut: lpBaseWithdrawable, withdrawalSharesOut } =
+    usePreviewRemoveLiquidity({
+      market: hyperdrive,
+      lpSharesIn: lpShares,
+      minBaseAmountOut: 1n,
+      destination: account,
+    });
+
+  const utilizationRatio =
+    !!withdrawalSharesOut && !!lpBaseWithdrawable
+      ? calculateRatio({
+          a: withdrawalSharesOut,
+          b: lpBaseWithdrawable,
+          decimals: hyperdrive.baseToken.decimals,
+        })
+      : 0n;
 
   return (
     <Well>
-      <div className="flex w-80 flex-col gap-8">
+      <div className="flex w-80 flex-col gap-4">
         <span className="text-h6 font-bold">LP Shares</span>
-        <div className="flex flex-col gap-2">
+        <div className="mb-4 flex flex-col gap-2">
           <div className="flex flex-col">
             <div className="flex justify-between">
-              <p className="">Pool share</p>
-              <p>1.254%</p>
+              <p
+                className="daisy-tooltip inline-flex cursor-help items-center gap-1 border-b border-dashed border-current"
+                data-tip="Your share of the total liquidity in the pool"
+              >
+                Pool share
+              </p>
+              <p>
+                {!!lpShares && !!lpSharesTotalSupply ? (
+                  `${formatRate(
+                    calculateRatio({
+                      a: lpShares,
+                      b: lpSharesTotalSupply,
+                      decimals: hyperdrive.baseToken.decimals,
+                    }),
+                    hyperdrive.baseToken.decimals,
+                  )}%`
+                ) : (
+                  <Skeleton />
+                )}
+              </p>
             </div>
           </div>
           <div className="flex flex-col">
@@ -51,38 +98,129 @@ export function LpPortfolioCard({
           <div className="flex flex-col">
             <div className="flex justify-between">
               <p className="">Current value</p>
-              <p className="font-bold">5,723.22 ETH</p>
+              <p className="font-bold">
+                {!!poolInfo && !!lpShares ? (
+                  `${formatBalance({
+                    balance: calculateLpValue({
+                      lpShares,
+                      lpSharePrice: poolInfo.lpSharePrice,
+                      decimals: hyperdrive.baseToken.decimals,
+                    }),
+                    decimals: hyperdrive.baseToken.decimals,
+                    places: 4,
+                  })} ${hyperdrive.baseToken.symbol}`
+                ) : (
+                  <Skeleton />
+                )}
+              </p>
             </div>
           </div>
-          <div className="flex flex-col">
+          <div className="mt-4 flex flex-col">
             <div className="flex justify-between">
               <p
-                className="daisy-tooltip inline-flex items-center gap-1"
-                data-tip="Your ratio of idle capital to capital being used to back Longs and Shorts"
+                className="daisy-tooltip mb-1 inline-flex cursor-help items-center border-b border-dashed border-current"
+                data-tip="Your ratio of idle capital to capital being used to back Longs and Shorts."
               >
                 Utilization ratio
-                <InformationCircleIcon className="h-5 w-5" />
               </p>
-              <p>64%</p>
+              <p>
+                {!!lpBaseWithdrawable && !!withdrawalSharesOut ? (
+                  `${formatRate(
+                    utilizationRatio,
+                    hyperdrive.baseToken.decimals,
+                  )}%`
+                ) : (
+                  <Skeleton />
+                )}
+              </p>
             </div>
           </div>
-          <progress className="daisy-progress" value="70" max="100"></progress>
+          <progress
+            className="daisy-progress"
+            value={
+              // The progress bar can't go past 100%, but it's possible that
+              // negative interest makes the utilization ratio go over 100%
+              Math.max(
+                +formatUnits(utilizationRatio, hyperdrive.baseToken.decimals),
+                100,
+              )
+            }
+            max="100"
+          ></progress>
+          <p className="text-center text-body">
+            Note: When you withdraw liquidity, you get back{" "}
+            {hyperdrive.baseToken.symbol} and withdrawal shares proportional to
+            your utilization ratio.
+          </p>
         </div>
         <div className="flex items-center justify-end">
-          <div className="daisy-join-vertical daisy-join gap-1 lg:daisy-join-horizontal">
-            <button className="daisy-btn-neutral daisy-btn-sm daisy-join-item daisy-btn hover:daisy-btn-ghost">
-              Deposit
-            </button>
-            <button className="daisy-btn-neutral daisy-btn-sm daisy-join-item daisy-btn hover:daisy-btn-ghost">
-              Withdraw
-            </button>
+          <div className="flex gap-1">
+            <Modal
+              modalId={"depositLpModal"}
+              modalContent={<AddLiquidityForm market={hyperdrive} />}
+            >
+              {({ showModal }) => (
+                <button
+                  className="daisy-btn-neutral daisy-btn-sm daisy-btn rounded-r-none  rounded-l-md hover:daisy-btn-ghost"
+                  onClick={showModal}
+                >
+                  Deposit
+                </button>
+              )}
+            </Modal>
+            <Modal
+              modalId={"withdrawalLpModal"}
+              modalContent={
+                <RemoveLiquidityForm
+                  hyperdrive={hyperdrive}
+                  lpShares={lpShares || 0n}
+                />
+              }
+            >
+              {({ showModal }) => (
+                <button
+                  className="daisy-btn-neutral daisy-btn-sm daisy-btn rounded-l-none rounded-r-md hover:daisy-btn-ghost"
+                  onClick={showModal}
+                >
+                  Withdraw
+                </button>
+              )}
+            </Modal>
           </div>
         </div>
-        <p className="text-center text-body">
-          Note: When you withdraw liquidity, you get back WETH and withdrawal
-          shares proportional to your utilization ratio.
-        </p>
       </div>
     </Well>
   );
+}
+
+function calculateLpValue({
+  lpShares,
+  lpSharePrice,
+  decimals,
+}: {
+  lpShares: bigint;
+  lpSharePrice: bigint;
+  decimals: number;
+}) {
+  return dnum.multiply(
+    [lpShares, decimals],
+    [lpSharePrice, decimals],
+    decimals,
+  )[0];
+}
+
+function calculateRatio({
+  a,
+  b,
+  decimals,
+}: {
+  a: bigint;
+  b: bigint;
+  decimals: number;
+}) {
+  return dnum.multiply(
+    dnum.divide([a, decimals], [b, decimals]),
+    dnum.from("100", decimals),
+    decimals,
+  )[0];
 }
