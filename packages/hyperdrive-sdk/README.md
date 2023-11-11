@@ -62,3 +62,13 @@ export const hyperdrive = new HyperdriveSdk({
   console.log(`The current fixed rate is: ${await hyperdrive.getSpotRate()}`);
 })();
 ```
+
+## Developing
+
+This SDK depends on the private GitHub package, `@delvtech/hyperwasm`. To
+install it, you'll need to [create a GitHub Personal Access Token (classic)](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic) with at
+least `read:packages` scope and add it to your `~/.npmrc`:
+
+```
+//npm.pkg.github.com/:_authToken=YOUR_PERSON
+```
