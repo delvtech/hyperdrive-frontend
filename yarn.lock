@@ -1517,10 +1517,10 @@
   dependencies:
     "@jridgewell/trace-mapping" "0.3.9"
 
-"@delvtech/hyperwasm@^0.0.0":
-  version "0.0.0"
-  resolved "https://npm.pkg.github.com/download/@delvtech/hyperwasm/0.0.0/f68e76380ba172ae1bee20a2c2e4a03bd59a1dcd#f68e76380ba172ae1bee20a2c2e4a03bd59a1dcd"
-  integrity sha512-RWpCq4Zqpux1zeLpccwf3joJuPx4riMNmv2qDYLxHonIr8e9bBFn6YkPY4jroCoT6skH4oeUzpL3ZEvAeEDlAQ==
+"@delvtech/hyperwasm@^0.0.1":
+  version "0.0.1"
+  resolved "https://npm.pkg.github.com/download/@delvtech/hyperwasm/0.0.1/cdeb956d9421353d864e5c2c0931d89f0b7e3cab#cdeb956d9421353d864e5c2c0931d89f0b7e3cab"
+  integrity sha512-1IRjmUAMZDTgfoHCPkzuHq7KFX7Svf2sGHb0VfiCFBK/LCF/gwbVI2gBEUYdPacx6tiDb7cm1hgy6J7N6RSaAw==
 
 "@discoveryjs/json-ext@0.5.7":
   version "0.5.7"
