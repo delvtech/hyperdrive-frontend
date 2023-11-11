@@ -1517,6 +1517,11 @@
   dependencies:
     "@jridgewell/trace-mapping" "0.3.9"
 
+"@delvtech/hyperwasm@^0.0.0":
+  version "0.0.0"
+  resolved "https://npm.pkg.github.com/download/@delvtech/hyperwasm/0.0.0/f68e76380ba172ae1bee20a2c2e4a03bd59a1dcd#f68e76380ba172ae1bee20a2c2e4a03bd59a1dcd"
+  integrity sha512-RWpCq4Zqpux1zeLpccwf3joJuPx4riMNmv2qDYLxHonIr8e9bBFn6YkPY4jroCoT6skH4oeUzpL3ZEvAeEDlAQ==
+
 "@discoveryjs/json-ext@0.5.7":
   version "0.5.7"
   resolved "https://registry.yarnpkg.com/@discoveryjs/json-ext/-/json-ext-0.5.7.tgz#1d572bfbbe14b7704e0ba0f39b74815b84870d70"
@@ -9195,10 +9200,6 @@ husky@^8.0.1:
   version "8.0.3"
   resolved "https://registry.yarnpkg.com/husky/-/husky-8.0.3.tgz#4936d7212e46d1dea28fef29bb3a108872cd9184"
   integrity sha512-+dQSyqPh4x1hlO1swXBiNb2HzTDN1I2IGLQx1GrBuiqFJfoMrnZWwVmatvSiO+Iz8fBUnf+lekwNo4c2LlXItg==
-
-"hyperwasm@file:./packages/hyperdrive-sdk/hyperwasm-0.0.0.tgz":
-  version "0.0.0"
-  resolved "file:./packages/hyperdrive-sdk/hyperwasm-0.0.0.tgz#35fb4bad1688f400870b8e3a0e0f309176832b0f"
 
 iconv-lite@0.4.24:
   version "0.4.24"
