@@ -70,5 +70,5 @@ install it, you'll need to [create a GitHub Personal Access Token (classic)](htt
 least `read:packages` scope and add it to your `~/.npmrc`:
 
 ```
-//npm.pkg.github.com/:_authToken=YOUR_PERSON
+//npm.pkg.github.com/:_authToken=YOUR_TOKEN
 ```
