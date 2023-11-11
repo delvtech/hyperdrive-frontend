@@ -4,7 +4,6 @@ import * as dnum from "dnum";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { Hyperdrive } from "src/appconfig/types";
-import { formatRate } from "src/base/formatRate";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Well } from "src/ui/base/components/Well/Well";
@@ -52,6 +51,15 @@ export function LpPortfolioCard({
         })
       : 0n;
 
+  const poolShare =
+    !!lpShares && !!lpSharesTotalSupply
+      ? calculateRatio({
+          a: lpShares,
+          b: lpSharesTotalSupply,
+          decimals: hyperdrive.baseToken.decimals,
+        })
+      : 0n;
+
   return (
     <Well>
       <div className="flex w-80 flex-col gap-4">
@@ -69,13 +77,9 @@ export function LpPortfolioCard({
                   </p>
                   <p>
                     {!!lpShares && !!lpSharesTotalSupply ? (
-                      `${formatRate(
-                        calculateRatio({
-                          a: lpShares,
-                          b: lpSharesTotalSupply,
-                          decimals: hyperdrive.baseToken.decimals,
-                        }),
-                        hyperdrive.baseToken.decimals,
+                      `${dnum.format(
+                        [poolShare, hyperdrive.baseToken.decimals],
+                        6,
                       )}%`
                     ) : (
                       <Skeleton />
@@ -130,9 +134,9 @@ export function LpPortfolioCard({
                   </p>
                   <p>
                     {!!lpBaseWithdrawable && !!withdrawalSharesOut ? (
-                      `${formatRate(
-                        utilizationRatio,
-                        hyperdrive.baseToken.decimals,
+                      `${dnum.format(
+                        [utilizationRatio, hyperdrive.baseToken.decimals],
+                        2,
                       )}%`
                     ) : (
                       <Skeleton />
@@ -148,7 +152,7 @@ export function LpPortfolioCard({
                     +formatUnits(
                       utilizationRatio,
                       hyperdrive.baseToken.decimals,
-                    ) * 100,
+                    ),
                     100,
                   )
                 }
@@ -228,9 +232,8 @@ function calculateRatio({
   decimals: number;
 }) {
   return dnum.multiply(
-    dnum.divide([a, decimals], [b, decimals]),
+    dnum.divide([a, decimals], [b, decimals], decimals),
     dnum.from("100", decimals),
-    decimals,
   )[0];
 }
 
