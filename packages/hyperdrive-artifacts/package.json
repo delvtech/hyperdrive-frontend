@@ -6,6 +6,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "sh build.sh"
+    "build": "sh build.sh",
+    "build:new": "rm -rf ./dist ./hyperdrive && sh build.sh"
   }
 }
