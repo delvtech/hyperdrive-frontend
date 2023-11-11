@@ -1,10 +1,10 @@
 /**
- * Recursively converts a primitive type to a new type. The `predicateFn` is
- * used to determine if the `converterFn` should be run on the value. Only the
- * primitive values will passed to the functions, so:
- * - For primitive types, the functions are called with the value itself.
- * - For arrays, the functions are called with each primitive in the array.
- * - For objects, the functions are called with each primitive in the object.
+ * Recursively converts a type to a new type. The `predicateFn` is
+ * used to determine if the `converterFn` should be run on the value.
+ *
+ * The function first checks the value itself, if the `predicateFn` returns
+ * false and the value is an array or object, the function will recursively
+ * check each item in the array or object.
  *
  * @param value - The value to convert primitive types in.
  * @param predicateFn - A function that returns true if the `converterFn` should
