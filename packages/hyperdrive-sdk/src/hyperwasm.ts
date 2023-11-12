@@ -1,4 +1,4 @@
-import * as hyperwasm from "@delvtech/hyperwasm";
+import * as hyperwasm from "@delvtech/hyperdrive-wasm";
 
 hyperwasm.initSync(hyperwasm.wasmBuffer);
 
