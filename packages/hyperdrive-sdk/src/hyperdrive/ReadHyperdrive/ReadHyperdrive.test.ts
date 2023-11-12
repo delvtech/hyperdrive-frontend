@@ -1,8 +1,8 @@
 import { expect, test } from "vitest";
 import * as dnum from "dnum";
 import { ReadHyperdrive } from "src/hyperdrive/ReadHyperdrive/ReadHyperdrive";
-import { simplePoolConfig } from "src/pool/testing/simplePoolConfig";
-import { simplePoolInfo } from "src/pool/testing/simplePoolInfo";
+import { mockPoolConfig, simplePoolConfig } from "src/pool/testing/PoolConfig";
+import { mockPoolInfo, simplePoolInfo } from "src/pool/testing/PoolInfo";
 import { ALICE, BOB } from "src/base/testing/accounts";
 import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
 import {
@@ -49,31 +49,24 @@ test("getPoolInfo should return the PoolInfo from the contract as-is", async () 
 
 // The sdk should return the exact APR from the contracts. It should not do any
 // conversions or transformations, eg: formatting bigints, etc..
-// TODO: Refactor this test once the Rust SDK available
 test("getFixedRate should get the fixed rate as-is", async () => {
-  const { contract, mathContract, readHyperdrive } = setupReadHyperdrive();
+  const { contract, readHyperdrive } = setupReadHyperdrive();
 
   // These are necessary to stub, but the values won't be used since we stub
   // calculateAPRFromReserves directly
   contract.stubRead({
     functionName: "getPoolConfig",
     args: [],
-    value: [simplePoolConfig],
+    value: [mockPoolConfig],
   });
   contract.stubRead({
     functionName: "getPoolInfo",
     args: [],
-    value: [simplePoolInfo],
-  });
-
-  mathContract.stubRead({
-    functionName: "calculateSpotAPR",
-    args: [0n, 0n, 0n, 0n, 0n],
-    value: [1n],
+    value: [mockPoolInfo],
   });
 
   const value = await readHyperdrive.getSpotRate();
-  expect(value).toBe(1n);
+  expect(value).toBe(34999999999999999n);
 });
 
 test("getTradingVolume should get the trading volume in terms of bonds", async () => {

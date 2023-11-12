@@ -4,6 +4,11 @@ script_dir="$(dirname "$0")"
 
 cd $script_dir
 
+# Ignore the build script if the dist folder already exists
+if [ -d "dist" ]; then
+  exit 0
+fi
+
 # Clone the hyperdrive repo if the hyperdrive folder doesn't exist
 if [ ! -d "hyperdrive" ]; then
   git clone --depth 1 --branch v0.2.0 git@github.com:delvtech/hyperdrive.git hyperdrive

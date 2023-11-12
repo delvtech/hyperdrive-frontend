@@ -17,8 +17,8 @@
   },
   "devDependencies": {
     "@hyperdrive/artifacts": "*",
-    "@hyperdrive/evm-client": "*",
     "@hyperdrive/eslint-config": "*",
+    "@hyperdrive/evm-client": "*",
     "@hyperdrive/prettier-config": "*",
     "@hyperdrive/tsconfig": "*",
     "@types/sinon": "^10.0.16",
@@ -37,6 +37,7 @@
     "access": "public"
   },
   "dependencies": {
+    "@delvtech/hyperwasm": "^0.0.1",
     "@tanstack/query-core": "^4.29.11",
     "@types/lodash.groupby": "^4.6.7",
     "@types/lodash.mapvalues": "^4.6.7",
