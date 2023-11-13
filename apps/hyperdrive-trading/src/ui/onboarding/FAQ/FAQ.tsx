@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import { ReactElement, useState } from "react";
 
 export function FAQ(): ReactElement {
@@ -10,41 +11,46 @@ export function FAQ(): ReactElement {
         <div className="w-[30%]">
           <div
             onClick={() => setSelectedFAQKey("faq1")}
-            className={`${
-              selectedFAQKey !== "faq1" && "bg-base-200 opacity-40"
-            } my-5 cursor-pointer`}
+            className={classNames(
+              "my-5 cursor-pointer",
+              selectedFAQKey !== "faq1" && "bg-base-200 opacity-40",
+            )}
           >
             <div>How can I get fixed rates?</div>
           </div>
           <div
             onClick={() => setSelectedFAQKey("faq2")}
-            className={`${
-              selectedFAQKey !== "faq2" && "bg-base-200 opacity-40"
-            } my-5 cursor-pointer`}
+            className={classNames(
+              "my-5 cursor-pointer",
+              selectedFAQKey !== "faq2" && "bg-base-200 opacity-40",
+            )}
           >
             <div>What is a short?</div>
           </div>
           <div
             onClick={() => setSelectedFAQKey("faq3")}
-            className={`${
-              selectedFAQKey !== "faq3" && "bg-base-200 opacity-40"
-            } my-5 cursor-pointer`}
+            className={classNames(
+              "my-5 cursor-pointer",
+              selectedFAQKey !== "faq3" && "bg-base-200 opacity-40",
+            )}
           >
             <div>What are the benefits of providing liquidity?</div>
           </div>
           <div
             onClick={() => setSelectedFAQKey("faq4")}
-            className={`${
-              selectedFAQKey !== "faq4" && "bg-base-200 opacity-40"
-            } my-5 cursor-pointer`}
+            className={classNames(
+              "my-5 cursor-pointer",
+              selectedFAQKey !== "faq4" && "bg-base-200 opacity-40",
+            )}
           >
             <div>Can I close my long/short/LP position before maturity?</div>
           </div>
           <div
             onClick={() => setSelectedFAQKey("faq5")}
-            className={`${
-              selectedFAQKey !== "faq5" && "bg-base-200 opacity-40"
-            } my-5 cursor-pointer`}
+            className={classNames(
+              "my-5 cursor-pointer",
+              selectedFAQKey !== "faq5" && "bg-base-200 opacity-40",
+            )}
           >
             <div>How do LP positions work?</div>
           </div>
