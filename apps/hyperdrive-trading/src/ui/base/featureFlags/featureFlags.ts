@@ -26,9 +26,10 @@ export function useFeatureFlag(flagName: string): {
     enableFlag: () => {
       // Create a new search params so we retain all existing search params
       const newSearchParams = new URLSearchParams(searchParams);
+
       newSearchParams.set(
         "feature_flags",
-        [...currentFlags, flagName].join(","),
+        [...new Set([...currentFlags, flagName])].join(","),
       );
       setSearchParams(newSearchParams);
     },
@@ -36,7 +37,7 @@ export function useFeatureFlag(flagName: string): {
     disableFlag: () => {
       // Create a new search params so we retain all existing search params
       const newSearchParams = new URLSearchParams(searchParams);
-      searchParams.set(
+      newSearchParams.set(
         "feature_flags",
         currentFlags.filter((name) => name !== flagName).join(","),
       );
