@@ -5,15 +5,13 @@ export function FAQ(): ReactElement {
 
   return (
     <div className="flex flex-col">
-      <span className="mb-2 text-h5 font-bold ">
-        Frequently Asked Questions
-      </span>
+      <span className="mb-2 text-h5 font-bold">Frequently Asked Questions</span>
       <div className="flex flex-row gap-6 rounded-md bg-base-200 p-12">
         <div className="w-[30%]">
           <div
             onClick={() => setSelectedFAQKey("faq1")}
             className={`${
-              selectedFAQKey !== "faq1" ? "bg-base-200 opacity-40" : ""
+              selectedFAQKey !== "faq1" && "bg-base-200 opacity-40"
             } my-5 cursor-pointer`}
           >
             <div>How can I get fixed rates?</div>
@@ -21,7 +19,7 @@ export function FAQ(): ReactElement {
           <div
             onClick={() => setSelectedFAQKey("faq2")}
             className={`${
-              selectedFAQKey !== "faq2" ? "bg-base-200 opacity-40" : ""
+              selectedFAQKey !== "faq2" && "bg-base-200 opacity-40"
             } my-5 cursor-pointer`}
           >
             <div>What is a short?</div>
@@ -29,7 +27,7 @@ export function FAQ(): ReactElement {
           <div
             onClick={() => setSelectedFAQKey("faq3")}
             className={`${
-              selectedFAQKey !== "faq3" ? "bg-base-200 opacity-40" : ""
+              selectedFAQKey !== "faq3" && "bg-base-200 opacity-40"
             } my-5 cursor-pointer`}
           >
             <div>What are the benefits of providing liquidity?</div>
@@ -37,7 +35,7 @@ export function FAQ(): ReactElement {
           <div
             onClick={() => setSelectedFAQKey("faq4")}
             className={`${
-              selectedFAQKey !== "faq4" ? "bg-base-200 opacity-40" : ""
+              selectedFAQKey !== "faq4" && "bg-base-200 opacity-40"
             } my-5 cursor-pointer`}
           >
             <div>Can I close my long/short/LP position before maturity?</div>
@@ -45,7 +43,7 @@ export function FAQ(): ReactElement {
           <div
             onClick={() => setSelectedFAQKey("faq5")}
             className={`${
-              selectedFAQKey !== "faq5" ? "bg-base-200 opacity-40" : ""
+              selectedFAQKey !== "faq5" && "bg-base-200 opacity-40"
             } my-5 cursor-pointer`}
           >
             <div>How do LP positions work?</div>
@@ -55,7 +53,7 @@ export function FAQ(): ReactElement {
         <div className="flex w-[70%] flex-col items-start justify-center">
           {selectedFAQKey === "faq1" && (
             <div>
-              <div className="mb-1 text-h4 ">How can I get fixed rates?</div>
+              <div className="mb-1 text-h4">How can I get fixed rates?</div>
               <span>
                 By opening a Long and holding it to maturity. <br />
                 <br />
@@ -85,7 +83,7 @@ export function FAQ(): ReactElement {
           )}
           {selectedFAQKey === "faq2" && (
             <div>
-              <div className="mb-1 text-h4 ">What is a short?</div>
+              <div className="mb-1 text-h4">What is a short?</div>
               <span>
                 Simply put, a short is the opposite of a long. Opening a short
                 implies short-selling hy[Token] at its current market price,
@@ -112,7 +110,7 @@ export function FAQ(): ReactElement {
           )}
           {selectedFAQKey === "faq3" && (
             <div>
-              <div className="mb-1 text-h4 ">
+              <div className="mb-1 text-h4">
                 What are the benefits of providing liquidity?
               </div>
               <span>
@@ -138,7 +136,7 @@ export function FAQ(): ReactElement {
           )}
           {selectedFAQKey === "faq4" && (
             <div>
-              <div className="mb-1 text-h4 ">
+              <div className="mb-1 text-h4">
                 Can I close my long/short/LP position before maturity?
               </div>
               <span>
@@ -174,7 +172,7 @@ export function FAQ(): ReactElement {
           )}
           {selectedFAQKey === "faq5" && (
             <div>
-              <div className="mb-1 text-h4 ">How do LP positions work?</div>
+              <div className="mb-1 text-h4">How do LP positions work?</div>
               <span>
                 You open an LP position by providing base asset to the AMM. This
                 increases the AMM&rsquo;s capacity for longs and shorts. LP
