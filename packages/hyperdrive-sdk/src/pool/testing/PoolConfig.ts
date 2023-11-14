@@ -16,8 +16,9 @@ export const simplePoolConfig: PoolConfig = {
     flat: 0n,
     governance: 0n,
   },
-  oracleSize: 0n,
-  updateGap: 0n,
+  linkerCodeHash: "0x".padEnd(66, "0") as `0x${string}`,
+  linkerFactory: ZERO_ADDRESS,
+  precisionThreshold: 0n,
 };
 
 export const mockPoolConfig: PoolConfig = {
@@ -35,6 +36,7 @@ export const mockPoolConfig: PoolConfig = {
   timeStretch: 31124187940342208n,
   positionDuration: 31536000n,
   checkpointDuration: 86400n,
-  oracleSize: 10n,
-  updateGap: 3600n,
+  linkerCodeHash: "0x".padEnd(66, "0") as `0x${string}`,
+  linkerFactory: ZERO_ADDRESS,
+  precisionThreshold: 100000000000000000n,
 };

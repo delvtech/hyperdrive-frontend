@@ -404,10 +404,10 @@ export class ReadHyperdrive implements IReadHyperdrive {
     const config = await this.getPoolConfig(options);
     const info = await this.getPoolInfo(options);
 
-    const aprDecimalString = await hyperwasm.getSpotRate({
-      info: convertBigIntsToStrings(info),
-      config: convertBigIntsToStrings(config),
-    });
+    const aprDecimalString = await hyperwasm.getSpotRate(
+      convertBigIntsToStrings(info),
+      convertBigIntsToStrings(config),
+    );
 
     return dnum.from(aprDecimalString, 18)[0];
   }
