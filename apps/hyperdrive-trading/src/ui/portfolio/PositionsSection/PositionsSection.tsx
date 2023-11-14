@@ -93,20 +93,18 @@ export function PositionsSection({
                 }
                 return <ClosedShortsTable hyperdrive={hyperdrive} />;
               }
-              case "LP":
+              case "LP": {
                 if (activeOpenOrClosedTab === "Open") {
-                  return (
-                    <>
-                      {showLpCards ? (
-                        <div className="flex">
-                          <LpPortfolioCard hyperdrive={hyperdrive} />
-                        </div>
-                      ) : undefined}
-                      <OpenLpTable hyperdrive={hyperdrive} />;
-                    </>
+                  return showLpCards ? (
+                    <div className="flex">
+                      <LpPortfolioCard hyperdrive={hyperdrive} />
+                    </div>
+                  ) : (
+                    <OpenLpTable hyperdrive={hyperdrive} />
                   );
                 }
                 return <ClosedLpTable hyperdrive={hyperdrive} />;
+              }
               default:
                 assertNever(activePositionTab);
             }
