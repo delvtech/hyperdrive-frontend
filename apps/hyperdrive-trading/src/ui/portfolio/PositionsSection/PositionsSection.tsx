@@ -81,19 +81,19 @@ export function PositionsSection({
         <div className="w-full">
           {(() => {
             switch (activePositionTab) {
-              case "Longs": {
+              case "Longs":
                 if (activeOpenOrClosedTab === "Open") {
                   return <OpenLongsTable hyperdrive={hyperdrive} />;
                 }
                 return <ClosedLongsTable hyperdrive={hyperdrive} />;
-              }
-              case "Shorts": {
+
+              case "Shorts":
                 if (activeOpenOrClosedTab === "Open") {
                   return <OpenShortsTable hyperdrive={hyperdrive} />;
                 }
                 return <ClosedShortsTable hyperdrive={hyperdrive} />;
-              }
-              case "LP": {
+
+              case "LP":
                 if (activeOpenOrClosedTab === "Open") {
                   return showLpCards ? (
                     <div className="flex">
@@ -104,7 +104,7 @@ export function PositionsSection({
                   );
                 }
                 return <ClosedLpTable hyperdrive={hyperdrive} />;
-              }
+
               default:
                 assertNever(activePositionTab);
             }
