@@ -62,7 +62,7 @@ export function LpPortfolioCard({
 
   return (
     <Well>
-      <div className="flex w-80 flex-col gap-4">
+      <div className="flex max-w-xs flex-col gap-4">
         <span className="text-h6 font-bold">LP Shares</span>
         {lpShares !== 0n ? (
           <>
