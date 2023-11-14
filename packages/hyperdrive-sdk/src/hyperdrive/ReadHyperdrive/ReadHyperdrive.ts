@@ -1002,7 +1002,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     const { timestamp: blockTimestamp } = await this.network.getBlock(options);
 
     const checkpointId = getCheckpointId(blockTimestamp, checkpointDuration);
-    const { longExposure: checkpointLongExposure } = await this.getCheckpoint({
+    const { exposure: checkpointExposure } = await this.getCheckpoint({
       checkpointId,
     });
 
@@ -1022,7 +1022,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
           curveFee: fees.curve,
           governanceFee: fees.governance,
         },
-        checkpointLongExposure,
+        checkpointExposure,
         MAX_ITERATIONS,
       ],
       options,
@@ -1052,7 +1052,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     const { timestamp: blockTimestamp } = await this.network.getBlock(options);
 
     const checkpointId = getCheckpointId(blockTimestamp, checkpointDuration);
-    const { longExposure: checkpointLongExposure } = await this.getCheckpoint({
+    const { exposure: checkpointExposure } = await this.getCheckpoint({
       checkpointId,
       options,
     });
@@ -1073,7 +1073,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
           curveFee: fees.curve,
           governanceFee: fees.governance,
         },
-        checkpointLongExposure,
+        checkpointExposure,
         MAX_ITERATIONS,
       ],
       options,
