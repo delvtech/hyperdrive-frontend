@@ -1,5 +1,6 @@
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { ReactElement } from "react";
+import { FeatureFlagPicker } from "src/ui/app/Navbar/FeatureFlagPicker";
 
 export function Navbar(): ReactElement {
   return (
@@ -15,6 +16,7 @@ export function Navbar(): ReactElement {
         </a>
       </div>
       <div className="daisy-navbar-end gap-8">
+        {import.meta.env.DEV ? <FeatureFlagPicker /> : null}
         <ConnectButton showBalance={false} />
       </div>
     </div>
