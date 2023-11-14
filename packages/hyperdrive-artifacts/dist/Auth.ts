@@ -108,7 +108,7 @@ export const Auth =
     "setAuthority(address)": "7a9e5e4b",
     "transferOwnership(address)": "f2fde38b"
   },
-  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"contract Authority\",\"name\":\"newAuthority\",\"type\":\"address\"}],\"name\":\"AuthorityUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"authority\",\"outputs\":[{\"internalType\":\"contract Authority\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract Authority\",\"name\":\"newAuthority\",\"type\":\"address\"}],\"name\":\"setAuthority\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Solmate (https://github.com/transmissions11/solmate/blob/main/src/auth/Auth.sol)Modified from Dappsys (https://github.com/dapphub/ds-auth/blob/master/src/auth.sol)\",\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Provides a flexible and updatable auth pattern which is completely separate from application logic.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"lib/solmate/src/auth/Auth.sol\":\"Auth\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@aave/=lib/aave-v3-core/contracts/\",\":aave-v3-core/=lib/aave-v3-core/\",\":create3-factory/=lib/yield-daddy/lib/create3-factory/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\",\":yield-daddy/=lib/yield-daddy/\"]},\"sources\":{\"lib/solmate/src/auth/Auth.sol\":{\"keccak256\":\"0x6e05238d59cd40172c04c1974eb8f1f6cef4fdc4b6553ef7844a7302b885f76c\",\"license\":\"AGPL-3.0-only\",\"urls\":[\"bzz-raw://a9743c21ca0470d9082e4cf00aea53786868c977d40775e6954463658ebb50ac\",\"dweb:/ipfs/QmPFdyrLHUX1zSipTC2tcJ58EzxxPp2TTvCZx9KCgqZn2W\"]}},\"version\":1}",
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"contract Authority\",\"name\":\"newAuthority\",\"type\":\"address\"}],\"name\":\"AuthorityUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"authority\",\"outputs\":[{\"internalType\":\"contract Authority\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract Authority\",\"name\":\"newAuthority\",\"type\":\"address\"}],\"name\":\"setAuthority\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Solmate (https://github.com/transmissions11/solmate/blob/main/src/auth/Auth.sol)Modified from Dappsys (https://github.com/dapphub/ds-auth/blob/master/src/auth.sol)\",\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Provides a flexible and updatable auth pattern which is completely separate from application logic.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"lib/solmate/src/auth/Auth.sol\":\"Auth\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":aave-v3-core/=lib/aave-v3-core/\",\":create3-factory/=lib/yield-daddy/lib/create3-factory/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\",\":solmate/=lib/solmate/src/\",\":yield-daddy/=lib/yield-daddy/\"]},\"sources\":{\"lib/solmate/src/auth/Auth.sol\":{\"keccak256\":\"0x6e05238d59cd40172c04c1974eb8f1f6cef4fdc4b6553ef7844a7302b885f76c\",\"license\":\"AGPL-3.0-only\",\"urls\":[\"bzz-raw://a9743c21ca0470d9082e4cf00aea53786868c977d40775e6954463658ebb50ac\",\"dweb:/ipfs/QmPFdyrLHUX1zSipTC2tcJ58EzxxPp2TTvCZx9KCgqZn2W\"]}},\"version\":1}",
   "metadata": {
     "compiler": {
       "version": "0.8.19+commit.7dd6d404"
@@ -218,14 +218,10 @@ export const Auth =
     },
     "settings": {
       "remappings": [
-        "@aave/=lib/aave-v3-core/contracts/",
         "aave-v3-core/=lib/aave-v3-core/",
         "create3-factory/=lib/yield-daddy/lib/create3-factory/",
         "ds-test/=lib/forge-std/lib/ds-test/src/",
-        "erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/",
         "forge-std/=lib/forge-std/src/",
-        "openzeppelin-contracts/=lib/openzeppelin-contracts/",
-        "openzeppelin/=lib/openzeppelin-contracts/contracts/",
         "solmate/=lib/solmate/src/",
         "yield-daddy/=lib/yield-daddy/"
       ],
@@ -255,22 +251,22 @@ export const Auth =
   },
   "ast": {
     "absolutePath": "lib/solmate/src/auth/Auth.sol",
-    "id": 62743,
+    "id": 59127,
     "exportedSymbols": {
       "Auth": [
-        62729
+        59113
       ],
       "Authority": [
-        62742
+        59126
       ]
     },
     "nodeType": "SourceUnit",
-    "src": "42:2535:97",
+    "src": "42:2535:81",
     "nodes": [
       {
-        "id": 62572,
+        "id": 58956,
         "nodeType": "PragmaDirective",
-        "src": "42:24:97",
+        "src": "42:24:81",
         "nodes": [],
         "literals": [
           "solidity",
@@ -280,33 +276,33 @@ export const Auth =
         ]
       },
       {
-        "id": 62729,
+        "id": 59113,
         "nodeType": "ContractDefinition",
-        "src": "369:1760:97",
+        "src": "369:1760:81",
         "nodes": [
           {
-            "id": 62579,
+            "id": 58963,
             "nodeType": "EventDefinition",
-            "src": "398:75:97",
+            "src": "398:75:81",
             "nodes": [],
             "anonymous": false,
             "eventSelector": "8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0",
             "name": "OwnershipTransferred",
-            "nameLocation": "404:20:97",
+            "nameLocation": "404:20:81",
             "parameters": {
-              "id": 62578,
+              "id": 58962,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 62575,
+                  "id": 58959,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "user",
-                  "nameLocation": "441:4:97",
+                  "nameLocation": "441:4:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 62579,
-                  "src": "425:20:97",
+                  "scope": 58963,
+                  "src": "425:20:81",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -314,10 +310,10 @@ export const Auth =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 62574,
+                    "id": 58958,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "425:7:97",
+                    "src": "425:7:81",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -328,14 +324,14 @@ export const Auth =
                 },
                 {
                   "constant": false,
-                  "id": 62577,
+                  "id": 58961,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "newOwner",
-                  "nameLocation": "463:8:97",
+                  "nameLocation": "463:8:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 62579,
-                  "src": "447:24:97",
+                  "scope": 58963,
+                  "src": "447:24:81",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -343,10 +339,10 @@ export const Auth =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 62576,
+                    "id": 58960,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "447:7:97",
+                    "src": "447:7:81",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -356,32 +352,32 @@ export const Auth =
                   "visibility": "internal"
                 }
               ],
-              "src": "424:48:97"
+              "src": "424:48:81"
             }
           },
           {
-            "id": 62586,
+            "id": 58970,
             "nodeType": "EventDefinition",
-            "src": "479:77:97",
+            "src": "479:77:81",
             "nodes": [],
             "anonymous": false,
             "eventSelector": "a3396fd7f6e0a21b50e5089d2da70d5ac0a3bbbd1f617a93f134b76389980198",
             "name": "AuthorityUpdated",
-            "nameLocation": "485:16:97",
+            "nameLocation": "485:16:81",
             "parameters": {
-              "id": 62585,
+              "id": 58969,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 62581,
+                  "id": 58965,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "user",
-                  "nameLocation": "518:4:97",
+                  "nameLocation": "518:4:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 62586,
-                  "src": "502:20:97",
+                  "scope": 58970,
+                  "src": "502:20:81",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -389,10 +385,10 @@ export const Auth =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 62580,
+                    "id": 58964,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "502:7:97",
+                    "src": "502:7:81",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -403,57 +399,57 @@ export const Auth =
                 },
                 {
                   "constant": false,
-                  "id": 62584,
+                  "id": 58968,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "newAuthority",
-                  "nameLocation": "542:12:97",
+                  "nameLocation": "542:12:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 62586,
-                  "src": "524:30:97",
+                  "scope": 58970,
+                  "src": "524:30:81",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_Authority_$62742",
+                    "typeIdentifier": "t_contract$_Authority_$59126",
                     "typeString": "contract Authority"
                   },
                   "typeName": {
-                    "id": 62583,
+                    "id": 58967,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 62582,
+                      "id": 58966,
                       "name": "Authority",
                       "nameLocations": [
-                        "524:9:97"
+                        "524:9:81"
                       ],
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 62742,
-                      "src": "524:9:97"
+                      "referencedDeclaration": 59126,
+                      "src": "524:9:81"
                     },
-                    "referencedDeclaration": 62742,
-                    "src": "524:9:97",
+                    "referencedDeclaration": 59126,
+                    "src": "524:9:81",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Authority_$62742",
+                      "typeIdentifier": "t_contract$_Authority_$59126",
                       "typeString": "contract Authority"
                     }
                   },
                   "visibility": "internal"
                 }
               ],
-              "src": "501:54:97"
+              "src": "501:54:81"
             }
           },
           {
-            "id": 62588,
+            "id": 58972,
             "nodeType": "VariableDeclaration",
-            "src": "562:20:97",
+            "src": "562:20:81",
             "nodes": [],
             "constant": false,
             "functionSelector": "8da5cb5b",
             "mutability": "mutable",
             "name": "owner",
-            "nameLocation": "577:5:97",
-            "scope": 62729,
+            "nameLocation": "577:5:81",
+            "scope": 59113,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -461,10 +457,10 @@ export const Auth =
               "typeString": "address"
             },
             "typeName": {
-              "id": 62587,
+              "id": 58971,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "562:7:97",
+              "src": "562:7:81",
               "stateMutability": "nonpayable",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
@@ -474,69 +470,69 @@ export const Auth =
             "visibility": "public"
           },
           {
-            "id": 62591,
+            "id": 58975,
             "nodeType": "VariableDeclaration",
-            "src": "589:26:97",
+            "src": "589:26:81",
             "nodes": [],
             "constant": false,
             "functionSelector": "bf7e214f",
             "mutability": "mutable",
             "name": "authority",
-            "nameLocation": "606:9:97",
-            "scope": 62729,
+            "nameLocation": "606:9:81",
+            "scope": 59113,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_Authority_$62742",
+              "typeIdentifier": "t_contract$_Authority_$59126",
               "typeString": "contract Authority"
             },
             "typeName": {
-              "id": 62590,
+              "id": 58974,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 62589,
+                "id": 58973,
                 "name": "Authority",
                 "nameLocations": [
-                  "589:9:97"
+                  "589:9:81"
                 ],
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 62742,
-                "src": "589:9:97"
+                "referencedDeclaration": 59126,
+                "src": "589:9:81"
               },
-              "referencedDeclaration": 62742,
-              "src": "589:9:97",
+              "referencedDeclaration": 59126,
+              "src": "589:9:81",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Authority_$62742",
+                "typeIdentifier": "t_contract$_Authority_$59126",
                 "typeString": "contract Authority"
               }
             },
             "visibility": "public"
           },
           {
-            "id": 62620,
+            "id": 59004,
             "nodeType": "FunctionDefinition",
-            "src": "622:224:97",
+            "src": "622:224:81",
             "nodes": [],
             "body": {
-              "id": 62619,
+              "id": 59003,
               "nodeType": "Block",
-              "src": "672:174:97",
+              "src": "672:174:81",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
-                    "id": 62601,
+                    "id": 58985,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 62599,
+                      "id": 58983,
                       "name": "owner",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 62588,
-                      "src": "682:5:97",
+                      "referencedDeclaration": 58972,
+                      "src": "682:5:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -545,107 +541,107 @@ export const Auth =
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 62600,
+                      "id": 58984,
                       "name": "_owner",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 62593,
-                      "src": "690:6:97",
+                      "referencedDeclaration": 58977,
+                      "src": "690:6:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "src": "682:14:97",
+                    "src": "682:14:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
-                  "id": 62602,
+                  "id": 58986,
                   "nodeType": "ExpressionStatement",
-                  "src": "682:14:97"
+                  "src": "682:14:81"
                 },
                 {
                   "expression": {
-                    "id": 62605,
+                    "id": 58989,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 62603,
+                      "id": 58987,
                       "name": "authority",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 62591,
-                      "src": "706:9:97",
+                      "referencedDeclaration": 58975,
+                      "src": "706:9:81",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Authority_$62742",
+                        "typeIdentifier": "t_contract$_Authority_$59126",
                         "typeString": "contract Authority"
                       }
                     },
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 62604,
+                      "id": 58988,
                       "name": "_authority",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 62596,
-                      "src": "718:10:97",
+                      "referencedDeclaration": 58980,
+                      "src": "718:10:81",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Authority_$62742",
+                        "typeIdentifier": "t_contract$_Authority_$59126",
                         "typeString": "contract Authority"
                       }
                     },
-                    "src": "706:22:97",
+                    "src": "706:22:81",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Authority_$62742",
+                      "typeIdentifier": "t_contract$_Authority_$59126",
                       "typeString": "contract Authority"
                     }
                   },
-                  "id": 62606,
+                  "id": 58990,
                   "nodeType": "ExpressionStatement",
-                  "src": "706:22:97"
+                  "src": "706:22:81"
                 },
                 {
                   "eventCall": {
                     "arguments": [
                       {
                         "expression": {
-                          "id": 62608,
+                          "id": 58992,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": -15,
-                          "src": "765:3:97",
+                          "src": "765:3:81",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
                           }
                         },
-                        "id": 62609,
+                        "id": 58993,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "769:6:97",
+                        "memberLocation": "769:6:81",
                         "memberName": "sender",
                         "nodeType": "MemberAccess",
-                        "src": "765:10:97",
+                        "src": "765:10:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         }
                       },
                       {
-                        "id": 62610,
+                        "id": 58994,
                         "name": "_owner",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 62593,
-                        "src": "777:6:97",
+                        "referencedDeclaration": 58977,
+                        "src": "777:6:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -663,18 +659,18 @@ export const Auth =
                           "typeString": "address"
                         }
                       ],
-                      "id": 62607,
+                      "id": 58991,
                       "name": "OwnershipTransferred",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 62579,
-                      "src": "744:20:97",
+                      "referencedDeclaration": 58963,
+                      "src": "744:20:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$returns$__$",
                         "typeString": "function (address,address)"
                       }
                     },
-                    "id": 62611,
+                    "id": 58995,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -683,56 +679,56 @@ export const Auth =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "744:40:97",
+                    "src": "744:40:81",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 62612,
+                  "id": 58996,
                   "nodeType": "EmitStatement",
-                  "src": "739:45:97"
+                  "src": "739:45:81"
                 },
                 {
                   "eventCall": {
                     "arguments": [
                       {
                         "expression": {
-                          "id": 62614,
+                          "id": 58998,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": -15,
-                          "src": "816:3:97",
+                          "src": "816:3:81",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
                           }
                         },
-                        "id": 62615,
+                        "id": 58999,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "820:6:97",
+                        "memberLocation": "820:6:81",
                         "memberName": "sender",
                         "nodeType": "MemberAccess",
-                        "src": "816:10:97",
+                        "src": "816:10:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         }
                       },
                       {
-                        "id": 62616,
+                        "id": 59000,
                         "name": "_authority",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 62596,
-                        "src": "828:10:97",
+                        "referencedDeclaration": 58980,
+                        "src": "828:10:81",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Authority_$62742",
+                          "typeIdentifier": "t_contract$_Authority_$59126",
                           "typeString": "contract Authority"
                         }
                       }
@@ -744,22 +740,22 @@ export const Auth =
                           "typeString": "address"
                         },
                         {
-                          "typeIdentifier": "t_contract$_Authority_$62742",
+                          "typeIdentifier": "t_contract$_Authority_$59126",
                           "typeString": "contract Authority"
                         }
                       ],
-                      "id": 62613,
+                      "id": 58997,
                       "name": "AuthorityUpdated",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 62586,
-                      "src": "799:16:97",
+                      "referencedDeclaration": 58970,
+                      "src": "799:16:81",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_contract$_Authority_$62742_$returns$__$",
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_contract$_Authority_$59126_$returns$__$",
                         "typeString": "function (address,contract Authority)"
                       }
                     },
-                    "id": 62617,
+                    "id": 59001,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -768,16 +764,16 @@ export const Auth =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "799:40:97",
+                    "src": "799:40:81",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 62618,
+                  "id": 59002,
                   "nodeType": "EmitStatement",
-                  "src": "794:45:97"
+                  "src": "794:45:81"
                 }
               ]
             },
@@ -787,18 +783,18 @@ export const Auth =
             "name": "",
             "nameLocation": "-1:-1:-1",
             "parameters": {
-              "id": 62597,
+              "id": 58981,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 62593,
+                  "id": 58977,
                   "mutability": "mutable",
                   "name": "_owner",
-                  "nameLocation": "642:6:97",
+                  "nameLocation": "642:6:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 62620,
-                  "src": "634:14:97",
+                  "scope": 59004,
+                  "src": "634:14:81",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -806,10 +802,10 @@ export const Auth =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 62592,
+                    "id": 58976,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "634:7:97",
+                    "src": "634:7:81",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -820,64 +816,64 @@ export const Auth =
                 },
                 {
                   "constant": false,
-                  "id": 62596,
+                  "id": 58980,
                   "mutability": "mutable",
                   "name": "_authority",
-                  "nameLocation": "660:10:97",
+                  "nameLocation": "660:10:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 62620,
-                  "src": "650:20:97",
+                  "scope": 59004,
+                  "src": "650:20:81",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_Authority_$62742",
+                    "typeIdentifier": "t_contract$_Authority_$59126",
                     "typeString": "contract Authority"
                   },
                   "typeName": {
-                    "id": 62595,
+                    "id": 58979,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 62594,
+                      "id": 58978,
                       "name": "Authority",
                       "nameLocations": [
-                        "650:9:97"
+                        "650:9:81"
                       ],
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 62742,
-                      "src": "650:9:97"
+                      "referencedDeclaration": 59126,
+                      "src": "650:9:81"
                     },
-                    "referencedDeclaration": 62742,
-                    "src": "650:9:97",
+                    "referencedDeclaration": 59126,
+                    "src": "650:9:81",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Authority_$62742",
+                      "typeIdentifier": "t_contract$_Authority_$59126",
                       "typeString": "contract Authority"
                     }
                   },
                   "visibility": "internal"
                 }
               ],
-              "src": "633:38:97"
+              "src": "633:38:81"
             },
             "returnParameters": {
-              "id": 62598,
+              "id": 58982,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "672:0:97"
+              "src": "672:0:81"
             },
-            "scope": 62729,
+            "scope": 59113,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 62634,
+            "id": 59018,
             "nodeType": "ModifierDefinition",
-            "src": "852:119:97",
+            "src": "852:119:81",
             "nodes": [],
             "body": {
-              "id": 62633,
+              "id": 59017,
               "nodeType": "Block",
-              "src": "884:87:97",
+              "src": "884:87:81",
               "nodes": [],
               "statements": [
                 {
@@ -887,26 +883,26 @@ export const Auth =
                         "arguments": [
                           {
                             "expression": {
-                              "id": 62624,
+                              "id": 59008,
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
                               "referencedDeclaration": -15,
-                              "src": "915:3:97",
+                              "src": "915:3:81",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
                                 "typeString": "msg"
                               }
                             },
-                            "id": 62625,
+                            "id": 59009,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
-                            "memberLocation": "919:6:97",
+                            "memberLocation": "919:6:81",
                             "memberName": "sender",
                             "nodeType": "MemberAccess",
-                            "src": "915:10:97",
+                            "src": "915:10:81",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -914,26 +910,26 @@ export const Auth =
                           },
                           {
                             "expression": {
-                              "id": 62626,
+                              "id": 59010,
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
                               "referencedDeclaration": -15,
-                              "src": "927:3:97",
+                              "src": "927:3:81",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
                                 "typeString": "msg"
                               }
                             },
-                            "id": 62627,
+                            "id": 59011,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
-                            "memberLocation": "931:3:97",
+                            "memberLocation": "931:3:81",
                             "memberName": "sig",
                             "nodeType": "MemberAccess",
-                            "src": "927:7:97",
+                            "src": "927:7:81",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes4",
                               "typeString": "bytes4"
@@ -951,18 +947,18 @@ export const Auth =
                               "typeString": "bytes4"
                             }
                           ],
-                          "id": 62623,
+                          "id": 59007,
                           "name": "isAuthorized",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 62674,
-                          "src": "902:12:97",
+                          "referencedDeclaration": 59058,
+                          "src": "902:12:81",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_view$_t_address_$_t_bytes4_$returns$_t_bool_$",
                             "typeString": "function (address,bytes4) view returns (bool)"
                           }
                         },
-                        "id": 62628,
+                        "id": 59012,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -971,7 +967,7 @@ export const Auth =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "902:33:97",
+                        "src": "902:33:81",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
@@ -980,14 +976,14 @@ export const Auth =
                       },
                       {
                         "hexValue": "554e415554484f52495a4544",
-                        "id": 62629,
+                        "id": 59013,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "937:14:97",
+                        "src": "937:14:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_269df367cd41cace5897a935d0e0858fe4543b5619d45e09af6b124c1bb3d528",
                           "typeString": "literal_string \"UNAUTHORIZED\""
@@ -1006,7 +1002,7 @@ export const Auth =
                           "typeString": "literal_string \"UNAUTHORIZED\""
                         }
                       ],
-                      "id": 62622,
+                      "id": 59006,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -1014,13 +1010,13 @@ export const Auth =
                         -18
                       ],
                       "referencedDeclaration": -18,
-                      "src": "894:7:97",
+                      "src": "894:7:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 62630,
+                    "id": 59014,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1029,104 +1025,104 @@ export const Auth =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "894:58:97",
+                    "src": "894:58:81",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 62631,
+                  "id": 59015,
                   "nodeType": "ExpressionStatement",
-                  "src": "894:58:97"
+                  "src": "894:58:81"
                 },
                 {
-                  "id": 62632,
+                  "id": 59016,
                   "nodeType": "PlaceholderStatement",
-                  "src": "963:1:97"
+                  "src": "963:1:81"
                 }
               ]
             },
             "name": "requiresAuth",
-            "nameLocation": "861:12:97",
+            "nameLocation": "861:12:81",
             "parameters": {
-              "id": 62621,
+              "id": 59005,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "873:2:97"
+              "src": "873:2:81"
             },
             "virtual": true,
             "visibility": "internal"
           },
           {
-            "id": 62674,
+            "id": 59058,
             "nodeType": "FunctionDefinition",
-            "src": "977:540:97",
+            "src": "977:540:81",
             "nodes": [],
             "body": {
-              "id": 62673,
+              "id": 59057,
               "nodeType": "Block",
-              "src": "1070:447:97",
+              "src": "1070:447:81",
               "nodes": [],
               "statements": [
                 {
                   "assignments": [
-                    62645
+                    59029
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 62645,
+                      "id": 59029,
                       "mutability": "mutable",
                       "name": "auth",
-                      "nameLocation": "1090:4:97",
+                      "nameLocation": "1090:4:81",
                       "nodeType": "VariableDeclaration",
-                      "scope": 62673,
-                      "src": "1080:14:97",
+                      "scope": 59057,
+                      "src": "1080:14:81",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Authority_$62742",
+                        "typeIdentifier": "t_contract$_Authority_$59126",
                         "typeString": "contract Authority"
                       },
                       "typeName": {
-                        "id": 62644,
+                        "id": 59028,
                         "nodeType": "UserDefinedTypeName",
                         "pathNode": {
-                          "id": 62643,
+                          "id": 59027,
                           "name": "Authority",
                           "nameLocations": [
-                            "1080:9:97"
+                            "1080:9:81"
                           ],
                           "nodeType": "IdentifierPath",
-                          "referencedDeclaration": 62742,
-                          "src": "1080:9:97"
+                          "referencedDeclaration": 59126,
+                          "src": "1080:9:81"
                         },
-                        "referencedDeclaration": 62742,
-                        "src": "1080:9:97",
+                        "referencedDeclaration": 59126,
+                        "src": "1080:9:81",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Authority_$62742",
+                          "typeIdentifier": "t_contract$_Authority_$59126",
                           "typeString": "contract Authority"
                         }
                       },
                       "visibility": "internal"
                     }
                   ],
-                  "id": 62647,
+                  "id": 59031,
                   "initialValue": {
-                    "id": 62646,
+                    "id": 59030,
                     "name": "authority",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 62591,
-                    "src": "1097:9:97",
+                    "referencedDeclaration": 58975,
+                    "src": "1097:9:81",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Authority_$62742",
+                      "typeIdentifier": "t_contract$_Authority_$59126",
                       "typeString": "contract Authority"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "1080:26:97"
+                  "src": "1080:26:81"
                 },
                 {
                   "expression": {
@@ -1134,7 +1130,7 @@ export const Auth =
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     },
-                    "id": 62671,
+                    "id": 59055,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1146,7 +1142,7 @@ export const Auth =
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
                           },
-                          "id": 62666,
+                          "id": 59050,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -1156,7 +1152,7 @@ export const Auth =
                               "typeIdentifier": "t_address",
                               "typeString": "address"
                             },
-                            "id": 62656,
+                            "id": 59040,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -1164,14 +1160,14 @@ export const Auth =
                             "leftExpression": {
                               "arguments": [
                                 {
-                                  "id": 62650,
+                                  "id": 59034,
                                   "name": "auth",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 62645,
-                                  "src": "1423:4:97",
+                                  "referencedDeclaration": 59029,
+                                  "src": "1423:4:81",
                                   "typeDescriptions": {
-                                    "typeIdentifier": "t_contract$_Authority_$62742",
+                                    "typeIdentifier": "t_contract$_Authority_$59126",
                                     "typeString": "contract Authority"
                                   }
                                 }
@@ -1179,30 +1175,30 @@ export const Auth =
                               "expression": {
                                 "argumentTypes": [
                                   {
-                                    "typeIdentifier": "t_contract$_Authority_$62742",
+                                    "typeIdentifier": "t_contract$_Authority_$59126",
                                     "typeString": "contract Authority"
                                   }
                                 ],
-                                "id": 62649,
+                                "id": 59033,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
                                 "lValueRequested": false,
                                 "nodeType": "ElementaryTypeNameExpression",
-                                "src": "1415:7:97",
+                                "src": "1415:7:81",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_type$_t_address_$",
                                   "typeString": "type(address)"
                                 },
                                 "typeName": {
-                                  "id": 62648,
+                                  "id": 59032,
                                   "name": "address",
                                   "nodeType": "ElementaryTypeName",
-                                  "src": "1415:7:97",
+                                  "src": "1415:7:81",
                                   "typeDescriptions": {}
                                 }
                               },
-                              "id": 62651,
+                              "id": 59035,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
@@ -1211,7 +1207,7 @@ export const Auth =
                               "nameLocations": [],
                               "names": [],
                               "nodeType": "FunctionCall",
-                              "src": "1415:13:97",
+                              "src": "1415:13:81",
                               "tryCall": false,
                               "typeDescriptions": {
                                 "typeIdentifier": "t_address",
@@ -1224,14 +1220,14 @@ export const Auth =
                               "arguments": [
                                 {
                                   "hexValue": "30",
-                                  "id": 62654,
+                                  "id": 59038,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": true,
                                   "kind": "number",
                                   "lValueRequested": false,
                                   "nodeType": "Literal",
-                                  "src": "1440:1:97",
+                                  "src": "1440:1:81",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_rational_0_by_1",
                                     "typeString": "int_const 0"
@@ -1246,26 +1242,26 @@ export const Auth =
                                     "typeString": "int_const 0"
                                   }
                                 ],
-                                "id": 62653,
+                                "id": 59037,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
                                 "lValueRequested": false,
                                 "nodeType": "ElementaryTypeNameExpression",
-                                "src": "1432:7:97",
+                                "src": "1432:7:81",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_type$_t_address_$",
                                   "typeString": "type(address)"
                                 },
                                 "typeName": {
-                                  "id": 62652,
+                                  "id": 59036,
                                   "name": "address",
                                   "nodeType": "ElementaryTypeName",
-                                  "src": "1432:7:97",
+                                  "src": "1432:7:81",
                                   "typeDescriptions": {}
                                 }
                               },
-                              "id": 62655,
+                              "id": 59039,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
@@ -1274,14 +1270,14 @@ export const Auth =
                               "nameLocations": [],
                               "names": [],
                               "nodeType": "FunctionCall",
-                              "src": "1432:10:97",
+                              "src": "1432:10:81",
                               "tryCall": false,
                               "typeDescriptions": {
                                 "typeIdentifier": "t_address",
                                 "typeString": "address"
                               }
                             },
-                            "src": "1415:27:97",
+                            "src": "1415:27:81",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
                               "typeString": "bool"
@@ -1292,12 +1288,12 @@ export const Auth =
                           "rightExpression": {
                             "arguments": [
                               {
-                                "id": 62659,
+                                "id": 59043,
                                 "name": "user",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 62636,
-                                "src": "1459:4:97",
+                                "referencedDeclaration": 59020,
+                                "src": "1459:4:81",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_address",
                                   "typeString": "address"
@@ -1306,14 +1302,14 @@ export const Auth =
                               {
                                 "arguments": [
                                   {
-                                    "id": 62662,
+                                    "id": 59046,
                                     "name": "this",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
                                     "referencedDeclaration": -28,
-                                    "src": "1473:4:97",
+                                    "src": "1473:4:81",
                                     "typeDescriptions": {
-                                      "typeIdentifier": "t_contract$_Auth_$62729",
+                                      "typeIdentifier": "t_contract$_Auth_$59113",
                                       "typeString": "contract Auth"
                                     }
                                   }
@@ -1321,30 +1317,30 @@ export const Auth =
                                 "expression": {
                                   "argumentTypes": [
                                     {
-                                      "typeIdentifier": "t_contract$_Auth_$62729",
+                                      "typeIdentifier": "t_contract$_Auth_$59113",
                                       "typeString": "contract Auth"
                                     }
                                   ],
-                                  "id": 62661,
+                                  "id": 59045,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": true,
                                   "lValueRequested": false,
                                   "nodeType": "ElementaryTypeNameExpression",
-                                  "src": "1465:7:97",
+                                  "src": "1465:7:81",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_type$_t_address_$",
                                     "typeString": "type(address)"
                                   },
                                   "typeName": {
-                                    "id": 62660,
+                                    "id": 59044,
                                     "name": "address",
                                     "nodeType": "ElementaryTypeName",
-                                    "src": "1465:7:97",
+                                    "src": "1465:7:81",
                                     "typeDescriptions": {}
                                   }
                                 },
-                                "id": 62663,
+                                "id": 59047,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -1353,7 +1349,7 @@ export const Auth =
                                 "nameLocations": [],
                                 "names": [],
                                 "nodeType": "FunctionCall",
-                                "src": "1465:13:97",
+                                "src": "1465:13:81",
                                 "tryCall": false,
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_address",
@@ -1361,12 +1357,12 @@ export const Auth =
                                 }
                               },
                               {
-                                "id": 62664,
+                                "id": 59048,
                                 "name": "functionSig",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 62638,
-                                "src": "1480:11:97",
+                                "referencedDeclaration": 59022,
+                                "src": "1480:11:81",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_bytes4",
                                   "typeString": "bytes4"
@@ -1389,33 +1385,33 @@ export const Auth =
                                 }
                               ],
                               "expression": {
-                                "id": 62657,
+                                "id": 59041,
                                 "name": "auth",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 62645,
-                                "src": "1446:4:97",
+                                "referencedDeclaration": 59029,
+                                "src": "1446:4:81",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_contract$_Authority_$62742",
+                                  "typeIdentifier": "t_contract$_Authority_$59126",
                                   "typeString": "contract Authority"
                                 }
                               },
-                              "id": 62658,
+                              "id": 59042,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
-                              "memberLocation": "1451:7:97",
+                              "memberLocation": "1451:7:81",
                               "memberName": "canCall",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 62741,
-                              "src": "1446:12:97",
+                              "referencedDeclaration": 59125,
+                              "src": "1446:12:81",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_external_view$_t_address_$_t_address_$_t_bytes4_$returns$_t_bool_$",
                                 "typeString": "function (address,address,bytes4) view external returns (bool)"
                               }
                             },
-                            "id": 62665,
+                            "id": 59049,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -1424,28 +1420,28 @@ export const Auth =
                             "nameLocations": [],
                             "names": [],
                             "nodeType": "FunctionCall",
-                            "src": "1446:46:97",
+                            "src": "1446:46:81",
                             "tryCall": false,
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
                               "typeString": "bool"
                             }
                           },
-                          "src": "1415:77:97",
+                          "src": "1415:77:81",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
                           }
                         }
                       ],
-                      "id": 62667,
+                      "id": 59051,
                       "isConstant": false,
                       "isInlineArray": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "nodeType": "TupleExpression",
-                      "src": "1414:79:97",
+                      "src": "1414:79:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
@@ -1458,18 +1454,18 @@ export const Auth =
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       },
-                      "id": 62670,
+                      "id": 59054,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
-                        "id": 62668,
+                        "id": 59052,
                         "name": "user",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 62636,
-                        "src": "1497:4:97",
+                        "referencedDeclaration": 59020,
+                        "src": "1497:4:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -1478,33 +1474,33 @@ export const Auth =
                       "nodeType": "BinaryOperation",
                       "operator": "==",
                       "rightExpression": {
-                        "id": 62669,
+                        "id": 59053,
                         "name": "owner",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 62588,
-                        "src": "1505:5:97",
+                        "referencedDeclaration": 58972,
+                        "src": "1505:5:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         }
                       },
-                      "src": "1497:13:97",
+                      "src": "1497:13:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
                       }
                     },
-                    "src": "1414:96:97",
+                    "src": "1414:96:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "functionReturnParameters": 62642,
-                  "id": 62672,
+                  "functionReturnParameters": 59026,
+                  "id": 59056,
                   "nodeType": "Return",
-                  "src": "1407:103:97"
+                  "src": "1407:103:81"
                 }
               ]
             },
@@ -1512,20 +1508,20 @@ export const Auth =
             "kind": "function",
             "modifiers": [],
             "name": "isAuthorized",
-            "nameLocation": "986:12:97",
+            "nameLocation": "986:12:81",
             "parameters": {
-              "id": 62639,
+              "id": 59023,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 62636,
+                  "id": 59020,
                   "mutability": "mutable",
                   "name": "user",
-                  "nameLocation": "1007:4:97",
+                  "nameLocation": "1007:4:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 62674,
-                  "src": "999:12:97",
+                  "scope": 59058,
+                  "src": "999:12:81",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1533,10 +1529,10 @@ export const Auth =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 62635,
+                    "id": 59019,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "999:7:97",
+                    "src": "999:7:81",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1547,13 +1543,13 @@ export const Auth =
                 },
                 {
                   "constant": false,
-                  "id": 62638,
+                  "id": 59022,
                   "mutability": "mutable",
                   "name": "functionSig",
-                  "nameLocation": "1020:11:97",
+                  "nameLocation": "1020:11:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 62674,
-                  "src": "1013:18:97",
+                  "scope": 59058,
+                  "src": "1013:18:81",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1561,10 +1557,10 @@ export const Auth =
                     "typeString": "bytes4"
                   },
                   "typeName": {
-                    "id": 62637,
+                    "id": 59021,
                     "name": "bytes4",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1013:6:97",
+                    "src": "1013:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes4",
                       "typeString": "bytes4"
@@ -1573,21 +1569,21 @@ export const Auth =
                   "visibility": "internal"
                 }
               ],
-              "src": "998:34:97"
+              "src": "998:34:81"
             },
             "returnParameters": {
-              "id": 62642,
+              "id": 59026,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 62641,
+                  "id": 59025,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 62674,
-                  "src": "1064:4:97",
+                  "scope": 59058,
+                  "src": "1064:4:81",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1595,10 +1591,10 @@ export const Auth =
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 62640,
+                    "id": 59024,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1064:4:97",
+                    "src": "1064:4:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -1607,22 +1603,22 @@ export const Auth =
                   "visibility": "internal"
                 }
               ],
-              "src": "1063:6:97"
+              "src": "1063:6:81"
             },
-            "scope": 62729,
+            "scope": 59113,
             "stateMutability": "view",
             "virtual": true,
             "visibility": "internal"
           },
           {
-            "id": 62710,
+            "id": 59094,
             "nodeType": "FunctionDefinition",
-            "src": "1523:434:97",
+            "src": "1523:434:81",
             "nodes": [],
             "body": {
-              "id": 62709,
+              "id": 59093,
               "nodeType": "Block",
-              "src": "1584:373:97",
+              "src": "1584:373:81",
               "nodes": [],
               "statements": [
                 {
@@ -1633,7 +1629,7 @@ export const Auth =
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
                         },
-                        "id": 62696,
+                        "id": 59080,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1643,33 +1639,33 @@ export const Auth =
                             "typeIdentifier": "t_address",
                             "typeString": "address"
                           },
-                          "id": 62684,
+                          "id": 59068,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftExpression": {
                             "expression": {
-                              "id": 62681,
+                              "id": 59065,
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
                               "referencedDeclaration": -15,
-                              "src": "1780:3:97",
+                              "src": "1780:3:81",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
                                 "typeString": "msg"
                               }
                             },
-                            "id": 62682,
+                            "id": 59066,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
-                            "memberLocation": "1784:6:97",
+                            "memberLocation": "1784:6:81",
                             "memberName": "sender",
                             "nodeType": "MemberAccess",
-                            "src": "1780:10:97",
+                            "src": "1780:10:81",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -1678,18 +1674,18 @@ export const Auth =
                           "nodeType": "BinaryOperation",
                           "operator": "==",
                           "rightExpression": {
-                            "id": 62683,
+                            "id": 59067,
                             "name": "owner",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 62588,
-                            "src": "1794:5:97",
+                            "referencedDeclaration": 58972,
+                            "src": "1794:5:81",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
                             }
                           },
-                          "src": "1780:19:97",
+                          "src": "1780:19:81",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
@@ -1701,26 +1697,26 @@ export const Auth =
                           "arguments": [
                             {
                               "expression": {
-                                "id": 62687,
+                                "id": 59071,
                                 "name": "msg",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
                                 "referencedDeclaration": -15,
-                                "src": "1821:3:97",
+                                "src": "1821:3:81",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_magic_message",
                                   "typeString": "msg"
                                 }
                               },
-                              "id": 62688,
+                              "id": 59072,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
-                              "memberLocation": "1825:6:97",
+                              "memberLocation": "1825:6:81",
                               "memberName": "sender",
                               "nodeType": "MemberAccess",
-                              "src": "1821:10:97",
+                              "src": "1821:10:81",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_address",
                                 "typeString": "address"
@@ -1729,14 +1725,14 @@ export const Auth =
                             {
                               "arguments": [
                                 {
-                                  "id": 62691,
+                                  "id": 59075,
                                   "name": "this",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
                                   "referencedDeclaration": -28,
-                                  "src": "1841:4:97",
+                                  "src": "1841:4:81",
                                   "typeDescriptions": {
-                                    "typeIdentifier": "t_contract$_Auth_$62729",
+                                    "typeIdentifier": "t_contract$_Auth_$59113",
                                     "typeString": "contract Auth"
                                   }
                                 }
@@ -1744,30 +1740,30 @@ export const Auth =
                               "expression": {
                                 "argumentTypes": [
                                   {
-                                    "typeIdentifier": "t_contract$_Auth_$62729",
+                                    "typeIdentifier": "t_contract$_Auth_$59113",
                                     "typeString": "contract Auth"
                                   }
                                 ],
-                                "id": 62690,
+                                "id": 59074,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
                                 "lValueRequested": false,
                                 "nodeType": "ElementaryTypeNameExpression",
-                                "src": "1833:7:97",
+                                "src": "1833:7:81",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_type$_t_address_$",
                                   "typeString": "type(address)"
                                 },
                                 "typeName": {
-                                  "id": 62689,
+                                  "id": 59073,
                                   "name": "address",
                                   "nodeType": "ElementaryTypeName",
-                                  "src": "1833:7:97",
+                                  "src": "1833:7:81",
                                   "typeDescriptions": {}
                                 }
                               },
-                              "id": 62692,
+                              "id": 59076,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
@@ -1776,7 +1772,7 @@ export const Auth =
                               "nameLocations": [],
                               "names": [],
                               "nodeType": "FunctionCall",
-                              "src": "1833:13:97",
+                              "src": "1833:13:81",
                               "tryCall": false,
                               "typeDescriptions": {
                                 "typeIdentifier": "t_address",
@@ -1785,26 +1781,26 @@ export const Auth =
                             },
                             {
                               "expression": {
-                                "id": 62693,
+                                "id": 59077,
                                 "name": "msg",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
                                 "referencedDeclaration": -15,
-                                "src": "1848:3:97",
+                                "src": "1848:3:81",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_magic_message",
                                   "typeString": "msg"
                                 }
                               },
-                              "id": 62694,
+                              "id": 59078,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
-                              "memberLocation": "1852:3:97",
+                              "memberLocation": "1852:3:81",
                               "memberName": "sig",
                               "nodeType": "MemberAccess",
-                              "src": "1848:7:97",
+                              "src": "1848:7:81",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_bytes4",
                                 "typeString": "bytes4"
@@ -1827,33 +1823,33 @@ export const Auth =
                               }
                             ],
                             "expression": {
-                              "id": 62685,
+                              "id": 59069,
                               "name": "authority",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 62591,
-                              "src": "1803:9:97",
+                              "referencedDeclaration": 58975,
+                              "src": "1803:9:81",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_Authority_$62742",
+                                "typeIdentifier": "t_contract$_Authority_$59126",
                                 "typeString": "contract Authority"
                               }
                             },
-                            "id": 62686,
+                            "id": 59070,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
-                            "memberLocation": "1813:7:97",
+                            "memberLocation": "1813:7:81",
                             "memberName": "canCall",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 62741,
-                            "src": "1803:17:97",
+                            "referencedDeclaration": 59125,
+                            "src": "1803:17:81",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_external_view$_t_address_$_t_address_$_t_bytes4_$returns$_t_bool_$",
                               "typeString": "function (address,address,bytes4) view external returns (bool)"
                             }
                           },
-                          "id": 62695,
+                          "id": 59079,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -1862,14 +1858,14 @@ export const Auth =
                           "nameLocations": [],
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "1803:53:97",
+                          "src": "1803:53:81",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
                           }
                         },
-                        "src": "1780:76:97",
+                        "src": "1780:76:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -1883,7 +1879,7 @@ export const Auth =
                           "typeString": "bool"
                         }
                       ],
-                      "id": 62680,
+                      "id": 59064,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -1891,13 +1887,13 @@ export const Auth =
                         -18
                       ],
                       "referencedDeclaration": -18,
-                      "src": "1772:7:97",
+                      "src": "1772:7:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
                         "typeString": "function (bool) pure"
                       }
                     },
-                    "id": 62697,
+                    "id": 59081,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1906,99 +1902,99 @@ export const Auth =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1772:85:97",
+                    "src": "1772:85:81",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 62698,
+                  "id": 59082,
                   "nodeType": "ExpressionStatement",
-                  "src": "1772:85:97"
+                  "src": "1772:85:81"
                 },
                 {
                   "expression": {
-                    "id": 62701,
+                    "id": 59085,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 62699,
+                      "id": 59083,
                       "name": "authority",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 62591,
-                      "src": "1868:9:97",
+                      "referencedDeclaration": 58975,
+                      "src": "1868:9:81",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Authority_$62742",
+                        "typeIdentifier": "t_contract$_Authority_$59126",
                         "typeString": "contract Authority"
                       }
                     },
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 62700,
+                      "id": 59084,
                       "name": "newAuthority",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 62677,
-                      "src": "1880:12:97",
+                      "referencedDeclaration": 59061,
+                      "src": "1880:12:81",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Authority_$62742",
+                        "typeIdentifier": "t_contract$_Authority_$59126",
                         "typeString": "contract Authority"
                       }
                     },
-                    "src": "1868:24:97",
+                    "src": "1868:24:81",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Authority_$62742",
+                      "typeIdentifier": "t_contract$_Authority_$59126",
                       "typeString": "contract Authority"
                     }
                   },
-                  "id": 62702,
+                  "id": 59086,
                   "nodeType": "ExpressionStatement",
-                  "src": "1868:24:97"
+                  "src": "1868:24:81"
                 },
                 {
                   "eventCall": {
                     "arguments": [
                       {
                         "expression": {
-                          "id": 62704,
+                          "id": 59088,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": -15,
-                          "src": "1925:3:97",
+                          "src": "1925:3:81",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
                           }
                         },
-                        "id": 62705,
+                        "id": 59089,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "1929:6:97",
+                        "memberLocation": "1929:6:81",
                         "memberName": "sender",
                         "nodeType": "MemberAccess",
-                        "src": "1925:10:97",
+                        "src": "1925:10:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         }
                       },
                       {
-                        "id": 62706,
+                        "id": 59090,
                         "name": "newAuthority",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 62677,
-                        "src": "1937:12:97",
+                        "referencedDeclaration": 59061,
+                        "src": "1937:12:81",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Authority_$62742",
+                          "typeIdentifier": "t_contract$_Authority_$59126",
                           "typeString": "contract Authority"
                         }
                       }
@@ -2010,22 +2006,22 @@ export const Auth =
                           "typeString": "address"
                         },
                         {
-                          "typeIdentifier": "t_contract$_Authority_$62742",
+                          "typeIdentifier": "t_contract$_Authority_$59126",
                           "typeString": "contract Authority"
                         }
                       ],
-                      "id": 62703,
+                      "id": 59087,
                       "name": "AuthorityUpdated",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 62586,
-                      "src": "1908:16:97",
+                      "referencedDeclaration": 58970,
+                      "src": "1908:16:81",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_contract$_Authority_$62742_$returns$__$",
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_contract$_Authority_$59126_$returns$__$",
                         "typeString": "function (address,contract Authority)"
                       }
                     },
-                    "id": 62707,
+                    "id": 59091,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2034,16 +2030,16 @@ export const Auth =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1908:42:97",
+                    "src": "1908:42:81",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 62708,
+                  "id": 59092,
                   "nodeType": "EmitStatement",
-                  "src": "1903:47:97"
+                  "src": "1903:47:81"
                 }
               ]
             },
@@ -2052,87 +2048,87 @@ export const Auth =
             "kind": "function",
             "modifiers": [],
             "name": "setAuthority",
-            "nameLocation": "1532:12:97",
+            "nameLocation": "1532:12:81",
             "parameters": {
-              "id": 62678,
+              "id": 59062,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 62677,
+                  "id": 59061,
                   "mutability": "mutable",
                   "name": "newAuthority",
-                  "nameLocation": "1555:12:97",
+                  "nameLocation": "1555:12:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 62710,
-                  "src": "1545:22:97",
+                  "scope": 59094,
+                  "src": "1545:22:81",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_Authority_$62742",
+                    "typeIdentifier": "t_contract$_Authority_$59126",
                     "typeString": "contract Authority"
                   },
                   "typeName": {
-                    "id": 62676,
+                    "id": 59060,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 62675,
+                      "id": 59059,
                       "name": "Authority",
                       "nameLocations": [
-                        "1545:9:97"
+                        "1545:9:81"
                       ],
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 62742,
-                      "src": "1545:9:97"
+                      "referencedDeclaration": 59126,
+                      "src": "1545:9:81"
                     },
-                    "referencedDeclaration": 62742,
-                    "src": "1545:9:97",
+                    "referencedDeclaration": 59126,
+                    "src": "1545:9:81",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Authority_$62742",
+                      "typeIdentifier": "t_contract$_Authority_$59126",
                       "typeString": "contract Authority"
                     }
                   },
                   "visibility": "internal"
                 }
               ],
-              "src": "1544:24:97"
+              "src": "1544:24:81"
             },
             "returnParameters": {
-              "id": 62679,
+              "id": 59063,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1584:0:97"
+              "src": "1584:0:81"
             },
-            "scope": 62729,
+            "scope": 59113,
             "stateMutability": "nonpayable",
             "virtual": true,
             "visibility": "public"
           },
           {
-            "id": 62728,
+            "id": 59112,
             "nodeType": "FunctionDefinition",
-            "src": "1963:164:97",
+            "src": "1963:164:81",
             "nodes": [],
             "body": {
-              "id": 62727,
+              "id": 59111,
               "nodeType": "Block",
-              "src": "2036:91:97",
+              "src": "2036:91:81",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
-                    "id": 62719,
+                    "id": 59103,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 62717,
+                      "id": 59101,
                       "name": "owner",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 62588,
-                      "src": "2046:5:97",
+                      "referencedDeclaration": 58972,
+                      "src": "2046:5:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -2141,64 +2137,64 @@ export const Auth =
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 62718,
+                      "id": 59102,
                       "name": "newOwner",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 62712,
-                      "src": "2054:8:97",
+                      "referencedDeclaration": 59096,
+                      "src": "2054:8:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "src": "2046:16:97",
+                    "src": "2046:16:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
-                  "id": 62720,
+                  "id": 59104,
                   "nodeType": "ExpressionStatement",
-                  "src": "2046:16:97"
+                  "src": "2046:16:81"
                 },
                 {
                   "eventCall": {
                     "arguments": [
                       {
                         "expression": {
-                          "id": 62722,
+                          "id": 59106,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": -15,
-                          "src": "2099:3:97",
+                          "src": "2099:3:81",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
                           }
                         },
-                        "id": 62723,
+                        "id": 59107,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "2103:6:97",
+                        "memberLocation": "2103:6:81",
                         "memberName": "sender",
                         "nodeType": "MemberAccess",
-                        "src": "2099:10:97",
+                        "src": "2099:10:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         }
                       },
                       {
-                        "id": 62724,
+                        "id": 59108,
                         "name": "newOwner",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 62712,
-                        "src": "2111:8:97",
+                        "referencedDeclaration": 59096,
+                        "src": "2111:8:81",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -2216,18 +2212,18 @@ export const Auth =
                           "typeString": "address"
                         }
                       ],
-                      "id": 62721,
+                      "id": 59105,
                       "name": "OwnershipTransferred",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 62579,
-                      "src": "2078:20:97",
+                      "referencedDeclaration": 58963,
+                      "src": "2078:20:81",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$returns$__$",
                         "typeString": "function (address,address)"
                       }
                     },
-                    "id": 62725,
+                    "id": 59109,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2236,16 +2232,16 @@ export const Auth =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "2078:42:97",
+                    "src": "2078:42:81",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 62726,
+                  "id": 59110,
                   "nodeType": "EmitStatement",
-                  "src": "2073:47:97"
+                  "src": "2073:47:81"
                 }
               ]
             },
@@ -2254,37 +2250,37 @@ export const Auth =
             "kind": "function",
             "modifiers": [
               {
-                "id": 62715,
+                "id": 59099,
                 "kind": "modifierInvocation",
                 "modifierName": {
-                  "id": 62714,
+                  "id": 59098,
                   "name": "requiresAuth",
                   "nameLocations": [
-                    "2023:12:97"
+                    "2023:12:81"
                   ],
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 62634,
-                  "src": "2023:12:97"
+                  "referencedDeclaration": 59018,
+                  "src": "2023:12:81"
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "2023:12:97"
+                "src": "2023:12:81"
               }
             ],
             "name": "transferOwnership",
-            "nameLocation": "1972:17:97",
+            "nameLocation": "1972:17:81",
             "parameters": {
-              "id": 62713,
+              "id": 59097,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 62712,
+                  "id": 59096,
                   "mutability": "mutable",
                   "name": "newOwner",
-                  "nameLocation": "1998:8:97",
+                  "nameLocation": "1998:8:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 62728,
-                  "src": "1990:16:97",
+                  "scope": 59112,
+                  "src": "1990:16:81",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2292,10 +2288,10 @@ export const Auth =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 62711,
+                    "id": 59095,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1990:7:97",
+                    "src": "1990:7:81",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -2305,15 +2301,15 @@ export const Auth =
                   "visibility": "internal"
                 }
               ],
-              "src": "1989:18:97"
+              "src": "1989:18:81"
             },
             "returnParameters": {
-              "id": 62716,
+              "id": 59100,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2036:0:97"
+              "src": "2036:0:81"
             },
-            "scope": 62729,
+            "scope": 59113,
             "stateMutability": "nonpayable",
             "virtual": true,
             "visibility": "public"
@@ -2325,49 +2321,49 @@ export const Auth =
         "contractDependencies": [],
         "contractKind": "contract",
         "documentation": {
-          "id": 62573,
+          "id": 58957,
           "nodeType": "StructuredDocumentation",
-          "src": "68:301:97",
+          "src": "68:301:81",
           "text": "@notice Provides a flexible and updatable auth pattern which is completely separate from application logic.\n @author Solmate (https://github.com/transmissions11/solmate/blob/main/src/auth/Auth.sol)\n @author Modified from Dappsys (https://github.com/dapphub/ds-auth/blob/master/src/auth.sol)"
         },
         "fullyImplemented": true,
         "linearizedBaseContracts": [
-          62729
+          59113
         ],
         "name": "Auth",
-        "nameLocation": "387:4:97",
-        "scope": 62743,
+        "nameLocation": "387:4:81",
+        "scope": 59127,
         "usedErrors": []
       },
       {
-        "id": 62742,
+        "id": 59126,
         "nodeType": "ContractDefinition",
-        "src": "2422:154:97",
+        "src": "2422:154:81",
         "nodes": [
           {
-            "id": 62741,
+            "id": 59125,
             "nodeType": "FunctionDefinition",
-            "src": "2448:126:97",
+            "src": "2448:126:81",
             "nodes": [],
             "functionSelector": "b7009613",
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "canCall",
-            "nameLocation": "2457:7:97",
+            "nameLocation": "2457:7:81",
             "parameters": {
-              "id": 62737,
+              "id": 59121,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 62732,
+                  "id": 59116,
                   "mutability": "mutable",
                   "name": "user",
-                  "nameLocation": "2482:4:97",
+                  "nameLocation": "2482:4:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 62741,
-                  "src": "2474:12:97",
+                  "scope": 59125,
+                  "src": "2474:12:81",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2375,10 +2371,10 @@ export const Auth =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 62731,
+                    "id": 59115,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2474:7:97",
+                    "src": "2474:7:81",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -2389,13 +2385,13 @@ export const Auth =
                 },
                 {
                   "constant": false,
-                  "id": 62734,
+                  "id": 59118,
                   "mutability": "mutable",
                   "name": "target",
-                  "nameLocation": "2504:6:97",
+                  "nameLocation": "2504:6:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 62741,
-                  "src": "2496:14:97",
+                  "scope": 59125,
+                  "src": "2496:14:81",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2403,10 +2399,10 @@ export const Auth =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 62733,
+                    "id": 59117,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2496:7:97",
+                    "src": "2496:7:81",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -2417,13 +2413,13 @@ export const Auth =
                 },
                 {
                   "constant": false,
-                  "id": 62736,
+                  "id": 59120,
                   "mutability": "mutable",
                   "name": "functionSig",
-                  "nameLocation": "2527:11:97",
+                  "nameLocation": "2527:11:81",
                   "nodeType": "VariableDeclaration",
-                  "scope": 62741,
-                  "src": "2520:18:97",
+                  "scope": 59125,
+                  "src": "2520:18:81",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2431,10 +2427,10 @@ export const Auth =
                     "typeString": "bytes4"
                   },
                   "typeName": {
-                    "id": 62735,
+                    "id": 59119,
                     "name": "bytes4",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2520:6:97",
+                    "src": "2520:6:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes4",
                       "typeString": "bytes4"
@@ -2443,21 +2439,21 @@ export const Auth =
                   "visibility": "internal"
                 }
               ],
-              "src": "2464:80:97"
+              "src": "2464:80:81"
             },
             "returnParameters": {
-              "id": 62740,
+              "id": 59124,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 62739,
+                  "id": 59123,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 62741,
-                  "src": "2568:4:97",
+                  "scope": 59125,
+                  "src": "2568:4:81",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2465,10 +2461,10 @@ export const Auth =
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 62738,
+                    "id": 59122,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2568:4:97",
+                    "src": "2568:4:81",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -2477,9 +2473,9 @@ export const Auth =
                   "visibility": "internal"
                 }
               ],
-              "src": "2567:6:97"
+              "src": "2567:6:81"
             },
-            "scope": 62742,
+            "scope": 59126,
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
@@ -2491,22 +2487,22 @@ export const Auth =
         "contractDependencies": [],
         "contractKind": "interface",
         "documentation": {
-          "id": 62730,
+          "id": 59114,
           "nodeType": "StructuredDocumentation",
-          "src": "2131:291:97",
+          "src": "2131:291:81",
           "text": "@notice A generic interface for a contract which provides authorization data to an Auth instance.\n @author Solmate (https://github.com/transmissions11/solmate/blob/main/src/auth/Auth.sol)\n @author Modified from Dappsys (https://github.com/dapphub/ds-auth/blob/master/src/auth.sol)"
         },
         "fullyImplemented": false,
         "linearizedBaseContracts": [
-          62742
+          59126
         ],
         "name": "Authority",
-        "nameLocation": "2432:9:97",
-        "scope": 62743,
+        "nameLocation": "2432:9:81",
+        "scope": 59127,
         "usedErrors": []
       }
     ],
     "license": "AGPL-3.0-only"
   },
-  "id": 97
+  "id": 81
 } as const;

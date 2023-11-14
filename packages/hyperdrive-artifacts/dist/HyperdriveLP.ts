@@ -3,52 +3,12 @@ export const HyperdriveLP =
   "abi": [
     {
       "inputs": [],
-      "name": "BatchInputLengthMismatch",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "BelowMinimumContribution",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "ExpiredDeadline",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "FixedPointMath_InvalidExponent",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "FixedPointMath_InvalidInput",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "InvalidApr",
-      "type": "error"
-    },
-    {
-      "inputs": [],
       "name": "InvalidCheckpointDuration",
       "type": "error"
     },
     {
       "inputs": [],
-      "name": "InvalidERC20Bridge",
-      "type": "error"
-    },
-    {
-      "inputs": [],
       "name": "InvalidFeeAmounts",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "InvalidFeeDestination",
       "type": "error"
     },
     {
@@ -59,76 +19,6 @@ export const HyperdriveLP =
     {
       "inputs": [],
       "name": "InvalidPositionDuration",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "InvalidShareReserves",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "InvalidSignature",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "InvalidTradeSize",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "MinimumTransactionAmount",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "NegativePresentValue",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "NotPayable",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "OutputLimit",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "Paused",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "PoolAlreadyInitialized",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "RestrictedZeroAddress",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "Unauthorized",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "UnexpectedSuccess",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "UnsafeCastToInt128",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "UnsafeCastToUint128",
       "type": "error"
     },
     {
@@ -309,31 +199,6 @@ export const HyperdriveLP =
       "inputs": [
         {
           "indexed": true,
-          "internalType": "address",
-          "name": "collector",
-          "type": "address"
-        },
-        {
-          "indexed": false,
-          "internalType": "uint256",
-          "name": "baseFees",
-          "type": "uint256"
-        },
-        {
-          "indexed": false,
-          "internalType": "uint256",
-          "name": "sharePrice",
-          "type": "uint256"
-        }
-      ],
-      "name": "CollectGovernanceFee",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
           "internalType": "uint256",
           "name": "checkpointTime",
           "type": "uint256"
@@ -364,19 +229,6 @@ export const HyperdriveLP =
         }
       ],
       "name": "CreateCheckpoint",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "newGovernance",
-          "type": "address"
-        }
-      ],
-      "name": "GovernanceUpdated",
       "type": "event"
     },
     {
@@ -508,19 +360,6 @@ export const HyperdriveLP =
         {
           "indexed": true,
           "internalType": "address",
-          "name": "newPauser",
-          "type": "address"
-        }
-      ],
-      "name": "PauserUpdated",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "address",
           "name": "provider",
           "type": "address"
         },
@@ -625,756 +464,6 @@ export const HyperdriveLP =
       ],
       "name": "TransferSingle",
       "type": "event"
-    },
-    {
-      "stateMutability": "nonpayable",
-      "type": "fallback"
-    },
-    {
-      "inputs": [],
-      "name": "DOMAIN_SEPARATOR",
-      "outputs": [
-        {
-          "internalType": "bytes32",
-          "name": "",
-          "type": "bytes32"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "PERMIT_TYPEHASH",
-      "outputs": [
-        {
-          "internalType": "bytes32",
-          "name": "",
-          "type": "bytes32"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "_contribution",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "_minApr",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "_maxApr",
-          "type": "uint256"
-        },
-        {
-          "components": [
-            {
-              "internalType": "address",
-              "name": "destination",
-              "type": "address"
-            },
-            {
-              "internalType": "bool",
-              "name": "asBase",
-              "type": "bool"
-            },
-            {
-              "internalType": "bytes",
-              "name": "extraData",
-              "type": "bytes"
-            }
-          ],
-          "internalType": "struct IHyperdrive.Options",
-          "name": "_options",
-          "type": "tuple"
-        }
-      ],
-      "name": "addLiquidity",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "lpShares",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "payable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "from",
-          "type": "address"
-        },
-        {
-          "internalType": "address",
-          "name": "to",
-          "type": "address"
-        },
-        {
-          "internalType": "uint256[]",
-          "name": "ids",
-          "type": "uint256[]"
-        },
-        {
-          "internalType": "uint256[]",
-          "name": "values",
-          "type": "uint256[]"
-        }
-      ],
-      "name": "batchTransferFrom",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "_checkpointTime",
-          "type": "uint256"
-        }
-      ],
-      "name": "checkpoint",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "_maturityTime",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "_bondAmount",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "_minOutput",
-          "type": "uint256"
-        },
-        {
-          "components": [
-            {
-              "internalType": "address",
-              "name": "destination",
-              "type": "address"
-            },
-            {
-              "internalType": "bool",
-              "name": "asBase",
-              "type": "bool"
-            },
-            {
-              "internalType": "bytes",
-              "name": "extraData",
-              "type": "bytes"
-            }
-          ],
-          "internalType": "struct IHyperdrive.Options",
-          "name": "_options",
-          "type": "tuple"
-        }
-      ],
-      "name": "closeLong",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "_maturityTime",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "_bondAmount",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "_minOutput",
-          "type": "uint256"
-        },
-        {
-          "components": [
-            {
-              "internalType": "address",
-              "name": "destination",
-              "type": "address"
-            },
-            {
-              "internalType": "bool",
-              "name": "asBase",
-              "type": "bool"
-            },
-            {
-              "internalType": "bytes",
-              "name": "extraData",
-              "type": "bytes"
-            }
-          ],
-          "internalType": "struct IHyperdrive.Options",
-          "name": "_options",
-          "type": "tuple"
-        }
-      ],
-      "name": "closeShort",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "components": [
-            {
-              "internalType": "address",
-              "name": "destination",
-              "type": "address"
-            },
-            {
-              "internalType": "bool",
-              "name": "asBase",
-              "type": "bool"
-            },
-            {
-              "internalType": "bytes",
-              "name": "extraData",
-              "type": "bytes"
-            }
-          ],
-          "internalType": "struct IHyperdrive.Options",
-          "name": "_options",
-          "type": "tuple"
-        }
-      ],
-      "name": "collectGovernanceFee",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "proceeds",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "dataProvider",
-      "outputs": [
-        {
-          "internalType": "address",
-          "name": "",
-          "type": "address"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "_contribution",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "_apr",
-          "type": "uint256"
-        },
-        {
-          "components": [
-            {
-              "internalType": "address",
-              "name": "destination",
-              "type": "address"
-            },
-            {
-              "internalType": "bool",
-              "name": "asBase",
-              "type": "bool"
-            },
-            {
-              "internalType": "bytes",
-              "name": "extraData",
-              "type": "bytes"
-            }
-          ],
-          "internalType": "struct IHyperdrive.Options",
-          "name": "_options",
-          "type": "tuple"
-        }
-      ],
-      "name": "initialize",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "lpShares",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "payable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "_baseAmount",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "_minOutput",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "_minSharePrice",
-          "type": "uint256"
-        },
-        {
-          "components": [
-            {
-              "internalType": "address",
-              "name": "destination",
-              "type": "address"
-            },
-            {
-              "internalType": "bool",
-              "name": "asBase",
-              "type": "bool"
-            },
-            {
-              "internalType": "bytes",
-              "name": "extraData",
-              "type": "bytes"
-            }
-          ],
-          "internalType": "struct IHyperdrive.Options",
-          "name": "_options",
-          "type": "tuple"
-        }
-      ],
-      "name": "openLong",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "maturityTime",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "bondProceeds",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "payable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "_bondAmount",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "_maxDeposit",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "_minSharePrice",
-          "type": "uint256"
-        },
-        {
-          "components": [
-            {
-              "internalType": "address",
-              "name": "destination",
-              "type": "address"
-            },
-            {
-              "internalType": "bool",
-              "name": "asBase",
-              "type": "bool"
-            },
-            {
-              "internalType": "bytes",
-              "name": "extraData",
-              "type": "bytes"
-            }
-          ],
-          "internalType": "struct IHyperdrive.Options",
-          "name": "_options",
-          "type": "tuple"
-        }
-      ],
-      "name": "openShort",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "maturityTime",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "traderDeposit",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "payable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "bool",
-          "name": "_status",
-          "type": "bool"
-        }
-      ],
-      "name": "pause",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "owner",
-          "type": "address"
-        },
-        {
-          "internalType": "address",
-          "name": "spender",
-          "type": "address"
-        },
-        {
-          "internalType": "bool",
-          "name": "_approved",
-          "type": "bool"
-        },
-        {
-          "internalType": "uint256",
-          "name": "deadline",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint8",
-          "name": "v",
-          "type": "uint8"
-        },
-        {
-          "internalType": "bytes32",
-          "name": "r",
-          "type": "bytes32"
-        },
-        {
-          "internalType": "bytes32",
-          "name": "s",
-          "type": "bytes32"
-        }
-      ],
-      "name": "permitForAll",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "_withdrawalShares",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "_minOutputPerShare",
-          "type": "uint256"
-        },
-        {
-          "components": [
-            {
-              "internalType": "address",
-              "name": "destination",
-              "type": "address"
-            },
-            {
-              "internalType": "bool",
-              "name": "asBase",
-              "type": "bool"
-            },
-            {
-              "internalType": "bytes",
-              "name": "extraData",
-              "type": "bytes"
-            }
-          ],
-          "internalType": "struct IHyperdrive.Options",
-          "name": "_options",
-          "type": "tuple"
-        }
-      ],
-      "name": "redeemWithdrawalShares",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "proceeds",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "withdrawalSharesRedeemed",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "_lpShares",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "_minOutput",
-          "type": "uint256"
-        },
-        {
-          "components": [
-            {
-              "internalType": "address",
-              "name": "destination",
-              "type": "address"
-            },
-            {
-              "internalType": "bool",
-              "name": "asBase",
-              "type": "bool"
-            },
-            {
-              "internalType": "bytes",
-              "name": "extraData",
-              "type": "bytes"
-            }
-          ],
-          "internalType": "struct IHyperdrive.Options",
-          "name": "_options",
-          "type": "tuple"
-        }
-      ],
-      "name": "removeLiquidity",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "proceeds",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "withdrawalShares",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "tokenID",
-          "type": "uint256"
-        },
-        {
-          "internalType": "address",
-          "name": "operator",
-          "type": "address"
-        },
-        {
-          "internalType": "uint256",
-          "name": "amount",
-          "type": "uint256"
-        }
-      ],
-      "name": "setApproval",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "tokenID",
-          "type": "uint256"
-        },
-        {
-          "internalType": "address",
-          "name": "operator",
-          "type": "address"
-        },
-        {
-          "internalType": "uint256",
-          "name": "amount",
-          "type": "uint256"
-        },
-        {
-          "internalType": "address",
-          "name": "caller",
-          "type": "address"
-        }
-      ],
-      "name": "setApprovalBridge",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "operator",
-          "type": "address"
-        },
-        {
-          "internalType": "bool",
-          "name": "approved",
-          "type": "bool"
-        }
-      ],
-      "name": "setApprovalForAll",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "_who",
-          "type": "address"
-        }
-      ],
-      "name": "setGovernance",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "who",
-          "type": "address"
-        },
-        {
-          "internalType": "bool",
-          "name": "status",
-          "type": "bool"
-        }
-      ],
-      "name": "setPauser",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "tokenID",
-          "type": "uint256"
-        },
-        {
-          "internalType": "address",
-          "name": "from",
-          "type": "address"
-        },
-        {
-          "internalType": "address",
-          "name": "to",
-          "type": "address"
-        },
-        {
-          "internalType": "uint256",
-          "name": "amount",
-          "type": "uint256"
-        }
-      ],
-      "name": "transferFrom",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "tokenID",
-          "type": "uint256"
-        },
-        {
-          "internalType": "address",
-          "name": "from",
-          "type": "address"
-        },
-        {
-          "internalType": "address",
-          "name": "to",
-          "type": "address"
-        },
-        {
-          "internalType": "uint256",
-          "name": "amount",
-          "type": "uint256"
-        },
-        {
-          "internalType": "address",
-          "name": "caller",
-          "type": "address"
-        }
-      ],
-      "name": "transferFromBridge",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
     }
   ],
   "bytecode": {
@@ -1387,32 +476,8 @@ export const HyperdriveLP =
     "sourceMap": "",
     "linkReferences": {}
   },
-  "methodIdentifiers": {
-    "DOMAIN_SEPARATOR()": "3644e515",
-    "PERMIT_TYPEHASH()": "30adf81f",
-    "addLiquidity(uint256,uint256,uint256,(address,bool,bytes))": "9aa68462",
-    "batchTransferFrom(address,address,uint256[],uint256[])": "17fad7fc",
-    "checkpoint(uint256)": "ed64bab2",
-    "closeLong(uint256,uint256,uint256,(address,bool,bytes))": "ded06231",
-    "closeShort(uint256,uint256,uint256,(address,bool,bytes))": "29b23fc1",
-    "collectGovernanceFee((address,bool,bytes))": "3e691db9",
-    "dataProvider()": "b334ed86",
-    "initialize(uint256,uint256,(address,bool,bytes))": "77d05ff4",
-    "openLong(uint256,uint256,uint256,(address,bool,bytes))": "cba2e58d",
-    "openShort(uint256,uint256,uint256,(address,bool,bytes))": "dbbe8070",
-    "pause(bool)": "02329a29",
-    "permitForAll(address,address,bool,uint256,uint8,bytes32,bytes32)": "9032c726",
-    "redeemWithdrawalShares(uint256,uint256,(address,bool,bytes))": "074a6de9",
-    "removeLiquidity(uint256,uint256,(address,bool,bytes))": "cbc13434",
-    "setApproval(uint256,address,uint256)": "9cd241af",
-    "setApprovalBridge(uint256,address,uint256,address)": "4ed2d6ac",
-    "setApprovalForAll(address,bool)": "a22cb465",
-    "setGovernance(address)": "ab033ea9",
-    "setPauser(address,bool)": "7180c8ca",
-    "transferFrom(uint256,address,address,uint256)": "1c0f12b6",
-    "transferFromBridge(uint256,address,address,uint256,address)": "e44808bc"
-  },
-  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"BatchInputLengthMismatch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"BelowMinimumContribution\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ExpiredDeadline\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"FixedPointMath_InvalidExponent\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"FixedPointMath_InvalidInput\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidApr\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidCheckpointDuration\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidERC20Bridge\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidFeeAmounts\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidFeeDestination\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidMinimumShareReserves\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidPositionDuration\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidShareReserves\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidSignature\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidTradeSize\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"MinimumTransactionAmount\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NegativePresentValue\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotPayable\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"OutputLimit\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Paused\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"PoolAlreadyInitialized\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"RestrictedZeroAddress\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Unauthorized\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"UnexpectedSuccess\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"UnsafeCastToInt128\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"UnsafeCastToUint128\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"sharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"AddLiquidity\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"ApprovalForAll\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"sharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"CloseLong\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"sharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"CloseShort\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"collector\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseFees\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"sharePrice\",\"type\":\"uint256\"}],\"name\":\"CollectGovernanceFee\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"checkpointTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"sharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturedShorts\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturedLongs\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"CreateCheckpoint\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newGovernance\",\"type\":\"address\"}],\"name\":\"GovernanceUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"sharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"apr\",\"type\":\"uint256\"}],\"name\":\"Initialize\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"sharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"OpenLong\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"sharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"OpenShort\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newPauser\",\"type\":\"address\"}],\"name\":\"PauserUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"withdrawalShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"sharePrice\",\"type\":\"uint256\"}],\"name\":\"RedeemWithdrawalShares\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"sharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"withdrawalShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"RemoveLiquidity\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"TransferSingle\",\"type\":\"event\"},{\"stateMutability\":\"nonpayable\",\"type\":\"fallback\"},{\"inputs\":[],\"name\":\"DOMAIN_SEPARATOR\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"PERMIT_TYPEHASH\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_contribution\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_minApr\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_maxApr\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"internalType\":\"struct IHyperdrive.Options\",\"name\":\"_options\",\"type\":\"tuple\"}],\"name\":\"addLiquidity\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"lpShares\",\"type\":\"uint256\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256[]\",\"name\":\"ids\",\"type\":\"uint256[]\"},{\"internalType\":\"uint256[]\",\"name\":\"values\",\"type\":\"uint256[]\"}],\"name\":\"batchTransferFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_checkpointTime\",\"type\":\"uint256\"}],\"name\":\"checkpoint\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_maturityTime\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_bondAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_minOutput\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"internalType\":\"struct IHyperdrive.Options\",\"name\":\"_options\",\"type\":\"tuple\"}],\"name\":\"closeLong\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_maturityTime\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_bondAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_minOutput\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"internalType\":\"struct IHyperdrive.Options\",\"name\":\"_options\",\"type\":\"tuple\"}],\"name\":\"closeShort\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"internalType\":\"struct IHyperdrive.Options\",\"name\":\"_options\",\"type\":\"tuple\"}],\"name\":\"collectGovernanceFee\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"proceeds\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"dataProvider\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_contribution\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_apr\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"internalType\":\"struct IHyperdrive.Options\",\"name\":\"_options\",\"type\":\"tuple\"}],\"name\":\"initialize\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"lpShares\",\"type\":\"uint256\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_baseAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_minOutput\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_minSharePrice\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"internalType\":\"struct IHyperdrive.Options\",\"name\":\"_options\",\"type\":\"tuple\"}],\"name\":\"openLong\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"bondProceeds\",\"type\":\"uint256\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_bondAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_maxDeposit\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_minSharePrice\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"internalType\":\"struct IHyperdrive.Options\",\"name\":\"_options\",\"type\":\"tuple\"}],\"name\":\"openShort\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"traderDeposit\",\"type\":\"uint256\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bool\",\"name\":\"_status\",\"type\":\"bool\"}],\"name\":\"pause\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"_approved\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"deadline\",\"type\":\"uint256\"},{\"internalType\":\"uint8\",\"name\":\"v\",\"type\":\"uint8\"},{\"internalType\":\"bytes32\",\"name\":\"r\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"s\",\"type\":\"bytes32\"}],\"name\":\"permitForAll\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_withdrawalShares\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_minOutputPerShare\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"internalType\":\"struct IHyperdrive.Options\",\"name\":\"_options\",\"type\":\"tuple\"}],\"name\":\"redeemWithdrawalShares\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"proceeds\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"withdrawalSharesRedeemed\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_lpShares\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_minOutput\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"internalType\":\"struct IHyperdrive.Options\",\"name\":\"_options\",\"type\":\"tuple\"}],\"name\":\"removeLiquidity\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"proceeds\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"withdrawalShares\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenID\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"setApproval\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenID\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"caller\",\"type\":\"address\"}],\"name\":\"setApprovalBridge\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"setApprovalForAll\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_who\",\"type\":\"address\"}],\"name\":\"setGovernance\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"who\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"status\",\"type\":\"bool\"}],\"name\":\"setPauser\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenID\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenID\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"caller\",\"type\":\"address\"}],\"name\":\"transferFromBridge\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"DELV\",\"custom:disclaimer\":\"The language used in this code is for coding convenience                    only, and is not intended to, and does not, have any                    particular legal or regulatory significance.\",\"kind\":\"dev\",\"methods\":{\"addLiquidity(uint256,uint256,uint256,(address,bool,bytes))\":{\"params\":{\"_contribution\":\"The amount to supply.\",\"_maxApr\":\"The maximum APR at which the LP is willing to supply.\",\"_minApr\":\"The minimum APR at which the LP is willing to supply.\",\"_options\":\"The options that configure how the operation is settled.\"},\"returns\":{\"lpShares\":\"The number of LP tokens created\"}},\"batchTransferFrom(address,address,uint256[],uint256[])\":{\"params\":{\"from\":\"the source account\",\"ids\":\"The array of token ids of the asset to transfer\",\"to\":\"the destination account\",\"values\":\"The amount of each token to transfer\"}},\"collectGovernanceFee((address,bool,bytes))\":{\"params\":{\"_options\":\"The options that configure how the fees are settled.\"},\"returns\":{\"proceeds\":\"The amount of base collected.\"}},\"initialize(uint256,uint256,(address,bool,bytes))\":{\"params\":{\"_apr\":\"The target APR.\",\"_contribution\":\"The amount to supply.\",\"_options\":\"The options that configure how the operation is settled.\"},\"returns\":{\"lpShares\":\"The initial number of LP shares created.\"}},\"pause(bool)\":{\"params\":{\"_status\":\"True to pause all deposits and false to unpause them.\"}},\"permitForAll(address,address,bool,uint256,uint8,bytes32,bytes32)\":{\"details\":\"The signature for this function follows EIP 712 standard and should be generated with the      eth_signTypedData JSON RPC call instead of the eth_sign JSON RPC call. If using out of date      parity signing libraries the v component may need to be adjusted. Also it is very rare but possible      for v to be other values, those values are not supported.\",\"params\":{\"_approved\":\"a boolean of the approval status to set to\",\"deadline\":\"the timestamp which the signature must be submitted by to be valid\",\"owner\":\"the owner of the account which is having the new approval set\",\"r\":\"The r component of the ECDSA signature\",\"s\":\"The s component of the ECDSA signature\",\"spender\":\"the address which will be allowed to spend owner's tokens\",\"v\":\"Extra ECDSA data which allows public key recovery from signature assumed to be 27 or 28\"}},\"redeemWithdrawalShares(uint256,uint256,(address,bool,bytes))\":{\"params\":{\"_minOutputPerShare\":\"The minimum amount of base the LP expects to        receive for each withdrawal share that is burned.\",\"_options\":\"The options that configure how the operation is settled.\",\"_withdrawalShares\":\"The withdrawal shares to redeem.\"},\"returns\":{\"proceeds\":\"The amount the LP received.\",\"withdrawalSharesRedeemed\":\"The amount of withdrawal shares that were redeemed.\"}},\"removeLiquidity(uint256,uint256,(address,bool,bytes))\":{\"params\":{\"_lpShares\":\"The LP shares to burn.\",\"_minOutput\":\"The minium amount of the base token to receive.Note - this        value is likely to be less than the amount LP shares are worth.        The remainder is in short and long withdraw shares which are hard        to game the value of.\",\"_options\":\"The options that configure how the operation is settled.\"},\"returns\":{\"proceeds\":\"The amount the LP removing liquidity receives. The         LP receives a proportional amount of the pool's idle capital\",\"withdrawalShares\":\"The base that the LP receives buys out some of         their LP shares, but it may not be sufficient to fully buy the         LP out. In this case, the LP receives withdrawal shares equal         in value to the present value they are owed. As idle capital         becomes available, the pool will buy back these shares.\"}},\"setApproval(uint256,address,uint256)\":{\"params\":{\"amount\":\"The max tokens the approved person can use, setting to uint256.max               will cause the value to never decrement [saving gas on transfer]\",\"operator\":\"The address who will be able to use the tokens\",\"tokenID\":\"The asset to approve the use of\"}},\"setApprovalBridge(uint256,address,uint256,address)\":{\"params\":{\"amount\":\"The max tokens the approved person can use, setting to uint256.max               will cause the value to never decrement [saving gas on transfer]\",\"caller\":\"The eth address which called the linking contract\",\"operator\":\"The address who will be able to use the tokens\",\"tokenID\":\"The asset to approve the use of\"}},\"setApprovalForAll(address,bool)\":{\"params\":{\"approved\":\"True to approve, false to remove approval\",\"operator\":\"The eth address which can access the caller's assets\"}},\"setGovernance(address)\":{\"params\":{\"_who\":\"The new governance address.\"}},\"setPauser(address,bool)\":{\"params\":{\"status\":\"The new pauser status.\",\"who\":\"The address to change.\"}},\"transferFrom(uint256,address,address,uint256)\":{\"params\":{\"amount\":\"The amount of token to move\",\"from\":\"The address who's balance will be reduced\",\"to\":\"The address who's balance will be increased\",\"tokenID\":\"The token identifier\"}},\"transferFromBridge(uint256,address,address,uint256,address)\":{\"params\":{\"amount\":\"The amount of token to move\",\"caller\":\"The msg.sender from the bridge\",\"from\":\"The address who's balance will be reduced\",\"to\":\"The address who's balance will be increased\",\"tokenID\":\"The token identifier\"}}},\"title\":\"HyperdriveLP\",\"version\":1},\"userdoc\":{\"errors\":{\"BatchInputLengthMismatch()\":[{\"notice\":\"###################### ### ERC20Forwarder ### ######################\"}],\"FixedPointMath_InvalidExponent()\":[{\"notice\":\"###################### ### FixedPointMath ### ######################\"}],\"InvalidTradeSize()\":[{\"notice\":\"###################### ### YieldSpaceMath ### ######################\"}],\"Unauthorized()\":[{\"notice\":\"############### ### Factory ### ###############\"}],\"UnsafeCastToUint128()\":[{\"notice\":\"###################### ### SafeCast ### ######################\"}]},\"events\":{\"PauserUpdated(address)\":{\"notice\":\"Pause ///\"}},\"kind\":\"user\",\"methods\":{\"addLiquidity(uint256,uint256,uint256,(address,bool,bytes))\":{\"notice\":\"Allows LPs to supply liquidity for LP shares.\"},\"batchTransferFrom(address,address,uint256[],uint256[])\":{\"notice\":\"Transfers several assets from one account to another\"},\"collectGovernanceFee((address,bool,bytes))\":{\"notice\":\"This function collects the governance fees accrued by the pool.\"},\"initialize(uint256,uint256,(address,bool,bytes))\":{\"notice\":\"Allows the first LP to initialize the market with a target APR.\"},\"pause(bool)\":{\"notice\":\"Allows an authorized address to pause this contract.\"},\"permitForAll(address,address,bool,uint256,uint8,bytes32,bytes32)\":{\"notice\":\"Allows a caller who is not the owner of an account to execute         the functionality of 'approve' for all assets with the owners signature.\"},\"redeemWithdrawalShares(uint256,uint256,(address,bool,bytes))\":{\"notice\":\"Redeems withdrawal shares by giving the LP a pro-rata amount of         the withdrawal pool's proceeds. This function redeems the         maximum amount of the specified withdrawal shares given the         amount of withdrawal shares ready to withdraw.\"},\"removeLiquidity(uint256,uint256,(address,bool,bytes))\":{\"notice\":\"Allows an LP to burn shares and withdraw from the pool.\"},\"setApproval(uint256,address,uint256)\":{\"notice\":\"Allows a user to set an approval for an individual asset with specific amount.\"},\"setApprovalBridge(uint256,address,uint256,address)\":{\"notice\":\"Allows the compatibility linking contract to forward calls to set asset approvals\"},\"setApprovalForAll(address,bool)\":{\"notice\":\"Allows a user to approve an operator to use all of their assets\"},\"setGovernance(address)\":{\"notice\":\"Allows governance to change governance.\"},\"setPauser(address,bool)\":{\"notice\":\"Allows governance to change the pauser status of an address.\"},\"transferFrom(uint256,address,address,uint256)\":{\"notice\":\"Transfers an amount of assets from the source to the destination\"},\"transferFromBridge(uint256,address,address,uint256,address)\":{\"notice\":\"Permission-ed transfer for the bridge to access, only callable by         the ERC20 linking bridge\"}},\"notice\":\"Implements the LP accounting for Hyperdrive.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/HyperdriveLP.sol\":\"HyperdriveLP\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@aave/=lib/aave-v3-core/contracts/\",\":aave-v3-core/=lib/aave-v3-core/\",\":create3-factory/=lib/yield-daddy/lib/create3-factory/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\",\":yield-daddy/=lib/yield-daddy/\"]},\"sources\":{\"contracts/src/DataProvider.sol\":{\"keccak256\":\"0x4ab8d6b27ad40963fde6512935aa0163c00259a51477bcb15d85f222d84ed0a6\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3eaed8100e054b7b6d3dd34b80c72ab86669076d72e83daca1c6297441ac0e4b\",\"dweb:/ipfs/QmPCr6XchfY4nbvVdvnuJzPJc434AV6HAnjQXnSgo9vNDt\"]},\"contracts/src/HyperdriveBase.sol\":{\"keccak256\":\"0xd8b673eb52f74ac18cd75bcc4a9a4ba56bb952eb31600d522b6046c25e8d4c32\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://17a8b842f8538181e5a56fd3a904b7aa1bde2eb2c3d5e7fc55bbf5aea084ffbd\",\"dweb:/ipfs/QmVFB1ysPMXo6DPRdc3bAfMpWY8VCPwS3xhxmUFDRY4Zgu\"]},\"contracts/src/HyperdriveLP.sol\":{\"keccak256\":\"0x8d7edd9add98082a7a8d269f99788237a0b244c8dca3556a367b764bc3c17c02\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://abfe277c6982ed6344c8a2e4507e322d61fbbb76f62c673bdfbaa61495188669\",\"dweb:/ipfs/QmRp1Fc2WkAxQjxLWBr4Y7RL5j2VAQpqWMZ8Zd7sAAE2FJ\"]},\"contracts/src/HyperdriveStorage.sol\":{\"keccak256\":\"0xf02f44333981dfbf6c500bf979aab8cd7aee9731d103a6aafc247e09b90b76bc\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://6664cd66465073274f9c2c27fee39e1c64e8e21fff532e64cd3014800582b00a\",\"dweb:/ipfs/QmSGH1ixAUMu81yYf3pMFHo4uJxw6XgfnkBupjUSoFcdNY\"]},\"contracts/src/HyperdriveTWAP.sol\":{\"keccak256\":\"0x76cba088948ab50bb4956377235b302b28ef7c9f6cc68bda73211d66df41e92b\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://74e1b28c8cd08aa9adf3b3f31f0379c095299cd2b9de3d3595d7d55b0e0697cc\",\"dweb:/ipfs/QmTTnkPF3jUmdfynnJK6kUBTYSBZFWJs69A9e9tPQzqiac\"]},\"contracts/src/interfaces/IDataProvider.sol\":{\"keccak256\":\"0xb5540e954a8d9311a4ddc94f1b1a893f419965c4059e5f64d3f966fa5d7bf843\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://4322256d8ef1c32e16441b7be365169cbbfa72c6d952536ed0c2a4dab5befd15\",\"dweb:/ipfs/QmT1Zx7tHjgW52qb1e5C9KTjTbZaoniFxuyvZb3cWedUu7\"]},\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0x4642a027efffb3aa6cdc85e31796fb3b1bc4fff4316e6390874e6f4add37b86c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://3720a6c1c427dcfcbdeeec15cbdb682115e44e0a9136af7e0ad9e5af2ea40672\",\"dweb:/ipfs/QmP4bmaHw8MfX9MQLhhgnVQ9U9BTQAR3e5cCCE9RcoeX7w\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0x5f4ebd8ae035c05b0a1f3f740dba21a1414306796082b814bcaa2e190ab845b7\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://1353dab25f7e01c7169f602b7d013ff90c77fe36d62d382e179649a10ae41e78\",\"dweb:/ipfs/QmXQdQBcx6rKeVcoV5s7NG52DrqVvhBhgMNQwTxddAstE5\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0x837939af4a9224c5f4ea564e9b33a5612442b7d7d50b7f8bb32be6bb3ce239b3\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3bfebedcb31d2edf86a69f0dfbcc5aa7b96edc2d8197b4a4681a200cb6ffe993\",\"dweb:/ipfs/Qmeq4oAGxKv3mvRRWkqYBjfdozPkhi3MqBRFNnNkmAwCtt\"]},\"contracts/src/interfaces/IHyperdriveWrite.sol\":{\"keccak256\":\"0xd83e23e1894f3f4812d4812c5775c7a5267f3bfb80148b11f3ede3174ea936bc\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://ae5e91bb578ae9271426728ba69689ad659c6450853aa5ef0c52dd6d7c433206\",\"dweb:/ipfs/QmR5VU1UmZ8BN3azCs3zmHkCqJHzDKTUnVecdPjNQr8vYt\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xe3d64871148bdae5a714107b8b1a55f39cd4ede601436d2777a165d20d768a1a\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://9ebc0bfda35e9b7299c43f0efff38012b8074fcca867b781c0cedeede10cf3d0\",\"dweb:/ipfs/QmbHRLezFhWavHakK5G26DB4ud5PueU6fNvZf3L3TwXnPb\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0xcdc60ba02194150741a78cb0c52c306f5f577c5c814c63e98a13d46c02d2d9cc\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://8f5866cb2c8c4342dba88c0e4d78296fef0e170b18b3613c796c29dc31a5ca87\",\"dweb:/ipfs/QmZcoDTYhhYSB5ds3cNPJpdZTxrz6cF8M2vNVeuAcT8gw6\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0x2e55fa961123a8bb7284c8388af9bd1302a7153441ffe641804ea79021bdca05\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://c7dc03bbab02976609dec59c201e5b57a2998d1c626cef58d7a9fa7c2b06b939\",\"dweb:/ipfs/QmSifWr9cVWaUEmyKpGFcgpKCYdoBYgWtQBLgemtwo4a7x\"]},\"contracts/src/interfaces/IMultiTokenWrite.sol\":{\"keccak256\":\"0xa5ba8812e06fb6d38e1872603c8b80321cfd2f96cecbe7b67b92cb33e93b3fc8\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://73afa34919c7d457e925b4be83abb1b1ed2ed731a382ebffad95a3005c04bd5a\",\"dweb:/ipfs/QmauMxmgtYTS7RJQw1mS7Pwe5FUMDPHE2N1MBhFUjk6HPe\"]},\"contracts/src/libraries/AssetId.sol\":{\"keccak256\":\"0xcf8493b00dd39c50754a63f66dc612f3cd466cbac8c7ea5ed0c5ea68aa99267a\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://1a1986d6bc80e465dde116a70d3a30027b3e75969117a9b3517c6866c2e5e73a\",\"dweb:/ipfs/QmSASHifHWyKBycGAm1pUs9dw26Uf6A61V9nkEQnFj9mya\"]},\"contracts/src/libraries/FixedPointMath.sol\":{\"keccak256\":\"0x0108762fdecfae06d7b8d76bb52b1a5757669cc2a4e5f3ad701499295ed635bd\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a94cdbab2bdbb0212597f70cebea86fcf69be0702f6d6fe76571ee43992d7d6b\",\"dweb:/ipfs/QmXyncXgKixNzP7rgqoCA2dzehjPTAsEbtAKZGW6CQADFE\"]},\"contracts/src/libraries/HyperdriveMath.sol\":{\"keccak256\":\"0xa425f4064f7e95fc5da7763b26627ef0be68db76763bde67cd54cfda489a19ed\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://abc4b8f6f8c66a0d966b1dc366d689fc2844a60d866ed3f19cdd3852a0c274f6\",\"dweb:/ipfs/QmUSo1URvRru11TYPMGSdQR6FDRZk7SPh8tcze3T6XL4gL\"]},\"contracts/src/libraries/SafeCast.sol\":{\"keccak256\":\"0x077e800ae4f47bda111e72f8c40d50a57b10a1c5bce81f2e83bb57f94752159f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://8e9433729a73747a65ececae27a8f634300a4e02a66577f796f596e5894a4bb5\",\"dweb:/ipfs/QmT2fC2xaRoFuDBURAtcwqvpqXvw1AQybSgb4khVBzit2S\"]},\"contracts/src/libraries/YieldSpaceMath.sol\":{\"keccak256\":\"0xbd61fe3be6d0c8742f09a8174a5a2757e9070805b49d3fc7217f120b83c0ce0f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://5b6524a56a3062a3d9b47c2ad2712f90643a84971cd155f8f00fd31ef7a432fe\",\"dweb:/ipfs/QmXYtLBzjaVkh4WhTxTE1GEoqjcyidw1peyAenfAd5vPPr\"]},\"contracts/src/token/MultiToken.sol\":{\"keccak256\":\"0x1c22e52ab701c2b7ce3c0b049540ecba5fc24cd8b8000464b5b15c99dfee6a19\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://089273a3f853bdb205d34b70750eeca2edda7aaf999726ed9df0621d1e92bb98\",\"dweb:/ipfs/QmPy3tUmJb7gtnL9ACiWhhekKXGo3z3cd4SMYiUQX4geHy\"]},\"contracts/src/token/MultiTokenStorage.sol\":{\"keccak256\":\"0x97a22d11197f185d6f17ff5ada60665b27af265c23b208f20004e22b26d7b7e8\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://62f950f46f3de598776e8e8201a0d35ec51473cc0ea754be5c9e686078ebb3d6\",\"dweb:/ipfs/QmaKpZETx9zCV46XwcqvXUr7f8t2CPo1Tim2umTDwsk2bj\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x00c839ff53d07d19db2e7cfa1e5133f9ee90a8d64b0e2e57f50446a2d1a3a0e0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://3dac621d015a68a5251b1e5d41dda0faf252699bf6e8bcf46a958b29964d9dd1\",\"dweb:/ipfs/QmP9axjgZv4cezAhALoTemM62sdLtMDJ9MGTxECnNwHgSJ\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Permit.sol\":{\"keccak256\":\"0x35e258421ae206f3db37281cea70871b4c3553914734aa76139a41af60ac1abb\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2ef94b6bc4ee356db612a1849c615f7dd4b15542d6c8584c86bb9243a7913cf0\",\"dweb:/ipfs/QmaxFj5NFpAjjitZtHPNS9PPtCuBATaRz9ktDDRCQCQ83y\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol\":{\"keccak256\":\"0x8a63ea9ec07788740e51046ca14c61f411aedb901e89749c9d55fa56ed43086a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://3035ae3f172ed9e172e1ba4d83bdc70279f63be51ce9218c530132def66ff577\",\"dweb:/ipfs/QmTQ3zfC3YUNeY3KUVFiHgTWDuxfmcEMgpGC6HMoTpgZJL\"]},\"lib/openzeppelin-contracts/contracts/utils/Address.sol\":{\"keccak256\":\"0xa6dfb97ce947b7c846b054ee7d45d12383359778f4f3743654ae0a34fa421b26\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b97e7e5a77ea47c08ba422291df887eba76c80982f52a6e94a30106e9377a94f\",\"dweb:/ipfs/Qme7N2XRC7mcDxB8wZxNWPk6T8S2qsnmhAqXeUj4CNvsGD\"]},\"lib/solmate/src/utils/ReentrancyGuard.sol\":{\"keccak256\":\"0xb282dd78aa7375d6b200b9a5d8dd214b2e5df1004f8217a4b4c2b07f0c5bfd01\",\"license\":\"AGPL-3.0-only\",\"urls\":[\"bzz-raw://5fca62eb8d3dbd2b3b7e4bb051f6da16f4d0ff9cee61c39cebb80f031f6a8800\",\"dweb:/ipfs/QmbrsXPK91iBFwHKwJs2HLRud2KzMoBDRiWYMUtyV5H57j\"]}},\"version\":1}",
+  "methodIdentifiers": {},
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"InvalidCheckpointDuration\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidFeeAmounts\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidMinimumShareReserves\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidPositionDuration\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"sharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"AddLiquidity\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"ApprovalForAll\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"sharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"CloseLong\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"sharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"CloseShort\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"checkpointTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"sharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturedShorts\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturedLongs\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"CreateCheckpoint\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"sharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"apr\",\"type\":\"uint256\"}],\"name\":\"Initialize\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"sharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"OpenLong\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"sharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"OpenShort\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"withdrawalShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"sharePrice\",\"type\":\"uint256\"}],\"name\":\"RedeemWithdrawalShares\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"sharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"withdrawalShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"RemoveLiquidity\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"TransferSingle\",\"type\":\"event\"}],\"devdoc\":{\"author\":\"DELV\",\"custom:disclaimer\":\"The language used in this code is for coding convenience                    only, and is not intended to, and does not, have any                    particular legal or regulatory significance.\",\"kind\":\"dev\",\"methods\":{},\"title\":\"HyperdriveLP\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Implements the LP accounting for Hyperdrive.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/internal/HyperdriveLP.sol\":\"HyperdriveLP\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":aave-v3-core/=lib/aave-v3-core/\",\":create3-factory/=lib/yield-daddy/lib/create3-factory/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\",\":solmate/=lib/solmate/src/\",\":yield-daddy/=lib/yield-daddy/\"]},\"sources\":{\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0xfb57fe2ee4d8d1c6a8e2aa3b007da6f0e53d65388245b0b7d876234077ee95b4\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://e4303c41b9752b51c6eaa9b16aa11e5bffb34fc80c5c8761302539cd5922ae36\",\"dweb:/ipfs/QmZjVYBikfgPDX47hmbGJpG6kvm3Gyt6nKkFbZH6r8U4cL\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0x833d56790728bfab7d35507b8584dc7ce607b26512a382e887483f61d528f6c5\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3dd009d6ff5a89d1173f7330916e81a31ffd139bf6848b3f4400673652554a70\",\"dweb:/ipfs/QmXkVovZSWqhRqrt8y9FFfHt1HWhnUuP9TMecQyd89yEQ3\"]},\"contracts/src/interfaces/IHyperdriveCore.sol\":{\"keccak256\":\"0x84c73d8c4b67da41635f57fce2f30b8f04fc826ff6fb54c605de23d376f3403d\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://e6d636dff5c24916ae35a76695d741de2f14ee46876ea67c5393618bb7f9cf85\",\"dweb:/ipfs/QmUwxh8JeAqSFA8Z2qabVx3YWRSz7PJ9V2TQgnfctAgqPF\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0x837939af4a9224c5f4ea564e9b33a5612442b7d7d50b7f8bb32be6bb3ce239b3\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3bfebedcb31d2edf86a69f0dfbcc5aa7b96edc2d8197b4a4681a200cb6ffe993\",\"dweb:/ipfs/Qmeq4oAGxKv3mvRRWkqYBjfdozPkhi3MqBRFNnNkmAwCtt\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xcf3a4002275ea64e381f0a4aded3683e12960396ef79ba9dd153e2d1e395baad\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://c9990491f7a5151fd696a45e6e5b0282a1dedf58521861dfb8c64db8cb60f5b6\",\"dweb:/ipfs/QmaywmqqQhz7DeYqZdoeykagr5h4ZhQRv6GasHqvdWqzSy\"]},\"contracts/src/interfaces/IMultiTokenCore.sol\":{\"keccak256\":\"0xdb7f24663cff7307a468ef5e4c6f3e4d01ec0475157b3bbb3405890c3e9ab87d\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://7f631a9a395fba5b07c3d9308fccac18d5aa59d890efe23442ed2a4da9871ae8\",\"dweb:/ipfs/QmV2a4wiAPfWzSST3faYt58i2tqEyoqCLAJV8aNCdJyxVE\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0x476240ea4328bae9ab820b6f0f40afb11c74ee52d26bdbef69e4ece28dc10bdb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://843f73cb21eaec4e26952fd6cbde5e6815e3a28c438df9e026e249200d25076f\",\"dweb:/ipfs/QmXzE7gsRKMaRGQfTDodA1RXxNxUuBj8RT7grTYjZUdbe6\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0x9b92d81f2f038fcd4bb5d069ab2b754efc153234c451d4ee4caa6d74aaca16b4\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://8686fddc99564c6b6524ea68a6b7ff081a9988fc795fc13197bb59ddaa2041c6\",\"dweb:/ipfs/QmarJYJAgoH6Z4H1BmdPoRgqLubRu5S6NDXBNV2fDApPuW\"]},\"contracts/src/internal/HyperdriveBase.sol\":{\"keccak256\":\"0x328a01b0720b9a6494a2d6be1113539d41da589a382525578d4241fc077e9646\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://4b9d7b56fd8056ae9264da99f8e0764ef16f17dca179218cf9375cf3236ec9fc\",\"dweb:/ipfs/Qmf11fXRipobZfMWTTxaScrYz9tZFUsdVxH5eZ4aLVQQC8\"]},\"contracts/src/internal/HyperdriveLP.sol\":{\"keccak256\":\"0x6779541f073ba5ce6e0656d10c7d9ef23734d2675b865b4d5310a023c30764ad\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://5cc569f006ef38723c1cb893b4e08d22ca0a448dc559c8abd18b28bd6967fcb7\",\"dweb:/ipfs/QmdPfZGuM8g3qp4CPsuztZe1wcVrytWkbqHQDbsTVEKBdF\"]},\"contracts/src/internal/HyperdriveMultiToken.sol\":{\"keccak256\":\"0x6b85590aeffa0a73aabf0c17a958bdec064a4d59c2e3d7595a8cb2d86fb01277\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://d89ad612f8624723adab39bd85311389fe95f685cf496e1a5d116bfafd6588eb\",\"dweb:/ipfs/QmPWVwrfo65BZofeWubpZsM93yzxMFjhPfoNYsaT31yn28\"]},\"contracts/src/internal/HyperdriveStorage.sol\":{\"keccak256\":\"0xda130fbf6651046517801d119593b7f81e7a2a824f82cb15b1852495fa7fb148\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://c10ab3e768804fc8eee91502f34dd1e1d2d2e7d90d8ec0a26fac40d83ed940db\",\"dweb:/ipfs/QmNMqyFM6xC49uRAMeY3MhoQ9yK2ZHdQLt3QxrsNK9Kfkw\"]},\"contracts/src/libraries/AssetId.sol\":{\"keccak256\":\"0xcf8493b00dd39c50754a63f66dc612f3cd466cbac8c7ea5ed0c5ea68aa99267a\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://1a1986d6bc80e465dde116a70d3a30027b3e75969117a9b3517c6866c2e5e73a\",\"dweb:/ipfs/QmSASHifHWyKBycGAm1pUs9dw26Uf6A61V9nkEQnFj9mya\"]},\"contracts/src/libraries/FixedPointMath.sol\":{\"keccak256\":\"0xac200bd4172e6369dc6ad06bef96e3d4ce7df36a97e80ee8f1a033e622c99639\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://0add90b8957805ae8e99581b76d81dec07bdf7586fdf2a05f31d2ce91f09439d\",\"dweb:/ipfs/QmRRBbguna6QmMUvANobcSfH6HM3DydFjNXSWZZr1VDKH8\"]},\"contracts/src/libraries/HyperdriveMath.sol\":{\"keccak256\":\"0xccfb106f6bd8829c369c19d08ef4f8ffc8ebbf5c51a9e148141733ff9bbc49f3\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://d11ddba27aace6aefe451d75b4403ceb10f0a71cd61163e8f812728820107e62\",\"dweb:/ipfs/QmdSZJtY5LaJVnHYRwKAofo6oiihqpazC22Q1X9aL9uNbx\"]},\"contracts/src/libraries/SafeCast.sol\":{\"keccak256\":\"0x077e800ae4f47bda111e72f8c40d50a57b10a1c5bce81f2e83bb57f94752159f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://8e9433729a73747a65ececae27a8f634300a4e02a66577f796f596e5894a4bb5\",\"dweb:/ipfs/QmT2fC2xaRoFuDBURAtcwqvpqXvw1AQybSgb4khVBzit2S\"]},\"contracts/src/libraries/YieldSpaceMath.sol\":{\"keccak256\":\"0x42a910bd6ee869fc53f18f2991cbf75a667d663ed41b4a11e18b328546ede7db\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://77345fdb9b99d0b04fa7cf719857eae63362e20db6b99da35ac886a13bf3b56a\",\"dweb:/ipfs/QmXatm27fhzsApgrMq978mye2u8fk62D89pUgV4WsjQeyH\"]},\"lib/solmate/src/utils/ReentrancyGuard.sol\":{\"keccak256\":\"0xb282dd78aa7375d6b200b9a5d8dd214b2e5df1004f8217a4b4c2b07f0c5bfd01\",\"license\":\"AGPL-3.0-only\",\"urls\":[\"bzz-raw://5fca62eb8d3dbd2b3b7e4bb051f6da16f4d0ff9cee61c39cebb80f031f6a8800\",\"dweb:/ipfs/QmbrsXPK91iBFwHKwJs2HLRud2KzMoBDRiWYMUtyV5H57j\"]}},\"version\":1}",
   "metadata": {
     "compiler": {
       "version": "0.8.19+commit.7dd6d404"
@@ -1423,52 +488,12 @@ export const HyperdriveLP =
         {
           "inputs": [],
           "type": "error",
-          "name": "BatchInputLengthMismatch"
-        },
-        {
-          "inputs": [],
-          "type": "error",
-          "name": "BelowMinimumContribution"
-        },
-        {
-          "inputs": [],
-          "type": "error",
-          "name": "ExpiredDeadline"
-        },
-        {
-          "inputs": [],
-          "type": "error",
-          "name": "FixedPointMath_InvalidExponent"
-        },
-        {
-          "inputs": [],
-          "type": "error",
-          "name": "FixedPointMath_InvalidInput"
-        },
-        {
-          "inputs": [],
-          "type": "error",
-          "name": "InvalidApr"
-        },
-        {
-          "inputs": [],
-          "type": "error",
           "name": "InvalidCheckpointDuration"
         },
         {
           "inputs": [],
           "type": "error",
-          "name": "InvalidERC20Bridge"
-        },
-        {
-          "inputs": [],
-          "type": "error",
           "name": "InvalidFeeAmounts"
-        },
-        {
-          "inputs": [],
-          "type": "error",
-          "name": "InvalidFeeDestination"
         },
         {
           "inputs": [],
@@ -1479,76 +504,6 @@ export const HyperdriveLP =
           "inputs": [],
           "type": "error",
           "name": "InvalidPositionDuration"
-        },
-        {
-          "inputs": [],
-          "type": "error",
-          "name": "InvalidShareReserves"
-        },
-        {
-          "inputs": [],
-          "type": "error",
-          "name": "InvalidSignature"
-        },
-        {
-          "inputs": [],
-          "type": "error",
-          "name": "InvalidTradeSize"
-        },
-        {
-          "inputs": [],
-          "type": "error",
-          "name": "MinimumTransactionAmount"
-        },
-        {
-          "inputs": [],
-          "type": "error",
-          "name": "NegativePresentValue"
-        },
-        {
-          "inputs": [],
-          "type": "error",
-          "name": "NotPayable"
-        },
-        {
-          "inputs": [],
-          "type": "error",
-          "name": "OutputLimit"
-        },
-        {
-          "inputs": [],
-          "type": "error",
-          "name": "Paused"
-        },
-        {
-          "inputs": [],
-          "type": "error",
-          "name": "PoolAlreadyInitialized"
-        },
-        {
-          "inputs": [],
-          "type": "error",
-          "name": "RestrictedZeroAddress"
-        },
-        {
-          "inputs": [],
-          "type": "error",
-          "name": "Unauthorized"
-        },
-        {
-          "inputs": [],
-          "type": "error",
-          "name": "UnexpectedSuccess"
-        },
-        {
-          "inputs": [],
-          "type": "error",
-          "name": "UnsafeCastToInt128"
-        },
-        {
-          "inputs": [],
-          "type": "error",
-          "name": "UnsafeCastToUint128"
         },
         {
           "inputs": [
@@ -1726,31 +681,6 @@ export const HyperdriveLP =
         {
           "inputs": [
             {
-              "internalType": "address",
-              "name": "collector",
-              "type": "address",
-              "indexed": true
-            },
-            {
-              "internalType": "uint256",
-              "name": "baseFees",
-              "type": "uint256",
-              "indexed": false
-            },
-            {
-              "internalType": "uint256",
-              "name": "sharePrice",
-              "type": "uint256",
-              "indexed": false
-            }
-          ],
-          "type": "event",
-          "name": "CollectGovernanceFee",
-          "anonymous": false
-        },
-        {
-          "inputs": [
-            {
               "internalType": "uint256",
               "name": "checkpointTime",
               "type": "uint256",
@@ -1783,19 +713,6 @@ export const HyperdriveLP =
           ],
           "type": "event",
           "name": "CreateCheckpoint",
-          "anonymous": false
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "address",
-              "name": "newGovernance",
-              "type": "address",
-              "indexed": true
-            }
-          ],
-          "type": "event",
-          "name": "GovernanceUpdated",
           "anonymous": false
         },
         {
@@ -1925,19 +842,6 @@ export const HyperdriveLP =
           "inputs": [
             {
               "internalType": "address",
-              "name": "newPauser",
-              "type": "address",
-              "indexed": true
-            }
-          ],
-          "type": "event",
-          "name": "PauserUpdated",
-          "anonymous": false
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "address",
               "name": "provider",
               "type": "address",
               "indexed": true
@@ -2044,941 +948,25 @@ export const HyperdriveLP =
           "type": "event",
           "name": "TransferSingle",
           "anonymous": false
-        },
-        {
-          "inputs": [],
-          "stateMutability": "nonpayable",
-          "type": "fallback"
-        },
-        {
-          "inputs": [],
-          "stateMutability": "view",
-          "type": "function",
-          "name": "DOMAIN_SEPARATOR",
-          "outputs": [
-            {
-              "internalType": "bytes32",
-              "name": "",
-              "type": "bytes32"
-            }
-          ]
-        },
-        {
-          "inputs": [],
-          "stateMutability": "view",
-          "type": "function",
-          "name": "PERMIT_TYPEHASH",
-          "outputs": [
-            {
-              "internalType": "bytes32",
-              "name": "",
-              "type": "bytes32"
-            }
-          ]
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "uint256",
-              "name": "_contribution",
-              "type": "uint256"
-            },
-            {
-              "internalType": "uint256",
-              "name": "_minApr",
-              "type": "uint256"
-            },
-            {
-              "internalType": "uint256",
-              "name": "_maxApr",
-              "type": "uint256"
-            },
-            {
-              "internalType": "struct IHyperdrive.Options",
-              "name": "_options",
-              "type": "tuple",
-              "components": [
-                {
-                  "internalType": "address",
-                  "name": "destination",
-                  "type": "address"
-                },
-                {
-                  "internalType": "bool",
-                  "name": "asBase",
-                  "type": "bool"
-                },
-                {
-                  "internalType": "bytes",
-                  "name": "extraData",
-                  "type": "bytes"
-                }
-              ]
-            }
-          ],
-          "stateMutability": "payable",
-          "type": "function",
-          "name": "addLiquidity",
-          "outputs": [
-            {
-              "internalType": "uint256",
-              "name": "lpShares",
-              "type": "uint256"
-            }
-          ]
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "address",
-              "name": "from",
-              "type": "address"
-            },
-            {
-              "internalType": "address",
-              "name": "to",
-              "type": "address"
-            },
-            {
-              "internalType": "uint256[]",
-              "name": "ids",
-              "type": "uint256[]"
-            },
-            {
-              "internalType": "uint256[]",
-              "name": "values",
-              "type": "uint256[]"
-            }
-          ],
-          "stateMutability": "nonpayable",
-          "type": "function",
-          "name": "batchTransferFrom"
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "uint256",
-              "name": "_checkpointTime",
-              "type": "uint256"
-            }
-          ],
-          "stateMutability": "nonpayable",
-          "type": "function",
-          "name": "checkpoint"
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "uint256",
-              "name": "_maturityTime",
-              "type": "uint256"
-            },
-            {
-              "internalType": "uint256",
-              "name": "_bondAmount",
-              "type": "uint256"
-            },
-            {
-              "internalType": "uint256",
-              "name": "_minOutput",
-              "type": "uint256"
-            },
-            {
-              "internalType": "struct IHyperdrive.Options",
-              "name": "_options",
-              "type": "tuple",
-              "components": [
-                {
-                  "internalType": "address",
-                  "name": "destination",
-                  "type": "address"
-                },
-                {
-                  "internalType": "bool",
-                  "name": "asBase",
-                  "type": "bool"
-                },
-                {
-                  "internalType": "bytes",
-                  "name": "extraData",
-                  "type": "bytes"
-                }
-              ]
-            }
-          ],
-          "stateMutability": "nonpayable",
-          "type": "function",
-          "name": "closeLong",
-          "outputs": [
-            {
-              "internalType": "uint256",
-              "name": "",
-              "type": "uint256"
-            }
-          ]
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "uint256",
-              "name": "_maturityTime",
-              "type": "uint256"
-            },
-            {
-              "internalType": "uint256",
-              "name": "_bondAmount",
-              "type": "uint256"
-            },
-            {
-              "internalType": "uint256",
-              "name": "_minOutput",
-              "type": "uint256"
-            },
-            {
-              "internalType": "struct IHyperdrive.Options",
-              "name": "_options",
-              "type": "tuple",
-              "components": [
-                {
-                  "internalType": "address",
-                  "name": "destination",
-                  "type": "address"
-                },
-                {
-                  "internalType": "bool",
-                  "name": "asBase",
-                  "type": "bool"
-                },
-                {
-                  "internalType": "bytes",
-                  "name": "extraData",
-                  "type": "bytes"
-                }
-              ]
-            }
-          ],
-          "stateMutability": "nonpayable",
-          "type": "function",
-          "name": "closeShort",
-          "outputs": [
-            {
-              "internalType": "uint256",
-              "name": "",
-              "type": "uint256"
-            }
-          ]
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "struct IHyperdrive.Options",
-              "name": "_options",
-              "type": "tuple",
-              "components": [
-                {
-                  "internalType": "address",
-                  "name": "destination",
-                  "type": "address"
-                },
-                {
-                  "internalType": "bool",
-                  "name": "asBase",
-                  "type": "bool"
-                },
-                {
-                  "internalType": "bytes",
-                  "name": "extraData",
-                  "type": "bytes"
-                }
-              ]
-            }
-          ],
-          "stateMutability": "nonpayable",
-          "type": "function",
-          "name": "collectGovernanceFee",
-          "outputs": [
-            {
-              "internalType": "uint256",
-              "name": "proceeds",
-              "type": "uint256"
-            }
-          ]
-        },
-        {
-          "inputs": [],
-          "stateMutability": "view",
-          "type": "function",
-          "name": "dataProvider",
-          "outputs": [
-            {
-              "internalType": "address",
-              "name": "",
-              "type": "address"
-            }
-          ]
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "uint256",
-              "name": "_contribution",
-              "type": "uint256"
-            },
-            {
-              "internalType": "uint256",
-              "name": "_apr",
-              "type": "uint256"
-            },
-            {
-              "internalType": "struct IHyperdrive.Options",
-              "name": "_options",
-              "type": "tuple",
-              "components": [
-                {
-                  "internalType": "address",
-                  "name": "destination",
-                  "type": "address"
-                },
-                {
-                  "internalType": "bool",
-                  "name": "asBase",
-                  "type": "bool"
-                },
-                {
-                  "internalType": "bytes",
-                  "name": "extraData",
-                  "type": "bytes"
-                }
-              ]
-            }
-          ],
-          "stateMutability": "payable",
-          "type": "function",
-          "name": "initialize",
-          "outputs": [
-            {
-              "internalType": "uint256",
-              "name": "lpShares",
-              "type": "uint256"
-            }
-          ]
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "uint256",
-              "name": "_baseAmount",
-              "type": "uint256"
-            },
-            {
-              "internalType": "uint256",
-              "name": "_minOutput",
-              "type": "uint256"
-            },
-            {
-              "internalType": "uint256",
-              "name": "_minSharePrice",
-              "type": "uint256"
-            },
-            {
-              "internalType": "struct IHyperdrive.Options",
-              "name": "_options",
-              "type": "tuple",
-              "components": [
-                {
-                  "internalType": "address",
-                  "name": "destination",
-                  "type": "address"
-                },
-                {
-                  "internalType": "bool",
-                  "name": "asBase",
-                  "type": "bool"
-                },
-                {
-                  "internalType": "bytes",
-                  "name": "extraData",
-                  "type": "bytes"
-                }
-              ]
-            }
-          ],
-          "stateMutability": "payable",
-          "type": "function",
-          "name": "openLong",
-          "outputs": [
-            {
-              "internalType": "uint256",
-              "name": "maturityTime",
-              "type": "uint256"
-            },
-            {
-              "internalType": "uint256",
-              "name": "bondProceeds",
-              "type": "uint256"
-            }
-          ]
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "uint256",
-              "name": "_bondAmount",
-              "type": "uint256"
-            },
-            {
-              "internalType": "uint256",
-              "name": "_maxDeposit",
-              "type": "uint256"
-            },
-            {
-              "internalType": "uint256",
-              "name": "_minSharePrice",
-              "type": "uint256"
-            },
-            {
-              "internalType": "struct IHyperdrive.Options",
-              "name": "_options",
-              "type": "tuple",
-              "components": [
-                {
-                  "internalType": "address",
-                  "name": "destination",
-                  "type": "address"
-                },
-                {
-                  "internalType": "bool",
-                  "name": "asBase",
-                  "type": "bool"
-                },
-                {
-                  "internalType": "bytes",
-                  "name": "extraData",
-                  "type": "bytes"
-                }
-              ]
-            }
-          ],
-          "stateMutability": "payable",
-          "type": "function",
-          "name": "openShort",
-          "outputs": [
-            {
-              "internalType": "uint256",
-              "name": "maturityTime",
-              "type": "uint256"
-            },
-            {
-              "internalType": "uint256",
-              "name": "traderDeposit",
-              "type": "uint256"
-            }
-          ]
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "bool",
-              "name": "_status",
-              "type": "bool"
-            }
-          ],
-          "stateMutability": "nonpayable",
-          "type": "function",
-          "name": "pause"
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "address",
-              "name": "owner",
-              "type": "address"
-            },
-            {
-              "internalType": "address",
-              "name": "spender",
-              "type": "address"
-            },
-            {
-              "internalType": "bool",
-              "name": "_approved",
-              "type": "bool"
-            },
-            {
-              "internalType": "uint256",
-              "name": "deadline",
-              "type": "uint256"
-            },
-            {
-              "internalType": "uint8",
-              "name": "v",
-              "type": "uint8"
-            },
-            {
-              "internalType": "bytes32",
-              "name": "r",
-              "type": "bytes32"
-            },
-            {
-              "internalType": "bytes32",
-              "name": "s",
-              "type": "bytes32"
-            }
-          ],
-          "stateMutability": "nonpayable",
-          "type": "function",
-          "name": "permitForAll"
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "uint256",
-              "name": "_withdrawalShares",
-              "type": "uint256"
-            },
-            {
-              "internalType": "uint256",
-              "name": "_minOutputPerShare",
-              "type": "uint256"
-            },
-            {
-              "internalType": "struct IHyperdrive.Options",
-              "name": "_options",
-              "type": "tuple",
-              "components": [
-                {
-                  "internalType": "address",
-                  "name": "destination",
-                  "type": "address"
-                },
-                {
-                  "internalType": "bool",
-                  "name": "asBase",
-                  "type": "bool"
-                },
-                {
-                  "internalType": "bytes",
-                  "name": "extraData",
-                  "type": "bytes"
-                }
-              ]
-            }
-          ],
-          "stateMutability": "nonpayable",
-          "type": "function",
-          "name": "redeemWithdrawalShares",
-          "outputs": [
-            {
-              "internalType": "uint256",
-              "name": "proceeds",
-              "type": "uint256"
-            },
-            {
-              "internalType": "uint256",
-              "name": "withdrawalSharesRedeemed",
-              "type": "uint256"
-            }
-          ]
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "uint256",
-              "name": "_lpShares",
-              "type": "uint256"
-            },
-            {
-              "internalType": "uint256",
-              "name": "_minOutput",
-              "type": "uint256"
-            },
-            {
-              "internalType": "struct IHyperdrive.Options",
-              "name": "_options",
-              "type": "tuple",
-              "components": [
-                {
-                  "internalType": "address",
-                  "name": "destination",
-                  "type": "address"
-                },
-                {
-                  "internalType": "bool",
-                  "name": "asBase",
-                  "type": "bool"
-                },
-                {
-                  "internalType": "bytes",
-                  "name": "extraData",
-                  "type": "bytes"
-                }
-              ]
-            }
-          ],
-          "stateMutability": "nonpayable",
-          "type": "function",
-          "name": "removeLiquidity",
-          "outputs": [
-            {
-              "internalType": "uint256",
-              "name": "proceeds",
-              "type": "uint256"
-            },
-            {
-              "internalType": "uint256",
-              "name": "withdrawalShares",
-              "type": "uint256"
-            }
-          ]
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "uint256",
-              "name": "tokenID",
-              "type": "uint256"
-            },
-            {
-              "internalType": "address",
-              "name": "operator",
-              "type": "address"
-            },
-            {
-              "internalType": "uint256",
-              "name": "amount",
-              "type": "uint256"
-            }
-          ],
-          "stateMutability": "nonpayable",
-          "type": "function",
-          "name": "setApproval"
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "uint256",
-              "name": "tokenID",
-              "type": "uint256"
-            },
-            {
-              "internalType": "address",
-              "name": "operator",
-              "type": "address"
-            },
-            {
-              "internalType": "uint256",
-              "name": "amount",
-              "type": "uint256"
-            },
-            {
-              "internalType": "address",
-              "name": "caller",
-              "type": "address"
-            }
-          ],
-          "stateMutability": "nonpayable",
-          "type": "function",
-          "name": "setApprovalBridge"
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "address",
-              "name": "operator",
-              "type": "address"
-            },
-            {
-              "internalType": "bool",
-              "name": "approved",
-              "type": "bool"
-            }
-          ],
-          "stateMutability": "nonpayable",
-          "type": "function",
-          "name": "setApprovalForAll"
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "address",
-              "name": "_who",
-              "type": "address"
-            }
-          ],
-          "stateMutability": "nonpayable",
-          "type": "function",
-          "name": "setGovernance"
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "address",
-              "name": "who",
-              "type": "address"
-            },
-            {
-              "internalType": "bool",
-              "name": "status",
-              "type": "bool"
-            }
-          ],
-          "stateMutability": "nonpayable",
-          "type": "function",
-          "name": "setPauser"
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "uint256",
-              "name": "tokenID",
-              "type": "uint256"
-            },
-            {
-              "internalType": "address",
-              "name": "from",
-              "type": "address"
-            },
-            {
-              "internalType": "address",
-              "name": "to",
-              "type": "address"
-            },
-            {
-              "internalType": "uint256",
-              "name": "amount",
-              "type": "uint256"
-            }
-          ],
-          "stateMutability": "nonpayable",
-          "type": "function",
-          "name": "transferFrom"
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "uint256",
-              "name": "tokenID",
-              "type": "uint256"
-            },
-            {
-              "internalType": "address",
-              "name": "from",
-              "type": "address"
-            },
-            {
-              "internalType": "address",
-              "name": "to",
-              "type": "address"
-            },
-            {
-              "internalType": "uint256",
-              "name": "amount",
-              "type": "uint256"
-            },
-            {
-              "internalType": "address",
-              "name": "caller",
-              "type": "address"
-            }
-          ],
-          "stateMutability": "nonpayable",
-          "type": "function",
-          "name": "transferFromBridge"
         }
       ],
       "devdoc": {
         "kind": "dev",
-        "methods": {
-          "addLiquidity(uint256,uint256,uint256,(address,bool,bytes))": {
-            "params": {
-              "_contribution": "The amount to supply.",
-              "_maxApr": "The maximum APR at which the LP is willing to supply.",
-              "_minApr": "The minimum APR at which the LP is willing to supply.",
-              "_options": "The options that configure how the operation is settled."
-            },
-            "returns": {
-              "lpShares": "The number of LP tokens created"
-            }
-          },
-          "batchTransferFrom(address,address,uint256[],uint256[])": {
-            "params": {
-              "from": "the source account",
-              "ids": "The array of token ids of the asset to transfer",
-              "to": "the destination account",
-              "values": "The amount of each token to transfer"
-            }
-          },
-          "collectGovernanceFee((address,bool,bytes))": {
-            "params": {
-              "_options": "The options that configure how the fees are settled."
-            },
-            "returns": {
-              "proceeds": "The amount of base collected."
-            }
-          },
-          "initialize(uint256,uint256,(address,bool,bytes))": {
-            "params": {
-              "_apr": "The target APR.",
-              "_contribution": "The amount to supply.",
-              "_options": "The options that configure how the operation is settled."
-            },
-            "returns": {
-              "lpShares": "The initial number of LP shares created."
-            }
-          },
-          "pause(bool)": {
-            "params": {
-              "_status": "True to pause all deposits and false to unpause them."
-            }
-          },
-          "permitForAll(address,address,bool,uint256,uint8,bytes32,bytes32)": {
-            "details": "The signature for this function follows EIP 712 standard and should be generated with the      eth_signTypedData JSON RPC call instead of the eth_sign JSON RPC call. If using out of date      parity signing libraries the v component may need to be adjusted. Also it is very rare but possible      for v to be other values, those values are not supported.",
-            "params": {
-              "_approved": "a boolean of the approval status to set to",
-              "deadline": "the timestamp which the signature must be submitted by to be valid",
-              "owner": "the owner of the account which is having the new approval set",
-              "r": "The r component of the ECDSA signature",
-              "s": "The s component of the ECDSA signature",
-              "spender": "the address which will be allowed to spend owner's tokens",
-              "v": "Extra ECDSA data which allows public key recovery from signature assumed to be 27 or 28"
-            }
-          },
-          "redeemWithdrawalShares(uint256,uint256,(address,bool,bytes))": {
-            "params": {
-              "_minOutputPerShare": "The minimum amount of base the LP expects to        receive for each withdrawal share that is burned.",
-              "_options": "The options that configure how the operation is settled.",
-              "_withdrawalShares": "The withdrawal shares to redeem."
-            },
-            "returns": {
-              "proceeds": "The amount the LP received.",
-              "withdrawalSharesRedeemed": "The amount of withdrawal shares that were redeemed."
-            }
-          },
-          "removeLiquidity(uint256,uint256,(address,bool,bytes))": {
-            "params": {
-              "_lpShares": "The LP shares to burn.",
-              "_minOutput": "The minium amount of the base token to receive.Note - this        value is likely to be less than the amount LP shares are worth.        The remainder is in short and long withdraw shares which are hard        to game the value of.",
-              "_options": "The options that configure how the operation is settled."
-            },
-            "returns": {
-              "proceeds": "The amount the LP removing liquidity receives. The         LP receives a proportional amount of the pool's idle capital",
-              "withdrawalShares": "The base that the LP receives buys out some of         their LP shares, but it may not be sufficient to fully buy the         LP out. In this case, the LP receives withdrawal shares equal         in value to the present value they are owed. As idle capital         becomes available, the pool will buy back these shares."
-            }
-          },
-          "setApproval(uint256,address,uint256)": {
-            "params": {
-              "amount": "The max tokens the approved person can use, setting to uint256.max               will cause the value to never decrement [saving gas on transfer]",
-              "operator": "The address who will be able to use the tokens",
-              "tokenID": "The asset to approve the use of"
-            }
-          },
-          "setApprovalBridge(uint256,address,uint256,address)": {
-            "params": {
-              "amount": "The max tokens the approved person can use, setting to uint256.max               will cause the value to never decrement [saving gas on transfer]",
-              "caller": "The eth address which called the linking contract",
-              "operator": "The address who will be able to use the tokens",
-              "tokenID": "The asset to approve the use of"
-            }
-          },
-          "setApprovalForAll(address,bool)": {
-            "params": {
-              "approved": "True to approve, false to remove approval",
-              "operator": "The eth address which can access the caller's assets"
-            }
-          },
-          "setGovernance(address)": {
-            "params": {
-              "_who": "The new governance address."
-            }
-          },
-          "setPauser(address,bool)": {
-            "params": {
-              "status": "The new pauser status.",
-              "who": "The address to change."
-            }
-          },
-          "transferFrom(uint256,address,address,uint256)": {
-            "params": {
-              "amount": "The amount of token to move",
-              "from": "The address who's balance will be reduced",
-              "to": "The address who's balance will be increased",
-              "tokenID": "The token identifier"
-            }
-          },
-          "transferFromBridge(uint256,address,address,uint256,address)": {
-            "params": {
-              "amount": "The amount of token to move",
-              "caller": "The msg.sender from the bridge",
-              "from": "The address who's balance will be reduced",
-              "to": "The address who's balance will be increased",
-              "tokenID": "The token identifier"
-            }
-          }
-        },
+        "methods": {},
         "version": 1
       },
       "userdoc": {
         "kind": "user",
-        "methods": {
-          "addLiquidity(uint256,uint256,uint256,(address,bool,bytes))": {
-            "notice": "Allows LPs to supply liquidity for LP shares."
-          },
-          "batchTransferFrom(address,address,uint256[],uint256[])": {
-            "notice": "Transfers several assets from one account to another"
-          },
-          "collectGovernanceFee((address,bool,bytes))": {
-            "notice": "This function collects the governance fees accrued by the pool."
-          },
-          "initialize(uint256,uint256,(address,bool,bytes))": {
-            "notice": "Allows the first LP to initialize the market with a target APR."
-          },
-          "pause(bool)": {
-            "notice": "Allows an authorized address to pause this contract."
-          },
-          "permitForAll(address,address,bool,uint256,uint8,bytes32,bytes32)": {
-            "notice": "Allows a caller who is not the owner of an account to execute         the functionality of 'approve' for all assets with the owners signature."
-          },
-          "redeemWithdrawalShares(uint256,uint256,(address,bool,bytes))": {
-            "notice": "Redeems withdrawal shares by giving the LP a pro-rata amount of         the withdrawal pool's proceeds. This function redeems the         maximum amount of the specified withdrawal shares given the         amount of withdrawal shares ready to withdraw."
-          },
-          "removeLiquidity(uint256,uint256,(address,bool,bytes))": {
-            "notice": "Allows an LP to burn shares and withdraw from the pool."
-          },
-          "setApproval(uint256,address,uint256)": {
-            "notice": "Allows a user to set an approval for an individual asset with specific amount."
-          },
-          "setApprovalBridge(uint256,address,uint256,address)": {
-            "notice": "Allows the compatibility linking contract to forward calls to set asset approvals"
-          },
-          "setApprovalForAll(address,bool)": {
-            "notice": "Allows a user to approve an operator to use all of their assets"
-          },
-          "setGovernance(address)": {
-            "notice": "Allows governance to change governance."
-          },
-          "setPauser(address,bool)": {
-            "notice": "Allows governance to change the pauser status of an address."
-          },
-          "transferFrom(uint256,address,address,uint256)": {
-            "notice": "Transfers an amount of assets from the source to the destination"
-          },
-          "transferFromBridge(uint256,address,address,uint256,address)": {
-            "notice": "Permission-ed transfer for the bridge to access, only callable by         the ERC20 linking bridge"
-          }
-        },
+        "methods": {},
         "version": 1
       }
     },
     "settings": {
       "remappings": [
-        "@aave/=lib/aave-v3-core/contracts/",
         "aave-v3-core/=lib/aave-v3-core/",
         "create3-factory/=lib/yield-daddy/lib/create3-factory/",
         "ds-test/=lib/forge-std/lib/ds-test/src/",
-        "erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/",
         "forge-std/=lib/forge-std/src/",
-        "openzeppelin-contracts/=lib/openzeppelin-contracts/",
-        "openzeppelin/=lib/openzeppelin-contracts/contracts/",
         "solmate/=lib/solmate/src/",
         "yield-daddy/=lib/yield-daddy/"
       ],
@@ -2990,72 +978,32 @@ export const HyperdriveLP =
         "bytecodeHash": "ipfs"
       },
       "compilationTarget": {
-        "contracts/src/HyperdriveLP.sol": "HyperdriveLP"
+        "contracts/src/internal/HyperdriveLP.sol": "HyperdriveLP"
       },
       "libraries": {}
     },
     "sources": {
-      "contracts/src/DataProvider.sol": {
-        "keccak256": "0x4ab8d6b27ad40963fde6512935aa0163c00259a51477bcb15d85f222d84ed0a6",
-        "urls": [
-          "bzz-raw://3eaed8100e054b7b6d3dd34b80c72ab86669076d72e83daca1c6297441ac0e4b",
-          "dweb:/ipfs/QmPCr6XchfY4nbvVdvnuJzPJc434AV6HAnjQXnSgo9vNDt"
-        ],
-        "license": "Apache-2.0"
-      },
-      "contracts/src/HyperdriveBase.sol": {
-        "keccak256": "0xd8b673eb52f74ac18cd75bcc4a9a4ba56bb952eb31600d522b6046c25e8d4c32",
-        "urls": [
-          "bzz-raw://17a8b842f8538181e5a56fd3a904b7aa1bde2eb2c3d5e7fc55bbf5aea084ffbd",
-          "dweb:/ipfs/QmVFB1ysPMXo6DPRdc3bAfMpWY8VCPwS3xhxmUFDRY4Zgu"
-        ],
-        "license": "Apache-2.0"
-      },
-      "contracts/src/HyperdriveLP.sol": {
-        "keccak256": "0x8d7edd9add98082a7a8d269f99788237a0b244c8dca3556a367b764bc3c17c02",
-        "urls": [
-          "bzz-raw://abfe277c6982ed6344c8a2e4507e322d61fbbb76f62c673bdfbaa61495188669",
-          "dweb:/ipfs/QmRp1Fc2WkAxQjxLWBr4Y7RL5j2VAQpqWMZ8Zd7sAAE2FJ"
-        ],
-        "license": "Apache-2.0"
-      },
-      "contracts/src/HyperdriveStorage.sol": {
-        "keccak256": "0xf02f44333981dfbf6c500bf979aab8cd7aee9731d103a6aafc247e09b90b76bc",
-        "urls": [
-          "bzz-raw://6664cd66465073274f9c2c27fee39e1c64e8e21fff532e64cd3014800582b00a",
-          "dweb:/ipfs/QmSGH1ixAUMu81yYf3pMFHo4uJxw6XgfnkBupjUSoFcdNY"
-        ],
-        "license": "Apache-2.0"
-      },
-      "contracts/src/HyperdriveTWAP.sol": {
-        "keccak256": "0x76cba088948ab50bb4956377235b302b28ef7c9f6cc68bda73211d66df41e92b",
-        "urls": [
-          "bzz-raw://74e1b28c8cd08aa9adf3b3f31f0379c095299cd2b9de3d3595d7d55b0e0697cc",
-          "dweb:/ipfs/QmTTnkPF3jUmdfynnJK6kUBTYSBZFWJs69A9e9tPQzqiac"
-        ],
-        "license": "Apache-2.0"
-      },
-      "contracts/src/interfaces/IDataProvider.sol": {
-        "keccak256": "0xb5540e954a8d9311a4ddc94f1b1a893f419965c4059e5f64d3f966fa5d7bf843",
-        "urls": [
-          "bzz-raw://4322256d8ef1c32e16441b7be365169cbbfa72c6d952536ed0c2a4dab5befd15",
-          "dweb:/ipfs/QmT1Zx7tHjgW52qb1e5C9KTjTbZaoniFxuyvZb3cWedUu7"
-        ],
-        "license": "Apache-2.0"
-      },
       "contracts/src/interfaces/IERC20.sol": {
-        "keccak256": "0x4642a027efffb3aa6cdc85e31796fb3b1bc4fff4316e6390874e6f4add37b86c",
+        "keccak256": "0xfb57fe2ee4d8d1c6a8e2aa3b007da6f0e53d65388245b0b7d876234077ee95b4",
         "urls": [
-          "bzz-raw://3720a6c1c427dcfcbdeeec15cbdb682115e44e0a9136af7e0ad9e5af2ea40672",
-          "dweb:/ipfs/QmP4bmaHw8MfX9MQLhhgnVQ9U9BTQAR3e5cCCE9RcoeX7w"
+          "bzz-raw://e4303c41b9752b51c6eaa9b16aa11e5bffb34fc80c5c8761302539cd5922ae36",
+          "dweb:/ipfs/QmZjVYBikfgPDX47hmbGJpG6kvm3Gyt6nKkFbZH6r8U4cL"
         ],
-        "license": "MIT"
+        "license": "Apache-2.0"
       },
       "contracts/src/interfaces/IHyperdrive.sol": {
-        "keccak256": "0x5f4ebd8ae035c05b0a1f3f740dba21a1414306796082b814bcaa2e190ab845b7",
+        "keccak256": "0x833d56790728bfab7d35507b8584dc7ce607b26512a382e887483f61d528f6c5",
         "urls": [
-          "bzz-raw://1353dab25f7e01c7169f602b7d013ff90c77fe36d62d382e179649a10ae41e78",
-          "dweb:/ipfs/QmXQdQBcx6rKeVcoV5s7NG52DrqVvhBhgMNQwTxddAstE5"
+          "bzz-raw://3dd009d6ff5a89d1173f7330916e81a31ffd139bf6848b3f4400673652554a70",
+          "dweb:/ipfs/QmXkVovZSWqhRqrt8y9FFfHt1HWhnUuP9TMecQyd89yEQ3"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/interfaces/IHyperdriveCore.sol": {
+        "keccak256": "0x84c73d8c4b67da41635f57fce2f30b8f04fc826ff6fb54c605de23d376f3403d",
+        "urls": [
+          "bzz-raw://e6d636dff5c24916ae35a76695d741de2f14ee46876ea67c5393618bb7f9cf85",
+          "dweb:/ipfs/QmUwxh8JeAqSFA8Z2qabVx3YWRSz7PJ9V2TQgnfctAgqPF"
         ],
         "license": "Apache-2.0"
       },
@@ -3067,43 +1015,67 @@ export const HyperdriveLP =
         ],
         "license": "Apache-2.0"
       },
-      "contracts/src/interfaces/IHyperdriveWrite.sol": {
-        "keccak256": "0xd83e23e1894f3f4812d4812c5775c7a5267f3bfb80148b11f3ede3174ea936bc",
+      "contracts/src/interfaces/IMultiToken.sol": {
+        "keccak256": "0xcf3a4002275ea64e381f0a4aded3683e12960396ef79ba9dd153e2d1e395baad",
         "urls": [
-          "bzz-raw://ae5e91bb578ae9271426728ba69689ad659c6450853aa5ef0c52dd6d7c433206",
-          "dweb:/ipfs/QmR5VU1UmZ8BN3azCs3zmHkCqJHzDKTUnVecdPjNQr8vYt"
+          "bzz-raw://c9990491f7a5151fd696a45e6e5b0282a1dedf58521861dfb8c64db8cb60f5b6",
+          "dweb:/ipfs/QmaywmqqQhz7DeYqZdoeykagr5h4ZhQRv6GasHqvdWqzSy"
         ],
         "license": "Apache-2.0"
       },
-      "contracts/src/interfaces/IMultiToken.sol": {
-        "keccak256": "0xe3d64871148bdae5a714107b8b1a55f39cd4ede601436d2777a165d20d768a1a",
+      "contracts/src/interfaces/IMultiTokenCore.sol": {
+        "keccak256": "0xdb7f24663cff7307a468ef5e4c6f3e4d01ec0475157b3bbb3405890c3e9ab87d",
         "urls": [
-          "bzz-raw://9ebc0bfda35e9b7299c43f0efff38012b8074fcca867b781c0cedeede10cf3d0",
-          "dweb:/ipfs/QmbHRLezFhWavHakK5G26DB4ud5PueU6fNvZf3L3TwXnPb"
+          "bzz-raw://7f631a9a395fba5b07c3d9308fccac18d5aa59d890efe23442ed2a4da9871ae8",
+          "dweb:/ipfs/QmV2a4wiAPfWzSST3faYt58i2tqEyoqCLAJV8aNCdJyxVE"
         ],
         "license": "Apache-2.0"
       },
       "contracts/src/interfaces/IMultiTokenMetadata.sol": {
-        "keccak256": "0xcdc60ba02194150741a78cb0c52c306f5f577c5c814c63e98a13d46c02d2d9cc",
+        "keccak256": "0x476240ea4328bae9ab820b6f0f40afb11c74ee52d26bdbef69e4ece28dc10bdb",
         "urls": [
-          "bzz-raw://8f5866cb2c8c4342dba88c0e4d78296fef0e170b18b3613c796c29dc31a5ca87",
-          "dweb:/ipfs/QmZcoDTYhhYSB5ds3cNPJpdZTxrz6cF8M2vNVeuAcT8gw6"
+          "bzz-raw://843f73cb21eaec4e26952fd6cbde5e6815e3a28c438df9e026e249200d25076f",
+          "dweb:/ipfs/QmXzE7gsRKMaRGQfTDodA1RXxNxUuBj8RT7grTYjZUdbe6"
         ],
         "license": "Apache-2.0"
       },
       "contracts/src/interfaces/IMultiTokenRead.sol": {
-        "keccak256": "0x2e55fa961123a8bb7284c8388af9bd1302a7153441ffe641804ea79021bdca05",
+        "keccak256": "0x9b92d81f2f038fcd4bb5d069ab2b754efc153234c451d4ee4caa6d74aaca16b4",
         "urls": [
-          "bzz-raw://c7dc03bbab02976609dec59c201e5b57a2998d1c626cef58d7a9fa7c2b06b939",
-          "dweb:/ipfs/QmSifWr9cVWaUEmyKpGFcgpKCYdoBYgWtQBLgemtwo4a7x"
+          "bzz-raw://8686fddc99564c6b6524ea68a6b7ff081a9988fc795fc13197bb59ddaa2041c6",
+          "dweb:/ipfs/QmarJYJAgoH6Z4H1BmdPoRgqLubRu5S6NDXBNV2fDApPuW"
         ],
         "license": "Apache-2.0"
       },
-      "contracts/src/interfaces/IMultiTokenWrite.sol": {
-        "keccak256": "0xa5ba8812e06fb6d38e1872603c8b80321cfd2f96cecbe7b67b92cb33e93b3fc8",
+      "contracts/src/internal/HyperdriveBase.sol": {
+        "keccak256": "0x328a01b0720b9a6494a2d6be1113539d41da589a382525578d4241fc077e9646",
         "urls": [
-          "bzz-raw://73afa34919c7d457e925b4be83abb1b1ed2ed731a382ebffad95a3005c04bd5a",
-          "dweb:/ipfs/QmauMxmgtYTS7RJQw1mS7Pwe5FUMDPHE2N1MBhFUjk6HPe"
+          "bzz-raw://4b9d7b56fd8056ae9264da99f8e0764ef16f17dca179218cf9375cf3236ec9fc",
+          "dweb:/ipfs/Qmf11fXRipobZfMWTTxaScrYz9tZFUsdVxH5eZ4aLVQQC8"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/internal/HyperdriveLP.sol": {
+        "keccak256": "0x6779541f073ba5ce6e0656d10c7d9ef23734d2675b865b4d5310a023c30764ad",
+        "urls": [
+          "bzz-raw://5cc569f006ef38723c1cb893b4e08d22ca0a448dc559c8abd18b28bd6967fcb7",
+          "dweb:/ipfs/QmdPfZGuM8g3qp4CPsuztZe1wcVrytWkbqHQDbsTVEKBdF"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/internal/HyperdriveMultiToken.sol": {
+        "keccak256": "0x6b85590aeffa0a73aabf0c17a958bdec064a4d59c2e3d7595a8cb2d86fb01277",
+        "urls": [
+          "bzz-raw://d89ad612f8624723adab39bd85311389fe95f685cf496e1a5d116bfafd6588eb",
+          "dweb:/ipfs/QmPWVwrfo65BZofeWubpZsM93yzxMFjhPfoNYsaT31yn28"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/internal/HyperdriveStorage.sol": {
+        "keccak256": "0xda130fbf6651046517801d119593b7f81e7a2a824f82cb15b1852495fa7fb148",
+        "urls": [
+          "bzz-raw://c10ab3e768804fc8eee91502f34dd1e1d2d2e7d90d8ec0a26fac40d83ed940db",
+          "dweb:/ipfs/QmNMqyFM6xC49uRAMeY3MhoQ9yK2ZHdQLt3QxrsNK9Kfkw"
         ],
         "license": "Apache-2.0"
       },
@@ -3116,18 +1088,18 @@ export const HyperdriveLP =
         "license": "Apache-2.0"
       },
       "contracts/src/libraries/FixedPointMath.sol": {
-        "keccak256": "0x0108762fdecfae06d7b8d76bb52b1a5757669cc2a4e5f3ad701499295ed635bd",
+        "keccak256": "0xac200bd4172e6369dc6ad06bef96e3d4ce7df36a97e80ee8f1a033e622c99639",
         "urls": [
-          "bzz-raw://a94cdbab2bdbb0212597f70cebea86fcf69be0702f6d6fe76571ee43992d7d6b",
-          "dweb:/ipfs/QmXyncXgKixNzP7rgqoCA2dzehjPTAsEbtAKZGW6CQADFE"
+          "bzz-raw://0add90b8957805ae8e99581b76d81dec07bdf7586fdf2a05f31d2ce91f09439d",
+          "dweb:/ipfs/QmRRBbguna6QmMUvANobcSfH6HM3DydFjNXSWZZr1VDKH8"
         ],
         "license": "Apache-2.0"
       },
       "contracts/src/libraries/HyperdriveMath.sol": {
-        "keccak256": "0xa425f4064f7e95fc5da7763b26627ef0be68db76763bde67cd54cfda489a19ed",
+        "keccak256": "0xccfb106f6bd8829c369c19d08ef4f8ffc8ebbf5c51a9e148141733ff9bbc49f3",
         "urls": [
-          "bzz-raw://abc4b8f6f8c66a0d966b1dc366d689fc2844a60d866ed3f19cdd3852a0c274f6",
-          "dweb:/ipfs/QmUSo1URvRru11TYPMGSdQR6FDRZk7SPh8tcze3T6XL4gL"
+          "bzz-raw://d11ddba27aace6aefe451d75b4403ceb10f0a71cd61163e8f812728820107e62",
+          "dweb:/ipfs/QmdSZJtY5LaJVnHYRwKAofo6oiihqpazC22Q1X9aL9uNbx"
         ],
         "license": "Apache-2.0"
       },
@@ -3140,60 +1112,12 @@ export const HyperdriveLP =
         "license": "Apache-2.0"
       },
       "contracts/src/libraries/YieldSpaceMath.sol": {
-        "keccak256": "0xbd61fe3be6d0c8742f09a8174a5a2757e9070805b49d3fc7217f120b83c0ce0f",
+        "keccak256": "0x42a910bd6ee869fc53f18f2991cbf75a667d663ed41b4a11e18b328546ede7db",
         "urls": [
-          "bzz-raw://5b6524a56a3062a3d9b47c2ad2712f90643a84971cd155f8f00fd31ef7a432fe",
-          "dweb:/ipfs/QmXYtLBzjaVkh4WhTxTE1GEoqjcyidw1peyAenfAd5vPPr"
+          "bzz-raw://77345fdb9b99d0b04fa7cf719857eae63362e20db6b99da35ac886a13bf3b56a",
+          "dweb:/ipfs/QmXatm27fhzsApgrMq978mye2u8fk62D89pUgV4WsjQeyH"
         ],
         "license": "Apache-2.0"
-      },
-      "contracts/src/token/MultiToken.sol": {
-        "keccak256": "0x1c22e52ab701c2b7ce3c0b049540ecba5fc24cd8b8000464b5b15c99dfee6a19",
-        "urls": [
-          "bzz-raw://089273a3f853bdb205d34b70750eeca2edda7aaf999726ed9df0621d1e92bb98",
-          "dweb:/ipfs/QmPy3tUmJb7gtnL9ACiWhhekKXGo3z3cd4SMYiUQX4geHy"
-        ],
-        "license": "Apache-2.0"
-      },
-      "contracts/src/token/MultiTokenStorage.sol": {
-        "keccak256": "0x97a22d11197f185d6f17ff5ada60665b27af265c23b208f20004e22b26d7b7e8",
-        "urls": [
-          "bzz-raw://62f950f46f3de598776e8e8201a0d35ec51473cc0ea754be5c9e686078ebb3d6",
-          "dweb:/ipfs/QmaKpZETx9zCV46XwcqvXUr7f8t2CPo1Tim2umTDwsk2bj"
-        ],
-        "license": "Apache-2.0"
-      },
-      "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol": {
-        "keccak256": "0x00c839ff53d07d19db2e7cfa1e5133f9ee90a8d64b0e2e57f50446a2d1a3a0e0",
-        "urls": [
-          "bzz-raw://3dac621d015a68a5251b1e5d41dda0faf252699bf6e8bcf46a958b29964d9dd1",
-          "dweb:/ipfs/QmP9axjgZv4cezAhALoTemM62sdLtMDJ9MGTxECnNwHgSJ"
-        ],
-        "license": "MIT"
-      },
-      "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Permit.sol": {
-        "keccak256": "0x35e258421ae206f3db37281cea70871b4c3553914734aa76139a41af60ac1abb",
-        "urls": [
-          "bzz-raw://2ef94b6bc4ee356db612a1849c615f7dd4b15542d6c8584c86bb9243a7913cf0",
-          "dweb:/ipfs/QmaxFj5NFpAjjitZtHPNS9PPtCuBATaRz9ktDDRCQCQ83y"
-        ],
-        "license": "MIT"
-      },
-      "lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol": {
-        "keccak256": "0x8a63ea9ec07788740e51046ca14c61f411aedb901e89749c9d55fa56ed43086a",
-        "urls": [
-          "bzz-raw://3035ae3f172ed9e172e1ba4d83bdc70279f63be51ce9218c530132def66ff577",
-          "dweb:/ipfs/QmTQ3zfC3YUNeY3KUVFiHgTWDuxfmcEMgpGC6HMoTpgZJL"
-        ],
-        "license": "MIT"
-      },
-      "lib/openzeppelin-contracts/contracts/utils/Address.sol": {
-        "keccak256": "0xa6dfb97ce947b7c846b054ee7d45d12383359778f4f3743654ae0a34fa421b26",
-        "urls": [
-          "bzz-raw://b97e7e5a77ea47c08ba422291df887eba76c80982f52a6e94a30106e9377a94f",
-          "dweb:/ipfs/Qme7N2XRC7mcDxB8wZxNWPk6T8S2qsnmhAqXeUj4CNvsGD"
-        ],
-        "license": "MIT"
       },
       "lib/solmate/src/utils/ReentrancyGuard.sol": {
         "keccak256": "0xb282dd78aa7375d6b200b9a5d8dd214b2e5df1004f8217a4b4c2b07f0c5bfd01",
@@ -3207,44 +1131,41 @@ export const HyperdriveLP =
     "version": 1
   },
   "ast": {
-    "absolutePath": "contracts/src/HyperdriveLP.sol",
-    "id": 3079,
+    "absolutePath": "contracts/src/internal/HyperdriveLP.sol",
+    "id": 6968,
     "exportedSymbols": {
       "AssetId": [
-        8311
+        9781
       ],
       "FixedPointMath": [
-        9066
+        10533
       ],
       "HyperdriveBase": [
-        1465
+        5354
       ],
       "HyperdriveLP": [
-        3078
+        6967
       ],
       "HyperdriveMath": [
-        9918
+        11352
       ],
-      "HyperdriveTWAP": [
-        5300
+      "HyperdriveMultiToken": [
+        8158
       ],
       "IHyperdrive": [
-        7431
-      ],
-      "IHyperdriveWrite": [
-        7668
+        3759
       ],
       "SafeCast": [
-        9994
+        11428
       ]
     },
     "nodeType": "SourceUnit",
-    "src": "39:27329:4",
+    "src": "39:27647:35",
     "nodes": [
       {
-        "id": 1929,
+        "id": 5803,
         "nodeType": "PragmaDirective",
-        "src": "39:23:4",
+        "src": "39:23:35",
         "nodes": [],
         "literals": [
           "solidity",
@@ -3253,76 +1174,24 @@ export const HyperdriveLP =
         ]
       },
       {
-        "id": 1931,
+        "id": 5805,
         "nodeType": "ImportDirective",
-        "src": "64:54:4",
-        "nodes": [],
-        "absolutePath": "contracts/src/HyperdriveBase.sol",
-        "file": "./HyperdriveBase.sol",
-        "nameLocation": "-1:-1:-1",
-        "scope": 3079,
-        "sourceUnit": 1466,
-        "symbolAliases": [
-          {
-            "foreign": {
-              "id": 1930,
-              "name": "HyperdriveBase",
-              "nodeType": "Identifier",
-              "overloadedDeclarations": [],
-              "referencedDeclaration": 1465,
-              "src": "73:14:4",
-              "typeDescriptions": {}
-            },
-            "nameLocation": "-1:-1:-1"
-          }
-        ],
-        "unitAlias": ""
-      },
-      {
-        "id": 1933,
-        "nodeType": "ImportDirective",
-        "src": "119:54:4",
-        "nodes": [],
-        "absolutePath": "contracts/src/HyperdriveTWAP.sol",
-        "file": "./HyperdriveTWAP.sol",
-        "nameLocation": "-1:-1:-1",
-        "scope": 3079,
-        "sourceUnit": 5301,
-        "symbolAliases": [
-          {
-            "foreign": {
-              "id": 1932,
-              "name": "HyperdriveTWAP",
-              "nodeType": "Identifier",
-              "overloadedDeclarations": [],
-              "referencedDeclaration": 5300,
-              "src": "128:14:4",
-              "typeDescriptions": {}
-            },
-            "nameLocation": "-1:-1:-1"
-          }
-        ],
-        "unitAlias": ""
-      },
-      {
-        "id": 1935,
-        "nodeType": "ImportDirective",
-        "src": "174:59:4",
+        "src": "64:60:35",
         "nodes": [],
         "absolutePath": "contracts/src/interfaces/IHyperdrive.sol",
-        "file": "./interfaces/IHyperdrive.sol",
+        "file": "../interfaces/IHyperdrive.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 3079,
-        "sourceUnit": 7432,
+        "scope": 6968,
+        "sourceUnit": 3760,
         "symbolAliases": [
           {
             "foreign": {
-              "id": 1934,
+              "id": 5804,
               "name": "IHyperdrive",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "referencedDeclaration": 7431,
-              "src": "183:11:4",
+              "referencedDeclaration": 3759,
+              "src": "73:11:35",
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
@@ -3331,50 +1200,24 @@ export const HyperdriveLP =
         "unitAlias": ""
       },
       {
-        "id": 1937,
+        "id": 5807,
         "nodeType": "ImportDirective",
-        "src": "234:69:4",
-        "nodes": [],
-        "absolutePath": "contracts/src/interfaces/IHyperdriveWrite.sol",
-        "file": "./interfaces/IHyperdriveWrite.sol",
-        "nameLocation": "-1:-1:-1",
-        "scope": 3079,
-        "sourceUnit": 7669,
-        "symbolAliases": [
-          {
-            "foreign": {
-              "id": 1936,
-              "name": "IHyperdriveWrite",
-              "nodeType": "Identifier",
-              "overloadedDeclarations": [],
-              "referencedDeclaration": 7668,
-              "src": "243:16:4",
-              "typeDescriptions": {}
-            },
-            "nameLocation": "-1:-1:-1"
-          }
-        ],
-        "unitAlias": ""
-      },
-      {
-        "id": 1939,
-        "nodeType": "ImportDirective",
-        "src": "304:50:4",
+        "src": "125:51:35",
         "nodes": [],
         "absolutePath": "contracts/src/libraries/AssetId.sol",
-        "file": "./libraries/AssetId.sol",
+        "file": "../libraries/AssetId.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 3079,
-        "sourceUnit": 8312,
+        "scope": 6968,
+        "sourceUnit": 9782,
         "symbolAliases": [
           {
             "foreign": {
-              "id": 1938,
+              "id": 5806,
               "name": "AssetId",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "referencedDeclaration": 8311,
-              "src": "313:7:4",
+              "referencedDeclaration": 9781,
+              "src": "134:7:35",
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
@@ -3383,24 +1226,24 @@ export const HyperdriveLP =
         "unitAlias": ""
       },
       {
-        "id": 1941,
+        "id": 5809,
         "nodeType": "ImportDirective",
-        "src": "355:64:4",
+        "src": "177:65:35",
         "nodes": [],
         "absolutePath": "contracts/src/libraries/FixedPointMath.sol",
-        "file": "./libraries/FixedPointMath.sol",
+        "file": "../libraries/FixedPointMath.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 3079,
-        "sourceUnit": 9067,
+        "scope": 6968,
+        "sourceUnit": 10534,
         "symbolAliases": [
           {
             "foreign": {
-              "id": 1940,
+              "id": 5808,
               "name": "FixedPointMath",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "referencedDeclaration": 9066,
-              "src": "364:14:4",
+              "referencedDeclaration": 10533,
+              "src": "186:14:35",
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
@@ -3409,24 +1252,24 @@ export const HyperdriveLP =
         "unitAlias": ""
       },
       {
-        "id": 1943,
+        "id": 5811,
         "nodeType": "ImportDirective",
-        "src": "420:64:4",
+        "src": "243:65:35",
         "nodes": [],
         "absolutePath": "contracts/src/libraries/HyperdriveMath.sol",
-        "file": "./libraries/HyperdriveMath.sol",
+        "file": "../libraries/HyperdriveMath.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 3079,
-        "sourceUnit": 9919,
+        "scope": 6968,
+        "sourceUnit": 11353,
         "symbolAliases": [
           {
             "foreign": {
-              "id": 1942,
+              "id": 5810,
               "name": "HyperdriveMath",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "referencedDeclaration": 9918,
-              "src": "429:14:4",
+              "referencedDeclaration": 11352,
+              "src": "252:14:35",
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
@@ -3435,24 +1278,24 @@ export const HyperdriveLP =
         "unitAlias": ""
       },
       {
-        "id": 1945,
+        "id": 5813,
         "nodeType": "ImportDirective",
-        "src": "485:52:4",
+        "src": "309:53:35",
         "nodes": [],
         "absolutePath": "contracts/src/libraries/SafeCast.sol",
-        "file": "./libraries/SafeCast.sol",
+        "file": "../libraries/SafeCast.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 3079,
-        "sourceUnit": 9995,
+        "scope": 6968,
+        "sourceUnit": 11429,
         "symbolAliases": [
           {
             "foreign": {
-              "id": 1944,
+              "id": 5812,
               "name": "SafeCast",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "referencedDeclaration": 9994,
-              "src": "494:8:4",
+              "referencedDeclaration": 11428,
+              "src": "318:8:35",
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
@@ -3461,31 +1304,83 @@ export const HyperdriveLP =
         "unitAlias": ""
       },
       {
-        "id": 3078,
+        "id": 5815,
+        "nodeType": "ImportDirective",
+        "src": "363:54:35",
+        "nodes": [],
+        "absolutePath": "contracts/src/internal/HyperdriveBase.sol",
+        "file": "./HyperdriveBase.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 6968,
+        "sourceUnit": 5355,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 5814,
+              "name": "HyperdriveBase",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 5354,
+              "src": "372:14:35",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 5817,
+        "nodeType": "ImportDirective",
+        "src": "418:66:35",
+        "nodes": [],
+        "absolutePath": "contracts/src/internal/HyperdriveMultiToken.sol",
+        "file": "./HyperdriveMultiToken.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 6968,
+        "sourceUnit": 8159,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 5816,
+              "name": "HyperdriveMultiToken",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 8158,
+              "src": "427:20:35",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 6967,
         "nodeType": "ContractDefinition",
-        "src": "861:26506:4",
+        "src": "808:26877:35",
         "nodes": [
           {
-            "id": 1953,
+            "id": 5825,
             "nodeType": "UsingForDirective",
-            "src": "934:33:4",
+            "src": "885:33:35",
             "nodes": [],
             "global": false,
             "libraryName": {
-              "id": 1951,
+              "id": 5823,
               "name": "FixedPointMath",
               "nameLocations": [
-                "940:14:4"
+                "891:14:35"
               ],
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 9066,
-              "src": "940:14:4"
+              "referencedDeclaration": 10533,
+              "src": "891:14:35"
             },
             "typeName": {
-              "id": 1952,
+              "id": 5824,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "959:7:4",
+              "src": "910:7:35",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -3493,26 +1388,26 @@ export const HyperdriveLP =
             }
           },
           {
-            "id": 1956,
+            "id": 5828,
             "nodeType": "UsingForDirective",
-            "src": "972:26:4",
+            "src": "923:26:35",
             "nodes": [],
             "global": false,
             "libraryName": {
-              "id": 1954,
+              "id": 5826,
               "name": "SafeCast",
               "nameLocations": [
-                "978:8:4"
+                "929:8:35"
               ],
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 9994,
-              "src": "978:8:4"
+              "referencedDeclaration": 11428,
+              "src": "929:8:35"
             },
             "typeName": {
-              "id": 1955,
+              "id": 5827,
               "name": "int256",
               "nodeType": "ElementaryTypeName",
-              "src": "991:6:4",
+              "src": "942:6:35",
               "typeDescriptions": {
                 "typeIdentifier": "t_int256",
                 "typeString": "int256"
@@ -3520,26 +1415,26 @@ export const HyperdriveLP =
             }
           },
           {
-            "id": 1959,
+            "id": 5831,
             "nodeType": "UsingForDirective",
-            "src": "1003:27:4",
+            "src": "954:27:35",
             "nodes": [],
             "global": false,
             "libraryName": {
-              "id": 1957,
+              "id": 5829,
               "name": "SafeCast",
               "nameLocations": [
-                "1009:8:4"
+                "960:8:35"
               ],
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 9994,
-              "src": "1009:8:4"
+              "referencedDeclaration": 11428,
+              "src": "960:8:35"
             },
             "typeName": {
-              "id": 1958,
+              "id": 5830,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "1022:7:4",
+              "src": "973:7:35",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -3547,14 +1442,14 @@ export const HyperdriveLP =
             }
           },
           {
-            "id": 2088,
+            "id": 5960,
             "nodeType": "FunctionDefinition",
-            "src": "1350:3453:4",
+            "src": "1298:3446:35",
             "nodes": [],
             "body": {
-              "id": 2087,
+              "id": 5959,
               "nodeType": "Block",
-              "src": "1533:3270:4",
+              "src": "1474:3270:35",
               "nodes": [],
               "statements": [
                 {
@@ -3562,18 +1457,18 @@ export const HyperdriveLP =
                     "arguments": [],
                     "expression": {
                       "argumentTypes": [],
-                      "id": 1974,
+                      "id": 5846,
                       "name": "_checkMessageValue",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 777,
-                      "src": "1610:18:4",
+                      "referencedDeclaration": 4686,
+                      "src": "1551:18:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_view$__$returns$__$",
                         "typeString": "function () view"
                       }
                     },
-                    "id": 1975,
+                    "id": 5847,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3582,53 +1477,53 @@ export const HyperdriveLP =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1610:20:4",
+                    "src": "1551:20:35",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 1976,
+                  "id": 5848,
                   "nodeType": "ExpressionStatement",
-                  "src": "1610:20:4"
+                  "src": "1551:20:35"
                 },
                 {
                   "condition": {
                     "expression": {
-                      "id": 1977,
+                      "id": 5849,
                       "name": "_marketState",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 4833,
-                      "src": "1706:12:4",
+                      "referencedDeclaration": 9249,
+                      "src": "1647:12:35",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_MarketState_$7175_storage",
+                        "typeIdentifier": "t_struct$_MarketState_$3492_storage",
                         "typeString": "struct IHyperdrive.MarketState storage ref"
                       }
                     },
-                    "id": 1978,
+                    "id": 5850,
                     "isConstant": false,
                     "isLValue": true,
                     "isPure": false,
                     "lValueRequested": false,
-                    "memberLocation": "1719:13:4",
+                    "memberLocation": "1660:13:35",
                     "memberName": "isInitialized",
                     "nodeType": "MemberAccess",
-                    "referencedDeclaration": 7171,
-                    "src": "1706:26:4",
+                    "referencedDeclaration": 3488,
+                    "src": "1647:26:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 1985,
+                  "id": 5857,
                   "nodeType": "IfStatement",
-                  "src": "1702:100:4",
+                  "src": "1643:100:35",
                   "trueBody": {
-                    "id": 1984,
+                    "id": 5856,
                     "nodeType": "Block",
-                    "src": "1734:68:4",
+                    "src": "1675:68:35",
                     "statements": [
                       {
                         "errorCall": {
@@ -3636,33 +1531,33 @@ export const HyperdriveLP =
                           "expression": {
                             "argumentTypes": [],
                             "expression": {
-                              "id": 1979,
+                              "id": 5851,
                               "name": "IHyperdrive",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 7431,
-                              "src": "1755:11:4",
+                              "referencedDeclaration": 3759,
+                              "src": "1696:11:35",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$7431_$",
+                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$3759_$",
                                 "typeString": "type(contract IHyperdrive)"
                               }
                             },
-                            "id": 1981,
+                            "id": 5853,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
-                            "memberLocation": "1767:22:4",
+                            "memberLocation": "1708:22:35",
                             "memberName": "PoolAlreadyInitialized",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 7340,
-                            "src": "1755:34:4",
+                            "referencedDeclaration": 3653,
+                            "src": "1696:34:35",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_error_pure$__$returns$__$",
                               "typeString": "function () pure"
                             }
                           },
-                          "id": 1982,
+                          "id": 5854,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -3671,35 +1566,35 @@ export const HyperdriveLP =
                           "nameLocations": [],
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "1755:36:4",
+                          "src": "1696:36:35",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_tuple$__$",
                             "typeString": "tuple()"
                           }
                         },
-                        "id": 1983,
+                        "id": 5855,
                         "nodeType": "RevertStatement",
-                        "src": "1748:43:4"
+                        "src": "1689:43:35"
                       }
                     ]
                   }
                 },
                 {
                   "assignments": [
-                    1987,
-                    1989
+                    5859,
+                    5861
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 1987,
+                      "id": 5859,
                       "mutability": "mutable",
                       "name": "vaultShares",
-                      "nameLocation": "1938:11:4",
+                      "nameLocation": "1879:11:35",
                       "nodeType": "VariableDeclaration",
-                      "scope": 2087,
-                      "src": "1930:19:4",
+                      "scope": 5959,
+                      "src": "1871:19:35",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -3707,10 +1602,10 @@ export const HyperdriveLP =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 1986,
+                        "id": 5858,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "1930:7:4",
+                        "src": "1871:7:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -3720,13 +1615,13 @@ export const HyperdriveLP =
                     },
                     {
                       "constant": false,
-                      "id": 1989,
+                      "id": 5861,
                       "mutability": "mutable",
                       "name": "sharePrice",
-                      "nameLocation": "1959:10:4",
+                      "nameLocation": "1900:10:35",
                       "nodeType": "VariableDeclaration",
-                      "scope": 2087,
-                      "src": "1951:18:4",
+                      "scope": 5959,
+                      "src": "1892:18:35",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -3734,10 +1629,10 @@ export const HyperdriveLP =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 1988,
+                        "id": 5860,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "1951:7:4",
+                        "src": "1892:7:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -3746,30 +1641,30 @@ export const HyperdriveLP =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 1994,
+                  "id": 5866,
                   "initialValue": {
                     "arguments": [
                       {
-                        "id": 1991,
+                        "id": 5863,
                         "name": "_contribution",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1962,
-                        "src": "1995:13:4",
+                        "referencedDeclaration": 5834,
+                        "src": "1936:13:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 1992,
+                        "id": 5864,
                         "name": "_options",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1967,
-                        "src": "2022:8:4",
+                        "referencedDeclaration": 5839,
+                        "src": "1963:8:35",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Options_$7295_calldata_ptr",
+                          "typeIdentifier": "t_struct$_Options_$3608_calldata_ptr",
                           "typeString": "struct IHyperdrive.Options calldata"
                         }
                       }
@@ -3781,22 +1676,22 @@ export const HyperdriveLP =
                           "typeString": "uint256"
                         },
                         {
-                          "typeIdentifier": "t_struct$_Options_$7295_calldata_ptr",
+                          "typeIdentifier": "t_struct$_Options_$3608_calldata_ptr",
                           "typeString": "struct IHyperdrive.Options calldata"
                         }
                       ],
-                      "id": 1990,
+                      "id": 5862,
                       "name": "_deposit",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 790,
-                      "src": "1973:8:4",
+                      "referencedDeclaration": 4699,
+                      "src": "1914:8:35",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_struct$_Options_$7295_calldata_ptr_$returns$_t_uint256_$_t_uint256_$",
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_struct$_Options_$3608_calldata_ptr_$returns$_t_uint256_$_t_uint256_$",
                         "typeString": "function (uint256,struct IHyperdrive.Options calldata) returns (uint256,uint256)"
                       }
                     },
-                    "id": 1993,
+                    "id": 5865,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3805,7 +1700,7 @@ export const HyperdriveLP =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1973:67:4",
+                    "src": "1914:67:35",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$_t_uint256_$_t_uint256_$",
@@ -3813,7 +1708,7 @@ export const HyperdriveLP =
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "1929:111:4"
+                  "src": "1870:111:35"
                 },
                 {
                   "condition": {
@@ -3821,18 +1716,18 @@ export const HyperdriveLP =
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 1999,
+                    "id": 5871,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 1995,
+                      "id": 5867,
                       "name": "vaultShares",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1987,
-                      "src": "2951:11:4",
+                      "referencedDeclaration": 5859,
+                      "src": "2892:11:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -3845,21 +1740,21 @@ export const HyperdriveLP =
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       },
-                      "id": 1998,
+                      "id": 5870,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
                         "hexValue": "32",
-                        "id": 1996,
+                        "id": 5868,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "2965:1:4",
+                        "src": "2906:1:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_rational_2_by_1",
                           "typeString": "int_const 2"
@@ -3869,36 +1764,36 @@ export const HyperdriveLP =
                       "nodeType": "BinaryOperation",
                       "operator": "*",
                       "rightExpression": {
-                        "id": 1997,
+                        "id": 5869,
                         "name": "_minimumShareReserves",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4826,
-                        "src": "2969:21:4",
+                        "referencedDeclaration": 9239,
+                        "src": "2910:21:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
-                      "src": "2965:25:4",
+                      "src": "2906:25:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "2951:39:4",
+                    "src": "2892:39:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 2006,
+                  "id": 5878,
                   "nodeType": "IfStatement",
-                  "src": "2947:115:4",
+                  "src": "2888:115:35",
                   "trueBody": {
-                    "id": 2005,
+                    "id": 5877,
                     "nodeType": "Block",
-                    "src": "2992:70:4",
+                    "src": "2933:70:35",
                     "statements": [
                       {
                         "errorCall": {
@@ -3906,33 +1801,33 @@ export const HyperdriveLP =
                           "expression": {
                             "argumentTypes": [],
                             "expression": {
-                              "id": 2000,
+                              "id": 5872,
                               "name": "IHyperdrive",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 7431,
-                              "src": "3013:11:4",
+                              "referencedDeclaration": 3759,
+                              "src": "2954:11:35",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$7431_$",
+                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$3759_$",
                                 "typeString": "type(contract IHyperdrive)"
                               }
                             },
-                            "id": 2002,
+                            "id": 5874,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
-                            "memberLocation": "3025:24:4",
+                            "memberLocation": "2966:24:35",
                             "memberName": "BelowMinimumContribution",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 7302,
-                            "src": "3013:36:4",
+                            "referencedDeclaration": 3615,
+                            "src": "2954:36:35",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_error_pure$__$returns$__$",
                               "typeString": "function () pure"
                             }
                           },
-                          "id": 2003,
+                          "id": 5875,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -3941,34 +1836,34 @@ export const HyperdriveLP =
                           "nameLocations": [],
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "3013:38:4",
+                          "src": "2954:38:35",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_tuple$__$",
                             "typeString": "tuple()"
                           }
                         },
-                        "id": 2004,
+                        "id": 5876,
                         "nodeType": "RevertStatement",
-                        "src": "3006:45:4"
+                        "src": "2947:45:35"
                       }
                     ]
                   }
                 },
                 {
                   "expression": {
-                    "id": 2013,
+                    "id": 5885,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 2007,
+                      "id": 5879,
                       "name": "lpShares",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1972,
-                      "src": "3071:8:4",
+                      "referencedDeclaration": 5844,
+                      "src": "3012:8:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -3981,18 +1876,18 @@ export const HyperdriveLP =
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       },
-                      "id": 2012,
+                      "id": 5884,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
-                        "id": 2008,
+                        "id": 5880,
                         "name": "vaultShares",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1987,
-                        "src": "3082:11:4",
+                        "referencedDeclaration": 5859,
+                        "src": "3023:11:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -4005,21 +1900,21 @@ export const HyperdriveLP =
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 2011,
+                        "id": 5883,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
                           "hexValue": "32",
-                          "id": 2009,
+                          "id": 5881,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "3096:1:4",
+                          "src": "3037:1:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_2_by_1",
                             "typeString": "int_const 2"
@@ -4029,69 +1924,69 @@ export const HyperdriveLP =
                         "nodeType": "BinaryOperation",
                         "operator": "*",
                         "rightExpression": {
-                          "id": 2010,
+                          "id": 5882,
                           "name": "_minimumShareReserves",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 4826,
-                          "src": "3100:21:4",
+                          "referencedDeclaration": 9239,
+                          "src": "3041:21:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "src": "3096:25:4",
+                        "src": "3037:25:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
-                      "src": "3082:39:4",
+                      "src": "3023:39:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "3071:50:4",
+                    "src": "3012:50:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 2014,
+                  "id": 5886,
                   "nodeType": "ExpressionStatement",
-                  "src": "3071:50:4"
+                  "src": "3012:50:35"
                 },
                 {
                   "expression": {
-                    "id": 2019,
+                    "id": 5891,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "expression": {
-                        "id": 2015,
+                        "id": 5887,
                         "name": "_marketState",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4833,
-                        "src": "3178:12:4",
+                        "referencedDeclaration": 9249,
+                        "src": "3119:12:35",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_MarketState_$7175_storage",
+                          "typeIdentifier": "t_struct$_MarketState_$3492_storage",
                           "typeString": "struct IHyperdrive.MarketState storage ref"
                         }
                       },
-                      "id": 2017,
+                      "id": 5889,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
-                      "memberLocation": "3191:13:4",
+                      "memberLocation": "3132:13:35",
                       "memberName": "isInitialized",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 7171,
-                      "src": "3178:26:4",
+                      "referencedDeclaration": 3488,
+                      "src": "3119:26:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
@@ -4101,60 +1996,60 @@ export const HyperdriveLP =
                     "operator": "=",
                     "rightHandSide": {
                       "hexValue": "74727565",
-                      "id": 2018,
+                      "id": 5890,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "bool",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "3207:4:4",
+                      "src": "3148:4:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
                       },
                       "value": "true"
                     },
-                    "src": "3178:33:4",
+                    "src": "3119:33:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 2020,
+                  "id": 5892,
                   "nodeType": "ExpressionStatement",
-                  "src": "3178:33:4"
+                  "src": "3119:33:35"
                 },
                 {
                   "expression": {
-                    "id": 2027,
+                    "id": 5899,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "expression": {
-                        "id": 2021,
+                        "id": 5893,
                         "name": "_marketState",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4833,
-                        "src": "3351:12:4",
+                        "referencedDeclaration": 9249,
+                        "src": "3292:12:35",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_MarketState_$7175_storage",
+                          "typeIdentifier": "t_struct$_MarketState_$3492_storage",
                           "typeString": "struct IHyperdrive.MarketState storage ref"
                         }
                       },
-                      "id": 2023,
+                      "id": 5895,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
-                      "memberLocation": "3364:13:4",
+                      "memberLocation": "3305:13:35",
                       "memberName": "shareReserves",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 7147,
-                      "src": "3351:26:4",
+                      "referencedDeclaration": 3464,
+                      "src": "3292:26:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint128",
                         "typeString": "uint128"
@@ -4167,33 +2062,33 @@ export const HyperdriveLP =
                       "expression": {
                         "argumentTypes": [],
                         "expression": {
-                          "id": 2024,
+                          "id": 5896,
                           "name": "vaultShares",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1987,
-                          "src": "3380:11:4",
+                          "referencedDeclaration": 5859,
+                          "src": "3321:11:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 2025,
+                        "id": 5897,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "3392:9:4",
+                        "memberLocation": "3333:9:35",
                         "memberName": "toUint128",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 9953,
-                        "src": "3380:21:4",
+                        "referencedDeclaration": 11387,
+                        "src": "3321:21:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_uint256_$returns$_t_uint128_$attached_to$_t_uint256_$",
                           "typeString": "function (uint256) pure returns (uint128)"
                         }
                       },
-                      "id": 2026,
+                      "id": 5898,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -4202,53 +2097,53 @@ export const HyperdriveLP =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "3380:23:4",
+                      "src": "3321:23:35",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint128",
                         "typeString": "uint128"
                       }
                     },
-                    "src": "3351:52:4",
+                    "src": "3292:52:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint128",
                       "typeString": "uint128"
                     }
                   },
-                  "id": 2028,
+                  "id": 5900,
                   "nodeType": "ExpressionStatement",
-                  "src": "3351:52:4"
+                  "src": "3292:52:35"
                 },
                 {
                   "expression": {
-                    "id": 2042,
+                    "id": 5914,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "expression": {
-                        "id": 2029,
+                        "id": 5901,
                         "name": "_marketState",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4833,
-                        "src": "3413:12:4",
+                        "referencedDeclaration": 9249,
+                        "src": "3354:12:35",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_MarketState_$7175_storage",
+                          "typeIdentifier": "t_struct$_MarketState_$3492_storage",
                           "typeString": "struct IHyperdrive.MarketState storage ref"
                         }
                       },
-                      "id": 2031,
+                      "id": 5903,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
-                      "memberLocation": "3426:12:4",
+                      "memberLocation": "3367:12:35",
                       "memberName": "bondReserves",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 7150,
-                      "src": "3413:25:4",
+                      "referencedDeclaration": 3467,
+                      "src": "3354:25:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint128",
                         "typeString": "uint128"
@@ -4263,60 +2158,60 @@ export const HyperdriveLP =
                         "expression": {
                           "arguments": [
                             {
-                              "id": 2034,
+                              "id": 5906,
                               "name": "vaultShares",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 1987,
-                              "src": "3515:11:4",
+                              "referencedDeclaration": 5859,
+                              "src": "3456:11:35",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               }
                             },
                             {
-                              "id": 2035,
+                              "id": 5907,
                               "name": "_initialSharePrice",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 4823,
-                              "src": "3544:18:4",
+                              "referencedDeclaration": 9236,
+                              "src": "3485:18:35",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               }
                             },
                             {
-                              "id": 2036,
+                              "id": 5908,
                               "name": "_apr",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 1964,
-                              "src": "3580:4:4",
+                              "referencedDeclaration": 5836,
+                              "src": "3521:4:35",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               }
                             },
                             {
-                              "id": 2037,
+                              "id": 5909,
                               "name": "_positionDuration",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 4817,
-                              "src": "3602:17:4",
+                              "referencedDeclaration": 9221,
+                              "src": "3543:17:35",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               }
                             },
                             {
-                              "id": 2038,
+                              "id": 5910,
                               "name": "_timeStretch",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 4820,
-                              "src": "3637:12:4",
+                              "referencedDeclaration": 9224,
+                              "src": "3578:12:35",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
@@ -4347,33 +2242,33 @@ export const HyperdriveLP =
                               }
                             ],
                             "expression": {
-                              "id": 2032,
+                              "id": 5904,
                               "name": "HyperdriveMath",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 9918,
-                              "src": "3441:14:4",
+                              "referencedDeclaration": 11352,
+                              "src": "3382:14:35",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$9918_$",
+                                "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$11352_$",
                                 "typeString": "type(library HyperdriveMath)"
                               }
                             },
-                            "id": 2033,
+                            "id": 5905,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
-                            "memberLocation": "3469:28:4",
+                            "memberLocation": "3410:28:35",
                             "memberName": "calculateInitialBondReserves",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 9195,
-                            "src": "3441:56:4",
+                            "referencedDeclaration": 10662,
+                            "src": "3382:56:35",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
                               "typeString": "function (uint256,uint256,uint256,uint256,uint256) pure returns (uint256)"
                             }
                           },
-                          "id": 2039,
+                          "id": 5911,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -4382,29 +2277,29 @@ export const HyperdriveLP =
                           "nameLocations": [],
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "3441:222:4",
+                          "src": "3382:222:35",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 2040,
+                        "id": 5912,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "3677:9:4",
+                        "memberLocation": "3618:9:35",
                         "memberName": "toUint128",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 9953,
-                        "src": "3441:245:4",
+                        "referencedDeclaration": 11387,
+                        "src": "3382:245:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_uint256_$returns$_t_uint128_$attached_to$_t_uint256_$",
                           "typeString": "function (uint256) pure returns (uint128)"
                         }
                       },
-                      "id": 2041,
+                      "id": 5913,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -4413,49 +2308,49 @@ export const HyperdriveLP =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "3441:247:4",
+                      "src": "3382:247:35",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint128",
                         "typeString": "uint128"
                       }
                     },
-                    "src": "3413:275:4",
+                    "src": "3354:275:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint128",
                       "typeString": "uint128"
                     }
                   },
-                  "id": 2043,
+                  "id": 5915,
                   "nodeType": "ExpressionStatement",
-                  "src": "3413:275:4"
+                  "src": "3354:275:35"
                 },
                 {
                   "expression": {
                     "arguments": [
                       {
                         "expression": {
-                          "id": 2045,
+                          "id": 5917,
                           "name": "AssetId",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8311,
-                          "src": "4199:7:4",
+                          "referencedDeclaration": 9781,
+                          "src": "4140:7:35",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_AssetId_$8311_$",
+                            "typeIdentifier": "t_type$_t_contract$_AssetId_$9781_$",
                             "typeString": "type(library AssetId)"
                           }
                         },
-                        "id": 2046,
+                        "id": 5918,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "lValueRequested": false,
-                        "memberLocation": "4207:12:4",
+                        "memberLocation": "4148:12:35",
                         "memberName": "_LP_ASSET_ID",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 8003,
-                        "src": "4199:20:4",
+                        "referencedDeclaration": 9473,
+                        "src": "4140:20:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -4465,14 +2360,14 @@ export const HyperdriveLP =
                         "arguments": [
                           {
                             "hexValue": "30",
-                            "id": 2049,
+                            "id": 5921,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "kind": "number",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "4229:1:4",
+                            "src": "4170:1:35",
                             "typeDescriptions": {
                               "typeIdentifier": "t_rational_0_by_1",
                               "typeString": "int_const 0"
@@ -4487,26 +2382,26 @@ export const HyperdriveLP =
                               "typeString": "int_const 0"
                             }
                           ],
-                          "id": 2048,
+                          "id": 5920,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "lValueRequested": false,
                           "nodeType": "ElementaryTypeNameExpression",
-                          "src": "4221:7:4",
+                          "src": "4162:7:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_type$_t_address_$",
                             "typeString": "type(address)"
                           },
                           "typeName": {
-                            "id": 2047,
+                            "id": 5919,
                             "name": "address",
                             "nodeType": "ElementaryTypeName",
-                            "src": "4221:7:4",
+                            "src": "4162:7:35",
                             "typeDescriptions": {}
                           }
                         },
-                        "id": 2050,
+                        "id": 5922,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -4515,7 +2410,7 @@ export const HyperdriveLP =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "4221:10:4",
+                        "src": "4162:10:35",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -4523,12 +2418,12 @@ export const HyperdriveLP =
                         }
                       },
                       {
-                        "id": 2051,
+                        "id": 5923,
                         "name": "_minimumShareReserves",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4826,
-                        "src": "4233:21:4",
+                        "referencedDeclaration": 9239,
+                        "src": "4174:21:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -4550,18 +2445,18 @@ export const HyperdriveLP =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 2044,
+                      "id": 5916,
                       "name": "_mint",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 12051,
-                      "src": "4193:5:4",
+                      "referencedDeclaration": 8072,
+                      "src": "4134:5:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_address_$_t_uint256_$returns$__$",
                         "typeString": "function (uint256,address,uint256)"
                       }
                     },
-                    "id": 2052,
+                    "id": 5924,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -4570,43 +2465,43 @@ export const HyperdriveLP =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "4193:62:4",
+                    "src": "4134:62:35",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2053,
+                  "id": 5925,
                   "nodeType": "ExpressionStatement",
-                  "src": "4193:62:4"
+                  "src": "4134:62:35"
                 },
                 {
                   "expression": {
                     "arguments": [
                       {
                         "expression": {
-                          "id": 2055,
+                          "id": 5927,
                           "name": "AssetId",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8311,
-                          "src": "4271:7:4",
+                          "referencedDeclaration": 9781,
+                          "src": "4212:7:35",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_AssetId_$8311_$",
+                            "typeIdentifier": "t_type$_t_contract$_AssetId_$9781_$",
                             "typeString": "type(library AssetId)"
                           }
                         },
-                        "id": 2056,
+                        "id": 5928,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "lValueRequested": false,
-                        "memberLocation": "4279:12:4",
+                        "memberLocation": "4220:12:35",
                         "memberName": "_LP_ASSET_ID",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 8003,
-                        "src": "4271:20:4",
+                        "referencedDeclaration": 9473,
+                        "src": "4212:20:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -4614,39 +2509,39 @@ export const HyperdriveLP =
                       },
                       {
                         "expression": {
-                          "id": 2057,
+                          "id": 5929,
                           "name": "_options",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1967,
-                          "src": "4293:8:4",
+                          "referencedDeclaration": 5839,
+                          "src": "4234:8:35",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Options_$7295_calldata_ptr",
+                            "typeIdentifier": "t_struct$_Options_$3608_calldata_ptr",
                             "typeString": "struct IHyperdrive.Options calldata"
                           }
                         },
-                        "id": 2058,
+                        "id": 5930,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "4302:11:4",
+                        "memberLocation": "4243:11:35",
                         "memberName": "destination",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 7288,
-                        "src": "4293:20:4",
+                        "referencedDeclaration": 3601,
+                        "src": "4234:20:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         }
                       },
                       {
-                        "id": 2059,
+                        "id": 5931,
                         "name": "lpShares",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1972,
-                        "src": "4315:8:4",
+                        "referencedDeclaration": 5844,
+                        "src": "4256:8:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -4668,18 +2563,18 @@ export const HyperdriveLP =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 2054,
+                      "id": 5926,
                       "name": "_mint",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 12051,
-                      "src": "4265:5:4",
+                      "referencedDeclaration": 8072,
+                      "src": "4206:5:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_address_$_t_uint256_$returns$__$",
                         "typeString": "function (uint256,address,uint256)"
                       }
                     },
-                    "id": 2060,
+                    "id": 5932,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -4688,16 +2583,16 @@ export const HyperdriveLP =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "4265:59:4",
+                    "src": "4206:59:35",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2061,
+                  "id": 5933,
                   "nodeType": "ExpressionStatement",
-                  "src": "4265:59:4"
+                  "src": "4206:59:35"
                 },
                 {
                   "expression": {
@@ -4706,18 +2601,18 @@ export const HyperdriveLP =
                         "arguments": [],
                         "expression": {
                           "argumentTypes": [],
-                          "id": 2063,
+                          "id": 5935,
                           "name": "_latestCheckpoint",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 5113,
-                          "src": "4393:17:4",
+                          "referencedDeclaration": 4827,
+                          "src": "4334:17:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_view$__$returns$_t_uint256_$",
                             "typeString": "function () view returns (uint256)"
                           }
                         },
-                        "id": 2064,
+                        "id": 5936,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -4726,7 +2621,7 @@ export const HyperdriveLP =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "4393:19:4",
+                        "src": "4334:19:35",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -4734,12 +2629,12 @@ export const HyperdriveLP =
                         }
                       },
                       {
-                        "id": 2065,
+                        "id": 5937,
                         "name": "sharePrice",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1989,
-                        "src": "4414:10:4",
+                        "referencedDeclaration": 5861,
+                        "src": "4355:10:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -4757,18 +2652,18 @@ export const HyperdriveLP =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 2062,
+                      "id": 5934,
                       "name": "_applyCheckpoint",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 917,
-                      "src": "4376:16:4",
+                      "referencedDeclaration": 4739,
+                      "src": "4317:16:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
                         "typeString": "function (uint256,uint256) returns (uint256)"
                       }
                     },
-                    "id": 2066,
+                    "id": 5938,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -4777,31 +2672,31 @@ export const HyperdriveLP =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "4376:49:4",
+                    "src": "4317:49:35",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 2067,
+                  "id": 5939,
                   "nodeType": "ExpressionStatement",
-                  "src": "4376:49:4"
+                  "src": "4317:49:35"
                 },
                 {
                   "assignments": [
-                    2069
+                    5941
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 2069,
+                      "id": 5941,
                       "mutability": "mutable",
                       "name": "baseContribution",
-                      "nameLocation": "4481:16:4",
+                      "nameLocation": "4422:16:35",
                       "nodeType": "VariableDeclaration",
-                      "scope": 2087,
-                      "src": "4473:24:4",
+                      "scope": 5959,
+                      "src": "4414:24:35",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -4809,10 +2704,10 @@ export const HyperdriveLP =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 2068,
+                        "id": 5940,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "4473:7:4",
+                        "src": "4414:7:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -4821,42 +2716,42 @@ export const HyperdriveLP =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 2075,
+                  "id": 5947,
                   "initialValue": {
                     "arguments": [
                       {
-                        "id": 2071,
+                        "id": 5943,
                         "name": "_contribution",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1962,
-                        "src": "4538:13:4",
+                        "referencedDeclaration": 5834,
+                        "src": "4479:13:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 2072,
+                        "id": 5944,
                         "name": "sharePrice",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1989,
-                        "src": "4565:10:4",
+                        "referencedDeclaration": 5861,
+                        "src": "4506:10:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 2073,
+                        "id": 5945,
                         "name": "_options",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1967,
-                        "src": "4589:8:4",
+                        "referencedDeclaration": 5839,
+                        "src": "4530:8:35",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Options_$7295_calldata_ptr",
+                          "typeIdentifier": "t_struct$_Options_$3608_calldata_ptr",
                           "typeString": "struct IHyperdrive.Options calldata"
                         }
                       }
@@ -4872,22 +2767,22 @@ export const HyperdriveLP =
                           "typeString": "uint256"
                         },
                         {
-                          "typeIdentifier": "t_struct$_Options_$7295_calldata_ptr",
+                          "typeIdentifier": "t_struct$_Options_$3608_calldata_ptr",
                           "typeString": "struct IHyperdrive.Options calldata"
                         }
                       ],
-                      "id": 2070,
+                      "id": 5942,
                       "name": "_convertToBaseFromOption",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1438,
-                      "src": "4500:24:4",
+                      "referencedDeclaration": 5327,
+                      "src": "4441:24:35",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_struct$_Options_$7295_calldata_ptr_$returns$_t_uint256_$",
+                        "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_struct$_Options_$3608_calldata_ptr_$returns$_t_uint256_$",
                         "typeString": "function (uint256,uint256,struct IHyperdrive.Options calldata) pure returns (uint256)"
                       }
                     },
-                    "id": 2074,
+                    "id": 5946,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -4896,7 +2791,7 @@ export const HyperdriveLP =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "4500:107:4",
+                    "src": "4441:107:35",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
@@ -4904,82 +2799,82 @@ export const HyperdriveLP =
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "4473:134:4"
+                  "src": "4414:134:35"
                 },
                 {
                   "eventCall": {
                     "arguments": [
                       {
                         "expression": {
-                          "id": 2077,
+                          "id": 5949,
                           "name": "_options",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1967,
-                          "src": "4646:8:4",
+                          "referencedDeclaration": 5839,
+                          "src": "4587:8:35",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Options_$7295_calldata_ptr",
+                            "typeIdentifier": "t_struct$_Options_$3608_calldata_ptr",
                             "typeString": "struct IHyperdrive.Options calldata"
                           }
                         },
-                        "id": 2078,
+                        "id": 5950,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "4655:11:4",
+                        "memberLocation": "4596:11:35",
                         "memberName": "destination",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 7288,
-                        "src": "4646:20:4",
+                        "referencedDeclaration": 3601,
+                        "src": "4587:20:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         }
                       },
                       {
-                        "id": 2079,
+                        "id": 5951,
                         "name": "lpShares",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1972,
-                        "src": "4680:8:4",
+                        "referencedDeclaration": 5844,
+                        "src": "4621:8:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 2080,
+                        "id": 5952,
                         "name": "baseContribution",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2069,
-                        "src": "4702:16:4",
+                        "referencedDeclaration": 5941,
+                        "src": "4643:16:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 2081,
+                        "id": 5953,
                         "name": "sharePrice",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1989,
-                        "src": "4732:10:4",
+                        "referencedDeclaration": 5861,
+                        "src": "4673:10:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 2082,
+                        "id": 5954,
                         "name": "_apr",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1964,
-                        "src": "4756:4:4",
+                        "referencedDeclaration": 5836,
+                        "src": "4697:4:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -5009,18 +2904,18 @@ export const HyperdriveLP =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 2076,
+                      "id": 5948,
                       "name": "Initialize",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 600,
-                      "src": "4622:10:4",
+                      "referencedDeclaration": 4550,
+                      "src": "4563:10:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$__$",
                         "typeString": "function (address,uint256,uint256,uint256,uint256)"
                       }
                     },
-                    "id": 2083,
+                    "id": 5955,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -5029,82 +2924,78 @@ export const HyperdriveLP =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "4622:148:4",
+                    "src": "4563:148:35",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2084,
+                  "id": 5956,
                   "nodeType": "EmitStatement",
-                  "src": "4617:153:4"
+                  "src": "4558:153:35"
                 },
                 {
                   "expression": {
-                    "id": 2085,
+                    "id": 5957,
                     "name": "lpShares",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 1972,
-                    "src": "4788:8:4",
+                    "referencedDeclaration": 5844,
+                    "src": "4729:8:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 1973,
-                  "id": 2086,
+                  "functionReturnParameters": 5845,
+                  "id": 5958,
                   "nodeType": "Return",
-                  "src": "4781:15:4"
+                  "src": "4722:15:35"
                 }
               ]
             },
-            "baseFunctions": [
-              7552
-            ],
             "documentation": {
-              "id": 1960,
+              "id": 5832,
               "nodeType": "StructuredDocumentation",
-              "src": "1036:309:4",
-              "text": "@notice Allows the first LP to initialize the market with a target APR.\n @param _contribution The amount to supply.\n @param _apr The target APR.\n @param _options The options that configure how the operation is settled.\n @return lpShares The initial number of LP shares created."
+              "src": "987:306:35",
+              "text": "@dev Allows the first LP to initialize the market with a target APR.\n @param _contribution The amount to supply.\n @param _apr The target APR.\n @param _options The options that configure how the operation is settled.\n @return lpShares The initial number of LP shares created."
             },
-            "functionSelector": "77d05ff4",
             "implemented": true,
             "kind": "function",
             "modifiers": [
               {
-                "id": 1970,
+                "id": 5842,
                 "kind": "modifierInvocation",
                 "modifierName": {
-                  "id": 1969,
+                  "id": 5841,
                   "name": "nonReentrant",
                   "nameLocations": [
-                    "1493:12:4"
+                    "1434:12:35"
                   ],
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 64179,
-                  "src": "1493:12:4"
+                  "referencedDeclaration": 60563,
+                  "src": "1434:12:35"
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "1493:12:4"
+                "src": "1434:12:35"
               }
             ],
-            "name": "initialize",
-            "nameLocation": "1359:10:4",
+            "name": "_initialize",
+            "nameLocation": "1307:11:35",
             "parameters": {
-              "id": 1968,
+              "id": 5840,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1962,
+                  "id": 5834,
                   "mutability": "mutable",
                   "name": "_contribution",
-                  "nameLocation": "1387:13:4",
+                  "nameLocation": "1336:13:35",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2088,
-                  "src": "1379:21:4",
+                  "scope": 5960,
+                  "src": "1328:21:35",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -5112,10 +3003,10 @@ export const HyperdriveLP =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1961,
+                    "id": 5833,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1379:7:4",
+                    "src": "1328:7:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -5125,13 +3016,13 @@ export const HyperdriveLP =
                 },
                 {
                   "constant": false,
-                  "id": 1964,
+                  "id": 5836,
                   "mutability": "mutable",
                   "name": "_apr",
-                  "nameLocation": "1418:4:4",
+                  "nameLocation": "1367:4:35",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2088,
-                  "src": "1410:12:4",
+                  "scope": 5960,
+                  "src": "1359:12:35",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -5139,10 +3030,10 @@ export const HyperdriveLP =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1963,
+                    "id": 5835,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1410:7:4",
+                    "src": "1359:7:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -5152,58 +3043,58 @@ export const HyperdriveLP =
                 },
                 {
                   "constant": false,
-                  "id": 1967,
+                  "id": 5839,
                   "mutability": "mutable",
                   "name": "_options",
-                  "nameLocation": "1461:8:4",
+                  "nameLocation": "1410:8:35",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2088,
-                  "src": "1432:37:4",
+                  "scope": 5960,
+                  "src": "1381:37:35",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_Options_$7295_calldata_ptr",
+                    "typeIdentifier": "t_struct$_Options_$3608_calldata_ptr",
                     "typeString": "struct IHyperdrive.Options"
                   },
                   "typeName": {
-                    "id": 1966,
+                    "id": 5838,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 1965,
+                      "id": 5837,
                       "name": "IHyperdrive.Options",
                       "nameLocations": [
-                        "1432:11:4",
-                        "1444:7:4"
+                        "1381:11:35",
+                        "1393:7:35"
                       ],
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 7295,
-                      "src": "1432:19:4"
+                      "referencedDeclaration": 3608,
+                      "src": "1381:19:35"
                     },
-                    "referencedDeclaration": 7295,
-                    "src": "1432:19:4",
+                    "referencedDeclaration": 3608,
+                    "src": "1381:19:35",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Options_$7295_storage_ptr",
+                      "typeIdentifier": "t_struct$_Options_$3608_storage_ptr",
                       "typeString": "struct IHyperdrive.Options"
                     }
                   },
                   "visibility": "internal"
                 }
               ],
-              "src": "1369:106:4"
+              "src": "1318:106:35"
             },
             "returnParameters": {
-              "id": 1973,
+              "id": 5845,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1972,
+                  "id": 5844,
                   "mutability": "mutable",
                   "name": "lpShares",
-                  "nameLocation": "1523:8:4",
+                  "nameLocation": "1464:8:35",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2088,
-                  "src": "1515:16:4",
+                  "scope": 5960,
+                  "src": "1456:16:35",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -5211,10 +3102,10 @@ export const HyperdriveLP =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1971,
+                    "id": 5843,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1515:7:4",
+                    "src": "1456:7:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -5223,22 +3114,22 @@ export const HyperdriveLP =
                   "visibility": "internal"
                 }
               ],
-              "src": "1514:18:4"
+              "src": "1455:18:35"
             },
-            "scope": 3078,
-            "stateMutability": "payable",
+            "scope": 6967,
+            "stateMutability": "nonpayable",
             "virtual": false,
-            "visibility": "external"
+            "visibility": "internal"
           },
           {
-            "id": 2286,
+            "id": 6174,
             "nodeType": "FunctionDefinition",
-            "src": "5214:3711:4",
+            "src": "5152:4076:35",
             "nodes": [],
             "body": {
-              "id": 2285,
+              "id": 6173,
               "nodeType": "Block",
-              "src": "5439:3486:4",
+              "src": "5370:3858:35",
               "nodes": [],
               "statements": [
                 {
@@ -5246,18 +3137,18 @@ export const HyperdriveLP =
                     "arguments": [],
                     "expression": {
                       "argumentTypes": [],
-                      "id": 2107,
+                      "id": 5979,
                       "name": "_checkMessageValue",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 777,
-                      "src": "5516:18:4",
+                      "referencedDeclaration": 4686,
+                      "src": "5447:18:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_view$__$returns$__$",
                         "typeString": "function () view"
                       }
                     },
-                    "id": 2108,
+                    "id": 5980,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -5266,16 +3157,16 @@ export const HyperdriveLP =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "5516:20:4",
+                    "src": "5447:20:35",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2109,
+                  "id": 5981,
                   "nodeType": "ExpressionStatement",
-                  "src": "5516:20:4"
+                  "src": "5447:20:35"
                 },
                 {
                   "condition": {
@@ -5283,18 +3174,18 @@ export const HyperdriveLP =
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 2112,
+                    "id": 5984,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 2110,
+                      "id": 5982,
                       "name": "_contribution",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2091,
-                      "src": "5550:13:4",
+                      "referencedDeclaration": 5963,
+                      "src": "5481:13:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -5303,30 +3194,30 @@ export const HyperdriveLP =
                     "nodeType": "BinaryOperation",
                     "operator": "<",
                     "rightExpression": {
-                      "id": 2111,
+                      "id": 5983,
                       "name": "_minimumTransactionAmount",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 4829,
-                      "src": "5566:25:4",
+                      "referencedDeclaration": 9242,
+                      "src": "5497:25:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "5550:41:4",
+                    "src": "5481:41:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 2119,
+                  "id": 5991,
                   "nodeType": "IfStatement",
-                  "src": "5546:117:4",
+                  "src": "5477:117:35",
                   "trueBody": {
-                    "id": 2118,
+                    "id": 5990,
                     "nodeType": "Block",
-                    "src": "5593:70:4",
+                    "src": "5524:70:35",
                     "statements": [
                       {
                         "errorCall": {
@@ -5334,33 +3225,33 @@ export const HyperdriveLP =
                           "expression": {
                             "argumentTypes": [],
                             "expression": {
-                              "id": 2113,
+                              "id": 5985,
                               "name": "IHyperdrive",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 7431,
-                              "src": "5614:11:4",
+                              "referencedDeclaration": 3759,
+                              "src": "5545:11:35",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$7431_$",
+                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$3759_$",
                                 "typeString": "type(contract IHyperdrive)"
                               }
                             },
-                            "id": 2115,
+                            "id": 5987,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
-                            "memberLocation": "5626:24:4",
+                            "memberLocation": "5557:24:35",
                             "memberName": "MinimumTransactionAmount",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 7354,
-                            "src": "5614:36:4",
+                            "referencedDeclaration": 3667,
+                            "src": "5545:36:35",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_error_pure$__$returns$__$",
                               "typeString": "function () pure"
                             }
                           },
-                          "id": 2116,
+                          "id": 5988,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -5369,34 +3260,34 @@ export const HyperdriveLP =
                           "nameLocations": [],
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "5614:38:4",
+                          "src": "5545:38:35",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_tuple$__$",
                             "typeString": "tuple()"
                           }
                         },
-                        "id": 2117,
+                        "id": 5989,
                         "nodeType": "RevertStatement",
-                        "src": "5607:45:4"
+                        "src": "5538:45:35"
                       }
                     ]
                   }
                 },
                 {
                   "assignments": [
-                    2121
+                    5993
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 2121,
+                      "id": 5993,
                       "mutability": "mutable",
                       "name": "apr",
-                      "nameLocation": "5720:3:4",
+                      "nameLocation": "5651:3:35",
                       "nodeType": "VariableDeclaration",
-                      "scope": 2285,
-                      "src": "5712:11:4",
+                      "scope": 6173,
+                      "src": "5643:11:35",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -5404,10 +3295,10 @@ export const HyperdriveLP =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 2120,
+                        "id": 5992,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "5712:7:4",
+                        "src": "5643:7:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -5416,25 +3307,25 @@ export const HyperdriveLP =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 2132,
+                  "id": 6004,
                   "initialValue": {
                     "arguments": [
                       {
                         "arguments": [],
                         "expression": {
                           "argumentTypes": [],
-                          "id": 2124,
+                          "id": 5996,
                           "name": "_effectiveShareReserves",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 5128,
-                          "src": "5771:23:4",
+                          "referencedDeclaration": 4842,
+                          "src": "5702:23:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_view$__$returns$_t_uint256_$",
                             "typeString": "function () view returns (uint256)"
                           }
                         },
-                        "id": 2125,
+                        "id": 5997,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -5443,7 +3334,7 @@ export const HyperdriveLP =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "5771:25:4",
+                        "src": "5702:25:35",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -5452,63 +3343,63 @@ export const HyperdriveLP =
                       },
                       {
                         "expression": {
-                          "id": 2126,
+                          "id": 5998,
                           "name": "_marketState",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 4833,
-                          "src": "5810:12:4",
+                          "referencedDeclaration": 9249,
+                          "src": "5741:12:35",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_MarketState_$7175_storage",
+                            "typeIdentifier": "t_struct$_MarketState_$3492_storage",
                             "typeString": "struct IHyperdrive.MarketState storage ref"
                           }
                         },
-                        "id": 2127,
+                        "id": 5999,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "5823:12:4",
+                        "memberLocation": "5754:12:35",
                         "memberName": "bondReserves",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 7150,
-                        "src": "5810:25:4",
+                        "referencedDeclaration": 3467,
+                        "src": "5741:25:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint128",
                           "typeString": "uint128"
                         }
                       },
                       {
-                        "id": 2128,
+                        "id": 6000,
                         "name": "_initialSharePrice",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4823,
-                        "src": "5849:18:4",
+                        "referencedDeclaration": 9236,
+                        "src": "5780:18:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 2129,
+                        "id": 6001,
                         "name": "_positionDuration",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4817,
-                        "src": "5881:17:4",
+                        "referencedDeclaration": 9221,
+                        "src": "5812:17:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 2130,
+                        "id": 6002,
                         "name": "_timeStretch",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4820,
-                        "src": "5912:12:4",
+                        "referencedDeclaration": 9224,
+                        "src": "5843:12:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -5539,33 +3430,33 @@ export const HyperdriveLP =
                         }
                       ],
                       "expression": {
-                        "id": 2122,
+                        "id": 5994,
                         "name": "HyperdriveMath",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 9918,
-                        "src": "5726:14:4",
+                        "referencedDeclaration": 11352,
+                        "src": "5657:14:35",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$9918_$",
+                          "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$11352_$",
                           "typeString": "type(library HyperdriveMath)"
                         }
                       },
-                      "id": 2123,
+                      "id": 5995,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "5741:16:4",
+                      "memberLocation": "5672:16:35",
                       "memberName": "calculateSpotAPR",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9151,
-                      "src": "5726:31:4",
+                      "referencedDeclaration": 10618,
+                      "src": "5657:31:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
                         "typeString": "function (uint256,uint256,uint256,uint256,uint256) pure returns (uint256)"
                       }
                     },
-                    "id": 2131,
+                    "id": 6003,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -5574,7 +3465,7 @@ export const HyperdriveLP =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "5726:208:4",
+                    "src": "5657:208:35",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
@@ -5582,7 +3473,7 @@ export const HyperdriveLP =
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "5712:222:4"
+                  "src": "5643:222:35"
                 },
                 {
                   "condition": {
@@ -5590,7 +3481,7 @@ export const HyperdriveLP =
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     },
-                    "id": 2139,
+                    "id": 6011,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -5600,18 +3491,18 @@ export const HyperdriveLP =
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       },
-                      "id": 2135,
+                      "id": 6007,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
-                        "id": 2133,
+                        "id": 6005,
                         "name": "apr",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2121,
-                        "src": "5948:3:4",
+                        "referencedDeclaration": 5993,
+                        "src": "5879:3:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -5620,18 +3511,18 @@ export const HyperdriveLP =
                       "nodeType": "BinaryOperation",
                       "operator": "<",
                       "rightExpression": {
-                        "id": 2134,
+                        "id": 6006,
                         "name": "_minApr",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2093,
-                        "src": "5954:7:4",
+                        "referencedDeclaration": 5965,
+                        "src": "5885:7:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
-                      "src": "5948:13:4",
+                      "src": "5879:13:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
@@ -5644,18 +3535,18 @@ export const HyperdriveLP =
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       },
-                      "id": 2138,
+                      "id": 6010,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
-                        "id": 2136,
+                        "id": 6008,
                         "name": "apr",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2121,
-                        "src": "5965:3:4",
+                        "referencedDeclaration": 5993,
+                        "src": "5896:3:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -5664,100 +3555,107 @@ export const HyperdriveLP =
                       "nodeType": "BinaryOperation",
                       "operator": ">",
                       "rightExpression": {
-                        "id": 2137,
+                        "id": 6009,
                         "name": "_maxApr",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2095,
-                        "src": "5971:7:4",
+                        "referencedDeclaration": 5967,
+                        "src": "5902:7:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
-                      "src": "5965:13:4",
+                      "src": "5896:13:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
                       }
                     },
-                    "src": "5948:30:4",
+                    "src": "5879:30:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 2145,
+                  "id": 6018,
                   "nodeType": "IfStatement",
-                  "src": "5944:67:4",
+                  "src": "5875:92:35",
                   "trueBody": {
-                    "errorCall": {
-                      "arguments": [],
-                      "expression": {
-                        "argumentTypes": [],
-                        "expression": {
-                          "id": 2140,
-                          "name": "IHyperdrive",
-                          "nodeType": "Identifier",
-                          "overloadedDeclarations": [],
-                          "referencedDeclaration": 7431,
-                          "src": "5987:11:4",
+                    "id": 6017,
+                    "nodeType": "Block",
+                    "src": "5911:56:35",
+                    "statements": [
+                      {
+                        "errorCall": {
+                          "arguments": [],
+                          "expression": {
+                            "argumentTypes": [],
+                            "expression": {
+                              "id": 6012,
+                              "name": "IHyperdrive",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 3759,
+                              "src": "5932:11:35",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$3759_$",
+                                "typeString": "type(contract IHyperdrive)"
+                              }
+                            },
+                            "id": 6014,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberLocation": "5944:10:35",
+                            "memberName": "InvalidApr",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 3619,
+                            "src": "5932:22:35",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_error_pure$__$returns$__$",
+                              "typeString": "function () pure"
+                            }
+                          },
+                          "id": 6015,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "nameLocations": [],
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "5932:24:35",
+                          "tryCall": false,
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$7431_$",
-                            "typeString": "type(contract IHyperdrive)"
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
                           }
                         },
-                        "id": 2142,
-                        "isConstant": false,
-                        "isLValue": false,
-                        "isPure": false,
-                        "lValueRequested": false,
-                        "memberLocation": "5999:10:4",
-                        "memberName": "InvalidApr",
-                        "nodeType": "MemberAccess",
-                        "referencedDeclaration": 7306,
-                        "src": "5987:22:4",
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_function_error_pure$__$returns$__$",
-                          "typeString": "function () pure"
-                        }
-                      },
-                      "id": 2143,
-                      "isConstant": false,
-                      "isLValue": false,
-                      "isPure": false,
-                      "kind": "functionCall",
-                      "lValueRequested": false,
-                      "nameLocations": [],
-                      "names": [],
-                      "nodeType": "FunctionCall",
-                      "src": "5987:24:4",
-                      "tryCall": false,
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_tuple$__$",
-                        "typeString": "tuple()"
+                        "id": 6016,
+                        "nodeType": "RevertStatement",
+                        "src": "5925:31:35"
                       }
-                    },
-                    "id": 2144,
-                    "nodeType": "RevertStatement",
-                    "src": "5980:31:4"
+                    ]
                   }
                 },
                 {
                   "assignments": [
-                    2147,
-                    2149
+                    6020,
+                    6022
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 2147,
+                      "id": 6020,
                       "mutability": "mutable",
                       "name": "vaultShares",
-                      "nameLocation": "6099:11:4",
+                      "nameLocation": "6054:11:35",
                       "nodeType": "VariableDeclaration",
-                      "scope": 2285,
-                      "src": "6091:19:4",
+                      "scope": 6173,
+                      "src": "6046:19:35",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -5765,10 +3663,10 @@ export const HyperdriveLP =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 2146,
+                        "id": 6019,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "6091:7:4",
+                        "src": "6046:7:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -5778,13 +3676,13 @@ export const HyperdriveLP =
                     },
                     {
                       "constant": false,
-                      "id": 2149,
+                      "id": 6022,
                       "mutability": "mutable",
                       "name": "sharePrice",
-                      "nameLocation": "6120:10:4",
+                      "nameLocation": "6075:10:35",
                       "nodeType": "VariableDeclaration",
-                      "scope": 2285,
-                      "src": "6112:18:4",
+                      "scope": 6173,
+                      "src": "6067:18:35",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -5792,10 +3690,10 @@ export const HyperdriveLP =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 2148,
+                        "id": 6021,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "6112:7:4",
+                        "src": "6067:7:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -5804,30 +3702,30 @@ export const HyperdriveLP =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 2154,
+                  "id": 6027,
                   "initialValue": {
                     "arguments": [
                       {
-                        "id": 2151,
+                        "id": 6024,
                         "name": "_contribution",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2091,
-                        "src": "6156:13:4",
+                        "referencedDeclaration": 5963,
+                        "src": "6111:13:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 2152,
+                        "id": 6025,
                         "name": "_options",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2098,
-                        "src": "6183:8:4",
+                        "referencedDeclaration": 5970,
+                        "src": "6138:8:35",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Options_$7295_calldata_ptr",
+                          "typeIdentifier": "t_struct$_Options_$3608_calldata_ptr",
                           "typeString": "struct IHyperdrive.Options calldata"
                         }
                       }
@@ -5839,22 +3737,22 @@ export const HyperdriveLP =
                           "typeString": "uint256"
                         },
                         {
-                          "typeIdentifier": "t_struct$_Options_$7295_calldata_ptr",
+                          "typeIdentifier": "t_struct$_Options_$3608_calldata_ptr",
                           "typeString": "struct IHyperdrive.Options calldata"
                         }
                       ],
-                      "id": 2150,
+                      "id": 6023,
                       "name": "_deposit",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 790,
-                      "src": "6134:8:4",
+                      "referencedDeclaration": 4699,
+                      "src": "6089:8:35",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_struct$_Options_$7295_calldata_ptr_$returns$_t_uint256_$_t_uint256_$",
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_struct$_Options_$3608_calldata_ptr_$returns$_t_uint256_$_t_uint256_$",
                         "typeString": "function (uint256,struct IHyperdrive.Options calldata) returns (uint256,uint256)"
                       }
                     },
-                    "id": 2153,
+                    "id": 6026,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -5863,7 +3761,7 @@ export const HyperdriveLP =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "6134:67:4",
+                    "src": "6089:67:35",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$_t_uint256_$_t_uint256_$",
@@ -5871,7 +3769,7 @@ export const HyperdriveLP =
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "6090:111:4"
+                  "src": "6045:111:35"
                 },
                 {
                   "expression": {
@@ -5880,18 +3778,18 @@ export const HyperdriveLP =
                         "arguments": [],
                         "expression": {
                           "argumentTypes": [],
-                          "id": 2156,
+                          "id": 6029,
                           "name": "_latestCheckpoint",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 5113,
-                          "src": "6262:17:4",
+                          "referencedDeclaration": 4827,
+                          "src": "6217:17:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_view$__$returns$_t_uint256_$",
                             "typeString": "function () view returns (uint256)"
                           }
                         },
-                        "id": 2157,
+                        "id": 6030,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -5900,7 +3798,7 @@ export const HyperdriveLP =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "6262:19:4",
+                        "src": "6217:19:35",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -5908,12 +3806,12 @@ export const HyperdriveLP =
                         }
                       },
                       {
-                        "id": 2158,
+                        "id": 6031,
                         "name": "sharePrice",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2149,
-                        "src": "6283:10:4",
+                        "referencedDeclaration": 6022,
+                        "src": "6238:10:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -5931,18 +3829,18 @@ export const HyperdriveLP =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 2155,
+                      "id": 6028,
                       "name": "_applyCheckpoint",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 917,
-                      "src": "6245:16:4",
+                      "referencedDeclaration": 4739,
+                      "src": "6200:16:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
                         "typeString": "function (uint256,uint256) returns (uint256)"
                       }
                     },
-                    "id": 2159,
+                    "id": 6032,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -5951,31 +3849,31 @@ export const HyperdriveLP =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "6245:49:4",
+                    "src": "6200:49:35",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 2160,
+                  "id": 6033,
                   "nodeType": "ExpressionStatement",
-                  "src": "6245:49:4"
+                  "src": "6200:49:35"
                 },
                 {
                   "assignments": [
-                    2162
+                    6035
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 2162,
+                      "id": 6035,
                       "mutability": "mutable",
                       "name": "withdrawalSharesOutstanding",
-                      "nameLocation": "6720:27:4",
+                      "nameLocation": "6675:27:35",
                       "nodeType": "VariableDeclaration",
-                      "scope": 2285,
-                      "src": "6712:35:4",
+                      "scope": 6173,
+                      "src": "6667:35:35",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -5983,10 +3881,10 @@ export const HyperdriveLP =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 2161,
+                        "id": 6034,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "6712:7:4",
+                        "src": "6667:7:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -5995,54 +3893,54 @@ export const HyperdriveLP =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 2170,
+                  "id": 6043,
                   "initialValue": {
                     "commonType": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 2169,
+                    "id": 6042,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
                       "baseExpression": {
-                        "id": 2163,
+                        "id": 6036,
                         "name": "_totalSupply",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 12500,
-                        "src": "6750:12:4",
+                        "referencedDeclaration": 9291,
+                        "src": "6705:12:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
                           "typeString": "mapping(uint256 => uint256)"
                         }
                       },
-                      "id": 2166,
+                      "id": 6039,
                       "indexExpression": {
                         "expression": {
-                          "id": 2164,
+                          "id": 6037,
                           "name": "AssetId",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8311,
-                          "src": "6776:7:4",
+                          "referencedDeclaration": 9781,
+                          "src": "6731:7:35",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_AssetId_$8311_$",
+                            "typeIdentifier": "t_type$_t_contract$_AssetId_$9781_$",
                             "typeString": "type(library AssetId)"
                           }
                         },
-                        "id": 2165,
+                        "id": 6038,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "lValueRequested": false,
-                        "memberLocation": "6784:26:4",
+                        "memberLocation": "6739:26:35",
                         "memberName": "_WITHDRAWAL_SHARE_ASSET_ID",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 8012,
-                        "src": "6776:34:4",
+                        "referencedDeclaration": 9482,
+                        "src": "6731:34:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -6053,7 +3951,7 @@ export const HyperdriveLP =
                       "isPure": false,
                       "lValueRequested": false,
                       "nodeType": "IndexAccess",
-                      "src": "6750:70:4",
+                      "src": "6705:70:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -6063,55 +3961,55 @@ export const HyperdriveLP =
                     "operator": "-",
                     "rightExpression": {
                       "expression": {
-                        "id": 2167,
+                        "id": 6040,
                         "name": "_withdrawPool",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4837,
-                        "src": "6823:13:4",
+                        "referencedDeclaration": 9253,
+                        "src": "6778:13:35",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_WithdrawPool_$7189_storage",
+                          "typeIdentifier": "t_struct$_WithdrawPool_$3506_storage",
                           "typeString": "struct IHyperdrive.WithdrawPool storage ref"
                         }
                       },
-                      "id": 2168,
+                      "id": 6041,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "6837:15:4",
+                      "memberLocation": "6792:15:35",
                       "memberName": "readyToWithdraw",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 7185,
-                      "src": "6823:29:4",
+                      "referencedDeclaration": 3502,
+                      "src": "6778:29:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint128",
                         "typeString": "uint128"
                       }
                     },
-                    "src": "6750:102:4",
+                    "src": "6705:102:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "6712:140:4"
+                  "src": "6667:140:35"
                 },
                 {
                   "assignments": [
-                    2172
+                    6045
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 2172,
+                      "id": 6045,
                       "mutability": "mutable",
                       "name": "lpTotalSupply",
-                      "nameLocation": "6870:13:4",
+                      "nameLocation": "6825:13:35",
                       "nodeType": "VariableDeclaration",
-                      "scope": 2285,
-                      "src": "6862:21:4",
+                      "scope": 6173,
+                      "src": "6817:21:35",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -6119,10 +4017,10 @@ export const HyperdriveLP =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 2171,
+                        "id": 6044,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "6862:7:4",
+                        "src": "6817:7:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -6131,54 +4029,54 @@ export const HyperdriveLP =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 2179,
+                  "id": 6052,
                   "initialValue": {
                     "commonType": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 2178,
+                    "id": 6051,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
                       "baseExpression": {
-                        "id": 2173,
+                        "id": 6046,
                         "name": "_totalSupply",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 12500,
-                        "src": "6886:12:4",
+                        "referencedDeclaration": 9291,
+                        "src": "6841:12:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
                           "typeString": "mapping(uint256 => uint256)"
                         }
                       },
-                      "id": 2176,
+                      "id": 6049,
                       "indexExpression": {
                         "expression": {
-                          "id": 2174,
+                          "id": 6047,
                           "name": "AssetId",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8311,
-                          "src": "6899:7:4",
+                          "referencedDeclaration": 9781,
+                          "src": "6854:7:35",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_AssetId_$8311_$",
+                            "typeIdentifier": "t_type$_t_contract$_AssetId_$9781_$",
                             "typeString": "type(library AssetId)"
                           }
                         },
-                        "id": 2175,
+                        "id": 6048,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "lValueRequested": false,
-                        "memberLocation": "6907:12:4",
+                        "memberLocation": "6862:12:35",
                         "memberName": "_LP_ASSET_ID",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 8003,
-                        "src": "6899:20:4",
+                        "referencedDeclaration": 9473,
+                        "src": "6854:20:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -6189,7 +4087,7 @@ export const HyperdriveLP =
                       "isPure": false,
                       "lValueRequested": false,
                       "nodeType": "IndexAccess",
-                      "src": "6886:34:4",
+                      "src": "6841:34:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -6198,40 +4096,40 @@ export const HyperdriveLP =
                     "nodeType": "BinaryOperation",
                     "operator": "+",
                     "rightExpression": {
-                      "id": 2177,
+                      "id": 6050,
                       "name": "withdrawalSharesOutstanding",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2162,
-                      "src": "6935:27:4",
+                      "referencedDeclaration": 6035,
+                      "src": "6890:27:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "6886:76:4",
+                    "src": "6841:76:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "6862:100:4"
+                  "src": "6817:100:35"
                 },
                 {
                   "assignments": [
-                    2181
+                    6054
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 2181,
+                      "id": 6054,
                       "mutability": "mutable",
                       "name": "endingPresentValue",
-                      "nameLocation": "7035:18:4",
+                      "nameLocation": "6990:18:35",
                       "nodeType": "VariableDeclaration",
-                      "scope": 2285,
-                      "src": "7027:26:4",
+                      "scope": 6173,
+                      "src": "6982:26:35",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -6239,10 +4137,10 @@ export const HyperdriveLP =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 2180,
+                        "id": 6053,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "7027:7:4",
+                        "src": "6982:7:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -6251,24 +4149,24 @@ export const HyperdriveLP =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 2182,
+                  "id": 6055,
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "7027:26:4"
+                  "src": "6982:26:35"
                 },
                 {
                   "assignments": [
-                    2184
+                    6057
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 2184,
+                      "id": 6057,
                       "mutability": "mutable",
                       "name": "startingPresentValue",
-                      "nameLocation": "7071:20:4",
+                      "nameLocation": "7026:20:35",
                       "nodeType": "VariableDeclaration",
-                      "scope": 2285,
-                      "src": "7063:28:4",
+                      "scope": 6173,
+                      "src": "7018:28:35",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -6276,10 +4174,10 @@ export const HyperdriveLP =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 2183,
+                        "id": 6056,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "7063:7:4",
+                        "src": "7018:7:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -6288,69 +4186,69 @@ export const HyperdriveLP =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 2185,
+                  "id": 6058,
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "7063:28:4"
+                  "src": "7018:28:35"
                 },
                 {
-                  "id": 2248,
+                  "id": 6131,
                   "nodeType": "Block",
-                  "src": "7101:1246:4",
+                  "src": "7056:1465:35",
                   "statements": [
                     {
                       "assignments": [
-                        2190
+                        6063
                       ],
                       "declarations": [
                         {
                           "constant": false,
-                          "id": 2190,
+                          "id": 6063,
                           "mutability": "mutable",
                           "name": "params",
-                          "nameLocation": "7245:6:4",
+                          "nameLocation": "7200:6:35",
                           "nodeType": "VariableDeclaration",
-                          "scope": 2248,
-                          "src": "7188:63:4",
+                          "scope": 6131,
+                          "src": "7143:63:35",
                           "stateVariable": false,
                           "storageLocation": "memory",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_PresentValueParams_$9560_memory_ptr",
+                            "typeIdentifier": "t_struct$_PresentValueParams_$11027_memory_ptr",
                             "typeString": "struct HyperdriveMath.PresentValueParams"
                           },
                           "typeName": {
-                            "id": 2189,
+                            "id": 6062,
                             "nodeType": "UserDefinedTypeName",
                             "pathNode": {
-                              "id": 2188,
+                              "id": 6061,
                               "name": "HyperdriveMath.PresentValueParams",
                               "nameLocations": [
-                                "7188:14:4",
-                                "7203:18:4"
+                                "7143:14:35",
+                                "7158:18:35"
                               ],
                               "nodeType": "IdentifierPath",
-                              "referencedDeclaration": 9560,
-                              "src": "7188:33:4"
+                              "referencedDeclaration": 11027,
+                              "src": "7143:33:35"
                             },
-                            "referencedDeclaration": 9560,
-                            "src": "7188:33:4",
+                            "referencedDeclaration": 11027,
+                            "src": "7143:33:35",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_PresentValueParams_$9560_storage_ptr",
+                              "typeIdentifier": "t_struct$_PresentValueParams_$11027_storage_ptr",
                               "typeString": "struct HyperdriveMath.PresentValueParams"
                             }
                           },
                           "visibility": "internal"
                         }
                       ],
-                      "id": 2194,
+                      "id": 6067,
                       "initialValue": {
                         "arguments": [
                           {
-                            "id": 2192,
+                            "id": 6065,
                             "name": "sharePrice",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2149,
-                            "src": "7277:10:4",
+                            "referencedDeclaration": 6022,
+                            "src": "7232:10:35",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -6364,18 +4262,18 @@ export const HyperdriveLP =
                               "typeString": "uint256"
                             }
                           ],
-                          "id": 2191,
+                          "id": 6064,
                           "name": "_getPresentValueParams",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 5166,
-                          "src": "7254:22:4",
+                          "referencedDeclaration": 4880,
+                          "src": "7209:22:35",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_function_internal_view$_t_uint256_$returns$_t_struct$_PresentValueParams_$9560_memory_ptr_$",
+                            "typeIdentifier": "t_function_internal_view$_t_uint256_$returns$_t_struct$_PresentValueParams_$11027_memory_ptr_$",
                             "typeString": "function (uint256) view returns (struct HyperdriveMath.PresentValueParams memory)"
                           }
                         },
-                        "id": 2193,
+                        "id": 6066,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -6384,30 +4282,30 @@ export const HyperdriveLP =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "7254:34:4",
+                        "src": "7209:34:35",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_PresentValueParams_$9560_memory_ptr",
+                          "typeIdentifier": "t_struct$_PresentValueParams_$11027_memory_ptr",
                           "typeString": "struct HyperdriveMath.PresentValueParams memory"
                         }
                       },
                       "nodeType": "VariableDeclarationStatement",
-                      "src": "7188:100:4"
+                      "src": "7143:100:35"
                     },
                     {
                       "expression": {
-                        "id": 2200,
+                        "id": 6073,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftHandSide": {
-                          "id": 2195,
+                          "id": 6068,
                           "name": "startingPresentValue",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2184,
-                          "src": "7302:20:4",
+                          "referencedDeclaration": 6057,
+                          "src": "7257:20:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -6418,14 +4316,14 @@ export const HyperdriveLP =
                         "rightHandSide": {
                           "arguments": [
                             {
-                              "id": 2198,
+                              "id": 6071,
                               "name": "params",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2190,
-                              "src": "7362:6:4",
+                              "referencedDeclaration": 6063,
+                              "src": "7317:6:35",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_struct$_PresentValueParams_$9560_memory_ptr",
+                                "typeIdentifier": "t_struct$_PresentValueParams_$11027_memory_ptr",
                                 "typeString": "struct HyperdriveMath.PresentValueParams memory"
                               }
                             }
@@ -6433,38 +4331,38 @@ export const HyperdriveLP =
                           "expression": {
                             "argumentTypes": [
                               {
-                                "typeIdentifier": "t_struct$_PresentValueParams_$9560_memory_ptr",
+                                "typeIdentifier": "t_struct$_PresentValueParams_$11027_memory_ptr",
                                 "typeString": "struct HyperdriveMath.PresentValueParams memory"
                               }
                             ],
                             "expression": {
-                              "id": 2196,
+                              "id": 6069,
                               "name": "HyperdriveMath",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 9918,
-                              "src": "7325:14:4",
+                              "referencedDeclaration": 11352,
+                              "src": "7280:14:35",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$9918_$",
+                                "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$11352_$",
                                 "typeString": "type(library HyperdriveMath)"
                               }
                             },
-                            "id": 2197,
+                            "id": 6070,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
-                            "memberLocation": "7340:21:4",
+                            "memberLocation": "7295:21:35",
                             "memberName": "calculatePresentValue",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 9802,
-                            "src": "7325:36:4",
+                            "referencedDeclaration": 11269,
+                            "src": "7280:36:35",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_function_internal_pure$_t_struct$_PresentValueParams_$9560_memory_ptr_$returns$_t_uint256_$",
+                              "typeIdentifier": "t_function_internal_pure$_t_struct$_PresentValueParams_$11027_memory_ptr_$returns$_t_uint256_$",
                               "typeString": "function (struct HyperdriveMath.PresentValueParams memory) pure returns (uint256)"
                             }
                           },
-                          "id": 2199,
+                          "id": 6072,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -6473,22 +4371,22 @@ export const HyperdriveLP =
                           "nameLocations": [],
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "7325:44:4",
+                          "src": "7280:44:35",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "src": "7302:67:4",
+                        "src": "7257:67:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
-                      "id": 2201,
+                      "id": 6074,
                       "nodeType": "ExpressionStatement",
-                      "src": "7302:67:4"
+                      "src": "7257:67:35"
                     },
                     {
                       "expression": {
@@ -6496,12 +4394,12 @@ export const HyperdriveLP =
                           {
                             "arguments": [
                               {
-                                "id": 2205,
+                                "id": 6078,
                                 "name": "vaultShares",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 2147,
-                                "src": "7516:11:4",
+                                "referencedDeclaration": 6020,
+                                "src": "7471:11:35",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
@@ -6515,26 +4413,26 @@ export const HyperdriveLP =
                                   "typeString": "uint256"
                                 }
                               ],
-                              "id": 2204,
+                              "id": 6077,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
                               "lValueRequested": false,
                               "nodeType": "ElementaryTypeNameExpression",
-                              "src": "7509:6:4",
+                              "src": "7464:6:35",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_type$_t_int256_$",
                                 "typeString": "type(int256)"
                               },
                               "typeName": {
-                                "id": 2203,
+                                "id": 6076,
                                 "name": "int256",
                                 "nodeType": "ElementaryTypeName",
-                                "src": "7509:6:4",
+                                "src": "7464:6:35",
                                 "typeDescriptions": {}
                               }
                             },
-                            "id": 2206,
+                            "id": 6079,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -6543,7 +4441,7 @@ export const HyperdriveLP =
                             "nameLocations": [],
                             "names": [],
                             "nodeType": "FunctionCall",
-                            "src": "7509:19:4",
+                            "src": "7464:19:35",
                             "tryCall": false,
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
@@ -6558,18 +4456,18 @@ export const HyperdriveLP =
                               "typeString": "int256"
                             }
                           ],
-                          "id": 2202,
+                          "id": 6075,
                           "name": "_updateLiquidity",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2721,
-                          "src": "7492:16:4",
+                          "referencedDeclaration": 6610,
+                          "src": "7447:16:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_nonpayable$_t_int256_$returns$__$",
                             "typeString": "function (int256)"
                           }
                         },
-                        "id": 2207,
+                        "id": 6080,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -6578,47 +4476,47 @@ export const HyperdriveLP =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "7492:37:4",
+                        "src": "7447:37:35",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_tuple$__$",
                           "typeString": "tuple()"
                         }
                       },
-                      "id": 2208,
+                      "id": 6081,
                       "nodeType": "ExpressionStatement",
-                      "src": "7492:37:4"
+                      "src": "7447:37:35"
                     },
                     {
                       "expression": {
-                        "id": 2214,
+                        "id": 6087,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftHandSide": {
                           "expression": {
-                            "id": 2209,
+                            "id": 6082,
                             "name": "params",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2190,
-                            "src": "7543:6:4",
+                            "referencedDeclaration": 6063,
+                            "src": "7498:6:35",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_PresentValueParams_$9560_memory_ptr",
+                              "typeIdentifier": "t_struct$_PresentValueParams_$11027_memory_ptr",
                               "typeString": "struct HyperdriveMath.PresentValueParams memory"
                             }
                           },
-                          "id": 2211,
+                          "id": 6084,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": true,
-                          "memberLocation": "7550:13:4",
+                          "memberLocation": "7505:13:35",
                           "memberName": "shareReserves",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 9539,
-                          "src": "7543:20:4",
+                          "referencedDeclaration": 11006,
+                          "src": "7498:20:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -6628,72 +4526,72 @@ export const HyperdriveLP =
                         "operator": "=",
                         "rightHandSide": {
                           "expression": {
-                            "id": 2212,
+                            "id": 6085,
                             "name": "_marketState",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 4833,
-                            "src": "7566:12:4",
+                            "referencedDeclaration": 9249,
+                            "src": "7521:12:35",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_MarketState_$7175_storage",
+                              "typeIdentifier": "t_struct$_MarketState_$3492_storage",
                               "typeString": "struct IHyperdrive.MarketState storage ref"
                             }
                           },
-                          "id": 2213,
+                          "id": 6086,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "7579:13:4",
+                          "memberLocation": "7534:13:35",
                           "memberName": "shareReserves",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 7147,
-                          "src": "7566:26:4",
+                          "referencedDeclaration": 3464,
+                          "src": "7521:26:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint128",
                             "typeString": "uint128"
                           }
                         },
-                        "src": "7543:49:4",
+                        "src": "7498:49:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
-                      "id": 2215,
+                      "id": 6088,
                       "nodeType": "ExpressionStatement",
-                      "src": "7543:49:4"
+                      "src": "7498:49:35"
                     },
                     {
                       "expression": {
-                        "id": 2221,
+                        "id": 6094,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftHandSide": {
                           "expression": {
-                            "id": 2216,
+                            "id": 6089,
                             "name": "params",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2190,
-                            "src": "7606:6:4",
+                            "referencedDeclaration": 6063,
+                            "src": "7561:6:35",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_PresentValueParams_$9560_memory_ptr",
+                              "typeIdentifier": "t_struct$_PresentValueParams_$11027_memory_ptr",
                               "typeString": "struct HyperdriveMath.PresentValueParams memory"
                             }
                           },
-                          "id": 2218,
+                          "id": 6091,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": true,
-                          "memberLocation": "7613:15:4",
+                          "memberLocation": "7568:15:35",
                           "memberName": "shareAdjustment",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 9541,
-                          "src": "7606:22:4",
+                          "referencedDeclaration": 11008,
+                          "src": "7561:22:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
@@ -6703,72 +4601,72 @@ export const HyperdriveLP =
                         "operator": "=",
                         "rightHandSide": {
                           "expression": {
-                            "id": 2219,
+                            "id": 6092,
                             "name": "_marketState",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 4833,
-                            "src": "7631:12:4",
+                            "referencedDeclaration": 9249,
+                            "src": "7586:12:35",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_MarketState_$7175_storage",
+                              "typeIdentifier": "t_struct$_MarketState_$3492_storage",
                               "typeString": "struct IHyperdrive.MarketState storage ref"
                             }
                           },
-                          "id": 2220,
+                          "id": 6093,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "7644:15:4",
+                          "memberLocation": "7599:15:35",
                           "memberName": "shareAdjustment",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 7153,
-                          "src": "7631:28:4",
+                          "referencedDeclaration": 3470,
+                          "src": "7586:28:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int128",
                             "typeString": "int128"
                           }
                         },
-                        "src": "7606:53:4",
+                        "src": "7561:53:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "id": 2222,
+                      "id": 6095,
                       "nodeType": "ExpressionStatement",
-                      "src": "7606:53:4"
+                      "src": "7561:53:35"
                     },
                     {
                       "expression": {
-                        "id": 2228,
+                        "id": 6101,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftHandSide": {
                           "expression": {
-                            "id": 2223,
+                            "id": 6096,
                             "name": "params",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2190,
-                            "src": "7673:6:4",
+                            "referencedDeclaration": 6063,
+                            "src": "7628:6:35",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_PresentValueParams_$9560_memory_ptr",
+                              "typeIdentifier": "t_struct$_PresentValueParams_$11027_memory_ptr",
                               "typeString": "struct HyperdriveMath.PresentValueParams memory"
                             }
                           },
-                          "id": 2225,
+                          "id": 6098,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": true,
-                          "memberLocation": "7680:12:4",
+                          "memberLocation": "7635:12:35",
                           "memberName": "bondReserves",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 9543,
-                          "src": "7673:19:4",
+                          "referencedDeclaration": 11010,
+                          "src": "7628:19:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -6778,56 +4676,56 @@ export const HyperdriveLP =
                         "operator": "=",
                         "rightHandSide": {
                           "expression": {
-                            "id": 2226,
+                            "id": 6099,
                             "name": "_marketState",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 4833,
-                            "src": "7695:12:4",
+                            "referencedDeclaration": 9249,
+                            "src": "7650:12:35",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_MarketState_$7175_storage",
+                              "typeIdentifier": "t_struct$_MarketState_$3492_storage",
                               "typeString": "struct IHyperdrive.MarketState storage ref"
                             }
                           },
-                          "id": 2227,
+                          "id": 6100,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "7708:12:4",
+                          "memberLocation": "7663:12:35",
                           "memberName": "bondReserves",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 7150,
-                          "src": "7695:25:4",
+                          "referencedDeclaration": 3467,
+                          "src": "7650:25:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint128",
                             "typeString": "uint128"
                           }
                         },
-                        "src": "7673:47:4",
+                        "src": "7628:47:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
-                      "id": 2229,
+                      "id": 6102,
                       "nodeType": "ExpressionStatement",
-                      "src": "7673:47:4"
+                      "src": "7628:47:35"
                     },
                     {
                       "expression": {
-                        "id": 2235,
+                        "id": 6108,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftHandSide": {
-                          "id": 2230,
+                          "id": 6103,
                           "name": "endingPresentValue",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2181,
-                          "src": "7734:18:4",
+                          "referencedDeclaration": 6054,
+                          "src": "7689:18:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -6838,14 +4736,14 @@ export const HyperdriveLP =
                         "rightHandSide": {
                           "arguments": [
                             {
-                              "id": 2233,
+                              "id": 6106,
                               "name": "params",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2190,
-                              "src": "7792:6:4",
+                              "referencedDeclaration": 6063,
+                              "src": "7747:6:35",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_struct$_PresentValueParams_$9560_memory_ptr",
+                                "typeIdentifier": "t_struct$_PresentValueParams_$11027_memory_ptr",
                                 "typeString": "struct HyperdriveMath.PresentValueParams memory"
                               }
                             }
@@ -6853,38 +4751,38 @@ export const HyperdriveLP =
                           "expression": {
                             "argumentTypes": [
                               {
-                                "typeIdentifier": "t_struct$_PresentValueParams_$9560_memory_ptr",
+                                "typeIdentifier": "t_struct$_PresentValueParams_$11027_memory_ptr",
                                 "typeString": "struct HyperdriveMath.PresentValueParams memory"
                               }
                             ],
                             "expression": {
-                              "id": 2231,
+                              "id": 6104,
                               "name": "HyperdriveMath",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 9918,
-                              "src": "7755:14:4",
+                              "referencedDeclaration": 11352,
+                              "src": "7710:14:35",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$9918_$",
+                                "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$11352_$",
                                 "typeString": "type(library HyperdriveMath)"
                               }
                             },
-                            "id": 2232,
+                            "id": 6105,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
-                            "memberLocation": "7770:21:4",
+                            "memberLocation": "7725:21:35",
                             "memberName": "calculatePresentValue",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 9802,
-                            "src": "7755:36:4",
+                            "referencedDeclaration": 11269,
+                            "src": "7710:36:35",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_function_internal_pure$_t_struct$_PresentValueParams_$9560_memory_ptr_$returns$_t_uint256_$",
+                              "typeIdentifier": "t_function_internal_pure$_t_struct$_PresentValueParams_$11027_memory_ptr_$returns$_t_uint256_$",
                               "typeString": "function (struct HyperdriveMath.PresentValueParams memory) pure returns (uint256)"
                             }
                           },
-                          "id": 2234,
+                          "id": 6107,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -6893,37 +4791,37 @@ export const HyperdriveLP =
                           "nameLocations": [],
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "7755:44:4",
+                          "src": "7710:44:35",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "src": "7734:65:4",
+                        "src": "7689:65:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
-                      "id": 2236,
+                      "id": 6109,
                       "nodeType": "ExpressionStatement",
-                      "src": "7734:65:4"
+                      "src": "7689:65:35"
                     },
                     {
                       "expression": {
-                        "id": 2246,
+                        "id": 6119,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftHandSide": {
-                          "id": 2237,
+                          "id": 6110,
                           "name": "lpShares",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2105,
-                          "src": "8188:8:4",
+                          "referencedDeclaration": 5977,
+                          "src": "8143:8:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -6934,24 +4832,24 @@ export const HyperdriveLP =
                         "rightHandSide": {
                           "arguments": [
                             {
-                              "id": 2243,
+                              "id": 6116,
                               "name": "lpTotalSupply",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2172,
-                              "src": "8271:13:4",
+                              "referencedDeclaration": 6045,
+                              "src": "8226:13:35",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               }
                             },
                             {
-                              "id": 2244,
+                              "id": 6117,
                               "name": "startingPresentValue",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2184,
-                              "src": "8302:20:4",
+                              "referencedDeclaration": 6057,
+                              "src": "8257:20:35",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
@@ -6976,18 +4874,18 @@ export const HyperdriveLP =
                                     "typeIdentifier": "t_uint256",
                                     "typeString": "uint256"
                                   },
-                                  "id": 2240,
+                                  "id": 6113,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "leftExpression": {
-                                    "id": 2238,
+                                    "id": 6111,
                                     "name": "endingPresentValue",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 2181,
-                                    "src": "8200:18:4",
+                                    "referencedDeclaration": 6054,
+                                    "src": "8155:18:35",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
                                       "typeString": "uint256"
@@ -6996,53 +4894,53 @@ export const HyperdriveLP =
                                   "nodeType": "BinaryOperation",
                                   "operator": "-",
                                   "rightExpression": {
-                                    "id": 2239,
+                                    "id": 6112,
                                     "name": "startingPresentValue",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 2184,
-                                    "src": "8221:20:4",
+                                    "referencedDeclaration": 6057,
+                                    "src": "8176:20:35",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
                                       "typeString": "uint256"
                                     }
                                   },
-                                  "src": "8200:41:4",
+                                  "src": "8155:41:35",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_uint256",
                                     "typeString": "uint256"
                                   }
                                 }
                               ],
-                              "id": 2241,
+                              "id": 6114,
                               "isConstant": false,
                               "isInlineArray": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "nodeType": "TupleExpression",
-                              "src": "8199:43:4",
+                              "src": "8154:43:35",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               }
                             },
-                            "id": 2242,
+                            "id": 6115,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
-                            "memberLocation": "8243:10:4",
+                            "memberLocation": "8198:10:35",
                             "memberName": "mulDivDown",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 8346,
-                            "src": "8199:54:4",
+                            "referencedDeclaration": 9813,
+                            "src": "8154:54:35",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                               "typeString": "function (uint256,uint256,uint256) pure returns (uint256)"
                             }
                           },
-                          "id": 2245,
+                          "id": 6118,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -7051,22 +4949,128 @@ export const HyperdriveLP =
                           "nameLocations": [],
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "8199:137:4",
+                          "src": "8154:137:35",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "src": "8188:148:4",
+                        "src": "8143:148:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
-                      "id": 2247,
+                      "id": 6120,
                       "nodeType": "ExpressionStatement",
-                      "src": "8188:148:4"
+                      "src": "8143:148:35"
+                    },
+                    {
+                      "condition": {
+                        "commonType": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "id": 6123,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "id": 6121,
+                          "name": "lpShares",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 5977,
+                          "src": "8395:8:35",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "<",
+                        "rightExpression": {
+                          "id": 6122,
+                          "name": "_minimumTransactionAmount",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 9242,
+                          "src": "8406:25:35",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "src": "8395:36:35",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      "id": 6130,
+                      "nodeType": "IfStatement",
+                      "src": "8391:120:35",
+                      "trueBody": {
+                        "id": 6129,
+                        "nodeType": "Block",
+                        "src": "8433:78:35",
+                        "statements": [
+                          {
+                            "errorCall": {
+                              "arguments": [],
+                              "expression": {
+                                "argumentTypes": [],
+                                "expression": {
+                                  "id": 6124,
+                                  "name": "IHyperdrive",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 3759,
+                                  "src": "8458:11:35",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$3759_$",
+                                    "typeString": "type(contract IHyperdrive)"
+                                  }
+                                },
+                                "id": 6126,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "memberLocation": "8470:24:35",
+                                "memberName": "MinimumTransactionAmount",
+                                "nodeType": "MemberAccess",
+                                "referencedDeclaration": 3667,
+                                "src": "8458:36:35",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_function_error_pure$__$returns$__$",
+                                  "typeString": "function () pure"
+                                }
+                              },
+                              "id": 6127,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "kind": "functionCall",
+                              "lValueRequested": false,
+                              "nameLocations": [],
+                              "names": [],
+                              "nodeType": "FunctionCall",
+                              "src": "8458:38:35",
+                              "tryCall": false,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_tuple$__$",
+                                "typeString": "tuple()"
+                              }
+                            },
+                            "id": 6128,
+                            "nodeType": "RevertStatement",
+                            "src": "8451:45:35"
+                          }
+                        ]
+                      }
                     }
                   ]
                 },
@@ -7075,27 +5079,27 @@ export const HyperdriveLP =
                     "arguments": [
                       {
                         "expression": {
-                          "id": 2250,
+                          "id": 6133,
                           "name": "AssetId",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8311,
-                          "src": "8406:7:4",
+                          "referencedDeclaration": 9781,
+                          "src": "8580:7:35",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_AssetId_$8311_$",
+                            "typeIdentifier": "t_type$_t_contract$_AssetId_$9781_$",
                             "typeString": "type(library AssetId)"
                           }
                         },
-                        "id": 2251,
+                        "id": 6134,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "lValueRequested": false,
-                        "memberLocation": "8414:12:4",
+                        "memberLocation": "8588:12:35",
                         "memberName": "_LP_ASSET_ID",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 8003,
-                        "src": "8406:20:4",
+                        "referencedDeclaration": 9473,
+                        "src": "8580:20:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -7103,39 +5107,39 @@ export const HyperdriveLP =
                       },
                       {
                         "expression": {
-                          "id": 2252,
+                          "id": 6135,
                           "name": "_options",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2098,
-                          "src": "8428:8:4",
+                          "referencedDeclaration": 5970,
+                          "src": "8602:8:35",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Options_$7295_calldata_ptr",
+                            "typeIdentifier": "t_struct$_Options_$3608_calldata_ptr",
                             "typeString": "struct IHyperdrive.Options calldata"
                           }
                         },
-                        "id": 2253,
+                        "id": 6136,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "8437:11:4",
+                        "memberLocation": "8611:11:35",
                         "memberName": "destination",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 7288,
-                        "src": "8428:20:4",
+                        "referencedDeclaration": 3601,
+                        "src": "8602:20:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         }
                       },
                       {
-                        "id": 2254,
+                        "id": 6137,
                         "name": "lpShares",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2105,
-                        "src": "8450:8:4",
+                        "referencedDeclaration": 5977,
+                        "src": "8624:8:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -7157,18 +5161,18 @@ export const HyperdriveLP =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 2249,
+                      "id": 6132,
                       "name": "_mint",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 12051,
-                      "src": "8400:5:4",
+                      "referencedDeclaration": 8072,
+                      "src": "8574:5:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_address_$_t_uint256_$returns$__$",
                         "typeString": "function (uint256,address,uint256)"
                       }
                     },
-                    "id": 2255,
+                    "id": 6138,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -7177,27 +5181,27 @@ export const HyperdriveLP =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "8400:59:4",
+                    "src": "8574:59:35",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2256,
+                  "id": 6139,
                   "nodeType": "ExpressionStatement",
-                  "src": "8400:59:4"
+                  "src": "8574:59:35"
                 },
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 2258,
+                        "id": 6141,
                         "name": "sharePrice",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2149,
-                        "src": "8554:10:4",
+                        "referencedDeclaration": 6022,
+                        "src": "8728:10:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -7211,18 +5215,18 @@ export const HyperdriveLP =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 2257,
+                      "id": 6140,
                       "name": "_distributeExcessIdle",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2961,
-                      "src": "8532:21:4",
+                      "referencedDeclaration": 6850,
+                      "src": "8706:21:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$returns$__$",
                         "typeString": "function (uint256)"
                       }
                     },
-                    "id": 2259,
+                    "id": 6142,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -7231,31 +5235,31 @@ export const HyperdriveLP =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "8532:33:4",
+                    "src": "8706:33:35",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2260,
+                  "id": 6143,
                   "nodeType": "ExpressionStatement",
-                  "src": "8532:33:4"
+                  "src": "8706:33:35"
                 },
                 {
                   "assignments": [
-                    2262
+                    6145
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 2262,
+                      "id": 6145,
                       "mutability": "mutable",
                       "name": "lpSharePrice",
-                      "nameLocation": "8623:12:4",
+                      "nameLocation": "8797:12:35",
                       "nodeType": "VariableDeclaration",
-                      "scope": 2285,
-                      "src": "8615:20:4",
+                      "scope": 6173,
+                      "src": "8789:20:35",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -7263,10 +5267,10 @@ export const HyperdriveLP =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 2261,
+                        "id": 6144,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "8615:7:4",
+                        "src": "8789:7:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -7275,25 +5279,25 @@ export const HyperdriveLP =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 2272,
+                  "id": 6155,
                   "initialValue": {
                     "condition": {
                       "commonType": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       },
-                      "id": 2265,
+                      "id": 6148,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
-                        "id": 2263,
+                        "id": 6146,
                         "name": "lpTotalSupply",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2172,
-                        "src": "8638:13:4",
+                        "referencedDeclaration": 6045,
+                        "src": "8812:13:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -7303,21 +5307,21 @@ export const HyperdriveLP =
                       "operator": "==",
                       "rightExpression": {
                         "hexValue": "30",
-                        "id": 2264,
+                        "id": 6147,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "8655:1:4",
+                        "src": "8829:1:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_rational_0_by_1",
                           "typeString": "int_const 0"
                         },
                         "value": "0"
                       },
-                      "src": "8638:18:4",
+                      "src": "8812:18:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
@@ -7326,12 +5330,12 @@ export const HyperdriveLP =
                     "falseExpression": {
                       "arguments": [
                         {
-                          "id": 2269,
+                          "id": 6152,
                           "name": "lpTotalSupply",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2172,
-                          "src": "8716:13:4",
+                          "referencedDeclaration": 6045,
+                          "src": "8890:13:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -7346,33 +5350,33 @@ export const HyperdriveLP =
                           }
                         ],
                         "expression": {
-                          "id": 2267,
+                          "id": 6150,
                           "name": "startingPresentValue",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2184,
-                          "src": "8687:20:4",
+                          "referencedDeclaration": 6057,
+                          "src": "8861:20:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 2268,
+                        "id": 6151,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "8708:7:4",
+                        "memberLocation": "8882:7:35",
                         "memberName": "divDown",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 8382,
-                        "src": "8687:28:4",
+                        "referencedDeclaration": 9849,
+                        "src": "8861:28:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                           "typeString": "function (uint256,uint256) pure returns (uint256)"
                         }
                       },
-                      "id": 2270,
+                      "id": 6153,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -7381,30 +5385,30 @@ export const HyperdriveLP =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "8687:43:4",
+                      "src": "8861:43:35",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "id": 2271,
+                    "id": 6154,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "Conditional",
-                    "src": "8638:92:4",
+                    "src": "8812:92:35",
                     "trueExpression": {
                       "hexValue": "30",
-                      "id": 2266,
+                      "id": 6149,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "8671:1:4",
+                      "src": "8845:1:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_0_by_1",
                         "typeString": "int_const 0"
@@ -7417,135 +5421,200 @@ export const HyperdriveLP =
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "8615:115:4"
+                  "src": "8789:115:35"
+                },
+                {
+                  "assignments": [
+                    6157
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 6157,
+                      "mutability": "mutable",
+                      "name": "baseContribution",
+                      "nameLocation": "8922:16:35",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 6173,
+                      "src": "8914:24:35",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 6156,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "8914:7:35",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 6163,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "id": 6159,
+                        "name": "_contribution",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 5963,
+                        "src": "8979:13:35",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 6160,
+                        "name": "sharePrice",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6022,
+                        "src": "9006:10:35",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "id": 6161,
+                        "name": "_options",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 5970,
+                        "src": "9030:8:35",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Options_$3608_calldata_ptr",
+                          "typeString": "struct IHyperdrive.Options calldata"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_struct$_Options_$3608_calldata_ptr",
+                          "typeString": "struct IHyperdrive.Options calldata"
+                        }
+                      ],
+                      "id": 6158,
+                      "name": "_convertToBaseFromOption",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5327,
+                      "src": "8941:24:35",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_struct$_Options_$3608_calldata_ptr_$returns$_t_uint256_$",
+                        "typeString": "function (uint256,uint256,struct IHyperdrive.Options calldata) pure returns (uint256)"
+                      }
+                    },
+                    "id": 6162,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "8941:107:35",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "8914:134:35"
                 },
                 {
                   "eventCall": {
                     "arguments": [
                       {
                         "expression": {
-                          "id": 2274,
+                          "id": 6165,
                           "name": "_options",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2098,
-                          "src": "8771:8:4",
+                          "referencedDeclaration": 5970,
+                          "src": "9089:8:35",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Options_$7295_calldata_ptr",
+                            "typeIdentifier": "t_struct$_Options_$3608_calldata_ptr",
                             "typeString": "struct IHyperdrive.Options calldata"
                           }
                         },
-                        "id": 2275,
+                        "id": 6166,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "8780:11:4",
+                        "memberLocation": "9098:11:35",
                         "memberName": "destination",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 7288,
-                        "src": "8771:20:4",
+                        "referencedDeclaration": 3601,
+                        "src": "9089:20:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         }
                       },
                       {
-                        "id": 2276,
+                        "id": 6167,
                         "name": "lpShares",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2105,
-                        "src": "8805:8:4",
+                        "referencedDeclaration": 5977,
+                        "src": "9123:8:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "arguments": [
-                          {
-                            "id": 2279,
-                            "name": "sharePrice",
-                            "nodeType": "Identifier",
-                            "overloadedDeclarations": [],
-                            "referencedDeclaration": 2149,
-                            "src": "8847:10:4",
-                            "typeDescriptions": {
-                              "typeIdentifier": "t_uint256",
-                              "typeString": "uint256"
-                            }
-                          }
-                        ],
-                        "expression": {
-                          "argumentTypes": [
-                            {
-                              "typeIdentifier": "t_uint256",
-                              "typeString": "uint256"
-                            }
-                          ],
-                          "expression": {
-                            "id": 2277,
-                            "name": "vaultShares",
-                            "nodeType": "Identifier",
-                            "overloadedDeclarations": [],
-                            "referencedDeclaration": 2147,
-                            "src": "8827:11:4",
-                            "typeDescriptions": {
-                              "typeIdentifier": "t_uint256",
-                              "typeString": "uint256"
-                            }
-                          },
-                          "id": 2278,
-                          "isConstant": false,
-                          "isLValue": false,
-                          "isPure": false,
-                          "lValueRequested": false,
-                          "memberLocation": "8839:7:4",
-                          "memberName": "mulDown",
-                          "nodeType": "MemberAccess",
-                          "referencedDeclaration": 8364,
-                          "src": "8827:19:4",
-                          "typeDescriptions": {
-                            "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
-                            "typeString": "function (uint256,uint256) pure returns (uint256)"
-                          }
-                        },
-                        "id": 2280,
-                        "isConstant": false,
-                        "isLValue": false,
-                        "isPure": false,
-                        "kind": "functionCall",
-                        "lValueRequested": false,
-                        "nameLocations": [],
-                        "names": [],
-                        "nodeType": "FunctionCall",
-                        "src": "8827:31:4",
-                        "tryCall": false,
+                        "id": 6168,
+                        "name": "baseContribution",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6157,
+                        "src": "9145:16:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 2281,
+                        "id": 6169,
                         "name": "sharePrice",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2149,
-                        "src": "8872:10:4",
+                        "referencedDeclaration": 6022,
+                        "src": "9175:10:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 2282,
+                        "id": 6170,
                         "name": "lpSharePrice",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2262,
-                        "src": "8896:12:4",
+                        "referencedDeclaration": 6145,
+                        "src": "9199:12:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -7575,18 +5644,18 @@ export const HyperdriveLP =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 2273,
+                      "id": 6164,
                       "name": "AddLiquidity",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 612,
-                      "src": "8745:12:4",
+                      "referencedDeclaration": 4562,
+                      "src": "9063:12:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$__$",
                         "typeString": "function (address,uint256,uint256,uint256,uint256)"
                       }
                     },
-                    "id": 2283,
+                    "id": 6171,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -7595,80 +5664,76 @@ export const HyperdriveLP =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "8745:173:4",
+                    "src": "9063:158:35",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2284,
+                  "id": 6172,
                   "nodeType": "EmitStatement",
-                  "src": "8740:178:4"
+                  "src": "9058:163:35"
                 }
               ]
             },
-            "baseFunctions": [
-              7566
-            ],
             "documentation": {
-              "id": 2089,
+              "id": 5961,
               "nodeType": "StructuredDocumentation",
-              "src": "4809:400:4",
-              "text": "@notice Allows LPs to supply liquidity for LP shares.\n @param _contribution The amount to supply.\n @param _minApr The minimum APR at which the LP is willing to supply.\n @param _maxApr The maximum APR at which the LP is willing to supply.\n @param _options The options that configure how the operation is settled.\n @return lpShares The number of LP tokens created"
+              "src": "4750:397:35",
+              "text": "@dev Allows LPs to supply liquidity for LP shares.\n @param _contribution The amount to supply.\n @param _minApr The minimum APR at which the LP is willing to supply.\n @param _maxApr The maximum APR at which the LP is willing to supply.\n @param _options The options that configure how the operation is settled.\n @return lpShares The number of LP tokens created"
             },
-            "functionSelector": "9aa68462",
             "implemented": true,
             "kind": "function",
             "modifiers": [
               {
-                "id": 2101,
+                "id": 5973,
                 "kind": "modifierInvocation",
                 "modifierName": {
-                  "id": 2100,
+                  "id": 5972,
                   "name": "nonReentrant",
                   "nameLocations": [
-                    "5387:12:4"
+                    "5318:12:35"
                   ],
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 64179,
-                  "src": "5387:12:4"
+                  "referencedDeclaration": 60563,
+                  "src": "5318:12:35"
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "5387:12:4"
+                "src": "5318:12:35"
               },
               {
-                "id": 2103,
+                "id": 5975,
                 "kind": "modifierInvocation",
                 "modifierName": {
-                  "id": 2102,
+                  "id": 5974,
                   "name": "isNotPaused",
                   "nameLocations": [
-                    "5400:11:4"
+                    "5331:11:35"
                   ],
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 907,
-                  "src": "5400:11:4"
+                  "referencedDeclaration": 4729,
+                  "src": "5331:11:35"
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "5400:11:4"
+                "src": "5331:11:35"
               }
             ],
-            "name": "addLiquidity",
-            "nameLocation": "5223:12:4",
+            "name": "_addLiquidity",
+            "nameLocation": "5161:13:35",
             "parameters": {
-              "id": 2099,
+              "id": 5971,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2091,
+                  "id": 5963,
                   "mutability": "mutable",
                   "name": "_contribution",
-                  "nameLocation": "5253:13:4",
+                  "nameLocation": "5192:13:35",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2286,
-                  "src": "5245:21:4",
+                  "scope": 6174,
+                  "src": "5184:21:35",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -7676,10 +5741,10 @@ export const HyperdriveLP =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2090,
+                    "id": 5962,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5245:7:4",
+                    "src": "5184:7:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -7689,13 +5754,13 @@ export const HyperdriveLP =
                 },
                 {
                   "constant": false,
-                  "id": 2093,
+                  "id": 5965,
                   "mutability": "mutable",
                   "name": "_minApr",
-                  "nameLocation": "5284:7:4",
+                  "nameLocation": "5223:7:35",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2286,
-                  "src": "5276:15:4",
+                  "scope": 6174,
+                  "src": "5215:15:35",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -7703,10 +5768,10 @@ export const HyperdriveLP =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2092,
+                    "id": 5964,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5276:7:4",
+                    "src": "5215:7:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -7716,13 +5781,13 @@ export const HyperdriveLP =
                 },
                 {
                   "constant": false,
-                  "id": 2095,
+                  "id": 5967,
                   "mutability": "mutable",
                   "name": "_maxApr",
-                  "nameLocation": "5309:7:4",
+                  "nameLocation": "5248:7:35",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2286,
-                  "src": "5301:15:4",
+                  "scope": 6174,
+                  "src": "5240:15:35",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -7730,10 +5795,10 @@ export const HyperdriveLP =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2094,
+                    "id": 5966,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5301:7:4",
+                    "src": "5240:7:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -7743,58 +5808,58 @@ export const HyperdriveLP =
                 },
                 {
                   "constant": false,
-                  "id": 2098,
+                  "id": 5970,
                   "mutability": "mutable",
                   "name": "_options",
-                  "nameLocation": "5355:8:4",
+                  "nameLocation": "5294:8:35",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2286,
-                  "src": "5326:37:4",
+                  "scope": 6174,
+                  "src": "5265:37:35",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_Options_$7295_calldata_ptr",
+                    "typeIdentifier": "t_struct$_Options_$3608_calldata_ptr",
                     "typeString": "struct IHyperdrive.Options"
                   },
                   "typeName": {
-                    "id": 2097,
+                    "id": 5969,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 2096,
+                      "id": 5968,
                       "name": "IHyperdrive.Options",
                       "nameLocations": [
-                        "5326:11:4",
-                        "5338:7:4"
+                        "5265:11:35",
+                        "5277:7:35"
                       ],
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 7295,
-                      "src": "5326:19:4"
+                      "referencedDeclaration": 3608,
+                      "src": "5265:19:35"
                     },
-                    "referencedDeclaration": 7295,
-                    "src": "5326:19:4",
+                    "referencedDeclaration": 3608,
+                    "src": "5265:19:35",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Options_$7295_storage_ptr",
+                      "typeIdentifier": "t_struct$_Options_$3608_storage_ptr",
                       "typeString": "struct IHyperdrive.Options"
                     }
                   },
                   "visibility": "internal"
                 }
               ],
-              "src": "5235:134:4"
+              "src": "5174:134:35"
             },
             "returnParameters": {
-              "id": 2106,
+              "id": 5978,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2105,
+                  "id": 5977,
                   "mutability": "mutable",
                   "name": "lpShares",
-                  "nameLocation": "5429:8:4",
+                  "nameLocation": "5360:8:35",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2286,
-                  "src": "5421:16:4",
+                  "scope": 6174,
+                  "src": "5352:16:35",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -7802,10 +5867,10 @@ export const HyperdriveLP =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2104,
+                    "id": 5976,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5421:7:4",
+                    "src": "5352:7:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -7814,22 +5879,22 @@ export const HyperdriveLP =
                   "visibility": "internal"
                 }
               ],
-              "src": "5420:18:4"
+              "src": "5351:18:35"
             },
-            "scope": 3078,
-            "stateMutability": "payable",
+            "scope": 6967,
+            "stateMutability": "nonpayable",
             "virtual": false,
-            "visibility": "external"
+            "visibility": "internal"
           },
           {
-            "id": 2440,
+            "id": 6328,
             "nodeType": "FunctionDefinition",
-            "src": "9953:2560:4",
+            "src": "10253:2561:35",
             "nodes": [],
             "body": {
-              "id": 2439,
+              "id": 6327,
               "nodeType": "Block",
-              "src": "10189:2324:4",
+              "src": "10490:2324:35",
               "nodes": [],
               "statements": [
                 {
@@ -7838,18 +5903,18 @@ export const HyperdriveLP =
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 2305,
+                    "id": 6193,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 2303,
+                      "id": 6191,
                       "name": "_lpShares",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2289,
-                      "src": "10203:9:4",
+                      "referencedDeclaration": 6177,
+                      "src": "10504:9:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -7858,30 +5923,30 @@ export const HyperdriveLP =
                     "nodeType": "BinaryOperation",
                     "operator": "<",
                     "rightExpression": {
-                      "id": 2304,
+                      "id": 6192,
                       "name": "_minimumTransactionAmount",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 4829,
-                      "src": "10215:25:4",
+                      "referencedDeclaration": 9242,
+                      "src": "10516:25:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "10203:37:4",
+                    "src": "10504:37:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 2312,
+                  "id": 6200,
                   "nodeType": "IfStatement",
-                  "src": "10199:113:4",
+                  "src": "10500:113:35",
                   "trueBody": {
-                    "id": 2311,
+                    "id": 6199,
                     "nodeType": "Block",
-                    "src": "10242:70:4",
+                    "src": "10543:70:35",
                     "statements": [
                       {
                         "errorCall": {
@@ -7889,33 +5954,33 @@ export const HyperdriveLP =
                           "expression": {
                             "argumentTypes": [],
                             "expression": {
-                              "id": 2306,
+                              "id": 6194,
                               "name": "IHyperdrive",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 7431,
-                              "src": "10263:11:4",
+                              "referencedDeclaration": 3759,
+                              "src": "10564:11:35",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$7431_$",
+                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$3759_$",
                                 "typeString": "type(contract IHyperdrive)"
                               }
                             },
-                            "id": 2308,
+                            "id": 6196,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
-                            "memberLocation": "10275:24:4",
+                            "memberLocation": "10576:24:35",
                             "memberName": "MinimumTransactionAmount",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 7354,
-                            "src": "10263:36:4",
+                            "referencedDeclaration": 3667,
+                            "src": "10564:36:35",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_error_pure$__$returns$__$",
                               "typeString": "function () pure"
                             }
                           },
-                          "id": 2309,
+                          "id": 6197,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -7924,34 +5989,34 @@ export const HyperdriveLP =
                           "nameLocations": [],
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "10263:38:4",
+                          "src": "10564:38:35",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_tuple$__$",
                             "typeString": "tuple()"
                           }
                         },
-                        "id": 2310,
+                        "id": 6198,
                         "nodeType": "RevertStatement",
-                        "src": "10256:45:4"
+                        "src": "10557:45:35"
                       }
                     ]
                   }
                 },
                 {
                   "assignments": [
-                    2314
+                    6202
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 2314,
+                      "id": 6202,
                       "mutability": "mutable",
                       "name": "sharePrice",
-                      "nameLocation": "10363:10:4",
+                      "nameLocation": "10664:10:35",
                       "nodeType": "VariableDeclaration",
-                      "scope": 2439,
-                      "src": "10355:18:4",
+                      "scope": 6327,
+                      "src": "10656:18:35",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -7959,10 +6024,10 @@ export const HyperdriveLP =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 2313,
+                        "id": 6201,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "10355:7:4",
+                        "src": "10656:7:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -7971,23 +6036,23 @@ export const HyperdriveLP =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 2317,
+                  "id": 6205,
                   "initialValue": {
                     "arguments": [],
                     "expression": {
                       "argumentTypes": [],
-                      "id": 2315,
+                      "id": 6203,
                       "name": "_pricePerShare",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 807,
-                      "src": "10376:14:4",
+                      "referencedDeclaration": 4716,
+                      "src": "10677:14:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_view$__$returns$_t_uint256_$",
                         "typeString": "function () view returns (uint256)"
                       }
                     },
-                    "id": 2316,
+                    "id": 6204,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -7996,7 +6061,7 @@ export const HyperdriveLP =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "10376:16:4",
+                    "src": "10677:16:35",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
@@ -8004,7 +6069,7 @@ export const HyperdriveLP =
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "10355:37:4"
+                  "src": "10656:37:35"
                 },
                 {
                   "expression": {
@@ -8013,18 +6078,18 @@ export const HyperdriveLP =
                         "arguments": [],
                         "expression": {
                           "argumentTypes": [],
-                          "id": 2319,
+                          "id": 6207,
                           "name": "_latestCheckpoint",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 5113,
-                          "src": "10419:17:4",
+                          "referencedDeclaration": 4827,
+                          "src": "10720:17:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_view$__$returns$_t_uint256_$",
                             "typeString": "function () view returns (uint256)"
                           }
                         },
-                        "id": 2320,
+                        "id": 6208,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -8033,7 +6098,7 @@ export const HyperdriveLP =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "10419:19:4",
+                        "src": "10720:19:35",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -8041,12 +6106,12 @@ export const HyperdriveLP =
                         }
                       },
                       {
-                        "id": 2321,
+                        "id": 6209,
                         "name": "sharePrice",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2314,
-                        "src": "10440:10:4",
+                        "referencedDeclaration": 6202,
+                        "src": "10741:10:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -8064,18 +6129,18 @@ export const HyperdriveLP =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 2318,
+                      "id": 6206,
                       "name": "_applyCheckpoint",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 917,
-                      "src": "10402:16:4",
+                      "referencedDeclaration": 4739,
+                      "src": "10703:16:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
                         "typeString": "function (uint256,uint256) returns (uint256)"
                       }
                     },
-                    "id": 2322,
+                    "id": 6210,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -8084,27 +6149,27 @@ export const HyperdriveLP =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "10402:49:4",
+                    "src": "10703:49:35",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 2323,
+                  "id": 6211,
                   "nodeType": "ExpressionStatement",
-                  "src": "10402:49:4"
+                  "src": "10703:49:35"
                 },
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 2325,
+                        "id": 6213,
                         "name": "sharePrice",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2314,
-                        "src": "10690:10:4",
+                        "referencedDeclaration": 6202,
+                        "src": "10991:10:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -8118,18 +6183,18 @@ export const HyperdriveLP =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 2324,
+                      "id": 6212,
                       "name": "_distributeExcessIdle",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2961,
-                      "src": "10668:21:4",
+                      "referencedDeclaration": 6850,
+                      "src": "10969:21:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$returns$__$",
                         "typeString": "function (uint256)"
                       }
                     },
-                    "id": 2326,
+                    "id": 6214,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -8138,31 +6203,31 @@ export const HyperdriveLP =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "10668:33:4",
+                    "src": "10969:33:35",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2327,
+                  "id": 6215,
                   "nodeType": "ExpressionStatement",
-                  "src": "10668:33:4"
+                  "src": "10969:33:35"
                 },
                 {
                   "assignments": [
-                    2329
+                    6217
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 2329,
+                      "id": 6217,
                       "mutability": "mutable",
                       "name": "totalActiveLpSupply",
-                      "nameLocation": "10751:19:4",
+                      "nameLocation": "11052:19:35",
                       "nodeType": "VariableDeclaration",
-                      "scope": 2439,
-                      "src": "10743:27:4",
+                      "scope": 6327,
+                      "src": "11044:27:35",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -8170,10 +6235,10 @@ export const HyperdriveLP =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 2328,
+                        "id": 6216,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "10743:7:4",
+                        "src": "11044:7:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -8182,44 +6247,44 @@ export const HyperdriveLP =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 2334,
+                  "id": 6222,
                   "initialValue": {
                     "baseExpression": {
-                      "id": 2330,
+                      "id": 6218,
                       "name": "_totalSupply",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 12500,
-                      "src": "10773:12:4",
+                      "referencedDeclaration": 9291,
+                      "src": "11074:12:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
                         "typeString": "mapping(uint256 => uint256)"
                       }
                     },
-                    "id": 2333,
+                    "id": 6221,
                     "indexExpression": {
                       "expression": {
-                        "id": 2331,
+                        "id": 6219,
                         "name": "AssetId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 8311,
-                        "src": "10786:7:4",
+                        "referencedDeclaration": 9781,
+                        "src": "11087:7:35",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_AssetId_$8311_$",
+                          "typeIdentifier": "t_type$_t_contract$_AssetId_$9781_$",
                           "typeString": "type(library AssetId)"
                         }
                       },
-                      "id": 2332,
+                      "id": 6220,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "lValueRequested": false,
-                      "memberLocation": "10794:12:4",
+                      "memberLocation": "11095:12:35",
                       "memberName": "_LP_ASSET_ID",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 8003,
-                      "src": "10786:20:4",
+                      "referencedDeclaration": 9473,
+                      "src": "11087:20:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -8230,29 +6295,29 @@ export const HyperdriveLP =
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "IndexAccess",
-                    "src": "10773:34:4",
+                    "src": "11074:34:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "10743:64:4"
+                  "src": "11044:64:35"
                 },
                 {
                   "assignments": [
-                    2336
+                    6224
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 2336,
+                      "id": 6224,
                       "mutability": "mutable",
                       "name": "withdrawalSharesOutstanding",
-                      "nameLocation": "10825:27:4",
+                      "nameLocation": "11126:27:35",
                       "nodeType": "VariableDeclaration",
-                      "scope": 2439,
-                      "src": "10817:35:4",
+                      "scope": 6327,
+                      "src": "11118:35:35",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -8260,10 +6325,10 @@ export const HyperdriveLP =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 2335,
+                        "id": 6223,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "10817:7:4",
+                        "src": "11118:7:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -8272,54 +6337,54 @@ export const HyperdriveLP =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 2344,
+                  "id": 6232,
                   "initialValue": {
                     "commonType": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 2343,
+                    "id": 6231,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
                       "baseExpression": {
-                        "id": 2337,
+                        "id": 6225,
                         "name": "_totalSupply",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 12500,
-                        "src": "10855:12:4",
+                        "referencedDeclaration": 9291,
+                        "src": "11156:12:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
                           "typeString": "mapping(uint256 => uint256)"
                         }
                       },
-                      "id": 2340,
+                      "id": 6228,
                       "indexExpression": {
                         "expression": {
-                          "id": 2338,
+                          "id": 6226,
                           "name": "AssetId",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8311,
-                          "src": "10881:7:4",
+                          "referencedDeclaration": 9781,
+                          "src": "11182:7:35",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_AssetId_$8311_$",
+                            "typeIdentifier": "t_type$_t_contract$_AssetId_$9781_$",
                             "typeString": "type(library AssetId)"
                           }
                         },
-                        "id": 2339,
+                        "id": 6227,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "lValueRequested": false,
-                        "memberLocation": "10889:26:4",
+                        "memberLocation": "11190:26:35",
                         "memberName": "_WITHDRAWAL_SHARE_ASSET_ID",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 8012,
-                        "src": "10881:34:4",
+                        "referencedDeclaration": 9482,
+                        "src": "11182:34:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -8330,7 +6395,7 @@ export const HyperdriveLP =
                       "isPure": false,
                       "lValueRequested": false,
                       "nodeType": "IndexAccess",
-                      "src": "10855:70:4",
+                      "src": "11156:70:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -8340,55 +6405,55 @@ export const HyperdriveLP =
                     "operator": "-",
                     "rightExpression": {
                       "expression": {
-                        "id": 2341,
+                        "id": 6229,
                         "name": "_withdrawPool",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4837,
-                        "src": "10928:13:4",
+                        "referencedDeclaration": 9253,
+                        "src": "11229:13:35",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_WithdrawPool_$7189_storage",
+                          "typeIdentifier": "t_struct$_WithdrawPool_$3506_storage",
                           "typeString": "struct IHyperdrive.WithdrawPool storage ref"
                         }
                       },
-                      "id": 2342,
+                      "id": 6230,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "10942:15:4",
+                      "memberLocation": "11243:15:35",
                       "memberName": "readyToWithdraw",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 7185,
-                      "src": "10928:29:4",
+                      "referencedDeclaration": 3502,
+                      "src": "11229:29:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint128",
                         "typeString": "uint128"
                       }
                     },
-                    "src": "10855:102:4",
+                    "src": "11156:102:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "10817:140:4"
+                  "src": "11118:140:35"
                 },
                 {
                   "assignments": [
-                    2346
+                    6234
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 2346,
+                      "id": 6234,
                       "mutability": "mutable",
                       "name": "totalLpSupply",
-                      "nameLocation": "10975:13:4",
+                      "nameLocation": "11276:13:35",
                       "nodeType": "VariableDeclaration",
-                      "scope": 2439,
-                      "src": "10967:21:4",
+                      "scope": 6327,
+                      "src": "11268:21:35",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -8396,10 +6461,10 @@ export const HyperdriveLP =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 2345,
+                        "id": 6233,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "10967:7:4",
+                        "src": "11268:7:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -8408,24 +6473,24 @@ export const HyperdriveLP =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 2350,
+                  "id": 6238,
                   "initialValue": {
                     "commonType": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 2349,
+                    "id": 6237,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 2347,
+                      "id": 6235,
                       "name": "totalActiveLpSupply",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2329,
-                      "src": "10991:19:4",
+                      "referencedDeclaration": 6217,
+                      "src": "11292:19:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -8434,52 +6499,52 @@ export const HyperdriveLP =
                     "nodeType": "BinaryOperation",
                     "operator": "+",
                     "rightExpression": {
-                      "id": 2348,
+                      "id": 6236,
                       "name": "withdrawalSharesOutstanding",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2336,
-                      "src": "11025:27:4",
+                      "referencedDeclaration": 6224,
+                      "src": "11326:27:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "10991:61:4",
+                    "src": "11292:61:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "10967:85:4"
+                  "src": "11268:85:35"
                 },
                 {
                   "expression": {
                     "arguments": [
                       {
                         "expression": {
-                          "id": 2352,
+                          "id": 6240,
                           "name": "AssetId",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8311,
-                          "src": "11068:7:4",
+                          "referencedDeclaration": 9781,
+                          "src": "11369:7:35",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_AssetId_$8311_$",
+                            "typeIdentifier": "t_type$_t_contract$_AssetId_$9781_$",
                             "typeString": "type(library AssetId)"
                           }
                         },
-                        "id": 2353,
+                        "id": 6241,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "lValueRequested": false,
-                        "memberLocation": "11076:12:4",
+                        "memberLocation": "11377:12:35",
                         "memberName": "_LP_ASSET_ID",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 8003,
-                        "src": "11068:20:4",
+                        "referencedDeclaration": 9473,
+                        "src": "11369:20:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -8487,38 +6552,38 @@ export const HyperdriveLP =
                       },
                       {
                         "expression": {
-                          "id": 2354,
+                          "id": 6242,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": -15,
-                          "src": "11090:3:4",
+                          "src": "11391:3:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
                           }
                         },
-                        "id": 2355,
+                        "id": 6243,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "11094:6:4",
+                        "memberLocation": "11395:6:35",
                         "memberName": "sender",
                         "nodeType": "MemberAccess",
-                        "src": "11090:10:4",
+                        "src": "11391:10:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         }
                       },
                       {
-                        "id": 2356,
+                        "id": 6244,
                         "name": "_lpShares",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2289,
-                        "src": "11102:9:4",
+                        "referencedDeclaration": 6177,
+                        "src": "11403:9:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -8540,18 +6605,18 @@ export const HyperdriveLP =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 2351,
+                      "id": 6239,
                       "name": "_burn",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 12088,
-                      "src": "11062:5:4",
+                      "referencedDeclaration": 8109,
+                      "src": "11363:5:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_address_$_t_uint256_$returns$__$",
                         "typeString": "function (uint256,address,uint256)"
                       }
                     },
-                    "id": 2357,
+                    "id": 6245,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -8560,31 +6625,31 @@ export const HyperdriveLP =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "11062:50:4",
+                    "src": "11363:50:35",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2358,
+                  "id": 6246,
                   "nodeType": "ExpressionStatement",
-                  "src": "11062:50:4"
+                  "src": "11363:50:35"
                 },
                 {
                   "assignments": [
-                    2360
+                    6248
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 2360,
+                      "id": 6248,
                       "mutability": "mutable",
                       "name": "shareProceeds",
-                      "nameLocation": "11178:13:4",
+                      "nameLocation": "11479:13:35",
                       "nodeType": "VariableDeclaration",
-                      "scope": 2439,
-                      "src": "11170:21:4",
+                      "scope": 6327,
+                      "src": "11471:21:35",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -8592,10 +6657,10 @@ export const HyperdriveLP =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 2359,
+                        "id": 6247,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "11170:7:4",
+                        "src": "11471:7:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -8604,24 +6669,24 @@ export const HyperdriveLP =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 2361,
+                  "id": 6249,
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "11170:21:4"
+                  "src": "11471:21:35"
                 },
                 {
                   "assignments": [
-                    2363
+                    6251
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 2363,
+                      "id": 6251,
                       "mutability": "mutable",
                       "name": "startingPresentValue",
-                      "nameLocation": "11209:20:4",
+                      "nameLocation": "11510:20:35",
                       "nodeType": "VariableDeclaration",
-                      "scope": 2439,
-                      "src": "11201:28:4",
+                      "scope": 6327,
+                      "src": "11502:28:35",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -8629,10 +6694,10 @@ export const HyperdriveLP =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 2362,
+                        "id": 6250,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "11201:7:4",
+                        "src": "11502:7:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -8641,13 +6706,13 @@ export const HyperdriveLP =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 2364,
+                  "id": 6252,
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "11201:28:4"
+                  "src": "11502:28:35"
                 },
                 {
                   "expression": {
-                    "id": 2376,
+                    "id": 6264,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -8655,50 +6720,50 @@ export const HyperdriveLP =
                     "leftHandSide": {
                       "components": [
                         {
-                          "id": 2365,
+                          "id": 6253,
                           "name": "shareProceeds",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2360,
-                          "src": "11253:13:4",
+                          "referencedDeclaration": 6248,
+                          "src": "11554:13:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
                         {
-                          "id": 2366,
+                          "id": 6254,
                           "name": "withdrawalShares",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2301,
-                          "src": "11280:16:4",
+                          "referencedDeclaration": 6189,
+                          "src": "11581:16:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
                         {
-                          "id": 2367,
+                          "id": 6255,
                           "name": "startingPresentValue",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2363,
-                          "src": "11310:20:4",
+                          "referencedDeclaration": 6251,
+                          "src": "11611:20:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         }
                       ],
-                      "id": 2368,
+                      "id": 6256,
                       "isConstant": false,
                       "isInlineArray": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
                       "nodeType": "TupleExpression",
-                      "src": "11239:101:4",
+                      "src": "11540:101:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_tuple$_t_uint256_$_t_uint256_$_t_uint256_$",
                         "typeString": "tuple(uint256,uint256,uint256)"
@@ -8709,60 +6774,60 @@ export const HyperdriveLP =
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 2370,
+                          "id": 6258,
                           "name": "_lpShares",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2289,
-                          "src": "11378:9:4",
+                          "referencedDeclaration": 6177,
+                          "src": "11679:9:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
                         {
-                          "id": 2371,
+                          "id": 6259,
                           "name": "sharePrice",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2314,
-                          "src": "11401:10:4",
+                          "referencedDeclaration": 6202,
+                          "src": "11702:10:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
                         {
-                          "id": 2372,
+                          "id": 6260,
                           "name": "totalLpSupply",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2346,
-                          "src": "11425:13:4",
+                          "referencedDeclaration": 6234,
+                          "src": "11726:13:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
                         {
-                          "id": 2373,
+                          "id": 6261,
                           "name": "totalActiveLpSupply",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2329,
-                          "src": "11452:19:4",
+                          "referencedDeclaration": 6217,
+                          "src": "11753:19:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
                         {
-                          "id": 2374,
+                          "id": 6262,
                           "name": "withdrawalSharesOutstanding",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2336,
-                          "src": "11485:27:4",
+                          "referencedDeclaration": 6224,
+                          "src": "11786:27:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -8792,18 +6857,18 @@ export const HyperdriveLP =
                             "typeString": "uint256"
                           }
                         ],
-                        "id": 2369,
+                        "id": 6257,
                         "name": "_applyRemoveLiquidity",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2877,
-                        "src": "11343:21:4",
+                        "referencedDeclaration": 6766,
+                        "src": "11644:21:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$_t_uint256_$_t_uint256_$",
                           "typeString": "function (uint256,uint256,uint256,uint256,uint256) returns (uint256,uint256,uint256)"
                         }
                       },
-                      "id": 2375,
+                      "id": 6263,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -8812,49 +6877,49 @@ export const HyperdriveLP =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "11343:179:4",
+                      "src": "11644:179:35",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_tuple$_t_uint256_$_t_uint256_$_t_uint256_$",
                         "typeString": "tuple(uint256,uint256,uint256)"
                       }
                     },
-                    "src": "11239:283:4",
+                    "src": "11540:283:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2377,
+                  "id": 6265,
                   "nodeType": "ExpressionStatement",
-                  "src": "11239:283:4"
+                  "src": "11540:283:35"
                 },
                 {
                   "expression": {
                     "arguments": [
                       {
                         "expression": {
-                          "id": 2379,
+                          "id": 6267,
                           "name": "AssetId",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8311,
-                          "src": "11601:7:4",
+                          "referencedDeclaration": 9781,
+                          "src": "11902:7:35",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_AssetId_$8311_$",
+                            "typeIdentifier": "t_type$_t_contract$_AssetId_$9781_$",
                             "typeString": "type(library AssetId)"
                           }
                         },
-                        "id": 2380,
+                        "id": 6268,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "lValueRequested": false,
-                        "memberLocation": "11609:26:4",
+                        "memberLocation": "11910:26:35",
                         "memberName": "_WITHDRAWAL_SHARE_ASSET_ID",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 8012,
-                        "src": "11601:34:4",
+                        "referencedDeclaration": 9482,
+                        "src": "11902:34:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -8862,39 +6927,39 @@ export const HyperdriveLP =
                       },
                       {
                         "expression": {
-                          "id": 2381,
+                          "id": 6269,
                           "name": "_options",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2294,
-                          "src": "11649:8:4",
+                          "referencedDeclaration": 6182,
+                          "src": "11950:8:35",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Options_$7295_calldata_ptr",
+                            "typeIdentifier": "t_struct$_Options_$3608_calldata_ptr",
                             "typeString": "struct IHyperdrive.Options calldata"
                           }
                         },
-                        "id": 2382,
+                        "id": 6270,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "11658:11:4",
+                        "memberLocation": "11959:11:35",
                         "memberName": "destination",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 7288,
-                        "src": "11649:20:4",
+                        "referencedDeclaration": 3601,
+                        "src": "11950:20:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         }
                       },
                       {
-                        "id": 2383,
+                        "id": 6271,
                         "name": "withdrawalShares",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2301,
-                        "src": "11683:16:4",
+                        "referencedDeclaration": 6189,
+                        "src": "11984:16:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -8916,18 +6981,18 @@ export const HyperdriveLP =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 2378,
+                      "id": 6266,
                       "name": "_mint",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 12051,
-                      "src": "11582:5:4",
+                      "referencedDeclaration": 8072,
+                      "src": "11883:5:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_address_$_t_uint256_$returns$__$",
                         "typeString": "function (uint256,address,uint256)"
                       }
                     },
-                    "id": 2384,
+                    "id": 6272,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -8936,31 +7001,31 @@ export const HyperdriveLP =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "11582:127:4",
+                    "src": "11883:127:35",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2385,
+                  "id": 6273,
                   "nodeType": "ExpressionStatement",
-                  "src": "11582:127:4"
+                  "src": "11883:127:35"
                 },
                 {
                   "expression": {
-                    "id": 2391,
+                    "id": 6279,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 2386,
+                      "id": 6274,
                       "name": "proceeds",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2299,
-                      "src": "11774:8:4",
+                      "referencedDeclaration": 6187,
+                      "src": "12075:8:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -8971,26 +7036,26 @@ export const HyperdriveLP =
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 2388,
+                          "id": 6276,
                           "name": "shareProceeds",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2360,
-                          "src": "11795:13:4",
+                          "referencedDeclaration": 6248,
+                          "src": "12096:13:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
                         {
-                          "id": 2389,
+                          "id": 6277,
                           "name": "_options",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2294,
-                          "src": "11810:8:4",
+                          "referencedDeclaration": 6182,
+                          "src": "12111:8:35",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Options_$7295_calldata_ptr",
+                            "typeIdentifier": "t_struct$_Options_$3608_calldata_ptr",
                             "typeString": "struct IHyperdrive.Options calldata"
                           }
                         }
@@ -9002,22 +7067,22 @@ export const HyperdriveLP =
                             "typeString": "uint256"
                           },
                           {
-                            "typeIdentifier": "t_struct$_Options_$7295_calldata_ptr",
+                            "typeIdentifier": "t_struct$_Options_$3608_calldata_ptr",
                             "typeString": "struct IHyperdrive.Options calldata"
                           }
                         ],
-                        "id": 2387,
+                        "id": 6275,
                         "name": "_withdraw",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 801,
-                        "src": "11785:9:4",
+                        "referencedDeclaration": 4710,
+                        "src": "12086:9:35",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_struct$_Options_$7295_calldata_ptr_$returns$_t_uint256_$",
+                          "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_struct$_Options_$3608_calldata_ptr_$returns$_t_uint256_$",
                           "typeString": "function (uint256,struct IHyperdrive.Options calldata) returns (uint256)"
                         }
                       },
-                      "id": 2390,
+                      "id": 6278,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -9026,37 +7091,37 @@ export const HyperdriveLP =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "11785:34:4",
+                      "src": "12086:34:35",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "11774:45:4",
+                    "src": "12075:45:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 2392,
+                  "id": 6280,
                   "nodeType": "ExpressionStatement",
-                  "src": "11774:45:4"
+                  "src": "12075:45:35"
                 },
                 {
                   "assignments": [
-                    2394
+                    6282
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 2394,
+                      "id": 6282,
                       "mutability": "mutable",
                       "name": "baseProceeds",
-                      "nameLocation": "11874:12:4",
+                      "nameLocation": "12175:12:35",
                       "nodeType": "VariableDeclaration",
-                      "scope": 2439,
-                      "src": "11866:20:4",
+                      "scope": 6327,
+                      "src": "12167:20:35",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -9064,10 +7129,10 @@ export const HyperdriveLP =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 2393,
+                        "id": 6281,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "11866:7:4",
+                        "src": "12167:7:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -9076,42 +7141,42 @@ export const HyperdriveLP =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 2400,
+                  "id": 6288,
                   "initialValue": {
                     "arguments": [
                       {
-                        "id": 2396,
+                        "id": 6284,
                         "name": "proceeds",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2299,
-                        "src": "11927:8:4",
+                        "referencedDeclaration": 6187,
+                        "src": "12228:8:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 2397,
+                        "id": 6285,
                         "name": "sharePrice",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2314,
-                        "src": "11949:10:4",
+                        "referencedDeclaration": 6202,
+                        "src": "12250:10:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 2398,
+                        "id": 6286,
                         "name": "_options",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2294,
-                        "src": "11973:8:4",
+                        "referencedDeclaration": 6182,
+                        "src": "12274:8:35",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Options_$7295_calldata_ptr",
+                          "typeIdentifier": "t_struct$_Options_$3608_calldata_ptr",
                           "typeString": "struct IHyperdrive.Options calldata"
                         }
                       }
@@ -9127,22 +7192,22 @@ export const HyperdriveLP =
                           "typeString": "uint256"
                         },
                         {
-                          "typeIdentifier": "t_struct$_Options_$7295_calldata_ptr",
+                          "typeIdentifier": "t_struct$_Options_$3608_calldata_ptr",
                           "typeString": "struct IHyperdrive.Options calldata"
                         }
                       ],
-                      "id": 2395,
+                      "id": 6283,
                       "name": "_convertToBaseFromOption",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1438,
-                      "src": "11889:24:4",
+                      "referencedDeclaration": 5327,
+                      "src": "12190:24:35",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_struct$_Options_$7295_calldata_ptr_$returns$_t_uint256_$",
+                        "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_struct$_Options_$3608_calldata_ptr_$returns$_t_uint256_$",
                         "typeString": "function (uint256,uint256,struct IHyperdrive.Options calldata) pure returns (uint256)"
                       }
                     },
-                    "id": 2399,
+                    "id": 6287,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -9151,7 +7216,7 @@ export const HyperdriveLP =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "11889:102:4",
+                    "src": "12190:102:35",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
@@ -9159,7 +7224,7 @@ export const HyperdriveLP =
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "11866:125:4"
+                  "src": "12167:125:35"
                 },
                 {
                   "condition": {
@@ -9167,18 +7232,18 @@ export const HyperdriveLP =
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 2403,
+                    "id": 6291,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 2401,
+                      "id": 6289,
                       "name": "_minOutput",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2291,
-                      "src": "12005:10:4",
+                      "referencedDeclaration": 6179,
+                      "src": "12306:10:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -9187,59 +7252,59 @@ export const HyperdriveLP =
                     "nodeType": "BinaryOperation",
                     "operator": ">",
                     "rightExpression": {
-                      "id": 2402,
+                      "id": 6290,
                       "name": "proceeds",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2299,
-                      "src": "12018:8:4",
+                      "referencedDeclaration": 6187,
+                      "src": "12319:8:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "12005:21:4",
+                    "src": "12306:21:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 2409,
+                  "id": 6297,
                   "nodeType": "IfStatement",
-                  "src": "12001:59:4",
+                  "src": "12302:59:35",
                   "trueBody": {
                     "errorCall": {
                       "arguments": [],
                       "expression": {
                         "argumentTypes": [],
                         "expression": {
-                          "id": 2404,
+                          "id": 6292,
                           "name": "IHyperdrive",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 7431,
-                          "src": "12035:11:4",
+                          "referencedDeclaration": 3759,
+                          "src": "12336:11:35",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$7431_$",
+                            "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$3759_$",
                             "typeString": "type(contract IHyperdrive)"
                           }
                         },
-                        "id": 2406,
+                        "id": 6294,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "12047:11:4",
+                        "memberLocation": "12348:11:35",
                         "memberName": "OutputLimit",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 7336,
-                        "src": "12035:23:4",
+                        "referencedDeclaration": 3649,
+                        "src": "12336:23:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_error_pure$__$returns$__$",
                           "typeString": "function () pure"
                         }
                       },
-                      "id": 2407,
+                      "id": 6295,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -9248,32 +7313,32 @@ export const HyperdriveLP =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "12035:25:4",
+                      "src": "12336:25:35",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_tuple$__$",
                         "typeString": "tuple()"
                       }
                     },
-                    "id": 2408,
+                    "id": 6296,
                     "nodeType": "RevertStatement",
-                    "src": "12028:32:4"
+                    "src": "12329:32:35"
                   }
                 },
                 {
                   "assignments": [
-                    2411
+                    6299
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 2411,
+                      "id": 6299,
                       "mutability": "mutable",
                       "name": "lpSharePrice",
-                      "nameLocation": "12120:12:4",
+                      "nameLocation": "12421:12:35",
                       "nodeType": "VariableDeclaration",
-                      "scope": 2439,
-                      "src": "12112:20:4",
+                      "scope": 6327,
+                      "src": "12413:20:35",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -9281,10 +7346,10 @@ export const HyperdriveLP =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 2410,
+                        "id": 6298,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "12112:7:4",
+                        "src": "12413:7:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -9293,25 +7358,25 @@ export const HyperdriveLP =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 2421,
+                  "id": 6309,
                   "initialValue": {
                     "condition": {
                       "commonType": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       },
-                      "id": 2414,
+                      "id": 6302,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
-                        "id": 2412,
+                        "id": 6300,
                         "name": "totalLpSupply",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2346,
-                        "src": "12135:13:4",
+                        "referencedDeclaration": 6234,
+                        "src": "12436:13:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -9321,21 +7386,21 @@ export const HyperdriveLP =
                       "operator": "==",
                       "rightExpression": {
                         "hexValue": "30",
-                        "id": 2413,
+                        "id": 6301,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "12152:1:4",
+                        "src": "12453:1:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_rational_0_by_1",
                           "typeString": "int_const 0"
                         },
                         "value": "0"
                       },
-                      "src": "12135:18:4",
+                      "src": "12436:18:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
@@ -9344,12 +7409,12 @@ export const HyperdriveLP =
                     "falseExpression": {
                       "arguments": [
                         {
-                          "id": 2418,
+                          "id": 6306,
                           "name": "totalLpSupply",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2346,
-                          "src": "12213:13:4",
+                          "referencedDeclaration": 6234,
+                          "src": "12514:13:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -9364,33 +7429,33 @@ export const HyperdriveLP =
                           }
                         ],
                         "expression": {
-                          "id": 2416,
+                          "id": 6304,
                           "name": "startingPresentValue",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2363,
-                          "src": "12184:20:4",
+                          "referencedDeclaration": 6251,
+                          "src": "12485:20:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 2417,
+                        "id": 6305,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "12205:7:4",
+                        "memberLocation": "12506:7:35",
                         "memberName": "divDown",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 8382,
-                        "src": "12184:28:4",
+                        "referencedDeclaration": 9849,
+                        "src": "12485:28:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                           "typeString": "function (uint256,uint256) pure returns (uint256)"
                         }
                       },
-                      "id": 2419,
+                      "id": 6307,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -9399,30 +7464,30 @@ export const HyperdriveLP =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "12184:43:4",
+                      "src": "12485:43:35",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "id": 2420,
+                    "id": 6308,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "Conditional",
-                    "src": "12135:92:4",
+                    "src": "12436:92:35",
                     "trueExpression": {
                       "hexValue": "30",
-                      "id": 2415,
+                      "id": 6303,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "12168:1:4",
+                      "src": "12469:1:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_0_by_1",
                         "typeString": "int_const 0"
@@ -9435,70 +7500,70 @@ export const HyperdriveLP =
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "12112:115:4"
+                  "src": "12413:115:35"
                 },
                 {
                   "eventCall": {
                     "arguments": [
                       {
                         "expression": {
-                          "id": 2423,
+                          "id": 6311,
                           "name": "_options",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2294,
-                          "src": "12271:8:4",
+                          "referencedDeclaration": 6182,
+                          "src": "12572:8:35",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Options_$7295_calldata_ptr",
+                            "typeIdentifier": "t_struct$_Options_$3608_calldata_ptr",
                             "typeString": "struct IHyperdrive.Options calldata"
                           }
                         },
-                        "id": 2424,
+                        "id": 6312,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "12280:11:4",
+                        "memberLocation": "12581:11:35",
                         "memberName": "destination",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 7288,
-                        "src": "12271:20:4",
+                        "referencedDeclaration": 3601,
+                        "src": "12572:20:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         }
                       },
                       {
-                        "id": 2425,
+                        "id": 6313,
                         "name": "_lpShares",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2289,
-                        "src": "12305:9:4",
+                        "referencedDeclaration": 6177,
+                        "src": "12606:9:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 2426,
+                        "id": 6314,
                         "name": "baseProceeds",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2394,
-                        "src": "12328:12:4",
+                        "referencedDeclaration": 6282,
+                        "src": "12629:12:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 2427,
+                        "id": 6315,
                         "name": "sharePrice",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2314,
-                        "src": "12354:10:4",
+                        "referencedDeclaration": 6202,
+                        "src": "12655:10:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -9507,12 +7572,12 @@ export const HyperdriveLP =
                       {
                         "arguments": [
                           {
-                            "id": 2430,
+                            "id": 6318,
                             "name": "withdrawalShares",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2301,
-                            "src": "12407:16:4",
+                            "referencedDeclaration": 6189,
+                            "src": "12708:16:35",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -9526,26 +7591,26 @@ export const HyperdriveLP =
                               "typeString": "uint256"
                             }
                           ],
-                          "id": 2429,
+                          "id": 6317,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "lValueRequested": false,
                           "nodeType": "ElementaryTypeNameExpression",
-                          "src": "12399:7:4",
+                          "src": "12700:7:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_type$_t_uint256_$",
                             "typeString": "type(uint256)"
                           },
                           "typeName": {
-                            "id": 2428,
+                            "id": 6316,
                             "name": "uint256",
                             "nodeType": "ElementaryTypeName",
-                            "src": "12399:7:4",
+                            "src": "12700:7:35",
                             "typeDescriptions": {}
                           }
                         },
-                        "id": 2431,
+                        "id": 6319,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -9554,7 +7619,7 @@ export const HyperdriveLP =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "12399:25:4",
+                        "src": "12700:25:35",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -9562,12 +7627,12 @@ export const HyperdriveLP =
                         }
                       },
                       {
-                        "id": 2432,
+                        "id": 6320,
                         "name": "lpSharePrice",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2411,
-                        "src": "12438:12:4",
+                        "referencedDeclaration": 6299,
+                        "src": "12739:12:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -9601,18 +7666,18 @@ export const HyperdriveLP =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 2422,
+                      "id": 6310,
                       "name": "RemoveLiquidity",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 626,
-                      "src": "12242:15:4",
+                      "referencedDeclaration": 4576,
+                      "src": "12543:15:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$__$",
                         "typeString": "function (address,uint256,uint256,uint256,uint256,uint256)"
                       }
                     },
-                    "id": 2433,
+                    "id": 6321,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -9621,110 +7686,106 @@ export const HyperdriveLP =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "12242:218:4",
+                    "src": "12543:218:35",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2434,
+                  "id": 6322,
                   "nodeType": "EmitStatement",
-                  "src": "12237:223:4"
+                  "src": "12538:223:35"
                 },
                 {
                   "expression": {
                     "components": [
                       {
-                        "id": 2435,
+                        "id": 6323,
                         "name": "proceeds",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2299,
-                        "src": "12479:8:4",
+                        "referencedDeclaration": 6187,
+                        "src": "12780:8:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 2436,
+                        "id": 6324,
                         "name": "withdrawalShares",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2301,
-                        "src": "12489:16:4",
+                        "referencedDeclaration": 6189,
+                        "src": "12790:16:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       }
                     ],
-                    "id": 2437,
+                    "id": 6325,
                     "isConstant": false,
                     "isInlineArray": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "TupleExpression",
-                    "src": "12478:28:4",
+                    "src": "12779:28:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$_t_uint256_$_t_uint256_$",
                       "typeString": "tuple(uint256,uint256)"
                     }
                   },
-                  "functionReturnParameters": 2302,
-                  "id": 2438,
+                  "functionReturnParameters": 6190,
+                  "id": 6326,
                   "nodeType": "Return",
-                  "src": "12471:35:4"
+                  "src": "12772:35:35"
                 }
               ]
             },
-            "baseFunctions": [
-              7580
-            ],
             "documentation": {
-              "id": 2287,
+              "id": 6175,
               "nodeType": "StructuredDocumentation",
-              "src": "8931:1017:4",
-              "text": "@notice Allows an LP to burn shares and withdraw from the pool.\n @param _lpShares The LP shares to burn.\n @param _minOutput The minium amount of the base token to receive.Note - this\n        value is likely to be less than the amount LP shares are worth.\n        The remainder is in short and long withdraw shares which are hard\n        to game the value of.\n @param _options The options that configure how the operation is settled.\n @return proceeds The amount the LP removing liquidity receives. The\n         LP receives a proportional amount of the pool's idle capital\n @return withdrawalShares The base that the LP receives buys out some of\n         their LP shares, but it may not be sufficient to fully buy the\n         LP out. In this case, the LP receives withdrawal shares equal\n         in value to the present value they are owed. As idle capital\n         becomes available, the pool will buy back these shares."
+              "src": "9234:1014:35",
+              "text": "@dev Allows an LP to burn shares and withdraw from the pool.\n @param _lpShares The LP shares to burn.\n @param _minOutput The minium amount of the base token to receive.\n        NOTE: This value is likely to be less than the amount LP shares\n        are worth. The remainder is in short and long withdraw shares\n        which are hard to game the value of.\n @param _options The options that configure how the operation is settled.\n @return proceeds The amount the LP removing liquidity receives. The\n         LP receives a proportional amount of the pool's idle capital\n @return withdrawalShares The base that the LP receives buys out some of\n         their LP shares, but it may not be sufficient to fully buy the\n         LP out. In this case, the LP receives withdrawal shares equal\n         in value to the present value they are owed. As idle capital\n         becomes available, the pool will buy back these shares."
             },
-            "functionSelector": "cbc13434",
             "implemented": true,
             "kind": "function",
             "modifiers": [
               {
-                "id": 2297,
+                "id": 6185,
                 "kind": "modifierInvocation",
                 "modifierName": {
-                  "id": 2296,
+                  "id": 6184,
                   "name": "nonReentrant",
                   "nameLocations": [
-                    "10111:12:4"
+                    "10412:12:35"
                   ],
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 64179,
-                  "src": "10111:12:4"
+                  "referencedDeclaration": 60563,
+                  "src": "10412:12:35"
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "10111:12:4"
+                "src": "10412:12:35"
               }
             ],
-            "name": "removeLiquidity",
-            "nameLocation": "9962:15:4",
+            "name": "_removeLiquidity",
+            "nameLocation": "10262:16:35",
             "parameters": {
-              "id": 2295,
+              "id": 6183,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2289,
+                  "id": 6177,
                   "mutability": "mutable",
                   "name": "_lpShares",
-                  "nameLocation": "9995:9:4",
+                  "nameLocation": "10296:9:35",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2440,
-                  "src": "9987:17:4",
+                  "scope": 6328,
+                  "src": "10288:17:35",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -9732,10 +7793,10 @@ export const HyperdriveLP =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2288,
+                    "id": 6176,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "9987:7:4",
+                    "src": "10288:7:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -9745,13 +7806,13 @@ export const HyperdriveLP =
                 },
                 {
                   "constant": false,
-                  "id": 2291,
+                  "id": 6179,
                   "mutability": "mutable",
                   "name": "_minOutput",
-                  "nameLocation": "10022:10:4",
+                  "nameLocation": "10323:10:35",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2440,
-                  "src": "10014:18:4",
+                  "scope": 6328,
+                  "src": "10315:18:35",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -9759,10 +7820,10 @@ export const HyperdriveLP =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2290,
+                    "id": 6178,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "10014:7:4",
+                    "src": "10315:7:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -9772,58 +7833,58 @@ export const HyperdriveLP =
                 },
                 {
                   "constant": false,
-                  "id": 2294,
+                  "id": 6182,
                   "mutability": "mutable",
                   "name": "_options",
-                  "nameLocation": "10071:8:4",
+                  "nameLocation": "10372:8:35",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2440,
-                  "src": "10042:37:4",
+                  "scope": 6328,
+                  "src": "10343:37:35",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_Options_$7295_calldata_ptr",
+                    "typeIdentifier": "t_struct$_Options_$3608_calldata_ptr",
                     "typeString": "struct IHyperdrive.Options"
                   },
                   "typeName": {
-                    "id": 2293,
+                    "id": 6181,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 2292,
+                      "id": 6180,
                       "name": "IHyperdrive.Options",
                       "nameLocations": [
-                        "10042:11:4",
-                        "10054:7:4"
+                        "10343:11:35",
+                        "10355:7:35"
                       ],
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 7295,
-                      "src": "10042:19:4"
+                      "referencedDeclaration": 3608,
+                      "src": "10343:19:35"
                     },
-                    "referencedDeclaration": 7295,
-                    "src": "10042:19:4",
+                    "referencedDeclaration": 3608,
+                    "src": "10343:19:35",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Options_$7295_storage_ptr",
+                      "typeIdentifier": "t_struct$_Options_$3608_storage_ptr",
                       "typeString": "struct IHyperdrive.Options"
                     }
                   },
                   "visibility": "internal"
                 }
               ],
-              "src": "9977:108:4"
+              "src": "10278:108:35"
             },
             "returnParameters": {
-              "id": 2302,
+              "id": 6190,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2299,
+                  "id": 6187,
                   "mutability": "mutable",
                   "name": "proceeds",
-                  "nameLocation": "10149:8:4",
+                  "nameLocation": "10450:8:35",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2440,
-                  "src": "10141:16:4",
+                  "scope": 6328,
+                  "src": "10442:16:35",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -9831,10 +7892,10 @@ export const HyperdriveLP =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2298,
+                    "id": 6186,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "10141:7:4",
+                    "src": "10442:7:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -9844,13 +7905,13 @@ export const HyperdriveLP =
                 },
                 {
                   "constant": false,
-                  "id": 2301,
+                  "id": 6189,
                   "mutability": "mutable",
                   "name": "withdrawalShares",
-                  "nameLocation": "10167:16:4",
+                  "nameLocation": "10468:16:35",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2440,
-                  "src": "10159:24:4",
+                  "scope": 6328,
+                  "src": "10460:24:35",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -9858,10 +7919,10 @@ export const HyperdriveLP =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2300,
+                    "id": 6188,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "10159:7:4",
+                    "src": "10460:7:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -9870,38 +7931,38 @@ export const HyperdriveLP =
                   "visibility": "internal"
                 }
               ],
-              "src": "10140:44:4"
+              "src": "10441:44:35"
             },
-            "scope": 3078,
+            "scope": 6967,
             "stateMutability": "nonpayable",
             "virtual": false,
-            "visibility": "external"
+            "visibility": "internal"
           },
           {
-            "id": 2578,
+            "id": 6467,
             "nodeType": "FunctionDefinition",
-            "src": "13249:2358:4",
+            "src": "13554:2371:35",
             "nodes": [],
             "body": {
-              "id": 2577,
+              "id": 6466,
               "nodeType": "Block",
-              "src": "13516:2091:4",
+              "src": "13822:2103:35",
               "nodes": [],
               "statements": [
                 {
                   "assignments": [
-                    2458
+                    6346
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 2458,
+                      "id": 6346,
                       "mutability": "mutable",
                       "name": "sharePrice",
-                      "nameLocation": "13567:10:4",
+                      "nameLocation": "13873:10:35",
                       "nodeType": "VariableDeclaration",
-                      "scope": 2577,
-                      "src": "13559:18:4",
+                      "scope": 6466,
+                      "src": "13865:18:35",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -9909,10 +7970,10 @@ export const HyperdriveLP =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 2457,
+                        "id": 6345,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "13559:7:4",
+                        "src": "13865:7:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -9921,23 +7982,23 @@ export const HyperdriveLP =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 2461,
+                  "id": 6349,
                   "initialValue": {
                     "arguments": [],
                     "expression": {
                       "argumentTypes": [],
-                      "id": 2459,
+                      "id": 6347,
                       "name": "_pricePerShare",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 807,
-                      "src": "13580:14:4",
+                      "referencedDeclaration": 4716,
+                      "src": "13886:14:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_view$__$returns$_t_uint256_$",
                         "typeString": "function () view returns (uint256)"
                       }
                     },
-                    "id": 2460,
+                    "id": 6348,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -9946,7 +8007,7 @@ export const HyperdriveLP =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "13580:16:4",
+                    "src": "13886:16:35",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
@@ -9954,7 +8015,7 @@ export const HyperdriveLP =
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "13559:37:4"
+                  "src": "13865:37:35"
                 },
                 {
                   "expression": {
@@ -9963,18 +8024,18 @@ export const HyperdriveLP =
                         "arguments": [],
                         "expression": {
                           "argumentTypes": [],
-                          "id": 2463,
+                          "id": 6351,
                           "name": "_latestCheckpoint",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 5113,
-                          "src": "13623:17:4",
+                          "referencedDeclaration": 4827,
+                          "src": "13929:17:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_view$__$returns$_t_uint256_$",
                             "typeString": "function () view returns (uint256)"
                           }
                         },
-                        "id": 2464,
+                        "id": 6352,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -9983,7 +8044,7 @@ export const HyperdriveLP =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "13623:19:4",
+                        "src": "13929:19:35",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -9991,12 +8052,12 @@ export const HyperdriveLP =
                         }
                       },
                       {
-                        "id": 2465,
+                        "id": 6353,
                         "name": "sharePrice",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2458,
-                        "src": "13644:10:4",
+                        "referencedDeclaration": 6346,
+                        "src": "13950:10:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -10014,18 +8075,18 @@ export const HyperdriveLP =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 2462,
+                      "id": 6350,
                       "name": "_applyCheckpoint",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 917,
-                      "src": "13606:16:4",
+                      "referencedDeclaration": 4739,
+                      "src": "13912:16:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
                         "typeString": "function (uint256,uint256) returns (uint256)"
                       }
                     },
-                    "id": 2466,
+                    "id": 6354,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -10034,27 +8095,27 @@ export const HyperdriveLP =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "13606:49:4",
+                    "src": "13912:49:35",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 2467,
+                  "id": 6355,
                   "nodeType": "ExpressionStatement",
-                  "src": "13606:49:4"
+                  "src": "13912:49:35"
                 },
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 2469,
+                        "id": 6357,
                         "name": "sharePrice",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2458,
-                        "src": "13802:10:4",
+                        "referencedDeclaration": 6346,
+                        "src": "14108:10:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -10068,18 +8129,18 @@ export const HyperdriveLP =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 2468,
+                      "id": 6356,
                       "name": "_distributeExcessIdle",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2961,
-                      "src": "13780:21:4",
+                      "referencedDeclaration": 6850,
+                      "src": "14086:21:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$returns$__$",
                         "typeString": "function (uint256)"
                       }
                     },
-                    "id": 2470,
+                    "id": 6358,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -10088,31 +8149,31 @@ export const HyperdriveLP =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "13780:33:4",
+                    "src": "14086:33:35",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2471,
+                  "id": 6359,
                   "nodeType": "ExpressionStatement",
-                  "src": "13780:33:4"
+                  "src": "14086:33:35"
                 },
                 {
                   "expression": {
-                    "id": 2474,
+                    "id": 6362,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 2472,
+                      "id": 6360,
                       "name": "withdrawalSharesRedeemed",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2455,
-                      "src": "14016:24:4",
+                      "referencedDeclaration": 6343,
+                      "src": "14322:24:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -10121,41 +8182,41 @@ export const HyperdriveLP =
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 2473,
+                      "id": 6361,
                       "name": "_withdrawalShares",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2443,
-                      "src": "14043:17:4",
+                      "referencedDeclaration": 6331,
+                      "src": "14349:17:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "14016:44:4",
+                    "src": "14322:44:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 2475,
+                  "id": 6363,
                   "nodeType": "ExpressionStatement",
-                  "src": "14016:44:4"
+                  "src": "14322:44:35"
                 },
                 {
                   "assignments": [
-                    2477
+                    6365
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 2477,
+                      "id": 6365,
                       "mutability": "mutable",
                       "name": "readyToWithdraw_",
-                      "nameLocation": "14078:16:4",
+                      "nameLocation": "14384:16:35",
                       "nodeType": "VariableDeclaration",
-                      "scope": 2577,
-                      "src": "14070:24:4",
+                      "scope": 6466,
+                      "src": "14376:24:35",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -10163,10 +8224,10 @@ export const HyperdriveLP =
                         "typeString": "uint128"
                       },
                       "typeName": {
-                        "id": 2476,
+                        "id": 6364,
                         "name": "uint128",
                         "nodeType": "ElementaryTypeName",
-                        "src": "14070:7:4",
+                        "src": "14376:7:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint128",
                           "typeString": "uint128"
@@ -10175,37 +8236,37 @@ export const HyperdriveLP =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 2480,
+                  "id": 6368,
                   "initialValue": {
                     "expression": {
-                      "id": 2478,
+                      "id": 6366,
                       "name": "_withdrawPool",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 4837,
-                      "src": "14097:13:4",
+                      "referencedDeclaration": 9253,
+                      "src": "14403:13:35",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_WithdrawPool_$7189_storage",
+                        "typeIdentifier": "t_struct$_WithdrawPool_$3506_storage",
                         "typeString": "struct IHyperdrive.WithdrawPool storage ref"
                       }
                     },
-                    "id": 2479,
+                    "id": 6367,
                     "isConstant": false,
                     "isLValue": true,
                     "isPure": false,
                     "lValueRequested": false,
-                    "memberLocation": "14111:15:4",
+                    "memberLocation": "14417:15:35",
                     "memberName": "readyToWithdraw",
                     "nodeType": "MemberAccess",
-                    "referencedDeclaration": 7185,
-                    "src": "14097:29:4",
+                    "referencedDeclaration": 3502,
+                    "src": "14403:29:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint128",
                       "typeString": "uint128"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "14070:56:4"
+                  "src": "14376:56:35"
                 },
                 {
                   "condition": {
@@ -10213,18 +8274,18 @@ export const HyperdriveLP =
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 2483,
+                    "id": 6371,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 2481,
+                      "id": 6369,
                       "name": "withdrawalSharesRedeemed",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2455,
-                      "src": "14140:24:4",
+                      "referencedDeclaration": 6343,
+                      "src": "14446:24:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -10233,45 +8294,45 @@ export const HyperdriveLP =
                     "nodeType": "BinaryOperation",
                     "operator": ">",
                     "rightExpression": {
-                      "id": 2482,
+                      "id": 6370,
                       "name": "readyToWithdraw_",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2477,
-                      "src": "14167:16:4",
+                      "referencedDeclaration": 6365,
+                      "src": "14473:16:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint128",
                         "typeString": "uint128"
                       }
                     },
-                    "src": "14140:43:4",
+                    "src": "14446:43:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 2489,
+                  "id": 6377,
                   "nodeType": "IfStatement",
-                  "src": "14136:117:4",
+                  "src": "14442:117:35",
                   "trueBody": {
-                    "id": 2488,
+                    "id": 6376,
                     "nodeType": "Block",
-                    "src": "14185:68:4",
+                    "src": "14491:68:35",
                     "statements": [
                       {
                         "expression": {
-                          "id": 2486,
+                          "id": 6374,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 2484,
+                            "id": 6372,
                             "name": "withdrawalSharesRedeemed",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2455,
-                            "src": "14199:24:4",
+                            "referencedDeclaration": 6343,
+                            "src": "14505:24:35",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -10280,26 +8341,26 @@ export const HyperdriveLP =
                           "nodeType": "Assignment",
                           "operator": "=",
                           "rightHandSide": {
-                            "id": 2485,
+                            "id": 6373,
                             "name": "readyToWithdraw_",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2477,
-                            "src": "14226:16:4",
+                            "referencedDeclaration": 6365,
+                            "src": "14532:16:35",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint128",
                               "typeString": "uint128"
                             }
                           },
-                          "src": "14199:43:4",
+                          "src": "14505:43:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 2487,
+                        "id": 6375,
                         "nodeType": "ExpressionStatement",
-                        "src": "14199:43:4"
+                        "src": "14505:43:35"
                       }
                     ]
                   }
@@ -10310,18 +8371,18 @@ export const HyperdriveLP =
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 2492,
+                    "id": 6380,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 2490,
+                      "id": 6378,
                       "name": "withdrawalSharesRedeemed",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2455,
-                      "src": "14266:24:4",
+                      "referencedDeclaration": 6343,
+                      "src": "14572:24:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -10331,42 +8392,42 @@ export const HyperdriveLP =
                     "operator": "==",
                     "rightExpression": {
                       "hexValue": "30",
-                      "id": 2491,
+                      "id": 6379,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "14294:1:4",
+                      "src": "14600:1:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_0_by_1",
                         "typeString": "int_const 0"
                       },
                       "value": "0"
                     },
-                    "src": "14266:29:4",
+                    "src": "14572:29:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 2497,
+                  "id": 6385,
                   "nodeType": "IfStatement",
-                  "src": "14262:48:4",
+                  "src": "14568:48:35",
                   "trueBody": {
                     "expression": {
                       "components": [
                         {
                           "hexValue": "30",
-                          "id": 2493,
+                          "id": 6381,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "14305:1:4",
+                          "src": "14611:1:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_0_by_1",
                             "typeString": "int_const 0"
@@ -10375,14 +8436,14 @@ export const HyperdriveLP =
                         },
                         {
                           "hexValue": "30",
-                          "id": 2494,
+                          "id": 6382,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "14308:1:4",
+                          "src": "14614:1:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_0_by_1",
                             "typeString": "int_const 0"
@@ -10390,23 +8451,23 @@ export const HyperdriveLP =
                           "value": "0"
                         }
                       ],
-                      "id": 2495,
+                      "id": 6383,
                       "isConstant": false,
                       "isInlineArray": false,
                       "isLValue": false,
                       "isPure": true,
                       "lValueRequested": false,
                       "nodeType": "TupleExpression",
-                      "src": "14304:6:4",
+                      "src": "14610:6:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_tuple$_t_rational_0_by_1_$_t_rational_0_by_1_$",
                         "typeString": "tuple(int_const 0,int_const 0)"
                       }
                     },
-                    "functionReturnParameters": 2456,
-                    "id": 2496,
+                    "functionReturnParameters": 6344,
+                    "id": 6384,
                     "nodeType": "Return",
-                    "src": "14297:13:4"
+                    "src": "14603:13:35"
                   }
                 },
                 {
@@ -10414,27 +8475,27 @@ export const HyperdriveLP =
                     "arguments": [
                       {
                         "expression": {
-                          "id": 2499,
+                          "id": 6387,
                           "name": "AssetId",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8311,
-                          "src": "14384:7:4",
+                          "referencedDeclaration": 9781,
+                          "src": "14690:7:35",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_AssetId_$8311_$",
+                            "typeIdentifier": "t_type$_t_contract$_AssetId_$9781_$",
                             "typeString": "type(library AssetId)"
                           }
                         },
-                        "id": 2500,
+                        "id": 6388,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "lValueRequested": false,
-                        "memberLocation": "14392:26:4",
+                        "memberLocation": "14698:26:35",
                         "memberName": "_WITHDRAWAL_SHARE_ASSET_ID",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 8012,
-                        "src": "14384:34:4",
+                        "referencedDeclaration": 9482,
+                        "src": "14690:34:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -10442,38 +8503,38 @@ export const HyperdriveLP =
                       },
                       {
                         "expression": {
-                          "id": 2501,
+                          "id": 6389,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": -15,
-                          "src": "14432:3:4",
+                          "src": "14738:3:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
                           }
                         },
-                        "id": 2502,
+                        "id": 6390,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "14436:6:4",
+                        "memberLocation": "14742:6:35",
                         "memberName": "sender",
                         "nodeType": "MemberAccess",
-                        "src": "14432:10:4",
+                        "src": "14738:10:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         }
                       },
                       {
-                        "id": 2503,
+                        "id": 6391,
                         "name": "withdrawalSharesRedeemed",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2455,
-                        "src": "14456:24:4",
+                        "referencedDeclaration": 6343,
+                        "src": "14762:24:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -10495,18 +8556,18 @@ export const HyperdriveLP =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 2498,
+                      "id": 6386,
                       "name": "_burn",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 12088,
-                      "src": "14365:5:4",
+                      "referencedDeclaration": 8109,
+                      "src": "14671:5:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_address_$_t_uint256_$returns$__$",
                         "typeString": "function (uint256,address,uint256)"
                       }
                     },
-                    "id": 2504,
+                    "id": 6392,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -10515,31 +8576,31 @@ export const HyperdriveLP =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "14365:125:4",
+                    "src": "14671:125:35",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2505,
+                  "id": 6393,
                   "nodeType": "ExpressionStatement",
-                  "src": "14365:125:4"
+                  "src": "14671:125:35"
                 },
                 {
                   "assignments": [
-                    2507
+                    6395
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 2507,
+                      "id": 6395,
                       "mutability": "mutable",
                       "name": "proceeds_",
-                      "nameLocation": "14579:9:4",
+                      "nameLocation": "14885:9:35",
                       "nodeType": "VariableDeclaration",
-                      "scope": 2577,
-                      "src": "14571:17:4",
+                      "scope": 6466,
+                      "src": "14877:17:35",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -10547,10 +8608,10 @@ export const HyperdriveLP =
                         "typeString": "uint128"
                       },
                       "typeName": {
-                        "id": 2506,
+                        "id": 6394,
                         "name": "uint128",
                         "nodeType": "ElementaryTypeName",
-                        "src": "14571:7:4",
+                        "src": "14877:7:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint128",
                           "typeString": "uint128"
@@ -10559,52 +8620,52 @@ export const HyperdriveLP =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 2510,
+                  "id": 6398,
                   "initialValue": {
                     "expression": {
-                      "id": 2508,
+                      "id": 6396,
                       "name": "_withdrawPool",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 4837,
-                      "src": "14591:13:4",
+                      "referencedDeclaration": 9253,
+                      "src": "14897:13:35",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_WithdrawPool_$7189_storage",
+                        "typeIdentifier": "t_struct$_WithdrawPool_$3506_storage",
                         "typeString": "struct IHyperdrive.WithdrawPool storage ref"
                       }
                     },
-                    "id": 2509,
+                    "id": 6397,
                     "isConstant": false,
                     "isLValue": true,
                     "isPure": false,
                     "lValueRequested": false,
-                    "memberLocation": "14605:8:4",
+                    "memberLocation": "14911:8:35",
                     "memberName": "proceeds",
                     "nodeType": "MemberAccess",
-                    "referencedDeclaration": 7188,
-                    "src": "14591:22:4",
+                    "referencedDeclaration": 3505,
+                    "src": "14897:22:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint128",
                       "typeString": "uint128"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "14571:42:4"
+                  "src": "14877:42:35"
                 },
                 {
                   "assignments": [
-                    2512
+                    6400
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 2512,
+                      "id": 6400,
                       "mutability": "mutable",
                       "name": "shareProceeds",
-                      "nameLocation": "14631:13:4",
+                      "nameLocation": "14937:13:35",
                       "nodeType": "VariableDeclaration",
-                      "scope": 2577,
-                      "src": "14623:21:4",
+                      "scope": 6466,
+                      "src": "14929:21:35",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -10612,10 +8673,10 @@ export const HyperdriveLP =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 2511,
+                        "id": 6399,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "14623:7:4",
+                        "src": "14929:7:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -10624,18 +8685,18 @@ export const HyperdriveLP =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 2524,
+                  "id": 6412,
                   "initialValue": {
                     "arguments": [
                       {
                         "arguments": [
                           {
-                            "id": 2517,
+                            "id": 6405,
                             "name": "proceeds_",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2507,
-                            "src": "14704:9:4",
+                            "referencedDeclaration": 6395,
+                            "src": "15010:9:35",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint128",
                               "typeString": "uint128"
@@ -10649,26 +8710,26 @@ export const HyperdriveLP =
                               "typeString": "uint128"
                             }
                           ],
-                          "id": 2516,
+                          "id": 6404,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "lValueRequested": false,
                           "nodeType": "ElementaryTypeNameExpression",
-                          "src": "14696:7:4",
+                          "src": "15002:7:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_type$_t_uint128_$",
                             "typeString": "type(uint128)"
                           },
                           "typeName": {
-                            "id": 2515,
+                            "id": 6403,
                             "name": "uint128",
                             "nodeType": "ElementaryTypeName",
-                            "src": "14696:7:4",
+                            "src": "15002:7:35",
                             "typeDescriptions": {}
                           }
                         },
-                        "id": 2518,
+                        "id": 6406,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -10677,7 +8738,7 @@ export const HyperdriveLP =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "14696:18:4",
+                        "src": "15002:18:35",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint128",
@@ -10687,12 +8748,12 @@ export const HyperdriveLP =
                       {
                         "arguments": [
                           {
-                            "id": 2521,
+                            "id": 6409,
                             "name": "readyToWithdraw_",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2477,
-                            "src": "14736:16:4",
+                            "referencedDeclaration": 6365,
+                            "src": "15042:16:35",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint128",
                               "typeString": "uint128"
@@ -10706,26 +8767,26 @@ export const HyperdriveLP =
                               "typeString": "uint128"
                             }
                           ],
-                          "id": 2520,
+                          "id": 6408,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "lValueRequested": false,
                           "nodeType": "ElementaryTypeNameExpression",
-                          "src": "14728:7:4",
+                          "src": "15034:7:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_type$_t_uint128_$",
                             "typeString": "type(uint128)"
                           },
                           "typeName": {
-                            "id": 2519,
+                            "id": 6407,
                             "name": "uint128",
                             "nodeType": "ElementaryTypeName",
-                            "src": "14728:7:4",
+                            "src": "15034:7:35",
                             "typeDescriptions": {}
                           }
                         },
-                        "id": 2522,
+                        "id": 6410,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -10734,7 +8795,7 @@ export const HyperdriveLP =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "14728:25:4",
+                        "src": "15034:25:35",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint128",
@@ -10754,33 +8815,33 @@ export const HyperdriveLP =
                         }
                       ],
                       "expression": {
-                        "id": 2513,
+                        "id": 6401,
                         "name": "withdrawalSharesRedeemed",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2455,
-                        "src": "14647:24:4",
+                        "referencedDeclaration": 6343,
+                        "src": "14953:24:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
-                      "id": 2514,
+                      "id": 6402,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "14672:10:4",
+                      "memberLocation": "14978:10:35",
                       "memberName": "mulDivDown",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 8346,
-                      "src": "14647:35:4",
+                      "referencedDeclaration": 9813,
+                      "src": "14953:35:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                         "typeString": "function (uint256,uint256,uint256) pure returns (uint256)"
                       }
                     },
-                    "id": 2523,
+                    "id": 6411,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -10789,7 +8850,7 @@ export const HyperdriveLP =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "14647:116:4",
+                    "src": "14953:116:35",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
@@ -10797,38 +8858,38 @@ export const HyperdriveLP =
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "14623:140:4"
+                  "src": "14929:140:35"
                 },
                 {
                   "expression": {
-                    "id": 2533,
+                    "id": 6421,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "expression": {
-                        "id": 2525,
+                        "id": 6413,
                         "name": "_withdrawPool",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4837,
-                        "src": "14826:13:4",
+                        "referencedDeclaration": 9253,
+                        "src": "15132:13:35",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_WithdrawPool_$7189_storage",
+                          "typeIdentifier": "t_struct$_WithdrawPool_$3506_storage",
                           "typeString": "struct IHyperdrive.WithdrawPool storage ref"
                         }
                       },
-                      "id": 2527,
+                      "id": 6415,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
-                      "memberLocation": "14840:15:4",
+                      "memberLocation": "15146:15:35",
                       "memberName": "readyToWithdraw",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 7185,
-                      "src": "14826:29:4",
+                      "referencedDeclaration": 3502,
+                      "src": "15132:29:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint128",
                         "typeString": "uint128"
@@ -10841,18 +8902,18 @@ export const HyperdriveLP =
                         "typeIdentifier": "t_uint128",
                         "typeString": "uint128"
                       },
-                      "id": 2532,
+                      "id": 6420,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
-                        "id": 2528,
+                        "id": 6416,
                         "name": "readyToWithdraw_",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2477,
-                        "src": "14870:16:4",
+                        "referencedDeclaration": 6365,
+                        "src": "15176:16:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint128",
                           "typeString": "uint128"
@@ -10865,33 +8926,33 @@ export const HyperdriveLP =
                         "expression": {
                           "argumentTypes": [],
                           "expression": {
-                            "id": 2529,
+                            "id": 6417,
                             "name": "withdrawalSharesRedeemed",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2455,
-                            "src": "14901:24:4",
+                            "referencedDeclaration": 6343,
+                            "src": "15207:24:35",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             }
                           },
-                          "id": 2530,
+                          "id": 6418,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "14926:9:4",
+                          "memberLocation": "15232:9:35",
                           "memberName": "toUint128",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 9953,
-                          "src": "14901:34:4",
+                          "referencedDeclaration": 11387,
+                          "src": "15207:34:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_pure$_t_uint256_$returns$_t_uint128_$attached_to$_t_uint256_$",
                             "typeString": "function (uint256) pure returns (uint128)"
                           }
                         },
-                        "id": 2531,
+                        "id": 6419,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -10900,59 +8961,59 @@ export const HyperdriveLP =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "14901:36:4",
+                        "src": "15207:36:35",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint128",
                           "typeString": "uint128"
                         }
                       },
-                      "src": "14870:67:4",
+                      "src": "15176:67:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint128",
                         "typeString": "uint128"
                       }
                     },
-                    "src": "14826:111:4",
+                    "src": "15132:111:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint128",
                       "typeString": "uint128"
                     }
                   },
-                  "id": 2534,
+                  "id": 6422,
                   "nodeType": "ExpressionStatement",
-                  "src": "14826:111:4"
+                  "src": "15132:111:35"
                 },
                 {
                   "expression": {
-                    "id": 2541,
+                    "id": 6429,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "expression": {
-                        "id": 2535,
+                        "id": 6423,
                         "name": "_withdrawPool",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4837,
-                        "src": "14947:13:4",
+                        "referencedDeclaration": 9253,
+                        "src": "15253:13:35",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_WithdrawPool_$7189_storage",
+                          "typeIdentifier": "t_struct$_WithdrawPool_$3506_storage",
                           "typeString": "struct IHyperdrive.WithdrawPool storage ref"
                         }
                       },
-                      "id": 2537,
+                      "id": 6425,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
-                      "memberLocation": "14961:8:4",
+                      "memberLocation": "15267:8:35",
                       "memberName": "proceeds",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 7188,
-                      "src": "14947:22:4",
+                      "referencedDeclaration": 3505,
+                      "src": "15253:22:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint128",
                         "typeString": "uint128"
@@ -10965,33 +9026,33 @@ export const HyperdriveLP =
                       "expression": {
                         "argumentTypes": [],
                         "expression": {
-                          "id": 2538,
+                          "id": 6426,
                           "name": "shareProceeds",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2512,
-                          "src": "14973:13:4",
+                          "referencedDeclaration": 6400,
+                          "src": "15279:13:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 2539,
+                        "id": 6427,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "14987:9:4",
+                        "memberLocation": "15293:9:35",
                         "memberName": "toUint128",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 9953,
-                        "src": "14973:23:4",
+                        "referencedDeclaration": 11387,
+                        "src": "15279:23:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_uint256_$returns$_t_uint128_$attached_to$_t_uint256_$",
                           "typeString": "function (uint256) pure returns (uint128)"
                         }
                       },
-                      "id": 2540,
+                      "id": 6428,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -11000,37 +9061,37 @@ export const HyperdriveLP =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "14973:25:4",
+                      "src": "15279:25:35",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint128",
                         "typeString": "uint128"
                       }
                     },
-                    "src": "14947:51:4",
+                    "src": "15253:51:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint128",
                       "typeString": "uint128"
                     }
                   },
-                  "id": 2542,
+                  "id": 6430,
                   "nodeType": "ExpressionStatement",
-                  "src": "14947:51:4"
+                  "src": "15253:51:35"
                 },
                 {
                   "expression": {
-                    "id": 2548,
+                    "id": 6436,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 2543,
+                      "id": 6431,
                       "name": "proceeds",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2453,
-                      "src": "15042:8:4",
+                      "referencedDeclaration": 6341,
+                      "src": "15348:8:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -11041,26 +9102,26 @@ export const HyperdriveLP =
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 2545,
+                          "id": 6433,
                           "name": "shareProceeds",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2512,
-                          "src": "15063:13:4",
+                          "referencedDeclaration": 6400,
+                          "src": "15369:13:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
                         {
-                          "id": 2546,
+                          "id": 6434,
                           "name": "_options",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2448,
-                          "src": "15078:8:4",
+                          "referencedDeclaration": 6336,
+                          "src": "15384:8:35",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Options_$7295_calldata_ptr",
+                            "typeIdentifier": "t_struct$_Options_$3608_calldata_ptr",
                             "typeString": "struct IHyperdrive.Options calldata"
                           }
                         }
@@ -11072,22 +9133,22 @@ export const HyperdriveLP =
                             "typeString": "uint256"
                           },
                           {
-                            "typeIdentifier": "t_struct$_Options_$7295_calldata_ptr",
+                            "typeIdentifier": "t_struct$_Options_$3608_calldata_ptr",
                             "typeString": "struct IHyperdrive.Options calldata"
                           }
                         ],
-                        "id": 2544,
+                        "id": 6432,
                         "name": "_withdraw",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 801,
-                        "src": "15053:9:4",
+                        "referencedDeclaration": 4710,
+                        "src": "15359:9:35",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_struct$_Options_$7295_calldata_ptr_$returns$_t_uint256_$",
+                          "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_struct$_Options_$3608_calldata_ptr_$returns$_t_uint256_$",
                           "typeString": "function (uint256,struct IHyperdrive.Options calldata) returns (uint256)"
                         }
                       },
-                      "id": 2547,
+                      "id": 6435,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -11096,22 +9157,22 @@ export const HyperdriveLP =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "15053:34:4",
+                      "src": "15359:34:35",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "15042:45:4",
+                    "src": "15348:45:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 2549,
+                  "id": 6437,
                   "nodeType": "ExpressionStatement",
-                  "src": "15042:45:4"
+                  "src": "15348:45:35"
                 },
                 {
                   "condition": {
@@ -11119,7 +9180,7 @@ export const HyperdriveLP =
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 2555,
+                    "id": 6443,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -11127,12 +9188,12 @@ export const HyperdriveLP =
                     "leftExpression": {
                       "arguments": [
                         {
-                          "id": 2552,
+                          "id": 6440,
                           "name": "withdrawalSharesRedeemed",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2455,
-                          "src": "15183:24:4",
+                          "referencedDeclaration": 6343,
+                          "src": "15489:24:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -11147,33 +9208,33 @@ export const HyperdriveLP =
                           }
                         ],
                         "expression": {
-                          "id": 2550,
+                          "id": 6438,
                           "name": "_minOutputPerShare",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2445,
-                          "src": "15156:18:4",
+                          "referencedDeclaration": 6333,
+                          "src": "15462:18:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 2551,
+                        "id": 6439,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "15175:7:4",
+                        "memberLocation": "15481:7:35",
                         "memberName": "mulDown",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 8364,
-                        "src": "15156:26:4",
+                        "referencedDeclaration": 9831,
+                        "src": "15462:26:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                           "typeString": "function (uint256,uint256) pure returns (uint256)"
                         }
                       },
-                      "id": 2553,
+                      "id": 6441,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -11182,7 +9243,7 @@ export const HyperdriveLP =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "15156:52:4",
+                      "src": "15462:52:35",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -11192,77 +9253,84 @@ export const HyperdriveLP =
                     "nodeType": "BinaryOperation",
                     "operator": ">",
                     "rightExpression": {
-                      "id": 2554,
+                      "id": 6442,
                       "name": "proceeds",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2453,
-                      "src": "15211:8:4",
+                      "referencedDeclaration": 6341,
+                      "src": "15517:8:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "15156:63:4",
+                    "src": "15462:63:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 2561,
+                  "id": 6450,
                   "nodeType": "IfStatement",
-                  "src": "15152:113:4",
+                  "src": "15458:126:35",
                   "trueBody": {
-                    "errorCall": {
-                      "arguments": [],
-                      "expression": {
-                        "argumentTypes": [],
-                        "expression": {
-                          "id": 2556,
-                          "name": "IHyperdrive",
-                          "nodeType": "Identifier",
-                          "overloadedDeclarations": [],
-                          "referencedDeclaration": 7431,
-                          "src": "15240:11:4",
+                    "id": 6449,
+                    "nodeType": "Block",
+                    "src": "15527:57:35",
+                    "statements": [
+                      {
+                        "errorCall": {
+                          "arguments": [],
+                          "expression": {
+                            "argumentTypes": [],
+                            "expression": {
+                              "id": 6444,
+                              "name": "IHyperdrive",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 3759,
+                              "src": "15548:11:35",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$3759_$",
+                                "typeString": "type(contract IHyperdrive)"
+                              }
+                            },
+                            "id": 6446,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberLocation": "15560:11:35",
+                            "memberName": "OutputLimit",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 3649,
+                            "src": "15548:23:35",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_error_pure$__$returns$__$",
+                              "typeString": "function () pure"
+                            }
+                          },
+                          "id": 6447,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "nameLocations": [],
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "15548:25:35",
+                          "tryCall": false,
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$7431_$",
-                            "typeString": "type(contract IHyperdrive)"
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
                           }
                         },
-                        "id": 2558,
-                        "isConstant": false,
-                        "isLValue": false,
-                        "isPure": false,
-                        "lValueRequested": false,
-                        "memberLocation": "15252:11:4",
-                        "memberName": "OutputLimit",
-                        "nodeType": "MemberAccess",
-                        "referencedDeclaration": 7336,
-                        "src": "15240:23:4",
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_function_error_pure$__$returns$__$",
-                          "typeString": "function () pure"
-                        }
-                      },
-                      "id": 2559,
-                      "isConstant": false,
-                      "isLValue": false,
-                      "isPure": false,
-                      "kind": "functionCall",
-                      "lValueRequested": false,
-                      "nameLocations": [],
-                      "names": [],
-                      "nodeType": "FunctionCall",
-                      "src": "15240:25:4",
-                      "tryCall": false,
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_tuple$__$",
-                        "typeString": "tuple()"
+                        "id": 6448,
+                        "nodeType": "RevertStatement",
+                        "src": "15541:32:35"
                       }
-                    },
-                    "id": 2560,
-                    "nodeType": "RevertStatement",
-                    "src": "15233:32:4"
+                    ]
                   }
                 },
                 {
@@ -11270,39 +9338,39 @@ export const HyperdriveLP =
                     "arguments": [
                       {
                         "expression": {
-                          "id": 2563,
+                          "id": 6452,
                           "name": "_options",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2448,
-                          "src": "15365:8:4",
+                          "referencedDeclaration": 6336,
+                          "src": "15683:8:35",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_Options_$7295_calldata_ptr",
+                            "typeIdentifier": "t_struct$_Options_$3608_calldata_ptr",
                             "typeString": "struct IHyperdrive.Options calldata"
                           }
                         },
-                        "id": 2564,
+                        "id": 6453,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "15374:11:4",
+                        "memberLocation": "15692:11:35",
                         "memberName": "destination",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 7288,
-                        "src": "15365:20:4",
+                        "referencedDeclaration": 3601,
+                        "src": "15683:20:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         }
                       },
                       {
-                        "id": 2565,
+                        "id": 6454,
                         "name": "withdrawalSharesRedeemed",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2455,
-                        "src": "15399:24:4",
+                        "referencedDeclaration": 6343,
+                        "src": "15717:24:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -11311,12 +9379,12 @@ export const HyperdriveLP =
                       {
                         "arguments": [
                           {
-                            "id": 2568,
+                            "id": 6457,
                             "name": "sharePrice",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2458,
-                            "src": "15480:10:4",
+                            "referencedDeclaration": 6346,
+                            "src": "15798:10:35",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -11331,33 +9399,33 @@ export const HyperdriveLP =
                             }
                           ],
                           "expression": {
-                            "id": 2566,
+                            "id": 6455,
                             "name": "shareProceeds",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2512,
-                            "src": "15458:13:4",
+                            "referencedDeclaration": 6400,
+                            "src": "15776:13:35",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             }
                           },
-                          "id": 2567,
+                          "id": 6456,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "15472:7:4",
+                          "memberLocation": "15790:7:35",
                           "memberName": "mulDown",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 8364,
-                          "src": "15458:21:4",
+                          "referencedDeclaration": 9831,
+                          "src": "15776:21:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                             "typeString": "function (uint256,uint256) pure returns (uint256)"
                           }
                         },
-                        "id": 2569,
+                        "id": 6458,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -11366,7 +9434,7 @@ export const HyperdriveLP =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "15458:33:4",
+                        "src": "15776:33:35",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -11374,12 +9442,12 @@ export const HyperdriveLP =
                         }
                       },
                       {
-                        "id": 2570,
+                        "id": 6459,
                         "name": "sharePrice",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2458,
-                        "src": "15505:10:4",
+                        "referencedDeclaration": 6346,
+                        "src": "15823:10:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -11405,18 +9473,18 @@ export const HyperdriveLP =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 2562,
+                      "id": 6451,
                       "name": "RedeemWithdrawalShares",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 636,
-                      "src": "15329:22:4",
+                      "referencedDeclaration": 4586,
+                      "src": "15647:22:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_uint256_$_t_uint256_$_t_uint256_$returns$__$",
                         "typeString": "function (address,uint256,uint256,uint256)"
                       }
                     },
-                    "id": 2571,
+                    "id": 6460,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -11425,110 +9493,106 @@ export const HyperdriveLP =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "15329:217:4",
+                    "src": "15647:217:35",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2572,
+                  "id": 6461,
                   "nodeType": "EmitStatement",
-                  "src": "15324:222:4"
+                  "src": "15642:222:35"
                 },
                 {
                   "expression": {
                     "components": [
                       {
-                        "id": 2573,
+                        "id": 6462,
                         "name": "proceeds",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2453,
-                        "src": "15565:8:4",
+                        "referencedDeclaration": 6341,
+                        "src": "15883:8:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 2574,
+                        "id": 6463,
                         "name": "withdrawalSharesRedeemed",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2455,
-                        "src": "15575:24:4",
+                        "referencedDeclaration": 6343,
+                        "src": "15893:24:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       }
                     ],
-                    "id": 2575,
+                    "id": 6464,
                     "isConstant": false,
                     "isInlineArray": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "TupleExpression",
-                    "src": "15564:36:4",
+                    "src": "15882:36:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$_t_uint256_$_t_uint256_$",
                       "typeString": "tuple(uint256,uint256)"
                     }
                   },
-                  "functionReturnParameters": 2456,
-                  "id": 2576,
+                  "functionReturnParameters": 6344,
+                  "id": 6465,
                   "nodeType": "Return",
-                  "src": "15557:43:4"
+                  "src": "15875:43:35"
                 }
               ]
             },
-            "baseFunctions": [
-              7594
-            ],
             "documentation": {
-              "id": 2441,
+              "id": 6329,
               "nodeType": "StructuredDocumentation",
-              "src": "12519:725:4",
-              "text": "@notice Redeems withdrawal shares by giving the LP a pro-rata amount of\n         the withdrawal pool's proceeds. This function redeems the\n         maximum amount of the specified withdrawal shares given the\n         amount of withdrawal shares ready to withdraw.\n @param _withdrawalShares The withdrawal shares to redeem.\n @param _minOutputPerShare The minimum amount of base the LP expects to\n        receive for each withdrawal share that is burned.\n @param _options The options that configure how the operation is settled.\n @return proceeds The amount the LP received.\n @return withdrawalSharesRedeemed The amount of withdrawal shares that were redeemed."
+              "src": "12820:729:35",
+              "text": "@dev Redeems withdrawal shares by giving the LP a pro-rata amount of the\n      withdrawal pool's proceeds. This function redeems the maximum\n      amount of the specified withdrawal shares given the amount of\n      withdrawal shares ready to withdraw.\n @param _withdrawalShares The withdrawal shares to redeem.\n @param _minOutputPerShare The minimum amount of base the LP expects to\n        receive for each withdrawal share that is burned.\n @param _options The options that configure how the operation is settled.\n @return proceeds The amount the LP received.\n @return withdrawalSharesRedeemed The amount of withdrawal shares that\n         were redeemed."
             },
-            "functionSelector": "074a6de9",
             "implemented": true,
             "kind": "function",
             "modifiers": [
               {
-                "id": 2451,
+                "id": 6339,
                 "kind": "modifierInvocation",
                 "modifierName": {
-                  "id": 2450,
+                  "id": 6338,
                   "name": "nonReentrant",
                   "nameLocations": [
-                    "13430:12:4"
+                    "13736:12:35"
                   ],
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 64179,
-                  "src": "13430:12:4"
+                  "referencedDeclaration": 60563,
+                  "src": "13736:12:35"
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "13430:12:4"
+                "src": "13736:12:35"
               }
             ],
-            "name": "redeemWithdrawalShares",
-            "nameLocation": "13258:22:4",
+            "name": "_redeemWithdrawalShares",
+            "nameLocation": "13563:23:35",
             "parameters": {
-              "id": 2449,
+              "id": 6337,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2443,
+                  "id": 6331,
                   "mutability": "mutable",
                   "name": "_withdrawalShares",
-                  "nameLocation": "13298:17:4",
+                  "nameLocation": "13604:17:35",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2578,
-                  "src": "13290:25:4",
+                  "scope": 6467,
+                  "src": "13596:25:35",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -11536,10 +9600,10 @@ export const HyperdriveLP =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2442,
+                    "id": 6330,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "13290:7:4",
+                    "src": "13596:7:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -11549,13 +9613,13 @@ export const HyperdriveLP =
                 },
                 {
                   "constant": false,
-                  "id": 2445,
+                  "id": 6333,
                   "mutability": "mutable",
                   "name": "_minOutputPerShare",
-                  "nameLocation": "13333:18:4",
+                  "nameLocation": "13639:18:35",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2578,
-                  "src": "13325:26:4",
+                  "scope": 6467,
+                  "src": "13631:26:35",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -11563,10 +9627,10 @@ export const HyperdriveLP =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2444,
+                    "id": 6332,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "13325:7:4",
+                    "src": "13631:7:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -11576,58 +9640,58 @@ export const HyperdriveLP =
                 },
                 {
                   "constant": false,
-                  "id": 2448,
+                  "id": 6336,
                   "mutability": "mutable",
                   "name": "_options",
-                  "nameLocation": "13390:8:4",
+                  "nameLocation": "13696:8:35",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2578,
-                  "src": "13361:37:4",
+                  "scope": 6467,
+                  "src": "13667:37:35",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_Options_$7295_calldata_ptr",
+                    "typeIdentifier": "t_struct$_Options_$3608_calldata_ptr",
                     "typeString": "struct IHyperdrive.Options"
                   },
                   "typeName": {
-                    "id": 2447,
+                    "id": 6335,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 2446,
+                      "id": 6334,
                       "name": "IHyperdrive.Options",
                       "nameLocations": [
-                        "13361:11:4",
-                        "13373:7:4"
+                        "13667:11:35",
+                        "13679:7:35"
                       ],
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 7295,
-                      "src": "13361:19:4"
+                      "referencedDeclaration": 3608,
+                      "src": "13667:19:35"
                     },
-                    "referencedDeclaration": 7295,
-                    "src": "13361:19:4",
+                    "referencedDeclaration": 3608,
+                    "src": "13667:19:35",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Options_$7295_storage_ptr",
+                      "typeIdentifier": "t_struct$_Options_$3608_storage_ptr",
                       "typeString": "struct IHyperdrive.Options"
                     }
                   },
                   "visibility": "internal"
                 }
               ],
-              "src": "13280:124:4"
+              "src": "13586:124:35"
             },
             "returnParameters": {
-              "id": 2456,
+              "id": 6344,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2453,
+                  "id": 6341,
                   "mutability": "mutable",
                   "name": "proceeds",
-                  "nameLocation": "13468:8:4",
+                  "nameLocation": "13774:8:35",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2578,
-                  "src": "13460:16:4",
+                  "scope": 6467,
+                  "src": "13766:16:35",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -11635,10 +9699,10 @@ export const HyperdriveLP =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2452,
+                    "id": 6340,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "13460:7:4",
+                    "src": "13766:7:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -11648,13 +9712,13 @@ export const HyperdriveLP =
                 },
                 {
                   "constant": false,
-                  "id": 2455,
+                  "id": 6343,
                   "mutability": "mutable",
                   "name": "withdrawalSharesRedeemed",
-                  "nameLocation": "13486:24:4",
+                  "nameLocation": "13792:24:35",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2578,
-                  "src": "13478:32:4",
+                  "scope": 6467,
+                  "src": "13784:32:35",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -11662,10 +9726,10 @@ export const HyperdriveLP =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2454,
+                    "id": 6342,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "13478:7:4",
+                    "src": "13784:7:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -11674,22 +9738,22 @@ export const HyperdriveLP =
                   "visibility": "internal"
                 }
               ],
-              "src": "13459:52:4"
+              "src": "13765:52:35"
             },
-            "scope": 3078,
+            "scope": 6967,
             "stateMutability": "nonpayable",
             "virtual": false,
-            "visibility": "external"
+            "visibility": "internal"
           },
           {
-            "id": 2721,
+            "id": 6610,
             "nodeType": "FunctionDefinition",
-            "src": "15784:3325:4",
+            "src": "16102:3325:35",
             "nodes": [],
             "body": {
-              "id": 2720,
+              "id": 6609,
               "nodeType": "Block",
-              "src": "15847:3262:4",
+              "src": "16165:3262:35",
               "nodes": [],
               "statements": [
                 {
@@ -11698,18 +9762,18 @@ export const HyperdriveLP =
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     },
-                    "id": 2586,
+                    "id": 6475,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 2584,
+                      "id": 6473,
                       "name": "_shareReservesDelta",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2581,
-                      "src": "15967:19:4",
+                      "referencedDeclaration": 6470,
+                      "src": "16285:19:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -11719,57 +9783,57 @@ export const HyperdriveLP =
                     "operator": "==",
                     "rightExpression": {
                       "hexValue": "30",
-                      "id": 2585,
+                      "id": 6474,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "15990:1:4",
+                      "src": "16308:1:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_0_by_1",
                         "typeString": "int_const 0"
                       },
                       "value": "0"
                     },
-                    "src": "15967:24:4",
+                    "src": "16285:24:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 2589,
+                  "id": 6478,
                   "nodeType": "IfStatement",
-                  "src": "15963:61:4",
+                  "src": "16281:61:35",
                   "trueBody": {
-                    "id": 2588,
+                    "id": 6477,
                     "nodeType": "Block",
-                    "src": "15993:31:4",
+                    "src": "16311:31:35",
                     "statements": [
                       {
-                        "functionReturnParameters": 2583,
-                        "id": 2587,
+                        "functionReturnParameters": 6472,
+                        "id": 6476,
                         "nodeType": "Return",
-                        "src": "16007:7:4"
+                        "src": "16325:7:35"
                       }
                     ]
                   }
                 },
                 {
                   "assignments": [
-                    2591
+                    6480
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 2591,
+                      "id": 6480,
                       "mutability": "mutable",
                       "name": "shareReserves",
-                      "nameLocation": "16239:13:4",
+                      "nameLocation": "16557:13:35",
                       "nodeType": "VariableDeclaration",
-                      "scope": 2720,
-                      "src": "16231:21:4",
+                      "scope": 6609,
+                      "src": "16549:21:35",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -11777,10 +9841,10 @@ export const HyperdriveLP =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 2590,
+                        "id": 6479,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "16231:7:4",
+                        "src": "16549:7:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -11789,37 +9853,37 @@ export const HyperdriveLP =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 2594,
+                  "id": 6483,
                   "initialValue": {
                     "expression": {
-                      "id": 2592,
+                      "id": 6481,
                       "name": "_marketState",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 4833,
-                      "src": "16255:12:4",
+                      "referencedDeclaration": 9249,
+                      "src": "16573:12:35",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_MarketState_$7175_storage",
+                        "typeIdentifier": "t_struct$_MarketState_$3492_storage",
                         "typeString": "struct IHyperdrive.MarketState storage ref"
                       }
                     },
-                    "id": 2593,
+                    "id": 6482,
                     "isConstant": false,
                     "isLValue": true,
                     "isPure": false,
                     "lValueRequested": false,
-                    "memberLocation": "16268:13:4",
+                    "memberLocation": "16586:13:35",
                     "memberName": "shareReserves",
                     "nodeType": "MemberAccess",
-                    "referencedDeclaration": 7147,
-                    "src": "16255:26:4",
+                    "referencedDeclaration": 3464,
+                    "src": "16573:26:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint128",
                       "typeString": "uint128"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "16231:50:4"
+                  "src": "16549:50:35"
                 },
                 {
                   "condition": {
@@ -11827,18 +9891,18 @@ export const HyperdriveLP =
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 2597,
+                    "id": 6486,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 2595,
+                      "id": 6484,
                       "name": "shareReserves",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2591,
-                      "src": "16295:13:4",
+                      "referencedDeclaration": 6480,
+                      "src": "16613:13:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -11847,30 +9911,30 @@ export const HyperdriveLP =
                     "nodeType": "BinaryOperation",
                     "operator": "<",
                     "rightExpression": {
-                      "id": 2596,
+                      "id": 6485,
                       "name": "_minimumShareReserves",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 4826,
-                      "src": "16311:21:4",
+                      "referencedDeclaration": 9239,
+                      "src": "16629:21:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "16295:37:4",
+                    "src": "16613:37:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 2604,
+                  "id": 6493,
                   "nodeType": "IfStatement",
-                  "src": "16291:109:4",
+                  "src": "16609:109:35",
                   "trueBody": {
-                    "id": 2603,
+                    "id": 6492,
                     "nodeType": "Block",
-                    "src": "16334:66:4",
+                    "src": "16652:66:35",
                     "statements": [
                       {
                         "errorCall": {
@@ -11878,33 +9942,33 @@ export const HyperdriveLP =
                           "expression": {
                             "argumentTypes": [],
                             "expression": {
-                              "id": 2598,
+                              "id": 6487,
                               "name": "IHyperdrive",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 7431,
-                              "src": "16355:11:4",
+                              "referencedDeclaration": 3759,
+                              "src": "16673:11:35",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$7431_$",
+                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$3759_$",
                                 "typeString": "type(contract IHyperdrive)"
                               }
                             },
-                            "id": 2600,
+                            "id": 6489,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
-                            "memberLocation": "16367:20:4",
+                            "memberLocation": "16685:20:35",
                             "memberName": "InvalidShareReserves",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 7322,
-                            "src": "16355:32:4",
+                            "referencedDeclaration": 3635,
+                            "src": "16673:32:35",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_error_pure$__$returns$__$",
                               "typeString": "function () pure"
                             }
                           },
-                          "id": 2601,
+                          "id": 6490,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -11913,34 +9977,34 @@ export const HyperdriveLP =
                           "nameLocations": [],
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "16355:34:4",
+                          "src": "16673:34:35",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_tuple$__$",
                             "typeString": "tuple()"
                           }
                         },
-                        "id": 2602,
+                        "id": 6491,
                         "nodeType": "RevertStatement",
-                        "src": "16348:41:4"
+                        "src": "16666:41:35"
                       }
                     ]
                   }
                 },
                 {
                   "assignments": [
-                    2606
+                    6495
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 2606,
+                      "id": 6495,
                       "mutability": "mutable",
                       "name": "updatedShareReserves",
-                      "nameLocation": "16576:20:4",
+                      "nameLocation": "16894:20:35",
                       "nodeType": "VariableDeclaration",
-                      "scope": 2720,
-                      "src": "16569:27:4",
+                      "scope": 6609,
+                      "src": "16887:27:35",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -11948,10 +10012,10 @@ export const HyperdriveLP =
                         "typeString": "int256"
                       },
                       "typeName": {
-                        "id": 2605,
+                        "id": 6494,
                         "name": "int256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "16569:6:4",
+                        "src": "16887:6:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -11960,13 +10024,13 @@ export const HyperdriveLP =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 2613,
+                  "id": 6502,
                   "initialValue": {
                     "commonType": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     },
-                    "id": 2612,
+                    "id": 6501,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -11974,12 +10038,12 @@ export const HyperdriveLP =
                     "leftExpression": {
                       "arguments": [
                         {
-                          "id": 2609,
+                          "id": 6498,
                           "name": "shareReserves",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2591,
-                          "src": "16606:13:4",
+                          "referencedDeclaration": 6480,
+                          "src": "16924:13:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -11993,26 +10057,26 @@ export const HyperdriveLP =
                             "typeString": "uint256"
                           }
                         ],
-                        "id": 2608,
+                        "id": 6497,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "lValueRequested": false,
                         "nodeType": "ElementaryTypeNameExpression",
-                        "src": "16599:6:4",
+                        "src": "16917:6:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_type$_t_int256_$",
                           "typeString": "type(int256)"
                         },
                         "typeName": {
-                          "id": 2607,
+                          "id": 6496,
                           "name": "int256",
                           "nodeType": "ElementaryTypeName",
-                          "src": "16599:6:4",
+                          "src": "16917:6:35",
                           "typeDescriptions": {}
                         }
                       },
-                      "id": 2610,
+                      "id": 6499,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -12021,7 +10085,7 @@ export const HyperdriveLP =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "16599:21:4",
+                      "src": "16917:21:35",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
@@ -12031,25 +10095,25 @@ export const HyperdriveLP =
                     "nodeType": "BinaryOperation",
                     "operator": "+",
                     "rightExpression": {
-                      "id": 2611,
+                      "id": 6500,
                       "name": "_shareReservesDelta",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2581,
-                      "src": "16635:19:4",
+                      "referencedDeclaration": 6470,
+                      "src": "16953:19:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "16599:55:4",
+                    "src": "16917:55:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "16569:85:4"
+                  "src": "16887:85:35"
                 },
                 {
                   "condition": {
@@ -12057,18 +10121,18 @@ export const HyperdriveLP =
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     },
-                    "id": 2619,
+                    "id": 6508,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 2614,
+                      "id": 6503,
                       "name": "updatedShareReserves",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2606,
-                      "src": "16668:20:4",
+                      "referencedDeclaration": 6495,
+                      "src": "16986:20:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -12079,12 +10143,12 @@ export const HyperdriveLP =
                     "rightExpression": {
                       "arguments": [
                         {
-                          "id": 2617,
+                          "id": 6506,
                           "name": "_minimumShareReserves",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 4826,
-                          "src": "16698:21:4",
+                          "referencedDeclaration": 9239,
+                          "src": "17016:21:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -12098,26 +10162,26 @@ export const HyperdriveLP =
                             "typeString": "uint256"
                           }
                         ],
-                        "id": 2616,
+                        "id": 6505,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "lValueRequested": false,
                         "nodeType": "ElementaryTypeNameExpression",
-                        "src": "16691:6:4",
+                        "src": "17009:6:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_type$_t_int256_$",
                           "typeString": "type(int256)"
                         },
                         "typeName": {
-                          "id": 2615,
+                          "id": 6504,
                           "name": "int256",
                           "nodeType": "ElementaryTypeName",
-                          "src": "16691:6:4",
+                          "src": "17009:6:35",
                           "typeDescriptions": {}
                         }
                       },
-                      "id": 2618,
+                      "id": 6507,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -12126,26 +10190,26 @@ export const HyperdriveLP =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "16691:29:4",
+                      "src": "17009:29:35",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "16668:52:4",
+                    "src": "16986:52:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 2626,
+                  "id": 6515,
                   "nodeType": "IfStatement",
-                  "src": "16664:124:4",
+                  "src": "16982:124:35",
                   "trueBody": {
-                    "id": 2625,
+                    "id": 6514,
                     "nodeType": "Block",
-                    "src": "16722:66:4",
+                    "src": "17040:66:35",
                     "statements": [
                       {
                         "errorCall": {
@@ -12153,33 +10217,33 @@ export const HyperdriveLP =
                           "expression": {
                             "argumentTypes": [],
                             "expression": {
-                              "id": 2620,
+                              "id": 6509,
                               "name": "IHyperdrive",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 7431,
-                              "src": "16743:11:4",
+                              "referencedDeclaration": 3759,
+                              "src": "17061:11:35",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$7431_$",
+                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$3759_$",
                                 "typeString": "type(contract IHyperdrive)"
                               }
                             },
-                            "id": 2622,
+                            "id": 6511,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
-                            "memberLocation": "16755:20:4",
+                            "memberLocation": "17073:20:35",
                             "memberName": "InvalidShareReserves",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 7322,
-                            "src": "16743:32:4",
+                            "referencedDeclaration": 3635,
+                            "src": "17061:32:35",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_error_pure$__$returns$__$",
                               "typeString": "function () pure"
                             }
                           },
-                          "id": 2623,
+                          "id": 6512,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -12188,50 +10252,50 @@ export const HyperdriveLP =
                           "nameLocations": [],
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "16743:34:4",
+                          "src": "17061:34:35",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_tuple$__$",
                             "typeString": "tuple()"
                           }
                         },
-                        "id": 2624,
+                        "id": 6513,
                         "nodeType": "RevertStatement",
-                        "src": "16736:41:4"
+                        "src": "17054:41:35"
                       }
                     ]
                   }
                 },
                 {
                   "expression": {
-                    "id": 2636,
+                    "id": 6525,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "expression": {
-                        "id": 2627,
+                        "id": 6516,
                         "name": "_marketState",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4833,
-                        "src": "16797:12:4",
+                        "referencedDeclaration": 9249,
+                        "src": "17115:12:35",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_MarketState_$7175_storage",
+                          "typeIdentifier": "t_struct$_MarketState_$3492_storage",
                           "typeString": "struct IHyperdrive.MarketState storage ref"
                         }
                       },
-                      "id": 2629,
+                      "id": 6518,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
-                      "memberLocation": "16810:13:4",
+                      "memberLocation": "17128:13:35",
                       "memberName": "shareReserves",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 7147,
-                      "src": "16797:26:4",
+                      "referencedDeclaration": 3464,
+                      "src": "17115:26:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint128",
                         "typeString": "uint128"
@@ -12246,12 +10310,12 @@ export const HyperdriveLP =
                         "expression": {
                           "arguments": [
                             {
-                              "id": 2632,
+                              "id": 6521,
                               "name": "updatedShareReserves",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2606,
-                              "src": "16834:20:4",
+                              "referencedDeclaration": 6495,
+                              "src": "17152:20:35",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -12265,26 +10329,26 @@ export const HyperdriveLP =
                                 "typeString": "int256"
                               }
                             ],
-                            "id": 2631,
+                            "id": 6520,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "lValueRequested": false,
                             "nodeType": "ElementaryTypeNameExpression",
-                            "src": "16826:7:4",
+                            "src": "17144:7:35",
                             "typeDescriptions": {
                               "typeIdentifier": "t_type$_t_uint256_$",
                               "typeString": "type(uint256)"
                             },
                             "typeName": {
-                              "id": 2630,
+                              "id": 6519,
                               "name": "uint256",
                               "nodeType": "ElementaryTypeName",
-                              "src": "16826:7:4",
+                              "src": "17144:7:35",
                               "typeDescriptions": {}
                             }
                           },
-                          "id": 2633,
+                          "id": 6522,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -12293,29 +10357,29 @@ export const HyperdriveLP =
                           "nameLocations": [],
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "16826:29:4",
+                          "src": "17144:29:35",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 2634,
+                        "id": 6523,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "16856:9:4",
+                        "memberLocation": "17174:9:35",
                         "memberName": "toUint128",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 9953,
-                        "src": "16826:39:4",
+                        "referencedDeclaration": 11387,
+                        "src": "17144:39:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_uint256_$returns$_t_uint128_$attached_to$_t_uint256_$",
                           "typeString": "function (uint256) pure returns (uint128)"
                         }
                       },
-                      "id": 2635,
+                      "id": 6524,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -12324,37 +10388,37 @@ export const HyperdriveLP =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "16826:41:4",
+                      "src": "17144:41:35",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint128",
                         "typeString": "uint128"
                       }
                     },
-                    "src": "16797:70:4",
+                    "src": "17115:70:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint128",
                       "typeString": "uint128"
                     }
                   },
-                  "id": 2637,
+                  "id": 6526,
                   "nodeType": "ExpressionStatement",
-                  "src": "16797:70:4"
+                  "src": "17115:70:35"
                 },
                 {
                   "assignments": [
-                    2639
+                    6528
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 2639,
+                      "id": 6528,
                       "mutability": "mutable",
                       "name": "updatedShareAdjustment",
-                      "nameLocation": "17386:22:4",
+                      "nameLocation": "17704:22:35",
                       "nodeType": "VariableDeclaration",
-                      "scope": 2720,
-                      "src": "17379:29:4",
+                      "scope": 6609,
+                      "src": "17697:29:35",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -12362,10 +10426,10 @@ export const HyperdriveLP =
                         "typeString": "int256"
                       },
                       "typeName": {
-                        "id": 2638,
+                        "id": 6527,
                         "name": "int256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "17379:6:4",
+                        "src": "17697:6:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -12374,24 +10438,24 @@ export const HyperdriveLP =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 2640,
+                  "id": 6529,
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "17379:29:4"
+                  "src": "17697:29:35"
                 },
                 {
                   "assignments": [
-                    2642
+                    6531
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 2642,
+                      "id": 6531,
                       "mutability": "mutable",
                       "name": "shareAdjustment",
-                      "nameLocation": "17425:15:4",
+                      "nameLocation": "17743:15:35",
                       "nodeType": "VariableDeclaration",
-                      "scope": 2720,
-                      "src": "17418:22:4",
+                      "scope": 6609,
+                      "src": "17736:22:35",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -12399,10 +10463,10 @@ export const HyperdriveLP =
                         "typeString": "int256"
                       },
                       "typeName": {
-                        "id": 2641,
+                        "id": 6530,
                         "name": "int256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "17418:6:4",
+                        "src": "17736:6:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -12411,37 +10475,37 @@ export const HyperdriveLP =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 2645,
+                  "id": 6534,
                   "initialValue": {
                     "expression": {
-                      "id": 2643,
+                      "id": 6532,
                       "name": "_marketState",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 4833,
-                      "src": "17443:12:4",
+                      "referencedDeclaration": 9249,
+                      "src": "17761:12:35",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_MarketState_$7175_storage",
+                        "typeIdentifier": "t_struct$_MarketState_$3492_storage",
                         "typeString": "struct IHyperdrive.MarketState storage ref"
                       }
                     },
-                    "id": 2644,
+                    "id": 6533,
                     "isConstant": false,
                     "isLValue": true,
                     "isPure": false,
                     "lValueRequested": false,
-                    "memberLocation": "17456:15:4",
+                    "memberLocation": "17774:15:35",
                     "memberName": "shareAdjustment",
                     "nodeType": "MemberAccess",
-                    "referencedDeclaration": 7153,
-                    "src": "17443:28:4",
+                    "referencedDeclaration": 3470,
+                    "src": "17761:28:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int128",
                       "typeString": "int128"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "17418:53:4"
+                  "src": "17736:53:35"
                 },
                 {
                   "condition": {
@@ -12449,18 +10513,18 @@ export const HyperdriveLP =
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     },
-                    "id": 2648,
+                    "id": 6537,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 2646,
+                      "id": 6535,
                       "name": "shareAdjustment",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2642,
-                      "src": "17485:15:4",
+                      "referencedDeclaration": 6531,
+                      "src": "17803:15:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -12470,45 +10534,45 @@ export const HyperdriveLP =
                     "operator": ">=",
                     "rightExpression": {
                       "hexValue": "30",
-                      "id": 2647,
+                      "id": 6536,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "17504:1:4",
+                      "src": "17822:1:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_0_by_1",
                         "typeString": "int_const 0"
                       },
                       "value": "0"
                     },
-                    "src": "17485:20:4",
+                    "src": "17803:20:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
                   "falseBody": {
-                    "id": 2686,
+                    "id": 6575,
                     "nodeType": "Block",
-                    "src": "17740:229:4",
+                    "src": "18058:229:35",
                     "statements": [
                       {
                         "expression": {
-                          "id": 2684,
+                          "id": 6573,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 2667,
+                            "id": 6556,
                             "name": "updatedShareAdjustment",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2639,
-                            "src": "17754:22:4",
+                            "referencedDeclaration": 6528,
+                            "src": "18072:22:35",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -12517,7 +10581,7 @@ export const HyperdriveLP =
                           "nodeType": "Assignment",
                           "operator": "=",
                           "rightHandSide": {
-                            "id": 2683,
+                            "id": 6572,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -12525,7 +10589,7 @@ export const HyperdriveLP =
                             "nodeType": "UnaryOperation",
                             "operator": "-",
                             "prefix": true,
-                            "src": "17779:179:4",
+                            "src": "18097:179:35",
                             "subExpression": {
                               "arguments": [
                                 {
@@ -12533,7 +10597,7 @@ export const HyperdriveLP =
                                     {
                                       "arguments": [
                                         {
-                                          "id": 2678,
+                                          "id": 6567,
                                           "isConstant": false,
                                           "isLValue": false,
                                           "isPure": false,
@@ -12541,14 +10605,14 @@ export const HyperdriveLP =
                                           "nodeType": "UnaryOperation",
                                           "operator": "-",
                                           "prefix": true,
-                                          "src": "17874:16:4",
+                                          "src": "18192:16:35",
                                           "subExpression": {
-                                            "id": 2677,
+                                            "id": 6566,
                                             "name": "shareAdjustment",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 2642,
-                                            "src": "17875:15:4",
+                                            "referencedDeclaration": 6531,
+                                            "src": "18193:15:35",
                                             "typeDescriptions": {
                                               "typeIdentifier": "t_int256",
                                               "typeString": "int256"
@@ -12567,26 +10631,26 @@ export const HyperdriveLP =
                                             "typeString": "int256"
                                           }
                                         ],
-                                        "id": 2676,
+                                        "id": 6565,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": true,
                                         "lValueRequested": false,
                                         "nodeType": "ElementaryTypeNameExpression",
-                                        "src": "17866:7:4",
+                                        "src": "18184:7:35",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_type$_t_uint256_$",
                                           "typeString": "type(uint256)"
                                         },
                                         "typeName": {
-                                          "id": 2675,
+                                          "id": 6564,
                                           "name": "uint256",
                                           "nodeType": "ElementaryTypeName",
-                                          "src": "17866:7:4",
+                                          "src": "18184:7:35",
                                           "typeDescriptions": {}
                                         }
                                       },
-                                      "id": 2679,
+                                      "id": 6568,
                                       "isConstant": false,
                                       "isLValue": false,
                                       "isPure": false,
@@ -12595,7 +10659,7 @@ export const HyperdriveLP =
                                       "nameLocations": [],
                                       "names": [],
                                       "nodeType": "FunctionCall",
-                                      "src": "17866:25:4",
+                                      "src": "18184:25:35",
                                       "tryCall": false,
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_uint256",
@@ -12603,12 +10667,12 @@ export const HyperdriveLP =
                                       }
                                     },
                                     {
-                                      "id": 2680,
+                                      "id": 6569,
                                       "name": "shareReserves",
                                       "nodeType": "Identifier",
                                       "overloadedDeclarations": [],
-                                      "referencedDeclaration": 2591,
-                                      "src": "17913:13:4",
+                                      "referencedDeclaration": 6480,
+                                      "src": "18231:13:35",
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_uint256",
                                         "typeString": "uint256"
@@ -12629,12 +10693,12 @@ export const HyperdriveLP =
                                     "expression": {
                                       "arguments": [
                                         {
-                                          "id": 2672,
+                                          "id": 6561,
                                           "name": "updatedShareReserves",
                                           "nodeType": "Identifier",
                                           "overloadedDeclarations": [],
-                                          "referencedDeclaration": 2606,
-                                          "src": "17812:20:4",
+                                          "referencedDeclaration": 6495,
+                                          "src": "18130:20:35",
                                           "typeDescriptions": {
                                             "typeIdentifier": "t_int256",
                                             "typeString": "int256"
@@ -12648,26 +10712,26 @@ export const HyperdriveLP =
                                             "typeString": "int256"
                                           }
                                         ],
-                                        "id": 2671,
+                                        "id": 6560,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": true,
                                         "lValueRequested": false,
                                         "nodeType": "ElementaryTypeNameExpression",
-                                        "src": "17804:7:4",
+                                        "src": "18122:7:35",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_type$_t_uint256_$",
                                           "typeString": "type(uint256)"
                                         },
                                         "typeName": {
-                                          "id": 2670,
+                                          "id": 6559,
                                           "name": "uint256",
                                           "nodeType": "ElementaryTypeName",
-                                          "src": "17804:7:4",
+                                          "src": "18122:7:35",
                                           "typeDescriptions": {}
                                         }
                                       },
-                                      "id": 2673,
+                                      "id": 6562,
                                       "isConstant": false,
                                       "isLValue": false,
                                       "isPure": false,
@@ -12676,29 +10740,29 @@ export const HyperdriveLP =
                                       "nameLocations": [],
                                       "names": [],
                                       "nodeType": "FunctionCall",
-                                      "src": "17804:29:4",
+                                      "src": "18122:29:35",
                                       "tryCall": false,
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_uint256",
                                         "typeString": "uint256"
                                       }
                                     },
-                                    "id": 2674,
+                                    "id": 6563,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": false,
                                     "lValueRequested": false,
-                                    "memberLocation": "17834:10:4",
+                                    "memberLocation": "18152:10:35",
                                     "memberName": "mulDivDown",
                                     "nodeType": "MemberAccess",
-                                    "referencedDeclaration": 8346,
-                                    "src": "17804:40:4",
+                                    "referencedDeclaration": 9813,
+                                    "src": "18122:40:35",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                       "typeString": "function (uint256,uint256,uint256) pure returns (uint256)"
                                     }
                                   },
-                                  "id": 2681,
+                                  "id": 6570,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
@@ -12707,7 +10771,7 @@ export const HyperdriveLP =
                                   "nameLocations": [],
                                   "names": [],
                                   "nodeType": "FunctionCall",
-                                  "src": "17804:140:4",
+                                  "src": "18122:140:35",
                                   "tryCall": false,
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_uint256",
@@ -12722,26 +10786,26 @@ export const HyperdriveLP =
                                     "typeString": "uint256"
                                   }
                                 ],
-                                "id": 2669,
+                                "id": 6558,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
                                 "lValueRequested": false,
                                 "nodeType": "ElementaryTypeNameExpression",
-                                "src": "17780:6:4",
+                                "src": "18098:6:35",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_type$_t_int256_$",
                                   "typeString": "type(int256)"
                                 },
                                 "typeName": {
-                                  "id": 2668,
+                                  "id": 6557,
                                   "name": "int256",
                                   "nodeType": "ElementaryTypeName",
-                                  "src": "17780:6:4",
+                                  "src": "18098:6:35",
                                   "typeDescriptions": {}
                                 }
                               },
-                              "id": 2682,
+                              "id": 6571,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
@@ -12750,7 +10814,7 @@ export const HyperdriveLP =
                               "nameLocations": [],
                               "names": [],
                               "nodeType": "FunctionCall",
-                              "src": "17780:178:4",
+                              "src": "18098:178:35",
                               "tryCall": false,
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
@@ -12762,40 +10826,40 @@ export const HyperdriveLP =
                               "typeString": "int256"
                             }
                           },
-                          "src": "17754:204:4",
+                          "src": "18072:204:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 2685,
+                        "id": 6574,
                         "nodeType": "ExpressionStatement",
-                        "src": "17754:204:4"
+                        "src": "18072:204:35"
                       }
                     ]
                   },
-                  "id": 2687,
+                  "id": 6576,
                   "nodeType": "IfStatement",
-                  "src": "17481:488:4",
+                  "src": "17799:488:35",
                   "trueBody": {
-                    "id": 2666,
+                    "id": 6555,
                     "nodeType": "Block",
-                    "src": "17507:227:4",
+                    "src": "17825:227:35",
                     "statements": [
                       {
                         "expression": {
-                          "id": 2664,
+                          "id": 6553,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 2649,
+                            "id": 6538,
                             "name": "updatedShareAdjustment",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2639,
-                            "src": "17521:22:4",
+                            "referencedDeclaration": 6528,
+                            "src": "17839:22:35",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -12810,12 +10874,12 @@ export const HyperdriveLP =
                                   {
                                     "arguments": [
                                       {
-                                        "id": 2659,
+                                        "id": 6548,
                                         "name": "shareAdjustment",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 2642,
-                                        "src": "17640:15:4",
+                                        "referencedDeclaration": 6531,
+                                        "src": "17958:15:35",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_int256",
                                           "typeString": "int256"
@@ -12829,26 +10893,26 @@ export const HyperdriveLP =
                                           "typeString": "int256"
                                         }
                                       ],
-                                      "id": 2658,
+                                      "id": 6547,
                                       "isConstant": false,
                                       "isLValue": false,
                                       "isPure": true,
                                       "lValueRequested": false,
                                       "nodeType": "ElementaryTypeNameExpression",
-                                      "src": "17632:7:4",
+                                      "src": "17950:7:35",
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_type$_t_uint256_$",
                                         "typeString": "type(uint256)"
                                       },
                                       "typeName": {
-                                        "id": 2657,
+                                        "id": 6546,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "17632:7:4",
+                                        "src": "17950:7:35",
                                         "typeDescriptions": {}
                                       }
                                     },
-                                    "id": 2660,
+                                    "id": 6549,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": false,
@@ -12857,7 +10921,7 @@ export const HyperdriveLP =
                                     "nameLocations": [],
                                     "names": [],
                                     "nodeType": "FunctionCall",
-                                    "src": "17632:24:4",
+                                    "src": "17950:24:35",
                                     "tryCall": false,
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
@@ -12865,12 +10929,12 @@ export const HyperdriveLP =
                                     }
                                   },
                                   {
-                                    "id": 2661,
+                                    "id": 6550,
                                     "name": "shareReserves",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 2591,
-                                    "src": "17678:13:4",
+                                    "referencedDeclaration": 6480,
+                                    "src": "17996:13:35",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
                                       "typeString": "uint256"
@@ -12891,12 +10955,12 @@ export const HyperdriveLP =
                                   "expression": {
                                     "arguments": [
                                       {
-                                        "id": 2654,
+                                        "id": 6543,
                                         "name": "updatedShareReserves",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 2606,
-                                        "src": "17578:20:4",
+                                        "referencedDeclaration": 6495,
+                                        "src": "17896:20:35",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_int256",
                                           "typeString": "int256"
@@ -12910,26 +10974,26 @@ export const HyperdriveLP =
                                           "typeString": "int256"
                                         }
                                       ],
-                                      "id": 2653,
+                                      "id": 6542,
                                       "isConstant": false,
                                       "isLValue": false,
                                       "isPure": true,
                                       "lValueRequested": false,
                                       "nodeType": "ElementaryTypeNameExpression",
-                                      "src": "17570:7:4",
+                                      "src": "17888:7:35",
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_type$_t_uint256_$",
                                         "typeString": "type(uint256)"
                                       },
                                       "typeName": {
-                                        "id": 2652,
+                                        "id": 6541,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "17570:7:4",
+                                        "src": "17888:7:35",
                                         "typeDescriptions": {}
                                       }
                                     },
-                                    "id": 2655,
+                                    "id": 6544,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": false,
@@ -12938,29 +11002,29 @@ export const HyperdriveLP =
                                     "nameLocations": [],
                                     "names": [],
                                     "nodeType": "FunctionCall",
-                                    "src": "17570:29:4",
+                                    "src": "17888:29:35",
                                     "tryCall": false,
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
                                       "typeString": "uint256"
                                     }
                                   },
-                                  "id": 2656,
+                                  "id": 6545,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
-                                  "memberLocation": "17600:10:4",
+                                  "memberLocation": "17918:10:35",
                                   "memberName": "mulDivDown",
                                   "nodeType": "MemberAccess",
-                                  "referencedDeclaration": 8346,
-                                  "src": "17570:40:4",
+                                  "referencedDeclaration": 9813,
+                                  "src": "17888:40:35",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                     "typeString": "function (uint256,uint256,uint256) pure returns (uint256)"
                                   }
                                 },
-                                "id": 2662,
+                                "id": 6551,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -12969,7 +11033,7 @@ export const HyperdriveLP =
                                 "nameLocations": [],
                                 "names": [],
                                 "nodeType": "FunctionCall",
-                                "src": "17570:139:4",
+                                "src": "17888:139:35",
                                 "tryCall": false,
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
@@ -12984,26 +11048,26 @@ export const HyperdriveLP =
                                   "typeString": "uint256"
                                 }
                               ],
-                              "id": 2651,
+                              "id": 6540,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
                               "lValueRequested": false,
                               "nodeType": "ElementaryTypeNameExpression",
-                              "src": "17546:6:4",
+                              "src": "17864:6:35",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_type$_t_int256_$",
                                 "typeString": "type(int256)"
                               },
                               "typeName": {
-                                "id": 2650,
+                                "id": 6539,
                                 "name": "int256",
                                 "nodeType": "ElementaryTypeName",
-                                "src": "17546:6:4",
+                                "src": "17864:6:35",
                                 "typeDescriptions": {}
                               }
                             },
-                            "id": 2663,
+                            "id": 6552,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -13012,56 +11076,56 @@ export const HyperdriveLP =
                             "nameLocations": [],
                             "names": [],
                             "nodeType": "FunctionCall",
-                            "src": "17546:177:4",
+                            "src": "17864:177:35",
                             "tryCall": false,
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "17521:202:4",
+                          "src": "17839:202:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 2665,
+                        "id": 6554,
                         "nodeType": "ExpressionStatement",
-                        "src": "17521:202:4"
+                        "src": "17839:202:35"
                       }
                     ]
                   }
                 },
                 {
                   "expression": {
-                    "id": 2694,
+                    "id": 6583,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "expression": {
-                        "id": 2688,
+                        "id": 6577,
                         "name": "_marketState",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4833,
-                        "src": "17978:12:4",
+                        "referencedDeclaration": 9249,
+                        "src": "18296:12:35",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_MarketState_$7175_storage",
+                          "typeIdentifier": "t_struct$_MarketState_$3492_storage",
                           "typeString": "struct IHyperdrive.MarketState storage ref"
                         }
                       },
-                      "id": 2690,
+                      "id": 6579,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
-                      "memberLocation": "17991:15:4",
+                      "memberLocation": "18309:15:35",
                       "memberName": "shareAdjustment",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 7153,
-                      "src": "17978:28:4",
+                      "referencedDeclaration": 3470,
+                      "src": "18296:28:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int128",
                         "typeString": "int128"
@@ -13074,33 +11138,33 @@ export const HyperdriveLP =
                       "expression": {
                         "argumentTypes": [],
                         "expression": {
-                          "id": 2691,
+                          "id": 6580,
                           "name": "updatedShareAdjustment",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2639,
-                          "src": "18009:22:4",
+                          "referencedDeclaration": 6528,
+                          "src": "18327:22:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 2692,
+                        "id": 6581,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "18032:8:4",
+                        "memberLocation": "18350:8:35",
                         "memberName": "toInt128",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 9993,
-                        "src": "18009:31:4",
+                        "referencedDeclaration": 11427,
+                        "src": "18327:31:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_int256_$returns$_t_int128_$attached_to$_t_int256_$",
                           "typeString": "function (int256) pure returns (int128)"
                         }
                       },
-                      "id": 2693,
+                      "id": 6582,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -13109,53 +11173,53 @@ export const HyperdriveLP =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "18009:33:4",
+                      "src": "18327:33:35",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_int128",
                         "typeString": "int128"
                       }
                     },
-                    "src": "17978:64:4",
+                    "src": "18296:64:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int128",
                       "typeString": "int128"
                     }
                   },
-                  "id": 2695,
+                  "id": 6584,
                   "nodeType": "ExpressionStatement",
-                  "src": "17978:64:4"
+                  "src": "18296:64:35"
                 },
                 {
                   "expression": {
-                    "id": 2718,
+                    "id": 6607,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "expression": {
-                        "id": 2696,
+                        "id": 6585,
                         "name": "_marketState",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4833,
-                        "src": "18654:12:4",
+                        "referencedDeclaration": 9249,
+                        "src": "18972:12:35",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_MarketState_$7175_storage",
+                          "typeIdentifier": "t_struct$_MarketState_$3492_storage",
                           "typeString": "struct IHyperdrive.MarketState storage ref"
                         }
                       },
-                      "id": 2698,
+                      "id": 6587,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
-                      "memberLocation": "18667:12:4",
+                      "memberLocation": "18985:12:35",
                       "memberName": "bondReserves",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 7150,
-                      "src": "18654:25:4",
+                      "referencedDeclaration": 3467,
+                      "src": "18972:25:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint128",
                         "typeString": "uint128"
@@ -13171,27 +11235,27 @@ export const HyperdriveLP =
                           "arguments": [
                             {
                               "expression": {
-                                "id": 2708,
+                                "id": 6597,
                                 "name": "_marketState",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 4833,
-                                "src": "18884:12:4",
+                                "referencedDeclaration": 9249,
+                                "src": "19202:12:35",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_struct$_MarketState_$7175_storage",
+                                  "typeIdentifier": "t_struct$_MarketState_$3492_storage",
                                   "typeString": "struct IHyperdrive.MarketState storage ref"
                                 }
                               },
-                              "id": 2709,
+                              "id": 6598,
                               "isConstant": false,
                               "isLValue": true,
                               "isPure": false,
                               "lValueRequested": false,
-                              "memberLocation": "18897:12:4",
+                              "memberLocation": "19215:12:35",
                               "memberName": "bondReserves",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 7150,
-                              "src": "18884:25:4",
+                              "referencedDeclaration": 3467,
+                              "src": "19202:25:35",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint128",
                                 "typeString": "uint128"
@@ -13200,24 +11264,24 @@ export const HyperdriveLP =
                             {
                               "arguments": [
                                 {
-                                  "id": 2712,
+                                  "id": 6601,
                                   "name": "shareReserves",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 2591,
-                                  "src": "18995:13:4",
+                                  "referencedDeclaration": 6480,
+                                  "src": "19313:13:35",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_uint256",
                                     "typeString": "uint256"
                                   }
                                 },
                                 {
-                                  "id": 2713,
+                                  "id": 6602,
                                   "name": "shareAdjustment",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 2642,
-                                  "src": "19030:15:4",
+                                  "referencedDeclaration": 6531,
+                                  "src": "19348:15:35",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
@@ -13236,33 +11300,33 @@ export const HyperdriveLP =
                                   }
                                 ],
                                 "expression": {
-                                  "id": 2710,
+                                  "id": 6599,
                                   "name": "HyperdriveMath",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 9918,
-                                  "src": "18927:14:4",
+                                  "referencedDeclaration": 11352,
+                                  "src": "19245:14:35",
                                   "typeDescriptions": {
-                                    "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$9918_$",
+                                    "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$11352_$",
                                     "typeString": "type(library HyperdriveMath)"
                                   }
                                 },
-                                "id": 2711,
+                                "id": 6600,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
                                 "lValueRequested": false,
-                                "memberLocation": "18942:31:4",
+                                "memberLocation": "19260:31:35",
                                 "memberName": "calculateEffectiveShareReserves",
                                 "nodeType": "MemberAccess",
-                                "referencedDeclaration": 9917,
-                                "src": "18927:46:4",
+                                "referencedDeclaration": 11351,
+                                "src": "19245:46:35",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_int256_$returns$_t_uint256_$",
                                   "typeString": "function (uint256,int256) pure returns (uint256)"
                                 }
                               },
-                              "id": 2714,
+                              "id": 6603,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
@@ -13271,7 +11335,7 @@ export const HyperdriveLP =
                               "nameLocations": [],
                               "names": [],
                               "nodeType": "FunctionCall",
-                              "src": "18927:136:4",
+                              "src": "19245:136:35",
                               "tryCall": false,
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
@@ -13295,12 +11359,12 @@ export const HyperdriveLP =
                                 {
                                   "arguments": [
                                     {
-                                      "id": 2703,
+                                      "id": 6592,
                                       "name": "updatedShareReserves",
                                       "nodeType": "Identifier",
                                       "overloadedDeclarations": [],
-                                      "referencedDeclaration": 2606,
-                                      "src": "18767:20:4",
+                                      "referencedDeclaration": 6495,
+                                      "src": "19085:20:35",
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
@@ -13314,26 +11378,26 @@ export const HyperdriveLP =
                                         "typeString": "int256"
                                       }
                                     ],
-                                    "id": 2702,
+                                    "id": 6591,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": true,
                                     "lValueRequested": false,
                                     "nodeType": "ElementaryTypeNameExpression",
-                                    "src": "18759:7:4",
+                                    "src": "19077:7:35",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_type$_t_uint256_$",
                                       "typeString": "type(uint256)"
                                     },
                                     "typeName": {
-                                      "id": 2701,
+                                      "id": 6590,
                                       "name": "uint256",
                                       "nodeType": "ElementaryTypeName",
-                                      "src": "18759:7:4",
+                                      "src": "19077:7:35",
                                       "typeDescriptions": {}
                                     }
                                   },
-                                  "id": 2704,
+                                  "id": 6593,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
@@ -13342,7 +11406,7 @@ export const HyperdriveLP =
                                   "nameLocations": [],
                                   "names": [],
                                   "nodeType": "FunctionCall",
-                                  "src": "18759:29:4",
+                                  "src": "19077:29:35",
                                   "tryCall": false,
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_uint256",
@@ -13350,12 +11414,12 @@ export const HyperdriveLP =
                                   }
                                 },
                                 {
-                                  "id": 2705,
+                                  "id": 6594,
                                   "name": "updatedShareAdjustment",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 2639,
-                                  "src": "18806:22:4",
+                                  "referencedDeclaration": 6528,
+                                  "src": "19124:22:35",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
@@ -13374,33 +11438,33 @@ export const HyperdriveLP =
                                   }
                                 ],
                                 "expression": {
-                                  "id": 2699,
+                                  "id": 6588,
                                   "name": "HyperdriveMath",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 9918,
-                                  "src": "18682:14:4",
+                                  "referencedDeclaration": 11352,
+                                  "src": "19000:14:35",
                                   "typeDescriptions": {
-                                    "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$9918_$",
+                                    "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$11352_$",
                                     "typeString": "type(library HyperdriveMath)"
                                   }
                                 },
-                                "id": 2700,
+                                "id": 6589,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
                                 "lValueRequested": false,
-                                "memberLocation": "18710:31:4",
+                                "memberLocation": "19028:31:35",
                                 "memberName": "calculateEffectiveShareReserves",
                                 "nodeType": "MemberAccess",
-                                "referencedDeclaration": 9917,
-                                "src": "18682:59:4",
+                                "referencedDeclaration": 11351,
+                                "src": "19000:59:35",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_int256_$returns$_t_uint256_$",
                                   "typeString": "function (uint256,int256) pure returns (uint256)"
                                 }
                               },
-                              "id": 2706,
+                              "id": 6595,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
@@ -13409,29 +11473,29 @@ export const HyperdriveLP =
                               "nameLocations": [],
                               "names": [],
                               "nodeType": "FunctionCall",
-                              "src": "18682:160:4",
+                              "src": "19000:160:35",
                               "tryCall": false,
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               }
                             },
-                            "id": 2707,
+                            "id": 6596,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
-                            "memberLocation": "18856:10:4",
+                            "memberLocation": "19174:10:35",
                             "memberName": "mulDivDown",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 8346,
-                            "src": "18682:184:4",
+                            "referencedDeclaration": 9813,
+                            "src": "19000:184:35",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                               "typeString": "function (uint256,uint256,uint256) pure returns (uint256)"
                             }
                           },
-                          "id": 2715,
+                          "id": 6604,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -13440,29 +11504,29 @@ export const HyperdriveLP =
                           "nameLocations": [],
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "18682:395:4",
+                          "src": "19000:395:35",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 2716,
+                        "id": 6605,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "19091:9:4",
+                        "memberLocation": "19409:9:35",
                         "memberName": "toUint128",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 9953,
-                        "src": "18682:418:4",
+                        "referencedDeclaration": 11387,
+                        "src": "19000:418:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_uint256_$returns$_t_uint128_$attached_to$_t_uint256_$",
                           "typeString": "function (uint256) pure returns (uint128)"
                         }
                       },
-                      "id": 2717,
+                      "id": 6606,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -13471,49 +11535,49 @@ export const HyperdriveLP =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "18682:420:4",
+                      "src": "19000:420:35",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint128",
                         "typeString": "uint128"
                       }
                     },
-                    "src": "18654:448:4",
+                    "src": "18972:448:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint128",
                       "typeString": "uint128"
                     }
                   },
-                  "id": 2719,
+                  "id": 6608,
                   "nodeType": "ExpressionStatement",
-                  "src": "18654:448:4"
+                  "src": "18972:448:35"
                 }
               ]
             },
             "documentation": {
-              "id": 2579,
+              "id": 6468,
               "nodeType": "StructuredDocumentation",
-              "src": "15613:166:4",
+              "src": "15931:166:35",
               "text": "@dev Updates the pool's liquidity and holds the pool's spot price constant.\n @param _shareReservesDelta The delta that should be applied to share reserves."
             },
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "_updateLiquidity",
-            "nameLocation": "15793:16:4",
+            "nameLocation": "16111:16:35",
             "parameters": {
-              "id": 2582,
+              "id": 6471,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2581,
+                  "id": 6470,
                   "mutability": "mutable",
                   "name": "_shareReservesDelta",
-                  "nameLocation": "15817:19:4",
+                  "nameLocation": "16135:19:35",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2721,
-                  "src": "15810:26:4",
+                  "scope": 6610,
+                  "src": "16128:26:35",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -13521,10 +11585,10 @@ export const HyperdriveLP =
                     "typeString": "int256"
                   },
                   "typeName": {
-                    "id": 2580,
+                    "id": 6469,
                     "name": "int256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "15810:6:4",
+                    "src": "16128:6:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
@@ -13533,84 +11597,84 @@ export const HyperdriveLP =
                   "visibility": "internal"
                 }
               ],
-              "src": "15809:28:4"
+              "src": "16127:28:35"
             },
             "returnParameters": {
-              "id": 2583,
+              "id": 6472,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "15847:0:4"
+              "src": "16165:0:35"
             },
-            "scope": 3078,
+            "scope": 6967,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 2877,
+            "id": 6766,
             "nodeType": "FunctionDefinition",
-            "src": "19829:2546:4",
+            "src": "20147:2546:35",
             "nodes": [],
             "body": {
-              "id": 2876,
+              "id": 6765,
               "nodeType": "Block",
-              "src": "20095:2280:4",
+              "src": "20413:2280:35",
               "nodes": [],
               "statements": [
                 {
                   "assignments": [
-                    2745
+                    6634
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 2745,
+                      "id": 6634,
                       "mutability": "mutable",
                       "name": "params",
-                      "nameLocation": "20496:6:4",
+                      "nameLocation": "20814:6:35",
                       "nodeType": "VariableDeclaration",
-                      "scope": 2876,
-                      "src": "20443:59:4",
+                      "scope": 6765,
+                      "src": "20761:59:35",
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_PresentValueParams_$9560_memory_ptr",
+                        "typeIdentifier": "t_struct$_PresentValueParams_$11027_memory_ptr",
                         "typeString": "struct HyperdriveMath.PresentValueParams"
                       },
                       "typeName": {
-                        "id": 2744,
+                        "id": 6633,
                         "nodeType": "UserDefinedTypeName",
                         "pathNode": {
-                          "id": 2743,
+                          "id": 6632,
                           "name": "HyperdriveMath.PresentValueParams",
                           "nameLocations": [
-                            "20443:14:4",
-                            "20458:18:4"
+                            "20761:14:35",
+                            "20776:18:35"
                           ],
                           "nodeType": "IdentifierPath",
-                          "referencedDeclaration": 9560,
-                          "src": "20443:33:4"
+                          "referencedDeclaration": 11027,
+                          "src": "20761:33:35"
                         },
-                        "referencedDeclaration": 9560,
-                        "src": "20443:33:4",
+                        "referencedDeclaration": 11027,
+                        "src": "20761:33:35",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_PresentValueParams_$9560_storage_ptr",
+                          "typeIdentifier": "t_struct$_PresentValueParams_$11027_storage_ptr",
                           "typeString": "struct HyperdriveMath.PresentValueParams"
                         }
                       },
                       "visibility": "internal"
                     }
                   ],
-                  "id": 2749,
+                  "id": 6638,
                   "initialValue": {
                     "arguments": [
                       {
-                        "id": 2747,
+                        "id": 6636,
                         "name": "_sharePrice",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2726,
-                        "src": "20528:11:4",
+                        "referencedDeclaration": 6615,
+                        "src": "20846:11:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -13624,18 +11688,18 @@ export const HyperdriveLP =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 2746,
+                      "id": 6635,
                       "name": "_getPresentValueParams",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 5166,
-                      "src": "20505:22:4",
+                      "referencedDeclaration": 4880,
+                      "src": "20823:22:35",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_view$_t_uint256_$returns$_t_struct$_PresentValueParams_$9560_memory_ptr_$",
+                        "typeIdentifier": "t_function_internal_view$_t_uint256_$returns$_t_struct$_PresentValueParams_$11027_memory_ptr_$",
                         "typeString": "function (uint256) view returns (struct HyperdriveMath.PresentValueParams memory)"
                       }
                     },
-                    "id": 2748,
+                    "id": 6637,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -13644,30 +11708,30 @@ export const HyperdriveLP =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "20505:35:4",
+                    "src": "20823:35:35",
                     "tryCall": false,
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_PresentValueParams_$9560_memory_ptr",
+                      "typeIdentifier": "t_struct$_PresentValueParams_$11027_memory_ptr",
                       "typeString": "struct HyperdriveMath.PresentValueParams memory"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "20443:97:4"
+                  "src": "20761:97:35"
                 },
                 {
                   "assignments": [
-                    2751
+                    6640
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 2751,
+                      "id": 6640,
                       "mutability": "mutable",
                       "name": "startingPresentValue",
-                      "nameLocation": "20558:20:4",
+                      "nameLocation": "20876:20:35",
                       "nodeType": "VariableDeclaration",
-                      "scope": 2876,
-                      "src": "20550:28:4",
+                      "scope": 6765,
+                      "src": "20868:28:35",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -13675,10 +11739,10 @@ export const HyperdriveLP =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 2750,
+                        "id": 6639,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "20550:7:4",
+                        "src": "20868:7:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -13687,18 +11751,18 @@ export const HyperdriveLP =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 2756,
+                  "id": 6645,
                   "initialValue": {
                     "arguments": [
                       {
-                        "id": 2754,
+                        "id": 6643,
                         "name": "params",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2745,
-                        "src": "20631:6:4",
+                        "referencedDeclaration": 6634,
+                        "src": "20949:6:35",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_PresentValueParams_$9560_memory_ptr",
+                          "typeIdentifier": "t_struct$_PresentValueParams_$11027_memory_ptr",
                           "typeString": "struct HyperdriveMath.PresentValueParams memory"
                         }
                       }
@@ -13706,38 +11770,38 @@ export const HyperdriveLP =
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_PresentValueParams_$9560_memory_ptr",
+                          "typeIdentifier": "t_struct$_PresentValueParams_$11027_memory_ptr",
                           "typeString": "struct HyperdriveMath.PresentValueParams memory"
                         }
                       ],
                       "expression": {
-                        "id": 2752,
+                        "id": 6641,
                         "name": "HyperdriveMath",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 9918,
-                        "src": "20581:14:4",
+                        "referencedDeclaration": 11352,
+                        "src": "20899:14:35",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$9918_$",
+                          "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$11352_$",
                           "typeString": "type(library HyperdriveMath)"
                         }
                       },
-                      "id": 2753,
+                      "id": 6642,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "20596:21:4",
+                      "memberLocation": "20914:21:35",
                       "memberName": "calculatePresentValue",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9802,
-                      "src": "20581:36:4",
+                      "referencedDeclaration": 11269,
+                      "src": "20899:36:35",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_pure$_t_struct$_PresentValueParams_$9560_memory_ptr_$returns$_t_uint256_$",
+                        "typeIdentifier": "t_function_internal_pure$_t_struct$_PresentValueParams_$11027_memory_ptr_$returns$_t_uint256_$",
                         "typeString": "function (struct HyperdriveMath.PresentValueParams memory) pure returns (uint256)"
                       }
                     },
-                    "id": 2755,
+                    "id": 6644,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -13746,7 +11810,7 @@ export const HyperdriveLP =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "20581:66:4",
+                    "src": "20899:66:35",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
@@ -13754,22 +11818,22 @@ export const HyperdriveLP =
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "20550:97:4"
+                  "src": "20868:97:35"
                 },
                 {
                   "expression": {
-                    "id": 2762,
+                    "id": 6651,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 2757,
+                      "id": 6646,
                       "name": "shareProceeds",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2735,
-                      "src": "20657:13:4",
+                      "referencedDeclaration": 6624,
+                      "src": "20975:13:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -13783,18 +11847,18 @@ export const HyperdriveLP =
                           "arguments": [],
                           "expression": {
                             "argumentTypes": [],
-                            "id": 2759,
+                            "id": 6648,
                             "name": "_pricePerShare",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 807,
-                            "src": "20701:14:4",
+                            "referencedDeclaration": 4716,
+                            "src": "21019:14:35",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_view$__$returns$_t_uint256_$",
                               "typeString": "function () view returns (uint256)"
                             }
                           },
-                          "id": 2760,
+                          "id": 6649,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -13803,7 +11867,7 @@ export const HyperdriveLP =
                           "nameLocations": [],
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "20701:16:4",
+                          "src": "21019:16:35",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -13818,18 +11882,18 @@ export const HyperdriveLP =
                             "typeString": "uint256"
                           }
                         ],
-                        "id": 2758,
+                        "id": 6647,
                         "name": "_calculateIdleShareReserves",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1291,
-                        "src": "20673:27:4",
+                        "referencedDeclaration": 5184,
+                        "src": "20991:27:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_view$_t_uint256_$returns$_t_uint256_$",
                           "typeString": "function (uint256) view returns (uint256)"
                         }
                       },
-                      "id": 2761,
+                      "id": 6650,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -13838,37 +11902,37 @@ export const HyperdriveLP =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "20673:45:4",
+                      "src": "20991:45:35",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "20657:61:4",
+                    "src": "20975:61:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 2763,
+                  "id": 6652,
                   "nodeType": "ExpressionStatement",
-                  "src": "20657:61:4"
+                  "src": "20975:61:35"
                 },
                 {
                   "expression": {
-                    "id": 2770,
+                    "id": 6659,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 2764,
+                      "id": 6653,
                       "name": "shareProceeds",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2735,
-                      "src": "20728:13:4",
+                      "referencedDeclaration": 6624,
+                      "src": "21046:13:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -13879,24 +11943,24 @@ export const HyperdriveLP =
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 2767,
+                          "id": 6656,
                           "name": "_shares",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2724,
-                          "src": "20769:7:4",
+                          "referencedDeclaration": 6613,
+                          "src": "21087:7:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
                         {
-                          "id": 2768,
+                          "id": 6657,
                           "name": "_totalActiveLpSupply",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2730,
-                          "src": "20778:20:4",
+                          "referencedDeclaration": 6619,
+                          "src": "21096:20:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -13915,33 +11979,33 @@ export const HyperdriveLP =
                           }
                         ],
                         "expression": {
-                          "id": 2765,
+                          "id": 6654,
                           "name": "shareProceeds",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2735,
-                          "src": "20744:13:4",
+                          "referencedDeclaration": 6624,
+                          "src": "21062:13:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 2766,
+                        "id": 6655,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "20758:10:4",
+                        "memberLocation": "21076:10:35",
                         "memberName": "mulDivDown",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 8346,
-                        "src": "20744:24:4",
+                        "referencedDeclaration": 9813,
+                        "src": "21062:24:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                           "typeString": "function (uint256,uint256,uint256) pure returns (uint256)"
                         }
                       },
-                      "id": 2769,
+                      "id": 6658,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -13950,28 +12014,28 @@ export const HyperdriveLP =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "20744:55:4",
+                      "src": "21062:55:35",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "20728:71:4",
+                    "src": "21046:71:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 2771,
+                  "id": 6660,
                   "nodeType": "ExpressionStatement",
-                  "src": "20728:71:4"
+                  "src": "21046:71:35"
                 },
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 2777,
+                        "id": 6666,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -13979,16 +12043,16 @@ export const HyperdriveLP =
                         "nodeType": "UnaryOperation",
                         "operator": "-",
                         "prefix": true,
-                        "src": "20826:22:4",
+                        "src": "21144:22:35",
                         "subExpression": {
                           "arguments": [
                             {
-                              "id": 2775,
+                              "id": 6664,
                               "name": "shareProceeds",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2735,
-                              "src": "20834:13:4",
+                              "referencedDeclaration": 6624,
+                              "src": "21152:13:35",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
@@ -14002,26 +12066,26 @@ export const HyperdriveLP =
                                 "typeString": "uint256"
                               }
                             ],
-                            "id": 2774,
+                            "id": 6663,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "lValueRequested": false,
                             "nodeType": "ElementaryTypeNameExpression",
-                            "src": "20827:6:4",
+                            "src": "21145:6:35",
                             "typeDescriptions": {
                               "typeIdentifier": "t_type$_t_int256_$",
                               "typeString": "type(int256)"
                             },
                             "typeName": {
-                              "id": 2773,
+                              "id": 6662,
                               "name": "int256",
                               "nodeType": "ElementaryTypeName",
-                              "src": "20827:6:4",
+                              "src": "21145:6:35",
                               "typeDescriptions": {}
                             }
                           },
-                          "id": 2776,
+                          "id": 6665,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -14030,7 +12094,7 @@ export const HyperdriveLP =
                           "nameLocations": [],
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "20827:21:4",
+                          "src": "21145:21:35",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
@@ -14050,18 +12114,18 @@ export const HyperdriveLP =
                           "typeString": "int256"
                         }
                       ],
-                      "id": 2772,
+                      "id": 6661,
                       "name": "_updateLiquidity",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2721,
-                      "src": "20809:16:4",
+                      "referencedDeclaration": 6610,
+                      "src": "21127:16:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_int256_$returns$__$",
                         "typeString": "function (int256)"
                       }
                     },
-                    "id": 2778,
+                    "id": 6667,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -14070,47 +12134,47 @@ export const HyperdriveLP =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "20809:40:4",
+                    "src": "21127:40:35",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2779,
+                  "id": 6668,
                   "nodeType": "ExpressionStatement",
-                  "src": "20809:40:4"
+                  "src": "21127:40:35"
                 },
                 {
                   "expression": {
-                    "id": 2785,
+                    "id": 6674,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "expression": {
-                        "id": 2780,
+                        "id": 6669,
                         "name": "params",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2745,
-                        "src": "20859:6:4",
+                        "referencedDeclaration": 6634,
+                        "src": "21177:6:35",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_PresentValueParams_$9560_memory_ptr",
+                          "typeIdentifier": "t_struct$_PresentValueParams_$11027_memory_ptr",
                           "typeString": "struct HyperdriveMath.PresentValueParams memory"
                         }
                       },
-                      "id": 2782,
+                      "id": 6671,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
-                      "memberLocation": "20866:13:4",
+                      "memberLocation": "21184:13:35",
                       "memberName": "shareReserves",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9539,
-                      "src": "20859:20:4",
+                      "referencedDeclaration": 11006,
+                      "src": "21177:20:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -14120,72 +12184,72 @@ export const HyperdriveLP =
                     "operator": "=",
                     "rightHandSide": {
                       "expression": {
-                        "id": 2783,
+                        "id": 6672,
                         "name": "_marketState",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4833,
-                        "src": "20882:12:4",
+                        "referencedDeclaration": 9249,
+                        "src": "21200:12:35",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_MarketState_$7175_storage",
+                          "typeIdentifier": "t_struct$_MarketState_$3492_storage",
                           "typeString": "struct IHyperdrive.MarketState storage ref"
                         }
                       },
-                      "id": 2784,
+                      "id": 6673,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "20895:13:4",
+                      "memberLocation": "21213:13:35",
                       "memberName": "shareReserves",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 7147,
-                      "src": "20882:26:4",
+                      "referencedDeclaration": 3464,
+                      "src": "21200:26:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint128",
                         "typeString": "uint128"
                       }
                     },
-                    "src": "20859:49:4",
+                    "src": "21177:49:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 2786,
+                  "id": 6675,
                   "nodeType": "ExpressionStatement",
-                  "src": "20859:49:4"
+                  "src": "21177:49:35"
                 },
                 {
                   "expression": {
-                    "id": 2792,
+                    "id": 6681,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "expression": {
-                        "id": 2787,
+                        "id": 6676,
                         "name": "params",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2745,
-                        "src": "20918:6:4",
+                        "referencedDeclaration": 6634,
+                        "src": "21236:6:35",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_PresentValueParams_$9560_memory_ptr",
+                          "typeIdentifier": "t_struct$_PresentValueParams_$11027_memory_ptr",
                           "typeString": "struct HyperdriveMath.PresentValueParams memory"
                         }
                       },
-                      "id": 2789,
+                      "id": 6678,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
-                      "memberLocation": "20925:15:4",
+                      "memberLocation": "21243:15:35",
                       "memberName": "shareAdjustment",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9541,
-                      "src": "20918:22:4",
+                      "referencedDeclaration": 11008,
+                      "src": "21236:22:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -14195,72 +12259,72 @@ export const HyperdriveLP =
                     "operator": "=",
                     "rightHandSide": {
                       "expression": {
-                        "id": 2790,
+                        "id": 6679,
                         "name": "_marketState",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4833,
-                        "src": "20943:12:4",
+                        "referencedDeclaration": 9249,
+                        "src": "21261:12:35",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_MarketState_$7175_storage",
+                          "typeIdentifier": "t_struct$_MarketState_$3492_storage",
                           "typeString": "struct IHyperdrive.MarketState storage ref"
                         }
                       },
-                      "id": 2791,
+                      "id": 6680,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "20956:15:4",
+                      "memberLocation": "21274:15:35",
                       "memberName": "shareAdjustment",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 7153,
-                      "src": "20943:28:4",
+                      "referencedDeclaration": 3470,
+                      "src": "21261:28:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int128",
                         "typeString": "int128"
                       }
                     },
-                    "src": "20918:53:4",
+                    "src": "21236:53:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 2793,
+                  "id": 6682,
                   "nodeType": "ExpressionStatement",
-                  "src": "20918:53:4"
+                  "src": "21236:53:35"
                 },
                 {
                   "expression": {
-                    "id": 2799,
+                    "id": 6688,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "expression": {
-                        "id": 2794,
+                        "id": 6683,
                         "name": "params",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2745,
-                        "src": "20981:6:4",
+                        "referencedDeclaration": 6634,
+                        "src": "21299:6:35",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_PresentValueParams_$9560_memory_ptr",
+                          "typeIdentifier": "t_struct$_PresentValueParams_$11027_memory_ptr",
                           "typeString": "struct HyperdriveMath.PresentValueParams memory"
                         }
                       },
-                      "id": 2796,
+                      "id": 6685,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
-                      "memberLocation": "20988:12:4",
+                      "memberLocation": "21306:12:35",
                       "memberName": "bondReserves",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9543,
-                      "src": "20981:19:4",
+                      "referencedDeclaration": 11010,
+                      "src": "21299:19:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -14270,56 +12334,56 @@ export const HyperdriveLP =
                     "operator": "=",
                     "rightHandSide": {
                       "expression": {
-                        "id": 2797,
+                        "id": 6686,
                         "name": "_marketState",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4833,
-                        "src": "21003:12:4",
+                        "referencedDeclaration": 9249,
+                        "src": "21321:12:35",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_MarketState_$7175_storage",
+                          "typeIdentifier": "t_struct$_MarketState_$3492_storage",
                           "typeString": "struct IHyperdrive.MarketState storage ref"
                         }
                       },
-                      "id": 2798,
+                      "id": 6687,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "21016:12:4",
+                      "memberLocation": "21334:12:35",
                       "memberName": "bondReserves",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 7150,
-                      "src": "21003:25:4",
+                      "referencedDeclaration": 3467,
+                      "src": "21321:25:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint128",
                         "typeString": "uint128"
                       }
                     },
-                    "src": "20981:47:4",
+                    "src": "21299:47:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 2800,
+                  "id": 6689,
                   "nodeType": "ExpressionStatement",
-                  "src": "20981:47:4"
+                  "src": "21299:47:35"
                 },
                 {
                   "assignments": [
-                    2802
+                    6691
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 2802,
+                      "id": 6691,
                       "mutability": "mutable",
                       "name": "endingPresentValue",
-                      "nameLocation": "21046:18:4",
+                      "nameLocation": "21364:18:35",
                       "nodeType": "VariableDeclaration",
-                      "scope": 2876,
-                      "src": "21038:26:4",
+                      "scope": 6765,
+                      "src": "21356:26:35",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -14327,10 +12391,10 @@ export const HyperdriveLP =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 2801,
+                        "id": 6690,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "21038:7:4",
+                        "src": "21356:7:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -14339,18 +12403,18 @@ export const HyperdriveLP =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 2807,
+                  "id": 6696,
                   "initialValue": {
                     "arguments": [
                       {
-                        "id": 2805,
+                        "id": 6694,
                         "name": "params",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2745,
-                        "src": "21117:6:4",
+                        "referencedDeclaration": 6634,
+                        "src": "21435:6:35",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_PresentValueParams_$9560_memory_ptr",
+                          "typeIdentifier": "t_struct$_PresentValueParams_$11027_memory_ptr",
                           "typeString": "struct HyperdriveMath.PresentValueParams memory"
                         }
                       }
@@ -14358,38 +12422,38 @@ export const HyperdriveLP =
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_PresentValueParams_$9560_memory_ptr",
+                          "typeIdentifier": "t_struct$_PresentValueParams_$11027_memory_ptr",
                           "typeString": "struct HyperdriveMath.PresentValueParams memory"
                         }
                       ],
                       "expression": {
-                        "id": 2803,
+                        "id": 6692,
                         "name": "HyperdriveMath",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 9918,
-                        "src": "21067:14:4",
+                        "referencedDeclaration": 11352,
+                        "src": "21385:14:35",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$9918_$",
+                          "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$11352_$",
                           "typeString": "type(library HyperdriveMath)"
                         }
                       },
-                      "id": 2804,
+                      "id": 6693,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "21082:21:4",
+                      "memberLocation": "21400:21:35",
                       "memberName": "calculatePresentValue",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9802,
-                      "src": "21067:36:4",
+                      "referencedDeclaration": 11269,
+                      "src": "21385:36:35",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_pure$_t_struct$_PresentValueParams_$9560_memory_ptr_$returns$_t_uint256_$",
+                        "typeIdentifier": "t_function_internal_pure$_t_struct$_PresentValueParams_$11027_memory_ptr_$returns$_t_uint256_$",
                         "typeString": "function (struct HyperdriveMath.PresentValueParams memory) pure returns (uint256)"
                       }
                     },
-                    "id": 2806,
+                    "id": 6695,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -14398,7 +12462,7 @@ export const HyperdriveLP =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "21067:66:4",
+                    "src": "21385:66:35",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
@@ -14406,22 +12470,22 @@ export const HyperdriveLP =
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "21038:95:4"
+                  "src": "21356:95:35"
                 },
                 {
                   "assignments": [
-                    2809
+                    6698
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 2809,
+                      "id": 6698,
                       "mutability": "mutable",
                       "name": "withdrawalShares",
-                      "nameLocation": "21414:16:4",
+                      "nameLocation": "21732:16:35",
                       "nodeType": "VariableDeclaration",
-                      "scope": 2876,
-                      "src": "21407:23:4",
+                      "scope": 6765,
+                      "src": "21725:23:35",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -14429,10 +12493,10 @@ export const HyperdriveLP =
                         "typeString": "int256"
                       },
                       "typeName": {
-                        "id": 2808,
+                        "id": 6697,
                         "name": "int256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "21407:6:4",
+                        "src": "21725:6:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -14441,30 +12505,30 @@ export const HyperdriveLP =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 2818,
+                  "id": 6707,
                   "initialValue": {
                     "arguments": [
                       {
                         "arguments": [
                           {
-                            "id": 2814,
+                            "id": 6703,
                             "name": "endingPresentValue",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2802,
-                            "src": "21479:18:4",
+                            "referencedDeclaration": 6691,
+                            "src": "21797:18:35",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             }
                           },
                           {
-                            "id": 2815,
+                            "id": 6704,
                             "name": "startingPresentValue",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2751,
-                            "src": "21499:20:4",
+                            "referencedDeclaration": 6640,
+                            "src": "21817:20:35",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -14483,33 +12547,33 @@ export const HyperdriveLP =
                             }
                           ],
                           "expression": {
-                            "id": 2812,
+                            "id": 6701,
                             "name": "_totalLpSupply",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2728,
-                            "src": "21453:14:4",
+                            "referencedDeclaration": 6617,
+                            "src": "21771:14:35",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             }
                           },
-                          "id": 2813,
+                          "id": 6702,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "21468:10:4",
+                          "memberLocation": "21786:10:35",
                           "memberName": "mulDivDown",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 8346,
-                          "src": "21453:25:4",
+                          "referencedDeclaration": 9813,
+                          "src": "21771:25:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                             "typeString": "function (uint256,uint256,uint256) pure returns (uint256)"
                           }
                         },
-                        "id": 2816,
+                        "id": 6705,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -14518,7 +12582,7 @@ export const HyperdriveLP =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "21453:67:4",
+                        "src": "21771:67:35",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -14533,26 +12597,26 @@ export const HyperdriveLP =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 2811,
+                      "id": 6700,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "lValueRequested": false,
                       "nodeType": "ElementaryTypeNameExpression",
-                      "src": "21433:6:4",
+                      "src": "21751:6:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_type$_t_int256_$",
                         "typeString": "type(int256)"
                       },
                       "typeName": {
-                        "id": 2810,
+                        "id": 6699,
                         "name": "int256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "21433:6:4",
+                        "src": "21751:6:35",
                         "typeDescriptions": {}
                       }
                     },
-                    "id": 2817,
+                    "id": 6706,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -14561,7 +12625,7 @@ export const HyperdriveLP =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "21433:97:4",
+                    "src": "21751:97:35",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
@@ -14569,22 +12633,22 @@ export const HyperdriveLP =
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "21407:123:4"
+                  "src": "21725:123:35"
                 },
                 {
                   "expression": {
-                    "id": 2829,
+                    "id": 6718,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 2819,
+                      "id": 6708,
                       "name": "withdrawalShares",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2809,
-                      "src": "21540:16:4",
+                      "referencedDeclaration": 6698,
+                      "src": "21858:16:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -14597,7 +12661,7 @@ export const HyperdriveLP =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 2828,
+                      "id": 6717,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -14605,12 +12669,12 @@ export const HyperdriveLP =
                       "leftExpression": {
                         "arguments": [
                           {
-                            "id": 2822,
+                            "id": 6711,
                             "name": "_totalLpSupply",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2728,
-                            "src": "21567:14:4",
+                            "referencedDeclaration": 6617,
+                            "src": "21885:14:35",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -14624,26 +12688,26 @@ export const HyperdriveLP =
                               "typeString": "uint256"
                             }
                           ],
-                          "id": 2821,
+                          "id": 6710,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "lValueRequested": false,
                           "nodeType": "ElementaryTypeNameExpression",
-                          "src": "21560:6:4",
+                          "src": "21878:6:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_type$_t_int256_$",
                             "typeString": "type(int256)"
                           },
                           "typeName": {
-                            "id": 2820,
+                            "id": 6709,
                             "name": "int256",
                             "nodeType": "ElementaryTypeName",
-                            "src": "21560:6:4",
+                            "src": "21878:6:35",
                             "typeDescriptions": {}
                           }
                         },
-                        "id": 2823,
+                        "id": 6712,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -14652,7 +12716,7 @@ export const HyperdriveLP =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "21560:22:4",
+                        "src": "21878:22:35",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
@@ -14664,12 +12728,12 @@ export const HyperdriveLP =
                       "rightExpression": {
                         "arguments": [
                           {
-                            "id": 2826,
+                            "id": 6715,
                             "name": "_shares",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2724,
-                            "src": "21592:7:4",
+                            "referencedDeclaration": 6613,
+                            "src": "21910:7:35",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -14683,26 +12747,26 @@ export const HyperdriveLP =
                               "typeString": "uint256"
                             }
                           ],
-                          "id": 2825,
+                          "id": 6714,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "lValueRequested": false,
                           "nodeType": "ElementaryTypeNameExpression",
-                          "src": "21585:6:4",
+                          "src": "21903:6:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_type$_t_int256_$",
                             "typeString": "type(int256)"
                           },
                           "typeName": {
-                            "id": 2824,
+                            "id": 6713,
                             "name": "int256",
                             "nodeType": "ElementaryTypeName",
-                            "src": "21585:6:4",
+                            "src": "21903:6:35",
                             "typeDescriptions": {}
                           }
                         },
-                        "id": 2827,
+                        "id": 6716,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -14711,28 +12775,28 @@ export const HyperdriveLP =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "21585:15:4",
+                        "src": "21903:15:35",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "src": "21560:40:4",
+                      "src": "21878:40:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "21540:60:4",
+                    "src": "21858:60:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 2830,
+                  "id": 6719,
                   "nodeType": "ExpressionStatement",
-                  "src": "21540:60:4"
+                  "src": "21858:60:35"
                 },
                 {
                   "condition": {
@@ -14740,18 +12804,18 @@ export const HyperdriveLP =
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     },
-                    "id": 2833,
+                    "id": 6722,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 2831,
+                      "id": 6720,
                       "name": "withdrawalShares",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2809,
-                      "src": "21614:16:4",
+                      "referencedDeclaration": 6698,
+                      "src": "21932:16:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -14761,48 +12825,48 @@ export const HyperdriveLP =
                     "operator": "<",
                     "rightExpression": {
                       "hexValue": "30",
-                      "id": 2832,
+                      "id": 6721,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "21633:1:4",
+                      "src": "21951:1:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_0_by_1",
                         "typeString": "int_const 0"
                       },
                       "value": "0"
                     },
-                    "src": "21614:20:4",
+                    "src": "21932:20:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 2867,
+                  "id": 6756,
                   "nodeType": "IfStatement",
-                  "src": "21610:677:4",
+                  "src": "21928:677:35",
                   "trueBody": {
-                    "id": 2866,
+                    "id": 6755,
                     "nodeType": "Block",
-                    "src": "21636:651:4",
+                    "src": "21954:651:35",
                     "statements": [
                       {
                         "assignments": [
-                          2835
+                          6724
                         ],
                         "declarations": [
                           {
                             "constant": false,
-                            "id": 2835,
+                            "id": 6724,
                             "mutability": "mutable",
                             "name": "overestimatedProceeds",
-                            "nameLocation": "21815:21:4",
+                            "nameLocation": "22133:21:35",
                             "nodeType": "VariableDeclaration",
-                            "scope": 2866,
-                            "src": "21807:29:4",
+                            "scope": 6755,
+                            "src": "22125:29:35",
                             "stateVariable": false,
                             "storageLocation": "default",
                             "typeDescriptions": {
@@ -14810,10 +12874,10 @@ export const HyperdriveLP =
                               "typeString": "uint256"
                             },
                             "typeName": {
-                              "id": 2834,
+                              "id": 6723,
                               "name": "uint256",
                               "nodeType": "ElementaryTypeName",
-                              "src": "21807:7:4",
+                              "src": "22125:7:35",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
@@ -14822,13 +12886,13 @@ export const HyperdriveLP =
                             "visibility": "internal"
                           }
                         ],
-                        "id": 2845,
+                        "id": 6734,
                         "initialValue": {
                           "arguments": [
                             {
                               "arguments": [
                                 {
-                                  "id": 2841,
+                                  "id": 6730,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
@@ -14836,14 +12900,14 @@ export const HyperdriveLP =
                                   "nodeType": "UnaryOperation",
                                   "operator": "-",
                                   "prefix": true,
-                                  "src": "21896:17:4",
+                                  "src": "22214:17:35",
                                   "subExpression": {
-                                    "id": 2840,
+                                    "id": 6729,
                                     "name": "withdrawalShares",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 2809,
-                                    "src": "21897:16:4",
+                                    "referencedDeclaration": 6698,
+                                    "src": "22215:16:35",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
@@ -14862,26 +12926,26 @@ export const HyperdriveLP =
                                     "typeString": "int256"
                                   }
                                 ],
-                                "id": 2839,
+                                "id": 6728,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
                                 "lValueRequested": false,
                                 "nodeType": "ElementaryTypeNameExpression",
-                                "src": "21888:7:4",
+                                "src": "22206:7:35",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_type$_t_uint256_$",
                                   "typeString": "type(uint256)"
                                 },
                                 "typeName": {
-                                  "id": 2838,
+                                  "id": 6727,
                                   "name": "uint256",
                                   "nodeType": "ElementaryTypeName",
-                                  "src": "21888:7:4",
+                                  "src": "22206:7:35",
                                   "typeDescriptions": {}
                                 }
                               },
-                              "id": 2842,
+                              "id": 6731,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
@@ -14890,7 +12954,7 @@ export const HyperdriveLP =
                               "nameLocations": [],
                               "names": [],
                               "nodeType": "FunctionCall",
-                              "src": "21888:26:4",
+                              "src": "22206:26:35",
                               "tryCall": false,
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
@@ -14898,12 +12962,12 @@ export const HyperdriveLP =
                               }
                             },
                             {
-                              "id": 2843,
+                              "id": 6732,
                               "name": "_totalLpSupply",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2728,
-                              "src": "21932:14:4",
+                              "referencedDeclaration": 6617,
+                              "src": "22250:14:35",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
@@ -14922,33 +12986,33 @@ export const HyperdriveLP =
                               }
                             ],
                             "expression": {
-                              "id": 2836,
+                              "id": 6725,
                               "name": "startingPresentValue",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2751,
-                              "src": "21839:20:4",
+                              "referencedDeclaration": 6640,
+                              "src": "22157:20:35",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               }
                             },
-                            "id": 2837,
+                            "id": 6726,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
-                            "memberLocation": "21860:10:4",
+                            "memberLocation": "22178:10:35",
                             "memberName": "mulDivDown",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 8346,
-                            "src": "21839:31:4",
+                            "referencedDeclaration": 9813,
+                            "src": "22157:31:35",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                               "typeString": "function (uint256,uint256,uint256) pure returns (uint256)"
                             }
                           },
-                          "id": 2844,
+                          "id": 6733,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -14957,7 +13021,7 @@ export const HyperdriveLP =
                           "nameLocations": [],
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "21839:121:4",
+                          "src": "22157:121:35",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -14965,22 +13029,22 @@ export const HyperdriveLP =
                           }
                         },
                         "nodeType": "VariableDeclarationStatement",
-                        "src": "21807:153:4"
+                        "src": "22125:153:35"
                       },
                       {
                         "expression": {
-                          "id": 2848,
+                          "id": 6737,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 2846,
+                            "id": 6735,
                             "name": "shareProceeds",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2735,
-                            "src": "21974:13:4",
+                            "referencedDeclaration": 6624,
+                            "src": "22292:13:35",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -14989,26 +13053,26 @@ export const HyperdriveLP =
                           "nodeType": "Assignment",
                           "operator": "-=",
                           "rightHandSide": {
-                            "id": 2847,
+                            "id": 6736,
                             "name": "overestimatedProceeds",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2835,
-                            "src": "21991:21:4",
+                            "referencedDeclaration": 6724,
+                            "src": "22309:21:35",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             }
                           },
-                          "src": "21974:38:4",
+                          "src": "22292:38:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 2849,
+                        "id": 6738,
                         "nodeType": "ExpressionStatement",
-                        "src": "21974:38:4"
+                        "src": "22292:38:35"
                       },
                       {
                         "expression": {
@@ -15016,12 +13080,12 @@ export const HyperdriveLP =
                             {
                               "arguments": [
                                 {
-                                  "id": 2853,
+                                  "id": 6742,
                                   "name": "overestimatedProceeds",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 2835,
-                                  "src": "22050:21:4",
+                                  "referencedDeclaration": 6724,
+                                  "src": "22368:21:35",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_uint256",
                                     "typeString": "uint256"
@@ -15035,26 +13099,26 @@ export const HyperdriveLP =
                                     "typeString": "uint256"
                                   }
                                 ],
-                                "id": 2852,
+                                "id": 6741,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
                                 "lValueRequested": false,
                                 "nodeType": "ElementaryTypeNameExpression",
-                                "src": "22043:6:4",
+                                "src": "22361:6:35",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_type$_t_int256_$",
                                   "typeString": "type(int256)"
                                 },
                                 "typeName": {
-                                  "id": 2851,
+                                  "id": 6740,
                                   "name": "int256",
                                   "nodeType": "ElementaryTypeName",
-                                  "src": "22043:6:4",
+                                  "src": "22361:6:35",
                                   "typeDescriptions": {}
                                 }
                               },
-                              "id": 2854,
+                              "id": 6743,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
@@ -15063,7 +13127,7 @@ export const HyperdriveLP =
                               "nameLocations": [],
                               "names": [],
                               "nodeType": "FunctionCall",
-                              "src": "22043:29:4",
+                              "src": "22361:29:35",
                               "tryCall": false,
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
@@ -15078,18 +13142,18 @@ export const HyperdriveLP =
                                 "typeString": "int256"
                               }
                             ],
-                            "id": 2850,
+                            "id": 6739,
                             "name": "_updateLiquidity",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2721,
-                            "src": "22026:16:4",
+                            "referencedDeclaration": 6610,
+                            "src": "22344:16:35",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_nonpayable$_t_int256_$returns$__$",
                               "typeString": "function (int256)"
                             }
                           },
-                          "id": 2855,
+                          "id": 6744,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -15098,51 +13162,51 @@ export const HyperdriveLP =
                           "nameLocations": [],
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "22026:47:4",
+                          "src": "22344:47:35",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_tuple$__$",
                             "typeString": "tuple()"
                           }
                         },
-                        "id": 2856,
+                        "id": 6745,
                         "nodeType": "ExpressionStatement",
-                        "src": "22026:47:4"
+                        "src": "22344:47:35"
                       },
                       {
                         "expression": {
                           "arguments": [
                             {
-                              "id": 2858,
+                              "id": 6747,
                               "name": "overestimatedProceeds",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2835,
-                              "src": "22129:21:4",
+                              "referencedDeclaration": 6724,
+                              "src": "22447:21:35",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               }
                             },
                             {
-                              "id": 2859,
+                              "id": 6748,
                               "name": "_withdrawalSharesOutstanding",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2732,
-                              "src": "22168:28:4",
+                              "referencedDeclaration": 6621,
+                              "src": "22486:28:35",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               }
                             },
                             {
-                              "id": 2860,
+                              "id": 6749,
                               "name": "_sharePrice",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2726,
-                              "src": "22214:11:4",
+                              "referencedDeclaration": 6615,
+                              "src": "22532:11:35",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
@@ -15164,18 +13228,18 @@ export const HyperdriveLP =
                                 "typeString": "uint256"
                               }
                             ],
-                            "id": 2857,
+                            "id": 6746,
                             "name": "_applyWithdrawalProceeds",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2997,
-                            "src": "22087:24:4",
+                            "referencedDeclaration": 6886,
+                            "src": "22405:24:35",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_uint256_$_t_uint256_$returns$__$",
                               "typeString": "function (uint256,uint256,uint256)"
                             }
                           },
-                          "id": 2861,
+                          "id": 6750,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -15184,20 +13248,20 @@ export const HyperdriveLP =
                           "nameLocations": [],
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "22087:152:4",
+                          "src": "22405:152:35",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_tuple$__$",
                             "typeString": "tuple()"
                           }
                         },
-                        "id": 2862,
+                        "id": 6751,
                         "nodeType": "ExpressionStatement",
-                        "src": "22087:152:4"
+                        "src": "22405:152:35"
                       },
                       {
                         "expression": {
-                          "id": 2864,
+                          "id": 6753,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -15205,14 +13269,14 @@ export const HyperdriveLP =
                           "nodeType": "UnaryOperation",
                           "operator": "delete",
                           "prefix": true,
-                          "src": "22253:23:4",
+                          "src": "22571:23:35",
                           "subExpression": {
-                            "id": 2863,
+                            "id": 6752,
                             "name": "withdrawalShares",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2809,
-                            "src": "22260:16:4",
+                            "referencedDeclaration": 6698,
+                            "src": "22578:16:35",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -15223,9 +13287,9 @@ export const HyperdriveLP =
                             "typeString": "tuple()"
                           }
                         },
-                        "id": 2865,
+                        "id": 6754,
                         "nodeType": "ExpressionStatement",
-                        "src": "22253:23:4"
+                        "src": "22571:23:35"
                       }
                     ]
                   }
@@ -15234,12 +13298,12 @@ export const HyperdriveLP =
                   "expression": {
                     "components": [
                       {
-                        "id": 2868,
+                        "id": 6757,
                         "name": "shareProceeds",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2735,
-                        "src": "22305:13:4",
+                        "referencedDeclaration": 6624,
+                        "src": "22623:13:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -15248,12 +13312,12 @@ export const HyperdriveLP =
                       {
                         "arguments": [
                           {
-                            "id": 2871,
+                            "id": 6760,
                             "name": "withdrawalShares",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2809,
-                            "src": "22328:16:4",
+                            "referencedDeclaration": 6698,
+                            "src": "22646:16:35",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -15267,26 +13331,26 @@ export const HyperdriveLP =
                               "typeString": "int256"
                             }
                           ],
-                          "id": 2870,
+                          "id": 6759,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "lValueRequested": false,
                           "nodeType": "ElementaryTypeNameExpression",
-                          "src": "22320:7:4",
+                          "src": "22638:7:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_type$_t_uint256_$",
                             "typeString": "type(uint256)"
                           },
                           "typeName": {
-                            "id": 2869,
+                            "id": 6758,
                             "name": "uint256",
                             "nodeType": "ElementaryTypeName",
-                            "src": "22320:7:4",
+                            "src": "22638:7:35",
                             "typeDescriptions": {}
                           }
                         },
-                        "id": 2872,
+                        "id": 6761,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -15295,7 +13359,7 @@ export const HyperdriveLP =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "22320:25:4",
+                        "src": "22638:25:35",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -15303,62 +13367,62 @@ export const HyperdriveLP =
                         }
                       },
                       {
-                        "id": 2873,
+                        "id": 6762,
                         "name": "startingPresentValue",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2751,
-                        "src": "22347:20:4",
+                        "referencedDeclaration": 6640,
+                        "src": "22665:20:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       }
                     ],
-                    "id": 2874,
+                    "id": 6763,
                     "isConstant": false,
                     "isInlineArray": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "TupleExpression",
-                    "src": "22304:64:4",
+                    "src": "22622:64:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$_t_uint256_$_t_uint256_$_t_uint256_$",
                       "typeString": "tuple(uint256,uint256,uint256)"
                     }
                   },
-                  "functionReturnParameters": 2740,
-                  "id": 2875,
+                  "functionReturnParameters": 6629,
+                  "id": 6764,
                   "nodeType": "Return",
-                  "src": "22297:71:4"
+                  "src": "22615:71:35"
                 }
               ]
             },
             "documentation": {
-              "id": 2722,
+              "id": 6611,
               "nodeType": "StructuredDocumentation",
-              "src": "19115:709:4",
+              "src": "19433:709:35",
               "text": "@dev Removes liquidity from the pool and calculates the amount of\n      withdrawal shares that should be minted.\n @param _shares The amount of shares to remove.\n @param _sharePrice The current price of a share.\n @param _totalLpSupply The total amount of LP shares.\n @param _totalActiveLpSupply The total amount of active LP shares.\n @param _withdrawalSharesOutstanding The total amount of withdrawal\n        shares outstanding.\n @return shareProceeds The share proceeds that will be paid to the LP.\n @return The amount of withdrawal shares that should be minted.\n @return The present value of the pool before the liquidity was removed."
             },
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "_applyRemoveLiquidity",
-            "nameLocation": "19838:21:4",
+            "nameLocation": "20156:21:35",
             "parameters": {
-              "id": 2733,
+              "id": 6622,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2724,
+                  "id": 6613,
                   "mutability": "mutable",
                   "name": "_shares",
-                  "nameLocation": "19877:7:4",
+                  "nameLocation": "20195:7:35",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2877,
-                  "src": "19869:15:4",
+                  "scope": 6766,
+                  "src": "20187:15:35",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -15366,10 +13430,10 @@ export const HyperdriveLP =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2723,
+                    "id": 6612,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "19869:7:4",
+                    "src": "20187:7:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -15379,13 +13443,13 @@ export const HyperdriveLP =
                 },
                 {
                   "constant": false,
-                  "id": 2726,
+                  "id": 6615,
                   "mutability": "mutable",
                   "name": "_sharePrice",
-                  "nameLocation": "19902:11:4",
+                  "nameLocation": "20220:11:35",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2877,
-                  "src": "19894:19:4",
+                  "scope": 6766,
+                  "src": "20212:19:35",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -15393,10 +13457,10 @@ export const HyperdriveLP =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2725,
+                    "id": 6614,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "19894:7:4",
+                    "src": "20212:7:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -15406,13 +13470,13 @@ export const HyperdriveLP =
                 },
                 {
                   "constant": false,
-                  "id": 2728,
+                  "id": 6617,
                   "mutability": "mutable",
                   "name": "_totalLpSupply",
-                  "nameLocation": "19931:14:4",
+                  "nameLocation": "20249:14:35",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2877,
-                  "src": "19923:22:4",
+                  "scope": 6766,
+                  "src": "20241:22:35",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -15420,10 +13484,10 @@ export const HyperdriveLP =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2727,
+                    "id": 6616,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "19923:7:4",
+                    "src": "20241:7:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -15433,13 +13497,13 @@ export const HyperdriveLP =
                 },
                 {
                   "constant": false,
-                  "id": 2730,
+                  "id": 6619,
                   "mutability": "mutable",
                   "name": "_totalActiveLpSupply",
-                  "nameLocation": "19963:20:4",
+                  "nameLocation": "20281:20:35",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2877,
-                  "src": "19955:28:4",
+                  "scope": 6766,
+                  "src": "20273:28:35",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -15447,10 +13511,10 @@ export const HyperdriveLP =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2729,
+                    "id": 6618,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "19955:7:4",
+                    "src": "20273:7:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -15460,13 +13524,13 @@ export const HyperdriveLP =
                 },
                 {
                   "constant": false,
-                  "id": 2732,
+                  "id": 6621,
                   "mutability": "mutable",
                   "name": "_withdrawalSharesOutstanding",
-                  "nameLocation": "20001:28:4",
+                  "nameLocation": "20319:28:35",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2877,
-                  "src": "19993:36:4",
+                  "scope": 6766,
+                  "src": "20311:36:35",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -15474,10 +13538,10 @@ export const HyperdriveLP =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2731,
+                    "id": 6620,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "19993:7:4",
+                    "src": "20311:7:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -15486,21 +13550,21 @@ export const HyperdriveLP =
                   "visibility": "internal"
                 }
               ],
-              "src": "19859:176:4"
+              "src": "20177:176:35"
             },
             "returnParameters": {
-              "id": 2740,
+              "id": 6629,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2735,
+                  "id": 6624,
                   "mutability": "mutable",
                   "name": "shareProceeds",
-                  "nameLocation": "20062:13:4",
+                  "nameLocation": "20380:13:35",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2877,
-                  "src": "20054:21:4",
+                  "scope": 6766,
+                  "src": "20372:21:35",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -15508,10 +13572,10 @@ export const HyperdriveLP =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2734,
+                    "id": 6623,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "20054:7:4",
+                    "src": "20372:7:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -15521,13 +13585,13 @@ export const HyperdriveLP =
                 },
                 {
                   "constant": false,
-                  "id": 2737,
+                  "id": 6626,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2877,
-                  "src": "20077:7:4",
+                  "scope": 6766,
+                  "src": "20395:7:35",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -15535,10 +13599,10 @@ export const HyperdriveLP =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2736,
+                    "id": 6625,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "20077:7:4",
+                    "src": "20395:7:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -15548,13 +13612,13 @@ export const HyperdriveLP =
                 },
                 {
                   "constant": false,
-                  "id": 2739,
+                  "id": 6628,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2877,
-                  "src": "20086:7:4",
+                  "scope": 6766,
+                  "src": "20404:7:35",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -15562,10 +13626,10 @@ export const HyperdriveLP =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2738,
+                    "id": 6627,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "20086:7:4",
+                    "src": "20404:7:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -15574,38 +13638,38 @@ export const HyperdriveLP =
                   "visibility": "internal"
                 }
               ],
-              "src": "20053:41:4"
+              "src": "20371:41:35"
             },
-            "scope": 3078,
+            "scope": 6967,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 2961,
+            "id": 6850,
             "nodeType": "FunctionDefinition",
-            "src": "22590:1546:4",
+            "src": "22908:1546:35",
             "nodes": [],
             "body": {
-              "id": 2960,
+              "id": 6849,
               "nodeType": "Block",
-              "src": "22651:1485:4",
+              "src": "22969:1485:35",
               "nodes": [],
               "statements": [
                 {
                   "assignments": [
-                    2884
+                    6773
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 2884,
+                      "id": 6773,
                       "mutability": "mutable",
                       "name": "activeLpSupply",
-                      "nameLocation": "22782:14:4",
+                      "nameLocation": "23100:14:35",
                       "nodeType": "VariableDeclaration",
-                      "scope": 2960,
-                      "src": "22774:22:4",
+                      "scope": 6849,
+                      "src": "23092:22:35",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -15613,10 +13677,10 @@ export const HyperdriveLP =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 2883,
+                        "id": 6772,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "22774:7:4",
+                        "src": "23092:7:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -15625,44 +13689,44 @@ export const HyperdriveLP =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 2889,
+                  "id": 6778,
                   "initialValue": {
                     "baseExpression": {
-                      "id": 2885,
+                      "id": 6774,
                       "name": "_totalSupply",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 12500,
-                      "src": "22799:12:4",
+                      "referencedDeclaration": 9291,
+                      "src": "23117:12:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
                         "typeString": "mapping(uint256 => uint256)"
                       }
                     },
-                    "id": 2888,
+                    "id": 6777,
                     "indexExpression": {
                       "expression": {
-                        "id": 2886,
+                        "id": 6775,
                         "name": "AssetId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 8311,
-                        "src": "22812:7:4",
+                        "referencedDeclaration": 9781,
+                        "src": "23130:7:35",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_AssetId_$8311_$",
+                          "typeIdentifier": "t_type$_t_contract$_AssetId_$9781_$",
                           "typeString": "type(library AssetId)"
                         }
                       },
-                      "id": 2887,
+                      "id": 6776,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "lValueRequested": false,
-                      "memberLocation": "22820:12:4",
+                      "memberLocation": "23138:12:35",
                       "memberName": "_LP_ASSET_ID",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 8003,
-                      "src": "22812:20:4",
+                      "referencedDeclaration": 9473,
+                      "src": "23130:20:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -15673,29 +13737,29 @@ export const HyperdriveLP =
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "IndexAccess",
-                    "src": "22799:34:4",
+                    "src": "23117:34:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "22774:59:4"
+                  "src": "23092:59:35"
                 },
                 {
                   "assignments": [
-                    2891
+                    6780
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 2891,
+                      "id": 6780,
                       "mutability": "mutable",
                       "name": "withdrawalSharesOutstanding",
-                      "nameLocation": "22851:27:4",
+                      "nameLocation": "23169:27:35",
                       "nodeType": "VariableDeclaration",
-                      "scope": 2960,
-                      "src": "22843:35:4",
+                      "scope": 6849,
+                      "src": "23161:35:35",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -15703,10 +13767,10 @@ export const HyperdriveLP =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 2890,
+                        "id": 6779,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "22843:7:4",
+                        "src": "23161:7:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -15715,54 +13779,54 @@ export const HyperdriveLP =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 2899,
+                  "id": 6788,
                   "initialValue": {
                     "commonType": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 2898,
+                    "id": 6787,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
                       "baseExpression": {
-                        "id": 2892,
+                        "id": 6781,
                         "name": "_totalSupply",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 12500,
-                        "src": "22881:12:4",
+                        "referencedDeclaration": 9291,
+                        "src": "23199:12:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
                           "typeString": "mapping(uint256 => uint256)"
                         }
                       },
-                      "id": 2895,
+                      "id": 6784,
                       "indexExpression": {
                         "expression": {
-                          "id": 2893,
+                          "id": 6782,
                           "name": "AssetId",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8311,
-                          "src": "22907:7:4",
+                          "referencedDeclaration": 9781,
+                          "src": "23225:7:35",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_AssetId_$8311_$",
+                            "typeIdentifier": "t_type$_t_contract$_AssetId_$9781_$",
                             "typeString": "type(library AssetId)"
                           }
                         },
-                        "id": 2894,
+                        "id": 6783,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "lValueRequested": false,
-                        "memberLocation": "22915:26:4",
+                        "memberLocation": "23233:26:35",
                         "memberName": "_WITHDRAWAL_SHARE_ASSET_ID",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 8012,
-                        "src": "22907:34:4",
+                        "referencedDeclaration": 9482,
+                        "src": "23225:34:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -15773,7 +13837,7 @@ export const HyperdriveLP =
                       "isPure": false,
                       "lValueRequested": false,
                       "nodeType": "IndexAccess",
-                      "src": "22881:70:4",
+                      "src": "23199:70:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -15783,55 +13847,55 @@ export const HyperdriveLP =
                     "operator": "-",
                     "rightExpression": {
                       "expression": {
-                        "id": 2896,
+                        "id": 6785,
                         "name": "_withdrawPool",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4837,
-                        "src": "22954:13:4",
+                        "referencedDeclaration": 9253,
+                        "src": "23272:13:35",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_WithdrawPool_$7189_storage",
+                          "typeIdentifier": "t_struct$_WithdrawPool_$3506_storage",
                           "typeString": "struct IHyperdrive.WithdrawPool storage ref"
                         }
                       },
-                      "id": 2897,
+                      "id": 6786,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "22968:15:4",
+                      "memberLocation": "23286:15:35",
                       "memberName": "readyToWithdraw",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 7185,
-                      "src": "22954:29:4",
+                      "referencedDeclaration": 3502,
+                      "src": "23272:29:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint128",
                         "typeString": "uint128"
                       }
                     },
-                    "src": "22881:102:4",
+                    "src": "23199:102:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "22843:140:4"
+                  "src": "23161:140:35"
                 },
                 {
                   "assignments": [
-                    2901
+                    6790
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 2901,
+                      "id": 6790,
                       "mutability": "mutable",
                       "name": "totalLpSupply",
-                      "nameLocation": "23001:13:4",
+                      "nameLocation": "23319:13:35",
                       "nodeType": "VariableDeclaration",
-                      "scope": 2960,
-                      "src": "22993:21:4",
+                      "scope": 6849,
+                      "src": "23311:21:35",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -15839,10 +13903,10 @@ export const HyperdriveLP =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 2900,
+                        "id": 6789,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "22993:7:4",
+                        "src": "23311:7:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -15851,24 +13915,24 @@ export const HyperdriveLP =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 2905,
+                  "id": 6794,
                   "initialValue": {
                     "commonType": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 2904,
+                    "id": 6793,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 2902,
+                      "id": 6791,
                       "name": "activeLpSupply",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2884,
-                      "src": "23017:14:4",
+                      "referencedDeclaration": 6773,
+                      "src": "23335:14:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -15877,40 +13941,40 @@ export const HyperdriveLP =
                     "nodeType": "BinaryOperation",
                     "operator": "+",
                     "rightExpression": {
-                      "id": 2903,
+                      "id": 6792,
                       "name": "withdrawalSharesOutstanding",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2891,
-                      "src": "23034:27:4",
+                      "referencedDeclaration": 6780,
+                      "src": "23352:27:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "23017:44:4",
+                    "src": "23335:44:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "22993:68:4"
+                  "src": "23311:68:35"
                 },
                 {
                   "assignments": [
-                    2907
+                    6796
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 2907,
+                      "id": 6796,
                       "mutability": "mutable",
                       "name": "presentValue",
-                      "nameLocation": "23079:12:4",
+                      "nameLocation": "23397:12:35",
                       "nodeType": "VariableDeclaration",
-                      "scope": 2960,
-                      "src": "23071:20:4",
+                      "scope": 6849,
+                      "src": "23389:20:35",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -15918,10 +13982,10 @@ export const HyperdriveLP =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 2906,
+                        "id": 6795,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "23071:7:4",
+                        "src": "23389:7:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -15930,18 +13994,18 @@ export const HyperdriveLP =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 2914,
+                  "id": 6803,
                   "initialValue": {
                     "arguments": [
                       {
                         "arguments": [
                           {
-                            "id": 2911,
+                            "id": 6800,
                             "name": "_sharePrice",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2880,
-                            "src": "23167:11:4",
+                            "referencedDeclaration": 6769,
+                            "src": "23485:11:35",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -15955,18 +14019,18 @@ export const HyperdriveLP =
                               "typeString": "uint256"
                             }
                           ],
-                          "id": 2910,
+                          "id": 6799,
                           "name": "_getPresentValueParams",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 5166,
-                          "src": "23144:22:4",
+                          "referencedDeclaration": 4880,
+                          "src": "23462:22:35",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_function_internal_view$_t_uint256_$returns$_t_struct$_PresentValueParams_$9560_memory_ptr_$",
+                            "typeIdentifier": "t_function_internal_view$_t_uint256_$returns$_t_struct$_PresentValueParams_$11027_memory_ptr_$",
                             "typeString": "function (uint256) view returns (struct HyperdriveMath.PresentValueParams memory)"
                           }
                         },
-                        "id": 2912,
+                        "id": 6801,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -15975,10 +14039,10 @@ export const HyperdriveLP =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "23144:35:4",
+                        "src": "23462:35:35",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_PresentValueParams_$9560_memory_ptr",
+                          "typeIdentifier": "t_struct$_PresentValueParams_$11027_memory_ptr",
                           "typeString": "struct HyperdriveMath.PresentValueParams memory"
                         }
                       }
@@ -15986,38 +14050,38 @@ export const HyperdriveLP =
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_PresentValueParams_$9560_memory_ptr",
+                          "typeIdentifier": "t_struct$_PresentValueParams_$11027_memory_ptr",
                           "typeString": "struct HyperdriveMath.PresentValueParams memory"
                         }
                       ],
                       "expression": {
-                        "id": 2908,
+                        "id": 6797,
                         "name": "HyperdriveMath",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 9918,
-                        "src": "23094:14:4",
+                        "referencedDeclaration": 11352,
+                        "src": "23412:14:35",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$9918_$",
+                          "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$11352_$",
                           "typeString": "type(library HyperdriveMath)"
                         }
                       },
-                      "id": 2909,
+                      "id": 6798,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "23109:21:4",
+                      "memberLocation": "23427:21:35",
                       "memberName": "calculatePresentValue",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9802,
-                      "src": "23094:36:4",
+                      "referencedDeclaration": 11269,
+                      "src": "23412:36:35",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_pure$_t_struct$_PresentValueParams_$9560_memory_ptr_$returns$_t_uint256_$",
+                        "typeIdentifier": "t_function_internal_pure$_t_struct$_PresentValueParams_$11027_memory_ptr_$returns$_t_uint256_$",
                         "typeString": "function (struct HyperdriveMath.PresentValueParams memory) pure returns (uint256)"
                       }
                     },
-                    "id": 2913,
+                    "id": 6802,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -16026,7 +14090,7 @@ export const HyperdriveLP =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "23094:95:4",
+                    "src": "23412:95:35",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
@@ -16034,22 +14098,22 @@ export const HyperdriveLP =
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "23071:118:4"
+                  "src": "23389:118:35"
                 },
                 {
                   "assignments": [
-                    2916
+                    6805
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 2916,
+                      "id": 6805,
                       "mutability": "mutable",
                       "name": "activeLpValue",
-                      "nameLocation": "23207:13:4",
+                      "nameLocation": "23525:13:35",
                       "nodeType": "VariableDeclaration",
-                      "scope": 2960,
-                      "src": "23199:21:4",
+                      "scope": 6849,
+                      "src": "23517:21:35",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -16057,10 +14121,10 @@ export const HyperdriveLP =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 2915,
+                        "id": 6804,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "23199:7:4",
+                        "src": "23517:7:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -16069,28 +14133,28 @@ export const HyperdriveLP =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 2922,
+                  "id": 6811,
                   "initialValue": {
                     "arguments": [
                       {
-                        "id": 2919,
+                        "id": 6808,
                         "name": "presentValue",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2907,
-                        "src": "23262:12:4",
+                        "referencedDeclaration": 6796,
+                        "src": "23580:12:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 2920,
+                        "id": 6809,
                         "name": "totalLpSupply",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2901,
-                        "src": "23288:13:4",
+                        "referencedDeclaration": 6790,
+                        "src": "23606:13:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -16109,33 +14173,33 @@ export const HyperdriveLP =
                         }
                       ],
                       "expression": {
-                        "id": 2917,
+                        "id": 6806,
                         "name": "activeLpSupply",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2884,
-                        "src": "23223:14:4",
+                        "referencedDeclaration": 6773,
+                        "src": "23541:14:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
-                      "id": 2918,
+                      "id": 6807,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "23238:10:4",
+                      "memberLocation": "23556:10:35",
                       "memberName": "mulDivDown",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 8346,
-                      "src": "23223:25:4",
+                      "referencedDeclaration": 9813,
+                      "src": "23541:25:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                         "typeString": "function (uint256,uint256,uint256) pure returns (uint256)"
                       }
                     },
-                    "id": 2921,
+                    "id": 6810,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -16144,7 +14208,7 @@ export const HyperdriveLP =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "23223:88:4",
+                    "src": "23541:88:35",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
@@ -16152,22 +14216,22 @@ export const HyperdriveLP =
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "23199:112:4"
+                  "src": "23517:112:35"
                 },
                 {
                   "assignments": [
-                    2924
+                    6813
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 2924,
+                      "id": 6813,
                       "mutability": "mutable",
                       "name": "withdrawalProceeds",
-                      "nameLocation": "23677:18:4",
+                      "nameLocation": "23995:18:35",
                       "nodeType": "VariableDeclaration",
-                      "scope": 2960,
-                      "src": "23669:26:4",
+                      "scope": 6849,
+                      "src": "23987:26:35",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -16175,10 +14239,10 @@ export const HyperdriveLP =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 2923,
+                        "id": 6812,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "23669:7:4",
+                        "src": "23987:7:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -16187,17 +14251,17 @@ export const HyperdriveLP =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 2926,
+                  "id": 6815,
                   "initialValue": {
                     "hexValue": "30",
-                    "id": 2925,
+                    "id": 6814,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
                     "kind": "number",
                     "lValueRequested": false,
                     "nodeType": "Literal",
-                    "src": "23698:1:4",
+                    "src": "24016:1:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_rational_0_by_1",
                       "typeString": "int_const 0"
@@ -16205,22 +14269,22 @@ export const HyperdriveLP =
                     "value": "0"
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "23669:30:4"
+                  "src": "23987:30:35"
                 },
                 {
                   "assignments": [
-                    2928
+                    6817
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 2928,
+                      "id": 6817,
                       "mutability": "mutable",
                       "name": "idle",
-                      "nameLocation": "23717:4:4",
+                      "nameLocation": "24035:4:35",
                       "nodeType": "VariableDeclaration",
-                      "scope": 2960,
-                      "src": "23709:12:4",
+                      "scope": 6849,
+                      "src": "24027:12:35",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -16228,10 +14292,10 @@ export const HyperdriveLP =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 2927,
+                        "id": 6816,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "23709:7:4",
+                        "src": "24027:7:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -16240,16 +14304,16 @@ export const HyperdriveLP =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 2932,
+                  "id": 6821,
                   "initialValue": {
                     "arguments": [
                       {
-                        "id": 2930,
+                        "id": 6819,
                         "name": "_sharePrice",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2880,
-                        "src": "23752:11:4",
+                        "referencedDeclaration": 6769,
+                        "src": "24070:11:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -16263,18 +14327,18 @@ export const HyperdriveLP =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 2929,
+                      "id": 6818,
                       "name": "_calculateIdleShareReserves",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1291,
-                      "src": "23724:27:4",
+                      "referencedDeclaration": 5184,
+                      "src": "24042:27:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_view$_t_uint256_$returns$_t_uint256_$",
                         "typeString": "function (uint256) view returns (uint256)"
                       }
                     },
-                    "id": 2931,
+                    "id": 6820,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -16283,7 +14347,7 @@ export const HyperdriveLP =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "23724:40:4",
+                    "src": "24042:40:35",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
@@ -16291,7 +14355,7 @@ export const HyperdriveLP =
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "23709:55:4"
+                  "src": "24027:55:35"
                 },
                 {
                   "condition": {
@@ -16299,18 +14363,18 @@ export const HyperdriveLP =
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 2935,
+                    "id": 6824,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 2933,
+                      "id": 6822,
                       "name": "idle",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2928,
-                      "src": "23778:4:4",
+                      "referencedDeclaration": 6817,
+                      "src": "24096:4:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -16319,45 +14383,45 @@ export const HyperdriveLP =
                     "nodeType": "BinaryOperation",
                     "operator": ">",
                     "rightExpression": {
-                      "id": 2934,
+                      "id": 6823,
                       "name": "activeLpValue",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2916,
-                      "src": "23785:13:4",
+                      "referencedDeclaration": 6805,
+                      "src": "24103:13:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "23778:20:4",
+                    "src": "24096:20:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 2943,
+                  "id": 6832,
                   "nodeType": "IfStatement",
-                  "src": "23774:92:4",
+                  "src": "24092:92:35",
                   "trueBody": {
-                    "id": 2942,
+                    "id": 6831,
                     "nodeType": "Block",
-                    "src": "23800:66:4",
+                    "src": "24118:66:35",
                     "statements": [
                       {
                         "expression": {
-                          "id": 2940,
+                          "id": 6829,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 2936,
+                            "id": 6825,
                             "name": "withdrawalProceeds",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2924,
-                            "src": "23814:18:4",
+                            "referencedDeclaration": 6813,
+                            "src": "24132:18:35",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -16370,18 +14434,18 @@ export const HyperdriveLP =
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             },
-                            "id": 2939,
+                            "id": 6828,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "leftExpression": {
-                              "id": 2937,
+                              "id": 6826,
                               "name": "idle",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2928,
-                              "src": "23835:4:4",
+                              "referencedDeclaration": 6817,
+                              "src": "24153:4:35",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
@@ -16390,32 +14454,32 @@ export const HyperdriveLP =
                             "nodeType": "BinaryOperation",
                             "operator": "-",
                             "rightExpression": {
-                              "id": 2938,
+                              "id": 6827,
                               "name": "activeLpValue",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2916,
-                              "src": "23842:13:4",
+                              "referencedDeclaration": 6805,
+                              "src": "24160:13:35",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               }
                             },
-                            "src": "23835:20:4",
+                            "src": "24153:20:35",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             }
                           },
-                          "src": "23814:41:4",
+                          "src": "24132:41:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 2941,
+                        "id": 6830,
                         "nodeType": "ExpressionStatement",
-                        "src": "23814:41:4"
+                        "src": "24132:41:35"
                       }
                     ]
                   }
@@ -16426,7 +14490,7 @@ export const HyperdriveLP =
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     },
-                    "id": 2950,
+                    "id": 6839,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -16436,18 +14500,18 @@ export const HyperdriveLP =
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       },
-                      "id": 2946,
+                      "id": 6835,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
-                        "id": 2944,
+                        "id": 6833,
                         "name": "withdrawalProceeds",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2924,
-                        "src": "23879:18:4",
+                        "referencedDeclaration": 6813,
+                        "src": "24197:18:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -16457,21 +14521,21 @@ export const HyperdriveLP =
                       "operator": ">",
                       "rightExpression": {
                         "hexValue": "30",
-                        "id": 2945,
+                        "id": 6834,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "23900:1:4",
+                        "src": "24218:1:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_rational_0_by_1",
                           "typeString": "int_const 0"
                         },
                         "value": "0"
                       },
-                      "src": "23879:22:4",
+                      "src": "24197:22:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
@@ -16484,18 +14548,18 @@ export const HyperdriveLP =
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       },
-                      "id": 2949,
+                      "id": 6838,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
-                        "id": 2947,
+                        "id": 6836,
                         "name": "presentValue",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2907,
-                        "src": "23905:12:4",
+                        "referencedDeclaration": 6796,
+                        "src": "24223:12:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -16505,86 +14569,86 @@ export const HyperdriveLP =
                       "operator": "==",
                       "rightExpression": {
                         "hexValue": "30",
-                        "id": 2948,
+                        "id": 6837,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "23921:1:4",
+                        "src": "24239:1:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_rational_0_by_1",
                           "typeString": "int_const 0"
                         },
                         "value": "0"
                       },
-                      "src": "23905:17:4",
+                      "src": "24223:17:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
                       }
                     },
-                    "src": "23879:43:4",
+                    "src": "24197:43:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 2959,
+                  "id": 6848,
                   "nodeType": "IfStatement",
-                  "src": "23875:255:4",
+                  "src": "24193:255:35",
                   "trueBody": {
-                    "id": 2958,
+                    "id": 6847,
                     "nodeType": "Block",
-                    "src": "23924:206:4",
+                    "src": "24242:206:35",
                     "statements": [
                       {
                         "expression": {
                           "arguments": [
                             {
-                              "id": 2952,
+                              "id": 6841,
                               "name": "withdrawalProceeds",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2924,
-                              "src": "23981:18:4",
+                              "referencedDeclaration": 6813,
+                              "src": "24299:18:35",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               }
                             },
                             {
-                              "id": 2953,
+                              "id": 6842,
                               "name": "presentValue",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2907,
-                              "src": "24017:12:4",
+                              "referencedDeclaration": 6796,
+                              "src": "24335:12:35",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               }
                             },
                             {
-                              "id": 2954,
+                              "id": 6843,
                               "name": "totalLpSupply",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2901,
-                              "src": "24047:13:4",
+                              "referencedDeclaration": 6790,
+                              "src": "24365:13:35",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               }
                             },
                             {
-                              "id": 2955,
+                              "id": 6844,
                               "name": "withdrawalSharesOutstanding",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2891,
-                              "src": "24078:27:4",
+                              "referencedDeclaration": 6780,
+                              "src": "24396:27:35",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
@@ -16610,18 +14674,18 @@ export const HyperdriveLP =
                                 "typeString": "uint256"
                               }
                             ],
-                            "id": 2951,
+                            "id": 6840,
                             "name": "_compensateWithdrawalPool",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 3077,
-                            "src": "23938:25:4",
+                            "referencedDeclaration": 6966,
+                            "src": "24256:25:35",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$__$",
                               "typeString": "function (uint256,uint256,uint256,uint256)"
                             }
                           },
-                          "id": 2956,
+                          "id": 6845,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -16630,16 +14694,16 @@ export const HyperdriveLP =
                           "nameLocations": [],
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "23938:181:4",
+                          "src": "24256:181:35",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_tuple$__$",
                             "typeString": "tuple()"
                           }
                         },
-                        "id": 2957,
+                        "id": 6846,
                         "nodeType": "ExpressionStatement",
-                        "src": "23938:181:4"
+                        "src": "24256:181:35"
                       }
                     ]
                   }
@@ -16647,29 +14711,29 @@ export const HyperdriveLP =
               ]
             },
             "documentation": {
-              "id": 2878,
+              "id": 6767,
               "nodeType": "StructuredDocumentation",
-              "src": "22381:204:4",
+              "src": "22699:204:35",
               "text": "@dev If the idle capital in the pool is worth more than the active LP\n      supply, then we pay out the withdrawal pool with the excess idle.\n @param _sharePrice The current share price."
             },
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "_distributeExcessIdle",
-            "nameLocation": "22599:21:4",
+            "nameLocation": "22917:21:35",
             "parameters": {
-              "id": 2881,
+              "id": 6770,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2880,
+                  "id": 6769,
                   "mutability": "mutable",
                   "name": "_sharePrice",
-                  "nameLocation": "22629:11:4",
+                  "nameLocation": "22947:11:35",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2961,
-                  "src": "22621:19:4",
+                  "scope": 6850,
+                  "src": "22939:19:35",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -16677,10 +14741,10 @@ export const HyperdriveLP =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2879,
+                    "id": 6768,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "22621:7:4",
+                    "src": "22939:7:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -16689,44 +14753,44 @@ export const HyperdriveLP =
                   "visibility": "internal"
                 }
               ],
-              "src": "22620:21:4"
+              "src": "22938:21:35"
             },
             "returnParameters": {
-              "id": 2882,
+              "id": 6771,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "22651:0:4"
+              "src": "22969:0:35"
             },
-            "scope": 3078,
+            "scope": 6967,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 2997,
+            "id": 6886,
             "nodeType": "FunctionDefinition",
-            "src": "24518:580:4",
+            "src": "24836:580:35",
             "nodes": [],
             "body": {
-              "id": 2996,
+              "id": 6885,
               "nodeType": "Block",
-              "src": "24679:419:4",
+              "src": "24997:419:35",
               "nodes": [],
               "statements": [
                 {
                   "assignments": [
-                    2972
+                    6861
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 2972,
+                      "id": 6861,
                       "mutability": "mutable",
                       "name": "presentValue",
-                      "nameLocation": "24697:12:4",
+                      "nameLocation": "25015:12:35",
                       "nodeType": "VariableDeclaration",
-                      "scope": 2996,
-                      "src": "24689:20:4",
+                      "scope": 6885,
+                      "src": "25007:20:35",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -16734,10 +14798,10 @@ export const HyperdriveLP =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 2971,
+                        "id": 6860,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "24689:7:4",
+                        "src": "25007:7:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -16746,18 +14810,18 @@ export const HyperdriveLP =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 2979,
+                  "id": 6868,
                   "initialValue": {
                     "arguments": [
                       {
                         "arguments": [
                           {
-                            "id": 2976,
+                            "id": 6865,
                             "name": "_sharePrice",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2968,
-                            "src": "24785:11:4",
+                            "referencedDeclaration": 6857,
+                            "src": "25103:11:35",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -16771,18 +14835,18 @@ export const HyperdriveLP =
                               "typeString": "uint256"
                             }
                           ],
-                          "id": 2975,
+                          "id": 6864,
                           "name": "_getPresentValueParams",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 5166,
-                          "src": "24762:22:4",
+                          "referencedDeclaration": 4880,
+                          "src": "25080:22:35",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_function_internal_view$_t_uint256_$returns$_t_struct$_PresentValueParams_$9560_memory_ptr_$",
+                            "typeIdentifier": "t_function_internal_view$_t_uint256_$returns$_t_struct$_PresentValueParams_$11027_memory_ptr_$",
                             "typeString": "function (uint256) view returns (struct HyperdriveMath.PresentValueParams memory)"
                           }
                         },
-                        "id": 2977,
+                        "id": 6866,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -16791,10 +14855,10 @@ export const HyperdriveLP =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "24762:35:4",
+                        "src": "25080:35:35",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_PresentValueParams_$9560_memory_ptr",
+                          "typeIdentifier": "t_struct$_PresentValueParams_$11027_memory_ptr",
                           "typeString": "struct HyperdriveMath.PresentValueParams memory"
                         }
                       }
@@ -16802,38 +14866,38 @@ export const HyperdriveLP =
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_PresentValueParams_$9560_memory_ptr",
+                          "typeIdentifier": "t_struct$_PresentValueParams_$11027_memory_ptr",
                           "typeString": "struct HyperdriveMath.PresentValueParams memory"
                         }
                       ],
                       "expression": {
-                        "id": 2973,
+                        "id": 6862,
                         "name": "HyperdriveMath",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 9918,
-                        "src": "24712:14:4",
+                        "referencedDeclaration": 11352,
+                        "src": "25030:14:35",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$9918_$",
+                          "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$11352_$",
                           "typeString": "type(library HyperdriveMath)"
                         }
                       },
-                      "id": 2974,
+                      "id": 6863,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "24727:21:4",
+                      "memberLocation": "25045:21:35",
                       "memberName": "calculatePresentValue",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 9802,
-                      "src": "24712:36:4",
+                      "referencedDeclaration": 11269,
+                      "src": "25030:36:35",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_pure$_t_struct$_PresentValueParams_$9560_memory_ptr_$returns$_t_uint256_$",
+                        "typeIdentifier": "t_function_internal_pure$_t_struct$_PresentValueParams_$11027_memory_ptr_$returns$_t_uint256_$",
                         "typeString": "function (struct HyperdriveMath.PresentValueParams memory) pure returns (uint256)"
                       }
                     },
-                    "id": 2978,
+                    "id": 6867,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -16842,7 +14906,7 @@ export const HyperdriveLP =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "24712:95:4",
+                    "src": "25030:95:35",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
@@ -16850,22 +14914,22 @@ export const HyperdriveLP =
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "24689:118:4"
+                  "src": "25007:118:35"
                 },
                 {
                   "assignments": [
-                    2981
+                    6870
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 2981,
+                      "id": 6870,
                       "mutability": "mutable",
                       "name": "lpTotalSupply",
-                      "nameLocation": "24825:13:4",
+                      "nameLocation": "25143:13:35",
                       "nodeType": "VariableDeclaration",
-                      "scope": 2996,
-                      "src": "24817:21:4",
+                      "scope": 6885,
+                      "src": "25135:21:35",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -16873,10 +14937,10 @@ export const HyperdriveLP =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 2980,
+                        "id": 6869,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "24817:7:4",
+                        "src": "25135:7:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -16885,54 +14949,54 @@ export const HyperdriveLP =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 2988,
+                  "id": 6877,
                   "initialValue": {
                     "commonType": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 2987,
+                    "id": 6876,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
                       "baseExpression": {
-                        "id": 2982,
+                        "id": 6871,
                         "name": "_totalSupply",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 12500,
-                        "src": "24841:12:4",
+                        "referencedDeclaration": 9291,
+                        "src": "25159:12:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
                           "typeString": "mapping(uint256 => uint256)"
                         }
                       },
-                      "id": 2985,
+                      "id": 6874,
                       "indexExpression": {
                         "expression": {
-                          "id": 2983,
+                          "id": 6872,
                           "name": "AssetId",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8311,
-                          "src": "24854:7:4",
+                          "referencedDeclaration": 9781,
+                          "src": "25172:7:35",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_AssetId_$8311_$",
+                            "typeIdentifier": "t_type$_t_contract$_AssetId_$9781_$",
                             "typeString": "type(library AssetId)"
                           }
                         },
-                        "id": 2984,
+                        "id": 6873,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "lValueRequested": false,
-                        "memberLocation": "24862:12:4",
+                        "memberLocation": "25180:12:35",
                         "memberName": "_LP_ASSET_ID",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 8003,
-                        "src": "24854:20:4",
+                        "referencedDeclaration": 9473,
+                        "src": "25172:20:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -16943,7 +15007,7 @@ export const HyperdriveLP =
                       "isPure": false,
                       "lValueRequested": false,
                       "nodeType": "IndexAccess",
-                      "src": "24841:34:4",
+                      "src": "25159:34:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -16952,72 +15016,72 @@ export const HyperdriveLP =
                     "nodeType": "BinaryOperation",
                     "operator": "+",
                     "rightExpression": {
-                      "id": 2986,
+                      "id": 6875,
                       "name": "_withdrawalSharesOutstanding",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2966,
-                      "src": "24890:28:4",
+                      "referencedDeclaration": 6855,
+                      "src": "25208:28:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "24841:77:4",
+                    "src": "25159:77:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "24817:101:4"
+                  "src": "25135:101:35"
                 },
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 2990,
+                        "id": 6879,
                         "name": "_withdrawalProceeds",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2964,
-                        "src": "24967:19:4",
+                        "referencedDeclaration": 6853,
+                        "src": "25285:19:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 2991,
+                        "id": 6880,
                         "name": "presentValue",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2972,
-                        "src": "25000:12:4",
+                        "referencedDeclaration": 6861,
+                        "src": "25318:12:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 2992,
+                        "id": 6881,
                         "name": "lpTotalSupply",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2981,
-                        "src": "25026:13:4",
+                        "referencedDeclaration": 6870,
+                        "src": "25344:13:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 2993,
+                        "id": 6882,
                         "name": "_withdrawalSharesOutstanding",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2966,
-                        "src": "25053:28:4",
+                        "referencedDeclaration": 6855,
+                        "src": "25371:28:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -17043,18 +15107,18 @@ export const HyperdriveLP =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 2989,
+                      "id": 6878,
                       "name": "_compensateWithdrawalPool",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 3077,
-                      "src": "24928:25:4",
+                      "referencedDeclaration": 6966,
+                      "src": "25246:25:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$__$",
                         "typeString": "function (uint256,uint256,uint256,uint256)"
                       }
                     },
-                    "id": 2994,
+                    "id": 6883,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -17063,43 +15127,43 @@ export const HyperdriveLP =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "24928:163:4",
+                    "src": "25246:163:35",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 2995,
+                  "id": 6884,
                   "nodeType": "ExpressionStatement",
-                  "src": "24928:163:4"
+                  "src": "25246:163:35"
                 }
               ]
             },
             "documentation": {
-              "id": 2962,
+              "id": 6851,
               "nodeType": "StructuredDocumentation",
-              "src": "24142:371:4",
+              "src": "24460:371:35",
               "text": "@dev Pays out the maximum amount of withdrawal shares given a specified\n      amount of withdrawal proceeds.\n @param _withdrawalProceeds The amount of withdrawal proceeds to pay out.\n @param _withdrawalSharesOutstanding The amount of withdrawal shares\n        that haven't been paid out.\n @param _sharePrice The current share price."
             },
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "_applyWithdrawalProceeds",
-            "nameLocation": "24527:24:4",
+            "nameLocation": "24845:24:35",
             "parameters": {
-              "id": 2969,
+              "id": 6858,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2964,
+                  "id": 6853,
                   "mutability": "mutable",
                   "name": "_withdrawalProceeds",
-                  "nameLocation": "24569:19:4",
+                  "nameLocation": "24887:19:35",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2997,
-                  "src": "24561:27:4",
+                  "scope": 6886,
+                  "src": "24879:27:35",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -17107,10 +15171,10 @@ export const HyperdriveLP =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2963,
+                    "id": 6852,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "24561:7:4",
+                    "src": "24879:7:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -17120,13 +15184,13 @@ export const HyperdriveLP =
                 },
                 {
                   "constant": false,
-                  "id": 2966,
+                  "id": 6855,
                   "mutability": "mutable",
                   "name": "_withdrawalSharesOutstanding",
-                  "nameLocation": "24606:28:4",
+                  "nameLocation": "24924:28:35",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2997,
-                  "src": "24598:36:4",
+                  "scope": 6886,
+                  "src": "24916:36:35",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -17134,10 +15198,10 @@ export const HyperdriveLP =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2965,
+                    "id": 6854,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "24598:7:4",
+                    "src": "24916:7:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -17147,13 +15211,13 @@ export const HyperdriveLP =
                 },
                 {
                   "constant": false,
-                  "id": 2968,
+                  "id": 6857,
                   "mutability": "mutable",
                   "name": "_sharePrice",
-                  "nameLocation": "24652:11:4",
+                  "nameLocation": "24970:11:35",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2997,
-                  "src": "24644:19:4",
+                  "scope": 6886,
+                  "src": "24962:19:35",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -17161,10 +15225,10 @@ export const HyperdriveLP =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2967,
+                    "id": 6856,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "24644:7:4",
+                    "src": "24962:7:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -17173,44 +15237,44 @@ export const HyperdriveLP =
                   "visibility": "internal"
                 }
               ],
-              "src": "24551:118:4"
+              "src": "24869:118:35"
             },
             "returnParameters": {
-              "id": 2970,
+              "id": 6859,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "24679:0:4"
+              "src": "24997:0:35"
             },
-            "scope": 3078,
+            "scope": 6967,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 3077,
+            "id": 6966,
             "nodeType": "FunctionDefinition",
-            "src": "25635:1730:4",
+            "src": "25953:1730:35",
             "nodes": [],
             "body": {
-              "id": 3076,
+              "id": 6965,
               "nodeType": "Block",
-              "src": "25831:1534:4",
+              "src": "26149:1534:35",
               "nodes": [],
               "statements": [
                 {
                   "assignments": [
-                    3010
+                    6899
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 3010,
+                      "id": 6899,
                       "mutability": "mutable",
                       "name": "maxSharesReleased",
-                      "nameLocation": "26336:17:4",
+                      "nameLocation": "26654:17:35",
                       "nodeType": "VariableDeclaration",
-                      "scope": 3076,
-                      "src": "26328:25:4",
+                      "scope": 6965,
+                      "src": "26646:25:35",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -17218,10 +15282,10 @@ export const HyperdriveLP =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 3009,
+                        "id": 6898,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "26328:7:4",
+                        "src": "26646:7:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -17230,25 +15294,25 @@ export const HyperdriveLP =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 3021,
+                  "id": 6910,
                   "initialValue": {
                     "condition": {
                       "commonType": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       },
-                      "id": 3013,
+                      "id": 6902,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
-                        "id": 3011,
+                        "id": 6900,
                         "name": "_presentValue",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 3002,
-                        "src": "26356:13:4",
+                        "referencedDeclaration": 6891,
+                        "src": "26674:13:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -17258,66 +15322,66 @@ export const HyperdriveLP =
                       "operator": ">",
                       "rightExpression": {
                         "hexValue": "30",
-                        "id": 3012,
+                        "id": 6901,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "26372:1:4",
+                        "src": "26690:1:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_rational_0_by_1",
                           "typeString": "int_const 0"
                         },
                         "value": "0"
                       },
-                      "src": "26356:17:4",
+                      "src": "26674:17:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
                       }
                     },
                     "falseExpression": {
-                      "id": 3019,
+                      "id": 6908,
                       "name": "_lpTotalSupply",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 3004,
-                      "src": "26464:14:4",
+                      "referencedDeclaration": 6893,
+                      "src": "26782:14:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "id": 3020,
+                    "id": 6909,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "Conditional",
-                    "src": "26356:122:4",
+                    "src": "26674:122:35",
                     "trueExpression": {
                       "arguments": [
                         {
-                          "id": 3016,
+                          "id": 6905,
                           "name": "_withdrawalProceeds",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 3000,
-                          "src": "26414:19:4",
+                          "referencedDeclaration": 6889,
+                          "src": "26732:19:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
                         {
-                          "id": 3017,
+                          "id": 6906,
                           "name": "_presentValue",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 3002,
-                          "src": "26435:13:4",
+                          "referencedDeclaration": 6891,
+                          "src": "26753:13:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -17336,33 +15400,33 @@ export const HyperdriveLP =
                           }
                         ],
                         "expression": {
-                          "id": 3014,
+                          "id": 6903,
                           "name": "_lpTotalSupply",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 3004,
-                          "src": "26388:14:4",
+                          "referencedDeclaration": 6893,
+                          "src": "26706:14:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 3015,
+                        "id": 6904,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "26403:10:4",
+                        "memberLocation": "26721:10:35",
                         "memberName": "mulDivDown",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 8346,
-                        "src": "26388:25:4",
+                        "referencedDeclaration": 9813,
+                        "src": "26706:25:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                           "typeString": "function (uint256,uint256,uint256) pure returns (uint256)"
                         }
                       },
-                      "id": 3018,
+                      "id": 6907,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -17371,7 +15435,7 @@ export const HyperdriveLP =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "26388:61:4",
+                      "src": "26706:61:35",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -17384,7 +15448,7 @@ export const HyperdriveLP =
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "26328:150:4"
+                  "src": "26646:150:35"
                 },
                 {
                   "condition": {
@@ -17392,18 +15456,18 @@ export const HyperdriveLP =
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 3024,
+                    "id": 6913,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 3022,
+                      "id": 6911,
                       "name": "maxSharesReleased",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 3010,
-                      "src": "26492:17:4",
+                      "referencedDeclaration": 6899,
+                      "src": "26810:17:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -17413,50 +15477,50 @@ export const HyperdriveLP =
                     "operator": "==",
                     "rightExpression": {
                       "hexValue": "30",
-                      "id": 3023,
+                      "id": 6912,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "26513:1:4",
+                      "src": "26831:1:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_0_by_1",
                         "typeString": "int_const 0"
                       },
                       "value": "0"
                     },
-                    "src": "26492:22:4",
+                    "src": "26810:22:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 3026,
+                  "id": 6915,
                   "nodeType": "IfStatement",
-                  "src": "26488:35:4",
+                  "src": "26806:35:35",
                   "trueBody": {
-                    "functionReturnParameters": 3008,
-                    "id": 3025,
+                    "functionReturnParameters": 6897,
+                    "id": 6914,
                     "nodeType": "Return",
-                    "src": "26516:7:4"
+                    "src": "26834:7:35"
                   }
                 },
                 {
                   "assignments": [
-                    3028
+                    6917
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 3028,
+                      "id": 6917,
                       "mutability": "mutable",
                       "name": "sharesReleased",
-                      "nameLocation": "26714:14:4",
+                      "nameLocation": "27032:14:35",
                       "nodeType": "VariableDeclaration",
-                      "scope": 3076,
-                      "src": "26706:22:4",
+                      "scope": 6965,
+                      "src": "27024:22:35",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -17464,10 +15528,10 @@ export const HyperdriveLP =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 3027,
+                        "id": 6916,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "26706:7:4",
+                        "src": "27024:7:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -17476,36 +15540,36 @@ export const HyperdriveLP =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 3030,
+                  "id": 6919,
                   "initialValue": {
-                    "id": 3029,
+                    "id": 6918,
                     "name": "maxSharesReleased",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 3010,
-                    "src": "26731:17:4",
+                    "referencedDeclaration": 6899,
+                    "src": "27049:17:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "26706:42:4"
+                  "src": "27024:42:35"
                 },
                 {
                   "assignments": [
-                    3032
+                    6921
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 3032,
+                      "id": 6921,
                       "mutability": "mutable",
                       "name": "withdrawalPoolProceeds",
-                      "nameLocation": "26766:22:4",
+                      "nameLocation": "27084:22:35",
                       "nodeType": "VariableDeclaration",
-                      "scope": 3076,
-                      "src": "26758:30:4",
+                      "scope": 6965,
+                      "src": "27076:30:35",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -17513,10 +15577,10 @@ export const HyperdriveLP =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 3031,
+                        "id": 6920,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "26758:7:4",
+                        "src": "27076:7:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -17525,21 +15589,21 @@ export const HyperdriveLP =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 3034,
+                  "id": 6923,
                   "initialValue": {
-                    "id": 3033,
+                    "id": 6922,
                     "name": "_withdrawalProceeds",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 3000,
-                    "src": "26791:19:4",
+                    "referencedDeclaration": 6889,
+                    "src": "27109:19:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "26758:52:4"
+                  "src": "27076:52:35"
                 },
                 {
                   "condition": {
@@ -17547,18 +15611,18 @@ export const HyperdriveLP =
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 3037,
+                    "id": 6926,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 3035,
+                      "id": 6924,
                       "name": "maxSharesReleased",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 3010,
-                      "src": "26824:17:4",
+                      "referencedDeclaration": 6899,
+                      "src": "27142:17:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -17567,45 +15631,45 @@ export const HyperdriveLP =
                     "nodeType": "BinaryOperation",
                     "operator": ">",
                     "rightExpression": {
-                      "id": 3036,
+                      "id": 6925,
                       "name": "_withdrawalSharesOutstanding",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 3006,
-                      "src": "26844:28:4",
+                      "referencedDeclaration": 6895,
+                      "src": "27162:28:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "26824:48:4",
+                    "src": "27142:48:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 3051,
+                  "id": 6940,
                   "nodeType": "IfStatement",
-                  "src": "26820:274:4",
+                  "src": "27138:274:35",
                   "trueBody": {
-                    "id": 3050,
+                    "id": 6939,
                     "nodeType": "Block",
-                    "src": "26874:220:4",
+                    "src": "27192:220:35",
                     "statements": [
                       {
                         "expression": {
-                          "id": 3040,
+                          "id": 6929,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 3038,
+                            "id": 6927,
                             "name": "sharesReleased",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 3028,
-                            "src": "26888:14:4",
+                            "referencedDeclaration": 6917,
+                            "src": "27206:14:35",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -17614,41 +15678,41 @@ export const HyperdriveLP =
                           "nodeType": "Assignment",
                           "operator": "=",
                           "rightHandSide": {
-                            "id": 3039,
+                            "id": 6928,
                             "name": "_withdrawalSharesOutstanding",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 3006,
-                            "src": "26905:28:4",
+                            "referencedDeclaration": 6895,
+                            "src": "27223:28:35",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             }
                           },
-                          "src": "26888:45:4",
+                          "src": "27206:45:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 3041,
+                        "id": 6930,
                         "nodeType": "ExpressionStatement",
-                        "src": "26888:45:4"
+                        "src": "27206:45:35"
                       },
                       {
                         "expression": {
-                          "id": 3048,
+                          "id": 6937,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 3042,
+                            "id": 6931,
                             "name": "withdrawalPoolProceeds",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 3032,
-                            "src": "26947:22:4",
+                            "referencedDeclaration": 6921,
+                            "src": "27265:22:35",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -17659,24 +15723,24 @@ export const HyperdriveLP =
                           "rightHandSide": {
                             "arguments": [
                               {
-                                "id": 3045,
+                                "id": 6934,
                                 "name": "sharesReleased",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 3028,
-                                "src": "27020:14:4",
+                                "referencedDeclaration": 6917,
+                                "src": "27338:14:35",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
                                 }
                               },
                               {
-                                "id": 3046,
+                                "id": 6935,
                                 "name": "maxSharesReleased",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 3010,
-                                "src": "27052:17:4",
+                                "referencedDeclaration": 6899,
+                                "src": "27370:17:35",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
@@ -17695,33 +15759,33 @@ export const HyperdriveLP =
                                 }
                               ],
                               "expression": {
-                                "id": 3043,
+                                "id": 6932,
                                 "name": "_withdrawalProceeds",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 3000,
-                                "src": "26972:19:4",
+                                "referencedDeclaration": 6889,
+                                "src": "27290:19:35",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
                                 }
                               },
-                              "id": 3044,
+                              "id": 6933,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
-                              "memberLocation": "26992:10:4",
+                              "memberLocation": "27310:10:35",
                               "memberName": "mulDivDown",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 8346,
-                              "src": "26972:30:4",
+                              "referencedDeclaration": 9813,
+                              "src": "27290:30:35",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                 "typeString": "function (uint256,uint256,uint256) pure returns (uint256)"
                               }
                             },
-                            "id": 3047,
+                            "id": 6936,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -17730,56 +15794,56 @@ export const HyperdriveLP =
                             "nameLocations": [],
                             "names": [],
                             "nodeType": "FunctionCall",
-                            "src": "26972:111:4",
+                            "src": "27290:111:35",
                             "tryCall": false,
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             }
                           },
-                          "src": "26947:136:4",
+                          "src": "27265:136:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 3049,
+                        "id": 6938,
                         "nodeType": "ExpressionStatement",
-                        "src": "26947:136:4"
+                        "src": "27265:136:35"
                       }
                     ]
                   }
                 },
                 {
                   "expression": {
-                    "id": 3058,
+                    "id": 6947,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "expression": {
-                        "id": 3052,
+                        "id": 6941,
                         "name": "_withdrawPool",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4837,
-                        "src": "27103:13:4",
+                        "referencedDeclaration": 9253,
+                        "src": "27421:13:35",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_WithdrawPool_$7189_storage",
+                          "typeIdentifier": "t_struct$_WithdrawPool_$3506_storage",
                           "typeString": "struct IHyperdrive.WithdrawPool storage ref"
                         }
                       },
-                      "id": 3054,
+                      "id": 6943,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
-                      "memberLocation": "27117:15:4",
+                      "memberLocation": "27435:15:35",
                       "memberName": "readyToWithdraw",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 7185,
-                      "src": "27103:29:4",
+                      "referencedDeclaration": 3502,
+                      "src": "27421:29:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint128",
                         "typeString": "uint128"
@@ -17792,33 +15856,33 @@ export const HyperdriveLP =
                       "expression": {
                         "argumentTypes": [],
                         "expression": {
-                          "id": 3055,
+                          "id": 6944,
                           "name": "sharesReleased",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 3028,
-                          "src": "27136:14:4",
+                          "referencedDeclaration": 6917,
+                          "src": "27454:14:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 3056,
+                        "id": 6945,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "27151:9:4",
+                        "memberLocation": "27469:9:35",
                         "memberName": "toUint128",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 9953,
-                        "src": "27136:24:4",
+                        "referencedDeclaration": 11387,
+                        "src": "27454:24:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_uint256_$returns$_t_uint128_$attached_to$_t_uint256_$",
                           "typeString": "function (uint256) pure returns (uint128)"
                         }
                       },
-                      "id": 3057,
+                      "id": 6946,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -17827,53 +15891,53 @@ export const HyperdriveLP =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "27136:26:4",
+                      "src": "27454:26:35",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint128",
                         "typeString": "uint128"
                       }
                     },
-                    "src": "27103:59:4",
+                    "src": "27421:59:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint128",
                       "typeString": "uint128"
                     }
                   },
-                  "id": 3059,
+                  "id": 6948,
                   "nodeType": "ExpressionStatement",
-                  "src": "27103:59:4"
+                  "src": "27421:59:35"
                 },
                 {
                   "expression": {
-                    "id": 3066,
+                    "id": 6955,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "expression": {
-                        "id": 3060,
+                        "id": 6949,
                         "name": "_withdrawPool",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4837,
-                        "src": "27172:13:4",
+                        "referencedDeclaration": 9253,
+                        "src": "27490:13:35",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_WithdrawPool_$7189_storage",
+                          "typeIdentifier": "t_struct$_WithdrawPool_$3506_storage",
                           "typeString": "struct IHyperdrive.WithdrawPool storage ref"
                         }
                       },
-                      "id": 3062,
+                      "id": 6951,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
                       "lValueRequested": true,
-                      "memberLocation": "27186:8:4",
+                      "memberLocation": "27504:8:35",
                       "memberName": "proceeds",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 7188,
-                      "src": "27172:22:4",
+                      "referencedDeclaration": 3505,
+                      "src": "27490:22:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint128",
                         "typeString": "uint128"
@@ -17886,33 +15950,33 @@ export const HyperdriveLP =
                       "expression": {
                         "argumentTypes": [],
                         "expression": {
-                          "id": 3063,
+                          "id": 6952,
                           "name": "withdrawalPoolProceeds",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 3032,
-                          "src": "27198:22:4",
+                          "referencedDeclaration": 6921,
+                          "src": "27516:22:35",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 3064,
+                        "id": 6953,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "27221:9:4",
+                        "memberLocation": "27539:9:35",
                         "memberName": "toUint128",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 9953,
-                        "src": "27198:32:4",
+                        "referencedDeclaration": 11387,
+                        "src": "27516:32:35",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_uint256_$returns$_t_uint128_$attached_to$_t_uint256_$",
                           "typeString": "function (uint256) pure returns (uint128)"
                         }
                       },
-                      "id": 3065,
+                      "id": 6954,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -17921,28 +15985,28 @@ export const HyperdriveLP =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "27198:34:4",
+                      "src": "27516:34:35",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint128",
                         "typeString": "uint128"
                       }
                     },
-                    "src": "27172:60:4",
+                    "src": "27490:60:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint128",
                       "typeString": "uint128"
                     }
                   },
-                  "id": 3067,
+                  "id": 6956,
                   "nodeType": "ExpressionStatement",
-                  "src": "27172:60:4"
+                  "src": "27490:60:35"
                 },
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 3073,
+                        "id": 6962,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -17950,16 +16014,16 @@ export const HyperdriveLP =
                         "nodeType": "UnaryOperation",
                         "operator": "-",
                         "prefix": true,
-                        "src": "27326:31:4",
+                        "src": "27644:31:35",
                         "subExpression": {
                           "arguments": [
                             {
-                              "id": 3071,
+                              "id": 6960,
                               "name": "withdrawalPoolProceeds",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 3032,
-                              "src": "27334:22:4",
+                              "referencedDeclaration": 6921,
+                              "src": "27652:22:35",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
@@ -17973,26 +16037,26 @@ export const HyperdriveLP =
                                 "typeString": "uint256"
                               }
                             ],
-                            "id": 3070,
+                            "id": 6959,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "lValueRequested": false,
                             "nodeType": "ElementaryTypeNameExpression",
-                            "src": "27327:6:4",
+                            "src": "27645:6:35",
                             "typeDescriptions": {
                               "typeIdentifier": "t_type$_t_int256_$",
                               "typeString": "type(int256)"
                             },
                             "typeName": {
-                              "id": 3069,
+                              "id": 6958,
                               "name": "int256",
                               "nodeType": "ElementaryTypeName",
-                              "src": "27327:6:4",
+                              "src": "27645:6:35",
                               "typeDescriptions": {}
                             }
                           },
-                          "id": 3072,
+                          "id": 6961,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -18001,7 +16065,7 @@ export const HyperdriveLP =
                           "nameLocations": [],
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "27327:30:4",
+                          "src": "27645:30:35",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
@@ -18021,18 +16085,18 @@ export const HyperdriveLP =
                           "typeString": "int256"
                         }
                       ],
-                      "id": 3068,
+                      "id": 6957,
                       "name": "_updateLiquidity",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2721,
-                      "src": "27309:16:4",
+                      "referencedDeclaration": 6610,
+                      "src": "27627:16:35",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_int256_$returns$__$",
                         "typeString": "function (int256)"
                       }
                     },
-                    "id": 3074,
+                    "id": 6963,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -18041,43 +16105,43 @@ export const HyperdriveLP =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "27309:49:4",
+                    "src": "27627:49:35",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 3075,
+                  "id": 6964,
                   "nodeType": "ExpressionStatement",
-                  "src": "27309:49:4"
+                  "src": "27627:49:35"
                 }
               ]
             },
             "documentation": {
-              "id": 2998,
+              "id": 6887,
               "nodeType": "StructuredDocumentation",
-              "src": "25104:526:4",
+              "src": "25422:526:35",
               "text": "@dev Pays out a specified amount of withdrawal proceeds to the\n      withdrawal pool. This function is useful for circumstances in which\n      core calculations have already been performed to avoid reloading\n      state.\n @param _withdrawalProceeds The amount of withdrawal proceeds to pay out.\n @param _presentValue The present value of the pool.\n @param _lpTotalSupply The total supply of LP shares.\n @param _withdrawalSharesOutstanding The outstanding withdrawal shares."
             },
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "_compensateWithdrawalPool",
-            "nameLocation": "25644:25:4",
+            "nameLocation": "25962:25:35",
             "parameters": {
-              "id": 3007,
+              "id": 6896,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3000,
+                  "id": 6889,
                   "mutability": "mutable",
                   "name": "_withdrawalProceeds",
-                  "nameLocation": "25687:19:4",
+                  "nameLocation": "26005:19:35",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3077,
-                  "src": "25679:27:4",
+                  "scope": 6966,
+                  "src": "25997:27:35",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -18085,10 +16149,10 @@ export const HyperdriveLP =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2999,
+                    "id": 6888,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "25679:7:4",
+                    "src": "25997:7:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -18098,13 +16162,13 @@ export const HyperdriveLP =
                 },
                 {
                   "constant": false,
-                  "id": 3002,
+                  "id": 6891,
                   "mutability": "mutable",
                   "name": "_presentValue",
-                  "nameLocation": "25724:13:4",
+                  "nameLocation": "26042:13:35",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3077,
-                  "src": "25716:21:4",
+                  "scope": 6966,
+                  "src": "26034:21:35",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -18112,10 +16176,10 @@ export const HyperdriveLP =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 3001,
+                    "id": 6890,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "25716:7:4",
+                    "src": "26034:7:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -18125,13 +16189,13 @@ export const HyperdriveLP =
                 },
                 {
                   "constant": false,
-                  "id": 3004,
+                  "id": 6893,
                   "mutability": "mutable",
                   "name": "_lpTotalSupply",
-                  "nameLocation": "25755:14:4",
+                  "nameLocation": "26073:14:35",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3077,
-                  "src": "25747:22:4",
+                  "scope": 6966,
+                  "src": "26065:22:35",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -18139,10 +16203,10 @@ export const HyperdriveLP =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 3003,
+                    "id": 6892,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "25747:7:4",
+                    "src": "26065:7:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -18152,13 +16216,13 @@ export const HyperdriveLP =
                 },
                 {
                   "constant": false,
-                  "id": 3006,
+                  "id": 6895,
                   "mutability": "mutable",
                   "name": "_withdrawalSharesOutstanding",
-                  "nameLocation": "25787:28:4",
+                  "nameLocation": "26105:28:35",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3077,
-                  "src": "25779:36:4",
+                  "scope": 6966,
+                  "src": "26097:36:35",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -18166,10 +16230,10 @@ export const HyperdriveLP =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 3005,
+                    "id": 6894,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "25779:7:4",
+                    "src": "26097:7:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -18178,15 +16242,15 @@ export const HyperdriveLP =
                   "visibility": "internal"
                 }
               ],
-              "src": "25669:152:4"
+              "src": "25987:152:35"
             },
             "returnParameters": {
-              "id": 3008,
+              "id": 6897,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "25831:0:4"
+              "src": "26149:0:35"
             },
-            "scope": 3078,
+            "scope": 6967,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
@@ -18196,92 +16260,64 @@ export const HyperdriveLP =
         "baseContracts": [
           {
             "baseName": {
-              "id": 1947,
-              "name": "IHyperdriveWrite",
+              "id": 5819,
+              "name": "HyperdriveBase",
               "nameLocations": [
-                "895:16:4"
+                "842:14:35"
               ],
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 7668,
-              "src": "895:16:4"
+              "referencedDeclaration": 5354,
+              "src": "842:14:35"
             },
-            "id": 1948,
+            "id": 5820,
             "nodeType": "InheritanceSpecifier",
-            "src": "895:16:4"
+            "src": "842:14:35"
           },
           {
             "baseName": {
-              "id": 1949,
-              "name": "HyperdriveTWAP",
+              "id": 5821,
+              "name": "HyperdriveMultiToken",
               "nameLocations": [
-                "913:14:4"
+                "858:20:35"
               ],
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 5300,
-              "src": "913:14:4"
+              "referencedDeclaration": 8158,
+              "src": "858:20:35"
             },
-            "id": 1950,
+            "id": 5822,
             "nodeType": "InheritanceSpecifier",
-            "src": "913:14:4"
+            "src": "858:20:35"
           }
         ],
         "canonicalName": "HyperdriveLP",
         "contractDependencies": [],
         "contractKind": "contract",
         "documentation": {
-          "id": 1946,
+          "id": 5818,
           "nodeType": "StructuredDocumentation",
-          "src": "539:322:4",
+          "src": "486:322:35",
           "text": "@author DELV\n @title HyperdriveLP\n @notice Implements the LP accounting for Hyperdrive.\n @custom:disclaimer The language used in this code is for coding convenience\n                    only, and is not intended to, and does not, have any\n                    particular legal or regulatory significance."
         },
         "fullyImplemented": false,
         "linearizedBaseContracts": [
-          3078,
-          5300,
-          1465,
-          5167,
-          12262,
-          7668,
-          7980,
-          12544,
-          64180,
-          76,
-          6652
+          6967,
+          8158,
+          5354,
+          9465,
+          60564
         ],
         "name": "HyperdriveLP",
-        "nameLocation": "879:12:4",
-        "scope": 3079,
+        "nameLocation": "826:12:35",
+        "scope": 6968,
         "usedErrors": [
-          7302,
-          7306,
-          7312,
-          7318,
-          7320,
-          7322,
-          7324,
-          7326,
-          7330,
-          7334,
-          7336,
-          7338,
-          7340,
-          7354,
-          7370,
-          7373,
-          7386,
-          7388,
-          7390,
-          7392,
-          7394,
-          7416,
-          7418,
-          7425,
-          7428,
-          7430
+          3625,
+          3631,
+          3633,
+          3637
         ]
       }
     ],
     "license": "Apache-2.0"
   },
-  "id": 4
+  "id": 35
 } as const;

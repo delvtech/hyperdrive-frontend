@@ -2,17 +2,17 @@ export const BalancerErrors =
 {
   "abi": [],
   "bytecode": {
-    "object": "0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea264697066735822122028bd9b4996461c88336342e0c8291f61144c9e8cfa3d3dad21c54e1e2c7cecc664736f6c63430008130033",
-    "sourceMap": "5206:10031:113:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;5206:10031:113;;;;;;;;;;;;;;;;;",
+    "object": "0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea264697066735822122090253c552afcefb3f0b0057a53ac848c40ccc3f7199ac0ddd1a934dff483a71264736f6c63430008130033",
+    "sourceMap": "5206:10031:95:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;5206:10031:95;;;;;;;;;;;;;;;;;",
     "linkReferences": {}
   },
   "deployedBytecode": {
-    "object": "0x73000000000000000000000000000000000000000030146080604052600080fdfea264697066735822122028bd9b4996461c88336342e0c8291f61144c9e8cfa3d3dad21c54e1e2c7cecc664736f6c63430008130033",
-    "sourceMap": "5206:10031:113:-:0;;;;;;;;",
+    "object": "0x73000000000000000000000000000000000000000030146080604052600080fdfea264697066735822122090253c552afcefb3f0b0057a53ac848c40ccc3f7199ac0ddd1a934dff483a71264736f6c63430008130033",
+    "sourceMap": "5206:10031:95:-:0;;;;;;;;",
     "linkReferences": {}
   },
   "methodIdentifiers": {},
-  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"test/3rdPartyLibs/BalancerErrors.sol\":\"BalancerErrors\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@aave/=lib/aave-v3-core/contracts/\",\":aave-v3-core/=lib/aave-v3-core/\",\":create3-factory/=lib/yield-daddy/lib/create3-factory/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\",\":yield-daddy/=lib/yield-daddy/\"]},\"sources\":{\"test/3rdPartyLibs/BalancerErrors.sol\":{\"keccak256\":\"0xd4bc389c3bb940fe0ebd712a06c219dd8ebcaa8749fa5e166c8a373ca7eaa4ca\",\"license\":\"GPL-3.0-or-later\",\"urls\":[\"bzz-raw://9d0847b6535322c1ffa9d2783b32557f80aed5e8de430c824a496ea3b6f58611\",\"dweb:/ipfs/QmRDqDSkP3FDvFYbPQNXwYq25FbYsx1UEYSg11caiw2xtU\"]}},\"version\":1}",
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"test/3rdPartyLibs/BalancerErrors.sol\":\"BalancerErrors\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":aave-v3-core/=lib/aave-v3-core/\",\":create3-factory/=lib/yield-daddy/lib/create3-factory/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\",\":solmate/=lib/solmate/src/\",\":yield-daddy/=lib/yield-daddy/\"]},\"sources\":{\"test/3rdPartyLibs/BalancerErrors.sol\":{\"keccak256\":\"0xd4bc389c3bb940fe0ebd712a06c219dd8ebcaa8749fa5e166c8a373ca7eaa4ca\",\"license\":\"GPL-3.0-or-later\",\"urls\":[\"bzz-raw://9d0847b6535322c1ffa9d2783b32557f80aed5e8de430c824a496ea3b6f58611\",\"dweb:/ipfs/QmRDqDSkP3FDvFYbPQNXwYq25FbYsx1UEYSg11caiw2xtU\"]}},\"version\":1}",
   "metadata": {
     "compiler": {
       "version": "0.8.19+commit.7dd6d404"
@@ -33,14 +33,10 @@ export const BalancerErrors =
     },
     "settings": {
       "remappings": [
-        "@aave/=lib/aave-v3-core/contracts/",
         "aave-v3-core/=lib/aave-v3-core/",
         "create3-factory/=lib/yield-daddy/lib/create3-factory/",
         "ds-test/=lib/forge-std/lib/ds-test/src/",
-        "erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/",
         "forge-std/=lib/forge-std/src/",
-        "openzeppelin-contracts/=lib/openzeppelin-contracts/",
-        "openzeppelin/=lib/openzeppelin-contracts/contracts/",
         "solmate/=lib/solmate/src/",
         "yield-daddy/=lib/yield-daddy/"
       ],
@@ -70,27 +66,27 @@ export const BalancerErrors =
   },
   "ast": {
     "absolutePath": "test/3rdPartyLibs/BalancerErrors.sol",
-    "id": 68145,
+    "id": 63031,
     "exportedSymbols": {
       "BalancerErrors": [
-        68144
+        63030
       ],
       "_require": [
-        67588,
-        67607
+        62474,
+        62493
       ],
       "_revert": [
-        67619,
-        67639
+        62505,
+        62525
       ]
     },
     "nodeType": "SourceUnit",
-    "src": "688:14550:113",
+    "src": "688:14550:95",
     "nodes": [
       {
-        "id": 67572,
+        "id": 62458,
         "nodeType": "PragmaDirective",
-        "src": "688:31:113",
+        "src": "688:31:95",
         "nodes": [],
         "literals": [
           "solidity",
@@ -103,19 +99,19 @@ export const BalancerErrors =
         ]
       },
       {
-        "id": 67588,
+        "id": 62474,
         "nodeType": "FunctionDefinition",
-        "src": "926:101:113",
+        "src": "926:101:95",
         "nodes": [],
         "body": {
-          "id": 67587,
+          "id": 62473,
           "nodeType": "Block",
-          "src": "984:43:113",
+          "src": "984:43:95",
           "nodes": [],
           "statements": [
             {
               "condition": {
-                "id": 67581,
+                "id": 62467,
                 "isConstant": false,
                 "isLValue": false,
                 "isPure": false,
@@ -123,14 +119,14 @@ export const BalancerErrors =
                 "nodeType": "UnaryOperation",
                 "operator": "!",
                 "prefix": true,
-                "src": "994:10:113",
+                "src": "994:10:95",
                 "subExpression": {
-                  "id": 67580,
+                  "id": 62466,
                   "name": "condition",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 67575,
-                  "src": "995:9:113",
+                  "referencedDeclaration": 62461,
+                  "src": "995:9:95",
                   "typeDescriptions": {
                     "typeIdentifier": "t_bool",
                     "typeString": "bool"
@@ -141,19 +137,19 @@ export const BalancerErrors =
                   "typeString": "bool"
                 }
               },
-              "id": 67586,
+              "id": 62472,
               "nodeType": "IfStatement",
-              "src": "990:34:113",
+              "src": "990:34:95",
               "trueBody": {
                 "expression": {
                   "arguments": [
                     {
-                      "id": 67583,
+                      "id": 62469,
                       "name": "errorCode",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 67577,
-                      "src": "1014:9:113",
+                      "referencedDeclaration": 62463,
+                      "src": "1014:9:95",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -167,21 +163,21 @@ export const BalancerErrors =
                         "typeString": "uint256"
                       }
                     ],
-                    "id": 67582,
+                    "id": 62468,
                     "name": "_revert",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [
-                      67619,
-                      67639
+                      62505,
+                      62525
                     ],
-                    "referencedDeclaration": 67619,
-                    "src": "1006:7:113",
+                    "referencedDeclaration": 62505,
+                    "src": "1006:7:95",
                     "typeDescriptions": {
                       "typeIdentifier": "t_function_internal_pure$_t_uint256_$returns$__$",
                       "typeString": "function (uint256) pure"
                     }
                   },
-                  "id": 67584,
+                  "id": 62470,
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": false,
@@ -190,44 +186,44 @@ export const BalancerErrors =
                   "nameLocations": [],
                   "names": [],
                   "nodeType": "FunctionCall",
-                  "src": "1006:18:113",
+                  "src": "1006:18:95",
                   "tryCall": false,
                   "typeDescriptions": {
                     "typeIdentifier": "t_tuple$__$",
                     "typeString": "tuple()"
                   }
                 },
-                "id": 67585,
+                "id": 62471,
                 "nodeType": "ExpressionStatement",
-                "src": "1006:18:113"
+                "src": "1006:18:95"
               }
             }
           ]
         },
         "documentation": {
-          "id": 67573,
+          "id": 62459,
           "nodeType": "StructuredDocumentation",
-          "src": "741:184:113",
+          "src": "741:184:95",
           "text": " @dev Reverts if `condition` is false, with a revert reason containing `errorCode`. Only codes up to 999 are\n supported.\n Uses the default 'BAL' prefix for the error code"
         },
         "implemented": true,
         "kind": "freeFunction",
         "modifiers": [],
         "name": "_require",
-        "nameLocation": "935:8:113",
+        "nameLocation": "935:8:95",
         "parameters": {
-          "id": 67578,
+          "id": 62464,
           "nodeType": "ParameterList",
           "parameters": [
             {
               "constant": false,
-              "id": 67575,
+              "id": 62461,
               "mutability": "mutable",
               "name": "condition",
-              "nameLocation": "949:9:113",
+              "nameLocation": "949:9:95",
               "nodeType": "VariableDeclaration",
-              "scope": 67588,
-              "src": "944:14:113",
+              "scope": 62474,
+              "src": "944:14:95",
               "stateVariable": false,
               "storageLocation": "default",
               "typeDescriptions": {
@@ -235,10 +231,10 @@ export const BalancerErrors =
                 "typeString": "bool"
               },
               "typeName": {
-                "id": 67574,
+                "id": 62460,
                 "name": "bool",
                 "nodeType": "ElementaryTypeName",
-                "src": "944:4:113",
+                "src": "944:4:95",
                 "typeDescriptions": {
                   "typeIdentifier": "t_bool",
                   "typeString": "bool"
@@ -248,13 +244,13 @@ export const BalancerErrors =
             },
             {
               "constant": false,
-              "id": 67577,
+              "id": 62463,
               "mutability": "mutable",
               "name": "errorCode",
-              "nameLocation": "968:9:113",
+              "nameLocation": "968:9:95",
               "nodeType": "VariableDeclaration",
-              "scope": 67588,
-              "src": "960:17:113",
+              "scope": 62474,
+              "src": "960:17:95",
               "stateVariable": false,
               "storageLocation": "default",
               "typeDescriptions": {
@@ -262,10 +258,10 @@ export const BalancerErrors =
                 "typeString": "uint256"
               },
               "typeName": {
-                "id": 67576,
+                "id": 62462,
                 "name": "uint256",
                 "nodeType": "ElementaryTypeName",
-                "src": "960:7:113",
+                "src": "960:7:95",
                 "typeDescriptions": {
                   "typeIdentifier": "t_uint256",
                   "typeString": "uint256"
@@ -274,33 +270,33 @@ export const BalancerErrors =
               "visibility": "internal"
             }
           ],
-          "src": "943:35:113"
+          "src": "943:35:95"
         },
         "returnParameters": {
-          "id": 67579,
+          "id": 62465,
           "nodeType": "ParameterList",
           "parameters": [],
-          "src": "984:0:113"
+          "src": "984:0:95"
         },
-        "scope": 68145,
+        "scope": 63031,
         "stateMutability": "pure",
         "virtual": false,
         "visibility": "internal"
       },
       {
-        "id": 67607,
+        "id": 62493,
         "nodeType": "FunctionDefinition",
-        "src": "1162:124:113",
+        "src": "1162:124:95",
         "nodes": [],
         "body": {
-          "id": 67606,
+          "id": 62492,
           "nodeType": "Block",
-          "src": "1235:51:113",
+          "src": "1235:51:95",
           "nodes": [],
           "statements": [
             {
               "condition": {
-                "id": 67599,
+                "id": 62485,
                 "isConstant": false,
                 "isLValue": false,
                 "isPure": false,
@@ -308,14 +304,14 @@ export const BalancerErrors =
                 "nodeType": "UnaryOperation",
                 "operator": "!",
                 "prefix": true,
-                "src": "1245:10:113",
+                "src": "1245:10:95",
                 "subExpression": {
-                  "id": 67598,
+                  "id": 62484,
                   "name": "condition",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 67591,
-                  "src": "1246:9:113",
+                  "referencedDeclaration": 62477,
+                  "src": "1246:9:95",
                   "typeDescriptions": {
                     "typeIdentifier": "t_bool",
                     "typeString": "bool"
@@ -326,31 +322,31 @@ export const BalancerErrors =
                   "typeString": "bool"
                 }
               },
-              "id": 67605,
+              "id": 62491,
               "nodeType": "IfStatement",
-              "src": "1241:42:113",
+              "src": "1241:42:95",
               "trueBody": {
                 "expression": {
                   "arguments": [
                     {
-                      "id": 67601,
+                      "id": 62487,
                       "name": "errorCode",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 67593,
-                      "src": "1265:9:113",
+                      "referencedDeclaration": 62479,
+                      "src": "1265:9:95",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
                     {
-                      "id": 67602,
+                      "id": 62488,
                       "name": "prefix",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 67595,
-                      "src": "1276:6:113",
+                      "referencedDeclaration": 62481,
+                      "src": "1276:6:95",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bytes3",
                         "typeString": "bytes3"
@@ -368,21 +364,21 @@ export const BalancerErrors =
                         "typeString": "bytes3"
                       }
                     ],
-                    "id": 67600,
+                    "id": 62486,
                     "name": "_revert",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [
-                      67619,
-                      67639
+                      62505,
+                      62525
                     ],
-                    "referencedDeclaration": 67639,
-                    "src": "1257:7:113",
+                    "referencedDeclaration": 62525,
+                    "src": "1257:7:95",
                     "typeDescriptions": {
                       "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_bytes3_$returns$__$",
                       "typeString": "function (uint256,bytes3) pure"
                     }
                   },
-                  "id": 67603,
+                  "id": 62489,
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": false,
@@ -391,44 +387,44 @@ export const BalancerErrors =
                   "nameLocations": [],
                   "names": [],
                   "nodeType": "FunctionCall",
-                  "src": "1257:26:113",
+                  "src": "1257:26:95",
                   "tryCall": false,
                   "typeDescriptions": {
                     "typeIdentifier": "t_tuple$__$",
                     "typeString": "tuple()"
                   }
                 },
-                "id": 67604,
+                "id": 62490,
                 "nodeType": "ExpressionStatement",
-                "src": "1257:26:113"
+                "src": "1257:26:95"
               }
             }
           ]
         },
         "documentation": {
-          "id": 67589,
+          "id": 62475,
           "nodeType": "StructuredDocumentation",
-          "src": "1029:132:113",
+          "src": "1029:132:95",
           "text": " @dev Reverts if `condition` is false, with a revert reason containing `errorCode`. Only codes up to 999 are\n supported."
         },
         "implemented": true,
         "kind": "freeFunction",
         "modifiers": [],
         "name": "_require",
-        "nameLocation": "1171:8:113",
+        "nameLocation": "1171:8:95",
         "parameters": {
-          "id": 67596,
+          "id": 62482,
           "nodeType": "ParameterList",
           "parameters": [
             {
               "constant": false,
-              "id": 67591,
+              "id": 62477,
               "mutability": "mutable",
               "name": "condition",
-              "nameLocation": "1185:9:113",
+              "nameLocation": "1185:9:95",
               "nodeType": "VariableDeclaration",
-              "scope": 67607,
-              "src": "1180:14:113",
+              "scope": 62493,
+              "src": "1180:14:95",
               "stateVariable": false,
               "storageLocation": "default",
               "typeDescriptions": {
@@ -436,10 +432,10 @@ export const BalancerErrors =
                 "typeString": "bool"
               },
               "typeName": {
-                "id": 67590,
+                "id": 62476,
                 "name": "bool",
                 "nodeType": "ElementaryTypeName",
-                "src": "1180:4:113",
+                "src": "1180:4:95",
                 "typeDescriptions": {
                   "typeIdentifier": "t_bool",
                   "typeString": "bool"
@@ -449,13 +445,13 @@ export const BalancerErrors =
             },
             {
               "constant": false,
-              "id": 67593,
+              "id": 62479,
               "mutability": "mutable",
               "name": "errorCode",
-              "nameLocation": "1204:9:113",
+              "nameLocation": "1204:9:95",
               "nodeType": "VariableDeclaration",
-              "scope": 67607,
-              "src": "1196:17:113",
+              "scope": 62493,
+              "src": "1196:17:95",
               "stateVariable": false,
               "storageLocation": "default",
               "typeDescriptions": {
@@ -463,10 +459,10 @@ export const BalancerErrors =
                 "typeString": "uint256"
               },
               "typeName": {
-                "id": 67592,
+                "id": 62478,
                 "name": "uint256",
                 "nodeType": "ElementaryTypeName",
-                "src": "1196:7:113",
+                "src": "1196:7:95",
                 "typeDescriptions": {
                   "typeIdentifier": "t_uint256",
                   "typeString": "uint256"
@@ -476,13 +472,13 @@ export const BalancerErrors =
             },
             {
               "constant": false,
-              "id": 67595,
+              "id": 62481,
               "mutability": "mutable",
               "name": "prefix",
-              "nameLocation": "1222:6:113",
+              "nameLocation": "1222:6:95",
               "nodeType": "VariableDeclaration",
-              "scope": 67607,
-              "src": "1215:13:113",
+              "scope": 62493,
+              "src": "1215:13:95",
               "stateVariable": false,
               "storageLocation": "default",
               "typeDescriptions": {
@@ -490,10 +486,10 @@ export const BalancerErrors =
                 "typeString": "bytes3"
               },
               "typeName": {
-                "id": 67594,
+                "id": 62480,
                 "name": "bytes3",
                 "nodeType": "ElementaryTypeName",
-                "src": "1215:6:113",
+                "src": "1215:6:95",
                 "typeDescriptions": {
                   "typeIdentifier": "t_bytes3",
                   "typeString": "bytes3"
@@ -502,40 +498,40 @@ export const BalancerErrors =
               "visibility": "internal"
             }
           ],
-          "src": "1179:50:113"
+          "src": "1179:50:95"
         },
         "returnParameters": {
-          "id": 67597,
+          "id": 62483,
           "nodeType": "ParameterList",
           "parameters": [],
-          "src": "1235:0:113"
+          "src": "1235:0:95"
         },
-        "scope": 68145,
+        "scope": 63031,
         "stateMutability": "pure",
         "virtual": false,
         "visibility": "internal"
       },
       {
-        "id": 67619,
+        "id": 62505,
         "nodeType": "FunctionDefinition",
-        "src": "1445:126:113",
+        "src": "1445:126:95",
         "nodes": [],
         "body": {
-          "id": 67618,
+          "id": 62504,
           "nodeType": "Block",
-          "src": "1486:85:113",
+          "src": "1486:85:95",
           "nodes": [],
           "statements": [
             {
               "expression": {
                 "arguments": [
                   {
-                    "id": 67614,
+                    "id": 62500,
                     "name": "errorCode",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 67610,
-                    "src": "1500:9:113",
+                    "referencedDeclaration": 62496,
+                    "src": "1500:9:95",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -543,14 +539,14 @@ export const BalancerErrors =
                   },
                   {
                     "hexValue": "3078343234313463",
-                    "id": 67615,
+                    "id": 62501,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
                     "kind": "number",
                     "lValueRequested": false,
                     "nodeType": "Literal",
-                    "src": "1511:8:113",
+                    "src": "1511:8:95",
                     "typeDescriptions": {
                       "typeIdentifier": "t_rational_4342092_by_1",
                       "typeString": "int_const 4342092"
@@ -569,21 +565,21 @@ export const BalancerErrors =
                       "typeString": "int_const 4342092"
                     }
                   ],
-                  "id": 67613,
+                  "id": 62499,
                   "name": "_revert",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [
-                    67619,
-                    67639
+                    62505,
+                    62525
                   ],
-                  "referencedDeclaration": 67639,
-                  "src": "1492:7:113",
+                  "referencedDeclaration": 62525,
+                  "src": "1492:7:95",
                   "typeDescriptions": {
                     "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_bytes3_$returns$__$",
                     "typeString": "function (uint256,bytes3) pure"
                   }
                 },
-                "id": 67616,
+                "id": 62502,
                 "isConstant": false,
                 "isLValue": false,
                 "isPure": false,
@@ -592,43 +588,43 @@ export const BalancerErrors =
                 "nameLocations": [],
                 "names": [],
                 "nodeType": "FunctionCall",
-                "src": "1492:28:113",
+                "src": "1492:28:95",
                 "tryCall": false,
                 "typeDescriptions": {
                   "typeIdentifier": "t_tuple$__$",
                   "typeString": "tuple()"
                 }
               },
-              "id": 67617,
+              "id": 62503,
               "nodeType": "ExpressionStatement",
-              "src": "1492:28:113"
+              "src": "1492:28:95"
             }
           ]
         },
         "documentation": {
-          "id": 67608,
+          "id": 62494,
           "nodeType": "StructuredDocumentation",
-          "src": "1288:156:113",
+          "src": "1288:156:95",
           "text": " @dev Reverts with a revert reason containing `errorCode`. Only codes up to 999 are supported.\n Uses the default 'BAL' prefix for the error code"
         },
         "implemented": true,
         "kind": "freeFunction",
         "modifiers": [],
         "name": "_revert",
-        "nameLocation": "1454:7:113",
+        "nameLocation": "1454:7:95",
         "parameters": {
-          "id": 67611,
+          "id": 62497,
           "nodeType": "ParameterList",
           "parameters": [
             {
               "constant": false,
-              "id": 67610,
+              "id": 62496,
               "mutability": "mutable",
               "name": "errorCode",
-              "nameLocation": "1470:9:113",
+              "nameLocation": "1470:9:95",
               "nodeType": "VariableDeclaration",
-              "scope": 67619,
-              "src": "1462:17:113",
+              "scope": 62505,
+              "src": "1462:17:95",
               "stateVariable": false,
               "storageLocation": "default",
               "typeDescriptions": {
@@ -636,10 +632,10 @@ export const BalancerErrors =
                 "typeString": "uint256"
               },
               "typeName": {
-                "id": 67609,
+                "id": 62495,
                 "name": "uint256",
                 "nodeType": "ElementaryTypeName",
-                "src": "1462:7:113",
+                "src": "1462:7:95",
                 "typeDescriptions": {
                   "typeIdentifier": "t_uint256",
                   "typeString": "uint256"
@@ -648,44 +644,44 @@ export const BalancerErrors =
               "visibility": "internal"
             }
           ],
-          "src": "1461:19:113"
+          "src": "1461:19:95"
         },
         "returnParameters": {
-          "id": 67612,
+          "id": 62498,
           "nodeType": "ParameterList",
           "parameters": [],
-          "src": "1486:0:113"
+          "src": "1486:0:95"
         },
-        "scope": 68145,
+        "scope": 63031,
         "stateMutability": "pure",
         "virtual": false,
         "visibility": "internal"
       },
       {
-        "id": 67639,
+        "id": 62525,
         "nodeType": "FunctionDefinition",
-        "src": "1678:3526:113",
+        "src": "1678:3526:95",
         "nodes": [],
         "body": {
-          "id": 67638,
+          "id": 62524,
           "nodeType": "Block",
-          "src": "1734:3470:113",
+          "src": "1734:3470:95",
           "nodes": [],
           "statements": [
             {
               "assignments": [
-                67628
+                62514
               ],
               "declarations": [
                 {
                   "constant": false,
-                  "id": 67628,
+                  "id": 62514,
                   "mutability": "mutable",
                   "name": "prefixUint",
-                  "nameLocation": "1748:10:113",
+                  "nameLocation": "1748:10:95",
                   "nodeType": "VariableDeclaration",
-                  "scope": 67638,
-                  "src": "1740:18:113",
+                  "scope": 62524,
+                  "src": "1740:18:95",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -693,10 +689,10 @@ export const BalancerErrors =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 67627,
+                    "id": 62513,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1740:7:113",
+                    "src": "1740:7:95",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -705,18 +701,18 @@ export const BalancerErrors =
                   "visibility": "internal"
                 }
               ],
-              "id": 67636,
+              "id": 62522,
               "initialValue": {
                 "arguments": [
                   {
                     "arguments": [
                       {
-                        "id": 67633,
+                        "id": 62519,
                         "name": "prefix",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 67624,
-                        "src": "1776:6:113",
+                        "referencedDeclaration": 62510,
+                        "src": "1776:6:95",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes3",
                           "typeString": "bytes3"
@@ -730,26 +726,26 @@ export const BalancerErrors =
                           "typeString": "bytes3"
                         }
                       ],
-                      "id": 67632,
+                      "id": 62518,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "lValueRequested": false,
                       "nodeType": "ElementaryTypeNameExpression",
-                      "src": "1769:6:113",
+                      "src": "1769:6:95",
                       "typeDescriptions": {
                         "typeIdentifier": "t_type$_t_uint24_$",
                         "typeString": "type(uint24)"
                       },
                       "typeName": {
-                        "id": 67631,
+                        "id": 62517,
                         "name": "uint24",
                         "nodeType": "ElementaryTypeName",
-                        "src": "1769:6:113",
+                        "src": "1769:6:95",
                         "typeDescriptions": {}
                       }
                     },
-                    "id": 67634,
+                    "id": 62520,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -758,7 +754,7 @@ export const BalancerErrors =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1769:14:113",
+                    "src": "1769:14:95",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint24",
@@ -773,26 +769,26 @@ export const BalancerErrors =
                       "typeString": "uint24"
                     }
                   ],
-                  "id": 67630,
+                  "id": 62516,
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": true,
                   "lValueRequested": false,
                   "nodeType": "ElementaryTypeNameExpression",
-                  "src": "1761:7:113",
+                  "src": "1761:7:95",
                   "typeDescriptions": {
                     "typeIdentifier": "t_type$_t_uint256_$",
                     "typeString": "type(uint256)"
                   },
                   "typeName": {
-                    "id": 67629,
+                    "id": 62515,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1761:7:113",
+                    "src": "1761:7:95",
                     "typeDescriptions": {}
                   }
                 },
-                "id": 67635,
+                "id": 62521,
                 "isConstant": false,
                 "isLValue": false,
                 "isPure": false,
@@ -801,7 +797,7 @@ export const BalancerErrors =
                 "nameLocations": [],
                 "names": [],
                 "nodeType": "FunctionCall",
-                "src": "1761:23:113",
+                "src": "1761:23:95",
                 "tryCall": false,
                 "typeDescriptions": {
                   "typeIdentifier": "t_uint256",
@@ -809,16 +805,16 @@ export const BalancerErrors =
                 }
               },
               "nodeType": "VariableDeclarationStatement",
-              "src": "1740:44:113"
+              "src": "1740:44:95"
             },
             {
               "AST": {
                 "nodeType": "YulBlock",
-                "src": "2573:2629:113",
+                "src": "2573:2629:95",
                 "statements": [
                   {
                     "nodeType": "YulVariableDeclaration",
-                    "src": "2847:42:113",
+                    "src": "2847:42:95",
                     "value": {
                       "arguments": [
                         {
@@ -826,12 +822,12 @@ export const BalancerErrors =
                             {
                               "name": "errorCode",
                               "nodeType": "YulIdentifier",
-                              "src": "2868:9:113"
+                              "src": "2868:9:95"
                             },
                             {
                               "kind": "number",
                               "nodeType": "YulLiteral",
-                              "src": "2879:2:113",
+                              "src": "2879:2:95",
                               "type": "",
                               "value": "10"
                             }
@@ -839,15 +835,15 @@ export const BalancerErrors =
                           "functionName": {
                             "name": "mod",
                             "nodeType": "YulIdentifier",
-                            "src": "2864:3:113"
+                            "src": "2864:3:95"
                           },
                           "nodeType": "YulFunctionCall",
-                          "src": "2864:18:113"
+                          "src": "2864:18:95"
                         },
                         {
                           "kind": "number",
                           "nodeType": "YulLiteral",
-                          "src": "2884:4:113",
+                          "src": "2884:4:95",
                           "type": "",
                           "value": "0x30"
                         }
@@ -855,34 +851,34 @@ export const BalancerErrors =
                       "functionName": {
                         "name": "add",
                         "nodeType": "YulIdentifier",
-                        "src": "2860:3:113"
+                        "src": "2860:3:95"
                       },
                       "nodeType": "YulFunctionCall",
-                      "src": "2860:29:113"
+                      "src": "2860:29:95"
                     },
                     "variables": [
                       {
                         "name": "units",
                         "nodeType": "YulTypedName",
-                        "src": "2851:5:113",
+                        "src": "2851:5:95",
                         "type": ""
                       }
                     ]
                   },
                   {
                     "nodeType": "YulAssignment",
-                    "src": "2899:31:113",
+                    "src": "2899:31:95",
                     "value": {
                       "arguments": [
                         {
                           "name": "errorCode",
                           "nodeType": "YulIdentifier",
-                          "src": "2916:9:113"
+                          "src": "2916:9:95"
                         },
                         {
                           "kind": "number",
                           "nodeType": "YulLiteral",
-                          "src": "2927:2:113",
+                          "src": "2927:2:95",
                           "type": "",
                           "value": "10"
                         }
@@ -890,22 +886,22 @@ export const BalancerErrors =
                       "functionName": {
                         "name": "div",
                         "nodeType": "YulIdentifier",
-                        "src": "2912:3:113"
+                        "src": "2912:3:95"
                       },
                       "nodeType": "YulFunctionCall",
-                      "src": "2912:18:113"
+                      "src": "2912:18:95"
                     },
                     "variableNames": [
                       {
                         "name": "errorCode",
                         "nodeType": "YulIdentifier",
-                        "src": "2899:9:113"
+                        "src": "2899:9:95"
                       }
                     ]
                   },
                   {
                     "nodeType": "YulVariableDeclaration",
-                    "src": "2939:43:113",
+                    "src": "2939:43:95",
                     "value": {
                       "arguments": [
                         {
@@ -913,12 +909,12 @@ export const BalancerErrors =
                             {
                               "name": "errorCode",
                               "nodeType": "YulIdentifier",
-                              "src": "2961:9:113"
+                              "src": "2961:9:95"
                             },
                             {
                               "kind": "number",
                               "nodeType": "YulLiteral",
-                              "src": "2972:2:113",
+                              "src": "2972:2:95",
                               "type": "",
                               "value": "10"
                             }
@@ -926,15 +922,15 @@ export const BalancerErrors =
                           "functionName": {
                             "name": "mod",
                             "nodeType": "YulIdentifier",
-                            "src": "2957:3:113"
+                            "src": "2957:3:95"
                           },
                           "nodeType": "YulFunctionCall",
-                          "src": "2957:18:113"
+                          "src": "2957:18:95"
                         },
                         {
                           "kind": "number",
                           "nodeType": "YulLiteral",
-                          "src": "2977:4:113",
+                          "src": "2977:4:95",
                           "type": "",
                           "value": "0x30"
                         }
@@ -942,34 +938,34 @@ export const BalancerErrors =
                       "functionName": {
                         "name": "add",
                         "nodeType": "YulIdentifier",
-                        "src": "2953:3:113"
+                        "src": "2953:3:95"
                       },
                       "nodeType": "YulFunctionCall",
-                      "src": "2953:29:113"
+                      "src": "2953:29:95"
                     },
                     "variables": [
                       {
                         "name": "tenths",
                         "nodeType": "YulTypedName",
-                        "src": "2943:6:113",
+                        "src": "2943:6:95",
                         "type": ""
                       }
                     ]
                   },
                   {
                     "nodeType": "YulAssignment",
-                    "src": "2992:31:113",
+                    "src": "2992:31:95",
                     "value": {
                       "arguments": [
                         {
                           "name": "errorCode",
                           "nodeType": "YulIdentifier",
-                          "src": "3009:9:113"
+                          "src": "3009:9:95"
                         },
                         {
                           "kind": "number",
                           "nodeType": "YulLiteral",
-                          "src": "3020:2:113",
+                          "src": "3020:2:95",
                           "type": "",
                           "value": "10"
                         }
@@ -977,22 +973,22 @@ export const BalancerErrors =
                       "functionName": {
                         "name": "div",
                         "nodeType": "YulIdentifier",
-                        "src": "3005:3:113"
+                        "src": "3005:3:95"
                       },
                       "nodeType": "YulFunctionCall",
-                      "src": "3005:18:113"
+                      "src": "3005:18:95"
                     },
                     "variableNames": [
                       {
                         "name": "errorCode",
                         "nodeType": "YulIdentifier",
-                        "src": "2992:9:113"
+                        "src": "2992:9:95"
                       }
                     ]
                   },
                   {
                     "nodeType": "YulVariableDeclaration",
-                    "src": "3032:45:113",
+                    "src": "3032:45:95",
                     "value": {
                       "arguments": [
                         {
@@ -1000,12 +996,12 @@ export const BalancerErrors =
                             {
                               "name": "errorCode",
                               "nodeType": "YulIdentifier",
-                              "src": "3056:9:113"
+                              "src": "3056:9:95"
                             },
                             {
                               "kind": "number",
                               "nodeType": "YulLiteral",
-                              "src": "3067:2:113",
+                              "src": "3067:2:95",
                               "type": "",
                               "value": "10"
                             }
@@ -1013,15 +1009,15 @@ export const BalancerErrors =
                           "functionName": {
                             "name": "mod",
                             "nodeType": "YulIdentifier",
-                            "src": "3052:3:113"
+                            "src": "3052:3:95"
                           },
                           "nodeType": "YulFunctionCall",
-                          "src": "3052:18:113"
+                          "src": "3052:18:95"
                         },
                         {
                           "kind": "number",
                           "nodeType": "YulLiteral",
-                          "src": "3072:4:113",
+                          "src": "3072:4:95",
                           "type": "",
                           "value": "0x30"
                         }
@@ -1029,29 +1025,29 @@ export const BalancerErrors =
                       "functionName": {
                         "name": "add",
                         "nodeType": "YulIdentifier",
-                        "src": "3048:3:113"
+                        "src": "3048:3:95"
                       },
                       "nodeType": "YulFunctionCall",
-                      "src": "3048:29:113"
+                      "src": "3048:29:95"
                     },
                     "variables": [
                       {
                         "name": "hundreds",
                         "nodeType": "YulTypedName",
-                        "src": "3036:8:113",
+                        "src": "3036:8:95",
                         "type": ""
                       }
                     ]
                   },
                   {
                     "nodeType": "YulVariableDeclaration",
-                    "src": "3710:61:113",
+                    "src": "3710:61:95",
                     "value": {
                       "arguments": [
                         {
                           "kind": "number",
                           "nodeType": "YulLiteral",
-                          "src": "3737:2:113",
+                          "src": "3737:2:95",
                           "type": "",
                           "value": "24"
                         },
@@ -1060,7 +1056,7 @@ export const BalancerErrors =
                             {
                               "kind": "number",
                               "nodeType": "YulLiteral",
-                              "src": "3745:4:113",
+                              "src": "3745:4:95",
                               "type": "",
                               "value": "0x23"
                             },
@@ -1069,60 +1065,60 @@ export const BalancerErrors =
                                 {
                                   "kind": "number",
                                   "nodeType": "YulLiteral",
-                                  "src": "3755:1:113",
+                                  "src": "3755:1:95",
                                   "type": "",
                                   "value": "8"
                                 },
                                 {
                                   "name": "prefixUint",
                                   "nodeType": "YulIdentifier",
-                                  "src": "3758:10:113"
+                                  "src": "3758:10:95"
                                 }
                               ],
                               "functionName": {
                                 "name": "shl",
                                 "nodeType": "YulIdentifier",
-                                "src": "3751:3:113"
+                                "src": "3751:3:95"
                               },
                               "nodeType": "YulFunctionCall",
-                              "src": "3751:18:113"
+                              "src": "3751:18:95"
                             }
                           ],
                           "functionName": {
                             "name": "add",
                             "nodeType": "YulIdentifier",
-                            "src": "3741:3:113"
+                            "src": "3741:3:95"
                           },
                           "nodeType": "YulFunctionCall",
-                          "src": "3741:29:113"
+                          "src": "3741:29:95"
                         }
                       ],
                       "functionName": {
                         "name": "shl",
                         "nodeType": "YulIdentifier",
-                        "src": "3733:3:113"
+                        "src": "3733:3:95"
                       },
                       "nodeType": "YulFunctionCall",
-                      "src": "3733:38:113"
+                      "src": "3733:38:95"
                     },
                     "variables": [
                       {
                         "name": "formattedPrefix",
                         "nodeType": "YulTypedName",
-                        "src": "3714:15:113",
+                        "src": "3714:15:95",
                         "type": ""
                       }
                     ]
                   },
                   {
                     "nodeType": "YulVariableDeclaration",
-                    "src": "3781:182:113",
+                    "src": "3781:182:95",
                     "value": {
                       "arguments": [
                         {
                           "kind": "number",
                           "nodeType": "YulLiteral",
-                          "src": "3818:3:113",
+                          "src": "3818:3:95",
                           "type": "",
                           "value": "200"
                         },
@@ -1131,7 +1127,7 @@ export const BalancerErrors =
                             {
                               "name": "formattedPrefix",
                               "nodeType": "YulIdentifier",
-                              "src": "3856:15:113"
+                              "src": "3856:15:95"
                             },
                             {
                               "arguments": [
@@ -1140,95 +1136,95 @@ export const BalancerErrors =
                                     {
                                       "name": "units",
                                       "nodeType": "YulIdentifier",
-                                      "src": "3897:5:113"
+                                      "src": "3897:5:95"
                                     },
                                     {
                                       "arguments": [
                                         {
                                           "kind": "number",
                                           "nodeType": "YulLiteral",
-                                          "src": "3908:1:113",
+                                          "src": "3908:1:95",
                                           "type": "",
                                           "value": "8"
                                         },
                                         {
                                           "name": "tenths",
                                           "nodeType": "YulIdentifier",
-                                          "src": "3911:6:113"
+                                          "src": "3911:6:95"
                                         }
                                       ],
                                       "functionName": {
                                         "name": "shl",
                                         "nodeType": "YulIdentifier",
-                                        "src": "3904:3:113"
+                                        "src": "3904:3:95"
                                       },
                                       "nodeType": "YulFunctionCall",
-                                      "src": "3904:14:113"
+                                      "src": "3904:14:95"
                                     }
                                   ],
                                   "functionName": {
                                     "name": "add",
                                     "nodeType": "YulIdentifier",
-                                    "src": "3893:3:113"
+                                    "src": "3893:3:95"
                                   },
                                   "nodeType": "YulFunctionCall",
-                                  "src": "3893:26:113"
+                                  "src": "3893:26:95"
                                 },
                                 {
                                   "arguments": [
                                     {
                                       "kind": "number",
                                       "nodeType": "YulLiteral",
-                                      "src": "3925:2:113",
+                                      "src": "3925:2:95",
                                       "type": "",
                                       "value": "16"
                                     },
                                     {
                                       "name": "hundreds",
                                       "nodeType": "YulIdentifier",
-                                      "src": "3929:8:113"
+                                      "src": "3929:8:95"
                                     }
                                   ],
                                   "functionName": {
                                     "name": "shl",
                                     "nodeType": "YulIdentifier",
-                                    "src": "3921:3:113"
+                                    "src": "3921:3:95"
                                   },
                                   "nodeType": "YulFunctionCall",
-                                  "src": "3921:17:113"
+                                  "src": "3921:17:95"
                                 }
                               ],
                               "functionName": {
                                 "name": "add",
                                 "nodeType": "YulIdentifier",
-                                "src": "3889:3:113"
+                                "src": "3889:3:95"
                               },
                               "nodeType": "YulFunctionCall",
-                              "src": "3889:50:113"
+                              "src": "3889:50:95"
                             }
                           ],
                           "functionName": {
                             "name": "add",
                             "nodeType": "YulIdentifier",
-                            "src": "3835:3:113"
+                            "src": "3835:3:95"
                           },
                           "nodeType": "YulFunctionCall",
-                          "src": "3835:118:113"
+                          "src": "3835:118:95"
                         }
                       ],
                       "functionName": {
                         "name": "shl",
                         "nodeType": "YulIdentifier",
-                        "src": "3801:3:113"
+                        "src": "3801:3:95"
                       },
                       "nodeType": "YulFunctionCall",
-                      "src": "3801:162:113"
+                      "src": "3801:162:95"
                     },
                     "variables": [
                       {
                         "name": "revertReason",
                         "nodeType": "YulTypedName",
-                        "src": "3785:12:113",
+                        "src": "3785:12:95",
                         "type": ""
                       }
                     ]
@@ -1239,14 +1235,14 @@ export const BalancerErrors =
                         {
                           "kind": "number",
                           "nodeType": "YulLiteral",
-                          "src": "4491:3:113",
+                          "src": "4491:3:95",
                           "type": "",
                           "value": "0x0"
                         },
                         {
                           "kind": "number",
                           "nodeType": "YulLiteral",
-                          "src": "4508:66:113",
+                          "src": "4508:66:95",
                           "type": "",
                           "value": "0x08c379a000000000000000000000000000000000000000000000000000000000"
                         }
@@ -1254,13 +1250,13 @@ export const BalancerErrors =
                       "functionName": {
                         "name": "mstore",
                         "nodeType": "YulIdentifier",
-                        "src": "4471:6:113"
+                        "src": "4471:6:95"
                       },
                       "nodeType": "YulFunctionCall",
-                      "src": "4471:113:113"
+                      "src": "4471:113:95"
                     },
                     "nodeType": "YulExpressionStatement",
-                    "src": "4471:113:113"
+                    "src": "4471:113:95"
                   },
                   {
                     "expression": {
@@ -1268,14 +1264,14 @@ export const BalancerErrors =
                         {
                           "kind": "number",
                           "nodeType": "YulLiteral",
-                          "src": "4730:4:113",
+                          "src": "4730:4:95",
                           "type": "",
                           "value": "0x04"
                         },
                         {
                           "kind": "number",
                           "nodeType": "YulLiteral",
-                          "src": "4748:66:113",
+                          "src": "4748:66:95",
                           "type": "",
                           "value": "0x0000000000000000000000000000000000000000000000000000000000000020"
                         }
@@ -1283,13 +1279,13 @@ export const BalancerErrors =
                       "functionName": {
                         "name": "mstore",
                         "nodeType": "YulIdentifier",
-                        "src": "4710:6:113"
+                        "src": "4710:6:95"
                       },
                       "nodeType": "YulFunctionCall",
-                      "src": "4710:114:113"
+                      "src": "4710:114:95"
                     },
                     "nodeType": "YulExpressionStatement",
-                    "src": "4710:114:113"
+                    "src": "4710:114:95"
                   },
                   {
                     "expression": {
@@ -1297,14 +1293,14 @@ export const BalancerErrors =
                         {
                           "kind": "number",
                           "nodeType": "YulLiteral",
-                          "src": "4893:4:113",
+                          "src": "4893:4:95",
                           "type": "",
                           "value": "0x24"
                         },
                         {
                           "kind": "number",
                           "nodeType": "YulLiteral",
-                          "src": "4899:1:113",
+                          "src": "4899:1:95",
                           "type": "",
                           "value": "7"
                         }
@@ -1312,13 +1308,13 @@ export const BalancerErrors =
                       "functionName": {
                         "name": "mstore",
                         "nodeType": "YulIdentifier",
-                        "src": "4886:6:113"
+                        "src": "4886:6:95"
                       },
                       "nodeType": "YulFunctionCall",
-                      "src": "4886:15:113"
+                      "src": "4886:15:95"
                     },
                     "nodeType": "YulExpressionStatement",
-                    "src": "4886:15:113"
+                    "src": "4886:15:95"
                   },
                   {
                     "expression": {
@@ -1326,26 +1322,26 @@ export const BalancerErrors =
                         {
                           "kind": "number",
                           "nodeType": "YulLiteral",
-                          "src": "4966:4:113",
+                          "src": "4966:4:95",
                           "type": "",
                           "value": "0x44"
                         },
                         {
                           "name": "revertReason",
                           "nodeType": "YulIdentifier",
-                          "src": "4972:12:113"
+                          "src": "4972:12:95"
                         }
                       ],
                       "functionName": {
                         "name": "mstore",
                         "nodeType": "YulIdentifier",
-                        "src": "4959:6:113"
+                        "src": "4959:6:95"
                       },
                       "nodeType": "YulFunctionCall",
-                      "src": "4959:26:113"
+                      "src": "4959:26:95"
                     },
                     "nodeType": "YulExpressionStatement",
-                    "src": "4959:26:113"
+                    "src": "4959:26:95"
                   },
                   {
                     "expression": {
@@ -1353,14 +1349,14 @@ export const BalancerErrors =
                         {
                           "kind": "number",
                           "nodeType": "YulLiteral",
-                          "src": "5189:1:113",
+                          "src": "5189:1:95",
                           "type": "",
                           "value": "0"
                         },
                         {
                           "kind": "number",
                           "nodeType": "YulLiteral",
-                          "src": "5192:3:113",
+                          "src": "5192:3:95",
                           "type": "",
                           "value": "100"
                         }
@@ -1368,105 +1364,105 @@ export const BalancerErrors =
                       "functionName": {
                         "name": "revert",
                         "nodeType": "YulIdentifier",
-                        "src": "5182:6:113"
+                        "src": "5182:6:95"
                       },
                       "nodeType": "YulFunctionCall",
-                      "src": "5182:14:113"
+                      "src": "5182:14:95"
                     },
                     "nodeType": "YulExpressionStatement",
-                    "src": "5182:14:113"
+                    "src": "5182:14:95"
                   }
                 ]
               },
               "evmVersion": "paris",
               "externalReferences": [
                 {
-                  "declaration": 67622,
+                  "declaration": 62508,
                   "isOffset": false,
                   "isSlot": false,
-                  "src": "2868:9:113",
+                  "src": "2868:9:95",
                   "valueSize": 1
                 },
                 {
-                  "declaration": 67622,
+                  "declaration": 62508,
                   "isOffset": false,
                   "isSlot": false,
-                  "src": "2899:9:113",
+                  "src": "2899:9:95",
                   "valueSize": 1
                 },
                 {
-                  "declaration": 67622,
+                  "declaration": 62508,
                   "isOffset": false,
                   "isSlot": false,
-                  "src": "2916:9:113",
+                  "src": "2916:9:95",
                   "valueSize": 1
                 },
                 {
-                  "declaration": 67622,
+                  "declaration": 62508,
                   "isOffset": false,
                   "isSlot": false,
-                  "src": "2961:9:113",
+                  "src": "2961:9:95",
                   "valueSize": 1
                 },
                 {
-                  "declaration": 67622,
+                  "declaration": 62508,
                   "isOffset": false,
                   "isSlot": false,
-                  "src": "2992:9:113",
+                  "src": "2992:9:95",
                   "valueSize": 1
                 },
                 {
-                  "declaration": 67622,
+                  "declaration": 62508,
                   "isOffset": false,
                   "isSlot": false,
-                  "src": "3009:9:113",
+                  "src": "3009:9:95",
                   "valueSize": 1
                 },
                 {
-                  "declaration": 67622,
+                  "declaration": 62508,
                   "isOffset": false,
                   "isSlot": false,
-                  "src": "3056:9:113",
+                  "src": "3056:9:95",
                   "valueSize": 1
                 },
                 {
-                  "declaration": 67628,
+                  "declaration": 62514,
                   "isOffset": false,
                   "isSlot": false,
-                  "src": "3758:10:113",
+                  "src": "3758:10:95",
                   "valueSize": 1
                 }
               ],
-              "id": 67637,
+              "id": 62523,
               "nodeType": "InlineAssembly",
-              "src": "2564:2638:113"
+              "src": "2564:2638:95"
             }
           ]
         },
         "documentation": {
-          "id": 67620,
+          "id": 62506,
           "nodeType": "StructuredDocumentation",
-          "src": "1573:104:113",
+          "src": "1573:104:95",
           "text": " @dev Reverts with a revert reason containing `errorCode`. Only codes up to 999 are supported."
         },
         "implemented": true,
         "kind": "freeFunction",
         "modifiers": [],
         "name": "_revert",
-        "nameLocation": "1687:7:113",
+        "nameLocation": "1687:7:95",
         "parameters": {
-          "id": 67625,
+          "id": 62511,
           "nodeType": "ParameterList",
           "parameters": [
             {
               "constant": false,
-              "id": 67622,
+              "id": 62508,
               "mutability": "mutable",
               "name": "errorCode",
-              "nameLocation": "1703:9:113",
+              "nameLocation": "1703:9:95",
               "nodeType": "VariableDeclaration",
-              "scope": 67639,
-              "src": "1695:17:113",
+              "scope": 62525,
+              "src": "1695:17:95",
               "stateVariable": false,
               "storageLocation": "default",
               "typeDescriptions": {
@@ -1474,10 +1470,10 @@ export const BalancerErrors =
                 "typeString": "uint256"
               },
               "typeName": {
-                "id": 67621,
+                "id": 62507,
                 "name": "uint256",
                 "nodeType": "ElementaryTypeName",
-                "src": "1695:7:113",
+                "src": "1695:7:95",
                 "typeDescriptions": {
                   "typeIdentifier": "t_uint256",
                   "typeString": "uint256"
@@ -1487,13 +1483,13 @@ export const BalancerErrors =
             },
             {
               "constant": false,
-              "id": 67624,
+              "id": 62510,
               "mutability": "mutable",
               "name": "prefix",
-              "nameLocation": "1721:6:113",
+              "nameLocation": "1721:6:95",
               "nodeType": "VariableDeclaration",
-              "scope": 67639,
-              "src": "1714:13:113",
+              "scope": 62525,
+              "src": "1714:13:95",
               "stateVariable": false,
               "storageLocation": "default",
               "typeDescriptions": {
@@ -1501,10 +1497,10 @@ export const BalancerErrors =
                 "typeString": "bytes3"
               },
               "typeName": {
-                "id": 67623,
+                "id": 62509,
                 "name": "bytes3",
                 "nodeType": "ElementaryTypeName",
-                "src": "1714:6:113",
+                "src": "1714:6:95",
                 "typeDescriptions": {
                   "typeIdentifier": "t_bytes3",
                   "typeString": "bytes3"
@@ -1513,34 +1509,34 @@ export const BalancerErrors =
               "visibility": "internal"
             }
           ],
-          "src": "1694:34:113"
+          "src": "1694:34:95"
         },
         "returnParameters": {
-          "id": 67626,
+          "id": 62512,
           "nodeType": "ParameterList",
           "parameters": [],
-          "src": "1734:0:113"
+          "src": "1734:0:95"
         },
-        "scope": 68145,
+        "scope": 63031,
         "stateMutability": "pure",
         "virtual": false,
         "visibility": "internal"
       },
       {
-        "id": 68144,
+        "id": 63030,
         "nodeType": "ContractDefinition",
-        "src": "5206:10031:113",
+        "src": "5206:10031:95",
         "nodes": [
           {
-            "id": 67642,
+            "id": 62528,
             "nodeType": "VariableDeclaration",
-            "src": "5247:42:113",
+            "src": "5247:42:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "ADD_OVERFLOW",
-            "nameLocation": "5273:12:113",
-            "scope": 68144,
+            "nameLocation": "5273:12:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1548,10 +1544,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67640,
+              "id": 62526,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "5247:7:113",
+              "src": "5247:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1559,14 +1555,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "30",
-              "id": 67641,
+              "id": 62527,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "5288:1:113",
+              "src": "5288:1:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_0_by_1",
                 "typeString": "int_const 0"
@@ -1576,15 +1572,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67645,
+            "id": 62531,
             "nodeType": "VariableDeclaration",
-            "src": "5295:42:113",
+            "src": "5295:42:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "SUB_OVERFLOW",
-            "nameLocation": "5321:12:113",
-            "scope": 68144,
+            "nameLocation": "5321:12:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1592,10 +1588,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67643,
+              "id": 62529,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "5295:7:113",
+              "src": "5295:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1603,14 +1599,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "31",
-              "id": 67644,
+              "id": 62530,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "5336:1:113",
+              "src": "5336:1:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_1_by_1",
                 "typeString": "int_const 1"
@@ -1620,15 +1616,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67648,
+            "id": 62534,
             "nodeType": "VariableDeclaration",
-            "src": "5343:43:113",
+            "src": "5343:43:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "SUB_UNDERFLOW",
-            "nameLocation": "5369:13:113",
-            "scope": 68144,
+            "nameLocation": "5369:13:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1636,10 +1632,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67646,
+              "id": 62532,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "5343:7:113",
+              "src": "5343:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1647,14 +1643,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "32",
-              "id": 67647,
+              "id": 62533,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "5385:1:113",
+              "src": "5385:1:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_2_by_1",
                 "typeString": "int_const 2"
@@ -1664,15 +1660,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67651,
+            "id": 62537,
             "nodeType": "VariableDeclaration",
-            "src": "5392:42:113",
+            "src": "5392:42:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "MUL_OVERFLOW",
-            "nameLocation": "5418:12:113",
-            "scope": 68144,
+            "nameLocation": "5418:12:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1680,10 +1676,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67649,
+              "id": 62535,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "5392:7:113",
+              "src": "5392:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1691,14 +1687,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "33",
-              "id": 67650,
+              "id": 62536,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "5433:1:113",
+              "src": "5433:1:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_3_by_1",
                 "typeString": "int_const 3"
@@ -1708,15 +1704,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67654,
+            "id": 62540,
             "nodeType": "VariableDeclaration",
-            "src": "5440:43:113",
+            "src": "5440:43:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "ZERO_DIVISION",
-            "nameLocation": "5466:13:113",
-            "scope": 68144,
+            "nameLocation": "5466:13:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1724,10 +1720,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67652,
+              "id": 62538,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "5440:7:113",
+              "src": "5440:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1735,14 +1731,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "34",
-              "id": 67653,
+              "id": 62539,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "5482:1:113",
+              "src": "5482:1:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_4_by_1",
                 "typeString": "int_const 4"
@@ -1752,15 +1748,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67657,
+            "id": 62543,
             "nodeType": "VariableDeclaration",
-            "src": "5489:42:113",
+            "src": "5489:42:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "DIV_INTERNAL",
-            "nameLocation": "5515:12:113",
-            "scope": 68144,
+            "nameLocation": "5515:12:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1768,10 +1764,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67655,
+              "id": 62541,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "5489:7:113",
+              "src": "5489:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1779,14 +1775,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "35",
-              "id": 67656,
+              "id": 62542,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "5530:1:113",
+              "src": "5530:1:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_5_by_1",
                 "typeString": "int_const 5"
@@ -1796,15 +1792,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67660,
+            "id": 62546,
             "nodeType": "VariableDeclaration",
-            "src": "5537:45:113",
+            "src": "5537:45:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "X_OUT_OF_BOUNDS",
-            "nameLocation": "5563:15:113",
-            "scope": 68144,
+            "nameLocation": "5563:15:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1812,10 +1808,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67658,
+              "id": 62544,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "5537:7:113",
+              "src": "5537:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1823,14 +1819,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "36",
-              "id": 67659,
+              "id": 62545,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "5581:1:113",
+              "src": "5581:1:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_6_by_1",
                 "typeString": "int_const 6"
@@ -1840,15 +1836,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67663,
+            "id": 62549,
             "nodeType": "VariableDeclaration",
-            "src": "5588:45:113",
+            "src": "5588:45:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "Y_OUT_OF_BOUNDS",
-            "nameLocation": "5614:15:113",
-            "scope": 68144,
+            "nameLocation": "5614:15:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1856,10 +1852,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67661,
+              "id": 62547,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "5588:7:113",
+              "src": "5588:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1867,14 +1863,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "37",
-              "id": 67662,
+              "id": 62548,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "5632:1:113",
+              "src": "5632:1:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_7_by_1",
                 "typeString": "int_const 7"
@@ -1884,15 +1880,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67666,
+            "id": 62552,
             "nodeType": "VariableDeclaration",
-            "src": "5639:51:113",
+            "src": "5639:51:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "PRODUCT_OUT_OF_BOUNDS",
-            "nameLocation": "5665:21:113",
-            "scope": 68144,
+            "nameLocation": "5665:21:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1900,10 +1896,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67664,
+              "id": 62550,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "5639:7:113",
+              "src": "5639:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1911,14 +1907,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "38",
-              "id": 67665,
+              "id": 62551,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "5689:1:113",
+              "src": "5689:1:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_8_by_1",
                 "typeString": "int_const 8"
@@ -1928,15 +1924,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67669,
+            "id": 62555,
             "nodeType": "VariableDeclaration",
-            "src": "5696:46:113",
+            "src": "5696:46:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "INVALID_EXPONENT",
-            "nameLocation": "5722:16:113",
-            "scope": 68144,
+            "nameLocation": "5722:16:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1944,10 +1940,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67667,
+              "id": 62553,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "5696:7:113",
+              "src": "5696:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1955,14 +1951,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "39",
-              "id": 67668,
+              "id": 62554,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "5741:1:113",
+              "src": "5741:1:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_9_by_1",
                 "typeString": "int_const 9"
@@ -1972,15 +1968,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67672,
+            "id": 62558,
             "nodeType": "VariableDeclaration",
-            "src": "5762:45:113",
+            "src": "5762:45:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "OUT_OF_BOUNDS",
-            "nameLocation": "5788:13:113",
-            "scope": 68144,
+            "nameLocation": "5788:13:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1988,10 +1984,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67670,
+              "id": 62556,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "5762:7:113",
+              "src": "5762:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1999,14 +1995,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "313030",
-              "id": 67671,
+              "id": 62557,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "5804:3:113",
+              "src": "5804:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_100_by_1",
                 "typeString": "int_const 100"
@@ -2016,15 +2012,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67675,
+            "id": 62561,
             "nodeType": "VariableDeclaration",
-            "src": "5813:46:113",
+            "src": "5813:46:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "UNSORTED_ARRAY",
-            "nameLocation": "5839:14:113",
-            "scope": 68144,
+            "nameLocation": "5839:14:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -2032,10 +2028,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67673,
+              "id": 62559,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "5813:7:113",
+              "src": "5813:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -2043,14 +2039,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "313031",
-              "id": 67674,
+              "id": 62560,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "5856:3:113",
+              "src": "5856:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_101_by_1",
                 "typeString": "int_const 101"
@@ -2060,15 +2056,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67678,
+            "id": 62564,
             "nodeType": "VariableDeclaration",
-            "src": "5865:47:113",
+            "src": "5865:47:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "UNSORTED_TOKENS",
-            "nameLocation": "5891:15:113",
-            "scope": 68144,
+            "nameLocation": "5891:15:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -2076,10 +2072,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67676,
+              "id": 62562,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "5865:7:113",
+              "src": "5865:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -2087,14 +2083,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "313032",
-              "id": 67677,
+              "id": 62563,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "5909:3:113",
+              "src": "5909:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_102_by_1",
                 "typeString": "int_const 102"
@@ -2104,15 +2100,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67681,
+            "id": 62567,
             "nodeType": "VariableDeclaration",
-            "src": "5918:53:113",
+            "src": "5918:53:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "INPUT_LENGTH_MISMATCH",
-            "nameLocation": "5944:21:113",
-            "scope": 68144,
+            "nameLocation": "5944:21:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -2120,10 +2116,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67679,
+              "id": 62565,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "5918:7:113",
+              "src": "5918:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -2131,14 +2127,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "313033",
-              "id": 67680,
+              "id": 62566,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "5968:3:113",
+              "src": "5968:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_103_by_1",
                 "typeString": "int_const 103"
@@ -2148,15 +2144,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67684,
+            "id": 62570,
             "nodeType": "VariableDeclaration",
-            "src": "5977:42:113",
+            "src": "5977:42:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "ZERO_TOKEN",
-            "nameLocation": "6003:10:113",
-            "scope": 68144,
+            "nameLocation": "6003:10:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -2164,10 +2160,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67682,
+              "id": 62568,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "5977:7:113",
+              "src": "5977:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -2175,14 +2171,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "313034",
-              "id": 67683,
+              "id": 62569,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "6016:3:113",
+              "src": "6016:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_104_by_1",
                 "typeString": "int_const 104"
@@ -2192,15 +2188,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67687,
+            "id": 62573,
             "nodeType": "VariableDeclaration",
-            "src": "6025:49:113",
+            "src": "6025:49:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "INSUFFICIENT_DATA",
-            "nameLocation": "6051:17:113",
-            "scope": 68144,
+            "nameLocation": "6051:17:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -2208,10 +2204,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67685,
+              "id": 62571,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "6025:7:113",
+              "src": "6025:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -2219,14 +2215,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "313035",
-              "id": 67686,
+              "id": 62572,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "6071:3:113",
+              "src": "6071:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_105_by_1",
                 "typeString": "int_const 105"
@@ -2236,15 +2232,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67690,
+            "id": 62576,
             "nodeType": "VariableDeclaration",
-            "src": "6101:42:113",
+            "src": "6101:42:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "MIN_TOKENS",
-            "nameLocation": "6127:10:113",
-            "scope": 68144,
+            "nameLocation": "6127:10:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -2252,10 +2248,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67688,
+              "id": 62574,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "6101:7:113",
+              "src": "6101:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -2263,14 +2259,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "323030",
-              "id": 67689,
+              "id": 62575,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "6140:3:113",
+              "src": "6140:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_200_by_1",
                 "typeString": "int_const 200"
@@ -2280,15 +2276,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67693,
+            "id": 62579,
             "nodeType": "VariableDeclaration",
-            "src": "6149:42:113",
+            "src": "6149:42:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "MAX_TOKENS",
-            "nameLocation": "6175:10:113",
-            "scope": 68144,
+            "nameLocation": "6175:10:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -2296,10 +2292,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67691,
+              "id": 62577,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "6149:7:113",
+              "src": "6149:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -2307,14 +2303,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "323031",
-              "id": 67692,
+              "id": 62578,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "6188:3:113",
+              "src": "6188:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_201_by_1",
                 "typeString": "int_const 201"
@@ -2324,15 +2320,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67696,
+            "id": 62582,
             "nodeType": "VariableDeclaration",
-            "src": "6197:55:113",
+            "src": "6197:55:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "MAX_SWAP_FEE_PERCENTAGE",
-            "nameLocation": "6223:23:113",
-            "scope": 68144,
+            "nameLocation": "6223:23:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -2340,10 +2336,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67694,
+              "id": 62580,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "6197:7:113",
+              "src": "6197:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -2351,14 +2347,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "323032",
-              "id": 67695,
+              "id": 62581,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "6249:3:113",
+              "src": "6249:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_202_by_1",
                 "typeString": "int_const 202"
@@ -2368,15 +2364,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67699,
+            "id": 62585,
             "nodeType": "VariableDeclaration",
-            "src": "6258:55:113",
+            "src": "6258:55:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "MIN_SWAP_FEE_PERCENTAGE",
-            "nameLocation": "6284:23:113",
-            "scope": 68144,
+            "nameLocation": "6284:23:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -2384,10 +2380,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67697,
+              "id": 62583,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "6258:7:113",
+              "src": "6258:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -2395,14 +2391,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "323033",
-              "id": 67698,
+              "id": 62584,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "6310:3:113",
+              "src": "6310:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_203_by_1",
                 "typeString": "int_const 203"
@@ -2412,15 +2408,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67702,
+            "id": 62588,
             "nodeType": "VariableDeclaration",
-            "src": "6319:43:113",
+            "src": "6319:43:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "MINIMUM_BPT",
-            "nameLocation": "6345:11:113",
-            "scope": 68144,
+            "nameLocation": "6345:11:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -2428,10 +2424,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67700,
+              "id": 62586,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "6319:7:113",
+              "src": "6319:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -2439,14 +2435,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "323034",
-              "id": 67701,
+              "id": 62587,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "6359:3:113",
+              "src": "6359:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_204_by_1",
                 "typeString": "int_const 204"
@@ -2456,15 +2452,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67705,
+            "id": 62591,
             "nodeType": "VariableDeclaration",
-            "src": "6368:48:113",
+            "src": "6368:48:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "CALLER_NOT_VAULT",
-            "nameLocation": "6394:16:113",
-            "scope": 68144,
+            "nameLocation": "6394:16:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -2472,10 +2468,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67703,
+              "id": 62589,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "6368:7:113",
+              "src": "6368:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -2483,14 +2479,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "323035",
-              "id": 67704,
+              "id": 62590,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "6413:3:113",
+              "src": "6413:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_205_by_1",
                 "typeString": "int_const 205"
@@ -2500,15 +2496,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67708,
+            "id": 62594,
             "nodeType": "VariableDeclaration",
-            "src": "6422:45:113",
+            "src": "6422:45:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "UNINITIALIZED",
-            "nameLocation": "6448:13:113",
-            "scope": 68144,
+            "nameLocation": "6448:13:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -2516,10 +2512,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67706,
+              "id": 62592,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "6422:7:113",
+              "src": "6422:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -2527,14 +2523,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "323036",
-              "id": 67707,
+              "id": 62593,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "6464:3:113",
+              "src": "6464:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_206_by_1",
                 "typeString": "int_const 206"
@@ -2544,15 +2540,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67711,
+            "id": 62597,
             "nodeType": "VariableDeclaration",
-            "src": "6473:49:113",
+            "src": "6473:49:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "BPT_IN_MAX_AMOUNT",
-            "nameLocation": "6499:17:113",
-            "scope": 68144,
+            "nameLocation": "6499:17:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -2560,10 +2556,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67709,
+              "id": 62595,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "6473:7:113",
+              "src": "6473:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -2571,14 +2567,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "323037",
-              "id": 67710,
+              "id": 62596,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "6519:3:113",
+              "src": "6519:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_207_by_1",
                 "typeString": "int_const 207"
@@ -2588,15 +2584,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67714,
+            "id": 62600,
             "nodeType": "VariableDeclaration",
-            "src": "6528:50:113",
+            "src": "6528:50:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "BPT_OUT_MIN_AMOUNT",
-            "nameLocation": "6554:18:113",
-            "scope": 68144,
+            "nameLocation": "6554:18:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -2604,10 +2600,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67712,
+              "id": 62598,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "6528:7:113",
+              "src": "6528:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -2615,14 +2611,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "323038",
-              "id": 67713,
+              "id": 62599,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "6575:3:113",
+              "src": "6575:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_208_by_1",
                 "typeString": "int_const 208"
@@ -2632,15 +2628,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67717,
+            "id": 62603,
             "nodeType": "VariableDeclaration",
-            "src": "6584:46:113",
+            "src": "6584:46:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "EXPIRED_PERMIT",
-            "nameLocation": "6610:14:113",
-            "scope": 68144,
+            "nameLocation": "6610:14:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -2648,10 +2644,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67715,
+              "id": 62601,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "6584:7:113",
+              "src": "6584:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -2659,14 +2655,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "323039",
-              "id": 67716,
+              "id": 62602,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "6627:3:113",
+              "src": "6627:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_209_by_1",
                 "typeString": "int_const 209"
@@ -2676,15 +2672,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67720,
+            "id": 62606,
             "nodeType": "VariableDeclaration",
-            "src": "6636:46:113",
+            "src": "6636:46:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "NOT_TWO_TOKENS",
-            "nameLocation": "6662:14:113",
-            "scope": 68144,
+            "nameLocation": "6662:14:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -2692,10 +2688,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67718,
+              "id": 62604,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "6636:7:113",
+              "src": "6636:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -2703,14 +2699,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "323130",
-              "id": 67719,
+              "id": 62605,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "6679:3:113",
+              "src": "6679:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_210_by_1",
                 "typeString": "int_const 210"
@@ -2720,15 +2716,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67723,
+            "id": 62609,
             "nodeType": "VariableDeclaration",
-            "src": "6688:40:113",
+            "src": "6688:40:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "DISABLED",
-            "nameLocation": "6714:8:113",
-            "scope": 68144,
+            "nameLocation": "6714:8:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -2736,10 +2732,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67721,
+              "id": 62607,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "6688:7:113",
+              "src": "6688:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -2747,14 +2743,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "323131",
-              "id": 67722,
+              "id": 62608,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "6725:3:113",
+              "src": "6725:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_211_by_1",
                 "typeString": "int_const 211"
@@ -2764,15 +2760,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67726,
+            "id": 62612,
             "nodeType": "VariableDeclaration",
-            "src": "6748:39:113",
+            "src": "6748:39:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "MIN_AMP",
-            "nameLocation": "6774:7:113",
-            "scope": 68144,
+            "nameLocation": "6774:7:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -2780,10 +2776,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67724,
+              "id": 62610,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "6748:7:113",
+              "src": "6748:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -2791,14 +2787,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333030",
-              "id": 67725,
+              "id": 62611,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "6784:3:113",
+              "src": "6784:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_300_by_1",
                 "typeString": "int_const 300"
@@ -2808,15 +2804,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67729,
+            "id": 62615,
             "nodeType": "VariableDeclaration",
-            "src": "6793:39:113",
+            "src": "6793:39:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "MAX_AMP",
-            "nameLocation": "6819:7:113",
-            "scope": 68144,
+            "nameLocation": "6819:7:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -2824,10 +2820,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67727,
+              "id": 62613,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "6793:7:113",
+              "src": "6793:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -2835,14 +2831,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333031",
-              "id": 67728,
+              "id": 62614,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "6829:3:113",
+              "src": "6829:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_301_by_1",
                 "typeString": "int_const 301"
@@ -2852,15 +2848,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67732,
+            "id": 62618,
             "nodeType": "VariableDeclaration",
-            "src": "6838:42:113",
+            "src": "6838:42:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "MIN_WEIGHT",
-            "nameLocation": "6864:10:113",
-            "scope": 68144,
+            "nameLocation": "6864:10:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -2868,10 +2864,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67730,
+              "id": 62616,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "6838:7:113",
+              "src": "6838:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -2879,14 +2875,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333032",
-              "id": 67731,
+              "id": 62617,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "6877:3:113",
+              "src": "6877:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_302_by_1",
                 "typeString": "int_const 302"
@@ -2896,15 +2892,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67735,
+            "id": 62621,
             "nodeType": "VariableDeclaration",
-            "src": "6886:49:113",
+            "src": "6886:49:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "MAX_STABLE_TOKENS",
-            "nameLocation": "6912:17:113",
-            "scope": 68144,
+            "nameLocation": "6912:17:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -2912,10 +2908,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67733,
+              "id": 62619,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "6886:7:113",
+              "src": "6886:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -2923,14 +2919,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333033",
-              "id": 67734,
+              "id": 62620,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "6932:3:113",
+              "src": "6932:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_303_by_1",
                 "typeString": "int_const 303"
@@ -2940,15 +2936,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67738,
+            "id": 62624,
             "nodeType": "VariableDeclaration",
-            "src": "6941:44:113",
+            "src": "6941:44:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "MAX_IN_RATIO",
-            "nameLocation": "6967:12:113",
-            "scope": 68144,
+            "nameLocation": "6967:12:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -2956,10 +2952,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67736,
+              "id": 62622,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "6941:7:113",
+              "src": "6941:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -2967,14 +2963,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333034",
-              "id": 67737,
+              "id": 62623,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "6982:3:113",
+              "src": "6982:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_304_by_1",
                 "typeString": "int_const 304"
@@ -2984,15 +2980,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67741,
+            "id": 62627,
             "nodeType": "VariableDeclaration",
-            "src": "6991:45:113",
+            "src": "6991:45:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "MAX_OUT_RATIO",
-            "nameLocation": "7017:13:113",
-            "scope": 68144,
+            "nameLocation": "7017:13:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -3000,10 +2996,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67739,
+              "id": 62625,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "6991:7:113",
+              "src": "6991:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -3011,14 +3007,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333035",
-              "id": 67740,
+              "id": 62626,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "7033:3:113",
+              "src": "7033:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_305_by_1",
                 "typeString": "int_const 305"
@@ -3028,15 +3024,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67744,
+            "id": 62630,
             "nodeType": "VariableDeclaration",
-            "src": "7042:56:113",
+            "src": "7042:56:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "MIN_BPT_IN_FOR_TOKEN_OUT",
-            "nameLocation": "7068:24:113",
-            "scope": 68144,
+            "nameLocation": "7068:24:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -3044,10 +3040,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67742,
+              "id": 62628,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "7042:7:113",
+              "src": "7042:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -3055,14 +3051,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333036",
-              "id": 67743,
+              "id": 62629,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "7095:3:113",
+              "src": "7095:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_306_by_1",
                 "typeString": "int_const 306"
@@ -3072,15 +3068,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67747,
+            "id": 62633,
             "nodeType": "VariableDeclaration",
-            "src": "7104:56:113",
+            "src": "7104:56:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "MAX_OUT_BPT_FOR_TOKEN_IN",
-            "nameLocation": "7130:24:113",
-            "scope": 68144,
+            "nameLocation": "7130:24:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -3088,10 +3084,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67745,
+              "id": 62631,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "7104:7:113",
+              "src": "7104:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -3099,14 +3095,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333037",
-              "id": 67746,
+              "id": 62632,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "7157:3:113",
+              "src": "7157:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_307_by_1",
                 "typeString": "int_const 307"
@@ -3116,15 +3112,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67750,
+            "id": 62636,
             "nodeType": "VariableDeclaration",
-            "src": "7166:59:113",
+            "src": "7166:59:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "NORMALIZED_WEIGHT_INVARIANT",
-            "nameLocation": "7192:27:113",
-            "scope": 68144,
+            "nameLocation": "7192:27:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -3132,10 +3128,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67748,
+              "id": 62634,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "7166:7:113",
+              "src": "7166:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -3143,14 +3139,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333038",
-              "id": 67749,
+              "id": 62635,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "7222:3:113",
+              "src": "7222:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_308_by_1",
                 "typeString": "int_const 308"
@@ -3160,15 +3156,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67753,
+            "id": 62639,
             "nodeType": "VariableDeclaration",
-            "src": "7231:45:113",
+            "src": "7231:45:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "INVALID_TOKEN",
-            "nameLocation": "7257:13:113",
-            "scope": 68144,
+            "nameLocation": "7257:13:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -3176,10 +3172,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67751,
+              "id": 62637,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "7231:7:113",
+              "src": "7231:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -3187,14 +3183,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333039",
-              "id": 67752,
+              "id": 62638,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "7273:3:113",
+              "src": "7273:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_309_by_1",
                 "typeString": "int_const 309"
@@ -3204,15 +3200,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67756,
+            "id": 62642,
             "nodeType": "VariableDeclaration",
-            "src": "7282:51:113",
+            "src": "7282:51:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "UNHANDLED_JOIN_KIND",
-            "nameLocation": "7308:19:113",
-            "scope": 68144,
+            "nameLocation": "7308:19:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -3220,10 +3216,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67754,
+              "id": 62640,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "7282:7:113",
+              "src": "7282:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -3231,14 +3227,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333130",
-              "id": 67755,
+              "id": 62641,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "7330:3:113",
+              "src": "7330:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_310_by_1",
                 "typeString": "int_const 310"
@@ -3248,15 +3244,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67759,
+            "id": 62645,
             "nodeType": "VariableDeclaration",
-            "src": "7339:46:113",
+            "src": "7339:46:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "ZERO_INVARIANT",
-            "nameLocation": "7365:14:113",
-            "scope": 68144,
+            "nameLocation": "7365:14:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -3264,10 +3260,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67757,
+              "id": 62643,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "7339:7:113",
+              "src": "7339:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -3275,14 +3271,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333131",
-              "id": 67758,
+              "id": 62644,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "7382:3:113",
+              "src": "7382:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_311_by_1",
                 "typeString": "int_const 311"
@@ -3292,15 +3288,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67762,
+            "id": 62648,
             "nodeType": "VariableDeclaration",
-            "src": "7391:60:113",
+            "src": "7391:60:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "ORACLE_INVALID_SECONDS_QUERY",
-            "nameLocation": "7417:28:113",
-            "scope": 68144,
+            "nameLocation": "7417:28:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -3308,10 +3304,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67760,
+              "id": 62646,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "7391:7:113",
+              "src": "7391:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -3319,14 +3315,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333132",
-              "id": 67761,
+              "id": 62647,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "7448:3:113",
+              "src": "7448:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_312_by_1",
                 "typeString": "int_const 312"
@@ -3336,15 +3332,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67765,
+            "id": 62651,
             "nodeType": "VariableDeclaration",
-            "src": "7457:54:113",
+            "src": "7457:54:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "ORACLE_NOT_INITIALIZED",
-            "nameLocation": "7483:22:113",
-            "scope": 68144,
+            "nameLocation": "7483:22:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -3352,10 +3348,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67763,
+              "id": 62649,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "7457:7:113",
+              "src": "7457:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -3363,14 +3359,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333133",
-              "id": 67764,
+              "id": 62650,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "7508:3:113",
+              "src": "7508:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_313_by_1",
                 "typeString": "int_const 313"
@@ -3380,15 +3376,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67768,
+            "id": 62654,
             "nodeType": "VariableDeclaration",
-            "src": "7517:52:113",
+            "src": "7517:52:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "ORACLE_QUERY_TOO_OLD",
-            "nameLocation": "7543:20:113",
-            "scope": 68144,
+            "nameLocation": "7543:20:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -3396,10 +3392,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67766,
+              "id": 62652,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "7517:7:113",
+              "src": "7517:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -3407,14 +3403,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333134",
-              "id": 67767,
+              "id": 62653,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "7566:3:113",
+              "src": "7566:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_314_by_1",
                 "typeString": "int_const 314"
@@ -3424,15 +3420,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67771,
+            "id": 62657,
             "nodeType": "VariableDeclaration",
-            "src": "7575:52:113",
+            "src": "7575:52:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "ORACLE_INVALID_INDEX",
-            "nameLocation": "7601:20:113",
-            "scope": 68144,
+            "nameLocation": "7601:20:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -3440,10 +3436,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67769,
+              "id": 62655,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "7575:7:113",
+              "src": "7575:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -3451,14 +3447,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333135",
-              "id": 67770,
+              "id": 62656,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "7624:3:113",
+              "src": "7624:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_315_by_1",
                 "typeString": "int_const 315"
@@ -3468,15 +3464,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67774,
+            "id": 62660,
             "nodeType": "VariableDeclaration",
-            "src": "7633:47:113",
+            "src": "7633:47:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "ORACLE_BAD_SECS",
-            "nameLocation": "7659:15:113",
-            "scope": 68144,
+            "nameLocation": "7659:15:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -3484,10 +3480,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67772,
+              "id": 62658,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "7633:7:113",
+              "src": "7633:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -3495,14 +3491,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333136",
-              "id": 67773,
+              "id": 62659,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "7677:3:113",
+              "src": "7677:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_316_by_1",
                 "typeString": "int_const 316"
@@ -3512,15 +3508,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67777,
+            "id": 62663,
             "nodeType": "VariableDeclaration",
-            "src": "7686:54:113",
+            "src": "7686:54:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "AMP_END_TIME_TOO_CLOSE",
-            "nameLocation": "7712:22:113",
-            "scope": 68144,
+            "nameLocation": "7712:22:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -3528,10 +3524,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67775,
+              "id": 62661,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "7686:7:113",
+              "src": "7686:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -3539,14 +3535,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333137",
-              "id": 67776,
+              "id": 62662,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "7737:3:113",
+              "src": "7737:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_317_by_1",
                 "typeString": "int_const 317"
@@ -3556,15 +3552,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67780,
+            "id": 62666,
             "nodeType": "VariableDeclaration",
-            "src": "7746:50:113",
+            "src": "7746:50:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "AMP_ONGOING_UPDATE",
-            "nameLocation": "7772:18:113",
-            "scope": 68144,
+            "nameLocation": "7772:18:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -3572,10 +3568,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67778,
+              "id": 62664,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "7746:7:113",
+              "src": "7746:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -3583,14 +3579,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333138",
-              "id": 67779,
+              "id": 62665,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "7793:3:113",
+              "src": "7793:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_318_by_1",
                 "typeString": "int_const 318"
@@ -3600,15 +3596,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67783,
+            "id": 62669,
             "nodeType": "VariableDeclaration",
-            "src": "7802:49:113",
+            "src": "7802:49:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "AMP_RATE_TOO_HIGH",
-            "nameLocation": "7828:17:113",
-            "scope": 68144,
+            "nameLocation": "7828:17:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -3616,10 +3612,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67781,
+              "id": 62667,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "7802:7:113",
+              "src": "7802:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -3627,14 +3623,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333139",
-              "id": 67782,
+              "id": 62668,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "7848:3:113",
+              "src": "7848:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_319_by_1",
                 "typeString": "int_const 319"
@@ -3644,15 +3640,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67786,
+            "id": 62672,
             "nodeType": "VariableDeclaration",
-            "src": "7857:53:113",
+            "src": "7857:53:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "AMP_NO_ONGOING_UPDATE",
-            "nameLocation": "7883:21:113",
-            "scope": 68144,
+            "nameLocation": "7883:21:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -3660,10 +3656,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67784,
+              "id": 62670,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "7857:7:113",
+              "src": "7857:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -3671,14 +3667,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333230",
-              "id": 67785,
+              "id": 62671,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "7907:3:113",
+              "src": "7907:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_320_by_1",
                 "typeString": "int_const 320"
@@ -3688,15 +3684,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67789,
+            "id": 62675,
             "nodeType": "VariableDeclaration",
-            "src": "7916:63:113",
+            "src": "7916:63:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "STABLE_INVARIANT_DIDNT_CONVERGE",
-            "nameLocation": "7942:31:113",
-            "scope": 68144,
+            "nameLocation": "7942:31:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -3704,10 +3700,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67787,
+              "id": 62673,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "7916:7:113",
+              "src": "7916:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -3715,14 +3711,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333231",
-              "id": 67788,
+              "id": 62674,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "7976:3:113",
+              "src": "7976:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_321_by_1",
                 "typeString": "int_const 321"
@@ -3732,15 +3728,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67792,
+            "id": 62678,
             "nodeType": "VariableDeclaration",
-            "src": "7985:65:113",
+            "src": "7985:65:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "STABLE_GET_BALANCE_DIDNT_CONVERGE",
-            "nameLocation": "8011:33:113",
-            "scope": 68144,
+            "nameLocation": "8011:33:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -3748,10 +3744,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67790,
+              "id": 62676,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "7985:7:113",
+              "src": "7985:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -3759,14 +3755,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333232",
-              "id": 67791,
+              "id": 62677,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "8047:3:113",
+              "src": "8047:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_322_by_1",
                 "typeString": "int_const 322"
@@ -3776,15 +3772,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67795,
+            "id": 62681,
             "nodeType": "VariableDeclaration",
-            "src": "8056:52:113",
+            "src": "8056:52:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "RELAYER_NOT_CONTRACT",
-            "nameLocation": "8082:20:113",
-            "scope": 68144,
+            "nameLocation": "8082:20:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -3792,10 +3788,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67793,
+              "id": 62679,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "8056:7:113",
+              "src": "8056:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -3803,14 +3799,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333233",
-              "id": 67794,
+              "id": 62680,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "8105:3:113",
+              "src": "8105:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_323_by_1",
                 "typeString": "int_const 323"
@@ -3820,15 +3816,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67798,
+            "id": 62684,
             "nodeType": "VariableDeclaration",
-            "src": "8114:60:113",
+            "src": "8114:60:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "BASE_POOL_RELAYER_NOT_CALLED",
-            "nameLocation": "8140:28:113",
-            "scope": 68144,
+            "nameLocation": "8140:28:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -3836,10 +3832,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67796,
+              "id": 62682,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "8114:7:113",
+              "src": "8114:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -3847,14 +3843,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333234",
-              "id": 67797,
+              "id": 62683,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "8171:3:113",
+              "src": "8171:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_324_by_1",
                 "typeString": "int_const 324"
@@ -3864,15 +3860,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67801,
+            "id": 62687,
             "nodeType": "VariableDeclaration",
-            "src": "8180:61:113",
+            "src": "8180:61:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "REBALANCING_RELAYER_REENTERED",
-            "nameLocation": "8206:29:113",
-            "scope": 68144,
+            "nameLocation": "8206:29:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -3880,10 +3876,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67799,
+              "id": 62685,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "8180:7:113",
+              "src": "8180:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -3891,14 +3887,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333235",
-              "id": 67800,
+              "id": 62686,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "8238:3:113",
+              "src": "8238:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_325_by_1",
                 "typeString": "int_const 325"
@@ -3908,15 +3904,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67804,
+            "id": 62690,
             "nodeType": "VariableDeclaration",
-            "src": "8247:58:113",
+            "src": "8247:58:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "GRADUAL_UPDATE_TIME_TRAVEL",
-            "nameLocation": "8273:26:113",
-            "scope": 68144,
+            "nameLocation": "8273:26:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -3924,10 +3920,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67802,
+              "id": 62688,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "8247:7:113",
+              "src": "8247:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -3935,14 +3931,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333236",
-              "id": 67803,
+              "id": 62689,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "8302:3:113",
+              "src": "8302:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_326_by_1",
                 "typeString": "int_const 326"
@@ -3952,15 +3948,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67807,
+            "id": 62693,
             "nodeType": "VariableDeclaration",
-            "src": "8311:46:113",
+            "src": "8311:46:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "SWAPS_DISABLED",
-            "nameLocation": "8337:14:113",
-            "scope": 68144,
+            "nameLocation": "8337:14:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -3968,10 +3964,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67805,
+              "id": 62691,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "8311:7:113",
+              "src": "8311:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -3979,14 +3975,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333237",
-              "id": 67806,
+              "id": 62692,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "8354:3:113",
+              "src": "8354:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_327_by_1",
                 "typeString": "int_const 327"
@@ -3996,15 +3992,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67810,
+            "id": 62696,
             "nodeType": "VariableDeclaration",
-            "src": "8363:55:113",
+            "src": "8363:55:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "CALLER_IS_NOT_LBP_OWNER",
-            "nameLocation": "8389:23:113",
-            "scope": 68144,
+            "nameLocation": "8389:23:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -4012,10 +4008,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67808,
+              "id": 62694,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "8363:7:113",
+              "src": "8363:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -4023,14 +4019,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333238",
-              "id": 67809,
+              "id": 62695,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "8415:3:113",
+              "src": "8415:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_328_by_1",
                 "typeString": "int_const 328"
@@ -4040,15 +4036,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67813,
+            "id": 62699,
             "nodeType": "VariableDeclaration",
-            "src": "8424:51:113",
+            "src": "8424:51:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "PRICE_RATE_OVERFLOW",
-            "nameLocation": "8450:19:113",
-            "scope": 68144,
+            "nameLocation": "8450:19:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -4056,10 +4052,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67811,
+              "id": 62697,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "8424:7:113",
+              "src": "8424:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -4067,14 +4063,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333239",
-              "id": 67812,
+              "id": 62698,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "8472:3:113",
+              "src": "8472:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_329_by_1",
                 "typeString": "int_const 329"
@@ -4084,15 +4080,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67816,
+            "id": 62702,
             "nodeType": "VariableDeclaration",
-            "src": "8481:75:113",
+            "src": "8481:75:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "INVALID_JOIN_EXIT_KIND_WHILE_SWAPS_DISABLED",
-            "nameLocation": "8507:43:113",
-            "scope": 68144,
+            "nameLocation": "8507:43:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -4100,10 +4096,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67814,
+              "id": 62700,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "8481:7:113",
+              "src": "8481:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -4111,14 +4107,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333330",
-              "id": 67815,
+              "id": 62701,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "8553:3:113",
+              "src": "8553:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_330_by_1",
                 "typeString": "int_const 330"
@@ -4128,15 +4124,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67819,
+            "id": 62705,
             "nodeType": "VariableDeclaration",
-            "src": "8562:54:113",
+            "src": "8562:54:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "WEIGHT_CHANGE_TOO_FAST",
-            "nameLocation": "8588:22:113",
-            "scope": 68144,
+            "nameLocation": "8588:22:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -4144,10 +4140,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67817,
+              "id": 62703,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "8562:7:113",
+              "src": "8562:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -4155,14 +4151,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333331",
-              "id": 67818,
+              "id": 62704,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "8613:3:113",
+              "src": "8613:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_331_by_1",
                 "typeString": "int_const 331"
@@ -4172,15 +4168,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67822,
+            "id": 62708,
             "nodeType": "VariableDeclaration",
-            "src": "8622:63:113",
+            "src": "8622:63:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "LOWER_GREATER_THAN_UPPER_TARGET",
-            "nameLocation": "8648:31:113",
-            "scope": 68144,
+            "nameLocation": "8648:31:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -4188,10 +4184,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67820,
+              "id": 62706,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "8622:7:113",
+              "src": "8622:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -4199,14 +4195,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333332",
-              "id": 67821,
+              "id": 62707,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "8682:3:113",
+              "src": "8682:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_332_by_1",
                 "typeString": "int_const 332"
@@ -4216,15 +4212,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67825,
+            "id": 62711,
             "nodeType": "VariableDeclaration",
-            "src": "8691:53:113",
+            "src": "8691:53:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "UPPER_TARGET_TOO_HIGH",
-            "nameLocation": "8717:21:113",
-            "scope": 68144,
+            "nameLocation": "8717:21:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -4232,10 +4228,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67823,
+              "id": 62709,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "8691:7:113",
+              "src": "8691:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -4243,14 +4239,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333333",
-              "id": 67824,
+              "id": 62710,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "8741:3:113",
+              "src": "8741:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_333_by_1",
                 "typeString": "int_const 333"
@@ -4260,15 +4256,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67828,
+            "id": 62714,
             "nodeType": "VariableDeclaration",
-            "src": "8750:56:113",
+            "src": "8750:56:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "UNHANDLED_BY_LINEAR_POOL",
-            "nameLocation": "8776:24:113",
-            "scope": 68144,
+            "nameLocation": "8776:24:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -4276,10 +4272,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67826,
+              "id": 62712,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "8750:7:113",
+              "src": "8750:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -4287,14 +4283,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333334",
-              "id": 67827,
+              "id": 62713,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "8803:3:113",
+              "src": "8803:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_334_by_1",
                 "typeString": "int_const 334"
@@ -4304,15 +4300,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67831,
+            "id": 62717,
             "nodeType": "VariableDeclaration",
-            "src": "8812:51:113",
+            "src": "8812:51:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "OUT_OF_TARGET_RANGE",
-            "nameLocation": "8838:19:113",
-            "scope": 68144,
+            "nameLocation": "8838:19:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -4320,10 +4316,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67829,
+              "id": 62715,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "8812:7:113",
+              "src": "8812:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -4331,14 +4327,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333335",
-              "id": 67830,
+              "id": 62716,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "8860:3:113",
+              "src": "8860:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_335_by_1",
                 "typeString": "int_const 335"
@@ -4348,15 +4344,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67834,
+            "id": 62720,
             "nodeType": "VariableDeclaration",
-            "src": "8869:51:113",
+            "src": "8869:51:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "UNHANDLED_EXIT_KIND",
-            "nameLocation": "8895:19:113",
-            "scope": 68144,
+            "nameLocation": "8895:19:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -4364,10 +4360,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67832,
+              "id": 62718,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "8869:7:113",
+              "src": "8869:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -4375,14 +4371,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333336",
-              "id": 67833,
+              "id": 62719,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "8917:3:113",
+              "src": "8917:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_336_by_1",
                 "typeString": "int_const 336"
@@ -4392,15 +4388,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67837,
+            "id": 62723,
             "nodeType": "VariableDeclaration",
-            "src": "8926:49:113",
+            "src": "8926:49:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "UNAUTHORIZED_EXIT",
-            "nameLocation": "8952:17:113",
-            "scope": 68144,
+            "nameLocation": "8952:17:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -4408,10 +4404,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67835,
+              "id": 62721,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "8926:7:113",
+              "src": "8926:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -4419,14 +4415,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333337",
-              "id": 67836,
+              "id": 62722,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "8972:3:113",
+              "src": "8972:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_337_by_1",
                 "typeString": "int_const 337"
@@ -4436,15 +4432,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67840,
+            "id": 62726,
             "nodeType": "VariableDeclaration",
-            "src": "8981:66:113",
+            "src": "8981:66:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "MAX_MANAGEMENT_SWAP_FEE_PERCENTAGE",
-            "nameLocation": "9007:34:113",
-            "scope": 68144,
+            "nameLocation": "9007:34:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -4452,10 +4448,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67838,
+              "id": 62724,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "8981:7:113",
+              "src": "8981:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -4463,14 +4459,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333338",
-              "id": 67839,
+              "id": 62725,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "9044:3:113",
+              "src": "9044:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_338_by_1",
                 "typeString": "int_const 338"
@@ -4480,15 +4476,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67843,
+            "id": 62729,
             "nodeType": "VariableDeclaration",
-            "src": "9053:57:113",
+            "src": "9053:57:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "UNHANDLED_BY_MANAGED_POOL",
-            "nameLocation": "9079:25:113",
-            "scope": 68144,
+            "nameLocation": "9079:25:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -4496,10 +4492,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67841,
+              "id": 62727,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "9053:7:113",
+              "src": "9053:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -4507,14 +4503,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333339",
-              "id": 67842,
+              "id": 62728,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "9107:3:113",
+              "src": "9107:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_339_by_1",
                 "typeString": "int_const 339"
@@ -4524,15 +4520,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67846,
+            "id": 62732,
             "nodeType": "VariableDeclaration",
-            "src": "9116:57:113",
+            "src": "9116:57:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "UNHANDLED_BY_PHANTOM_POOL",
-            "nameLocation": "9142:25:113",
-            "scope": 68144,
+            "nameLocation": "9142:25:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -4540,10 +4536,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67844,
+              "id": 62730,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "9116:7:113",
+              "src": "9116:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -4551,14 +4547,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333430",
-              "id": 67845,
+              "id": 62731,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "9170:3:113",
+              "src": "9170:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_340_by_1",
                 "typeString": "int_const 340"
@@ -4568,15 +4564,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67849,
+            "id": 62735,
             "nodeType": "VariableDeclaration",
-            "src": "9179:65:113",
+            "src": "9179:65:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "TOKEN_DOES_NOT_HAVE_RATE_PROVIDER",
-            "nameLocation": "9205:33:113",
-            "scope": 68144,
+            "nameLocation": "9205:33:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -4584,10 +4580,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67847,
+              "id": 62733,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "9179:7:113",
+              "src": "9179:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -4595,14 +4591,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333431",
-              "id": 67848,
+              "id": 62734,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "9241:3:113",
+              "src": "9241:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_341_by_1",
                 "typeString": "int_const 341"
@@ -4612,15 +4608,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67852,
+            "id": 62738,
             "nodeType": "VariableDeclaration",
-            "src": "9250:54:113",
+            "src": "9250:54:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "INVALID_INITIALIZATION",
-            "nameLocation": "9276:22:113",
-            "scope": 68144,
+            "nameLocation": "9276:22:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -4628,10 +4624,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67850,
+              "id": 62736,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "9250:7:113",
+              "src": "9250:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -4639,14 +4635,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333432",
-              "id": 67851,
+              "id": 62737,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "9301:3:113",
+              "src": "9301:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_342_by_1",
                 "typeString": "int_const 342"
@@ -4656,15 +4652,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67855,
+            "id": 62741,
             "nodeType": "VariableDeclaration",
-            "src": "9310:55:113",
+            "src": "9310:55:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "OUT_OF_NEW_TARGET_RANGE",
-            "nameLocation": "9336:23:113",
-            "scope": 68144,
+            "nameLocation": "9336:23:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -4672,10 +4668,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67853,
+              "id": 62739,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "9310:7:113",
+              "src": "9310:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -4683,14 +4679,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333433",
-              "id": 67854,
+              "id": 62740,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "9362:3:113",
+              "src": "9362:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_343_by_1",
                 "typeString": "int_const 343"
@@ -4700,15 +4696,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67858,
+            "id": 62744,
             "nodeType": "VariableDeclaration",
-            "src": "9371:48:113",
+            "src": "9371:48:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "FEATURE_DISABLED",
-            "nameLocation": "9397:16:113",
-            "scope": 68144,
+            "nameLocation": "9397:16:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -4716,10 +4712,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67856,
+              "id": 62742,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "9371:7:113",
+              "src": "9371:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -4727,14 +4723,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333434",
-              "id": 67857,
+              "id": 62743,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "9416:3:113",
+              "src": "9416:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_344_by_1",
                 "typeString": "int_const 344"
@@ -4744,15 +4740,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67861,
+            "id": 62747,
             "nodeType": "VariableDeclaration",
-            "src": "9425:61:113",
+            "src": "9425:61:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "UNINITIALIZED_POOL_CONTROLLER",
-            "nameLocation": "9451:29:113",
-            "scope": 68144,
+            "nameLocation": "9451:29:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -4760,10 +4756,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67859,
+              "id": 62745,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "9425:7:113",
+              "src": "9425:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -4771,14 +4767,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333435",
-              "id": 67860,
+              "id": 62746,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "9483:3:113",
+              "src": "9483:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_345_by_1",
                 "typeString": "int_const 345"
@@ -4788,15 +4784,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67864,
+            "id": 62750,
             "nodeType": "VariableDeclaration",
-            "src": "9492:62:113",
+            "src": "9492:62:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "SET_SWAP_FEE_DURING_FEE_CHANGE",
-            "nameLocation": "9518:30:113",
-            "scope": 68144,
+            "nameLocation": "9518:30:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -4804,10 +4800,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67862,
+              "id": 62748,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "9492:7:113",
+              "src": "9492:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -4815,14 +4811,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333436",
-              "id": 67863,
+              "id": 62749,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "9551:3:113",
+              "src": "9551:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_346_by_1",
                 "typeString": "int_const 346"
@@ -4832,15 +4828,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67867,
+            "id": 62753,
             "nodeType": "VariableDeclaration",
-            "src": "9560:63:113",
+            "src": "9560:63:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "SET_SWAP_FEE_PENDING_FEE_CHANGE",
-            "nameLocation": "9586:31:113",
-            "scope": 68144,
+            "nameLocation": "9586:31:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -4848,10 +4844,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67865,
+              "id": 62751,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "9560:7:113",
+              "src": "9560:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -4859,14 +4855,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333437",
-              "id": 67866,
+              "id": 62752,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "9620:3:113",
+              "src": "9620:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_347_by_1",
                 "typeString": "int_const 347"
@@ -4876,15 +4872,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67870,
+            "id": 62756,
             "nodeType": "VariableDeclaration",
-            "src": "9629:66:113",
+            "src": "9629:66:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "CHANGE_TOKENS_DURING_WEIGHT_CHANGE",
-            "nameLocation": "9655:34:113",
-            "scope": 68144,
+            "nameLocation": "9655:34:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -4892,10 +4888,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67868,
+              "id": 62754,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "9629:7:113",
+              "src": "9629:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -4903,14 +4899,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333438",
-              "id": 67869,
+              "id": 62755,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "9692:3:113",
+              "src": "9692:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_348_by_1",
                 "typeString": "int_const 348"
@@ -4920,15 +4916,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67873,
+            "id": 62759,
             "nodeType": "VariableDeclaration",
-            "src": "9701:67:113",
+            "src": "9701:67:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "CHANGE_TOKENS_PENDING_WEIGHT_CHANGE",
-            "nameLocation": "9727:35:113",
-            "scope": 68144,
+            "nameLocation": "9727:35:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -4936,10 +4932,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67871,
+              "id": 62757,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "9701:7:113",
+              "src": "9701:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -4947,14 +4943,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333439",
-              "id": 67872,
+              "id": 62758,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "9765:3:113",
+              "src": "9765:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_349_by_1",
                 "typeString": "int_const 349"
@@ -4964,15 +4960,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67876,
+            "id": 62762,
             "nodeType": "VariableDeclaration",
-            "src": "9774:42:113",
+            "src": "9774:42:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "MAX_WEIGHT",
-            "nameLocation": "9800:10:113",
-            "scope": 68144,
+            "nameLocation": "9800:10:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -4980,10 +4976,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67874,
+              "id": 62760,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "9774:7:113",
+              "src": "9774:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -4991,14 +4987,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333530",
-              "id": 67875,
+              "id": 62761,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "9813:3:113",
+              "src": "9813:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_350_by_1",
                 "typeString": "int_const 350"
@@ -5008,15 +5004,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67879,
+            "id": 62765,
             "nodeType": "VariableDeclaration",
-            "src": "9822:49:113",
+            "src": "9822:49:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "UNAUTHORIZED_JOIN",
-            "nameLocation": "9848:17:113",
-            "scope": 68144,
+            "nameLocation": "9848:17:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -5024,10 +5020,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67877,
+              "id": 62763,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "9822:7:113",
+              "src": "9822:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -5035,14 +5031,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333531",
-              "id": 67878,
+              "id": 62764,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "9868:3:113",
+              "src": "9868:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_351_by_1",
                 "typeString": "int_const 351"
@@ -5052,15 +5048,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67882,
+            "id": 62768,
             "nodeType": "VariableDeclaration",
-            "src": "9877:65:113",
+            "src": "9877:65:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "MAX_MANAGEMENT_AUM_FEE_PERCENTAGE",
-            "nameLocation": "9903:33:113",
-            "scope": 68144,
+            "nameLocation": "9903:33:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -5068,10 +5064,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67880,
+              "id": 62766,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "9877:7:113",
+              "src": "9877:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -5079,14 +5075,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333532",
-              "id": 67881,
+              "id": 62767,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "9939:3:113",
+              "src": "9939:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_352_by_1",
                 "typeString": "int_const 352"
@@ -5096,15 +5092,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67885,
+            "id": 62771,
             "nodeType": "VariableDeclaration",
-            "src": "9948:49:113",
+            "src": "9948:49:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "FRACTIONAL_TARGET",
-            "nameLocation": "9974:17:113",
-            "scope": 68144,
+            "nameLocation": "9974:17:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -5112,10 +5108,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67883,
+              "id": 62769,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "9948:7:113",
+              "src": "9948:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -5123,14 +5119,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333533",
-              "id": 67884,
+              "id": 62770,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "9994:3:113",
+              "src": "9994:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_353_by_1",
                 "typeString": "int_const 353"
@@ -5140,15 +5136,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67888,
+            "id": 62774,
             "nodeType": "VariableDeclaration",
-            "src": "10003:49:113",
+            "src": "10003:49:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "ADD_OR_REMOVE_BPT",
-            "nameLocation": "10029:17:113",
-            "scope": 68144,
+            "nameLocation": "10029:17:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -5156,10 +5152,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67886,
+              "id": 62772,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "10003:7:113",
+              "src": "10003:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -5167,14 +5163,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333534",
-              "id": 67887,
+              "id": 62773,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "10049:3:113",
+              "src": "10049:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_354_by_1",
                 "typeString": "int_const 354"
@@ -5184,15 +5180,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67891,
+            "id": 62777,
             "nodeType": "VariableDeclaration",
-            "src": "10058:62:113",
+            "src": "10058:62:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "INVALID_CIRCUIT_BREAKER_BOUNDS",
-            "nameLocation": "10084:30:113",
-            "scope": 68144,
+            "nameLocation": "10084:30:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -5200,10 +5196,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67889,
+              "id": 62775,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "10058:7:113",
+              "src": "10058:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -5211,14 +5207,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333535",
-              "id": 67890,
+              "id": 62776,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "10117:3:113",
+              "src": "10117:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_355_by_1",
                 "typeString": "int_const 355"
@@ -5228,15 +5224,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67894,
+            "id": 62780,
             "nodeType": "VariableDeclaration",
-            "src": "10126:55:113",
+            "src": "10126:55:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "CIRCUIT_BREAKER_TRIPPED",
-            "nameLocation": "10152:23:113",
-            "scope": 68144,
+            "nameLocation": "10152:23:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -5244,10 +5240,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67892,
+              "id": 62778,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "10126:7:113",
+              "src": "10126:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -5255,14 +5251,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333536",
-              "id": 67893,
+              "id": 62779,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "10178:3:113",
+              "src": "10178:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_356_by_1",
                 "typeString": "int_const 356"
@@ -5272,15 +5268,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67897,
+            "id": 62783,
             "nodeType": "VariableDeclaration",
-            "src": "10187:54:113",
+            "src": "10187:54:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "MALICIOUS_QUERY_REVERT",
-            "nameLocation": "10213:22:113",
-            "scope": 68144,
+            "nameLocation": "10213:22:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -5288,10 +5284,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67895,
+              "id": 62781,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "10187:7:113",
+              "src": "10187:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -5299,14 +5295,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333537",
-              "id": 67896,
+              "id": 62782,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "10238:3:113",
+              "src": "10238:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_357_by_1",
                 "typeString": "int_const 357"
@@ -5316,15 +5312,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67900,
+            "id": 62786,
             "nodeType": "VariableDeclaration",
-            "src": "10247:52:113",
+            "src": "10247:52:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "JOINS_EXITS_DISABLED",
-            "nameLocation": "10273:20:113",
-            "scope": 68144,
+            "nameLocation": "10273:20:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -5332,10 +5328,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67898,
+              "id": 62784,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "10247:7:113",
+              "src": "10247:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -5343,14 +5339,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "333538",
-              "id": 67899,
+              "id": 62785,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "10296:3:113",
+              "src": "10296:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_358_by_1",
                 "typeString": "int_const 358"
@@ -5360,15 +5356,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67903,
+            "id": 62789,
             "nodeType": "VariableDeclaration",
-            "src": "10317:42:113",
+            "src": "10317:42:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "REENTRANCY",
-            "nameLocation": "10343:10:113",
-            "scope": 68144,
+            "nameLocation": "10343:10:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -5376,10 +5372,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67901,
+              "id": 62787,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "10317:7:113",
+              "src": "10317:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -5387,14 +5383,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "343030",
-              "id": 67902,
+              "id": 62788,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "10356:3:113",
+              "src": "10356:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_400_by_1",
                 "typeString": "int_const 400"
@@ -5404,15 +5400,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67906,
+            "id": 62792,
             "nodeType": "VariableDeclaration",
-            "src": "10365:50:113",
+            "src": "10365:50:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "SENDER_NOT_ALLOWED",
-            "nameLocation": "10391:18:113",
-            "scope": 68144,
+            "nameLocation": "10391:18:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -5420,10 +5416,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67904,
+              "id": 62790,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "10365:7:113",
+              "src": "10365:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -5431,14 +5427,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "343031",
-              "id": 67905,
+              "id": 62791,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "10412:3:113",
+              "src": "10412:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_401_by_1",
                 "typeString": "int_const 401"
@@ -5448,15 +5444,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67909,
+            "id": 62795,
             "nodeType": "VariableDeclaration",
-            "src": "10421:38:113",
+            "src": "10421:38:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "PAUSED",
-            "nameLocation": "10447:6:113",
-            "scope": 68144,
+            "nameLocation": "10447:6:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -5464,10 +5460,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67907,
+              "id": 62793,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "10421:7:113",
+              "src": "10421:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -5475,14 +5471,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "343032",
-              "id": 67908,
+              "id": 62794,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "10456:3:113",
+              "src": "10456:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_402_by_1",
                 "typeString": "int_const 402"
@@ -5492,15 +5488,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67912,
+            "id": 62798,
             "nodeType": "VariableDeclaration",
-            "src": "10465:52:113",
+            "src": "10465:52:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "PAUSE_WINDOW_EXPIRED",
-            "nameLocation": "10491:20:113",
-            "scope": 68144,
+            "nameLocation": "10491:20:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -5508,10 +5504,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67910,
+              "id": 62796,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "10465:7:113",
+              "src": "10465:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -5519,14 +5515,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "343033",
-              "id": 67911,
+              "id": 62797,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "10514:3:113",
+              "src": "10514:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_403_by_1",
                 "typeString": "int_const 403"
@@ -5536,15 +5532,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67915,
+            "id": 62801,
             "nodeType": "VariableDeclaration",
-            "src": "10523:57:113",
+            "src": "10523:57:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "MAX_PAUSE_WINDOW_DURATION",
-            "nameLocation": "10549:25:113",
-            "scope": 68144,
+            "nameLocation": "10549:25:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -5552,10 +5548,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67913,
+              "id": 62799,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "10523:7:113",
+              "src": "10523:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -5563,14 +5559,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "343034",
-              "id": 67914,
+              "id": 62800,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "10577:3:113",
+              "src": "10577:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_404_by_1",
                 "typeString": "int_const 404"
@@ -5580,15 +5576,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67918,
+            "id": 62804,
             "nodeType": "VariableDeclaration",
-            "src": "10586:58:113",
+            "src": "10586:58:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "MAX_BUFFER_PERIOD_DURATION",
-            "nameLocation": "10612:26:113",
-            "scope": 68144,
+            "nameLocation": "10612:26:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -5596,10 +5592,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67916,
+              "id": 62802,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "10586:7:113",
+              "src": "10586:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -5607,14 +5603,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "343035",
-              "id": 67917,
+              "id": 62803,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "10641:3:113",
+              "src": "10641:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_405_by_1",
                 "typeString": "int_const 405"
@@ -5624,15 +5620,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67921,
+            "id": 62807,
             "nodeType": "VariableDeclaration",
-            "src": "10650:52:113",
+            "src": "10650:52:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "INSUFFICIENT_BALANCE",
-            "nameLocation": "10676:20:113",
-            "scope": 68144,
+            "nameLocation": "10676:20:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -5640,10 +5636,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67919,
+              "id": 62805,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "10650:7:113",
+              "src": "10650:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -5651,14 +5647,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "343036",
-              "id": 67920,
+              "id": 62806,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "10699:3:113",
+              "src": "10699:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_406_by_1",
                 "typeString": "int_const 406"
@@ -5668,15 +5664,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67924,
+            "id": 62810,
             "nodeType": "VariableDeclaration",
-            "src": "10708:54:113",
+            "src": "10708:54:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "INSUFFICIENT_ALLOWANCE",
-            "nameLocation": "10734:22:113",
-            "scope": 68144,
+            "nameLocation": "10734:22:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -5684,10 +5680,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67922,
+              "id": 62808,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "10708:7:113",
+              "src": "10708:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -5695,14 +5691,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "343037",
-              "id": 67923,
+              "id": 62809,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "10759:3:113",
+              "src": "10759:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_407_by_1",
                 "typeString": "int_const 407"
@@ -5712,15 +5708,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67927,
+            "id": 62813,
             "nodeType": "VariableDeclaration",
-            "src": "10768:64:113",
+            "src": "10768:64:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "ERC20_TRANSFER_FROM_ZERO_ADDRESS",
-            "nameLocation": "10794:32:113",
-            "scope": 68144,
+            "nameLocation": "10794:32:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -5728,10 +5724,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67925,
+              "id": 62811,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "10768:7:113",
+              "src": "10768:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -5739,14 +5735,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "343038",
-              "id": 67926,
+              "id": 62812,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "10829:3:113",
+              "src": "10829:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_408_by_1",
                 "typeString": "int_const 408"
@@ -5756,15 +5752,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67930,
+            "id": 62816,
             "nodeType": "VariableDeclaration",
-            "src": "10838:62:113",
+            "src": "10838:62:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "ERC20_TRANSFER_TO_ZERO_ADDRESS",
-            "nameLocation": "10864:30:113",
-            "scope": 68144,
+            "nameLocation": "10864:30:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -5772,10 +5768,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67928,
+              "id": 62814,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "10838:7:113",
+              "src": "10838:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -5783,14 +5779,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "343039",
-              "id": 67929,
+              "id": 62815,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "10897:3:113",
+              "src": "10897:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_409_by_1",
                 "typeString": "int_const 409"
@@ -5800,15 +5796,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67933,
+            "id": 62819,
             "nodeType": "VariableDeclaration",
-            "src": "10906:58:113",
+            "src": "10906:58:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "ERC20_MINT_TO_ZERO_ADDRESS",
-            "nameLocation": "10932:26:113",
-            "scope": 68144,
+            "nameLocation": "10932:26:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -5816,10 +5812,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67931,
+              "id": 62817,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "10906:7:113",
+              "src": "10906:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -5827,14 +5823,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "343130",
-              "id": 67932,
+              "id": 62818,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "10961:3:113",
+              "src": "10961:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_410_by_1",
                 "typeString": "int_const 410"
@@ -5844,15 +5840,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67936,
+            "id": 62822,
             "nodeType": "VariableDeclaration",
-            "src": "10970:60:113",
+            "src": "10970:60:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "ERC20_BURN_FROM_ZERO_ADDRESS",
-            "nameLocation": "10996:28:113",
-            "scope": 68144,
+            "nameLocation": "10996:28:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -5860,10 +5856,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67934,
+              "id": 62820,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "10970:7:113",
+              "src": "10970:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -5871,14 +5867,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "343131",
-              "id": 67935,
+              "id": 62821,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "11027:3:113",
+              "src": "11027:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_411_by_1",
                 "typeString": "int_const 411"
@@ -5888,15 +5884,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67939,
+            "id": 62825,
             "nodeType": "VariableDeclaration",
-            "src": "11036:63:113",
+            "src": "11036:63:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "ERC20_APPROVE_FROM_ZERO_ADDRESS",
-            "nameLocation": "11062:31:113",
-            "scope": 68144,
+            "nameLocation": "11062:31:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -5904,10 +5900,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67937,
+              "id": 62823,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "11036:7:113",
+              "src": "11036:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -5915,14 +5911,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "343132",
-              "id": 67938,
+              "id": 62824,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "11096:3:113",
+              "src": "11096:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_412_by_1",
                 "typeString": "int_const 412"
@@ -5932,15 +5928,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67942,
+            "id": 62828,
             "nodeType": "VariableDeclaration",
-            "src": "11105:61:113",
+            "src": "11105:61:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "ERC20_APPROVE_TO_ZERO_ADDRESS",
-            "nameLocation": "11131:29:113",
-            "scope": 68144,
+            "nameLocation": "11131:29:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -5948,10 +5944,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67940,
+              "id": 62826,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "11105:7:113",
+              "src": "11105:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -5959,14 +5955,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "343133",
-              "id": 67941,
+              "id": 62827,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "11163:3:113",
+              "src": "11163:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_413_by_1",
                 "typeString": "int_const 413"
@@ -5976,15 +5972,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67945,
+            "id": 62831,
             "nodeType": "VariableDeclaration",
-            "src": "11172:64:113",
+            "src": "11172:64:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "ERC20_TRANSFER_EXCEEDS_ALLOWANCE",
-            "nameLocation": "11198:32:113",
-            "scope": 68144,
+            "nameLocation": "11198:32:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -5992,10 +5988,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67943,
+              "id": 62829,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "11172:7:113",
+              "src": "11172:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -6003,14 +5999,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "343134",
-              "id": 67944,
+              "id": 62830,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "11233:3:113",
+              "src": "11233:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_414_by_1",
                 "typeString": "int_const 414"
@@ -6020,15 +6016,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67948,
+            "id": 62834,
             "nodeType": "VariableDeclaration",
-            "src": "11242:68:113",
+            "src": "11242:68:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "ERC20_DECREASED_ALLOWANCE_BELOW_ZERO",
-            "nameLocation": "11268:36:113",
-            "scope": 68144,
+            "nameLocation": "11268:36:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -6036,10 +6032,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67946,
+              "id": 62832,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "11242:7:113",
+              "src": "11242:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -6047,14 +6043,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "343135",
-              "id": 67947,
+              "id": 62833,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "11307:3:113",
+              "src": "11307:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_415_by_1",
                 "typeString": "int_const 415"
@@ -6064,15 +6060,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67951,
+            "id": 62837,
             "nodeType": "VariableDeclaration",
-            "src": "11316:62:113",
+            "src": "11316:62:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "ERC20_TRANSFER_EXCEEDS_BALANCE",
-            "nameLocation": "11342:30:113",
-            "scope": 68144,
+            "nameLocation": "11342:30:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -6080,10 +6076,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67949,
+              "id": 62835,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "11316:7:113",
+              "src": "11316:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -6091,14 +6087,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "343136",
-              "id": 67950,
+              "id": 62836,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "11375:3:113",
+              "src": "11375:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_416_by_1",
                 "typeString": "int_const 416"
@@ -6108,15 +6104,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67954,
+            "id": 62840,
             "nodeType": "VariableDeclaration",
-            "src": "11384:60:113",
+            "src": "11384:60:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "ERC20_BURN_EXCEEDS_ALLOWANCE",
-            "nameLocation": "11410:28:113",
-            "scope": 68144,
+            "nameLocation": "11410:28:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -6124,10 +6120,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67952,
+              "id": 62838,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "11384:7:113",
+              "src": "11384:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -6135,14 +6131,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "343137",
-              "id": 67953,
+              "id": 62839,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "11441:3:113",
+              "src": "11441:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_417_by_1",
                 "typeString": "int_const 417"
@@ -6152,15 +6148,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67957,
+            "id": 62843,
             "nodeType": "VariableDeclaration",
-            "src": "11450:54:113",
+            "src": "11450:54:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "SAFE_ERC20_CALL_FAILED",
-            "nameLocation": "11476:22:113",
-            "scope": 68144,
+            "nameLocation": "11476:22:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -6168,10 +6164,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67955,
+              "id": 62841,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "11450:7:113",
+              "src": "11450:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -6179,14 +6175,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "343138",
-              "id": 67956,
+              "id": 62842,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "11501:3:113",
+              "src": "11501:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_418_by_1",
                 "typeString": "int_const 418"
@@ -6196,15 +6192,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67960,
+            "id": 62846,
             "nodeType": "VariableDeclaration",
-            "src": "11510:60:113",
+            "src": "11510:60:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "ADDRESS_INSUFFICIENT_BALANCE",
-            "nameLocation": "11536:28:113",
-            "scope": 68144,
+            "nameLocation": "11536:28:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -6212,10 +6208,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67958,
+              "id": 62844,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "11510:7:113",
+              "src": "11510:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -6223,14 +6219,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "343139",
-              "id": 67959,
+              "id": 62845,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "11567:3:113",
+              "src": "11567:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_419_by_1",
                 "typeString": "int_const 419"
@@ -6240,15 +6236,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67963,
+            "id": 62849,
             "nodeType": "VariableDeclaration",
-            "src": "11576:57:113",
+            "src": "11576:57:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "ADDRESS_CANNOT_SEND_VALUE",
-            "nameLocation": "11602:25:113",
-            "scope": 68144,
+            "nameLocation": "11602:25:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -6256,10 +6252,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67961,
+              "id": 62847,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "11576:7:113",
+              "src": "11576:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -6267,14 +6263,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "343230",
-              "id": 67962,
+              "id": 62848,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "11630:3:113",
+              "src": "11630:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_420_by_1",
                 "typeString": "int_const 420"
@@ -6284,15 +6280,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67966,
+            "id": 62852,
             "nodeType": "VariableDeclaration",
-            "src": "11639:63:113",
+            "src": "11639:63:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "SAFE_CAST_VALUE_CANT_FIT_INT256",
-            "nameLocation": "11665:31:113",
-            "scope": 68144,
+            "nameLocation": "11665:31:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -6300,10 +6296,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67964,
+              "id": 62850,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "11639:7:113",
+              "src": "11639:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -6311,14 +6307,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "343231",
-              "id": 67965,
+              "id": 62851,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "11699:3:113",
+              "src": "11699:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_421_by_1",
                 "typeString": "int_const 421"
@@ -6328,15 +6324,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67969,
+            "id": 62855,
             "nodeType": "VariableDeclaration",
-            "src": "11708:54:113",
+            "src": "11708:54:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "GRANT_SENDER_NOT_ADMIN",
-            "nameLocation": "11734:22:113",
-            "scope": 68144,
+            "nameLocation": "11734:22:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -6344,10 +6340,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67967,
+              "id": 62853,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "11708:7:113",
+              "src": "11708:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -6355,14 +6351,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "343232",
-              "id": 67968,
+              "id": 62854,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "11759:3:113",
+              "src": "11759:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_422_by_1",
                 "typeString": "int_const 422"
@@ -6372,15 +6368,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67972,
+            "id": 62858,
             "nodeType": "VariableDeclaration",
-            "src": "11768:55:113",
+            "src": "11768:55:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "REVOKE_SENDER_NOT_ADMIN",
-            "nameLocation": "11794:23:113",
-            "scope": 68144,
+            "nameLocation": "11794:23:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -6388,10 +6384,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67970,
+              "id": 62856,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "11768:7:113",
+              "src": "11768:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -6399,14 +6395,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "343233",
-              "id": 67971,
+              "id": 62857,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "11820:3:113",
+              "src": "11820:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_423_by_1",
                 "typeString": "int_const 423"
@@ -6416,15 +6412,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67975,
+            "id": 62861,
             "nodeType": "VariableDeclaration",
-            "src": "11829:59:113",
+            "src": "11829:59:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "RENOUNCE_SENDER_NOT_ALLOWED",
-            "nameLocation": "11855:27:113",
-            "scope": 68144,
+            "nameLocation": "11855:27:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -6432,10 +6428,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67973,
+              "id": 62859,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "11829:7:113",
+              "src": "11829:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -6443,14 +6439,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "343234",
-              "id": 67974,
+              "id": 62860,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "11885:3:113",
+              "src": "11885:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_424_by_1",
                 "typeString": "int_const 424"
@@ -6460,15 +6456,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67978,
+            "id": 62864,
             "nodeType": "VariableDeclaration",
-            "src": "11894:53:113",
+            "src": "11894:53:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "BUFFER_PERIOD_EXPIRED",
-            "nameLocation": "11920:21:113",
-            "scope": 68144,
+            "nameLocation": "11920:21:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -6476,10 +6472,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67976,
+              "id": 62862,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "11894:7:113",
+              "src": "11894:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -6487,14 +6483,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "343235",
-              "id": 67977,
+              "id": 62863,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "11944:3:113",
+              "src": "11944:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_425_by_1",
                 "typeString": "int_const 425"
@@ -6504,15 +6500,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67981,
+            "id": 62867,
             "nodeType": "VariableDeclaration",
-            "src": "11953:51:113",
+            "src": "11953:51:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "CALLER_IS_NOT_OWNER",
-            "nameLocation": "11979:19:113",
-            "scope": 68144,
+            "nameLocation": "11979:19:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -6520,10 +6516,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67979,
+              "id": 62865,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "11953:7:113",
+              "src": "11953:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -6531,14 +6527,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "343236",
-              "id": 67980,
+              "id": 62866,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "12001:3:113",
+              "src": "12001:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_426_by_1",
                 "typeString": "int_const 426"
@@ -6548,15 +6544,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67984,
+            "id": 62870,
             "nodeType": "VariableDeclaration",
-            "src": "12010:49:113",
+            "src": "12010:49:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "NEW_OWNER_IS_ZERO",
-            "nameLocation": "12036:17:113",
-            "scope": 68144,
+            "nameLocation": "12036:17:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -6564,10 +6560,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67982,
+              "id": 62868,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "12010:7:113",
+              "src": "12010:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -6575,14 +6571,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "343237",
-              "id": 67983,
+              "id": 62869,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "12056:3:113",
+              "src": "12056:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_427_by_1",
                 "typeString": "int_const 427"
@@ -6592,15 +6588,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67987,
+            "id": 62873,
             "nodeType": "VariableDeclaration",
-            "src": "12065:54:113",
+            "src": "12065:54:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "CODE_DEPLOYMENT_FAILED",
-            "nameLocation": "12091:22:113",
-            "scope": 68144,
+            "nameLocation": "12091:22:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -6608,10 +6604,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67985,
+              "id": 62871,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "12065:7:113",
+              "src": "12065:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -6619,14 +6615,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "343238",
-              "id": 67986,
+              "id": 62872,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "12116:3:113",
+              "src": "12116:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_428_by_1",
                 "typeString": "int_const 428"
@@ -6636,15 +6632,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67990,
+            "id": 62876,
             "nodeType": "VariableDeclaration",
-            "src": "12125:52:113",
+            "src": "12125:52:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "CALL_TO_NON_CONTRACT",
-            "nameLocation": "12151:20:113",
-            "scope": 68144,
+            "nameLocation": "12151:20:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -6652,10 +6648,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67988,
+              "id": 62874,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "12125:7:113",
+              "src": "12125:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -6663,14 +6659,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "343239",
-              "id": 67989,
+              "id": 62875,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "12174:3:113",
+              "src": "12174:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_429_by_1",
                 "typeString": "int_const 429"
@@ -6680,15 +6676,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67993,
+            "id": 62879,
             "nodeType": "VariableDeclaration",
-            "src": "12183:53:113",
+            "src": "12183:53:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "LOW_LEVEL_CALL_FAILED",
-            "nameLocation": "12209:21:113",
-            "scope": 68144,
+            "nameLocation": "12209:21:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -6696,10 +6692,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67991,
+              "id": 62877,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "12183:7:113",
+              "src": "12183:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -6707,14 +6703,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "343330",
-              "id": 67992,
+              "id": 62878,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "12233:3:113",
+              "src": "12233:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_430_by_1",
                 "typeString": "int_const 430"
@@ -6724,15 +6720,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67996,
+            "id": 62882,
             "nodeType": "VariableDeclaration",
-            "src": "12242:42:113",
+            "src": "12242:42:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "NOT_PAUSED",
-            "nameLocation": "12268:10:113",
-            "scope": 68144,
+            "nameLocation": "12268:10:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -6740,10 +6736,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67994,
+              "id": 62880,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "12242:7:113",
+              "src": "12242:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -6751,14 +6747,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "343331",
-              "id": 67995,
+              "id": 62881,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "12281:3:113",
+              "src": "12281:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_431_by_1",
                 "typeString": "int_const 431"
@@ -6768,15 +6764,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 67999,
+            "id": 62885,
             "nodeType": "VariableDeclaration",
-            "src": "12290:59:113",
+            "src": "12290:59:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "ADDRESS_ALREADY_ALLOWLISTED",
-            "nameLocation": "12316:27:113",
-            "scope": 68144,
+            "nameLocation": "12316:27:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -6784,10 +6780,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 67997,
+              "id": 62883,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "12290:7:113",
+              "src": "12290:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -6795,14 +6791,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "343332",
-              "id": 67998,
+              "id": 62884,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "12346:3:113",
+              "src": "12346:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_432_by_1",
                 "typeString": "int_const 432"
@@ -6812,15 +6808,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68002,
+            "id": 62888,
             "nodeType": "VariableDeclaration",
-            "src": "12355:55:113",
+            "src": "12355:55:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "ADDRESS_NOT_ALLOWLISTED",
-            "nameLocation": "12381:23:113",
-            "scope": 68144,
+            "nameLocation": "12381:23:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -6828,10 +6824,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68000,
+              "id": 62886,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "12355:7:113",
+              "src": "12355:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -6839,14 +6835,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "343333",
-              "id": 68001,
+              "id": 62887,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "12407:3:113",
+              "src": "12407:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_433_by_1",
                 "typeString": "int_const 433"
@@ -6856,15 +6852,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68005,
+            "id": 62891,
             "nodeType": "VariableDeclaration",
-            "src": "12416:58:113",
+            "src": "12416:58:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "ERC20_BURN_EXCEEDS_BALANCE",
-            "nameLocation": "12442:26:113",
-            "scope": 68144,
+            "nameLocation": "12442:26:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -6872,10 +6868,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68003,
+              "id": 62889,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "12416:7:113",
+              "src": "12416:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -6883,14 +6879,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "343334",
-              "id": 68004,
+              "id": 62890,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "12471:3:113",
+              "src": "12471:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_434_by_1",
                 "typeString": "int_const 434"
@@ -6900,15 +6896,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68008,
+            "id": 62894,
             "nodeType": "VariableDeclaration",
-            "src": "12480:49:113",
+            "src": "12480:49:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "INVALID_OPERATION",
-            "nameLocation": "12506:17:113",
-            "scope": 68144,
+            "nameLocation": "12506:17:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -6916,10 +6912,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68006,
+              "id": 62892,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "12480:7:113",
+              "src": "12480:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -6927,14 +6923,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "343335",
-              "id": 68007,
+              "id": 62893,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "12526:3:113",
+              "src": "12526:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_435_by_1",
                 "typeString": "int_const 435"
@@ -6944,15 +6940,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68011,
+            "id": 62897,
             "nodeType": "VariableDeclaration",
-            "src": "12535:46:113",
+            "src": "12535:46:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "CODEC_OVERFLOW",
-            "nameLocation": "12561:14:113",
-            "scope": 68144,
+            "nameLocation": "12561:14:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -6960,10 +6956,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68009,
+              "id": 62895,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "12535:7:113",
+              "src": "12535:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -6971,14 +6967,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "343336",
-              "id": 68010,
+              "id": 62896,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "12578:3:113",
+              "src": "12578:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_436_by_1",
                 "typeString": "int_const 436"
@@ -6988,15 +6984,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68014,
+            "id": 62900,
             "nodeType": "VariableDeclaration",
-            "src": "12587:48:113",
+            "src": "12587:48:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "IN_RECOVERY_MODE",
-            "nameLocation": "12613:16:113",
-            "scope": 68144,
+            "nameLocation": "12613:16:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -7004,10 +7000,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68012,
+              "id": 62898,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "12587:7:113",
+              "src": "12587:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -7015,14 +7011,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "343337",
-              "id": 68013,
+              "id": 62899,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "12632:3:113",
+              "src": "12632:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_437_by_1",
                 "typeString": "int_const 437"
@@ -7032,15 +7028,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68017,
+            "id": 62903,
             "nodeType": "VariableDeclaration",
-            "src": "12641:52:113",
+            "src": "12641:52:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "NOT_IN_RECOVERY_MODE",
-            "nameLocation": "12667:20:113",
-            "scope": 68144,
+            "nameLocation": "12667:20:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -7048,10 +7044,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68015,
+              "id": 62901,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "12641:7:113",
+              "src": "12641:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -7059,14 +7055,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "343338",
-              "id": 68016,
+              "id": 62902,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "12690:3:113",
+              "src": "12690:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_438_by_1",
                 "typeString": "int_const 438"
@@ -7076,15 +7072,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68020,
+            "id": 62906,
             "nodeType": "VariableDeclaration",
-            "src": "12699:47:113",
+            "src": "12699:47:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "INDUCED_FAILURE",
-            "nameLocation": "12725:15:113",
-            "scope": 68144,
+            "nameLocation": "12725:15:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -7092,10 +7088,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68018,
+              "id": 62904,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "12699:7:113",
+              "src": "12699:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -7103,14 +7099,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "343339",
-              "id": 68019,
+              "id": 62905,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "12743:3:113",
+              "src": "12743:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_439_by_1",
                 "typeString": "int_const 439"
@@ -7120,15 +7116,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68023,
+            "id": 62909,
             "nodeType": "VariableDeclaration",
-            "src": "12752:49:113",
+            "src": "12752:49:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "EXPIRED_SIGNATURE",
-            "nameLocation": "12778:17:113",
-            "scope": 68144,
+            "nameLocation": "12778:17:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -7136,10 +7132,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68021,
+              "id": 62907,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "12752:7:113",
+              "src": "12752:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -7147,14 +7143,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "343430",
-              "id": 68022,
+              "id": 62908,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "12798:3:113",
+              "src": "12798:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_440_by_1",
                 "typeString": "int_const 440"
@@ -7164,15 +7160,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68026,
+            "id": 62912,
             "nodeType": "VariableDeclaration",
-            "src": "12807:51:113",
+            "src": "12807:51:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "MALFORMED_SIGNATURE",
-            "nameLocation": "12833:19:113",
-            "scope": 68144,
+            "nameLocation": "12833:19:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -7180,10 +7176,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68024,
+              "id": 62910,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "12807:7:113",
+              "src": "12807:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -7191,14 +7187,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "343431",
-              "id": 68025,
+              "id": 62911,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "12855:3:113",
+              "src": "12855:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_441_by_1",
                 "typeString": "int_const 441"
@@ -7208,15 +7204,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68029,
+            "id": 62915,
             "nodeType": "VariableDeclaration",
-            "src": "12864:63:113",
+            "src": "12864:63:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "SAFE_CAST_VALUE_CANT_FIT_UINT64",
-            "nameLocation": "12890:31:113",
-            "scope": 68144,
+            "nameLocation": "12890:31:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -7224,10 +7220,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68027,
+              "id": 62913,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "12864:7:113",
+              "src": "12864:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -7235,14 +7231,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "343432",
-              "id": 68028,
+              "id": 62914,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "12924:3:113",
+              "src": "12924:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_442_by_1",
                 "typeString": "int_const 442"
@@ -7252,15 +7248,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68032,
+            "id": 62918,
             "nodeType": "VariableDeclaration",
-            "src": "12933:50:113",
+            "src": "12933:50:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "UNHANDLED_FEE_TYPE",
-            "nameLocation": "12959:18:113",
-            "scope": 68144,
+            "nameLocation": "12959:18:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -7268,10 +7264,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68030,
+              "id": 62916,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "12933:7:113",
+              "src": "12933:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -7279,14 +7275,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "343433",
-              "id": 68031,
+              "id": 62917,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "12980:3:113",
+              "src": "12980:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_443_by_1",
                 "typeString": "int_const 443"
@@ -7296,15 +7292,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68035,
+            "id": 62921,
             "nodeType": "VariableDeclaration",
-            "src": "12989:46:113",
+            "src": "12989:46:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "BURN_FROM_ZERO",
-            "nameLocation": "13015:14:113",
-            "scope": 68144,
+            "nameLocation": "13015:14:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -7312,10 +7308,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68033,
+              "id": 62919,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "12989:7:113",
+              "src": "12989:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -7323,14 +7319,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "343434",
-              "id": 68034,
+              "id": 62920,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "13032:3:113",
+              "src": "13032:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_444_by_1",
                 "typeString": "int_const 444"
@@ -7340,15 +7336,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68038,
+            "id": 62924,
             "nodeType": "VariableDeclaration",
-            "src": "13055:47:113",
+            "src": "13055:47:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "INVALID_POOL_ID",
-            "nameLocation": "13081:15:113",
-            "scope": 68144,
+            "nameLocation": "13081:15:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -7356,10 +7352,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68036,
+              "id": 62922,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "13055:7:113",
+              "src": "13055:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -7367,14 +7363,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "353030",
-              "id": 68037,
+              "id": 62923,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "13099:3:113",
+              "src": "13099:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_500_by_1",
                 "typeString": "int_const 500"
@@ -7384,15 +7380,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68041,
+            "id": 62927,
             "nodeType": "VariableDeclaration",
-            "src": "13108:47:113",
+            "src": "13108:47:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "CALLER_NOT_POOL",
-            "nameLocation": "13134:15:113",
-            "scope": 68144,
+            "nameLocation": "13134:15:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -7400,10 +7396,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68039,
+              "id": 62925,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "13108:7:113",
+              "src": "13108:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -7411,14 +7407,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "353031",
-              "id": 68040,
+              "id": 62926,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "13152:3:113",
+              "src": "13152:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_501_by_1",
                 "typeString": "int_const 501"
@@ -7428,15 +7424,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68044,
+            "id": 62930,
             "nodeType": "VariableDeclaration",
-            "src": "13161:56:113",
+            "src": "13161:56:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "SENDER_NOT_ASSET_MANAGER",
-            "nameLocation": "13187:24:113",
-            "scope": 68144,
+            "nameLocation": "13187:24:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -7444,10 +7440,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68042,
+              "id": 62928,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "13161:7:113",
+              "src": "13161:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -7455,14 +7451,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "353032",
-              "id": 68043,
+              "id": 62929,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "13214:3:113",
+              "src": "13214:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_502_by_1",
                 "typeString": "int_const 502"
@@ -7472,15 +7468,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68047,
+            "id": 62933,
             "nodeType": "VariableDeclaration",
-            "src": "13223:57:113",
+            "src": "13223:57:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "USER_DOESNT_ALLOW_RELAYER",
-            "nameLocation": "13249:25:113",
-            "scope": 68144,
+            "nameLocation": "13249:25:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -7488,10 +7484,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68045,
+              "id": 62931,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "13223:7:113",
+              "src": "13223:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -7499,14 +7495,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "353033",
-              "id": 68046,
+              "id": 62932,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "13277:3:113",
+              "src": "13277:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_503_by_1",
                 "typeString": "int_const 503"
@@ -7516,15 +7512,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68050,
+            "id": 62936,
             "nodeType": "VariableDeclaration",
-            "src": "13286:49:113",
+            "src": "13286:49:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "INVALID_SIGNATURE",
-            "nameLocation": "13312:17:113",
-            "scope": 68144,
+            "nameLocation": "13312:17:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -7532,10 +7528,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68048,
+              "id": 62934,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "13286:7:113",
+              "src": "13286:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -7543,14 +7539,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "353034",
-              "id": 68049,
+              "id": 62935,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "13332:3:113",
+              "src": "13332:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_504_by_1",
                 "typeString": "int_const 504"
@@ -7560,15 +7556,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68053,
+            "id": 62939,
             "nodeType": "VariableDeclaration",
-            "src": "13341:46:113",
+            "src": "13341:46:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "EXIT_BELOW_MIN",
-            "nameLocation": "13367:14:113",
-            "scope": 68144,
+            "nameLocation": "13367:14:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -7576,10 +7572,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68051,
+              "id": 62937,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "13341:7:113",
+              "src": "13341:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -7587,14 +7583,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "353035",
-              "id": 68052,
+              "id": 62938,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "13384:3:113",
+              "src": "13384:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_505_by_1",
                 "typeString": "int_const 505"
@@ -7604,15 +7600,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68056,
+            "id": 62942,
             "nodeType": "VariableDeclaration",
-            "src": "13393:46:113",
+            "src": "13393:46:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "JOIN_ABOVE_MAX",
-            "nameLocation": "13419:14:113",
-            "scope": 68144,
+            "nameLocation": "13419:14:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -7620,10 +7616,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68054,
+              "id": 62940,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "13393:7:113",
+              "src": "13393:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -7631,14 +7627,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "353036",
-              "id": 68055,
+              "id": 62941,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "13436:3:113",
+              "src": "13436:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_506_by_1",
                 "typeString": "int_const 506"
@@ -7648,15 +7644,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68059,
+            "id": 62945,
             "nodeType": "VariableDeclaration",
-            "src": "13445:42:113",
+            "src": "13445:42:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "SWAP_LIMIT",
-            "nameLocation": "13471:10:113",
-            "scope": 68144,
+            "nameLocation": "13471:10:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -7664,10 +7660,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68057,
+              "id": 62943,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "13445:7:113",
+              "src": "13445:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -7675,14 +7671,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "353037",
-              "id": 68058,
+              "id": 62944,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "13484:3:113",
+              "src": "13484:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_507_by_1",
                 "typeString": "int_const 507"
@@ -7692,15 +7688,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68062,
+            "id": 62948,
             "nodeType": "VariableDeclaration",
-            "src": "13493:45:113",
+            "src": "13493:45:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "SWAP_DEADLINE",
-            "nameLocation": "13519:13:113",
-            "scope": 68144,
+            "nameLocation": "13519:13:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -7708,10 +7704,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68060,
+              "id": 62946,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "13493:7:113",
+              "src": "13493:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -7719,14 +7715,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "353038",
-              "id": 68061,
+              "id": 62947,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "13535:3:113",
+              "src": "13535:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_508_by_1",
                 "typeString": "int_const 508"
@@ -7736,15 +7732,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68065,
+            "id": 62951,
             "nodeType": "VariableDeclaration",
-            "src": "13544:54:113",
+            "src": "13544:54:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "CANNOT_SWAP_SAME_TOKEN",
-            "nameLocation": "13570:22:113",
-            "scope": 68144,
+            "nameLocation": "13570:22:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -7752,10 +7748,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68063,
+              "id": 62949,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "13544:7:113",
+              "src": "13544:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -7763,14 +7759,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "353039",
-              "id": 68064,
+              "id": 62950,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "13595:3:113",
+              "src": "13595:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_509_by_1",
                 "typeString": "int_const 509"
@@ -7780,15 +7776,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68068,
+            "id": 62954,
             "nodeType": "VariableDeclaration",
-            "src": "13604:60:113",
+            "src": "13604:60:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "UNKNOWN_AMOUNT_IN_FIRST_SWAP",
-            "nameLocation": "13630:28:113",
-            "scope": 68144,
+            "nameLocation": "13630:28:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -7796,10 +7792,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68066,
+              "id": 62952,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "13604:7:113",
+              "src": "13604:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -7807,14 +7803,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "353130",
-              "id": 68067,
+              "id": 62953,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "13661:3:113",
+              "src": "13661:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_510_by_1",
                 "typeString": "int_const 510"
@@ -7824,15 +7820,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68071,
+            "id": 62957,
             "nodeType": "VariableDeclaration",
-            "src": "13670:60:113",
+            "src": "13670:60:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "MALCONSTRUCTED_MULTIHOP_SWAP",
-            "nameLocation": "13696:28:113",
-            "scope": 68144,
+            "nameLocation": "13696:28:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -7840,10 +7836,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68069,
+              "id": 62955,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "13670:7:113",
+              "src": "13670:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -7851,14 +7847,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "353131",
-              "id": 68070,
+              "id": 62956,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "13727:3:113",
+              "src": "13727:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_511_by_1",
                 "typeString": "int_const 511"
@@ -7868,15 +7864,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68074,
+            "id": 62960,
             "nodeType": "VariableDeclaration",
-            "src": "13736:57:113",
+            "src": "13736:57:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "INTERNAL_BALANCE_OVERFLOW",
-            "nameLocation": "13762:25:113",
-            "scope": 68144,
+            "nameLocation": "13762:25:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -7884,10 +7880,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68072,
+              "id": 62958,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "13736:7:113",
+              "src": "13736:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -7895,14 +7891,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "353132",
-              "id": 68073,
+              "id": 62959,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "13790:3:113",
+              "src": "13790:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_512_by_1",
                 "typeString": "int_const 512"
@@ -7912,15 +7908,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68077,
+            "id": 62963,
             "nodeType": "VariableDeclaration",
-            "src": "13799:61:113",
+            "src": "13799:61:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "INSUFFICIENT_INTERNAL_BALANCE",
-            "nameLocation": "13825:29:113",
-            "scope": 68144,
+            "nameLocation": "13825:29:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -7928,10 +7924,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68075,
+              "id": 62961,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "13799:7:113",
+              "src": "13799:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -7939,14 +7935,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "353133",
-              "id": 68076,
+              "id": 62962,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "13857:3:113",
+              "src": "13857:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_513_by_1",
                 "typeString": "int_const 513"
@@ -7956,15 +7952,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68080,
+            "id": 62966,
             "nodeType": "VariableDeclaration",
-            "src": "13866:60:113",
+            "src": "13866:60:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "INVALID_ETH_INTERNAL_BALANCE",
-            "nameLocation": "13892:28:113",
-            "scope": 68144,
+            "nameLocation": "13892:28:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -7972,10 +7968,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68078,
+              "id": 62964,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "13866:7:113",
+              "src": "13866:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -7983,14 +7979,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "353134",
-              "id": 68079,
+              "id": 62965,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "13923:3:113",
+              "src": "13923:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_514_by_1",
                 "typeString": "int_const 514"
@@ -8000,15 +7996,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68083,
+            "id": 62969,
             "nodeType": "VariableDeclaration",
-            "src": "13932:57:113",
+            "src": "13932:57:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "INVALID_POST_LOAN_BALANCE",
-            "nameLocation": "13958:25:113",
-            "scope": 68144,
+            "nameLocation": "13958:25:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -8016,10 +8012,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68081,
+              "id": 62967,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "13932:7:113",
+              "src": "13932:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -8027,14 +8023,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "353135",
-              "id": 68082,
+              "id": 62968,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "13986:3:113",
+              "src": "13986:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_515_by_1",
                 "typeString": "int_const 515"
@@ -8044,15 +8040,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68086,
+            "id": 62972,
             "nodeType": "VariableDeclaration",
-            "src": "13995:48:113",
+            "src": "13995:48:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "INSUFFICIENT_ETH",
-            "nameLocation": "14021:16:113",
-            "scope": 68144,
+            "nameLocation": "14021:16:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -8060,10 +8056,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68084,
+              "id": 62970,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "13995:7:113",
+              "src": "13995:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -8071,14 +8067,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "353136",
-              "id": 68085,
+              "id": 62971,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "14040:3:113",
+              "src": "14040:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_516_by_1",
                 "typeString": "int_const 516"
@@ -8088,15 +8084,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68089,
+            "id": 62975,
             "nodeType": "VariableDeclaration",
-            "src": "14049:47:113",
+            "src": "14049:47:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "UNALLOCATED_ETH",
-            "nameLocation": "14075:15:113",
-            "scope": 68144,
+            "nameLocation": "14075:15:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -8104,10 +8100,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68087,
+              "id": 62973,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "14049:7:113",
+              "src": "14049:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -8115,14 +8111,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "353137",
-              "id": 68088,
+              "id": 62974,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "14093:3:113",
+              "src": "14093:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_517_by_1",
                 "typeString": "int_const 517"
@@ -8132,15 +8128,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68092,
+            "id": 62978,
             "nodeType": "VariableDeclaration",
-            "src": "14102:44:113",
+            "src": "14102:44:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "ETH_TRANSFER",
-            "nameLocation": "14128:12:113",
-            "scope": 68144,
+            "nameLocation": "14128:12:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -8148,10 +8144,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68090,
+              "id": 62976,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "14102:7:113",
+              "src": "14102:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -8159,14 +8155,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "353138",
-              "id": 68091,
+              "id": 62977,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "14143:3:113",
+              "src": "14143:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_518_by_1",
                 "typeString": "int_const 518"
@@ -8176,15 +8172,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68095,
+            "id": 62981,
             "nodeType": "VariableDeclaration",
-            "src": "14152:55:113",
+            "src": "14152:55:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "CANNOT_USE_ETH_SENTINEL",
-            "nameLocation": "14178:23:113",
-            "scope": 68144,
+            "nameLocation": "14178:23:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -8192,10 +8188,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68093,
+              "id": 62979,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "14152:7:113",
+              "src": "14152:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -8203,14 +8199,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "353139",
-              "id": 68094,
+              "id": 62980,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "14204:3:113",
+              "src": "14204:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_519_by_1",
                 "typeString": "int_const 519"
@@ -8220,15 +8216,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68098,
+            "id": 62984,
             "nodeType": "VariableDeclaration",
-            "src": "14213:47:113",
+            "src": "14213:47:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "TOKENS_MISMATCH",
-            "nameLocation": "14239:15:113",
-            "scope": 68144,
+            "nameLocation": "14239:15:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -8236,10 +8232,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68096,
+              "id": 62982,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "14213:7:113",
+              "src": "14213:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -8247,14 +8243,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "353230",
-              "id": 68097,
+              "id": 62983,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "14257:3:113",
+              "src": "14257:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_520_by_1",
                 "typeString": "int_const 520"
@@ -8264,15 +8260,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68101,
+            "id": 62987,
             "nodeType": "VariableDeclaration",
-            "src": "14266:52:113",
+            "src": "14266:52:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "TOKEN_NOT_REGISTERED",
-            "nameLocation": "14292:20:113",
-            "scope": 68144,
+            "nameLocation": "14292:20:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -8280,10 +8276,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68099,
+              "id": 62985,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "14266:7:113",
+              "src": "14266:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -8291,14 +8287,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "353231",
-              "id": 68100,
+              "id": 62986,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "14315:3:113",
+              "src": "14315:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_521_by_1",
                 "typeString": "int_const 521"
@@ -8308,15 +8304,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68104,
+            "id": 62990,
             "nodeType": "VariableDeclaration",
-            "src": "14324:56:113",
+            "src": "14324:56:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "TOKEN_ALREADY_REGISTERED",
-            "nameLocation": "14350:24:113",
-            "scope": 68144,
+            "nameLocation": "14350:24:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -8324,10 +8320,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68102,
+              "id": 62988,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "14324:7:113",
+              "src": "14324:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -8335,14 +8331,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "353232",
-              "id": 68103,
+              "id": 62989,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "14377:3:113",
+              "src": "14377:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_522_by_1",
                 "typeString": "int_const 522"
@@ -8352,15 +8348,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68107,
+            "id": 62993,
             "nodeType": "VariableDeclaration",
-            "src": "14386:50:113",
+            "src": "14386:50:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "TOKENS_ALREADY_SET",
-            "nameLocation": "14412:18:113",
-            "scope": 68144,
+            "nameLocation": "14412:18:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -8368,10 +8364,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68105,
+              "id": 62991,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "14386:7:113",
+              "src": "14386:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -8379,14 +8375,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "353233",
-              "id": 68106,
+              "id": 62992,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "14433:3:113",
+              "src": "14433:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_523_by_1",
                 "typeString": "int_const 523"
@@ -8396,15 +8392,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68110,
+            "id": 62996,
             "nodeType": "VariableDeclaration",
-            "src": "14442:55:113",
+            "src": "14442:55:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "TOKENS_LENGTH_MUST_BE_2",
-            "nameLocation": "14468:23:113",
-            "scope": 68144,
+            "nameLocation": "14468:23:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -8412,10 +8408,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68108,
+              "id": 62994,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "14442:7:113",
+              "src": "14442:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -8423,14 +8419,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "353234",
-              "id": 68109,
+              "id": 62995,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "14494:3:113",
+              "src": "14494:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_524_by_1",
                 "typeString": "int_const 524"
@@ -8440,15 +8436,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68113,
+            "id": 62999,
             "nodeType": "VariableDeclaration",
-            "src": "14503:53:113",
+            "src": "14503:53:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "NONZERO_TOKEN_BALANCE",
-            "nameLocation": "14529:21:113",
-            "scope": 68144,
+            "nameLocation": "14529:21:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -8456,10 +8452,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68111,
+              "id": 62997,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "14503:7:113",
+              "src": "14503:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -8467,14 +8463,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "353235",
-              "id": 68112,
+              "id": 62998,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "14553:3:113",
+              "src": "14553:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_525_by_1",
                 "typeString": "int_const 525"
@@ -8484,15 +8480,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68116,
+            "id": 63002,
             "nodeType": "VariableDeclaration",
-            "src": "14562:54:113",
+            "src": "14562:54:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "BALANCE_TOTAL_OVERFLOW",
-            "nameLocation": "14588:22:113",
-            "scope": 68144,
+            "nameLocation": "14588:22:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -8500,10 +8496,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68114,
+              "id": 63000,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "14562:7:113",
+              "src": "14562:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -8511,14 +8507,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "353236",
-              "id": 68115,
+              "id": 63001,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "14613:3:113",
+              "src": "14613:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_526_by_1",
                 "typeString": "int_const 526"
@@ -8528,15 +8524,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68119,
+            "id": 63005,
             "nodeType": "VariableDeclaration",
-            "src": "14622:46:113",
+            "src": "14622:46:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "POOL_NO_TOKENS",
-            "nameLocation": "14648:14:113",
-            "scope": 68144,
+            "nameLocation": "14648:14:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -8544,10 +8540,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68117,
+              "id": 63003,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "14622:7:113",
+              "src": "14622:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -8555,14 +8551,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "353237",
-              "id": 68118,
+              "id": 63004,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "14665:3:113",
+              "src": "14665:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_527_by_1",
                 "typeString": "int_const 527"
@@ -8572,15 +8568,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68122,
+            "id": 63008,
             "nodeType": "VariableDeclaration",
-            "src": "14674:63:113",
+            "src": "14674:63:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "INSUFFICIENT_FLASH_LOAN_BALANCE",
-            "nameLocation": "14700:31:113",
-            "scope": 68144,
+            "nameLocation": "14700:31:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -8588,10 +8584,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68120,
+              "id": 63006,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "14674:7:113",
+              "src": "14674:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -8599,14 +8595,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "353238",
-              "id": 68121,
+              "id": 63007,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "14734:3:113",
+              "src": "14734:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_528_by_1",
                 "typeString": "int_const 528"
@@ -8616,15 +8612,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68125,
+            "id": 63011,
             "nodeType": "VariableDeclaration",
-            "src": "14756:60:113",
+            "src": "14756:60:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "SWAP_FEE_PERCENTAGE_TOO_HIGH",
-            "nameLocation": "14782:28:113",
-            "scope": 68144,
+            "nameLocation": "14782:28:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -8632,10 +8628,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68123,
+              "id": 63009,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "14756:7:113",
+              "src": "14756:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -8643,14 +8639,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "363030",
-              "id": 68124,
+              "id": 63010,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "14813:3:113",
+              "src": "14813:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_600_by_1",
                 "typeString": "int_const 600"
@@ -8660,15 +8656,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68128,
+            "id": 63014,
             "nodeType": "VariableDeclaration",
-            "src": "14822:66:113",
+            "src": "14822:66:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "FLASH_LOAN_FEE_PERCENTAGE_TOO_HIGH",
-            "nameLocation": "14848:34:113",
-            "scope": 68144,
+            "nameLocation": "14848:34:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -8676,10 +8672,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68126,
+              "id": 63012,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "14822:7:113",
+              "src": "14822:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -8687,14 +8683,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "363031",
-              "id": 68127,
+              "id": 63013,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "14885:3:113",
+              "src": "14885:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_601_by_1",
                 "typeString": "int_const 601"
@@ -8704,15 +8700,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68131,
+            "id": 63017,
             "nodeType": "VariableDeclaration",
-            "src": "14894:66:113",
+            "src": "14894:66:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "INSUFFICIENT_FLASH_LOAN_FEE_AMOUNT",
-            "nameLocation": "14920:34:113",
-            "scope": 68144,
+            "nameLocation": "14920:34:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -8720,10 +8716,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68129,
+              "id": 63015,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "14894:7:113",
+              "src": "14894:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -8731,14 +8727,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "363032",
-              "id": 68130,
+              "id": 63016,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "14957:3:113",
+              "src": "14957:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_602_by_1",
                 "typeString": "int_const 602"
@@ -8748,15 +8744,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68134,
+            "id": 63020,
             "nodeType": "VariableDeclaration",
-            "src": "14966:59:113",
+            "src": "14966:59:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "AUM_FEE_PERCENTAGE_TOO_HIGH",
-            "nameLocation": "14992:27:113",
-            "scope": 68144,
+            "nameLocation": "14992:27:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -8764,10 +8760,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68132,
+              "id": 63018,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "14966:7:113",
+              "src": "14966:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -8775,14 +8771,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "363033",
-              "id": 68133,
+              "id": 63019,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "15022:3:113",
+              "src": "15022:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_603_by_1",
                 "typeString": "int_const 603"
@@ -8792,15 +8788,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68137,
+            "id": 63023,
             "nodeType": "VariableDeclaration",
-            "src": "15051:64:113",
+            "src": "15051:64:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "SPLITTER_FEE_PERCENTAGE_TOO_HIGH",
-            "nameLocation": "15077:32:113",
-            "scope": 68144,
+            "nameLocation": "15077:32:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -8808,10 +8804,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68135,
+              "id": 63021,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "15051:7:113",
+              "src": "15051:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -8819,14 +8815,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "373030",
-              "id": 68136,
+              "id": 63022,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "15112:3:113",
+              "src": "15112:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_700_by_1",
                 "typeString": "int_const 700"
@@ -8836,15 +8832,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68140,
+            "id": 63026,
             "nodeType": "VariableDeclaration",
-            "src": "15134:45:113",
+            "src": "15134:45:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "UNIMPLEMENTED",
-            "nameLocation": "15160:13:113",
-            "scope": 68144,
+            "nameLocation": "15160:13:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -8852,10 +8848,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68138,
+              "id": 63024,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "15134:7:113",
+              "src": "15134:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -8863,14 +8859,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "393938",
-              "id": 68139,
+              "id": 63025,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "15176:3:113",
+              "src": "15176:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_998_by_1",
                 "typeString": "int_const 998"
@@ -8880,15 +8876,15 @@ export const BalancerErrors =
             "visibility": "internal"
           },
           {
-            "id": 68143,
+            "id": 63029,
             "nodeType": "VariableDeclaration",
-            "src": "15185:49:113",
+            "src": "15185:49:95",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "SHOULD_NOT_HAPPEN",
-            "nameLocation": "15211:17:113",
-            "scope": 68144,
+            "nameLocation": "15211:17:95",
+            "scope": 63030,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -8896,10 +8892,10 @@ export const BalancerErrors =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68141,
+              "id": 63027,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "15185:7:113",
+              "src": "15185:7:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -8907,14 +8903,14 @@ export const BalancerErrors =
             },
             "value": {
               "hexValue": "393939",
-              "id": 68142,
+              "id": 63028,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "15231:3:113",
+              "src": "15231:3:95",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_999_by_1",
                 "typeString": "int_const 999"
@@ -8931,15 +8927,15 @@ export const BalancerErrors =
         "contractKind": "library",
         "fullyImplemented": true,
         "linearizedBaseContracts": [
-          68144
+          63030
         ],
         "name": "BalancerErrors",
-        "nameLocation": "5214:14:113",
-        "scope": 68145,
+        "nameLocation": "5214:14:95",
+        "scope": 63031,
         "usedErrors": []
       }
     ],
     "license": "GPL-3.0-or-later"
   },
-  "id": 113
+  "id": 95
 } as const;
