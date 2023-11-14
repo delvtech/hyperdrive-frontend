@@ -142,6 +142,10 @@ export function LpPortfolioCard({
                 className="daisy-progress"
                 value={
                   // Don't let the progress bar go over 100%
+                  // TODO: This happens in negative interest scenarios (open a
+                  // short for 10M bonds on the devnet, say) and we should
+                  // remove this defensive coding once negative interest is
+                  // fixed.
                   Math.min(
                     +formatUnits(
                       utilizationRatio,
