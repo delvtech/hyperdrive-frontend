@@ -1,13 +1,16 @@
 import assertNever from "assert-never";
 import classNames from "classnames";
-import { ReactElement, useEffect } from "react";
+import { ReactElement } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
+import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
 import { ClosedLongsTable } from "src/ui/portfolio/ClosedLongsTable/ClosedLongsTable";
 import { ClosedLpTable } from "src/ui/portfolio/ClosedLpTable/ClosedLpTable";
 import { ClosedShortsTable } from "src/ui/portfolio/ClosedShortsTable/ClosedShortsTable";
+import { LP_CARDS_FEATURE_FLAG } from "src/ui/portfolio/featureFlags";
 import { LpPortfolioCard } from "src/ui/portfolio/LpPortfolioCard/LpPortfolioCard";
 import { OpenLongsTable } from "src/ui/portfolio/OpenLongsTable/OpenLongsTable";
+import { OpenLpTable } from "src/ui/portfolio/OpenLpTable/OpenLpTable";
 import { OpenShortsTable } from "src/ui/portfolio/OpenShortsTable/OpenShortsTable";
 import {
   PositionTab,
@@ -22,35 +25,28 @@ export function PositionsSection({
   hyperdrive: Hyperdrive;
 }): ReactElement {
   const [searchParams, setSearchParams] = useSearchParams();
+  const { isFlagEnabled: showLpCards } = useFeatureFlag(LP_CARDS_FEATURE_FLAG);
 
   const activePositionTab =
     (searchParams.get("position") as PositionTab) || "Longs";
   const activeOpenOrClosedTab =
     (searchParams.get("openOrClosed") as OpenOrClosedTab) || "Open";
 
-  // Run effect when mounted to set the search params to the default
-  useEffect(() => {
-    setSearchParams({
-      position: activePositionTab,
-      openOrClosed: activeOpenOrClosedTab,
-    });
-  }, []);
+  function handleChangeTab(position: PositionTab) {
+    // Create a new search params so we retain all existing search params
+    const newSearchParams = new URLSearchParams(searchParams);
+    newSearchParams.set("position", position);
+    newSearchParams.set("openOrClosed", "Open");
+    setSearchParams(newSearchParams);
+  }
 
-  const handleChangeTab = (position: PositionTab) => {
-    setSearchParams({
-      ...searchParams,
-      position,
-      openOrClosed: "Open",
-    });
-  };
-
-  const handleChangeOpenOrClosedTab = (openOrClosed: OpenOrClosedTab) => {
-    setSearchParams({
-      ...searchParams,
-      position: activePositionTab,
-      openOrClosed,
-    });
-  };
+  function handleChangeOpenOrClosedTab(openOrClosed: OpenOrClosedTab) {
+    // Create a new search params so we retain all existing search params
+    const newSearchParams = new URLSearchParams(searchParams);
+    newSearchParams.set("position", activePositionTab);
+    newSearchParams.set("openOrClosed", openOrClosed);
+    setSearchParams(newSearchParams);
+  }
 
   return (
     <div>
@@ -100,11 +96,15 @@ export function PositionsSection({
               case "LP":
                 if (activeOpenOrClosedTab === "Open") {
                   return (
-                    <div className="flex">
-                      <LpPortfolioCard hyperdrive={hyperdrive} />
-                    </div>
+                    <>
+                      {showLpCards ? (
+                        <div className="flex">
+                          <LpPortfolioCard hyperdrive={hyperdrive} />
+                        </div>
+                      ) : undefined}
+                      <OpenLpTable hyperdrive={hyperdrive} />;
+                    </>
                   );
-                  // return <OpenLpTable hyperdrive={hyperdrive} />;
                 }
                 return <ClosedLpTable hyperdrive={hyperdrive} />;
               default:
