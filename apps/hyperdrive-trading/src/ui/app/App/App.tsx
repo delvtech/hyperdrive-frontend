@@ -5,6 +5,7 @@ import {
   redirect,
   RouterProvider,
 } from "react-router-dom";
+import { Landing } from "src/pages/Landing";
 import { Trade } from "src/pages/Trade";
 import { Navbar } from "src/ui/app/Navbar/Navbar";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -36,9 +37,7 @@ export function App(): ReactElement | null {
       children: [
         {
           path: "/",
-          loader: () => {
-            return redirect(`/trade/${appConfig?.hyperdrives[0].address}`);
-          },
+          element: <Landing />,
         },
         {
           path: "/trade/:address",
