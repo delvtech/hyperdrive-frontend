@@ -67,62 +67,56 @@ export function LpPortfolioCard({
         {lpShares !== 0n ? (
           <>
             <div className="mb-4 flex flex-col gap-2">
-              <div className="flex flex-col">
-                <div className="flex justify-between">
-                  <p
-                    className="daisy-tooltip inline-flex cursor-help items-center gap-1 border-b border-dashed border-current"
-                    data-tip="Your share of the total liquidity in the pool"
-                  >
-                    Pool share
-                  </p>
-                  <p>
-                    {!!lpShares && !!lpSharesTotalSupply ? (
-                      `${dnum.format(
-                        [poolShare, hyperdrive.baseToken.decimals],
-                        6,
-                      )}%`
-                    ) : (
-                      <Skeleton />
-                    )}
-                  </p>
-                </div>
+              <div className="flex justify-between">
+                <p
+                  className="daisy-tooltip inline-flex cursor-help items-center gap-1 border-b border-dashed border-current"
+                  data-tip="Your share of the total liquidity in the pool"
+                >
+                  Pool share
+                </p>
+                <p>
+                  {!!lpShares && !!lpSharesTotalSupply ? (
+                    `${dnum.format(
+                      [poolShare, hyperdrive.baseToken.decimals],
+                      6,
+                    )}%`
+                  ) : (
+                    <Skeleton />
+                  )}
+                </p>
               </div>
-              <div className="flex flex-col">
-                <div className="flex justify-between">
-                  <p className="">LP balance</p>
-                  <p className="">
-                    {!lpShares ? (
-                      <Skeleton />
-                    ) : (
-                      formatBalance({
-                        balance: lpShares,
-                        decimals: hyperdrive.baseToken.decimals,
-                        places: 4,
-                      })
-                    )}{" "}
-                    Shares
-                  </p>
-                </div>
+              <div className="flex justify-between">
+                <p className="">LP balance</p>
+                <p>
+                  {!lpShares ? (
+                    <Skeleton />
+                  ) : (
+                    formatBalance({
+                      balance: lpShares,
+                      decimals: hyperdrive.baseToken.decimals,
+                      places: 4,
+                    })
+                  )}{" "}
+                  Shares
+                </p>
               </div>
-              <div className="flex flex-col">
-                <div className="flex justify-between">
-                  <p className="">Current value</p>
-                  <p className="font-bold">
-                    {!!poolInfo && !!lpShares ? (
-                      `${formatBalance({
-                        balance: calculateLpValue({
-                          lpShares,
-                          lpSharePrice: poolInfo.lpSharePrice,
-                          decimals: hyperdrive.baseToken.decimals,
-                        }),
+              <div className="flex justify-between">
+                <p className="">Current value</p>
+                <p className="font-bold">
+                  {!!poolInfo && !!lpShares ? (
+                    `${formatBalance({
+                      balance: calculateLpValue({
+                        lpShares,
+                        lpSharePrice: poolInfo.lpSharePrice,
                         decimals: hyperdrive.baseToken.decimals,
-                        places: 4,
-                      })} ${hyperdrive.baseToken.symbol}`
-                    ) : (
-                      <Skeleton />
-                    )}
-                  </p>
-                </div>
+                      }),
+                      decimals: hyperdrive.baseToken.decimals,
+                      places: 4,
+                    })} ${hyperdrive.baseToken.symbol}`
+                  ) : (
+                    <Skeleton />
+                  )}
+                </p>
               </div>
               <div className="mt-4 flex flex-col">
                 <div className="flex justify-between">
@@ -164,31 +158,29 @@ export function LpPortfolioCard({
                 to your utilization ratio.
               </p>
             </div>
-            <div className="flex items-center justify-end">
-              <div className="flex gap-1">
-                <DepositButton
-                  hyperdrive={hyperdrive}
-                  className="rounded-l-md rounded-r-none"
-                />
-                <Modal
-                  modalId={"withdrawalLpModal"}
-                  modalContent={
-                    <RemoveLiquidityForm
-                      hyperdrive={hyperdrive}
-                      lpShares={lpShares || 0n}
-                    />
-                  }
-                >
-                  {({ showModal }) => (
-                    <button
-                      className="daisy-btn-neutral daisy-btn-sm daisy-btn rounded-l-none rounded-r-md hover:daisy-btn-ghost"
-                      onClick={showModal}
-                    >
-                      Withdraw
-                    </button>
-                  )}
-                </Modal>
-              </div>
+            <div className="flex items-center justify-end gap-1">
+              <DepositButton
+                hyperdrive={hyperdrive}
+                className="rounded-l-md rounded-r-none"
+              />
+              <Modal
+                modalId={"withdrawalLpModal"}
+                modalContent={
+                  <RemoveLiquidityForm
+                    hyperdrive={hyperdrive}
+                    lpShares={lpShares || 0n}
+                  />
+                }
+              >
+                {({ showModal }) => (
+                  <button
+                    className="daisy-btn-neutral daisy-btn-sm daisy-btn rounded-l-none rounded-r-md hover:daisy-btn-ghost"
+                    onClick={showModal}
+                  >
+                    Withdraw
+                  </button>
+                )}
+              </Modal>
             </div>
           </>
         ) : (
