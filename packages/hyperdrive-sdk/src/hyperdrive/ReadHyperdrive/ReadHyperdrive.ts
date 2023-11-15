@@ -64,6 +64,9 @@ export interface IReadHyperdrive {
   /**
    * This function retrieves the market liquidity by using the following formula:
    * marketLiquidity = lpSharePrice * effectiveShareReserves - longsOutstanding
+   *
+   * TODO: We need a better way to get the baseToken.decimals() without the
+   * caller having to provide them.
    */
   getLiquidity(args: {
     decimals?: number;
