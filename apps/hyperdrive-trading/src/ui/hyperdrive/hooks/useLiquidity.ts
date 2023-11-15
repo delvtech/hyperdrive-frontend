@@ -4,7 +4,13 @@ import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "wagmi";
 
-export function useLiquidity(hyperdriveAddress: Address): {
+export function useLiquidity({
+  hyperdriveAddress,
+  decimals,
+}: {
+  hyperdriveAddress: Address;
+  decimals: number;
+}): {
   liquidity:
     | {
         liquidity: bigint;
@@ -19,10 +25,10 @@ export function useLiquidity(hyperdriveAddress: Address): {
     queryKey: makeQueryKey("liquidity", { hyperdriveAddress }),
     queryFn: queryEnabled
       ? async () => {
-          const liquidity = await readHyperdrive.getLiquidity();
+          const liquidity = await readHyperdrive.getLiquidity({ decimals });
           return {
             liquidity: liquidity,
-            formatted: dnum.format([liquidity, 18], { digits: 0 }),
+            formatted: dnum.format([liquidity, decimals], { digits: 0 }),
           };
         }
       : undefined,

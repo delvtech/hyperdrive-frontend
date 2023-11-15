@@ -64,8 +64,14 @@ export interface IReadHyperdrive {
   /**
    * This function retrieves the market liquidity by using the following formula:
    * marketLiquidity = lpSharePrice * effectiveShareReserves - longsOutstanding
+   *
+   * TODO: We need a better way to get the baseToken.decimals() without the
+   * caller having to provide them.
    */
-  getLiquidity(options?: ContractReadOptions): Promise<bigint>;
+  getLiquidity(args: {
+    decimals?: number;
+    options?: ContractReadOptions;
+  }): Promise<bigint>;
 
   /**
    * This  returns the LP APY using the following formula for continuous compounding:
@@ -191,7 +197,9 @@ export interface IReadHyperdrive {
     account: Address;
     options?: ContractReadOptions;
   }): Promise<bigint>;
-
+  getLpSharesTotalSupply(args?: {
+    options?: ContractReadOptions;
+  }): Promise<bigint>;
   /**
    * Gets the amount of closed LP shares a user has.
    */
@@ -412,9 +420,13 @@ export class ReadHyperdrive implements IReadHyperdrive {
     return dnum.from(aprDecimalString, 18)[0];
   }
 
-  async getLiquidity(
-    options?: ContractReadOptions,
-  ): ReturnType<IReadHyperdrive, "getLiquidity"> {
+  async getLiquidity({
+    decimals = 18,
+    options,
+  }: {
+    decimals?: number;
+    options?: ContractReadOptions;
+  }): ReturnType<IReadHyperdrive, "getLiquidity"> {
     const { lpSharePrice, shareReserves, longsOutstanding, shareAdjustment } =
       await this.getPoolInfo(options);
 
@@ -422,6 +434,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
       lpSharePrice,
       calculateEffectiveShareReserves(shareReserves, shareAdjustment),
       longsOutstanding,
+      decimals,
     );
 
     return liquidity;
@@ -1085,6 +1098,16 @@ export class ReadHyperdrive implements IReadHyperdrive {
     };
   }
 
+  async getLpSharesTotalSupply(args?: {
+    options?: ContractReadOptions;
+  }): ReturnType<IReadHyperdrive, "getLpSharesTotalSupply"> {
+    const [totalSupply] = await this.contract.read(
+      "totalSupply",
+      [LP_ASSET_ID],
+      args?.options,
+    );
+    return totalSupply;
+  }
   async getLpShares({
     account,
     options,
