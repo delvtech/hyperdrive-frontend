@@ -1,4 +1,4 @@
-import { ERC4626HyperdriveDeployer } from "@hyperdrive/artifacts/dist/ERC4626HyperdriveDeployer";
+import { ERC4626Target1Deployer } from "@hyperdrive/artifacts/dist/ERC4626Target1Deployer";
 import signale from "signale";
 import { chainOption, requiredChain } from "src/options/chain";
 import { requiredRpcUrl, rpcUrlOption } from "src/options/rpc-url";
@@ -11,9 +11,9 @@ import { Chain } from "viem/chains";
 
 export const { command, aliases, describe, builder, handler } =
   createCommandModule({
-    command: "forwarderfactory [OPTIONS]",
-    aliases: ["ERC4626HyperdriveDeployer"],
-    describe: "Deploy an ERC4626HyperdriveDeployer contract",
+    command: "erc4626target1deployer [OPTIONS]",
+    aliases: ["ERC4626Target1Deployer"],
+    describe: "Deploy an ERC4626Target1Deployer contract",
 
     builder: (yargs) => {
       return yargs.options({
@@ -30,40 +30,40 @@ export const { command, aliases, describe, builder, handler } =
 
       const account = privateKeyToAccount(walletKey as Hex);
 
-      signale.pending("Deploying ERC4626HyperdriveDeployer...");
+      signale.pending("Deploying ERC4626Target1Deployer...");
 
-      const { address } = await deployERC4626HyperdriveDeployer({
+      const { address } = await deployERC4626Target1Deployer({
         account,
         rpcUrl,
         chain,
         onSubmitted: (txHash) => {
           signale.pending(
-            `ERC4626HyperdriveDeployer deployment tx submitted: ${txHash}`,
+            `ERC4626Target1Deployer deployment tx submitted: ${txHash}`,
           );
         },
       });
 
-      signale.success(`ERC4626HyperdriveDeployer deployed @ ${address}`);
+      signale.success(`ERC4626Target1Deployer deployed @ ${address}`);
     },
   });
 
-export interface DeployERC4626HyperdriveDeployerOptions {
+export interface DeployERC4626Target1DeployerOptions {
   account: PrivateKeyAccount;
   rpcUrl: string;
   chain: Chain;
   onSubmitted?: (txHash: string) => void;
 }
 
-export async function deployERC4626HyperdriveDeployer({
+export async function deployERC4626Target1Deployer({
   account,
   rpcUrl,
   chain,
   onSubmitted,
-}: DeployERC4626HyperdriveDeployerOptions): Promise<DeployedContract> {
+}: DeployERC4626Target1DeployerOptions): Promise<DeployedContract> {
   return await deployContract({
-    abi: ERC4626HyperdriveDeployer.abi,
+    abi: ERC4626Target1Deployer.abi,
     args: [],
-    bytecode: ERC4626HyperdriveDeployer.bytecode.object as `0x${string}`,
+    bytecode: ERC4626Target1Deployer.bytecode.object as `0x${string}`,
     account,
     rpcUrl,
     chain,
