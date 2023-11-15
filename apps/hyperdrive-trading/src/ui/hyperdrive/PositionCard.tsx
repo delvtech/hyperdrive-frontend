@@ -5,7 +5,7 @@ import { Well } from "src/ui/base/components/Well/Well";
 interface Props {
   title: string;
   subtitle: string;
-  description: string;
+  description?: string;
   icon: ReactNode;
   checklist: string[];
   emphasized?: boolean;

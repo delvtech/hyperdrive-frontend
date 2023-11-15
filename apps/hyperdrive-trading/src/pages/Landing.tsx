@@ -4,15 +4,12 @@ import {
   SquaresPlusIcon,
 } from "@heroicons/react/24/outline";
 import { ReactElement } from "react";
+import { Link } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
 import { CommonHeadTags } from "src/ui/app/Head/CommonHeadTags";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { PositionCard } from "src/ui/hyperdrive/PositionCard";
-import { useCurrentFixedAPR } from "src/ui/hyperdrive/hooks/useCurrentFixedAPR";
-import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
-import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
 import { FAQ } from "src/ui/onboarding/FAQ/FAQ";
-import { useVaultRate } from "src/ui/vaults/useVaultRate";
 
 export function Landing(): ReactElement | null {
   const { appConfig } = useAppConfig();
@@ -26,8 +23,9 @@ export function Landing(): ReactElement | null {
   }
   const hyperdrive = appConfig?.hyperdrives[0];
   return (
-    <div className="flex h-full justify-center bg-base-100 py-8 px-4">
+    <div className="flex flex-col items-center gap-10 bg-base-100 py-8 px-4">
       <CommonHeadTags />
+      <Hero />
       <PositionCards hyperdrive={hyperdrive} />
     </div>
   );
@@ -38,24 +36,14 @@ function PositionCards({
 }: {
   hyperdrive: Hyperdrive;
 }): ReactElement {
-  const { fixedAPR } = useCurrentFixedAPR(hyperdrive);
-  const { longPrice } = useCurrentLongPrice(hyperdrive);
-  const { marketState } = useMarketState(hyperdrive.address);
-  const { vaultRate } = useVaultRate({
-    // TODO: temporary for now until this available via addresses.json
-    vaultAddress: "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
-  });
   return (
-    <div className="flex h-[90vh] max-w-6xl flex-col items-center justify-evenly">
-      <div className="flex flex-wrap justify-center gap-16">
+    <div className="flex max-w-6xl flex-col items-center justify-evenly gap-10">
+      <div className="flex flex-wrap justify-center gap-16 ">
         <PositionCard
-          title={`Long hy${hyperdrive.baseToken.symbol}`}
-          subtitle={`Earn ${fixedAPR?.formatted || "-"}% APR on ${
-            hyperdrive.baseToken.symbol
-          } `}
-          description={`1 hy${hyperdrive.baseToken.symbol} is always worth 1
-          ${hyperdrive.baseToken.symbol} at maturity. It's a predictable
-          fixed rate yield.`}
+          title={"Long Assets"}
+          subtitle={
+            "Go long fixed rates and earn passive yield on your favourite assets."
+          }
           icon={<ClockIcon className="mb-2 h-16" />}
           checklist={[
             "Fixed rate included in the price",
@@ -64,15 +52,13 @@ function PositionCards({
           ]}
         />
         <PositionCard
-          title={`Short hy${hyperdrive.baseToken.symbol}`}
-          subtitle={`Earn ${vaultRate?.formatted || "-"}% APY on ${
-            hyperdrive.baseToken.symbol
-          }`}
-          description={`Profit when hy${hyperdrive.baseToken.symbol} price drops, while
-          maximizing exposure to the yield source.`}
+          title={`Short Assets`}
+          subtitle={
+            "Profit when the price of hy-asset drops, maximize exposure to the yield source."
+          }
           icon={<BoltIcon className="mb-2 h-16" />}
           checklist={[
-            `Fixed rate up, hy${hyperdrive.baseToken.symbol} price down`,
+            `Fixed rate up, hy-asset price down`,
             "Maximize exposure to yield source",
             "Redeemable before term ends",
           ]}
@@ -84,7 +70,7 @@ function PositionCards({
           yield source rate."
           icon={<SquaresPlusIcon className="mb-2 h-16" />}
           checklist={[
-            `Single-sided deposit with ${hyperdrive.baseToken.symbol}`,
+            `Single-sided deposit with hy-asset`,
             "Idle liquidity earns yield source rate",
             "No terms or manual LP rollovers",
           ]}
@@ -92,10 +78,31 @@ function PositionCards({
         />
       </div>
 
-      <div className="daisy-btn-neutral daisy-btn-md daisy-btn mt-10 w-60 justify-between gap-0 hover:daisy-btn-ghost">
+      <Link
+        to={`/trade/${hyperdrive.address}?position=Longs&openOrClosed=Open`}
+        className="daisy-btn-neutral daisy-btn-md daisy-btn mt-10 w-60 justify-between gap-0 hover:daisy-btn-ghost"
+      >
         <span className="flex-1 text-center">Select Market</span>
-      </div>
+      </Link>
       <FAQ />
+    </div>
+  );
+}
+
+function Hero() {
+  return (
+    <div className="daisy-hero">
+      <div className="daisy-hero-content text-center">
+        <div className="max-w-2xl">
+          <span className="mb-5  text-h2 font-bold">Hyperdrive</span>
+          <p className="mb-5">
+            Hyperdrive marks a significant stride forward in exploring variable
+            and fixed rate primitives. With no preset expiration dates, unified
+            liquidity, and the elimination of LP rollovers, we introduce the
+            convenience of everlasting liquidity.
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
