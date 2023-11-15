@@ -3,9 +3,9 @@ import { useLoaderData } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
 import { CommonHeadTags } from "src/ui/app/Head/CommonHeadTags";
 import { useDevLogging } from "src/ui/hyperdrive/hooks/useDevLogging";
-import { TradeBody } from "src/ui/trade/TradeBody/TradeBody";
+import { MarketDetailsBody } from "src/ui/markets/MarketDetailsBody/MarketDetailsBody";
 
-export function Trade(): ReactElement {
+export function Market(): ReactElement {
   // Safe to cast this variable because router configs this page is rendered with a valid market
   const market = useLoaderData() as Hyperdrive;
 
@@ -14,7 +14,7 @@ export function Trade(): ReactElement {
   return (
     <div className="flex h-full justify-center bg-base-100 py-8 px-4">
       <CommonHeadTags />
-      <TradeBody hyperdrive={market} />
+      <MarketDetailsBody hyperdrive={market} />
     </div>
   );
 }
