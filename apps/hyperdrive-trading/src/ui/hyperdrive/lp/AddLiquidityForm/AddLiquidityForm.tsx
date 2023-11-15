@@ -69,7 +69,7 @@ export function AddLiquidityForm({
     destination: account,
     enabled: addLiquidityPreviewStatus === "success" && !needsApproval,
     onExecuted: () => {
-      setAmount(undefined);
+      setAmount("");
       toast.success("Liquidity added", { position: "top-center" });
     },
   });
