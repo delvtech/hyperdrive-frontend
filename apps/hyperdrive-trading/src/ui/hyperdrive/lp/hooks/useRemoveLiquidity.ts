@@ -14,6 +14,7 @@ interface UseRemoveLiquidityOptions {
   destination: Address | undefined;
   asBase?: boolean;
   enabled?: boolean;
+  onExecuted: () => void;
 }
 
 interface UseRemoveLiquidityResult {
@@ -28,6 +29,7 @@ export function useRemoveLiquidity({
   destination,
   asBase = true,
   enabled,
+  onExecuted,
 }: UseRemoveLiquidityOptions): UseRemoveLiquidityResult {
   const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
   const queryClient = useQueryClient();
@@ -57,6 +59,7 @@ export function useRemoveLiquidity({
           },
         });
         queryClient.resetQueries();
+        onExecuted?.();
       }
     },
   });

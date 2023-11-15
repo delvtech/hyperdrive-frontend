@@ -1,4 +1,5 @@
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
+import toast from "react-hot-toast";
 import { queryClient } from "src/network/queryClient";
 import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";
 import {
@@ -40,6 +41,7 @@ export function useTokenApproval({
         hash: data.hash,
         queryClient,
       });
+      toast.success("Token Approved", { position: "top-center" });
     },
   });
 

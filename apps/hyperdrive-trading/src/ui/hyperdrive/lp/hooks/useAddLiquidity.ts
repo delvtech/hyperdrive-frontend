@@ -17,6 +17,7 @@ interface UseAddLiquidityOptions {
   /** Controls whether or not an `addLiquidity` callback will be returned to the
    * caller, useful for disabling buttons and other hooks */
   enabled?: boolean;
+  onExecuted: () => void;
 }
 
 interface UseAddLiquidityResult {
@@ -32,6 +33,7 @@ export function useAddLiquidity({
   maxAPR,
   asBase = true,
   enabled,
+  onExecuted,
 }: UseAddLiquidityOptions): UseAddLiquidityResult {
   const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
   const queryClient = useQueryClient();
@@ -63,6 +65,7 @@ export function useAddLiquidity({
           },
         });
         queryClient.resetQueries();
+        onExecuted?.();
       }
     },
   });

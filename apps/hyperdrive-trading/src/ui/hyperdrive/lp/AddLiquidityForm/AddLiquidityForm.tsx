@@ -1,5 +1,6 @@
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { ReactElement } from "react";
+import toast from "react-hot-toast";
 import { Hyperdrive } from "src/appconfig/types";
 import { MAX_UINT256 } from "src/base/constants";
 import { parseUnits } from "src/base/parseUnits";
@@ -67,6 +68,10 @@ export function AddLiquidityForm({
     maxAPR: parseUnits("999", market.baseToken.decimals),
     destination: account,
     enabled: addLiquidityPreviewStatus === "success" && !needsApproval,
+    onExecuted: () => {
+      setAmount(undefined);
+      toast.success("Liquidity added", { position: "top-center" });
+    },
   });
 
   return (
