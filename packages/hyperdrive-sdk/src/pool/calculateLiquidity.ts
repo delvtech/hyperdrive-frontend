@@ -4,10 +4,15 @@ export function calculateLiquidity(
   lpSharePrice: bigint,
   shareReserves: bigint,
   longsOutstanding: bigint,
+  decimals: number,
 ): bigint {
   return dnum.subtract(
-    dnum.multiply([lpSharePrice, 18], [shareReserves, 18], 18),
-    [longsOutstanding, 18],
-    18,
+    dnum.multiply(
+      [lpSharePrice, decimals],
+      [shareReserves, decimals],
+      decimals,
+    ),
+    [longsOutstanding, decimals],
+    decimals,
   )[0];
 }

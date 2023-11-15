@@ -65,7 +65,10 @@ export interface IReadHyperdrive {
    * This function retrieves the market liquidity by using the following formula:
    * marketLiquidity = lpSharePrice * effectiveShareReserves - longsOutstanding
    */
-  getLiquidity(options?: ContractReadOptions): Promise<bigint>;
+  getLiquidity(args: {
+    decimals?: number;
+    options?: ContractReadOptions;
+  }): Promise<bigint>;
 
   /**
    * This  returns the LP APY using the following formula for continuous compounding:
@@ -414,9 +417,13 @@ export class ReadHyperdrive implements IReadHyperdrive {
     return dnum.from(aprDecimalString, 18)[0];
   }
 
-  async getLiquidity(
-    options?: ContractReadOptions,
-  ): ReturnType<IReadHyperdrive, "getLiquidity"> {
+  async getLiquidity({
+    decimals = 18,
+    options,
+  }: {
+    decimals?: number;
+    options?: ContractReadOptions;
+  }): ReturnType<IReadHyperdrive, "getLiquidity"> {
     const { lpSharePrice, shareReserves, longsOutstanding, shareAdjustment } =
       await this.getPoolInfo(options);
 
@@ -424,6 +431,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
       lpSharePrice,
       calculateEffectiveShareReserves(shareReserves, shareAdjustment),
       longsOutstanding,
+      decimals,
     );
 
     return liquidity;

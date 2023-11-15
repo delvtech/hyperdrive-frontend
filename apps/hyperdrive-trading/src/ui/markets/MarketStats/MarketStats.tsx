@@ -26,7 +26,10 @@ export function MarketStats({
     currentBlockNumber,
   );
 
-  const { liquidity } = useLiquidity(hyperdrive.address);
+  const { liquidity } = useLiquidity({
+    hyperdriveAddress: hyperdrive.address,
+    decimals: hyperdrive.baseToken.decimals,
+  });
   const { fixedAPR } = useCurrentFixedAPR(hyperdrive);
   const { lpApy } = useLpApy(hyperdrive);
 
