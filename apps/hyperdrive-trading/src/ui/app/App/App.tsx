@@ -5,7 +5,7 @@ import {
   redirect,
   RouterProvider,
 } from "react-router-dom";
-import { Trade } from "src/pages/Trade";
+import { Market } from "src/pages/market";
 import { Navbar } from "src/ui/app/Navbar/Navbar";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 
@@ -37,12 +37,12 @@ export function App(): ReactElement | null {
         {
           path: "/",
           loader: () => {
-            return redirect(`/trade/${appConfig?.hyperdrives[0].address}`);
+            return redirect(`/market/${appConfig?.hyperdrives[0].address}`);
           },
         },
         {
-          path: "/trade/:address",
-          element: <Trade />,
+          path: "/market/:address",
+          element: <Market />,
           loader: ({ params }) => {
             const market = appConfig?.hyperdrives.find(
               (market) => market.address === params.address,
@@ -54,7 +54,7 @@ export function App(): ReactElement | null {
 
             // we fall back to the first market in the config
             // this should rarely happen
-            return redirect(`/trade/${appConfig?.hyperdrives[0].address}`);
+            return redirect(`/market/${appConfig?.hyperdrives[0].address}`);
           },
         },
       ],
