@@ -5,6 +5,7 @@ import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Stat } from "src/ui/base/components/Stat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { formatCompact } from "src/ui/base/formatting/formatCompact";
 import { useCurrentFixedAPR } from "src/ui/hyperdrive/hooks/useCurrentFixedAPR";
 import { useLiquidity } from "src/ui/hyperdrive/hooks/useLiquidity";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
@@ -95,10 +96,9 @@ export function MarketStats({
         value={
           <AmountLabel
             symbol={`hy${hyperdrive.baseToken.symbol}`}
-            value={formatBalance({
-              balance: totalVolume || 0n,
+            value={formatCompact({
+              value: totalVolume || 0n,
               decimals: hyperdrive.baseToken.decimals,
-              places: 0,
             })}
             tooltip={`Long volume: ${formatBalance({
               balance: longVolume || 0n,
@@ -120,7 +120,15 @@ export function MarketStats({
         value={
           <AmountLabel
             symbol={hyperdrive.baseToken.symbol}
-            value={liquidity?.formatted || "0"}
+            value={formatCompact({
+              value: liquidity?.liquidity || 0n,
+              decimals: hyperdrive.baseToken.decimals,
+            })}
+            tooltip={`${formatBalance({
+              balance: liquidity?.liquidity || 0n,
+              decimals: hyperdrive.baseToken.decimals,
+              places: 0,
+            })} ${hyperdrive.baseToken.symbol}`}
           />
         }
       />
