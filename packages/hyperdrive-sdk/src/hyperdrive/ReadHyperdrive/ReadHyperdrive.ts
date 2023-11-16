@@ -412,10 +412,10 @@ export class ReadHyperdrive implements IReadHyperdrive {
     const config = await this.getPoolConfig(options);
     const info = await this.getPoolInfo(options);
 
-    const aprDecimalString = await hyperwasm.getSpotRate({
-      info: convertBigIntsToStrings(info),
-      config: convertBigIntsToStrings(config),
-    });
+    const aprDecimalString = await hyperwasm.getSpotRate(
+      convertBigIntsToStrings(info),
+      convertBigIntsToStrings(config),
+    );
 
     return dnum.from(aprDecimalString, 18)[0];
   }
@@ -1015,7 +1015,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     const { timestamp: blockTimestamp } = await this.network.getBlock(options);
 
     const checkpointId = getCheckpointId(blockTimestamp, checkpointDuration);
-    const { longExposure: checkpointLongExposure } = await this.getCheckpoint({
+    const { exposure: checkpointExposure } = await this.getCheckpoint({
       checkpointId,
     });
 
@@ -1035,7 +1035,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
           curveFee: fees.curve,
           governanceFee: fees.governance,
         },
-        checkpointLongExposure,
+        checkpointExposure,
         MAX_ITERATIONS,
       ],
       options,
@@ -1065,7 +1065,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     const { timestamp: blockTimestamp } = await this.network.getBlock(options);
 
     const checkpointId = getCheckpointId(blockTimestamp, checkpointDuration);
-    const { longExposure: checkpointLongExposure } = await this.getCheckpoint({
+    const { exposure: checkpointExposure } = await this.getCheckpoint({
       checkpointId,
       options,
     });
@@ -1086,7 +1086,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
           curveFee: fees.curve,
           governanceFee: fees.governance,
         },
-        checkpointLongExposure,
+        checkpointExposure,
         MAX_ITERATIONS,
       ],
       options,

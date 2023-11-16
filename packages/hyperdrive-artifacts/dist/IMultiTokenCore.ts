@@ -1,93 +1,6 @@
-export const IMultiTokenWrite = 
+export const IMultiTokenCore = 
 {
   "abi": [
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "owner",
-          "type": "address"
-        },
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "spender",
-          "type": "address"
-        },
-        {
-          "indexed": false,
-          "internalType": "uint256",
-          "name": "value",
-          "type": "uint256"
-        }
-      ],
-      "name": "Approval",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "account",
-          "type": "address"
-        },
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "operator",
-          "type": "address"
-        },
-        {
-          "indexed": false,
-          "internalType": "bool",
-          "name": "approved",
-          "type": "bool"
-        }
-      ],
-      "name": "ApprovalForAll",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "operator",
-          "type": "address"
-        },
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "from",
-          "type": "address"
-        },
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "to",
-          "type": "address"
-        },
-        {
-          "indexed": false,
-          "internalType": "uint256",
-          "name": "id",
-          "type": "uint256"
-        },
-        {
-          "indexed": false,
-          "internalType": "uint256",
-          "name": "value",
-          "type": "uint256"
-        }
-      ],
-      "name": "TransferSingle",
-      "type": "event"
-    },
     {
       "inputs": [
         {
@@ -309,7 +222,7 @@ export const IMultiTokenWrite =
     "transferFrom(uint256,address,address,uint256)": "1c0f12b6",
     "transferFromBridge(uint256,address,address,uint256,address)": "e44808bc"
   },
-  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"ApprovalForAll\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"TransferSingle\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256[]\",\"name\":\"ids\",\"type\":\"uint256[]\"},{\"internalType\":\"uint256[]\",\"name\":\"values\",\"type\":\"uint256[]\"}],\"name\":\"batchTransferFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"_approved\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"deadline\",\"type\":\"uint256\"},{\"internalType\":\"uint8\",\"name\":\"v\",\"type\":\"uint8\"},{\"internalType\":\"bytes32\",\"name\":\"r\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"s\",\"type\":\"bytes32\"}],\"name\":\"permitForAll\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenID\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"setApproval\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenID\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"caller\",\"type\":\"address\"}],\"name\":\"setApprovalBridge\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"setApprovalForAll\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenID\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenID\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"caller\",\"type\":\"address\"}],\"name\":\"transferFromBridge\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/interfaces/IMultiTokenWrite.sol\":\"IMultiTokenWrite\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@aave/=lib/aave-v3-core/contracts/\",\":aave-v3-core/=lib/aave-v3-core/\",\":create3-factory/=lib/yield-daddy/lib/create3-factory/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\",\":yield-daddy/=lib/yield-daddy/\"]},\"sources\":{\"contracts/src/interfaces/IMultiTokenWrite.sol\":{\"keccak256\":\"0xa5ba8812e06fb6d38e1872603c8b80321cfd2f96cecbe7b67b92cb33e93b3fc8\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://73afa34919c7d457e925b4be83abb1b1ed2ed731a382ebffad95a3005c04bd5a\",\"dweb:/ipfs/QmauMxmgtYTS7RJQw1mS7Pwe5FUMDPHE2N1MBhFUjk6HPe\"]}},\"version\":1}",
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256[]\",\"name\":\"ids\",\"type\":\"uint256[]\"},{\"internalType\":\"uint256[]\",\"name\":\"values\",\"type\":\"uint256[]\"}],\"name\":\"batchTransferFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"_approved\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"deadline\",\"type\":\"uint256\"},{\"internalType\":\"uint8\",\"name\":\"v\",\"type\":\"uint8\"},{\"internalType\":\"bytes32\",\"name\":\"r\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"s\",\"type\":\"bytes32\"}],\"name\":\"permitForAll\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenID\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"setApproval\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenID\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"caller\",\"type\":\"address\"}],\"name\":\"setApprovalBridge\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"setApprovalForAll\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenID\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenID\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"caller\",\"type\":\"address\"}],\"name\":\"transferFromBridge\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/interfaces/IMultiTokenCore.sol\":\"IMultiTokenCore\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":aave-v3-core/=lib/aave-v3-core/\",\":create3-factory/=lib/yield-daddy/lib/create3-factory/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\",\":solmate/=lib/solmate/src/\",\":yield-daddy/=lib/yield-daddy/\"]},\"sources\":{\"contracts/src/interfaces/IMultiTokenCore.sol\":{\"keccak256\":\"0xdb7f24663cff7307a468ef5e4c6f3e4d01ec0475157b3bbb3405890c3e9ab87d\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://7f631a9a395fba5b07c3d9308fccac18d5aa59d890efe23442ed2a4da9871ae8\",\"dweb:/ipfs/QmV2a4wiAPfWzSST3faYt58i2tqEyoqCLAJV8aNCdJyxVE\"]}},\"version\":1}",
   "metadata": {
     "compiler": {
       "version": "0.8.19+commit.7dd6d404"
@@ -317,93 +230,6 @@ export const IMultiTokenWrite =
     "language": "Solidity",
     "output": {
       "abi": [
-        {
-          "inputs": [
-            {
-              "internalType": "address",
-              "name": "owner",
-              "type": "address",
-              "indexed": true
-            },
-            {
-              "internalType": "address",
-              "name": "spender",
-              "type": "address",
-              "indexed": true
-            },
-            {
-              "internalType": "uint256",
-              "name": "value",
-              "type": "uint256",
-              "indexed": false
-            }
-          ],
-          "type": "event",
-          "name": "Approval",
-          "anonymous": false
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "address",
-              "name": "account",
-              "type": "address",
-              "indexed": true
-            },
-            {
-              "internalType": "address",
-              "name": "operator",
-              "type": "address",
-              "indexed": true
-            },
-            {
-              "internalType": "bool",
-              "name": "approved",
-              "type": "bool",
-              "indexed": false
-            }
-          ],
-          "type": "event",
-          "name": "ApprovalForAll",
-          "anonymous": false
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "address",
-              "name": "operator",
-              "type": "address",
-              "indexed": true
-            },
-            {
-              "internalType": "address",
-              "name": "from",
-              "type": "address",
-              "indexed": true
-            },
-            {
-              "internalType": "address",
-              "name": "to",
-              "type": "address",
-              "indexed": true
-            },
-            {
-              "internalType": "uint256",
-              "name": "id",
-              "type": "uint256",
-              "indexed": false
-            },
-            {
-              "internalType": "uint256",
-              "name": "value",
-              "type": "uint256",
-              "indexed": false
-            }
-          ],
-          "type": "event",
-          "name": "TransferSingle",
-          "anonymous": false
-        },
         {
           "inputs": [
             {
@@ -612,14 +438,10 @@ export const IMultiTokenWrite =
     },
     "settings": {
       "remappings": [
-        "@aave/=lib/aave-v3-core/contracts/",
         "aave-v3-core/=lib/aave-v3-core/",
         "create3-factory/=lib/yield-daddy/lib/create3-factory/",
         "ds-test/=lib/forge-std/lib/ds-test/src/",
-        "erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/",
         "forge-std/=lib/forge-std/src/",
-        "openzeppelin-contracts/=lib/openzeppelin-contracts/",
-        "openzeppelin/=lib/openzeppelin-contracts/contracts/",
         "solmate/=lib/solmate/src/",
         "yield-daddy/=lib/yield-daddy/"
       ],
@@ -631,16 +453,16 @@ export const IMultiTokenWrite =
         "bytecodeHash": "ipfs"
       },
       "compilationTarget": {
-        "contracts/src/interfaces/IMultiTokenWrite.sol": "IMultiTokenWrite"
+        "contracts/src/interfaces/IMultiTokenCore.sol": "IMultiTokenCore"
       },
       "libraries": {}
     },
     "sources": {
-      "contracts/src/interfaces/IMultiTokenWrite.sol": {
-        "keccak256": "0xa5ba8812e06fb6d38e1872603c8b80321cfd2f96cecbe7b67b92cb33e93b3fc8",
+      "contracts/src/interfaces/IMultiTokenCore.sol": {
+        "keccak256": "0xdb7f24663cff7307a468ef5e4c6f3e4d01ec0475157b3bbb3405890c3e9ab87d",
         "urls": [
-          "bzz-raw://73afa34919c7d457e925b4be83abb1b1ed2ed731a382ebffad95a3005c04bd5a",
-          "dweb:/ipfs/QmauMxmgtYTS7RJQw1mS7Pwe5FUMDPHE2N1MBhFUjk6HPe"
+          "bzz-raw://7f631a9a395fba5b07c3d9308fccac18d5aa59d890efe23442ed2a4da9871ae8",
+          "dweb:/ipfs/QmV2a4wiAPfWzSST3faYt58i2tqEyoqCLAJV8aNCdJyxVE"
         ],
         "license": "Apache-2.0"
       }
@@ -648,20 +470,20 @@ export const IMultiTokenWrite =
     "version": 1
   },
   "ast": {
-    "absolutePath": "contracts/src/interfaces/IMultiTokenWrite.sol",
-    "id": 7981,
+    "absolutePath": "contracts/src/interfaces/IMultiTokenCore.sol",
+    "id": 4253,
     "exportedSymbols": {
-      "IMultiTokenWrite": [
-        7980
+      "IMultiTokenCore": [
+        4252
       ]
     },
     "nodeType": "SourceUnit",
-    "src": "39:1450:30",
+    "src": "39:1044:28",
     "nodes": [
       {
-        "id": 7870,
+        "id": 4170,
         "nodeType": "PragmaDirective",
-        "src": "39:23:30",
+        "src": "39:23:28",
         "nodes": [],
         "literals": [
           "solidity",
@@ -670,400 +492,34 @@ export const IMultiTokenWrite =
         ]
       },
       {
-        "id": 7980,
+        "id": 4252,
         "nodeType": "ContractDefinition",
-        "src": "64:1424:30",
+        "src": "64:1018:28",
         "nodes": [
           {
-            "id": 7882,
-            "nodeType": "EventDefinition",
-            "src": "97:162:30",
-            "nodes": [],
-            "anonymous": false,
-            "eventSelector": "c3d58168c5ae7397731d063d5bbf3d657854427343f4c083240f7aacaa2d0f62",
-            "name": "TransferSingle",
-            "nameLocation": "103:14:30",
-            "parameters": {
-              "id": 7881,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 7872,
-                  "indexed": true,
-                  "mutability": "mutable",
-                  "name": "operator",
-                  "nameLocation": "143:8:30",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 7882,
-                  "src": "127:24:30",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_address",
-                    "typeString": "address"
-                  },
-                  "typeName": {
-                    "id": 7871,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "127:7:30",
-                    "stateMutability": "nonpayable",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_address",
-                      "typeString": "address"
-                    }
-                  },
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 7874,
-                  "indexed": true,
-                  "mutability": "mutable",
-                  "name": "from",
-                  "nameLocation": "177:4:30",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 7882,
-                  "src": "161:20:30",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_address",
-                    "typeString": "address"
-                  },
-                  "typeName": {
-                    "id": 7873,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "161:7:30",
-                    "stateMutability": "nonpayable",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_address",
-                      "typeString": "address"
-                    }
-                  },
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 7876,
-                  "indexed": true,
-                  "mutability": "mutable",
-                  "name": "to",
-                  "nameLocation": "207:2:30",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 7882,
-                  "src": "191:18:30",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_address",
-                    "typeString": "address"
-                  },
-                  "typeName": {
-                    "id": 7875,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "191:7:30",
-                    "stateMutability": "nonpayable",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_address",
-                      "typeString": "address"
-                    }
-                  },
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 7878,
-                  "indexed": false,
-                  "mutability": "mutable",
-                  "name": "id",
-                  "nameLocation": "227:2:30",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 7882,
-                  "src": "219:10:30",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  },
-                  "typeName": {
-                    "id": 7877,
-                    "name": "uint256",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "219:7:30",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 7880,
-                  "indexed": false,
-                  "mutability": "mutable",
-                  "name": "value",
-                  "nameLocation": "247:5:30",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 7882,
-                  "src": "239:13:30",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  },
-                  "typeName": {
-                    "id": 7879,
-                    "name": "uint256",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "239:7:30",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "visibility": "internal"
-                }
-              ],
-              "src": "117:141:30"
-            }
-          },
-          {
-            "id": 7890,
-            "nodeType": "EventDefinition",
-            "src": "265:108:30",
-            "nodes": [],
-            "anonymous": false,
-            "eventSelector": "8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925",
-            "name": "Approval",
-            "nameLocation": "271:8:30",
-            "parameters": {
-              "id": 7889,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 7884,
-                  "indexed": true,
-                  "mutability": "mutable",
-                  "name": "owner",
-                  "nameLocation": "305:5:30",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 7890,
-                  "src": "289:21:30",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_address",
-                    "typeString": "address"
-                  },
-                  "typeName": {
-                    "id": 7883,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "289:7:30",
-                    "stateMutability": "nonpayable",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_address",
-                      "typeString": "address"
-                    }
-                  },
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 7886,
-                  "indexed": true,
-                  "mutability": "mutable",
-                  "name": "spender",
-                  "nameLocation": "336:7:30",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 7890,
-                  "src": "320:23:30",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_address",
-                    "typeString": "address"
-                  },
-                  "typeName": {
-                    "id": 7885,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "320:7:30",
-                    "stateMutability": "nonpayable",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_address",
-                      "typeString": "address"
-                    }
-                  },
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 7888,
-                  "indexed": false,
-                  "mutability": "mutable",
-                  "name": "value",
-                  "nameLocation": "361:5:30",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 7890,
-                  "src": "353:13:30",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  },
-                  "typeName": {
-                    "id": 7887,
-                    "name": "uint256",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "353:7:30",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "visibility": "internal"
-                }
-              ],
-              "src": "279:93:30"
-            }
-          },
-          {
-            "id": 7898,
-            "nodeType": "EventDefinition",
-            "src": "379:117:30",
-            "nodes": [],
-            "anonymous": false,
-            "eventSelector": "17307eab39ab6107e8899845ad3d59bd9653f200f220920489ca2b5937696c31",
-            "name": "ApprovalForAll",
-            "nameLocation": "385:14:30",
-            "parameters": {
-              "id": 7897,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 7892,
-                  "indexed": true,
-                  "mutability": "mutable",
-                  "name": "account",
-                  "nameLocation": "425:7:30",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 7898,
-                  "src": "409:23:30",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_address",
-                    "typeString": "address"
-                  },
-                  "typeName": {
-                    "id": 7891,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "409:7:30",
-                    "stateMutability": "nonpayable",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_address",
-                      "typeString": "address"
-                    }
-                  },
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 7894,
-                  "indexed": true,
-                  "mutability": "mutable",
-                  "name": "operator",
-                  "nameLocation": "458:8:30",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 7898,
-                  "src": "442:24:30",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_address",
-                    "typeString": "address"
-                  },
-                  "typeName": {
-                    "id": 7893,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "442:7:30",
-                    "stateMutability": "nonpayable",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_address",
-                      "typeString": "address"
-                    }
-                  },
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 7896,
-                  "indexed": false,
-                  "mutability": "mutable",
-                  "name": "approved",
-                  "nameLocation": "481:8:30",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 7898,
-                  "src": "476:13:30",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_bool",
-                    "typeString": "bool"
-                  },
-                  "typeName": {
-                    "id": 7895,
-                    "name": "bool",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "476:4:30",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_bool",
-                      "typeString": "bool"
-                    }
-                  },
-                  "visibility": "internal"
-                }
-              ],
-              "src": "399:96:30"
-            }
-          },
-          {
-            "id": 7909,
+            "id": 4181,
             "nodeType": "FunctionDefinition",
-            "src": "502:128:30",
+            "src": "96:128:28",
             "nodes": [],
             "functionSelector": "1c0f12b6",
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "transferFrom",
-            "nameLocation": "511:12:30",
+            "nameLocation": "105:12:28",
             "parameters": {
-              "id": 7907,
+              "id": 4179,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 7900,
+                  "id": 4172,
                   "mutability": "mutable",
                   "name": "tokenID",
-                  "nameLocation": "541:7:30",
+                  "nameLocation": "135:7:28",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7909,
-                  "src": "533:15:30",
+                  "scope": 4181,
+                  "src": "127:15:28",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1071,10 +527,10 @@ export const IMultiTokenWrite =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 7899,
+                    "id": 4171,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "533:7:30",
+                    "src": "127:7:28",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1084,13 +540,13 @@ export const IMultiTokenWrite =
                 },
                 {
                   "constant": false,
-                  "id": 7902,
+                  "id": 4174,
                   "mutability": "mutable",
                   "name": "from",
-                  "nameLocation": "566:4:30",
+                  "nameLocation": "160:4:28",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7909,
-                  "src": "558:12:30",
+                  "scope": 4181,
+                  "src": "152:12:28",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1098,10 +554,10 @@ export const IMultiTokenWrite =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 7901,
+                    "id": 4173,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "558:7:30",
+                    "src": "152:7:28",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1112,13 +568,13 @@ export const IMultiTokenWrite =
                 },
                 {
                   "constant": false,
-                  "id": 7904,
+                  "id": 4176,
                   "mutability": "mutable",
                   "name": "to",
-                  "nameLocation": "588:2:30",
+                  "nameLocation": "182:2:28",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7909,
-                  "src": "580:10:30",
+                  "scope": 4181,
+                  "src": "174:10:28",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1126,10 +582,10 @@ export const IMultiTokenWrite =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 7903,
+                    "id": 4175,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "580:7:30",
+                    "src": "174:7:28",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1140,13 +596,13 @@ export const IMultiTokenWrite =
                 },
                 {
                   "constant": false,
-                  "id": 7906,
+                  "id": 4178,
                   "mutability": "mutable",
                   "name": "amount",
-                  "nameLocation": "608:6:30",
+                  "nameLocation": "202:6:28",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7909,
-                  "src": "600:14:30",
+                  "scope": 4181,
+                  "src": "194:14:28",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1154,10 +610,10 @@ export const IMultiTokenWrite =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 7905,
+                    "id": 4177,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "600:7:30",
+                    "src": "194:7:28",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1166,43 +622,43 @@ export const IMultiTokenWrite =
                   "visibility": "internal"
                 }
               ],
-              "src": "523:97:30"
+              "src": "117:97:28"
             },
             "returnParameters": {
-              "id": 7908,
+              "id": 4180,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "629:0:30"
+              "src": "223:0:28"
             },
-            "scope": 7980,
+            "scope": 4252,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 7922,
+            "id": 4194,
             "nodeType": "FunctionDefinition",
-            "src": "636:158:30",
+            "src": "230:158:28",
             "nodes": [],
             "functionSelector": "e44808bc",
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "transferFromBridge",
-            "nameLocation": "645:18:30",
+            "nameLocation": "239:18:28",
             "parameters": {
-              "id": 7920,
+              "id": 4192,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 7911,
+                  "id": 4183,
                   "mutability": "mutable",
                   "name": "tokenID",
-                  "nameLocation": "681:7:30",
+                  "nameLocation": "275:7:28",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7922,
-                  "src": "673:15:30",
+                  "scope": 4194,
+                  "src": "267:15:28",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1210,10 +666,10 @@ export const IMultiTokenWrite =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 7910,
+                    "id": 4182,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "673:7:30",
+                    "src": "267:7:28",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1223,13 +679,13 @@ export const IMultiTokenWrite =
                 },
                 {
                   "constant": false,
-                  "id": 7913,
+                  "id": 4185,
                   "mutability": "mutable",
                   "name": "from",
-                  "nameLocation": "706:4:30",
+                  "nameLocation": "300:4:28",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7922,
-                  "src": "698:12:30",
+                  "scope": 4194,
+                  "src": "292:12:28",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1237,10 +693,10 @@ export const IMultiTokenWrite =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 7912,
+                    "id": 4184,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "698:7:30",
+                    "src": "292:7:28",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1251,13 +707,13 @@ export const IMultiTokenWrite =
                 },
                 {
                   "constant": false,
-                  "id": 7915,
+                  "id": 4187,
                   "mutability": "mutable",
                   "name": "to",
-                  "nameLocation": "728:2:30",
+                  "nameLocation": "322:2:28",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7922,
-                  "src": "720:10:30",
+                  "scope": 4194,
+                  "src": "314:10:28",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1265,10 +721,10 @@ export const IMultiTokenWrite =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 7914,
+                    "id": 4186,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "720:7:30",
+                    "src": "314:7:28",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1279,13 +735,13 @@ export const IMultiTokenWrite =
                 },
                 {
                   "constant": false,
-                  "id": 7917,
+                  "id": 4189,
                   "mutability": "mutable",
                   "name": "amount",
-                  "nameLocation": "748:6:30",
+                  "nameLocation": "342:6:28",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7922,
-                  "src": "740:14:30",
+                  "scope": 4194,
+                  "src": "334:14:28",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1293,10 +749,10 @@ export const IMultiTokenWrite =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 7916,
+                    "id": 4188,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "740:7:30",
+                    "src": "334:7:28",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1306,13 +762,13 @@ export const IMultiTokenWrite =
                 },
                 {
                   "constant": false,
-                  "id": 7919,
+                  "id": 4191,
                   "mutability": "mutable",
                   "name": "caller",
-                  "nameLocation": "772:6:30",
+                  "nameLocation": "366:6:28",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7922,
-                  "src": "764:14:30",
+                  "scope": 4194,
+                  "src": "358:14:28",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1320,10 +776,10 @@ export const IMultiTokenWrite =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 7918,
+                    "id": 4190,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "764:7:30",
+                    "src": "358:7:28",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1333,43 +789,43 @@ export const IMultiTokenWrite =
                   "visibility": "internal"
                 }
               ],
-              "src": "663:121:30"
+              "src": "257:121:28"
             },
             "returnParameters": {
-              "id": 7921,
+              "id": 4193,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "793:0:30"
+              "src": "387:0:28"
             },
-            "scope": 7980,
+            "scope": 4252,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 7931,
+            "id": 4203,
             "nodeType": "FunctionDefinition",
-            "src": "800:111:30",
+            "src": "394:111:28",
             "nodes": [],
             "functionSelector": "9cd241af",
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "setApproval",
-            "nameLocation": "809:11:30",
+            "nameLocation": "403:11:28",
             "parameters": {
-              "id": 7929,
+              "id": 4201,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 7924,
+                  "id": 4196,
                   "mutability": "mutable",
                   "name": "tokenID",
-                  "nameLocation": "838:7:30",
+                  "nameLocation": "432:7:28",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7931,
-                  "src": "830:15:30",
+                  "scope": 4203,
+                  "src": "424:15:28",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1377,10 +833,10 @@ export const IMultiTokenWrite =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 7923,
+                    "id": 4195,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "830:7:30",
+                    "src": "424:7:28",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1390,13 +846,13 @@ export const IMultiTokenWrite =
                 },
                 {
                   "constant": false,
-                  "id": 7926,
+                  "id": 4198,
                   "mutability": "mutable",
                   "name": "operator",
-                  "nameLocation": "863:8:30",
+                  "nameLocation": "457:8:28",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7931,
-                  "src": "855:16:30",
+                  "scope": 4203,
+                  "src": "449:16:28",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1404,10 +860,10 @@ export const IMultiTokenWrite =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 7925,
+                    "id": 4197,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "855:7:30",
+                    "src": "449:7:28",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1418,13 +874,13 @@ export const IMultiTokenWrite =
                 },
                 {
                   "constant": false,
-                  "id": 7928,
+                  "id": 4200,
                   "mutability": "mutable",
                   "name": "amount",
-                  "nameLocation": "889:6:30",
+                  "nameLocation": "483:6:28",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7931,
-                  "src": "881:14:30",
+                  "scope": 4203,
+                  "src": "475:14:28",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1432,10 +888,10 @@ export const IMultiTokenWrite =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 7927,
+                    "id": 4199,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "881:7:30",
+                    "src": "475:7:28",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1444,43 +900,43 @@ export const IMultiTokenWrite =
                   "visibility": "internal"
                 }
               ],
-              "src": "820:81:30"
+              "src": "414:81:28"
             },
             "returnParameters": {
-              "id": 7930,
+              "id": 4202,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "910:0:30"
+              "src": "504:0:28"
             },
-            "scope": 7980,
+            "scope": 4252,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 7942,
+            "id": 4214,
             "nodeType": "FunctionDefinition",
-            "src": "917:141:30",
+            "src": "511:141:28",
             "nodes": [],
             "functionSelector": "4ed2d6ac",
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "setApprovalBridge",
-            "nameLocation": "926:17:30",
+            "nameLocation": "520:17:28",
             "parameters": {
-              "id": 7940,
+              "id": 4212,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 7933,
+                  "id": 4205,
                   "mutability": "mutable",
                   "name": "tokenID",
-                  "nameLocation": "961:7:30",
+                  "nameLocation": "555:7:28",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7942,
-                  "src": "953:15:30",
+                  "scope": 4214,
+                  "src": "547:15:28",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1488,10 +944,10 @@ export const IMultiTokenWrite =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 7932,
+                    "id": 4204,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "953:7:30",
+                    "src": "547:7:28",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1501,13 +957,13 @@ export const IMultiTokenWrite =
                 },
                 {
                   "constant": false,
-                  "id": 7935,
+                  "id": 4207,
                   "mutability": "mutable",
                   "name": "operator",
-                  "nameLocation": "986:8:30",
+                  "nameLocation": "580:8:28",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7942,
-                  "src": "978:16:30",
+                  "scope": 4214,
+                  "src": "572:16:28",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1515,10 +971,10 @@ export const IMultiTokenWrite =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 7934,
+                    "id": 4206,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "978:7:30",
+                    "src": "572:7:28",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1529,13 +985,13 @@ export const IMultiTokenWrite =
                 },
                 {
                   "constant": false,
-                  "id": 7937,
+                  "id": 4209,
                   "mutability": "mutable",
                   "name": "amount",
-                  "nameLocation": "1012:6:30",
+                  "nameLocation": "606:6:28",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7942,
-                  "src": "1004:14:30",
+                  "scope": 4214,
+                  "src": "598:14:28",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1543,10 +999,10 @@ export const IMultiTokenWrite =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 7936,
+                    "id": 4208,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1004:7:30",
+                    "src": "598:7:28",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1556,13 +1012,13 @@ export const IMultiTokenWrite =
                 },
                 {
                   "constant": false,
-                  "id": 7939,
+                  "id": 4211,
                   "mutability": "mutable",
                   "name": "caller",
-                  "nameLocation": "1036:6:30",
+                  "nameLocation": "630:6:28",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7942,
-                  "src": "1028:14:30",
+                  "scope": 4214,
+                  "src": "622:14:28",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1570,10 +1026,10 @@ export const IMultiTokenWrite =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 7938,
+                    "id": 4210,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1028:7:30",
+                    "src": "622:7:28",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1583,43 +1039,43 @@ export const IMultiTokenWrite =
                   "visibility": "internal"
                 }
               ],
-              "src": "943:105:30"
+              "src": "537:105:28"
             },
             "returnParameters": {
-              "id": 7941,
+              "id": 4213,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1057:0:30"
+              "src": "651:0:28"
             },
-            "scope": 7980,
+            "scope": 4252,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 7949,
+            "id": 4221,
             "nodeType": "FunctionDefinition",
-            "src": "1064:69:30",
+            "src": "658:69:28",
             "nodes": [],
             "functionSelector": "a22cb465",
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "setApprovalForAll",
-            "nameLocation": "1073:17:30",
+            "nameLocation": "667:17:28",
             "parameters": {
-              "id": 7947,
+              "id": 4219,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 7944,
+                  "id": 4216,
                   "mutability": "mutable",
                   "name": "operator",
-                  "nameLocation": "1099:8:30",
+                  "nameLocation": "693:8:28",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7949,
-                  "src": "1091:16:30",
+                  "scope": 4221,
+                  "src": "685:16:28",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1627,10 +1083,10 @@ export const IMultiTokenWrite =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 7943,
+                    "id": 4215,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1091:7:30",
+                    "src": "685:7:28",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1641,13 +1097,13 @@ export const IMultiTokenWrite =
                 },
                 {
                   "constant": false,
-                  "id": 7946,
+                  "id": 4218,
                   "mutability": "mutable",
                   "name": "approved",
-                  "nameLocation": "1114:8:30",
+                  "nameLocation": "708:8:28",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7949,
-                  "src": "1109:13:30",
+                  "scope": 4221,
+                  "src": "703:13:28",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1655,10 +1111,10 @@ export const IMultiTokenWrite =
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 7945,
+                    "id": 4217,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1109:4:30",
+                    "src": "703:4:28",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -1667,43 +1123,43 @@ export const IMultiTokenWrite =
                   "visibility": "internal"
                 }
               ],
-              "src": "1090:33:30"
+              "src": "684:33:28"
             },
             "returnParameters": {
-              "id": 7948,
+              "id": 4220,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1132:0:30"
+              "src": "726:0:28"
             },
-            "scope": 7980,
+            "scope": 4252,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 7962,
+            "id": 4234,
             "nodeType": "FunctionDefinition",
-            "src": "1139:151:30",
+            "src": "733:151:28",
             "nodes": [],
             "functionSelector": "17fad7fc",
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "batchTransferFrom",
-            "nameLocation": "1148:17:30",
+            "nameLocation": "742:17:28",
             "parameters": {
-              "id": 7960,
+              "id": 4232,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 7951,
+                  "id": 4223,
                   "mutability": "mutable",
                   "name": "from",
-                  "nameLocation": "1183:4:30",
+                  "nameLocation": "777:4:28",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7962,
-                  "src": "1175:12:30",
+                  "scope": 4234,
+                  "src": "769:12:28",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1711,10 +1167,10 @@ export const IMultiTokenWrite =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 7950,
+                    "id": 4222,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1175:7:30",
+                    "src": "769:7:28",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1725,13 +1181,13 @@ export const IMultiTokenWrite =
                 },
                 {
                   "constant": false,
-                  "id": 7953,
+                  "id": 4225,
                   "mutability": "mutable",
                   "name": "to",
-                  "nameLocation": "1205:2:30",
+                  "nameLocation": "799:2:28",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7962,
-                  "src": "1197:10:30",
+                  "scope": 4234,
+                  "src": "791:10:28",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1739,10 +1195,10 @@ export const IMultiTokenWrite =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 7952,
+                    "id": 4224,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1197:7:30",
+                    "src": "791:7:28",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1753,13 +1209,13 @@ export const IMultiTokenWrite =
                 },
                 {
                   "constant": false,
-                  "id": 7956,
+                  "id": 4228,
                   "mutability": "mutable",
                   "name": "ids",
-                  "nameLocation": "1236:3:30",
+                  "nameLocation": "830:3:28",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7962,
-                  "src": "1217:22:30",
+                  "scope": 4234,
+                  "src": "811:22:28",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -1768,18 +1224,18 @@ export const IMultiTokenWrite =
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 7954,
+                      "id": 4226,
                       "name": "uint256",
                       "nodeType": "ElementaryTypeName",
-                      "src": "1217:7:30",
+                      "src": "811:7:28",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "id": 7955,
+                    "id": 4227,
                     "nodeType": "ArrayTypeName",
-                    "src": "1217:9:30",
+                    "src": "811:9:28",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
                       "typeString": "uint256[]"
@@ -1789,13 +1245,13 @@ export const IMultiTokenWrite =
                 },
                 {
                   "constant": false,
-                  "id": 7959,
+                  "id": 4231,
                   "mutability": "mutable",
                   "name": "values",
-                  "nameLocation": "1268:6:30",
+                  "nameLocation": "862:6:28",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7962,
-                  "src": "1249:25:30",
+                  "scope": 4234,
+                  "src": "843:25:28",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -1804,18 +1260,18 @@ export const IMultiTokenWrite =
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 7957,
+                      "id": 4229,
                       "name": "uint256",
                       "nodeType": "ElementaryTypeName",
-                      "src": "1249:7:30",
+                      "src": "843:7:28",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "id": 7958,
+                    "id": 4230,
                     "nodeType": "ArrayTypeName",
-                    "src": "1249:9:30",
+                    "src": "843:9:28",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
                       "typeString": "uint256[]"
@@ -1824,43 +1280,43 @@ export const IMultiTokenWrite =
                   "visibility": "internal"
                 }
               ],
-              "src": "1165:115:30"
+              "src": "759:115:28"
             },
             "returnParameters": {
-              "id": 7961,
+              "id": 4233,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1289:0:30"
+              "src": "883:0:28"
             },
-            "scope": 7980,
+            "scope": 4252,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 7979,
+            "id": 4251,
             "nodeType": "FunctionDefinition",
-            "src": "1296:190:30",
+            "src": "890:190:28",
             "nodes": [],
             "functionSelector": "9032c726",
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "permitForAll",
-            "nameLocation": "1305:12:30",
+            "nameLocation": "899:12:28",
             "parameters": {
-              "id": 7977,
+              "id": 4249,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 7964,
+                  "id": 4236,
                   "mutability": "mutable",
                   "name": "owner",
-                  "nameLocation": "1335:5:30",
+                  "nameLocation": "929:5:28",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7979,
-                  "src": "1327:13:30",
+                  "scope": 4251,
+                  "src": "921:13:28",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1868,10 +1324,10 @@ export const IMultiTokenWrite =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 7963,
+                    "id": 4235,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1327:7:30",
+                    "src": "921:7:28",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1882,13 +1338,13 @@ export const IMultiTokenWrite =
                 },
                 {
                   "constant": false,
-                  "id": 7966,
+                  "id": 4238,
                   "mutability": "mutable",
                   "name": "spender",
-                  "nameLocation": "1358:7:30",
+                  "nameLocation": "952:7:28",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7979,
-                  "src": "1350:15:30",
+                  "scope": 4251,
+                  "src": "944:15:28",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1896,10 +1352,10 @@ export const IMultiTokenWrite =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 7965,
+                    "id": 4237,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1350:7:30",
+                    "src": "944:7:28",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1910,13 +1366,13 @@ export const IMultiTokenWrite =
                 },
                 {
                   "constant": false,
-                  "id": 7968,
+                  "id": 4240,
                   "mutability": "mutable",
                   "name": "_approved",
-                  "nameLocation": "1380:9:30",
+                  "nameLocation": "974:9:28",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7979,
-                  "src": "1375:14:30",
+                  "scope": 4251,
+                  "src": "969:14:28",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1924,10 +1380,10 @@ export const IMultiTokenWrite =
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 7967,
+                    "id": 4239,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1375:4:30",
+                    "src": "969:4:28",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -1937,13 +1393,13 @@ export const IMultiTokenWrite =
                 },
                 {
                   "constant": false,
-                  "id": 7970,
+                  "id": 4242,
                   "mutability": "mutable",
                   "name": "deadline",
-                  "nameLocation": "1407:8:30",
+                  "nameLocation": "1001:8:28",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7979,
-                  "src": "1399:16:30",
+                  "scope": 4251,
+                  "src": "993:16:28",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1951,10 +1407,10 @@ export const IMultiTokenWrite =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 7969,
+                    "id": 4241,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1399:7:30",
+                    "src": "993:7:28",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1964,13 +1420,13 @@ export const IMultiTokenWrite =
                 },
                 {
                   "constant": false,
-                  "id": 7972,
+                  "id": 4244,
                   "mutability": "mutable",
                   "name": "v",
-                  "nameLocation": "1431:1:30",
+                  "nameLocation": "1025:1:28",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7979,
-                  "src": "1425:7:30",
+                  "scope": 4251,
+                  "src": "1019:7:28",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1978,10 +1434,10 @@ export const IMultiTokenWrite =
                     "typeString": "uint8"
                   },
                   "typeName": {
-                    "id": 7971,
+                    "id": 4243,
                     "name": "uint8",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1425:5:30",
+                    "src": "1019:5:28",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint8",
                       "typeString": "uint8"
@@ -1991,13 +1447,13 @@ export const IMultiTokenWrite =
                 },
                 {
                   "constant": false,
-                  "id": 7974,
+                  "id": 4246,
                   "mutability": "mutable",
                   "name": "r",
-                  "nameLocation": "1450:1:30",
+                  "nameLocation": "1044:1:28",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7979,
-                  "src": "1442:9:30",
+                  "scope": 4251,
+                  "src": "1036:9:28",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2005,10 +1461,10 @@ export const IMultiTokenWrite =
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 7973,
+                    "id": 4245,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1442:7:30",
+                    "src": "1036:7:28",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -2018,13 +1474,13 @@ export const IMultiTokenWrite =
                 },
                 {
                   "constant": false,
-                  "id": 7976,
+                  "id": 4248,
                   "mutability": "mutable",
                   "name": "s",
-                  "nameLocation": "1469:1:30",
+                  "nameLocation": "1063:1:28",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7979,
-                  "src": "1461:9:30",
+                  "scope": 4251,
+                  "src": "1055:9:28",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2032,10 +1488,10 @@ export const IMultiTokenWrite =
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 7975,
+                    "id": 4247,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1461:7:30",
+                    "src": "1055:7:28",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -2044,15 +1500,15 @@ export const IMultiTokenWrite =
                   "visibility": "internal"
                 }
               ],
-              "src": "1317:159:30"
+              "src": "911:159:28"
             },
             "returnParameters": {
-              "id": 7978,
+              "id": 4250,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1485:0:30"
+              "src": "1079:0:28"
             },
-            "scope": 7980,
+            "scope": 4252,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
@@ -2060,20 +1516,20 @@ export const IMultiTokenWrite =
         ],
         "abstract": false,
         "baseContracts": [],
-        "canonicalName": "IMultiTokenWrite",
+        "canonicalName": "IMultiTokenCore",
         "contractDependencies": [],
         "contractKind": "interface",
         "fullyImplemented": false,
         "linearizedBaseContracts": [
-          7980
+          4252
         ],
-        "name": "IMultiTokenWrite",
-        "nameLocation": "74:16:30",
-        "scope": 7981,
+        "name": "IMultiTokenCore",
+        "nameLocation": "74:15:28",
+        "scope": 4253,
         "usedErrors": []
       }
     ],
     "license": "Apache-2.0"
   },
-  "id": 30
+  "id": 28
 } as const;

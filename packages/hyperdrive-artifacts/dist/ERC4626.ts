@@ -729,7 +729,7 @@ export const ERC4626 =
     "transferFrom(address,address,uint256)": "23b872dd",
     "withdraw(uint256,address,address)": "b460af94"
   },
-  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"caller\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"assets\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"shares\",\"type\":\"uint256\"}],\"name\":\"Deposit\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"caller\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"receiver\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"assets\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"shares\",\"type\":\"uint256\"}],\"name\":\"Withdraw\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"DOMAIN_SEPARATOR\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"allowance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"approve\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"asset\",\"outputs\":[{\"internalType\":\"contract ERC20\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"shares\",\"type\":\"uint256\"}],\"name\":\"convertToAssets\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"assets\",\"type\":\"uint256\"}],\"name\":\"convertToShares\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"decimals\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"assets\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"receiver\",\"type\":\"address\"}],\"name\":\"deposit\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"shares\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"maxDeposit\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"maxMint\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"name\":\"maxRedeem\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"name\":\"maxWithdraw\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"shares\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"receiver\",\"type\":\"address\"}],\"name\":\"mint\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"assets\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"nonces\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"deadline\",\"type\":\"uint256\"},{\"internalType\":\"uint8\",\"name\":\"v\",\"type\":\"uint8\"},{\"internalType\":\"bytes32\",\"name\":\"r\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"s\",\"type\":\"bytes32\"}],\"name\":\"permit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"assets\",\"type\":\"uint256\"}],\"name\":\"previewDeposit\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"shares\",\"type\":\"uint256\"}],\"name\":\"previewMint\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"shares\",\"type\":\"uint256\"}],\"name\":\"previewRedeem\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"assets\",\"type\":\"uint256\"}],\"name\":\"previewWithdraw\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"shares\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"receiver\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"name\":\"redeem\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"assets\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"symbol\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalAssets\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transfer\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"assets\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"receiver\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"name\":\"withdraw\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"shares\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Solmate (https://github.com/transmissions11/solmate/blob/main/src/mixins/ERC4626.sol)\",\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Minimal ERC4626 tokenized Vault implementation.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"lib/solmate/src/mixins/ERC4626.sol\":\"ERC4626\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@aave/=lib/aave-v3-core/contracts/\",\":aave-v3-core/=lib/aave-v3-core/\",\":create3-factory/=lib/yield-daddy/lib/create3-factory/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\",\":yield-daddy/=lib/yield-daddy/\"]},\"sources\":{\"lib/solmate/src/mixins/ERC4626.sol\":{\"keccak256\":\"0xa404f6f45bd53f24a90cc5ffe95e16b52e3f2dfd88f0d7a1edcb35f815919a7b\",\"license\":\"AGPL-3.0-only\",\"urls\":[\"bzz-raw://9f01e32d713e05cc58c1563e9938a1c5e096b1da9f52c7ea8424f2317b94adc1\",\"dweb:/ipfs/QmVt5SsbA3kezM5pyovupN7iZLy6QVqY5qQRZKLFqxKJUs\"]},\"lib/solmate/src/tokens/ERC20.sol\":{\"keccak256\":\"0xcdfd8db76b2a3415620e4d18cc5545f3d50de792dbf2c3dd5adb40cbe6f94b10\",\"license\":\"AGPL-3.0-only\",\"urls\":[\"bzz-raw://57b3ab70cde374af1cf2c9888636e8de6cf660f087b1c9abd805e9271e19fa35\",\"dweb:/ipfs/QmNrLDBAHYFjpjSd12jerm1AdBkDqEYUUaXgnT854BUZ97\"]},\"lib/solmate/src/utils/FixedPointMathLib.sol\":{\"keccak256\":\"0x1b62af9baf5b8e991ed7531bc87f45550ba9d61e8dbff5caf237ccaf3a3fd843\",\"license\":\"AGPL-3.0-only\",\"urls\":[\"bzz-raw://b7b38b977c5305b18ceefbeed4c9ceaaaefa419b520de62de6604ea661f8c0a9\",\"dweb:/ipfs/QmecMRzgfMyDVa2pvBqMMDLYBappaj7Aa3qcMoQYEQrhWi\"]},\"lib/solmate/src/utils/SafeTransferLib.sol\":{\"keccak256\":\"0xbadf3d708cf532b12f75f78a1d423135954b63774a6d4ba15914a551d348db8a\",\"license\":\"AGPL-3.0-only\",\"urls\":[\"bzz-raw://88ac8256bd520d1b8e6f9c4ac9e8777bffdc4a6c8afb1a848f596665779a55b4\",\"dweb:/ipfs/QmXx7X1dxe6f5VM91vgQ5BA4r2eF97GWDcQDrgHytcvfjU\"]}},\"version\":1}",
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"caller\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"assets\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"shares\",\"type\":\"uint256\"}],\"name\":\"Deposit\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"caller\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"receiver\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"assets\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"shares\",\"type\":\"uint256\"}],\"name\":\"Withdraw\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"DOMAIN_SEPARATOR\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"allowance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"approve\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"asset\",\"outputs\":[{\"internalType\":\"contract ERC20\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"shares\",\"type\":\"uint256\"}],\"name\":\"convertToAssets\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"assets\",\"type\":\"uint256\"}],\"name\":\"convertToShares\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"decimals\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"assets\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"receiver\",\"type\":\"address\"}],\"name\":\"deposit\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"shares\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"maxDeposit\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"maxMint\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"name\":\"maxRedeem\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"name\":\"maxWithdraw\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"shares\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"receiver\",\"type\":\"address\"}],\"name\":\"mint\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"assets\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"nonces\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"deadline\",\"type\":\"uint256\"},{\"internalType\":\"uint8\",\"name\":\"v\",\"type\":\"uint8\"},{\"internalType\":\"bytes32\",\"name\":\"r\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"s\",\"type\":\"bytes32\"}],\"name\":\"permit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"assets\",\"type\":\"uint256\"}],\"name\":\"previewDeposit\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"shares\",\"type\":\"uint256\"}],\"name\":\"previewMint\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"shares\",\"type\":\"uint256\"}],\"name\":\"previewRedeem\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"assets\",\"type\":\"uint256\"}],\"name\":\"previewWithdraw\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"shares\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"receiver\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"name\":\"redeem\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"assets\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"symbol\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalAssets\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transfer\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"assets\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"receiver\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"name\":\"withdraw\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"shares\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Solmate (https://github.com/transmissions11/solmate/blob/main/src/mixins/ERC4626.sol)\",\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Minimal ERC4626 tokenized Vault implementation.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"lib/solmate/src/mixins/ERC4626.sol\":\"ERC4626\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":aave-v3-core/=lib/aave-v3-core/\",\":create3-factory/=lib/yield-daddy/lib/create3-factory/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\",\":solmate/=lib/solmate/src/\",\":yield-daddy/=lib/yield-daddy/\"]},\"sources\":{\"lib/solmate/src/mixins/ERC4626.sol\":{\"keccak256\":\"0xa404f6f45bd53f24a90cc5ffe95e16b52e3f2dfd88f0d7a1edcb35f815919a7b\",\"license\":\"AGPL-3.0-only\",\"urls\":[\"bzz-raw://9f01e32d713e05cc58c1563e9938a1c5e096b1da9f52c7ea8424f2317b94adc1\",\"dweb:/ipfs/QmVt5SsbA3kezM5pyovupN7iZLy6QVqY5qQRZKLFqxKJUs\"]},\"lib/solmate/src/tokens/ERC20.sol\":{\"keccak256\":\"0xcdfd8db76b2a3415620e4d18cc5545f3d50de792dbf2c3dd5adb40cbe6f94b10\",\"license\":\"AGPL-3.0-only\",\"urls\":[\"bzz-raw://57b3ab70cde374af1cf2c9888636e8de6cf660f087b1c9abd805e9271e19fa35\",\"dweb:/ipfs/QmNrLDBAHYFjpjSd12jerm1AdBkDqEYUUaXgnT854BUZ97\"]},\"lib/solmate/src/utils/FixedPointMathLib.sol\":{\"keccak256\":\"0x1b62af9baf5b8e991ed7531bc87f45550ba9d61e8dbff5caf237ccaf3a3fd843\",\"license\":\"AGPL-3.0-only\",\"urls\":[\"bzz-raw://b7b38b977c5305b18ceefbeed4c9ceaaaefa419b520de62de6604ea661f8c0a9\",\"dweb:/ipfs/QmecMRzgfMyDVa2pvBqMMDLYBappaj7Aa3qcMoQYEQrhWi\"]},\"lib/solmate/src/utils/SafeTransferLib.sol\":{\"keccak256\":\"0xbadf3d708cf532b12f75f78a1d423135954b63774a6d4ba15914a551d348db8a\",\"license\":\"AGPL-3.0-only\",\"urls\":[\"bzz-raw://88ac8256bd520d1b8e6f9c4ac9e8777bffdc4a6c8afb1a848f596665779a55b4\",\"dweb:/ipfs/QmXx7X1dxe6f5VM91vgQ5BA4r2eF97GWDcQDrgHytcvfjU\"]}},\"version\":1}",
   "metadata": {
     "compiler": {
       "version": "0.8.19+commit.7dd6d404"
@@ -1437,14 +1437,10 @@ export const ERC4626 =
     },
     "settings": {
       "remappings": [
-        "@aave/=lib/aave-v3-core/contracts/",
         "aave-v3-core/=lib/aave-v3-core/",
         "create3-factory/=lib/yield-daddy/lib/create3-factory/",
         "ds-test/=lib/forge-std/lib/ds-test/src/",
-        "erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/",
         "forge-std/=lib/forge-std/src/",
-        "openzeppelin-contracts/=lib/openzeppelin-contracts/",
-        "openzeppelin/=lib/openzeppelin-contracts/contracts/",
         "solmate/=lib/solmate/src/",
         "yield-daddy/=lib/yield-daddy/"
       ],
@@ -1498,28 +1494,28 @@ export const ERC4626 =
   },
   "ast": {
     "absolutePath": "lib/solmate/src/mixins/ERC4626.sol",
-    "id": 63569,
+    "id": 59953,
     "exportedSymbols": {
       "ERC20": [
-        63956
+        60340
       ],
       "ERC4626": [
-        63568
+        59952
       ],
       "FixedPointMathLib": [
-        64154
+        60538
       ],
       "SafeTransferLib": [
-        64265
+        60649
       ]
     },
     "nodeType": "SourceUnit",
-    "src": "42:6477:99",
+    "src": "42:6477:83",
     "nodes": [
       {
-        "id": 63049,
+        "id": 59433,
         "nodeType": "PragmaDirective",
-        "src": "42:24:99",
+        "src": "42:24:83",
         "nodes": [],
         "literals": [
           "solidity",
@@ -1529,24 +1525,24 @@ export const ERC4626 =
         ]
       },
       {
-        "id": 63051,
+        "id": 59435,
         "nodeType": "ImportDirective",
-        "src": "68:42:99",
+        "src": "68:42:83",
         "nodes": [],
         "absolutePath": "lib/solmate/src/tokens/ERC20.sol",
         "file": "../tokens/ERC20.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 63569,
-        "sourceUnit": 63957,
+        "scope": 59953,
+        "sourceUnit": 60341,
         "symbolAliases": [
           {
             "foreign": {
-              "id": 63050,
+              "id": 59434,
               "name": "ERC20",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "referencedDeclaration": 63956,
-              "src": "76:5:99",
+              "referencedDeclaration": 60340,
+              "src": "76:5:83",
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
@@ -1555,24 +1551,24 @@ export const ERC4626 =
         "unitAlias": ""
       },
       {
-        "id": 63053,
+        "id": 59437,
         "nodeType": "ImportDirective",
-        "src": "111:61:99",
+        "src": "111:61:83",
         "nodes": [],
         "absolutePath": "lib/solmate/src/utils/SafeTransferLib.sol",
         "file": "../utils/SafeTransferLib.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 63569,
-        "sourceUnit": 64266,
+        "scope": 59953,
+        "sourceUnit": 60650,
         "symbolAliases": [
           {
             "foreign": {
-              "id": 63052,
+              "id": 59436,
               "name": "SafeTransferLib",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "referencedDeclaration": 64265,
-              "src": "119:15:99",
+              "referencedDeclaration": 60649,
+              "src": "119:15:83",
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
@@ -1581,24 +1577,24 @@ export const ERC4626 =
         "unitAlias": ""
       },
       {
-        "id": 63055,
+        "id": 59439,
         "nodeType": "ImportDirective",
-        "src": "173:65:99",
+        "src": "173:65:83",
         "nodes": [],
         "absolutePath": "lib/solmate/src/utils/FixedPointMathLib.sol",
         "file": "../utils/FixedPointMathLib.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 63569,
-        "sourceUnit": 64155,
+        "scope": 59953,
+        "sourceUnit": 60539,
         "symbolAliases": [
           {
             "foreign": {
-              "id": 63054,
+              "id": 59438,
               "name": "FixedPointMathLib",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "referencedDeclaration": 64154,
-              "src": "181:17:99",
+              "referencedDeclaration": 60538,
+              "src": "181:17:83",
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
@@ -1607,68 +1603,68 @@ export const ERC4626 =
         "unitAlias": ""
       },
       {
-        "id": 63568,
+        "id": 59952,
         "nodeType": "ContractDefinition",
-        "src": "398:6120:99",
+        "src": "398:6120:83",
         "nodes": [
           {
-            "id": 63062,
+            "id": 59446,
             "nodeType": "UsingForDirective",
-            "src": "439:32:99",
+            "src": "439:32:83",
             "nodes": [],
             "global": false,
             "libraryName": {
-              "id": 63059,
+              "id": 59443,
               "name": "SafeTransferLib",
               "nameLocations": [
-                "445:15:99"
+                "445:15:83"
               ],
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 64265,
-              "src": "445:15:99"
+              "referencedDeclaration": 60649,
+              "src": "445:15:83"
             },
             "typeName": {
-              "id": 63061,
+              "id": 59445,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 63060,
+                "id": 59444,
                 "name": "ERC20",
                 "nameLocations": [
-                  "465:5:99"
+                  "465:5:83"
                 ],
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 63956,
-                "src": "465:5:99"
+                "referencedDeclaration": 60340,
+                "src": "465:5:83"
               },
-              "referencedDeclaration": 63956,
-              "src": "465:5:99",
+              "referencedDeclaration": 60340,
+              "src": "465:5:83",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC20_$63956",
+                "typeIdentifier": "t_contract$_ERC20_$60340",
                 "typeString": "contract ERC20"
               }
             }
           },
           {
-            "id": 63065,
+            "id": 59449,
             "nodeType": "UsingForDirective",
-            "src": "476:36:99",
+            "src": "476:36:83",
             "nodes": [],
             "global": false,
             "libraryName": {
-              "id": 63063,
+              "id": 59447,
               "name": "FixedPointMathLib",
               "nameLocations": [
-                "482:17:99"
+                "482:17:83"
               ],
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 64154,
-              "src": "482:17:99"
+              "referencedDeclaration": 60538,
+              "src": "482:17:83"
             },
             "typeName": {
-              "id": 63064,
+              "id": 59448,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "504:7:99",
+              "src": "504:7:83",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -1676,28 +1672,28 @@ export const ERC4626 =
             }
           },
           {
-            "id": 63075,
+            "id": 59459,
             "nodeType": "EventDefinition",
-            "src": "697:93:99",
+            "src": "697:93:83",
             "nodes": [],
             "anonymous": false,
             "eventSelector": "dcbc1c05240f31ff3ad067ef1ee35ce4997762752e3a095284754544f4c709d7",
             "name": "Deposit",
-            "nameLocation": "703:7:99",
+            "nameLocation": "703:7:83",
             "parameters": {
-              "id": 63074,
+              "id": 59458,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 63067,
+                  "id": 59451,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "caller",
-                  "nameLocation": "727:6:99",
+                  "nameLocation": "727:6:83",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63075,
-                  "src": "711:22:99",
+                  "scope": 59459,
+                  "src": "711:22:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1705,10 +1701,10 @@ export const ERC4626 =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 63066,
+                    "id": 59450,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "711:7:99",
+                    "src": "711:7:83",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1719,14 +1715,14 @@ export const ERC4626 =
                 },
                 {
                   "constant": false,
-                  "id": 63069,
+                  "id": 59453,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "owner",
-                  "nameLocation": "751:5:99",
+                  "nameLocation": "751:5:83",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63075,
-                  "src": "735:21:99",
+                  "scope": 59459,
+                  "src": "735:21:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1734,10 +1730,10 @@ export const ERC4626 =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 63068,
+                    "id": 59452,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "735:7:99",
+                    "src": "735:7:83",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1748,14 +1744,14 @@ export const ERC4626 =
                 },
                 {
                   "constant": false,
-                  "id": 63071,
+                  "id": 59455,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "assets",
-                  "nameLocation": "766:6:99",
+                  "nameLocation": "766:6:83",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63075,
-                  "src": "758:14:99",
+                  "scope": 59459,
+                  "src": "758:14:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1763,10 +1759,10 @@ export const ERC4626 =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 63070,
+                    "id": 59454,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "758:7:99",
+                    "src": "758:7:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1776,14 +1772,14 @@ export const ERC4626 =
                 },
                 {
                   "constant": false,
-                  "id": 63073,
+                  "id": 59457,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "shares",
-                  "nameLocation": "782:6:99",
+                  "nameLocation": "782:6:83",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63075,
-                  "src": "774:14:99",
+                  "scope": 59459,
+                  "src": "774:14:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1791,10 +1787,10 @@ export const ERC4626 =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 63072,
+                    "id": 59456,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "774:7:99",
+                    "src": "774:7:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1803,32 +1799,32 @@ export const ERC4626 =
                   "visibility": "internal"
                 }
               ],
-              "src": "710:79:99"
+              "src": "710:79:83"
             }
           },
           {
-            "id": 63087,
+            "id": 59471,
             "nodeType": "EventDefinition",
-            "src": "796:166:99",
+            "src": "796:166:83",
             "nodes": [],
             "anonymous": false,
             "eventSelector": "fbde797d201c681b91056529119e0b02407c7bb96a4a2c75c01fc9667232c8db",
             "name": "Withdraw",
-            "nameLocation": "802:8:99",
+            "nameLocation": "802:8:83",
             "parameters": {
-              "id": 63086,
+              "id": 59470,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 63077,
+                  "id": 59461,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "caller",
-                  "nameLocation": "836:6:99",
+                  "nameLocation": "836:6:83",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63087,
-                  "src": "820:22:99",
+                  "scope": 59471,
+                  "src": "820:22:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1836,10 +1832,10 @@ export const ERC4626 =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 63076,
+                    "id": 59460,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "820:7:99",
+                    "src": "820:7:83",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1850,14 +1846,14 @@ export const ERC4626 =
                 },
                 {
                   "constant": false,
-                  "id": 63079,
+                  "id": 59463,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "receiver",
-                  "nameLocation": "868:8:99",
+                  "nameLocation": "868:8:83",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63087,
-                  "src": "852:24:99",
+                  "scope": 59471,
+                  "src": "852:24:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1865,10 +1861,10 @@ export const ERC4626 =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 63078,
+                    "id": 59462,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "852:7:99",
+                    "src": "852:7:83",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1879,14 +1875,14 @@ export const ERC4626 =
                 },
                 {
                   "constant": false,
-                  "id": 63081,
+                  "id": 59465,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "owner",
-                  "nameLocation": "902:5:99",
+                  "nameLocation": "902:5:83",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63087,
-                  "src": "886:21:99",
+                  "scope": 59471,
+                  "src": "886:21:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1894,10 +1890,10 @@ export const ERC4626 =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 63080,
+                    "id": 59464,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "886:7:99",
+                    "src": "886:7:83",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1908,14 +1904,14 @@ export const ERC4626 =
                 },
                 {
                   "constant": false,
-                  "id": 63083,
+                  "id": 59467,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "assets",
-                  "nameLocation": "925:6:99",
+                  "nameLocation": "925:6:83",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63087,
-                  "src": "917:14:99",
+                  "scope": 59471,
+                  "src": "917:14:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1923,10 +1919,10 @@ export const ERC4626 =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 63082,
+                    "id": 59466,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "917:7:99",
+                    "src": "917:7:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1936,14 +1932,14 @@ export const ERC4626 =
                 },
                 {
                   "constant": false,
-                  "id": 63085,
+                  "id": 59469,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "shares",
-                  "nameLocation": "949:6:99",
+                  "nameLocation": "949:6:83",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63087,
-                  "src": "941:14:99",
+                  "scope": 59471,
+                  "src": "941:14:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1951,10 +1947,10 @@ export const ERC4626 =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 63084,
+                    "id": 59468,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "941:7:99",
+                    "src": "941:7:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1963,101 +1959,101 @@ export const ERC4626 =
                   "visibility": "internal"
                 }
               ],
-              "src": "810:151:99"
+              "src": "810:151:83"
             }
           },
           {
-            "id": 63090,
+            "id": 59474,
             "nodeType": "VariableDeclaration",
-            "src": "1149:28:99",
+            "src": "1149:28:83",
             "nodes": [],
             "constant": false,
             "functionSelector": "38d52e0f",
             "mutability": "immutable",
             "name": "asset",
-            "nameLocation": "1172:5:99",
-            "scope": 63568,
+            "nameLocation": "1172:5:83",
+            "scope": 59952,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_ERC20_$63956",
+              "typeIdentifier": "t_contract$_ERC20_$60340",
               "typeString": "contract ERC20"
             },
             "typeName": {
-              "id": 63089,
+              "id": 59473,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 63088,
+                "id": 59472,
                 "name": "ERC20",
                 "nameLocations": [
-                  "1149:5:99"
+                  "1149:5:83"
                 ],
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 63956,
-                "src": "1149:5:99"
+                "referencedDeclaration": 60340,
+                "src": "1149:5:83"
               },
-              "referencedDeclaration": 63956,
-              "src": "1149:5:99",
+              "referencedDeclaration": 60340,
+              "src": "1149:5:83",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC20_$63956",
+                "typeIdentifier": "t_contract$_ERC20_$60340",
                 "typeString": "contract ERC20"
               }
             },
             "visibility": "public"
           },
           {
-            "id": 63112,
+            "id": 59496,
             "nodeType": "FunctionDefinition",
-            "src": "1184:172:99",
+            "src": "1184:172:83",
             "nodes": [],
             "body": {
-              "id": 63111,
+              "id": 59495,
               "nodeType": "Block",
-              "src": "1325:31:99",
+              "src": "1325:31:83",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
-                    "id": 63109,
+                    "id": 59493,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 63107,
+                      "id": 59491,
                       "name": "asset",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 63090,
-                      "src": "1335:5:99",
+                      "referencedDeclaration": 59474,
+                      "src": "1335:5:83",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ERC20_$63956",
+                        "typeIdentifier": "t_contract$_ERC20_$60340",
                         "typeString": "contract ERC20"
                       }
                     },
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 63108,
+                      "id": 59492,
                       "name": "_asset",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 63093,
-                      "src": "1343:6:99",
+                      "referencedDeclaration": 59477,
+                      "src": "1343:6:83",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ERC20_$63956",
+                        "typeIdentifier": "t_contract$_ERC20_$60340",
                         "typeString": "contract ERC20"
                       }
                     },
-                    "src": "1335:14:99",
+                    "src": "1335:14:83",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_ERC20_$63956",
+                      "typeIdentifier": "t_contract$_ERC20_$60340",
                       "typeString": "contract ERC20"
                     }
                   },
-                  "id": 63110,
+                  "id": 59494,
                   "nodeType": "ExpressionStatement",
-                  "src": "1335:14:99"
+                  "src": "1335:14:83"
                 }
               ]
             },
@@ -2067,24 +2063,24 @@ export const ERC4626 =
               {
                 "arguments": [
                   {
-                    "id": 63100,
+                    "id": 59484,
                     "name": "_name",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 63095,
-                    "src": "1290:5:99",
+                    "referencedDeclaration": 59479,
+                    "src": "1290:5:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
                   {
-                    "id": 63101,
+                    "id": 59485,
                     "name": "_symbol",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 63097,
-                    "src": "1297:7:99",
+                    "referencedDeclaration": 59481,
+                    "src": "1297:7:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
@@ -2095,33 +2091,33 @@ export const ERC4626 =
                     "expression": {
                       "argumentTypes": [],
                       "expression": {
-                        "id": 63102,
+                        "id": 59486,
                         "name": "_asset",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63093,
-                        "src": "1306:6:99",
+                        "referencedDeclaration": 59477,
+                        "src": "1306:6:83",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ERC20_$63956",
+                          "typeIdentifier": "t_contract$_ERC20_$60340",
                           "typeString": "contract ERC20"
                         }
                       },
-                      "id": 63103,
+                      "id": 59487,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "1313:8:99",
+                      "memberLocation": "1313:8:83",
                       "memberName": "decimals",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 63593,
-                      "src": "1306:15:99",
+                      "referencedDeclaration": 59977,
+                      "src": "1306:15:83",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_view$__$returns$_t_uint8_$",
                         "typeString": "function () view external returns (uint8)"
                       }
                     },
-                    "id": 63104,
+                    "id": 59488,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2130,7 +2126,7 @@ export const ERC4626 =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1306:17:99",
+                    "src": "1306:17:83",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint8",
@@ -2138,60 +2134,60 @@ export const ERC4626 =
                     }
                   }
                 ],
-                "id": 63105,
+                "id": 59489,
                 "kind": "baseConstructorSpecifier",
                 "modifierName": {
-                  "id": 63099,
+                  "id": 59483,
                   "name": "ERC20",
                   "nameLocations": [
-                    "1284:5:99"
+                    "1284:5:83"
                   ],
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 63956,
-                  "src": "1284:5:99"
+                  "referencedDeclaration": 60340,
+                  "src": "1284:5:83"
                 },
                 "nodeType": "ModifierInvocation",
-                "src": "1284:40:99"
+                "src": "1284:40:83"
               }
             ],
             "name": "",
             "nameLocation": "-1:-1:-1",
             "parameters": {
-              "id": 63098,
+              "id": 59482,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 63093,
+                  "id": 59477,
                   "mutability": "mutable",
                   "name": "_asset",
-                  "nameLocation": "1211:6:99",
+                  "nameLocation": "1211:6:83",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63112,
-                  "src": "1205:12:99",
+                  "scope": 59496,
+                  "src": "1205:12:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_ERC20_$63956",
+                    "typeIdentifier": "t_contract$_ERC20_$60340",
                     "typeString": "contract ERC20"
                   },
                   "typeName": {
-                    "id": 63092,
+                    "id": 59476,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 63091,
+                      "id": 59475,
                       "name": "ERC20",
                       "nameLocations": [
-                        "1205:5:99"
+                        "1205:5:83"
                       ],
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 63956,
-                      "src": "1205:5:99"
+                      "referencedDeclaration": 60340,
+                      "src": "1205:5:83"
                     },
-                    "referencedDeclaration": 63956,
-                    "src": "1205:5:99",
+                    "referencedDeclaration": 60340,
+                    "src": "1205:5:83",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_ERC20_$63956",
+                      "typeIdentifier": "t_contract$_ERC20_$60340",
                       "typeString": "contract ERC20"
                     }
                   },
@@ -2199,13 +2195,13 @@ export const ERC4626 =
                 },
                 {
                   "constant": false,
-                  "id": 63095,
+                  "id": 59479,
                   "mutability": "mutable",
                   "name": "_name",
-                  "nameLocation": "1241:5:99",
+                  "nameLocation": "1241:5:83",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63112,
-                  "src": "1227:19:99",
+                  "scope": 59496,
+                  "src": "1227:19:83",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -2213,10 +2209,10 @@ export const ERC4626 =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 63094,
+                    "id": 59478,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1227:6:99",
+                    "src": "1227:6:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -2226,13 +2222,13 @@ export const ERC4626 =
                 },
                 {
                   "constant": false,
-                  "id": 63097,
+                  "id": 59481,
                   "mutability": "mutable",
                   "name": "_symbol",
-                  "nameLocation": "1270:7:99",
+                  "nameLocation": "1270:7:83",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63112,
-                  "src": "1256:21:99",
+                  "scope": 59496,
+                  "src": "1256:21:83",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -2240,10 +2236,10 @@ export const ERC4626 =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 63096,
+                    "id": 59480,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1256:6:99",
+                    "src": "1256:6:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -2252,28 +2248,28 @@ export const ERC4626 =
                   "visibility": "internal"
                 }
               ],
-              "src": "1195:88:99"
+              "src": "1195:88:83"
             },
             "returnParameters": {
-              "id": 63106,
+              "id": 59490,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1325:0:99"
+              "src": "1325:0:83"
             },
-            "scope": 63568,
+            "scope": 59952,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 63164,
+            "id": 59548,
             "nodeType": "FunctionDefinition",
-            "src": "1550:516:99",
+            "src": "1550:516:83",
             "nodes": [],
             "body": {
-              "id": 63163,
+              "id": 59547,
               "nodeType": "Block",
-              "src": "1641:425:99",
+              "src": "1641:425:83",
               "nodes": [],
               "statements": [
                 {
@@ -2284,7 +2280,7 @@ export const ERC4626 =
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 63129,
+                        "id": 59513,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -2292,18 +2288,18 @@ export const ERC4626 =
                         "leftExpression": {
                           "components": [
                             {
-                              "id": 63126,
+                              "id": 59510,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "leftHandSide": {
-                                "id": 63122,
+                                "id": 59506,
                                 "name": "shares",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 63119,
-                                "src": "1735:6:99",
+                                "referencedDeclaration": 59503,
+                                "src": "1735:6:83",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
@@ -2314,12 +2310,12 @@ export const ERC4626 =
                               "rightHandSide": {
                                 "arguments": [
                                   {
-                                    "id": 63124,
+                                    "id": 59508,
                                     "name": "assets",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 63114,
-                                    "src": "1759:6:99",
+                                    "referencedDeclaration": 59498,
+                                    "src": "1759:6:83",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
                                       "typeString": "uint256"
@@ -2333,18 +2329,18 @@ export const ERC4626 =
                                       "typeString": "uint256"
                                     }
                                   ],
-                                  "id": 63123,
+                                  "id": 59507,
                                   "name": "previewDeposit",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 63437,
-                                  "src": "1744:14:99",
+                                  "referencedDeclaration": 59821,
+                                  "src": "1744:14:83",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_function_internal_view$_t_uint256_$returns$_t_uint256_$",
                                     "typeString": "function (uint256) view returns (uint256)"
                                   }
                                 },
-                                "id": 63125,
+                                "id": 59509,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -2353,28 +2349,28 @@ export const ERC4626 =
                                 "nameLocations": [],
                                 "names": [],
                                 "nodeType": "FunctionCall",
-                                "src": "1744:22:99",
+                                "src": "1744:22:83",
                                 "tryCall": false,
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
                                 }
                               },
-                              "src": "1735:31:99",
+                              "src": "1735:31:83",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               }
                             }
                           ],
-                          "id": 63127,
+                          "id": 59511,
                           "isConstant": false,
                           "isInlineArray": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "nodeType": "TupleExpression",
-                          "src": "1734:33:99",
+                          "src": "1734:33:83",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -2384,21 +2380,21 @@ export const ERC4626 =
                         "operator": "!=",
                         "rightExpression": {
                           "hexValue": "30",
-                          "id": 63128,
+                          "id": 59512,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "1771:1:99",
+                          "src": "1771:1:83",
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_0_by_1",
                             "typeString": "int_const 0"
                           },
                           "value": "0"
                         },
-                        "src": "1734:38:99",
+                        "src": "1734:38:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -2406,14 +2402,14 @@ export const ERC4626 =
                       },
                       {
                         "hexValue": "5a45524f5f534841524553",
-                        "id": 63130,
+                        "id": 59514,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "1774:13:99",
+                        "src": "1774:13:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_2119bd5d92259e418533f96b824fbd100e3dea453e6ac4c5f7315e6344368f2f",
                           "typeString": "literal_string \"ZERO_SHARES\""
@@ -2432,7 +2428,7 @@ export const ERC4626 =
                           "typeString": "literal_string \"ZERO_SHARES\""
                         }
                       ],
-                      "id": 63121,
+                      "id": 59505,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -2440,13 +2436,13 @@ export const ERC4626 =
                         -18
                       ],
                       "referencedDeclaration": -18,
-                      "src": "1726:7:99",
+                      "src": "1726:7:83",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 63131,
+                    "id": 59515,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2455,42 +2451,42 @@ export const ERC4626 =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1726:62:99",
+                    "src": "1726:62:83",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 63132,
+                  "id": 59516,
                   "nodeType": "ExpressionStatement",
-                  "src": "1726:62:99"
+                  "src": "1726:62:83"
                 },
                 {
                   "expression": {
                     "arguments": [
                       {
                         "expression": {
-                          "id": 63136,
+                          "id": 59520,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": -15,
-                          "src": "1891:3:99",
+                          "src": "1891:3:83",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
                           }
                         },
-                        "id": 63137,
+                        "id": 59521,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "1895:6:99",
+                        "memberLocation": "1895:6:83",
                         "memberName": "sender",
                         "nodeType": "MemberAccess",
-                        "src": "1891:10:99",
+                        "src": "1891:10:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -2499,14 +2495,14 @@ export const ERC4626 =
                       {
                         "arguments": [
                           {
-                            "id": 63140,
+                            "id": 59524,
                             "name": "this",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": -28,
-                            "src": "1911:4:99",
+                            "src": "1911:4:83",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_ERC4626_$63568",
+                              "typeIdentifier": "t_contract$_ERC4626_$59952",
                               "typeString": "contract ERC4626"
                             }
                           }
@@ -2514,30 +2510,30 @@ export const ERC4626 =
                         "expression": {
                           "argumentTypes": [
                             {
-                              "typeIdentifier": "t_contract$_ERC4626_$63568",
+                              "typeIdentifier": "t_contract$_ERC4626_$59952",
                               "typeString": "contract ERC4626"
                             }
                           ],
-                          "id": 63139,
+                          "id": 59523,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "lValueRequested": false,
                           "nodeType": "ElementaryTypeNameExpression",
-                          "src": "1903:7:99",
+                          "src": "1903:7:83",
                           "typeDescriptions": {
                             "typeIdentifier": "t_type$_t_address_$",
                             "typeString": "type(address)"
                           },
                           "typeName": {
-                            "id": 63138,
+                            "id": 59522,
                             "name": "address",
                             "nodeType": "ElementaryTypeName",
-                            "src": "1903:7:99",
+                            "src": "1903:7:83",
                             "typeDescriptions": {}
                           }
                         },
-                        "id": 63141,
+                        "id": 59525,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -2546,7 +2542,7 @@ export const ERC4626 =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "1903:13:99",
+                        "src": "1903:13:83",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -2554,12 +2550,12 @@ export const ERC4626 =
                         }
                       },
                       {
-                        "id": 63142,
+                        "id": 59526,
                         "name": "assets",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63114,
-                        "src": "1918:6:99",
+                        "referencedDeclaration": 59498,
+                        "src": "1918:6:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -2582,33 +2578,33 @@ export const ERC4626 =
                         }
                       ],
                       "expression": {
-                        "id": 63133,
+                        "id": 59517,
                         "name": "asset",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63090,
-                        "src": "1868:5:99",
+                        "referencedDeclaration": 59474,
+                        "src": "1868:5:83",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ERC20_$63956",
+                          "typeIdentifier": "t_contract$_ERC20_$60340",
                           "typeString": "contract ERC20"
                         }
                       },
-                      "id": 63135,
+                      "id": 59519,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "1874:16:99",
+                      "memberLocation": "1874:16:83",
                       "memberName": "safeTransferFrom",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 64224,
-                      "src": "1868:22:99",
+                      "referencedDeclaration": 60608,
+                      "src": "1868:22:83",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_ERC20_$63956_$_t_address_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_ERC20_$63956_$",
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_ERC20_$60340_$_t_address_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_ERC20_$60340_$",
                         "typeString": "function (contract ERC20,address,address,uint256)"
                       }
                     },
-                    "id": 63143,
+                    "id": 59527,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2617,39 +2613,39 @@ export const ERC4626 =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1868:57:99",
+                    "src": "1868:57:83",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 63144,
+                  "id": 59528,
                   "nodeType": "ExpressionStatement",
-                  "src": "1868:57:99"
+                  "src": "1868:57:83"
                 },
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 63146,
+                        "id": 59530,
                         "name": "receiver",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63116,
-                        "src": "1942:8:99",
+                        "referencedDeclaration": 59500,
+                        "src": "1942:8:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         }
                       },
                       {
-                        "id": 63147,
+                        "id": 59531,
                         "name": "shares",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63119,
-                        "src": "1952:6:99",
+                        "referencedDeclaration": 59503,
+                        "src": "1952:6:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -2667,18 +2663,18 @@ export const ERC4626 =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 63145,
+                      "id": 59529,
                       "name": "_mint",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 63927,
-                      "src": "1936:5:99",
+                      "referencedDeclaration": 60311,
+                      "src": "1936:5:83",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
                         "typeString": "function (address,uint256)"
                       }
                     },
-                    "id": 63148,
+                    "id": 59532,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2687,78 +2683,78 @@ export const ERC4626 =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1936:23:99",
+                    "src": "1936:23:83",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 63149,
+                  "id": 59533,
                   "nodeType": "ExpressionStatement",
-                  "src": "1936:23:99"
+                  "src": "1936:23:83"
                 },
                 {
                   "eventCall": {
                     "arguments": [
                       {
                         "expression": {
-                          "id": 63151,
+                          "id": 59535,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": -15,
-                          "src": "1983:3:99",
+                          "src": "1983:3:83",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
                           }
                         },
-                        "id": 63152,
+                        "id": 59536,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "1987:6:99",
+                        "memberLocation": "1987:6:83",
                         "memberName": "sender",
                         "nodeType": "MemberAccess",
-                        "src": "1983:10:99",
+                        "src": "1983:10:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         }
                       },
                       {
-                        "id": 63153,
+                        "id": 59537,
                         "name": "receiver",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63116,
-                        "src": "1995:8:99",
+                        "referencedDeclaration": 59500,
+                        "src": "1995:8:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         }
                       },
                       {
-                        "id": 63154,
+                        "id": 59538,
                         "name": "assets",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63114,
-                        "src": "2005:6:99",
+                        "referencedDeclaration": 59498,
+                        "src": "2005:6:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 63155,
+                        "id": 59539,
                         "name": "shares",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63119,
-                        "src": "2013:6:99",
+                        "referencedDeclaration": 59503,
+                        "src": "2013:6:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -2784,18 +2780,18 @@ export const ERC4626 =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 63150,
+                      "id": 59534,
                       "name": "Deposit",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 63075,
-                      "src": "1975:7:99",
+                      "referencedDeclaration": 59459,
+                      "src": "1975:7:83",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$_t_uint256_$_t_uint256_$returns$__$",
                         "typeString": "function (address,address,uint256,uint256)"
                       }
                     },
-                    "id": 63156,
+                    "id": 59540,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2804,39 +2800,39 @@ export const ERC4626 =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1975:45:99",
+                    "src": "1975:45:83",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 63157,
+                  "id": 59541,
                   "nodeType": "EmitStatement",
-                  "src": "1970:50:99"
+                  "src": "1970:50:83"
                 },
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 63159,
+                        "id": 59543,
                         "name": "assets",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63114,
-                        "src": "2044:6:99",
+                        "referencedDeclaration": 59498,
+                        "src": "2044:6:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 63160,
+                        "id": 59544,
                         "name": "shares",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63119,
-                        "src": "2052:6:99",
+                        "referencedDeclaration": 59503,
+                        "src": "2052:6:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -2854,18 +2850,18 @@ export const ERC4626 =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 63158,
+                      "id": 59542,
                       "name": "afterDeposit",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 63567,
-                      "src": "2031:12:99",
+                      "referencedDeclaration": 59951,
+                      "src": "2031:12:83",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_uint256_$returns$__$",
                         "typeString": "function (uint256,uint256)"
                       }
                     },
-                    "id": 63161,
+                    "id": 59545,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2874,16 +2870,16 @@ export const ERC4626 =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "2031:28:99",
+                    "src": "2031:28:83",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 63162,
+                  "id": 59546,
                   "nodeType": "ExpressionStatement",
-                  "src": "2031:28:99"
+                  "src": "2031:28:83"
                 }
               ]
             },
@@ -2892,20 +2888,20 @@ export const ERC4626 =
             "kind": "function",
             "modifiers": [],
             "name": "deposit",
-            "nameLocation": "1559:7:99",
+            "nameLocation": "1559:7:83",
             "parameters": {
-              "id": 63117,
+              "id": 59501,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 63114,
+                  "id": 59498,
                   "mutability": "mutable",
                   "name": "assets",
-                  "nameLocation": "1575:6:99",
+                  "nameLocation": "1575:6:83",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63164,
-                  "src": "1567:14:99",
+                  "scope": 59548,
+                  "src": "1567:14:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2913,10 +2909,10 @@ export const ERC4626 =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 63113,
+                    "id": 59497,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1567:7:99",
+                    "src": "1567:7:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2926,13 +2922,13 @@ export const ERC4626 =
                 },
                 {
                   "constant": false,
-                  "id": 63116,
+                  "id": 59500,
                   "mutability": "mutable",
                   "name": "receiver",
-                  "nameLocation": "1591:8:99",
+                  "nameLocation": "1591:8:83",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63164,
-                  "src": "1583:16:99",
+                  "scope": 59548,
+                  "src": "1583:16:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2940,10 +2936,10 @@ export const ERC4626 =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 63115,
+                    "id": 59499,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1583:7:99",
+                    "src": "1583:7:83",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -2953,21 +2949,21 @@ export const ERC4626 =
                   "visibility": "internal"
                 }
               ],
-              "src": "1566:34:99"
+              "src": "1566:34:83"
             },
             "returnParameters": {
-              "id": 63120,
+              "id": 59504,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 63119,
+                  "id": 59503,
                   "mutability": "mutable",
                   "name": "shares",
-                  "nameLocation": "1633:6:99",
+                  "nameLocation": "1633:6:83",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63164,
-                  "src": "1625:14:99",
+                  "scope": 59548,
+                  "src": "1625:14:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2975,10 +2971,10 @@ export const ERC4626 =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 63118,
+                    "id": 59502,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1625:7:99",
+                    "src": "1625:7:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2987,38 +2983,38 @@ export const ERC4626 =
                   "visibility": "internal"
                 }
               ],
-              "src": "1624:16:99"
+              "src": "1624:16:83"
             },
-            "scope": 63568,
+            "scope": 59952,
             "stateMutability": "nonpayable",
             "virtual": true,
             "visibility": "public"
           },
           {
-            "id": 63210,
+            "id": 59594,
             "nodeType": "FunctionDefinition",
-            "src": "2072:467:99",
+            "src": "2072:467:83",
             "nodes": [],
             "body": {
-              "id": 63209,
+              "id": 59593,
               "nodeType": "Block",
-              "src": "2160:379:99",
+              "src": "2160:379:83",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
-                    "id": 63177,
+                    "id": 59561,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 63173,
+                      "id": 59557,
                       "name": "assets",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 63171,
-                      "src": "2170:6:99",
+                      "referencedDeclaration": 59555,
+                      "src": "2170:6:83",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -3029,12 +3025,12 @@ export const ERC4626 =
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 63175,
+                          "id": 59559,
                           "name": "shares",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 63166,
-                          "src": "2191:6:99",
+                          "referencedDeclaration": 59550,
+                          "src": "2191:6:83",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -3048,18 +3044,18 @@ export const ERC4626 =
                             "typeString": "uint256"
                           }
                         ],
-                        "id": 63174,
+                        "id": 59558,
                         "name": "previewMint",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63461,
-                        "src": "2179:11:99",
+                        "referencedDeclaration": 59845,
+                        "src": "2179:11:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_view$_t_uint256_$returns$_t_uint256_$",
                           "typeString": "function (uint256) view returns (uint256)"
                         }
                       },
-                      "id": 63176,
+                      "id": 59560,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -3068,48 +3064,48 @@ export const ERC4626 =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "2179:19:99",
+                      "src": "2179:19:83",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "2170:28:99",
+                    "src": "2170:28:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 63178,
+                  "id": 59562,
                   "nodeType": "ExpressionStatement",
-                  "src": "2170:28:99"
+                  "src": "2170:28:83"
                 },
                 {
                   "expression": {
                     "arguments": [
                       {
                         "expression": {
-                          "id": 63182,
+                          "id": 59566,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": -15,
-                          "src": "2364:3:99",
+                          "src": "2364:3:83",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
                           }
                         },
-                        "id": 63183,
+                        "id": 59567,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "2368:6:99",
+                        "memberLocation": "2368:6:83",
                         "memberName": "sender",
                         "nodeType": "MemberAccess",
-                        "src": "2364:10:99",
+                        "src": "2364:10:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -3118,14 +3114,14 @@ export const ERC4626 =
                       {
                         "arguments": [
                           {
-                            "id": 63186,
+                            "id": 59570,
                             "name": "this",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": -28,
-                            "src": "2384:4:99",
+                            "src": "2384:4:83",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_ERC4626_$63568",
+                              "typeIdentifier": "t_contract$_ERC4626_$59952",
                               "typeString": "contract ERC4626"
                             }
                           }
@@ -3133,30 +3129,30 @@ export const ERC4626 =
                         "expression": {
                           "argumentTypes": [
                             {
-                              "typeIdentifier": "t_contract$_ERC4626_$63568",
+                              "typeIdentifier": "t_contract$_ERC4626_$59952",
                               "typeString": "contract ERC4626"
                             }
                           ],
-                          "id": 63185,
+                          "id": 59569,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "lValueRequested": false,
                           "nodeType": "ElementaryTypeNameExpression",
-                          "src": "2376:7:99",
+                          "src": "2376:7:83",
                           "typeDescriptions": {
                             "typeIdentifier": "t_type$_t_address_$",
                             "typeString": "type(address)"
                           },
                           "typeName": {
-                            "id": 63184,
+                            "id": 59568,
                             "name": "address",
                             "nodeType": "ElementaryTypeName",
-                            "src": "2376:7:99",
+                            "src": "2376:7:83",
                             "typeDescriptions": {}
                           }
                         },
-                        "id": 63187,
+                        "id": 59571,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -3165,7 +3161,7 @@ export const ERC4626 =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "2376:13:99",
+                        "src": "2376:13:83",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -3173,12 +3169,12 @@ export const ERC4626 =
                         }
                       },
                       {
-                        "id": 63188,
+                        "id": 59572,
                         "name": "assets",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63171,
-                        "src": "2391:6:99",
+                        "referencedDeclaration": 59555,
+                        "src": "2391:6:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -3201,33 +3197,33 @@ export const ERC4626 =
                         }
                       ],
                       "expression": {
-                        "id": 63179,
+                        "id": 59563,
                         "name": "asset",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63090,
-                        "src": "2341:5:99",
+                        "referencedDeclaration": 59474,
+                        "src": "2341:5:83",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ERC20_$63956",
+                          "typeIdentifier": "t_contract$_ERC20_$60340",
                           "typeString": "contract ERC20"
                         }
                       },
-                      "id": 63181,
+                      "id": 59565,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "2347:16:99",
+                      "memberLocation": "2347:16:83",
                       "memberName": "safeTransferFrom",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 64224,
-                      "src": "2341:22:99",
+                      "referencedDeclaration": 60608,
+                      "src": "2341:22:83",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_ERC20_$63956_$_t_address_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_ERC20_$63956_$",
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_ERC20_$60340_$_t_address_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_ERC20_$60340_$",
                         "typeString": "function (contract ERC20,address,address,uint256)"
                       }
                     },
-                    "id": 63189,
+                    "id": 59573,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3236,39 +3232,39 @@ export const ERC4626 =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "2341:57:99",
+                    "src": "2341:57:83",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 63190,
+                  "id": 59574,
                   "nodeType": "ExpressionStatement",
-                  "src": "2341:57:99"
+                  "src": "2341:57:83"
                 },
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 63192,
+                        "id": 59576,
                         "name": "receiver",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63168,
-                        "src": "2415:8:99",
+                        "referencedDeclaration": 59552,
+                        "src": "2415:8:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         }
                       },
                       {
-                        "id": 63193,
+                        "id": 59577,
                         "name": "shares",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63166,
-                        "src": "2425:6:99",
+                        "referencedDeclaration": 59550,
+                        "src": "2425:6:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -3286,18 +3282,18 @@ export const ERC4626 =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 63191,
+                      "id": 59575,
                       "name": "_mint",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 63927,
-                      "src": "2409:5:99",
+                      "referencedDeclaration": 60311,
+                      "src": "2409:5:83",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
                         "typeString": "function (address,uint256)"
                       }
                     },
-                    "id": 63194,
+                    "id": 59578,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3306,78 +3302,78 @@ export const ERC4626 =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "2409:23:99",
+                    "src": "2409:23:83",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 63195,
+                  "id": 59579,
                   "nodeType": "ExpressionStatement",
-                  "src": "2409:23:99"
+                  "src": "2409:23:83"
                 },
                 {
                   "eventCall": {
                     "arguments": [
                       {
                         "expression": {
-                          "id": 63197,
+                          "id": 59581,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": -15,
-                          "src": "2456:3:99",
+                          "src": "2456:3:83",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
                           }
                         },
-                        "id": 63198,
+                        "id": 59582,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "2460:6:99",
+                        "memberLocation": "2460:6:83",
                         "memberName": "sender",
                         "nodeType": "MemberAccess",
-                        "src": "2456:10:99",
+                        "src": "2456:10:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         }
                       },
                       {
-                        "id": 63199,
+                        "id": 59583,
                         "name": "receiver",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63168,
-                        "src": "2468:8:99",
+                        "referencedDeclaration": 59552,
+                        "src": "2468:8:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         }
                       },
                       {
-                        "id": 63200,
+                        "id": 59584,
                         "name": "assets",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63171,
-                        "src": "2478:6:99",
+                        "referencedDeclaration": 59555,
+                        "src": "2478:6:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 63201,
+                        "id": 59585,
                         "name": "shares",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63166,
-                        "src": "2486:6:99",
+                        "referencedDeclaration": 59550,
+                        "src": "2486:6:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -3403,18 +3399,18 @@ export const ERC4626 =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 63196,
+                      "id": 59580,
                       "name": "Deposit",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 63075,
-                      "src": "2448:7:99",
+                      "referencedDeclaration": 59459,
+                      "src": "2448:7:83",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$_t_uint256_$_t_uint256_$returns$__$",
                         "typeString": "function (address,address,uint256,uint256)"
                       }
                     },
-                    "id": 63202,
+                    "id": 59586,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3423,39 +3419,39 @@ export const ERC4626 =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "2448:45:99",
+                    "src": "2448:45:83",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 63203,
+                  "id": 59587,
                   "nodeType": "EmitStatement",
-                  "src": "2443:50:99"
+                  "src": "2443:50:83"
                 },
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 63205,
+                        "id": 59589,
                         "name": "assets",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63171,
-                        "src": "2517:6:99",
+                        "referencedDeclaration": 59555,
+                        "src": "2517:6:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 63206,
+                        "id": 59590,
                         "name": "shares",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63166,
-                        "src": "2525:6:99",
+                        "referencedDeclaration": 59550,
+                        "src": "2525:6:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -3473,18 +3469,18 @@ export const ERC4626 =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 63204,
+                      "id": 59588,
                       "name": "afterDeposit",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 63567,
-                      "src": "2504:12:99",
+                      "referencedDeclaration": 59951,
+                      "src": "2504:12:83",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_uint256_$returns$__$",
                         "typeString": "function (uint256,uint256)"
                       }
                     },
-                    "id": 63207,
+                    "id": 59591,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3493,16 +3489,16 @@ export const ERC4626 =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "2504:28:99",
+                    "src": "2504:28:83",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 63208,
+                  "id": 59592,
                   "nodeType": "ExpressionStatement",
-                  "src": "2504:28:99"
+                  "src": "2504:28:83"
                 }
               ]
             },
@@ -3511,20 +3507,20 @@ export const ERC4626 =
             "kind": "function",
             "modifiers": [],
             "name": "mint",
-            "nameLocation": "2081:4:99",
+            "nameLocation": "2081:4:83",
             "parameters": {
-              "id": 63169,
+              "id": 59553,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 63166,
+                  "id": 59550,
                   "mutability": "mutable",
                   "name": "shares",
-                  "nameLocation": "2094:6:99",
+                  "nameLocation": "2094:6:83",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63210,
-                  "src": "2086:14:99",
+                  "scope": 59594,
+                  "src": "2086:14:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3532,10 +3528,10 @@ export const ERC4626 =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 63165,
+                    "id": 59549,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2086:7:99",
+                    "src": "2086:7:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -3545,13 +3541,13 @@ export const ERC4626 =
                 },
                 {
                   "constant": false,
-                  "id": 63168,
+                  "id": 59552,
                   "mutability": "mutable",
                   "name": "receiver",
-                  "nameLocation": "2110:8:99",
+                  "nameLocation": "2110:8:83",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63210,
-                  "src": "2102:16:99",
+                  "scope": 59594,
+                  "src": "2102:16:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3559,10 +3555,10 @@ export const ERC4626 =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 63167,
+                    "id": 59551,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2102:7:99",
+                    "src": "2102:7:83",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -3572,21 +3568,21 @@ export const ERC4626 =
                   "visibility": "internal"
                 }
               ],
-              "src": "2085:34:99"
+              "src": "2085:34:83"
             },
             "returnParameters": {
-              "id": 63172,
+              "id": 59556,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 63171,
+                  "id": 59555,
                   "mutability": "mutable",
                   "name": "assets",
-                  "nameLocation": "2152:6:99",
+                  "nameLocation": "2152:6:83",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63210,
-                  "src": "2144:14:99",
+                  "scope": 59594,
+                  "src": "2144:14:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3594,10 +3590,10 @@ export const ERC4626 =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 63170,
+                    "id": 59554,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2144:7:99",
+                    "src": "2144:7:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -3606,38 +3602,38 @@ export const ERC4626 =
                   "visibility": "internal"
                 }
               ],
-              "src": "2143:16:99"
+              "src": "2143:16:83"
             },
-            "scope": 63568,
+            "scope": 59952,
             "stateMutability": "nonpayable",
             "virtual": true,
             "visibility": "public"
           },
           {
-            "id": 63288,
+            "id": 59672,
             "nodeType": "FunctionDefinition",
-            "src": "2545:679:99",
+            "src": "2545:679:83",
             "nodes": [],
             "body": {
-              "id": 63287,
+              "id": 59671,
               "nodeType": "Block",
-              "src": "2682:542:99",
+              "src": "2682:542:83",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
-                    "id": 63225,
+                    "id": 59609,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 63221,
+                      "id": 59605,
                       "name": "shares",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 63219,
-                      "src": "2692:6:99",
+                      "referencedDeclaration": 59603,
+                      "src": "2692:6:83",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -3648,12 +3644,12 @@ export const ERC4626 =
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 63223,
+                          "id": 59607,
                           "name": "assets",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 63212,
-                          "src": "2717:6:99",
+                          "referencedDeclaration": 59596,
+                          "src": "2717:6:83",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -3667,18 +3663,18 @@ export const ERC4626 =
                             "typeString": "uint256"
                           }
                         ],
-                        "id": 63222,
+                        "id": 59606,
                         "name": "previewWithdraw",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63485,
-                        "src": "2701:15:99",
+                        "referencedDeclaration": 59869,
+                        "src": "2701:15:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_view$_t_uint256_$returns$_t_uint256_$",
                           "typeString": "function (uint256) view returns (uint256)"
                         }
                       },
-                      "id": 63224,
+                      "id": 59608,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -3687,22 +3683,22 @@ export const ERC4626 =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "2701:23:99",
+                      "src": "2701:23:83",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "2692:32:99",
+                    "src": "2692:32:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 63226,
+                  "id": 59610,
                   "nodeType": "ExpressionStatement",
-                  "src": "2692:32:99"
+                  "src": "2692:32:83"
                 },
                 {
                   "condition": {
@@ -3710,33 +3706,33 @@ export const ERC4626 =
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     },
-                    "id": 63230,
+                    "id": 59614,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
                       "expression": {
-                        "id": 63227,
+                        "id": 59611,
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": -15,
-                        "src": "2806:3:99",
+                        "src": "2806:3:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
                           "typeString": "msg"
                         }
                       },
-                      "id": 63228,
+                      "id": 59612,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "2810:6:99",
+                      "memberLocation": "2810:6:83",
                       "memberName": "sender",
                       "nodeType": "MemberAccess",
-                      "src": "2806:10:99",
+                      "src": "2806:10:83",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -3745,45 +3741,45 @@ export const ERC4626 =
                     "nodeType": "BinaryOperation",
                     "operator": "!=",
                     "rightExpression": {
-                      "id": 63229,
+                      "id": 59613,
                       "name": "owner",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 63216,
-                      "src": "2820:5:99",
+                      "referencedDeclaration": 59600,
+                      "src": "2820:5:83",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "src": "2806:19:99",
+                    "src": "2806:19:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 63260,
+                  "id": 59644,
                   "nodeType": "IfStatement",
-                  "src": "2802:228:99",
+                  "src": "2802:228:83",
                   "trueBody": {
-                    "id": 63259,
+                    "id": 59643,
                     "nodeType": "Block",
-                    "src": "2827:203:99",
+                    "src": "2827:203:83",
                     "statements": [
                       {
                         "assignments": [
-                          63232
+                          59616
                         ],
                         "declarations": [
                           {
                             "constant": false,
-                            "id": 63232,
+                            "id": 59616,
                             "mutability": "mutable",
                             "name": "allowed",
-                            "nameLocation": "2849:7:99",
+                            "nameLocation": "2849:7:83",
                             "nodeType": "VariableDeclaration",
-                            "scope": 63259,
-                            "src": "2841:15:99",
+                            "scope": 59643,
+                            "src": "2841:15:83",
                             "stateVariable": false,
                             "storageLocation": "default",
                             "typeDescriptions": {
@@ -3791,10 +3787,10 @@ export const ERC4626 =
                               "typeString": "uint256"
                             },
                             "typeName": {
-                              "id": 63231,
+                              "id": 59615,
                               "name": "uint256",
                               "nodeType": "ElementaryTypeName",
-                              "src": "2841:7:99",
+                              "src": "2841:7:83",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
@@ -3803,29 +3799,29 @@ export const ERC4626 =
                             "visibility": "internal"
                           }
                         ],
-                        "id": 63239,
+                        "id": 59623,
                         "initialValue": {
                           "baseExpression": {
                             "baseExpression": {
-                              "id": 63233,
+                              "id": 59617,
                               "name": "allowance",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 63605,
-                              "src": "2859:9:99",
+                              "referencedDeclaration": 59989,
+                              "src": "2859:9:83",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_address_$_t_uint256_$_$",
                                 "typeString": "mapping(address => mapping(address => uint256))"
                               }
                             },
-                            "id": 63235,
+                            "id": 59619,
                             "indexExpression": {
-                              "id": 63234,
+                              "id": 59618,
                               "name": "owner",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 63216,
-                              "src": "2869:5:99",
+                              "referencedDeclaration": 59600,
+                              "src": "2869:5:83",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_address",
                                 "typeString": "address"
@@ -3836,35 +3832,35 @@ export const ERC4626 =
                             "isPure": false,
                             "lValueRequested": false,
                             "nodeType": "IndexAccess",
-                            "src": "2859:16:99",
+                            "src": "2859:16:83",
                             "typeDescriptions": {
                               "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                               "typeString": "mapping(address => uint256)"
                             }
                           },
-                          "id": 63238,
+                          "id": 59622,
                           "indexExpression": {
                             "expression": {
-                              "id": 63236,
+                              "id": 59620,
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
                               "referencedDeclaration": -15,
-                              "src": "2876:3:99",
+                              "src": "2876:3:83",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
                                 "typeString": "msg"
                               }
                             },
-                            "id": 63237,
+                            "id": 59621,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
-                            "memberLocation": "2880:6:99",
+                            "memberLocation": "2880:6:83",
                             "memberName": "sender",
                             "nodeType": "MemberAccess",
-                            "src": "2876:10:99",
+                            "src": "2876:10:83",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -3875,14 +3871,14 @@ export const ERC4626 =
                           "isPure": false,
                           "lValueRequested": false,
                           "nodeType": "IndexAccess",
-                          "src": "2859:28:99",
+                          "src": "2859:28:83",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
                         "nodeType": "VariableDeclarationStatement",
-                        "src": "2841:46:99"
+                        "src": "2841:46:83"
                       },
                       {
                         "condition": {
@@ -3890,18 +3886,18 @@ export const ERC4626 =
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           },
-                          "id": 63246,
+                          "id": 59630,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftExpression": {
-                            "id": 63240,
+                            "id": 59624,
                             "name": "allowed",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 63232,
-                            "src": "2942:7:99",
+                            "referencedDeclaration": 59616,
+                            "src": "2942:7:83",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -3913,22 +3909,22 @@ export const ERC4626 =
                             "expression": {
                               "arguments": [
                                 {
-                                  "id": 63243,
+                                  "id": 59627,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": true,
                                   "lValueRequested": false,
                                   "nodeType": "ElementaryTypeNameExpression",
-                                  "src": "2958:7:99",
+                                  "src": "2958:7:83",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_type$_t_uint256_$",
                                     "typeString": "type(uint256)"
                                   },
                                   "typeName": {
-                                    "id": 63242,
+                                    "id": 59626,
                                     "name": "uint256",
                                     "nodeType": "ElementaryTypeName",
-                                    "src": "2958:7:99",
+                                    "src": "2958:7:83",
                                     "typeDescriptions": {}
                                   }
                                 }
@@ -3940,18 +3936,18 @@ export const ERC4626 =
                                     "typeString": "type(uint256)"
                                   }
                                 ],
-                                "id": 63241,
+                                "id": 59625,
                                 "name": "type",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
                                 "referencedDeclaration": -27,
-                                "src": "2953:4:99",
+                                "src": "2953:4:83",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_function_metatype_pure$__$returns$__$",
                                   "typeString": "function () pure"
                                 }
                               },
-                              "id": 63244,
+                              "id": 59628,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
@@ -3960,39 +3956,39 @@ export const ERC4626 =
                               "nameLocations": [],
                               "names": [],
                               "nodeType": "FunctionCall",
-                              "src": "2953:13:99",
+                              "src": "2953:13:83",
                               "tryCall": false,
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_meta_type_t_uint256",
                                 "typeString": "type(uint256)"
                               }
                             },
-                            "id": 63245,
+                            "id": 59629,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "lValueRequested": false,
-                            "memberLocation": "2967:3:99",
+                            "memberLocation": "2967:3:83",
                             "memberName": "max",
                             "nodeType": "MemberAccess",
-                            "src": "2953:17:99",
+                            "src": "2953:17:83",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             }
                           },
-                          "src": "2942:28:99",
+                          "src": "2942:28:83",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
                           }
                         },
-                        "id": 63258,
+                        "id": 59642,
                         "nodeType": "IfStatement",
-                        "src": "2938:81:99",
+                        "src": "2938:81:83",
                         "trueBody": {
                           "expression": {
-                            "id": 63256,
+                            "id": 59640,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -4000,25 +3996,25 @@ export const ERC4626 =
                             "leftHandSide": {
                               "baseExpression": {
                                 "baseExpression": {
-                                  "id": 63247,
+                                  "id": 59631,
                                   "name": "allowance",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 63605,
-                                  "src": "2972:9:99",
+                                  "referencedDeclaration": 59989,
+                                  "src": "2972:9:83",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_address_$_t_uint256_$_$",
                                     "typeString": "mapping(address => mapping(address => uint256))"
                                   }
                                 },
-                                "id": 63251,
+                                "id": 59635,
                                 "indexExpression": {
-                                  "id": 63248,
+                                  "id": 59632,
                                   "name": "owner",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 63216,
-                                  "src": "2982:5:99",
+                                  "referencedDeclaration": 59600,
+                                  "src": "2982:5:83",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_address",
                                     "typeString": "address"
@@ -4029,35 +4025,35 @@ export const ERC4626 =
                                 "isPure": false,
                                 "lValueRequested": false,
                                 "nodeType": "IndexAccess",
-                                "src": "2972:16:99",
+                                "src": "2972:16:83",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                                   "typeString": "mapping(address => uint256)"
                                 }
                               },
-                              "id": 63252,
+                              "id": 59636,
                               "indexExpression": {
                                 "expression": {
-                                  "id": 63249,
+                                  "id": 59633,
                                   "name": "msg",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
                                   "referencedDeclaration": -15,
-                                  "src": "2989:3:99",
+                                  "src": "2989:3:83",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_magic_message",
                                     "typeString": "msg"
                                   }
                                 },
-                                "id": 63250,
+                                "id": 59634,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
                                 "lValueRequested": false,
-                                "memberLocation": "2993:6:99",
+                                "memberLocation": "2993:6:83",
                                 "memberName": "sender",
                                 "nodeType": "MemberAccess",
-                                "src": "2989:10:99",
+                                "src": "2989:10:83",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_address",
                                   "typeString": "address"
@@ -4068,7 +4064,7 @@ export const ERC4626 =
                               "isPure": false,
                               "lValueRequested": true,
                               "nodeType": "IndexAccess",
-                              "src": "2972:28:99",
+                              "src": "2972:28:83",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
@@ -4081,18 +4077,18 @@ export const ERC4626 =
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               },
-                              "id": 63255,
+                              "id": 59639,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "leftExpression": {
-                                "id": 63253,
+                                "id": 59637,
                                 "name": "allowed",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 63232,
-                                "src": "3003:7:99",
+                                "referencedDeclaration": 59616,
+                                "src": "3003:7:83",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
@@ -4101,32 +4097,32 @@ export const ERC4626 =
                               "nodeType": "BinaryOperation",
                               "operator": "-",
                               "rightExpression": {
-                                "id": 63254,
+                                "id": 59638,
                                 "name": "shares",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 63219,
-                                "src": "3013:6:99",
+                                "referencedDeclaration": 59603,
+                                "src": "3013:6:83",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
                                 }
                               },
-                              "src": "3003:16:99",
+                              "src": "3003:16:83",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               }
                             },
-                            "src": "2972:47:99",
+                            "src": "2972:47:83",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             }
                           },
-                          "id": 63257,
+                          "id": 59641,
                           "nodeType": "ExpressionStatement",
-                          "src": "2972:47:99"
+                          "src": "2972:47:83"
                         }
                       }
                     ]
@@ -4136,24 +4132,24 @@ export const ERC4626 =
                   "expression": {
                     "arguments": [
                       {
-                        "id": 63262,
+                        "id": 59646,
                         "name": "assets",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63212,
-                        "src": "3055:6:99",
+                        "referencedDeclaration": 59596,
+                        "src": "3055:6:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 63263,
+                        "id": 59647,
                         "name": "shares",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63219,
-                        "src": "3063:6:99",
+                        "referencedDeclaration": 59603,
+                        "src": "3063:6:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -4171,18 +4167,18 @@ export const ERC4626 =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 63261,
+                      "id": 59645,
                       "name": "beforeWithdraw",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 63559,
-                      "src": "3040:14:99",
+                      "referencedDeclaration": 59943,
+                      "src": "3040:14:83",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_uint256_$returns$__$",
                         "typeString": "function (uint256,uint256)"
                       }
                     },
-                    "id": 63264,
+                    "id": 59648,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -4191,39 +4187,39 @@ export const ERC4626 =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "3040:30:99",
+                    "src": "3040:30:83",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 63265,
+                  "id": 59649,
                   "nodeType": "ExpressionStatement",
-                  "src": "3040:30:99"
+                  "src": "3040:30:83"
                 },
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 63267,
+                        "id": 59651,
                         "name": "owner",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63216,
-                        "src": "3087:5:99",
+                        "referencedDeclaration": 59600,
+                        "src": "3087:5:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         }
                       },
                       {
-                        "id": 63268,
+                        "id": 59652,
                         "name": "shares",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63219,
-                        "src": "3094:6:99",
+                        "referencedDeclaration": 59603,
+                        "src": "3094:6:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -4241,18 +4237,18 @@ export const ERC4626 =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 63266,
+                      "id": 59650,
                       "name": "_burn",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 63955,
-                      "src": "3081:5:99",
+                      "referencedDeclaration": 60339,
+                      "src": "3081:5:83",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
                         "typeString": "function (address,uint256)"
                       }
                     },
-                    "id": 63269,
+                    "id": 59653,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -4261,90 +4257,90 @@ export const ERC4626 =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "3081:20:99",
+                    "src": "3081:20:83",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 63270,
+                  "id": 59654,
                   "nodeType": "ExpressionStatement",
-                  "src": "3081:20:99"
+                  "src": "3081:20:83"
                 },
                 {
                   "eventCall": {
                     "arguments": [
                       {
                         "expression": {
-                          "id": 63272,
+                          "id": 59656,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": -15,
-                          "src": "3126:3:99",
+                          "src": "3126:3:83",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
                           }
                         },
-                        "id": 63273,
+                        "id": 59657,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "3130:6:99",
+                        "memberLocation": "3130:6:83",
                         "memberName": "sender",
                         "nodeType": "MemberAccess",
-                        "src": "3126:10:99",
+                        "src": "3126:10:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         }
                       },
                       {
-                        "id": 63274,
+                        "id": 59658,
                         "name": "receiver",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63214,
-                        "src": "3138:8:99",
+                        "referencedDeclaration": 59598,
+                        "src": "3138:8:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         }
                       },
                       {
-                        "id": 63275,
+                        "id": 59659,
                         "name": "owner",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63216,
-                        "src": "3148:5:99",
+                        "referencedDeclaration": 59600,
+                        "src": "3148:5:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         }
                       },
                       {
-                        "id": 63276,
+                        "id": 59660,
                         "name": "assets",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63212,
-                        "src": "3155:6:99",
+                        "referencedDeclaration": 59596,
+                        "src": "3155:6:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 63277,
+                        "id": 59661,
                         "name": "shares",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63219,
-                        "src": "3163:6:99",
+                        "referencedDeclaration": 59603,
+                        "src": "3163:6:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -4374,18 +4370,18 @@ export const ERC4626 =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 63271,
+                      "id": 59655,
                       "name": "Withdraw",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 63087,
-                      "src": "3117:8:99",
+                      "referencedDeclaration": 59471,
+                      "src": "3117:8:83",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$_t_address_$_t_uint256_$_t_uint256_$returns$__$",
                         "typeString": "function (address,address,address,uint256,uint256)"
                       }
                     },
-                    "id": 63278,
+                    "id": 59662,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -4394,39 +4390,39 @@ export const ERC4626 =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "3117:53:99",
+                    "src": "3117:53:83",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 63279,
+                  "id": 59663,
                   "nodeType": "EmitStatement",
-                  "src": "3112:58:99"
+                  "src": "3112:58:83"
                 },
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 63283,
+                        "id": 59667,
                         "name": "receiver",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63214,
-                        "src": "3200:8:99",
+                        "referencedDeclaration": 59598,
+                        "src": "3200:8:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         }
                       },
                       {
-                        "id": 63284,
+                        "id": 59668,
                         "name": "assets",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63212,
-                        "src": "3210:6:99",
+                        "referencedDeclaration": 59596,
+                        "src": "3210:6:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -4445,33 +4441,33 @@ export const ERC4626 =
                         }
                       ],
                       "expression": {
-                        "id": 63280,
+                        "id": 59664,
                         "name": "asset",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63090,
-                        "src": "3181:5:99",
+                        "referencedDeclaration": 59474,
+                        "src": "3181:5:83",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ERC20_$63956",
+                          "typeIdentifier": "t_contract$_ERC20_$60340",
                           "typeString": "contract ERC20"
                         }
                       },
-                      "id": 63282,
+                      "id": 59666,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "3187:12:99",
+                      "memberLocation": "3187:12:83",
                       "memberName": "safeTransfer",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 64244,
-                      "src": "3181:18:99",
+                      "referencedDeclaration": 60628,
+                      "src": "3181:18:83",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_ERC20_$63956_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_ERC20_$63956_$",
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_ERC20_$60340_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_ERC20_$60340_$",
                         "typeString": "function (contract ERC20,address,uint256)"
                       }
                     },
-                    "id": 63285,
+                    "id": 59669,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -4480,16 +4476,16 @@ export const ERC4626 =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "3181:36:99",
+                    "src": "3181:36:83",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 63286,
+                  "id": 59670,
                   "nodeType": "ExpressionStatement",
-                  "src": "3181:36:99"
+                  "src": "3181:36:83"
                 }
               ]
             },
@@ -4498,20 +4494,20 @@ export const ERC4626 =
             "kind": "function",
             "modifiers": [],
             "name": "withdraw",
-            "nameLocation": "2554:8:99",
+            "nameLocation": "2554:8:83",
             "parameters": {
-              "id": 63217,
+              "id": 59601,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 63212,
+                  "id": 59596,
                   "mutability": "mutable",
                   "name": "assets",
-                  "nameLocation": "2580:6:99",
+                  "nameLocation": "2580:6:83",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63288,
-                  "src": "2572:14:99",
+                  "scope": 59672,
+                  "src": "2572:14:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -4519,10 +4515,10 @@ export const ERC4626 =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 63211,
+                    "id": 59595,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2572:7:99",
+                    "src": "2572:7:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -4532,13 +4528,13 @@ export const ERC4626 =
                 },
                 {
                   "constant": false,
-                  "id": 63214,
+                  "id": 59598,
                   "mutability": "mutable",
                   "name": "receiver",
-                  "nameLocation": "2604:8:99",
+                  "nameLocation": "2604:8:83",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63288,
-                  "src": "2596:16:99",
+                  "scope": 59672,
+                  "src": "2596:16:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -4546,10 +4542,10 @@ export const ERC4626 =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 63213,
+                    "id": 59597,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2596:7:99",
+                    "src": "2596:7:83",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -4560,13 +4556,13 @@ export const ERC4626 =
                 },
                 {
                   "constant": false,
-                  "id": 63216,
+                  "id": 59600,
                   "mutability": "mutable",
                   "name": "owner",
-                  "nameLocation": "2630:5:99",
+                  "nameLocation": "2630:5:83",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63288,
-                  "src": "2622:13:99",
+                  "scope": 59672,
+                  "src": "2622:13:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -4574,10 +4570,10 @@ export const ERC4626 =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 63215,
+                    "id": 59599,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2622:7:99",
+                    "src": "2622:7:83",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -4587,21 +4583,21 @@ export const ERC4626 =
                   "visibility": "internal"
                 }
               ],
-              "src": "2562:79:99"
+              "src": "2562:79:83"
             },
             "returnParameters": {
-              "id": 63220,
+              "id": 59604,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 63219,
+                  "id": 59603,
                   "mutability": "mutable",
                   "name": "shares",
-                  "nameLocation": "2674:6:99",
+                  "nameLocation": "2674:6:83",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63288,
-                  "src": "2666:14:99",
+                  "scope": 59672,
+                  "src": "2666:14:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -4609,10 +4605,10 @@ export const ERC4626 =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 63218,
+                    "id": 59602,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2666:7:99",
+                    "src": "2666:7:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -4621,22 +4617,22 @@ export const ERC4626 =
                   "visibility": "internal"
                 }
               ],
-              "src": "2665:16:99"
+              "src": "2665:16:83"
             },
-            "scope": 63568,
+            "scope": 59952,
             "stateMutability": "nonpayable",
             "virtual": true,
             "visibility": "public"
           },
           {
-            "id": 63372,
+            "id": 59756,
             "nodeType": "FunctionDefinition",
-            "src": "3230:713:99",
+            "src": "3230:713:83",
             "nodes": [],
             "body": {
-              "id": 63371,
+              "id": 59755,
               "nodeType": "Block",
-              "src": "3365:578:99",
+              "src": "3365:578:83",
               "nodes": [],
               "statements": [
                 {
@@ -4645,33 +4641,33 @@ export const ERC4626 =
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     },
-                    "id": 63302,
+                    "id": 59686,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
                       "expression": {
-                        "id": 63299,
+                        "id": 59683,
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": -15,
-                        "src": "3379:3:99",
+                        "src": "3379:3:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
                           "typeString": "msg"
                         }
                       },
-                      "id": 63300,
+                      "id": 59684,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "3383:6:99",
+                      "memberLocation": "3383:6:83",
                       "memberName": "sender",
                       "nodeType": "MemberAccess",
-                      "src": "3379:10:99",
+                      "src": "3379:10:83",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -4680,45 +4676,45 @@ export const ERC4626 =
                     "nodeType": "BinaryOperation",
                     "operator": "!=",
                     "rightExpression": {
-                      "id": 63301,
+                      "id": 59685,
                       "name": "owner",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 63294,
-                      "src": "3393:5:99",
+                      "referencedDeclaration": 59678,
+                      "src": "3393:5:83",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "src": "3379:19:99",
+                    "src": "3379:19:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 63332,
+                  "id": 59716,
                   "nodeType": "IfStatement",
-                  "src": "3375:228:99",
+                  "src": "3375:228:83",
                   "trueBody": {
-                    "id": 63331,
+                    "id": 59715,
                     "nodeType": "Block",
-                    "src": "3400:203:99",
+                    "src": "3400:203:83",
                     "statements": [
                       {
                         "assignments": [
-                          63304
+                          59688
                         ],
                         "declarations": [
                           {
                             "constant": false,
-                            "id": 63304,
+                            "id": 59688,
                             "mutability": "mutable",
                             "name": "allowed",
-                            "nameLocation": "3422:7:99",
+                            "nameLocation": "3422:7:83",
                             "nodeType": "VariableDeclaration",
-                            "scope": 63331,
-                            "src": "3414:15:99",
+                            "scope": 59715,
+                            "src": "3414:15:83",
                             "stateVariable": false,
                             "storageLocation": "default",
                             "typeDescriptions": {
@@ -4726,10 +4722,10 @@ export const ERC4626 =
                               "typeString": "uint256"
                             },
                             "typeName": {
-                              "id": 63303,
+                              "id": 59687,
                               "name": "uint256",
                               "nodeType": "ElementaryTypeName",
-                              "src": "3414:7:99",
+                              "src": "3414:7:83",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
@@ -4738,29 +4734,29 @@ export const ERC4626 =
                             "visibility": "internal"
                           }
                         ],
-                        "id": 63311,
+                        "id": 59695,
                         "initialValue": {
                           "baseExpression": {
                             "baseExpression": {
-                              "id": 63305,
+                              "id": 59689,
                               "name": "allowance",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 63605,
-                              "src": "3432:9:99",
+                              "referencedDeclaration": 59989,
+                              "src": "3432:9:83",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_address_$_t_uint256_$_$",
                                 "typeString": "mapping(address => mapping(address => uint256))"
                               }
                             },
-                            "id": 63307,
+                            "id": 59691,
                             "indexExpression": {
-                              "id": 63306,
+                              "id": 59690,
                               "name": "owner",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 63294,
-                              "src": "3442:5:99",
+                              "referencedDeclaration": 59678,
+                              "src": "3442:5:83",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_address",
                                 "typeString": "address"
@@ -4771,35 +4767,35 @@ export const ERC4626 =
                             "isPure": false,
                             "lValueRequested": false,
                             "nodeType": "IndexAccess",
-                            "src": "3432:16:99",
+                            "src": "3432:16:83",
                             "typeDescriptions": {
                               "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                               "typeString": "mapping(address => uint256)"
                             }
                           },
-                          "id": 63310,
+                          "id": 59694,
                           "indexExpression": {
                             "expression": {
-                              "id": 63308,
+                              "id": 59692,
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
                               "referencedDeclaration": -15,
-                              "src": "3449:3:99",
+                              "src": "3449:3:83",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
                                 "typeString": "msg"
                               }
                             },
-                            "id": 63309,
+                            "id": 59693,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
-                            "memberLocation": "3453:6:99",
+                            "memberLocation": "3453:6:83",
                             "memberName": "sender",
                             "nodeType": "MemberAccess",
-                            "src": "3449:10:99",
+                            "src": "3449:10:83",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -4810,14 +4806,14 @@ export const ERC4626 =
                           "isPure": false,
                           "lValueRequested": false,
                           "nodeType": "IndexAccess",
-                          "src": "3432:28:99",
+                          "src": "3432:28:83",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
                         "nodeType": "VariableDeclarationStatement",
-                        "src": "3414:46:99"
+                        "src": "3414:46:83"
                       },
                       {
                         "condition": {
@@ -4825,18 +4821,18 @@ export const ERC4626 =
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           },
-                          "id": 63318,
+                          "id": 59702,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftExpression": {
-                            "id": 63312,
+                            "id": 59696,
                             "name": "allowed",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 63304,
-                            "src": "3515:7:99",
+                            "referencedDeclaration": 59688,
+                            "src": "3515:7:83",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -4848,22 +4844,22 @@ export const ERC4626 =
                             "expression": {
                               "arguments": [
                                 {
-                                  "id": 63315,
+                                  "id": 59699,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": true,
                                   "lValueRequested": false,
                                   "nodeType": "ElementaryTypeNameExpression",
-                                  "src": "3531:7:99",
+                                  "src": "3531:7:83",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_type$_t_uint256_$",
                                     "typeString": "type(uint256)"
                                   },
                                   "typeName": {
-                                    "id": 63314,
+                                    "id": 59698,
                                     "name": "uint256",
                                     "nodeType": "ElementaryTypeName",
-                                    "src": "3531:7:99",
+                                    "src": "3531:7:83",
                                     "typeDescriptions": {}
                                   }
                                 }
@@ -4875,18 +4871,18 @@ export const ERC4626 =
                                     "typeString": "type(uint256)"
                                   }
                                 ],
-                                "id": 63313,
+                                "id": 59697,
                                 "name": "type",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
                                 "referencedDeclaration": -27,
-                                "src": "3526:4:99",
+                                "src": "3526:4:83",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_function_metatype_pure$__$returns$__$",
                                   "typeString": "function () pure"
                                 }
                               },
-                              "id": 63316,
+                              "id": 59700,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
@@ -4895,39 +4891,39 @@ export const ERC4626 =
                               "nameLocations": [],
                               "names": [],
                               "nodeType": "FunctionCall",
-                              "src": "3526:13:99",
+                              "src": "3526:13:83",
                               "tryCall": false,
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_meta_type_t_uint256",
                                 "typeString": "type(uint256)"
                               }
                             },
-                            "id": 63317,
+                            "id": 59701,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "lValueRequested": false,
-                            "memberLocation": "3540:3:99",
+                            "memberLocation": "3540:3:83",
                             "memberName": "max",
                             "nodeType": "MemberAccess",
-                            "src": "3526:17:99",
+                            "src": "3526:17:83",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             }
                           },
-                          "src": "3515:28:99",
+                          "src": "3515:28:83",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
                           }
                         },
-                        "id": 63330,
+                        "id": 59714,
                         "nodeType": "IfStatement",
-                        "src": "3511:81:99",
+                        "src": "3511:81:83",
                         "trueBody": {
                           "expression": {
-                            "id": 63328,
+                            "id": 59712,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -4935,25 +4931,25 @@ export const ERC4626 =
                             "leftHandSide": {
                               "baseExpression": {
                                 "baseExpression": {
-                                  "id": 63319,
+                                  "id": 59703,
                                   "name": "allowance",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 63605,
-                                  "src": "3545:9:99",
+                                  "referencedDeclaration": 59989,
+                                  "src": "3545:9:83",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_address_$_t_uint256_$_$",
                                     "typeString": "mapping(address => mapping(address => uint256))"
                                   }
                                 },
-                                "id": 63323,
+                                "id": 59707,
                                 "indexExpression": {
-                                  "id": 63320,
+                                  "id": 59704,
                                   "name": "owner",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 63294,
-                                  "src": "3555:5:99",
+                                  "referencedDeclaration": 59678,
+                                  "src": "3555:5:83",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_address",
                                     "typeString": "address"
@@ -4964,35 +4960,35 @@ export const ERC4626 =
                                 "isPure": false,
                                 "lValueRequested": false,
                                 "nodeType": "IndexAccess",
-                                "src": "3545:16:99",
+                                "src": "3545:16:83",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                                   "typeString": "mapping(address => uint256)"
                                 }
                               },
-                              "id": 63324,
+                              "id": 59708,
                               "indexExpression": {
                                 "expression": {
-                                  "id": 63321,
+                                  "id": 59705,
                                   "name": "msg",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
                                   "referencedDeclaration": -15,
-                                  "src": "3562:3:99",
+                                  "src": "3562:3:83",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_magic_message",
                                     "typeString": "msg"
                                   }
                                 },
-                                "id": 63322,
+                                "id": 59706,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
                                 "lValueRequested": false,
-                                "memberLocation": "3566:6:99",
+                                "memberLocation": "3566:6:83",
                                 "memberName": "sender",
                                 "nodeType": "MemberAccess",
-                                "src": "3562:10:99",
+                                "src": "3562:10:83",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_address",
                                   "typeString": "address"
@@ -5003,7 +4999,7 @@ export const ERC4626 =
                               "isPure": false,
                               "lValueRequested": true,
                               "nodeType": "IndexAccess",
-                              "src": "3545:28:99",
+                              "src": "3545:28:83",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
@@ -5016,18 +5012,18 @@ export const ERC4626 =
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               },
-                              "id": 63327,
+                              "id": 59711,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "leftExpression": {
-                                "id": 63325,
+                                "id": 59709,
                                 "name": "allowed",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 63304,
-                                "src": "3576:7:99",
+                                "referencedDeclaration": 59688,
+                                "src": "3576:7:83",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
@@ -5036,32 +5032,32 @@ export const ERC4626 =
                               "nodeType": "BinaryOperation",
                               "operator": "-",
                               "rightExpression": {
-                                "id": 63326,
+                                "id": 59710,
                                 "name": "shares",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 63290,
-                                "src": "3586:6:99",
+                                "referencedDeclaration": 59674,
+                                "src": "3586:6:83",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
                                 }
                               },
-                              "src": "3576:16:99",
+                              "src": "3576:16:83",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               }
                             },
-                            "src": "3545:47:99",
+                            "src": "3545:47:83",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             }
                           },
-                          "id": 63329,
+                          "id": 59713,
                           "nodeType": "ExpressionStatement",
-                          "src": "3545:47:99"
+                          "src": "3545:47:83"
                         }
                       }
                     ]
@@ -5075,7 +5071,7 @@ export const ERC4626 =
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 63341,
+                        "id": 59725,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -5083,18 +5079,18 @@ export const ERC4626 =
                         "leftExpression": {
                           "components": [
                             {
-                              "id": 63338,
+                              "id": 59722,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "leftHandSide": {
-                                "id": 63334,
+                                "id": 59718,
                                 "name": "assets",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 63297,
-                                "src": "3696:6:99",
+                                "referencedDeclaration": 59681,
+                                "src": "3696:6:83",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
@@ -5105,12 +5101,12 @@ export const ERC4626 =
                               "rightHandSide": {
                                 "arguments": [
                                   {
-                                    "id": 63336,
+                                    "id": 59720,
                                     "name": "shares",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 63290,
-                                    "src": "3719:6:99",
+                                    "referencedDeclaration": 59674,
+                                    "src": "3719:6:83",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
                                       "typeString": "uint256"
@@ -5124,18 +5120,18 @@ export const ERC4626 =
                                       "typeString": "uint256"
                                     }
                                   ],
-                                  "id": 63335,
+                                  "id": 59719,
                                   "name": "previewRedeem",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 63497,
-                                  "src": "3705:13:99",
+                                  "referencedDeclaration": 59881,
+                                  "src": "3705:13:83",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_function_internal_view$_t_uint256_$returns$_t_uint256_$",
                                     "typeString": "function (uint256) view returns (uint256)"
                                   }
                                 },
-                                "id": 63337,
+                                "id": 59721,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -5144,28 +5140,28 @@ export const ERC4626 =
                                 "nameLocations": [],
                                 "names": [],
                                 "nodeType": "FunctionCall",
-                                "src": "3705:21:99",
+                                "src": "3705:21:83",
                                 "tryCall": false,
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
                                 }
                               },
-                              "src": "3696:30:99",
+                              "src": "3696:30:83",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               }
                             }
                           ],
-                          "id": 63339,
+                          "id": 59723,
                           "isConstant": false,
                           "isInlineArray": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "nodeType": "TupleExpression",
-                          "src": "3695:32:99",
+                          "src": "3695:32:83",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -5175,21 +5171,21 @@ export const ERC4626 =
                         "operator": "!=",
                         "rightExpression": {
                           "hexValue": "30",
-                          "id": 63340,
+                          "id": 59724,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "3731:1:99",
+                          "src": "3731:1:83",
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_0_by_1",
                             "typeString": "int_const 0"
                           },
                           "value": "0"
                         },
-                        "src": "3695:37:99",
+                        "src": "3695:37:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -5197,14 +5193,14 @@ export const ERC4626 =
                       },
                       {
                         "hexValue": "5a45524f5f415353455453",
-                        "id": 63342,
+                        "id": 59726,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "3734:13:99",
+                        "src": "3734:13:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_bf169ab2ef12d57708bb5afe72ea54ba3ad2eccb91dd95f37571afa377c52483",
                           "typeString": "literal_string \"ZERO_ASSETS\""
@@ -5223,7 +5219,7 @@ export const ERC4626 =
                           "typeString": "literal_string \"ZERO_ASSETS\""
                         }
                       ],
-                      "id": 63333,
+                      "id": 59717,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -5231,13 +5227,13 @@ export const ERC4626 =
                         -18
                       ],
                       "referencedDeclaration": -18,
-                      "src": "3687:7:99",
+                      "src": "3687:7:83",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 63343,
+                    "id": 59727,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -5246,39 +5242,39 @@ export const ERC4626 =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "3687:61:99",
+                    "src": "3687:61:83",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 63344,
+                  "id": 59728,
                   "nodeType": "ExpressionStatement",
-                  "src": "3687:61:99"
+                  "src": "3687:61:83"
                 },
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 63346,
+                        "id": 59730,
                         "name": "assets",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63297,
-                        "src": "3774:6:99",
+                        "referencedDeclaration": 59681,
+                        "src": "3774:6:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 63347,
+                        "id": 59731,
                         "name": "shares",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63290,
-                        "src": "3782:6:99",
+                        "referencedDeclaration": 59674,
+                        "src": "3782:6:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -5296,18 +5292,18 @@ export const ERC4626 =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 63345,
+                      "id": 59729,
                       "name": "beforeWithdraw",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 63559,
-                      "src": "3759:14:99",
+                      "referencedDeclaration": 59943,
+                      "src": "3759:14:83",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_uint256_$returns$__$",
                         "typeString": "function (uint256,uint256)"
                       }
                     },
-                    "id": 63348,
+                    "id": 59732,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -5316,39 +5312,39 @@ export const ERC4626 =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "3759:30:99",
+                    "src": "3759:30:83",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 63349,
+                  "id": 59733,
                   "nodeType": "ExpressionStatement",
-                  "src": "3759:30:99"
+                  "src": "3759:30:83"
                 },
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 63351,
+                        "id": 59735,
                         "name": "owner",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63294,
-                        "src": "3806:5:99",
+                        "referencedDeclaration": 59678,
+                        "src": "3806:5:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         }
                       },
                       {
-                        "id": 63352,
+                        "id": 59736,
                         "name": "shares",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63290,
-                        "src": "3813:6:99",
+                        "referencedDeclaration": 59674,
+                        "src": "3813:6:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -5366,18 +5362,18 @@ export const ERC4626 =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 63350,
+                      "id": 59734,
                       "name": "_burn",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 63955,
-                      "src": "3800:5:99",
+                      "referencedDeclaration": 60339,
+                      "src": "3800:5:83",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
                         "typeString": "function (address,uint256)"
                       }
                     },
-                    "id": 63353,
+                    "id": 59737,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -5386,90 +5382,90 @@ export const ERC4626 =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "3800:20:99",
+                    "src": "3800:20:83",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 63354,
+                  "id": 59738,
                   "nodeType": "ExpressionStatement",
-                  "src": "3800:20:99"
+                  "src": "3800:20:83"
                 },
                 {
                   "eventCall": {
                     "arguments": [
                       {
                         "expression": {
-                          "id": 63356,
+                          "id": 59740,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": -15,
-                          "src": "3845:3:99",
+                          "src": "3845:3:83",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
                           }
                         },
-                        "id": 63357,
+                        "id": 59741,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "3849:6:99",
+                        "memberLocation": "3849:6:83",
                         "memberName": "sender",
                         "nodeType": "MemberAccess",
-                        "src": "3845:10:99",
+                        "src": "3845:10:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         }
                       },
                       {
-                        "id": 63358,
+                        "id": 59742,
                         "name": "receiver",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63292,
-                        "src": "3857:8:99",
+                        "referencedDeclaration": 59676,
+                        "src": "3857:8:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         }
                       },
                       {
-                        "id": 63359,
+                        "id": 59743,
                         "name": "owner",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63294,
-                        "src": "3867:5:99",
+                        "referencedDeclaration": 59678,
+                        "src": "3867:5:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         }
                       },
                       {
-                        "id": 63360,
+                        "id": 59744,
                         "name": "assets",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63297,
-                        "src": "3874:6:99",
+                        "referencedDeclaration": 59681,
+                        "src": "3874:6:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
                       {
-                        "id": 63361,
+                        "id": 59745,
                         "name": "shares",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63290,
-                        "src": "3882:6:99",
+                        "referencedDeclaration": 59674,
+                        "src": "3882:6:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -5499,18 +5495,18 @@ export const ERC4626 =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 63355,
+                      "id": 59739,
                       "name": "Withdraw",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 63087,
-                      "src": "3836:8:99",
+                      "referencedDeclaration": 59471,
+                      "src": "3836:8:83",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$_t_address_$_t_uint256_$_t_uint256_$returns$__$",
                         "typeString": "function (address,address,address,uint256,uint256)"
                       }
                     },
-                    "id": 63362,
+                    "id": 59746,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -5519,39 +5515,39 @@ export const ERC4626 =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "3836:53:99",
+                    "src": "3836:53:83",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 63363,
+                  "id": 59747,
                   "nodeType": "EmitStatement",
-                  "src": "3831:58:99"
+                  "src": "3831:58:83"
                 },
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 63367,
+                        "id": 59751,
                         "name": "receiver",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63292,
-                        "src": "3919:8:99",
+                        "referencedDeclaration": 59676,
+                        "src": "3919:8:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         }
                       },
                       {
-                        "id": 63368,
+                        "id": 59752,
                         "name": "assets",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63297,
-                        "src": "3929:6:99",
+                        "referencedDeclaration": 59681,
+                        "src": "3929:6:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -5570,33 +5566,33 @@ export const ERC4626 =
                         }
                       ],
                       "expression": {
-                        "id": 63364,
+                        "id": 59748,
                         "name": "asset",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63090,
-                        "src": "3900:5:99",
+                        "referencedDeclaration": 59474,
+                        "src": "3900:5:83",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ERC20_$63956",
+                          "typeIdentifier": "t_contract$_ERC20_$60340",
                           "typeString": "contract ERC20"
                         }
                       },
-                      "id": 63366,
+                      "id": 59750,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
-                      "memberLocation": "3906:12:99",
+                      "memberLocation": "3906:12:83",
                       "memberName": "safeTransfer",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 64244,
-                      "src": "3900:18:99",
+                      "referencedDeclaration": 60628,
+                      "src": "3900:18:83",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_ERC20_$63956_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_ERC20_$63956_$",
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_ERC20_$60340_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_ERC20_$60340_$",
                         "typeString": "function (contract ERC20,address,uint256)"
                       }
                     },
-                    "id": 63369,
+                    "id": 59753,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -5605,16 +5601,16 @@ export const ERC4626 =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "3900:36:99",
+                    "src": "3900:36:83",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 63370,
+                  "id": 59754,
                   "nodeType": "ExpressionStatement",
-                  "src": "3900:36:99"
+                  "src": "3900:36:83"
                 }
               ]
             },
@@ -5623,20 +5619,20 @@ export const ERC4626 =
             "kind": "function",
             "modifiers": [],
             "name": "redeem",
-            "nameLocation": "3239:6:99",
+            "nameLocation": "3239:6:83",
             "parameters": {
-              "id": 63295,
+              "id": 59679,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 63290,
+                  "id": 59674,
                   "mutability": "mutable",
                   "name": "shares",
-                  "nameLocation": "3263:6:99",
+                  "nameLocation": "3263:6:83",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63372,
-                  "src": "3255:14:99",
+                  "scope": 59756,
+                  "src": "3255:14:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -5644,10 +5640,10 @@ export const ERC4626 =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 63289,
+                    "id": 59673,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3255:7:99",
+                    "src": "3255:7:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -5657,13 +5653,13 @@ export const ERC4626 =
                 },
                 {
                   "constant": false,
-                  "id": 63292,
+                  "id": 59676,
                   "mutability": "mutable",
                   "name": "receiver",
-                  "nameLocation": "3287:8:99",
+                  "nameLocation": "3287:8:83",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63372,
-                  "src": "3279:16:99",
+                  "scope": 59756,
+                  "src": "3279:16:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -5671,10 +5667,10 @@ export const ERC4626 =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 63291,
+                    "id": 59675,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3279:7:99",
+                    "src": "3279:7:83",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -5685,13 +5681,13 @@ export const ERC4626 =
                 },
                 {
                   "constant": false,
-                  "id": 63294,
+                  "id": 59678,
                   "mutability": "mutable",
                   "name": "owner",
-                  "nameLocation": "3313:5:99",
+                  "nameLocation": "3313:5:83",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63372,
-                  "src": "3305:13:99",
+                  "scope": 59756,
+                  "src": "3305:13:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -5699,10 +5695,10 @@ export const ERC4626 =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 63293,
+                    "id": 59677,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3305:7:99",
+                    "src": "3305:7:83",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -5712,21 +5708,21 @@ export const ERC4626 =
                   "visibility": "internal"
                 }
               ],
-              "src": "3245:79:99"
+              "src": "3245:79:83"
             },
             "returnParameters": {
-              "id": 63298,
+              "id": 59682,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 63297,
+                  "id": 59681,
                   "mutability": "mutable",
                   "name": "assets",
-                  "nameLocation": "3357:6:99",
+                  "nameLocation": "3357:6:83",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63372,
-                  "src": "3349:14:99",
+                  "scope": 59756,
+                  "src": "3349:14:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -5734,10 +5730,10 @@ export const ERC4626 =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 63296,
+                    "id": 59680,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3349:7:99",
+                    "src": "3349:7:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -5746,43 +5742,43 @@ export const ERC4626 =
                   "visibility": "internal"
                 }
               ],
-              "src": "3348:16:99"
+              "src": "3348:16:83"
             },
-            "scope": 63568,
+            "scope": 59952,
             "stateMutability": "nonpayable",
             "virtual": true,
             "visibility": "public"
           },
           {
-            "id": 63377,
+            "id": 59761,
             "nodeType": "FunctionDefinition",
-            "src": "4133:61:99",
+            "src": "4133:61:83",
             "nodes": [],
             "functionSelector": "01e1d114",
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "totalAssets",
-            "nameLocation": "4142:11:99",
+            "nameLocation": "4142:11:83",
             "parameters": {
-              "id": 63373,
+              "id": 59757,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "4153:2:99"
+              "src": "4153:2:83"
             },
             "returnParameters": {
-              "id": 63376,
+              "id": 59760,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 63375,
+                  "id": 59759,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63377,
-                  "src": "4185:7:99",
+                  "scope": 59761,
+                  "src": "4185:7:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -5790,10 +5786,10 @@ export const ERC4626 =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 63374,
+                    "id": 59758,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4185:7:99",
+                    "src": "4185:7:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -5802,38 +5798,38 @@ export const ERC4626 =
                   "visibility": "internal"
                 }
               ],
-              "src": "4184:9:99"
+              "src": "4184:9:83"
             },
-            "scope": 63568,
+            "scope": 59952,
             "stateMutability": "view",
             "virtual": true,
             "visibility": "public"
           },
           {
-            "id": 63401,
+            "id": 59785,
             "nodeType": "FunctionDefinition",
-            "src": "4200:257:99",
+            "src": "4200:257:83",
             "nodes": [],
             "body": {
-              "id": 63400,
+              "id": 59784,
               "nodeType": "Block",
-              "src": "4279:178:99",
+              "src": "4279:178:83",
               "nodes": [],
               "statements": [
                 {
                   "assignments": [
-                    63385
+                    59769
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 63385,
+                      "id": 59769,
                       "mutability": "mutable",
                       "name": "supply",
-                      "nameLocation": "4297:6:99",
+                      "nameLocation": "4297:6:83",
                       "nodeType": "VariableDeclaration",
-                      "scope": 63400,
-                      "src": "4289:14:99",
+                      "scope": 59784,
+                      "src": "4289:14:83",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -5841,10 +5837,10 @@ export const ERC4626 =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 63384,
+                        "id": 59768,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "4289:7:99",
+                        "src": "4289:7:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -5853,21 +5849,21 @@ export const ERC4626 =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 63387,
+                  "id": 59771,
                   "initialValue": {
-                    "id": 63386,
+                    "id": 59770,
                     "name": "totalSupply",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 63595,
-                    "src": "4306:11:99",
+                    "referencedDeclaration": 59979,
+                    "src": "4306:11:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "4289:28:99"
+                  "src": "4289:28:83"
                 },
                 {
                   "expression": {
@@ -5876,18 +5872,18 @@ export const ERC4626 =
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       },
-                      "id": 63390,
+                      "id": 59774,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
-                        "id": 63388,
+                        "id": 59772,
                         "name": "supply",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63385,
-                        "src": "4387:6:99",
+                        "referencedDeclaration": 59769,
+                        "src": "4387:6:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -5897,21 +5893,21 @@ export const ERC4626 =
                       "operator": "==",
                       "rightExpression": {
                         "hexValue": "30",
-                        "id": 63389,
+                        "id": 59773,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "4397:1:99",
+                        "src": "4397:1:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_rational_0_by_1",
                           "typeString": "int_const 0"
                         },
                         "value": "0"
                       },
-                      "src": "4387:11:99",
+                      "src": "4387:11:83",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
@@ -5920,12 +5916,12 @@ export const ERC4626 =
                     "falseExpression": {
                       "arguments": [
                         {
-                          "id": 63394,
+                          "id": 59778,
                           "name": "supply",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 63385,
-                          "src": "4428:6:99",
+                          "referencedDeclaration": 59769,
+                          "src": "4428:6:83",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -5935,18 +5931,18 @@ export const ERC4626 =
                           "arguments": [],
                           "expression": {
                             "argumentTypes": [],
-                            "id": 63395,
+                            "id": 59779,
                             "name": "totalAssets",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 63377,
-                            "src": "4436:11:99",
+                            "referencedDeclaration": 59761,
+                            "src": "4436:11:83",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_view$__$returns$_t_uint256_$",
                               "typeString": "function () view returns (uint256)"
                             }
                           },
-                          "id": 63396,
+                          "id": 59780,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -5955,7 +5951,7 @@ export const ERC4626 =
                           "nameLocations": [],
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "4436:13:99",
+                          "src": "4436:13:83",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -5975,33 +5971,33 @@ export const ERC4626 =
                           }
                         ],
                         "expression": {
-                          "id": 63392,
+                          "id": 59776,
                           "name": "assets",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 63379,
-                          "src": "4410:6:99",
+                          "referencedDeclaration": 59763,
+                          "src": "4410:6:83",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 63393,
+                        "id": 59777,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "4417:10:99",
+                        "memberLocation": "4417:10:83",
                         "memberName": "mulDivDown",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 64085,
-                        "src": "4410:17:99",
+                        "referencedDeclaration": 60469,
+                        "src": "4410:17:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                           "typeString": "function (uint256,uint256,uint256) pure returns (uint256)"
                         }
                       },
-                      "id": 63397,
+                      "id": 59781,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -6010,27 +6006,27 @@ export const ERC4626 =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "4410:40:99",
+                      "src": "4410:40:83",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "id": 63398,
+                    "id": 59782,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "Conditional",
-                    "src": "4387:63:99",
+                    "src": "4387:63:83",
                     "trueExpression": {
-                      "id": 63391,
+                      "id": 59775,
                       "name": "assets",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 63379,
-                      "src": "4401:6:99",
+                      "referencedDeclaration": 59763,
+                      "src": "4401:6:83",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -6041,10 +6037,10 @@ export const ERC4626 =
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 63383,
-                  "id": 63399,
+                  "functionReturnParameters": 59767,
+                  "id": 59783,
                   "nodeType": "Return",
-                  "src": "4380:70:99"
+                  "src": "4380:70:83"
                 }
               ]
             },
@@ -6053,20 +6049,20 @@ export const ERC4626 =
             "kind": "function",
             "modifiers": [],
             "name": "convertToShares",
-            "nameLocation": "4209:15:99",
+            "nameLocation": "4209:15:83",
             "parameters": {
-              "id": 63380,
+              "id": 59764,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 63379,
+                  "id": 59763,
                   "mutability": "mutable",
                   "name": "assets",
-                  "nameLocation": "4233:6:99",
+                  "nameLocation": "4233:6:83",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63401,
-                  "src": "4225:14:99",
+                  "scope": 59785,
+                  "src": "4225:14:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -6074,10 +6070,10 @@ export const ERC4626 =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 63378,
+                    "id": 59762,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4225:7:99",
+                    "src": "4225:7:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -6086,21 +6082,21 @@ export const ERC4626 =
                   "visibility": "internal"
                 }
               ],
-              "src": "4224:16:99"
+              "src": "4224:16:83"
             },
             "returnParameters": {
-              "id": 63383,
+              "id": 59767,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 63382,
+                  "id": 59766,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63401,
-                  "src": "4270:7:99",
+                  "scope": 59785,
+                  "src": "4270:7:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -6108,10 +6104,10 @@ export const ERC4626 =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 63381,
+                    "id": 59765,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4270:7:99",
+                    "src": "4270:7:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -6120,38 +6116,38 @@ export const ERC4626 =
                   "visibility": "internal"
                 }
               ],
-              "src": "4269:9:99"
+              "src": "4269:9:83"
             },
-            "scope": 63568,
+            "scope": 59952,
             "stateMutability": "view",
             "virtual": true,
             "visibility": "public"
           },
           {
-            "id": 63425,
+            "id": 59809,
             "nodeType": "FunctionDefinition",
-            "src": "4463:257:99",
+            "src": "4463:257:83",
             "nodes": [],
             "body": {
-              "id": 63424,
+              "id": 59808,
               "nodeType": "Block",
-              "src": "4542:178:99",
+              "src": "4542:178:83",
               "nodes": [],
               "statements": [
                 {
                   "assignments": [
-                    63409
+                    59793
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 63409,
+                      "id": 59793,
                       "mutability": "mutable",
                       "name": "supply",
-                      "nameLocation": "4560:6:99",
+                      "nameLocation": "4560:6:83",
                       "nodeType": "VariableDeclaration",
-                      "scope": 63424,
-                      "src": "4552:14:99",
+                      "scope": 59808,
+                      "src": "4552:14:83",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -6159,10 +6155,10 @@ export const ERC4626 =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 63408,
+                        "id": 59792,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "4552:7:99",
+                        "src": "4552:7:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -6171,21 +6167,21 @@ export const ERC4626 =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 63411,
+                  "id": 59795,
                   "initialValue": {
-                    "id": 63410,
+                    "id": 59794,
                     "name": "totalSupply",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 63595,
-                    "src": "4569:11:99",
+                    "referencedDeclaration": 59979,
+                    "src": "4569:11:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "4552:28:99"
+                  "src": "4552:28:83"
                 },
                 {
                   "expression": {
@@ -6194,18 +6190,18 @@ export const ERC4626 =
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       },
-                      "id": 63414,
+                      "id": 59798,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
-                        "id": 63412,
+                        "id": 59796,
                         "name": "supply",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63409,
-                        "src": "4650:6:99",
+                        "referencedDeclaration": 59793,
+                        "src": "4650:6:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -6215,21 +6211,21 @@ export const ERC4626 =
                       "operator": "==",
                       "rightExpression": {
                         "hexValue": "30",
-                        "id": 63413,
+                        "id": 59797,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "4660:1:99",
+                        "src": "4660:1:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_rational_0_by_1",
                           "typeString": "int_const 0"
                         },
                         "value": "0"
                       },
-                      "src": "4650:11:99",
+                      "src": "4650:11:83",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
@@ -6241,18 +6237,18 @@ export const ERC4626 =
                           "arguments": [],
                           "expression": {
                             "argumentTypes": [],
-                            "id": 63418,
+                            "id": 59802,
                             "name": "totalAssets",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 63377,
-                            "src": "4691:11:99",
+                            "referencedDeclaration": 59761,
+                            "src": "4691:11:83",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_view$__$returns$_t_uint256_$",
                               "typeString": "function () view returns (uint256)"
                             }
                           },
-                          "id": 63419,
+                          "id": 59803,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -6261,7 +6257,7 @@ export const ERC4626 =
                           "nameLocations": [],
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "4691:13:99",
+                          "src": "4691:13:83",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -6269,12 +6265,12 @@ export const ERC4626 =
                           }
                         },
                         {
-                          "id": 63420,
+                          "id": 59804,
                           "name": "supply",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 63409,
-                          "src": "4706:6:99",
+                          "referencedDeclaration": 59793,
+                          "src": "4706:6:83",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -6293,33 +6289,33 @@ export const ERC4626 =
                           }
                         ],
                         "expression": {
-                          "id": 63416,
+                          "id": 59800,
                           "name": "shares",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 63403,
-                          "src": "4673:6:99",
+                          "referencedDeclaration": 59787,
+                          "src": "4673:6:83",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 63417,
+                        "id": 59801,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "4680:10:99",
+                        "memberLocation": "4680:10:83",
                         "memberName": "mulDivDown",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 64085,
-                        "src": "4673:17:99",
+                        "referencedDeclaration": 60469,
+                        "src": "4673:17:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                           "typeString": "function (uint256,uint256,uint256) pure returns (uint256)"
                         }
                       },
-                      "id": 63421,
+                      "id": 59805,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -6328,27 +6324,27 @@ export const ERC4626 =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "4673:40:99",
+                      "src": "4673:40:83",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "id": 63422,
+                    "id": 59806,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "Conditional",
-                    "src": "4650:63:99",
+                    "src": "4650:63:83",
                     "trueExpression": {
-                      "id": 63415,
+                      "id": 59799,
                       "name": "shares",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 63403,
-                      "src": "4664:6:99",
+                      "referencedDeclaration": 59787,
+                      "src": "4664:6:83",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -6359,10 +6355,10 @@ export const ERC4626 =
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 63407,
-                  "id": 63423,
+                  "functionReturnParameters": 59791,
+                  "id": 59807,
                   "nodeType": "Return",
-                  "src": "4643:70:99"
+                  "src": "4643:70:83"
                 }
               ]
             },
@@ -6371,20 +6367,20 @@ export const ERC4626 =
             "kind": "function",
             "modifiers": [],
             "name": "convertToAssets",
-            "nameLocation": "4472:15:99",
+            "nameLocation": "4472:15:83",
             "parameters": {
-              "id": 63404,
+              "id": 59788,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 63403,
+                  "id": 59787,
                   "mutability": "mutable",
                   "name": "shares",
-                  "nameLocation": "4496:6:99",
+                  "nameLocation": "4496:6:83",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63425,
-                  "src": "4488:14:99",
+                  "scope": 59809,
+                  "src": "4488:14:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -6392,10 +6388,10 @@ export const ERC4626 =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 63402,
+                    "id": 59786,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4488:7:99",
+                    "src": "4488:7:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -6404,21 +6400,21 @@ export const ERC4626 =
                   "visibility": "internal"
                 }
               ],
-              "src": "4487:16:99"
+              "src": "4487:16:83"
             },
             "returnParameters": {
-              "id": 63407,
+              "id": 59791,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 63406,
+                  "id": 59790,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63425,
-                  "src": "4533:7:99",
+                  "scope": 59809,
+                  "src": "4533:7:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -6426,10 +6422,10 @@ export const ERC4626 =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 63405,
+                    "id": 59789,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4533:7:99",
+                    "src": "4533:7:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -6438,34 +6434,34 @@ export const ERC4626 =
                   "visibility": "internal"
                 }
               ],
-              "src": "4532:9:99"
+              "src": "4532:9:83"
             },
-            "scope": 63568,
+            "scope": 59952,
             "stateMutability": "view",
             "virtual": true,
             "visibility": "public"
           },
           {
-            "id": 63437,
+            "id": 59821,
             "nodeType": "FunctionDefinition",
-            "src": "4726:125:99",
+            "src": "4726:125:83",
             "nodes": [],
             "body": {
-              "id": 63436,
+              "id": 59820,
               "nodeType": "Block",
-              "src": "4804:47:99",
+              "src": "4804:47:83",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 63433,
+                        "id": 59817,
                         "name": "assets",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63427,
-                        "src": "4837:6:99",
+                        "referencedDeclaration": 59811,
+                        "src": "4837:6:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -6479,18 +6475,18 @@ export const ERC4626 =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 63432,
+                      "id": 59816,
                       "name": "convertToShares",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 63401,
-                      "src": "4821:15:99",
+                      "referencedDeclaration": 59785,
+                      "src": "4821:15:83",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_view$_t_uint256_$returns$_t_uint256_$",
                         "typeString": "function (uint256) view returns (uint256)"
                       }
                     },
-                    "id": 63434,
+                    "id": 59818,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -6499,17 +6495,17 @@ export const ERC4626 =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "4821:23:99",
+                    "src": "4821:23:83",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 63431,
-                  "id": 63435,
+                  "functionReturnParameters": 59815,
+                  "id": 59819,
                   "nodeType": "Return",
-                  "src": "4814:30:99"
+                  "src": "4814:30:83"
                 }
               ]
             },
@@ -6518,20 +6514,20 @@ export const ERC4626 =
             "kind": "function",
             "modifiers": [],
             "name": "previewDeposit",
-            "nameLocation": "4735:14:99",
+            "nameLocation": "4735:14:83",
             "parameters": {
-              "id": 63428,
+              "id": 59812,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 63427,
+                  "id": 59811,
                   "mutability": "mutable",
                   "name": "assets",
-                  "nameLocation": "4758:6:99",
+                  "nameLocation": "4758:6:83",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63437,
-                  "src": "4750:14:99",
+                  "scope": 59821,
+                  "src": "4750:14:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -6539,10 +6535,10 @@ export const ERC4626 =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 63426,
+                    "id": 59810,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4750:7:99",
+                    "src": "4750:7:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -6551,21 +6547,21 @@ export const ERC4626 =
                   "visibility": "internal"
                 }
               ],
-              "src": "4749:16:99"
+              "src": "4749:16:83"
             },
             "returnParameters": {
-              "id": 63431,
+              "id": 59815,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 63430,
+                  "id": 59814,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63437,
-                  "src": "4795:7:99",
+                  "scope": 59821,
+                  "src": "4795:7:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -6573,10 +6569,10 @@ export const ERC4626 =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 63429,
+                    "id": 59813,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4795:7:99",
+                    "src": "4795:7:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -6585,38 +6581,38 @@ export const ERC4626 =
                   "visibility": "internal"
                 }
               ],
-              "src": "4794:9:99"
+              "src": "4794:9:83"
             },
-            "scope": 63568,
+            "scope": 59952,
             "stateMutability": "view",
             "virtual": true,
             "visibility": "public"
           },
           {
-            "id": 63461,
+            "id": 59845,
             "nodeType": "FunctionDefinition",
-            "src": "4857:251:99",
+            "src": "4857:251:83",
             "nodes": [],
             "body": {
-              "id": 63460,
+              "id": 59844,
               "nodeType": "Block",
-              "src": "4932:176:99",
+              "src": "4932:176:83",
               "nodes": [],
               "statements": [
                 {
                   "assignments": [
-                    63445
+                    59829
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 63445,
+                      "id": 59829,
                       "mutability": "mutable",
                       "name": "supply",
-                      "nameLocation": "4950:6:99",
+                      "nameLocation": "4950:6:83",
                       "nodeType": "VariableDeclaration",
-                      "scope": 63460,
-                      "src": "4942:14:99",
+                      "scope": 59844,
+                      "src": "4942:14:83",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -6624,10 +6620,10 @@ export const ERC4626 =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 63444,
+                        "id": 59828,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "4942:7:99",
+                        "src": "4942:7:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -6636,21 +6632,21 @@ export const ERC4626 =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 63447,
+                  "id": 59831,
                   "initialValue": {
-                    "id": 63446,
+                    "id": 59830,
                     "name": "totalSupply",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 63595,
-                    "src": "4959:11:99",
+                    "referencedDeclaration": 59979,
+                    "src": "4959:11:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "4942:28:99"
+                  "src": "4942:28:83"
                 },
                 {
                   "expression": {
@@ -6659,18 +6655,18 @@ export const ERC4626 =
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       },
-                      "id": 63450,
+                      "id": 59834,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
-                        "id": 63448,
+                        "id": 59832,
                         "name": "supply",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63445,
-                        "src": "5040:6:99",
+                        "referencedDeclaration": 59829,
+                        "src": "5040:6:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -6680,21 +6676,21 @@ export const ERC4626 =
                       "operator": "==",
                       "rightExpression": {
                         "hexValue": "30",
-                        "id": 63449,
+                        "id": 59833,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "5050:1:99",
+                        "src": "5050:1:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_rational_0_by_1",
                           "typeString": "int_const 0"
                         },
                         "value": "0"
                       },
-                      "src": "5040:11:99",
+                      "src": "5040:11:83",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
@@ -6706,18 +6702,18 @@ export const ERC4626 =
                           "arguments": [],
                           "expression": {
                             "argumentTypes": [],
-                            "id": 63454,
+                            "id": 59838,
                             "name": "totalAssets",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 63377,
-                            "src": "5079:11:99",
+                            "referencedDeclaration": 59761,
+                            "src": "5079:11:83",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_view$__$returns$_t_uint256_$",
                               "typeString": "function () view returns (uint256)"
                             }
                           },
-                          "id": 63455,
+                          "id": 59839,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -6726,7 +6722,7 @@ export const ERC4626 =
                           "nameLocations": [],
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "5079:13:99",
+                          "src": "5079:13:83",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -6734,12 +6730,12 @@ export const ERC4626 =
                           }
                         },
                         {
-                          "id": 63456,
+                          "id": 59840,
                           "name": "supply",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 63445,
-                          "src": "5094:6:99",
+                          "referencedDeclaration": 59829,
+                          "src": "5094:6:83",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -6758,33 +6754,33 @@ export const ERC4626 =
                           }
                         ],
                         "expression": {
-                          "id": 63452,
+                          "id": 59836,
                           "name": "shares",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 63439,
-                          "src": "5063:6:99",
+                          "referencedDeclaration": 59823,
+                          "src": "5063:6:83",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 63453,
+                        "id": 59837,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "5070:8:99",
+                        "memberLocation": "5070:8:83",
                         "memberName": "mulDivUp",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 64098,
-                        "src": "5063:15:99",
+                        "referencedDeclaration": 60482,
+                        "src": "5063:15:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                           "typeString": "function (uint256,uint256,uint256) pure returns (uint256)"
                         }
                       },
-                      "id": 63457,
+                      "id": 59841,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -6793,27 +6789,27 @@ export const ERC4626 =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "5063:38:99",
+                      "src": "5063:38:83",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "id": 63458,
+                    "id": 59842,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "Conditional",
-                    "src": "5040:61:99",
+                    "src": "5040:61:83",
                     "trueExpression": {
-                      "id": 63451,
+                      "id": 59835,
                       "name": "shares",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 63439,
-                      "src": "5054:6:99",
+                      "referencedDeclaration": 59823,
+                      "src": "5054:6:83",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -6824,10 +6820,10 @@ export const ERC4626 =
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 63443,
-                  "id": 63459,
+                  "functionReturnParameters": 59827,
+                  "id": 59843,
                   "nodeType": "Return",
-                  "src": "5033:68:99"
+                  "src": "5033:68:83"
                 }
               ]
             },
@@ -6836,20 +6832,20 @@ export const ERC4626 =
             "kind": "function",
             "modifiers": [],
             "name": "previewMint",
-            "nameLocation": "4866:11:99",
+            "nameLocation": "4866:11:83",
             "parameters": {
-              "id": 63440,
+              "id": 59824,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 63439,
+                  "id": 59823,
                   "mutability": "mutable",
                   "name": "shares",
-                  "nameLocation": "4886:6:99",
+                  "nameLocation": "4886:6:83",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63461,
-                  "src": "4878:14:99",
+                  "scope": 59845,
+                  "src": "4878:14:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -6857,10 +6853,10 @@ export const ERC4626 =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 63438,
+                    "id": 59822,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4878:7:99",
+                    "src": "4878:7:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -6869,21 +6865,21 @@ export const ERC4626 =
                   "visibility": "internal"
                 }
               ],
-              "src": "4877:16:99"
+              "src": "4877:16:83"
             },
             "returnParameters": {
-              "id": 63443,
+              "id": 59827,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 63442,
+                  "id": 59826,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63461,
-                  "src": "4923:7:99",
+                  "scope": 59845,
+                  "src": "4923:7:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -6891,10 +6887,10 @@ export const ERC4626 =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 63441,
+                    "id": 59825,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4923:7:99",
+                    "src": "4923:7:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -6903,38 +6899,38 @@ export const ERC4626 =
                   "visibility": "internal"
                 }
               ],
-              "src": "4922:9:99"
+              "src": "4922:9:83"
             },
-            "scope": 63568,
+            "scope": 59952,
             "stateMutability": "view",
             "virtual": true,
             "visibility": "public"
           },
           {
-            "id": 63485,
+            "id": 59869,
             "nodeType": "FunctionDefinition",
-            "src": "5114:255:99",
+            "src": "5114:255:83",
             "nodes": [],
             "body": {
-              "id": 63484,
+              "id": 59868,
               "nodeType": "Block",
-              "src": "5193:176:99",
+              "src": "5193:176:83",
               "nodes": [],
               "statements": [
                 {
                   "assignments": [
-                    63469
+                    59853
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 63469,
+                      "id": 59853,
                       "mutability": "mutable",
                       "name": "supply",
-                      "nameLocation": "5211:6:99",
+                      "nameLocation": "5211:6:83",
                       "nodeType": "VariableDeclaration",
-                      "scope": 63484,
-                      "src": "5203:14:99",
+                      "scope": 59868,
+                      "src": "5203:14:83",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -6942,10 +6938,10 @@ export const ERC4626 =
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 63468,
+                        "id": 59852,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "5203:7:99",
+                        "src": "5203:7:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -6954,21 +6950,21 @@ export const ERC4626 =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 63471,
+                  "id": 59855,
                   "initialValue": {
-                    "id": 63470,
+                    "id": 59854,
                     "name": "totalSupply",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 63595,
-                    "src": "5220:11:99",
+                    "referencedDeclaration": 59979,
+                    "src": "5220:11:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "5203:28:99"
+                  "src": "5203:28:83"
                 },
                 {
                   "expression": {
@@ -6977,18 +6973,18 @@ export const ERC4626 =
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       },
-                      "id": 63474,
+                      "id": 59858,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
-                        "id": 63472,
+                        "id": 59856,
                         "name": "supply",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63469,
-                        "src": "5301:6:99",
+                        "referencedDeclaration": 59853,
+                        "src": "5301:6:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -6998,21 +6994,21 @@ export const ERC4626 =
                       "operator": "==",
                       "rightExpression": {
                         "hexValue": "30",
-                        "id": 63473,
+                        "id": 59857,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "5311:1:99",
+                        "src": "5311:1:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_rational_0_by_1",
                           "typeString": "int_const 0"
                         },
                         "value": "0"
                       },
-                      "src": "5301:11:99",
+                      "src": "5301:11:83",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
@@ -7021,12 +7017,12 @@ export const ERC4626 =
                     "falseExpression": {
                       "arguments": [
                         {
-                          "id": 63478,
+                          "id": 59862,
                           "name": "supply",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 63469,
-                          "src": "5340:6:99",
+                          "referencedDeclaration": 59853,
+                          "src": "5340:6:83",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -7036,18 +7032,18 @@ export const ERC4626 =
                           "arguments": [],
                           "expression": {
                             "argumentTypes": [],
-                            "id": 63479,
+                            "id": 59863,
                             "name": "totalAssets",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 63377,
-                            "src": "5348:11:99",
+                            "referencedDeclaration": 59761,
+                            "src": "5348:11:83",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_view$__$returns$_t_uint256_$",
                               "typeString": "function () view returns (uint256)"
                             }
                           },
-                          "id": 63480,
+                          "id": 59864,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -7056,7 +7052,7 @@ export const ERC4626 =
                           "nameLocations": [],
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "5348:13:99",
+                          "src": "5348:13:83",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -7076,33 +7072,33 @@ export const ERC4626 =
                           }
                         ],
                         "expression": {
-                          "id": 63476,
+                          "id": 59860,
                           "name": "assets",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 63463,
-                          "src": "5324:6:99",
+                          "referencedDeclaration": 59847,
+                          "src": "5324:6:83",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 63477,
+                        "id": 59861,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "5331:8:99",
+                        "memberLocation": "5331:8:83",
                         "memberName": "mulDivUp",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 64098,
-                        "src": "5324:15:99",
+                        "referencedDeclaration": 60482,
+                        "src": "5324:15:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                           "typeString": "function (uint256,uint256,uint256) pure returns (uint256)"
                         }
                       },
-                      "id": 63481,
+                      "id": 59865,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -7111,27 +7107,27 @@ export const ERC4626 =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "5324:38:99",
+                      "src": "5324:38:83",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "id": 63482,
+                    "id": 59866,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "Conditional",
-                    "src": "5301:61:99",
+                    "src": "5301:61:83",
                     "trueExpression": {
-                      "id": 63475,
+                      "id": 59859,
                       "name": "assets",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 63463,
-                      "src": "5315:6:99",
+                      "referencedDeclaration": 59847,
+                      "src": "5315:6:83",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -7142,10 +7138,10 @@ export const ERC4626 =
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 63467,
-                  "id": 63483,
+                  "functionReturnParameters": 59851,
+                  "id": 59867,
                   "nodeType": "Return",
-                  "src": "5294:68:99"
+                  "src": "5294:68:83"
                 }
               ]
             },
@@ -7154,20 +7150,20 @@ export const ERC4626 =
             "kind": "function",
             "modifiers": [],
             "name": "previewWithdraw",
-            "nameLocation": "5123:15:99",
+            "nameLocation": "5123:15:83",
             "parameters": {
-              "id": 63464,
+              "id": 59848,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 63463,
+                  "id": 59847,
                   "mutability": "mutable",
                   "name": "assets",
-                  "nameLocation": "5147:6:99",
+                  "nameLocation": "5147:6:83",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63485,
-                  "src": "5139:14:99",
+                  "scope": 59869,
+                  "src": "5139:14:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -7175,10 +7171,10 @@ export const ERC4626 =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 63462,
+                    "id": 59846,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5139:7:99",
+                    "src": "5139:7:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -7187,21 +7183,21 @@ export const ERC4626 =
                   "visibility": "internal"
                 }
               ],
-              "src": "5138:16:99"
+              "src": "5138:16:83"
             },
             "returnParameters": {
-              "id": 63467,
+              "id": 59851,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 63466,
+                  "id": 59850,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63485,
-                  "src": "5184:7:99",
+                  "scope": 59869,
+                  "src": "5184:7:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -7209,10 +7205,10 @@ export const ERC4626 =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 63465,
+                    "id": 59849,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5184:7:99",
+                    "src": "5184:7:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -7221,34 +7217,34 @@ export const ERC4626 =
                   "visibility": "internal"
                 }
               ],
-              "src": "5183:9:99"
+              "src": "5183:9:83"
             },
-            "scope": 63568,
+            "scope": 59952,
             "stateMutability": "view",
             "virtual": true,
             "visibility": "public"
           },
           {
-            "id": 63497,
+            "id": 59881,
             "nodeType": "FunctionDefinition",
-            "src": "5375:124:99",
+            "src": "5375:124:83",
             "nodes": [],
             "body": {
-              "id": 63496,
+              "id": 59880,
               "nodeType": "Block",
-              "src": "5452:47:99",
+              "src": "5452:47:83",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 63493,
+                        "id": 59877,
                         "name": "shares",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 63487,
-                        "src": "5485:6:99",
+                        "referencedDeclaration": 59871,
+                        "src": "5485:6:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -7262,18 +7258,18 @@ export const ERC4626 =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 63492,
+                      "id": 59876,
                       "name": "convertToAssets",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 63425,
-                      "src": "5469:15:99",
+                      "referencedDeclaration": 59809,
+                      "src": "5469:15:83",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_view$_t_uint256_$returns$_t_uint256_$",
                         "typeString": "function (uint256) view returns (uint256)"
                       }
                     },
-                    "id": 63494,
+                    "id": 59878,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -7282,17 +7278,17 @@ export const ERC4626 =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "5469:23:99",
+                    "src": "5469:23:83",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 63491,
-                  "id": 63495,
+                  "functionReturnParameters": 59875,
+                  "id": 59879,
                   "nodeType": "Return",
-                  "src": "5462:30:99"
+                  "src": "5462:30:83"
                 }
               ]
             },
@@ -7301,20 +7297,20 @@ export const ERC4626 =
             "kind": "function",
             "modifiers": [],
             "name": "previewRedeem",
-            "nameLocation": "5384:13:99",
+            "nameLocation": "5384:13:83",
             "parameters": {
-              "id": 63488,
+              "id": 59872,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 63487,
+                  "id": 59871,
                   "mutability": "mutable",
                   "name": "shares",
-                  "nameLocation": "5406:6:99",
+                  "nameLocation": "5406:6:83",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63497,
-                  "src": "5398:14:99",
+                  "scope": 59881,
+                  "src": "5398:14:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -7322,10 +7318,10 @@ export const ERC4626 =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 63486,
+                    "id": 59870,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5398:7:99",
+                    "src": "5398:7:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -7334,21 +7330,21 @@ export const ERC4626 =
                   "visibility": "internal"
                 }
               ],
-              "src": "5397:16:99"
+              "src": "5397:16:83"
             },
             "returnParameters": {
-              "id": 63491,
+              "id": 59875,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 63490,
+                  "id": 59874,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63497,
-                  "src": "5443:7:99",
+                  "scope": 59881,
+                  "src": "5443:7:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -7356,10 +7352,10 @@ export const ERC4626 =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 63489,
+                    "id": 59873,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5443:7:99",
+                    "src": "5443:7:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -7368,22 +7364,22 @@ export const ERC4626 =
                   "visibility": "internal"
                 }
               ],
-              "src": "5442:9:99"
+              "src": "5442:9:83"
             },
-            "scope": 63568,
+            "scope": 59952,
             "stateMutability": "view",
             "virtual": true,
             "visibility": "public"
           },
           {
-            "id": 63511,
+            "id": 59895,
             "nodeType": "FunctionDefinition",
-            "src": "5696:108:99",
+            "src": "5696:108:83",
             "nodes": [],
             "body": {
-              "id": 63510,
+              "id": 59894,
               "nodeType": "Block",
-              "src": "5763:41:99",
+              "src": "5763:41:83",
               "nodes": [],
               "statements": [
                 {
@@ -7391,22 +7387,22 @@ export const ERC4626 =
                     "expression": {
                       "arguments": [
                         {
-                          "id": 63506,
+                          "id": 59890,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "lValueRequested": false,
                           "nodeType": "ElementaryTypeNameExpression",
-                          "src": "5785:7:99",
+                          "src": "5785:7:83",
                           "typeDescriptions": {
                             "typeIdentifier": "t_type$_t_uint256_$",
                             "typeString": "type(uint256)"
                           },
                           "typeName": {
-                            "id": 63505,
+                            "id": 59889,
                             "name": "uint256",
                             "nodeType": "ElementaryTypeName",
-                            "src": "5785:7:99",
+                            "src": "5785:7:83",
                             "typeDescriptions": {}
                           }
                         }
@@ -7418,18 +7414,18 @@ export const ERC4626 =
                             "typeString": "type(uint256)"
                           }
                         ],
-                        "id": 63504,
+                        "id": 59888,
                         "name": "type",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": -27,
-                        "src": "5780:4:99",
+                        "src": "5780:4:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_metatype_pure$__$returns$__$",
                           "typeString": "function () pure"
                         }
                       },
-                      "id": 63507,
+                      "id": 59891,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -7438,31 +7434,31 @@ export const ERC4626 =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "5780:13:99",
+                      "src": "5780:13:83",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_magic_meta_type_t_uint256",
                         "typeString": "type(uint256)"
                       }
                     },
-                    "id": 63508,
+                    "id": 59892,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
                     "lValueRequested": false,
-                    "memberLocation": "5794:3:99",
+                    "memberLocation": "5794:3:83",
                     "memberName": "max",
                     "nodeType": "MemberAccess",
-                    "src": "5780:17:99",
+                    "src": "5780:17:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 63503,
-                  "id": 63509,
+                  "functionReturnParameters": 59887,
+                  "id": 59893,
                   "nodeType": "Return",
-                  "src": "5773:24:99"
+                  "src": "5773:24:83"
                 }
               ]
             },
@@ -7471,20 +7467,20 @@ export const ERC4626 =
             "kind": "function",
             "modifiers": [],
             "name": "maxDeposit",
-            "nameLocation": "5705:10:99",
+            "nameLocation": "5705:10:83",
             "parameters": {
-              "id": 63500,
+              "id": 59884,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 63499,
+                  "id": 59883,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63511,
-                  "src": "5716:7:99",
+                  "scope": 59895,
+                  "src": "5716:7:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -7492,10 +7488,10 @@ export const ERC4626 =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 63498,
+                    "id": 59882,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5716:7:99",
+                    "src": "5716:7:83",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -7505,21 +7501,21 @@ export const ERC4626 =
                   "visibility": "internal"
                 }
               ],
-              "src": "5715:9:99"
+              "src": "5715:9:83"
             },
             "returnParameters": {
-              "id": 63503,
+              "id": 59887,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 63502,
+                  "id": 59886,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63511,
-                  "src": "5754:7:99",
+                  "scope": 59895,
+                  "src": "5754:7:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -7527,10 +7523,10 @@ export const ERC4626 =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 63501,
+                    "id": 59885,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5754:7:99",
+                    "src": "5754:7:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -7539,22 +7535,22 @@ export const ERC4626 =
                   "visibility": "internal"
                 }
               ],
-              "src": "5753:9:99"
+              "src": "5753:9:83"
             },
-            "scope": 63568,
+            "scope": 59952,
             "stateMutability": "view",
             "virtual": true,
             "visibility": "public"
           },
           {
-            "id": 63525,
+            "id": 59909,
             "nodeType": "FunctionDefinition",
-            "src": "5810:105:99",
+            "src": "5810:105:83",
             "nodes": [],
             "body": {
-              "id": 63524,
+              "id": 59908,
               "nodeType": "Block",
-              "src": "5874:41:99",
+              "src": "5874:41:83",
               "nodes": [],
               "statements": [
                 {
@@ -7562,22 +7558,22 @@ export const ERC4626 =
                     "expression": {
                       "arguments": [
                         {
-                          "id": 63520,
+                          "id": 59904,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "lValueRequested": false,
                           "nodeType": "ElementaryTypeNameExpression",
-                          "src": "5896:7:99",
+                          "src": "5896:7:83",
                           "typeDescriptions": {
                             "typeIdentifier": "t_type$_t_uint256_$",
                             "typeString": "type(uint256)"
                           },
                           "typeName": {
-                            "id": 63519,
+                            "id": 59903,
                             "name": "uint256",
                             "nodeType": "ElementaryTypeName",
-                            "src": "5896:7:99",
+                            "src": "5896:7:83",
                             "typeDescriptions": {}
                           }
                         }
@@ -7589,18 +7585,18 @@ export const ERC4626 =
                             "typeString": "type(uint256)"
                           }
                         ],
-                        "id": 63518,
+                        "id": 59902,
                         "name": "type",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": -27,
-                        "src": "5891:4:99",
+                        "src": "5891:4:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_metatype_pure$__$returns$__$",
                           "typeString": "function () pure"
                         }
                       },
-                      "id": 63521,
+                      "id": 59905,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -7609,31 +7605,31 @@ export const ERC4626 =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "5891:13:99",
+                      "src": "5891:13:83",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_magic_meta_type_t_uint256",
                         "typeString": "type(uint256)"
                       }
                     },
-                    "id": 63522,
+                    "id": 59906,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
                     "lValueRequested": false,
-                    "memberLocation": "5905:3:99",
+                    "memberLocation": "5905:3:83",
                     "memberName": "max",
                     "nodeType": "MemberAccess",
-                    "src": "5891:17:99",
+                    "src": "5891:17:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 63517,
-                  "id": 63523,
+                  "functionReturnParameters": 59901,
+                  "id": 59907,
                   "nodeType": "Return",
-                  "src": "5884:24:99"
+                  "src": "5884:24:83"
                 }
               ]
             },
@@ -7642,20 +7638,20 @@ export const ERC4626 =
             "kind": "function",
             "modifiers": [],
             "name": "maxMint",
-            "nameLocation": "5819:7:99",
+            "nameLocation": "5819:7:83",
             "parameters": {
-              "id": 63514,
+              "id": 59898,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 63513,
+                  "id": 59897,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63525,
-                  "src": "5827:7:99",
+                  "scope": 59909,
+                  "src": "5827:7:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -7663,10 +7659,10 @@ export const ERC4626 =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 63512,
+                    "id": 59896,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5827:7:99",
+                    "src": "5827:7:83",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -7676,21 +7672,21 @@ export const ERC4626 =
                   "visibility": "internal"
                 }
               ],
-              "src": "5826:9:99"
+              "src": "5826:9:83"
             },
             "returnParameters": {
-              "id": 63517,
+              "id": 59901,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 63516,
+                  "id": 59900,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63525,
-                  "src": "5865:7:99",
+                  "scope": 59909,
+                  "src": "5865:7:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -7698,10 +7694,10 @@ export const ERC4626 =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 63515,
+                    "id": 59899,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5865:7:99",
+                    "src": "5865:7:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -7710,22 +7706,22 @@ export const ERC4626 =
                   "visibility": "internal"
                 }
               ],
-              "src": "5864:9:99"
+              "src": "5864:9:83"
             },
-            "scope": 63568,
+            "scope": 59952,
             "stateMutability": "view",
             "virtual": true,
             "visibility": "public"
           },
           {
-            "id": 63539,
+            "id": 59923,
             "nodeType": "FunctionDefinition",
-            "src": "5921:131:99",
+            "src": "5921:131:83",
             "nodes": [],
             "body": {
-              "id": 63538,
+              "id": 59922,
               "nodeType": "Block",
-              "src": "5995:57:99",
+              "src": "5995:57:83",
               "nodes": [],
               "statements": [
                 {
@@ -7733,25 +7729,25 @@ export const ERC4626 =
                     "arguments": [
                       {
                         "baseExpression": {
-                          "id": 63533,
+                          "id": 59917,
                           "name": "balanceOf",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 63599,
-                          "src": "6028:9:99",
+                          "referencedDeclaration": 59983,
+                          "src": "6028:9:83",
                           "typeDescriptions": {
                             "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                             "typeString": "mapping(address => uint256)"
                           }
                         },
-                        "id": 63535,
+                        "id": 59919,
                         "indexExpression": {
-                          "id": 63534,
+                          "id": 59918,
                           "name": "owner",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 63527,
-                          "src": "6038:5:99",
+                          "referencedDeclaration": 59911,
+                          "src": "6038:5:83",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -7762,7 +7758,7 @@ export const ERC4626 =
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "IndexAccess",
-                        "src": "6028:16:99",
+                        "src": "6028:16:83",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -7776,18 +7772,18 @@ export const ERC4626 =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 63532,
+                      "id": 59916,
                       "name": "convertToAssets",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 63425,
-                      "src": "6012:15:99",
+                      "referencedDeclaration": 59809,
+                      "src": "6012:15:83",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_view$_t_uint256_$returns$_t_uint256_$",
                         "typeString": "function (uint256) view returns (uint256)"
                       }
                     },
-                    "id": 63536,
+                    "id": 59920,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -7796,17 +7792,17 @@ export const ERC4626 =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "6012:33:99",
+                    "src": "6012:33:83",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 63531,
-                  "id": 63537,
+                  "functionReturnParameters": 59915,
+                  "id": 59921,
                   "nodeType": "Return",
-                  "src": "6005:40:99"
+                  "src": "6005:40:83"
                 }
               ]
             },
@@ -7815,20 +7811,20 @@ export const ERC4626 =
             "kind": "function",
             "modifiers": [],
             "name": "maxWithdraw",
-            "nameLocation": "5930:11:99",
+            "nameLocation": "5930:11:83",
             "parameters": {
-              "id": 63528,
+              "id": 59912,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 63527,
+                  "id": 59911,
                   "mutability": "mutable",
                   "name": "owner",
-                  "nameLocation": "5950:5:99",
+                  "nameLocation": "5950:5:83",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63539,
-                  "src": "5942:13:99",
+                  "scope": 59923,
+                  "src": "5942:13:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -7836,10 +7832,10 @@ export const ERC4626 =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 63526,
+                    "id": 59910,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5942:7:99",
+                    "src": "5942:7:83",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -7849,21 +7845,21 @@ export const ERC4626 =
                   "visibility": "internal"
                 }
               ],
-              "src": "5941:15:99"
+              "src": "5941:15:83"
             },
             "returnParameters": {
-              "id": 63531,
+              "id": 59915,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 63530,
+                  "id": 59914,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63539,
-                  "src": "5986:7:99",
+                  "scope": 59923,
+                  "src": "5986:7:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -7871,10 +7867,10 @@ export const ERC4626 =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 63529,
+                    "id": 59913,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5986:7:99",
+                    "src": "5986:7:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -7883,46 +7879,46 @@ export const ERC4626 =
                   "visibility": "internal"
                 }
               ],
-              "src": "5985:9:99"
+              "src": "5985:9:83"
             },
-            "scope": 63568,
+            "scope": 59952,
             "stateMutability": "view",
             "virtual": true,
             "visibility": "public"
           },
           {
-            "id": 63551,
+            "id": 59935,
             "nodeType": "FunctionDefinition",
-            "src": "6058:112:99",
+            "src": "6058:112:83",
             "nodes": [],
             "body": {
-              "id": 63550,
+              "id": 59934,
               "nodeType": "Block",
-              "src": "6130:40:99",
+              "src": "6130:40:83",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "baseExpression": {
-                      "id": 63546,
+                      "id": 59930,
                       "name": "balanceOf",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 63599,
-                      "src": "6147:9:99",
+                      "referencedDeclaration": 59983,
+                      "src": "6147:9:83",
                       "typeDescriptions": {
                         "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                         "typeString": "mapping(address => uint256)"
                       }
                     },
-                    "id": 63548,
+                    "id": 59932,
                     "indexExpression": {
-                      "id": 63547,
+                      "id": 59931,
                       "name": "owner",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 63541,
-                      "src": "6157:5:99",
+                      "referencedDeclaration": 59925,
+                      "src": "6157:5:83",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -7933,16 +7929,16 @@ export const ERC4626 =
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "IndexAccess",
-                    "src": "6147:16:99",
+                    "src": "6147:16:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 63545,
-                  "id": 63549,
+                  "functionReturnParameters": 59929,
+                  "id": 59933,
                   "nodeType": "Return",
-                  "src": "6140:23:99"
+                  "src": "6140:23:83"
                 }
               ]
             },
@@ -7951,20 +7947,20 @@ export const ERC4626 =
             "kind": "function",
             "modifiers": [],
             "name": "maxRedeem",
-            "nameLocation": "6067:9:99",
+            "nameLocation": "6067:9:83",
             "parameters": {
-              "id": 63542,
+              "id": 59926,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 63541,
+                  "id": 59925,
                   "mutability": "mutable",
                   "name": "owner",
-                  "nameLocation": "6085:5:99",
+                  "nameLocation": "6085:5:83",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63551,
-                  "src": "6077:13:99",
+                  "scope": 59935,
+                  "src": "6077:13:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -7972,10 +7968,10 @@ export const ERC4626 =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 63540,
+                    "id": 59924,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "6077:7:99",
+                    "src": "6077:7:83",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -7985,21 +7981,21 @@ export const ERC4626 =
                   "visibility": "internal"
                 }
               ],
-              "src": "6076:15:99"
+              "src": "6076:15:83"
             },
             "returnParameters": {
-              "id": 63545,
+              "id": 59929,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 63544,
+                  "id": 59928,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63551,
-                  "src": "6121:7:99",
+                  "scope": 59935,
+                  "src": "6121:7:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -8007,10 +8003,10 @@ export const ERC4626 =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 63543,
+                    "id": 59927,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "6121:7:99",
+                    "src": "6121:7:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -8019,22 +8015,22 @@ export const ERC4626 =
                   "visibility": "internal"
                 }
               ],
-              "src": "6120:9:99"
+              "src": "6120:9:83"
             },
-            "scope": 63568,
+            "scope": 59952,
             "stateMutability": "view",
             "virtual": true,
             "visibility": "public"
           },
           {
-            "id": 63559,
+            "id": 59943,
             "nodeType": "FunctionDefinition",
-            "src": "6362:75:99",
+            "src": "6362:75:83",
             "nodes": [],
             "body": {
-              "id": 63558,
+              "id": 59942,
               "nodeType": "Block",
-              "src": "6435:2:99",
+              "src": "6435:2:83",
               "nodes": [],
               "statements": []
             },
@@ -8042,20 +8038,20 @@ export const ERC4626 =
             "kind": "function",
             "modifiers": [],
             "name": "beforeWithdraw",
-            "nameLocation": "6371:14:99",
+            "nameLocation": "6371:14:83",
             "parameters": {
-              "id": 63556,
+              "id": 59940,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 63553,
+                  "id": 59937,
                   "mutability": "mutable",
                   "name": "assets",
-                  "nameLocation": "6394:6:99",
+                  "nameLocation": "6394:6:83",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63559,
-                  "src": "6386:14:99",
+                  "scope": 59943,
+                  "src": "6386:14:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -8063,10 +8059,10 @@ export const ERC4626 =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 63552,
+                    "id": 59936,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "6386:7:99",
+                    "src": "6386:7:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -8076,13 +8072,13 @@ export const ERC4626 =
                 },
                 {
                   "constant": false,
-                  "id": 63555,
+                  "id": 59939,
                   "mutability": "mutable",
                   "name": "shares",
-                  "nameLocation": "6410:6:99",
+                  "nameLocation": "6410:6:83",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63559,
-                  "src": "6402:14:99",
+                  "scope": 59943,
+                  "src": "6402:14:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -8090,10 +8086,10 @@ export const ERC4626 =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 63554,
+                    "id": 59938,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "6402:7:99",
+                    "src": "6402:7:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -8102,28 +8098,28 @@ export const ERC4626 =
                   "visibility": "internal"
                 }
               ],
-              "src": "6385:32:99"
+              "src": "6385:32:83"
             },
             "returnParameters": {
-              "id": 63557,
+              "id": 59941,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "6435:0:99"
+              "src": "6435:0:83"
             },
-            "scope": 63568,
+            "scope": 59952,
             "stateMutability": "nonpayable",
             "virtual": true,
             "visibility": "internal"
           },
           {
-            "id": 63567,
+            "id": 59951,
             "nodeType": "FunctionDefinition",
-            "src": "6443:73:99",
+            "src": "6443:73:83",
             "nodes": [],
             "body": {
-              "id": 63566,
+              "id": 59950,
               "nodeType": "Block",
-              "src": "6514:2:99",
+              "src": "6514:2:83",
               "nodes": [],
               "statements": []
             },
@@ -8131,20 +8127,20 @@ export const ERC4626 =
             "kind": "function",
             "modifiers": [],
             "name": "afterDeposit",
-            "nameLocation": "6452:12:99",
+            "nameLocation": "6452:12:83",
             "parameters": {
-              "id": 63564,
+              "id": 59948,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 63561,
+                  "id": 59945,
                   "mutability": "mutable",
                   "name": "assets",
-                  "nameLocation": "6473:6:99",
+                  "nameLocation": "6473:6:83",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63567,
-                  "src": "6465:14:99",
+                  "scope": 59951,
+                  "src": "6465:14:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -8152,10 +8148,10 @@ export const ERC4626 =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 63560,
+                    "id": 59944,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "6465:7:99",
+                    "src": "6465:7:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -8165,13 +8161,13 @@ export const ERC4626 =
                 },
                 {
                   "constant": false,
-                  "id": 63563,
+                  "id": 59947,
                   "mutability": "mutable",
                   "name": "shares",
-                  "nameLocation": "6489:6:99",
+                  "nameLocation": "6489:6:83",
                   "nodeType": "VariableDeclaration",
-                  "scope": 63567,
-                  "src": "6481:14:99",
+                  "scope": 59951,
+                  "src": "6481:14:83",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -8179,10 +8175,10 @@ export const ERC4626 =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 63562,
+                    "id": 59946,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "6481:7:99",
+                    "src": "6481:7:83",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -8191,15 +8187,15 @@ export const ERC4626 =
                   "visibility": "internal"
                 }
               ],
-              "src": "6464:32:99"
+              "src": "6464:32:83"
             },
             "returnParameters": {
-              "id": 63565,
+              "id": 59949,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "6514:0:99"
+              "src": "6514:0:83"
             },
-            "scope": 63568,
+            "scope": 59952,
             "stateMutability": "nonpayable",
             "virtual": true,
             "visibility": "internal"
@@ -8209,41 +8205,41 @@ export const ERC4626 =
         "baseContracts": [
           {
             "baseName": {
-              "id": 63057,
+              "id": 59441,
               "name": "ERC20",
               "nameLocations": [
-                "427:5:99"
+                "427:5:83"
               ],
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 63956,
-              "src": "427:5:99"
+              "referencedDeclaration": 60340,
+              "src": "427:5:83"
             },
-            "id": 63058,
+            "id": 59442,
             "nodeType": "InheritanceSpecifier",
-            "src": "427:5:99"
+            "src": "427:5:83"
           }
         ],
         "canonicalName": "ERC4626",
         "contractDependencies": [],
         "contractKind": "contract",
         "documentation": {
-          "id": 63056,
+          "id": 59440,
           "nodeType": "StructuredDocumentation",
-          "src": "240:158:99",
+          "src": "240:158:83",
           "text": "@notice Minimal ERC4626 tokenized Vault implementation.\n @author Solmate (https://github.com/transmissions11/solmate/blob/main/src/mixins/ERC4626.sol)"
         },
         "fullyImplemented": false,
         "linearizedBaseContracts": [
-          63568,
-          63956
+          59952,
+          60340
         ],
         "name": "ERC4626",
-        "nameLocation": "416:7:99",
-        "scope": 63569,
+        "nameLocation": "416:7:83",
+        "scope": 59953,
         "usedErrors": []
       }
     ],
     "license": "AGPL-3.0-only"
   },
-  "id": 99
+  "id": 83
 } as const;

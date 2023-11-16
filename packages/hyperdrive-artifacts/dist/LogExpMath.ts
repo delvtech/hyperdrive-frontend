@@ -2,17 +2,17 @@ export const LogExpMath =
 {
   "abi": [],
   "bytecode": {
-    "object": "0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220fc90df38d5c15e0532daa12368b7a80907bd18efec3c5ec388579a437accaf1e64736f6c63430008130033",
-    "sourceMap": "1671:19613:114:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;1671:19613:114;;;;;;;;;;;;;;;;;",
+    "object": "0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220499f9fccb7a89fcf4958c61d2a30ffc897814597f4962eeb6c2dc2516b1d09c464736f6c63430008130033",
+    "sourceMap": "1671:19613:96:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;1671:19613:96;;;;;;;;;;;;;;;;;",
     "linkReferences": {}
   },
   "deployedBytecode": {
-    "object": "0x73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220fc90df38d5c15e0532daa12368b7a80907bd18efec3c5ec388579a437accaf1e64736f6c63430008130033",
-    "sourceMap": "1671:19613:114:-:0;;;;;;;;",
+    "object": "0x73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220499f9fccb7a89fcf4958c61d2a30ffc897814597f4962eeb6c2dc2516b1d09c464736f6c63430008130033",
+    "sourceMap": "1671:19613:96:-:0;;;;;;;;",
     "linkReferences": {}
   },
   "methodIdentifiers": {},
-  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"author\":\"Fernando Martinelli - @fernandomartinelliSergio Yuhjtman - @sergioyuhjtmanDaniel Fernandez - @dmf7z\",\"details\":\"Exponentiation and logarithm functions for 18 decimal fixed point numbers (both base and exponent/argument). Exponentiation and logarithm with arbitrary bases (x^y and log_x(y)) are implemented by conversion to natural exponentiation and logarithm (where the base is Euler's number).\",\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"test/3rdPartyLibs/LogExpMath.sol\":\"LogExpMath\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@aave/=lib/aave-v3-core/contracts/\",\":aave-v3-core/=lib/aave-v3-core/\",\":create3-factory/=lib/yield-daddy/lib/create3-factory/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\",\":yield-daddy/=lib/yield-daddy/\"]},\"sources\":{\"test/3rdPartyLibs/BalancerErrors.sol\":{\"keccak256\":\"0xd4bc389c3bb940fe0ebd712a06c219dd8ebcaa8749fa5e166c8a373ca7eaa4ca\",\"license\":\"GPL-3.0-or-later\",\"urls\":[\"bzz-raw://9d0847b6535322c1ffa9d2783b32557f80aed5e8de430c824a496ea3b6f58611\",\"dweb:/ipfs/QmRDqDSkP3FDvFYbPQNXwYq25FbYsx1UEYSg11caiw2xtU\"]},\"test/3rdPartyLibs/LogExpMath.sol\":{\"keccak256\":\"0x6ce1763535e5457f8e6132d74a1d16b857fb5eac7a63a9773df5768095513dee\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://36dfca19e82dd52bc30eab2aa2441e59cc9dbac583d65a02a1b4a045620258e9\",\"dweb:/ipfs/QmbyuAJ9e1FnaWJB1aizXR5DfiAXrXAaRT9B8DPwPQboM1\"]}},\"version\":1}",
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"author\":\"Fernando Martinelli - @fernandomartinelliSergio Yuhjtman - @sergioyuhjtmanDaniel Fernandez - @dmf7z\",\"details\":\"Exponentiation and logarithm functions for 18 decimal fixed point numbers (both base and exponent/argument). Exponentiation and logarithm with arbitrary bases (x^y and log_x(y)) are implemented by conversion to natural exponentiation and logarithm (where the base is Euler's number).\",\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"test/3rdPartyLibs/LogExpMath.sol\":\"LogExpMath\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":aave-v3-core/=lib/aave-v3-core/\",\":create3-factory/=lib/yield-daddy/lib/create3-factory/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\",\":solmate/=lib/solmate/src/\",\":yield-daddy/=lib/yield-daddy/\"]},\"sources\":{\"test/3rdPartyLibs/BalancerErrors.sol\":{\"keccak256\":\"0xd4bc389c3bb940fe0ebd712a06c219dd8ebcaa8749fa5e166c8a373ca7eaa4ca\",\"license\":\"GPL-3.0-or-later\",\"urls\":[\"bzz-raw://9d0847b6535322c1ffa9d2783b32557f80aed5e8de430c824a496ea3b6f58611\",\"dweb:/ipfs/QmRDqDSkP3FDvFYbPQNXwYq25FbYsx1UEYSg11caiw2xtU\"]},\"test/3rdPartyLibs/LogExpMath.sol\":{\"keccak256\":\"0x6ce1763535e5457f8e6132d74a1d16b857fb5eac7a63a9773df5768095513dee\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://36dfca19e82dd52bc30eab2aa2441e59cc9dbac583d65a02a1b4a045620258e9\",\"dweb:/ipfs/QmbyuAJ9e1FnaWJB1aizXR5DfiAXrXAaRT9B8DPwPQboM1\"]}},\"version\":1}",
   "metadata": {
     "compiler": {
       "version": "0.8.19+commit.7dd6d404"
@@ -33,14 +33,10 @@ export const LogExpMath =
     },
     "settings": {
       "remappings": [
-        "@aave/=lib/aave-v3-core/contracts/",
         "aave-v3-core/=lib/aave-v3-core/",
         "create3-factory/=lib/yield-daddy/lib/create3-factory/",
         "ds-test/=lib/forge-std/lib/ds-test/src/",
-        "erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/",
         "forge-std/=lib/forge-std/src/",
-        "openzeppelin-contracts/=lib/openzeppelin-contracts/",
-        "openzeppelin/=lib/openzeppelin-contracts/contracts/",
         "solmate/=lib/solmate/src/",
         "yield-daddy/=lib/yield-daddy/"
       ],
@@ -78,26 +74,26 @@ export const LogExpMath =
   },
   "ast": {
     "absolutePath": "test/3rdPartyLibs/LogExpMath.sol",
-    "id": 69445,
+    "id": 64331,
     "exportedSymbols": {
       "BalancerErrors": [
-        68144
+        63030
       ],
       "LogExpMath": [
-        69444
+        64330
       ],
       "_require": [
-        67588,
-        67607
+        62474,
+        62493
       ]
     },
     "nodeType": "SourceUnit",
-    "src": "1094:20191:114",
+    "src": "1094:20191:96",
     "nodes": [
       {
-        "id": 68146,
+        "id": 63032,
         "nodeType": "PragmaDirective",
-        "src": "1094:23:114",
+        "src": "1094:23:96",
         "nodes": [],
         "literals": [
           "solidity",
@@ -106,35 +102,35 @@ export const LogExpMath =
         ]
       },
       {
-        "id": 68149,
+        "id": 63035,
         "nodeType": "ImportDirective",
-        "src": "1119:80:114",
+        "src": "1119:80:96",
         "nodes": [],
         "absolutePath": "test/3rdPartyLibs/BalancerErrors.sol",
         "file": "test/3rdPartyLibs/BalancerErrors.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 69445,
-        "sourceUnit": 68145,
+        "scope": 64331,
+        "sourceUnit": 63031,
         "symbolAliases": [
           {
             "foreign": {
-              "id": 68147,
+              "id": 63033,
               "name": "BalancerErrors",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "referencedDeclaration": 68144,
-              "src": "1128:14:114",
+              "referencedDeclaration": 63030,
+              "src": "1128:14:96",
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
           },
           {
             "foreign": {
-              "id": 68148,
+              "id": 63034,
               "name": "_require",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "src": "1144:8:114",
+              "src": "1144:8:96",
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
@@ -143,20 +139,20 @@ export const LogExpMath =
         "unitAlias": ""
       },
       {
-        "id": 69444,
+        "id": 64330,
         "nodeType": "ContractDefinition",
-        "src": "1671:19613:114",
+        "src": "1671:19613:96",
         "nodes": [
           {
-            "id": 68153,
+            "id": 63039,
             "nodeType": "VariableDeclaration",
-            "src": "1951:29:114",
+            "src": "1951:29:96",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "ONE_18",
-            "nameLocation": "1967:6:114",
-            "scope": 69444,
+            "nameLocation": "1967:6:96",
+            "scope": 64330,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -164,10 +160,10 @@ export const LogExpMath =
               "typeString": "int256"
             },
             "typeName": {
-              "id": 68151,
+              "id": 63037,
               "name": "int256",
               "nodeType": "ElementaryTypeName",
-              "src": "1951:6:114",
+              "src": "1951:6:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_int256",
                 "typeString": "int256"
@@ -175,14 +171,14 @@ export const LogExpMath =
             },
             "value": {
               "hexValue": "31653138",
-              "id": 68152,
+              "id": 63038,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "1976:4:114",
+              "src": "1976:4:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_1000000000000000000_by_1",
                 "typeString": "int_const 1000000000000000000"
@@ -192,15 +188,15 @@ export const LogExpMath =
             "visibility": "internal"
           },
           {
-            "id": 68156,
+            "id": 63042,
             "nodeType": "VariableDeclaration",
-            "src": "2141:29:114",
+            "src": "2141:29:96",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "ONE_20",
-            "nameLocation": "2157:6:114",
-            "scope": 69444,
+            "nameLocation": "2157:6:96",
+            "scope": 64330,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -208,10 +204,10 @@ export const LogExpMath =
               "typeString": "int256"
             },
             "typeName": {
-              "id": 68154,
+              "id": 63040,
               "name": "int256",
               "nodeType": "ElementaryTypeName",
-              "src": "2141:6:114",
+              "src": "2141:6:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_int256",
                 "typeString": "int256"
@@ -219,14 +215,14 @@ export const LogExpMath =
             },
             "value": {
               "hexValue": "31653230",
-              "id": 68155,
+              "id": 63041,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "2166:4:114",
+              "src": "2166:4:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_100000000000000000000_by_1",
                 "typeString": "int_const 100000000000000000000"
@@ -236,15 +232,15 @@ export const LogExpMath =
             "visibility": "internal"
           },
           {
-            "id": 68159,
+            "id": 63045,
             "nodeType": "VariableDeclaration",
-            "src": "2176:29:114",
+            "src": "2176:29:96",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "ONE_36",
-            "nameLocation": "2192:6:114",
-            "scope": 69444,
+            "nameLocation": "2192:6:96",
+            "scope": 64330,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -252,10 +248,10 @@ export const LogExpMath =
               "typeString": "int256"
             },
             "typeName": {
-              "id": 68157,
+              "id": 63043,
               "name": "int256",
               "nodeType": "ElementaryTypeName",
-              "src": "2176:6:114",
+              "src": "2176:6:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_int256",
                 "typeString": "int256"
@@ -263,14 +259,14 @@ export const LogExpMath =
             },
             "value": {
               "hexValue": "31653336",
-              "id": 68158,
+              "id": 63044,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "2201:4:114",
+              "src": "2201:4:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_1000000000000000000000000000000000000_by_1",
                 "typeString": "int_const 1000...(29 digits omitted)...0000"
@@ -280,15 +276,15 @@ export const LogExpMath =
             "visibility": "internal"
           },
           {
-            "id": 68162,
+            "id": 63048,
             "nodeType": "VariableDeclaration",
-            "src": "2722:45:114",
+            "src": "2722:45:96",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "MAX_NATURAL_EXPONENT",
-            "nameLocation": "2738:20:114",
-            "scope": 69444,
+            "nameLocation": "2738:20:96",
+            "scope": 64330,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -296,10 +292,10 @@ export const LogExpMath =
               "typeString": "int256"
             },
             "typeName": {
-              "id": 68160,
+              "id": 63046,
               "name": "int256",
               "nodeType": "ElementaryTypeName",
-              "src": "2722:6:114",
+              "src": "2722:6:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_int256",
                 "typeString": "int256"
@@ -307,14 +303,14 @@ export const LogExpMath =
             },
             "value": {
               "hexValue": "313330653138",
-              "id": 68161,
+              "id": 63047,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "2761:6:114",
+              "src": "2761:6:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_130000000000000000000_by_1",
                 "typeString": "int_const 130000000000000000000"
@@ -324,15 +320,15 @@ export const LogExpMath =
             "visibility": "internal"
           },
           {
-            "id": 68166,
+            "id": 63052,
             "nodeType": "VariableDeclaration",
-            "src": "2773:45:114",
+            "src": "2773:45:96",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "MIN_NATURAL_EXPONENT",
-            "nameLocation": "2789:20:114",
-            "scope": 69444,
+            "nameLocation": "2789:20:96",
+            "scope": 64330,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -340,17 +336,17 @@ export const LogExpMath =
               "typeString": "int256"
             },
             "typeName": {
-              "id": 68163,
+              "id": 63049,
               "name": "int256",
               "nodeType": "ElementaryTypeName",
-              "src": "2773:6:114",
+              "src": "2773:6:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_int256",
                 "typeString": "int256"
               }
             },
             "value": {
-              "id": 68165,
+              "id": 63051,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -358,17 +354,17 @@ export const LogExpMath =
               "nodeType": "UnaryOperation",
               "operator": "-",
               "prefix": true,
-              "src": "2812:6:114",
+              "src": "2812:6:96",
               "subExpression": {
                 "hexValue": "3431653138",
-                "id": 68164,
+                "id": 63050,
                 "isConstant": false,
                 "isLValue": false,
                 "isPure": true,
                 "kind": "number",
                 "lValueRequested": false,
                 "nodeType": "Literal",
-                "src": "2813:5:114",
+                "src": "2813:5:96",
                 "typeDescriptions": {
                   "typeIdentifier": "t_rational_41000000000000000000_by_1",
                   "typeString": "int_const 41000000000000000000"
@@ -383,15 +379,15 @@ export const LogExpMath =
             "visibility": "internal"
           },
           {
-            "id": 68171,
+            "id": 63057,
             "nodeType": "VariableDeclaration",
-            "src": "2969:49:114",
+            "src": "2969:49:96",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "LN_36_LOWER_BOUND",
-            "nameLocation": "2985:17:114",
-            "scope": 69444,
+            "nameLocation": "2985:17:96",
+            "scope": 64330,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -399,10 +395,10 @@ export const LogExpMath =
               "typeString": "int256"
             },
             "typeName": {
-              "id": 68167,
+              "id": 63053,
               "name": "int256",
               "nodeType": "ElementaryTypeName",
-              "src": "2969:6:114",
+              "src": "2969:6:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_int256",
                 "typeString": "int256"
@@ -413,18 +409,18 @@ export const LogExpMath =
                 "typeIdentifier": "t_int256",
                 "typeString": "int256"
               },
-              "id": 68170,
+              "id": 63056,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "lValueRequested": false,
               "leftExpression": {
-                "id": 68168,
+                "id": 63054,
                 "name": "ONE_18",
                 "nodeType": "Identifier",
                 "overloadedDeclarations": [],
-                "referencedDeclaration": 68153,
-                "src": "3005:6:114",
+                "referencedDeclaration": 63039,
+                "src": "3005:6:96",
                 "typeDescriptions": {
                   "typeIdentifier": "t_int256",
                   "typeString": "int256"
@@ -434,21 +430,21 @@ export const LogExpMath =
               "operator": "-",
               "rightExpression": {
                 "hexValue": "31653137",
-                "id": 68169,
+                "id": 63055,
                 "isConstant": false,
                 "isLValue": false,
                 "isPure": true,
                 "kind": "number",
                 "lValueRequested": false,
                 "nodeType": "Literal",
-                "src": "3014:4:114",
+                "src": "3014:4:96",
                 "typeDescriptions": {
                   "typeIdentifier": "t_rational_100000000000000000_by_1",
                   "typeString": "int_const 100000000000000000"
                 },
                 "value": "1e17"
               },
-              "src": "3005:13:114",
+              "src": "3005:13:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_int256",
                 "typeString": "int256"
@@ -457,15 +453,15 @@ export const LogExpMath =
             "visibility": "internal"
           },
           {
-            "id": 68176,
+            "id": 63062,
             "nodeType": "VariableDeclaration",
-            "src": "3024:49:114",
+            "src": "3024:49:96",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "LN_36_UPPER_BOUND",
-            "nameLocation": "3040:17:114",
-            "scope": 69444,
+            "nameLocation": "3040:17:96",
+            "scope": 64330,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -473,10 +469,10 @@ export const LogExpMath =
               "typeString": "int256"
             },
             "typeName": {
-              "id": 68172,
+              "id": 63058,
               "name": "int256",
               "nodeType": "ElementaryTypeName",
-              "src": "3024:6:114",
+              "src": "3024:6:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_int256",
                 "typeString": "int256"
@@ -487,18 +483,18 @@ export const LogExpMath =
                 "typeIdentifier": "t_int256",
                 "typeString": "int256"
               },
-              "id": 68175,
+              "id": 63061,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "lValueRequested": false,
               "leftExpression": {
-                "id": 68173,
+                "id": 63059,
                 "name": "ONE_18",
                 "nodeType": "Identifier",
                 "overloadedDeclarations": [],
-                "referencedDeclaration": 68153,
-                "src": "3060:6:114",
+                "referencedDeclaration": 63039,
+                "src": "3060:6:96",
                 "typeDescriptions": {
                   "typeIdentifier": "t_int256",
                   "typeString": "int256"
@@ -508,21 +504,21 @@ export const LogExpMath =
               "operator": "+",
               "rightExpression": {
                 "hexValue": "31653137",
-                "id": 68174,
+                "id": 63060,
                 "isConstant": false,
                 "isLValue": false,
                 "isPure": true,
                 "kind": "number",
                 "lValueRequested": false,
                 "nodeType": "Literal",
-                "src": "3069:4:114",
+                "src": "3069:4:96",
                 "typeDescriptions": {
                   "typeIdentifier": "t_rational_100000000000000000_by_1",
                   "typeString": "int_const 100000000000000000"
                 },
                 "value": "1e17"
               },
-              "src": "3060:13:114",
+              "src": "3060:13:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_int256",
                 "typeString": "int256"
@@ -531,15 +527,15 @@ export const LogExpMath =
             "visibility": "internal"
           },
           {
-            "id": 68186,
+            "id": 63072,
             "nodeType": "VariableDeclaration",
-            "src": "3080:65:114",
+            "src": "3080:65:96",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "MILD_EXPONENT_BOUND",
-            "nameLocation": "3097:19:114",
-            "scope": 69444,
+            "nameLocation": "3097:19:96",
+            "scope": 64330,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -547,10 +543,10 @@ export const LogExpMath =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 68177,
+              "id": 63063,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "3080:7:114",
+              "src": "3080:7:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -561,7 +557,7 @@ export const LogExpMath =
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
               },
-              "id": 68185,
+              "id": 63071,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -571,21 +567,21 @@ export const LogExpMath =
                   "typeIdentifier": "t_rational_28948022309329048855892746252171976963317496166410141009864396001978282409984_by_1",
                   "typeString": "int_const 2894...(69 digits omitted)...9984"
                 },
-                "id": 68180,
+                "id": 63066,
                 "isConstant": false,
                 "isLValue": false,
                 "isPure": true,
                 "lValueRequested": false,
                 "leftExpression": {
                   "hexValue": "32",
-                  "id": 68178,
+                  "id": 63064,
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": true,
                   "kind": "number",
                   "lValueRequested": false,
                   "nodeType": "Literal",
-                  "src": "3119:1:114",
+                  "src": "3119:1:96",
                   "typeDescriptions": {
                     "typeIdentifier": "t_rational_2_by_1",
                     "typeString": "int_const 2"
@@ -596,21 +592,21 @@ export const LogExpMath =
                 "operator": "**",
                 "rightExpression": {
                   "hexValue": "323534",
-                  "id": 68179,
+                  "id": 63065,
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": true,
                   "kind": "number",
                   "lValueRequested": false,
                   "nodeType": "Literal",
-                  "src": "3124:3:114",
+                  "src": "3124:3:96",
                   "typeDescriptions": {
                     "typeIdentifier": "t_rational_254_by_1",
                     "typeString": "int_const 254"
                   },
                   "value": "254"
                 },
-                "src": "3119:8:114",
+                "src": "3119:8:96",
                 "typeDescriptions": {
                   "typeIdentifier": "t_rational_28948022309329048855892746252171976963317496166410141009864396001978282409984_by_1",
                   "typeString": "int_const 2894...(69 digits omitted)...9984"
@@ -621,12 +617,12 @@ export const LogExpMath =
               "rightExpression": {
                 "arguments": [
                   {
-                    "id": 68183,
+                    "id": 63069,
                     "name": "ONE_20",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 68156,
-                    "src": "3138:6:114",
+                    "referencedDeclaration": 63042,
+                    "src": "3138:6:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
@@ -640,26 +636,26 @@ export const LogExpMath =
                       "typeString": "int256"
                     }
                   ],
-                  "id": 68182,
+                  "id": 63068,
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": true,
                   "lValueRequested": false,
                   "nodeType": "ElementaryTypeNameExpression",
-                  "src": "3130:7:114",
+                  "src": "3130:7:96",
                   "typeDescriptions": {
                     "typeIdentifier": "t_type$_t_uint256_$",
                     "typeString": "type(uint256)"
                   },
                   "typeName": {
-                    "id": 68181,
+                    "id": 63067,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3130:7:114",
+                    "src": "3130:7:96",
                     "typeDescriptions": {}
                   }
                 },
-                "id": 68184,
+                "id": 63070,
                 "isConstant": false,
                 "isLValue": false,
                 "isPure": true,
@@ -668,14 +664,14 @@ export const LogExpMath =
                 "nameLocations": [],
                 "names": [],
                 "nodeType": "FunctionCall",
-                "src": "3130:15:114",
+                "src": "3130:15:96",
                 "tryCall": false,
                 "typeDescriptions": {
                   "typeIdentifier": "t_uint256",
                   "typeString": "uint256"
                 }
               },
-              "src": "3119:26:114",
+              "src": "3119:26:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -684,15 +680,15 @@ export const LogExpMath =
             "visibility": "internal"
           },
           {
-            "id": 68189,
+            "id": 63075,
             "nodeType": "VariableDeclaration",
-            "src": "3180:42:114",
+            "src": "3180:42:96",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "x0",
-            "nameLocation": "3196:2:114",
-            "scope": 69444,
+            "nameLocation": "3196:2:96",
+            "scope": 64330,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -700,10 +696,10 @@ export const LogExpMath =
               "typeString": "int256"
             },
             "typeName": {
-              "id": 68187,
+              "id": 63073,
               "name": "int256",
               "nodeType": "ElementaryTypeName",
-              "src": "3180:6:114",
+              "src": "3180:6:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_int256",
                 "typeString": "int256"
@@ -711,14 +707,14 @@ export const LogExpMath =
             },
             "value": {
               "hexValue": "313238303030303030303030303030303030303030",
-              "id": 68188,
+              "id": 63074,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "3201:21:114",
+              "src": "3201:21:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_128000000000000000000_by_1",
                 "typeString": "int_const 128000000000000000000"
@@ -728,15 +724,15 @@ export const LogExpMath =
             "visibility": "internal"
           },
           {
-            "id": 68192,
+            "id": 63078,
             "nodeType": "VariableDeclaration",
-            "src": "3236:85:114",
+            "src": "3236:85:96",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "a0",
-            "nameLocation": "3252:2:114",
-            "scope": 69444,
+            "nameLocation": "3252:2:96",
+            "scope": 64330,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -744,10 +740,10 @@ export const LogExpMath =
               "typeString": "int256"
             },
             "typeName": {
-              "id": 68190,
+              "id": 63076,
               "name": "int256",
               "nodeType": "ElementaryTypeName",
-              "src": "3236:6:114",
+              "src": "3236:6:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_int256",
                 "typeString": "int256"
@@ -755,14 +751,14 @@ export const LogExpMath =
             },
             "value": {
               "hexValue": "3338383737303834303539393435393530393232323030303030303030303030303030303030303030303030303030303030303030303030",
-              "id": 68191,
+              "id": 63077,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "3265:56:114",
+              "src": "3265:56:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_38877084059945950922200000000000000000000000000000000000_by_1",
                 "typeString": "int_const 3887...(48 digits omitted)...0000"
@@ -772,15 +768,15 @@ export const LogExpMath =
             "visibility": "internal"
           },
           {
-            "id": 68195,
+            "id": 63081,
             "nodeType": "VariableDeclaration",
-            "src": "3352:41:114",
+            "src": "3352:41:96",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "x1",
-            "nameLocation": "3368:2:114",
-            "scope": 69444,
+            "nameLocation": "3368:2:96",
+            "scope": 64330,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -788,10 +784,10 @@ export const LogExpMath =
               "typeString": "int256"
             },
             "typeName": {
-              "id": 68193,
+              "id": 63079,
               "name": "int256",
               "nodeType": "ElementaryTypeName",
-              "src": "3352:6:114",
+              "src": "3352:6:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_int256",
                 "typeString": "int256"
@@ -799,14 +795,14 @@ export const LogExpMath =
             },
             "value": {
               "hexValue": "3634303030303030303030303030303030303030",
-              "id": 68194,
+              "id": 63080,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "3373:20:114",
+              "src": "3373:20:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_64000000000000000000_by_1",
                 "typeString": "int_const 64000000000000000000"
@@ -816,15 +812,15 @@ export const LogExpMath =
             "visibility": "internal"
           },
           {
-            "id": 68198,
+            "id": 63084,
             "nodeType": "VariableDeclaration",
-            "src": "3407:49:114",
+            "src": "3407:49:96",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "a1",
-            "nameLocation": "3423:2:114",
-            "scope": 69444,
+            "nameLocation": "3423:2:96",
+            "scope": 64330,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -832,10 +828,10 @@ export const LogExpMath =
               "typeString": "int256"
             },
             "typeName": {
-              "id": 68196,
+              "id": 63082,
               "name": "int256",
               "nodeType": "ElementaryTypeName",
-              "src": "3407:6:114",
+              "src": "3407:6:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_int256",
                 "typeString": "int256"
@@ -843,14 +839,14 @@ export const LogExpMath =
             },
             "value": {
               "hexValue": "36323335313439303830383131363136383832393130303030303030",
-              "id": 68197,
+              "id": 63083,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "3428:28:114",
+              "src": "3428:28:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_6235149080811616882910000000_by_1",
                 "typeString": "int_const 6235149080811616882910000000"
@@ -860,15 +856,15 @@ export const LogExpMath =
             "visibility": "internal"
           },
           {
-            "id": 68201,
+            "id": 63087,
             "nodeType": "VariableDeclaration",
-            "src": "3516:43:114",
+            "src": "3516:43:96",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "x2",
-            "nameLocation": "3532:2:114",
-            "scope": 69444,
+            "nameLocation": "3532:2:96",
+            "scope": 64330,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -876,10 +872,10 @@ export const LogExpMath =
               "typeString": "int256"
             },
             "typeName": {
-              "id": 68199,
+              "id": 63085,
               "name": "int256",
               "nodeType": "ElementaryTypeName",
-              "src": "3516:6:114",
+              "src": "3516:6:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_int256",
                 "typeString": "int256"
@@ -887,14 +883,14 @@ export const LogExpMath =
             },
             "value": {
               "hexValue": "33323030303030303030303030303030303030303030",
-              "id": 68200,
+              "id": 63086,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "3537:22:114",
+              "src": "3537:22:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_3200000000000000000000_by_1",
                 "typeString": "int_const 3200000000000000000000"
@@ -904,15 +900,15 @@ export const LogExpMath =
             "visibility": "internal"
           },
           {
-            "id": 68204,
+            "id": 63090,
             "nodeType": "VariableDeclaration",
-            "src": "3573:55:114",
+            "src": "3573:55:96",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "a2",
-            "nameLocation": "3589:2:114",
-            "scope": 69444,
+            "nameLocation": "3589:2:96",
+            "scope": 64330,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -920,10 +916,10 @@ export const LogExpMath =
               "typeString": "int256"
             },
             "typeName": {
-              "id": 68202,
+              "id": 63088,
               "name": "int256",
               "nodeType": "ElementaryTypeName",
-              "src": "3573:6:114",
+              "src": "3573:6:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_int256",
                 "typeString": "int256"
@@ -931,14 +927,14 @@ export const LogExpMath =
             },
             "value": {
               "hexValue": "37383936323936303138323638303639353136313030303030303030303030303030",
-              "id": 68203,
+              "id": 63089,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "3594:34:114",
+              "src": "3594:34:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_7896296018268069516100000000000000_by_1",
                 "typeString": "int_const 7896...(26 digits omitted)...0000"
@@ -948,15 +944,15 @@ export const LogExpMath =
             "visibility": "internal"
           },
           {
-            "id": 68207,
+            "id": 63093,
             "nodeType": "VariableDeclaration",
-            "src": "3645:43:114",
+            "src": "3645:43:96",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "x3",
-            "nameLocation": "3661:2:114",
-            "scope": 69444,
+            "nameLocation": "3661:2:96",
+            "scope": 64330,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -964,10 +960,10 @@ export const LogExpMath =
               "typeString": "int256"
             },
             "typeName": {
-              "id": 68205,
+              "id": 63091,
               "name": "int256",
               "nodeType": "ElementaryTypeName",
-              "src": "3645:6:114",
+              "src": "3645:6:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_int256",
                 "typeString": "int256"
@@ -975,14 +971,14 @@ export const LogExpMath =
             },
             "value": {
               "hexValue": "31363030303030303030303030303030303030303030",
-              "id": 68206,
+              "id": 63092,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "3666:22:114",
+              "src": "3666:22:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_1600000000000000000000_by_1",
                 "typeString": "int_const 1600000000000000000000"
@@ -992,15 +988,15 @@ export const LogExpMath =
             "visibility": "internal"
           },
           {
-            "id": 68210,
+            "id": 63096,
             "nodeType": "VariableDeclaration",
-            "src": "3702:48:114",
+            "src": "3702:48:96",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "a3",
-            "nameLocation": "3718:2:114",
-            "scope": 69444,
+            "nameLocation": "3718:2:96",
+            "scope": 64330,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1008,10 +1004,10 @@ export const LogExpMath =
               "typeString": "int256"
             },
             "typeName": {
-              "id": 68208,
+              "id": 63094,
               "name": "int256",
               "nodeType": "ElementaryTypeName",
-              "src": "3702:6:114",
+              "src": "3702:6:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_int256",
                 "typeString": "int256"
@@ -1019,14 +1015,14 @@ export const LogExpMath =
             },
             "value": {
               "hexValue": "383838363131303532303530373837323633363736303030303030",
-              "id": 68209,
+              "id": 63095,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "3723:27:114",
+              "src": "3723:27:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_888611052050787263676000000_by_1",
                 "typeString": "int_const 888611052050787263676000000"
@@ -1036,15 +1032,15 @@ export const LogExpMath =
             "visibility": "internal"
           },
           {
-            "id": 68213,
+            "id": 63099,
             "nodeType": "VariableDeclaration",
-            "src": "3767:42:114",
+            "src": "3767:42:96",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "x4",
-            "nameLocation": "3783:2:114",
-            "scope": 69444,
+            "nameLocation": "3783:2:96",
+            "scope": 64330,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1052,10 +1048,10 @@ export const LogExpMath =
               "typeString": "int256"
             },
             "typeName": {
-              "id": 68211,
+              "id": 63097,
               "name": "int256",
               "nodeType": "ElementaryTypeName",
-              "src": "3767:6:114",
+              "src": "3767:6:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_int256",
                 "typeString": "int256"
@@ -1063,14 +1059,14 @@ export const LogExpMath =
             },
             "value": {
               "hexValue": "383030303030303030303030303030303030303030",
-              "id": 68212,
+              "id": 63098,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "3788:21:114",
+              "src": "3788:21:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_800000000000000000000_by_1",
                 "typeString": "int_const 800000000000000000000"
@@ -1080,15 +1076,15 @@ export const LogExpMath =
             "visibility": "internal"
           },
           {
-            "id": 68216,
+            "id": 63102,
             "nodeType": "VariableDeclaration",
-            "src": "3823:45:114",
+            "src": "3823:45:96",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "a4",
-            "nameLocation": "3839:2:114",
-            "scope": 69444,
+            "nameLocation": "3839:2:96",
+            "scope": 64330,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1096,10 +1092,10 @@ export const LogExpMath =
               "typeString": "int256"
             },
             "typeName": {
-              "id": 68214,
+              "id": 63100,
               "name": "int256",
               "nodeType": "ElementaryTypeName",
-              "src": "3823:6:114",
+              "src": "3823:6:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_int256",
                 "typeString": "int256"
@@ -1107,14 +1103,14 @@ export const LogExpMath =
             },
             "value": {
               "hexValue": "323938303935373938373034313732383237343734303030",
-              "id": 68215,
+              "id": 63101,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "3844:24:114",
+              "src": "3844:24:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_298095798704172827474000_by_1",
                 "typeString": "int_const 298095798704172827474000"
@@ -1124,15 +1120,15 @@ export const LogExpMath =
             "visibility": "internal"
           },
           {
-            "id": 68219,
+            "id": 63105,
             "nodeType": "VariableDeclaration",
-            "src": "3885:42:114",
+            "src": "3885:42:96",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "x5",
-            "nameLocation": "3901:2:114",
-            "scope": 69444,
+            "nameLocation": "3901:2:96",
+            "scope": 64330,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1140,10 +1136,10 @@ export const LogExpMath =
               "typeString": "int256"
             },
             "typeName": {
-              "id": 68217,
+              "id": 63103,
               "name": "int256",
               "nodeType": "ElementaryTypeName",
-              "src": "3885:6:114",
+              "src": "3885:6:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_int256",
                 "typeString": "int256"
@@ -1151,14 +1147,14 @@ export const LogExpMath =
             },
             "value": {
               "hexValue": "343030303030303030303030303030303030303030",
-              "id": 68218,
+              "id": 63104,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "3906:21:114",
+              "src": "3906:21:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_400000000000000000000_by_1",
                 "typeString": "int_const 400000000000000000000"
@@ -1168,15 +1164,15 @@ export const LogExpMath =
             "visibility": "internal"
           },
           {
-            "id": 68222,
+            "id": 63108,
             "nodeType": "VariableDeclaration",
-            "src": "3941:43:114",
+            "src": "3941:43:96",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "a5",
-            "nameLocation": "3957:2:114",
-            "scope": 69444,
+            "nameLocation": "3957:2:96",
+            "scope": 64330,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1184,10 +1180,10 @@ export const LogExpMath =
               "typeString": "int256"
             },
             "typeName": {
-              "id": 68220,
+              "id": 63106,
               "name": "int256",
               "nodeType": "ElementaryTypeName",
-              "src": "3941:6:114",
+              "src": "3941:6:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_int256",
                 "typeString": "int256"
@@ -1195,14 +1191,14 @@ export const LogExpMath =
             },
             "value": {
               "hexValue": "35343539383135303033333134343233393037383130",
-              "id": 68221,
+              "id": 63107,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "3962:22:114",
+              "src": "3962:22:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_5459815003314423907810_by_1",
                 "typeString": "int_const 5459815003314423907810"
@@ -1212,15 +1208,15 @@ export const LogExpMath =
             "visibility": "internal"
           },
           {
-            "id": 68225,
+            "id": 63111,
             "nodeType": "VariableDeclaration",
-            "src": "4001:42:114",
+            "src": "4001:42:96",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "x6",
-            "nameLocation": "4017:2:114",
-            "scope": 69444,
+            "nameLocation": "4017:2:96",
+            "scope": 64330,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1228,10 +1224,10 @@ export const LogExpMath =
               "typeString": "int256"
             },
             "typeName": {
-              "id": 68223,
+              "id": 63109,
               "name": "int256",
               "nodeType": "ElementaryTypeName",
-              "src": "4001:6:114",
+              "src": "4001:6:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_int256",
                 "typeString": "int256"
@@ -1239,14 +1235,14 @@ export const LogExpMath =
             },
             "value": {
               "hexValue": "323030303030303030303030303030303030303030",
-              "id": 68224,
+              "id": 63110,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "4022:21:114",
+              "src": "4022:21:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_200000000000000000000_by_1",
                 "typeString": "int_const 200000000000000000000"
@@ -1256,15 +1252,15 @@ export const LogExpMath =
             "visibility": "internal"
           },
           {
-            "id": 68228,
+            "id": 63114,
             "nodeType": "VariableDeclaration",
-            "src": "4057:42:114",
+            "src": "4057:42:96",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "a6",
-            "nameLocation": "4073:2:114",
-            "scope": 69444,
+            "nameLocation": "4073:2:96",
+            "scope": 64330,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1272,10 +1268,10 @@ export const LogExpMath =
               "typeString": "int256"
             },
             "typeName": {
-              "id": 68226,
+              "id": 63112,
               "name": "int256",
               "nodeType": "ElementaryTypeName",
-              "src": "4057:6:114",
+              "src": "4057:6:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_int256",
                 "typeString": "int256"
@@ -1283,14 +1279,14 @@ export const LogExpMath =
             },
             "value": {
               "hexValue": "373338393035363039383933303635303232373233",
-              "id": 68227,
+              "id": 63113,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "4078:21:114",
+              "src": "4078:21:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_738905609893065022723_by_1",
                 "typeString": "int_const 738905609893065022723"
@@ -1300,15 +1296,15 @@ export const LogExpMath =
             "visibility": "internal"
           },
           {
-            "id": 68231,
+            "id": 63117,
             "nodeType": "VariableDeclaration",
-            "src": "4116:42:114",
+            "src": "4116:42:96",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "x7",
-            "nameLocation": "4132:2:114",
-            "scope": 69444,
+            "nameLocation": "4132:2:96",
+            "scope": 64330,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1316,10 +1312,10 @@ export const LogExpMath =
               "typeString": "int256"
             },
             "typeName": {
-              "id": 68229,
+              "id": 63115,
               "name": "int256",
               "nodeType": "ElementaryTypeName",
-              "src": "4116:6:114",
+              "src": "4116:6:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_int256",
                 "typeString": "int256"
@@ -1327,14 +1323,14 @@ export const LogExpMath =
             },
             "value": {
               "hexValue": "313030303030303030303030303030303030303030",
-              "id": 68230,
+              "id": 63116,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "4137:21:114",
+              "src": "4137:21:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_100000000000000000000_by_1",
                 "typeString": "int_const 100000000000000000000"
@@ -1344,15 +1340,15 @@ export const LogExpMath =
             "visibility": "internal"
           },
           {
-            "id": 68234,
+            "id": 63120,
             "nodeType": "VariableDeclaration",
-            "src": "4172:42:114",
+            "src": "4172:42:96",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "a7",
-            "nameLocation": "4188:2:114",
-            "scope": 69444,
+            "nameLocation": "4188:2:96",
+            "scope": 64330,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1360,10 +1356,10 @@ export const LogExpMath =
               "typeString": "int256"
             },
             "typeName": {
-              "id": 68232,
+              "id": 63118,
               "name": "int256",
               "nodeType": "ElementaryTypeName",
-              "src": "4172:6:114",
+              "src": "4172:6:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_int256",
                 "typeString": "int256"
@@ -1371,14 +1367,14 @@ export const LogExpMath =
             },
             "value": {
               "hexValue": "323731383238313832383435393034353233353336",
-              "id": 68233,
+              "id": 63119,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "4193:21:114",
+              "src": "4193:21:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_271828182845904523536_by_1",
                 "typeString": "int_const 271828182845904523536"
@@ -1388,15 +1384,15 @@ export const LogExpMath =
             "visibility": "internal"
           },
           {
-            "id": 68237,
+            "id": 63123,
             "nodeType": "VariableDeclaration",
-            "src": "4231:41:114",
+            "src": "4231:41:96",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "x8",
-            "nameLocation": "4247:2:114",
-            "scope": 69444,
+            "nameLocation": "4247:2:96",
+            "scope": 64330,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1404,10 +1400,10 @@ export const LogExpMath =
               "typeString": "int256"
             },
             "typeName": {
-              "id": 68235,
+              "id": 63121,
               "name": "int256",
               "nodeType": "ElementaryTypeName",
-              "src": "4231:6:114",
+              "src": "4231:6:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_int256",
                 "typeString": "int256"
@@ -1415,14 +1411,14 @@ export const LogExpMath =
             },
             "value": {
               "hexValue": "3530303030303030303030303030303030303030",
-              "id": 68236,
+              "id": 63122,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "4252:20:114",
+              "src": "4252:20:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_50000000000000000000_by_1",
                 "typeString": "int_const 50000000000000000000"
@@ -1432,15 +1428,15 @@ export const LogExpMath =
             "visibility": "internal"
           },
           {
-            "id": 68240,
+            "id": 63126,
             "nodeType": "VariableDeclaration",
-            "src": "4287:42:114",
+            "src": "4287:42:96",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "a8",
-            "nameLocation": "4303:2:114",
-            "scope": 69444,
+            "nameLocation": "4303:2:96",
+            "scope": 64330,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1448,10 +1444,10 @@ export const LogExpMath =
               "typeString": "int256"
             },
             "typeName": {
-              "id": 68238,
+              "id": 63124,
               "name": "int256",
               "nodeType": "ElementaryTypeName",
-              "src": "4287:6:114",
+              "src": "4287:6:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_int256",
                 "typeString": "int256"
@@ -1459,14 +1455,14 @@ export const LogExpMath =
             },
             "value": {
               "hexValue": "313634383732313237303730303132383134363835",
-              "id": 68239,
+              "id": 63125,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "4308:21:114",
+              "src": "4308:21:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_164872127070012814685_by_1",
                 "typeString": "int_const 164872127070012814685"
@@ -1476,15 +1472,15 @@ export const LogExpMath =
             "visibility": "internal"
           },
           {
-            "id": 68243,
+            "id": 63129,
             "nodeType": "VariableDeclaration",
-            "src": "4346:41:114",
+            "src": "4346:41:96",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "x9",
-            "nameLocation": "4362:2:114",
-            "scope": 69444,
+            "nameLocation": "4362:2:96",
+            "scope": 64330,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1492,10 +1488,10 @@ export const LogExpMath =
               "typeString": "int256"
             },
             "typeName": {
-              "id": 68241,
+              "id": 63127,
               "name": "int256",
               "nodeType": "ElementaryTypeName",
-              "src": "4346:6:114",
+              "src": "4346:6:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_int256",
                 "typeString": "int256"
@@ -1503,14 +1499,14 @@ export const LogExpMath =
             },
             "value": {
               "hexValue": "3235303030303030303030303030303030303030",
-              "id": 68242,
+              "id": 63128,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "4367:20:114",
+              "src": "4367:20:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_25000000000000000000_by_1",
                 "typeString": "int_const 25000000000000000000"
@@ -1520,15 +1516,15 @@ export const LogExpMath =
             "visibility": "internal"
           },
           {
-            "id": 68246,
+            "id": 63132,
             "nodeType": "VariableDeclaration",
-            "src": "4402:42:114",
+            "src": "4402:42:96",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "a9",
-            "nameLocation": "4418:2:114",
-            "scope": 69444,
+            "nameLocation": "4418:2:96",
+            "scope": 64330,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1536,10 +1532,10 @@ export const LogExpMath =
               "typeString": "int256"
             },
             "typeName": {
-              "id": 68244,
+              "id": 63130,
               "name": "int256",
               "nodeType": "ElementaryTypeName",
-              "src": "4402:6:114",
+              "src": "4402:6:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_int256",
                 "typeString": "int256"
@@ -1547,14 +1543,14 @@ export const LogExpMath =
             },
             "value": {
               "hexValue": "313238343032353431363638373734313438343037",
-              "id": 68245,
+              "id": 63131,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "4423:21:114",
+              "src": "4423:21:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_128402541668774148407_by_1",
                 "typeString": "int_const 128402541668774148407"
@@ -1564,15 +1560,15 @@ export const LogExpMath =
             "visibility": "internal"
           },
           {
-            "id": 68249,
+            "id": 63135,
             "nodeType": "VariableDeclaration",
-            "src": "4461:42:114",
+            "src": "4461:42:96",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "x10",
-            "nameLocation": "4477:3:114",
-            "scope": 69444,
+            "nameLocation": "4477:3:96",
+            "scope": 64330,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1580,10 +1576,10 @@ export const LogExpMath =
               "typeString": "int256"
             },
             "typeName": {
-              "id": 68247,
+              "id": 63133,
               "name": "int256",
               "nodeType": "ElementaryTypeName",
-              "src": "4461:6:114",
+              "src": "4461:6:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_int256",
                 "typeString": "int256"
@@ -1591,14 +1587,14 @@ export const LogExpMath =
             },
             "value": {
               "hexValue": "3132353030303030303030303030303030303030",
-              "id": 68248,
+              "id": 63134,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "4483:20:114",
+              "src": "4483:20:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_12500000000000000000_by_1",
                 "typeString": "int_const 12500000000000000000"
@@ -1608,15 +1604,15 @@ export const LogExpMath =
             "visibility": "internal"
           },
           {
-            "id": 68252,
+            "id": 63138,
             "nodeType": "VariableDeclaration",
-            "src": "4518:43:114",
+            "src": "4518:43:96",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "a10",
-            "nameLocation": "4534:3:114",
-            "scope": 69444,
+            "nameLocation": "4534:3:96",
+            "scope": 64330,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1624,10 +1620,10 @@ export const LogExpMath =
               "typeString": "int256"
             },
             "typeName": {
-              "id": 68250,
+              "id": 63136,
               "name": "int256",
               "nodeType": "ElementaryTypeName",
-              "src": "4518:6:114",
+              "src": "4518:6:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_int256",
                 "typeString": "int256"
@@ -1635,14 +1631,14 @@ export const LogExpMath =
             },
             "value": {
               "hexValue": "313133333134383435333036363832363331363833",
-              "id": 68251,
+              "id": 63137,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "4540:21:114",
+              "src": "4540:21:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_113314845306682631683_by_1",
                 "typeString": "int_const 113314845306682631683"
@@ -1652,15 +1648,15 @@ export const LogExpMath =
             "visibility": "internal"
           },
           {
-            "id": 68255,
+            "id": 63141,
             "nodeType": "VariableDeclaration",
-            "src": "4579:41:114",
+            "src": "4579:41:96",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "x11",
-            "nameLocation": "4595:3:114",
-            "scope": 69444,
+            "nameLocation": "4595:3:96",
+            "scope": 64330,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1668,10 +1664,10 @@ export const LogExpMath =
               "typeString": "int256"
             },
             "typeName": {
-              "id": 68253,
+              "id": 63139,
               "name": "int256",
               "nodeType": "ElementaryTypeName",
-              "src": "4579:6:114",
+              "src": "4579:6:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_int256",
                 "typeString": "int256"
@@ -1679,14 +1675,14 @@ export const LogExpMath =
             },
             "value": {
               "hexValue": "36323530303030303030303030303030303030",
-              "id": 68254,
+              "id": 63140,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "4601:19:114",
+              "src": "4601:19:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_6250000000000000000_by_1",
                 "typeString": "int_const 6250000000000000000"
@@ -1696,15 +1692,15 @@ export const LogExpMath =
             "visibility": "internal"
           },
           {
-            "id": 68258,
+            "id": 63144,
             "nodeType": "VariableDeclaration",
-            "src": "4635:43:114",
+            "src": "4635:43:96",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "a11",
-            "nameLocation": "4651:3:114",
-            "scope": 69444,
+            "nameLocation": "4651:3:96",
+            "scope": 64330,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1712,10 +1708,10 @@ export const LogExpMath =
               "typeString": "int256"
             },
             "typeName": {
-              "id": 68256,
+              "id": 63142,
               "name": "int256",
               "nodeType": "ElementaryTypeName",
-              "src": "4635:6:114",
+              "src": "4635:6:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_int256",
                 "typeString": "int256"
@@ -1723,14 +1719,14 @@ export const LogExpMath =
             },
             "value": {
               "hexValue": "313036343439343435383931373835393432393536",
-              "id": 68257,
+              "id": 63143,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "4657:21:114",
+              "src": "4657:21:96",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_106449445891785942956_by_1",
                 "typeString": "int_const 106449445891785942956"
@@ -1740,14 +1736,14 @@ export const LogExpMath =
             "visibility": "internal"
           },
           {
-            "id": 68388,
+            "id": 63274,
             "nodeType": "FunctionDefinition",
-            "src": "4916:2283:114",
+            "src": "4916:2283:96",
             "nodes": [],
             "body": {
-              "id": 68387,
+              "id": 63273,
               "nodeType": "Block",
-              "src": "4983:2216:114",
+              "src": "4983:2216:96",
               "nodes": [],
               "statements": [
                 {
@@ -1756,18 +1752,18 @@ export const LogExpMath =
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 68270,
+                    "id": 63156,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 68268,
+                      "id": 63154,
                       "name": "y",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68263,
-                      "src": "4997:1:114",
+                      "referencedDeclaration": 63149,
+                      "src": "4997:1:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -1777,44 +1773,44 @@ export const LogExpMath =
                     "operator": "==",
                     "rightExpression": {
                       "hexValue": "30",
-                      "id": 68269,
+                      "id": 63155,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "5002:1:114",
+                      "src": "5002:1:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_0_by_1",
                         "typeString": "int_const 0"
                       },
                       "value": "0"
                     },
-                    "src": "4997:6:114",
+                    "src": "4997:6:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 68277,
+                  "id": 63163,
                   "nodeType": "IfStatement",
-                  "src": "4993:131:114",
+                  "src": "4993:131:96",
                   "trueBody": {
-                    "id": 68276,
+                    "id": 63162,
                     "nodeType": "Block",
-                    "src": "5005:119:114",
+                    "src": "5005:119:96",
                     "statements": [
                       {
                         "expression": {
                           "arguments": [
                             {
-                              "id": 68273,
+                              "id": 63159,
                               "name": "ONE_18",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 68153,
-                              "src": "5106:6:114",
+                              "referencedDeclaration": 63039,
+                              "src": "5106:6:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -1828,26 +1824,26 @@ export const LogExpMath =
                                 "typeString": "int256"
                               }
                             ],
-                            "id": 68272,
+                            "id": 63158,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "lValueRequested": false,
                             "nodeType": "ElementaryTypeNameExpression",
-                            "src": "5098:7:114",
+                            "src": "5098:7:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_type$_t_uint256_$",
                               "typeString": "type(uint256)"
                             },
                             "typeName": {
-                              "id": 68271,
+                              "id": 63157,
                               "name": "uint256",
                               "nodeType": "ElementaryTypeName",
-                              "src": "5098:7:114",
+                              "src": "5098:7:96",
                               "typeDescriptions": {}
                             }
                           },
-                          "id": 68274,
+                          "id": 63160,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -1856,17 +1852,17 @@ export const LogExpMath =
                           "nameLocations": [],
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "5098:15:114",
+                          "src": "5098:15:96",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "functionReturnParameters": 68267,
-                        "id": 68275,
+                        "functionReturnParameters": 63153,
+                        "id": 63161,
                         "nodeType": "Return",
-                        "src": "5091:22:114"
+                        "src": "5091:22:96"
                       }
                     ]
                   }
@@ -1877,18 +1873,18 @@ export const LogExpMath =
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 68280,
+                    "id": 63166,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 68278,
+                      "id": 63164,
                       "name": "x",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68261,
-                      "src": "5138:1:114",
+                      "referencedDeclaration": 63147,
+                      "src": "5138:1:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -1898,55 +1894,55 @@ export const LogExpMath =
                     "operator": "==",
                     "rightExpression": {
                       "hexValue": "30",
-                      "id": 68279,
+                      "id": 63165,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "5143:1:114",
+                      "src": "5143:1:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_0_by_1",
                         "typeString": "int_const 0"
                       },
                       "value": "0"
                     },
-                    "src": "5138:6:114",
+                    "src": "5138:6:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 68284,
+                  "id": 63170,
                   "nodeType": "IfStatement",
-                  "src": "5134:45:114",
+                  "src": "5134:45:96",
                   "trueBody": {
-                    "id": 68283,
+                    "id": 63169,
                     "nodeType": "Block",
-                    "src": "5146:33:114",
+                    "src": "5146:33:96",
                     "statements": [
                       {
                         "expression": {
                           "hexValue": "30",
-                          "id": 68281,
+                          "id": 63167,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "5167:1:114",
+                          "src": "5167:1:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_0_by_1",
                             "typeString": "int_const 0"
                           },
                           "value": "0"
                         },
-                        "functionReturnParameters": 68267,
-                        "id": 68282,
+                        "functionReturnParameters": 63153,
+                        "id": 63168,
                         "nodeType": "Return",
-                        "src": "5160:8:114"
+                        "src": "5160:8:96"
                       }
                     ]
                   }
@@ -1959,7 +1955,7 @@ export const LogExpMath =
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 68290,
+                        "id": 63176,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1969,18 +1965,18 @@ export const LogExpMath =
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           },
-                          "id": 68288,
+                          "id": 63174,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftExpression": {
-                            "id": 68286,
+                            "id": 63172,
                             "name": "x",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68261,
-                            "src": "5558:1:114",
+                            "referencedDeclaration": 63147,
+                            "src": "5558:1:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -1990,21 +1986,21 @@ export const LogExpMath =
                           "operator": ">>",
                           "rightExpression": {
                             "hexValue": "323535",
-                            "id": 68287,
+                            "id": 63173,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "kind": "number",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "5563:3:114",
+                            "src": "5563:3:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_rational_255_by_1",
                               "typeString": "int_const 255"
                             },
                             "value": "255"
                           },
-                          "src": "5558:8:114",
+                          "src": "5558:8:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -2014,21 +2010,21 @@ export const LogExpMath =
                         "operator": "==",
                         "rightExpression": {
                           "hexValue": "30",
-                          "id": 68289,
+                          "id": 63175,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "5570:1:114",
+                          "src": "5570:1:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_0_by_1",
                             "typeString": "int_const 0"
                           },
                           "value": "0"
                         },
-                        "src": "5558:13:114",
+                        "src": "5558:13:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -2036,27 +2032,27 @@ export const LogExpMath =
                       },
                       {
                         "expression": {
-                          "id": 68291,
+                          "id": 63177,
                           "name": "BalancerErrors",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 68144,
-                          "src": "5573:14:114",
+                          "referencedDeclaration": 63030,
+                          "src": "5573:14:96",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_BalancerErrors_$68144_$",
+                            "typeIdentifier": "t_type$_t_contract$_BalancerErrors_$63030_$",
                             "typeString": "type(library BalancerErrors)"
                           }
                         },
-                        "id": 68292,
+                        "id": 63178,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "lValueRequested": false,
-                        "memberLocation": "5588:15:114",
+                        "memberLocation": "5588:15:96",
                         "memberName": "X_OUT_OF_BOUNDS",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 67660,
-                        "src": "5573:30:114",
+                        "referencedDeclaration": 62546,
+                        "src": "5573:30:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -2074,21 +2070,21 @@ export const LogExpMath =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 68285,
+                      "id": 63171,
                       "name": "_require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        67588,
-                        67607
+                        62474,
+                        62493
                       ],
-                      "referencedDeclaration": 67588,
-                      "src": "5549:8:114",
+                      "referencedDeclaration": 62474,
+                      "src": "5549:8:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_bool_$_t_uint256_$returns$__$",
                         "typeString": "function (bool,uint256) pure"
                       }
                     },
-                    "id": 68293,
+                    "id": 63179,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2097,31 +2093,31 @@ export const LogExpMath =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "5549:55:114",
+                    "src": "5549:55:96",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 68294,
+                  "id": 63180,
                   "nodeType": "ExpressionStatement",
-                  "src": "5549:55:114"
+                  "src": "5549:55:96"
                 },
                 {
                   "assignments": [
-                    68296
+                    63182
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 68296,
+                      "id": 63182,
                       "mutability": "mutable",
                       "name": "x_int256",
-                      "nameLocation": "5621:8:114",
+                      "nameLocation": "5621:8:96",
                       "nodeType": "VariableDeclaration",
-                      "scope": 68387,
-                      "src": "5614:15:114",
+                      "scope": 63273,
+                      "src": "5614:15:96",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -2129,10 +2125,10 @@ export const LogExpMath =
                         "typeString": "int256"
                       },
                       "typeName": {
-                        "id": 68295,
+                        "id": 63181,
                         "name": "int256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "5614:6:114",
+                        "src": "5614:6:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -2141,16 +2137,16 @@ export const LogExpMath =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 68301,
+                  "id": 63187,
                   "initialValue": {
                     "arguments": [
                       {
-                        "id": 68299,
+                        "id": 63185,
                         "name": "x",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 68261,
-                        "src": "5639:1:114",
+                        "referencedDeclaration": 63147,
+                        "src": "5639:1:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -2164,26 +2160,26 @@ export const LogExpMath =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 68298,
+                      "id": 63184,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "lValueRequested": false,
                       "nodeType": "ElementaryTypeNameExpression",
-                      "src": "5632:6:114",
+                      "src": "5632:6:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_type$_t_int256_$",
                         "typeString": "type(int256)"
                       },
                       "typeName": {
-                        "id": 68297,
+                        "id": 63183,
                         "name": "int256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "5632:6:114",
+                        "src": "5632:6:96",
                         "typeDescriptions": {}
                       }
                     },
-                    "id": 68300,
+                    "id": 63186,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2192,7 +2188,7 @@ export const LogExpMath =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "5632:9:114",
+                    "src": "5632:9:96",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
@@ -2200,7 +2196,7 @@ export const LogExpMath =
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "5614:27:114"
+                  "src": "5614:27:96"
                 },
                 {
                   "expression": {
@@ -2210,18 +2206,18 @@ export const LogExpMath =
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 68305,
+                        "id": 63191,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
-                          "id": 68303,
+                          "id": 63189,
                           "name": "y",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 68263,
-                          "src": "6004:1:114",
+                          "referencedDeclaration": 63149,
+                          "src": "6004:1:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -2230,18 +2226,18 @@ export const LogExpMath =
                         "nodeType": "BinaryOperation",
                         "operator": "<",
                         "rightExpression": {
-                          "id": 68304,
+                          "id": 63190,
                           "name": "MILD_EXPONENT_BOUND",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 68186,
-                          "src": "6008:19:114",
+                          "referencedDeclaration": 63072,
+                          "src": "6008:19:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "src": "6004:23:114",
+                        "src": "6004:23:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -2249,27 +2245,27 @@ export const LogExpMath =
                       },
                       {
                         "expression": {
-                          "id": 68306,
+                          "id": 63192,
                           "name": "BalancerErrors",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 68144,
-                          "src": "6029:14:114",
+                          "referencedDeclaration": 63030,
+                          "src": "6029:14:96",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_BalancerErrors_$68144_$",
+                            "typeIdentifier": "t_type$_t_contract$_BalancerErrors_$63030_$",
                             "typeString": "type(library BalancerErrors)"
                           }
                         },
-                        "id": 68307,
+                        "id": 63193,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "lValueRequested": false,
-                        "memberLocation": "6044:15:114",
+                        "memberLocation": "6044:15:96",
                         "memberName": "Y_OUT_OF_BOUNDS",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 67663,
-                        "src": "6029:30:114",
+                        "referencedDeclaration": 62549,
+                        "src": "6029:30:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -2287,21 +2283,21 @@ export const LogExpMath =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 68302,
+                      "id": 63188,
                       "name": "_require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        67588,
-                        67607
+                        62474,
+                        62493
                       ],
-                      "referencedDeclaration": 67588,
-                      "src": "5995:8:114",
+                      "referencedDeclaration": 62474,
+                      "src": "5995:8:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_bool_$_t_uint256_$returns$__$",
                         "typeString": "function (bool,uint256) pure"
                       }
                     },
-                    "id": 68308,
+                    "id": 63194,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2310,31 +2306,31 @@ export const LogExpMath =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "5995:65:114",
+                    "src": "5995:65:96",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 68309,
+                  "id": 63195,
                   "nodeType": "ExpressionStatement",
-                  "src": "5995:65:114"
+                  "src": "5995:65:96"
                 },
                 {
                   "assignments": [
-                    68311
+                    63197
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 68311,
+                      "id": 63197,
                       "mutability": "mutable",
                       "name": "y_int256",
-                      "nameLocation": "6077:8:114",
+                      "nameLocation": "6077:8:96",
                       "nodeType": "VariableDeclaration",
-                      "scope": 68387,
-                      "src": "6070:15:114",
+                      "scope": 63273,
+                      "src": "6070:15:96",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -2342,10 +2338,10 @@ export const LogExpMath =
                         "typeString": "int256"
                       },
                       "typeName": {
-                        "id": 68310,
+                        "id": 63196,
                         "name": "int256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "6070:6:114",
+                        "src": "6070:6:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -2354,16 +2350,16 @@ export const LogExpMath =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 68316,
+                  "id": 63202,
                   "initialValue": {
                     "arguments": [
                       {
-                        "id": 68314,
+                        "id": 63200,
                         "name": "y",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 68263,
-                        "src": "6095:1:114",
+                        "referencedDeclaration": 63149,
+                        "src": "6095:1:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -2377,26 +2373,26 @@ export const LogExpMath =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 68313,
+                      "id": 63199,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "lValueRequested": false,
                       "nodeType": "ElementaryTypeNameExpression",
-                      "src": "6088:6:114",
+                      "src": "6088:6:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_type$_t_int256_$",
                         "typeString": "type(int256)"
                       },
                       "typeName": {
-                        "id": 68312,
+                        "id": 63198,
                         "name": "int256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "6088:6:114",
+                        "src": "6088:6:96",
                         "typeDescriptions": {}
                       }
                     },
-                    "id": 68315,
+                    "id": 63201,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2405,7 +2401,7 @@ export const LogExpMath =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "6088:9:114",
+                    "src": "6088:9:96",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
@@ -2413,22 +2409,22 @@ export const LogExpMath =
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "6070:27:114"
+                  "src": "6070:27:96"
                 },
                 {
                   "assignments": [
-                    68318
+                    63204
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 68318,
+                      "id": 63204,
                       "mutability": "mutable",
                       "name": "logx_times_y",
-                      "nameLocation": "6115:12:114",
+                      "nameLocation": "6115:12:96",
                       "nodeType": "VariableDeclaration",
-                      "scope": 68387,
-                      "src": "6108:19:114",
+                      "scope": 63273,
+                      "src": "6108:19:96",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -2436,10 +2432,10 @@ export const LogExpMath =
                         "typeString": "int256"
                       },
                       "typeName": {
-                        "id": 68317,
+                        "id": 63203,
                         "name": "int256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "6108:6:114",
+                        "src": "6108:6:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -2448,9 +2444,9 @@ export const LogExpMath =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 68319,
+                  "id": 63205,
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "6108:19:114"
+                  "src": "6108:19:96"
                 },
                 {
                   "condition": {
@@ -2458,7 +2454,7 @@ export const LogExpMath =
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     },
-                    "id": 68326,
+                    "id": 63212,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2468,18 +2464,18 @@ export const LogExpMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 68322,
+                      "id": 63208,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
-                        "id": 68320,
+                        "id": 63206,
                         "name": "LN_36_LOWER_BOUND",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 68171,
-                        "src": "6141:17:114",
+                        "referencedDeclaration": 63057,
+                        "src": "6141:17:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -2488,18 +2484,18 @@ export const LogExpMath =
                       "nodeType": "BinaryOperation",
                       "operator": "<",
                       "rightExpression": {
-                        "id": 68321,
+                        "id": 63207,
                         "name": "x_int256",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 68296,
-                        "src": "6161:8:114",
+                        "referencedDeclaration": 63182,
+                        "src": "6161:8:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "src": "6141:28:114",
+                      "src": "6141:28:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
@@ -2512,18 +2508,18 @@ export const LogExpMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 68325,
+                      "id": 63211,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
-                        "id": 68323,
+                        "id": 63209,
                         "name": "x_int256",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 68296,
-                        "src": "6173:8:114",
+                        "referencedDeclaration": 63182,
+                        "src": "6173:8:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -2532,48 +2528,48 @@ export const LogExpMath =
                       "nodeType": "BinaryOperation",
                       "operator": "<",
                       "rightExpression": {
-                        "id": 68324,
+                        "id": 63210,
                         "name": "LN_36_UPPER_BOUND",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 68176,
-                        "src": "6184:17:114",
+                        "referencedDeclaration": 63062,
+                        "src": "6184:17:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "src": "6173:28:114",
+                      "src": "6173:28:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
                       }
                     },
-                    "src": "6141:60:114",
+                    "src": "6141:60:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
                   "falseBody": {
-                    "id": 68362,
+                    "id": 63248,
                     "nodeType": "Block",
-                    "src": "6805:64:114",
+                    "src": "6805:64:96",
                     "statements": [
                       {
                         "expression": {
-                          "id": 68360,
+                          "id": 63246,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 68354,
+                            "id": 63240,
                             "name": "logx_times_y",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68318,
-                            "src": "6819:12:114",
+                            "referencedDeclaration": 63204,
+                            "src": "6819:12:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -2586,7 +2582,7 @@ export const LogExpMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 68359,
+                            "id": 63245,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -2594,12 +2590,12 @@ export const LogExpMath =
                             "leftExpression": {
                               "arguments": [
                                 {
-                                  "id": 68356,
+                                  "id": 63242,
                                   "name": "x_int256",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 68296,
-                                  "src": "6838:8:114",
+                                  "referencedDeclaration": 63182,
+                                  "src": "6838:8:96",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
@@ -2613,18 +2609,18 @@ export const LogExpMath =
                                     "typeString": "int256"
                                   }
                                 ],
-                                "id": 68355,
+                                "id": 63241,
                                 "name": "_ln",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 69289,
-                                "src": "6834:3:114",
+                                "referencedDeclaration": 64175,
+                                "src": "6834:3:96",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_function_internal_pure$_t_int256_$returns$_t_int256_$",
                                   "typeString": "function (int256) pure returns (int256)"
                                 }
                               },
-                              "id": 68357,
+                              "id": 63243,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
@@ -2633,7 +2629,7 @@ export const LogExpMath =
                               "nameLocations": [],
                               "names": [],
                               "nodeType": "FunctionCall",
-                              "src": "6834:13:114",
+                              "src": "6834:13:96",
                               "tryCall": false,
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
@@ -2643,57 +2639,57 @@ export const LogExpMath =
                             "nodeType": "BinaryOperation",
                             "operator": "*",
                             "rightExpression": {
-                              "id": 68358,
+                              "id": 63244,
                               "name": "y_int256",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 68311,
-                              "src": "6850:8:114",
+                              "referencedDeclaration": 63197,
+                              "src": "6850:8:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "6834:24:114",
+                            "src": "6834:24:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "6819:39:114",
+                          "src": "6819:39:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 68361,
+                        "id": 63247,
                         "nodeType": "ExpressionStatement",
-                        "src": "6819:39:114"
+                        "src": "6819:39:96"
                       }
                     ]
                   },
-                  "id": 68363,
+                  "id": 63249,
                   "nodeType": "IfStatement",
-                  "src": "6137:732:114",
+                  "src": "6137:732:96",
                   "trueBody": {
-                    "id": 68353,
+                    "id": 63239,
                     "nodeType": "Block",
-                    "src": "6203:596:114",
+                    "src": "6203:596:96",
                     "statements": [
                       {
                         "assignments": [
-                          68328
+                          63214
                         ],
                         "declarations": [
                           {
                             "constant": false,
-                            "id": 68328,
+                            "id": 63214,
                             "mutability": "mutable",
                             "name": "ln_36_x",
-                            "nameLocation": "6224:7:114",
+                            "nameLocation": "6224:7:96",
                             "nodeType": "VariableDeclaration",
-                            "scope": 68353,
-                            "src": "6217:14:114",
+                            "scope": 63239,
+                            "src": "6217:14:96",
                             "stateVariable": false,
                             "storageLocation": "default",
                             "typeDescriptions": {
@@ -2701,10 +2697,10 @@ export const LogExpMath =
                               "typeString": "int256"
                             },
                             "typeName": {
-                              "id": 68327,
+                              "id": 63213,
                               "name": "int256",
                               "nodeType": "ElementaryTypeName",
-                              "src": "6217:6:114",
+                              "src": "6217:6:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -2713,16 +2709,16 @@ export const LogExpMath =
                             "visibility": "internal"
                           }
                         ],
-                        "id": 68332,
+                        "id": 63218,
                         "initialValue": {
                           "arguments": [
                             {
-                              "id": 68330,
+                              "id": 63216,
                               "name": "x_int256",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 68296,
-                              "src": "6241:8:114",
+                              "referencedDeclaration": 63182,
+                              "src": "6241:8:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -2736,18 +2732,18 @@ export const LogExpMath =
                                 "typeString": "int256"
                               }
                             ],
-                            "id": 68329,
+                            "id": 63215,
                             "name": "_ln_36",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 69443,
-                            "src": "6234:6:114",
+                            "referencedDeclaration": 64329,
+                            "src": "6234:6:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_pure$_t_int256_$returns$_t_int256_$",
                               "typeString": "function (int256) pure returns (int256)"
                             }
                           },
-                          "id": 68331,
+                          "id": 63217,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -2756,7 +2752,7 @@ export const LogExpMath =
                           "nameLocations": [],
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "6234:16:114",
+                          "src": "6234:16:96",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
@@ -2764,22 +2760,22 @@ export const LogExpMath =
                           }
                         },
                         "nodeType": "VariableDeclarationStatement",
-                        "src": "6217:33:114"
+                        "src": "6217:33:96"
                       },
                       {
                         "expression": {
-                          "id": 68351,
+                          "id": 63237,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 68333,
+                            "id": 63219,
                             "name": "logx_times_y",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68318,
-                            "src": "6651:12:114",
+                            "referencedDeclaration": 63204,
+                            "src": "6651:12:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -2794,7 +2790,7 @@ export const LogExpMath =
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 },
-                                "id": 68349,
+                                "id": 63235,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -2804,7 +2800,7 @@ export const LogExpMath =
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   },
-                                  "id": 68339,
+                                  "id": 63225,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
@@ -2816,18 +2812,18 @@ export const LogExpMath =
                                           "typeIdentifier": "t_int256",
                                           "typeString": "int256"
                                         },
-                                        "id": 68336,
+                                        "id": 63222,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                          "id": 68334,
+                                          "id": 63220,
                                           "name": "ln_36_x",
                                           "nodeType": "Identifier",
                                           "overloadedDeclarations": [],
-                                          "referencedDeclaration": 68328,
-                                          "src": "6668:7:114",
+                                          "referencedDeclaration": 63214,
+                                          "src": "6668:7:96",
                                           "typeDescriptions": {
                                             "typeIdentifier": "t_int256",
                                             "typeString": "int256"
@@ -2836,32 +2832,32 @@ export const LogExpMath =
                                         "nodeType": "BinaryOperation",
                                         "operator": "/",
                                         "rightExpression": {
-                                          "id": 68335,
+                                          "id": 63221,
                                           "name": "ONE_18",
                                           "nodeType": "Identifier",
                                           "overloadedDeclarations": [],
-                                          "referencedDeclaration": 68153,
-                                          "src": "6678:6:114",
+                                          "referencedDeclaration": 63039,
+                                          "src": "6678:6:96",
                                           "typeDescriptions": {
                                             "typeIdentifier": "t_int256",
                                             "typeString": "int256"
                                           }
                                         },
-                                        "src": "6668:16:114",
+                                        "src": "6668:16:96",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_int256",
                                           "typeString": "int256"
                                         }
                                       }
                                     ],
-                                    "id": 68337,
+                                    "id": 63223,
                                     "isConstant": false,
                                     "isInlineArray": false,
                                     "isLValue": false,
                                     "isPure": false,
                                     "lValueRequested": false,
                                     "nodeType": "TupleExpression",
-                                    "src": "6667:18:114",
+                                    "src": "6667:18:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
@@ -2870,18 +2866,18 @@ export const LogExpMath =
                                   "nodeType": "BinaryOperation",
                                   "operator": "*",
                                   "rightExpression": {
-                                    "id": 68338,
+                                    "id": 63224,
                                     "name": "y_int256",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68311,
-                                    "src": "6704:8:114",
+                                    "referencedDeclaration": 63197,
+                                    "src": "6704:8:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
                                     }
                                   },
-                                  "src": "6667:45:114",
+                                  "src": "6667:45:96",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
@@ -2894,7 +2890,7 @@ export const LogExpMath =
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   },
-                                  "id": 68348,
+                                  "id": 63234,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
@@ -2906,7 +2902,7 @@ export const LogExpMath =
                                           "typeIdentifier": "t_int256",
                                           "typeString": "int256"
                                         },
-                                        "id": 68345,
+                                        "id": 63231,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -2918,18 +2914,18 @@ export const LogExpMath =
                                                 "typeIdentifier": "t_int256",
                                                 "typeString": "int256"
                                               },
-                                              "id": 68342,
+                                              "id": 63228,
                                               "isConstant": false,
                                               "isLValue": false,
                                               "isPure": false,
                                               "lValueRequested": false,
                                               "leftExpression": {
-                                                "id": 68340,
+                                                "id": 63226,
                                                 "name": "ln_36_x",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 68328,
-                                                "src": "6733:7:114",
+                                                "referencedDeclaration": 63214,
+                                                "src": "6733:7:96",
                                                 "typeDescriptions": {
                                                   "typeIdentifier": "t_int256",
                                                   "typeString": "int256"
@@ -2938,32 +2934,32 @@ export const LogExpMath =
                                               "nodeType": "BinaryOperation",
                                               "operator": "%",
                                               "rightExpression": {
-                                                "id": 68341,
+                                                "id": 63227,
                                                 "name": "ONE_18",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 68153,
-                                                "src": "6743:6:114",
+                                                "referencedDeclaration": 63039,
+                                                "src": "6743:6:96",
                                                 "typeDescriptions": {
                                                   "typeIdentifier": "t_int256",
                                                   "typeString": "int256"
                                                 }
                                               },
-                                              "src": "6733:16:114",
+                                              "src": "6733:16:96",
                                               "typeDescriptions": {
                                                 "typeIdentifier": "t_int256",
                                                 "typeString": "int256"
                                               }
                                             }
                                           ],
-                                          "id": 68343,
+                                          "id": 63229,
                                           "isConstant": false,
                                           "isInlineArray": false,
                                           "isLValue": false,
                                           "isPure": false,
                                           "lValueRequested": false,
                                           "nodeType": "TupleExpression",
-                                          "src": "6732:18:114",
+                                          "src": "6732:18:96",
                                           "typeDescriptions": {
                                             "typeIdentifier": "t_int256",
                                             "typeString": "int256"
@@ -2972,32 +2968,32 @@ export const LogExpMath =
                                         "nodeType": "BinaryOperation",
                                         "operator": "*",
                                         "rightExpression": {
-                                          "id": 68344,
+                                          "id": 63230,
                                           "name": "y_int256",
                                           "nodeType": "Identifier",
                                           "overloadedDeclarations": [],
-                                          "referencedDeclaration": 68311,
-                                          "src": "6753:8:114",
+                                          "referencedDeclaration": 63197,
+                                          "src": "6753:8:96",
                                           "typeDescriptions": {
                                             "typeIdentifier": "t_int256",
                                             "typeString": "int256"
                                           }
                                         },
-                                        "src": "6732:29:114",
+                                        "src": "6732:29:96",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_int256",
                                           "typeString": "int256"
                                         }
                                       }
                                     ],
-                                    "id": 68346,
+                                    "id": 63232,
                                     "isConstant": false,
                                     "isInlineArray": false,
                                     "isLValue": false,
                                     "isPure": false,
                                     "lValueRequested": false,
                                     "nodeType": "TupleExpression",
-                                    "src": "6731:31:114",
+                                    "src": "6731:31:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
@@ -3006,70 +3002,70 @@ export const LogExpMath =
                                   "nodeType": "BinaryOperation",
                                   "operator": "/",
                                   "rightExpression": {
-                                    "id": 68347,
+                                    "id": 63233,
                                     "name": "ONE_18",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68153,
-                                    "src": "6781:6:114",
+                                    "referencedDeclaration": 63039,
+                                    "src": "6781:6:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
                                     }
                                   },
-                                  "src": "6731:56:114",
+                                  "src": "6731:56:96",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   }
                                 },
-                                "src": "6667:120:114",
+                                "src": "6667:120:96",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 }
                               }
                             ],
-                            "id": 68350,
+                            "id": 63236,
                             "isConstant": false,
                             "isInlineArray": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "nodeType": "TupleExpression",
-                            "src": "6666:122:114",
+                            "src": "6666:122:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "6651:137:114",
+                          "src": "6651:137:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 68352,
+                        "id": 63238,
                         "nodeType": "ExpressionStatement",
-                        "src": "6651:137:114"
+                        "src": "6651:137:96"
                       }
                     ]
                   }
                 },
                 {
                   "expression": {
-                    "id": 68366,
+                    "id": 63252,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 68364,
+                      "id": 63250,
                       "name": "logx_times_y",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68318,
-                      "src": "6878:12:114",
+                      "referencedDeclaration": 63204,
+                      "src": "6878:12:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -3078,26 +3074,26 @@ export const LogExpMath =
                     "nodeType": "Assignment",
                     "operator": "/=",
                     "rightHandSide": {
-                      "id": 68365,
+                      "id": 63251,
                       "name": "ONE_18",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68153,
-                      "src": "6894:6:114",
+                      "referencedDeclaration": 63039,
+                      "src": "6894:6:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "6878:22:114",
+                    "src": "6878:22:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 68367,
+                  "id": 63253,
                   "nodeType": "ExpressionStatement",
-                  "src": "6878:22:114"
+                  "src": "6878:22:96"
                 },
                 {
                   "expression": {
@@ -3107,7 +3103,7 @@ export const LogExpMath =
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
                         },
-                        "id": 68375,
+                        "id": 63261,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -3117,18 +3113,18 @@ export const LogExpMath =
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           },
-                          "id": 68371,
+                          "id": 63257,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftExpression": {
-                            "id": 68369,
+                            "id": 63255,
                             "name": "MIN_NATURAL_EXPONENT",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68166,
-                            "src": "6996:20:114",
+                            "referencedDeclaration": 63052,
+                            "src": "6996:20:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -3137,18 +3133,18 @@ export const LogExpMath =
                           "nodeType": "BinaryOperation",
                           "operator": "<=",
                           "rightExpression": {
-                            "id": 68370,
+                            "id": 63256,
                             "name": "logx_times_y",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68318,
-                            "src": "7020:12:114",
+                            "referencedDeclaration": 63204,
+                            "src": "7020:12:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "6996:36:114",
+                          "src": "6996:36:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
@@ -3161,18 +3157,18 @@ export const LogExpMath =
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           },
-                          "id": 68374,
+                          "id": 63260,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftExpression": {
-                            "id": 68372,
+                            "id": 63258,
                             "name": "logx_times_y",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68318,
-                            "src": "7052:12:114",
+                            "referencedDeclaration": 63204,
+                            "src": "7052:12:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -3181,24 +3177,24 @@ export const LogExpMath =
                           "nodeType": "BinaryOperation",
                           "operator": "<=",
                           "rightExpression": {
-                            "id": 68373,
+                            "id": 63259,
                             "name": "MAX_NATURAL_EXPONENT",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68162,
-                            "src": "7068:20:114",
+                            "referencedDeclaration": 63048,
+                            "src": "7068:20:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "7052:36:114",
+                          "src": "7052:36:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
                           }
                         },
-                        "src": "6996:92:114",
+                        "src": "6996:92:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -3206,27 +3202,27 @@ export const LogExpMath =
                       },
                       {
                         "expression": {
-                          "id": 68376,
+                          "id": 63262,
                           "name": "BalancerErrors",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 68144,
-                          "src": "7102:14:114",
+                          "referencedDeclaration": 63030,
+                          "src": "7102:14:96",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_BalancerErrors_$68144_$",
+                            "typeIdentifier": "t_type$_t_contract$_BalancerErrors_$63030_$",
                             "typeString": "type(library BalancerErrors)"
                           }
                         },
-                        "id": 68377,
+                        "id": 63263,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "lValueRequested": false,
-                        "memberLocation": "7117:21:114",
+                        "memberLocation": "7117:21:96",
                         "memberName": "PRODUCT_OUT_OF_BOUNDS",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 67666,
-                        "src": "7102:36:114",
+                        "referencedDeclaration": 62552,
+                        "src": "7102:36:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -3244,21 +3240,21 @@ export const LogExpMath =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 68368,
+                      "id": 63254,
                       "name": "_require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        67588,
-                        67607
+                        62474,
+                        62493
                       ],
-                      "referencedDeclaration": 67588,
-                      "src": "6974:8:114",
+                      "referencedDeclaration": 62474,
+                      "src": "6974:8:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_bool_$_t_uint256_$returns$__$",
                         "typeString": "function (bool,uint256) pure"
                       }
                     },
-                    "id": 68378,
+                    "id": 63264,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3267,16 +3263,16 @@ export const LogExpMath =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "6974:174:114",
+                    "src": "6974:174:96",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 68379,
+                  "id": 63265,
                   "nodeType": "ExpressionStatement",
-                  "src": "6974:174:114"
+                  "src": "6974:174:96"
                 },
                 {
                   "expression": {
@@ -3284,12 +3280,12 @@ export const LogExpMath =
                       {
                         "arguments": [
                           {
-                            "id": 68383,
+                            "id": 63269,
                             "name": "logx_times_y",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68318,
-                            "src": "7178:12:114",
+                            "referencedDeclaration": 63204,
+                            "src": "7178:12:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -3303,18 +3299,18 @@ export const LogExpMath =
                               "typeString": "int256"
                             }
                           ],
-                          "id": 68382,
+                          "id": 63268,
                           "name": "exp",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 68815,
-                          "src": "7174:3:114",
+                          "referencedDeclaration": 63701,
+                          "src": "7174:3:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_pure$_t_int256_$returns$_t_int256_$",
                             "typeString": "function (int256) pure returns (int256)"
                           }
                         },
-                        "id": 68384,
+                        "id": 63270,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -3323,7 +3319,7 @@ export const LogExpMath =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "7174:17:114",
+                        "src": "7174:17:96",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
@@ -3338,26 +3334,26 @@ export const LogExpMath =
                           "typeString": "int256"
                         }
                       ],
-                      "id": 68381,
+                      "id": 63267,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "lValueRequested": false,
                       "nodeType": "ElementaryTypeNameExpression",
-                      "src": "7166:7:114",
+                      "src": "7166:7:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_type$_t_uint256_$",
                         "typeString": "type(uint256)"
                       },
                       "typeName": {
-                        "id": 68380,
+                        "id": 63266,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "7166:7:114",
+                        "src": "7166:7:96",
                         "typeDescriptions": {}
                       }
                     },
-                    "id": 68385,
+                    "id": 63271,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3366,44 +3362,44 @@ export const LogExpMath =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "7166:26:114",
+                    "src": "7166:26:96",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 68267,
-                  "id": 68386,
+                  "functionReturnParameters": 63153,
+                  "id": 63272,
                   "nodeType": "Return",
-                  "src": "7159:33:114"
+                  "src": "7159:33:96"
                 }
               ]
             },
             "documentation": {
-              "id": 68259,
+              "id": 63145,
               "nodeType": "StructuredDocumentation",
-              "src": "4697:214:114",
+              "src": "4697:214:96",
               "text": " @dev Exponentiation (x^y) with unsigned 18 decimal fixed point base and exponent.\n Reverts if ln(x) * y is smaller than `MIN_NATURAL_EXPONENT`, or larger than `MAX_NATURAL_EXPONENT`."
             },
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "pow",
-            "nameLocation": "4925:3:114",
+            "nameLocation": "4925:3:96",
             "parameters": {
-              "id": 68264,
+              "id": 63150,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 68261,
+                  "id": 63147,
                   "mutability": "mutable",
                   "name": "x",
-                  "nameLocation": "4937:1:114",
+                  "nameLocation": "4937:1:96",
                   "nodeType": "VariableDeclaration",
-                  "scope": 68388,
-                  "src": "4929:9:114",
+                  "scope": 63274,
+                  "src": "4929:9:96",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3411,10 +3407,10 @@ export const LogExpMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 68260,
+                    "id": 63146,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4929:7:114",
+                    "src": "4929:7:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -3424,13 +3420,13 @@ export const LogExpMath =
                 },
                 {
                   "constant": false,
-                  "id": 68263,
+                  "id": 63149,
                   "mutability": "mutable",
                   "name": "y",
-                  "nameLocation": "4948:1:114",
+                  "nameLocation": "4948:1:96",
                   "nodeType": "VariableDeclaration",
-                  "scope": 68388,
-                  "src": "4940:9:114",
+                  "scope": 63274,
+                  "src": "4940:9:96",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3438,10 +3434,10 @@ export const LogExpMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 68262,
+                    "id": 63148,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4940:7:114",
+                    "src": "4940:7:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -3450,21 +3446,21 @@ export const LogExpMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "4928:22:114"
+              "src": "4928:22:96"
             },
             "returnParameters": {
-              "id": 68267,
+              "id": 63153,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 68266,
+                  "id": 63152,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 68388,
-                  "src": "4974:7:114",
+                  "scope": 63274,
+                  "src": "4974:7:96",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3472,10 +3468,10 @@ export const LogExpMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 68265,
+                    "id": 63151,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4974:7:114",
+                    "src": "4974:7:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -3484,22 +3480,22 @@ export const LogExpMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "4973:9:114"
+              "src": "4973:9:96"
             },
-            "scope": 69444,
+            "scope": 64330,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 68815,
+            "id": 63701,
             "nodeType": "FunctionDefinition",
-            "src": "7413:5421:114",
+            "src": "7413:5421:96",
             "nodes": [],
             "body": {
-              "id": 68814,
+              "id": 63700,
               "nodeType": "Block",
-              "src": "7467:5367:114",
+              "src": "7467:5367:96",
               "nodes": [],
               "statements": [
                 {
@@ -3510,7 +3506,7 @@ export const LogExpMath =
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
                         },
-                        "id": 68403,
+                        "id": 63289,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -3520,18 +3516,18 @@ export const LogExpMath =
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           },
-                          "id": 68399,
+                          "id": 63285,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftExpression": {
-                            "id": 68397,
+                            "id": 63283,
                             "name": "x",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68391,
-                            "src": "7499:1:114",
+                            "referencedDeclaration": 63277,
+                            "src": "7499:1:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -3540,18 +3536,18 @@ export const LogExpMath =
                           "nodeType": "BinaryOperation",
                           "operator": ">=",
                           "rightExpression": {
-                            "id": 68398,
+                            "id": 63284,
                             "name": "MIN_NATURAL_EXPONENT",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68166,
-                            "src": "7504:20:114",
+                            "referencedDeclaration": 63052,
+                            "src": "7504:20:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "7499:25:114",
+                          "src": "7499:25:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
@@ -3564,18 +3560,18 @@ export const LogExpMath =
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           },
-                          "id": 68402,
+                          "id": 63288,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftExpression": {
-                            "id": 68400,
+                            "id": 63286,
                             "name": "x",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68391,
-                            "src": "7528:1:114",
+                            "referencedDeclaration": 63277,
+                            "src": "7528:1:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -3584,24 +3580,24 @@ export const LogExpMath =
                           "nodeType": "BinaryOperation",
                           "operator": "<=",
                           "rightExpression": {
-                            "id": 68401,
+                            "id": 63287,
                             "name": "MAX_NATURAL_EXPONENT",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68162,
-                            "src": "7533:20:114",
+                            "referencedDeclaration": 63048,
+                            "src": "7533:20:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "7528:25:114",
+                          "src": "7528:25:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
                           }
                         },
-                        "src": "7499:54:114",
+                        "src": "7499:54:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -3609,27 +3605,27 @@ export const LogExpMath =
                       },
                       {
                         "expression": {
-                          "id": 68404,
+                          "id": 63290,
                           "name": "BalancerErrors",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 68144,
-                          "src": "7567:14:114",
+                          "referencedDeclaration": 63030,
+                          "src": "7567:14:96",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_BalancerErrors_$68144_$",
+                            "typeIdentifier": "t_type$_t_contract$_BalancerErrors_$63030_$",
                             "typeString": "type(library BalancerErrors)"
                           }
                         },
-                        "id": 68405,
+                        "id": 63291,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "lValueRequested": false,
-                        "memberLocation": "7582:16:114",
+                        "memberLocation": "7582:16:96",
                         "memberName": "INVALID_EXPONENT",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 67669,
-                        "src": "7567:31:114",
+                        "referencedDeclaration": 62555,
+                        "src": "7567:31:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -3647,21 +3643,21 @@ export const LogExpMath =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 68396,
+                      "id": 63282,
                       "name": "_require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        67588,
-                        67607
+                        62474,
+                        62493
                       ],
-                      "referencedDeclaration": 67588,
-                      "src": "7477:8:114",
+                      "referencedDeclaration": 62474,
+                      "src": "7477:8:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_bool_$_t_uint256_$returns$__$",
                         "typeString": "function (bool,uint256) pure"
                       }
                     },
-                    "id": 68406,
+                    "id": 63292,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3670,16 +3666,16 @@ export const LogExpMath =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "7477:131:114",
+                    "src": "7477:131:96",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 68407,
+                  "id": 63293,
                   "nodeType": "ExpressionStatement",
-                  "src": "7477:131:114"
+                  "src": "7477:131:96"
                 },
                 {
                   "condition": {
@@ -3687,18 +3683,18 @@ export const LogExpMath =
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     },
-                    "id": 68410,
+                    "id": 63296,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 68408,
+                      "id": 63294,
                       "name": "x",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68391,
-                      "src": "7623:1:114",
+                      "referencedDeclaration": 63277,
+                      "src": "7623:1:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -3708,33 +3704,33 @@ export const LogExpMath =
                     "operator": "<",
                     "rightExpression": {
                       "hexValue": "30",
-                      "id": 68409,
+                      "id": 63295,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "7627:1:114",
+                      "src": "7627:1:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_0_by_1",
                         "typeString": "int_const 0"
                       },
                       "value": "0"
                     },
-                    "src": "7623:5:114",
+                    "src": "7623:5:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 68423,
+                  "id": 63309,
                   "nodeType": "IfStatement",
-                  "src": "7619:353:114",
+                  "src": "7619:353:96",
                   "trueBody": {
-                    "id": 68422,
+                    "id": 63308,
                     "nodeType": "Block",
-                    "src": "7630:342:114",
+                    "src": "7630:342:96",
                     "statements": [
                       {
                         "expression": {
@@ -3744,7 +3740,7 @@ export const LogExpMath =
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               },
-                              "id": 68419,
+                              "id": 63305,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
@@ -3756,18 +3752,18 @@ export const LogExpMath =
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
                                     },
-                                    "id": 68413,
+                                    "id": 63299,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": true,
                                     "lValueRequested": false,
                                     "leftExpression": {
-                                      "id": 68411,
+                                      "id": 63297,
                                       "name": "ONE_18",
                                       "nodeType": "Identifier",
                                       "overloadedDeclarations": [],
-                                      "referencedDeclaration": 68153,
-                                      "src": "7934:6:114",
+                                      "referencedDeclaration": 63039,
+                                      "src": "7934:6:96",
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
@@ -3776,32 +3772,32 @@ export const LogExpMath =
                                     "nodeType": "BinaryOperation",
                                     "operator": "*",
                                     "rightExpression": {
-                                      "id": 68412,
+                                      "id": 63298,
                                       "name": "ONE_18",
                                       "nodeType": "Identifier",
                                       "overloadedDeclarations": [],
-                                      "referencedDeclaration": 68153,
-                                      "src": "7943:6:114",
+                                      "referencedDeclaration": 63039,
+                                      "src": "7943:6:96",
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
                                       }
                                     },
-                                    "src": "7934:15:114",
+                                    "src": "7934:15:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
                                     }
                                   }
                                 ],
-                                "id": 68414,
+                                "id": 63300,
                                 "isConstant": false,
                                 "isInlineArray": false,
                                 "isLValue": false,
                                 "isPure": true,
                                 "lValueRequested": false,
                                 "nodeType": "TupleExpression",
-                                "src": "7933:17:114",
+                                "src": "7933:17:96",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
@@ -3812,7 +3808,7 @@ export const LogExpMath =
                               "rightExpression": {
                                 "arguments": [
                                   {
-                                    "id": 68417,
+                                    "id": 63303,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": false,
@@ -3820,14 +3816,14 @@ export const LogExpMath =
                                     "nodeType": "UnaryOperation",
                                     "operator": "-",
                                     "prefix": true,
-                                    "src": "7957:2:114",
+                                    "src": "7957:2:96",
                                     "subExpression": {
-                                      "id": 68416,
+                                      "id": 63302,
                                       "name": "x",
                                       "nodeType": "Identifier",
                                       "overloadedDeclarations": [],
-                                      "referencedDeclaration": 68391,
-                                      "src": "7958:1:114",
+                                      "referencedDeclaration": 63277,
+                                      "src": "7958:1:96",
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
@@ -3846,18 +3842,18 @@ export const LogExpMath =
                                       "typeString": "int256"
                                     }
                                   ],
-                                  "id": 68415,
+                                  "id": 63301,
                                   "name": "exp",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 68815,
-                                  "src": "7953:3:114",
+                                  "referencedDeclaration": 63701,
+                                  "src": "7953:3:96",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_function_internal_pure$_t_int256_$returns$_t_int256_$",
                                     "typeString": "function (int256) pure returns (int256)"
                                   }
                                 },
-                                "id": 68418,
+                                "id": 63304,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -3866,55 +3862,55 @@ export const LogExpMath =
                                 "nameLocations": [],
                                 "names": [],
                                 "nodeType": "FunctionCall",
-                                "src": "7953:7:114",
+                                "src": "7953:7:96",
                                 "tryCall": false,
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 }
                               },
-                              "src": "7933:27:114",
+                              "src": "7933:27:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             }
                           ],
-                          "id": 68420,
+                          "id": 63306,
                           "isConstant": false,
                           "isInlineArray": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "nodeType": "TupleExpression",
-                          "src": "7932:29:114",
+                          "src": "7932:29:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "functionReturnParameters": 68395,
-                        "id": 68421,
+                        "functionReturnParameters": 63281,
+                        "id": 63307,
                         "nodeType": "Return",
-                        "src": "7925:36:114"
+                        "src": "7925:36:96"
                       }
                     ]
                   }
                 },
                 {
                   "assignments": [
-                    68425
+                    63311
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 68425,
+                      "id": 63311,
                       "mutability": "mutable",
                       "name": "firstAN",
-                      "nameLocation": "9280:7:114",
+                      "nameLocation": "9280:7:96",
                       "nodeType": "VariableDeclaration",
-                      "scope": 68814,
-                      "src": "9273:14:114",
+                      "scope": 63700,
+                      "src": "9273:14:96",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -3922,10 +3918,10 @@ export const LogExpMath =
                         "typeString": "int256"
                       },
                       "typeName": {
-                        "id": 68424,
+                        "id": 63310,
                         "name": "int256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "9273:6:114",
+                        "src": "9273:6:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -3934,9 +3930,9 @@ export const LogExpMath =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 68426,
+                  "id": 63312,
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "9273:14:114"
+                  "src": "9273:14:96"
                 },
                 {
                   "condition": {
@@ -3944,18 +3940,18 @@ export const LogExpMath =
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     },
-                    "id": 68429,
+                    "id": 63315,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 68427,
+                      "id": 63313,
                       "name": "x",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68391,
-                      "src": "9301:1:114",
+                      "referencedDeclaration": 63277,
+                      "src": "9301:1:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -3964,18 +3960,18 @@ export const LogExpMath =
                     "nodeType": "BinaryOperation",
                     "operator": ">=",
                     "rightExpression": {
-                      "id": 68428,
+                      "id": 63314,
                       "name": "x0",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68189,
-                      "src": "9306:2:114",
+                      "referencedDeclaration": 63075,
+                      "src": "9306:2:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "9301:7:114",
+                    "src": "9301:7:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -3987,18 +3983,18 @@ export const LogExpMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 68441,
+                      "id": 63327,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
-                        "id": 68439,
+                        "id": 63325,
                         "name": "x",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 68391,
-                        "src": "9378:1:114",
+                        "referencedDeclaration": 63277,
+                        "src": "9378:1:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -4007,42 +4003,42 @@ export const LogExpMath =
                       "nodeType": "BinaryOperation",
                       "operator": ">=",
                       "rightExpression": {
-                        "id": 68440,
+                        "id": 63326,
                         "name": "x1",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 68195,
-                        "src": "9383:2:114",
+                        "referencedDeclaration": 63081,
+                        "src": "9383:2:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "src": "9378:7:114",
+                      "src": "9378:7:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
                       }
                     },
                     "falseBody": {
-                      "id": 68455,
+                      "id": 63341,
                       "nodeType": "Block",
-                      "src": "9451:66:114",
+                      "src": "9451:66:96",
                       "statements": [
                         {
                           "expression": {
-                            "id": 68453,
+                            "id": 63339,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "leftHandSide": {
-                              "id": 68451,
+                              "id": 63337,
                               "name": "firstAN",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 68425,
-                              "src": "9465:7:114",
+                              "referencedDeclaration": 63311,
+                              "src": "9465:7:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -4052,54 +4048,54 @@ export const LogExpMath =
                             "operator": "=",
                             "rightHandSide": {
                               "hexValue": "31",
-                              "id": 68452,
+                              "id": 63338,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
                               "kind": "number",
                               "lValueRequested": false,
                               "nodeType": "Literal",
-                              "src": "9475:1:114",
+                              "src": "9475:1:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_rational_1_by_1",
                                 "typeString": "int_const 1"
                               },
                               "value": "1"
                             },
-                            "src": "9465:11:114",
+                            "src": "9465:11:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "id": 68454,
+                          "id": 63340,
                           "nodeType": "ExpressionStatement",
-                          "src": "9465:11:114"
+                          "src": "9465:11:96"
                         }
                       ]
                     },
-                    "id": 68456,
+                    "id": 63342,
                     "nodeType": "IfStatement",
-                    "src": "9374:143:114",
+                    "src": "9374:143:96",
                     "trueBody": {
-                      "id": 68450,
+                      "id": 63336,
                       "nodeType": "Block",
-                      "src": "9387:58:114",
+                      "src": "9387:58:96",
                       "statements": [
                         {
                           "expression": {
-                            "id": 68444,
+                            "id": 63330,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "leftHandSide": {
-                              "id": 68442,
+                              "id": 63328,
                               "name": "x",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 68391,
-                              "src": "9401:1:114",
+                              "referencedDeclaration": 63277,
+                              "src": "9401:1:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -4108,41 +4104,41 @@ export const LogExpMath =
                             "nodeType": "Assignment",
                             "operator": "-=",
                             "rightHandSide": {
-                              "id": 68443,
+                              "id": 63329,
                               "name": "x1",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 68195,
-                              "src": "9406:2:114",
+                              "referencedDeclaration": 63081,
+                              "src": "9406:2:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "9401:7:114",
+                            "src": "9401:7:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "id": 68445,
+                          "id": 63331,
                           "nodeType": "ExpressionStatement",
-                          "src": "9401:7:114"
+                          "src": "9401:7:96"
                         },
                         {
                           "expression": {
-                            "id": 68448,
+                            "id": 63334,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "leftHandSide": {
-                              "id": 68446,
+                              "id": 63332,
                               "name": "firstAN",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 68425,
-                              "src": "9422:7:114",
+                              "referencedDeclaration": 63311,
+                              "src": "9422:7:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -4151,52 +4147,52 @@ export const LogExpMath =
                             "nodeType": "Assignment",
                             "operator": "=",
                             "rightHandSide": {
-                              "id": 68447,
+                              "id": 63333,
                               "name": "a1",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 68198,
-                              "src": "9432:2:114",
+                              "referencedDeclaration": 63084,
+                              "src": "9432:2:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "9422:12:114",
+                            "src": "9422:12:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "id": 68449,
+                          "id": 63335,
                           "nodeType": "ExpressionStatement",
-                          "src": "9422:12:114"
+                          "src": "9422:12:96"
                         }
                       ]
                     }
                   },
-                  "id": 68457,
+                  "id": 63343,
                   "nodeType": "IfStatement",
-                  "src": "9297:220:114",
+                  "src": "9297:220:96",
                   "trueBody": {
-                    "id": 68438,
+                    "id": 63324,
                     "nodeType": "Block",
-                    "src": "9310:58:114",
+                    "src": "9310:58:96",
                     "statements": [
                       {
                         "expression": {
-                          "id": 68432,
+                          "id": 63318,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 68430,
+                            "id": 63316,
                             "name": "x",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68391,
-                            "src": "9324:1:114",
+                            "referencedDeclaration": 63277,
+                            "src": "9324:1:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -4205,41 +4201,41 @@ export const LogExpMath =
                           "nodeType": "Assignment",
                           "operator": "-=",
                           "rightHandSide": {
-                            "id": 68431,
+                            "id": 63317,
                             "name": "x0",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68189,
-                            "src": "9329:2:114",
+                            "referencedDeclaration": 63075,
+                            "src": "9329:2:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "9324:7:114",
+                          "src": "9324:7:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 68433,
+                        "id": 63319,
                         "nodeType": "ExpressionStatement",
-                        "src": "9324:7:114"
+                        "src": "9324:7:96"
                       },
                       {
                         "expression": {
-                          "id": 68436,
+                          "id": 63322,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 68434,
+                            "id": 63320,
                             "name": "firstAN",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68425,
-                            "src": "9345:7:114",
+                            "referencedDeclaration": 63311,
+                            "src": "9345:7:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -4248,44 +4244,44 @@ export const LogExpMath =
                           "nodeType": "Assignment",
                           "operator": "=",
                           "rightHandSide": {
-                            "id": 68435,
+                            "id": 63321,
                             "name": "a0",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68192,
-                            "src": "9355:2:114",
+                            "referencedDeclaration": 63078,
+                            "src": "9355:2:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "9345:12:114",
+                          "src": "9345:12:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 68437,
+                        "id": 63323,
                         "nodeType": "ExpressionStatement",
-                        "src": "9345:12:114"
+                        "src": "9345:12:96"
                       }
                     ]
                   }
                 },
                 {
                   "expression": {
-                    "id": 68460,
+                    "id": 63346,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 68458,
+                      "id": 63344,
                       "name": "x",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68391,
-                      "src": "9667:1:114",
+                      "referencedDeclaration": 63277,
+                      "src": "9667:1:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -4295,44 +4291,44 @@ export const LogExpMath =
                     "operator": "*=",
                     "rightHandSide": {
                       "hexValue": "313030",
-                      "id": 68459,
+                      "id": 63345,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "9672:3:114",
+                      "src": "9672:3:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_100_by_1",
                         "typeString": "int_const 100"
                       },
                       "value": "100"
                     },
-                    "src": "9667:8:114",
+                    "src": "9667:8:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 68461,
+                  "id": 63347,
                   "nodeType": "ExpressionStatement",
-                  "src": "9667:8:114"
+                  "src": "9667:8:96"
                 },
                 {
                   "assignments": [
-                    68463
+                    63349
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 68463,
+                      "id": 63349,
                       "mutability": "mutable",
                       "name": "product",
-                      "nameLocation": "9895:7:114",
+                      "nameLocation": "9895:7:96",
                       "nodeType": "VariableDeclaration",
-                      "scope": 68814,
-                      "src": "9888:14:114",
+                      "scope": 63700,
+                      "src": "9888:14:96",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -4340,10 +4336,10 @@ export const LogExpMath =
                         "typeString": "int256"
                       },
                       "typeName": {
-                        "id": 68462,
+                        "id": 63348,
                         "name": "int256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "9888:6:114",
+                        "src": "9888:6:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -4352,21 +4348,21 @@ export const LogExpMath =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 68465,
+                  "id": 63351,
                   "initialValue": {
-                    "id": 68464,
+                    "id": 63350,
                     "name": "ONE_20",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 68156,
-                    "src": "9905:6:114",
+                    "referencedDeclaration": 63042,
+                    "src": "9905:6:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "9888:23:114"
+                  "src": "9888:23:96"
                 },
                 {
                   "condition": {
@@ -4374,18 +4370,18 @@ export const LogExpMath =
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     },
-                    "id": 68468,
+                    "id": 63354,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 68466,
+                      "id": 63352,
                       "name": "x",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68391,
-                      "src": "9926:1:114",
+                      "referencedDeclaration": 63277,
+                      "src": "9926:1:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -4394,45 +4390,45 @@ export const LogExpMath =
                     "nodeType": "BinaryOperation",
                     "operator": ">=",
                     "rightExpression": {
-                      "id": 68467,
+                      "id": 63353,
                       "name": "x2",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68201,
-                      "src": "9931:2:114",
+                      "referencedDeclaration": 63087,
+                      "src": "9931:2:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "9926:7:114",
+                    "src": "9926:7:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 68483,
+                  "id": 63369,
                   "nodeType": "IfStatement",
-                  "src": "9922:92:114",
+                  "src": "9922:92:96",
                   "trueBody": {
-                    "id": 68482,
+                    "id": 63368,
                     "nodeType": "Block",
-                    "src": "9935:79:114",
+                    "src": "9935:79:96",
                     "statements": [
                       {
                         "expression": {
-                          "id": 68471,
+                          "id": 63357,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 68469,
+                            "id": 63355,
                             "name": "x",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68391,
-                            "src": "9949:1:114",
+                            "referencedDeclaration": 63277,
+                            "src": "9949:1:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -4441,41 +4437,41 @@ export const LogExpMath =
                           "nodeType": "Assignment",
                           "operator": "-=",
                           "rightHandSide": {
-                            "id": 68470,
+                            "id": 63356,
                             "name": "x2",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68201,
-                            "src": "9954:2:114",
+                            "referencedDeclaration": 63087,
+                            "src": "9954:2:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "9949:7:114",
+                          "src": "9949:7:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 68472,
+                        "id": 63358,
                         "nodeType": "ExpressionStatement",
-                        "src": "9949:7:114"
+                        "src": "9949:7:96"
                       },
                       {
                         "expression": {
-                          "id": 68480,
+                          "id": 63366,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 68473,
+                            "id": 63359,
                             "name": "product",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68463,
-                            "src": "9970:7:114",
+                            "referencedDeclaration": 63349,
+                            "src": "9970:7:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -4488,7 +4484,7 @@ export const LogExpMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 68479,
+                            "id": 63365,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -4500,18 +4496,18 @@ export const LogExpMath =
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   },
-                                  "id": 68476,
+                                  "id": 63362,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "leftExpression": {
-                                    "id": 68474,
+                                    "id": 63360,
                                     "name": "product",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68463,
-                                    "src": "9981:7:114",
+                                    "referencedDeclaration": 63349,
+                                    "src": "9981:7:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
@@ -4520,32 +4516,32 @@ export const LogExpMath =
                                   "nodeType": "BinaryOperation",
                                   "operator": "*",
                                   "rightExpression": {
-                                    "id": 68475,
+                                    "id": 63361,
                                     "name": "a2",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68204,
-                                    "src": "9991:2:114",
+                                    "referencedDeclaration": 63090,
+                                    "src": "9991:2:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
                                     }
                                   },
-                                  "src": "9981:12:114",
+                                  "src": "9981:12:96",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   }
                                 }
                               ],
-                              "id": 68477,
+                              "id": 63363,
                               "isConstant": false,
                               "isInlineArray": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "nodeType": "TupleExpression",
-                              "src": "9980:14:114",
+                              "src": "9980:14:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -4554,32 +4550,32 @@ export const LogExpMath =
                             "nodeType": "BinaryOperation",
                             "operator": "/",
                             "rightExpression": {
-                              "id": 68478,
+                              "id": 63364,
                               "name": "ONE_20",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 68156,
-                              "src": "9997:6:114",
+                              "referencedDeclaration": 63042,
+                              "src": "9997:6:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "9980:23:114",
+                            "src": "9980:23:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "9970:33:114",
+                          "src": "9970:33:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 68481,
+                        "id": 63367,
                         "nodeType": "ExpressionStatement",
-                        "src": "9970:33:114"
+                        "src": "9970:33:96"
                       }
                     ]
                   }
@@ -4590,18 +4586,18 @@ export const LogExpMath =
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     },
-                    "id": 68486,
+                    "id": 63372,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 68484,
+                      "id": 63370,
                       "name": "x",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68391,
-                      "src": "10027:1:114",
+                      "referencedDeclaration": 63277,
+                      "src": "10027:1:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -4610,45 +4606,45 @@ export const LogExpMath =
                     "nodeType": "BinaryOperation",
                     "operator": ">=",
                     "rightExpression": {
-                      "id": 68485,
+                      "id": 63371,
                       "name": "x3",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68207,
-                      "src": "10032:2:114",
+                      "referencedDeclaration": 63093,
+                      "src": "10032:2:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "10027:7:114",
+                    "src": "10027:7:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 68501,
+                  "id": 63387,
                   "nodeType": "IfStatement",
-                  "src": "10023:92:114",
+                  "src": "10023:92:96",
                   "trueBody": {
-                    "id": 68500,
+                    "id": 63386,
                     "nodeType": "Block",
-                    "src": "10036:79:114",
+                    "src": "10036:79:96",
                     "statements": [
                       {
                         "expression": {
-                          "id": 68489,
+                          "id": 63375,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 68487,
+                            "id": 63373,
                             "name": "x",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68391,
-                            "src": "10050:1:114",
+                            "referencedDeclaration": 63277,
+                            "src": "10050:1:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -4657,41 +4653,41 @@ export const LogExpMath =
                           "nodeType": "Assignment",
                           "operator": "-=",
                           "rightHandSide": {
-                            "id": 68488,
+                            "id": 63374,
                             "name": "x3",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68207,
-                            "src": "10055:2:114",
+                            "referencedDeclaration": 63093,
+                            "src": "10055:2:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "10050:7:114",
+                          "src": "10050:7:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 68490,
+                        "id": 63376,
                         "nodeType": "ExpressionStatement",
-                        "src": "10050:7:114"
+                        "src": "10050:7:96"
                       },
                       {
                         "expression": {
-                          "id": 68498,
+                          "id": 63384,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 68491,
+                            "id": 63377,
                             "name": "product",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68463,
-                            "src": "10071:7:114",
+                            "referencedDeclaration": 63349,
+                            "src": "10071:7:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -4704,7 +4700,7 @@ export const LogExpMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 68497,
+                            "id": 63383,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -4716,18 +4712,18 @@ export const LogExpMath =
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   },
-                                  "id": 68494,
+                                  "id": 63380,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "leftExpression": {
-                                    "id": 68492,
+                                    "id": 63378,
                                     "name": "product",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68463,
-                                    "src": "10082:7:114",
+                                    "referencedDeclaration": 63349,
+                                    "src": "10082:7:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
@@ -4736,32 +4732,32 @@ export const LogExpMath =
                                   "nodeType": "BinaryOperation",
                                   "operator": "*",
                                   "rightExpression": {
-                                    "id": 68493,
+                                    "id": 63379,
                                     "name": "a3",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68210,
-                                    "src": "10092:2:114",
+                                    "referencedDeclaration": 63096,
+                                    "src": "10092:2:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
                                     }
                                   },
-                                  "src": "10082:12:114",
+                                  "src": "10082:12:96",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   }
                                 }
                               ],
-                              "id": 68495,
+                              "id": 63381,
                               "isConstant": false,
                               "isInlineArray": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "nodeType": "TupleExpression",
-                              "src": "10081:14:114",
+                              "src": "10081:14:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -4770,32 +4766,32 @@ export const LogExpMath =
                             "nodeType": "BinaryOperation",
                             "operator": "/",
                             "rightExpression": {
-                              "id": 68496,
+                              "id": 63382,
                               "name": "ONE_20",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 68156,
-                              "src": "10098:6:114",
+                              "referencedDeclaration": 63042,
+                              "src": "10098:6:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "10081:23:114",
+                            "src": "10081:23:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "10071:33:114",
+                          "src": "10071:33:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 68499,
+                        "id": 63385,
                         "nodeType": "ExpressionStatement",
-                        "src": "10071:33:114"
+                        "src": "10071:33:96"
                       }
                     ]
                   }
@@ -4806,18 +4802,18 @@ export const LogExpMath =
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     },
-                    "id": 68504,
+                    "id": 63390,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 68502,
+                      "id": 63388,
                       "name": "x",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68391,
-                      "src": "10128:1:114",
+                      "referencedDeclaration": 63277,
+                      "src": "10128:1:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -4826,45 +4822,45 @@ export const LogExpMath =
                     "nodeType": "BinaryOperation",
                     "operator": ">=",
                     "rightExpression": {
-                      "id": 68503,
+                      "id": 63389,
                       "name": "x4",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68213,
-                      "src": "10133:2:114",
+                      "referencedDeclaration": 63099,
+                      "src": "10133:2:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "10128:7:114",
+                    "src": "10128:7:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 68519,
+                  "id": 63405,
                   "nodeType": "IfStatement",
-                  "src": "10124:92:114",
+                  "src": "10124:92:96",
                   "trueBody": {
-                    "id": 68518,
+                    "id": 63404,
                     "nodeType": "Block",
-                    "src": "10137:79:114",
+                    "src": "10137:79:96",
                     "statements": [
                       {
                         "expression": {
-                          "id": 68507,
+                          "id": 63393,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 68505,
+                            "id": 63391,
                             "name": "x",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68391,
-                            "src": "10151:1:114",
+                            "referencedDeclaration": 63277,
+                            "src": "10151:1:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -4873,41 +4869,41 @@ export const LogExpMath =
                           "nodeType": "Assignment",
                           "operator": "-=",
                           "rightHandSide": {
-                            "id": 68506,
+                            "id": 63392,
                             "name": "x4",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68213,
-                            "src": "10156:2:114",
+                            "referencedDeclaration": 63099,
+                            "src": "10156:2:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "10151:7:114",
+                          "src": "10151:7:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 68508,
+                        "id": 63394,
                         "nodeType": "ExpressionStatement",
-                        "src": "10151:7:114"
+                        "src": "10151:7:96"
                       },
                       {
                         "expression": {
-                          "id": 68516,
+                          "id": 63402,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 68509,
+                            "id": 63395,
                             "name": "product",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68463,
-                            "src": "10172:7:114",
+                            "referencedDeclaration": 63349,
+                            "src": "10172:7:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -4920,7 +4916,7 @@ export const LogExpMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 68515,
+                            "id": 63401,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -4932,18 +4928,18 @@ export const LogExpMath =
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   },
-                                  "id": 68512,
+                                  "id": 63398,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "leftExpression": {
-                                    "id": 68510,
+                                    "id": 63396,
                                     "name": "product",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68463,
-                                    "src": "10183:7:114",
+                                    "referencedDeclaration": 63349,
+                                    "src": "10183:7:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
@@ -4952,32 +4948,32 @@ export const LogExpMath =
                                   "nodeType": "BinaryOperation",
                                   "operator": "*",
                                   "rightExpression": {
-                                    "id": 68511,
+                                    "id": 63397,
                                     "name": "a4",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68216,
-                                    "src": "10193:2:114",
+                                    "referencedDeclaration": 63102,
+                                    "src": "10193:2:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
                                     }
                                   },
-                                  "src": "10183:12:114",
+                                  "src": "10183:12:96",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   }
                                 }
                               ],
-                              "id": 68513,
+                              "id": 63399,
                               "isConstant": false,
                               "isInlineArray": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "nodeType": "TupleExpression",
-                              "src": "10182:14:114",
+                              "src": "10182:14:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -4986,32 +4982,32 @@ export const LogExpMath =
                             "nodeType": "BinaryOperation",
                             "operator": "/",
                             "rightExpression": {
-                              "id": 68514,
+                              "id": 63400,
                               "name": "ONE_20",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 68156,
-                              "src": "10199:6:114",
+                              "referencedDeclaration": 63042,
+                              "src": "10199:6:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "10182:23:114",
+                            "src": "10182:23:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "10172:33:114",
+                          "src": "10172:33:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 68517,
+                        "id": 63403,
                         "nodeType": "ExpressionStatement",
-                        "src": "10172:33:114"
+                        "src": "10172:33:96"
                       }
                     ]
                   }
@@ -5022,18 +5018,18 @@ export const LogExpMath =
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     },
-                    "id": 68522,
+                    "id": 63408,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 68520,
+                      "id": 63406,
                       "name": "x",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68391,
-                      "src": "10229:1:114",
+                      "referencedDeclaration": 63277,
+                      "src": "10229:1:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -5042,45 +5038,45 @@ export const LogExpMath =
                     "nodeType": "BinaryOperation",
                     "operator": ">=",
                     "rightExpression": {
-                      "id": 68521,
+                      "id": 63407,
                       "name": "x5",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68219,
-                      "src": "10234:2:114",
+                      "referencedDeclaration": 63105,
+                      "src": "10234:2:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "10229:7:114",
+                    "src": "10229:7:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 68537,
+                  "id": 63423,
                   "nodeType": "IfStatement",
-                  "src": "10225:92:114",
+                  "src": "10225:92:96",
                   "trueBody": {
-                    "id": 68536,
+                    "id": 63422,
                     "nodeType": "Block",
-                    "src": "10238:79:114",
+                    "src": "10238:79:96",
                     "statements": [
                       {
                         "expression": {
-                          "id": 68525,
+                          "id": 63411,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 68523,
+                            "id": 63409,
                             "name": "x",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68391,
-                            "src": "10252:1:114",
+                            "referencedDeclaration": 63277,
+                            "src": "10252:1:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -5089,41 +5085,41 @@ export const LogExpMath =
                           "nodeType": "Assignment",
                           "operator": "-=",
                           "rightHandSide": {
-                            "id": 68524,
+                            "id": 63410,
                             "name": "x5",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68219,
-                            "src": "10257:2:114",
+                            "referencedDeclaration": 63105,
+                            "src": "10257:2:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "10252:7:114",
+                          "src": "10252:7:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 68526,
+                        "id": 63412,
                         "nodeType": "ExpressionStatement",
-                        "src": "10252:7:114"
+                        "src": "10252:7:96"
                       },
                       {
                         "expression": {
-                          "id": 68534,
+                          "id": 63420,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 68527,
+                            "id": 63413,
                             "name": "product",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68463,
-                            "src": "10273:7:114",
+                            "referencedDeclaration": 63349,
+                            "src": "10273:7:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -5136,7 +5132,7 @@ export const LogExpMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 68533,
+                            "id": 63419,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -5148,18 +5144,18 @@ export const LogExpMath =
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   },
-                                  "id": 68530,
+                                  "id": 63416,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "leftExpression": {
-                                    "id": 68528,
+                                    "id": 63414,
                                     "name": "product",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68463,
-                                    "src": "10284:7:114",
+                                    "referencedDeclaration": 63349,
+                                    "src": "10284:7:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
@@ -5168,32 +5164,32 @@ export const LogExpMath =
                                   "nodeType": "BinaryOperation",
                                   "operator": "*",
                                   "rightExpression": {
-                                    "id": 68529,
+                                    "id": 63415,
                                     "name": "a5",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68222,
-                                    "src": "10294:2:114",
+                                    "referencedDeclaration": 63108,
+                                    "src": "10294:2:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
                                     }
                                   },
-                                  "src": "10284:12:114",
+                                  "src": "10284:12:96",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   }
                                 }
                               ],
-                              "id": 68531,
+                              "id": 63417,
                               "isConstant": false,
                               "isInlineArray": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "nodeType": "TupleExpression",
-                              "src": "10283:14:114",
+                              "src": "10283:14:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -5202,32 +5198,32 @@ export const LogExpMath =
                             "nodeType": "BinaryOperation",
                             "operator": "/",
                             "rightExpression": {
-                              "id": 68532,
+                              "id": 63418,
                               "name": "ONE_20",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 68156,
-                              "src": "10300:6:114",
+                              "referencedDeclaration": 63042,
+                              "src": "10300:6:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "10283:23:114",
+                            "src": "10283:23:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "10273:33:114",
+                          "src": "10273:33:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 68535,
+                        "id": 63421,
                         "nodeType": "ExpressionStatement",
-                        "src": "10273:33:114"
+                        "src": "10273:33:96"
                       }
                     ]
                   }
@@ -5238,18 +5234,18 @@ export const LogExpMath =
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     },
-                    "id": 68540,
+                    "id": 63426,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 68538,
+                      "id": 63424,
                       "name": "x",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68391,
-                      "src": "10330:1:114",
+                      "referencedDeclaration": 63277,
+                      "src": "10330:1:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -5258,45 +5254,45 @@ export const LogExpMath =
                     "nodeType": "BinaryOperation",
                     "operator": ">=",
                     "rightExpression": {
-                      "id": 68539,
+                      "id": 63425,
                       "name": "x6",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68225,
-                      "src": "10335:2:114",
+                      "referencedDeclaration": 63111,
+                      "src": "10335:2:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "10330:7:114",
+                    "src": "10330:7:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 68555,
+                  "id": 63441,
                   "nodeType": "IfStatement",
-                  "src": "10326:92:114",
+                  "src": "10326:92:96",
                   "trueBody": {
-                    "id": 68554,
+                    "id": 63440,
                     "nodeType": "Block",
-                    "src": "10339:79:114",
+                    "src": "10339:79:96",
                     "statements": [
                       {
                         "expression": {
-                          "id": 68543,
+                          "id": 63429,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 68541,
+                            "id": 63427,
                             "name": "x",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68391,
-                            "src": "10353:1:114",
+                            "referencedDeclaration": 63277,
+                            "src": "10353:1:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -5305,41 +5301,41 @@ export const LogExpMath =
                           "nodeType": "Assignment",
                           "operator": "-=",
                           "rightHandSide": {
-                            "id": 68542,
+                            "id": 63428,
                             "name": "x6",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68225,
-                            "src": "10358:2:114",
+                            "referencedDeclaration": 63111,
+                            "src": "10358:2:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "10353:7:114",
+                          "src": "10353:7:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 68544,
+                        "id": 63430,
                         "nodeType": "ExpressionStatement",
-                        "src": "10353:7:114"
+                        "src": "10353:7:96"
                       },
                       {
                         "expression": {
-                          "id": 68552,
+                          "id": 63438,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 68545,
+                            "id": 63431,
                             "name": "product",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68463,
-                            "src": "10374:7:114",
+                            "referencedDeclaration": 63349,
+                            "src": "10374:7:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -5352,7 +5348,7 @@ export const LogExpMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 68551,
+                            "id": 63437,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -5364,18 +5360,18 @@ export const LogExpMath =
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   },
-                                  "id": 68548,
+                                  "id": 63434,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "leftExpression": {
-                                    "id": 68546,
+                                    "id": 63432,
                                     "name": "product",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68463,
-                                    "src": "10385:7:114",
+                                    "referencedDeclaration": 63349,
+                                    "src": "10385:7:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
@@ -5384,32 +5380,32 @@ export const LogExpMath =
                                   "nodeType": "BinaryOperation",
                                   "operator": "*",
                                   "rightExpression": {
-                                    "id": 68547,
+                                    "id": 63433,
                                     "name": "a6",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68228,
-                                    "src": "10395:2:114",
+                                    "referencedDeclaration": 63114,
+                                    "src": "10395:2:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
                                     }
                                   },
-                                  "src": "10385:12:114",
+                                  "src": "10385:12:96",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   }
                                 }
                               ],
-                              "id": 68549,
+                              "id": 63435,
                               "isConstant": false,
                               "isInlineArray": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "nodeType": "TupleExpression",
-                              "src": "10384:14:114",
+                              "src": "10384:14:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -5418,32 +5414,32 @@ export const LogExpMath =
                             "nodeType": "BinaryOperation",
                             "operator": "/",
                             "rightExpression": {
-                              "id": 68550,
+                              "id": 63436,
                               "name": "ONE_20",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 68156,
-                              "src": "10401:6:114",
+                              "referencedDeclaration": 63042,
+                              "src": "10401:6:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "10384:23:114",
+                            "src": "10384:23:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "10374:33:114",
+                          "src": "10374:33:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 68553,
+                        "id": 63439,
                         "nodeType": "ExpressionStatement",
-                        "src": "10374:33:114"
+                        "src": "10374:33:96"
                       }
                     ]
                   }
@@ -5454,18 +5450,18 @@ export const LogExpMath =
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     },
-                    "id": 68558,
+                    "id": 63444,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 68556,
+                      "id": 63442,
                       "name": "x",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68391,
-                      "src": "10431:1:114",
+                      "referencedDeclaration": 63277,
+                      "src": "10431:1:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -5474,45 +5470,45 @@ export const LogExpMath =
                     "nodeType": "BinaryOperation",
                     "operator": ">=",
                     "rightExpression": {
-                      "id": 68557,
+                      "id": 63443,
                       "name": "x7",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68231,
-                      "src": "10436:2:114",
+                      "referencedDeclaration": 63117,
+                      "src": "10436:2:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "10431:7:114",
+                    "src": "10431:7:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 68573,
+                  "id": 63459,
                   "nodeType": "IfStatement",
-                  "src": "10427:92:114",
+                  "src": "10427:92:96",
                   "trueBody": {
-                    "id": 68572,
+                    "id": 63458,
                     "nodeType": "Block",
-                    "src": "10440:79:114",
+                    "src": "10440:79:96",
                     "statements": [
                       {
                         "expression": {
-                          "id": 68561,
+                          "id": 63447,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 68559,
+                            "id": 63445,
                             "name": "x",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68391,
-                            "src": "10454:1:114",
+                            "referencedDeclaration": 63277,
+                            "src": "10454:1:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -5521,41 +5517,41 @@ export const LogExpMath =
                           "nodeType": "Assignment",
                           "operator": "-=",
                           "rightHandSide": {
-                            "id": 68560,
+                            "id": 63446,
                             "name": "x7",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68231,
-                            "src": "10459:2:114",
+                            "referencedDeclaration": 63117,
+                            "src": "10459:2:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "10454:7:114",
+                          "src": "10454:7:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 68562,
+                        "id": 63448,
                         "nodeType": "ExpressionStatement",
-                        "src": "10454:7:114"
+                        "src": "10454:7:96"
                       },
                       {
                         "expression": {
-                          "id": 68570,
+                          "id": 63456,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 68563,
+                            "id": 63449,
                             "name": "product",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68463,
-                            "src": "10475:7:114",
+                            "referencedDeclaration": 63349,
+                            "src": "10475:7:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -5568,7 +5564,7 @@ export const LogExpMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 68569,
+                            "id": 63455,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -5580,18 +5576,18 @@ export const LogExpMath =
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   },
-                                  "id": 68566,
+                                  "id": 63452,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "leftExpression": {
-                                    "id": 68564,
+                                    "id": 63450,
                                     "name": "product",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68463,
-                                    "src": "10486:7:114",
+                                    "referencedDeclaration": 63349,
+                                    "src": "10486:7:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
@@ -5600,32 +5596,32 @@ export const LogExpMath =
                                   "nodeType": "BinaryOperation",
                                   "operator": "*",
                                   "rightExpression": {
-                                    "id": 68565,
+                                    "id": 63451,
                                     "name": "a7",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68234,
-                                    "src": "10496:2:114",
+                                    "referencedDeclaration": 63120,
+                                    "src": "10496:2:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
                                     }
                                   },
-                                  "src": "10486:12:114",
+                                  "src": "10486:12:96",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   }
                                 }
                               ],
-                              "id": 68567,
+                              "id": 63453,
                               "isConstant": false,
                               "isInlineArray": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "nodeType": "TupleExpression",
-                              "src": "10485:14:114",
+                              "src": "10485:14:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -5634,32 +5630,32 @@ export const LogExpMath =
                             "nodeType": "BinaryOperation",
                             "operator": "/",
                             "rightExpression": {
-                              "id": 68568,
+                              "id": 63454,
                               "name": "ONE_20",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 68156,
-                              "src": "10502:6:114",
+                              "referencedDeclaration": 63042,
+                              "src": "10502:6:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "10485:23:114",
+                            "src": "10485:23:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "10475:33:114",
+                          "src": "10475:33:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 68571,
+                        "id": 63457,
                         "nodeType": "ExpressionStatement",
-                        "src": "10475:33:114"
+                        "src": "10475:33:96"
                       }
                     ]
                   }
@@ -5670,18 +5666,18 @@ export const LogExpMath =
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     },
-                    "id": 68576,
+                    "id": 63462,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 68574,
+                      "id": 63460,
                       "name": "x",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68391,
-                      "src": "10532:1:114",
+                      "referencedDeclaration": 63277,
+                      "src": "10532:1:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -5690,45 +5686,45 @@ export const LogExpMath =
                     "nodeType": "BinaryOperation",
                     "operator": ">=",
                     "rightExpression": {
-                      "id": 68575,
+                      "id": 63461,
                       "name": "x8",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68237,
-                      "src": "10537:2:114",
+                      "referencedDeclaration": 63123,
+                      "src": "10537:2:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "10532:7:114",
+                    "src": "10532:7:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 68591,
+                  "id": 63477,
                   "nodeType": "IfStatement",
-                  "src": "10528:92:114",
+                  "src": "10528:92:96",
                   "trueBody": {
-                    "id": 68590,
+                    "id": 63476,
                     "nodeType": "Block",
-                    "src": "10541:79:114",
+                    "src": "10541:79:96",
                     "statements": [
                       {
                         "expression": {
-                          "id": 68579,
+                          "id": 63465,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 68577,
+                            "id": 63463,
                             "name": "x",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68391,
-                            "src": "10555:1:114",
+                            "referencedDeclaration": 63277,
+                            "src": "10555:1:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -5737,41 +5733,41 @@ export const LogExpMath =
                           "nodeType": "Assignment",
                           "operator": "-=",
                           "rightHandSide": {
-                            "id": 68578,
+                            "id": 63464,
                             "name": "x8",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68237,
-                            "src": "10560:2:114",
+                            "referencedDeclaration": 63123,
+                            "src": "10560:2:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "10555:7:114",
+                          "src": "10555:7:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 68580,
+                        "id": 63466,
                         "nodeType": "ExpressionStatement",
-                        "src": "10555:7:114"
+                        "src": "10555:7:96"
                       },
                       {
                         "expression": {
-                          "id": 68588,
+                          "id": 63474,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 68581,
+                            "id": 63467,
                             "name": "product",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68463,
-                            "src": "10576:7:114",
+                            "referencedDeclaration": 63349,
+                            "src": "10576:7:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -5784,7 +5780,7 @@ export const LogExpMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 68587,
+                            "id": 63473,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -5796,18 +5792,18 @@ export const LogExpMath =
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   },
-                                  "id": 68584,
+                                  "id": 63470,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "leftExpression": {
-                                    "id": 68582,
+                                    "id": 63468,
                                     "name": "product",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68463,
-                                    "src": "10587:7:114",
+                                    "referencedDeclaration": 63349,
+                                    "src": "10587:7:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
@@ -5816,32 +5812,32 @@ export const LogExpMath =
                                   "nodeType": "BinaryOperation",
                                   "operator": "*",
                                   "rightExpression": {
-                                    "id": 68583,
+                                    "id": 63469,
                                     "name": "a8",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68240,
-                                    "src": "10597:2:114",
+                                    "referencedDeclaration": 63126,
+                                    "src": "10597:2:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
                                     }
                                   },
-                                  "src": "10587:12:114",
+                                  "src": "10587:12:96",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   }
                                 }
                               ],
-                              "id": 68585,
+                              "id": 63471,
                               "isConstant": false,
                               "isInlineArray": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "nodeType": "TupleExpression",
-                              "src": "10586:14:114",
+                              "src": "10586:14:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -5850,32 +5846,32 @@ export const LogExpMath =
                             "nodeType": "BinaryOperation",
                             "operator": "/",
                             "rightExpression": {
-                              "id": 68586,
+                              "id": 63472,
                               "name": "ONE_20",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 68156,
-                              "src": "10603:6:114",
+                              "referencedDeclaration": 63042,
+                              "src": "10603:6:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "10586:23:114",
+                            "src": "10586:23:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "10576:33:114",
+                          "src": "10576:33:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 68589,
+                        "id": 63475,
                         "nodeType": "ExpressionStatement",
-                        "src": "10576:33:114"
+                        "src": "10576:33:96"
                       }
                     ]
                   }
@@ -5886,18 +5882,18 @@ export const LogExpMath =
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     },
-                    "id": 68594,
+                    "id": 63480,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 68592,
+                      "id": 63478,
                       "name": "x",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68391,
-                      "src": "10633:1:114",
+                      "referencedDeclaration": 63277,
+                      "src": "10633:1:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -5906,45 +5902,45 @@ export const LogExpMath =
                     "nodeType": "BinaryOperation",
                     "operator": ">=",
                     "rightExpression": {
-                      "id": 68593,
+                      "id": 63479,
                       "name": "x9",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68243,
-                      "src": "10638:2:114",
+                      "referencedDeclaration": 63129,
+                      "src": "10638:2:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "10633:7:114",
+                    "src": "10633:7:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 68609,
+                  "id": 63495,
                   "nodeType": "IfStatement",
-                  "src": "10629:92:114",
+                  "src": "10629:92:96",
                   "trueBody": {
-                    "id": 68608,
+                    "id": 63494,
                     "nodeType": "Block",
-                    "src": "10642:79:114",
+                    "src": "10642:79:96",
                     "statements": [
                       {
                         "expression": {
-                          "id": 68597,
+                          "id": 63483,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 68595,
+                            "id": 63481,
                             "name": "x",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68391,
-                            "src": "10656:1:114",
+                            "referencedDeclaration": 63277,
+                            "src": "10656:1:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -5953,41 +5949,41 @@ export const LogExpMath =
                           "nodeType": "Assignment",
                           "operator": "-=",
                           "rightHandSide": {
-                            "id": 68596,
+                            "id": 63482,
                             "name": "x9",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68243,
-                            "src": "10661:2:114",
+                            "referencedDeclaration": 63129,
+                            "src": "10661:2:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "10656:7:114",
+                          "src": "10656:7:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 68598,
+                        "id": 63484,
                         "nodeType": "ExpressionStatement",
-                        "src": "10656:7:114"
+                        "src": "10656:7:96"
                       },
                       {
                         "expression": {
-                          "id": 68606,
+                          "id": 63492,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 68599,
+                            "id": 63485,
                             "name": "product",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68463,
-                            "src": "10677:7:114",
+                            "referencedDeclaration": 63349,
+                            "src": "10677:7:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -6000,7 +5996,7 @@ export const LogExpMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 68605,
+                            "id": 63491,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -6012,18 +6008,18 @@ export const LogExpMath =
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   },
-                                  "id": 68602,
+                                  "id": 63488,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "leftExpression": {
-                                    "id": 68600,
+                                    "id": 63486,
                                     "name": "product",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68463,
-                                    "src": "10688:7:114",
+                                    "referencedDeclaration": 63349,
+                                    "src": "10688:7:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
@@ -6032,32 +6028,32 @@ export const LogExpMath =
                                   "nodeType": "BinaryOperation",
                                   "operator": "*",
                                   "rightExpression": {
-                                    "id": 68601,
+                                    "id": 63487,
                                     "name": "a9",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68246,
-                                    "src": "10698:2:114",
+                                    "referencedDeclaration": 63132,
+                                    "src": "10698:2:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
                                     }
                                   },
-                                  "src": "10688:12:114",
+                                  "src": "10688:12:96",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   }
                                 }
                               ],
-                              "id": 68603,
+                              "id": 63489,
                               "isConstant": false,
                               "isInlineArray": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "nodeType": "TupleExpression",
-                              "src": "10687:14:114",
+                              "src": "10687:14:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -6066,50 +6062,50 @@ export const LogExpMath =
                             "nodeType": "BinaryOperation",
                             "operator": "/",
                             "rightExpression": {
-                              "id": 68604,
+                              "id": 63490,
                               "name": "ONE_20",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 68156,
-                              "src": "10704:6:114",
+                              "referencedDeclaration": 63042,
+                              "src": "10704:6:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "10687:23:114",
+                            "src": "10687:23:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "10677:33:114",
+                          "src": "10677:33:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 68607,
+                        "id": 63493,
                         "nodeType": "ExpressionStatement",
-                        "src": "10677:33:114"
+                        "src": "10677:33:96"
                       }
                     ]
                   }
                 },
                 {
                   "assignments": [
-                    68611
+                    63497
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 68611,
+                      "id": 63497,
                       "mutability": "mutable",
                       "name": "seriesSum",
-                      "nameLocation": "11032:9:114",
+                      "nameLocation": "11032:9:96",
                       "nodeType": "VariableDeclaration",
-                      "scope": 68814,
-                      "src": "11025:16:114",
+                      "scope": 63700,
+                      "src": "11025:16:96",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -6117,10 +6113,10 @@ export const LogExpMath =
                         "typeString": "int256"
                       },
                       "typeName": {
-                        "id": 68610,
+                        "id": 63496,
                         "name": "int256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "11025:6:114",
+                        "src": "11025:6:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -6129,36 +6125,36 @@ export const LogExpMath =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 68613,
+                  "id": 63499,
                   "initialValue": {
-                    "id": 68612,
+                    "id": 63498,
                     "name": "ONE_20",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 68156,
-                    "src": "11044:6:114",
+                    "referencedDeclaration": 63042,
+                    "src": "11044:6:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "11025:25:114"
+                  "src": "11025:25:96"
                 },
                 {
                   "assignments": [
-                    68615
+                    63501
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 68615,
+                      "id": 63501,
                       "mutability": "mutable",
                       "name": "term",
-                      "nameLocation": "11122:4:114",
+                      "nameLocation": "11122:4:96",
                       "nodeType": "VariableDeclaration",
-                      "scope": 68814,
-                      "src": "11115:11:114",
+                      "scope": 63700,
+                      "src": "11115:11:96",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -6166,10 +6162,10 @@ export const LogExpMath =
                         "typeString": "int256"
                       },
                       "typeName": {
-                        "id": 68614,
+                        "id": 63500,
                         "name": "int256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "11115:6:114",
+                        "src": "11115:6:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -6178,24 +6174,24 @@ export const LogExpMath =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 68616,
+                  "id": 63502,
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "11115:11:114"
+                  "src": "11115:11:96"
                 },
                 {
                   "expression": {
-                    "id": 68619,
+                    "id": 63505,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 68617,
+                      "id": 63503,
                       "name": "term",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68615,
-                      "src": "11235:4:114",
+                      "referencedDeclaration": 63501,
+                      "src": "11235:4:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -6204,41 +6200,41 @@ export const LogExpMath =
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 68618,
+                      "id": 63504,
                       "name": "x",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68391,
-                      "src": "11242:1:114",
+                      "referencedDeclaration": 63277,
+                      "src": "11242:1:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "11235:8:114",
+                    "src": "11235:8:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 68620,
+                  "id": 63506,
                   "nodeType": "ExpressionStatement",
-                  "src": "11235:8:114"
+                  "src": "11235:8:96"
                 },
                 {
                   "expression": {
-                    "id": 68623,
+                    "id": 63509,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 68621,
+                      "id": 63507,
                       "name": "seriesSum",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68611,
-                      "src": "11253:9:114",
+                      "referencedDeclaration": 63497,
+                      "src": "11253:9:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -6247,41 +6243,41 @@ export const LogExpMath =
                     "nodeType": "Assignment",
                     "operator": "+=",
                     "rightHandSide": {
-                      "id": 68622,
+                      "id": 63508,
                       "name": "term",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68615,
-                      "src": "11266:4:114",
+                      "referencedDeclaration": 63501,
+                      "src": "11266:4:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "11253:17:114",
+                    "src": "11253:17:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 68624,
+                  "id": 63510,
                   "nodeType": "ExpressionStatement",
-                  "src": "11253:17:114"
+                  "src": "11253:17:96"
                 },
                 {
                   "expression": {
-                    "id": 68635,
+                    "id": 63521,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 68625,
+                      "id": 63511,
                       "name": "term",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68615,
-                      "src": "11507:4:114",
+                      "referencedDeclaration": 63501,
+                      "src": "11507:4:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -6294,7 +6290,7 @@ export const LogExpMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 68634,
+                      "id": 63520,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -6306,7 +6302,7 @@ export const LogExpMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 68631,
+                            "id": 63517,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -6318,18 +6314,18 @@ export const LogExpMath =
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   },
-                                  "id": 68628,
+                                  "id": 63514,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "leftExpression": {
-                                    "id": 68626,
+                                    "id": 63512,
                                     "name": "term",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68615,
-                                    "src": "11516:4:114",
+                                    "referencedDeclaration": 63501,
+                                    "src": "11516:4:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
@@ -6338,32 +6334,32 @@ export const LogExpMath =
                                   "nodeType": "BinaryOperation",
                                   "operator": "*",
                                   "rightExpression": {
-                                    "id": 68627,
+                                    "id": 63513,
                                     "name": "x",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68391,
-                                    "src": "11523:1:114",
+                                    "referencedDeclaration": 63277,
+                                    "src": "11523:1:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
                                     }
                                   },
-                                  "src": "11516:8:114",
+                                  "src": "11516:8:96",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   }
                                 }
                               ],
-                              "id": 68629,
+                              "id": 63515,
                               "isConstant": false,
                               "isInlineArray": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "nodeType": "TupleExpression",
-                              "src": "11515:10:114",
+                              "src": "11515:10:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -6372,32 +6368,32 @@ export const LogExpMath =
                             "nodeType": "BinaryOperation",
                             "operator": "/",
                             "rightExpression": {
-                              "id": 68630,
+                              "id": 63516,
                               "name": "ONE_20",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 68156,
-                              "src": "11528:6:114",
+                              "referencedDeclaration": 63042,
+                              "src": "11528:6:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "11515:19:114",
+                            "src": "11515:19:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           }
                         ],
-                        "id": 68632,
+                        "id": 63518,
                         "isConstant": false,
                         "isInlineArray": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "TupleExpression",
-                        "src": "11514:21:114",
+                        "src": "11514:21:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -6407,50 +6403,50 @@ export const LogExpMath =
                       "operator": "/",
                       "rightExpression": {
                         "hexValue": "32",
-                        "id": 68633,
+                        "id": 63519,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "11538:1:114",
+                        "src": "11538:1:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_rational_2_by_1",
                           "typeString": "int_const 2"
                         },
                         "value": "2"
                       },
-                      "src": "11514:25:114",
+                      "src": "11514:25:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "11507:32:114",
+                    "src": "11507:32:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 68636,
+                  "id": 63522,
                   "nodeType": "ExpressionStatement",
-                  "src": "11507:32:114"
+                  "src": "11507:32:96"
                 },
                 {
                   "expression": {
-                    "id": 68639,
+                    "id": 63525,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 68637,
+                      "id": 63523,
                       "name": "seriesSum",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68611,
-                      "src": "11549:9:114",
+                      "referencedDeclaration": 63497,
+                      "src": "11549:9:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -6459,41 +6455,41 @@ export const LogExpMath =
                     "nodeType": "Assignment",
                     "operator": "+=",
                     "rightHandSide": {
-                      "id": 68638,
+                      "id": 63524,
                       "name": "term",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68615,
-                      "src": "11562:4:114",
+                      "referencedDeclaration": 63501,
+                      "src": "11562:4:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "11549:17:114",
+                    "src": "11549:17:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 68640,
+                  "id": 63526,
                   "nodeType": "ExpressionStatement",
-                  "src": "11549:17:114"
+                  "src": "11549:17:96"
                 },
                 {
                   "expression": {
-                    "id": 68651,
+                    "id": 63537,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 68641,
+                      "id": 63527,
                       "name": "term",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68615,
-                      "src": "11577:4:114",
+                      "referencedDeclaration": 63501,
+                      "src": "11577:4:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -6506,7 +6502,7 @@ export const LogExpMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 68650,
+                      "id": 63536,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -6518,7 +6514,7 @@ export const LogExpMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 68647,
+                            "id": 63533,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -6530,18 +6526,18 @@ export const LogExpMath =
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   },
-                                  "id": 68644,
+                                  "id": 63530,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "leftExpression": {
-                                    "id": 68642,
+                                    "id": 63528,
                                     "name": "term",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68615,
-                                    "src": "11586:4:114",
+                                    "referencedDeclaration": 63501,
+                                    "src": "11586:4:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
@@ -6550,32 +6546,32 @@ export const LogExpMath =
                                   "nodeType": "BinaryOperation",
                                   "operator": "*",
                                   "rightExpression": {
-                                    "id": 68643,
+                                    "id": 63529,
                                     "name": "x",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68391,
-                                    "src": "11593:1:114",
+                                    "referencedDeclaration": 63277,
+                                    "src": "11593:1:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
                                     }
                                   },
-                                  "src": "11586:8:114",
+                                  "src": "11586:8:96",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   }
                                 }
                               ],
-                              "id": 68645,
+                              "id": 63531,
                               "isConstant": false,
                               "isInlineArray": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "nodeType": "TupleExpression",
-                              "src": "11585:10:114",
+                              "src": "11585:10:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -6584,32 +6580,32 @@ export const LogExpMath =
                             "nodeType": "BinaryOperation",
                             "operator": "/",
                             "rightExpression": {
-                              "id": 68646,
+                              "id": 63532,
                               "name": "ONE_20",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 68156,
-                              "src": "11598:6:114",
+                              "referencedDeclaration": 63042,
+                              "src": "11598:6:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "11585:19:114",
+                            "src": "11585:19:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           }
                         ],
-                        "id": 68648,
+                        "id": 63534,
                         "isConstant": false,
                         "isInlineArray": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "TupleExpression",
-                        "src": "11584:21:114",
+                        "src": "11584:21:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -6619,50 +6615,50 @@ export const LogExpMath =
                       "operator": "/",
                       "rightExpression": {
                         "hexValue": "33",
-                        "id": 68649,
+                        "id": 63535,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "11608:1:114",
+                        "src": "11608:1:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_rational_3_by_1",
                           "typeString": "int_const 3"
                         },
                         "value": "3"
                       },
-                      "src": "11584:25:114",
+                      "src": "11584:25:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "11577:32:114",
+                    "src": "11577:32:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 68652,
+                  "id": 63538,
                   "nodeType": "ExpressionStatement",
-                  "src": "11577:32:114"
+                  "src": "11577:32:96"
                 },
                 {
                   "expression": {
-                    "id": 68655,
+                    "id": 63541,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 68653,
+                      "id": 63539,
                       "name": "seriesSum",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68611,
-                      "src": "11619:9:114",
+                      "referencedDeclaration": 63497,
+                      "src": "11619:9:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -6671,41 +6667,41 @@ export const LogExpMath =
                     "nodeType": "Assignment",
                     "operator": "+=",
                     "rightHandSide": {
-                      "id": 68654,
+                      "id": 63540,
                       "name": "term",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68615,
-                      "src": "11632:4:114",
+                      "referencedDeclaration": 63501,
+                      "src": "11632:4:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "11619:17:114",
+                    "src": "11619:17:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 68656,
+                  "id": 63542,
                   "nodeType": "ExpressionStatement",
-                  "src": "11619:17:114"
+                  "src": "11619:17:96"
                 },
                 {
                   "expression": {
-                    "id": 68667,
+                    "id": 63553,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 68657,
+                      "id": 63543,
                       "name": "term",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68615,
-                      "src": "11647:4:114",
+                      "referencedDeclaration": 63501,
+                      "src": "11647:4:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -6718,7 +6714,7 @@ export const LogExpMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 68666,
+                      "id": 63552,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -6730,7 +6726,7 @@ export const LogExpMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 68663,
+                            "id": 63549,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -6742,18 +6738,18 @@ export const LogExpMath =
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   },
-                                  "id": 68660,
+                                  "id": 63546,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "leftExpression": {
-                                    "id": 68658,
+                                    "id": 63544,
                                     "name": "term",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68615,
-                                    "src": "11656:4:114",
+                                    "referencedDeclaration": 63501,
+                                    "src": "11656:4:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
@@ -6762,32 +6758,32 @@ export const LogExpMath =
                                   "nodeType": "BinaryOperation",
                                   "operator": "*",
                                   "rightExpression": {
-                                    "id": 68659,
+                                    "id": 63545,
                                     "name": "x",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68391,
-                                    "src": "11663:1:114",
+                                    "referencedDeclaration": 63277,
+                                    "src": "11663:1:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
                                     }
                                   },
-                                  "src": "11656:8:114",
+                                  "src": "11656:8:96",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   }
                                 }
                               ],
-                              "id": 68661,
+                              "id": 63547,
                               "isConstant": false,
                               "isInlineArray": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "nodeType": "TupleExpression",
-                              "src": "11655:10:114",
+                              "src": "11655:10:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -6796,32 +6792,32 @@ export const LogExpMath =
                             "nodeType": "BinaryOperation",
                             "operator": "/",
                             "rightExpression": {
-                              "id": 68662,
+                              "id": 63548,
                               "name": "ONE_20",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 68156,
-                              "src": "11668:6:114",
+                              "referencedDeclaration": 63042,
+                              "src": "11668:6:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "11655:19:114",
+                            "src": "11655:19:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           }
                         ],
-                        "id": 68664,
+                        "id": 63550,
                         "isConstant": false,
                         "isInlineArray": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "TupleExpression",
-                        "src": "11654:21:114",
+                        "src": "11654:21:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -6831,50 +6827,50 @@ export const LogExpMath =
                       "operator": "/",
                       "rightExpression": {
                         "hexValue": "34",
-                        "id": 68665,
+                        "id": 63551,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "11678:1:114",
+                        "src": "11678:1:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_rational_4_by_1",
                           "typeString": "int_const 4"
                         },
                         "value": "4"
                       },
-                      "src": "11654:25:114",
+                      "src": "11654:25:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "11647:32:114",
+                    "src": "11647:32:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 68668,
+                  "id": 63554,
                   "nodeType": "ExpressionStatement",
-                  "src": "11647:32:114"
+                  "src": "11647:32:96"
                 },
                 {
                   "expression": {
-                    "id": 68671,
+                    "id": 63557,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 68669,
+                      "id": 63555,
                       "name": "seriesSum",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68611,
-                      "src": "11689:9:114",
+                      "referencedDeclaration": 63497,
+                      "src": "11689:9:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -6883,41 +6879,41 @@ export const LogExpMath =
                     "nodeType": "Assignment",
                     "operator": "+=",
                     "rightHandSide": {
-                      "id": 68670,
+                      "id": 63556,
                       "name": "term",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68615,
-                      "src": "11702:4:114",
+                      "referencedDeclaration": 63501,
+                      "src": "11702:4:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "11689:17:114",
+                    "src": "11689:17:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 68672,
+                  "id": 63558,
                   "nodeType": "ExpressionStatement",
-                  "src": "11689:17:114"
+                  "src": "11689:17:96"
                 },
                 {
                   "expression": {
-                    "id": 68683,
+                    "id": 63569,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 68673,
+                      "id": 63559,
                       "name": "term",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68615,
-                      "src": "11717:4:114",
+                      "referencedDeclaration": 63501,
+                      "src": "11717:4:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -6930,7 +6926,7 @@ export const LogExpMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 68682,
+                      "id": 63568,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -6942,7 +6938,7 @@ export const LogExpMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 68679,
+                            "id": 63565,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -6954,18 +6950,18 @@ export const LogExpMath =
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   },
-                                  "id": 68676,
+                                  "id": 63562,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "leftExpression": {
-                                    "id": 68674,
+                                    "id": 63560,
                                     "name": "term",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68615,
-                                    "src": "11726:4:114",
+                                    "referencedDeclaration": 63501,
+                                    "src": "11726:4:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
@@ -6974,32 +6970,32 @@ export const LogExpMath =
                                   "nodeType": "BinaryOperation",
                                   "operator": "*",
                                   "rightExpression": {
-                                    "id": 68675,
+                                    "id": 63561,
                                     "name": "x",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68391,
-                                    "src": "11733:1:114",
+                                    "referencedDeclaration": 63277,
+                                    "src": "11733:1:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
                                     }
                                   },
-                                  "src": "11726:8:114",
+                                  "src": "11726:8:96",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   }
                                 }
                               ],
-                              "id": 68677,
+                              "id": 63563,
                               "isConstant": false,
                               "isInlineArray": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "nodeType": "TupleExpression",
-                              "src": "11725:10:114",
+                              "src": "11725:10:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -7008,32 +7004,32 @@ export const LogExpMath =
                             "nodeType": "BinaryOperation",
                             "operator": "/",
                             "rightExpression": {
-                              "id": 68678,
+                              "id": 63564,
                               "name": "ONE_20",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 68156,
-                              "src": "11738:6:114",
+                              "referencedDeclaration": 63042,
+                              "src": "11738:6:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "11725:19:114",
+                            "src": "11725:19:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           }
                         ],
-                        "id": 68680,
+                        "id": 63566,
                         "isConstant": false,
                         "isInlineArray": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "TupleExpression",
-                        "src": "11724:21:114",
+                        "src": "11724:21:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -7043,50 +7039,50 @@ export const LogExpMath =
                       "operator": "/",
                       "rightExpression": {
                         "hexValue": "35",
-                        "id": 68681,
+                        "id": 63567,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "11748:1:114",
+                        "src": "11748:1:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_rational_5_by_1",
                           "typeString": "int_const 5"
                         },
                         "value": "5"
                       },
-                      "src": "11724:25:114",
+                      "src": "11724:25:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "11717:32:114",
+                    "src": "11717:32:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 68684,
+                  "id": 63570,
                   "nodeType": "ExpressionStatement",
-                  "src": "11717:32:114"
+                  "src": "11717:32:96"
                 },
                 {
                   "expression": {
-                    "id": 68687,
+                    "id": 63573,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 68685,
+                      "id": 63571,
                       "name": "seriesSum",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68611,
-                      "src": "11759:9:114",
+                      "referencedDeclaration": 63497,
+                      "src": "11759:9:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -7095,41 +7091,41 @@ export const LogExpMath =
                     "nodeType": "Assignment",
                     "operator": "+=",
                     "rightHandSide": {
-                      "id": 68686,
+                      "id": 63572,
                       "name": "term",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68615,
-                      "src": "11772:4:114",
+                      "referencedDeclaration": 63501,
+                      "src": "11772:4:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "11759:17:114",
+                    "src": "11759:17:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 68688,
+                  "id": 63574,
                   "nodeType": "ExpressionStatement",
-                  "src": "11759:17:114"
+                  "src": "11759:17:96"
                 },
                 {
                   "expression": {
-                    "id": 68699,
+                    "id": 63585,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 68689,
+                      "id": 63575,
                       "name": "term",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68615,
-                      "src": "11787:4:114",
+                      "referencedDeclaration": 63501,
+                      "src": "11787:4:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -7142,7 +7138,7 @@ export const LogExpMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 68698,
+                      "id": 63584,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -7154,7 +7150,7 @@ export const LogExpMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 68695,
+                            "id": 63581,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -7166,18 +7162,18 @@ export const LogExpMath =
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   },
-                                  "id": 68692,
+                                  "id": 63578,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "leftExpression": {
-                                    "id": 68690,
+                                    "id": 63576,
                                     "name": "term",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68615,
-                                    "src": "11796:4:114",
+                                    "referencedDeclaration": 63501,
+                                    "src": "11796:4:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
@@ -7186,32 +7182,32 @@ export const LogExpMath =
                                   "nodeType": "BinaryOperation",
                                   "operator": "*",
                                   "rightExpression": {
-                                    "id": 68691,
+                                    "id": 63577,
                                     "name": "x",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68391,
-                                    "src": "11803:1:114",
+                                    "referencedDeclaration": 63277,
+                                    "src": "11803:1:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
                                     }
                                   },
-                                  "src": "11796:8:114",
+                                  "src": "11796:8:96",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   }
                                 }
                               ],
-                              "id": 68693,
+                              "id": 63579,
                               "isConstant": false,
                               "isInlineArray": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "nodeType": "TupleExpression",
-                              "src": "11795:10:114",
+                              "src": "11795:10:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -7220,32 +7216,32 @@ export const LogExpMath =
                             "nodeType": "BinaryOperation",
                             "operator": "/",
                             "rightExpression": {
-                              "id": 68694,
+                              "id": 63580,
                               "name": "ONE_20",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 68156,
-                              "src": "11808:6:114",
+                              "referencedDeclaration": 63042,
+                              "src": "11808:6:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "11795:19:114",
+                            "src": "11795:19:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           }
                         ],
-                        "id": 68696,
+                        "id": 63582,
                         "isConstant": false,
                         "isInlineArray": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "TupleExpression",
-                        "src": "11794:21:114",
+                        "src": "11794:21:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -7255,50 +7251,50 @@ export const LogExpMath =
                       "operator": "/",
                       "rightExpression": {
                         "hexValue": "36",
-                        "id": 68697,
+                        "id": 63583,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "11818:1:114",
+                        "src": "11818:1:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_rational_6_by_1",
                           "typeString": "int_const 6"
                         },
                         "value": "6"
                       },
-                      "src": "11794:25:114",
+                      "src": "11794:25:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "11787:32:114",
+                    "src": "11787:32:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 68700,
+                  "id": 63586,
                   "nodeType": "ExpressionStatement",
-                  "src": "11787:32:114"
+                  "src": "11787:32:96"
                 },
                 {
                   "expression": {
-                    "id": 68703,
+                    "id": 63589,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 68701,
+                      "id": 63587,
                       "name": "seriesSum",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68611,
-                      "src": "11829:9:114",
+                      "referencedDeclaration": 63497,
+                      "src": "11829:9:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -7307,41 +7303,41 @@ export const LogExpMath =
                     "nodeType": "Assignment",
                     "operator": "+=",
                     "rightHandSide": {
-                      "id": 68702,
+                      "id": 63588,
                       "name": "term",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68615,
-                      "src": "11842:4:114",
+                      "referencedDeclaration": 63501,
+                      "src": "11842:4:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "11829:17:114",
+                    "src": "11829:17:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 68704,
+                  "id": 63590,
                   "nodeType": "ExpressionStatement",
-                  "src": "11829:17:114"
+                  "src": "11829:17:96"
                 },
                 {
                   "expression": {
-                    "id": 68715,
+                    "id": 63601,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 68705,
+                      "id": 63591,
                       "name": "term",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68615,
-                      "src": "11857:4:114",
+                      "referencedDeclaration": 63501,
+                      "src": "11857:4:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -7354,7 +7350,7 @@ export const LogExpMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 68714,
+                      "id": 63600,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -7366,7 +7362,7 @@ export const LogExpMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 68711,
+                            "id": 63597,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -7378,18 +7374,18 @@ export const LogExpMath =
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   },
-                                  "id": 68708,
+                                  "id": 63594,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "leftExpression": {
-                                    "id": 68706,
+                                    "id": 63592,
                                     "name": "term",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68615,
-                                    "src": "11866:4:114",
+                                    "referencedDeclaration": 63501,
+                                    "src": "11866:4:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
@@ -7398,32 +7394,32 @@ export const LogExpMath =
                                   "nodeType": "BinaryOperation",
                                   "operator": "*",
                                   "rightExpression": {
-                                    "id": 68707,
+                                    "id": 63593,
                                     "name": "x",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68391,
-                                    "src": "11873:1:114",
+                                    "referencedDeclaration": 63277,
+                                    "src": "11873:1:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
                                     }
                                   },
-                                  "src": "11866:8:114",
+                                  "src": "11866:8:96",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   }
                                 }
                               ],
-                              "id": 68709,
+                              "id": 63595,
                               "isConstant": false,
                               "isInlineArray": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "nodeType": "TupleExpression",
-                              "src": "11865:10:114",
+                              "src": "11865:10:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -7432,32 +7428,32 @@ export const LogExpMath =
                             "nodeType": "BinaryOperation",
                             "operator": "/",
                             "rightExpression": {
-                              "id": 68710,
+                              "id": 63596,
                               "name": "ONE_20",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 68156,
-                              "src": "11878:6:114",
+                              "referencedDeclaration": 63042,
+                              "src": "11878:6:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "11865:19:114",
+                            "src": "11865:19:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           }
                         ],
-                        "id": 68712,
+                        "id": 63598,
                         "isConstant": false,
                         "isInlineArray": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "TupleExpression",
-                        "src": "11864:21:114",
+                        "src": "11864:21:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -7467,50 +7463,50 @@ export const LogExpMath =
                       "operator": "/",
                       "rightExpression": {
                         "hexValue": "37",
-                        "id": 68713,
+                        "id": 63599,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "11888:1:114",
+                        "src": "11888:1:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_rational_7_by_1",
                           "typeString": "int_const 7"
                         },
                         "value": "7"
                       },
-                      "src": "11864:25:114",
+                      "src": "11864:25:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "11857:32:114",
+                    "src": "11857:32:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 68716,
+                  "id": 63602,
                   "nodeType": "ExpressionStatement",
-                  "src": "11857:32:114"
+                  "src": "11857:32:96"
                 },
                 {
                   "expression": {
-                    "id": 68719,
+                    "id": 63605,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 68717,
+                      "id": 63603,
                       "name": "seriesSum",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68611,
-                      "src": "11899:9:114",
+                      "referencedDeclaration": 63497,
+                      "src": "11899:9:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -7519,41 +7515,41 @@ export const LogExpMath =
                     "nodeType": "Assignment",
                     "operator": "+=",
                     "rightHandSide": {
-                      "id": 68718,
+                      "id": 63604,
                       "name": "term",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68615,
-                      "src": "11912:4:114",
+                      "referencedDeclaration": 63501,
+                      "src": "11912:4:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "11899:17:114",
+                    "src": "11899:17:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 68720,
+                  "id": 63606,
                   "nodeType": "ExpressionStatement",
-                  "src": "11899:17:114"
+                  "src": "11899:17:96"
                 },
                 {
                   "expression": {
-                    "id": 68731,
+                    "id": 63617,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 68721,
+                      "id": 63607,
                       "name": "term",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68615,
-                      "src": "11927:4:114",
+                      "referencedDeclaration": 63501,
+                      "src": "11927:4:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -7566,7 +7562,7 @@ export const LogExpMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 68730,
+                      "id": 63616,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -7578,7 +7574,7 @@ export const LogExpMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 68727,
+                            "id": 63613,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -7590,18 +7586,18 @@ export const LogExpMath =
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   },
-                                  "id": 68724,
+                                  "id": 63610,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "leftExpression": {
-                                    "id": 68722,
+                                    "id": 63608,
                                     "name": "term",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68615,
-                                    "src": "11936:4:114",
+                                    "referencedDeclaration": 63501,
+                                    "src": "11936:4:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
@@ -7610,32 +7606,32 @@ export const LogExpMath =
                                   "nodeType": "BinaryOperation",
                                   "operator": "*",
                                   "rightExpression": {
-                                    "id": 68723,
+                                    "id": 63609,
                                     "name": "x",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68391,
-                                    "src": "11943:1:114",
+                                    "referencedDeclaration": 63277,
+                                    "src": "11943:1:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
                                     }
                                   },
-                                  "src": "11936:8:114",
+                                  "src": "11936:8:96",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   }
                                 }
                               ],
-                              "id": 68725,
+                              "id": 63611,
                               "isConstant": false,
                               "isInlineArray": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "nodeType": "TupleExpression",
-                              "src": "11935:10:114",
+                              "src": "11935:10:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -7644,32 +7640,32 @@ export const LogExpMath =
                             "nodeType": "BinaryOperation",
                             "operator": "/",
                             "rightExpression": {
-                              "id": 68726,
+                              "id": 63612,
                               "name": "ONE_20",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 68156,
-                              "src": "11948:6:114",
+                              "referencedDeclaration": 63042,
+                              "src": "11948:6:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "11935:19:114",
+                            "src": "11935:19:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           }
                         ],
-                        "id": 68728,
+                        "id": 63614,
                         "isConstant": false,
                         "isInlineArray": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "TupleExpression",
-                        "src": "11934:21:114",
+                        "src": "11934:21:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -7679,50 +7675,50 @@ export const LogExpMath =
                       "operator": "/",
                       "rightExpression": {
                         "hexValue": "38",
-                        "id": 68729,
+                        "id": 63615,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "11958:1:114",
+                        "src": "11958:1:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_rational_8_by_1",
                           "typeString": "int_const 8"
                         },
                         "value": "8"
                       },
-                      "src": "11934:25:114",
+                      "src": "11934:25:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "11927:32:114",
+                    "src": "11927:32:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 68732,
+                  "id": 63618,
                   "nodeType": "ExpressionStatement",
-                  "src": "11927:32:114"
+                  "src": "11927:32:96"
                 },
                 {
                   "expression": {
-                    "id": 68735,
+                    "id": 63621,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 68733,
+                      "id": 63619,
                       "name": "seriesSum",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68611,
-                      "src": "11969:9:114",
+                      "referencedDeclaration": 63497,
+                      "src": "11969:9:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -7731,41 +7727,41 @@ export const LogExpMath =
                     "nodeType": "Assignment",
                     "operator": "+=",
                     "rightHandSide": {
-                      "id": 68734,
+                      "id": 63620,
                       "name": "term",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68615,
-                      "src": "11982:4:114",
+                      "referencedDeclaration": 63501,
+                      "src": "11982:4:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "11969:17:114",
+                    "src": "11969:17:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 68736,
+                  "id": 63622,
                   "nodeType": "ExpressionStatement",
-                  "src": "11969:17:114"
+                  "src": "11969:17:96"
                 },
                 {
                   "expression": {
-                    "id": 68747,
+                    "id": 63633,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 68737,
+                      "id": 63623,
                       "name": "term",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68615,
-                      "src": "11997:4:114",
+                      "referencedDeclaration": 63501,
+                      "src": "11997:4:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -7778,7 +7774,7 @@ export const LogExpMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 68746,
+                      "id": 63632,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -7790,7 +7786,7 @@ export const LogExpMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 68743,
+                            "id": 63629,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -7802,18 +7798,18 @@ export const LogExpMath =
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   },
-                                  "id": 68740,
+                                  "id": 63626,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "leftExpression": {
-                                    "id": 68738,
+                                    "id": 63624,
                                     "name": "term",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68615,
-                                    "src": "12006:4:114",
+                                    "referencedDeclaration": 63501,
+                                    "src": "12006:4:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
@@ -7822,32 +7818,32 @@ export const LogExpMath =
                                   "nodeType": "BinaryOperation",
                                   "operator": "*",
                                   "rightExpression": {
-                                    "id": 68739,
+                                    "id": 63625,
                                     "name": "x",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68391,
-                                    "src": "12013:1:114",
+                                    "referencedDeclaration": 63277,
+                                    "src": "12013:1:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
                                     }
                                   },
-                                  "src": "12006:8:114",
+                                  "src": "12006:8:96",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   }
                                 }
                               ],
-                              "id": 68741,
+                              "id": 63627,
                               "isConstant": false,
                               "isInlineArray": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "nodeType": "TupleExpression",
-                              "src": "12005:10:114",
+                              "src": "12005:10:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -7856,32 +7852,32 @@ export const LogExpMath =
                             "nodeType": "BinaryOperation",
                             "operator": "/",
                             "rightExpression": {
-                              "id": 68742,
+                              "id": 63628,
                               "name": "ONE_20",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 68156,
-                              "src": "12018:6:114",
+                              "referencedDeclaration": 63042,
+                              "src": "12018:6:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "12005:19:114",
+                            "src": "12005:19:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           }
                         ],
-                        "id": 68744,
+                        "id": 63630,
                         "isConstant": false,
                         "isInlineArray": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "TupleExpression",
-                        "src": "12004:21:114",
+                        "src": "12004:21:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -7891,50 +7887,50 @@ export const LogExpMath =
                       "operator": "/",
                       "rightExpression": {
                         "hexValue": "39",
-                        "id": 68745,
+                        "id": 63631,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "12028:1:114",
+                        "src": "12028:1:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_rational_9_by_1",
                           "typeString": "int_const 9"
                         },
                         "value": "9"
                       },
-                      "src": "12004:25:114",
+                      "src": "12004:25:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "11997:32:114",
+                    "src": "11997:32:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 68748,
+                  "id": 63634,
                   "nodeType": "ExpressionStatement",
-                  "src": "11997:32:114"
+                  "src": "11997:32:96"
                 },
                 {
                   "expression": {
-                    "id": 68751,
+                    "id": 63637,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 68749,
+                      "id": 63635,
                       "name": "seriesSum",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68611,
-                      "src": "12039:9:114",
+                      "referencedDeclaration": 63497,
+                      "src": "12039:9:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -7943,41 +7939,41 @@ export const LogExpMath =
                     "nodeType": "Assignment",
                     "operator": "+=",
                     "rightHandSide": {
-                      "id": 68750,
+                      "id": 63636,
                       "name": "term",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68615,
-                      "src": "12052:4:114",
+                      "referencedDeclaration": 63501,
+                      "src": "12052:4:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "12039:17:114",
+                    "src": "12039:17:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 68752,
+                  "id": 63638,
                   "nodeType": "ExpressionStatement",
-                  "src": "12039:17:114"
+                  "src": "12039:17:96"
                 },
                 {
                   "expression": {
-                    "id": 68763,
+                    "id": 63649,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 68753,
+                      "id": 63639,
                       "name": "term",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68615,
-                      "src": "12067:4:114",
+                      "referencedDeclaration": 63501,
+                      "src": "12067:4:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -7990,7 +7986,7 @@ export const LogExpMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 68762,
+                      "id": 63648,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -8002,7 +7998,7 @@ export const LogExpMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 68759,
+                            "id": 63645,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -8014,18 +8010,18 @@ export const LogExpMath =
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   },
-                                  "id": 68756,
+                                  "id": 63642,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "leftExpression": {
-                                    "id": 68754,
+                                    "id": 63640,
                                     "name": "term",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68615,
-                                    "src": "12076:4:114",
+                                    "referencedDeclaration": 63501,
+                                    "src": "12076:4:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
@@ -8034,32 +8030,32 @@ export const LogExpMath =
                                   "nodeType": "BinaryOperation",
                                   "operator": "*",
                                   "rightExpression": {
-                                    "id": 68755,
+                                    "id": 63641,
                                     "name": "x",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68391,
-                                    "src": "12083:1:114",
+                                    "referencedDeclaration": 63277,
+                                    "src": "12083:1:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
                                     }
                                   },
-                                  "src": "12076:8:114",
+                                  "src": "12076:8:96",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   }
                                 }
                               ],
-                              "id": 68757,
+                              "id": 63643,
                               "isConstant": false,
                               "isInlineArray": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "nodeType": "TupleExpression",
-                              "src": "12075:10:114",
+                              "src": "12075:10:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -8068,32 +8064,32 @@ export const LogExpMath =
                             "nodeType": "BinaryOperation",
                             "operator": "/",
                             "rightExpression": {
-                              "id": 68758,
+                              "id": 63644,
                               "name": "ONE_20",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 68156,
-                              "src": "12088:6:114",
+                              "referencedDeclaration": 63042,
+                              "src": "12088:6:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "12075:19:114",
+                            "src": "12075:19:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           }
                         ],
-                        "id": 68760,
+                        "id": 63646,
                         "isConstant": false,
                         "isInlineArray": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "TupleExpression",
-                        "src": "12074:21:114",
+                        "src": "12074:21:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -8103,50 +8099,50 @@ export const LogExpMath =
                       "operator": "/",
                       "rightExpression": {
                         "hexValue": "3130",
-                        "id": 68761,
+                        "id": 63647,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "12098:2:114",
+                        "src": "12098:2:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_rational_10_by_1",
                           "typeString": "int_const 10"
                         },
                         "value": "10"
                       },
-                      "src": "12074:26:114",
+                      "src": "12074:26:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "12067:33:114",
+                    "src": "12067:33:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 68764,
+                  "id": 63650,
                   "nodeType": "ExpressionStatement",
-                  "src": "12067:33:114"
+                  "src": "12067:33:96"
                 },
                 {
                   "expression": {
-                    "id": 68767,
+                    "id": 63653,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 68765,
+                      "id": 63651,
                       "name": "seriesSum",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68611,
-                      "src": "12110:9:114",
+                      "referencedDeclaration": 63497,
+                      "src": "12110:9:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -8155,41 +8151,41 @@ export const LogExpMath =
                     "nodeType": "Assignment",
                     "operator": "+=",
                     "rightHandSide": {
-                      "id": 68766,
+                      "id": 63652,
                       "name": "term",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68615,
-                      "src": "12123:4:114",
+                      "referencedDeclaration": 63501,
+                      "src": "12123:4:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "12110:17:114",
+                    "src": "12110:17:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 68768,
+                  "id": 63654,
                   "nodeType": "ExpressionStatement",
-                  "src": "12110:17:114"
+                  "src": "12110:17:96"
                 },
                 {
                   "expression": {
-                    "id": 68779,
+                    "id": 63665,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 68769,
+                      "id": 63655,
                       "name": "term",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68615,
-                      "src": "12138:4:114",
+                      "referencedDeclaration": 63501,
+                      "src": "12138:4:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -8202,7 +8198,7 @@ export const LogExpMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 68778,
+                      "id": 63664,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -8214,7 +8210,7 @@ export const LogExpMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 68775,
+                            "id": 63661,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -8226,18 +8222,18 @@ export const LogExpMath =
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   },
-                                  "id": 68772,
+                                  "id": 63658,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "leftExpression": {
-                                    "id": 68770,
+                                    "id": 63656,
                                     "name": "term",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68615,
-                                    "src": "12147:4:114",
+                                    "referencedDeclaration": 63501,
+                                    "src": "12147:4:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
@@ -8246,32 +8242,32 @@ export const LogExpMath =
                                   "nodeType": "BinaryOperation",
                                   "operator": "*",
                                   "rightExpression": {
-                                    "id": 68771,
+                                    "id": 63657,
                                     "name": "x",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68391,
-                                    "src": "12154:1:114",
+                                    "referencedDeclaration": 63277,
+                                    "src": "12154:1:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
                                     }
                                   },
-                                  "src": "12147:8:114",
+                                  "src": "12147:8:96",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   }
                                 }
                               ],
-                              "id": 68773,
+                              "id": 63659,
                               "isConstant": false,
                               "isInlineArray": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "nodeType": "TupleExpression",
-                              "src": "12146:10:114",
+                              "src": "12146:10:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -8280,32 +8276,32 @@ export const LogExpMath =
                             "nodeType": "BinaryOperation",
                             "operator": "/",
                             "rightExpression": {
-                              "id": 68774,
+                              "id": 63660,
                               "name": "ONE_20",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 68156,
-                              "src": "12159:6:114",
+                              "referencedDeclaration": 63042,
+                              "src": "12159:6:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "12146:19:114",
+                            "src": "12146:19:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           }
                         ],
-                        "id": 68776,
+                        "id": 63662,
                         "isConstant": false,
                         "isInlineArray": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "TupleExpression",
-                        "src": "12145:21:114",
+                        "src": "12145:21:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -8315,50 +8311,50 @@ export const LogExpMath =
                       "operator": "/",
                       "rightExpression": {
                         "hexValue": "3131",
-                        "id": 68777,
+                        "id": 63663,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "12169:2:114",
+                        "src": "12169:2:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_rational_11_by_1",
                           "typeString": "int_const 11"
                         },
                         "value": "11"
                       },
-                      "src": "12145:26:114",
+                      "src": "12145:26:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "12138:33:114",
+                    "src": "12138:33:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 68780,
+                  "id": 63666,
                   "nodeType": "ExpressionStatement",
-                  "src": "12138:33:114"
+                  "src": "12138:33:96"
                 },
                 {
                   "expression": {
-                    "id": 68783,
+                    "id": 63669,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 68781,
+                      "id": 63667,
                       "name": "seriesSum",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68611,
-                      "src": "12181:9:114",
+                      "referencedDeclaration": 63497,
+                      "src": "12181:9:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -8367,41 +8363,41 @@ export const LogExpMath =
                     "nodeType": "Assignment",
                     "operator": "+=",
                     "rightHandSide": {
-                      "id": 68782,
+                      "id": 63668,
                       "name": "term",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68615,
-                      "src": "12194:4:114",
+                      "referencedDeclaration": 63501,
+                      "src": "12194:4:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "12181:17:114",
+                    "src": "12181:17:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 68784,
+                  "id": 63670,
                   "nodeType": "ExpressionStatement",
-                  "src": "12181:17:114"
+                  "src": "12181:17:96"
                 },
                 {
                   "expression": {
-                    "id": 68795,
+                    "id": 63681,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 68785,
+                      "id": 63671,
                       "name": "term",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68615,
-                      "src": "12209:4:114",
+                      "referencedDeclaration": 63501,
+                      "src": "12209:4:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -8414,7 +8410,7 @@ export const LogExpMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 68794,
+                      "id": 63680,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -8426,7 +8422,7 @@ export const LogExpMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 68791,
+                            "id": 63677,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -8438,18 +8434,18 @@ export const LogExpMath =
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   },
-                                  "id": 68788,
+                                  "id": 63674,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "leftExpression": {
-                                    "id": 68786,
+                                    "id": 63672,
                                     "name": "term",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68615,
-                                    "src": "12218:4:114",
+                                    "referencedDeclaration": 63501,
+                                    "src": "12218:4:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
@@ -8458,32 +8454,32 @@ export const LogExpMath =
                                   "nodeType": "BinaryOperation",
                                   "operator": "*",
                                   "rightExpression": {
-                                    "id": 68787,
+                                    "id": 63673,
                                     "name": "x",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68391,
-                                    "src": "12225:1:114",
+                                    "referencedDeclaration": 63277,
+                                    "src": "12225:1:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
                                     }
                                   },
-                                  "src": "12218:8:114",
+                                  "src": "12218:8:96",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   }
                                 }
                               ],
-                              "id": 68789,
+                              "id": 63675,
                               "isConstant": false,
                               "isInlineArray": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "nodeType": "TupleExpression",
-                              "src": "12217:10:114",
+                              "src": "12217:10:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -8492,32 +8488,32 @@ export const LogExpMath =
                             "nodeType": "BinaryOperation",
                             "operator": "/",
                             "rightExpression": {
-                              "id": 68790,
+                              "id": 63676,
                               "name": "ONE_20",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 68156,
-                              "src": "12230:6:114",
+                              "referencedDeclaration": 63042,
+                              "src": "12230:6:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "12217:19:114",
+                            "src": "12217:19:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           }
                         ],
-                        "id": 68792,
+                        "id": 63678,
                         "isConstant": false,
                         "isInlineArray": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "TupleExpression",
-                        "src": "12216:21:114",
+                        "src": "12216:21:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -8527,50 +8523,50 @@ export const LogExpMath =
                       "operator": "/",
                       "rightExpression": {
                         "hexValue": "3132",
-                        "id": 68793,
+                        "id": 63679,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "12240:2:114",
+                        "src": "12240:2:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_rational_12_by_1",
                           "typeString": "int_const 12"
                         },
                         "value": "12"
                       },
-                      "src": "12216:26:114",
+                      "src": "12216:26:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "12209:33:114",
+                    "src": "12209:33:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 68796,
+                  "id": 63682,
                   "nodeType": "ExpressionStatement",
-                  "src": "12209:33:114"
+                  "src": "12209:33:96"
                 },
                 {
                   "expression": {
-                    "id": 68799,
+                    "id": 63685,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 68797,
+                      "id": 63683,
                       "name": "seriesSum",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68611,
-                      "src": "12252:9:114",
+                      "referencedDeclaration": 63497,
+                      "src": "12252:9:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -8579,26 +8575,26 @@ export const LogExpMath =
                     "nodeType": "Assignment",
                     "operator": "+=",
                     "rightHandSide": {
-                      "id": 68798,
+                      "id": 63684,
                       "name": "term",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68615,
-                      "src": "12265:4:114",
+                      "referencedDeclaration": 63501,
+                      "src": "12265:4:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "12252:17:114",
+                    "src": "12252:17:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 68800,
+                  "id": 63686,
                   "nodeType": "ExpressionStatement",
-                  "src": "12252:17:114"
+                  "src": "12252:17:96"
                 },
                 {
                   "expression": {
@@ -8606,7 +8602,7 @@ export const LogExpMath =
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     },
-                    "id": 68812,
+                    "id": 63698,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -8618,7 +8614,7 @@ export const LogExpMath =
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           },
-                          "id": 68809,
+                          "id": 63695,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -8630,7 +8626,7 @@ export const LogExpMath =
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 },
-                                "id": 68806,
+                                "id": 63692,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -8642,18 +8638,18 @@ export const LogExpMath =
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
                                       },
-                                      "id": 68803,
+                                      "id": 63689,
                                       "isConstant": false,
                                       "isLValue": false,
                                       "isPure": false,
                                       "lValueRequested": false,
                                       "leftExpression": {
-                                        "id": 68801,
+                                        "id": 63687,
                                         "name": "product",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 68463,
-                                        "src": "12780:7:114",
+                                        "referencedDeclaration": 63349,
+                                        "src": "12780:7:96",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_int256",
                                           "typeString": "int256"
@@ -8662,32 +8658,32 @@ export const LogExpMath =
                                       "nodeType": "BinaryOperation",
                                       "operator": "*",
                                       "rightExpression": {
-                                        "id": 68802,
+                                        "id": 63688,
                                         "name": "seriesSum",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 68611,
-                                        "src": "12790:9:114",
+                                        "referencedDeclaration": 63497,
+                                        "src": "12790:9:96",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_int256",
                                           "typeString": "int256"
                                         }
                                       },
-                                      "src": "12780:19:114",
+                                      "src": "12780:19:96",
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
                                       }
                                     }
                                   ],
-                                  "id": 68804,
+                                  "id": 63690,
                                   "isConstant": false,
                                   "isInlineArray": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "nodeType": "TupleExpression",
-                                  "src": "12779:21:114",
+                                  "src": "12779:21:96",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
@@ -8696,32 +8692,32 @@ export const LogExpMath =
                                 "nodeType": "BinaryOperation",
                                 "operator": "/",
                                 "rightExpression": {
-                                  "id": 68805,
+                                  "id": 63691,
                                   "name": "ONE_20",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 68156,
-                                  "src": "12803:6:114",
+                                  "referencedDeclaration": 63042,
+                                  "src": "12803:6:96",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   }
                                 },
-                                "src": "12779:30:114",
+                                "src": "12779:30:96",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 }
                               }
                             ],
-                            "id": 68807,
+                            "id": 63693,
                             "isConstant": false,
                             "isInlineArray": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "nodeType": "TupleExpression",
-                            "src": "12778:32:114",
+                            "src": "12778:32:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -8730,32 +8726,32 @@ export const LogExpMath =
                           "nodeType": "BinaryOperation",
                           "operator": "*",
                           "rightExpression": {
-                            "id": 68808,
+                            "id": 63694,
                             "name": "firstAN",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68425,
-                            "src": "12813:7:114",
+                            "referencedDeclaration": 63311,
+                            "src": "12813:7:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "12778:42:114",
+                          "src": "12778:42:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         }
                       ],
-                      "id": 68810,
+                      "id": 63696,
                       "isConstant": false,
                       "isInlineArray": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "nodeType": "TupleExpression",
-                      "src": "12777:44:114",
+                      "src": "12777:44:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -8765,57 +8761,57 @@ export const LogExpMath =
                     "operator": "/",
                     "rightExpression": {
                       "hexValue": "313030",
-                      "id": 68811,
+                      "id": 63697,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "12824:3:114",
+                      "src": "12824:3:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_100_by_1",
                         "typeString": "int_const 100"
                       },
                       "value": "100"
                     },
-                    "src": "12777:50:114",
+                    "src": "12777:50:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "functionReturnParameters": 68395,
-                  "id": 68813,
+                  "functionReturnParameters": 63281,
+                  "id": 63699,
                   "nodeType": "Return",
-                  "src": "12770:57:114"
+                  "src": "12770:57:96"
                 }
               ]
             },
             "documentation": {
-              "id": 68389,
+              "id": 63275,
               "nodeType": "StructuredDocumentation",
-              "src": "7205:203:114",
+              "src": "7205:203:96",
               "text": " @dev Natural exponentiation (e^x) with signed 18 decimal fixed point exponent.\n Reverts if `x` is smaller than MIN_NATURAL_EXPONENT, or larger than `MAX_NATURAL_EXPONENT`."
             },
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "exp",
-            "nameLocation": "7422:3:114",
+            "nameLocation": "7422:3:96",
             "parameters": {
-              "id": 68392,
+              "id": 63278,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 68391,
+                  "id": 63277,
                   "mutability": "mutable",
                   "name": "x",
-                  "nameLocation": "7433:1:114",
+                  "nameLocation": "7433:1:96",
                   "nodeType": "VariableDeclaration",
-                  "scope": 68815,
-                  "src": "7426:8:114",
+                  "scope": 63701,
+                  "src": "7426:8:96",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -8823,10 +8819,10 @@ export const LogExpMath =
                     "typeString": "int256"
                   },
                   "typeName": {
-                    "id": 68390,
+                    "id": 63276,
                     "name": "int256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "7426:6:114",
+                    "src": "7426:6:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
@@ -8835,21 +8831,21 @@ export const LogExpMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "7425:10:114"
+              "src": "7425:10:96"
             },
             "returnParameters": {
-              "id": 68395,
+              "id": 63281,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 68394,
+                  "id": 63280,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 68815,
-                  "src": "7459:6:114",
+                  "scope": 63701,
+                  "src": "7459:6:96",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -8857,10 +8853,10 @@ export const LogExpMath =
                     "typeString": "int256"
                   },
                   "typeName": {
-                    "id": 68393,
+                    "id": 63279,
                     "name": "int256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "7459:6:114",
+                    "src": "7459:6:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
@@ -8869,38 +8865,38 @@ export const LogExpMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "7458:8:114"
+              "src": "7458:8:96"
             },
-            "scope": 69444,
+            "scope": 64330,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 68887,
+            "id": 63773,
             "nodeType": "FunctionDefinition",
-            "src": "12949:822:114",
+            "src": "12949:822:96",
             "nodes": [],
             "body": {
-              "id": 68886,
+              "id": 63772,
               "nodeType": "Block",
-              "src": "13018:753:114",
+              "src": "13018:753:96",
               "nodes": [],
               "statements": [
                 {
                   "assignments": [
-                    68826
+                    63712
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 68826,
+                      "id": 63712,
                       "mutability": "mutable",
                       "name": "logBase",
-                      "nameLocation": "13255:7:114",
+                      "nameLocation": "13255:7:96",
                       "nodeType": "VariableDeclaration",
-                      "scope": 68886,
-                      "src": "13248:14:114",
+                      "scope": 63772,
+                      "src": "13248:14:96",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -8908,10 +8904,10 @@ export const LogExpMath =
                         "typeString": "int256"
                       },
                       "typeName": {
-                        "id": 68825,
+                        "id": 63711,
                         "name": "int256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "13248:6:114",
+                        "src": "13248:6:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -8920,9 +8916,9 @@ export const LogExpMath =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 68827,
+                  "id": 63713,
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "13248:14:114"
+                  "src": "13248:14:96"
                 },
                 {
                   "condition": {
@@ -8930,7 +8926,7 @@ export const LogExpMath =
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     },
-                    "id": 68834,
+                    "id": 63720,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -8940,18 +8936,18 @@ export const LogExpMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 68830,
+                      "id": 63716,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
-                        "id": 68828,
+                        "id": 63714,
                         "name": "LN_36_LOWER_BOUND",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 68171,
-                        "src": "13276:17:114",
+                        "referencedDeclaration": 63057,
+                        "src": "13276:17:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -8960,18 +8956,18 @@ export const LogExpMath =
                       "nodeType": "BinaryOperation",
                       "operator": "<",
                       "rightExpression": {
-                        "id": 68829,
+                        "id": 63715,
                         "name": "base",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 68820,
-                        "src": "13296:4:114",
+                        "referencedDeclaration": 63706,
+                        "src": "13296:4:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "src": "13276:24:114",
+                      "src": "13276:24:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
@@ -8984,18 +8980,18 @@ export const LogExpMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 68833,
+                      "id": 63719,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
-                        "id": 68831,
+                        "id": 63717,
                         "name": "base",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 68820,
-                        "src": "13304:4:114",
+                        "referencedDeclaration": 63706,
+                        "src": "13304:4:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -9004,48 +9000,48 @@ export const LogExpMath =
                       "nodeType": "BinaryOperation",
                       "operator": "<",
                       "rightExpression": {
-                        "id": 68832,
+                        "id": 63718,
                         "name": "LN_36_UPPER_BOUND",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 68176,
-                        "src": "13311:17:114",
+                        "referencedDeclaration": 63062,
+                        "src": "13311:17:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "src": "13304:24:114",
+                      "src": "13304:24:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
                       }
                     },
-                    "src": "13276:52:114",
+                    "src": "13276:52:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
                   "falseBody": {
-                    "id": 68850,
+                    "id": 63736,
                     "nodeType": "Block",
-                    "src": "13383:53:114",
+                    "src": "13383:53:96",
                     "statements": [
                       {
                         "expression": {
-                          "id": 68848,
+                          "id": 63734,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 68842,
+                            "id": 63728,
                             "name": "logBase",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68826,
-                            "src": "13397:7:114",
+                            "referencedDeclaration": 63712,
+                            "src": "13397:7:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -9058,7 +9054,7 @@ export const LogExpMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 68847,
+                            "id": 63733,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -9066,12 +9062,12 @@ export const LogExpMath =
                             "leftExpression": {
                               "arguments": [
                                 {
-                                  "id": 68844,
+                                  "id": 63730,
                                   "name": "base",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 68820,
-                                  "src": "13411:4:114",
+                                  "referencedDeclaration": 63706,
+                                  "src": "13411:4:96",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
@@ -9085,18 +9081,18 @@ export const LogExpMath =
                                     "typeString": "int256"
                                   }
                                 ],
-                                "id": 68843,
+                                "id": 63729,
                                 "name": "_ln",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 69289,
-                                "src": "13407:3:114",
+                                "referencedDeclaration": 64175,
+                                "src": "13407:3:96",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_function_internal_pure$_t_int256_$returns$_t_int256_$",
                                   "typeString": "function (int256) pure returns (int256)"
                                 }
                               },
-                              "id": 68845,
+                              "id": 63731,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
@@ -9105,7 +9101,7 @@ export const LogExpMath =
                               "nameLocations": [],
                               "names": [],
                               "nodeType": "FunctionCall",
-                              "src": "13407:9:114",
+                              "src": "13407:9:96",
                               "tryCall": false,
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
@@ -9115,57 +9111,57 @@ export const LogExpMath =
                             "nodeType": "BinaryOperation",
                             "operator": "*",
                             "rightExpression": {
-                              "id": 68846,
+                              "id": 63732,
                               "name": "ONE_18",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 68153,
-                              "src": "13419:6:114",
+                              "referencedDeclaration": 63039,
+                              "src": "13419:6:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "13407:18:114",
+                            "src": "13407:18:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "13397:28:114",
+                          "src": "13397:28:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 68849,
+                        "id": 63735,
                         "nodeType": "ExpressionStatement",
-                        "src": "13397:28:114"
+                        "src": "13397:28:96"
                       }
                     ]
                   },
-                  "id": 68851,
+                  "id": 63737,
                   "nodeType": "IfStatement",
-                  "src": "13272:164:114",
+                  "src": "13272:164:96",
                   "trueBody": {
-                    "id": 68841,
+                    "id": 63727,
                     "nodeType": "Block",
-                    "src": "13330:47:114",
+                    "src": "13330:47:96",
                     "statements": [
                       {
                         "expression": {
-                          "id": 68839,
+                          "id": 63725,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 68835,
+                            "id": 63721,
                             "name": "logBase",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68826,
-                            "src": "13344:7:114",
+                            "referencedDeclaration": 63712,
+                            "src": "13344:7:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -9176,12 +9172,12 @@ export const LogExpMath =
                           "rightHandSide": {
                             "arguments": [
                               {
-                                "id": 68837,
+                                "id": 63723,
                                 "name": "base",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 68820,
-                                "src": "13361:4:114",
+                                "referencedDeclaration": 63706,
+                                "src": "13361:4:96",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
@@ -9195,18 +9191,18 @@ export const LogExpMath =
                                   "typeString": "int256"
                                 }
                               ],
-                              "id": 68836,
+                              "id": 63722,
                               "name": "_ln_36",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 69443,
-                              "src": "13354:6:114",
+                              "referencedDeclaration": 64329,
+                              "src": "13354:6:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_pure$_t_int256_$returns$_t_int256_$",
                                 "typeString": "function (int256) pure returns (int256)"
                               }
                             },
-                            "id": 68838,
+                            "id": 63724,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -9215,40 +9211,40 @@ export const LogExpMath =
                             "nameLocations": [],
                             "names": [],
                             "nodeType": "FunctionCall",
-                            "src": "13354:12:114",
+                            "src": "13354:12:96",
                             "tryCall": false,
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "13344:22:114",
+                          "src": "13344:22:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 68840,
+                        "id": 63726,
                         "nodeType": "ExpressionStatement",
-                        "src": "13344:22:114"
+                        "src": "13344:22:96"
                       }
                     ]
                   }
                 },
                 {
                   "assignments": [
-                    68853
+                    63739
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 68853,
+                      "id": 63739,
                       "mutability": "mutable",
                       "name": "logArg",
-                      "nameLocation": "13453:6:114",
+                      "nameLocation": "13453:6:96",
                       "nodeType": "VariableDeclaration",
-                      "scope": 68886,
-                      "src": "13446:13:114",
+                      "scope": 63772,
+                      "src": "13446:13:96",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -9256,10 +9252,10 @@ export const LogExpMath =
                         "typeString": "int256"
                       },
                       "typeName": {
-                        "id": 68852,
+                        "id": 63738,
                         "name": "int256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "13446:6:114",
+                        "src": "13446:6:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -9268,9 +9264,9 @@ export const LogExpMath =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 68854,
+                  "id": 63740,
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "13446:13:114"
+                  "src": "13446:13:96"
                 },
                 {
                   "condition": {
@@ -9278,7 +9274,7 @@ export const LogExpMath =
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     },
-                    "id": 68861,
+                    "id": 63747,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -9288,18 +9284,18 @@ export const LogExpMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 68857,
+                      "id": 63743,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
-                        "id": 68855,
+                        "id": 63741,
                         "name": "LN_36_LOWER_BOUND",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 68171,
-                        "src": "13473:17:114",
+                        "referencedDeclaration": 63057,
+                        "src": "13473:17:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -9308,18 +9304,18 @@ export const LogExpMath =
                       "nodeType": "BinaryOperation",
                       "operator": "<",
                       "rightExpression": {
-                        "id": 68856,
+                        "id": 63742,
                         "name": "arg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 68818,
-                        "src": "13493:3:114",
+                        "referencedDeclaration": 63704,
+                        "src": "13493:3:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "src": "13473:23:114",
+                      "src": "13473:23:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
@@ -9332,18 +9328,18 @@ export const LogExpMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 68860,
+                      "id": 63746,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
-                        "id": 68858,
+                        "id": 63744,
                         "name": "arg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 68818,
-                        "src": "13500:3:114",
+                        "referencedDeclaration": 63704,
+                        "src": "13500:3:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -9352,48 +9348,48 @@ export const LogExpMath =
                       "nodeType": "BinaryOperation",
                       "operator": "<",
                       "rightExpression": {
-                        "id": 68859,
+                        "id": 63745,
                         "name": "LN_36_UPPER_BOUND",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 68176,
-                        "src": "13506:17:114",
+                        "referencedDeclaration": 63062,
+                        "src": "13506:17:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "src": "13500:23:114",
+                      "src": "13500:23:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
                       }
                     },
-                    "src": "13473:50:114",
+                    "src": "13473:50:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
                   "falseBody": {
-                    "id": 68877,
+                    "id": 63763,
                     "nodeType": "Block",
-                    "src": "13576:51:114",
+                    "src": "13576:51:96",
                     "statements": [
                       {
                         "expression": {
-                          "id": 68875,
+                          "id": 63761,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 68869,
+                            "id": 63755,
                             "name": "logArg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68853,
-                            "src": "13590:6:114",
+                            "referencedDeclaration": 63739,
+                            "src": "13590:6:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -9406,7 +9402,7 @@ export const LogExpMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 68874,
+                            "id": 63760,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -9414,12 +9410,12 @@ export const LogExpMath =
                             "leftExpression": {
                               "arguments": [
                                 {
-                                  "id": 68871,
+                                  "id": 63757,
                                   "name": "arg",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 68818,
-                                  "src": "13603:3:114",
+                                  "referencedDeclaration": 63704,
+                                  "src": "13603:3:96",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
@@ -9433,18 +9429,18 @@ export const LogExpMath =
                                     "typeString": "int256"
                                   }
                                 ],
-                                "id": 68870,
+                                "id": 63756,
                                 "name": "_ln",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 69289,
-                                "src": "13599:3:114",
+                                "referencedDeclaration": 64175,
+                                "src": "13599:3:96",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_function_internal_pure$_t_int256_$returns$_t_int256_$",
                                   "typeString": "function (int256) pure returns (int256)"
                                 }
                               },
-                              "id": 68872,
+                              "id": 63758,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
@@ -9453,7 +9449,7 @@ export const LogExpMath =
                               "nameLocations": [],
                               "names": [],
                               "nodeType": "FunctionCall",
-                              "src": "13599:8:114",
+                              "src": "13599:8:96",
                               "tryCall": false,
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
@@ -9463,57 +9459,57 @@ export const LogExpMath =
                             "nodeType": "BinaryOperation",
                             "operator": "*",
                             "rightExpression": {
-                              "id": 68873,
+                              "id": 63759,
                               "name": "ONE_18",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 68153,
-                              "src": "13610:6:114",
+                              "referencedDeclaration": 63039,
+                              "src": "13610:6:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "13599:17:114",
+                            "src": "13599:17:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "13590:26:114",
+                          "src": "13590:26:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 68876,
+                        "id": 63762,
                         "nodeType": "ExpressionStatement",
-                        "src": "13590:26:114"
+                        "src": "13590:26:96"
                       }
                     ]
                   },
-                  "id": 68878,
+                  "id": 63764,
                   "nodeType": "IfStatement",
-                  "src": "13469:158:114",
+                  "src": "13469:158:96",
                   "trueBody": {
-                    "id": 68868,
+                    "id": 63754,
                     "nodeType": "Block",
-                    "src": "13525:45:114",
+                    "src": "13525:45:96",
                     "statements": [
                       {
                         "expression": {
-                          "id": 68866,
+                          "id": 63752,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 68862,
+                            "id": 63748,
                             "name": "logArg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68853,
-                            "src": "13539:6:114",
+                            "referencedDeclaration": 63739,
+                            "src": "13539:6:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -9524,12 +9520,12 @@ export const LogExpMath =
                           "rightHandSide": {
                             "arguments": [
                               {
-                                "id": 68864,
+                                "id": 63750,
                                 "name": "arg",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 68818,
-                                "src": "13555:3:114",
+                                "referencedDeclaration": 63704,
+                                "src": "13555:3:96",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
@@ -9543,18 +9539,18 @@ export const LogExpMath =
                                   "typeString": "int256"
                                 }
                               ],
-                              "id": 68863,
+                              "id": 63749,
                               "name": "_ln_36",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 69443,
-                              "src": "13548:6:114",
+                              "referencedDeclaration": 64329,
+                              "src": "13548:6:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_pure$_t_int256_$returns$_t_int256_$",
                                 "typeString": "function (int256) pure returns (int256)"
                               }
                             },
-                            "id": 68865,
+                            "id": 63751,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -9563,22 +9559,22 @@ export const LogExpMath =
                             "nameLocations": [],
                             "names": [],
                             "nodeType": "FunctionCall",
-                            "src": "13548:11:114",
+                            "src": "13548:11:96",
                             "tryCall": false,
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "13539:20:114",
+                          "src": "13539:20:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 68867,
+                        "id": 63753,
                         "nodeType": "ExpressionStatement",
-                        "src": "13539:20:114"
+                        "src": "13539:20:96"
                       }
                     ]
                   }
@@ -9589,7 +9585,7 @@ export const LogExpMath =
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     },
-                    "id": 68884,
+                    "id": 63770,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -9601,18 +9597,18 @@ export const LogExpMath =
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           },
-                          "id": 68881,
+                          "id": 63767,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftExpression": {
-                            "id": 68879,
+                            "id": 63765,
                             "name": "logArg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68853,
-                            "src": "13738:6:114",
+                            "referencedDeclaration": 63739,
+                            "src": "13738:6:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -9621,32 +9617,32 @@ export const LogExpMath =
                           "nodeType": "BinaryOperation",
                           "operator": "*",
                           "rightExpression": {
-                            "id": 68880,
+                            "id": 63766,
                             "name": "ONE_18",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68153,
-                            "src": "13747:6:114",
+                            "referencedDeclaration": 63039,
+                            "src": "13747:6:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "13738:15:114",
+                          "src": "13738:15:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         }
                       ],
-                      "id": 68882,
+                      "id": 63768,
                       "isConstant": false,
                       "isInlineArray": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "nodeType": "TupleExpression",
-                      "src": "13737:17:114",
+                      "src": "13737:17:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -9655,54 +9651,54 @@ export const LogExpMath =
                     "nodeType": "BinaryOperation",
                     "operator": "/",
                     "rightExpression": {
-                      "id": 68883,
+                      "id": 63769,
                       "name": "logBase",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68826,
-                      "src": "13757:7:114",
+                      "referencedDeclaration": 63712,
+                      "src": "13757:7:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "13737:27:114",
+                    "src": "13737:27:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "functionReturnParameters": 68824,
-                  "id": 68885,
+                  "functionReturnParameters": 63710,
+                  "id": 63771,
                   "nodeType": "Return",
-                  "src": "13730:34:114"
+                  "src": "13730:34:96"
                 }
               ]
             },
             "documentation": {
-              "id": 68816,
+              "id": 63702,
               "nodeType": "StructuredDocumentation",
-              "src": "12840:104:114",
+              "src": "12840:104:96",
               "text": " @dev Logarithm (log(arg, base), with signed 18 decimal fixed point base and argument."
             },
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "log",
-            "nameLocation": "12958:3:114",
+            "nameLocation": "12958:3:96",
             "parameters": {
-              "id": 68821,
+              "id": 63707,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 68818,
+                  "id": 63704,
                   "mutability": "mutable",
                   "name": "arg",
-                  "nameLocation": "12969:3:114",
+                  "nameLocation": "12969:3:96",
                   "nodeType": "VariableDeclaration",
-                  "scope": 68887,
-                  "src": "12962:10:114",
+                  "scope": 63773,
+                  "src": "12962:10:96",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -9710,10 +9706,10 @@ export const LogExpMath =
                     "typeString": "int256"
                   },
                   "typeName": {
-                    "id": 68817,
+                    "id": 63703,
                     "name": "int256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "12962:6:114",
+                    "src": "12962:6:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
@@ -9723,13 +9719,13 @@ export const LogExpMath =
                 },
                 {
                   "constant": false,
-                  "id": 68820,
+                  "id": 63706,
                   "mutability": "mutable",
                   "name": "base",
-                  "nameLocation": "12981:4:114",
+                  "nameLocation": "12981:4:96",
                   "nodeType": "VariableDeclaration",
-                  "scope": 68887,
-                  "src": "12974:11:114",
+                  "scope": 63773,
+                  "src": "12974:11:96",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -9737,10 +9733,10 @@ export const LogExpMath =
                     "typeString": "int256"
                   },
                   "typeName": {
-                    "id": 68819,
+                    "id": 63705,
                     "name": "int256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "12974:6:114",
+                    "src": "12974:6:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
@@ -9749,21 +9745,21 @@ export const LogExpMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "12961:25:114"
+              "src": "12961:25:96"
             },
             "returnParameters": {
-              "id": 68824,
+              "id": 63710,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 68823,
+                  "id": 63709,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 68887,
-                  "src": "13010:6:114",
+                  "scope": 63773,
+                  "src": "13010:6:96",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -9771,10 +9767,10 @@ export const LogExpMath =
                     "typeString": "int256"
                   },
                   "typeName": {
-                    "id": 68822,
+                    "id": 63708,
                     "name": "int256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "13010:6:114",
+                    "src": "13010:6:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
@@ -9783,22 +9779,22 @@ export const LogExpMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "13009:8:114"
+              "src": "13009:8:96"
             },
-            "scope": 69444,
+            "scope": 64330,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 68924,
+            "id": 63810,
             "nodeType": "FunctionDefinition",
-            "src": "13876:353:114",
+            "src": "13876:353:96",
             "nodes": [],
             "body": {
-              "id": 68923,
+              "id": 63809,
               "nodeType": "Block",
-              "src": "13929:300:114",
+              "src": "13929:300:96",
               "nodes": [],
               "statements": [
                 {
@@ -9809,18 +9805,18 @@ export const LogExpMath =
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         },
-                        "id": 68898,
+                        "id": 63784,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
-                          "id": 68896,
+                          "id": 63782,
                           "name": "a",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 68890,
-                          "src": "14031:1:114",
+                          "referencedDeclaration": 63776,
+                          "src": "14031:1:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
@@ -9830,21 +9826,21 @@ export const LogExpMath =
                         "operator": ">",
                         "rightExpression": {
                           "hexValue": "30",
-                          "id": 68897,
+                          "id": 63783,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "14035:1:114",
+                          "src": "14035:1:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_0_by_1",
                             "typeString": "int_const 0"
                           },
                           "value": "0"
                         },
-                        "src": "14031:5:114",
+                        "src": "14031:5:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -9852,27 +9848,27 @@ export const LogExpMath =
                       },
                       {
                         "expression": {
-                          "id": 68899,
+                          "id": 63785,
                           "name": "BalancerErrors",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 68144,
-                          "src": "14038:14:114",
+                          "referencedDeclaration": 63030,
+                          "src": "14038:14:96",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_BalancerErrors_$68144_$",
+                            "typeIdentifier": "t_type$_t_contract$_BalancerErrors_$63030_$",
                             "typeString": "type(library BalancerErrors)"
                           }
                         },
-                        "id": 68900,
+                        "id": 63786,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "lValueRequested": false,
-                        "memberLocation": "14053:13:114",
+                        "memberLocation": "14053:13:96",
                         "memberName": "OUT_OF_BOUNDS",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 67672,
-                        "src": "14038:28:114",
+                        "referencedDeclaration": 62558,
+                        "src": "14038:28:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -9890,21 +9886,21 @@ export const LogExpMath =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 68895,
+                      "id": 63781,
                       "name": "_require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        67588,
-                        67607
+                        62474,
+                        62493
                       ],
-                      "referencedDeclaration": 67588,
-                      "src": "14022:8:114",
+                      "referencedDeclaration": 62474,
+                      "src": "14022:8:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_bool_$_t_uint256_$returns$__$",
                         "typeString": "function (bool,uint256) pure"
                       }
                     },
-                    "id": 68901,
+                    "id": 63787,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -9913,16 +9909,16 @@ export const LogExpMath =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "14022:45:114",
+                    "src": "14022:45:96",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 68902,
+                  "id": 63788,
                   "nodeType": "ExpressionStatement",
-                  "src": "14022:45:114"
+                  "src": "14022:45:96"
                 },
                 {
                   "condition": {
@@ -9930,7 +9926,7 @@ export const LogExpMath =
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     },
-                    "id": 68909,
+                    "id": 63795,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -9940,18 +9936,18 @@ export const LogExpMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 68905,
+                      "id": 63791,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
-                        "id": 68903,
+                        "id": 63789,
                         "name": "LN_36_LOWER_BOUND",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 68171,
-                        "src": "14081:17:114",
+                        "referencedDeclaration": 63057,
+                        "src": "14081:17:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -9960,18 +9956,18 @@ export const LogExpMath =
                       "nodeType": "BinaryOperation",
                       "operator": "<",
                       "rightExpression": {
-                        "id": 68904,
+                        "id": 63790,
                         "name": "a",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 68890,
-                        "src": "14101:1:114",
+                        "referencedDeclaration": 63776,
+                        "src": "14101:1:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "src": "14081:21:114",
+                      "src": "14081:21:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
@@ -9984,18 +9980,18 @@ export const LogExpMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 68908,
+                      "id": 63794,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
-                        "id": 68906,
+                        "id": 63792,
                         "name": "a",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 68890,
-                        "src": "14106:1:114",
+                        "referencedDeclaration": 63776,
+                        "src": "14106:1:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -10004,44 +10000,44 @@ export const LogExpMath =
                       "nodeType": "BinaryOperation",
                       "operator": "<",
                       "rightExpression": {
-                        "id": 68907,
+                        "id": 63793,
                         "name": "LN_36_UPPER_BOUND",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 68176,
-                        "src": "14110:17:114",
+                        "referencedDeclaration": 63062,
+                        "src": "14110:17:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "src": "14106:21:114",
+                      "src": "14106:21:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
                       }
                     },
-                    "src": "14081:46:114",
+                    "src": "14081:46:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
                   "falseBody": {
-                    "id": 68921,
+                    "id": 63807,
                     "nodeType": "Block",
-                    "src": "14185:38:114",
+                    "src": "14185:38:96",
                     "statements": [
                       {
                         "expression": {
                           "arguments": [
                             {
-                              "id": 68918,
+                              "id": 63804,
                               "name": "a",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 68890,
-                              "src": "14210:1:114",
+                              "referencedDeclaration": 63776,
+                              "src": "14210:1:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -10055,18 +10051,18 @@ export const LogExpMath =
                                 "typeString": "int256"
                               }
                             ],
-                            "id": 68917,
+                            "id": 63803,
                             "name": "_ln",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 69289,
-                            "src": "14206:3:114",
+                            "referencedDeclaration": 64175,
+                            "src": "14206:3:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_pure$_t_int256_$returns$_t_int256_$",
                               "typeString": "function (int256) pure returns (int256)"
                             }
                           },
-                          "id": 68919,
+                          "id": 63805,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -10075,27 +10071,27 @@ export const LogExpMath =
                           "nameLocations": [],
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "14206:6:114",
+                          "src": "14206:6:96",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "functionReturnParameters": 68894,
-                        "id": 68920,
+                        "functionReturnParameters": 63780,
+                        "id": 63806,
                         "nodeType": "Return",
-                        "src": "14199:13:114"
+                        "src": "14199:13:96"
                       }
                     ]
                   },
-                  "id": 68922,
+                  "id": 63808,
                   "nodeType": "IfStatement",
-                  "src": "14077:146:114",
+                  "src": "14077:146:96",
                   "trueBody": {
-                    "id": 68916,
+                    "id": 63802,
                     "nodeType": "Block",
-                    "src": "14129:50:114",
+                    "src": "14129:50:96",
                     "statements": [
                       {
                         "expression": {
@@ -10103,7 +10099,7 @@ export const LogExpMath =
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           },
-                          "id": 68914,
+                          "id": 63800,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -10111,12 +10107,12 @@ export const LogExpMath =
                           "leftExpression": {
                             "arguments": [
                               {
-                                "id": 68911,
+                                "id": 63797,
                                 "name": "a",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 68890,
-                                "src": "14157:1:114",
+                                "referencedDeclaration": 63776,
+                                "src": "14157:1:96",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
@@ -10130,18 +10126,18 @@ export const LogExpMath =
                                   "typeString": "int256"
                                 }
                               ],
-                              "id": 68910,
+                              "id": 63796,
                               "name": "_ln_36",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 69443,
-                              "src": "14150:6:114",
+                              "referencedDeclaration": 64329,
+                              "src": "14150:6:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_pure$_t_int256_$returns$_t_int256_$",
                                 "typeString": "function (int256) pure returns (int256)"
                               }
                             },
-                            "id": 68912,
+                            "id": 63798,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -10150,7 +10146,7 @@ export const LogExpMath =
                             "nameLocations": [],
                             "names": [],
                             "nodeType": "FunctionCall",
-                            "src": "14150:9:114",
+                            "src": "14150:9:96",
                             "tryCall": false,
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
@@ -10160,27 +10156,27 @@ export const LogExpMath =
                           "nodeType": "BinaryOperation",
                           "operator": "/",
                           "rightExpression": {
-                            "id": 68913,
+                            "id": 63799,
                             "name": "ONE_18",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68153,
-                            "src": "14162:6:114",
+                            "referencedDeclaration": 63039,
+                            "src": "14162:6:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "14150:18:114",
+                          "src": "14150:18:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "functionReturnParameters": 68894,
-                        "id": 68915,
+                        "functionReturnParameters": 63780,
+                        "id": 63801,
                         "nodeType": "Return",
-                        "src": "14143:25:114"
+                        "src": "14143:25:96"
                       }
                     ]
                   }
@@ -10188,29 +10184,29 @@ export const LogExpMath =
               ]
             },
             "documentation": {
-              "id": 68888,
+              "id": 63774,
               "nodeType": "StructuredDocumentation",
-              "src": "13777:94:114",
+              "src": "13777:94:96",
               "text": " @dev Natural logarithm (ln(a)) with signed 18 decimal fixed point argument."
             },
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "ln",
-            "nameLocation": "13885:2:114",
+            "nameLocation": "13885:2:96",
             "parameters": {
-              "id": 68891,
+              "id": 63777,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 68890,
+                  "id": 63776,
                   "mutability": "mutable",
                   "name": "a",
-                  "nameLocation": "13895:1:114",
+                  "nameLocation": "13895:1:96",
                   "nodeType": "VariableDeclaration",
-                  "scope": 68924,
-                  "src": "13888:8:114",
+                  "scope": 63810,
+                  "src": "13888:8:96",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -10218,10 +10214,10 @@ export const LogExpMath =
                     "typeString": "int256"
                   },
                   "typeName": {
-                    "id": 68889,
+                    "id": 63775,
                     "name": "int256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "13888:6:114",
+                    "src": "13888:6:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
@@ -10230,21 +10226,21 @@ export const LogExpMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "13887:10:114"
+              "src": "13887:10:96"
             },
             "returnParameters": {
-              "id": 68894,
+              "id": 63780,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 68893,
+                  "id": 63779,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 68924,
-                  "src": "13921:6:114",
+                  "scope": 63810,
+                  "src": "13921:6:96",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -10252,10 +10248,10 @@ export const LogExpMath =
                     "typeString": "int256"
                   },
                   "typeName": {
-                    "id": 68892,
+                    "id": 63778,
                     "name": "int256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "13921:6:114",
+                    "src": "13921:6:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
@@ -10264,22 +10260,22 @@ export const LogExpMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "13920:8:114"
+              "src": "13920:8:96"
             },
-            "scope": 69444,
+            "scope": 64330,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 69289,
+            "id": 64175,
             "nodeType": "FunctionDefinition",
-            "src": "14343:4959:114",
+            "src": "14343:4959:96",
             "nodes": [],
             "body": {
-              "id": 69288,
+              "id": 64174,
               "nodeType": "Block",
-              "src": "14396:4906:114",
+              "src": "14396:4906:96",
               "nodes": [],
               "statements": [
                 {
@@ -10288,18 +10284,18 @@ export const LogExpMath =
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     },
-                    "id": 68934,
+                    "id": 63820,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 68932,
+                      "id": 63818,
                       "name": "a",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68927,
-                      "src": "14410:1:114",
+                      "referencedDeclaration": 63813,
+                      "src": "14410:1:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -10308,36 +10304,36 @@ export const LogExpMath =
                     "nodeType": "BinaryOperation",
                     "operator": "<",
                     "rightExpression": {
-                      "id": 68933,
+                      "id": 63819,
                       "name": "ONE_18",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68153,
-                      "src": "14414:6:114",
+                      "referencedDeclaration": 63039,
+                      "src": "14414:6:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "14410:10:114",
+                    "src": "14410:10:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 68947,
+                  "id": 63833,
                   "nodeType": "IfStatement",
-                  "src": "14406:382:114",
+                  "src": "14406:382:96",
                   "trueBody": {
-                    "id": 68946,
+                    "id": 63832,
                     "nodeType": "Block",
-                    "src": "14422:366:114",
+                    "src": "14422:366:96",
                     "statements": [
                       {
                         "expression": {
                           "components": [
                             {
-                              "id": 68943,
+                              "id": 63829,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
@@ -10345,7 +10341,7 @@ export const LogExpMath =
                               "nodeType": "UnaryOperation",
                               "operator": "-",
                               "prefix": true,
-                              "src": "14749:27:114",
+                              "src": "14749:27:96",
                               "subExpression": {
                                 "arguments": [
                                   {
@@ -10353,7 +10349,7 @@ export const LogExpMath =
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
                                     },
-                                    "id": 68941,
+                                    "id": 63827,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": false,
@@ -10365,18 +10361,18 @@ export const LogExpMath =
                                             "typeIdentifier": "t_int256",
                                             "typeString": "int256"
                                           },
-                                          "id": 68938,
+                                          "id": 63824,
                                           "isConstant": false,
                                           "isLValue": false,
                                           "isPure": true,
                                           "lValueRequested": false,
                                           "leftExpression": {
-                                            "id": 68936,
+                                            "id": 63822,
                                             "name": "ONE_18",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 68153,
-                                            "src": "14755:6:114",
+                                            "referencedDeclaration": 63039,
+                                            "src": "14755:6:96",
                                             "typeDescriptions": {
                                               "typeIdentifier": "t_int256",
                                               "typeString": "int256"
@@ -10385,32 +10381,32 @@ export const LogExpMath =
                                           "nodeType": "BinaryOperation",
                                           "operator": "*",
                                           "rightExpression": {
-                                            "id": 68937,
+                                            "id": 63823,
                                             "name": "ONE_18",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 68153,
-                                            "src": "14764:6:114",
+                                            "referencedDeclaration": 63039,
+                                            "src": "14764:6:96",
                                             "typeDescriptions": {
                                               "typeIdentifier": "t_int256",
                                               "typeString": "int256"
                                             }
                                           },
-                                          "src": "14755:15:114",
+                                          "src": "14755:15:96",
                                           "typeDescriptions": {
                                             "typeIdentifier": "t_int256",
                                             "typeString": "int256"
                                           }
                                         }
                                       ],
-                                      "id": 68939,
+                                      "id": 63825,
                                       "isConstant": false,
                                       "isInlineArray": false,
                                       "isLValue": false,
                                       "isPure": true,
                                       "lValueRequested": false,
                                       "nodeType": "TupleExpression",
-                                      "src": "14754:17:114",
+                                      "src": "14754:17:96",
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
@@ -10419,18 +10415,18 @@ export const LogExpMath =
                                     "nodeType": "BinaryOperation",
                                     "operator": "/",
                                     "rightExpression": {
-                                      "id": 68940,
+                                      "id": 63826,
                                       "name": "a",
                                       "nodeType": "Identifier",
                                       "overloadedDeclarations": [],
-                                      "referencedDeclaration": 68927,
-                                      "src": "14774:1:114",
+                                      "referencedDeclaration": 63813,
+                                      "src": "14774:1:96",
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
                                       }
                                     },
-                                    "src": "14754:21:114",
+                                    "src": "14754:21:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
@@ -10444,18 +10440,18 @@ export const LogExpMath =
                                       "typeString": "int256"
                                     }
                                   ],
-                                  "id": 68935,
+                                  "id": 63821,
                                   "name": "_ln",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 69289,
-                                  "src": "14750:3:114",
+                                  "referencedDeclaration": 64175,
+                                  "src": "14750:3:96",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_function_internal_pure$_t_int256_$returns$_t_int256_$",
                                     "typeString": "function (int256) pure returns (int256)"
                                   }
                                 },
-                                "id": 68942,
+                                "id": 63828,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -10464,7 +10460,7 @@ export const LogExpMath =
                                 "nameLocations": [],
                                 "names": [],
                                 "nodeType": "FunctionCall",
-                                "src": "14750:26:114",
+                                "src": "14750:26:96",
                                 "tryCall": false,
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_int256",
@@ -10477,41 +10473,41 @@ export const LogExpMath =
                               }
                             }
                           ],
-                          "id": 68944,
+                          "id": 63830,
                           "isConstant": false,
                           "isInlineArray": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "nodeType": "TupleExpression",
-                          "src": "14748:29:114",
+                          "src": "14748:29:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "functionReturnParameters": 68931,
-                        "id": 68945,
+                        "functionReturnParameters": 63817,
+                        "id": 63831,
                         "nodeType": "Return",
-                        "src": "14741:36:114"
+                        "src": "14741:36:96"
                       }
                     ]
                   }
                 },
                 {
                   "assignments": [
-                    68949
+                    63835
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 68949,
+                      "id": 63835,
                       "mutability": "mutable",
                       "name": "sum",
-                      "nameLocation": "16120:3:114",
+                      "nameLocation": "16120:3:96",
                       "nodeType": "VariableDeclaration",
-                      "scope": 69288,
-                      "src": "16113:10:114",
+                      "scope": 64174,
+                      "src": "16113:10:96",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -10519,10 +10515,10 @@ export const LogExpMath =
                         "typeString": "int256"
                       },
                       "typeName": {
-                        "id": 68948,
+                        "id": 63834,
                         "name": "int256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "16113:6:114",
+                        "src": "16113:6:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -10531,17 +10527,17 @@ export const LogExpMath =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 68951,
+                  "id": 63837,
                   "initialValue": {
                     "hexValue": "30",
-                    "id": 68950,
+                    "id": 63836,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
                     "kind": "number",
                     "lValueRequested": false,
                     "nodeType": "Literal",
-                    "src": "16126:1:114",
+                    "src": "16126:1:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_rational_0_by_1",
                       "typeString": "int_const 0"
@@ -10549,7 +10545,7 @@ export const LogExpMath =
                     "value": "0"
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "16113:14:114"
+                  "src": "16113:14:96"
                 },
                 {
                   "condition": {
@@ -10557,18 +10553,18 @@ export const LogExpMath =
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     },
-                    "id": 68956,
+                    "id": 63842,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 68952,
+                      "id": 63838,
                       "name": "a",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68927,
-                      "src": "16141:1:114",
+                      "referencedDeclaration": 63813,
+                      "src": "16141:1:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -10581,18 +10577,18 @@ export const LogExpMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 68955,
+                      "id": 63841,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "lValueRequested": false,
                       "leftExpression": {
-                        "id": 68953,
+                        "id": 63839,
                         "name": "a0",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 68192,
-                        "src": "16146:2:114",
+                        "referencedDeclaration": 63078,
+                        "src": "16146:2:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -10601,51 +10597,51 @@ export const LogExpMath =
                       "nodeType": "BinaryOperation",
                       "operator": "*",
                       "rightExpression": {
-                        "id": 68954,
+                        "id": 63840,
                         "name": "ONE_18",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 68153,
-                        "src": "16151:6:114",
+                        "referencedDeclaration": 63039,
+                        "src": "16151:6:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "src": "16146:11:114",
+                      "src": "16146:11:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "16141:16:114",
+                    "src": "16141:16:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 68966,
+                  "id": 63852,
                   "nodeType": "IfStatement",
-                  "src": "16137:114:114",
+                  "src": "16137:114:96",
                   "trueBody": {
-                    "id": 68965,
+                    "id": 63851,
                     "nodeType": "Block",
-                    "src": "16159:92:114",
+                    "src": "16159:92:96",
                     "statements": [
                       {
                         "expression": {
-                          "id": 68959,
+                          "id": 63845,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 68957,
+                            "id": 63843,
                             "name": "a",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68927,
-                            "src": "16173:1:114",
+                            "referencedDeclaration": 63813,
+                            "src": "16173:1:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -10654,41 +10650,41 @@ export const LogExpMath =
                           "nodeType": "Assignment",
                           "operator": "/=",
                           "rightHandSide": {
-                            "id": 68958,
+                            "id": 63844,
                             "name": "a0",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68192,
-                            "src": "16178:2:114",
+                            "referencedDeclaration": 63078,
+                            "src": "16178:2:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "16173:7:114",
+                          "src": "16173:7:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 68960,
+                        "id": 63846,
                         "nodeType": "ExpressionStatement",
-                        "src": "16173:7:114"
+                        "src": "16173:7:96"
                       },
                       {
                         "expression": {
-                          "id": 68963,
+                          "id": 63849,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 68961,
+                            "id": 63847,
                             "name": "sum",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68949,
-                            "src": "16231:3:114",
+                            "referencedDeclaration": 63835,
+                            "src": "16231:3:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -10697,26 +10693,26 @@ export const LogExpMath =
                           "nodeType": "Assignment",
                           "operator": "+=",
                           "rightHandSide": {
-                            "id": 68962,
+                            "id": 63848,
                             "name": "x0",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68189,
-                            "src": "16238:2:114",
+                            "referencedDeclaration": 63075,
+                            "src": "16238:2:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "16231:9:114",
+                          "src": "16231:9:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 68964,
+                        "id": 63850,
                         "nodeType": "ExpressionStatement",
-                        "src": "16231:9:114"
+                        "src": "16231:9:96"
                       }
                     ]
                   }
@@ -10727,18 +10723,18 @@ export const LogExpMath =
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     },
-                    "id": 68971,
+                    "id": 63857,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 68967,
+                      "id": 63853,
                       "name": "a",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68927,
-                      "src": "16265:1:114",
+                      "referencedDeclaration": 63813,
+                      "src": "16265:1:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -10751,18 +10747,18 @@ export const LogExpMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 68970,
+                      "id": 63856,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "lValueRequested": false,
                       "leftExpression": {
-                        "id": 68968,
+                        "id": 63854,
                         "name": "a1",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 68198,
-                        "src": "16270:2:114",
+                        "referencedDeclaration": 63084,
+                        "src": "16270:2:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -10771,51 +10767,51 @@ export const LogExpMath =
                       "nodeType": "BinaryOperation",
                       "operator": "*",
                       "rightExpression": {
-                        "id": 68969,
+                        "id": 63855,
                         "name": "ONE_18",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 68153,
-                        "src": "16275:6:114",
+                        "referencedDeclaration": 63039,
+                        "src": "16275:6:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "src": "16270:11:114",
+                      "src": "16270:11:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "16265:16:114",
+                    "src": "16265:16:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 68981,
+                  "id": 63867,
                   "nodeType": "IfStatement",
-                  "src": "16261:114:114",
+                  "src": "16261:114:96",
                   "trueBody": {
-                    "id": 68980,
+                    "id": 63866,
                     "nodeType": "Block",
-                    "src": "16283:92:114",
+                    "src": "16283:92:96",
                     "statements": [
                       {
                         "expression": {
-                          "id": 68974,
+                          "id": 63860,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 68972,
+                            "id": 63858,
                             "name": "a",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68927,
-                            "src": "16297:1:114",
+                            "referencedDeclaration": 63813,
+                            "src": "16297:1:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -10824,41 +10820,41 @@ export const LogExpMath =
                           "nodeType": "Assignment",
                           "operator": "/=",
                           "rightHandSide": {
-                            "id": 68973,
+                            "id": 63859,
                             "name": "a1",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68198,
-                            "src": "16302:2:114",
+                            "referencedDeclaration": 63084,
+                            "src": "16302:2:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "16297:7:114",
+                          "src": "16297:7:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 68975,
+                        "id": 63861,
                         "nodeType": "ExpressionStatement",
-                        "src": "16297:7:114"
+                        "src": "16297:7:96"
                       },
                       {
                         "expression": {
-                          "id": 68978,
+                          "id": 63864,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 68976,
+                            "id": 63862,
                             "name": "sum",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68949,
-                            "src": "16355:3:114",
+                            "referencedDeclaration": 63835,
+                            "src": "16355:3:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -10867,44 +10863,44 @@ export const LogExpMath =
                           "nodeType": "Assignment",
                           "operator": "+=",
                           "rightHandSide": {
-                            "id": 68977,
+                            "id": 63863,
                             "name": "x1",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68195,
-                            "src": "16362:2:114",
+                            "referencedDeclaration": 63081,
+                            "src": "16362:2:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "16355:9:114",
+                          "src": "16355:9:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 68979,
+                        "id": 63865,
                         "nodeType": "ExpressionStatement",
-                        "src": "16355:9:114"
+                        "src": "16355:9:96"
                       }
                     ]
                   }
                 },
                 {
                   "expression": {
-                    "id": 68984,
+                    "id": 63870,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 68982,
+                      "id": 63868,
                       "name": "sum",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68949,
-                      "src": "16506:3:114",
+                      "referencedDeclaration": 63835,
+                      "src": "16506:3:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -10914,44 +10910,44 @@ export const LogExpMath =
                     "operator": "*=",
                     "rightHandSide": {
                       "hexValue": "313030",
-                      "id": 68983,
+                      "id": 63869,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "16513:3:114",
+                      "src": "16513:3:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_100_by_1",
                         "typeString": "int_const 100"
                       },
                       "value": "100"
                     },
-                    "src": "16506:10:114",
+                    "src": "16506:10:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 68985,
+                  "id": 63871,
                   "nodeType": "ExpressionStatement",
-                  "src": "16506:10:114"
+                  "src": "16506:10:96"
                 },
                 {
                   "expression": {
-                    "id": 68988,
+                    "id": 63874,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 68986,
+                      "id": 63872,
                       "name": "a",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68927,
-                      "src": "16526:1:114",
+                      "referencedDeclaration": 63813,
+                      "src": "16526:1:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -10961,29 +10957,29 @@ export const LogExpMath =
                     "operator": "*=",
                     "rightHandSide": {
                       "hexValue": "313030",
-                      "id": 68987,
+                      "id": 63873,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "16531:3:114",
+                      "src": "16531:3:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_100_by_1",
                         "typeString": "int_const 100"
                       },
                       "value": "100"
                     },
-                    "src": "16526:8:114",
+                    "src": "16526:8:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 68989,
+                  "id": 63875,
                   "nodeType": "ExpressionStatement",
-                  "src": "16526:8:114"
+                  "src": "16526:8:96"
                 },
                 {
                   "condition": {
@@ -10991,18 +10987,18 @@ export const LogExpMath =
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     },
-                    "id": 68992,
+                    "id": 63878,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 68990,
+                      "id": 63876,
                       "name": "a",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68927,
-                      "src": "16661:1:114",
+                      "referencedDeclaration": 63813,
+                      "src": "16661:1:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -11011,45 +11007,45 @@ export const LogExpMath =
                     "nodeType": "BinaryOperation",
                     "operator": ">=",
                     "rightExpression": {
-                      "id": 68991,
+                      "id": 63877,
                       "name": "a2",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68204,
-                      "src": "16666:2:114",
+                      "referencedDeclaration": 63090,
+                      "src": "16666:2:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "16661:7:114",
+                    "src": "16661:7:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 69007,
+                  "id": 63893,
                   "nodeType": "IfStatement",
-                  "src": "16657:82:114",
+                  "src": "16657:82:96",
                   "trueBody": {
-                    "id": 69006,
+                    "id": 63892,
                     "nodeType": "Block",
-                    "src": "16670:69:114",
+                    "src": "16670:69:96",
                     "statements": [
                       {
                         "expression": {
-                          "id": 69000,
+                          "id": 63886,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 68993,
+                            "id": 63879,
                             "name": "a",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68927,
-                            "src": "16684:1:114",
+                            "referencedDeclaration": 63813,
+                            "src": "16684:1:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -11062,7 +11058,7 @@ export const LogExpMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 68999,
+                            "id": 63885,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -11074,18 +11070,18 @@ export const LogExpMath =
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   },
-                                  "id": 68996,
+                                  "id": 63882,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "leftExpression": {
-                                    "id": 68994,
+                                    "id": 63880,
                                     "name": "a",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68927,
-                                    "src": "16689:1:114",
+                                    "referencedDeclaration": 63813,
+                                    "src": "16689:1:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
@@ -11094,32 +11090,32 @@ export const LogExpMath =
                                   "nodeType": "BinaryOperation",
                                   "operator": "*",
                                   "rightExpression": {
-                                    "id": 68995,
+                                    "id": 63881,
                                     "name": "ONE_20",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68156,
-                                    "src": "16693:6:114",
+                                    "referencedDeclaration": 63042,
+                                    "src": "16693:6:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
                                     }
                                   },
-                                  "src": "16689:10:114",
+                                  "src": "16689:10:96",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   }
                                 }
                               ],
-                              "id": 68997,
+                              "id": 63883,
                               "isConstant": false,
                               "isInlineArray": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "nodeType": "TupleExpression",
-                              "src": "16688:12:114",
+                              "src": "16688:12:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -11128,47 +11124,47 @@ export const LogExpMath =
                             "nodeType": "BinaryOperation",
                             "operator": "/",
                             "rightExpression": {
-                              "id": 68998,
+                              "id": 63884,
                               "name": "a2",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 68204,
-                              "src": "16703:2:114",
+                              "referencedDeclaration": 63090,
+                              "src": "16703:2:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "16688:17:114",
+                            "src": "16688:17:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "16684:21:114",
+                          "src": "16684:21:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 69001,
+                        "id": 63887,
                         "nodeType": "ExpressionStatement",
-                        "src": "16684:21:114"
+                        "src": "16684:21:96"
                       },
                       {
                         "expression": {
-                          "id": 69004,
+                          "id": 63890,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 69002,
+                            "id": 63888,
                             "name": "sum",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68949,
-                            "src": "16719:3:114",
+                            "referencedDeclaration": 63835,
+                            "src": "16719:3:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -11177,26 +11173,26 @@ export const LogExpMath =
                           "nodeType": "Assignment",
                           "operator": "+=",
                           "rightHandSide": {
-                            "id": 69003,
+                            "id": 63889,
                             "name": "x2",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68201,
-                            "src": "16726:2:114",
+                            "referencedDeclaration": 63087,
+                            "src": "16726:2:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "16719:9:114",
+                          "src": "16719:9:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 69005,
+                        "id": 63891,
                         "nodeType": "ExpressionStatement",
-                        "src": "16719:9:114"
+                        "src": "16719:9:96"
                       }
                     ]
                   }
@@ -11207,18 +11203,18 @@ export const LogExpMath =
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     },
-                    "id": 69010,
+                    "id": 63896,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 69008,
+                      "id": 63894,
                       "name": "a",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68927,
-                      "src": "16753:1:114",
+                      "referencedDeclaration": 63813,
+                      "src": "16753:1:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -11227,45 +11223,45 @@ export const LogExpMath =
                     "nodeType": "BinaryOperation",
                     "operator": ">=",
                     "rightExpression": {
-                      "id": 69009,
+                      "id": 63895,
                       "name": "a3",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68210,
-                      "src": "16758:2:114",
+                      "referencedDeclaration": 63096,
+                      "src": "16758:2:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "16753:7:114",
+                    "src": "16753:7:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 69025,
+                  "id": 63911,
                   "nodeType": "IfStatement",
-                  "src": "16749:82:114",
+                  "src": "16749:82:96",
                   "trueBody": {
-                    "id": 69024,
+                    "id": 63910,
                     "nodeType": "Block",
-                    "src": "16762:69:114",
+                    "src": "16762:69:96",
                     "statements": [
                       {
                         "expression": {
-                          "id": 69018,
+                          "id": 63904,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 69011,
+                            "id": 63897,
                             "name": "a",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68927,
-                            "src": "16776:1:114",
+                            "referencedDeclaration": 63813,
+                            "src": "16776:1:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -11278,7 +11274,7 @@ export const LogExpMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 69017,
+                            "id": 63903,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -11290,18 +11286,18 @@ export const LogExpMath =
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   },
-                                  "id": 69014,
+                                  "id": 63900,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "leftExpression": {
-                                    "id": 69012,
+                                    "id": 63898,
                                     "name": "a",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68927,
-                                    "src": "16781:1:114",
+                                    "referencedDeclaration": 63813,
+                                    "src": "16781:1:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
@@ -11310,32 +11306,32 @@ export const LogExpMath =
                                   "nodeType": "BinaryOperation",
                                   "operator": "*",
                                   "rightExpression": {
-                                    "id": 69013,
+                                    "id": 63899,
                                     "name": "ONE_20",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68156,
-                                    "src": "16785:6:114",
+                                    "referencedDeclaration": 63042,
+                                    "src": "16785:6:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
                                     }
                                   },
-                                  "src": "16781:10:114",
+                                  "src": "16781:10:96",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   }
                                 }
                               ],
-                              "id": 69015,
+                              "id": 63901,
                               "isConstant": false,
                               "isInlineArray": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "nodeType": "TupleExpression",
-                              "src": "16780:12:114",
+                              "src": "16780:12:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -11344,47 +11340,47 @@ export const LogExpMath =
                             "nodeType": "BinaryOperation",
                             "operator": "/",
                             "rightExpression": {
-                              "id": 69016,
+                              "id": 63902,
                               "name": "a3",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 68210,
-                              "src": "16795:2:114",
+                              "referencedDeclaration": 63096,
+                              "src": "16795:2:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "16780:17:114",
+                            "src": "16780:17:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "16776:21:114",
+                          "src": "16776:21:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 69019,
+                        "id": 63905,
                         "nodeType": "ExpressionStatement",
-                        "src": "16776:21:114"
+                        "src": "16776:21:96"
                       },
                       {
                         "expression": {
-                          "id": 69022,
+                          "id": 63908,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 69020,
+                            "id": 63906,
                             "name": "sum",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68949,
-                            "src": "16811:3:114",
+                            "referencedDeclaration": 63835,
+                            "src": "16811:3:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -11393,26 +11389,26 @@ export const LogExpMath =
                           "nodeType": "Assignment",
                           "operator": "+=",
                           "rightHandSide": {
-                            "id": 69021,
+                            "id": 63907,
                             "name": "x3",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68207,
-                            "src": "16818:2:114",
+                            "referencedDeclaration": 63093,
+                            "src": "16818:2:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "16811:9:114",
+                          "src": "16811:9:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 69023,
+                        "id": 63909,
                         "nodeType": "ExpressionStatement",
-                        "src": "16811:9:114"
+                        "src": "16811:9:96"
                       }
                     ]
                   }
@@ -11423,18 +11419,18 @@ export const LogExpMath =
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     },
-                    "id": 69028,
+                    "id": 63914,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 69026,
+                      "id": 63912,
                       "name": "a",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68927,
-                      "src": "16845:1:114",
+                      "referencedDeclaration": 63813,
+                      "src": "16845:1:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -11443,45 +11439,45 @@ export const LogExpMath =
                     "nodeType": "BinaryOperation",
                     "operator": ">=",
                     "rightExpression": {
-                      "id": 69027,
+                      "id": 63913,
                       "name": "a4",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68216,
-                      "src": "16850:2:114",
+                      "referencedDeclaration": 63102,
+                      "src": "16850:2:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "16845:7:114",
+                    "src": "16845:7:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 69043,
+                  "id": 63929,
                   "nodeType": "IfStatement",
-                  "src": "16841:82:114",
+                  "src": "16841:82:96",
                   "trueBody": {
-                    "id": 69042,
+                    "id": 63928,
                     "nodeType": "Block",
-                    "src": "16854:69:114",
+                    "src": "16854:69:96",
                     "statements": [
                       {
                         "expression": {
-                          "id": 69036,
+                          "id": 63922,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 69029,
+                            "id": 63915,
                             "name": "a",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68927,
-                            "src": "16868:1:114",
+                            "referencedDeclaration": 63813,
+                            "src": "16868:1:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -11494,7 +11490,7 @@ export const LogExpMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 69035,
+                            "id": 63921,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -11506,18 +11502,18 @@ export const LogExpMath =
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   },
-                                  "id": 69032,
+                                  "id": 63918,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "leftExpression": {
-                                    "id": 69030,
+                                    "id": 63916,
                                     "name": "a",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68927,
-                                    "src": "16873:1:114",
+                                    "referencedDeclaration": 63813,
+                                    "src": "16873:1:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
@@ -11526,32 +11522,32 @@ export const LogExpMath =
                                   "nodeType": "BinaryOperation",
                                   "operator": "*",
                                   "rightExpression": {
-                                    "id": 69031,
+                                    "id": 63917,
                                     "name": "ONE_20",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68156,
-                                    "src": "16877:6:114",
+                                    "referencedDeclaration": 63042,
+                                    "src": "16877:6:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
                                     }
                                   },
-                                  "src": "16873:10:114",
+                                  "src": "16873:10:96",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   }
                                 }
                               ],
-                              "id": 69033,
+                              "id": 63919,
                               "isConstant": false,
                               "isInlineArray": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "nodeType": "TupleExpression",
-                              "src": "16872:12:114",
+                              "src": "16872:12:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -11560,47 +11556,47 @@ export const LogExpMath =
                             "nodeType": "BinaryOperation",
                             "operator": "/",
                             "rightExpression": {
-                              "id": 69034,
+                              "id": 63920,
                               "name": "a4",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 68216,
-                              "src": "16887:2:114",
+                              "referencedDeclaration": 63102,
+                              "src": "16887:2:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "16872:17:114",
+                            "src": "16872:17:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "16868:21:114",
+                          "src": "16868:21:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 69037,
+                        "id": 63923,
                         "nodeType": "ExpressionStatement",
-                        "src": "16868:21:114"
+                        "src": "16868:21:96"
                       },
                       {
                         "expression": {
-                          "id": 69040,
+                          "id": 63926,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 69038,
+                            "id": 63924,
                             "name": "sum",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68949,
-                            "src": "16903:3:114",
+                            "referencedDeclaration": 63835,
+                            "src": "16903:3:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -11609,26 +11605,26 @@ export const LogExpMath =
                           "nodeType": "Assignment",
                           "operator": "+=",
                           "rightHandSide": {
-                            "id": 69039,
+                            "id": 63925,
                             "name": "x4",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68213,
-                            "src": "16910:2:114",
+                            "referencedDeclaration": 63099,
+                            "src": "16910:2:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "16903:9:114",
+                          "src": "16903:9:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 69041,
+                        "id": 63927,
                         "nodeType": "ExpressionStatement",
-                        "src": "16903:9:114"
+                        "src": "16903:9:96"
                       }
                     ]
                   }
@@ -11639,18 +11635,18 @@ export const LogExpMath =
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     },
-                    "id": 69046,
+                    "id": 63932,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 69044,
+                      "id": 63930,
                       "name": "a",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68927,
-                      "src": "16937:1:114",
+                      "referencedDeclaration": 63813,
+                      "src": "16937:1:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -11659,45 +11655,45 @@ export const LogExpMath =
                     "nodeType": "BinaryOperation",
                     "operator": ">=",
                     "rightExpression": {
-                      "id": 69045,
+                      "id": 63931,
                       "name": "a5",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68222,
-                      "src": "16942:2:114",
+                      "referencedDeclaration": 63108,
+                      "src": "16942:2:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "16937:7:114",
+                    "src": "16937:7:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 69061,
+                  "id": 63947,
                   "nodeType": "IfStatement",
-                  "src": "16933:82:114",
+                  "src": "16933:82:96",
                   "trueBody": {
-                    "id": 69060,
+                    "id": 63946,
                     "nodeType": "Block",
-                    "src": "16946:69:114",
+                    "src": "16946:69:96",
                     "statements": [
                       {
                         "expression": {
-                          "id": 69054,
+                          "id": 63940,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 69047,
+                            "id": 63933,
                             "name": "a",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68927,
-                            "src": "16960:1:114",
+                            "referencedDeclaration": 63813,
+                            "src": "16960:1:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -11710,7 +11706,7 @@ export const LogExpMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 69053,
+                            "id": 63939,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -11722,18 +11718,18 @@ export const LogExpMath =
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   },
-                                  "id": 69050,
+                                  "id": 63936,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "leftExpression": {
-                                    "id": 69048,
+                                    "id": 63934,
                                     "name": "a",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68927,
-                                    "src": "16965:1:114",
+                                    "referencedDeclaration": 63813,
+                                    "src": "16965:1:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
@@ -11742,32 +11738,32 @@ export const LogExpMath =
                                   "nodeType": "BinaryOperation",
                                   "operator": "*",
                                   "rightExpression": {
-                                    "id": 69049,
+                                    "id": 63935,
                                     "name": "ONE_20",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68156,
-                                    "src": "16969:6:114",
+                                    "referencedDeclaration": 63042,
+                                    "src": "16969:6:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
                                     }
                                   },
-                                  "src": "16965:10:114",
+                                  "src": "16965:10:96",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   }
                                 }
                               ],
-                              "id": 69051,
+                              "id": 63937,
                               "isConstant": false,
                               "isInlineArray": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "nodeType": "TupleExpression",
-                              "src": "16964:12:114",
+                              "src": "16964:12:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -11776,47 +11772,47 @@ export const LogExpMath =
                             "nodeType": "BinaryOperation",
                             "operator": "/",
                             "rightExpression": {
-                              "id": 69052,
+                              "id": 63938,
                               "name": "a5",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 68222,
-                              "src": "16979:2:114",
+                              "referencedDeclaration": 63108,
+                              "src": "16979:2:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "16964:17:114",
+                            "src": "16964:17:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "16960:21:114",
+                          "src": "16960:21:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 69055,
+                        "id": 63941,
                         "nodeType": "ExpressionStatement",
-                        "src": "16960:21:114"
+                        "src": "16960:21:96"
                       },
                       {
                         "expression": {
-                          "id": 69058,
+                          "id": 63944,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 69056,
+                            "id": 63942,
                             "name": "sum",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68949,
-                            "src": "16995:3:114",
+                            "referencedDeclaration": 63835,
+                            "src": "16995:3:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -11825,26 +11821,26 @@ export const LogExpMath =
                           "nodeType": "Assignment",
                           "operator": "+=",
                           "rightHandSide": {
-                            "id": 69057,
+                            "id": 63943,
                             "name": "x5",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68219,
-                            "src": "17002:2:114",
+                            "referencedDeclaration": 63105,
+                            "src": "17002:2:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "16995:9:114",
+                          "src": "16995:9:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 69059,
+                        "id": 63945,
                         "nodeType": "ExpressionStatement",
-                        "src": "16995:9:114"
+                        "src": "16995:9:96"
                       }
                     ]
                   }
@@ -11855,18 +11851,18 @@ export const LogExpMath =
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     },
-                    "id": 69064,
+                    "id": 63950,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 69062,
+                      "id": 63948,
                       "name": "a",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68927,
-                      "src": "17029:1:114",
+                      "referencedDeclaration": 63813,
+                      "src": "17029:1:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -11875,45 +11871,45 @@ export const LogExpMath =
                     "nodeType": "BinaryOperation",
                     "operator": ">=",
                     "rightExpression": {
-                      "id": 69063,
+                      "id": 63949,
                       "name": "a6",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68228,
-                      "src": "17034:2:114",
+                      "referencedDeclaration": 63114,
+                      "src": "17034:2:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "17029:7:114",
+                    "src": "17029:7:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 69079,
+                  "id": 63965,
                   "nodeType": "IfStatement",
-                  "src": "17025:82:114",
+                  "src": "17025:82:96",
                   "trueBody": {
-                    "id": 69078,
+                    "id": 63964,
                     "nodeType": "Block",
-                    "src": "17038:69:114",
+                    "src": "17038:69:96",
                     "statements": [
                       {
                         "expression": {
-                          "id": 69072,
+                          "id": 63958,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 69065,
+                            "id": 63951,
                             "name": "a",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68927,
-                            "src": "17052:1:114",
+                            "referencedDeclaration": 63813,
+                            "src": "17052:1:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -11926,7 +11922,7 @@ export const LogExpMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 69071,
+                            "id": 63957,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -11938,18 +11934,18 @@ export const LogExpMath =
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   },
-                                  "id": 69068,
+                                  "id": 63954,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "leftExpression": {
-                                    "id": 69066,
+                                    "id": 63952,
                                     "name": "a",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68927,
-                                    "src": "17057:1:114",
+                                    "referencedDeclaration": 63813,
+                                    "src": "17057:1:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
@@ -11958,32 +11954,32 @@ export const LogExpMath =
                                   "nodeType": "BinaryOperation",
                                   "operator": "*",
                                   "rightExpression": {
-                                    "id": 69067,
+                                    "id": 63953,
                                     "name": "ONE_20",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68156,
-                                    "src": "17061:6:114",
+                                    "referencedDeclaration": 63042,
+                                    "src": "17061:6:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
                                     }
                                   },
-                                  "src": "17057:10:114",
+                                  "src": "17057:10:96",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   }
                                 }
                               ],
-                              "id": 69069,
+                              "id": 63955,
                               "isConstant": false,
                               "isInlineArray": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "nodeType": "TupleExpression",
-                              "src": "17056:12:114",
+                              "src": "17056:12:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -11992,47 +11988,47 @@ export const LogExpMath =
                             "nodeType": "BinaryOperation",
                             "operator": "/",
                             "rightExpression": {
-                              "id": 69070,
+                              "id": 63956,
                               "name": "a6",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 68228,
-                              "src": "17071:2:114",
+                              "referencedDeclaration": 63114,
+                              "src": "17071:2:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "17056:17:114",
+                            "src": "17056:17:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "17052:21:114",
+                          "src": "17052:21:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 69073,
+                        "id": 63959,
                         "nodeType": "ExpressionStatement",
-                        "src": "17052:21:114"
+                        "src": "17052:21:96"
                       },
                       {
                         "expression": {
-                          "id": 69076,
+                          "id": 63962,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 69074,
+                            "id": 63960,
                             "name": "sum",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68949,
-                            "src": "17087:3:114",
+                            "referencedDeclaration": 63835,
+                            "src": "17087:3:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -12041,26 +12037,26 @@ export const LogExpMath =
                           "nodeType": "Assignment",
                           "operator": "+=",
                           "rightHandSide": {
-                            "id": 69075,
+                            "id": 63961,
                             "name": "x6",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68225,
-                            "src": "17094:2:114",
+                            "referencedDeclaration": 63111,
+                            "src": "17094:2:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "17087:9:114",
+                          "src": "17087:9:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 69077,
+                        "id": 63963,
                         "nodeType": "ExpressionStatement",
-                        "src": "17087:9:114"
+                        "src": "17087:9:96"
                       }
                     ]
                   }
@@ -12071,18 +12067,18 @@ export const LogExpMath =
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     },
-                    "id": 69082,
+                    "id": 63968,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 69080,
+                      "id": 63966,
                       "name": "a",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68927,
-                      "src": "17121:1:114",
+                      "referencedDeclaration": 63813,
+                      "src": "17121:1:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -12091,45 +12087,45 @@ export const LogExpMath =
                     "nodeType": "BinaryOperation",
                     "operator": ">=",
                     "rightExpression": {
-                      "id": 69081,
+                      "id": 63967,
                       "name": "a7",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68234,
-                      "src": "17126:2:114",
+                      "referencedDeclaration": 63120,
+                      "src": "17126:2:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "17121:7:114",
+                    "src": "17121:7:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 69097,
+                  "id": 63983,
                   "nodeType": "IfStatement",
-                  "src": "17117:82:114",
+                  "src": "17117:82:96",
                   "trueBody": {
-                    "id": 69096,
+                    "id": 63982,
                     "nodeType": "Block",
-                    "src": "17130:69:114",
+                    "src": "17130:69:96",
                     "statements": [
                       {
                         "expression": {
-                          "id": 69090,
+                          "id": 63976,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 69083,
+                            "id": 63969,
                             "name": "a",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68927,
-                            "src": "17144:1:114",
+                            "referencedDeclaration": 63813,
+                            "src": "17144:1:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -12142,7 +12138,7 @@ export const LogExpMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 69089,
+                            "id": 63975,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -12154,18 +12150,18 @@ export const LogExpMath =
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   },
-                                  "id": 69086,
+                                  "id": 63972,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "leftExpression": {
-                                    "id": 69084,
+                                    "id": 63970,
                                     "name": "a",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68927,
-                                    "src": "17149:1:114",
+                                    "referencedDeclaration": 63813,
+                                    "src": "17149:1:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
@@ -12174,32 +12170,32 @@ export const LogExpMath =
                                   "nodeType": "BinaryOperation",
                                   "operator": "*",
                                   "rightExpression": {
-                                    "id": 69085,
+                                    "id": 63971,
                                     "name": "ONE_20",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68156,
-                                    "src": "17153:6:114",
+                                    "referencedDeclaration": 63042,
+                                    "src": "17153:6:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
                                     }
                                   },
-                                  "src": "17149:10:114",
+                                  "src": "17149:10:96",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   }
                                 }
                               ],
-                              "id": 69087,
+                              "id": 63973,
                               "isConstant": false,
                               "isInlineArray": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "nodeType": "TupleExpression",
-                              "src": "17148:12:114",
+                              "src": "17148:12:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -12208,47 +12204,47 @@ export const LogExpMath =
                             "nodeType": "BinaryOperation",
                             "operator": "/",
                             "rightExpression": {
-                              "id": 69088,
+                              "id": 63974,
                               "name": "a7",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 68234,
-                              "src": "17163:2:114",
+                              "referencedDeclaration": 63120,
+                              "src": "17163:2:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "17148:17:114",
+                            "src": "17148:17:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "17144:21:114",
+                          "src": "17144:21:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 69091,
+                        "id": 63977,
                         "nodeType": "ExpressionStatement",
-                        "src": "17144:21:114"
+                        "src": "17144:21:96"
                       },
                       {
                         "expression": {
-                          "id": 69094,
+                          "id": 63980,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 69092,
+                            "id": 63978,
                             "name": "sum",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68949,
-                            "src": "17179:3:114",
+                            "referencedDeclaration": 63835,
+                            "src": "17179:3:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -12257,26 +12253,26 @@ export const LogExpMath =
                           "nodeType": "Assignment",
                           "operator": "+=",
                           "rightHandSide": {
-                            "id": 69093,
+                            "id": 63979,
                             "name": "x7",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68231,
-                            "src": "17186:2:114",
+                            "referencedDeclaration": 63117,
+                            "src": "17186:2:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "17179:9:114",
+                          "src": "17179:9:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 69095,
+                        "id": 63981,
                         "nodeType": "ExpressionStatement",
-                        "src": "17179:9:114"
+                        "src": "17179:9:96"
                       }
                     ]
                   }
@@ -12287,18 +12283,18 @@ export const LogExpMath =
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     },
-                    "id": 69100,
+                    "id": 63986,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 69098,
+                      "id": 63984,
                       "name": "a",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68927,
-                      "src": "17213:1:114",
+                      "referencedDeclaration": 63813,
+                      "src": "17213:1:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -12307,45 +12303,45 @@ export const LogExpMath =
                     "nodeType": "BinaryOperation",
                     "operator": ">=",
                     "rightExpression": {
-                      "id": 69099,
+                      "id": 63985,
                       "name": "a8",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68240,
-                      "src": "17218:2:114",
+                      "referencedDeclaration": 63126,
+                      "src": "17218:2:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "17213:7:114",
+                    "src": "17213:7:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 69115,
+                  "id": 64001,
                   "nodeType": "IfStatement",
-                  "src": "17209:82:114",
+                  "src": "17209:82:96",
                   "trueBody": {
-                    "id": 69114,
+                    "id": 64000,
                     "nodeType": "Block",
-                    "src": "17222:69:114",
+                    "src": "17222:69:96",
                     "statements": [
                       {
                         "expression": {
-                          "id": 69108,
+                          "id": 63994,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 69101,
+                            "id": 63987,
                             "name": "a",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68927,
-                            "src": "17236:1:114",
+                            "referencedDeclaration": 63813,
+                            "src": "17236:1:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -12358,7 +12354,7 @@ export const LogExpMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 69107,
+                            "id": 63993,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -12370,18 +12366,18 @@ export const LogExpMath =
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   },
-                                  "id": 69104,
+                                  "id": 63990,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "leftExpression": {
-                                    "id": 69102,
+                                    "id": 63988,
                                     "name": "a",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68927,
-                                    "src": "17241:1:114",
+                                    "referencedDeclaration": 63813,
+                                    "src": "17241:1:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
@@ -12390,32 +12386,32 @@ export const LogExpMath =
                                   "nodeType": "BinaryOperation",
                                   "operator": "*",
                                   "rightExpression": {
-                                    "id": 69103,
+                                    "id": 63989,
                                     "name": "ONE_20",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68156,
-                                    "src": "17245:6:114",
+                                    "referencedDeclaration": 63042,
+                                    "src": "17245:6:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
                                     }
                                   },
-                                  "src": "17241:10:114",
+                                  "src": "17241:10:96",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   }
                                 }
                               ],
-                              "id": 69105,
+                              "id": 63991,
                               "isConstant": false,
                               "isInlineArray": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "nodeType": "TupleExpression",
-                              "src": "17240:12:114",
+                              "src": "17240:12:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -12424,47 +12420,47 @@ export const LogExpMath =
                             "nodeType": "BinaryOperation",
                             "operator": "/",
                             "rightExpression": {
-                              "id": 69106,
+                              "id": 63992,
                               "name": "a8",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 68240,
-                              "src": "17255:2:114",
+                              "referencedDeclaration": 63126,
+                              "src": "17255:2:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "17240:17:114",
+                            "src": "17240:17:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "17236:21:114",
+                          "src": "17236:21:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 69109,
+                        "id": 63995,
                         "nodeType": "ExpressionStatement",
-                        "src": "17236:21:114"
+                        "src": "17236:21:96"
                       },
                       {
                         "expression": {
-                          "id": 69112,
+                          "id": 63998,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 69110,
+                            "id": 63996,
                             "name": "sum",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68949,
-                            "src": "17271:3:114",
+                            "referencedDeclaration": 63835,
+                            "src": "17271:3:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -12473,26 +12469,26 @@ export const LogExpMath =
                           "nodeType": "Assignment",
                           "operator": "+=",
                           "rightHandSide": {
-                            "id": 69111,
+                            "id": 63997,
                             "name": "x8",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68237,
-                            "src": "17278:2:114",
+                            "referencedDeclaration": 63123,
+                            "src": "17278:2:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "17271:9:114",
+                          "src": "17271:9:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 69113,
+                        "id": 63999,
                         "nodeType": "ExpressionStatement",
-                        "src": "17271:9:114"
+                        "src": "17271:9:96"
                       }
                     ]
                   }
@@ -12503,18 +12499,18 @@ export const LogExpMath =
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     },
-                    "id": 69118,
+                    "id": 64004,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 69116,
+                      "id": 64002,
                       "name": "a",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68927,
-                      "src": "17305:1:114",
+                      "referencedDeclaration": 63813,
+                      "src": "17305:1:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -12523,45 +12519,45 @@ export const LogExpMath =
                     "nodeType": "BinaryOperation",
                     "operator": ">=",
                     "rightExpression": {
-                      "id": 69117,
+                      "id": 64003,
                       "name": "a9",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68246,
-                      "src": "17310:2:114",
+                      "referencedDeclaration": 63132,
+                      "src": "17310:2:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "17305:7:114",
+                    "src": "17305:7:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 69133,
+                  "id": 64019,
                   "nodeType": "IfStatement",
-                  "src": "17301:82:114",
+                  "src": "17301:82:96",
                   "trueBody": {
-                    "id": 69132,
+                    "id": 64018,
                     "nodeType": "Block",
-                    "src": "17314:69:114",
+                    "src": "17314:69:96",
                     "statements": [
                       {
                         "expression": {
-                          "id": 69126,
+                          "id": 64012,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 69119,
+                            "id": 64005,
                             "name": "a",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68927,
-                            "src": "17328:1:114",
+                            "referencedDeclaration": 63813,
+                            "src": "17328:1:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -12574,7 +12570,7 @@ export const LogExpMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 69125,
+                            "id": 64011,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -12586,18 +12582,18 @@ export const LogExpMath =
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   },
-                                  "id": 69122,
+                                  "id": 64008,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "leftExpression": {
-                                    "id": 69120,
+                                    "id": 64006,
                                     "name": "a",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68927,
-                                    "src": "17333:1:114",
+                                    "referencedDeclaration": 63813,
+                                    "src": "17333:1:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
@@ -12606,32 +12602,32 @@ export const LogExpMath =
                                   "nodeType": "BinaryOperation",
                                   "operator": "*",
                                   "rightExpression": {
-                                    "id": 69121,
+                                    "id": 64007,
                                     "name": "ONE_20",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68156,
-                                    "src": "17337:6:114",
+                                    "referencedDeclaration": 63042,
+                                    "src": "17337:6:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
                                     }
                                   },
-                                  "src": "17333:10:114",
+                                  "src": "17333:10:96",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   }
                                 }
                               ],
-                              "id": 69123,
+                              "id": 64009,
                               "isConstant": false,
                               "isInlineArray": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "nodeType": "TupleExpression",
-                              "src": "17332:12:114",
+                              "src": "17332:12:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -12640,47 +12636,47 @@ export const LogExpMath =
                             "nodeType": "BinaryOperation",
                             "operator": "/",
                             "rightExpression": {
-                              "id": 69124,
+                              "id": 64010,
                               "name": "a9",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 68246,
-                              "src": "17347:2:114",
+                              "referencedDeclaration": 63132,
+                              "src": "17347:2:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "17332:17:114",
+                            "src": "17332:17:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "17328:21:114",
+                          "src": "17328:21:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 69127,
+                        "id": 64013,
                         "nodeType": "ExpressionStatement",
-                        "src": "17328:21:114"
+                        "src": "17328:21:96"
                       },
                       {
                         "expression": {
-                          "id": 69130,
+                          "id": 64016,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 69128,
+                            "id": 64014,
                             "name": "sum",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68949,
-                            "src": "17363:3:114",
+                            "referencedDeclaration": 63835,
+                            "src": "17363:3:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -12689,26 +12685,26 @@ export const LogExpMath =
                           "nodeType": "Assignment",
                           "operator": "+=",
                           "rightHandSide": {
-                            "id": 69129,
+                            "id": 64015,
                             "name": "x9",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68243,
-                            "src": "17370:2:114",
+                            "referencedDeclaration": 63129,
+                            "src": "17370:2:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "17363:9:114",
+                          "src": "17363:9:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 69131,
+                        "id": 64017,
                         "nodeType": "ExpressionStatement",
-                        "src": "17363:9:114"
+                        "src": "17363:9:96"
                       }
                     ]
                   }
@@ -12719,18 +12715,18 @@ export const LogExpMath =
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     },
-                    "id": 69136,
+                    "id": 64022,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 69134,
+                      "id": 64020,
                       "name": "a",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68927,
-                      "src": "17397:1:114",
+                      "referencedDeclaration": 63813,
+                      "src": "17397:1:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -12739,45 +12735,45 @@ export const LogExpMath =
                     "nodeType": "BinaryOperation",
                     "operator": ">=",
                     "rightExpression": {
-                      "id": 69135,
+                      "id": 64021,
                       "name": "a10",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68252,
-                      "src": "17402:3:114",
+                      "referencedDeclaration": 63138,
+                      "src": "17402:3:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "17397:8:114",
+                    "src": "17397:8:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 69151,
+                  "id": 64037,
                   "nodeType": "IfStatement",
-                  "src": "17393:85:114",
+                  "src": "17393:85:96",
                   "trueBody": {
-                    "id": 69150,
+                    "id": 64036,
                     "nodeType": "Block",
-                    "src": "17407:71:114",
+                    "src": "17407:71:96",
                     "statements": [
                       {
                         "expression": {
-                          "id": 69144,
+                          "id": 64030,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 69137,
+                            "id": 64023,
                             "name": "a",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68927,
-                            "src": "17421:1:114",
+                            "referencedDeclaration": 63813,
+                            "src": "17421:1:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -12790,7 +12786,7 @@ export const LogExpMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 69143,
+                            "id": 64029,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -12802,18 +12798,18 @@ export const LogExpMath =
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   },
-                                  "id": 69140,
+                                  "id": 64026,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "leftExpression": {
-                                    "id": 69138,
+                                    "id": 64024,
                                     "name": "a",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68927,
-                                    "src": "17426:1:114",
+                                    "referencedDeclaration": 63813,
+                                    "src": "17426:1:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
@@ -12822,32 +12818,32 @@ export const LogExpMath =
                                   "nodeType": "BinaryOperation",
                                   "operator": "*",
                                   "rightExpression": {
-                                    "id": 69139,
+                                    "id": 64025,
                                     "name": "ONE_20",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68156,
-                                    "src": "17430:6:114",
+                                    "referencedDeclaration": 63042,
+                                    "src": "17430:6:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
                                     }
                                   },
-                                  "src": "17426:10:114",
+                                  "src": "17426:10:96",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   }
                                 }
                               ],
-                              "id": 69141,
+                              "id": 64027,
                               "isConstant": false,
                               "isInlineArray": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "nodeType": "TupleExpression",
-                              "src": "17425:12:114",
+                              "src": "17425:12:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -12856,47 +12852,47 @@ export const LogExpMath =
                             "nodeType": "BinaryOperation",
                             "operator": "/",
                             "rightExpression": {
-                              "id": 69142,
+                              "id": 64028,
                               "name": "a10",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 68252,
-                              "src": "17440:3:114",
+                              "referencedDeclaration": 63138,
+                              "src": "17440:3:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "17425:18:114",
+                            "src": "17425:18:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "17421:22:114",
+                          "src": "17421:22:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 69145,
+                        "id": 64031,
                         "nodeType": "ExpressionStatement",
-                        "src": "17421:22:114"
+                        "src": "17421:22:96"
                       },
                       {
                         "expression": {
-                          "id": 69148,
+                          "id": 64034,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 69146,
+                            "id": 64032,
                             "name": "sum",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68949,
-                            "src": "17457:3:114",
+                            "referencedDeclaration": 63835,
+                            "src": "17457:3:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -12905,26 +12901,26 @@ export const LogExpMath =
                           "nodeType": "Assignment",
                           "operator": "+=",
                           "rightHandSide": {
-                            "id": 69147,
+                            "id": 64033,
                             "name": "x10",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68249,
-                            "src": "17464:3:114",
+                            "referencedDeclaration": 63135,
+                            "src": "17464:3:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "17457:10:114",
+                          "src": "17457:10:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 69149,
+                        "id": 64035,
                         "nodeType": "ExpressionStatement",
-                        "src": "17457:10:114"
+                        "src": "17457:10:96"
                       }
                     ]
                   }
@@ -12935,18 +12931,18 @@ export const LogExpMath =
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     },
-                    "id": 69154,
+                    "id": 64040,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 69152,
+                      "id": 64038,
                       "name": "a",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68927,
-                      "src": "17492:1:114",
+                      "referencedDeclaration": 63813,
+                      "src": "17492:1:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -12955,45 +12951,45 @@ export const LogExpMath =
                     "nodeType": "BinaryOperation",
                     "operator": ">=",
                     "rightExpression": {
-                      "id": 69153,
+                      "id": 64039,
                       "name": "a11",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68258,
-                      "src": "17497:3:114",
+                      "referencedDeclaration": 63144,
+                      "src": "17497:3:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "17492:8:114",
+                    "src": "17492:8:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 69169,
+                  "id": 64055,
                   "nodeType": "IfStatement",
-                  "src": "17488:85:114",
+                  "src": "17488:85:96",
                   "trueBody": {
-                    "id": 69168,
+                    "id": 64054,
                     "nodeType": "Block",
-                    "src": "17502:71:114",
+                    "src": "17502:71:96",
                     "statements": [
                       {
                         "expression": {
-                          "id": 69162,
+                          "id": 64048,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 69155,
+                            "id": 64041,
                             "name": "a",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68927,
-                            "src": "17516:1:114",
+                            "referencedDeclaration": 63813,
+                            "src": "17516:1:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -13006,7 +13002,7 @@ export const LogExpMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 69161,
+                            "id": 64047,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -13018,18 +13014,18 @@ export const LogExpMath =
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   },
-                                  "id": 69158,
+                                  "id": 64044,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "leftExpression": {
-                                    "id": 69156,
+                                    "id": 64042,
                                     "name": "a",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68927,
-                                    "src": "17521:1:114",
+                                    "referencedDeclaration": 63813,
+                                    "src": "17521:1:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
@@ -13038,32 +13034,32 @@ export const LogExpMath =
                                   "nodeType": "BinaryOperation",
                                   "operator": "*",
                                   "rightExpression": {
-                                    "id": 69157,
+                                    "id": 64043,
                                     "name": "ONE_20",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 68156,
-                                    "src": "17525:6:114",
+                                    "referencedDeclaration": 63042,
+                                    "src": "17525:6:96",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
                                     }
                                   },
-                                  "src": "17521:10:114",
+                                  "src": "17521:10:96",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   }
                                 }
                               ],
-                              "id": 69159,
+                              "id": 64045,
                               "isConstant": false,
                               "isInlineArray": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "nodeType": "TupleExpression",
-                              "src": "17520:12:114",
+                              "src": "17520:12:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -13072,47 +13068,47 @@ export const LogExpMath =
                             "nodeType": "BinaryOperation",
                             "operator": "/",
                             "rightExpression": {
-                              "id": 69160,
+                              "id": 64046,
                               "name": "a11",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 68258,
-                              "src": "17535:3:114",
+                              "referencedDeclaration": 63144,
+                              "src": "17535:3:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "17520:18:114",
+                            "src": "17520:18:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "17516:22:114",
+                          "src": "17516:22:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 69163,
+                        "id": 64049,
                         "nodeType": "ExpressionStatement",
-                        "src": "17516:22:114"
+                        "src": "17516:22:96"
                       },
                       {
                         "expression": {
-                          "id": 69166,
+                          "id": 64052,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 69164,
+                            "id": 64050,
                             "name": "sum",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68949,
-                            "src": "17552:3:114",
+                            "referencedDeclaration": 63835,
+                            "src": "17552:3:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -13121,44 +13117,44 @@ export const LogExpMath =
                           "nodeType": "Assignment",
                           "operator": "+=",
                           "rightHandSide": {
-                            "id": 69165,
+                            "id": 64051,
                             "name": "x11",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68255,
-                            "src": "17559:3:114",
+                            "referencedDeclaration": 63141,
+                            "src": "17559:3:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "17552:10:114",
+                          "src": "17552:10:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "id": 69167,
+                        "id": 64053,
                         "nodeType": "ExpressionStatement",
-                        "src": "17552:10:114"
+                        "src": "17552:10:96"
                       }
                     ]
                   }
                 },
                 {
                   "assignments": [
-                    69171
+                    64057
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 69171,
+                      "id": 64057,
                       "mutability": "mutable",
                       "name": "z",
-                      "nameLocation": "18082:1:114",
+                      "nameLocation": "18082:1:96",
                       "nodeType": "VariableDeclaration",
-                      "scope": 69288,
-                      "src": "18075:8:114",
+                      "scope": 64174,
+                      "src": "18075:8:96",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -13166,10 +13162,10 @@ export const LogExpMath =
                         "typeString": "int256"
                       },
                       "typeName": {
-                        "id": 69170,
+                        "id": 64056,
                         "name": "int256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "18075:6:114",
+                        "src": "18075:6:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -13178,13 +13174,13 @@ export const LogExpMath =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 69184,
+                  "id": 64070,
                   "initialValue": {
                     "commonType": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     },
-                    "id": 69183,
+                    "id": 64069,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -13196,7 +13192,7 @@ export const LogExpMath =
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           },
-                          "id": 69177,
+                          "id": 64063,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -13208,18 +13204,18 @@ export const LogExpMath =
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 },
-                                "id": 69174,
+                                "id": 64060,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
                                 "lValueRequested": false,
                                 "leftExpression": {
-                                  "id": 69172,
+                                  "id": 64058,
                                   "name": "a",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 68927,
-                                  "src": "18088:1:114",
+                                  "referencedDeclaration": 63813,
+                                  "src": "18088:1:96",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
@@ -13228,32 +13224,32 @@ export const LogExpMath =
                                 "nodeType": "BinaryOperation",
                                 "operator": "-",
                                 "rightExpression": {
-                                  "id": 69173,
+                                  "id": 64059,
                                   "name": "ONE_20",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 68156,
-                                  "src": "18092:6:114",
+                                  "referencedDeclaration": 63042,
+                                  "src": "18092:6:96",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   }
                                 },
-                                "src": "18088:10:114",
+                                "src": "18088:10:96",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 }
                               }
                             ],
-                            "id": 69175,
+                            "id": 64061,
                             "isConstant": false,
                             "isInlineArray": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "nodeType": "TupleExpression",
-                            "src": "18087:12:114",
+                            "src": "18087:12:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -13262,32 +13258,32 @@ export const LogExpMath =
                           "nodeType": "BinaryOperation",
                           "operator": "*",
                           "rightExpression": {
-                            "id": 69176,
+                            "id": 64062,
                             "name": "ONE_20",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68156,
-                            "src": "18102:6:114",
+                            "referencedDeclaration": 63042,
+                            "src": "18102:6:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "18087:21:114",
+                          "src": "18087:21:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         }
                       ],
-                      "id": 69178,
+                      "id": 64064,
                       "isConstant": false,
                       "isInlineArray": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "nodeType": "TupleExpression",
-                      "src": "18086:23:114",
+                      "src": "18086:23:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -13302,18 +13298,18 @@ export const LogExpMath =
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           },
-                          "id": 69181,
+                          "id": 64067,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftExpression": {
-                            "id": 69179,
+                            "id": 64065,
                             "name": "a",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68927,
-                            "src": "18113:1:114",
+                            "referencedDeclaration": 63813,
+                            "src": "18113:1:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -13322,60 +13318,60 @@ export const LogExpMath =
                           "nodeType": "BinaryOperation",
                           "operator": "+",
                           "rightExpression": {
-                            "id": 69180,
+                            "id": 64066,
                             "name": "ONE_20",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68156,
-                            "src": "18117:6:114",
+                            "referencedDeclaration": 63042,
+                            "src": "18117:6:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "18113:10:114",
+                          "src": "18113:10:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         }
                       ],
-                      "id": 69182,
+                      "id": 64068,
                       "isConstant": false,
                       "isInlineArray": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "nodeType": "TupleExpression",
-                      "src": "18112:12:114",
+                      "src": "18112:12:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "18086:38:114",
+                    "src": "18086:38:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "18075:49:114"
+                  "src": "18075:49:96"
                 },
                 {
                   "assignments": [
-                    69186
+                    64072
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 69186,
+                      "id": 64072,
                       "mutability": "mutable",
                       "name": "z_squared",
-                      "nameLocation": "18141:9:114",
+                      "nameLocation": "18141:9:96",
                       "nodeType": "VariableDeclaration",
-                      "scope": 69288,
-                      "src": "18134:16:114",
+                      "scope": 64174,
+                      "src": "18134:16:96",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -13383,10 +13379,10 @@ export const LogExpMath =
                         "typeString": "int256"
                       },
                       "typeName": {
-                        "id": 69185,
+                        "id": 64071,
                         "name": "int256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "18134:6:114",
+                        "src": "18134:6:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -13395,13 +13391,13 @@ export const LogExpMath =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 69193,
+                  "id": 64079,
                   "initialValue": {
                     "commonType": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     },
-                    "id": 69192,
+                    "id": 64078,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -13413,18 +13409,18 @@ export const LogExpMath =
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           },
-                          "id": 69189,
+                          "id": 64075,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftExpression": {
-                            "id": 69187,
+                            "id": 64073,
                             "name": "z",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 69171,
-                            "src": "18154:1:114",
+                            "referencedDeclaration": 64057,
+                            "src": "18154:1:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -13433,32 +13429,32 @@ export const LogExpMath =
                           "nodeType": "BinaryOperation",
                           "operator": "*",
                           "rightExpression": {
-                            "id": 69188,
+                            "id": 64074,
                             "name": "z",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 69171,
-                            "src": "18158:1:114",
+                            "referencedDeclaration": 64057,
+                            "src": "18158:1:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "18154:5:114",
+                          "src": "18154:5:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         }
                       ],
-                      "id": 69190,
+                      "id": 64076,
                       "isConstant": false,
                       "isInlineArray": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "nodeType": "TupleExpression",
-                      "src": "18153:7:114",
+                      "src": "18153:7:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -13467,40 +13463,40 @@ export const LogExpMath =
                     "nodeType": "BinaryOperation",
                     "operator": "/",
                     "rightExpression": {
-                      "id": 69191,
+                      "id": 64077,
                       "name": "ONE_20",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68156,
-                      "src": "18163:6:114",
+                      "referencedDeclaration": 63042,
+                      "src": "18163:6:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "18153:16:114",
+                    "src": "18153:16:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "18134:35:114"
+                  "src": "18134:35:96"
                 },
                 {
                   "assignments": [
-                    69195
+                    64081
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 69195,
+                      "id": 64081,
                       "mutability": "mutable",
                       "name": "num",
-                      "nameLocation": "18257:3:114",
+                      "nameLocation": "18257:3:96",
                       "nodeType": "VariableDeclaration",
-                      "scope": 69288,
-                      "src": "18250:10:114",
+                      "scope": 64174,
+                      "src": "18250:10:96",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -13508,10 +13504,10 @@ export const LogExpMath =
                         "typeString": "int256"
                       },
                       "typeName": {
-                        "id": 69194,
+                        "id": 64080,
                         "name": "int256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "18250:6:114",
+                        "src": "18250:6:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -13520,36 +13516,36 @@ export const LogExpMath =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 69197,
+                  "id": 64083,
                   "initialValue": {
-                    "id": 69196,
+                    "id": 64082,
                     "name": "z",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 69171,
-                    "src": "18263:1:114",
+                    "referencedDeclaration": 64057,
+                    "src": "18263:1:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "18250:14:114"
+                  "src": "18250:14:96"
                 },
                 {
                   "assignments": [
-                    69199
+                    64085
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 69199,
+                      "id": 64085,
                       "mutability": "mutable",
                       "name": "seriesSum",
-                      "nameLocation": "18385:9:114",
+                      "nameLocation": "18385:9:96",
                       "nodeType": "VariableDeclaration",
-                      "scope": 69288,
-                      "src": "18378:16:114",
+                      "scope": 64174,
+                      "src": "18378:16:96",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -13557,10 +13553,10 @@ export const LogExpMath =
                         "typeString": "int256"
                       },
                       "typeName": {
-                        "id": 69198,
+                        "id": 64084,
                         "name": "int256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "18378:6:114",
+                        "src": "18378:6:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -13569,36 +13565,36 @@ export const LogExpMath =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 69201,
+                  "id": 64087,
                   "initialValue": {
-                    "id": 69200,
+                    "id": 64086,
                     "name": "num",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 69195,
-                    "src": "18397:3:114",
+                    "referencedDeclaration": 64081,
+                    "src": "18397:3:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "18378:22:114"
+                  "src": "18378:22:96"
                 },
                 {
                   "expression": {
-                    "id": 69209,
+                    "id": 64095,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 69202,
+                      "id": 64088,
                       "name": "num",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 69195,
-                      "src": "18471:3:114",
+                      "referencedDeclaration": 64081,
+                      "src": "18471:3:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -13611,7 +13607,7 @@ export const LogExpMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 69208,
+                      "id": 64094,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -13623,18 +13619,18 @@ export const LogExpMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 69205,
+                            "id": 64091,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "leftExpression": {
-                              "id": 69203,
+                              "id": 64089,
                               "name": "num",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 69195,
-                              "src": "18478:3:114",
+                              "referencedDeclaration": 64081,
+                              "src": "18478:3:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -13643,32 +13639,32 @@ export const LogExpMath =
                             "nodeType": "BinaryOperation",
                             "operator": "*",
                             "rightExpression": {
-                              "id": 69204,
+                              "id": 64090,
                               "name": "z_squared",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 69186,
-                              "src": "18484:9:114",
+                              "referencedDeclaration": 64072,
+                              "src": "18484:9:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "18478:15:114",
+                            "src": "18478:15:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           }
                         ],
-                        "id": 69206,
+                        "id": 64092,
                         "isConstant": false,
                         "isInlineArray": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "TupleExpression",
-                        "src": "18477:17:114",
+                        "src": "18477:17:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -13677,47 +13673,47 @@ export const LogExpMath =
                       "nodeType": "BinaryOperation",
                       "operator": "/",
                       "rightExpression": {
-                        "id": 69207,
+                        "id": 64093,
                         "name": "ONE_20",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 68156,
-                        "src": "18497:6:114",
+                        "referencedDeclaration": 63042,
+                        "src": "18497:6:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "src": "18477:26:114",
+                      "src": "18477:26:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "18471:32:114",
+                    "src": "18471:32:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 69210,
+                  "id": 64096,
                   "nodeType": "ExpressionStatement",
-                  "src": "18471:32:114"
+                  "src": "18471:32:96"
                 },
                 {
                   "expression": {
-                    "id": 69215,
+                    "id": 64101,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 69211,
+                      "id": 64097,
                       "name": "seriesSum",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 69199,
-                      "src": "18513:9:114",
+                      "referencedDeclaration": 64085,
+                      "src": "18513:9:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -13730,18 +13726,18 @@ export const LogExpMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 69214,
+                      "id": 64100,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
-                        "id": 69212,
+                        "id": 64098,
                         "name": "num",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 69195,
-                        "src": "18526:3:114",
+                        "referencedDeclaration": 64081,
+                        "src": "18526:3:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -13751,50 +13747,50 @@ export const LogExpMath =
                       "operator": "/",
                       "rightExpression": {
                         "hexValue": "33",
-                        "id": 69213,
+                        "id": 64099,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "18532:1:114",
+                        "src": "18532:1:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_rational_3_by_1",
                           "typeString": "int_const 3"
                         },
                         "value": "3"
                       },
-                      "src": "18526:7:114",
+                      "src": "18526:7:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "18513:20:114",
+                    "src": "18513:20:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 69216,
+                  "id": 64102,
                   "nodeType": "ExpressionStatement",
-                  "src": "18513:20:114"
+                  "src": "18513:20:96"
                 },
                 {
                   "expression": {
-                    "id": 69224,
+                    "id": 64110,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 69217,
+                      "id": 64103,
                       "name": "num",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 69195,
-                      "src": "18544:3:114",
+                      "referencedDeclaration": 64081,
+                      "src": "18544:3:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -13807,7 +13803,7 @@ export const LogExpMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 69223,
+                      "id": 64109,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -13819,18 +13815,18 @@ export const LogExpMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 69220,
+                            "id": 64106,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "leftExpression": {
-                              "id": 69218,
+                              "id": 64104,
                               "name": "num",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 69195,
-                              "src": "18551:3:114",
+                              "referencedDeclaration": 64081,
+                              "src": "18551:3:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -13839,32 +13835,32 @@ export const LogExpMath =
                             "nodeType": "BinaryOperation",
                             "operator": "*",
                             "rightExpression": {
-                              "id": 69219,
+                              "id": 64105,
                               "name": "z_squared",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 69186,
-                              "src": "18557:9:114",
+                              "referencedDeclaration": 64072,
+                              "src": "18557:9:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "18551:15:114",
+                            "src": "18551:15:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           }
                         ],
-                        "id": 69221,
+                        "id": 64107,
                         "isConstant": false,
                         "isInlineArray": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "TupleExpression",
-                        "src": "18550:17:114",
+                        "src": "18550:17:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -13873,47 +13869,47 @@ export const LogExpMath =
                       "nodeType": "BinaryOperation",
                       "operator": "/",
                       "rightExpression": {
-                        "id": 69222,
+                        "id": 64108,
                         "name": "ONE_20",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 68156,
-                        "src": "18570:6:114",
+                        "referencedDeclaration": 63042,
+                        "src": "18570:6:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "src": "18550:26:114",
+                      "src": "18550:26:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "18544:32:114",
+                    "src": "18544:32:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 69225,
+                  "id": 64111,
                   "nodeType": "ExpressionStatement",
-                  "src": "18544:32:114"
+                  "src": "18544:32:96"
                 },
                 {
                   "expression": {
-                    "id": 69230,
+                    "id": 64116,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 69226,
+                      "id": 64112,
                       "name": "seriesSum",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 69199,
-                      "src": "18586:9:114",
+                      "referencedDeclaration": 64085,
+                      "src": "18586:9:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -13926,18 +13922,18 @@ export const LogExpMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 69229,
+                      "id": 64115,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
-                        "id": 69227,
+                        "id": 64113,
                         "name": "num",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 69195,
-                        "src": "18599:3:114",
+                        "referencedDeclaration": 64081,
+                        "src": "18599:3:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -13947,50 +13943,50 @@ export const LogExpMath =
                       "operator": "/",
                       "rightExpression": {
                         "hexValue": "35",
-                        "id": 69228,
+                        "id": 64114,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "18605:1:114",
+                        "src": "18605:1:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_rational_5_by_1",
                           "typeString": "int_const 5"
                         },
                         "value": "5"
                       },
-                      "src": "18599:7:114",
+                      "src": "18599:7:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "18586:20:114",
+                    "src": "18586:20:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 69231,
+                  "id": 64117,
                   "nodeType": "ExpressionStatement",
-                  "src": "18586:20:114"
+                  "src": "18586:20:96"
                 },
                 {
                   "expression": {
-                    "id": 69239,
+                    "id": 64125,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 69232,
+                      "id": 64118,
                       "name": "num",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 69195,
-                      "src": "18617:3:114",
+                      "referencedDeclaration": 64081,
+                      "src": "18617:3:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -14003,7 +13999,7 @@ export const LogExpMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 69238,
+                      "id": 64124,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -14015,18 +14011,18 @@ export const LogExpMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 69235,
+                            "id": 64121,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "leftExpression": {
-                              "id": 69233,
+                              "id": 64119,
                               "name": "num",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 69195,
-                              "src": "18624:3:114",
+                              "referencedDeclaration": 64081,
+                              "src": "18624:3:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -14035,32 +14031,32 @@ export const LogExpMath =
                             "nodeType": "BinaryOperation",
                             "operator": "*",
                             "rightExpression": {
-                              "id": 69234,
+                              "id": 64120,
                               "name": "z_squared",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 69186,
-                              "src": "18630:9:114",
+                              "referencedDeclaration": 64072,
+                              "src": "18630:9:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "18624:15:114",
+                            "src": "18624:15:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           }
                         ],
-                        "id": 69236,
+                        "id": 64122,
                         "isConstant": false,
                         "isInlineArray": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "TupleExpression",
-                        "src": "18623:17:114",
+                        "src": "18623:17:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -14069,47 +14065,47 @@ export const LogExpMath =
                       "nodeType": "BinaryOperation",
                       "operator": "/",
                       "rightExpression": {
-                        "id": 69237,
+                        "id": 64123,
                         "name": "ONE_20",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 68156,
-                        "src": "18643:6:114",
+                        "referencedDeclaration": 63042,
+                        "src": "18643:6:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "src": "18623:26:114",
+                      "src": "18623:26:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "18617:32:114",
+                    "src": "18617:32:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 69240,
+                  "id": 64126,
                   "nodeType": "ExpressionStatement",
-                  "src": "18617:32:114"
+                  "src": "18617:32:96"
                 },
                 {
                   "expression": {
-                    "id": 69245,
+                    "id": 64131,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 69241,
+                      "id": 64127,
                       "name": "seriesSum",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 69199,
-                      "src": "18659:9:114",
+                      "referencedDeclaration": 64085,
+                      "src": "18659:9:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -14122,18 +14118,18 @@ export const LogExpMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 69244,
+                      "id": 64130,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
-                        "id": 69242,
+                        "id": 64128,
                         "name": "num",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 69195,
-                        "src": "18672:3:114",
+                        "referencedDeclaration": 64081,
+                        "src": "18672:3:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -14143,50 +14139,50 @@ export const LogExpMath =
                       "operator": "/",
                       "rightExpression": {
                         "hexValue": "37",
-                        "id": 69243,
+                        "id": 64129,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "18678:1:114",
+                        "src": "18678:1:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_rational_7_by_1",
                           "typeString": "int_const 7"
                         },
                         "value": "7"
                       },
-                      "src": "18672:7:114",
+                      "src": "18672:7:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "18659:20:114",
+                    "src": "18659:20:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 69246,
+                  "id": 64132,
                   "nodeType": "ExpressionStatement",
-                  "src": "18659:20:114"
+                  "src": "18659:20:96"
                 },
                 {
                   "expression": {
-                    "id": 69254,
+                    "id": 64140,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 69247,
+                      "id": 64133,
                       "name": "num",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 69195,
-                      "src": "18690:3:114",
+                      "referencedDeclaration": 64081,
+                      "src": "18690:3:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -14199,7 +14195,7 @@ export const LogExpMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 69253,
+                      "id": 64139,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -14211,18 +14207,18 @@ export const LogExpMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 69250,
+                            "id": 64136,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "leftExpression": {
-                              "id": 69248,
+                              "id": 64134,
                               "name": "num",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 69195,
-                              "src": "18697:3:114",
+                              "referencedDeclaration": 64081,
+                              "src": "18697:3:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -14231,32 +14227,32 @@ export const LogExpMath =
                             "nodeType": "BinaryOperation",
                             "operator": "*",
                             "rightExpression": {
-                              "id": 69249,
+                              "id": 64135,
                               "name": "z_squared",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 69186,
-                              "src": "18703:9:114",
+                              "referencedDeclaration": 64072,
+                              "src": "18703:9:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "18697:15:114",
+                            "src": "18697:15:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           }
                         ],
-                        "id": 69251,
+                        "id": 64137,
                         "isConstant": false,
                         "isInlineArray": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "TupleExpression",
-                        "src": "18696:17:114",
+                        "src": "18696:17:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -14265,47 +14261,47 @@ export const LogExpMath =
                       "nodeType": "BinaryOperation",
                       "operator": "/",
                       "rightExpression": {
-                        "id": 69252,
+                        "id": 64138,
                         "name": "ONE_20",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 68156,
-                        "src": "18716:6:114",
+                        "referencedDeclaration": 63042,
+                        "src": "18716:6:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "src": "18696:26:114",
+                      "src": "18696:26:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "18690:32:114",
+                    "src": "18690:32:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 69255,
+                  "id": 64141,
                   "nodeType": "ExpressionStatement",
-                  "src": "18690:32:114"
+                  "src": "18690:32:96"
                 },
                 {
                   "expression": {
-                    "id": 69260,
+                    "id": 64146,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 69256,
+                      "id": 64142,
                       "name": "seriesSum",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 69199,
-                      "src": "18732:9:114",
+                      "referencedDeclaration": 64085,
+                      "src": "18732:9:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -14318,18 +14314,18 @@ export const LogExpMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 69259,
+                      "id": 64145,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
-                        "id": 69257,
+                        "id": 64143,
                         "name": "num",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 69195,
-                        "src": "18745:3:114",
+                        "referencedDeclaration": 64081,
+                        "src": "18745:3:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -14339,50 +14335,50 @@ export const LogExpMath =
                       "operator": "/",
                       "rightExpression": {
                         "hexValue": "39",
-                        "id": 69258,
+                        "id": 64144,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "18751:1:114",
+                        "src": "18751:1:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_rational_9_by_1",
                           "typeString": "int_const 9"
                         },
                         "value": "9"
                       },
-                      "src": "18745:7:114",
+                      "src": "18745:7:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "18732:20:114",
+                    "src": "18732:20:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 69261,
+                  "id": 64147,
                   "nodeType": "ExpressionStatement",
-                  "src": "18732:20:114"
+                  "src": "18732:20:96"
                 },
                 {
                   "expression": {
-                    "id": 69269,
+                    "id": 64155,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 69262,
+                      "id": 64148,
                       "name": "num",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 69195,
-                      "src": "18763:3:114",
+                      "referencedDeclaration": 64081,
+                      "src": "18763:3:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -14395,7 +14391,7 @@ export const LogExpMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 69268,
+                      "id": 64154,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -14407,18 +14403,18 @@ export const LogExpMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 69265,
+                            "id": 64151,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "leftExpression": {
-                              "id": 69263,
+                              "id": 64149,
                               "name": "num",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 69195,
-                              "src": "18770:3:114",
+                              "referencedDeclaration": 64081,
+                              "src": "18770:3:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -14427,32 +14423,32 @@ export const LogExpMath =
                             "nodeType": "BinaryOperation",
                             "operator": "*",
                             "rightExpression": {
-                              "id": 69264,
+                              "id": 64150,
                               "name": "z_squared",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 69186,
-                              "src": "18776:9:114",
+                              "referencedDeclaration": 64072,
+                              "src": "18776:9:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "18770:15:114",
+                            "src": "18770:15:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           }
                         ],
-                        "id": 69266,
+                        "id": 64152,
                         "isConstant": false,
                         "isInlineArray": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "TupleExpression",
-                        "src": "18769:17:114",
+                        "src": "18769:17:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -14461,47 +14457,47 @@ export const LogExpMath =
                       "nodeType": "BinaryOperation",
                       "operator": "/",
                       "rightExpression": {
-                        "id": 69267,
+                        "id": 64153,
                         "name": "ONE_20",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 68156,
-                        "src": "18789:6:114",
+                        "referencedDeclaration": 63042,
+                        "src": "18789:6:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "src": "18769:26:114",
+                      "src": "18769:26:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "18763:32:114",
+                    "src": "18763:32:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 69270,
+                  "id": 64156,
                   "nodeType": "ExpressionStatement",
-                  "src": "18763:32:114"
+                  "src": "18763:32:96"
                 },
                 {
                   "expression": {
-                    "id": 69275,
+                    "id": 64161,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 69271,
+                      "id": 64157,
                       "name": "seriesSum",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 69199,
-                      "src": "18805:9:114",
+                      "referencedDeclaration": 64085,
+                      "src": "18805:9:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -14514,18 +14510,18 @@ export const LogExpMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 69274,
+                      "id": 64160,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
-                        "id": 69272,
+                        "id": 64158,
                         "name": "num",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 69195,
-                        "src": "18818:3:114",
+                        "referencedDeclaration": 64081,
+                        "src": "18818:3:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -14535,50 +14531,50 @@ export const LogExpMath =
                       "operator": "/",
                       "rightExpression": {
                         "hexValue": "3131",
-                        "id": 69273,
+                        "id": 64159,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "18824:2:114",
+                        "src": "18824:2:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_rational_11_by_1",
                           "typeString": "int_const 11"
                         },
                         "value": "11"
                       },
-                      "src": "18818:8:114",
+                      "src": "18818:8:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "18805:21:114",
+                    "src": "18805:21:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 69276,
+                  "id": 64162,
                   "nodeType": "ExpressionStatement",
-                  "src": "18805:21:114"
+                  "src": "18805:21:96"
                 },
                 {
                   "expression": {
-                    "id": 69279,
+                    "id": 64165,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 69277,
+                      "id": 64163,
                       "name": "seriesSum",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 69199,
-                      "src": "18985:9:114",
+                      "referencedDeclaration": 64085,
+                      "src": "18985:9:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -14588,29 +14584,29 @@ export const LogExpMath =
                     "operator": "*=",
                     "rightHandSide": {
                       "hexValue": "32",
-                      "id": 69278,
+                      "id": 64164,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "18998:1:114",
+                      "src": "18998:1:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_2_by_1",
                         "typeString": "int_const 2"
                       },
                       "value": "2"
                     },
-                    "src": "18985:14:114",
+                    "src": "18985:14:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 69280,
+                  "id": 64166,
                   "nodeType": "ExpressionStatement",
-                  "src": "18985:14:114"
+                  "src": "18985:14:96"
                 },
                 {
                   "expression": {
@@ -14618,7 +14614,7 @@ export const LogExpMath =
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     },
-                    "id": 69286,
+                    "id": 64172,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -14630,18 +14626,18 @@ export const LogExpMath =
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           },
-                          "id": 69283,
+                          "id": 64169,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftExpression": {
-                            "id": 69281,
+                            "id": 64167,
                             "name": "sum",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68949,
-                            "src": "19273:3:114",
+                            "referencedDeclaration": 63835,
+                            "src": "19273:3:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -14650,32 +14646,32 @@ export const LogExpMath =
                           "nodeType": "BinaryOperation",
                           "operator": "+",
                           "rightExpression": {
-                            "id": 69282,
+                            "id": 64168,
                             "name": "seriesSum",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 69199,
-                            "src": "19279:9:114",
+                            "referencedDeclaration": 64085,
+                            "src": "19279:9:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "19273:15:114",
+                          "src": "19273:15:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         }
                       ],
-                      "id": 69284,
+                      "id": 64170,
                       "isConstant": false,
                       "isInlineArray": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "nodeType": "TupleExpression",
-                      "src": "19272:17:114",
+                      "src": "19272:17:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -14685,57 +14681,57 @@ export const LogExpMath =
                     "operator": "/",
                     "rightExpression": {
                       "hexValue": "313030",
-                      "id": 69285,
+                      "id": 64171,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "19292:3:114",
+                      "src": "19292:3:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_100_by_1",
                         "typeString": "int_const 100"
                       },
                       "value": "100"
                     },
-                    "src": "19272:23:114",
+                    "src": "19272:23:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "functionReturnParameters": 68931,
-                  "id": 69287,
+                  "functionReturnParameters": 63817,
+                  "id": 64173,
                   "nodeType": "Return",
-                  "src": "19265:30:114"
+                  "src": "19265:30:96"
                 }
               ]
             },
             "documentation": {
-              "id": 68925,
+              "id": 63811,
               "nodeType": "StructuredDocumentation",
-              "src": "14235:103:114",
+              "src": "14235:103:96",
               "text": " @dev Internal natural logarithm (ln(a)) with signed 18 decimal fixed point argument."
             },
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "_ln",
-            "nameLocation": "14352:3:114",
+            "nameLocation": "14352:3:96",
             "parameters": {
-              "id": 68928,
+              "id": 63814,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 68927,
+                  "id": 63813,
                   "mutability": "mutable",
                   "name": "a",
-                  "nameLocation": "14363:1:114",
+                  "nameLocation": "14363:1:96",
                   "nodeType": "VariableDeclaration",
-                  "scope": 69289,
-                  "src": "14356:8:114",
+                  "scope": 64175,
+                  "src": "14356:8:96",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -14743,10 +14739,10 @@ export const LogExpMath =
                     "typeString": "int256"
                   },
                   "typeName": {
-                    "id": 68926,
+                    "id": 63812,
                     "name": "int256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "14356:6:114",
+                    "src": "14356:6:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
@@ -14755,21 +14751,21 @@ export const LogExpMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "14355:10:114"
+              "src": "14355:10:96"
             },
             "returnParameters": {
-              "id": 68931,
+              "id": 63817,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 68930,
+                  "id": 63816,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 69289,
-                  "src": "14388:6:114",
+                  "scope": 64175,
+                  "src": "14388:6:96",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -14777,10 +14773,10 @@ export const LogExpMath =
                     "typeString": "int256"
                   },
                   "typeName": {
-                    "id": 68929,
+                    "id": 63815,
                     "name": "int256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "14388:6:114",
+                    "src": "14388:6:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
@@ -14789,38 +14785,38 @@ export const LogExpMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "14387:8:114"
+              "src": "14387:8:96"
             },
-            "scope": 69444,
+            "scope": 64330,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "private"
           },
           {
-            "id": 69443,
+            "id": 64329,
             "nodeType": "FunctionDefinition",
-            "src": "19568:1714:114",
+            "src": "19568:1714:96",
             "nodes": [],
             "body": {
-              "id": 69442,
+              "id": 64328,
               "nodeType": "Block",
-              "src": "19624:1658:114",
+              "src": "19624:1658:96",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
-                    "id": 69299,
+                    "id": 64185,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 69297,
+                      "id": 64183,
                       "name": "x",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 69292,
-                      "src": "19838:1:114",
+                      "referencedDeclaration": 64178,
+                      "src": "19838:1:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -14829,41 +14825,41 @@ export const LogExpMath =
                     "nodeType": "Assignment",
                     "operator": "*=",
                     "rightHandSide": {
-                      "id": 69298,
+                      "id": 64184,
                       "name": "ONE_18",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68153,
-                      "src": "19843:6:114",
+                      "referencedDeclaration": 63039,
+                      "src": "19843:6:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "19838:11:114",
+                    "src": "19838:11:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 69300,
+                  "id": 64186,
                   "nodeType": "ExpressionStatement",
-                  "src": "19838:11:114"
+                  "src": "19838:11:96"
                 },
                 {
                   "assignments": [
-                    69302
+                    64188
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 69302,
+                      "id": 64188,
                       "mutability": "mutable",
                       "name": "z",
-                      "nameLocation": "20217:1:114",
+                      "nameLocation": "20217:1:96",
                       "nodeType": "VariableDeclaration",
-                      "scope": 69442,
-                      "src": "20210:8:114",
+                      "scope": 64328,
+                      "src": "20210:8:96",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -14871,10 +14867,10 @@ export const LogExpMath =
                         "typeString": "int256"
                       },
                       "typeName": {
-                        "id": 69301,
+                        "id": 64187,
                         "name": "int256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "20210:6:114",
+                        "src": "20210:6:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -14883,13 +14879,13 @@ export const LogExpMath =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 69315,
+                  "id": 64201,
                   "initialValue": {
                     "commonType": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     },
-                    "id": 69314,
+                    "id": 64200,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -14901,7 +14897,7 @@ export const LogExpMath =
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           },
-                          "id": 69308,
+                          "id": 64194,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -14913,18 +14909,18 @@ export const LogExpMath =
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 },
-                                "id": 69305,
+                                "id": 64191,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
                                 "lValueRequested": false,
                                 "leftExpression": {
-                                  "id": 69303,
+                                  "id": 64189,
                                   "name": "x",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 69292,
-                                  "src": "20223:1:114",
+                                  "referencedDeclaration": 64178,
+                                  "src": "20223:1:96",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
@@ -14933,32 +14929,32 @@ export const LogExpMath =
                                 "nodeType": "BinaryOperation",
                                 "operator": "-",
                                 "rightExpression": {
-                                  "id": 69304,
+                                  "id": 64190,
                                   "name": "ONE_36",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 68159,
-                                  "src": "20227:6:114",
+                                  "referencedDeclaration": 63045,
+                                  "src": "20227:6:96",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
                                   }
                                 },
-                                "src": "20223:10:114",
+                                "src": "20223:10:96",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 }
                               }
                             ],
-                            "id": 69306,
+                            "id": 64192,
                             "isConstant": false,
                             "isInlineArray": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "nodeType": "TupleExpression",
-                            "src": "20222:12:114",
+                            "src": "20222:12:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -14967,32 +14963,32 @@ export const LogExpMath =
                           "nodeType": "BinaryOperation",
                           "operator": "*",
                           "rightExpression": {
-                            "id": 69307,
+                            "id": 64193,
                             "name": "ONE_36",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68159,
-                            "src": "20237:6:114",
+                            "referencedDeclaration": 63045,
+                            "src": "20237:6:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "20222:21:114",
+                          "src": "20222:21:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         }
                       ],
-                      "id": 69309,
+                      "id": 64195,
                       "isConstant": false,
                       "isInlineArray": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "nodeType": "TupleExpression",
-                      "src": "20221:23:114",
+                      "src": "20221:23:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -15007,18 +15003,18 @@ export const LogExpMath =
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           },
-                          "id": 69312,
+                          "id": 64198,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftExpression": {
-                            "id": 69310,
+                            "id": 64196,
                             "name": "x",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 69292,
-                            "src": "20248:1:114",
+                            "referencedDeclaration": 64178,
+                            "src": "20248:1:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -15027,60 +15023,60 @@ export const LogExpMath =
                           "nodeType": "BinaryOperation",
                           "operator": "+",
                           "rightExpression": {
-                            "id": 69311,
+                            "id": 64197,
                             "name": "ONE_36",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 68159,
-                            "src": "20252:6:114",
+                            "referencedDeclaration": 63045,
+                            "src": "20252:6:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "20248:10:114",
+                          "src": "20248:10:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         }
                       ],
-                      "id": 69313,
+                      "id": 64199,
                       "isConstant": false,
                       "isInlineArray": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "nodeType": "TupleExpression",
-                      "src": "20247:12:114",
+                      "src": "20247:12:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "20221:38:114",
+                    "src": "20221:38:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "20210:49:114"
+                  "src": "20210:49:96"
                 },
                 {
                   "assignments": [
-                    69317
+                    64203
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 69317,
+                      "id": 64203,
                       "mutability": "mutable",
                       "name": "z_squared",
-                      "nameLocation": "20276:9:114",
+                      "nameLocation": "20276:9:96",
                       "nodeType": "VariableDeclaration",
-                      "scope": 69442,
-                      "src": "20269:16:114",
+                      "scope": 64328,
+                      "src": "20269:16:96",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -15088,10 +15084,10 @@ export const LogExpMath =
                         "typeString": "int256"
                       },
                       "typeName": {
-                        "id": 69316,
+                        "id": 64202,
                         "name": "int256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "20269:6:114",
+                        "src": "20269:6:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -15100,13 +15096,13 @@ export const LogExpMath =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 69324,
+                  "id": 64210,
                   "initialValue": {
                     "commonType": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     },
-                    "id": 69323,
+                    "id": 64209,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -15118,18 +15114,18 @@ export const LogExpMath =
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           },
-                          "id": 69320,
+                          "id": 64206,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftExpression": {
-                            "id": 69318,
+                            "id": 64204,
                             "name": "z",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 69302,
-                            "src": "20289:1:114",
+                            "referencedDeclaration": 64188,
+                            "src": "20289:1:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -15138,32 +15134,32 @@ export const LogExpMath =
                           "nodeType": "BinaryOperation",
                           "operator": "*",
                           "rightExpression": {
-                            "id": 69319,
+                            "id": 64205,
                             "name": "z",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 69302,
-                            "src": "20293:1:114",
+                            "referencedDeclaration": 64188,
+                            "src": "20293:1:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "20289:5:114",
+                          "src": "20289:5:96",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         }
                       ],
-                      "id": 69321,
+                      "id": 64207,
                       "isConstant": false,
                       "isInlineArray": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "nodeType": "TupleExpression",
-                      "src": "20288:7:114",
+                      "src": "20288:7:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -15172,40 +15168,40 @@ export const LogExpMath =
                     "nodeType": "BinaryOperation",
                     "operator": "/",
                     "rightExpression": {
-                      "id": 69322,
+                      "id": 64208,
                       "name": "ONE_36",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 68159,
-                      "src": "20298:6:114",
+                      "referencedDeclaration": 63045,
+                      "src": "20298:6:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "20288:16:114",
+                    "src": "20288:16:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "20269:35:114"
+                  "src": "20269:35:96"
                 },
                 {
                   "assignments": [
-                    69326
+                    64212
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 69326,
+                      "id": 64212,
                       "mutability": "mutable",
                       "name": "num",
-                      "nameLocation": "20392:3:114",
+                      "nameLocation": "20392:3:96",
                       "nodeType": "VariableDeclaration",
-                      "scope": 69442,
-                      "src": "20385:10:114",
+                      "scope": 64328,
+                      "src": "20385:10:96",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -15213,10 +15209,10 @@ export const LogExpMath =
                         "typeString": "int256"
                       },
                       "typeName": {
-                        "id": 69325,
+                        "id": 64211,
                         "name": "int256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "20385:6:114",
+                        "src": "20385:6:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -15225,36 +15221,36 @@ export const LogExpMath =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 69328,
+                  "id": 64214,
                   "initialValue": {
-                    "id": 69327,
+                    "id": 64213,
                     "name": "z",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 69302,
-                    "src": "20398:1:114",
+                    "referencedDeclaration": 64188,
+                    "src": "20398:1:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "20385:14:114"
+                  "src": "20385:14:96"
                 },
                 {
                   "assignments": [
-                    69330
+                    64216
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 69330,
+                      "id": 64216,
                       "mutability": "mutable",
                       "name": "seriesSum",
-                      "nameLocation": "20520:9:114",
+                      "nameLocation": "20520:9:96",
                       "nodeType": "VariableDeclaration",
-                      "scope": 69442,
-                      "src": "20513:16:114",
+                      "scope": 64328,
+                      "src": "20513:16:96",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -15262,10 +15258,10 @@ export const LogExpMath =
                         "typeString": "int256"
                       },
                       "typeName": {
-                        "id": 69329,
+                        "id": 64215,
                         "name": "int256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "20513:6:114",
+                        "src": "20513:6:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -15274,36 +15270,36 @@ export const LogExpMath =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 69332,
+                  "id": 64218,
                   "initialValue": {
-                    "id": 69331,
+                    "id": 64217,
                     "name": "num",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 69326,
-                    "src": "20532:3:114",
+                    "referencedDeclaration": 64212,
+                    "src": "20532:3:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "20513:22:114"
+                  "src": "20513:22:96"
                 },
                 {
                   "expression": {
-                    "id": 69340,
+                    "id": 64226,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 69333,
+                      "id": 64219,
                       "name": "num",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 69326,
-                      "src": "20606:3:114",
+                      "referencedDeclaration": 64212,
+                      "src": "20606:3:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -15316,7 +15312,7 @@ export const LogExpMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 69339,
+                      "id": 64225,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -15328,18 +15324,18 @@ export const LogExpMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 69336,
+                            "id": 64222,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "leftExpression": {
-                              "id": 69334,
+                              "id": 64220,
                               "name": "num",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 69326,
-                              "src": "20613:3:114",
+                              "referencedDeclaration": 64212,
+                              "src": "20613:3:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -15348,32 +15344,32 @@ export const LogExpMath =
                             "nodeType": "BinaryOperation",
                             "operator": "*",
                             "rightExpression": {
-                              "id": 69335,
+                              "id": 64221,
                               "name": "z_squared",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 69317,
-                              "src": "20619:9:114",
+                              "referencedDeclaration": 64203,
+                              "src": "20619:9:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "20613:15:114",
+                            "src": "20613:15:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           }
                         ],
-                        "id": 69337,
+                        "id": 64223,
                         "isConstant": false,
                         "isInlineArray": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "TupleExpression",
-                        "src": "20612:17:114",
+                        "src": "20612:17:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -15382,47 +15378,47 @@ export const LogExpMath =
                       "nodeType": "BinaryOperation",
                       "operator": "/",
                       "rightExpression": {
-                        "id": 69338,
+                        "id": 64224,
                         "name": "ONE_36",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 68159,
-                        "src": "20632:6:114",
+                        "referencedDeclaration": 63045,
+                        "src": "20632:6:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "src": "20612:26:114",
+                      "src": "20612:26:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "20606:32:114",
+                    "src": "20606:32:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 69341,
+                  "id": 64227,
                   "nodeType": "ExpressionStatement",
-                  "src": "20606:32:114"
+                  "src": "20606:32:96"
                 },
                 {
                   "expression": {
-                    "id": 69346,
+                    "id": 64232,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 69342,
+                      "id": 64228,
                       "name": "seriesSum",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 69330,
-                      "src": "20648:9:114",
+                      "referencedDeclaration": 64216,
+                      "src": "20648:9:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -15435,18 +15431,18 @@ export const LogExpMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 69345,
+                      "id": 64231,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
-                        "id": 69343,
+                        "id": 64229,
                         "name": "num",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 69326,
-                        "src": "20661:3:114",
+                        "referencedDeclaration": 64212,
+                        "src": "20661:3:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -15456,50 +15452,50 @@ export const LogExpMath =
                       "operator": "/",
                       "rightExpression": {
                         "hexValue": "33",
-                        "id": 69344,
+                        "id": 64230,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "20667:1:114",
+                        "src": "20667:1:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_rational_3_by_1",
                           "typeString": "int_const 3"
                         },
                         "value": "3"
                       },
-                      "src": "20661:7:114",
+                      "src": "20661:7:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "20648:20:114",
+                    "src": "20648:20:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 69347,
+                  "id": 64233,
                   "nodeType": "ExpressionStatement",
-                  "src": "20648:20:114"
+                  "src": "20648:20:96"
                 },
                 {
                   "expression": {
-                    "id": 69355,
+                    "id": 64241,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 69348,
+                      "id": 64234,
                       "name": "num",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 69326,
-                      "src": "20679:3:114",
+                      "referencedDeclaration": 64212,
+                      "src": "20679:3:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -15512,7 +15508,7 @@ export const LogExpMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 69354,
+                      "id": 64240,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -15524,18 +15520,18 @@ export const LogExpMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 69351,
+                            "id": 64237,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "leftExpression": {
-                              "id": 69349,
+                              "id": 64235,
                               "name": "num",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 69326,
-                              "src": "20686:3:114",
+                              "referencedDeclaration": 64212,
+                              "src": "20686:3:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -15544,32 +15540,32 @@ export const LogExpMath =
                             "nodeType": "BinaryOperation",
                             "operator": "*",
                             "rightExpression": {
-                              "id": 69350,
+                              "id": 64236,
                               "name": "z_squared",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 69317,
-                              "src": "20692:9:114",
+                              "referencedDeclaration": 64203,
+                              "src": "20692:9:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "20686:15:114",
+                            "src": "20686:15:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           }
                         ],
-                        "id": 69352,
+                        "id": 64238,
                         "isConstant": false,
                         "isInlineArray": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "TupleExpression",
-                        "src": "20685:17:114",
+                        "src": "20685:17:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -15578,47 +15574,47 @@ export const LogExpMath =
                       "nodeType": "BinaryOperation",
                       "operator": "/",
                       "rightExpression": {
-                        "id": 69353,
+                        "id": 64239,
                         "name": "ONE_36",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 68159,
-                        "src": "20705:6:114",
+                        "referencedDeclaration": 63045,
+                        "src": "20705:6:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "src": "20685:26:114",
+                      "src": "20685:26:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "20679:32:114",
+                    "src": "20679:32:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 69356,
+                  "id": 64242,
                   "nodeType": "ExpressionStatement",
-                  "src": "20679:32:114"
+                  "src": "20679:32:96"
                 },
                 {
                   "expression": {
-                    "id": 69361,
+                    "id": 64247,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 69357,
+                      "id": 64243,
                       "name": "seriesSum",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 69330,
-                      "src": "20721:9:114",
+                      "referencedDeclaration": 64216,
+                      "src": "20721:9:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -15631,18 +15627,18 @@ export const LogExpMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 69360,
+                      "id": 64246,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
-                        "id": 69358,
+                        "id": 64244,
                         "name": "num",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 69326,
-                        "src": "20734:3:114",
+                        "referencedDeclaration": 64212,
+                        "src": "20734:3:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -15652,50 +15648,50 @@ export const LogExpMath =
                       "operator": "/",
                       "rightExpression": {
                         "hexValue": "35",
-                        "id": 69359,
+                        "id": 64245,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "20740:1:114",
+                        "src": "20740:1:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_rational_5_by_1",
                           "typeString": "int_const 5"
                         },
                         "value": "5"
                       },
-                      "src": "20734:7:114",
+                      "src": "20734:7:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "20721:20:114",
+                    "src": "20721:20:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 69362,
+                  "id": 64248,
                   "nodeType": "ExpressionStatement",
-                  "src": "20721:20:114"
+                  "src": "20721:20:96"
                 },
                 {
                   "expression": {
-                    "id": 69370,
+                    "id": 64256,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 69363,
+                      "id": 64249,
                       "name": "num",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 69326,
-                      "src": "20752:3:114",
+                      "referencedDeclaration": 64212,
+                      "src": "20752:3:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -15708,7 +15704,7 @@ export const LogExpMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 69369,
+                      "id": 64255,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -15720,18 +15716,18 @@ export const LogExpMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 69366,
+                            "id": 64252,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "leftExpression": {
-                              "id": 69364,
+                              "id": 64250,
                               "name": "num",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 69326,
-                              "src": "20759:3:114",
+                              "referencedDeclaration": 64212,
+                              "src": "20759:3:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -15740,32 +15736,32 @@ export const LogExpMath =
                             "nodeType": "BinaryOperation",
                             "operator": "*",
                             "rightExpression": {
-                              "id": 69365,
+                              "id": 64251,
                               "name": "z_squared",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 69317,
-                              "src": "20765:9:114",
+                              "referencedDeclaration": 64203,
+                              "src": "20765:9:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "20759:15:114",
+                            "src": "20759:15:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           }
                         ],
-                        "id": 69367,
+                        "id": 64253,
                         "isConstant": false,
                         "isInlineArray": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "TupleExpression",
-                        "src": "20758:17:114",
+                        "src": "20758:17:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -15774,47 +15770,47 @@ export const LogExpMath =
                       "nodeType": "BinaryOperation",
                       "operator": "/",
                       "rightExpression": {
-                        "id": 69368,
+                        "id": 64254,
                         "name": "ONE_36",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 68159,
-                        "src": "20778:6:114",
+                        "referencedDeclaration": 63045,
+                        "src": "20778:6:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "src": "20758:26:114",
+                      "src": "20758:26:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "20752:32:114",
+                    "src": "20752:32:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 69371,
+                  "id": 64257,
                   "nodeType": "ExpressionStatement",
-                  "src": "20752:32:114"
+                  "src": "20752:32:96"
                 },
                 {
                   "expression": {
-                    "id": 69376,
+                    "id": 64262,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 69372,
+                      "id": 64258,
                       "name": "seriesSum",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 69330,
-                      "src": "20794:9:114",
+                      "referencedDeclaration": 64216,
+                      "src": "20794:9:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -15827,18 +15823,18 @@ export const LogExpMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 69375,
+                      "id": 64261,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
-                        "id": 69373,
+                        "id": 64259,
                         "name": "num",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 69326,
-                        "src": "20807:3:114",
+                        "referencedDeclaration": 64212,
+                        "src": "20807:3:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -15848,50 +15844,50 @@ export const LogExpMath =
                       "operator": "/",
                       "rightExpression": {
                         "hexValue": "37",
-                        "id": 69374,
+                        "id": 64260,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "20813:1:114",
+                        "src": "20813:1:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_rational_7_by_1",
                           "typeString": "int_const 7"
                         },
                         "value": "7"
                       },
-                      "src": "20807:7:114",
+                      "src": "20807:7:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "20794:20:114",
+                    "src": "20794:20:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 69377,
+                  "id": 64263,
                   "nodeType": "ExpressionStatement",
-                  "src": "20794:20:114"
+                  "src": "20794:20:96"
                 },
                 {
                   "expression": {
-                    "id": 69385,
+                    "id": 64271,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 69378,
+                      "id": 64264,
                       "name": "num",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 69326,
-                      "src": "20825:3:114",
+                      "referencedDeclaration": 64212,
+                      "src": "20825:3:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -15904,7 +15900,7 @@ export const LogExpMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 69384,
+                      "id": 64270,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -15916,18 +15912,18 @@ export const LogExpMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 69381,
+                            "id": 64267,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "leftExpression": {
-                              "id": 69379,
+                              "id": 64265,
                               "name": "num",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 69326,
-                              "src": "20832:3:114",
+                              "referencedDeclaration": 64212,
+                              "src": "20832:3:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -15936,32 +15932,32 @@ export const LogExpMath =
                             "nodeType": "BinaryOperation",
                             "operator": "*",
                             "rightExpression": {
-                              "id": 69380,
+                              "id": 64266,
                               "name": "z_squared",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 69317,
-                              "src": "20838:9:114",
+                              "referencedDeclaration": 64203,
+                              "src": "20838:9:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "20832:15:114",
+                            "src": "20832:15:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           }
                         ],
-                        "id": 69382,
+                        "id": 64268,
                         "isConstant": false,
                         "isInlineArray": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "TupleExpression",
-                        "src": "20831:17:114",
+                        "src": "20831:17:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -15970,47 +15966,47 @@ export const LogExpMath =
                       "nodeType": "BinaryOperation",
                       "operator": "/",
                       "rightExpression": {
-                        "id": 69383,
+                        "id": 64269,
                         "name": "ONE_36",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 68159,
-                        "src": "20851:6:114",
+                        "referencedDeclaration": 63045,
+                        "src": "20851:6:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "src": "20831:26:114",
+                      "src": "20831:26:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "20825:32:114",
+                    "src": "20825:32:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 69386,
+                  "id": 64272,
                   "nodeType": "ExpressionStatement",
-                  "src": "20825:32:114"
+                  "src": "20825:32:96"
                 },
                 {
                   "expression": {
-                    "id": 69391,
+                    "id": 64277,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 69387,
+                      "id": 64273,
                       "name": "seriesSum",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 69330,
-                      "src": "20867:9:114",
+                      "referencedDeclaration": 64216,
+                      "src": "20867:9:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -16023,18 +16019,18 @@ export const LogExpMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 69390,
+                      "id": 64276,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
-                        "id": 69388,
+                        "id": 64274,
                         "name": "num",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 69326,
-                        "src": "20880:3:114",
+                        "referencedDeclaration": 64212,
+                        "src": "20880:3:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -16044,50 +16040,50 @@ export const LogExpMath =
                       "operator": "/",
                       "rightExpression": {
                         "hexValue": "39",
-                        "id": 69389,
+                        "id": 64275,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "20886:1:114",
+                        "src": "20886:1:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_rational_9_by_1",
                           "typeString": "int_const 9"
                         },
                         "value": "9"
                       },
-                      "src": "20880:7:114",
+                      "src": "20880:7:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "20867:20:114",
+                    "src": "20867:20:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 69392,
+                  "id": 64278,
                   "nodeType": "ExpressionStatement",
-                  "src": "20867:20:114"
+                  "src": "20867:20:96"
                 },
                 {
                   "expression": {
-                    "id": 69400,
+                    "id": 64286,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 69393,
+                      "id": 64279,
                       "name": "num",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 69326,
-                      "src": "20898:3:114",
+                      "referencedDeclaration": 64212,
+                      "src": "20898:3:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -16100,7 +16096,7 @@ export const LogExpMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 69399,
+                      "id": 64285,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -16112,18 +16108,18 @@ export const LogExpMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 69396,
+                            "id": 64282,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "leftExpression": {
-                              "id": 69394,
+                              "id": 64280,
                               "name": "num",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 69326,
-                              "src": "20905:3:114",
+                              "referencedDeclaration": 64212,
+                              "src": "20905:3:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -16132,32 +16128,32 @@ export const LogExpMath =
                             "nodeType": "BinaryOperation",
                             "operator": "*",
                             "rightExpression": {
-                              "id": 69395,
+                              "id": 64281,
                               "name": "z_squared",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 69317,
-                              "src": "20911:9:114",
+                              "referencedDeclaration": 64203,
+                              "src": "20911:9:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "20905:15:114",
+                            "src": "20905:15:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           }
                         ],
-                        "id": 69397,
+                        "id": 64283,
                         "isConstant": false,
                         "isInlineArray": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "TupleExpression",
-                        "src": "20904:17:114",
+                        "src": "20904:17:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -16166,47 +16162,47 @@ export const LogExpMath =
                       "nodeType": "BinaryOperation",
                       "operator": "/",
                       "rightExpression": {
-                        "id": 69398,
+                        "id": 64284,
                         "name": "ONE_36",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 68159,
-                        "src": "20924:6:114",
+                        "referencedDeclaration": 63045,
+                        "src": "20924:6:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "src": "20904:26:114",
+                      "src": "20904:26:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "20898:32:114",
+                    "src": "20898:32:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 69401,
+                  "id": 64287,
                   "nodeType": "ExpressionStatement",
-                  "src": "20898:32:114"
+                  "src": "20898:32:96"
                 },
                 {
                   "expression": {
-                    "id": 69406,
+                    "id": 64292,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 69402,
+                      "id": 64288,
                       "name": "seriesSum",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 69330,
-                      "src": "20940:9:114",
+                      "referencedDeclaration": 64216,
+                      "src": "20940:9:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -16219,18 +16215,18 @@ export const LogExpMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 69405,
+                      "id": 64291,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
-                        "id": 69403,
+                        "id": 64289,
                         "name": "num",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 69326,
-                        "src": "20953:3:114",
+                        "referencedDeclaration": 64212,
+                        "src": "20953:3:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -16240,50 +16236,50 @@ export const LogExpMath =
                       "operator": "/",
                       "rightExpression": {
                         "hexValue": "3131",
-                        "id": 69404,
+                        "id": 64290,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "20959:2:114",
+                        "src": "20959:2:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_rational_11_by_1",
                           "typeString": "int_const 11"
                         },
                         "value": "11"
                       },
-                      "src": "20953:8:114",
+                      "src": "20953:8:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "20940:21:114",
+                    "src": "20940:21:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 69407,
+                  "id": 64293,
                   "nodeType": "ExpressionStatement",
-                  "src": "20940:21:114"
+                  "src": "20940:21:96"
                 },
                 {
                   "expression": {
-                    "id": 69415,
+                    "id": 64301,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 69408,
+                      "id": 64294,
                       "name": "num",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 69326,
-                      "src": "20972:3:114",
+                      "referencedDeclaration": 64212,
+                      "src": "20972:3:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -16296,7 +16292,7 @@ export const LogExpMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 69414,
+                      "id": 64300,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -16308,18 +16304,18 @@ export const LogExpMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 69411,
+                            "id": 64297,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "leftExpression": {
-                              "id": 69409,
+                              "id": 64295,
                               "name": "num",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 69326,
-                              "src": "20979:3:114",
+                              "referencedDeclaration": 64212,
+                              "src": "20979:3:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -16328,32 +16324,32 @@ export const LogExpMath =
                             "nodeType": "BinaryOperation",
                             "operator": "*",
                             "rightExpression": {
-                              "id": 69410,
+                              "id": 64296,
                               "name": "z_squared",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 69317,
-                              "src": "20985:9:114",
+                              "referencedDeclaration": 64203,
+                              "src": "20985:9:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "20979:15:114",
+                            "src": "20979:15:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           }
                         ],
-                        "id": 69412,
+                        "id": 64298,
                         "isConstant": false,
                         "isInlineArray": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "TupleExpression",
-                        "src": "20978:17:114",
+                        "src": "20978:17:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -16362,47 +16358,47 @@ export const LogExpMath =
                       "nodeType": "BinaryOperation",
                       "operator": "/",
                       "rightExpression": {
-                        "id": 69413,
+                        "id": 64299,
                         "name": "ONE_36",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 68159,
-                        "src": "20998:6:114",
+                        "referencedDeclaration": 63045,
+                        "src": "20998:6:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "src": "20978:26:114",
+                      "src": "20978:26:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "20972:32:114",
+                    "src": "20972:32:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 69416,
+                  "id": 64302,
                   "nodeType": "ExpressionStatement",
-                  "src": "20972:32:114"
+                  "src": "20972:32:96"
                 },
                 {
                   "expression": {
-                    "id": 69421,
+                    "id": 64307,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 69417,
+                      "id": 64303,
                       "name": "seriesSum",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 69330,
-                      "src": "21014:9:114",
+                      "referencedDeclaration": 64216,
+                      "src": "21014:9:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -16415,18 +16411,18 @@ export const LogExpMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 69420,
+                      "id": 64306,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
-                        "id": 69418,
+                        "id": 64304,
                         "name": "num",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 69326,
-                        "src": "21027:3:114",
+                        "referencedDeclaration": 64212,
+                        "src": "21027:3:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -16436,50 +16432,50 @@ export const LogExpMath =
                       "operator": "/",
                       "rightExpression": {
                         "hexValue": "3133",
-                        "id": 69419,
+                        "id": 64305,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "21033:2:114",
+                        "src": "21033:2:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_rational_13_by_1",
                           "typeString": "int_const 13"
                         },
                         "value": "13"
                       },
-                      "src": "21027:8:114",
+                      "src": "21027:8:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "21014:21:114",
+                    "src": "21014:21:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 69422,
+                  "id": 64308,
                   "nodeType": "ExpressionStatement",
-                  "src": "21014:21:114"
+                  "src": "21014:21:96"
                 },
                 {
                   "expression": {
-                    "id": 69430,
+                    "id": 64316,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 69423,
+                      "id": 64309,
                       "name": "num",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 69326,
-                      "src": "21046:3:114",
+                      "referencedDeclaration": 64212,
+                      "src": "21046:3:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -16492,7 +16488,7 @@ export const LogExpMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 69429,
+                      "id": 64315,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -16504,18 +16500,18 @@ export const LogExpMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 69426,
+                            "id": 64312,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "leftExpression": {
-                              "id": 69424,
+                              "id": 64310,
                               "name": "num",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 69326,
-                              "src": "21053:3:114",
+                              "referencedDeclaration": 64212,
+                              "src": "21053:3:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -16524,32 +16520,32 @@ export const LogExpMath =
                             "nodeType": "BinaryOperation",
                             "operator": "*",
                             "rightExpression": {
-                              "id": 69425,
+                              "id": 64311,
                               "name": "z_squared",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 69317,
-                              "src": "21059:9:114",
+                              "referencedDeclaration": 64203,
+                              "src": "21059:9:96",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "21053:15:114",
+                            "src": "21053:15:96",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           }
                         ],
-                        "id": 69427,
+                        "id": 64313,
                         "isConstant": false,
                         "isInlineArray": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "TupleExpression",
-                        "src": "21052:17:114",
+                        "src": "21052:17:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -16558,47 +16554,47 @@ export const LogExpMath =
                       "nodeType": "BinaryOperation",
                       "operator": "/",
                       "rightExpression": {
-                        "id": 69428,
+                        "id": 64314,
                         "name": "ONE_36",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 68159,
-                        "src": "21072:6:114",
+                        "referencedDeclaration": 63045,
+                        "src": "21072:6:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "src": "21052:26:114",
+                      "src": "21052:26:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "21046:32:114",
+                    "src": "21046:32:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 69431,
+                  "id": 64317,
                   "nodeType": "ExpressionStatement",
-                  "src": "21046:32:114"
+                  "src": "21046:32:96"
                 },
                 {
                   "expression": {
-                    "id": 69436,
+                    "id": 64322,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 69432,
+                      "id": 64318,
                       "name": "seriesSum",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 69330,
-                      "src": "21088:9:114",
+                      "referencedDeclaration": 64216,
+                      "src": "21088:9:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -16611,18 +16607,18 @@ export const LogExpMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 69435,
+                      "id": 64321,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
-                        "id": 69433,
+                        "id": 64319,
                         "name": "num",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 69326,
-                        "src": "21101:3:114",
+                        "referencedDeclaration": 64212,
+                        "src": "21101:3:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -16632,35 +16628,35 @@ export const LogExpMath =
                       "operator": "/",
                       "rightExpression": {
                         "hexValue": "3135",
-                        "id": 69434,
+                        "id": 64320,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "number",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "21107:2:114",
+                        "src": "21107:2:96",
                         "typeDescriptions": {
                           "typeIdentifier": "t_rational_15_by_1",
                           "typeString": "int_const 15"
                         },
                         "value": "15"
                       },
-                      "src": "21101:8:114",
+                      "src": "21101:8:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "21088:21:114",
+                    "src": "21088:21:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 69437,
+                  "id": 64323,
                   "nodeType": "ExpressionStatement",
-                  "src": "21088:21:114"
+                  "src": "21088:21:96"
                 },
                 {
                   "expression": {
@@ -16668,18 +16664,18 @@ export const LogExpMath =
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     },
-                    "id": 69440,
+                    "id": 64326,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 69438,
+                      "id": 64324,
                       "name": "seriesSum",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 69330,
-                      "src": "21262:9:114",
+                      "referencedDeclaration": 64216,
+                      "src": "21262:9:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -16689,57 +16685,57 @@ export const LogExpMath =
                     "operator": "*",
                     "rightExpression": {
                       "hexValue": "32",
-                      "id": 69439,
+                      "id": 64325,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "21274:1:114",
+                      "src": "21274:1:96",
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_2_by_1",
                         "typeString": "int_const 2"
                       },
                       "value": "2"
                     },
-                    "src": "21262:13:114",
+                    "src": "21262:13:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "functionReturnParameters": 69296,
-                  "id": 69441,
+                  "functionReturnParameters": 64182,
+                  "id": 64327,
                   "nodeType": "Return",
-                  "src": "21255:20:114"
+                  "src": "21255:20:96"
                 }
               ]
             },
             "documentation": {
-              "id": 69290,
+              "id": 64176,
               "nodeType": "StructuredDocumentation",
-              "src": "19308:255:114",
+              "src": "19308:255:96",
               "text": " @dev Intrnal high precision (36 decimal places) natural logarithm (ln(x)) with signed 18 decimal fixed point argument,\n for x close to one.\n Should only be used if x is between LN_36_LOWER_BOUND and LN_36_UPPER_BOUND."
             },
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "_ln_36",
-            "nameLocation": "19577:6:114",
+            "nameLocation": "19577:6:96",
             "parameters": {
-              "id": 69293,
+              "id": 64179,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 69292,
+                  "id": 64178,
                   "mutability": "mutable",
                   "name": "x",
-                  "nameLocation": "19591:1:114",
+                  "nameLocation": "19591:1:96",
                   "nodeType": "VariableDeclaration",
-                  "scope": 69443,
-                  "src": "19584:8:114",
+                  "scope": 64329,
+                  "src": "19584:8:96",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -16747,10 +16743,10 @@ export const LogExpMath =
                     "typeString": "int256"
                   },
                   "typeName": {
-                    "id": 69291,
+                    "id": 64177,
                     "name": "int256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "19584:6:114",
+                    "src": "19584:6:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
@@ -16759,21 +16755,21 @@ export const LogExpMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "19583:10:114"
+              "src": "19583:10:96"
             },
             "returnParameters": {
-              "id": 69296,
+              "id": 64182,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 69295,
+                  "id": 64181,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 69443,
-                  "src": "19616:6:114",
+                  "scope": 64329,
+                  "src": "19616:6:96",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -16781,10 +16777,10 @@ export const LogExpMath =
                     "typeString": "int256"
                   },
                   "typeName": {
-                    "id": 69294,
+                    "id": 64180,
                     "name": "int256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "19616:6:114",
+                    "src": "19616:6:96",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
@@ -16793,9 +16789,9 @@ export const LogExpMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "19615:8:114"
+              "src": "19615:8:96"
             },
-            "scope": 69444,
+            "scope": 64330,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "private"
@@ -16807,22 +16803,22 @@ export const LogExpMath =
         "contractDependencies": [],
         "contractKind": "library",
         "documentation": {
-          "id": 68150,
+          "id": 63036,
           "nodeType": "StructuredDocumentation",
-          "src": "1224:446:114",
+          "src": "1224:446:96",
           "text": " @dev Exponentiation and logarithm functions for 18 decimal fixed point numbers (both base and exponent/argument).\n Exponentiation and logarithm with arbitrary bases (x^y and log_x(y)) are implemented by conversion to natural\n exponentiation and logarithm (where the base is Euler's number).\n @author Fernando Martinelli - @fernandomartinelli\n @author Sergio Yuhjtman - @sergioyuhjtman\n @author Daniel Fernandez - @dmf7z"
         },
         "fullyImplemented": true,
         "linearizedBaseContracts": [
-          69444
+          64330
         ],
         "name": "LogExpMath",
-        "nameLocation": "1679:10:114",
-        "scope": 69445,
+        "nameLocation": "1679:10:96",
+        "scope": 64331,
         "usedErrors": []
       }
     ],
     "license": "MIT"
   },
-  "id": 114
+  "id": 96
 } as const;

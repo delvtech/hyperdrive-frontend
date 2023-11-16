@@ -11,19 +11,19 @@ export const Constants =
   },
   "ast": {
     "absolutePath": "test/utils/Constants.sol",
-    "id": 119579,
+    "id": 115617,
     "exportedSymbols": {
       "ETH": [
-        119578
+        115616
       ]
     },
     "nodeType": "SourceUnit",
-    "src": "39:92:163",
+    "src": "39:92:145",
     "nodes": [
       {
-        "id": 119575,
+        "id": 115613,
         "nodeType": "PragmaDirective",
-        "src": "39:23:163",
+        "src": "39:23:145",
         "nodes": [],
         "literals": [
           "solidity",
@@ -32,15 +32,15 @@ export const Constants =
         ]
       },
       {
-        "id": 119578,
+        "id": 115616,
         "nodeType": "VariableDeclaration",
-        "src": "64:65:163",
+        "src": "64:65:145",
         "nodes": [],
         "constant": true,
         "mutability": "constant",
         "name": "ETH",
-        "nameLocation": "81:3:163",
-        "scope": 119579,
+        "nameLocation": "81:3:145",
+        "scope": 115617,
         "stateVariable": false,
         "storageLocation": "default",
         "typeDescriptions": {
@@ -48,10 +48,10 @@ export const Constants =
           "typeString": "address"
         },
         "typeName": {
-          "id": 119576,
+          "id": 115614,
           "name": "address",
           "nodeType": "ElementaryTypeName",
-          "src": "64:7:163",
+          "src": "64:7:145",
           "stateMutability": "nonpayable",
           "typeDescriptions": {
             "typeIdentifier": "t_address",
@@ -60,14 +60,14 @@ export const Constants =
         },
         "value": {
           "hexValue": "307845656565654565656545654565654565456545656545454565656565456565656565656545456545",
-          "id": 119577,
+          "id": 115615,
           "isConstant": false,
           "isLValue": false,
           "isPure": true,
           "kind": "number",
           "lValueRequested": false,
           "nodeType": "Literal",
-          "src": "87:42:163",
+          "src": "87:42:145",
           "typeDescriptions": {
             "typeIdentifier": "t_address",
             "typeString": "address"
@@ -79,5 +79,5 @@ export const Constants =
     ],
     "license": "Apache-2.0"
   },
-  "id": 163
+  "id": 145
 } as const;
