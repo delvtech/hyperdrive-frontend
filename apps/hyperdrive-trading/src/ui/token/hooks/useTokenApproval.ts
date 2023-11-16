@@ -41,7 +41,7 @@ export function useTokenApproval({
         hash: data.hash,
         queryClient,
       });
-      toast.success("Token Approved", { position: "top-center" });
+      toast.success("Token approved", { position: "top-center" });
     },
   });
 
