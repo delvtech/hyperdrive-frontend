@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
 import { CommonHeadTags } from "src/ui/app/Head/CommonHeadTags";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import DiscordIcon from "src/ui/base/icons/discord";
 import { PositionCard } from "src/ui/hyperdrive/PositionCard";
 import { FAQ } from "src/ui/onboarding/FAQ/FAQ";
 
@@ -78,7 +79,6 @@ function PositionCards({
           emphasized
         />
       </div>
-
       <a
         href={`/trade/${hyperdrive.address}?position=Longs&openOrClosed=Open`}
         className="daisy-btn-neutral daisy-btn-md daisy-btn mt-10 w-60 justify-between gap-0 hover:daisy-btn-ghost"
@@ -123,9 +123,14 @@ function Footer() {
           </div>
           Hyperdrive
         </Link>
-        <p className="max-w-[160px]">
-          Revolutionize DeFi with Everlasting Liquidity
-        </p>
+        <a
+          href="https://discord.gg/bdn9fxcs"
+          className="link link-hover"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <DiscordIcon />
+        </a>
       </aside>
       <nav>
         <header className="daisy-footer-title">Services</header>
@@ -139,10 +144,12 @@ function Footer() {
         </Link>
       </nav>
       <nav>
+        {/* TODO: Determine if company information is needed here */}
         <header className="daisy-footer-title">Company</header>
         <a className="link link-hover">About us</a>
       </nav>
       <nav>
+        {/* TODO: Add links to legal pages */}
         <header className="daisy-footer-title">Legal</header>
         <a className="link link-hover">Terms of use</a>
         <a className="link link-hover">Privacy policy</a>
