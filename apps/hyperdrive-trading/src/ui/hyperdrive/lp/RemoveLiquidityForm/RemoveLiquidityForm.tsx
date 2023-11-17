@@ -1,6 +1,7 @@
 import { adjustAmountByPercentage } from "@hyperdrive/sdk";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
+import toast from "react-hot-toast";
 import { Hyperdrive } from "src/appconfig/types";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
@@ -51,6 +52,10 @@ export function RemoveLiquidityForm({
     minBaseAmountOut: minBaseAmountAfterSlippage,
     destination: account,
     enabled: previewRemoveLiquidityStatus === "success",
+    onExecuted: () => {
+      setAmount("");
+      toast.success("Liquidity removed", { position: "top-center" });
+    },
   });
 
   const formattedBaseAmountOut =

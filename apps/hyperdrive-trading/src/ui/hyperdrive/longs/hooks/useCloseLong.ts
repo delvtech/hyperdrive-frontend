@@ -11,6 +11,7 @@ interface UseCloseLongOptions {
   destination: Address | undefined;
   asBase?: boolean;
   enabled?: boolean;
+  onExecuted: () => void;
 }
 
 interface UseCloseLongResult {
@@ -26,6 +27,7 @@ export function useCloseLong({
   destination,
   asBase = true,
   enabled = true,
+  onExecuted,
 }: UseCloseLongOptions): UseCloseLongResult {
   const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
   const queryClient = useQueryClient();
@@ -57,6 +59,7 @@ export function useCloseLong({
           },
         });
         queryClient.resetQueries();
+        onExecuted?.();
       }
     },
   });

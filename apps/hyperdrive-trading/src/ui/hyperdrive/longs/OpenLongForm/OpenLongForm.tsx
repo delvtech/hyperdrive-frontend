@@ -1,6 +1,7 @@
 import { adjustAmountByPercentage } from "@hyperdrive/sdk";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { ReactElement } from "react";
+import toast from "react-hot-toast";
 import { Hyperdrive } from "src/appconfig/types";
 import { MAX_UINT256 } from "src/base/constants";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -88,6 +89,7 @@ export function OpenLongForm({
     enabled: openLongPreviewStatus === "success" && hasEnoughAllowance,
     onExecuted: () => {
       setAmount("");
+      toast.success("Long opened", { position: "top-center" });
     },
   });
 
