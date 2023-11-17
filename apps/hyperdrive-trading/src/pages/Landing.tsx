@@ -28,6 +28,7 @@ export function Landing(): ReactElement | null {
       <CommonHeadTags />
       <Hero />
       <PositionCards hyperdrive={hyperdrive} />
+      <FAQ />
       <Footer />
     </div>
   );
@@ -85,7 +86,6 @@ function PositionCards({
       >
         <span className="flex-1 text-center">Choose Market</span>
       </a>
-      <FAQ />
     </div>
   );
 }
