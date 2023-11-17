@@ -2,7 +2,6 @@ import { ERC4626HyperdriveDeployer } from "@hyperdrive/artifacts/dist/ERC4626Hyp
 import signale from "signale";
 import { chainOption, requiredChain } from "src/options/chain";
 import { requiredRpcUrl, rpcUrlOption } from "src/options/rpc-url";
-import { requiredString } from "src/options/utils/requiredString";
 import { requiredWalletKey, walletKeyOption } from "src/options/wallet-key";
 import { createCommandModule } from "src/utils/createCommandModule";
 import { DeployedContract, deployContract } from "src/utils/deployContract";
@@ -18,11 +17,6 @@ export const { command, aliases, describe, builder, handler } =
 
     builder: (yargs) => {
       return yargs.options({
-        p: {
-          alias: ["pool"],
-          describe: "The ERC4626 pool",
-          type: "string",
-        },
         c: chainOption,
         r: rpcUrlOption,
         w: walletKeyOption,
@@ -36,15 +30,9 @@ export const { command, aliases, describe, builder, handler } =
 
       const account = privateKeyToAccount(walletKey as Hex);
 
-      const pool = await requiredString(args.pool, {
-        name: "pool",
-        message: "Enter pool address",
-      });
-
       signale.pending("Deploying ERC4626HyperdriveDeployer...");
 
-      const { address } = await deployForwarderFactory({
-        pool,
+      const { address } = await deployERC4626HyperdriveDeployer({
         account,
         rpcUrl,
         chain,
@@ -59,24 +47,22 @@ export const { command, aliases, describe, builder, handler } =
     },
   });
 
-export interface DeployForwarderFactoryOptions {
-  pool: string;
+export interface DeployERC4626HyperdriveDeployerOptions {
   account: PrivateKeyAccount;
   rpcUrl: string;
   chain: Chain;
   onSubmitted?: (txHash: string) => void;
 }
 
-export async function deployForwarderFactory({
-  pool,
+export async function deployERC4626HyperdriveDeployer({
   account,
   rpcUrl,
   chain,
   onSubmitted,
-}: DeployForwarderFactoryOptions): Promise<DeployedContract> {
+}: DeployERC4626HyperdriveDeployerOptions): Promise<DeployedContract> {
   return await deployContract({
     abi: ERC4626HyperdriveDeployer.abi,
-    args: [pool as `0x${string}`],
+    args: [],
     bytecode: ERC4626HyperdriveDeployer.bytecode.object as `0x${string}`,
     account,
     rpcUrl,

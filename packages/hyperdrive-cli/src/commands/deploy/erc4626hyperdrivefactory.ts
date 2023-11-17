@@ -1,20 +1,14 @@
 import { ERC4626HyperdriveFactory } from "@hyperdrive/artifacts/dist/ERC4626HyperdriveFactory";
-import { MockERC4626 } from "@hyperdrive/artifacts/dist/MockERC4626";
 import signale from "signale";
 import { chainOption, requiredChain } from "src/options/chain";
 import { requiredRpcUrl, rpcUrlOption } from "src/options/rpc-url";
 import { requiredArray } from "src/options/utils/requiredArray";
+import { requiredNumber } from "src/options/utils/requiredNumber";
 import { requiredString } from "src/options/utils/requiredString";
 import { requiredWalletKey, walletKeyOption } from "src/options/wallet-key";
 import { createCommandModule } from "src/utils/createCommandModule";
 import { DeployedContract, deployContract } from "src/utils/deployContract";
-import {
-  Hex,
-  PrivateKeyAccount,
-  createPublicClient,
-  http,
-  parseUnits,
-} from "viem";
+import { Hex, PrivateKeyAccount, parseUnits } from "viem";
 import { privateKeyToAccount } from "viem/accounts";
 import { Chain } from "viem/chains";
 
@@ -39,6 +33,10 @@ export const { command, aliases, describe, builder, handler } =
           describe:
             "The address which should be set as the fee collector in new deployments",
           type: "string",
+        },
+        decimals: {
+          describe: "The number of decimals for the token, used to scale fees",
+          type: "number",
         },
         "curve-fee": {
           describe: "The LP fee applied to the curve portion of a trade",
@@ -74,7 +72,17 @@ export const { command, aliases, describe, builder, handler } =
           type: "array",
         },
         deployer: {
-          describe: "The contract that deploys new hyperdrive instances",
+          describe: "The Hyperdrive deployer",
+          type: "string",
+        },
+        target0: {
+          alias: ["target0-deployer"],
+          describe: "The Hyperdrive target0 deployer",
+          type: "string",
+        },
+        target1: {
+          alias: ["target1-deployer"],
+          describe: "The Hyperdrive target1 deployer",
           type: "string",
         },
         linker: {
@@ -129,6 +137,12 @@ export const { command, aliases, describe, builder, handler } =
         initial: governance,
       });
 
+      const decimals = await requiredNumber(args.decimals, {
+        name: "decimals",
+        message: "Enter token decimals",
+        initial: 18,
+      });
+
       const curveFee = await requiredString(args.curveFee, {
         name: "curve-fee",
         message: "Enter curve fee",
@@ -168,7 +182,16 @@ export const { command, aliases, describe, builder, handler } =
       const deployer = await requiredString(args.deployer, {
         name: "deployer",
         message: "Enter deployer address",
-        initial: governance,
+      });
+
+      const target0 = await requiredString(args.target0, {
+        name: "target0-deployer",
+        message: "Enter target0 deployer address",
+      });
+
+      const target1 = await requiredString(args.target1, {
+        name: "target1-deployer",
+        message: "Enter target1 deployer address",
       });
 
       const linker = await requiredString(args.linker, {
@@ -181,11 +204,6 @@ export const { command, aliases, describe, builder, handler } =
         message: "Enter linker code hash",
       });
 
-      const pool = await requiredString(args.pool, {
-        name: "pool",
-        message: "Enter pool address",
-      });
-
       const sweepTargets = (
         await requiredArray(args.targets?.map(String), {
           name: "sweep-targets",
@@ -195,17 +213,6 @@ export const { command, aliases, describe, builder, handler } =
       ).filter(Boolean);
 
       signale.pending("Deploying ERC4626HyperdriveFactory...");
-
-      const publicClient = await createPublicClient({
-        transport: http(rpcUrl),
-        chain,
-      });
-
-      const decimals = await publicClient.readContract({
-        abi: MockERC4626.abi,
-        address: pool as `0x${string}`,
-        functionName: "decimals",
-      });
 
       const { address } = await deployERC4626HyperdriveFactory({
         governance,
@@ -223,9 +230,10 @@ export const { command, aliases, describe, builder, handler } =
         },
         pausers,
         deployer,
+        target0,
+        target1,
         linker,
         linkerCodeHash,
-        pool,
         sweepTargets,
         account,
         rpcUrl,
@@ -257,9 +265,10 @@ export interface DeployERC4626HyperdriveFactoryOptions {
   };
   pausers: string[];
   deployer: string;
+  target0: string;
+  target1: string;
   linker: string;
   linkerCodeHash: string;
-  pool: string;
   sweepTargets: string[];
   account: PrivateKeyAccount;
   rpcUrl: string;
@@ -275,9 +284,10 @@ export async function deployERC4626HyperdriveFactory({
   maxFees,
   pausers,
   deployer,
+  target0,
+  target1,
   linker,
   linkerCodeHash,
-  pool,
   sweepTargets,
   account,
   rpcUrl,
@@ -293,13 +303,14 @@ export async function deployERC4626HyperdriveFactory({
         feeCollector: feeCollector as `0x${string}`,
         fees,
         maxFees,
-        defaultPausers: pausers as any[],
+        defaultPausers: pausers as `0x${string}`[],
+        hyperdriveDeployer: deployer as `0x${string}`,
+        target0Deployer: target0 as `0x${string}`,
+        target1Deployer: target1 as `0x${string}`,
+        linkerFactory: linker as `0x${string}`,
+        linkerCodeHash: linkerCodeHash as `0x${string}`,
       },
-      deployer as `0x${string}`,
-      linker as `0x${string}`,
-      linkerCodeHash as `0x${string}`,
-      pool as `0x${string}`,
-      sweepTargets as any[],
+      sweepTargets as `0x${string}`[],
     ],
     bytecode: ERC4626HyperdriveFactory.bytecode.object as `0x${string}`,
     account,

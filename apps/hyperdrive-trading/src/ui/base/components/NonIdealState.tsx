@@ -1,9 +1,24 @@
-import { ReactElement } from "react";
+import { ReactElement, ReactNode } from "react";
 
-export function NonIdealState(): ReactElement {
+export function NonIdealState({
+  heading,
+  text = "Nothing to show",
+  icon,
+  action,
+}: {
+  icon?: ReactNode;
+  heading?: string;
+  text?: string;
+  action?: ReactNode;
+}): ReactElement {
   return (
-    <div className="rounded-b-lg bg-base-200 p-10 text-center">
-      <p className="text-lg">Nothing to show.</p>
+    <div className="flex w-full flex-col items-center justify-center gap-4 bg-base-200 p-10">
+      {icon}
+      <div className="flex flex-col gap-1 text-center">
+        <p className="text-h6 font-bold">{heading}</p>
+        <p className="text-lg">{text}</p>
+      </div>
+      {action}
     </div>
   );
 }

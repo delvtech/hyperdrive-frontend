@@ -38,7 +38,9 @@ export function useMarketRowData(
                 publicClient,
                 cache: querySdkCache,
               });
-              const liquidity = await readHyperdrive.getLiquidity();
+              const liquidity = await readHyperdrive.getLiquidity({
+                decimals: hyperdrive.baseToken.decimals,
+              });
               const longApr = await readHyperdrive.getSpotRate();
               return {
                 market: hyperdrive,

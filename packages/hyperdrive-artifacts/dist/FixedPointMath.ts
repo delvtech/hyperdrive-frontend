@@ -1,55 +1,25 @@
 export const FixedPointMath = 
 {
-  "abi": [
-    {
-      "inputs": [],
-      "name": "ONE_18",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    }
-  ],
+  "abi": [],
   "bytecode": {
-    "object": "0x608e610038600b82828239805160001a607314602b57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe730000000000000000000000000000000000000000301460806040526004361060335760003560e01c8063d33fee44146038575b600080fd5b6046670de0b6b3a764000081565b60405190815260200160405180910390f3fea264697066735822122011db60662ae2d7b10448fc179b5b1cb123620d15f6f98105a096db09d30bc2e164736f6c63430008130033",
-    "sourceMap": "464:14900:33:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;464:14900:33;;;;;;;;;;;;;;;;;",
+    "object": "0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea264697066735822122076954b5d32293e7f46551de85082148de5b0f4deea40dd5ecbf4a0b3edb11abb64736f6c63430008130033",
+    "sourceMap": "464:14851:42:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;464:14851:42;;;;;;;;;;;;;;;;;",
     "linkReferences": {}
   },
   "deployedBytecode": {
-    "object": "0x730000000000000000000000000000000000000000301460806040526004361060335760003560e01c8063d33fee44146038575b600080fd5b6046670de0b6b3a764000081565b60405190815260200160405180910390f3fea264697066735822122011db60662ae2d7b10448fc179b5b1cb123620d15f6f98105a096db09d30bc2e164736f6c63430008130033",
-    "sourceMap": "464:14900:33:-:0;;;;;;;;;;;;;;;;;;;;;;;;532:37;;565:4;532:37;;;;;168:25:167;;;156:2;141:18;532:37:33;;;;;;",
+    "object": "0x73000000000000000000000000000000000000000030146080604052600080fdfea264697066735822122076954b5d32293e7f46551de85082148de5b0f4deea40dd5ecbf4a0b3edb11abb64736f6c63430008130033",
+    "sourceMap": "464:14851:42:-:0;;;;;;;;",
     "linkReferences": {}
   },
-  "methodIdentifiers": {
-    "ONE_18()": "d33fee44"
-  },
-  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"ONE_18\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"DELV\",\"custom:disclaimer\":\"The language used in this code is for coding convenience                    only, and is not intended to, and does not, have any                    particular legal or regulatory significance.\",\"kind\":\"dev\",\"methods\":{},\"title\":\"FixedPointMath\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"A fixed-point math library.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/libraries/FixedPointMath.sol\":\"FixedPointMath\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@aave/=lib/aave-v3-core/contracts/\",\":aave-v3-core/=lib/aave-v3-core/\",\":create3-factory/=lib/yield-daddy/lib/create3-factory/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\",\":yield-daddy/=lib/yield-daddy/\"]},\"sources\":{\"contracts/src/interfaces/IDataProvider.sol\":{\"keccak256\":\"0xb5540e954a8d9311a4ddc94f1b1a893f419965c4059e5f64d3f966fa5d7bf843\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://4322256d8ef1c32e16441b7be365169cbbfa72c6d952536ed0c2a4dab5befd15\",\"dweb:/ipfs/QmT1Zx7tHjgW52qb1e5C9KTjTbZaoniFxuyvZb3cWedUu7\"]},\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0x4642a027efffb3aa6cdc85e31796fb3b1bc4fff4316e6390874e6f4add37b86c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://3720a6c1c427dcfcbdeeec15cbdb682115e44e0a9136af7e0ad9e5af2ea40672\",\"dweb:/ipfs/QmP4bmaHw8MfX9MQLhhgnVQ9U9BTQAR3e5cCCE9RcoeX7w\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0x5f4ebd8ae035c05b0a1f3f740dba21a1414306796082b814bcaa2e190ab845b7\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://1353dab25f7e01c7169f602b7d013ff90c77fe36d62d382e179649a10ae41e78\",\"dweb:/ipfs/QmXQdQBcx6rKeVcoV5s7NG52DrqVvhBhgMNQwTxddAstE5\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0x837939af4a9224c5f4ea564e9b33a5612442b7d7d50b7f8bb32be6bb3ce239b3\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3bfebedcb31d2edf86a69f0dfbcc5aa7b96edc2d8197b4a4681a200cb6ffe993\",\"dweb:/ipfs/Qmeq4oAGxKv3mvRRWkqYBjfdozPkhi3MqBRFNnNkmAwCtt\"]},\"contracts/src/interfaces/IHyperdriveWrite.sol\":{\"keccak256\":\"0xd83e23e1894f3f4812d4812c5775c7a5267f3bfb80148b11f3ede3174ea936bc\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://ae5e91bb578ae9271426728ba69689ad659c6450853aa5ef0c52dd6d7c433206\",\"dweb:/ipfs/QmR5VU1UmZ8BN3azCs3zmHkCqJHzDKTUnVecdPjNQr8vYt\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xe3d64871148bdae5a714107b8b1a55f39cd4ede601436d2777a165d20d768a1a\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://9ebc0bfda35e9b7299c43f0efff38012b8074fcca867b781c0cedeede10cf3d0\",\"dweb:/ipfs/QmbHRLezFhWavHakK5G26DB4ud5PueU6fNvZf3L3TwXnPb\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0xcdc60ba02194150741a78cb0c52c306f5f577c5c814c63e98a13d46c02d2d9cc\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://8f5866cb2c8c4342dba88c0e4d78296fef0e170b18b3613c796c29dc31a5ca87\",\"dweb:/ipfs/QmZcoDTYhhYSB5ds3cNPJpdZTxrz6cF8M2vNVeuAcT8gw6\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0x2e55fa961123a8bb7284c8388af9bd1302a7153441ffe641804ea79021bdca05\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://c7dc03bbab02976609dec59c201e5b57a2998d1c626cef58d7a9fa7c2b06b939\",\"dweb:/ipfs/QmSifWr9cVWaUEmyKpGFcgpKCYdoBYgWtQBLgemtwo4a7x\"]},\"contracts/src/interfaces/IMultiTokenWrite.sol\":{\"keccak256\":\"0xa5ba8812e06fb6d38e1872603c8b80321cfd2f96cecbe7b67b92cb33e93b3fc8\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://73afa34919c7d457e925b4be83abb1b1ed2ed731a382ebffad95a3005c04bd5a\",\"dweb:/ipfs/QmauMxmgtYTS7RJQw1mS7Pwe5FUMDPHE2N1MBhFUjk6HPe\"]},\"contracts/src/libraries/FixedPointMath.sol\":{\"keccak256\":\"0x0108762fdecfae06d7b8d76bb52b1a5757669cc2a4e5f3ad701499295ed635bd\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a94cdbab2bdbb0212597f70cebea86fcf69be0702f6d6fe76571ee43992d7d6b\",\"dweb:/ipfs/QmXyncXgKixNzP7rgqoCA2dzehjPTAsEbtAKZGW6CQADFE\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x00c839ff53d07d19db2e7cfa1e5133f9ee90a8d64b0e2e57f50446a2d1a3a0e0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://3dac621d015a68a5251b1e5d41dda0faf252699bf6e8bcf46a958b29964d9dd1\",\"dweb:/ipfs/QmP9axjgZv4cezAhALoTemM62sdLtMDJ9MGTxECnNwHgSJ\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Permit.sol\":{\"keccak256\":\"0x35e258421ae206f3db37281cea70871b4c3553914734aa76139a41af60ac1abb\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2ef94b6bc4ee356db612a1849c615f7dd4b15542d6c8584c86bb9243a7913cf0\",\"dweb:/ipfs/QmaxFj5NFpAjjitZtHPNS9PPtCuBATaRz9ktDDRCQCQ83y\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol\":{\"keccak256\":\"0x8a63ea9ec07788740e51046ca14c61f411aedb901e89749c9d55fa56ed43086a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://3035ae3f172ed9e172e1ba4d83bdc70279f63be51ce9218c530132def66ff577\",\"dweb:/ipfs/QmTQ3zfC3YUNeY3KUVFiHgTWDuxfmcEMgpGC6HMoTpgZJL\"]},\"lib/openzeppelin-contracts/contracts/utils/Address.sol\":{\"keccak256\":\"0xa6dfb97ce947b7c846b054ee7d45d12383359778f4f3743654ae0a34fa421b26\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b97e7e5a77ea47c08ba422291df887eba76c80982f52a6e94a30106e9377a94f\",\"dweb:/ipfs/Qme7N2XRC7mcDxB8wZxNWPk6T8S2qsnmhAqXeUj4CNvsGD\"]}},\"version\":1}",
+  "methodIdentifiers": {},
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"author\":\"DELV\",\"custom:disclaimer\":\"The language used in this code is for coding convenience                    only, and is not intended to, and does not, have any                    particular legal or regulatory significance.\",\"kind\":\"dev\",\"methods\":{},\"title\":\"FixedPointMath\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"A fixed-point math library.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/libraries/FixedPointMath.sol\":\"FixedPointMath\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":aave-v3-core/=lib/aave-v3-core/\",\":create3-factory/=lib/yield-daddy/lib/create3-factory/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\",\":solmate/=lib/solmate/src/\",\":yield-daddy/=lib/yield-daddy/\"]},\"sources\":{\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0xfb57fe2ee4d8d1c6a8e2aa3b007da6f0e53d65388245b0b7d876234077ee95b4\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://e4303c41b9752b51c6eaa9b16aa11e5bffb34fc80c5c8761302539cd5922ae36\",\"dweb:/ipfs/QmZjVYBikfgPDX47hmbGJpG6kvm3Gyt6nKkFbZH6r8U4cL\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0x833d56790728bfab7d35507b8584dc7ce607b26512a382e887483f61d528f6c5\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3dd009d6ff5a89d1173f7330916e81a31ffd139bf6848b3f4400673652554a70\",\"dweb:/ipfs/QmXkVovZSWqhRqrt8y9FFfHt1HWhnUuP9TMecQyd89yEQ3\"]},\"contracts/src/interfaces/IHyperdriveCore.sol\":{\"keccak256\":\"0x84c73d8c4b67da41635f57fce2f30b8f04fc826ff6fb54c605de23d376f3403d\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://e6d636dff5c24916ae35a76695d741de2f14ee46876ea67c5393618bb7f9cf85\",\"dweb:/ipfs/QmUwxh8JeAqSFA8Z2qabVx3YWRSz7PJ9V2TQgnfctAgqPF\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0x837939af4a9224c5f4ea564e9b33a5612442b7d7d50b7f8bb32be6bb3ce239b3\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3bfebedcb31d2edf86a69f0dfbcc5aa7b96edc2d8197b4a4681a200cb6ffe993\",\"dweb:/ipfs/Qmeq4oAGxKv3mvRRWkqYBjfdozPkhi3MqBRFNnNkmAwCtt\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xcf3a4002275ea64e381f0a4aded3683e12960396ef79ba9dd153e2d1e395baad\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://c9990491f7a5151fd696a45e6e5b0282a1dedf58521861dfb8c64db8cb60f5b6\",\"dweb:/ipfs/QmaywmqqQhz7DeYqZdoeykagr5h4ZhQRv6GasHqvdWqzSy\"]},\"contracts/src/interfaces/IMultiTokenCore.sol\":{\"keccak256\":\"0xdb7f24663cff7307a468ef5e4c6f3e4d01ec0475157b3bbb3405890c3e9ab87d\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://7f631a9a395fba5b07c3d9308fccac18d5aa59d890efe23442ed2a4da9871ae8\",\"dweb:/ipfs/QmV2a4wiAPfWzSST3faYt58i2tqEyoqCLAJV8aNCdJyxVE\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0x476240ea4328bae9ab820b6f0f40afb11c74ee52d26bdbef69e4ece28dc10bdb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://843f73cb21eaec4e26952fd6cbde5e6815e3a28c438df9e026e249200d25076f\",\"dweb:/ipfs/QmXzE7gsRKMaRGQfTDodA1RXxNxUuBj8RT7grTYjZUdbe6\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0x9b92d81f2f038fcd4bb5d069ab2b754efc153234c451d4ee4caa6d74aaca16b4\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://8686fddc99564c6b6524ea68a6b7ff081a9988fc795fc13197bb59ddaa2041c6\",\"dweb:/ipfs/QmarJYJAgoH6Z4H1BmdPoRgqLubRu5S6NDXBNV2fDApPuW\"]},\"contracts/src/libraries/FixedPointMath.sol\":{\"keccak256\":\"0xac200bd4172e6369dc6ad06bef96e3d4ce7df36a97e80ee8f1a033e622c99639\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://0add90b8957805ae8e99581b76d81dec07bdf7586fdf2a05f31d2ce91f09439d\",\"dweb:/ipfs/QmRRBbguna6QmMUvANobcSfH6HM3DydFjNXSWZZr1VDKH8\"]}},\"version\":1}",
   "metadata": {
     "compiler": {
       "version": "0.8.19+commit.7dd6d404"
     },
     "language": "Solidity",
     "output": {
-      "abi": [
-        {
-          "inputs": [],
-          "stateMutability": "view",
-          "type": "function",
-          "name": "ONE_18",
-          "outputs": [
-            {
-              "internalType": "uint256",
-              "name": "",
-              "type": "uint256"
-            }
-          ]
-        }
-      ],
+      "abi": [],
       "devdoc": {
         "kind": "dev",
         "methods": {},
@@ -63,14 +33,10 @@ export const FixedPointMath =
     },
     "settings": {
       "remappings": [
-        "@aave/=lib/aave-v3-core/contracts/",
         "aave-v3-core/=lib/aave-v3-core/",
         "create3-factory/=lib/yield-daddy/lib/create3-factory/",
         "ds-test/=lib/forge-std/lib/ds-test/src/",
-        "erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/",
         "forge-std/=lib/forge-std/src/",
-        "openzeppelin-contracts/=lib/openzeppelin-contracts/",
-        "openzeppelin/=lib/openzeppelin-contracts/contracts/",
         "solmate/=lib/solmate/src/",
         "yield-daddy/=lib/yield-daddy/"
       ],
@@ -87,27 +53,27 @@ export const FixedPointMath =
       "libraries": {}
     },
     "sources": {
-      "contracts/src/interfaces/IDataProvider.sol": {
-        "keccak256": "0xb5540e954a8d9311a4ddc94f1b1a893f419965c4059e5f64d3f966fa5d7bf843",
+      "contracts/src/interfaces/IERC20.sol": {
+        "keccak256": "0xfb57fe2ee4d8d1c6a8e2aa3b007da6f0e53d65388245b0b7d876234077ee95b4",
         "urls": [
-          "bzz-raw://4322256d8ef1c32e16441b7be365169cbbfa72c6d952536ed0c2a4dab5befd15",
-          "dweb:/ipfs/QmT1Zx7tHjgW52qb1e5C9KTjTbZaoniFxuyvZb3cWedUu7"
+          "bzz-raw://e4303c41b9752b51c6eaa9b16aa11e5bffb34fc80c5c8761302539cd5922ae36",
+          "dweb:/ipfs/QmZjVYBikfgPDX47hmbGJpG6kvm3Gyt6nKkFbZH6r8U4cL"
         ],
         "license": "Apache-2.0"
       },
-      "contracts/src/interfaces/IERC20.sol": {
-        "keccak256": "0x4642a027efffb3aa6cdc85e31796fb3b1bc4fff4316e6390874e6f4add37b86c",
-        "urls": [
-          "bzz-raw://3720a6c1c427dcfcbdeeec15cbdb682115e44e0a9136af7e0ad9e5af2ea40672",
-          "dweb:/ipfs/QmP4bmaHw8MfX9MQLhhgnVQ9U9BTQAR3e5cCCE9RcoeX7w"
-        ],
-        "license": "MIT"
-      },
       "contracts/src/interfaces/IHyperdrive.sol": {
-        "keccak256": "0x5f4ebd8ae035c05b0a1f3f740dba21a1414306796082b814bcaa2e190ab845b7",
+        "keccak256": "0x833d56790728bfab7d35507b8584dc7ce607b26512a382e887483f61d528f6c5",
         "urls": [
-          "bzz-raw://1353dab25f7e01c7169f602b7d013ff90c77fe36d62d382e179649a10ae41e78",
-          "dweb:/ipfs/QmXQdQBcx6rKeVcoV5s7NG52DrqVvhBhgMNQwTxddAstE5"
+          "bzz-raw://3dd009d6ff5a89d1173f7330916e81a31ffd139bf6848b3f4400673652554a70",
+          "dweb:/ipfs/QmXkVovZSWqhRqrt8y9FFfHt1HWhnUuP9TMecQyd89yEQ3"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/interfaces/IHyperdriveCore.sol": {
+        "keccak256": "0x84c73d8c4b67da41635f57fce2f30b8f04fc826ff6fb54c605de23d376f3403d",
+        "urls": [
+          "bzz-raw://e6d636dff5c24916ae35a76695d741de2f14ee46876ea67c5393618bb7f9cf85",
+          "dweb:/ipfs/QmUwxh8JeAqSFA8Z2qabVx3YWRSz7PJ9V2TQgnfctAgqPF"
         ],
         "license": "Apache-2.0"
       },
@@ -119,110 +85,70 @@ export const FixedPointMath =
         ],
         "license": "Apache-2.0"
       },
-      "contracts/src/interfaces/IHyperdriveWrite.sol": {
-        "keccak256": "0xd83e23e1894f3f4812d4812c5775c7a5267f3bfb80148b11f3ede3174ea936bc",
+      "contracts/src/interfaces/IMultiToken.sol": {
+        "keccak256": "0xcf3a4002275ea64e381f0a4aded3683e12960396ef79ba9dd153e2d1e395baad",
         "urls": [
-          "bzz-raw://ae5e91bb578ae9271426728ba69689ad659c6450853aa5ef0c52dd6d7c433206",
-          "dweb:/ipfs/QmR5VU1UmZ8BN3azCs3zmHkCqJHzDKTUnVecdPjNQr8vYt"
+          "bzz-raw://c9990491f7a5151fd696a45e6e5b0282a1dedf58521861dfb8c64db8cb60f5b6",
+          "dweb:/ipfs/QmaywmqqQhz7DeYqZdoeykagr5h4ZhQRv6GasHqvdWqzSy"
         ],
         "license": "Apache-2.0"
       },
-      "contracts/src/interfaces/IMultiToken.sol": {
-        "keccak256": "0xe3d64871148bdae5a714107b8b1a55f39cd4ede601436d2777a165d20d768a1a",
+      "contracts/src/interfaces/IMultiTokenCore.sol": {
+        "keccak256": "0xdb7f24663cff7307a468ef5e4c6f3e4d01ec0475157b3bbb3405890c3e9ab87d",
         "urls": [
-          "bzz-raw://9ebc0bfda35e9b7299c43f0efff38012b8074fcca867b781c0cedeede10cf3d0",
-          "dweb:/ipfs/QmbHRLezFhWavHakK5G26DB4ud5PueU6fNvZf3L3TwXnPb"
+          "bzz-raw://7f631a9a395fba5b07c3d9308fccac18d5aa59d890efe23442ed2a4da9871ae8",
+          "dweb:/ipfs/QmV2a4wiAPfWzSST3faYt58i2tqEyoqCLAJV8aNCdJyxVE"
         ],
         "license": "Apache-2.0"
       },
       "contracts/src/interfaces/IMultiTokenMetadata.sol": {
-        "keccak256": "0xcdc60ba02194150741a78cb0c52c306f5f577c5c814c63e98a13d46c02d2d9cc",
+        "keccak256": "0x476240ea4328bae9ab820b6f0f40afb11c74ee52d26bdbef69e4ece28dc10bdb",
         "urls": [
-          "bzz-raw://8f5866cb2c8c4342dba88c0e4d78296fef0e170b18b3613c796c29dc31a5ca87",
-          "dweb:/ipfs/QmZcoDTYhhYSB5ds3cNPJpdZTxrz6cF8M2vNVeuAcT8gw6"
+          "bzz-raw://843f73cb21eaec4e26952fd6cbde5e6815e3a28c438df9e026e249200d25076f",
+          "dweb:/ipfs/QmXzE7gsRKMaRGQfTDodA1RXxNxUuBj8RT7grTYjZUdbe6"
         ],
         "license": "Apache-2.0"
       },
       "contracts/src/interfaces/IMultiTokenRead.sol": {
-        "keccak256": "0x2e55fa961123a8bb7284c8388af9bd1302a7153441ffe641804ea79021bdca05",
+        "keccak256": "0x9b92d81f2f038fcd4bb5d069ab2b754efc153234c451d4ee4caa6d74aaca16b4",
         "urls": [
-          "bzz-raw://c7dc03bbab02976609dec59c201e5b57a2998d1c626cef58d7a9fa7c2b06b939",
-          "dweb:/ipfs/QmSifWr9cVWaUEmyKpGFcgpKCYdoBYgWtQBLgemtwo4a7x"
-        ],
-        "license": "Apache-2.0"
-      },
-      "contracts/src/interfaces/IMultiTokenWrite.sol": {
-        "keccak256": "0xa5ba8812e06fb6d38e1872603c8b80321cfd2f96cecbe7b67b92cb33e93b3fc8",
-        "urls": [
-          "bzz-raw://73afa34919c7d457e925b4be83abb1b1ed2ed731a382ebffad95a3005c04bd5a",
-          "dweb:/ipfs/QmauMxmgtYTS7RJQw1mS7Pwe5FUMDPHE2N1MBhFUjk6HPe"
+          "bzz-raw://8686fddc99564c6b6524ea68a6b7ff081a9988fc795fc13197bb59ddaa2041c6",
+          "dweb:/ipfs/QmarJYJAgoH6Z4H1BmdPoRgqLubRu5S6NDXBNV2fDApPuW"
         ],
         "license": "Apache-2.0"
       },
       "contracts/src/libraries/FixedPointMath.sol": {
-        "keccak256": "0x0108762fdecfae06d7b8d76bb52b1a5757669cc2a4e5f3ad701499295ed635bd",
+        "keccak256": "0xac200bd4172e6369dc6ad06bef96e3d4ce7df36a97e80ee8f1a033e622c99639",
         "urls": [
-          "bzz-raw://a94cdbab2bdbb0212597f70cebea86fcf69be0702f6d6fe76571ee43992d7d6b",
-          "dweb:/ipfs/QmXyncXgKixNzP7rgqoCA2dzehjPTAsEbtAKZGW6CQADFE"
+          "bzz-raw://0add90b8957805ae8e99581b76d81dec07bdf7586fdf2a05f31d2ce91f09439d",
+          "dweb:/ipfs/QmRRBbguna6QmMUvANobcSfH6HM3DydFjNXSWZZr1VDKH8"
         ],
         "license": "Apache-2.0"
-      },
-      "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol": {
-        "keccak256": "0x00c839ff53d07d19db2e7cfa1e5133f9ee90a8d64b0e2e57f50446a2d1a3a0e0",
-        "urls": [
-          "bzz-raw://3dac621d015a68a5251b1e5d41dda0faf252699bf6e8bcf46a958b29964d9dd1",
-          "dweb:/ipfs/QmP9axjgZv4cezAhALoTemM62sdLtMDJ9MGTxECnNwHgSJ"
-        ],
-        "license": "MIT"
-      },
-      "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Permit.sol": {
-        "keccak256": "0x35e258421ae206f3db37281cea70871b4c3553914734aa76139a41af60ac1abb",
-        "urls": [
-          "bzz-raw://2ef94b6bc4ee356db612a1849c615f7dd4b15542d6c8584c86bb9243a7913cf0",
-          "dweb:/ipfs/QmaxFj5NFpAjjitZtHPNS9PPtCuBATaRz9ktDDRCQCQ83y"
-        ],
-        "license": "MIT"
-      },
-      "lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol": {
-        "keccak256": "0x8a63ea9ec07788740e51046ca14c61f411aedb901e89749c9d55fa56ed43086a",
-        "urls": [
-          "bzz-raw://3035ae3f172ed9e172e1ba4d83bdc70279f63be51ce9218c530132def66ff577",
-          "dweb:/ipfs/QmTQ3zfC3YUNeY3KUVFiHgTWDuxfmcEMgpGC6HMoTpgZJL"
-        ],
-        "license": "MIT"
-      },
-      "lib/openzeppelin-contracts/contracts/utils/Address.sol": {
-        "keccak256": "0xa6dfb97ce947b7c846b054ee7d45d12383359778f4f3743654ae0a34fa421b26",
-        "urls": [
-          "bzz-raw://b97e7e5a77ea47c08ba422291df887eba76c80982f52a6e94a30106e9377a94f",
-          "dweb:/ipfs/Qme7N2XRC7mcDxB8wZxNWPk6T8S2qsnmhAqXeUj4CNvsGD"
-        ],
-        "license": "MIT"
       }
     },
     "version": 1
   },
   "ast": {
     "absolutePath": "contracts/src/libraries/FixedPointMath.sol",
-    "id": 9067,
+    "id": 10534,
     "exportedSymbols": {
       "FixedPointMath": [
-        9066
+        10533
       ],
       "IHyperdrive": [
-        7431
+        3759
       ],
       "ONE": [
-        8318
+        9788
       ]
     },
     "nodeType": "SourceUnit",
-    "src": "40:15325:33",
+    "src": "40:15276:42",
     "nodes": [
       {
-        "id": 8313,
+        "id": 9783,
         "nodeType": "PragmaDirective",
-        "src": "40:23:33",
+        "src": "40:23:42",
         "nodes": [],
         "literals": [
           "solidity",
@@ -231,24 +157,24 @@ export const FixedPointMath =
         ]
       },
       {
-        "id": 8315,
+        "id": 9785,
         "nodeType": "ImportDirective",
-        "src": "65:60:33",
+        "src": "65:60:42",
         "nodes": [],
         "absolutePath": "contracts/src/interfaces/IHyperdrive.sol",
         "file": "../interfaces/IHyperdrive.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 9067,
-        "sourceUnit": 7432,
+        "scope": 10534,
+        "sourceUnit": 3760,
         "symbolAliases": [
           {
             "foreign": {
-              "id": 8314,
+              "id": 9784,
               "name": "IHyperdrive",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "referencedDeclaration": 7431,
-              "src": "74:11:33",
+              "referencedDeclaration": 3759,
+              "src": "74:11:42",
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
@@ -257,15 +183,15 @@ export const FixedPointMath =
         "unitAlias": ""
       },
       {
-        "id": 8318,
+        "id": 9788,
         "nodeType": "VariableDeclaration",
-        "src": "127:27:33",
+        "src": "127:27:42",
         "nodes": [],
         "constant": true,
         "mutability": "constant",
         "name": "ONE",
-        "nameLocation": "144:3:33",
-        "scope": 9067,
+        "nameLocation": "144:3:42",
+        "scope": 10534,
         "stateVariable": false,
         "storageLocation": "default",
         "typeDescriptions": {
@@ -273,10 +199,10 @@ export const FixedPointMath =
           "typeString": "uint256"
         },
         "typeName": {
-          "id": 8316,
+          "id": 9786,
           "name": "uint256",
           "nodeType": "ElementaryTypeName",
-          "src": "127:7:33",
+          "src": "127:7:42",
           "typeDescriptions": {
             "typeIdentifier": "t_uint256",
             "typeString": "uint256"
@@ -284,14 +210,14 @@ export const FixedPointMath =
         },
         "value": {
           "hexValue": "31653138",
-          "id": 8317,
+          "id": 9787,
           "isConstant": false,
           "isLValue": false,
           "isPure": true,
           "kind": "number",
           "lValueRequested": false,
           "nodeType": "Literal",
-          "src": "150:4:33",
+          "src": "150:4:42",
           "typeDescriptions": {
             "typeIdentifier": "t_rational_1000000000000000000_by_1",
             "typeString": "int_const 1000000000000000000"
@@ -301,31 +227,31 @@ export const FixedPointMath =
         "visibility": "internal"
       },
       {
-        "id": 9066,
+        "id": 10533,
         "nodeType": "ContractDefinition",
-        "src": "464:14900:33",
+        "src": "464:14851:42",
         "nodes": [
           {
-            "id": 8322,
+            "id": 9792,
             "nodeType": "UsingForDirective",
-            "src": "493:33:33",
+            "src": "493:33:42",
             "nodes": [],
             "global": false,
             "libraryName": {
-              "id": 8320,
+              "id": 9790,
               "name": "FixedPointMath",
               "nameLocations": [
-                "499:14:33"
+                "499:14:42"
               ],
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 9066,
-              "src": "499:14:33"
+              "referencedDeclaration": 10533,
+              "src": "499:14:42"
             },
             "typeName": {
-              "id": 8321,
+              "id": 9791,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "518:7:33",
+              "src": "518:7:42",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -333,60 +259,15 @@ export const FixedPointMath =
             }
           },
           {
-            "id": 8325,
+            "id": 9799,
             "nodeType": "VariableDeclaration",
-            "src": "532:37:33",
-            "nodes": [],
-            "constant": true,
-            "functionSelector": "d33fee44",
-            "mutability": "constant",
-            "name": "ONE_18",
-            "nameLocation": "556:6:33",
-            "scope": 9066,
-            "stateVariable": true,
-            "storageLocation": "default",
-            "typeDescriptions": {
-              "typeIdentifier": "t_uint256",
-              "typeString": "uint256"
-            },
-            "typeName": {
-              "id": 8323,
-              "name": "uint256",
-              "nodeType": "ElementaryTypeName",
-              "src": "532:7:33",
-              "typeDescriptions": {
-                "typeIdentifier": "t_uint256",
-                "typeString": "uint256"
-              }
-            },
-            "value": {
-              "hexValue": "31653138",
-              "id": 8324,
-              "isConstant": false,
-              "isLValue": false,
-              "isPure": true,
-              "kind": "number",
-              "lValueRequested": false,
-              "nodeType": "Literal",
-              "src": "565:4:33",
-              "typeDescriptions": {
-                "typeIdentifier": "t_rational_1000000000000000000_by_1",
-                "typeString": "int_const 1000000000000000000"
-              },
-              "value": "1e18"
-            },
-            "visibility": "public"
-          },
-          {
-            "id": 8332,
-            "nodeType": "VariableDeclaration",
-            "src": "575:52:33",
+            "src": "532:52:42",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "MAX_UINT256",
-            "nameLocation": "601:11:33",
-            "scope": 9066,
+            "nameLocation": "558:11:42",
+            "scope": 10533,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -394,10 +275,10 @@ export const FixedPointMath =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 8326,
+              "id": 9793,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "575:7:33",
+              "src": "532:7:42",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -408,7 +289,7 @@ export const FixedPointMath =
                 "typeIdentifier": "t_rational_115792089237316195423570985008687907853269984665640564039457584007913129639935_by_1",
                 "typeString": "int_const 1157...(70 digits omitted)...9935"
               },
-              "id": 8331,
+              "id": 9798,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -418,21 +299,21 @@ export const FixedPointMath =
                   "typeIdentifier": "t_rational_115792089237316195423570985008687907853269984665640564039457584007913129639936_by_1",
                   "typeString": "int_const 1157...(70 digits omitted)...9936"
                 },
-                "id": 8329,
+                "id": 9796,
                 "isConstant": false,
                 "isLValue": false,
                 "isPure": true,
                 "lValueRequested": false,
                 "leftExpression": {
                   "hexValue": "32",
-                  "id": 8327,
+                  "id": 9794,
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": true,
                   "kind": "number",
                   "lValueRequested": false,
                   "nodeType": "Literal",
-                  "src": "615:1:33",
+                  "src": "572:1:42",
                   "typeDescriptions": {
                     "typeIdentifier": "t_rational_2_by_1",
                     "typeString": "int_const 2"
@@ -443,21 +324,21 @@ export const FixedPointMath =
                 "operator": "**",
                 "rightExpression": {
                   "hexValue": "323536",
-                  "id": 8328,
+                  "id": 9795,
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": true,
                   "kind": "number",
                   "lValueRequested": false,
                   "nodeType": "Literal",
-                  "src": "620:3:33",
+                  "src": "577:3:42",
                   "typeDescriptions": {
                     "typeIdentifier": "t_rational_256_by_1",
                     "typeString": "int_const 256"
                   },
                   "value": "256"
                 },
-                "src": "615:8:33",
+                "src": "572:8:42",
                 "typeDescriptions": {
                   "typeIdentifier": "t_rational_115792089237316195423570985008687907853269984665640564039457584007913129639936_by_1",
                   "typeString": "int_const 1157...(70 digits omitted)...9936"
@@ -467,21 +348,21 @@ export const FixedPointMath =
               "operator": "-",
               "rightExpression": {
                 "hexValue": "31",
-                "id": 8330,
+                "id": 9797,
                 "isConstant": false,
                 "isLValue": false,
                 "isPure": true,
                 "kind": "number",
                 "lValueRequested": false,
                 "nodeType": "Literal",
-                "src": "626:1:33",
+                "src": "583:1:42",
                 "typeDescriptions": {
                   "typeIdentifier": "t_rational_1_by_1",
                   "typeString": "int_const 1"
                 },
                 "value": "1"
               },
-              "src": "615:12:33",
+              "src": "572:12:42",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_115792089237316195423570985008687907853269984665640564039457584007913129639935_by_1",
                 "typeString": "int_const 1157...(70 digits omitted)...9935"
@@ -490,25 +371,25 @@ export const FixedPointMath =
             "visibility": "internal"
           },
           {
-            "id": 8346,
+            "id": 9813,
             "nodeType": "FunctionDefinition",
-            "src": "984:556:33",
+            "src": "941:556:42",
             "nodes": [],
             "body": {
-              "id": 8345,
+              "id": 9812,
               "nodeType": "Block",
-              "src": "1111:429:33",
+              "src": "1068:429:42",
               "nodes": [],
               "statements": [
                 {
                   "AST": {
                     "nodeType": "YulBlock",
-                    "src": "1173:361:33",
+                    "src": "1130:361:42",
                     "statements": [
                       {
                         "body": {
                           "nodeType": "YulBlock",
-                          "src": "1386:44:33",
+                          "src": "1343:44:42",
                           "statements": [
                             {
                               "expression": {
@@ -516,14 +397,14 @@ export const FixedPointMath =
                                   {
                                     "kind": "number",
                                     "nodeType": "YulLiteral",
-                                    "src": "1411:1:33",
+                                    "src": "1368:1:42",
                                     "type": "",
                                     "value": "0"
                                   },
                                   {
                                     "kind": "number",
                                     "nodeType": "YulLiteral",
-                                    "src": "1414:1:33",
+                                    "src": "1371:1:42",
                                     "type": "",
                                     "value": "0"
                                   }
@@ -531,13 +412,13 @@ export const FixedPointMath =
                                 "functionName": {
                                   "name": "revert",
                                   "nodeType": "YulIdentifier",
-                                  "src": "1404:6:33"
+                                  "src": "1361:6:42"
                                 },
                                 "nodeType": "YulFunctionCall",
-                                "src": "1404:12:33"
+                                "src": "1361:12:42"
                               },
                               "nodeType": "YulExpressionStatement",
-                              "src": "1404:12:33"
+                              "src": "1361:12:42"
                             }
                           ]
                         },
@@ -548,7 +429,7 @@ export const FixedPointMath =
                                 {
                                   "name": "denominator",
                                   "nodeType": "YulIdentifier",
-                                  "src": "1315:11:33"
+                                  "src": "1272:11:42"
                                 },
                                 {
                                   "arguments": [
@@ -557,87 +438,87 @@ export const FixedPointMath =
                                         {
                                           "name": "y",
                                           "nodeType": "YulIdentifier",
-                                          "src": "1339:1:33"
+                                          "src": "1296:1:42"
                                         },
                                         {
                                           "arguments": [
                                             {
                                               "name": "x",
                                               "nodeType": "YulIdentifier",
-                                              "src": "1345:1:33"
+                                              "src": "1302:1:42"
                                             },
                                             {
                                               "arguments": [
                                                 {
                                                   "name": "MAX_UINT256",
                                                   "nodeType": "YulIdentifier",
-                                                  "src": "1352:11:33"
+                                                  "src": "1309:11:42"
                                                 },
                                                 {
                                                   "name": "y",
                                                   "nodeType": "YulIdentifier",
-                                                  "src": "1365:1:33"
+                                                  "src": "1322:1:42"
                                                 }
                                               ],
                                               "functionName": {
                                                 "name": "div",
                                                 "nodeType": "YulIdentifier",
-                                                "src": "1348:3:33"
+                                                "src": "1305:3:42"
                                               },
                                               "nodeType": "YulFunctionCall",
-                                              "src": "1348:19:33"
+                                              "src": "1305:19:42"
                                             }
                                           ],
                                           "functionName": {
                                             "name": "gt",
                                             "nodeType": "YulIdentifier",
-                                            "src": "1342:2:33"
+                                            "src": "1299:2:42"
                                           },
                                           "nodeType": "YulFunctionCall",
-                                          "src": "1342:26:33"
+                                          "src": "1299:26:42"
                                         }
                                       ],
                                       "functionName": {
                                         "name": "mul",
                                         "nodeType": "YulIdentifier",
-                                        "src": "1335:3:33"
+                                        "src": "1292:3:42"
                                       },
                                       "nodeType": "YulFunctionCall",
-                                      "src": "1335:34:33"
+                                      "src": "1292:34:42"
                                     }
                                   ],
                                   "functionName": {
                                     "name": "iszero",
                                     "nodeType": "YulIdentifier",
-                                    "src": "1328:6:33"
+                                    "src": "1285:6:42"
                                   },
                                   "nodeType": "YulFunctionCall",
-                                  "src": "1328:42:33"
+                                  "src": "1285:42:42"
                                 }
                               ],
                               "functionName": {
                                 "name": "mul",
                                 "nodeType": "YulIdentifier",
-                                "src": "1311:3:33"
+                                "src": "1268:3:42"
                               },
                               "nodeType": "YulFunctionCall",
-                              "src": "1311:60:33"
+                              "src": "1268:60:42"
                             }
                           ],
                           "functionName": {
                             "name": "iszero",
                             "nodeType": "YulIdentifier",
-                            "src": "1287:6:33"
+                            "src": "1244:6:42"
                           },
                           "nodeType": "YulFunctionCall",
-                          "src": "1287:98:33"
+                          "src": "1244:98:42"
                         },
                         "nodeType": "YulIf",
-                        "src": "1284:146:33"
+                        "src": "1241:146:42"
                       },
                       {
                         "nodeType": "YulAssignment",
-                        "src": "1492:32:33",
+                        "src": "1449:32:42",
                         "value": {
                           "arguments": [
                             {
@@ -645,41 +526,41 @@ export const FixedPointMath =
                                 {
                                   "name": "x",
                                   "nodeType": "YulIdentifier",
-                                  "src": "1505:1:33"
+                                  "src": "1462:1:42"
                                 },
                                 {
                                   "name": "y",
                                   "nodeType": "YulIdentifier",
-                                  "src": "1508:1:33"
+                                  "src": "1465:1:42"
                                 }
                               ],
                               "functionName": {
                                 "name": "mul",
                                 "nodeType": "YulIdentifier",
-                                "src": "1501:3:33"
+                                "src": "1458:3:42"
                               },
                               "nodeType": "YulFunctionCall",
-                              "src": "1501:9:33"
+                              "src": "1458:9:42"
                             },
                             {
                               "name": "denominator",
                               "nodeType": "YulIdentifier",
-                              "src": "1512:11:33"
+                              "src": "1469:11:42"
                             }
                           ],
                           "functionName": {
                             "name": "div",
                             "nodeType": "YulIdentifier",
-                            "src": "1497:3:33"
+                            "src": "1454:3:42"
                           },
                           "nodeType": "YulFunctionCall",
-                          "src": "1497:27:33"
+                          "src": "1454:27:42"
                         },
                         "variableNames": [
                           {
                             "name": "z",
                             "nodeType": "YulIdentifier",
-                            "src": "1492:1:33"
+                            "src": "1449:1:42"
                           }
                         ]
                       }
@@ -689,99 +570,99 @@ export const FixedPointMath =
                   "evmVersion": "paris",
                   "externalReferences": [
                     {
-                      "declaration": 8332,
+                      "declaration": 9799,
                       "isOffset": false,
                       "isSlot": false,
-                      "src": "1352:11:33",
+                      "src": "1309:11:42",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 8339,
+                      "declaration": 9806,
                       "isOffset": false,
                       "isSlot": false,
-                      "src": "1315:11:33",
+                      "src": "1272:11:42",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 8339,
+                      "declaration": 9806,
                       "isOffset": false,
                       "isSlot": false,
-                      "src": "1512:11:33",
+                      "src": "1469:11:42",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 8335,
+                      "declaration": 9802,
                       "isOffset": false,
                       "isSlot": false,
-                      "src": "1345:1:33",
+                      "src": "1302:1:42",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 8335,
+                      "declaration": 9802,
                       "isOffset": false,
                       "isSlot": false,
-                      "src": "1505:1:33",
+                      "src": "1462:1:42",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 8337,
+                      "declaration": 9804,
                       "isOffset": false,
                       "isSlot": false,
-                      "src": "1339:1:33",
+                      "src": "1296:1:42",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 8337,
+                      "declaration": 9804,
                       "isOffset": false,
                       "isSlot": false,
-                      "src": "1365:1:33",
+                      "src": "1322:1:42",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 8337,
+                      "declaration": 9804,
                       "isOffset": false,
                       "isSlot": false,
-                      "src": "1508:1:33",
+                      "src": "1465:1:42",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 8342,
+                      "declaration": 9809,
                       "isOffset": false,
                       "isSlot": false,
-                      "src": "1492:1:33",
+                      "src": "1449:1:42",
                       "valueSize": 1
                     }
                   ],
-                  "id": 8344,
+                  "id": 9811,
                   "nodeType": "InlineAssembly",
-                  "src": "1164:370:33"
+                  "src": "1121:370:42"
                 }
               ]
             },
             "documentation": {
-              "id": 8333,
+              "id": 9800,
               "nodeType": "StructuredDocumentation",
-              "src": "634:345:33",
+              "src": "591:345:42",
               "text": "@dev Credit to Solmate (https://github.com/transmissions11/solmate/blob/main/src/utils/FixedPointMathLib.sol)\n @param x Fixed point number in 1e18 format.\n @param y Fixed point number in 1e18 format.\n @param denominator Fixed point number in 1e18 format.\n @return z The result of x * y / denominator rounded down."
             },
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "mulDivDown",
-            "nameLocation": "993:10:33",
+            "nameLocation": "950:10:42",
             "parameters": {
-              "id": 8340,
+              "id": 9807,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8335,
+                  "id": 9802,
                   "mutability": "mutable",
                   "name": "x",
-                  "nameLocation": "1021:1:33",
+                  "nameLocation": "978:1:42",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8346,
-                  "src": "1013:9:33",
+                  "scope": 9813,
+                  "src": "970:9:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -789,10 +670,10 @@ export const FixedPointMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 8334,
+                    "id": 9801,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1013:7:33",
+                    "src": "970:7:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -802,13 +683,13 @@ export const FixedPointMath =
                 },
                 {
                   "constant": false,
-                  "id": 8337,
+                  "id": 9804,
                   "mutability": "mutable",
                   "name": "y",
-                  "nameLocation": "1040:1:33",
+                  "nameLocation": "997:1:42",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8346,
-                  "src": "1032:9:33",
+                  "scope": 9813,
+                  "src": "989:9:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -816,10 +697,10 @@ export const FixedPointMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 8336,
+                    "id": 9803,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1032:7:33",
+                    "src": "989:7:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -829,13 +710,13 @@ export const FixedPointMath =
                 },
                 {
                   "constant": false,
-                  "id": 8339,
+                  "id": 9806,
                   "mutability": "mutable",
                   "name": "denominator",
-                  "nameLocation": "1059:11:33",
+                  "nameLocation": "1016:11:42",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8346,
-                  "src": "1051:19:33",
+                  "scope": 9813,
+                  "src": "1008:19:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -843,10 +724,10 @@ export const FixedPointMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 8338,
+                    "id": 9805,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1051:7:33",
+                    "src": "1008:7:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -855,21 +736,21 @@ export const FixedPointMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "1003:73:33"
+              "src": "960:73:42"
             },
             "returnParameters": {
-              "id": 8343,
+              "id": 9810,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8342,
+                  "id": 9809,
                   "mutability": "mutable",
                   "name": "z",
-                  "nameLocation": "1108:1:33",
+                  "nameLocation": "1065:1:42",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8346,
-                  "src": "1100:9:33",
+                  "scope": 9813,
+                  "src": "1057:9:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -877,10 +758,10 @@ export const FixedPointMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 8341,
+                    "id": 9808,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1100:7:33",
+                    "src": "1057:7:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -889,22 +770,22 @@ export const FixedPointMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "1099:11:33"
+              "src": "1056:11:42"
             },
-            "scope": 9066,
+            "scope": 10533,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 8364,
+            "id": 9831,
             "nodeType": "FunctionDefinition",
-            "src": "1814:119:33",
+            "src": "1771:119:42",
             "nodes": [],
             "body": {
-              "id": 8363,
+              "id": 9830,
               "nodeType": "Block",
-              "src": "1885:48:33",
+              "src": "1842:48:42",
               "nodes": [],
               "statements": [
                 {
@@ -913,24 +794,24 @@ export const FixedPointMath =
                       {
                         "arguments": [
                           {
-                            "id": 8357,
+                            "id": 9824,
                             "name": "a",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 8349,
-                            "src": "1914:1:33",
+                            "referencedDeclaration": 9816,
+                            "src": "1871:1:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             }
                           },
                           {
-                            "id": 8358,
+                            "id": 9825,
                             "name": "b",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 8351,
-                            "src": "1917:1:33",
+                            "referencedDeclaration": 9818,
+                            "src": "1874:1:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -938,14 +819,14 @@ export const FixedPointMath =
                           },
                           {
                             "hexValue": "31653138",
-                            "id": 8359,
+                            "id": 9826,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "kind": "number",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "1920:4:33",
+                            "src": "1877:4:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_rational_1000000000000000000_by_1",
                               "typeString": "int_const 1000000000000000000"
@@ -968,18 +849,18 @@ export const FixedPointMath =
                               "typeString": "int_const 1000000000000000000"
                             }
                           ],
-                          "id": 8356,
+                          "id": 9823,
                           "name": "mulDivDown",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8346,
-                          "src": "1903:10:33",
+                          "referencedDeclaration": 9813,
+                          "src": "1860:10:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
                             "typeString": "function (uint256,uint256,uint256) pure returns (uint256)"
                           }
                         },
-                        "id": 8360,
+                        "id": 9827,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -988,7 +869,7 @@ export const FixedPointMath =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "1903:22:33",
+                        "src": "1860:22:42",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -996,50 +877,50 @@ export const FixedPointMath =
                         }
                       }
                     ],
-                    "id": 8361,
+                    "id": 9828,
                     "isConstant": false,
                     "isInlineArray": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "TupleExpression",
-                    "src": "1902:24:33",
+                    "src": "1859:24:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 8355,
-                  "id": 8362,
+                  "functionReturnParameters": 9822,
+                  "id": 9829,
                   "nodeType": "Return",
-                  "src": "1895:31:33"
+                  "src": "1852:31:42"
                 }
               ]
             },
             "documentation": {
-              "id": 8347,
+              "id": 9814,
               "nodeType": "StructuredDocumentation",
-              "src": "1546:263:33",
+              "src": "1503:263:42",
               "text": "@dev Credit to Solmate (https://github.com/transmissions11/solmate/blob/main/src/utils/FixedPointMathLib.sol)\n @param a Fixed point number in 1e18 format.\n @param b Fixed point number in 1e18 format.\n @return Result of a * b rounded down."
             },
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "mulDown",
-            "nameLocation": "1823:7:33",
+            "nameLocation": "1780:7:42",
             "parameters": {
-              "id": 8352,
+              "id": 9819,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8349,
+                  "id": 9816,
                   "mutability": "mutable",
                   "name": "a",
-                  "nameLocation": "1839:1:33",
+                  "nameLocation": "1796:1:42",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8364,
-                  "src": "1831:9:33",
+                  "scope": 9831,
+                  "src": "1788:9:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1047,10 +928,10 @@ export const FixedPointMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 8348,
+                    "id": 9815,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1831:7:33",
+                    "src": "1788:7:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1060,13 +941,13 @@ export const FixedPointMath =
                 },
                 {
                   "constant": false,
-                  "id": 8351,
+                  "id": 9818,
                   "mutability": "mutable",
                   "name": "b",
-                  "nameLocation": "1850:1:33",
+                  "nameLocation": "1807:1:42",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8364,
-                  "src": "1842:9:33",
+                  "scope": 9831,
+                  "src": "1799:9:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1074,10 +955,10 @@ export const FixedPointMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 8350,
+                    "id": 9817,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1842:7:33",
+                    "src": "1799:7:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1086,21 +967,21 @@ export const FixedPointMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "1830:22:33"
+              "src": "1787:22:42"
             },
             "returnParameters": {
-              "id": 8355,
+              "id": 9822,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8354,
+                  "id": 9821,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8364,
-                  "src": "1876:7:33",
+                  "scope": 9831,
+                  "src": "1833:7:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1108,10 +989,10 @@ export const FixedPointMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 8353,
+                    "id": 9820,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1876:7:33",
+                    "src": "1833:7:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1120,22 +1001,22 @@ export const FixedPointMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "1875:9:33"
+              "src": "1832:9:42"
             },
-            "scope": 9066,
+            "scope": 10533,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 8382,
+            "id": 9849,
             "nodeType": "FunctionDefinition",
-            "src": "2207:165:33",
+            "src": "2164:165:42",
             "nodes": [],
             "body": {
-              "id": 8381,
+              "id": 9848,
               "nodeType": "Block",
-              "src": "2278:94:33",
+              "src": "2235:94:42",
               "nodes": [],
               "statements": [
                 {
@@ -1144,12 +1025,12 @@ export const FixedPointMath =
                       {
                         "arguments": [
                           {
-                            "id": 8375,
+                            "id": 9842,
                             "name": "a",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 8367,
-                            "src": "2307:1:33",
+                            "referencedDeclaration": 9834,
+                            "src": "2264:1:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -1157,14 +1038,14 @@ export const FixedPointMath =
                           },
                           {
                             "hexValue": "31653138",
-                            "id": 8376,
+                            "id": 9843,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "kind": "number",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "2310:4:33",
+                            "src": "2267:4:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_rational_1000000000000000000_by_1",
                               "typeString": "int_const 1000000000000000000"
@@ -1172,12 +1053,12 @@ export const FixedPointMath =
                             "value": "1e18"
                           },
                           {
-                            "id": 8377,
+                            "id": 9844,
                             "name": "b",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 8369,
-                            "src": "2316:1:33",
+                            "referencedDeclaration": 9836,
+                            "src": "2273:1:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -1199,18 +1080,18 @@ export const FixedPointMath =
                               "typeString": "uint256"
                             }
                           ],
-                          "id": 8374,
+                          "id": 9841,
                           "name": "mulDivDown",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8346,
-                          "src": "2296:10:33",
+                          "referencedDeclaration": 9813,
+                          "src": "2253:10:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
                             "typeString": "function (uint256,uint256,uint256) pure returns (uint256)"
                           }
                         },
-                        "id": 8378,
+                        "id": 9845,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1219,7 +1100,7 @@ export const FixedPointMath =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "2296:22:33",
+                        "src": "2253:22:42",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -1227,50 +1108,50 @@ export const FixedPointMath =
                         }
                       }
                     ],
-                    "id": 8379,
+                    "id": 9846,
                     "isConstant": false,
                     "isInlineArray": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "TupleExpression",
-                    "src": "2295:24:33",
+                    "src": "2252:24:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 8373,
-                  "id": 8380,
+                  "functionReturnParameters": 9840,
+                  "id": 9847,
                   "nodeType": "Return",
-                  "src": "2288:31:33"
+                  "src": "2245:31:42"
                 }
               ]
             },
             "documentation": {
-              "id": 8365,
+              "id": 9832,
               "nodeType": "StructuredDocumentation",
-              "src": "1939:263:33",
+              "src": "1896:263:42",
               "text": "@dev Credit to Solmate (https://github.com/transmissions11/solmate/blob/main/src/utils/FixedPointMathLib.sol)\n @param a Fixed point number in 1e18 format.\n @param b Fixed point number in 1e18 format.\n @return Result of a / b rounded down."
             },
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "divDown",
-            "nameLocation": "2216:7:33",
+            "nameLocation": "2173:7:42",
             "parameters": {
-              "id": 8370,
+              "id": 9837,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8367,
+                  "id": 9834,
                   "mutability": "mutable",
                   "name": "a",
-                  "nameLocation": "2232:1:33",
+                  "nameLocation": "2189:1:42",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8382,
-                  "src": "2224:9:33",
+                  "scope": 9849,
+                  "src": "2181:9:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1278,10 +1159,10 @@ export const FixedPointMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 8366,
+                    "id": 9833,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2224:7:33",
+                    "src": "2181:7:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1291,13 +1172,13 @@ export const FixedPointMath =
                 },
                 {
                   "constant": false,
-                  "id": 8369,
+                  "id": 9836,
                   "mutability": "mutable",
                   "name": "b",
-                  "nameLocation": "2243:1:33",
+                  "nameLocation": "2200:1:42",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8382,
-                  "src": "2235:9:33",
+                  "scope": 9849,
+                  "src": "2192:9:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1305,10 +1186,10 @@ export const FixedPointMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 8368,
+                    "id": 9835,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2235:7:33",
+                    "src": "2192:7:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1317,21 +1198,21 @@ export const FixedPointMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "2223:22:33"
+              "src": "2180:22:42"
             },
             "returnParameters": {
-              "id": 8373,
+              "id": 9840,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8372,
+                  "id": 9839,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8382,
-                  "src": "2269:7:33",
+                  "scope": 9849,
+                  "src": "2226:7:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1339,10 +1220,10 @@ export const FixedPointMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 8371,
+                    "id": 9838,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2269:7:33",
+                    "src": "2226:7:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1351,33 +1232,33 @@ export const FixedPointMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "2268:9:33"
+              "src": "2225:9:42"
             },
-            "scope": 9066,
+            "scope": 10533,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 8396,
+            "id": 9863,
             "nodeType": "FunctionDefinition",
-            "src": "2726:748:33",
+            "src": "2683:748:42",
             "nodes": [],
             "body": {
-              "id": 8395,
+              "id": 9862,
               "nodeType": "Block",
-              "src": "2851:623:33",
+              "src": "2808:623:42",
               "nodes": [],
               "statements": [
                 {
                   "AST": {
                     "nodeType": "YulBlock",
-                    "src": "2913:555:33",
+                    "src": "2870:555:42",
                     "statements": [
                       {
                         "body": {
                           "nodeType": "YulBlock",
-                          "src": "3126:44:33",
+                          "src": "3083:44:42",
                           "statements": [
                             {
                               "expression": {
@@ -1385,14 +1266,14 @@ export const FixedPointMath =
                                   {
                                     "kind": "number",
                                     "nodeType": "YulLiteral",
-                                    "src": "3151:1:33",
+                                    "src": "3108:1:42",
                                     "type": "",
                                     "value": "0"
                                   },
                                   {
                                     "kind": "number",
                                     "nodeType": "YulLiteral",
-                                    "src": "3154:1:33",
+                                    "src": "3111:1:42",
                                     "type": "",
                                     "value": "0"
                                   }
@@ -1400,13 +1281,13 @@ export const FixedPointMath =
                                 "functionName": {
                                   "name": "revert",
                                   "nodeType": "YulIdentifier",
-                                  "src": "3144:6:33"
+                                  "src": "3101:6:42"
                                 },
                                 "nodeType": "YulFunctionCall",
-                                "src": "3144:12:33"
+                                "src": "3101:12:42"
                               },
                               "nodeType": "YulExpressionStatement",
-                              "src": "3144:12:33"
+                              "src": "3101:12:42"
                             }
                           ]
                         },
@@ -1417,7 +1298,7 @@ export const FixedPointMath =
                                 {
                                   "name": "denominator",
                                   "nodeType": "YulIdentifier",
-                                  "src": "3055:11:33"
+                                  "src": "3012:11:42"
                                 },
                                 {
                                   "arguments": [
@@ -1426,87 +1307,87 @@ export const FixedPointMath =
                                         {
                                           "name": "y",
                                           "nodeType": "YulIdentifier",
-                                          "src": "3079:1:33"
+                                          "src": "3036:1:42"
                                         },
                                         {
                                           "arguments": [
                                             {
                                               "name": "x",
                                               "nodeType": "YulIdentifier",
-                                              "src": "3085:1:33"
+                                              "src": "3042:1:42"
                                             },
                                             {
                                               "arguments": [
                                                 {
                                                   "name": "MAX_UINT256",
                                                   "nodeType": "YulIdentifier",
-                                                  "src": "3092:11:33"
+                                                  "src": "3049:11:42"
                                                 },
                                                 {
                                                   "name": "y",
                                                   "nodeType": "YulIdentifier",
-                                                  "src": "3105:1:33"
+                                                  "src": "3062:1:42"
                                                 }
                                               ],
                                               "functionName": {
                                                 "name": "div",
                                                 "nodeType": "YulIdentifier",
-                                                "src": "3088:3:33"
+                                                "src": "3045:3:42"
                                               },
                                               "nodeType": "YulFunctionCall",
-                                              "src": "3088:19:33"
+                                              "src": "3045:19:42"
                                             }
                                           ],
                                           "functionName": {
                                             "name": "gt",
                                             "nodeType": "YulIdentifier",
-                                            "src": "3082:2:33"
+                                            "src": "3039:2:42"
                                           },
                                           "nodeType": "YulFunctionCall",
-                                          "src": "3082:26:33"
+                                          "src": "3039:26:42"
                                         }
                                       ],
                                       "functionName": {
                                         "name": "mul",
                                         "nodeType": "YulIdentifier",
-                                        "src": "3075:3:33"
+                                        "src": "3032:3:42"
                                       },
                                       "nodeType": "YulFunctionCall",
-                                      "src": "3075:34:33"
+                                      "src": "3032:34:42"
                                     }
                                   ],
                                   "functionName": {
                                     "name": "iszero",
                                     "nodeType": "YulIdentifier",
-                                    "src": "3068:6:33"
+                                    "src": "3025:6:42"
                                   },
                                   "nodeType": "YulFunctionCall",
-                                  "src": "3068:42:33"
+                                  "src": "3025:42:42"
                                 }
                               ],
                               "functionName": {
                                 "name": "mul",
                                 "nodeType": "YulIdentifier",
-                                "src": "3051:3:33"
+                                "src": "3008:3:42"
                               },
                               "nodeType": "YulFunctionCall",
-                              "src": "3051:60:33"
+                              "src": "3008:60:42"
                             }
                           ],
                           "functionName": {
                             "name": "iszero",
                             "nodeType": "YulIdentifier",
-                            "src": "3027:6:33"
+                            "src": "2984:6:42"
                           },
                           "nodeType": "YulFunctionCall",
-                          "src": "3027:98:33"
+                          "src": "2984:98:42"
                         },
                         "nodeType": "YulIf",
-                        "src": "3024:146:33"
+                        "src": "2981:146:42"
                       },
                       {
                         "nodeType": "YulAssignment",
-                        "src": "3339:119:33",
+                        "src": "3296:119:42",
                         "value": {
                           "arguments": [
                             {
@@ -1518,40 +1399,40 @@ export const FixedPointMath =
                                         {
                                           "name": "x",
                                           "nodeType": "YulIdentifier",
-                                          "src": "3376:1:33"
+                                          "src": "3333:1:42"
                                         },
                                         {
                                           "name": "y",
                                           "nodeType": "YulIdentifier",
-                                          "src": "3379:1:33"
+                                          "src": "3336:1:42"
                                         }
                                       ],
                                       "functionName": {
                                         "name": "mul",
                                         "nodeType": "YulIdentifier",
-                                        "src": "3372:3:33"
+                                        "src": "3329:3:42"
                                       },
                                       "nodeType": "YulFunctionCall",
-                                      "src": "3372:9:33"
+                                      "src": "3329:9:42"
                                     },
                                     {
                                       "name": "denominator",
                                       "nodeType": "YulIdentifier",
-                                      "src": "3383:11:33"
+                                      "src": "3340:11:42"
                                     }
                                   ],
                                   "functionName": {
                                     "name": "mod",
                                     "nodeType": "YulIdentifier",
-                                    "src": "3368:3:33"
+                                    "src": "3325:3:42"
                                   },
                                   "nodeType": "YulFunctionCall",
-                                  "src": "3368:27:33"
+                                  "src": "3325:27:42"
                                 },
                                 {
                                   "kind": "number",
                                   "nodeType": "YulLiteral",
-                                  "src": "3397:1:33",
+                                  "src": "3354:1:42",
                                   "type": "",
                                   "value": "0"
                                 }
@@ -1559,10 +1440,10 @@ export const FixedPointMath =
                               "functionName": {
                                 "name": "gt",
                                 "nodeType": "YulIdentifier",
-                                "src": "3365:2:33"
+                                "src": "3322:2:42"
                               },
                               "nodeType": "YulFunctionCall",
-                              "src": "3365:34:33"
+                              "src": "3322:34:42"
                             },
                             {
                               "arguments": [
@@ -1571,50 +1452,50 @@ export const FixedPointMath =
                                     {
                                       "name": "x",
                                       "nodeType": "YulIdentifier",
-                                      "src": "3425:1:33"
+                                      "src": "3382:1:42"
                                     },
                                     {
                                       "name": "y",
                                       "nodeType": "YulIdentifier",
-                                      "src": "3428:1:33"
+                                      "src": "3385:1:42"
                                     }
                                   ],
                                   "functionName": {
                                     "name": "mul",
                                     "nodeType": "YulIdentifier",
-                                    "src": "3421:3:33"
+                                    "src": "3378:3:42"
                                   },
                                   "nodeType": "YulFunctionCall",
-                                  "src": "3421:9:33"
+                                  "src": "3378:9:42"
                                 },
                                 {
                                   "name": "denominator",
                                   "nodeType": "YulIdentifier",
-                                  "src": "3432:11:33"
+                                  "src": "3389:11:42"
                                 }
                               ],
                               "functionName": {
                                 "name": "div",
                                 "nodeType": "YulIdentifier",
-                                "src": "3417:3:33"
+                                "src": "3374:3:42"
                               },
                               "nodeType": "YulFunctionCall",
-                              "src": "3417:27:33"
+                              "src": "3374:27:42"
                             }
                           ],
                           "functionName": {
                             "name": "add",
                             "nodeType": "YulIdentifier",
-                            "src": "3344:3:33"
+                            "src": "3301:3:42"
                           },
                           "nodeType": "YulFunctionCall",
-                          "src": "3344:114:33"
+                          "src": "3301:114:42"
                         },
                         "variableNames": [
                           {
                             "name": "z",
                             "nodeType": "YulIdentifier",
-                            "src": "3339:1:33"
+                            "src": "3296:1:42"
                           }
                         ]
                       }
@@ -1624,120 +1505,120 @@ export const FixedPointMath =
                   "evmVersion": "paris",
                   "externalReferences": [
                     {
-                      "declaration": 8332,
+                      "declaration": 9799,
                       "isOffset": false,
                       "isSlot": false,
-                      "src": "3092:11:33",
+                      "src": "3049:11:42",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 8389,
+                      "declaration": 9856,
                       "isOffset": false,
                       "isSlot": false,
-                      "src": "3055:11:33",
+                      "src": "3012:11:42",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 8389,
+                      "declaration": 9856,
                       "isOffset": false,
                       "isSlot": false,
-                      "src": "3383:11:33",
+                      "src": "3340:11:42",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 8389,
+                      "declaration": 9856,
                       "isOffset": false,
                       "isSlot": false,
-                      "src": "3432:11:33",
+                      "src": "3389:11:42",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 8385,
+                      "declaration": 9852,
                       "isOffset": false,
                       "isSlot": false,
-                      "src": "3085:1:33",
+                      "src": "3042:1:42",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 8385,
+                      "declaration": 9852,
                       "isOffset": false,
                       "isSlot": false,
-                      "src": "3376:1:33",
+                      "src": "3333:1:42",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 8385,
+                      "declaration": 9852,
                       "isOffset": false,
                       "isSlot": false,
-                      "src": "3425:1:33",
+                      "src": "3382:1:42",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 8387,
+                      "declaration": 9854,
                       "isOffset": false,
                       "isSlot": false,
-                      "src": "3079:1:33",
+                      "src": "3036:1:42",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 8387,
+                      "declaration": 9854,
                       "isOffset": false,
                       "isSlot": false,
-                      "src": "3105:1:33",
+                      "src": "3062:1:42",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 8387,
+                      "declaration": 9854,
                       "isOffset": false,
                       "isSlot": false,
-                      "src": "3379:1:33",
+                      "src": "3336:1:42",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 8387,
+                      "declaration": 9854,
                       "isOffset": false,
                       "isSlot": false,
-                      "src": "3428:1:33",
+                      "src": "3385:1:42",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 8392,
+                      "declaration": 9859,
                       "isOffset": false,
                       "isSlot": false,
-                      "src": "3339:1:33",
+                      "src": "3296:1:42",
                       "valueSize": 1
                     }
                   ],
-                  "id": 8394,
+                  "id": 9861,
                   "nodeType": "InlineAssembly",
-                  "src": "2904:564:33"
+                  "src": "2861:564:42"
                 }
               ]
             },
             "documentation": {
-              "id": 8383,
+              "id": 9850,
               "nodeType": "StructuredDocumentation",
-              "src": "2378:343:33",
+              "src": "2335:343:42",
               "text": "@dev Credit to Solmate (https://github.com/transmissions11/solmate/blob/main/src/utils/FixedPointMathLib.sol)\n @param x Fixed point number in 1e18 format.\n @param y Fixed point number in 1e18 format.\n @param denominator Fixed point number in 1e18 format.\n @return z The result of x * y / denominator rounded up."
             },
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "mulDivUp",
-            "nameLocation": "2735:8:33",
+            "nameLocation": "2692:8:42",
             "parameters": {
-              "id": 8390,
+              "id": 9857,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8385,
+                  "id": 9852,
                   "mutability": "mutable",
                   "name": "x",
-                  "nameLocation": "2761:1:33",
+                  "nameLocation": "2718:1:42",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8396,
-                  "src": "2753:9:33",
+                  "scope": 9863,
+                  "src": "2710:9:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1745,10 +1626,10 @@ export const FixedPointMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 8384,
+                    "id": 9851,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2753:7:33",
+                    "src": "2710:7:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1758,13 +1639,13 @@ export const FixedPointMath =
                 },
                 {
                   "constant": false,
-                  "id": 8387,
+                  "id": 9854,
                   "mutability": "mutable",
                   "name": "y",
-                  "nameLocation": "2780:1:33",
+                  "nameLocation": "2737:1:42",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8396,
-                  "src": "2772:9:33",
+                  "scope": 9863,
+                  "src": "2729:9:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1772,10 +1653,10 @@ export const FixedPointMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 8386,
+                    "id": 9853,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2772:7:33",
+                    "src": "2729:7:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1785,13 +1666,13 @@ export const FixedPointMath =
                 },
                 {
                   "constant": false,
-                  "id": 8389,
+                  "id": 9856,
                   "mutability": "mutable",
                   "name": "denominator",
-                  "nameLocation": "2799:11:33",
+                  "nameLocation": "2756:11:42",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8396,
-                  "src": "2791:19:33",
+                  "scope": 9863,
+                  "src": "2748:19:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1799,10 +1680,10 @@ export const FixedPointMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 8388,
+                    "id": 9855,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2791:7:33",
+                    "src": "2748:7:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1811,21 +1692,21 @@ export const FixedPointMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "2743:73:33"
+              "src": "2700:73:42"
             },
             "returnParameters": {
-              "id": 8393,
+              "id": 9860,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8392,
+                  "id": 9859,
                   "mutability": "mutable",
                   "name": "z",
-                  "nameLocation": "2848:1:33",
+                  "nameLocation": "2805:1:42",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8396,
-                  "src": "2840:9:33",
+                  "scope": 9863,
+                  "src": "2797:9:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1833,10 +1714,10 @@ export const FixedPointMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 8391,
+                    "id": 9858,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2840:7:33",
+                    "src": "2797:7:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1845,22 +1726,22 @@ export const FixedPointMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "2839:11:33"
+              "src": "2796:11:42"
             },
-            "scope": 9066,
+            "scope": 10533,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 8414,
+            "id": 9881,
             "nodeType": "FunctionDefinition",
-            "src": "3750:115:33",
+            "src": "3707:115:42",
             "nodes": [],
             "body": {
-              "id": 8413,
+              "id": 9880,
               "nodeType": "Block",
-              "src": "3819:46:33",
+              "src": "3776:46:42",
               "nodes": [],
               "statements": [
                 {
@@ -1869,24 +1750,24 @@ export const FixedPointMath =
                       {
                         "arguments": [
                           {
-                            "id": 8407,
+                            "id": 9874,
                             "name": "a",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 8399,
-                            "src": "3846:1:33",
+                            "referencedDeclaration": 9866,
+                            "src": "3803:1:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             }
                           },
                           {
-                            "id": 8408,
+                            "id": 9875,
                             "name": "b",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 8401,
-                            "src": "3849:1:33",
+                            "referencedDeclaration": 9868,
+                            "src": "3806:1:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -1894,14 +1775,14 @@ export const FixedPointMath =
                           },
                           {
                             "hexValue": "31653138",
-                            "id": 8409,
+                            "id": 9876,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "kind": "number",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "3852:4:33",
+                            "src": "3809:4:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_rational_1000000000000000000_by_1",
                               "typeString": "int_const 1000000000000000000"
@@ -1924,18 +1805,18 @@ export const FixedPointMath =
                               "typeString": "int_const 1000000000000000000"
                             }
                           ],
-                          "id": 8406,
+                          "id": 9873,
                           "name": "mulDivUp",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8396,
-                          "src": "3837:8:33",
+                          "referencedDeclaration": 9863,
+                          "src": "3794:8:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
                             "typeString": "function (uint256,uint256,uint256) pure returns (uint256)"
                           }
                         },
-                        "id": 8410,
+                        "id": 9877,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1944,7 +1825,7 @@ export const FixedPointMath =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "3837:20:33",
+                        "src": "3794:20:42",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -1952,50 +1833,50 @@ export const FixedPointMath =
                         }
                       }
                     ],
-                    "id": 8411,
+                    "id": 9878,
                     "isConstant": false,
                     "isInlineArray": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "TupleExpression",
-                    "src": "3836:22:33",
+                    "src": "3793:22:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 8405,
-                  "id": 8412,
+                  "functionReturnParameters": 9872,
+                  "id": 9879,
                   "nodeType": "Return",
-                  "src": "3829:29:33"
+                  "src": "3786:29:42"
                 }
               ]
             },
             "documentation": {
-              "id": 8397,
+              "id": 9864,
               "nodeType": "StructuredDocumentation",
-              "src": "3480:265:33",
+              "src": "3437:265:42",
               "text": "@dev Credit to Solmate (https://github.com/transmissions11/solmate/blob/main/src/utils/FixedPointMathLib.sol)\n @param a Fixed point number in 1e18 format.\n @param b Fixed point number in 1e18 format.\n @return The result of a * b rounded up."
             },
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "mulUp",
-            "nameLocation": "3759:5:33",
+            "nameLocation": "3716:5:42",
             "parameters": {
-              "id": 8402,
+              "id": 9869,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8399,
+                  "id": 9866,
                   "mutability": "mutable",
                   "name": "a",
-                  "nameLocation": "3773:1:33",
+                  "nameLocation": "3730:1:42",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8414,
-                  "src": "3765:9:33",
+                  "scope": 9881,
+                  "src": "3722:9:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2003,10 +1884,10 @@ export const FixedPointMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 8398,
+                    "id": 9865,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3765:7:33",
+                    "src": "3722:7:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2016,13 +1897,13 @@ export const FixedPointMath =
                 },
                 {
                   "constant": false,
-                  "id": 8401,
+                  "id": 9868,
                   "mutability": "mutable",
                   "name": "b",
-                  "nameLocation": "3784:1:33",
+                  "nameLocation": "3741:1:42",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8414,
-                  "src": "3776:9:33",
+                  "scope": 9881,
+                  "src": "3733:9:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2030,10 +1911,10 @@ export const FixedPointMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 8400,
+                    "id": 9867,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3776:7:33",
+                    "src": "3733:7:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2042,21 +1923,21 @@ export const FixedPointMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "3764:22:33"
+              "src": "3721:22:42"
             },
             "returnParameters": {
-              "id": 8405,
+              "id": 9872,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8404,
+                  "id": 9871,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8414,
-                  "src": "3810:7:33",
+                  "scope": 9881,
+                  "src": "3767:7:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2064,10 +1945,10 @@ export const FixedPointMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 8403,
+                    "id": 9870,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3810:7:33",
+                    "src": "3767:7:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2076,22 +1957,22 @@ export const FixedPointMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "3809:9:33"
+              "src": "3766:9:42"
             },
-            "scope": 9066,
+            "scope": 10533,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 8432,
+            "id": 9899,
             "nodeType": "FunctionDefinition",
-            "src": "4141:115:33",
+            "src": "4098:115:42",
             "nodes": [],
             "body": {
-              "id": 8431,
+              "id": 9898,
               "nodeType": "Block",
-              "src": "4210:46:33",
+              "src": "4167:46:42",
               "nodes": [],
               "statements": [
                 {
@@ -2100,12 +1981,12 @@ export const FixedPointMath =
                       {
                         "arguments": [
                           {
-                            "id": 8425,
+                            "id": 9892,
                             "name": "a",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 8417,
-                            "src": "4237:1:33",
+                            "referencedDeclaration": 9884,
+                            "src": "4194:1:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -2113,14 +1994,14 @@ export const FixedPointMath =
                           },
                           {
                             "hexValue": "31653138",
-                            "id": 8426,
+                            "id": 9893,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "kind": "number",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "4240:4:33",
+                            "src": "4197:4:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_rational_1000000000000000000_by_1",
                               "typeString": "int_const 1000000000000000000"
@@ -2128,12 +2009,12 @@ export const FixedPointMath =
                             "value": "1e18"
                           },
                           {
-                            "id": 8427,
+                            "id": 9894,
                             "name": "b",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 8419,
-                            "src": "4246:1:33",
+                            "referencedDeclaration": 9886,
+                            "src": "4203:1:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -2155,18 +2036,18 @@ export const FixedPointMath =
                               "typeString": "uint256"
                             }
                           ],
-                          "id": 8424,
+                          "id": 9891,
                           "name": "mulDivUp",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8396,
-                          "src": "4228:8:33",
+                          "referencedDeclaration": 9863,
+                          "src": "4185:8:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
                             "typeString": "function (uint256,uint256,uint256) pure returns (uint256)"
                           }
                         },
-                        "id": 8428,
+                        "id": 9895,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -2175,7 +2056,7 @@ export const FixedPointMath =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "4228:20:33",
+                        "src": "4185:20:42",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -2183,50 +2064,50 @@ export const FixedPointMath =
                         }
                       }
                     ],
-                    "id": 8429,
+                    "id": 9896,
                     "isConstant": false,
                     "isInlineArray": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "TupleExpression",
-                    "src": "4227:22:33",
+                    "src": "4184:22:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 8423,
-                  "id": 8430,
+                  "functionReturnParameters": 9890,
+                  "id": 9897,
                   "nodeType": "Return",
-                  "src": "4220:29:33"
+                  "src": "4177:29:42"
                 }
               ]
             },
             "documentation": {
-              "id": 8415,
+              "id": 9882,
               "nodeType": "StructuredDocumentation",
-              "src": "3871:265:33",
+              "src": "3828:265:42",
               "text": "@dev Credit to Solmate (https://github.com/transmissions11/solmate/blob/main/src/utils/FixedPointMathLib.sol)\n @param a Fixed point number in 1e18 format.\n @param b Fixed point number in 1e18 format.\n @return The result of a / b rounded up."
             },
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "divUp",
-            "nameLocation": "4150:5:33",
+            "nameLocation": "4107:5:42",
             "parameters": {
-              "id": 8420,
+              "id": 9887,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8417,
+                  "id": 9884,
                   "mutability": "mutable",
                   "name": "a",
-                  "nameLocation": "4164:1:33",
+                  "nameLocation": "4121:1:42",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8432,
-                  "src": "4156:9:33",
+                  "scope": 9899,
+                  "src": "4113:9:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2234,10 +2115,10 @@ export const FixedPointMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 8416,
+                    "id": 9883,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4156:7:33",
+                    "src": "4113:7:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2247,13 +2128,13 @@ export const FixedPointMath =
                 },
                 {
                   "constant": false,
-                  "id": 8419,
+                  "id": 9886,
                   "mutability": "mutable",
                   "name": "b",
-                  "nameLocation": "4175:1:33",
+                  "nameLocation": "4132:1:42",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8432,
-                  "src": "4167:9:33",
+                  "scope": 9899,
+                  "src": "4124:9:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2261,10 +2142,10 @@ export const FixedPointMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 8418,
+                    "id": 9885,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4167:7:33",
+                    "src": "4124:7:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2273,21 +2154,21 @@ export const FixedPointMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "4155:22:33"
+              "src": "4112:22:42"
             },
             "returnParameters": {
-              "id": 8423,
+              "id": 9890,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8422,
+                  "id": 9889,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8432,
-                  "src": "4201:7:33",
+                  "scope": 9899,
+                  "src": "4158:7:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2295,10 +2176,10 @@ export const FixedPointMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 8421,
+                    "id": 9888,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4201:7:33",
+                    "src": "4158:7:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2307,22 +2188,22 @@ export const FixedPointMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "4200:9:33"
+              "src": "4157:9:42"
             },
-            "scope": 9066,
+            "scope": 10533,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 8491,
+            "id": 9958,
             "nodeType": "FunctionDefinition",
-            "src": "4671:846:33",
+            "src": "4628:840:42",
             "nodes": [],
             "body": {
-              "id": 8490,
+              "id": 9957,
               "nodeType": "Block",
-              "src": "4738:779:33",
+              "src": "4695:773:42",
               "nodes": [],
               "statements": [
                 {
@@ -2331,18 +2212,18 @@ export const FixedPointMath =
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 8444,
+                    "id": 9911,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 8442,
+                      "id": 9909,
                       "name": "y",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 8437,
-                      "src": "4795:1:33",
+                      "referencedDeclaration": 9904,
+                      "src": "4752:1:42",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -2352,51 +2233,51 @@ export const FixedPointMath =
                     "operator": "==",
                     "rightExpression": {
                       "hexValue": "30",
-                      "id": 8443,
+                      "id": 9910,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "4800:1:33",
+                      "src": "4757:1:42",
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_0_by_1",
                         "typeString": "int_const 0"
                       },
                       "value": "0"
                     },
-                    "src": "4795:6:33",
+                    "src": "4752:6:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 8448,
+                  "id": 9915,
                   "nodeType": "IfStatement",
-                  "src": "4791:50:33",
+                  "src": "4748:47:42",
                   "trueBody": {
-                    "id": 8447,
+                    "id": 9914,
                     "nodeType": "Block",
-                    "src": "4803:38:33",
+                    "src": "4760:35:42",
                     "statements": [
                       {
                         "expression": {
-                          "id": 8445,
-                          "name": "ONE_18",
+                          "id": 9912,
+                          "name": "ONE",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8325,
-                          "src": "4824:6:33",
+                          "referencedDeclaration": 9788,
+                          "src": "4781:3:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "functionReturnParameters": 8441,
-                        "id": 8446,
+                        "functionReturnParameters": 9908,
+                        "id": 9913,
                         "nodeType": "Return",
-                        "src": "4817:13:33"
+                        "src": "4774:10:42"
                       }
                     ]
                   }
@@ -2407,18 +2288,18 @@ export const FixedPointMath =
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 8451,
+                    "id": 9918,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 8449,
+                      "id": 9916,
                       "name": "x",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 8435,
-                      "src": "4894:1:33",
+                      "referencedDeclaration": 9902,
+                      "src": "4848:1:42",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -2428,73 +2309,73 @@ export const FixedPointMath =
                     "operator": "==",
                     "rightExpression": {
                       "hexValue": "30",
-                      "id": 8450,
+                      "id": 9917,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "4899:1:33",
+                      "src": "4853:1:42",
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_0_by_1",
                         "typeString": "int_const 0"
                       },
                       "value": "0"
                     },
-                    "src": "4894:6:33",
+                    "src": "4848:6:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 8455,
+                  "id": 9922,
                   "nodeType": "IfStatement",
-                  "src": "4890:45:33",
+                  "src": "4844:45:42",
                   "trueBody": {
-                    "id": 8454,
+                    "id": 9921,
                     "nodeType": "Block",
-                    "src": "4902:33:33",
+                    "src": "4856:33:42",
                     "statements": [
                       {
                         "expression": {
                           "hexValue": "30",
-                          "id": 8452,
+                          "id": 9919,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "4923:1:33",
+                          "src": "4877:1:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_0_by_1",
                             "typeString": "int_const 0"
                           },
                           "value": "0"
                         },
-                        "functionReturnParameters": 8441,
-                        "id": 8453,
+                        "functionReturnParameters": 9908,
+                        "id": 9920,
                         "nodeType": "Return",
-                        "src": "4916:8:33"
+                        "src": "4870:8:42"
                       }
                     ]
                   }
                 },
                 {
                   "assignments": [
-                    8457
+                    9924
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 8457,
+                      "id": 9924,
                       "mutability": "mutable",
                       "name": "y_int256",
-                      "nameLocation": "5080:8:33",
+                      "nameLocation": "5034:8:42",
                       "nodeType": "VariableDeclaration",
-                      "scope": 8490,
-                      "src": "5073:15:33",
+                      "scope": 9957,
+                      "src": "5027:15:42",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -2502,10 +2383,10 @@ export const FixedPointMath =
                         "typeString": "int256"
                       },
                       "typeName": {
-                        "id": 8456,
+                        "id": 9923,
                         "name": "int256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "5073:6:33",
+                        "src": "5027:6:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -2514,16 +2395,16 @@ export const FixedPointMath =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 8462,
+                  "id": 9929,
                   "initialValue": {
                     "arguments": [
                       {
-                        "id": 8460,
+                        "id": 9927,
                         "name": "y",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 8437,
-                        "src": "5098:1:33",
+                        "referencedDeclaration": 9904,
+                        "src": "5052:1:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -2537,26 +2418,26 @@ export const FixedPointMath =
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 8459,
+                      "id": 9926,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "lValueRequested": false,
                       "nodeType": "ElementaryTypeNameExpression",
-                      "src": "5091:6:33",
+                      "src": "5045:6:42",
                       "typeDescriptions": {
                         "typeIdentifier": "t_type$_t_int256_$",
                         "typeString": "type(int256)"
                       },
                       "typeName": {
-                        "id": 8458,
+                        "id": 9925,
                         "name": "int256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "5091:6:33",
+                        "src": "5045:6:42",
                         "typeDescriptions": {}
                       }
                     },
-                    "id": 8461,
+                    "id": 9928,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2565,7 +2446,7 @@ export const FixedPointMath =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "5091:9:33",
+                    "src": "5045:9:42",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
@@ -2573,22 +2454,22 @@ export const FixedPointMath =
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "5073:27:33"
+                  "src": "5027:27:42"
                 },
                 {
                   "assignments": [
-                    8464
+                    9931
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 8464,
+                      "id": 9931,
                       "mutability": "mutable",
                       "name": "lnx",
-                      "nameLocation": "5270:3:33",
+                      "nameLocation": "5224:3:42",
                       "nodeType": "VariableDeclaration",
-                      "scope": 8490,
-                      "src": "5263:10:33",
+                      "scope": 9957,
+                      "src": "5217:10:42",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -2596,10 +2477,10 @@ export const FixedPointMath =
                         "typeString": "int256"
                       },
                       "typeName": {
-                        "id": 8463,
+                        "id": 9930,
                         "name": "int256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "5263:6:33",
+                        "src": "5217:6:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -2608,18 +2489,18 @@ export const FixedPointMath =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 8471,
+                  "id": 9938,
                   "initialValue": {
                     "arguments": [
                       {
                         "arguments": [
                           {
-                            "id": 8468,
+                            "id": 9935,
                             "name": "x",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 8435,
-                            "src": "5287:1:33",
+                            "referencedDeclaration": 9902,
+                            "src": "5241:1:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -2633,26 +2514,26 @@ export const FixedPointMath =
                               "typeString": "uint256"
                             }
                           ],
-                          "id": 8467,
+                          "id": 9934,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "lValueRequested": false,
                           "nodeType": "ElementaryTypeNameExpression",
-                          "src": "5280:6:33",
+                          "src": "5234:6:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_type$_t_int256_$",
                             "typeString": "type(int256)"
                           },
                           "typeName": {
-                            "id": 8466,
+                            "id": 9933,
                             "name": "int256",
                             "nodeType": "ElementaryTypeName",
-                            "src": "5280:6:33",
+                            "src": "5234:6:42",
                             "typeDescriptions": {}
                           }
                         },
-                        "id": 8469,
+                        "id": 9936,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -2661,7 +2542,7 @@ export const FixedPointMath =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "5280:9:33",
+                        "src": "5234:9:42",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
@@ -2676,18 +2557,18 @@ export const FixedPointMath =
                           "typeString": "int256"
                         }
                       ],
-                      "id": 8465,
+                      "id": 9932,
                       "name": "_ln",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 8930,
-                      "src": "5276:3:33",
+                      "referencedDeclaration": 10397,
+                      "src": "5230:3:42",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_int256_$returns$_t_int256_$",
                         "typeString": "function (int256) pure returns (int256)"
                       }
                     },
-                    "id": 8470,
+                    "id": 9937,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2696,7 +2577,7 @@ export const FixedPointMath =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "5276:14:33",
+                    "src": "5230:14:42",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
@@ -2704,22 +2585,22 @@ export const FixedPointMath =
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "5263:27:33"
+                  "src": "5217:27:42"
                 },
                 {
                   "assignments": [
-                    8473
+                    9940
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 8473,
+                      "id": 9940,
                       "mutability": "mutable",
                       "name": "ylnx",
-                      "nameLocation": "5307:4:33",
+                      "nameLocation": "5261:4:42",
                       "nodeType": "VariableDeclaration",
-                      "scope": 8490,
-                      "src": "5300:11:33",
+                      "scope": 9957,
+                      "src": "5254:11:42",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -2727,10 +2608,10 @@ export const FixedPointMath =
                         "typeString": "int256"
                       },
                       "typeName": {
-                        "id": 8472,
+                        "id": 9939,
                         "name": "int256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "5300:6:33",
+                        "src": "5254:6:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -2739,44 +2620,44 @@ export const FixedPointMath =
                       "visibility": "internal"
                     }
                   ],
-                  "id": 8474,
+                  "id": 9941,
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "5300:11:33"
+                  "src": "5254:11:42"
                 },
                 {
                   "AST": {
                     "nodeType": "YulBlock",
-                    "src": "5346:50:33",
+                    "src": "5300:50:42",
                     "statements": [
                       {
                         "nodeType": "YulAssignment",
-                        "src": "5360:26:33",
+                        "src": "5314:26:42",
                         "value": {
                           "arguments": [
                             {
                               "name": "y_int256",
                               "nodeType": "YulIdentifier",
-                              "src": "5372:8:33"
+                              "src": "5326:8:42"
                             },
                             {
                               "name": "lnx",
                               "nodeType": "YulIdentifier",
-                              "src": "5382:3:33"
+                              "src": "5336:3:42"
                             }
                           ],
                           "functionName": {
                             "name": "mul",
                             "nodeType": "YulIdentifier",
-                            "src": "5368:3:33"
+                            "src": "5322:3:42"
                           },
                           "nodeType": "YulFunctionCall",
-                          "src": "5368:18:33"
+                          "src": "5322:18:42"
                         },
                         "variableNames": [
                           {
                             "name": "ylnx",
                             "nodeType": "YulIdentifier",
-                            "src": "5360:4:33"
+                            "src": "5314:4:42"
                           }
                         ]
                       }
@@ -2785,48 +2666,48 @@ export const FixedPointMath =
                   "evmVersion": "paris",
                   "externalReferences": [
                     {
-                      "declaration": 8464,
+                      "declaration": 9931,
                       "isOffset": false,
                       "isSlot": false,
-                      "src": "5382:3:33",
+                      "src": "5336:3:42",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 8457,
+                      "declaration": 9924,
                       "isOffset": false,
                       "isSlot": false,
-                      "src": "5372:8:33",
+                      "src": "5326:8:42",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 8473,
+                      "declaration": 9940,
                       "isOffset": false,
                       "isSlot": false,
-                      "src": "5360:4:33",
+                      "src": "5314:4:42",
                       "valueSize": 1
                     }
                   ],
                   "flags": [
                     "memory-safe"
                   ],
-                  "id": 8475,
+                  "id": 9942,
                   "nodeType": "InlineAssembly",
-                  "src": "5321:75:33"
+                  "src": "5275:75:42"
                 },
                 {
                   "expression": {
-                    "id": 8481,
+                    "id": 9948,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 8476,
+                      "id": 9943,
                       "name": "ylnx",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 8473,
-                      "src": "5405:4:33",
+                      "referencedDeclaration": 9940,
+                      "src": "5359:4:42",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -2837,12 +2718,12 @@ export const FixedPointMath =
                     "rightHandSide": {
                       "arguments": [
                         {
-                          "id": 8479,
-                          "name": "ONE_18",
+                          "id": 9946,
+                          "name": "ONE",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8325,
-                          "src": "5420:6:33",
+                          "referencedDeclaration": 9788,
+                          "src": "5374:3:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -2856,26 +2737,26 @@ export const FixedPointMath =
                             "typeString": "uint256"
                           }
                         ],
-                        "id": 8478,
+                        "id": 9945,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "lValueRequested": false,
                         "nodeType": "ElementaryTypeNameExpression",
-                        "src": "5413:6:33",
+                        "src": "5367:6:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_type$_t_int256_$",
                           "typeString": "type(int256)"
                         },
                         "typeName": {
-                          "id": 8477,
+                          "id": 9944,
                           "name": "int256",
                           "nodeType": "ElementaryTypeName",
-                          "src": "5413:6:33",
+                          "src": "5367:6:42",
                           "typeDescriptions": {}
                         }
                       },
-                      "id": 8480,
+                      "id": 9947,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -2884,22 +2765,22 @@ export const FixedPointMath =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "5413:14:33",
+                      "src": "5367:11:42",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "5405:22:33",
+                    "src": "5359:19:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 8482,
+                  "id": 9949,
                   "nodeType": "ExpressionStatement",
-                  "src": "5405:22:33"
+                  "src": "5359:19:42"
                 },
                 {
                   "expression": {
@@ -2907,12 +2788,12 @@ export const FixedPointMath =
                       {
                         "arguments": [
                           {
-                            "id": 8486,
+                            "id": 9953,
                             "name": "ylnx",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 8473,
-                            "src": "5504:4:33",
+                            "referencedDeclaration": 9940,
+                            "src": "5455:4:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -2926,18 +2807,18 @@ export const FixedPointMath =
                               "typeString": "int256"
                             }
                           ],
-                          "id": 8485,
+                          "id": 9952,
                           "name": "exp",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8688,
-                          "src": "5500:3:33",
+                          "referencedDeclaration": 10155,
+                          "src": "5451:3:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_pure$_t_int256_$returns$_t_int256_$",
                             "typeString": "function (int256) pure returns (int256)"
                           }
                         },
-                        "id": 8487,
+                        "id": 9954,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -2946,7 +2827,7 @@ export const FixedPointMath =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "5500:9:33",
+                        "src": "5451:9:42",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
@@ -2961,26 +2842,26 @@ export const FixedPointMath =
                           "typeString": "int256"
                         }
                       ],
-                      "id": 8484,
+                      "id": 9951,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "lValueRequested": false,
                       "nodeType": "ElementaryTypeNameExpression",
-                      "src": "5492:7:33",
+                      "src": "5443:7:42",
                       "typeDescriptions": {
                         "typeIdentifier": "t_type$_t_uint256_$",
                         "typeString": "type(uint256)"
                       },
                       "typeName": {
-                        "id": 8483,
+                        "id": 9950,
                         "name": "uint256",
                         "nodeType": "ElementaryTypeName",
-                        "src": "5492:7:33",
+                        "src": "5443:7:42",
                         "typeDescriptions": {}
                       }
                     },
-                    "id": 8488,
+                    "id": 9955,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2989,44 +2870,44 @@ export const FixedPointMath =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "5492:18:33",
+                    "src": "5443:18:42",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 8441,
-                  "id": 8489,
+                  "functionReturnParameters": 9908,
+                  "id": 9956,
                   "nodeType": "Return",
-                  "src": "5485:25:33"
+                  "src": "5436:25:42"
                 }
               ]
             },
             "documentation": {
-              "id": 8433,
+              "id": 9900,
               "nodeType": "StructuredDocumentation",
-              "src": "4262:404:33",
+              "src": "4219:404:42",
               "text": "@dev Exponentiation (x^y) with unsigned 18 decimal fixed point base and exponent.\n @dev Partially inspired by Balancer LogExpMath library (https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/solidity-utils/contracts/math/LogExpMath.sol)\n @param x Fixed point number in 1e18 format.\n @param y Fixed point number in 1e18 format.\n @return The result of x^y."
             },
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "pow",
-            "nameLocation": "4680:3:33",
+            "nameLocation": "4637:3:42",
             "parameters": {
-              "id": 8438,
+              "id": 9905,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8435,
+                  "id": 9902,
                   "mutability": "mutable",
                   "name": "x",
-                  "nameLocation": "4692:1:33",
+                  "nameLocation": "4649:1:42",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8491,
-                  "src": "4684:9:33",
+                  "scope": 9958,
+                  "src": "4641:9:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3034,10 +2915,10 @@ export const FixedPointMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 8434,
+                    "id": 9901,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4684:7:33",
+                    "src": "4641:7:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -3047,13 +2928,13 @@ export const FixedPointMath =
                 },
                 {
                   "constant": false,
-                  "id": 8437,
+                  "id": 9904,
                   "mutability": "mutable",
                   "name": "y",
-                  "nameLocation": "4703:1:33",
+                  "nameLocation": "4660:1:42",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8491,
-                  "src": "4695:9:33",
+                  "scope": 9958,
+                  "src": "4652:9:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3061,10 +2942,10 @@ export const FixedPointMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 8436,
+                    "id": 9903,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4695:7:33",
+                    "src": "4652:7:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -3073,21 +2954,21 @@ export const FixedPointMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "4683:22:33"
+              "src": "4640:22:42"
             },
             "returnParameters": {
-              "id": 8441,
+              "id": 9908,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8440,
+                  "id": 9907,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8491,
-                  "src": "4729:7:33",
+                  "scope": 9958,
+                  "src": "4686:7:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3095,10 +2976,10 @@ export const FixedPointMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 8439,
+                    "id": 9906,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4729:7:33",
+                    "src": "4686:7:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -3107,28 +2988,28 @@ export const FixedPointMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "4728:9:33"
+              "src": "4685:9:42"
             },
-            "scope": 9066,
+            "scope": 10533,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 8688,
+            "id": 10155,
             "nodeType": "FunctionDefinition",
-            "src": "5773:3347:33",
+            "src": "5724:3347:42",
             "nodes": [],
             "body": {
-              "id": 8687,
+              "id": 10154,
               "nodeType": "Block",
-              "src": "5829:3291:33",
+              "src": "5780:3291:42",
               "nodes": [],
               "statements": [
                 {
-                  "id": 8686,
+                  "id": 10153,
                   "nodeType": "UncheckedBlock",
-                  "src": "5839:3275:33",
+                  "src": "5790:3275:42",
                   "statements": [
                     {
                       "condition": {
@@ -3136,18 +3017,18 @@ export const FixedPointMath =
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         },
-                        "id": 8502,
+                        "id": 9969,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
-                          "id": 8499,
+                          "id": 9966,
                           "name": "x",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8494,
-                          "src": "5996:1:33",
+                          "referencedDeclaration": 9961,
+                          "src": "5947:1:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
@@ -3156,7 +3037,7 @@ export const FixedPointMath =
                         "nodeType": "BinaryOperation",
                         "operator": "<=",
                         "rightExpression": {
-                          "id": 8501,
+                          "id": 9968,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -3164,17 +3045,17 @@ export const FixedPointMath =
                           "nodeType": "UnaryOperation",
                           "operator": "-",
                           "prefix": true,
-                          "src": "6001:21:33",
+                          "src": "5952:21:42",
                           "subExpression": {
                             "hexValue": "3432313339363738383534343532373637353531",
-                            "id": 8500,
+                            "id": 9967,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "kind": "number",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "6002:20:33",
+                            "src": "5953:20:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_rational_42139678854452767551_by_1",
                               "typeString": "int_const 42139678854452767551"
@@ -3186,36 +3067,36 @@ export const FixedPointMath =
                             "typeString": "int_const -42139678854452767551"
                           }
                         },
-                        "src": "5996:26:33",
+                        "src": "5947:26:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
                         }
                       },
-                      "id": 8505,
+                      "id": 9972,
                       "nodeType": "IfStatement",
-                      "src": "5992:40:33",
+                      "src": "5943:40:42",
                       "trueBody": {
                         "expression": {
                           "hexValue": "30",
-                          "id": 8503,
+                          "id": 9970,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "6031:1:33",
+                          "src": "5982:1:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_0_by_1",
                             "typeString": "int_const 0"
                           },
                           "value": "0"
                         },
-                        "functionReturnParameters": 8498,
-                        "id": 8504,
+                        "functionReturnParameters": 9965,
+                        "id": 9971,
                         "nodeType": "Return",
-                        "src": "6024:8:33"
+                        "src": "5975:8:42"
                       }
                     },
                     {
@@ -3224,18 +3105,18 @@ export const FixedPointMath =
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         },
-                        "id": 8508,
+                        "id": 9975,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
-                          "id": 8506,
+                          "id": 9973,
                           "name": "x",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8494,
-                          "src": "6226:1:33",
+                          "referencedDeclaration": 9961,
+                          "src": "6177:1:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
@@ -3245,62 +3126,62 @@ export const FixedPointMath =
                         "operator": ">=",
                         "rightExpression": {
                           "hexValue": "313335333035393939333638383933323331353839",
-                          "id": 8507,
+                          "id": 9974,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "6231:21:33",
+                          "src": "6182:21:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_135305999368893231589_by_1",
                             "typeString": "int_const 135305999368893231589"
                           },
                           "value": "135305999368893231589"
                         },
-                        "src": "6226:26:33",
+                        "src": "6177:26:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
                         }
                       },
-                      "id": 8514,
+                      "id": 9981,
                       "nodeType": "IfStatement",
-                      "src": "6222:99:33",
+                      "src": "6173:99:42",
                       "trueBody": {
                         "errorCall": {
                           "arguments": [],
                           "expression": {
                             "argumentTypes": [],
                             "expression": {
-                              "id": 8509,
+                              "id": 9976,
                               "name": "IHyperdrive",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 7431,
-                              "src": "6277:11:33",
+                              "referencedDeclaration": 3759,
+                              "src": "6228:11:42",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$7431_$",
+                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$3759_$",
                                 "typeString": "type(contract IHyperdrive)"
                               }
                             },
-                            "id": 8511,
+                            "id": 9978,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
-                            "memberLocation": "6289:30:33",
+                            "memberLocation": "6240:30:42",
                             "memberName": "FixedPointMath_InvalidExponent",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 7416,
-                            "src": "6277:42:33",
+                            "referencedDeclaration": 3733,
+                            "src": "6228:42:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_error_pure$__$returns$__$",
                               "typeString": "function () pure"
                             }
                           },
-                          "id": 8512,
+                          "id": 9979,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -3309,32 +3190,32 @@ export const FixedPointMath =
                           "nameLocations": [],
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "6277:44:33",
+                          "src": "6228:44:42",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_tuple$__$",
                             "typeString": "tuple()"
                           }
                         },
-                        "id": 8513,
+                        "id": 9980,
                         "nodeType": "RevertStatement",
-                        "src": "6270:51:33"
+                        "src": "6221:51:42"
                       }
                     },
                     {
                       "expression": {
-                        "id": 8524,
+                        "id": 9991,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftHandSide": {
-                          "id": 8515,
+                          "id": 9982,
                           "name": "x",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8494,
-                          "src": "6578:1:33",
+                          "referencedDeclaration": 9961,
+                          "src": "6529:1:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
@@ -3347,7 +3228,7 @@ export const FixedPointMath =
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           },
-                          "id": 8523,
+                          "id": 9990,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -3359,18 +3240,18 @@ export const FixedPointMath =
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 },
-                                "id": 8518,
+                                "id": 9985,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
                                 "lValueRequested": false,
                                 "leftExpression": {
-                                  "id": 8516,
+                                  "id": 9983,
                                   "name": "x",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 8494,
-                                  "src": "6583:1:33",
+                                  "referencedDeclaration": 9961,
+                                  "src": "6534:1:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
@@ -3380,35 +3261,35 @@ export const FixedPointMath =
                                 "operator": "<<",
                                 "rightExpression": {
                                   "hexValue": "3738",
-                                  "id": 8517,
+                                  "id": 9984,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": true,
                                   "kind": "number",
                                   "lValueRequested": false,
                                   "nodeType": "Literal",
-                                  "src": "6588:2:33",
+                                  "src": "6539:2:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_rational_78_by_1",
                                     "typeString": "int_const 78"
                                   },
                                   "value": "78"
                                 },
-                                "src": "6583:7:33",
+                                "src": "6534:7:42",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 }
                               }
                             ],
-                            "id": 8519,
+                            "id": 9986,
                             "isConstant": false,
                             "isInlineArray": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "nodeType": "TupleExpression",
-                            "src": "6582:9:33",
+                            "src": "6533:9:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -3421,21 +3302,21 @@ export const FixedPointMath =
                               "typeIdentifier": "t_rational_3814697265625_by_1",
                               "typeString": "int_const 3814697265625"
                             },
-                            "id": 8522,
+                            "id": 9989,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "lValueRequested": false,
                             "leftExpression": {
                               "hexValue": "35",
-                              "id": 8520,
+                              "id": 9987,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
                               "kind": "number",
                               "lValueRequested": false,
                               "nodeType": "Literal",
-                              "src": "6594:1:33",
+                              "src": "6545:1:42",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_rational_5_by_1",
                                 "typeString": "int_const 5"
@@ -3446,56 +3327,56 @@ export const FixedPointMath =
                             "operator": "**",
                             "rightExpression": {
                               "hexValue": "3138",
-                              "id": 8521,
+                              "id": 9988,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
                               "kind": "number",
                               "lValueRequested": false,
                               "nodeType": "Literal",
-                              "src": "6599:2:33",
+                              "src": "6550:2:42",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_rational_18_by_1",
                                 "typeString": "int_const 18"
                               },
                               "value": "18"
                             },
-                            "src": "6594:7:33",
+                            "src": "6545:7:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_rational_3814697265625_by_1",
                               "typeString": "int_const 3814697265625"
                             }
                           },
-                          "src": "6582:19:33",
+                          "src": "6533:19:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "src": "6578:23:33",
+                        "src": "6529:23:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "id": 8525,
+                      "id": 9992,
                       "nodeType": "ExpressionStatement",
-                      "src": "6578:23:33"
+                      "src": "6529:23:42"
                     },
                     {
                       "assignments": [
-                        8527
+                        9994
                       ],
                       "declarations": [
                         {
                           "constant": false,
-                          "id": 8527,
+                          "id": 9994,
                           "mutability": "mutable",
                           "name": "k",
-                          "nameLocation": "6937:1:33",
+                          "nameLocation": "6888:1:42",
                           "nodeType": "VariableDeclaration",
-                          "scope": 8686,
-                          "src": "6930:8:33",
+                          "scope": 10153,
+                          "src": "6881:8:42",
                           "stateVariable": false,
                           "storageLocation": "default",
                           "typeDescriptions": {
@@ -3503,10 +3384,10 @@ export const FixedPointMath =
                             "typeString": "int256"
                           },
                           "typeName": {
-                            "id": 8526,
+                            "id": 9993,
                             "name": "int256",
                             "nodeType": "ElementaryTypeName",
-                            "src": "6930:6:33",
+                            "src": "6881:6:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -3515,13 +3396,13 @@ export const FixedPointMath =
                           "visibility": "internal"
                         }
                       ],
-                      "id": 8541,
+                      "id": 10008,
                       "initialValue": {
                         "commonType": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         },
-                        "id": 8540,
+                        "id": 10007,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -3533,7 +3414,7 @@ export const FixedPointMath =
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               },
-                              "id": 8537,
+                              "id": 10004,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
@@ -3543,7 +3424,7 @@ export const FixedPointMath =
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 },
-                                "id": 8533,
+                                "id": 10000,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -3555,18 +3436,18 @@ export const FixedPointMath =
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
                                       },
-                                      "id": 8530,
+                                      "id": 9997,
                                       "isConstant": false,
                                       "isLValue": false,
                                       "isPure": false,
                                       "lValueRequested": false,
                                       "leftExpression": {
-                                        "id": 8528,
+                                        "id": 9995,
                                         "name": "x",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 8494,
-                                        "src": "6943:1:33",
+                                        "referencedDeclaration": 9961,
+                                        "src": "6894:1:42",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_int256",
                                           "typeString": "int256"
@@ -3576,35 +3457,35 @@ export const FixedPointMath =
                                       "operator": "<<",
                                       "rightExpression": {
                                         "hexValue": "3936",
-                                        "id": 8529,
+                                        "id": 9996,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": true,
                                         "kind": "number",
                                         "lValueRequested": false,
                                         "nodeType": "Literal",
-                                        "src": "6948:2:33",
+                                        "src": "6899:2:42",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_rational_96_by_1",
                                           "typeString": "int_const 96"
                                         },
                                         "value": "96"
                                       },
-                                      "src": "6943:7:33",
+                                      "src": "6894:7:42",
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
                                       }
                                     }
                                   ],
-                                  "id": 8531,
+                                  "id": 9998,
                                   "isConstant": false,
                                   "isInlineArray": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "nodeType": "TupleExpression",
-                                  "src": "6942:9:33",
+                                  "src": "6893:9:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
@@ -3614,21 +3495,21 @@ export const FixedPointMath =
                                 "operator": "/",
                                 "rightExpression": {
                                   "hexValue": "3534393136373737343637373037343733333531313431343731313238",
-                                  "id": 8532,
+                                  "id": 9999,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": true,
                                   "kind": "number",
                                   "lValueRequested": false,
                                   "nodeType": "Literal",
-                                  "src": "6954:29:33",
+                                  "src": "6905:29:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_rational_54916777467707473351141471128_by_1",
                                     "typeString": "int_const 54916777467707473351141471128"
                                   },
                                   "value": "54916777467707473351141471128"
                                 },
-                                "src": "6942:41:33",
+                                "src": "6893:41:42",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
@@ -3641,21 +3522,21 @@ export const FixedPointMath =
                                   "typeIdentifier": "t_rational_39614081257132168796771975168_by_1",
                                   "typeString": "int_const 39614081257132168796771975168"
                                 },
-                                "id": 8536,
+                                "id": 10003,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
                                 "lValueRequested": false,
                                 "leftExpression": {
                                   "hexValue": "32",
-                                  "id": 8534,
+                                  "id": 10001,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": true,
                                   "kind": "number",
                                   "lValueRequested": false,
                                   "nodeType": "Literal",
-                                  "src": "6986:1:33",
+                                  "src": "6937:1:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_rational_2_by_1",
                                     "typeString": "int_const 2"
@@ -3666,41 +3547,41 @@ export const FixedPointMath =
                                 "operator": "**",
                                 "rightExpression": {
                                   "hexValue": "3935",
-                                  "id": 8535,
+                                  "id": 10002,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": true,
                                   "kind": "number",
                                   "lValueRequested": false,
                                   "nodeType": "Literal",
-                                  "src": "6991:2:33",
+                                  "src": "6942:2:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_rational_95_by_1",
                                     "typeString": "int_const 95"
                                   },
                                   "value": "95"
                                 },
-                                "src": "6986:7:33",
+                                "src": "6937:7:42",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_rational_39614081257132168796771975168_by_1",
                                   "typeString": "int_const 39614081257132168796771975168"
                                 }
                               },
-                              "src": "6942:51:33",
+                              "src": "6893:51:42",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             }
                           ],
-                          "id": 8538,
+                          "id": 10005,
                           "isConstant": false,
                           "isInlineArray": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "nodeType": "TupleExpression",
-                          "src": "6941:53:33",
+                          "src": "6892:53:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
@@ -3710,43 +3591,43 @@ export const FixedPointMath =
                         "operator": ">>",
                         "rightExpression": {
                           "hexValue": "3936",
-                          "id": 8539,
+                          "id": 10006,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "7014:2:33",
+                          "src": "6965:2:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_96_by_1",
                             "typeString": "int_const 96"
                           },
                           "value": "96"
                         },
-                        "src": "6941:75:33",
+                        "src": "6892:75:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
                       "nodeType": "VariableDeclarationStatement",
-                      "src": "6930:86:33"
+                      "src": "6881:86:42"
                     },
                     {
                       "expression": {
-                        "id": 8548,
+                        "id": 10015,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftHandSide": {
-                          "id": 8542,
+                          "id": 10009,
                           "name": "x",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8494,
-                          "src": "7030:1:33",
+                          "referencedDeclaration": 9961,
+                          "src": "6981:1:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
@@ -3759,18 +3640,18 @@ export const FixedPointMath =
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           },
-                          "id": 8547,
+                          "id": 10014,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftExpression": {
-                            "id": 8543,
+                            "id": 10010,
                             "name": "x",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 8494,
-                            "src": "7034:1:33",
+                            "referencedDeclaration": 9961,
+                            "src": "6985:1:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -3783,18 +3664,18 @@ export const FixedPointMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 8546,
+                            "id": 10013,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "leftExpression": {
-                              "id": 8544,
+                              "id": 10011,
                               "name": "k",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 8527,
-                              "src": "7038:1:33",
+                              "referencedDeclaration": 9994,
+                              "src": "6989:1:42",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -3804,56 +3685,56 @@ export const FixedPointMath =
                             "operator": "*",
                             "rightExpression": {
                               "hexValue": "3534393136373737343637373037343733333531313431343731313238",
-                              "id": 8545,
+                              "id": 10012,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
                               "kind": "number",
                               "lValueRequested": false,
                               "nodeType": "Literal",
-                              "src": "7042:29:33",
+                              "src": "6993:29:42",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_rational_54916777467707473351141471128_by_1",
                                 "typeString": "int_const 54916777467707473351141471128"
                               },
                               "value": "54916777467707473351141471128"
                             },
-                            "src": "7038:33:33",
+                            "src": "6989:33:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "7034:37:33",
+                          "src": "6985:37:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "src": "7030:41:33",
+                        "src": "6981:41:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "id": 8549,
+                      "id": 10016,
                       "nodeType": "ExpressionStatement",
-                      "src": "7030:41:33"
+                      "src": "6981:41:42"
                     },
                     {
                       "assignments": [
-                        8551
+                        10018
                       ],
                       "declarations": [
                         {
                           "constant": false,
-                          "id": 8551,
+                          "id": 10018,
                           "mutability": "mutable",
                           "name": "y",
-                          "nameLocation": "7279:1:33",
+                          "nameLocation": "7230:1:42",
                           "nodeType": "VariableDeclaration",
-                          "scope": 8686,
-                          "src": "7272:8:33",
+                          "scope": 10153,
+                          "src": "7223:8:42",
                           "stateVariable": false,
                           "storageLocation": "default",
                           "typeDescriptions": {
@@ -3861,10 +3742,10 @@ export const FixedPointMath =
                             "typeString": "int256"
                           },
                           "typeName": {
-                            "id": 8550,
+                            "id": 10017,
                             "name": "int256",
                             "nodeType": "ElementaryTypeName",
-                            "src": "7272:6:33",
+                            "src": "7223:6:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -3873,24 +3754,24 @@ export const FixedPointMath =
                           "visibility": "internal"
                         }
                       ],
-                      "id": 8555,
+                      "id": 10022,
                       "initialValue": {
                         "commonType": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         },
-                        "id": 8554,
+                        "id": 10021,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
-                          "id": 8552,
+                          "id": 10019,
                           "name": "x",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8494,
-                          "src": "7283:1:33",
+                          "referencedDeclaration": 9961,
+                          "src": "7234:1:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
@@ -3900,43 +3781,43 @@ export const FixedPointMath =
                         "operator": "+",
                         "rightExpression": {
                           "hexValue": "31333436333836363136353435373936343738393230393530373733333238",
-                          "id": 8553,
+                          "id": 10020,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "7287:31:33",
+                          "src": "7238:31:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_1346386616545796478920950773328_by_1",
                             "typeString": "int_const 1346386616545796478920950773328"
                           },
                           "value": "1346386616545796478920950773328"
                         },
-                        "src": "7283:35:33",
+                        "src": "7234:35:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
                       "nodeType": "VariableDeclarationStatement",
-                      "src": "7272:46:33"
+                      "src": "7223:46:42"
                     },
                     {
                       "expression": {
-                        "id": 8566,
+                        "id": 10033,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftHandSide": {
-                          "id": 8556,
+                          "id": 10023,
                           "name": "y",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8551,
-                          "src": "7332:1:33",
+                          "referencedDeclaration": 10018,
+                          "src": "7283:1:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
@@ -3949,7 +3830,7 @@ export const FixedPointMath =
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           },
-                          "id": 8565,
+                          "id": 10032,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -3961,7 +3842,7 @@ export const FixedPointMath =
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 },
-                                "id": 8562,
+                                "id": 10029,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -3973,18 +3854,18 @@ export const FixedPointMath =
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
                                       },
-                                      "id": 8559,
+                                      "id": 10026,
                                       "isConstant": false,
                                       "isLValue": false,
                                       "isPure": false,
                                       "lValueRequested": false,
                                       "leftExpression": {
-                                        "id": 8557,
+                                        "id": 10024,
                                         "name": "y",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 8551,
-                                        "src": "7338:1:33",
+                                        "referencedDeclaration": 10018,
+                                        "src": "7289:1:42",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_int256",
                                           "typeString": "int256"
@@ -3993,32 +3874,32 @@ export const FixedPointMath =
                                       "nodeType": "BinaryOperation",
                                       "operator": "*",
                                       "rightExpression": {
-                                        "id": 8558,
+                                        "id": 10025,
                                         "name": "x",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 8494,
-                                        "src": "7342:1:33",
+                                        "referencedDeclaration": 9961,
+                                        "src": "7293:1:42",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_int256",
                                           "typeString": "int256"
                                         }
                                       },
-                                      "src": "7338:5:33",
+                                      "src": "7289:5:42",
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
                                       }
                                     }
                                   ],
-                                  "id": 8560,
+                                  "id": 10027,
                                   "isConstant": false,
                                   "isInlineArray": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "nodeType": "TupleExpression",
-                                  "src": "7337:7:33",
+                                  "src": "7288:7:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
@@ -4028,35 +3909,35 @@ export const FixedPointMath =
                                 "operator": ">>",
                                 "rightExpression": {
                                   "hexValue": "3936",
-                                  "id": 8561,
+                                  "id": 10028,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": true,
                                   "kind": "number",
                                   "lValueRequested": false,
                                   "nodeType": "Literal",
-                                  "src": "7348:2:33",
+                                  "src": "7299:2:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_rational_96_by_1",
                                     "typeString": "int_const 96"
                                   },
                                   "value": "96"
                                 },
-                                "src": "7337:13:33",
+                                "src": "7288:13:42",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 }
                               }
                             ],
-                            "id": 8563,
+                            "id": 10030,
                             "isConstant": false,
                             "isInlineArray": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "nodeType": "TupleExpression",
-                            "src": "7336:15:33",
+                            "src": "7287:15:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -4066,50 +3947,50 @@ export const FixedPointMath =
                           "operator": "+",
                           "rightExpression": {
                             "hexValue": "3537313535343231323237353532333531303832323234333039373538343432",
-                            "id": 8564,
+                            "id": 10031,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "kind": "number",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "7354:32:33",
+                            "src": "7305:32:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_rational_57155421227552351082224309758442_by_1",
                               "typeString": "int_const 57155421227552351082224309758442"
                             },
                             "value": "57155421227552351082224309758442"
                           },
-                          "src": "7336:50:33",
+                          "src": "7287:50:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "src": "7332:54:33",
+                        "src": "7283:54:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "id": 8567,
+                      "id": 10034,
                       "nodeType": "ExpressionStatement",
-                      "src": "7332:54:33"
+                      "src": "7283:54:42"
                     },
                     {
                       "assignments": [
-                        8569
+                        10036
                       ],
                       "declarations": [
                         {
                           "constant": false,
-                          "id": 8569,
+                          "id": 10036,
                           "mutability": "mutable",
                           "name": "p",
-                          "nameLocation": "7407:1:33",
+                          "nameLocation": "7358:1:42",
                           "nodeType": "VariableDeclaration",
-                          "scope": 8686,
-                          "src": "7400:8:33",
+                          "scope": 10153,
+                          "src": "7351:8:42",
                           "stateVariable": false,
                           "storageLocation": "default",
                           "typeDescriptions": {
@@ -4117,10 +3998,10 @@ export const FixedPointMath =
                             "typeString": "int256"
                           },
                           "typeName": {
-                            "id": 8568,
+                            "id": 10035,
                             "name": "int256",
                             "nodeType": "ElementaryTypeName",
-                            "src": "7400:6:33",
+                            "src": "7351:6:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -4129,13 +4010,13 @@ export const FixedPointMath =
                           "visibility": "internal"
                         }
                       ],
-                      "id": 8575,
+                      "id": 10042,
                       "initialValue": {
                         "commonType": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         },
-                        "id": 8574,
+                        "id": 10041,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -4145,18 +4026,18 @@ export const FixedPointMath =
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           },
-                          "id": 8572,
+                          "id": 10039,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftExpression": {
-                            "id": 8570,
+                            "id": 10037,
                             "name": "y",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 8551,
-                            "src": "7411:1:33",
+                            "referencedDeclaration": 10018,
+                            "src": "7362:1:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -4165,18 +4046,18 @@ export const FixedPointMath =
                           "nodeType": "BinaryOperation",
                           "operator": "+",
                           "rightExpression": {
-                            "id": 8571,
+                            "id": 10038,
                             "name": "x",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 8494,
-                            "src": "7415:1:33",
+                            "referencedDeclaration": 9961,
+                            "src": "7366:1:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "7411:5:33",
+                          "src": "7362:5:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
@@ -4186,43 +4067,43 @@ export const FixedPointMath =
                         "operator": "-",
                         "rightExpression": {
                           "hexValue": "3934323031353439313934353530343932323534333536303432353034383132",
-                          "id": 8573,
+                          "id": 10040,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "7419:32:33",
+                          "src": "7370:32:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_94201549194550492254356042504812_by_1",
                             "typeString": "int_const 94201549194550492254356042504812"
                           },
                           "value": "94201549194550492254356042504812"
                         },
-                        "src": "7411:40:33",
+                        "src": "7362:40:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
                       "nodeType": "VariableDeclarationStatement",
-                      "src": "7400:51:33"
+                      "src": "7351:51:42"
                     },
                     {
                       "expression": {
-                        "id": 8586,
+                        "id": 10053,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftHandSide": {
-                          "id": 8576,
+                          "id": 10043,
                           "name": "p",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8569,
-                          "src": "7465:1:33",
+                          "referencedDeclaration": 10036,
+                          "src": "7416:1:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
@@ -4235,7 +4116,7 @@ export const FixedPointMath =
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           },
-                          "id": 8585,
+                          "id": 10052,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -4247,7 +4128,7 @@ export const FixedPointMath =
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 },
-                                "id": 8582,
+                                "id": 10049,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -4259,18 +4140,18 @@ export const FixedPointMath =
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
                                       },
-                                      "id": 8579,
+                                      "id": 10046,
                                       "isConstant": false,
                                       "isLValue": false,
                                       "isPure": false,
                                       "lValueRequested": false,
                                       "leftExpression": {
-                                        "id": 8577,
+                                        "id": 10044,
                                         "name": "p",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 8569,
-                                        "src": "7471:1:33",
+                                        "referencedDeclaration": 10036,
+                                        "src": "7422:1:42",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_int256",
                                           "typeString": "int256"
@@ -4279,32 +4160,32 @@ export const FixedPointMath =
                                       "nodeType": "BinaryOperation",
                                       "operator": "*",
                                       "rightExpression": {
-                                        "id": 8578,
+                                        "id": 10045,
                                         "name": "y",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 8551,
-                                        "src": "7475:1:33",
+                                        "referencedDeclaration": 10018,
+                                        "src": "7426:1:42",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_int256",
                                           "typeString": "int256"
                                         }
                                       },
-                                      "src": "7471:5:33",
+                                      "src": "7422:5:42",
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
                                       }
                                     }
                                   ],
-                                  "id": 8580,
+                                  "id": 10047,
                                   "isConstant": false,
                                   "isInlineArray": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "nodeType": "TupleExpression",
-                                  "src": "7470:7:33",
+                                  "src": "7421:7:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
@@ -4314,35 +4195,35 @@ export const FixedPointMath =
                                 "operator": ">>",
                                 "rightExpression": {
                                   "hexValue": "3936",
-                                  "id": 8581,
+                                  "id": 10048,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": true,
                                   "kind": "number",
                                   "lValueRequested": false,
                                   "nodeType": "Literal",
-                                  "src": "7481:2:33",
+                                  "src": "7432:2:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_rational_96_by_1",
                                     "typeString": "int_const 96"
                                   },
                                   "value": "96"
                                 },
-                                "src": "7470:13:33",
+                                "src": "7421:13:42",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 }
                               }
                             ],
-                            "id": 8583,
+                            "id": 10050,
                             "isConstant": false,
                             "isInlineArray": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "nodeType": "TupleExpression",
-                            "src": "7469:15:33",
+                            "src": "7420:15:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -4352,50 +4233,50 @@ export const FixedPointMath =
                           "operator": "+",
                           "rightExpression": {
                             "hexValue": "3238373139303231363434303239373236313533393536393434363830343132323430",
-                            "id": 8584,
+                            "id": 10051,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "kind": "number",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "7487:35:33",
+                            "src": "7438:35:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_rational_28719021644029726153956944680412240_by_1",
                               "typeString": "int_const 2871...(27 digits omitted)...2240"
                             },
                             "value": "28719021644029726153956944680412240"
                           },
-                          "src": "7469:53:33",
+                          "src": "7420:53:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "src": "7465:57:33",
+                        "src": "7416:57:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "id": 8587,
+                      "id": 10054,
                       "nodeType": "ExpressionStatement",
-                      "src": "7465:57:33"
+                      "src": "7416:57:42"
                     },
                     {
                       "expression": {
-                        "id": 8597,
+                        "id": 10064,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftHandSide": {
-                          "id": 8588,
+                          "id": 10055,
                           "name": "p",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8569,
-                          "src": "7536:1:33",
+                          "referencedDeclaration": 10036,
+                          "src": "7487:1:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
@@ -4408,7 +4289,7 @@ export const FixedPointMath =
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           },
-                          "id": 8596,
+                          "id": 10063,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -4418,18 +4299,18 @@ export const FixedPointMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 8591,
+                            "id": 10058,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "leftExpression": {
-                              "id": 8589,
+                              "id": 10056,
                               "name": "p",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 8569,
-                              "src": "7540:1:33",
+                              "referencedDeclaration": 10036,
+                              "src": "7491:1:42",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -4438,18 +4319,18 @@ export const FixedPointMath =
                             "nodeType": "BinaryOperation",
                             "operator": "*",
                             "rightExpression": {
-                              "id": 8590,
+                              "id": 10057,
                               "name": "x",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 8494,
-                              "src": "7544:1:33",
+                              "referencedDeclaration": 9961,
+                              "src": "7495:1:42",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "7540:5:33",
+                            "src": "7491:5:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -4464,21 +4345,21 @@ export const FixedPointMath =
                                   "typeIdentifier": "t_rational_347437083999162433888837515002539729507623920905942392673140736_by_1",
                                   "typeString": "int_const 3474...(55 digits omitted)...0736"
                                 },
-                                "id": 8594,
+                                "id": 10061,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
                                 "lValueRequested": false,
                                 "leftExpression": {
                                   "hexValue": "34333835323732353231343534383437393034363539303736393835363933323736",
-                                  "id": 8592,
+                                  "id": 10059,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": true,
                                   "kind": "number",
                                   "lValueRequested": false,
                                   "nodeType": "Literal",
-                                  "src": "7549:34:33",
+                                  "src": "7500:34:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_rational_4385272521454847904659076985693276_by_1",
                                     "typeString": "int_const 4385...(26 digits omitted)...3276"
@@ -4489,70 +4370,70 @@ export const FixedPointMath =
                                 "operator": "<<",
                                 "rightExpression": {
                                   "hexValue": "3936",
-                                  "id": 8593,
+                                  "id": 10060,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": true,
                                   "kind": "number",
                                   "lValueRequested": false,
                                   "nodeType": "Literal",
-                                  "src": "7587:2:33",
+                                  "src": "7538:2:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_rational_96_by_1",
                                     "typeString": "int_const 96"
                                   },
                                   "value": "96"
                                 },
-                                "src": "7549:40:33",
+                                "src": "7500:40:42",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_rational_347437083999162433888837515002539729507623920905942392673140736_by_1",
                                   "typeString": "int_const 3474...(55 digits omitted)...0736"
                                 }
                               }
                             ],
-                            "id": 8595,
+                            "id": 10062,
                             "isConstant": false,
                             "isInlineArray": false,
                             "isLValue": false,
                             "isPure": true,
                             "lValueRequested": false,
                             "nodeType": "TupleExpression",
-                            "src": "7548:42:33",
+                            "src": "7499:42:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_rational_347437083999162433888837515002539729507623920905942392673140736_by_1",
                               "typeString": "int_const 3474...(55 digits omitted)...0736"
                             }
                           },
-                          "src": "7540:50:33",
+                          "src": "7491:50:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "src": "7536:54:33",
+                        "src": "7487:54:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "id": 8598,
+                      "id": 10065,
                       "nodeType": "ExpressionStatement",
-                      "src": "7536:54:33"
+                      "src": "7487:54:42"
                     },
                     {
                       "assignments": [
-                        8600
+                        10067
                       ],
                       "declarations": [
                         {
                           "constant": false,
-                          "id": 8600,
+                          "id": 10067,
                           "mutability": "mutable",
                           "name": "q",
-                          "nameLocation": "7709:1:33",
+                          "nameLocation": "7660:1:42",
                           "nodeType": "VariableDeclaration",
-                          "scope": 8686,
-                          "src": "7702:8:33",
+                          "scope": 10153,
+                          "src": "7653:8:42",
                           "stateVariable": false,
                           "storageLocation": "default",
                           "typeDescriptions": {
@@ -4560,10 +4441,10 @@ export const FixedPointMath =
                             "typeString": "int256"
                           },
                           "typeName": {
-                            "id": 8599,
+                            "id": 10066,
                             "name": "int256",
                             "nodeType": "ElementaryTypeName",
-                            "src": "7702:6:33",
+                            "src": "7653:6:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -4572,24 +4453,24 @@ export const FixedPointMath =
                           "visibility": "internal"
                         }
                       ],
-                      "id": 8604,
+                      "id": 10071,
                       "initialValue": {
                         "commonType": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         },
-                        "id": 8603,
+                        "id": 10070,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
-                          "id": 8601,
+                          "id": 10068,
                           "name": "x",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8494,
-                          "src": "7713:1:33",
+                          "referencedDeclaration": 9961,
+                          "src": "7664:1:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
@@ -4599,43 +4480,43 @@ export const FixedPointMath =
                         "operator": "-",
                         "rightExpression": {
                           "hexValue": "32383535393839333934393037323233323633393336343834303539393030",
-                          "id": 8602,
+                          "id": 10069,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "7717:31:33",
+                          "src": "7668:31:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_2855989394907223263936484059900_by_1",
                             "typeString": "int_const 2855989394907223263936484059900"
                           },
                           "value": "2855989394907223263936484059900"
                         },
-                        "src": "7713:35:33",
+                        "src": "7664:35:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
                       "nodeType": "VariableDeclarationStatement",
-                      "src": "7702:46:33"
+                      "src": "7653:46:42"
                     },
                     {
                       "expression": {
-                        "id": 8615,
+                        "id": 10082,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftHandSide": {
-                          "id": 8605,
+                          "id": 10072,
                           "name": "q",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8600,
-                          "src": "7762:1:33",
+                          "referencedDeclaration": 10067,
+                          "src": "7713:1:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
@@ -4648,7 +4529,7 @@ export const FixedPointMath =
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           },
-                          "id": 8614,
+                          "id": 10081,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -4660,7 +4541,7 @@ export const FixedPointMath =
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 },
-                                "id": 8611,
+                                "id": 10078,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -4672,18 +4553,18 @@ export const FixedPointMath =
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
                                       },
-                                      "id": 8608,
+                                      "id": 10075,
                                       "isConstant": false,
                                       "isLValue": false,
                                       "isPure": false,
                                       "lValueRequested": false,
                                       "leftExpression": {
-                                        "id": 8606,
+                                        "id": 10073,
                                         "name": "q",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 8600,
-                                        "src": "7768:1:33",
+                                        "referencedDeclaration": 10067,
+                                        "src": "7719:1:42",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_int256",
                                           "typeString": "int256"
@@ -4692,32 +4573,32 @@ export const FixedPointMath =
                                       "nodeType": "BinaryOperation",
                                       "operator": "*",
                                       "rightExpression": {
-                                        "id": 8607,
+                                        "id": 10074,
                                         "name": "x",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 8494,
-                                        "src": "7772:1:33",
+                                        "referencedDeclaration": 9961,
+                                        "src": "7723:1:42",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_int256",
                                           "typeString": "int256"
                                         }
                                       },
-                                      "src": "7768:5:33",
+                                      "src": "7719:5:42",
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
                                       }
                                     }
                                   ],
-                                  "id": 8609,
+                                  "id": 10076,
                                   "isConstant": false,
                                   "isInlineArray": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "nodeType": "TupleExpression",
-                                  "src": "7767:7:33",
+                                  "src": "7718:7:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
@@ -4727,35 +4608,35 @@ export const FixedPointMath =
                                 "operator": ">>",
                                 "rightExpression": {
                                   "hexValue": "3936",
-                                  "id": 8610,
+                                  "id": 10077,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": true,
                                   "kind": "number",
                                   "lValueRequested": false,
                                   "nodeType": "Literal",
-                                  "src": "7778:2:33",
+                                  "src": "7729:2:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_rational_96_by_1",
                                     "typeString": "int_const 96"
                                   },
                                   "value": "96"
                                 },
-                                "src": "7767:13:33",
+                                "src": "7718:13:42",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 }
                               }
                             ],
-                            "id": 8612,
+                            "id": 10079,
                             "isConstant": false,
                             "isInlineArray": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "nodeType": "TupleExpression",
-                            "src": "7766:15:33",
+                            "src": "7717:15:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -4765,50 +4646,50 @@ export const FixedPointMath =
                           "operator": "+",
                           "rightExpression": {
                             "hexValue": "3530303230363033363532353335373833303139393631383331383831393435",
-                            "id": 8613,
+                            "id": 10080,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "kind": "number",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "7784:32:33",
+                            "src": "7735:32:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_rational_50020603652535783019961831881945_by_1",
                               "typeString": "int_const 50020603652535783019961831881945"
                             },
                             "value": "50020603652535783019961831881945"
                           },
-                          "src": "7766:50:33",
+                          "src": "7717:50:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "src": "7762:54:33",
+                        "src": "7713:54:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "id": 8616,
+                      "id": 10083,
                       "nodeType": "ExpressionStatement",
-                      "src": "7762:54:33"
+                      "src": "7713:54:42"
                     },
                     {
                       "expression": {
-                        "id": 8627,
+                        "id": 10094,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftHandSide": {
-                          "id": 8617,
+                          "id": 10084,
                           "name": "q",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8600,
-                          "src": "7830:1:33",
+                          "referencedDeclaration": 10067,
+                          "src": "7781:1:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
@@ -4821,7 +4702,7 @@ export const FixedPointMath =
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           },
-                          "id": 8626,
+                          "id": 10093,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -4833,7 +4714,7 @@ export const FixedPointMath =
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 },
-                                "id": 8623,
+                                "id": 10090,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -4845,18 +4726,18 @@ export const FixedPointMath =
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
                                       },
-                                      "id": 8620,
+                                      "id": 10087,
                                       "isConstant": false,
                                       "isLValue": false,
                                       "isPure": false,
                                       "lValueRequested": false,
                                       "leftExpression": {
-                                        "id": 8618,
+                                        "id": 10085,
                                         "name": "q",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 8600,
-                                        "src": "7836:1:33",
+                                        "referencedDeclaration": 10067,
+                                        "src": "7787:1:42",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_int256",
                                           "typeString": "int256"
@@ -4865,32 +4746,32 @@ export const FixedPointMath =
                                       "nodeType": "BinaryOperation",
                                       "operator": "*",
                                       "rightExpression": {
-                                        "id": 8619,
+                                        "id": 10086,
                                         "name": "x",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 8494,
-                                        "src": "7840:1:33",
+                                        "referencedDeclaration": 9961,
+                                        "src": "7791:1:42",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_int256",
                                           "typeString": "int256"
                                         }
                                       },
-                                      "src": "7836:5:33",
+                                      "src": "7787:5:42",
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
                                       }
                                     }
                                   ],
-                                  "id": 8621,
+                                  "id": 10088,
                                   "isConstant": false,
                                   "isInlineArray": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "nodeType": "TupleExpression",
-                                  "src": "7835:7:33",
+                                  "src": "7786:7:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
@@ -4900,35 +4781,35 @@ export const FixedPointMath =
                                 "operator": ">>",
                                 "rightExpression": {
                                   "hexValue": "3936",
-                                  "id": 8622,
+                                  "id": 10089,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": true,
                                   "kind": "number",
                                   "lValueRequested": false,
                                   "nodeType": "Literal",
-                                  "src": "7846:2:33",
+                                  "src": "7797:2:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_rational_96_by_1",
                                     "typeString": "int_const 96"
                                   },
                                   "value": "96"
                                 },
-                                "src": "7835:13:33",
+                                "src": "7786:13:42",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 }
                               }
                             ],
-                            "id": 8624,
+                            "id": 10091,
                             "isConstant": false,
                             "isInlineArray": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "nodeType": "TupleExpression",
-                            "src": "7834:15:33",
+                            "src": "7785:15:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -4938,50 +4819,50 @@ export const FixedPointMath =
                           "operator": "-",
                           "rightExpression": {
                             "hexValue": "353333383435303333353833343236373033323833363333343333373235333830",
-                            "id": 8625,
+                            "id": 10092,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "kind": "number",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "7852:33:33",
+                            "src": "7803:33:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_rational_533845033583426703283633433725380_by_1",
                               "typeString": "int_const 5338...(25 digits omitted)...5380"
                             },
                             "value": "533845033583426703283633433725380"
                           },
-                          "src": "7834:51:33",
+                          "src": "7785:51:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "src": "7830:55:33",
+                        "src": "7781:55:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "id": 8628,
+                      "id": 10095,
                       "nodeType": "ExpressionStatement",
-                      "src": "7830:55:33"
+                      "src": "7781:55:42"
                     },
                     {
                       "expression": {
-                        "id": 8639,
+                        "id": 10106,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftHandSide": {
-                          "id": 8629,
+                          "id": 10096,
                           "name": "q",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8600,
-                          "src": "7899:1:33",
+                          "referencedDeclaration": 10067,
+                          "src": "7850:1:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
@@ -4994,7 +4875,7 @@ export const FixedPointMath =
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           },
-                          "id": 8638,
+                          "id": 10105,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -5006,7 +4887,7 @@ export const FixedPointMath =
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 },
-                                "id": 8635,
+                                "id": 10102,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -5018,18 +4899,18 @@ export const FixedPointMath =
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
                                       },
-                                      "id": 8632,
+                                      "id": 10099,
                                       "isConstant": false,
                                       "isLValue": false,
                                       "isPure": false,
                                       "lValueRequested": false,
                                       "leftExpression": {
-                                        "id": 8630,
+                                        "id": 10097,
                                         "name": "q",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 8600,
-                                        "src": "7905:1:33",
+                                        "referencedDeclaration": 10067,
+                                        "src": "7856:1:42",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_int256",
                                           "typeString": "int256"
@@ -5038,32 +4919,32 @@ export const FixedPointMath =
                                       "nodeType": "BinaryOperation",
                                       "operator": "*",
                                       "rightExpression": {
-                                        "id": 8631,
+                                        "id": 10098,
                                         "name": "x",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 8494,
-                                        "src": "7909:1:33",
+                                        "referencedDeclaration": 9961,
+                                        "src": "7860:1:42",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_int256",
                                           "typeString": "int256"
                                         }
                                       },
-                                      "src": "7905:5:33",
+                                      "src": "7856:5:42",
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
                                       }
                                     }
                                   ],
-                                  "id": 8633,
+                                  "id": 10100,
                                   "isConstant": false,
                                   "isInlineArray": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "nodeType": "TupleExpression",
-                                  "src": "7904:7:33",
+                                  "src": "7855:7:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
@@ -5073,35 +4954,35 @@ export const FixedPointMath =
                                 "operator": ">>",
                                 "rightExpression": {
                                   "hexValue": "3936",
-                                  "id": 8634,
+                                  "id": 10101,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": true,
                                   "kind": "number",
                                   "lValueRequested": false,
                                   "nodeType": "Literal",
-                                  "src": "7915:2:33",
+                                  "src": "7866:2:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_rational_96_by_1",
                                     "typeString": "int_const 96"
                                   },
                                   "value": "96"
                                 },
-                                "src": "7904:13:33",
+                                "src": "7855:13:42",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 }
                               }
                             ],
-                            "id": 8636,
+                            "id": 10103,
                             "isConstant": false,
                             "isInlineArray": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "nodeType": "TupleExpression",
-                            "src": "7903:15:33",
+                            "src": "7854:15:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -5111,50 +4992,50 @@ export const FixedPointMath =
                           "operator": "+",
                           "rightExpression": {
                             "hexValue": "33363034383537323536393330363935343237303733363531393138303931343239",
-                            "id": 8637,
+                            "id": 10104,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "kind": "number",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "7921:34:33",
+                            "src": "7872:34:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_rational_3604857256930695427073651918091429_by_1",
                               "typeString": "int_const 3604...(26 digits omitted)...1429"
                             },
                             "value": "3604857256930695427073651918091429"
                           },
-                          "src": "7903:52:33",
+                          "src": "7854:52:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "src": "7899:56:33",
+                        "src": "7850:56:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "id": 8640,
+                      "id": 10107,
                       "nodeType": "ExpressionStatement",
-                      "src": "7899:56:33"
+                      "src": "7850:56:42"
                     },
                     {
                       "expression": {
-                        "id": 8651,
+                        "id": 10118,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftHandSide": {
-                          "id": 8641,
+                          "id": 10108,
                           "name": "q",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8600,
-                          "src": "7969:1:33",
+                          "referencedDeclaration": 10067,
+                          "src": "7920:1:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
@@ -5167,7 +5048,7 @@ export const FixedPointMath =
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           },
-                          "id": 8650,
+                          "id": 10117,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -5179,7 +5060,7 @@ export const FixedPointMath =
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 },
-                                "id": 8647,
+                                "id": 10114,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -5191,18 +5072,18 @@ export const FixedPointMath =
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
                                       },
-                                      "id": 8644,
+                                      "id": 10111,
                                       "isConstant": false,
                                       "isLValue": false,
                                       "isPure": false,
                                       "lValueRequested": false,
                                       "leftExpression": {
-                                        "id": 8642,
+                                        "id": 10109,
                                         "name": "q",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 8600,
-                                        "src": "7975:1:33",
+                                        "referencedDeclaration": 10067,
+                                        "src": "7926:1:42",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_int256",
                                           "typeString": "int256"
@@ -5211,32 +5092,32 @@ export const FixedPointMath =
                                       "nodeType": "BinaryOperation",
                                       "operator": "*",
                                       "rightExpression": {
-                                        "id": 8643,
+                                        "id": 10110,
                                         "name": "x",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 8494,
-                                        "src": "7979:1:33",
+                                        "referencedDeclaration": 9961,
+                                        "src": "7930:1:42",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_int256",
                                           "typeString": "int256"
                                         }
                                       },
-                                      "src": "7975:5:33",
+                                      "src": "7926:5:42",
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
                                       }
                                     }
                                   ],
-                                  "id": 8645,
+                                  "id": 10112,
                                   "isConstant": false,
                                   "isInlineArray": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "nodeType": "TupleExpression",
-                                  "src": "7974:7:33",
+                                  "src": "7925:7:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
@@ -5246,35 +5127,35 @@ export const FixedPointMath =
                                 "operator": ">>",
                                 "rightExpression": {
                                   "hexValue": "3936",
-                                  "id": 8646,
+                                  "id": 10113,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": true,
                                   "kind": "number",
                                   "lValueRequested": false,
                                   "nodeType": "Literal",
-                                  "src": "7985:2:33",
+                                  "src": "7936:2:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_rational_96_by_1",
                                     "typeString": "int_const 96"
                                   },
                                   "value": "96"
                                 },
-                                "src": "7974:13:33",
+                                "src": "7925:13:42",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 }
                               }
                             ],
-                            "id": 8648,
+                            "id": 10115,
                             "isConstant": false,
                             "isInlineArray": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "nodeType": "TupleExpression",
-                            "src": "7973:15:33",
+                            "src": "7924:15:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -5284,50 +5165,50 @@ export const FixedPointMath =
                           "operator": "-",
                           "rightExpression": {
                             "hexValue": "3134343233363038353637333530343633313830383837333732393632383037353733",
-                            "id": 8649,
+                            "id": 10116,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "kind": "number",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "7991:35:33",
+                            "src": "7942:35:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_rational_14423608567350463180887372962807573_by_1",
                               "typeString": "int_const 1442...(27 digits omitted)...7573"
                             },
                             "value": "14423608567350463180887372962807573"
                           },
-                          "src": "7973:53:33",
+                          "src": "7924:53:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "src": "7969:57:33",
+                        "src": "7920:57:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "id": 8652,
+                      "id": 10119,
                       "nodeType": "ExpressionStatement",
-                      "src": "7969:57:33"
+                      "src": "7920:57:42"
                     },
                     {
                       "expression": {
-                        "id": 8663,
+                        "id": 10130,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftHandSide": {
-                          "id": 8653,
+                          "id": 10120,
                           "name": "q",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8600,
-                          "src": "8040:1:33",
+                          "referencedDeclaration": 10067,
+                          "src": "7991:1:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
@@ -5340,7 +5221,7 @@ export const FixedPointMath =
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           },
-                          "id": 8662,
+                          "id": 10129,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -5352,7 +5233,7 @@ export const FixedPointMath =
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 },
-                                "id": 8659,
+                                "id": 10126,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -5364,18 +5245,18 @@ export const FixedPointMath =
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
                                       },
-                                      "id": 8656,
+                                      "id": 10123,
                                       "isConstant": false,
                                       "isLValue": false,
                                       "isPure": false,
                                       "lValueRequested": false,
                                       "leftExpression": {
-                                        "id": 8654,
+                                        "id": 10121,
                                         "name": "q",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 8600,
-                                        "src": "8046:1:33",
+                                        "referencedDeclaration": 10067,
+                                        "src": "7997:1:42",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_int256",
                                           "typeString": "int256"
@@ -5384,32 +5265,32 @@ export const FixedPointMath =
                                       "nodeType": "BinaryOperation",
                                       "operator": "*",
                                       "rightExpression": {
-                                        "id": 8655,
+                                        "id": 10122,
                                         "name": "x",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 8494,
-                                        "src": "8050:1:33",
+                                        "referencedDeclaration": 9961,
+                                        "src": "8001:1:42",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_int256",
                                           "typeString": "int256"
                                         }
                                       },
-                                      "src": "8046:5:33",
+                                      "src": "7997:5:42",
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
                                       }
                                     }
                                   ],
-                                  "id": 8657,
+                                  "id": 10124,
                                   "isConstant": false,
                                   "isInlineArray": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "nodeType": "TupleExpression",
-                                  "src": "8045:7:33",
+                                  "src": "7996:7:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
@@ -5419,35 +5300,35 @@ export const FixedPointMath =
                                 "operator": ">>",
                                 "rightExpression": {
                                   "hexValue": "3936",
-                                  "id": 8658,
+                                  "id": 10125,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": true,
                                   "kind": "number",
                                   "lValueRequested": false,
                                   "nodeType": "Literal",
-                                  "src": "8056:2:33",
+                                  "src": "8007:2:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_rational_96_by_1",
                                     "typeString": "int_const 96"
                                   },
                                   "value": "96"
                                 },
-                                "src": "8045:13:33",
+                                "src": "7996:13:42",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 }
                               }
                             ],
-                            "id": 8660,
+                            "id": 10127,
                             "isConstant": false,
                             "isInlineArray": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "nodeType": "TupleExpression",
-                            "src": "8044:15:33",
+                            "src": "7995:15:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -5457,70 +5338,70 @@ export const FixedPointMath =
                           "operator": "+",
                           "rightExpression": {
                             "hexValue": "3236343439313838343938333535353838333339393334383033373233393736303233",
-                            "id": 8661,
+                            "id": 10128,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "kind": "number",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "8062:35:33",
+                            "src": "8013:35:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_rational_26449188498355588339934803723976023_by_1",
                               "typeString": "int_const 2644...(27 digits omitted)...6023"
                             },
                             "value": "26449188498355588339934803723976023"
                           },
-                          "src": "8044:53:33",
+                          "src": "7995:53:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "src": "8040:57:33",
+                        "src": "7991:57:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "id": 8664,
+                      "id": 10131,
                       "nodeType": "ExpressionStatement",
-                      "src": "8040:57:33"
+                      "src": "7991:57:42"
                     },
                     {
                       "AST": {
                         "nodeType": "YulBlock",
-                        "src": "8168:318:33",
+                        "src": "8119:318:42",
                         "statements": [
                           {
                             "nodeType": "YulAssignment",
-                            "src": "8457:15:33",
+                            "src": "8408:15:42",
                             "value": {
                               "arguments": [
                                 {
                                   "name": "p",
                                   "nodeType": "YulIdentifier",
-                                  "src": "8467:1:33"
+                                  "src": "8418:1:42"
                                 },
                                 {
                                   "name": "q",
                                   "nodeType": "YulIdentifier",
-                                  "src": "8470:1:33"
+                                  "src": "8421:1:42"
                                 }
                               ],
                               "functionName": {
                                 "name": "sdiv",
                                 "nodeType": "YulIdentifier",
-                                "src": "8462:4:33"
+                                "src": "8413:4:42"
                               },
                               "nodeType": "YulFunctionCall",
-                              "src": "8462:10:33"
+                              "src": "8413:10:42"
                             },
                             "variableNames": [
                               {
                                 "name": "r",
                                 "nodeType": "YulIdentifier",
-                                "src": "8457:1:33"
+                                "src": "8408:1:42"
                               }
                             ]
                           }
@@ -5530,45 +5411,45 @@ export const FixedPointMath =
                       "evmVersion": "paris",
                       "externalReferences": [
                         {
-                          "declaration": 8569,
+                          "declaration": 10036,
                           "isOffset": false,
                           "isSlot": false,
-                          "src": "8467:1:33",
+                          "src": "8418:1:42",
                           "valueSize": 1
                         },
                         {
-                          "declaration": 8600,
+                          "declaration": 10067,
                           "isOffset": false,
                           "isSlot": false,
-                          "src": "8470:1:33",
+                          "src": "8421:1:42",
                           "valueSize": 1
                         },
                         {
-                          "declaration": 8497,
+                          "declaration": 9964,
                           "isOffset": false,
                           "isSlot": false,
-                          "src": "8457:1:33",
+                          "src": "8408:1:42",
                           "valueSize": 1
                         }
                       ],
-                      "id": 8665,
+                      "id": 10132,
                       "nodeType": "InlineAssembly",
-                      "src": "8159:327:33"
+                      "src": "8110:327:42"
                     },
                     {
                       "expression": {
-                        "id": 8684,
+                        "id": 10151,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftHandSide": {
-                          "id": 8666,
+                          "id": 10133,
                           "name": "r",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8497,
-                          "src": "8937:1:33",
+                          "referencedDeclaration": 9964,
+                          "src": "8888:1:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
@@ -5583,7 +5464,7 @@ export const FixedPointMath =
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               },
-                              "id": 8682,
+                              "id": 10149,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
@@ -5595,7 +5476,7 @@ export const FixedPointMath =
                                       "typeIdentifier": "t_uint256",
                                       "typeString": "uint256"
                                     },
-                                    "id": 8674,
+                                    "id": 10141,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": false,
@@ -5603,12 +5484,12 @@ export const FixedPointMath =
                                     "leftExpression": {
                                       "arguments": [
                                         {
-                                          "id": 8671,
+                                          "id": 10138,
                                           "name": "r",
                                           "nodeType": "Identifier",
                                           "overloadedDeclarations": [],
-                                          "referencedDeclaration": 8497,
-                                          "src": "8974:1:33",
+                                          "referencedDeclaration": 9964,
+                                          "src": "8925:1:42",
                                           "typeDescriptions": {
                                             "typeIdentifier": "t_int256",
                                             "typeString": "int256"
@@ -5622,26 +5503,26 @@ export const FixedPointMath =
                                             "typeString": "int256"
                                           }
                                         ],
-                                        "id": 8670,
+                                        "id": 10137,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": true,
                                         "lValueRequested": false,
                                         "nodeType": "ElementaryTypeNameExpression",
-                                        "src": "8966:7:33",
+                                        "src": "8917:7:42",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_type$_t_uint256_$",
                                           "typeString": "type(uint256)"
                                         },
                                         "typeName": {
-                                          "id": 8669,
+                                          "id": 10136,
                                           "name": "uint256",
                                           "nodeType": "ElementaryTypeName",
-                                          "src": "8966:7:33",
+                                          "src": "8917:7:42",
                                           "typeDescriptions": {}
                                         }
                                       },
-                                      "id": 8672,
+                                      "id": 10139,
                                       "isConstant": false,
                                       "isLValue": false,
                                       "isPure": false,
@@ -5650,7 +5531,7 @@ export const FixedPointMath =
                                       "nameLocations": [],
                                       "names": [],
                                       "nodeType": "FunctionCall",
-                                      "src": "8966:10:33",
+                                      "src": "8917:10:42",
                                       "tryCall": false,
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_uint256",
@@ -5661,35 +5542,35 @@ export const FixedPointMath =
                                     "operator": "*",
                                     "rightExpression": {
                                       "hexValue": "33383232383333303734393633323336343533303432373338323538393032313538303033313535343136363135363637",
-                                      "id": 8673,
+                                      "id": 10140,
                                       "isConstant": false,
                                       "isLValue": false,
                                       "isPure": true,
                                       "kind": "number",
                                       "lValueRequested": false,
                                       "nodeType": "Literal",
-                                      "src": "8999:49:33",
+                                      "src": "8950:49:42",
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_rational_3822833074963236453042738258902158003155416615667_by_1",
                                         "typeString": "int_const 3822...(41 digits omitted)...5667"
                                       },
                                       "value": "3822833074963236453042738258902158003155416615667"
                                     },
-                                    "src": "8966:82:33",
+                                    "src": "8917:82:42",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
                                       "typeString": "uint256"
                                     }
                                   }
                                 ],
-                                "id": 8675,
+                                "id": 10142,
                                 "isConstant": false,
                                 "isInlineArray": false,
                                 "isLValue": false,
                                 "isPure": false,
                                 "lValueRequested": false,
                                 "nodeType": "TupleExpression",
-                                "src": "8965:84:33",
+                                "src": "8916:84:42",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
@@ -5704,21 +5585,21 @@ export const FixedPointMath =
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
                                     },
-                                    "id": 8680,
+                                    "id": 10147,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": false,
                                     "lValueRequested": false,
                                     "leftExpression": {
                                       "hexValue": "313935",
-                                      "id": 8678,
+                                      "id": 10145,
                                       "isConstant": false,
                                       "isLValue": false,
                                       "isPure": true,
                                       "kind": "number",
                                       "lValueRequested": false,
                                       "nodeType": "Literal",
-                                      "src": "9081:3:33",
+                                      "src": "9032:3:42",
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_rational_195_by_1",
                                         "typeString": "int_const 195"
@@ -5728,18 +5609,18 @@ export const FixedPointMath =
                                     "nodeType": "BinaryOperation",
                                     "operator": "-",
                                     "rightExpression": {
-                                      "id": 8679,
+                                      "id": 10146,
                                       "name": "k",
                                       "nodeType": "Identifier",
                                       "overloadedDeclarations": [],
-                                      "referencedDeclaration": 8527,
-                                      "src": "9087:1:33",
+                                      "referencedDeclaration": 9994,
+                                      "src": "9038:1:42",
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
                                       }
                                     },
-                                    "src": "9081:7:33",
+                                    "src": "9032:7:42",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
@@ -5753,26 +5634,26 @@ export const FixedPointMath =
                                       "typeString": "int256"
                                     }
                                   ],
-                                  "id": 8677,
+                                  "id": 10144,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": true,
                                   "lValueRequested": false,
                                   "nodeType": "ElementaryTypeNameExpression",
-                                  "src": "9073:7:33",
+                                  "src": "9024:7:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_type$_t_uint256_$",
                                     "typeString": "type(uint256)"
                                   },
                                   "typeName": {
-                                    "id": 8676,
+                                    "id": 10143,
                                     "name": "uint256",
                                     "nodeType": "ElementaryTypeName",
-                                    "src": "9073:7:33",
+                                    "src": "9024:7:42",
                                     "typeDescriptions": {}
                                   }
                                 },
-                                "id": 8681,
+                                "id": 10148,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -5781,14 +5662,14 @@ export const FixedPointMath =
                                 "nameLocations": [],
                                 "names": [],
                                 "nodeType": "FunctionCall",
-                                "src": "9073:16:33",
+                                "src": "9024:16:42",
                                 "tryCall": false,
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
                                 }
                               },
-                              "src": "8965:124:33",
+                              "src": "8916:124:42",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
@@ -5802,26 +5683,26 @@ export const FixedPointMath =
                                 "typeString": "uint256"
                               }
                             ],
-                            "id": 8668,
+                            "id": 10135,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "lValueRequested": false,
                             "nodeType": "ElementaryTypeNameExpression",
-                            "src": "8941:6:33",
+                            "src": "8892:6:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_type$_t_int256_$",
                               "typeString": "type(int256)"
                             },
                             "typeName": {
-                              "id": 8667,
+                              "id": 10134,
                               "name": "int256",
                               "nodeType": "ElementaryTypeName",
-                              "src": "8941:6:33",
+                              "src": "8892:6:42",
                               "typeDescriptions": {}
                             }
                           },
-                          "id": 8683,
+                          "id": 10150,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -5830,51 +5711,51 @@ export const FixedPointMath =
                           "nameLocations": [],
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "8941:162:33",
+                          "src": "8892:162:42",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "src": "8937:166:33",
+                        "src": "8888:166:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "id": 8685,
+                      "id": 10152,
                       "nodeType": "ExpressionStatement",
-                      "src": "8937:166:33"
+                      "src": "8888:166:42"
                     }
                   ]
                 }
               ]
             },
             "documentation": {
-              "id": 8492,
+              "id": 9959,
               "nodeType": "StructuredDocumentation",
-              "src": "5523:245:33",
+              "src": "5474:245:42",
               "text": "@dev Computes e^x in 1e18 fixed point.\n @dev Credit to Solmate (https://github.com/transmissions11/solmate/blob/main/src/utils/SignedWadMath.sol)\n @param x Fixed point number in 1e18 format.\n @return r The result of e^x."
             },
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "exp",
-            "nameLocation": "5782:3:33",
+            "nameLocation": "5733:3:42",
             "parameters": {
-              "id": 8495,
+              "id": 9962,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8494,
+                  "id": 9961,
                   "mutability": "mutable",
                   "name": "x",
-                  "nameLocation": "5793:1:33",
+                  "nameLocation": "5744:1:42",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8688,
-                  "src": "5786:8:33",
+                  "scope": 10155,
+                  "src": "5737:8:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -5882,10 +5763,10 @@ export const FixedPointMath =
                     "typeString": "int256"
                   },
                   "typeName": {
-                    "id": 8493,
+                    "id": 9960,
                     "name": "int256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5786:6:33",
+                    "src": "5737:6:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
@@ -5894,21 +5775,21 @@ export const FixedPointMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "5785:10:33"
+              "src": "5736:10:42"
             },
             "returnParameters": {
-              "id": 8498,
+              "id": 9965,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8497,
+                  "id": 9964,
                   "mutability": "mutable",
                   "name": "r",
-                  "nameLocation": "5826:1:33",
+                  "nameLocation": "5777:1:42",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8688,
-                  "src": "5819:8:33",
+                  "scope": 10155,
+                  "src": "5770:8:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -5916,10 +5797,10 @@ export const FixedPointMath =
                     "typeString": "int256"
                   },
                   "typeName": {
-                    "id": 8496,
+                    "id": 9963,
                     "name": "int256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5819:6:33",
+                    "src": "5770:6:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
@@ -5928,22 +5809,22 @@ export const FixedPointMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "5818:10:33"
+              "src": "5769:10:42"
             },
-            "scope": 9066,
+            "scope": 10533,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 8710,
+            "id": 10177,
             "nodeType": "FunctionDefinition",
-            "src": "9412:160:33",
+            "src": "9363:160:42",
             "nodes": [],
             "body": {
-              "id": 8709,
+              "id": 10176,
               "nodeType": "Block",
-              "src": "9465:107:33",
+              "src": "9416:107:42",
               "nodes": [],
               "statements": [
                 {
@@ -5952,18 +5833,18 @@ export const FixedPointMath =
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     },
-                    "id": 8698,
+                    "id": 10165,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 8696,
+                      "id": 10163,
                       "name": "x",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 8691,
-                      "src": "9479:1:33",
+                      "referencedDeclaration": 10158,
+                      "src": "9430:1:42",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -5973,62 +5854,62 @@ export const FixedPointMath =
                     "operator": "<=",
                     "rightExpression": {
                       "hexValue": "30",
-                      "id": 8697,
+                      "id": 10164,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "9484:1:33",
+                      "src": "9435:1:42",
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_0_by_1",
                         "typeString": "int_const 0"
                       },
                       "value": "0"
                     },
-                    "src": "9479:6:33",
+                    "src": "9430:6:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "id": 8704,
+                  "id": 10171,
                   "nodeType": "IfStatement",
-                  "src": "9475:67:33",
+                  "src": "9426:67:42",
                   "trueBody": {
                     "errorCall": {
                       "arguments": [],
                       "expression": {
                         "argumentTypes": [],
                         "expression": {
-                          "id": 8699,
+                          "id": 10166,
                           "name": "IHyperdrive",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 7431,
-                          "src": "9494:11:33",
+                          "referencedDeclaration": 3759,
+                          "src": "9445:11:42",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$7431_$",
+                            "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$3759_$",
                             "typeString": "type(contract IHyperdrive)"
                           }
                         },
-                        "id": 8701,
+                        "id": 10168,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
-                        "memberLocation": "9506:34:33",
+                        "memberLocation": "9457:34:42",
                         "memberName": "FixedPointMath_NegativeOrZeroInput",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 7420,
-                        "src": "9494:46:33",
+                        "referencedDeclaration": 3737,
+                        "src": "9445:46:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_error_pure$__$returns$__$",
                           "typeString": "function () pure"
                         }
                       },
-                      "id": 8702,
+                      "id": 10169,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -6037,28 +5918,28 @@ export const FixedPointMath =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "9494:48:33",
+                      "src": "9445:48:42",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_tuple$__$",
                         "typeString": "tuple()"
                       }
                     },
-                    "id": 8703,
+                    "id": 10170,
                     "nodeType": "RevertStatement",
-                    "src": "9487:55:33"
+                    "src": "9438:55:42"
                   }
                 },
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 8706,
+                        "id": 10173,
                         "name": "x",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 8691,
-                        "src": "9563:1:33",
+                        "referencedDeclaration": 10158,
+                        "src": "9514:1:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -6072,18 +5953,18 @@ export const FixedPointMath =
                           "typeString": "int256"
                         }
                       ],
-                      "id": 8705,
+                      "id": 10172,
                       "name": "_ln",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 8930,
-                      "src": "9559:3:33",
+                      "referencedDeclaration": 10397,
+                      "src": "9510:3:42",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_int256_$returns$_t_int256_$",
                         "typeString": "function (int256) pure returns (int256)"
                       }
                     },
-                    "id": 8707,
+                    "id": 10174,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -6092,44 +5973,44 @@ export const FixedPointMath =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "9559:6:33",
+                    "src": "9510:6:42",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "functionReturnParameters": 8695,
-                  "id": 8708,
+                  "functionReturnParameters": 10162,
+                  "id": 10175,
                   "nodeType": "Return",
-                  "src": "9552:13:33"
+                  "src": "9503:13:42"
                 }
               ]
             },
             "documentation": {
-              "id": 8689,
+              "id": 10156,
               "nodeType": "StructuredDocumentation",
-              "src": "9126:281:33",
+              "src": "9077:281:42",
               "text": "@dev Computes ln(x) in 1e18 fixed point.\n @dev Reverts if x is negative\n @dev Credit to Solmate (https://github.com/transmissions11/solmate/blob/main/src/utils/SignedWadMath.sol)\n @param x Fixed point number in 1e18 format.\n @return Result of ln(x)."
             },
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "ln",
-            "nameLocation": "9421:2:33",
+            "nameLocation": "9372:2:42",
             "parameters": {
-              "id": 8692,
+              "id": 10159,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8691,
+                  "id": 10158,
                   "mutability": "mutable",
                   "name": "x",
-                  "nameLocation": "9431:1:33",
+                  "nameLocation": "9382:1:42",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8710,
-                  "src": "9424:8:33",
+                  "scope": 10177,
+                  "src": "9375:8:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -6137,10 +6018,10 @@ export const FixedPointMath =
                     "typeString": "int256"
                   },
                   "typeName": {
-                    "id": 8690,
+                    "id": 10157,
                     "name": "int256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "9424:6:33",
+                    "src": "9375:6:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
@@ -6149,21 +6030,21 @@ export const FixedPointMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "9423:10:33"
+              "src": "9374:10:42"
             },
             "returnParameters": {
-              "id": 8695,
+              "id": 10162,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8694,
+                  "id": 10161,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8710,
-                  "src": "9457:6:33",
+                  "scope": 10177,
+                  "src": "9408:6:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -6171,10 +6052,10 @@ export const FixedPointMath =
                     "typeString": "int256"
                   },
                   "typeName": {
-                    "id": 8693,
+                    "id": 10160,
                     "name": "int256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "9457:6:33",
+                    "src": "9408:6:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
@@ -6183,28 +6064,28 @@ export const FixedPointMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "9456:8:33"
+              "src": "9407:8:42"
             },
-            "scope": 9066,
+            "scope": 10533,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 8930,
+            "id": 10397,
             "nodeType": "FunctionDefinition",
-            "src": "9632:3592:33",
+            "src": "9583:3592:42",
             "nodes": [],
             "body": {
-              "id": 8929,
+              "id": 10396,
               "nodeType": "Block",
-              "src": "9687:3537:33",
+              "src": "9638:3537:42",
               "nodes": [],
               "statements": [
                 {
-                  "id": 8928,
+                  "id": 10395,
                   "nodeType": "UncheckedBlock",
-                  "src": "9697:3521:33",
+                  "src": "9648:3521:42",
                   "statements": [
                     {
                       "condition": {
@@ -6212,18 +6093,18 @@ export const FixedPointMath =
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         },
-                        "id": 8719,
+                        "id": 10186,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
-                          "id": 8717,
+                          "id": 10184,
                           "name": "x",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8712,
-                          "src": "9725:1:33",
+                          "referencedDeclaration": 10179,
+                          "src": "9676:1:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
@@ -6233,62 +6114,62 @@ export const FixedPointMath =
                         "operator": "<=",
                         "rightExpression": {
                           "hexValue": "30",
-                          "id": 8718,
+                          "id": 10185,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "9730:1:33",
+                          "src": "9681:1:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_0_by_1",
                             "typeString": "int_const 0"
                           },
                           "value": "0"
                         },
-                        "src": "9725:6:33",
+                        "src": "9676:6:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
                         }
                       },
-                      "id": 8725,
+                      "id": 10192,
                       "nodeType": "IfStatement",
-                      "src": "9721:60:33",
+                      "src": "9672:60:42",
                       "trueBody": {
                         "errorCall": {
                           "arguments": [],
                           "expression": {
                             "argumentTypes": [],
                             "expression": {
-                              "id": 8720,
+                              "id": 10187,
                               "name": "IHyperdrive",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 7431,
-                              "src": "9740:11:33",
+                              "referencedDeclaration": 3759,
+                              "src": "9691:11:42",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$7431_$",
+                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$3759_$",
                                 "typeString": "type(contract IHyperdrive)"
                               }
                             },
-                            "id": 8722,
+                            "id": 10189,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
-                            "memberLocation": "9752:27:33",
+                            "memberLocation": "9703:27:42",
                             "memberName": "FixedPointMath_InvalidInput",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 7418,
-                            "src": "9740:39:33",
+                            "referencedDeclaration": 3735,
+                            "src": "9691:39:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_error_pure$__$returns$__$",
                               "typeString": "function () pure"
                             }
                           },
-                          "id": 8723,
+                          "id": 10190,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -6297,32 +6178,32 @@ export const FixedPointMath =
                           "nameLocations": [],
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "9740:41:33",
+                          "src": "9691:41:42",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_tuple$__$",
                             "typeString": "tuple()"
                           }
                         },
-                        "id": 8724,
+                        "id": 10191,
                         "nodeType": "RevertStatement",
-                        "src": "9733:48:33"
+                        "src": "9684:48:42"
                       }
                     },
                     {
                       "AST": {
                         "nodeType": "YulBlock",
-                        "src": "10131:489:33",
+                        "src": "10082:489:42",
                         "statements": [
                           {
                             "nodeType": "YulAssignment",
-                            "src": "10149:54:33",
+                            "src": "10100:54:42",
                             "value": {
                               "arguments": [
                                 {
                                   "kind": "number",
                                   "nodeType": "YulLiteral",
-                                  "src": "10158:1:33",
+                                  "src": "10109:1:42",
                                   "type": "",
                                   "value": "7"
                                 },
@@ -6331,57 +6212,57 @@ export const FixedPointMath =
                                     {
                                       "kind": "number",
                                       "nodeType": "YulLiteral",
-                                      "src": "10164:34:33",
+                                      "src": "10115:34:42",
                                       "type": "",
                                       "value": "0xffffffffffffffffffffffffffffffff"
                                     },
                                     {
                                       "name": "x",
                                       "nodeType": "YulIdentifier",
-                                      "src": "10200:1:33"
+                                      "src": "10151:1:42"
                                     }
                                   ],
                                   "functionName": {
                                     "name": "lt",
                                     "nodeType": "YulIdentifier",
-                                    "src": "10161:2:33"
+                                    "src": "10112:2:42"
                                   },
                                   "nodeType": "YulFunctionCall",
-                                  "src": "10161:41:33"
+                                  "src": "10112:41:42"
                                 }
                               ],
                               "functionName": {
                                 "name": "shl",
                                 "nodeType": "YulIdentifier",
-                                "src": "10154:3:33"
+                                "src": "10105:3:42"
                               },
                               "nodeType": "YulFunctionCall",
-                              "src": "10154:49:33"
+                              "src": "10105:49:42"
                             },
                             "variableNames": [
                               {
                                 "name": "r",
                                 "nodeType": "YulIdentifier",
-                                "src": "10149:1:33"
+                                "src": "10100:1:42"
                               }
                             ]
                           },
                           {
                             "nodeType": "YulAssignment",
-                            "src": "10220:53:33",
+                            "src": "10171:53:42",
                             "value": {
                               "arguments": [
                                 {
                                   "name": "r",
                                   "nodeType": "YulIdentifier",
-                                  "src": "10228:1:33"
+                                  "src": "10179:1:42"
                                 },
                                 {
                                   "arguments": [
                                     {
                                       "kind": "number",
                                       "nodeType": "YulLiteral",
-                                      "src": "10235:1:33",
+                                      "src": "10186:1:42",
                                       "type": "",
                                       "value": "6"
                                     },
@@ -6390,7 +6271,7 @@ export const FixedPointMath =
                                         {
                                           "kind": "number",
                                           "nodeType": "YulLiteral",
-                                          "src": "10241:18:33",
+                                          "src": "10192:18:42",
                                           "type": "",
                                           "value": "0xffffffffffffffff"
                                         },
@@ -6399,73 +6280,73 @@ export const FixedPointMath =
                                             {
                                               "name": "r",
                                               "nodeType": "YulIdentifier",
-                                              "src": "10265:1:33"
+                                              "src": "10216:1:42"
                                             },
                                             {
                                               "name": "x",
                                               "nodeType": "YulIdentifier",
-                                              "src": "10268:1:33"
+                                              "src": "10219:1:42"
                                             }
                                           ],
                                           "functionName": {
                                             "name": "shr",
                                             "nodeType": "YulIdentifier",
-                                            "src": "10261:3:33"
+                                            "src": "10212:3:42"
                                           },
                                           "nodeType": "YulFunctionCall",
-                                          "src": "10261:9:33"
+                                          "src": "10212:9:42"
                                         }
                                       ],
                                       "functionName": {
                                         "name": "lt",
                                         "nodeType": "YulIdentifier",
-                                        "src": "10238:2:33"
+                                        "src": "10189:2:42"
                                       },
                                       "nodeType": "YulFunctionCall",
-                                      "src": "10238:33:33"
+                                      "src": "10189:33:42"
                                     }
                                   ],
                                   "functionName": {
                                     "name": "shl",
                                     "nodeType": "YulIdentifier",
-                                    "src": "10231:3:33"
+                                    "src": "10182:3:42"
                                   },
                                   "nodeType": "YulFunctionCall",
-                                  "src": "10231:41:33"
+                                  "src": "10182:41:42"
                                 }
                               ],
                               "functionName": {
                                 "name": "or",
                                 "nodeType": "YulIdentifier",
-                                "src": "10225:2:33"
+                                "src": "10176:2:42"
                               },
                               "nodeType": "YulFunctionCall",
-                              "src": "10225:48:33"
+                              "src": "10176:48:42"
                             },
                             "variableNames": [
                               {
                                 "name": "r",
                                 "nodeType": "YulIdentifier",
-                                "src": "10220:1:33"
+                                "src": "10171:1:42"
                               }
                             ]
                           },
                           {
                             "nodeType": "YulAssignment",
-                            "src": "10290:45:33",
+                            "src": "10241:45:42",
                             "value": {
                               "arguments": [
                                 {
                                   "name": "r",
                                   "nodeType": "YulIdentifier",
-                                  "src": "10298:1:33"
+                                  "src": "10249:1:42"
                                 },
                                 {
                                   "arguments": [
                                     {
                                       "kind": "number",
                                       "nodeType": "YulLiteral",
-                                      "src": "10305:1:33",
+                                      "src": "10256:1:42",
                                       "type": "",
                                       "value": "5"
                                     },
@@ -6474,7 +6355,7 @@ export const FixedPointMath =
                                         {
                                           "kind": "number",
                                           "nodeType": "YulLiteral",
-                                          "src": "10311:10:33",
+                                          "src": "10262:10:42",
                                           "type": "",
                                           "value": "0xffffffff"
                                         },
@@ -6483,73 +6364,73 @@ export const FixedPointMath =
                                             {
                                               "name": "r",
                                               "nodeType": "YulIdentifier",
-                                              "src": "10327:1:33"
+                                              "src": "10278:1:42"
                                             },
                                             {
                                               "name": "x",
                                               "nodeType": "YulIdentifier",
-                                              "src": "10330:1:33"
+                                              "src": "10281:1:42"
                                             }
                                           ],
                                           "functionName": {
                                             "name": "shr",
                                             "nodeType": "YulIdentifier",
-                                            "src": "10323:3:33"
+                                            "src": "10274:3:42"
                                           },
                                           "nodeType": "YulFunctionCall",
-                                          "src": "10323:9:33"
+                                          "src": "10274:9:42"
                                         }
                                       ],
                                       "functionName": {
                                         "name": "lt",
                                         "nodeType": "YulIdentifier",
-                                        "src": "10308:2:33"
+                                        "src": "10259:2:42"
                                       },
                                       "nodeType": "YulFunctionCall",
-                                      "src": "10308:25:33"
+                                      "src": "10259:25:42"
                                     }
                                   ],
                                   "functionName": {
                                     "name": "shl",
                                     "nodeType": "YulIdentifier",
-                                    "src": "10301:3:33"
+                                    "src": "10252:3:42"
                                   },
                                   "nodeType": "YulFunctionCall",
-                                  "src": "10301:33:33"
+                                  "src": "10252:33:42"
                                 }
                               ],
                               "functionName": {
                                 "name": "or",
                                 "nodeType": "YulIdentifier",
-                                "src": "10295:2:33"
+                                "src": "10246:2:42"
                               },
                               "nodeType": "YulFunctionCall",
-                              "src": "10295:40:33"
+                              "src": "10246:40:42"
                             },
                             "variableNames": [
                               {
                                 "name": "r",
                                 "nodeType": "YulIdentifier",
-                                "src": "10290:1:33"
+                                "src": "10241:1:42"
                               }
                             ]
                           },
                           {
                             "nodeType": "YulAssignment",
-                            "src": "10352:41:33",
+                            "src": "10303:41:42",
                             "value": {
                               "arguments": [
                                 {
                                   "name": "r",
                                   "nodeType": "YulIdentifier",
-                                  "src": "10360:1:33"
+                                  "src": "10311:1:42"
                                 },
                                 {
                                   "arguments": [
                                     {
                                       "kind": "number",
                                       "nodeType": "YulLiteral",
-                                      "src": "10367:1:33",
+                                      "src": "10318:1:42",
                                       "type": "",
                                       "value": "4"
                                     },
@@ -6558,7 +6439,7 @@ export const FixedPointMath =
                                         {
                                           "kind": "number",
                                           "nodeType": "YulLiteral",
-                                          "src": "10373:6:33",
+                                          "src": "10324:6:42",
                                           "type": "",
                                           "value": "0xffff"
                                         },
@@ -6567,73 +6448,73 @@ export const FixedPointMath =
                                             {
                                               "name": "r",
                                               "nodeType": "YulIdentifier",
-                                              "src": "10385:1:33"
+                                              "src": "10336:1:42"
                                             },
                                             {
                                               "name": "x",
                                               "nodeType": "YulIdentifier",
-                                              "src": "10388:1:33"
+                                              "src": "10339:1:42"
                                             }
                                           ],
                                           "functionName": {
                                             "name": "shr",
                                             "nodeType": "YulIdentifier",
-                                            "src": "10381:3:33"
+                                            "src": "10332:3:42"
                                           },
                                           "nodeType": "YulFunctionCall",
-                                          "src": "10381:9:33"
+                                          "src": "10332:9:42"
                                         }
                                       ],
                                       "functionName": {
                                         "name": "lt",
                                         "nodeType": "YulIdentifier",
-                                        "src": "10370:2:33"
+                                        "src": "10321:2:42"
                                       },
                                       "nodeType": "YulFunctionCall",
-                                      "src": "10370:21:33"
+                                      "src": "10321:21:42"
                                     }
                                   ],
                                   "functionName": {
                                     "name": "shl",
                                     "nodeType": "YulIdentifier",
-                                    "src": "10363:3:33"
+                                    "src": "10314:3:42"
                                   },
                                   "nodeType": "YulFunctionCall",
-                                  "src": "10363:29:33"
+                                  "src": "10314:29:42"
                                 }
                               ],
                               "functionName": {
                                 "name": "or",
                                 "nodeType": "YulIdentifier",
-                                "src": "10357:2:33"
+                                "src": "10308:2:42"
                               },
                               "nodeType": "YulFunctionCall",
-                              "src": "10357:36:33"
+                              "src": "10308:36:42"
                             },
                             "variableNames": [
                               {
                                 "name": "r",
                                 "nodeType": "YulIdentifier",
-                                "src": "10352:1:33"
+                                "src": "10303:1:42"
                               }
                             ]
                           },
                           {
                             "nodeType": "YulAssignment",
-                            "src": "10410:39:33",
+                            "src": "10361:39:42",
                             "value": {
                               "arguments": [
                                 {
                                   "name": "r",
                                   "nodeType": "YulIdentifier",
-                                  "src": "10418:1:33"
+                                  "src": "10369:1:42"
                                 },
                                 {
                                   "arguments": [
                                     {
                                       "kind": "number",
                                       "nodeType": "YulLiteral",
-                                      "src": "10425:1:33",
+                                      "src": "10376:1:42",
                                       "type": "",
                                       "value": "3"
                                     },
@@ -6642,7 +6523,7 @@ export const FixedPointMath =
                                         {
                                           "kind": "number",
                                           "nodeType": "YulLiteral",
-                                          "src": "10431:4:33",
+                                          "src": "10382:4:42",
                                           "type": "",
                                           "value": "0xff"
                                         },
@@ -6651,73 +6532,73 @@ export const FixedPointMath =
                                             {
                                               "name": "r",
                                               "nodeType": "YulIdentifier",
-                                              "src": "10441:1:33"
+                                              "src": "10392:1:42"
                                             },
                                             {
                                               "name": "x",
                                               "nodeType": "YulIdentifier",
-                                              "src": "10444:1:33"
+                                              "src": "10395:1:42"
                                             }
                                           ],
                                           "functionName": {
                                             "name": "shr",
                                             "nodeType": "YulIdentifier",
-                                            "src": "10437:3:33"
+                                            "src": "10388:3:42"
                                           },
                                           "nodeType": "YulFunctionCall",
-                                          "src": "10437:9:33"
+                                          "src": "10388:9:42"
                                         }
                                       ],
                                       "functionName": {
                                         "name": "lt",
                                         "nodeType": "YulIdentifier",
-                                        "src": "10428:2:33"
+                                        "src": "10379:2:42"
                                       },
                                       "nodeType": "YulFunctionCall",
-                                      "src": "10428:19:33"
+                                      "src": "10379:19:42"
                                     }
                                   ],
                                   "functionName": {
                                     "name": "shl",
                                     "nodeType": "YulIdentifier",
-                                    "src": "10421:3:33"
+                                    "src": "10372:3:42"
                                   },
                                   "nodeType": "YulFunctionCall",
-                                  "src": "10421:27:33"
+                                  "src": "10372:27:42"
                                 }
                               ],
                               "functionName": {
                                 "name": "or",
                                 "nodeType": "YulIdentifier",
-                                "src": "10415:2:33"
+                                "src": "10366:2:42"
                               },
                               "nodeType": "YulFunctionCall",
-                              "src": "10415:34:33"
+                              "src": "10366:34:42"
                             },
                             "variableNames": [
                               {
                                 "name": "r",
                                 "nodeType": "YulIdentifier",
-                                "src": "10410:1:33"
+                                "src": "10361:1:42"
                               }
                             ]
                           },
                           {
                             "nodeType": "YulAssignment",
-                            "src": "10466:38:33",
+                            "src": "10417:38:42",
                             "value": {
                               "arguments": [
                                 {
                                   "name": "r",
                                   "nodeType": "YulIdentifier",
-                                  "src": "10474:1:33"
+                                  "src": "10425:1:42"
                                 },
                                 {
                                   "arguments": [
                                     {
                                       "kind": "number",
                                       "nodeType": "YulLiteral",
-                                      "src": "10481:1:33",
+                                      "src": "10432:1:42",
                                       "type": "",
                                       "value": "2"
                                     },
@@ -6726,7 +6607,7 @@ export const FixedPointMath =
                                         {
                                           "kind": "number",
                                           "nodeType": "YulLiteral",
-                                          "src": "10487:3:33",
+                                          "src": "10438:3:42",
                                           "type": "",
                                           "value": "0xf"
                                         },
@@ -6735,73 +6616,73 @@ export const FixedPointMath =
                                             {
                                               "name": "r",
                                               "nodeType": "YulIdentifier",
-                                              "src": "10496:1:33"
+                                              "src": "10447:1:42"
                                             },
                                             {
                                               "name": "x",
                                               "nodeType": "YulIdentifier",
-                                              "src": "10499:1:33"
+                                              "src": "10450:1:42"
                                             }
                                           ],
                                           "functionName": {
                                             "name": "shr",
                                             "nodeType": "YulIdentifier",
-                                            "src": "10492:3:33"
+                                            "src": "10443:3:42"
                                           },
                                           "nodeType": "YulFunctionCall",
-                                          "src": "10492:9:33"
+                                          "src": "10443:9:42"
                                         }
                                       ],
                                       "functionName": {
                                         "name": "lt",
                                         "nodeType": "YulIdentifier",
-                                        "src": "10484:2:33"
+                                        "src": "10435:2:42"
                                       },
                                       "nodeType": "YulFunctionCall",
-                                      "src": "10484:18:33"
+                                      "src": "10435:18:42"
                                     }
                                   ],
                                   "functionName": {
                                     "name": "shl",
                                     "nodeType": "YulIdentifier",
-                                    "src": "10477:3:33"
+                                    "src": "10428:3:42"
                                   },
                                   "nodeType": "YulFunctionCall",
-                                  "src": "10477:26:33"
+                                  "src": "10428:26:42"
                                 }
                               ],
                               "functionName": {
                                 "name": "or",
                                 "nodeType": "YulIdentifier",
-                                "src": "10471:2:33"
+                                "src": "10422:2:42"
                               },
                               "nodeType": "YulFunctionCall",
-                              "src": "10471:33:33"
+                              "src": "10422:33:42"
                             },
                             "variableNames": [
                               {
                                 "name": "r",
                                 "nodeType": "YulIdentifier",
-                                "src": "10466:1:33"
+                                "src": "10417:1:42"
                               }
                             ]
                           },
                           {
                             "nodeType": "YulAssignment",
-                            "src": "10521:38:33",
+                            "src": "10472:38:42",
                             "value": {
                               "arguments": [
                                 {
                                   "name": "r",
                                   "nodeType": "YulIdentifier",
-                                  "src": "10529:1:33"
+                                  "src": "10480:1:42"
                                 },
                                 {
                                   "arguments": [
                                     {
                                       "kind": "number",
                                       "nodeType": "YulLiteral",
-                                      "src": "10536:1:33",
+                                      "src": "10487:1:42",
                                       "type": "",
                                       "value": "1"
                                     },
@@ -6810,7 +6691,7 @@ export const FixedPointMath =
                                         {
                                           "kind": "number",
                                           "nodeType": "YulLiteral",
-                                          "src": "10542:3:33",
+                                          "src": "10493:3:42",
                                           "type": "",
                                           "value": "0x3"
                                         },
@@ -6819,73 +6700,73 @@ export const FixedPointMath =
                                             {
                                               "name": "r",
                                               "nodeType": "YulIdentifier",
-                                              "src": "10551:1:33"
+                                              "src": "10502:1:42"
                                             },
                                             {
                                               "name": "x",
                                               "nodeType": "YulIdentifier",
-                                              "src": "10554:1:33"
+                                              "src": "10505:1:42"
                                             }
                                           ],
                                           "functionName": {
                                             "name": "shr",
                                             "nodeType": "YulIdentifier",
-                                            "src": "10547:3:33"
+                                            "src": "10498:3:42"
                                           },
                                           "nodeType": "YulFunctionCall",
-                                          "src": "10547:9:33"
+                                          "src": "10498:9:42"
                                         }
                                       ],
                                       "functionName": {
                                         "name": "lt",
                                         "nodeType": "YulIdentifier",
-                                        "src": "10539:2:33"
+                                        "src": "10490:2:42"
                                       },
                                       "nodeType": "YulFunctionCall",
-                                      "src": "10539:18:33"
+                                      "src": "10490:18:42"
                                     }
                                   ],
                                   "functionName": {
                                     "name": "shl",
                                     "nodeType": "YulIdentifier",
-                                    "src": "10532:3:33"
+                                    "src": "10483:3:42"
                                   },
                                   "nodeType": "YulFunctionCall",
-                                  "src": "10532:26:33"
+                                  "src": "10483:26:42"
                                 }
                               ],
                               "functionName": {
                                 "name": "or",
                                 "nodeType": "YulIdentifier",
-                                "src": "10526:2:33"
+                                "src": "10477:2:42"
                               },
                               "nodeType": "YulFunctionCall",
-                              "src": "10526:33:33"
+                              "src": "10477:33:42"
                             },
                             "variableNames": [
                               {
                                 "name": "r",
                                 "nodeType": "YulIdentifier",
-                                "src": "10521:1:33"
+                                "src": "10472:1:42"
                               }
                             ]
                           },
                           {
                             "nodeType": "YulAssignment",
-                            "src": "10576:30:33",
+                            "src": "10527:30:42",
                             "value": {
                               "arguments": [
                                 {
                                   "name": "r",
                                   "nodeType": "YulIdentifier",
-                                  "src": "10584:1:33"
+                                  "src": "10535:1:42"
                                 },
                                 {
                                   "arguments": [
                                     {
                                       "kind": "number",
                                       "nodeType": "YulLiteral",
-                                      "src": "10590:3:33",
+                                      "src": "10541:3:42",
                                       "type": "",
                                       "value": "0x1"
                                     },
@@ -6894,45 +6775,45 @@ export const FixedPointMath =
                                         {
                                           "name": "r",
                                           "nodeType": "YulIdentifier",
-                                          "src": "10599:1:33"
+                                          "src": "10550:1:42"
                                         },
                                         {
                                           "name": "x",
                                           "nodeType": "YulIdentifier",
-                                          "src": "10602:1:33"
+                                          "src": "10553:1:42"
                                         }
                                       ],
                                       "functionName": {
                                         "name": "shr",
                                         "nodeType": "YulIdentifier",
-                                        "src": "10595:3:33"
+                                        "src": "10546:3:42"
                                       },
                                       "nodeType": "YulFunctionCall",
-                                      "src": "10595:9:33"
+                                      "src": "10546:9:42"
                                     }
                                   ],
                                   "functionName": {
                                     "name": "lt",
                                     "nodeType": "YulIdentifier",
-                                    "src": "10587:2:33"
+                                    "src": "10538:2:42"
                                   },
                                   "nodeType": "YulFunctionCall",
-                                  "src": "10587:18:33"
+                                  "src": "10538:18:42"
                                 }
                               ],
                               "functionName": {
                                 "name": "or",
                                 "nodeType": "YulIdentifier",
-                                "src": "10581:2:33"
+                                "src": "10532:2:42"
                               },
                               "nodeType": "YulFunctionCall",
-                              "src": "10581:25:33"
+                              "src": "10532:25:42"
                             },
                             "variableNames": [
                               {
                                 "name": "r",
                                 "nodeType": "YulIdentifier",
-                                "src": "10576:1:33"
+                                "src": "10527:1:42"
                               }
                             ]
                           }
@@ -6942,234 +6823,234 @@ export const FixedPointMath =
                       "evmVersion": "paris",
                       "externalReferences": [
                         {
-                          "declaration": 8715,
+                          "declaration": 10182,
                           "isOffset": false,
                           "isSlot": false,
-                          "src": "10149:1:33",
+                          "src": "10100:1:42",
                           "valueSize": 1
                         },
                         {
-                          "declaration": 8715,
+                          "declaration": 10182,
                           "isOffset": false,
                           "isSlot": false,
-                          "src": "10220:1:33",
+                          "src": "10171:1:42",
                           "valueSize": 1
                         },
                         {
-                          "declaration": 8715,
+                          "declaration": 10182,
                           "isOffset": false,
                           "isSlot": false,
-                          "src": "10228:1:33",
+                          "src": "10179:1:42",
                           "valueSize": 1
                         },
                         {
-                          "declaration": 8715,
+                          "declaration": 10182,
                           "isOffset": false,
                           "isSlot": false,
-                          "src": "10265:1:33",
+                          "src": "10216:1:42",
                           "valueSize": 1
                         },
                         {
-                          "declaration": 8715,
+                          "declaration": 10182,
                           "isOffset": false,
                           "isSlot": false,
-                          "src": "10290:1:33",
+                          "src": "10241:1:42",
                           "valueSize": 1
                         },
                         {
-                          "declaration": 8715,
+                          "declaration": 10182,
                           "isOffset": false,
                           "isSlot": false,
-                          "src": "10298:1:33",
+                          "src": "10249:1:42",
                           "valueSize": 1
                         },
                         {
-                          "declaration": 8715,
+                          "declaration": 10182,
                           "isOffset": false,
                           "isSlot": false,
-                          "src": "10327:1:33",
+                          "src": "10278:1:42",
                           "valueSize": 1
                         },
                         {
-                          "declaration": 8715,
+                          "declaration": 10182,
                           "isOffset": false,
                           "isSlot": false,
-                          "src": "10352:1:33",
+                          "src": "10303:1:42",
                           "valueSize": 1
                         },
                         {
-                          "declaration": 8715,
+                          "declaration": 10182,
                           "isOffset": false,
                           "isSlot": false,
-                          "src": "10360:1:33",
+                          "src": "10311:1:42",
                           "valueSize": 1
                         },
                         {
-                          "declaration": 8715,
+                          "declaration": 10182,
                           "isOffset": false,
                           "isSlot": false,
-                          "src": "10385:1:33",
+                          "src": "10336:1:42",
                           "valueSize": 1
                         },
                         {
-                          "declaration": 8715,
+                          "declaration": 10182,
                           "isOffset": false,
                           "isSlot": false,
-                          "src": "10410:1:33",
+                          "src": "10361:1:42",
                           "valueSize": 1
                         },
                         {
-                          "declaration": 8715,
+                          "declaration": 10182,
                           "isOffset": false,
                           "isSlot": false,
-                          "src": "10418:1:33",
+                          "src": "10369:1:42",
                           "valueSize": 1
                         },
                         {
-                          "declaration": 8715,
+                          "declaration": 10182,
                           "isOffset": false,
                           "isSlot": false,
-                          "src": "10441:1:33",
+                          "src": "10392:1:42",
                           "valueSize": 1
                         },
                         {
-                          "declaration": 8715,
+                          "declaration": 10182,
                           "isOffset": false,
                           "isSlot": false,
-                          "src": "10466:1:33",
+                          "src": "10417:1:42",
                           "valueSize": 1
                         },
                         {
-                          "declaration": 8715,
+                          "declaration": 10182,
                           "isOffset": false,
                           "isSlot": false,
-                          "src": "10474:1:33",
+                          "src": "10425:1:42",
                           "valueSize": 1
                         },
                         {
-                          "declaration": 8715,
+                          "declaration": 10182,
                           "isOffset": false,
                           "isSlot": false,
-                          "src": "10496:1:33",
+                          "src": "10447:1:42",
                           "valueSize": 1
                         },
                         {
-                          "declaration": 8715,
+                          "declaration": 10182,
                           "isOffset": false,
                           "isSlot": false,
-                          "src": "10521:1:33",
+                          "src": "10472:1:42",
                           "valueSize": 1
                         },
                         {
-                          "declaration": 8715,
+                          "declaration": 10182,
                           "isOffset": false,
                           "isSlot": false,
-                          "src": "10529:1:33",
+                          "src": "10480:1:42",
                           "valueSize": 1
                         },
                         {
-                          "declaration": 8715,
+                          "declaration": 10182,
                           "isOffset": false,
                           "isSlot": false,
-                          "src": "10551:1:33",
+                          "src": "10502:1:42",
                           "valueSize": 1
                         },
                         {
-                          "declaration": 8715,
+                          "declaration": 10182,
                           "isOffset": false,
                           "isSlot": false,
-                          "src": "10576:1:33",
+                          "src": "10527:1:42",
                           "valueSize": 1
                         },
                         {
-                          "declaration": 8715,
+                          "declaration": 10182,
                           "isOffset": false,
                           "isSlot": false,
-                          "src": "10584:1:33",
+                          "src": "10535:1:42",
                           "valueSize": 1
                         },
                         {
-                          "declaration": 8715,
+                          "declaration": 10182,
                           "isOffset": false,
                           "isSlot": false,
-                          "src": "10599:1:33",
+                          "src": "10550:1:42",
                           "valueSize": 1
                         },
                         {
-                          "declaration": 8712,
+                          "declaration": 10179,
                           "isOffset": false,
                           "isSlot": false,
-                          "src": "10200:1:33",
+                          "src": "10151:1:42",
                           "valueSize": 1
                         },
                         {
-                          "declaration": 8712,
+                          "declaration": 10179,
                           "isOffset": false,
                           "isSlot": false,
-                          "src": "10268:1:33",
+                          "src": "10219:1:42",
                           "valueSize": 1
                         },
                         {
-                          "declaration": 8712,
+                          "declaration": 10179,
                           "isOffset": false,
                           "isSlot": false,
-                          "src": "10330:1:33",
+                          "src": "10281:1:42",
                           "valueSize": 1
                         },
                         {
-                          "declaration": 8712,
+                          "declaration": 10179,
                           "isOffset": false,
                           "isSlot": false,
-                          "src": "10388:1:33",
+                          "src": "10339:1:42",
                           "valueSize": 1
                         },
                         {
-                          "declaration": 8712,
+                          "declaration": 10179,
                           "isOffset": false,
                           "isSlot": false,
-                          "src": "10444:1:33",
+                          "src": "10395:1:42",
                           "valueSize": 1
                         },
                         {
-                          "declaration": 8712,
+                          "declaration": 10179,
                           "isOffset": false,
                           "isSlot": false,
-                          "src": "10499:1:33",
+                          "src": "10450:1:42",
                           "valueSize": 1
                         },
                         {
-                          "declaration": 8712,
+                          "declaration": 10179,
                           "isOffset": false,
                           "isSlot": false,
-                          "src": "10554:1:33",
+                          "src": "10505:1:42",
                           "valueSize": 1
                         },
                         {
-                          "declaration": 8712,
+                          "declaration": 10179,
                           "isOffset": false,
                           "isSlot": false,
-                          "src": "10602:1:33",
+                          "src": "10553:1:42",
                           "valueSize": 1
                         }
                       ],
-                      "id": 8726,
+                      "id": 10193,
                       "nodeType": "InlineAssembly",
-                      "src": "10122:498:33"
+                      "src": "10073:498:42"
                     },
                     {
                       "assignments": [
-                        8728
+                        10195
                       ],
                       "declarations": [
                         {
                           "constant": false,
-                          "id": 8728,
+                          "id": 10195,
                           "mutability": "mutable",
                           "name": "k",
-                          "nameLocation": "10739:1:33",
+                          "nameLocation": "10690:1:42",
                           "nodeType": "VariableDeclaration",
-                          "scope": 8928,
-                          "src": "10732:8:33",
+                          "scope": 10395,
+                          "src": "10683:8:42",
                           "stateVariable": false,
                           "storageLocation": "default",
                           "typeDescriptions": {
@@ -7177,10 +7058,10 @@ export const FixedPointMath =
                             "typeString": "int256"
                           },
                           "typeName": {
-                            "id": 8727,
+                            "id": 10194,
                             "name": "int256",
                             "nodeType": "ElementaryTypeName",
-                            "src": "10732:6:33",
+                            "src": "10683:6:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -7189,24 +7070,24 @@ export const FixedPointMath =
                           "visibility": "internal"
                         }
                       ],
-                      "id": 8732,
+                      "id": 10199,
                       "initialValue": {
                         "commonType": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         },
-                        "id": 8731,
+                        "id": 10198,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
-                          "id": 8729,
+                          "id": 10196,
                           "name": "r",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8715,
-                          "src": "10743:1:33",
+                          "referencedDeclaration": 10182,
+                          "src": "10694:1:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
@@ -7216,43 +7097,43 @@ export const FixedPointMath =
                         "operator": "-",
                         "rightExpression": {
                           "hexValue": "3936",
-                          "id": 8730,
+                          "id": 10197,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "10747:2:33",
+                          "src": "10698:2:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_96_by_1",
                             "typeString": "int_const 96"
                           },
                           "value": "96"
                         },
-                        "src": "10743:6:33",
+                        "src": "10694:6:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
                       "nodeType": "VariableDeclarationStatement",
-                      "src": "10732:17:33"
+                      "src": "10683:17:42"
                     },
                     {
                       "expression": {
-                        "id": 8740,
+                        "id": 10207,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftHandSide": {
-                          "id": 8733,
+                          "id": 10200,
                           "name": "x",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8712,
-                          "src": "10763:1:33",
+                          "referencedDeclaration": 10179,
+                          "src": "10714:1:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
@@ -7267,21 +7148,21 @@ export const FixedPointMath =
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               },
-                              "id": 8738,
+                              "id": 10205,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "leftExpression": {
                                 "hexValue": "313539",
-                                "id": 8736,
+                                "id": 10203,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
                                 "kind": "number",
                                 "lValueRequested": false,
                                 "nodeType": "Literal",
-                                "src": "10777:3:33",
+                                "src": "10728:3:42",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_rational_159_by_1",
                                   "typeString": "int_const 159"
@@ -7291,18 +7172,18 @@ export const FixedPointMath =
                               "nodeType": "BinaryOperation",
                               "operator": "-",
                               "rightExpression": {
-                                "id": 8737,
+                                "id": 10204,
                                 "name": "k",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 8728,
-                                "src": "10783:1:33",
+                                "referencedDeclaration": 10195,
+                                "src": "10734:1:42",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 }
                               },
-                              "src": "10777:7:33",
+                              "src": "10728:7:42",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -7316,26 +7197,26 @@ export const FixedPointMath =
                                 "typeString": "int256"
                               }
                             ],
-                            "id": 8735,
+                            "id": 10202,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "lValueRequested": false,
                             "nodeType": "ElementaryTypeNameExpression",
-                            "src": "10769:7:33",
+                            "src": "10720:7:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_type$_t_uint256_$",
                               "typeString": "type(uint256)"
                             },
                             "typeName": {
-                              "id": 8734,
+                              "id": 10201,
                               "name": "uint256",
                               "nodeType": "ElementaryTypeName",
-                              "src": "10769:7:33",
+                              "src": "10720:7:42",
                               "typeDescriptions": {}
                             }
                           },
-                          "id": 8739,
+                          "id": 10206,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -7344,37 +7225,37 @@ export const FixedPointMath =
                           "nameLocations": [],
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "10769:16:33",
+                          "src": "10720:16:42",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "src": "10763:22:33",
+                        "src": "10714:22:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "id": 8741,
+                      "id": 10208,
                       "nodeType": "ExpressionStatement",
-                      "src": "10763:22:33"
+                      "src": "10714:22:42"
                     },
                     {
                       "expression": {
-                        "id": 8752,
+                        "id": 10219,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftHandSide": {
-                          "id": 8742,
+                          "id": 10209,
                           "name": "x",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8712,
-                          "src": "10799:1:33",
+                          "referencedDeclaration": 10179,
+                          "src": "10750:1:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
@@ -7389,7 +7270,7 @@ export const FixedPointMath =
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               },
-                              "id": 8750,
+                              "id": 10217,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
@@ -7397,12 +7278,12 @@ export const FixedPointMath =
                               "leftExpression": {
                                 "arguments": [
                                   {
-                                    "id": 8747,
+                                    "id": 10214,
                                     "name": "x",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 8712,
-                                    "src": "10818:1:33",
+                                    "referencedDeclaration": 10179,
+                                    "src": "10769:1:42",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_int256",
                                       "typeString": "int256"
@@ -7416,26 +7297,26 @@ export const FixedPointMath =
                                       "typeString": "int256"
                                     }
                                   ],
-                                  "id": 8746,
+                                  "id": 10213,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": true,
                                   "lValueRequested": false,
                                   "nodeType": "ElementaryTypeNameExpression",
-                                  "src": "10810:7:33",
+                                  "src": "10761:7:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_type$_t_uint256_$",
                                     "typeString": "type(uint256)"
                                   },
                                   "typeName": {
-                                    "id": 8745,
+                                    "id": 10212,
                                     "name": "uint256",
                                     "nodeType": "ElementaryTypeName",
-                                    "src": "10810:7:33",
+                                    "src": "10761:7:42",
                                     "typeDescriptions": {}
                                   }
                                 },
-                                "id": 8748,
+                                "id": 10215,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -7444,7 +7325,7 @@ export const FixedPointMath =
                                 "nameLocations": [],
                                 "names": [],
                                 "nodeType": "FunctionCall",
-                                "src": "10810:10:33",
+                                "src": "10761:10:42",
                                 "tryCall": false,
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
@@ -7455,21 +7336,21 @@ export const FixedPointMath =
                               "operator": ">>",
                               "rightExpression": {
                                 "hexValue": "313539",
-                                "id": 8749,
+                                "id": 10216,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
                                 "kind": "number",
                                 "lValueRequested": false,
                                 "nodeType": "Literal",
-                                "src": "10824:3:33",
+                                "src": "10775:3:42",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_rational_159_by_1",
                                   "typeString": "int_const 159"
                                 },
                                 "value": "159"
                               },
-                              "src": "10810:17:33",
+                              "src": "10761:17:42",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
@@ -7483,26 +7364,26 @@ export const FixedPointMath =
                                 "typeString": "uint256"
                               }
                             ],
-                            "id": 8744,
+                            "id": 10211,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "lValueRequested": false,
                             "nodeType": "ElementaryTypeNameExpression",
-                            "src": "10803:6:33",
+                            "src": "10754:6:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_type$_t_int256_$",
                               "typeString": "type(int256)"
                             },
                             "typeName": {
-                              "id": 8743,
+                              "id": 10210,
                               "name": "int256",
                               "nodeType": "ElementaryTypeName",
-                              "src": "10803:6:33",
+                              "src": "10754:6:42",
                               "typeDescriptions": {}
                             }
                           },
-                          "id": 8751,
+                          "id": 10218,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -7511,37 +7392,37 @@ export const FixedPointMath =
                           "nameLocations": [],
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "10803:25:33",
+                          "src": "10754:25:42",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "src": "10799:29:33",
+                        "src": "10750:29:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "id": 8753,
+                      "id": 10220,
                       "nodeType": "ExpressionStatement",
-                      "src": "10799:29:33"
+                      "src": "10750:29:42"
                     },
                     {
                       "assignments": [
-                        8755
+                        10222
                       ],
                       "declarations": [
                         {
                           "constant": false,
-                          "id": 8755,
+                          "id": 10222,
                           "mutability": "mutable",
                           "name": "p",
-                          "nameLocation": "10992:1:33",
+                          "nameLocation": "10943:1:42",
                           "nodeType": "VariableDeclaration",
-                          "scope": 8928,
-                          "src": "10985:8:33",
+                          "scope": 10395,
+                          "src": "10936:8:42",
                           "stateVariable": false,
                           "storageLocation": "default",
                           "typeDescriptions": {
@@ -7549,10 +7430,10 @@ export const FixedPointMath =
                             "typeString": "int256"
                           },
                           "typeName": {
-                            "id": 8754,
+                            "id": 10221,
                             "name": "int256",
                             "nodeType": "ElementaryTypeName",
-                            "src": "10985:6:33",
+                            "src": "10936:6:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -7561,24 +7442,24 @@ export const FixedPointMath =
                           "visibility": "internal"
                         }
                       ],
-                      "id": 8759,
+                      "id": 10226,
                       "initialValue": {
                         "commonType": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         },
-                        "id": 8758,
+                        "id": 10225,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
-                          "id": 8756,
+                          "id": 10223,
                           "name": "x",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8712,
-                          "src": "10996:1:33",
+                          "referencedDeclaration": 10179,
+                          "src": "10947:1:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
@@ -7588,43 +7469,43 @@ export const FixedPointMath =
                         "operator": "+",
                         "rightExpression": {
                           "hexValue": "33323733323835343539363338353233383438363332323534303636323936",
-                          "id": 8757,
+                          "id": 10224,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "11000:31:33",
+                          "src": "10951:31:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_3273285459638523848632254066296_by_1",
                             "typeString": "int_const 3273285459638523848632254066296"
                           },
                           "value": "3273285459638523848632254066296"
                         },
-                        "src": "10996:35:33",
+                        "src": "10947:35:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
                       "nodeType": "VariableDeclarationStatement",
-                      "src": "10985:46:33"
+                      "src": "10936:46:42"
                     },
                     {
                       "expression": {
-                        "id": 8770,
+                        "id": 10237,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftHandSide": {
-                          "id": 8760,
+                          "id": 10227,
                           "name": "p",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8755,
-                          "src": "11045:1:33",
+                          "referencedDeclaration": 10222,
+                          "src": "10996:1:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
@@ -7637,7 +7518,7 @@ export const FixedPointMath =
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           },
-                          "id": 8769,
+                          "id": 10236,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -7649,7 +7530,7 @@ export const FixedPointMath =
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 },
-                                "id": 8766,
+                                "id": 10233,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -7661,18 +7542,18 @@ export const FixedPointMath =
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
                                       },
-                                      "id": 8763,
+                                      "id": 10230,
                                       "isConstant": false,
                                       "isLValue": false,
                                       "isPure": false,
                                       "lValueRequested": false,
                                       "leftExpression": {
-                                        "id": 8761,
+                                        "id": 10228,
                                         "name": "p",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 8755,
-                                        "src": "11051:1:33",
+                                        "referencedDeclaration": 10222,
+                                        "src": "11002:1:42",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_int256",
                                           "typeString": "int256"
@@ -7681,32 +7562,32 @@ export const FixedPointMath =
                                       "nodeType": "BinaryOperation",
                                       "operator": "*",
                                       "rightExpression": {
-                                        "id": 8762,
+                                        "id": 10229,
                                         "name": "x",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 8712,
-                                        "src": "11055:1:33",
+                                        "referencedDeclaration": 10179,
+                                        "src": "11006:1:42",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_int256",
                                           "typeString": "int256"
                                         }
                                       },
-                                      "src": "11051:5:33",
+                                      "src": "11002:5:42",
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
                                       }
                                     }
                                   ],
-                                  "id": 8764,
+                                  "id": 10231,
                                   "isConstant": false,
                                   "isInlineArray": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "nodeType": "TupleExpression",
-                                  "src": "11050:7:33",
+                                  "src": "11001:7:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
@@ -7716,35 +7597,35 @@ export const FixedPointMath =
                                 "operator": ">>",
                                 "rightExpression": {
                                   "hexValue": "3936",
-                                  "id": 8765,
+                                  "id": 10232,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": true,
                                   "kind": "number",
                                   "lValueRequested": false,
                                   "nodeType": "Literal",
-                                  "src": "11061:2:33",
+                                  "src": "11012:2:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_rational_96_by_1",
                                     "typeString": "int_const 96"
                                   },
                                   "value": "96"
                                 },
-                                "src": "11050:13:33",
+                                "src": "11001:13:42",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 }
                               }
                             ],
-                            "id": 8767,
+                            "id": 10234,
                             "isConstant": false,
                             "isInlineArray": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "nodeType": "TupleExpression",
-                            "src": "11049:15:33",
+                            "src": "11000:15:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -7754,50 +7635,50 @@ export const FixedPointMath =
                           "operator": "+",
                           "rightExpression": {
                             "hexValue": "3234383238313537303831383333313633383932363538303839343435353234",
-                            "id": 8768,
+                            "id": 10235,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "kind": "number",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "11067:32:33",
+                            "src": "11018:32:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_rational_24828157081833163892658089445524_by_1",
                               "typeString": "int_const 24828157081833163892658089445524"
                             },
                             "value": "24828157081833163892658089445524"
                           },
-                          "src": "11049:50:33",
+                          "src": "11000:50:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "src": "11045:54:33",
+                        "src": "10996:54:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "id": 8771,
+                      "id": 10238,
                       "nodeType": "ExpressionStatement",
-                      "src": "11045:54:33"
+                      "src": "10996:54:42"
                     },
                     {
                       "expression": {
-                        "id": 8782,
+                        "id": 10249,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftHandSide": {
-                          "id": 8772,
+                          "id": 10239,
                           "name": "p",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8755,
-                          "src": "11113:1:33",
+                          "referencedDeclaration": 10222,
+                          "src": "11064:1:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
@@ -7810,7 +7691,7 @@ export const FixedPointMath =
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           },
-                          "id": 8781,
+                          "id": 10248,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -7822,7 +7703,7 @@ export const FixedPointMath =
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 },
-                                "id": 8778,
+                                "id": 10245,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -7834,18 +7715,18 @@ export const FixedPointMath =
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
                                       },
-                                      "id": 8775,
+                                      "id": 10242,
                                       "isConstant": false,
                                       "isLValue": false,
                                       "isPure": false,
                                       "lValueRequested": false,
                                       "leftExpression": {
-                                        "id": 8773,
+                                        "id": 10240,
                                         "name": "p",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 8755,
-                                        "src": "11119:1:33",
+                                        "referencedDeclaration": 10222,
+                                        "src": "11070:1:42",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_int256",
                                           "typeString": "int256"
@@ -7854,32 +7735,32 @@ export const FixedPointMath =
                                       "nodeType": "BinaryOperation",
                                       "operator": "*",
                                       "rightExpression": {
-                                        "id": 8774,
+                                        "id": 10241,
                                         "name": "x",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 8712,
-                                        "src": "11123:1:33",
+                                        "referencedDeclaration": 10179,
+                                        "src": "11074:1:42",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_int256",
                                           "typeString": "int256"
                                         }
                                       },
-                                      "src": "11119:5:33",
+                                      "src": "11070:5:42",
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
                                       }
                                     }
                                   ],
-                                  "id": 8776,
+                                  "id": 10243,
                                   "isConstant": false,
                                   "isInlineArray": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "nodeType": "TupleExpression",
-                                  "src": "11118:7:33",
+                                  "src": "11069:7:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
@@ -7889,35 +7770,35 @@ export const FixedPointMath =
                                 "operator": ">>",
                                 "rightExpression": {
                                   "hexValue": "3936",
-                                  "id": 8777,
+                                  "id": 10244,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": true,
                                   "kind": "number",
                                   "lValueRequested": false,
                                   "nodeType": "Literal",
-                                  "src": "11129:2:33",
+                                  "src": "11080:2:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_rational_96_by_1",
                                     "typeString": "int_const 96"
                                   },
                                   "value": "96"
                                 },
-                                "src": "11118:13:33",
+                                "src": "11069:13:42",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 }
                               }
                             ],
-                            "id": 8779,
+                            "id": 10246,
                             "isConstant": false,
                             "isInlineArray": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "nodeType": "TupleExpression",
-                            "src": "11117:15:33",
+                            "src": "11068:15:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -7927,50 +7808,50 @@ export const FixedPointMath =
                           "operator": "+",
                           "rightExpression": {
                             "hexValue": "3433343536343835373235373339303337393538373430333735373433333933",
-                            "id": 8780,
+                            "id": 10247,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "kind": "number",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "11135:32:33",
+                            "src": "11086:32:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_rational_43456485725739037958740375743393_by_1",
                               "typeString": "int_const 43456485725739037958740375743393"
                             },
                             "value": "43456485725739037958740375743393"
                           },
-                          "src": "11117:50:33",
+                          "src": "11068:50:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "src": "11113:54:33",
+                        "src": "11064:54:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "id": 8783,
+                      "id": 10250,
                       "nodeType": "ExpressionStatement",
-                      "src": "11113:54:33"
+                      "src": "11064:54:42"
                     },
                     {
                       "expression": {
-                        "id": 8794,
+                        "id": 10261,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftHandSide": {
-                          "id": 8784,
+                          "id": 10251,
                           "name": "p",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8755,
-                          "src": "11181:1:33",
+                          "referencedDeclaration": 10222,
+                          "src": "11132:1:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
@@ -7983,7 +7864,7 @@ export const FixedPointMath =
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           },
-                          "id": 8793,
+                          "id": 10260,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -7995,7 +7876,7 @@ export const FixedPointMath =
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 },
-                                "id": 8790,
+                                "id": 10257,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -8007,18 +7888,18 @@ export const FixedPointMath =
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
                                       },
-                                      "id": 8787,
+                                      "id": 10254,
                                       "isConstant": false,
                                       "isLValue": false,
                                       "isPure": false,
                                       "lValueRequested": false,
                                       "leftExpression": {
-                                        "id": 8785,
+                                        "id": 10252,
                                         "name": "p",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 8755,
-                                        "src": "11187:1:33",
+                                        "referencedDeclaration": 10222,
+                                        "src": "11138:1:42",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_int256",
                                           "typeString": "int256"
@@ -8027,32 +7908,32 @@ export const FixedPointMath =
                                       "nodeType": "BinaryOperation",
                                       "operator": "*",
                                       "rightExpression": {
-                                        "id": 8786,
+                                        "id": 10253,
                                         "name": "x",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 8712,
-                                        "src": "11191:1:33",
+                                        "referencedDeclaration": 10179,
+                                        "src": "11142:1:42",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_int256",
                                           "typeString": "int256"
                                         }
                                       },
-                                      "src": "11187:5:33",
+                                      "src": "11138:5:42",
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
                                       }
                                     }
                                   ],
-                                  "id": 8788,
+                                  "id": 10255,
                                   "isConstant": false,
                                   "isInlineArray": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "nodeType": "TupleExpression",
-                                  "src": "11186:7:33",
+                                  "src": "11137:7:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
@@ -8062,35 +7943,35 @@ export const FixedPointMath =
                                 "operator": ">>",
                                 "rightExpression": {
                                   "hexValue": "3936",
-                                  "id": 8789,
+                                  "id": 10256,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": true,
                                   "kind": "number",
                                   "lValueRequested": false,
                                   "nodeType": "Literal",
-                                  "src": "11197:2:33",
+                                  "src": "11148:2:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_rational_96_by_1",
                                     "typeString": "int_const 96"
                                   },
                                   "value": "96"
                                 },
-                                "src": "11186:13:33",
+                                "src": "11137:13:42",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 }
                               }
                             ],
-                            "id": 8791,
+                            "id": 10258,
                             "isConstant": false,
                             "isInlineArray": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "nodeType": "TupleExpression",
-                            "src": "11185:15:33",
+                            "src": "11136:15:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -8100,50 +7981,50 @@ export const FixedPointMath =
                           "operator": "-",
                           "rightExpression": {
                             "hexValue": "3131313131353039313039343430393637303532303233383535353236393637",
-                            "id": 8792,
+                            "id": 10259,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "kind": "number",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "11203:32:33",
+                            "src": "11154:32:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_rational_11111509109440967052023855526967_by_1",
                               "typeString": "int_const 11111509109440967052023855526967"
                             },
                             "value": "11111509109440967052023855526967"
                           },
-                          "src": "11185:50:33",
+                          "src": "11136:50:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "src": "11181:54:33",
+                        "src": "11132:54:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "id": 8795,
+                      "id": 10262,
                       "nodeType": "ExpressionStatement",
-                      "src": "11181:54:33"
+                      "src": "11132:54:42"
                     },
                     {
                       "expression": {
-                        "id": 8806,
+                        "id": 10273,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftHandSide": {
-                          "id": 8796,
+                          "id": 10263,
                           "name": "p",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8755,
-                          "src": "11249:1:33",
+                          "referencedDeclaration": 10222,
+                          "src": "11200:1:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
@@ -8156,7 +8037,7 @@ export const FixedPointMath =
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           },
-                          "id": 8805,
+                          "id": 10272,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -8168,7 +8049,7 @@ export const FixedPointMath =
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 },
-                                "id": 8802,
+                                "id": 10269,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -8180,18 +8061,18 @@ export const FixedPointMath =
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
                                       },
-                                      "id": 8799,
+                                      "id": 10266,
                                       "isConstant": false,
                                       "isLValue": false,
                                       "isPure": false,
                                       "lValueRequested": false,
                                       "leftExpression": {
-                                        "id": 8797,
+                                        "id": 10264,
                                         "name": "p",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 8755,
-                                        "src": "11255:1:33",
+                                        "referencedDeclaration": 10222,
+                                        "src": "11206:1:42",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_int256",
                                           "typeString": "int256"
@@ -8200,32 +8081,32 @@ export const FixedPointMath =
                                       "nodeType": "BinaryOperation",
                                       "operator": "*",
                                       "rightExpression": {
-                                        "id": 8798,
+                                        "id": 10265,
                                         "name": "x",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 8712,
-                                        "src": "11259:1:33",
+                                        "referencedDeclaration": 10179,
+                                        "src": "11210:1:42",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_int256",
                                           "typeString": "int256"
                                         }
                                       },
-                                      "src": "11255:5:33",
+                                      "src": "11206:5:42",
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
                                       }
                                     }
                                   ],
-                                  "id": 8800,
+                                  "id": 10267,
                                   "isConstant": false,
                                   "isInlineArray": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "nodeType": "TupleExpression",
-                                  "src": "11254:7:33",
+                                  "src": "11205:7:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
@@ -8235,35 +8116,35 @@ export const FixedPointMath =
                                 "operator": ">>",
                                 "rightExpression": {
                                   "hexValue": "3936",
-                                  "id": 8801,
+                                  "id": 10268,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": true,
                                   "kind": "number",
                                   "lValueRequested": false,
                                   "nodeType": "Literal",
-                                  "src": "11265:2:33",
+                                  "src": "11216:2:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_rational_96_by_1",
                                     "typeString": "int_const 96"
                                   },
                                   "value": "96"
                                 },
-                                "src": "11254:13:33",
+                                "src": "11205:13:42",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 }
                               }
                             ],
-                            "id": 8803,
+                            "id": 10270,
                             "isConstant": false,
                             "isInlineArray": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "nodeType": "TupleExpression",
-                            "src": "11253:15:33",
+                            "src": "11204:15:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -8273,50 +8154,50 @@ export const FixedPointMath =
                           "operator": "-",
                           "rightExpression": {
                             "hexValue": "3435303233373039363637323534303633373633333336353334353135383537",
-                            "id": 8804,
+                            "id": 10271,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "kind": "number",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "11271:32:33",
+                            "src": "11222:32:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_rational_45023709667254063763336534515857_by_1",
                               "typeString": "int_const 45023709667254063763336534515857"
                             },
                             "value": "45023709667254063763336534515857"
                           },
-                          "src": "11253:50:33",
+                          "src": "11204:50:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "src": "11249:54:33",
+                        "src": "11200:54:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "id": 8807,
+                      "id": 10274,
                       "nodeType": "ExpressionStatement",
-                      "src": "11249:54:33"
+                      "src": "11200:54:42"
                     },
                     {
                       "expression": {
-                        "id": 8818,
+                        "id": 10285,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftHandSide": {
-                          "id": 8808,
+                          "id": 10275,
                           "name": "p",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8755,
-                          "src": "11317:1:33",
+                          "referencedDeclaration": 10222,
+                          "src": "11268:1:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
@@ -8329,7 +8210,7 @@ export const FixedPointMath =
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           },
-                          "id": 8817,
+                          "id": 10284,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -8341,7 +8222,7 @@ export const FixedPointMath =
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 },
-                                "id": 8814,
+                                "id": 10281,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -8353,18 +8234,18 @@ export const FixedPointMath =
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
                                       },
-                                      "id": 8811,
+                                      "id": 10278,
                                       "isConstant": false,
                                       "isLValue": false,
                                       "isPure": false,
                                       "lValueRequested": false,
                                       "leftExpression": {
-                                        "id": 8809,
+                                        "id": 10276,
                                         "name": "p",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 8755,
-                                        "src": "11323:1:33",
+                                        "referencedDeclaration": 10222,
+                                        "src": "11274:1:42",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_int256",
                                           "typeString": "int256"
@@ -8373,32 +8254,32 @@ export const FixedPointMath =
                                       "nodeType": "BinaryOperation",
                                       "operator": "*",
                                       "rightExpression": {
-                                        "id": 8810,
+                                        "id": 10277,
                                         "name": "x",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 8712,
-                                        "src": "11327:1:33",
+                                        "referencedDeclaration": 10179,
+                                        "src": "11278:1:42",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_int256",
                                           "typeString": "int256"
                                         }
                                       },
-                                      "src": "11323:5:33",
+                                      "src": "11274:5:42",
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
                                       }
                                     }
                                   ],
-                                  "id": 8812,
+                                  "id": 10279,
                                   "isConstant": false,
                                   "isInlineArray": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "nodeType": "TupleExpression",
-                                  "src": "11322:7:33",
+                                  "src": "11273:7:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
@@ -8408,35 +8289,35 @@ export const FixedPointMath =
                                 "operator": ">>",
                                 "rightExpression": {
                                   "hexValue": "3936",
-                                  "id": 8813,
+                                  "id": 10280,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": true,
                                   "kind": "number",
                                   "lValueRequested": false,
                                   "nodeType": "Literal",
-                                  "src": "11333:2:33",
+                                  "src": "11284:2:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_rational_96_by_1",
                                     "typeString": "int_const 96"
                                   },
                                   "value": "96"
                                 },
-                                "src": "11322:13:33",
+                                "src": "11273:13:42",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 }
                               }
                             ],
-                            "id": 8815,
+                            "id": 10282,
                             "isConstant": false,
                             "isInlineArray": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "nodeType": "TupleExpression",
-                            "src": "11321:15:33",
+                            "src": "11272:15:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -8446,50 +8327,50 @@ export const FixedPointMath =
                           "operator": "-",
                           "rightExpression": {
                             "hexValue": "3134373036373733343137333738363038373836373034363336313834353236",
-                            "id": 8816,
+                            "id": 10283,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "kind": "number",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "11339:32:33",
+                            "src": "11290:32:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_rational_14706773417378608786704636184526_by_1",
                               "typeString": "int_const 14706773417378608786704636184526"
                             },
                             "value": "14706773417378608786704636184526"
                           },
-                          "src": "11321:50:33",
+                          "src": "11272:50:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "src": "11317:54:33",
+                        "src": "11268:54:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "id": 8819,
+                      "id": 10286,
                       "nodeType": "ExpressionStatement",
-                      "src": "11317:54:33"
+                      "src": "11268:54:42"
                     },
                     {
                       "expression": {
-                        "id": 8829,
+                        "id": 10296,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftHandSide": {
-                          "id": 8820,
+                          "id": 10287,
                           "name": "p",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8755,
-                          "src": "11385:1:33",
+                          "referencedDeclaration": 10222,
+                          "src": "11336:1:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
@@ -8502,7 +8383,7 @@ export const FixedPointMath =
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           },
-                          "id": 8828,
+                          "id": 10295,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -8512,18 +8393,18 @@ export const FixedPointMath =
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             },
-                            "id": 8823,
+                            "id": 10290,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "leftExpression": {
-                              "id": 8821,
+                              "id": 10288,
                               "name": "p",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 8755,
-                              "src": "11389:1:33",
+                              "referencedDeclaration": 10222,
+                              "src": "11340:1:42",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
@@ -8532,18 +8413,18 @@ export const FixedPointMath =
                             "nodeType": "BinaryOperation",
                             "operator": "*",
                             "rightExpression": {
-                              "id": 8822,
+                              "id": 10289,
                               "name": "x",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 8712,
-                              "src": "11393:1:33",
+                              "referencedDeclaration": 10179,
+                              "src": "11344:1:42",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_int256",
                                 "typeString": "int256"
                               }
                             },
-                            "src": "11389:5:33",
+                            "src": "11340:5:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -8558,21 +8439,21 @@ export const FixedPointMath =
                                   "typeIdentifier": "t_rational_62999401287715976015676079709131874438408901006995465699328_by_1",
                                   "typeString": "int_const 6299...(51 digits omitted)...9328"
                                 },
-                                "id": 8826,
+                                "id": 10293,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
                                 "lValueRequested": false,
                                 "leftExpression": {
                                   "hexValue": "373935313634323335363531333530343236323538323439373837343938",
-                                  "id": 8824,
+                                  "id": 10291,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": true,
                                   "kind": "number",
                                   "lValueRequested": false,
                                   "nodeType": "Literal",
-                                  "src": "11398:30:33",
+                                  "src": "11349:30:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_rational_795164235651350426258249787498_by_1",
                                     "typeString": "int_const 795164235651350426258249787498"
@@ -8583,70 +8464,70 @@ export const FixedPointMath =
                                 "operator": "<<",
                                 "rightExpression": {
                                   "hexValue": "3936",
-                                  "id": 8825,
+                                  "id": 10292,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": true,
                                   "kind": "number",
                                   "lValueRequested": false,
                                   "nodeType": "Literal",
-                                  "src": "11432:2:33",
+                                  "src": "11383:2:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_rational_96_by_1",
                                     "typeString": "int_const 96"
                                   },
                                   "value": "96"
                                 },
-                                "src": "11398:36:33",
+                                "src": "11349:36:42",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_rational_62999401287715976015676079709131874438408901006995465699328_by_1",
                                   "typeString": "int_const 6299...(51 digits omitted)...9328"
                                 }
                               }
                             ],
-                            "id": 8827,
+                            "id": 10294,
                             "isConstant": false,
                             "isInlineArray": false,
                             "isLValue": false,
                             "isPure": true,
                             "lValueRequested": false,
                             "nodeType": "TupleExpression",
-                            "src": "11397:38:33",
+                            "src": "11348:38:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_rational_62999401287715976015676079709131874438408901006995465699328_by_1",
                               "typeString": "int_const 6299...(51 digits omitted)...9328"
                             }
                           },
-                          "src": "11389:46:33",
+                          "src": "11340:46:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "src": "11385:50:33",
+                        "src": "11336:50:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "id": 8830,
+                      "id": 10297,
                       "nodeType": "ExpressionStatement",
-                      "src": "11385:50:33"
+                      "src": "11336:50:42"
                     },
                     {
                       "assignments": [
-                        8832
+                        10299
                       ],
                       "declarations": [
                         {
                           "constant": false,
-                          "id": 8832,
+                          "id": 10299,
                           "mutability": "mutable",
                           "name": "q",
-                          "nameLocation": "11595:1:33",
+                          "nameLocation": "11546:1:42",
                           "nodeType": "VariableDeclaration",
-                          "scope": 8928,
-                          "src": "11588:8:33",
+                          "scope": 10395,
+                          "src": "11539:8:42",
                           "stateVariable": false,
                           "storageLocation": "default",
                           "typeDescriptions": {
@@ -8654,10 +8535,10 @@ export const FixedPointMath =
                             "typeString": "int256"
                           },
                           "typeName": {
-                            "id": 8831,
+                            "id": 10298,
                             "name": "int256",
                             "nodeType": "ElementaryTypeName",
-                            "src": "11588:6:33",
+                            "src": "11539:6:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -8666,24 +8547,24 @@ export const FixedPointMath =
                           "visibility": "internal"
                         }
                       ],
-                      "id": 8836,
+                      "id": 10303,
                       "initialValue": {
                         "commonType": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         },
-                        "id": 8835,
+                        "id": 10302,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
-                          "id": 8833,
+                          "id": 10300,
                           "name": "x",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8712,
-                          "src": "11599:1:33",
+                          "referencedDeclaration": 10179,
+                          "src": "11550:1:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
@@ -8693,43 +8574,43 @@ export const FixedPointMath =
                         "operator": "+",
                         "rightExpression": {
                           "hexValue": "35353733303335323333343430363733343636333030343531383133393336",
-                          "id": 8834,
+                          "id": 10301,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "11603:31:33",
+                          "src": "11554:31:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_5573035233440673466300451813936_by_1",
                             "typeString": "int_const 5573035233440673466300451813936"
                           },
                           "value": "5573035233440673466300451813936"
                         },
-                        "src": "11599:35:33",
+                        "src": "11550:35:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
                       "nodeType": "VariableDeclarationStatement",
-                      "src": "11588:46:33"
+                      "src": "11539:46:42"
                     },
                     {
                       "expression": {
-                        "id": 8847,
+                        "id": 10314,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftHandSide": {
-                          "id": 8837,
+                          "id": 10304,
                           "name": "q",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8832,
-                          "src": "11648:1:33",
+                          "referencedDeclaration": 10299,
+                          "src": "11599:1:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
@@ -8742,7 +8623,7 @@ export const FixedPointMath =
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           },
-                          "id": 8846,
+                          "id": 10313,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -8754,7 +8635,7 @@ export const FixedPointMath =
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 },
-                                "id": 8843,
+                                "id": 10310,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -8766,18 +8647,18 @@ export const FixedPointMath =
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
                                       },
-                                      "id": 8840,
+                                      "id": 10307,
                                       "isConstant": false,
                                       "isLValue": false,
                                       "isPure": false,
                                       "lValueRequested": false,
                                       "leftExpression": {
-                                        "id": 8838,
+                                        "id": 10305,
                                         "name": "q",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 8832,
-                                        "src": "11654:1:33",
+                                        "referencedDeclaration": 10299,
+                                        "src": "11605:1:42",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_int256",
                                           "typeString": "int256"
@@ -8786,32 +8667,32 @@ export const FixedPointMath =
                                       "nodeType": "BinaryOperation",
                                       "operator": "*",
                                       "rightExpression": {
-                                        "id": 8839,
+                                        "id": 10306,
                                         "name": "x",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 8712,
-                                        "src": "11658:1:33",
+                                        "referencedDeclaration": 10179,
+                                        "src": "11609:1:42",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_int256",
                                           "typeString": "int256"
                                         }
                                       },
-                                      "src": "11654:5:33",
+                                      "src": "11605:5:42",
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
                                       }
                                     }
                                   ],
-                                  "id": 8841,
+                                  "id": 10308,
                                   "isConstant": false,
                                   "isInlineArray": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "nodeType": "TupleExpression",
-                                  "src": "11653:7:33",
+                                  "src": "11604:7:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
@@ -8821,35 +8702,35 @@ export const FixedPointMath =
                                 "operator": ">>",
                                 "rightExpression": {
                                   "hexValue": "3936",
-                                  "id": 8842,
+                                  "id": 10309,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": true,
                                   "kind": "number",
                                   "lValueRequested": false,
                                   "nodeType": "Literal",
-                                  "src": "11664:2:33",
+                                  "src": "11615:2:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_rational_96_by_1",
                                     "typeString": "int_const 96"
                                   },
                                   "value": "96"
                                 },
-                                "src": "11653:13:33",
+                                "src": "11604:13:42",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 }
                               }
                             ],
-                            "id": 8844,
+                            "id": 10311,
                             "isConstant": false,
                             "isInlineArray": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "nodeType": "TupleExpression",
-                            "src": "11652:15:33",
+                            "src": "11603:15:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -8859,50 +8740,50 @@ export const FixedPointMath =
                           "operator": "+",
                           "rightExpression": {
                             "hexValue": "3731363934383734373939333137383833373634303930353631343534393538",
-                            "id": 8845,
+                            "id": 10312,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "kind": "number",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "11670:32:33",
+                            "src": "11621:32:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_rational_71694874799317883764090561454958_by_1",
                               "typeString": "int_const 71694874799317883764090561454958"
                             },
                             "value": "71694874799317883764090561454958"
                           },
-                          "src": "11652:50:33",
+                          "src": "11603:50:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "src": "11648:54:33",
+                        "src": "11599:54:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "id": 8848,
+                      "id": 10315,
                       "nodeType": "ExpressionStatement",
-                      "src": "11648:54:33"
+                      "src": "11599:54:42"
                     },
                     {
                       "expression": {
-                        "id": 8859,
+                        "id": 10326,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftHandSide": {
-                          "id": 8849,
+                          "id": 10316,
                           "name": "q",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8832,
-                          "src": "11716:1:33",
+                          "referencedDeclaration": 10299,
+                          "src": "11667:1:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
@@ -8915,7 +8796,7 @@ export const FixedPointMath =
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           },
-                          "id": 8858,
+                          "id": 10325,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -8927,7 +8808,7 @@ export const FixedPointMath =
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 },
-                                "id": 8855,
+                                "id": 10322,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -8939,18 +8820,18 @@ export const FixedPointMath =
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
                                       },
-                                      "id": 8852,
+                                      "id": 10319,
                                       "isConstant": false,
                                       "isLValue": false,
                                       "isPure": false,
                                       "lValueRequested": false,
                                       "leftExpression": {
-                                        "id": 8850,
+                                        "id": 10317,
                                         "name": "q",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 8832,
-                                        "src": "11722:1:33",
+                                        "referencedDeclaration": 10299,
+                                        "src": "11673:1:42",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_int256",
                                           "typeString": "int256"
@@ -8959,32 +8840,32 @@ export const FixedPointMath =
                                       "nodeType": "BinaryOperation",
                                       "operator": "*",
                                       "rightExpression": {
-                                        "id": 8851,
+                                        "id": 10318,
                                         "name": "x",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 8712,
-                                        "src": "11726:1:33",
+                                        "referencedDeclaration": 10179,
+                                        "src": "11677:1:42",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_int256",
                                           "typeString": "int256"
                                         }
                                       },
-                                      "src": "11722:5:33",
+                                      "src": "11673:5:42",
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
                                       }
                                     }
                                   ],
-                                  "id": 8853,
+                                  "id": 10320,
                                   "isConstant": false,
                                   "isInlineArray": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "nodeType": "TupleExpression",
-                                  "src": "11721:7:33",
+                                  "src": "11672:7:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
@@ -8994,35 +8875,35 @@ export const FixedPointMath =
                                 "operator": ">>",
                                 "rightExpression": {
                                   "hexValue": "3936",
-                                  "id": 8854,
+                                  "id": 10321,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": true,
                                   "kind": "number",
                                   "lValueRequested": false,
                                   "nodeType": "Literal",
-                                  "src": "11732:2:33",
+                                  "src": "11683:2:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_rational_96_by_1",
                                     "typeString": "int_const 96"
                                   },
                                   "value": "96"
                                 },
-                                "src": "11721:13:33",
+                                "src": "11672:13:42",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 }
                               }
                             ],
-                            "id": 8856,
+                            "id": 10323,
                             "isConstant": false,
                             "isInlineArray": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "nodeType": "TupleExpression",
-                            "src": "11720:15:33",
+                            "src": "11671:15:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -9032,50 +8913,50 @@ export const FixedPointMath =
                           "operator": "+",
                           "rightExpression": {
                             "hexValue": "323833343437303336313732393234353735373237313936343531333036393536",
-                            "id": 8857,
+                            "id": 10324,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "kind": "number",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "11738:33:33",
+                            "src": "11689:33:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_rational_283447036172924575727196451306956_by_1",
                               "typeString": "int_const 2834...(25 digits omitted)...6956"
                             },
                             "value": "283447036172924575727196451306956"
                           },
-                          "src": "11720:51:33",
+                          "src": "11671:51:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "src": "11716:55:33",
+                        "src": "11667:55:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "id": 8860,
+                      "id": 10327,
                       "nodeType": "ExpressionStatement",
-                      "src": "11716:55:33"
+                      "src": "11667:55:42"
                     },
                     {
                       "expression": {
-                        "id": 8871,
+                        "id": 10338,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftHandSide": {
-                          "id": 8861,
+                          "id": 10328,
                           "name": "q",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8832,
-                          "src": "11785:1:33",
+                          "referencedDeclaration": 10299,
+                          "src": "11736:1:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
@@ -9088,7 +8969,7 @@ export const FixedPointMath =
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           },
-                          "id": 8870,
+                          "id": 10337,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -9100,7 +8981,7 @@ export const FixedPointMath =
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 },
-                                "id": 8867,
+                                "id": 10334,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -9112,18 +8993,18 @@ export const FixedPointMath =
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
                                       },
-                                      "id": 8864,
+                                      "id": 10331,
                                       "isConstant": false,
                                       "isLValue": false,
                                       "isPure": false,
                                       "lValueRequested": false,
                                       "leftExpression": {
-                                        "id": 8862,
+                                        "id": 10329,
                                         "name": "q",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 8832,
-                                        "src": "11791:1:33",
+                                        "referencedDeclaration": 10299,
+                                        "src": "11742:1:42",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_int256",
                                           "typeString": "int256"
@@ -9132,32 +9013,32 @@ export const FixedPointMath =
                                       "nodeType": "BinaryOperation",
                                       "operator": "*",
                                       "rightExpression": {
-                                        "id": 8863,
+                                        "id": 10330,
                                         "name": "x",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 8712,
-                                        "src": "11795:1:33",
+                                        "referencedDeclaration": 10179,
+                                        "src": "11746:1:42",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_int256",
                                           "typeString": "int256"
                                         }
                                       },
-                                      "src": "11791:5:33",
+                                      "src": "11742:5:42",
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
                                       }
                                     }
                                   ],
-                                  "id": 8865,
+                                  "id": 10332,
                                   "isConstant": false,
                                   "isInlineArray": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "nodeType": "TupleExpression",
-                                  "src": "11790:7:33",
+                                  "src": "11741:7:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
@@ -9167,35 +9048,35 @@ export const FixedPointMath =
                                 "operator": ">>",
                                 "rightExpression": {
                                   "hexValue": "3936",
-                                  "id": 8866,
+                                  "id": 10333,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": true,
                                   "kind": "number",
                                   "lValueRequested": false,
                                   "nodeType": "Literal",
-                                  "src": "11801:2:33",
+                                  "src": "11752:2:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_rational_96_by_1",
                                     "typeString": "int_const 96"
                                   },
                                   "value": "96"
                                 },
-                                "src": "11790:13:33",
+                                "src": "11741:13:42",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 }
                               }
                             ],
-                            "id": 8868,
+                            "id": 10335,
                             "isConstant": false,
                             "isInlineArray": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "nodeType": "TupleExpression",
-                            "src": "11789:15:33",
+                            "src": "11740:15:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -9205,50 +9086,50 @@ export const FixedPointMath =
                           "operator": "+",
                           "rightExpression": {
                             "hexValue": "343031363836363930333934303237363633363531363234323038373639353533",
-                            "id": 8869,
+                            "id": 10336,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "kind": "number",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "11807:33:33",
+                            "src": "11758:33:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_rational_401686690394027663651624208769553_by_1",
                               "typeString": "int_const 4016...(25 digits omitted)...9553"
                             },
                             "value": "401686690394027663651624208769553"
                           },
-                          "src": "11789:51:33",
+                          "src": "11740:51:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "src": "11785:55:33",
+                        "src": "11736:55:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "id": 8872,
+                      "id": 10339,
                       "nodeType": "ExpressionStatement",
-                      "src": "11785:55:33"
+                      "src": "11736:55:42"
                     },
                     {
                       "expression": {
-                        "id": 8883,
+                        "id": 10350,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftHandSide": {
-                          "id": 8873,
+                          "id": 10340,
                           "name": "q",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8832,
-                          "src": "11854:1:33",
+                          "referencedDeclaration": 10299,
+                          "src": "11805:1:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
@@ -9261,7 +9142,7 @@ export const FixedPointMath =
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           },
-                          "id": 8882,
+                          "id": 10349,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -9273,7 +9154,7 @@ export const FixedPointMath =
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 },
-                                "id": 8879,
+                                "id": 10346,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -9285,18 +9166,18 @@ export const FixedPointMath =
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
                                       },
-                                      "id": 8876,
+                                      "id": 10343,
                                       "isConstant": false,
                                       "isLValue": false,
                                       "isPure": false,
                                       "lValueRequested": false,
                                       "leftExpression": {
-                                        "id": 8874,
+                                        "id": 10341,
                                         "name": "q",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 8832,
-                                        "src": "11860:1:33",
+                                        "referencedDeclaration": 10299,
+                                        "src": "11811:1:42",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_int256",
                                           "typeString": "int256"
@@ -9305,32 +9186,32 @@ export const FixedPointMath =
                                       "nodeType": "BinaryOperation",
                                       "operator": "*",
                                       "rightExpression": {
-                                        "id": 8875,
+                                        "id": 10342,
                                         "name": "x",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 8712,
-                                        "src": "11864:1:33",
+                                        "referencedDeclaration": 10179,
+                                        "src": "11815:1:42",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_int256",
                                           "typeString": "int256"
                                         }
                                       },
-                                      "src": "11860:5:33",
+                                      "src": "11811:5:42",
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
                                       }
                                     }
                                   ],
-                                  "id": 8877,
+                                  "id": 10344,
                                   "isConstant": false,
                                   "isInlineArray": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "nodeType": "TupleExpression",
-                                  "src": "11859:7:33",
+                                  "src": "11810:7:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
@@ -9340,35 +9221,35 @@ export const FixedPointMath =
                                 "operator": ">>",
                                 "rightExpression": {
                                   "hexValue": "3936",
-                                  "id": 8878,
+                                  "id": 10345,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": true,
                                   "kind": "number",
                                   "lValueRequested": false,
                                   "nodeType": "Literal",
-                                  "src": "11870:2:33",
+                                  "src": "11821:2:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_rational_96_by_1",
                                     "typeString": "int_const 96"
                                   },
                                   "value": "96"
                                 },
-                                "src": "11859:13:33",
+                                "src": "11810:13:42",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 }
                               }
                             ],
-                            "id": 8880,
+                            "id": 10347,
                             "isConstant": false,
                             "isInlineArray": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "nodeType": "TupleExpression",
-                            "src": "11858:15:33",
+                            "src": "11809:15:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -9378,50 +9259,50 @@ export const FixedPointMath =
                           "operator": "+",
                           "rightExpression": {
                             "hexValue": "323034303438343537353930333932303132333632343835303631383136363232",
-                            "id": 8881,
+                            "id": 10348,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "kind": "number",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "11876:33:33",
+                            "src": "11827:33:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_rational_204048457590392012362485061816622_by_1",
                               "typeString": "int_const 2040...(25 digits omitted)...6622"
                             },
                             "value": "204048457590392012362485061816622"
                           },
-                          "src": "11858:51:33",
+                          "src": "11809:51:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "src": "11854:55:33",
+                        "src": "11805:55:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "id": 8884,
+                      "id": 10351,
                       "nodeType": "ExpressionStatement",
-                      "src": "11854:55:33"
+                      "src": "11805:55:42"
                     },
                     {
                       "expression": {
-                        "id": 8895,
+                        "id": 10362,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftHandSide": {
-                          "id": 8885,
+                          "id": 10352,
                           "name": "q",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8832,
-                          "src": "11923:1:33",
+                          "referencedDeclaration": 10299,
+                          "src": "11874:1:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
@@ -9434,7 +9315,7 @@ export const FixedPointMath =
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           },
-                          "id": 8894,
+                          "id": 10361,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -9446,7 +9327,7 @@ export const FixedPointMath =
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 },
-                                "id": 8891,
+                                "id": 10358,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -9458,18 +9339,18 @@ export const FixedPointMath =
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
                                       },
-                                      "id": 8888,
+                                      "id": 10355,
                                       "isConstant": false,
                                       "isLValue": false,
                                       "isPure": false,
                                       "lValueRequested": false,
                                       "leftExpression": {
-                                        "id": 8886,
+                                        "id": 10353,
                                         "name": "q",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 8832,
-                                        "src": "11929:1:33",
+                                        "referencedDeclaration": 10299,
+                                        "src": "11880:1:42",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_int256",
                                           "typeString": "int256"
@@ -9478,32 +9359,32 @@ export const FixedPointMath =
                                       "nodeType": "BinaryOperation",
                                       "operator": "*",
                                       "rightExpression": {
-                                        "id": 8887,
+                                        "id": 10354,
                                         "name": "x",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 8712,
-                                        "src": "11933:1:33",
+                                        "referencedDeclaration": 10179,
+                                        "src": "11884:1:42",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_int256",
                                           "typeString": "int256"
                                         }
                                       },
-                                      "src": "11929:5:33",
+                                      "src": "11880:5:42",
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
                                       }
                                     }
                                   ],
-                                  "id": 8889,
+                                  "id": 10356,
                                   "isConstant": false,
                                   "isInlineArray": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "nodeType": "TupleExpression",
-                                  "src": "11928:7:33",
+                                  "src": "11879:7:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
@@ -9513,35 +9394,35 @@ export const FixedPointMath =
                                 "operator": ">>",
                                 "rightExpression": {
                                   "hexValue": "3936",
-                                  "id": 8890,
+                                  "id": 10357,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": true,
                                   "kind": "number",
                                   "lValueRequested": false,
                                   "nodeType": "Literal",
-                                  "src": "11939:2:33",
+                                  "src": "11890:2:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_rational_96_by_1",
                                     "typeString": "int_const 96"
                                   },
                                   "value": "96"
                                 },
-                                "src": "11928:13:33",
+                                "src": "11879:13:42",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 }
                               }
                             ],
-                            "id": 8892,
+                            "id": 10359,
                             "isConstant": false,
                             "isInlineArray": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "nodeType": "TupleExpression",
-                            "src": "11927:15:33",
+                            "src": "11878:15:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -9551,50 +9432,50 @@ export const FixedPointMath =
                           "operator": "+",
                           "rightExpression": {
                             "hexValue": "3331383533383939363938353031353731343032363533333539343237313338",
-                            "id": 8893,
+                            "id": 10360,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "kind": "number",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "11945:32:33",
+                            "src": "11896:32:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_rational_31853899698501571402653359427138_by_1",
                               "typeString": "int_const 31853899698501571402653359427138"
                             },
                             "value": "31853899698501571402653359427138"
                           },
-                          "src": "11927:50:33",
+                          "src": "11878:50:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "src": "11923:54:33",
+                        "src": "11874:54:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "id": 8896,
+                      "id": 10363,
                       "nodeType": "ExpressionStatement",
-                      "src": "11923:54:33"
+                      "src": "11874:54:42"
                     },
                     {
                       "expression": {
-                        "id": 8907,
+                        "id": 10374,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftHandSide": {
-                          "id": 8897,
+                          "id": 10364,
                           "name": "q",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8832,
-                          "src": "11991:1:33",
+                          "referencedDeclaration": 10299,
+                          "src": "11942:1:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
@@ -9607,7 +9488,7 @@ export const FixedPointMath =
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           },
-                          "id": 8906,
+                          "id": 10373,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -9619,7 +9500,7 @@ export const FixedPointMath =
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 },
-                                "id": 8903,
+                                "id": 10370,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -9631,18 +9512,18 @@ export const FixedPointMath =
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
                                       },
-                                      "id": 8900,
+                                      "id": 10367,
                                       "isConstant": false,
                                       "isLValue": false,
                                       "isPure": false,
                                       "lValueRequested": false,
                                       "leftExpression": {
-                                        "id": 8898,
+                                        "id": 10365,
                                         "name": "q",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 8832,
-                                        "src": "11997:1:33",
+                                        "referencedDeclaration": 10299,
+                                        "src": "11948:1:42",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_int256",
                                           "typeString": "int256"
@@ -9651,32 +9532,32 @@ export const FixedPointMath =
                                       "nodeType": "BinaryOperation",
                                       "operator": "*",
                                       "rightExpression": {
-                                        "id": 8899,
+                                        "id": 10366,
                                         "name": "x",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 8712,
-                                        "src": "12001:1:33",
+                                        "referencedDeclaration": 10179,
+                                        "src": "11952:1:42",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_int256",
                                           "typeString": "int256"
                                         }
                                       },
-                                      "src": "11997:5:33",
+                                      "src": "11948:5:42",
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_int256",
                                         "typeString": "int256"
                                       }
                                     }
                                   ],
-                                  "id": 8901,
+                                  "id": 10368,
                                   "isConstant": false,
                                   "isInlineArray": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "nodeType": "TupleExpression",
-                                  "src": "11996:7:33",
+                                  "src": "11947:7:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_int256",
                                     "typeString": "int256"
@@ -9686,35 +9567,35 @@ export const FixedPointMath =
                                 "operator": ">>",
                                 "rightExpression": {
                                   "hexValue": "3936",
-                                  "id": 8902,
+                                  "id": 10369,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": true,
                                   "kind": "number",
                                   "lValueRequested": false,
                                   "nodeType": "Literal",
-                                  "src": "12007:2:33",
+                                  "src": "11958:2:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_rational_96_by_1",
                                     "typeString": "int_const 96"
                                   },
                                   "value": "96"
                                 },
-                                "src": "11996:13:33",
+                                "src": "11947:13:42",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_int256",
                                   "typeString": "int256"
                                 }
                               }
                             ],
-                            "id": 8904,
+                            "id": 10371,
                             "isConstant": false,
                             "isInlineArray": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "nodeType": "TupleExpression",
-                            "src": "11995:15:33",
+                            "src": "11946:15:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -9724,70 +9605,70 @@ export const FixedPointMath =
                           "operator": "+",
                           "rightExpression": {
                             "hexValue": "393039343239393731323434333837333030323737333736353538333735",
-                            "id": 8905,
+                            "id": 10372,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "kind": "number",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "12013:30:33",
+                            "src": "11964:30:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_rational_909429971244387300277376558375_by_1",
                               "typeString": "int_const 909429971244387300277376558375"
                             },
                             "value": "909429971244387300277376558375"
                           },
-                          "src": "11995:48:33",
+                          "src": "11946:48:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "src": "11991:52:33",
+                        "src": "11942:52:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "id": 8908,
+                      "id": 10375,
                       "nodeType": "ExpressionStatement",
-                      "src": "11991:52:33"
+                      "src": "11942:52:42"
                     },
                     {
                       "AST": {
                         "nodeType": "YulBlock",
-                        "src": "12113:295:33",
+                        "src": "12064:295:42",
                         "statements": [
                           {
                             "nodeType": "YulAssignment",
-                            "src": "12379:15:33",
+                            "src": "12330:15:42",
                             "value": {
                               "arguments": [
                                 {
                                   "name": "p",
                                   "nodeType": "YulIdentifier",
-                                  "src": "12389:1:33"
+                                  "src": "12340:1:42"
                                 },
                                 {
                                   "name": "q",
                                   "nodeType": "YulIdentifier",
-                                  "src": "12392:1:33"
+                                  "src": "12343:1:42"
                                 }
                               ],
                               "functionName": {
                                 "name": "sdiv",
                                 "nodeType": "YulIdentifier",
-                                "src": "12384:4:33"
+                                "src": "12335:4:42"
                               },
                               "nodeType": "YulFunctionCall",
-                              "src": "12384:10:33"
+                              "src": "12335:10:42"
                             },
                             "variableNames": [
                               {
                                 "name": "r",
                                 "nodeType": "YulIdentifier",
-                                "src": "12379:1:33"
+                                "src": "12330:1:42"
                               }
                             ]
                           }
@@ -9797,45 +9678,45 @@ export const FixedPointMath =
                       "evmVersion": "paris",
                       "externalReferences": [
                         {
-                          "declaration": 8755,
+                          "declaration": 10222,
                           "isOffset": false,
                           "isSlot": false,
-                          "src": "12389:1:33",
+                          "src": "12340:1:42",
                           "valueSize": 1
                         },
                         {
-                          "declaration": 8832,
+                          "declaration": 10299,
                           "isOffset": false,
                           "isSlot": false,
-                          "src": "12392:1:33",
+                          "src": "12343:1:42",
                           "valueSize": 1
                         },
                         {
-                          "declaration": 8715,
+                          "declaration": 10182,
                           "isOffset": false,
                           "isSlot": false,
-                          "src": "12379:1:33",
+                          "src": "12330:1:42",
                           "valueSize": 1
                         }
                       ],
-                      "id": 8909,
+                      "id": 10376,
                       "nodeType": "InlineAssembly",
-                      "src": "12104:304:33"
+                      "src": "12055:304:42"
                     },
                     {
                       "expression": {
-                        "id": 8912,
+                        "id": 10379,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftHandSide": {
-                          "id": 8910,
+                          "id": 10377,
                           "name": "r",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8715,
-                          "src": "12769:1:33",
+                          "referencedDeclaration": 10182,
+                          "src": "12720:1:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
@@ -9845,44 +9726,44 @@ export const FixedPointMath =
                         "operator": "*=",
                         "rightHandSide": {
                           "hexValue": "31363737323032313130393936373138353838333432383230393637303637343433393633353136313636",
-                          "id": 8911,
+                          "id": 10378,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "12774:43:33",
+                          "src": "12725:43:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_1677202110996718588342820967067443963516166_by_1",
                             "typeString": "int_const 1677...(35 digits omitted)...6166"
                           },
                           "value": "1677202110996718588342820967067443963516166"
                         },
-                        "src": "12769:48:33",
+                        "src": "12720:48:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "id": 8913,
+                      "id": 10380,
                       "nodeType": "ExpressionStatement",
-                      "src": "12769:48:33"
+                      "src": "12720:48:42"
                     },
                     {
                       "expression": {
-                        "id": 8918,
+                        "id": 10385,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftHandSide": {
-                          "id": 8914,
+                          "id": 10381,
                           "name": "r",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8715,
-                          "src": "12876:1:33",
+                          "referencedDeclaration": 10182,
+                          "src": "12827:1:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
@@ -9895,21 +9776,21 @@ export const FixedPointMath =
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           },
-                          "id": 8917,
+                          "id": 10384,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftExpression": {
                             "hexValue": "3136353937353737353532363835363134323231343837323835393538313933393437343639313933383230353539323139383738313737393038303933343939323038333731",
-                            "id": 8915,
+                            "id": 10382,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "kind": "number",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "12897:71:33",
+                            "src": "12848:71:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_rational_16597577552685614221487285958193947469193820559219878177908093499208371_by_1",
                               "typeString": "int_const 1659...(63 digits omitted)...8371"
@@ -9919,47 +9800,47 @@ export const FixedPointMath =
                           "nodeType": "BinaryOperation",
                           "operator": "*",
                           "rightExpression": {
-                            "id": 8916,
+                            "id": 10383,
                             "name": "k",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 8728,
-                            "src": "12987:1:33",
+                            "referencedDeclaration": 10195,
+                            "src": "12938:1:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
                             }
                           },
-                          "src": "12897:91:33",
+                          "src": "12848:91:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
                           }
                         },
-                        "src": "12876:112:33",
+                        "src": "12827:112:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "id": 8919,
+                      "id": 10386,
                       "nodeType": "ExpressionStatement",
-                      "src": "12876:112:33"
+                      "src": "12827:112:42"
                     },
                     {
                       "expression": {
-                        "id": 8922,
+                        "id": 10389,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftHandSide": {
-                          "id": 8920,
+                          "id": 10387,
                           "name": "r",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8715,
-                          "src": "13056:1:33",
+                          "referencedDeclaration": 10182,
+                          "src": "13007:1:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
@@ -9969,44 +9850,44 @@ export const FixedPointMath =
                         "operator": "+=",
                         "rightHandSide": {
                           "hexValue": "363030393230313739383239373331383631373336373032373739333231363231343539353935343732323538303439303734313031353637333737383833303230303138333038",
-                          "id": 8921,
+                          "id": 10388,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "13061:72:33",
+                          "src": "13012:72:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_600920179829731861736702779321621459595472258049074101567377883020018308_by_1",
                             "typeString": "int_const 6009...(64 digits omitted)...8308"
                           },
                           "value": "600920179829731861736702779321621459595472258049074101567377883020018308"
                         },
-                        "src": "13056:77:33",
+                        "src": "13007:77:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "id": 8923,
+                      "id": 10390,
                       "nodeType": "ExpressionStatement",
-                      "src": "13056:77:33"
+                      "src": "13007:77:42"
                     },
                     {
                       "expression": {
-                        "id": 8926,
+                        "id": 10393,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftHandSide": {
-                          "id": 8924,
+                          "id": 10391,
                           "name": "r",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 8715,
-                          "src": "13198:1:33",
+                          "referencedDeclaration": 10182,
+                          "src": "13149:1:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_int256",
                             "typeString": "int256"
@@ -10016,29 +9897,29 @@ export const FixedPointMath =
                         "operator": ">>=",
                         "rightHandSide": {
                           "hexValue": "313734",
-                          "id": 8925,
+                          "id": 10392,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "13204:3:33",
+                          "src": "13155:3:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_174_by_1",
                             "typeString": "int_const 174"
                           },
                           "value": "174"
                         },
-                        "src": "13198:9:33",
+                        "src": "13149:9:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "id": 8927,
+                      "id": 10394,
                       "nodeType": "ExpressionStatement",
-                      "src": "13198:9:33"
+                      "src": "13149:9:42"
                     }
                   ]
                 }
@@ -10048,20 +9929,20 @@ export const FixedPointMath =
             "kind": "function",
             "modifiers": [],
             "name": "_ln",
-            "nameLocation": "9641:3:33",
+            "nameLocation": "9592:3:42",
             "parameters": {
-              "id": 8713,
+              "id": 10180,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8712,
+                  "id": 10179,
                   "mutability": "mutable",
                   "name": "x",
-                  "nameLocation": "9652:1:33",
+                  "nameLocation": "9603:1:42",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8930,
-                  "src": "9645:8:33",
+                  "scope": 10397,
+                  "src": "9596:8:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -10069,10 +9950,10 @@ export const FixedPointMath =
                     "typeString": "int256"
                   },
                   "typeName": {
-                    "id": 8711,
+                    "id": 10178,
                     "name": "int256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "9645:6:33",
+                    "src": "9596:6:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
@@ -10081,21 +9962,21 @@ export const FixedPointMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "9644:10:33"
+              "src": "9595:10:42"
             },
             "returnParameters": {
-              "id": 8716,
+              "id": 10183,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8715,
+                  "id": 10182,
                   "mutability": "mutable",
                   "name": "r",
-                  "nameLocation": "9684:1:33",
+                  "nameLocation": "9635:1:42",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8930,
-                  "src": "9677:8:33",
+                  "scope": 10397,
+                  "src": "9628:8:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -10103,10 +9984,10 @@ export const FixedPointMath =
                     "typeString": "int256"
                   },
                   "typeName": {
-                    "id": 8714,
+                    "id": 10181,
                     "name": "int256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "9677:6:33",
+                    "src": "9628:6:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
@@ -10115,41 +9996,41 @@ export const FixedPointMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "9676:10:33"
+              "src": "9627:10:42"
             },
-            "scope": 9066,
+            "scope": 10533,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "private"
           },
           {
-            "id": 8993,
+            "id": 10460,
             "nodeType": "FunctionDefinition",
-            "src": "13582:678:33",
+            "src": "13533:678:42",
             "nodes": [],
             "body": {
-              "id": 8992,
+              "id": 10459,
               "nodeType": "Block",
-              "src": "13793:467:33",
+              "src": "13744:467:42",
               "nodes": [],
               "statements": [
                 {
                   "condition": {
-                    "id": 8946,
+                    "id": 10413,
                     "name": "_isAdding",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 8941,
-                    "src": "13807:9:33",
+                    "referencedDeclaration": 10408,
+                    "src": "13758:9:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
                   "falseBody": {
-                    "id": 8990,
+                    "id": 10457,
                     "nodeType": "Block",
-                    "src": "14011:243:33",
+                    "src": "13962:243:42",
                     "statements": [
                       {
                         "condition": {
@@ -10157,18 +10038,18 @@ export const FixedPointMath =
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           },
-                          "id": 8968,
+                          "id": 10435,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftExpression": {
-                            "id": 8966,
+                            "id": 10433,
                             "name": "_totalWeight",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 8935,
-                            "src": "14029:12:33",
+                            "referencedDeclaration": 10402,
+                            "src": "13980:12:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -10177,63 +10058,63 @@ export const FixedPointMath =
                           "nodeType": "BinaryOperation",
                           "operator": "==",
                           "rightExpression": {
-                            "id": 8967,
+                            "id": 10434,
                             "name": "_deltaWeight",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 8939,
-                            "src": "14045:12:33",
+                            "referencedDeclaration": 10406,
+                            "src": "13996:12:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             }
                           },
-                          "src": "14029:28:33",
+                          "src": "13980:28:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
                           }
                         },
-                        "id": 8971,
+                        "id": 10438,
                         "nodeType": "IfStatement",
-                        "src": "14025:42:33",
+                        "src": "13976:42:42",
                         "trueBody": {
                           "expression": {
                             "hexValue": "30",
-                            "id": 8969,
+                            "id": 10436,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "kind": "number",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "14066:1:33",
+                            "src": "14017:1:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_rational_0_by_1",
                               "typeString": "int_const 0"
                             },
                             "value": "0"
                           },
-                          "functionReturnParameters": 8945,
-                          "id": 8970,
+                          "functionReturnParameters": 10412,
+                          "id": 10437,
                           "nodeType": "Return",
-                          "src": "14059:8:33"
+                          "src": "14010:8:42"
                         }
                       },
                       {
                         "expression": {
-                          "id": 8988,
+                          "id": 10455,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 8972,
+                            "id": 10439,
                             "name": "average",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 8944,
-                            "src": "14081:7:33",
+                            "referencedDeclaration": 10411,
+                            "src": "14032:7:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -10248,18 +10129,18 @@ export const FixedPointMath =
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
                                 },
-                                "id": 8986,
+                                "id": 10453,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
                                 "lValueRequested": false,
                                 "leftExpression": {
-                                  "id": 8984,
+                                  "id": 10451,
                                   "name": "_totalWeight",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 8935,
-                                  "src": "14198:12:33",
+                                  "referencedDeclaration": 10402,
+                                  "src": "14149:12:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_uint256",
                                     "typeString": "uint256"
@@ -10268,18 +10149,18 @@ export const FixedPointMath =
                                 "nodeType": "BinaryOperation",
                                 "operator": "-",
                                 "rightExpression": {
-                                  "id": 8985,
+                                  "id": 10452,
                                   "name": "_deltaWeight",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 8939,
-                                  "src": "14213:12:33",
+                                  "referencedDeclaration": 10406,
+                                  "src": "14164:12:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_uint256",
                                     "typeString": "uint256"
                                   }
                                 },
-                                "src": "14198:27:33",
+                                "src": "14149:27:42",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
@@ -10300,7 +10181,7 @@ export const FixedPointMath =
                                       "typeIdentifier": "t_uint256",
                                       "typeString": "uint256"
                                     },
-                                    "id": 8981,
+                                    "id": 10448,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": false,
@@ -10308,12 +10189,12 @@ export const FixedPointMath =
                                     "leftExpression": {
                                       "arguments": [
                                         {
-                                          "id": 8975,
+                                          "id": 10442,
                                           "name": "_average",
                                           "nodeType": "Identifier",
                                           "overloadedDeclarations": [],
-                                          "referencedDeclaration": 8933,
-                                          "src": "14113:8:33",
+                                          "referencedDeclaration": 10400,
+                                          "src": "14064:8:42",
                                           "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -10328,33 +10209,33 @@ export const FixedPointMath =
                                           }
                                         ],
                                         "expression": {
-                                          "id": 8973,
+                                          "id": 10440,
                                           "name": "_totalWeight",
                                           "nodeType": "Identifier",
                                           "overloadedDeclarations": [],
-                                          "referencedDeclaration": 8935,
-                                          "src": "14092:12:33",
+                                          "referencedDeclaration": 10402,
+                                          "src": "14043:12:42",
                                           "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                           }
                                         },
-                                        "id": 8974,
+                                        "id": 10441,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
-                                        "memberLocation": "14105:7:33",
+                                        "memberLocation": "14056:7:42",
                                         "memberName": "mulDown",
                                         "nodeType": "MemberAccess",
-                                        "referencedDeclaration": 8364,
-                                        "src": "14092:20:33",
+                                        "referencedDeclaration": 9831,
+                                        "src": "14043:20:42",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                           "typeString": "function (uint256,uint256) pure returns (uint256)"
                                         }
                                       },
-                                      "id": 8976,
+                                      "id": 10443,
                                       "isConstant": false,
                                       "isLValue": false,
                                       "isPure": false,
@@ -10363,7 +10244,7 @@ export const FixedPointMath =
                                       "nameLocations": [],
                                       "names": [],
                                       "nodeType": "FunctionCall",
-                                      "src": "14092:30:33",
+                                      "src": "14043:30:42",
                                       "tryCall": false,
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_uint256",
@@ -10375,12 +10256,12 @@ export const FixedPointMath =
                                     "rightExpression": {
                                       "arguments": [
                                         {
-                                          "id": 8979,
+                                          "id": 10446,
                                           "name": "_delta",
                                           "nodeType": "Identifier",
                                           "overloadedDeclarations": [],
-                                          "referencedDeclaration": 8937,
-                                          "src": "14162:6:33",
+                                          "referencedDeclaration": 10404,
+                                          "src": "14113:6:42",
                                           "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -10395,33 +10276,33 @@ export const FixedPointMath =
                                           }
                                         ],
                                         "expression": {
-                                          "id": 8977,
+                                          "id": 10444,
                                           "name": "_deltaWeight",
                                           "nodeType": "Identifier",
                                           "overloadedDeclarations": [],
-                                          "referencedDeclaration": 8939,
-                                          "src": "14141:12:33",
+                                          "referencedDeclaration": 10406,
+                                          "src": "14092:12:42",
                                           "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                           }
                                         },
-                                        "id": 8978,
+                                        "id": 10445,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
-                                        "memberLocation": "14154:7:33",
+                                        "memberLocation": "14105:7:42",
                                         "memberName": "mulDown",
                                         "nodeType": "MemberAccess",
-                                        "referencedDeclaration": 8364,
-                                        "src": "14141:20:33",
+                                        "referencedDeclaration": 9831,
+                                        "src": "14092:20:42",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                           "typeString": "function (uint256,uint256) pure returns (uint256)"
                                         }
                                       },
-                                      "id": 8980,
+                                      "id": 10447,
                                       "isConstant": false,
                                       "isLValue": false,
                                       "isPure": false,
@@ -10430,49 +10311,49 @@ export const FixedPointMath =
                                       "nameLocations": [],
                                       "names": [],
                                       "nodeType": "FunctionCall",
-                                      "src": "14141:28:33",
+                                      "src": "14092:28:42",
                                       "tryCall": false,
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_uint256",
                                         "typeString": "uint256"
                                       }
                                     },
-                                    "src": "14092:77:33",
+                                    "src": "14043:77:42",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
                                       "typeString": "uint256"
                                     }
                                   }
                                 ],
-                                "id": 8982,
+                                "id": 10449,
                                 "isConstant": false,
                                 "isInlineArray": false,
                                 "isLValue": false,
                                 "isPure": false,
                                 "lValueRequested": false,
                                 "nodeType": "TupleExpression",
-                                "src": "14091:79:33",
+                                "src": "14042:79:42",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
                                 }
                               },
-                              "id": 8983,
+                              "id": 10450,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
-                              "memberLocation": "14171:5:33",
+                              "memberLocation": "14122:5:42",
                               "memberName": "divUp",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 8432,
-                              "src": "14091:85:33",
+                              "referencedDeclaration": 9899,
+                              "src": "14042:85:42",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                 "typeString": "function (uint256,uint256) pure returns (uint256)"
                               }
                             },
-                            "id": 8987,
+                            "id": 10454,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -10481,47 +10362,47 @@ export const FixedPointMath =
                             "nameLocations": [],
                             "names": [],
                             "nodeType": "FunctionCall",
-                            "src": "14091:152:33",
+                            "src": "14042:152:42",
                             "tryCall": false,
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             }
                           },
-                          "src": "14081:162:33",
+                          "src": "14032:162:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 8989,
+                        "id": 10456,
                         "nodeType": "ExpressionStatement",
-                        "src": "14081:162:33"
+                        "src": "14032:162:42"
                       }
                     ]
                   },
-                  "id": 8991,
+                  "id": 10458,
                   "nodeType": "IfStatement",
-                  "src": "13803:451:33",
+                  "src": "13754:451:42",
                   "trueBody": {
-                    "id": 8965,
+                    "id": 10432,
                     "nodeType": "Block",
-                    "src": "13818:187:33",
+                    "src": "13769:187:42",
                     "statements": [
                       {
                         "expression": {
-                          "id": 8963,
+                          "id": 10430,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 8947,
+                            "id": 10414,
                             "name": "average",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 8944,
-                            "src": "13832:7:33",
+                            "referencedDeclaration": 10411,
+                            "src": "13783:7:42",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -10536,18 +10417,18 @@ export const FixedPointMath =
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
                                 },
-                                "id": 8961,
+                                "id": 10428,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
                                 "lValueRequested": false,
                                 "leftExpression": {
-                                  "id": 8959,
+                                  "id": 10426,
                                   "name": "_totalWeight",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 8935,
-                                  "src": "13949:12:33",
+                                  "referencedDeclaration": 10402,
+                                  "src": "13900:12:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_uint256",
                                     "typeString": "uint256"
@@ -10556,18 +10437,18 @@ export const FixedPointMath =
                                 "nodeType": "BinaryOperation",
                                 "operator": "+",
                                 "rightExpression": {
-                                  "id": 8960,
+                                  "id": 10427,
                                   "name": "_deltaWeight",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 8939,
-                                  "src": "13964:12:33",
+                                  "referencedDeclaration": 10406,
+                                  "src": "13915:12:42",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_uint256",
                                     "typeString": "uint256"
                                   }
                                 },
-                                "src": "13949:27:33",
+                                "src": "13900:27:42",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
@@ -10588,7 +10469,7 @@ export const FixedPointMath =
                                       "typeIdentifier": "t_uint256",
                                       "typeString": "uint256"
                                     },
-                                    "id": 8956,
+                                    "id": 10423,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": false,
@@ -10596,12 +10477,12 @@ export const FixedPointMath =
                                     "leftExpression": {
                                       "arguments": [
                                         {
-                                          "id": 8950,
+                                          "id": 10417,
                                           "name": "_average",
                                           "nodeType": "Identifier",
                                           "overloadedDeclarations": [],
-                                          "referencedDeclaration": 8933,
-                                          "src": "13864:8:33",
+                                          "referencedDeclaration": 10400,
+                                          "src": "13815:8:42",
                                           "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -10616,33 +10497,33 @@ export const FixedPointMath =
                                           }
                                         ],
                                         "expression": {
-                                          "id": 8948,
+                                          "id": 10415,
                                           "name": "_totalWeight",
                                           "nodeType": "Identifier",
                                           "overloadedDeclarations": [],
-                                          "referencedDeclaration": 8935,
-                                          "src": "13843:12:33",
+                                          "referencedDeclaration": 10402,
+                                          "src": "13794:12:42",
                                           "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                           }
                                         },
-                                        "id": 8949,
+                                        "id": 10416,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
-                                        "memberLocation": "13856:7:33",
+                                        "memberLocation": "13807:7:42",
                                         "memberName": "mulDown",
                                         "nodeType": "MemberAccess",
-                                        "referencedDeclaration": 8364,
-                                        "src": "13843:20:33",
+                                        "referencedDeclaration": 9831,
+                                        "src": "13794:20:42",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                           "typeString": "function (uint256,uint256) pure returns (uint256)"
                                         }
                                       },
-                                      "id": 8951,
+                                      "id": 10418,
                                       "isConstant": false,
                                       "isLValue": false,
                                       "isPure": false,
@@ -10651,7 +10532,7 @@ export const FixedPointMath =
                                       "nameLocations": [],
                                       "names": [],
                                       "nodeType": "FunctionCall",
-                                      "src": "13843:30:33",
+                                      "src": "13794:30:42",
                                       "tryCall": false,
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_uint256",
@@ -10663,12 +10544,12 @@ export const FixedPointMath =
                                     "rightExpression": {
                                       "arguments": [
                                         {
-                                          "id": 8954,
+                                          "id": 10421,
                                           "name": "_delta",
                                           "nodeType": "Identifier",
                                           "overloadedDeclarations": [],
-                                          "referencedDeclaration": 8937,
-                                          "src": "13913:6:33",
+                                          "referencedDeclaration": 10404,
+                                          "src": "13864:6:42",
                                           "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -10683,33 +10564,33 @@ export const FixedPointMath =
                                           }
                                         ],
                                         "expression": {
-                                          "id": 8952,
+                                          "id": 10419,
                                           "name": "_deltaWeight",
                                           "nodeType": "Identifier",
                                           "overloadedDeclarations": [],
-                                          "referencedDeclaration": 8939,
-                                          "src": "13892:12:33",
+                                          "referencedDeclaration": 10406,
+                                          "src": "13843:12:42",
                                           "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                           }
                                         },
-                                        "id": 8953,
+                                        "id": 10420,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
-                                        "memberLocation": "13905:7:33",
+                                        "memberLocation": "13856:7:42",
                                         "memberName": "mulDown",
                                         "nodeType": "MemberAccess",
-                                        "referencedDeclaration": 8364,
-                                        "src": "13892:20:33",
+                                        "referencedDeclaration": 9831,
+                                        "src": "13843:20:42",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                           "typeString": "function (uint256,uint256) pure returns (uint256)"
                                         }
                                       },
-                                      "id": 8955,
+                                      "id": 10422,
                                       "isConstant": false,
                                       "isLValue": false,
                                       "isPure": false,
@@ -10718,49 +10599,49 @@ export const FixedPointMath =
                                       "nameLocations": [],
                                       "names": [],
                                       "nodeType": "FunctionCall",
-                                      "src": "13892:28:33",
+                                      "src": "13843:28:42",
                                       "tryCall": false,
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_uint256",
                                         "typeString": "uint256"
                                       }
                                     },
-                                    "src": "13843:77:33",
+                                    "src": "13794:77:42",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
                                       "typeString": "uint256"
                                     }
                                   }
                                 ],
-                                "id": 8957,
+                                "id": 10424,
                                 "isConstant": false,
                                 "isInlineArray": false,
                                 "isLValue": false,
                                 "isPure": false,
                                 "lValueRequested": false,
                                 "nodeType": "TupleExpression",
-                                "src": "13842:79:33",
+                                "src": "13793:79:42",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
                                 }
                               },
-                              "id": 8958,
+                              "id": 10425,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
-                              "memberLocation": "13922:5:33",
+                              "memberLocation": "13873:5:42",
                               "memberName": "divUp",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 8432,
-                              "src": "13842:85:33",
+                              "referencedDeclaration": 9899,
+                              "src": "13793:85:42",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$attached_to$_t_uint256_$",
                                 "typeString": "function (uint256,uint256) pure returns (uint256)"
                               }
                             },
-                            "id": 8962,
+                            "id": 10429,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -10769,22 +10650,22 @@ export const FixedPointMath =
                             "nameLocations": [],
                             "names": [],
                             "nodeType": "FunctionCall",
-                            "src": "13842:152:33",
+                            "src": "13793:152:42",
                             "tryCall": false,
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             }
                           },
-                          "src": "13832:162:33",
+                          "src": "13783:162:42",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 8964,
+                        "id": 10431,
                         "nodeType": "ExpressionStatement",
-                        "src": "13832:162:33"
+                        "src": "13783:162:42"
                       }
                     ]
                   }
@@ -10792,29 +10673,29 @@ export const FixedPointMath =
               ]
             },
             "documentation": {
-              "id": 8931,
+              "id": 10398,
               "nodeType": "StructuredDocumentation",
-              "src": "13230:347:33",
+              "src": "13181:347:42",
               "text": "@dev Updates a weighted average by adding or removing a weighted delta.\n @param _totalWeight The total weight before the update.\n @param _deltaWeight The weight of the new value.\n @param _average The weighted average before the update.\n @param _delta The new value.\n @return average The new weighted average."
             },
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "updateWeightedAverage",
-            "nameLocation": "13591:21:33",
+            "nameLocation": "13542:21:42",
             "parameters": {
-              "id": 8942,
+              "id": 10409,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8933,
+                  "id": 10400,
                   "mutability": "mutable",
                   "name": "_average",
-                  "nameLocation": "13630:8:33",
+                  "nameLocation": "13581:8:42",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8993,
-                  "src": "13622:16:33",
+                  "scope": 10460,
+                  "src": "13573:16:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -10822,10 +10703,10 @@ export const FixedPointMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 8932,
+                    "id": 10399,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "13622:7:33",
+                    "src": "13573:7:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -10835,13 +10716,13 @@ export const FixedPointMath =
                 },
                 {
                   "constant": false,
-                  "id": 8935,
+                  "id": 10402,
                   "mutability": "mutable",
                   "name": "_totalWeight",
-                  "nameLocation": "13656:12:33",
+                  "nameLocation": "13607:12:42",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8993,
-                  "src": "13648:20:33",
+                  "scope": 10460,
+                  "src": "13599:20:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -10849,10 +10730,10 @@ export const FixedPointMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 8934,
+                    "id": 10401,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "13648:7:33",
+                    "src": "13599:7:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -10862,13 +10743,13 @@ export const FixedPointMath =
                 },
                 {
                   "constant": false,
-                  "id": 8937,
+                  "id": 10404,
                   "mutability": "mutable",
                   "name": "_delta",
-                  "nameLocation": "13686:6:33",
+                  "nameLocation": "13637:6:42",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8993,
-                  "src": "13678:14:33",
+                  "scope": 10460,
+                  "src": "13629:14:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -10876,10 +10757,10 @@ export const FixedPointMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 8936,
+                    "id": 10403,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "13678:7:33",
+                    "src": "13629:7:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -10889,13 +10770,13 @@ export const FixedPointMath =
                 },
                 {
                   "constant": false,
-                  "id": 8939,
+                  "id": 10406,
                   "mutability": "mutable",
                   "name": "_deltaWeight",
-                  "nameLocation": "13710:12:33",
+                  "nameLocation": "13661:12:42",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8993,
-                  "src": "13702:20:33",
+                  "scope": 10460,
+                  "src": "13653:20:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -10903,10 +10784,10 @@ export const FixedPointMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 8938,
+                    "id": 10405,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "13702:7:33",
+                    "src": "13653:7:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -10916,13 +10797,13 @@ export const FixedPointMath =
                 },
                 {
                   "constant": false,
-                  "id": 8941,
+                  "id": 10408,
                   "mutability": "mutable",
                   "name": "_isAdding",
-                  "nameLocation": "13737:9:33",
+                  "nameLocation": "13688:9:42",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8993,
-                  "src": "13732:14:33",
+                  "scope": 10460,
+                  "src": "13683:14:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -10930,10 +10811,10 @@ export const FixedPointMath =
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 8940,
+                    "id": 10407,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "13732:4:33",
+                    "src": "13683:4:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -10942,21 +10823,21 @@ export const FixedPointMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "13612:140:33"
+              "src": "13563:140:42"
             },
             "returnParameters": {
-              "id": 8945,
+              "id": 10412,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8944,
+                  "id": 10411,
                   "mutability": "mutable",
                   "name": "average",
-                  "nameLocation": "13784:7:33",
+                  "nameLocation": "13735:7:42",
                   "nodeType": "VariableDeclaration",
-                  "scope": 8993,
-                  "src": "13776:15:33",
+                  "scope": 10460,
+                  "src": "13727:15:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -10964,10 +10845,10 @@ export const FixedPointMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 8943,
+                    "id": 10410,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "13776:7:33",
+                    "src": "13727:7:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -10976,22 +10857,22 @@ export const FixedPointMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "13775:17:33"
+              "src": "13726:17:42"
             },
-            "scope": 9066,
+            "scope": 10533,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 9011,
+            "id": 10478,
             "nodeType": "FunctionDefinition",
-            "src": "14433:104:33",
+            "src": "14384:104:42",
             "nodes": [],
             "body": {
-              "id": 9010,
+              "id": 10477,
               "nodeType": "Block",
-              "src": "14500:37:33",
+              "src": "14451:37:42",
               "nodes": [],
               "statements": [
                 {
@@ -11001,18 +10882,18 @@ export const FixedPointMath =
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       },
-                      "id": 9005,
+                      "id": 10472,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
-                        "id": 9003,
+                        "id": 10470,
                         "name": "a",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 8996,
-                        "src": "14517:1:33",
+                        "referencedDeclaration": 10463,
+                        "src": "14468:1:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -11021,49 +10902,49 @@ export const FixedPointMath =
                       "nodeType": "BinaryOperation",
                       "operator": ">",
                       "rightExpression": {
-                        "id": 9004,
+                        "id": 10471,
                         "name": "b",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 8998,
-                        "src": "14521:1:33",
+                        "referencedDeclaration": 10465,
+                        "src": "14472:1:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
-                      "src": "14517:5:33",
+                      "src": "14468:5:42",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
                       }
                     },
                     "falseExpression": {
-                      "id": 9007,
+                      "id": 10474,
                       "name": "a",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 8996,
-                      "src": "14529:1:33",
+                      "referencedDeclaration": 10463,
+                      "src": "14480:1:42",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "id": 9008,
+                    "id": 10475,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "Conditional",
-                    "src": "14517:13:33",
+                    "src": "14468:13:42",
                     "trueExpression": {
-                      "id": 9006,
+                      "id": 10473,
                       "name": "b",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 8998,
-                      "src": "14525:1:33",
+                      "referencedDeclaration": 10465,
+                      "src": "14476:1:42",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -11074,37 +10955,37 @@ export const FixedPointMath =
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 9002,
-                  "id": 9009,
+                  "functionReturnParameters": 10469,
+                  "id": 10476,
                   "nodeType": "Return",
-                  "src": "14510:20:33"
+                  "src": "14461:20:42"
                 }
               ]
             },
             "documentation": {
-              "id": 8994,
+              "id": 10461,
               "nodeType": "StructuredDocumentation",
-              "src": "14266:162:33",
+              "src": "14217:162:42",
               "text": "@dev Calculates the minimum of two values.\n @param a The first value.\n @param b The second value.\n @return The minimum of the two values."
             },
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "min",
-            "nameLocation": "14442:3:33",
+            "nameLocation": "14393:3:42",
             "parameters": {
-              "id": 8999,
+              "id": 10466,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 8996,
+                  "id": 10463,
                   "mutability": "mutable",
                   "name": "a",
-                  "nameLocation": "14454:1:33",
+                  "nameLocation": "14405:1:42",
                   "nodeType": "VariableDeclaration",
-                  "scope": 9011,
-                  "src": "14446:9:33",
+                  "scope": 10478,
+                  "src": "14397:9:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -11112,10 +10993,10 @@ export const FixedPointMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 8995,
+                    "id": 10462,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "14446:7:33",
+                    "src": "14397:7:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -11125,13 +11006,13 @@ export const FixedPointMath =
                 },
                 {
                   "constant": false,
-                  "id": 8998,
+                  "id": 10465,
                   "mutability": "mutable",
                   "name": "b",
-                  "nameLocation": "14465:1:33",
+                  "nameLocation": "14416:1:42",
                   "nodeType": "VariableDeclaration",
-                  "scope": 9011,
-                  "src": "14457:9:33",
+                  "scope": 10478,
+                  "src": "14408:9:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -11139,10 +11020,10 @@ export const FixedPointMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 8997,
+                    "id": 10464,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "14457:7:33",
+                    "src": "14408:7:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -11151,21 +11032,21 @@ export const FixedPointMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "14445:22:33"
+              "src": "14396:22:42"
             },
             "returnParameters": {
-              "id": 9002,
+              "id": 10469,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 9001,
+                  "id": 10468,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 9011,
-                  "src": "14491:7:33",
+                  "scope": 10478,
+                  "src": "14442:7:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -11173,10 +11054,10 @@ export const FixedPointMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 9000,
+                    "id": 10467,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "14491:7:33",
+                    "src": "14442:7:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -11185,22 +11066,22 @@ export const FixedPointMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "14490:9:33"
+              "src": "14441:9:42"
             },
-            "scope": 9066,
+            "scope": 10533,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 9029,
+            "id": 10496,
             "nodeType": "FunctionDefinition",
-            "src": "14710:104:33",
+            "src": "14661:104:42",
             "nodes": [],
             "body": {
-              "id": 9028,
+              "id": 10495,
               "nodeType": "Block",
-              "src": "14777:37:33",
+              "src": "14728:37:42",
               "nodes": [],
               "statements": [
                 {
@@ -11210,18 +11091,18 @@ export const FixedPointMath =
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       },
-                      "id": 9023,
+                      "id": 10490,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
-                        "id": 9021,
+                        "id": 10488,
                         "name": "a",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 9014,
-                        "src": "14794:1:33",
+                        "referencedDeclaration": 10481,
+                        "src": "14745:1:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -11230,49 +11111,49 @@ export const FixedPointMath =
                       "nodeType": "BinaryOperation",
                       "operator": ">",
                       "rightExpression": {
-                        "id": 9022,
+                        "id": 10489,
                         "name": "b",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 9016,
-                        "src": "14798:1:33",
+                        "referencedDeclaration": 10483,
+                        "src": "14749:1:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         }
                       },
-                      "src": "14794:5:33",
+                      "src": "14745:5:42",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
                       }
                     },
                     "falseExpression": {
-                      "id": 9025,
+                      "id": 10492,
                       "name": "b",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 9016,
-                      "src": "14806:1:33",
+                      "referencedDeclaration": 10483,
+                      "src": "14757:1:42",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "id": 9026,
+                    "id": 10493,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "Conditional",
-                    "src": "14794:13:33",
+                    "src": "14745:13:42",
                     "trueExpression": {
-                      "id": 9024,
+                      "id": 10491,
                       "name": "a",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 9014,
-                      "src": "14802:1:33",
+                      "referencedDeclaration": 10481,
+                      "src": "14753:1:42",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -11283,37 +11164,37 @@ export const FixedPointMath =
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 9020,
-                  "id": 9027,
+                  "functionReturnParameters": 10487,
+                  "id": 10494,
                   "nodeType": "Return",
-                  "src": "14787:20:33"
+                  "src": "14738:20:42"
                 }
               ]
             },
             "documentation": {
-              "id": 9012,
+              "id": 10479,
               "nodeType": "StructuredDocumentation",
-              "src": "14543:162:33",
+              "src": "14494:162:42",
               "text": "@dev Calculates the maximum of two values.\n @param a The first value.\n @param b The second value.\n @return The maximum of the two values."
             },
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "max",
-            "nameLocation": "14719:3:33",
+            "nameLocation": "14670:3:42",
             "parameters": {
-              "id": 9017,
+              "id": 10484,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 9014,
+                  "id": 10481,
                   "mutability": "mutable",
                   "name": "a",
-                  "nameLocation": "14731:1:33",
+                  "nameLocation": "14682:1:42",
                   "nodeType": "VariableDeclaration",
-                  "scope": 9029,
-                  "src": "14723:9:33",
+                  "scope": 10496,
+                  "src": "14674:9:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -11321,10 +11202,10 @@ export const FixedPointMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 9013,
+                    "id": 10480,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "14723:7:33",
+                    "src": "14674:7:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -11334,13 +11215,13 @@ export const FixedPointMath =
                 },
                 {
                   "constant": false,
-                  "id": 9016,
+                  "id": 10483,
                   "mutability": "mutable",
                   "name": "b",
-                  "nameLocation": "14742:1:33",
+                  "nameLocation": "14693:1:42",
                   "nodeType": "VariableDeclaration",
-                  "scope": 9029,
-                  "src": "14734:9:33",
+                  "scope": 10496,
+                  "src": "14685:9:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -11348,10 +11229,10 @@ export const FixedPointMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 9015,
+                    "id": 10482,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "14734:7:33",
+                    "src": "14685:7:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -11360,21 +11241,21 @@ export const FixedPointMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "14722:22:33"
+              "src": "14673:22:42"
             },
             "returnParameters": {
-              "id": 9020,
+              "id": 10487,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 9019,
+                  "id": 10486,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 9029,
-                  "src": "14768:7:33",
+                  "scope": 10496,
+                  "src": "14719:7:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -11382,10 +11263,10 @@ export const FixedPointMath =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 9018,
+                    "id": 10485,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "14768:7:33",
+                    "src": "14719:7:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -11394,22 +11275,22 @@ export const FixedPointMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "14767:9:33"
+              "src": "14718:9:42"
             },
-            "scope": 9066,
+            "scope": 10533,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 9047,
+            "id": 10514,
             "nodeType": "FunctionDefinition",
-            "src": "14987:101:33",
+            "src": "14938:101:42",
             "nodes": [],
             "body": {
-              "id": 9046,
+              "id": 10513,
               "nodeType": "Block",
-              "src": "15051:37:33",
+              "src": "15002:37:42",
               "nodes": [],
               "statements": [
                 {
@@ -11419,18 +11300,18 @@ export const FixedPointMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 9041,
+                      "id": 10508,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
-                        "id": 9039,
+                        "id": 10506,
                         "name": "a",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 9032,
-                        "src": "15068:1:33",
+                        "referencedDeclaration": 10499,
+                        "src": "15019:1:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -11439,49 +11320,49 @@ export const FixedPointMath =
                       "nodeType": "BinaryOperation",
                       "operator": ">",
                       "rightExpression": {
-                        "id": 9040,
+                        "id": 10507,
                         "name": "b",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 9034,
-                        "src": "15072:1:33",
+                        "referencedDeclaration": 10501,
+                        "src": "15023:1:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "src": "15068:5:33",
+                      "src": "15019:5:42",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
                       }
                     },
                     "falseExpression": {
-                      "id": 9043,
+                      "id": 10510,
                       "name": "a",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 9032,
-                      "src": "15080:1:33",
+                      "referencedDeclaration": 10499,
+                      "src": "15031:1:42",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "id": 9044,
+                    "id": 10511,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "Conditional",
-                    "src": "15068:13:33",
+                    "src": "15019:13:42",
                     "trueExpression": {
-                      "id": 9042,
+                      "id": 10509,
                       "name": "b",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 9034,
-                      "src": "15076:1:33",
+                      "referencedDeclaration": 10501,
+                      "src": "15027:1:42",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -11492,37 +11373,37 @@ export const FixedPointMath =
                       "typeString": "int256"
                     }
                   },
-                  "functionReturnParameters": 9038,
-                  "id": 9045,
+                  "functionReturnParameters": 10505,
+                  "id": 10512,
                   "nodeType": "Return",
-                  "src": "15061:20:33"
+                  "src": "15012:20:42"
                 }
               ]
             },
             "documentation": {
-              "id": 9030,
+              "id": 10497,
               "nodeType": "StructuredDocumentation",
-              "src": "14820:162:33",
+              "src": "14771:162:42",
               "text": "@dev Calculates the minimum of two values.\n @param a The first value.\n @param b The second value.\n @return The minimum of the two values."
             },
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "min",
-            "nameLocation": "14996:3:33",
+            "nameLocation": "14947:3:42",
             "parameters": {
-              "id": 9035,
+              "id": 10502,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 9032,
+                  "id": 10499,
                   "mutability": "mutable",
                   "name": "a",
-                  "nameLocation": "15007:1:33",
+                  "nameLocation": "14958:1:42",
                   "nodeType": "VariableDeclaration",
-                  "scope": 9047,
-                  "src": "15000:8:33",
+                  "scope": 10514,
+                  "src": "14951:8:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -11530,10 +11411,10 @@ export const FixedPointMath =
                     "typeString": "int256"
                   },
                   "typeName": {
-                    "id": 9031,
+                    "id": 10498,
                     "name": "int256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "15000:6:33",
+                    "src": "14951:6:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
@@ -11543,13 +11424,13 @@ export const FixedPointMath =
                 },
                 {
                   "constant": false,
-                  "id": 9034,
+                  "id": 10501,
                   "mutability": "mutable",
                   "name": "b",
-                  "nameLocation": "15017:1:33",
+                  "nameLocation": "14968:1:42",
                   "nodeType": "VariableDeclaration",
-                  "scope": 9047,
-                  "src": "15010:8:33",
+                  "scope": 10514,
+                  "src": "14961:8:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -11557,10 +11438,10 @@ export const FixedPointMath =
                     "typeString": "int256"
                   },
                   "typeName": {
-                    "id": 9033,
+                    "id": 10500,
                     "name": "int256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "15010:6:33",
+                    "src": "14961:6:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
@@ -11569,21 +11450,21 @@ export const FixedPointMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "14999:20:33"
+              "src": "14950:20:42"
             },
             "returnParameters": {
-              "id": 9038,
+              "id": 10505,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 9037,
+                  "id": 10504,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 9047,
-                  "src": "15043:6:33",
+                  "scope": 10514,
+                  "src": "14994:6:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -11591,10 +11472,10 @@ export const FixedPointMath =
                     "typeString": "int256"
                   },
                   "typeName": {
-                    "id": 9036,
+                    "id": 10503,
                     "name": "int256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "15043:6:33",
+                    "src": "14994:6:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
@@ -11603,22 +11484,22 @@ export const FixedPointMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "15042:8:33"
+              "src": "14993:8:42"
             },
-            "scope": 9066,
+            "scope": 10533,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 9065,
+            "id": 10532,
             "nodeType": "FunctionDefinition",
-            "src": "15261:101:33",
+            "src": "15212:101:42",
             "nodes": [],
             "body": {
-              "id": 9064,
+              "id": 10531,
               "nodeType": "Block",
-              "src": "15325:37:33",
+              "src": "15276:37:42",
               "nodes": [],
               "statements": [
                 {
@@ -11628,18 +11509,18 @@ export const FixedPointMath =
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       },
-                      "id": 9059,
+                      "id": 10526,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
-                        "id": 9057,
+                        "id": 10524,
                         "name": "a",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 9050,
-                        "src": "15342:1:33",
+                        "referencedDeclaration": 10517,
+                        "src": "15293:1:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
@@ -11648,49 +11529,49 @@ export const FixedPointMath =
                       "nodeType": "BinaryOperation",
                       "operator": ">",
                       "rightExpression": {
-                        "id": 9058,
+                        "id": 10525,
                         "name": "b",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 9052,
-                        "src": "15346:1:33",
+                        "referencedDeclaration": 10519,
+                        "src": "15297:1:42",
                         "typeDescriptions": {
                           "typeIdentifier": "t_int256",
                           "typeString": "int256"
                         }
                       },
-                      "src": "15342:5:33",
+                      "src": "15293:5:42",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
                       }
                     },
                     "falseExpression": {
-                      "id": 9061,
+                      "id": 10528,
                       "name": "b",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 9052,
-                      "src": "15354:1:33",
+                      "referencedDeclaration": 10519,
+                      "src": "15305:1:42",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "id": 9062,
+                    "id": 10529,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "Conditional",
-                    "src": "15342:13:33",
+                    "src": "15293:13:42",
                     "trueExpression": {
-                      "id": 9060,
+                      "id": 10527,
                       "name": "a",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 9050,
-                      "src": "15350:1:33",
+                      "referencedDeclaration": 10517,
+                      "src": "15301:1:42",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -11701,37 +11582,37 @@ export const FixedPointMath =
                       "typeString": "int256"
                     }
                   },
-                  "functionReturnParameters": 9056,
-                  "id": 9063,
+                  "functionReturnParameters": 10523,
+                  "id": 10530,
                   "nodeType": "Return",
-                  "src": "15335:20:33"
+                  "src": "15286:20:42"
                 }
               ]
             },
             "documentation": {
-              "id": 9048,
+              "id": 10515,
               "nodeType": "StructuredDocumentation",
-              "src": "15094:162:33",
+              "src": "15045:162:42",
               "text": "@dev Calculates the maximum of two values.\n @param a The first value.\n @param b The second value.\n @return The maximum of the two values."
             },
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "max",
-            "nameLocation": "15270:3:33",
+            "nameLocation": "15221:3:42",
             "parameters": {
-              "id": 9053,
+              "id": 10520,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 9050,
+                  "id": 10517,
                   "mutability": "mutable",
                   "name": "a",
-                  "nameLocation": "15281:1:33",
+                  "nameLocation": "15232:1:42",
                   "nodeType": "VariableDeclaration",
-                  "scope": 9065,
-                  "src": "15274:8:33",
+                  "scope": 10532,
+                  "src": "15225:8:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -11739,10 +11620,10 @@ export const FixedPointMath =
                     "typeString": "int256"
                   },
                   "typeName": {
-                    "id": 9049,
+                    "id": 10516,
                     "name": "int256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "15274:6:33",
+                    "src": "15225:6:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
@@ -11752,13 +11633,13 @@ export const FixedPointMath =
                 },
                 {
                   "constant": false,
-                  "id": 9052,
+                  "id": 10519,
                   "mutability": "mutable",
                   "name": "b",
-                  "nameLocation": "15291:1:33",
+                  "nameLocation": "15242:1:42",
                   "nodeType": "VariableDeclaration",
-                  "scope": 9065,
-                  "src": "15284:8:33",
+                  "scope": 10532,
+                  "src": "15235:8:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -11766,10 +11647,10 @@ export const FixedPointMath =
                     "typeString": "int256"
                   },
                   "typeName": {
-                    "id": 9051,
+                    "id": 10518,
                     "name": "int256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "15284:6:33",
+                    "src": "15235:6:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
@@ -11778,21 +11659,21 @@ export const FixedPointMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "15273:20:33"
+              "src": "15224:20:42"
             },
             "returnParameters": {
-              "id": 9056,
+              "id": 10523,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 9055,
+                  "id": 10522,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 9065,
-                  "src": "15317:6:33",
+                  "scope": 10532,
+                  "src": "15268:6:42",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -11800,10 +11681,10 @@ export const FixedPointMath =
                     "typeString": "int256"
                   },
                   "typeName": {
-                    "id": 9054,
+                    "id": 10521,
                     "name": "int256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "15317:6:33",
+                    "src": "15268:6:42",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
@@ -11812,9 +11693,9 @@ export const FixedPointMath =
                   "visibility": "internal"
                 }
               ],
-              "src": "15316:8:33"
+              "src": "15267:8:42"
             },
-            "scope": 9066,
+            "scope": 10533,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
@@ -11826,22 +11707,22 @@ export const FixedPointMath =
         "contractDependencies": [],
         "contractKind": "library",
         "documentation": {
-          "id": 8319,
+          "id": 9789,
           "nodeType": "StructuredDocumentation",
-          "src": "157:307:33",
+          "src": "157:307:42",
           "text": "@author DELV\n @title FixedPointMath\n @notice A fixed-point math library.\n @custom:disclaimer The language used in this code is for coding convenience\n                    only, and is not intended to, and does not, have any\n                    particular legal or regulatory significance."
         },
         "fullyImplemented": true,
         "linearizedBaseContracts": [
-          9066
+          10533
         ],
         "name": "FixedPointMath",
-        "nameLocation": "472:14:33",
-        "scope": 9067,
+        "nameLocation": "472:14:42",
+        "scope": 10534,
         "usedErrors": []
       }
     ],
     "license": "Apache-2.0"
   },
-  "id": 33
+  "id": 42
 } as const;

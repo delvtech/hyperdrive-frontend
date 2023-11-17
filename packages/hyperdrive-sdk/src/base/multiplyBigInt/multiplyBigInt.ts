@@ -11,6 +11,8 @@
  * // 5.00 * .50 = 2.50
  * multiplyBigInt([500n, 50n], 2);
  * // 250n
+ *
+ * @deprecated use dnum instead
  */
 export function multiplyBigInt(values: bigint[], decimals: number): bigint {
   if (values.length === 0) {

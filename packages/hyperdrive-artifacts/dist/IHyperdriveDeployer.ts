@@ -11,6 +11,16 @@ export const IHyperdriveDeployer =
               "type": "address"
             },
             {
+              "internalType": "address",
+              "name": "linkerFactory",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "linkerCodeHash",
+              "type": "bytes32"
+            },
+            {
               "internalType": "uint256",
               "name": "initialSharePrice",
               "type": "uint256"
@@ -23,6 +33,11 @@ export const IHyperdriveDeployer =
             {
               "internalType": "uint256",
               "name": "minimumTransactionAmount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "precisionThreshold",
               "type": "uint256"
             },
             {
@@ -71,16 +86,6 @@ export const IHyperdriveDeployer =
               "internalType": "struct IHyperdrive.Fees",
               "name": "fees",
               "type": "tuple"
-            },
-            {
-              "internalType": "uint256",
-              "name": "oracleSize",
-              "type": "uint256"
-            },
-            {
-              "internalType": "uint256",
-              "name": "updateGap",
-              "type": "uint256"
             }
           ],
           "internalType": "struct IHyperdrive.PoolConfig",
@@ -89,23 +94,23 @@ export const IHyperdriveDeployer =
         },
         {
           "internalType": "address",
-          "name": "_dataProvider",
+          "name": "_target0",
           "type": "address"
         },
         {
-          "internalType": "bytes32",
-          "name": "_linkerCodeHash",
-          "type": "bytes32"
-        },
-        {
           "internalType": "address",
-          "name": "_linkerFactory",
+          "name": "_target1",
           "type": "address"
         },
         {
           "internalType": "bytes32[]",
           "name": "_extraData",
           "type": "bytes32[]"
+        },
+        {
+          "internalType": "address",
+          "name": "_pool",
+          "type": "address"
         }
       ],
       "name": "deploy",
@@ -131,9 +136,9 @@ export const IHyperdriveDeployer =
     "linkReferences": {}
   },
   "methodIdentifiers": {
-    "deploy((address,uint256,uint256,uint256,uint256,uint256,uint256,address,address,(uint256,uint256,uint256),uint256,uint256),address,bytes32,address,bytes32[])": "e3420f4f"
+    "deploy((address,address,bytes32,uint256,uint256,uint256,uint256,uint256,uint256,uint256,address,address,(uint256,uint256,uint256)),address,address,bytes32[],address)": "7a77fb8f"
   },
-  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"components\":[{\"internalType\":\"contract IERC20\",\"name\":\"baseToken\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"initialSharePrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"minimumShareReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"minimumTransactionAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"positionDuration\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"checkpointDuration\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"timeStretch\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"governance\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"feeCollector\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"curve\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"flat\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"governance\",\"type\":\"uint256\"}],\"internalType\":\"struct IHyperdrive.Fees\",\"name\":\"fees\",\"type\":\"tuple\"},{\"internalType\":\"uint256\",\"name\":\"oracleSize\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"updateGap\",\"type\":\"uint256\"}],\"internalType\":\"struct IHyperdrive.PoolConfig\",\"name\":\"_config\",\"type\":\"tuple\"},{\"internalType\":\"address\",\"name\":\"_dataProvider\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"_linkerCodeHash\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"_linkerFactory\",\"type\":\"address\"},{\"internalType\":\"bytes32[]\",\"name\":\"_extraData\",\"type\":\"bytes32[]\"}],\"name\":\"deploy\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/interfaces/IHyperdriveDeployer.sol\":\"IHyperdriveDeployer\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@aave/=lib/aave-v3-core/contracts/\",\":aave-v3-core/=lib/aave-v3-core/\",\":create3-factory/=lib/yield-daddy/lib/create3-factory/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\",\":yield-daddy/=lib/yield-daddy/\"]},\"sources\":{\"contracts/src/interfaces/IDataProvider.sol\":{\"keccak256\":\"0xb5540e954a8d9311a4ddc94f1b1a893f419965c4059e5f64d3f966fa5d7bf843\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://4322256d8ef1c32e16441b7be365169cbbfa72c6d952536ed0c2a4dab5befd15\",\"dweb:/ipfs/QmT1Zx7tHjgW52qb1e5C9KTjTbZaoniFxuyvZb3cWedUu7\"]},\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0x4642a027efffb3aa6cdc85e31796fb3b1bc4fff4316e6390874e6f4add37b86c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://3720a6c1c427dcfcbdeeec15cbdb682115e44e0a9136af7e0ad9e5af2ea40672\",\"dweb:/ipfs/QmP4bmaHw8MfX9MQLhhgnVQ9U9BTQAR3e5cCCE9RcoeX7w\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0x5f4ebd8ae035c05b0a1f3f740dba21a1414306796082b814bcaa2e190ab845b7\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://1353dab25f7e01c7169f602b7d013ff90c77fe36d62d382e179649a10ae41e78\",\"dweb:/ipfs/QmXQdQBcx6rKeVcoV5s7NG52DrqVvhBhgMNQwTxddAstE5\"]},\"contracts/src/interfaces/IHyperdriveDeployer.sol\":{\"keccak256\":\"0x7f6184ad6c3b28650b6644e74d7fdf4af5854c6e80f813da468a496aeb8c6da0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://ce31b67fc912729ee56d8b53abf699882ea44ddd4c62052dc1685c9694685587\",\"dweb:/ipfs/QmbUBE3V1ahsVKrKzHs8Ho5H4U1XVB182BsRDFgt4ZjLZB\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0x837939af4a9224c5f4ea564e9b33a5612442b7d7d50b7f8bb32be6bb3ce239b3\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3bfebedcb31d2edf86a69f0dfbcc5aa7b96edc2d8197b4a4681a200cb6ffe993\",\"dweb:/ipfs/Qmeq4oAGxKv3mvRRWkqYBjfdozPkhi3MqBRFNnNkmAwCtt\"]},\"contracts/src/interfaces/IHyperdriveWrite.sol\":{\"keccak256\":\"0xd83e23e1894f3f4812d4812c5775c7a5267f3bfb80148b11f3ede3174ea936bc\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://ae5e91bb578ae9271426728ba69689ad659c6450853aa5ef0c52dd6d7c433206\",\"dweb:/ipfs/QmR5VU1UmZ8BN3azCs3zmHkCqJHzDKTUnVecdPjNQr8vYt\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xe3d64871148bdae5a714107b8b1a55f39cd4ede601436d2777a165d20d768a1a\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://9ebc0bfda35e9b7299c43f0efff38012b8074fcca867b781c0cedeede10cf3d0\",\"dweb:/ipfs/QmbHRLezFhWavHakK5G26DB4ud5PueU6fNvZf3L3TwXnPb\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0xcdc60ba02194150741a78cb0c52c306f5f577c5c814c63e98a13d46c02d2d9cc\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://8f5866cb2c8c4342dba88c0e4d78296fef0e170b18b3613c796c29dc31a5ca87\",\"dweb:/ipfs/QmZcoDTYhhYSB5ds3cNPJpdZTxrz6cF8M2vNVeuAcT8gw6\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0x2e55fa961123a8bb7284c8388af9bd1302a7153441ffe641804ea79021bdca05\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://c7dc03bbab02976609dec59c201e5b57a2998d1c626cef58d7a9fa7c2b06b939\",\"dweb:/ipfs/QmSifWr9cVWaUEmyKpGFcgpKCYdoBYgWtQBLgemtwo4a7x\"]},\"contracts/src/interfaces/IMultiTokenWrite.sol\":{\"keccak256\":\"0xa5ba8812e06fb6d38e1872603c8b80321cfd2f96cecbe7b67b92cb33e93b3fc8\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://73afa34919c7d457e925b4be83abb1b1ed2ed731a382ebffad95a3005c04bd5a\",\"dweb:/ipfs/QmauMxmgtYTS7RJQw1mS7Pwe5FUMDPHE2N1MBhFUjk6HPe\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x00c839ff53d07d19db2e7cfa1e5133f9ee90a8d64b0e2e57f50446a2d1a3a0e0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://3dac621d015a68a5251b1e5d41dda0faf252699bf6e8bcf46a958b29964d9dd1\",\"dweb:/ipfs/QmP9axjgZv4cezAhALoTemM62sdLtMDJ9MGTxECnNwHgSJ\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Permit.sol\":{\"keccak256\":\"0x35e258421ae206f3db37281cea70871b4c3553914734aa76139a41af60ac1abb\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2ef94b6bc4ee356db612a1849c615f7dd4b15542d6c8584c86bb9243a7913cf0\",\"dweb:/ipfs/QmaxFj5NFpAjjitZtHPNS9PPtCuBATaRz9ktDDRCQCQ83y\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol\":{\"keccak256\":\"0x8a63ea9ec07788740e51046ca14c61f411aedb901e89749c9d55fa56ed43086a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://3035ae3f172ed9e172e1ba4d83bdc70279f63be51ce9218c530132def66ff577\",\"dweb:/ipfs/QmTQ3zfC3YUNeY3KUVFiHgTWDuxfmcEMgpGC6HMoTpgZJL\"]},\"lib/openzeppelin-contracts/contracts/utils/Address.sol\":{\"keccak256\":\"0xa6dfb97ce947b7c846b054ee7d45d12383359778f4f3743654ae0a34fa421b26\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b97e7e5a77ea47c08ba422291df887eba76c80982f52a6e94a30106e9377a94f\",\"dweb:/ipfs/Qme7N2XRC7mcDxB8wZxNWPk6T8S2qsnmhAqXeUj4CNvsGD\"]}},\"version\":1}",
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"components\":[{\"internalType\":\"contract IERC20\",\"name\":\"baseToken\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"linkerFactory\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"linkerCodeHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"initialSharePrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"minimumShareReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"minimumTransactionAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"precisionThreshold\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"positionDuration\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"checkpointDuration\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"timeStretch\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"governance\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"feeCollector\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"curve\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"flat\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"governance\",\"type\":\"uint256\"}],\"internalType\":\"struct IHyperdrive.Fees\",\"name\":\"fees\",\"type\":\"tuple\"}],\"internalType\":\"struct IHyperdrive.PoolConfig\",\"name\":\"_config\",\"type\":\"tuple\"},{\"internalType\":\"address\",\"name\":\"_target0\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_target1\",\"type\":\"address\"},{\"internalType\":\"bytes32[]\",\"name\":\"_extraData\",\"type\":\"bytes32[]\"},{\"internalType\":\"address\",\"name\":\"_pool\",\"type\":\"address\"}],\"name\":\"deploy\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/interfaces/IHyperdriveDeployer.sol\":\"IHyperdriveDeployer\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":aave-v3-core/=lib/aave-v3-core/\",\":create3-factory/=lib/yield-daddy/lib/create3-factory/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\",\":solmate/=lib/solmate/src/\",\":yield-daddy/=lib/yield-daddy/\"]},\"sources\":{\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0xfb57fe2ee4d8d1c6a8e2aa3b007da6f0e53d65388245b0b7d876234077ee95b4\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://e4303c41b9752b51c6eaa9b16aa11e5bffb34fc80c5c8761302539cd5922ae36\",\"dweb:/ipfs/QmZjVYBikfgPDX47hmbGJpG6kvm3Gyt6nKkFbZH6r8U4cL\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0x833d56790728bfab7d35507b8584dc7ce607b26512a382e887483f61d528f6c5\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3dd009d6ff5a89d1173f7330916e81a31ffd139bf6848b3f4400673652554a70\",\"dweb:/ipfs/QmXkVovZSWqhRqrt8y9FFfHt1HWhnUuP9TMecQyd89yEQ3\"]},\"contracts/src/interfaces/IHyperdriveCore.sol\":{\"keccak256\":\"0x84c73d8c4b67da41635f57fce2f30b8f04fc826ff6fb54c605de23d376f3403d\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://e6d636dff5c24916ae35a76695d741de2f14ee46876ea67c5393618bb7f9cf85\",\"dweb:/ipfs/QmUwxh8JeAqSFA8Z2qabVx3YWRSz7PJ9V2TQgnfctAgqPF\"]},\"contracts/src/interfaces/IHyperdriveDeployer.sol\":{\"keccak256\":\"0x8d6bb50b91a3598628e229d9fab3b76a5999fe95a0f7a661edc127aa523919c2\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://58cd34c632517be454d0f5ed3ab1c410433f4eb09a01d4c420b17b1b4ba7947e\",\"dweb:/ipfs/QmS7vyMCaewtSuPVYuxfaRTDKV55prxLPacnDzTrzGdr6L\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0x837939af4a9224c5f4ea564e9b33a5612442b7d7d50b7f8bb32be6bb3ce239b3\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3bfebedcb31d2edf86a69f0dfbcc5aa7b96edc2d8197b4a4681a200cb6ffe993\",\"dweb:/ipfs/Qmeq4oAGxKv3mvRRWkqYBjfdozPkhi3MqBRFNnNkmAwCtt\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xcf3a4002275ea64e381f0a4aded3683e12960396ef79ba9dd153e2d1e395baad\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://c9990491f7a5151fd696a45e6e5b0282a1dedf58521861dfb8c64db8cb60f5b6\",\"dweb:/ipfs/QmaywmqqQhz7DeYqZdoeykagr5h4ZhQRv6GasHqvdWqzSy\"]},\"contracts/src/interfaces/IMultiTokenCore.sol\":{\"keccak256\":\"0xdb7f24663cff7307a468ef5e4c6f3e4d01ec0475157b3bbb3405890c3e9ab87d\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://7f631a9a395fba5b07c3d9308fccac18d5aa59d890efe23442ed2a4da9871ae8\",\"dweb:/ipfs/QmV2a4wiAPfWzSST3faYt58i2tqEyoqCLAJV8aNCdJyxVE\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0x476240ea4328bae9ab820b6f0f40afb11c74ee52d26bdbef69e4ece28dc10bdb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://843f73cb21eaec4e26952fd6cbde5e6815e3a28c438df9e026e249200d25076f\",\"dweb:/ipfs/QmXzE7gsRKMaRGQfTDodA1RXxNxUuBj8RT7grTYjZUdbe6\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0x9b92d81f2f038fcd4bb5d069ab2b754efc153234c451d4ee4caa6d74aaca16b4\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://8686fddc99564c6b6524ea68a6b7ff081a9988fc795fc13197bb59ddaa2041c6\",\"dweb:/ipfs/QmarJYJAgoH6Z4H1BmdPoRgqLubRu5S6NDXBNV2fDApPuW\"]}},\"version\":1}",
   "metadata": {
     "compiler": {
       "version": "0.8.19+commit.7dd6d404"
@@ -154,6 +159,16 @@ export const IHyperdriveDeployer =
                   "type": "address"
                 },
                 {
+                  "internalType": "address",
+                  "name": "linkerFactory",
+                  "type": "address"
+                },
+                {
+                  "internalType": "bytes32",
+                  "name": "linkerCodeHash",
+                  "type": "bytes32"
+                },
+                {
                   "internalType": "uint256",
                   "name": "initialSharePrice",
                   "type": "uint256"
@@ -166,6 +181,11 @@ export const IHyperdriveDeployer =
                 {
                   "internalType": "uint256",
                   "name": "minimumTransactionAmount",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "precisionThreshold",
                   "type": "uint256"
                 },
                 {
@@ -214,38 +234,28 @@ export const IHyperdriveDeployer =
                       "type": "uint256"
                     }
                   ]
-                },
-                {
-                  "internalType": "uint256",
-                  "name": "oracleSize",
-                  "type": "uint256"
-                },
-                {
-                  "internalType": "uint256",
-                  "name": "updateGap",
-                  "type": "uint256"
                 }
               ]
             },
             {
               "internalType": "address",
-              "name": "_dataProvider",
+              "name": "_target0",
               "type": "address"
             },
             {
-              "internalType": "bytes32",
-              "name": "_linkerCodeHash",
-              "type": "bytes32"
-            },
-            {
               "internalType": "address",
-              "name": "_linkerFactory",
+              "name": "_target1",
               "type": "address"
             },
             {
               "internalType": "bytes32[]",
               "name": "_extraData",
               "type": "bytes32[]"
+            },
+            {
+              "internalType": "address",
+              "name": "_pool",
+              "type": "address"
             }
           ],
           "stateMutability": "nonpayable",
@@ -273,14 +283,10 @@ export const IHyperdriveDeployer =
     },
     "settings": {
       "remappings": [
-        "@aave/=lib/aave-v3-core/contracts/",
         "aave-v3-core/=lib/aave-v3-core/",
         "create3-factory/=lib/yield-daddy/lib/create3-factory/",
         "ds-test/=lib/forge-std/lib/ds-test/src/",
-        "erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/",
         "forge-std/=lib/forge-std/src/",
-        "openzeppelin-contracts/=lib/openzeppelin-contracts/",
-        "openzeppelin/=lib/openzeppelin-contracts/contracts/",
         "solmate/=lib/solmate/src/",
         "yield-daddy/=lib/yield-daddy/"
       ],
@@ -297,35 +303,35 @@ export const IHyperdriveDeployer =
       "libraries": {}
     },
     "sources": {
-      "contracts/src/interfaces/IDataProvider.sol": {
-        "keccak256": "0xb5540e954a8d9311a4ddc94f1b1a893f419965c4059e5f64d3f966fa5d7bf843",
+      "contracts/src/interfaces/IERC20.sol": {
+        "keccak256": "0xfb57fe2ee4d8d1c6a8e2aa3b007da6f0e53d65388245b0b7d876234077ee95b4",
         "urls": [
-          "bzz-raw://4322256d8ef1c32e16441b7be365169cbbfa72c6d952536ed0c2a4dab5befd15",
-          "dweb:/ipfs/QmT1Zx7tHjgW52qb1e5C9KTjTbZaoniFxuyvZb3cWedUu7"
+          "bzz-raw://e4303c41b9752b51c6eaa9b16aa11e5bffb34fc80c5c8761302539cd5922ae36",
+          "dweb:/ipfs/QmZjVYBikfgPDX47hmbGJpG6kvm3Gyt6nKkFbZH6r8U4cL"
         ],
         "license": "Apache-2.0"
       },
-      "contracts/src/interfaces/IERC20.sol": {
-        "keccak256": "0x4642a027efffb3aa6cdc85e31796fb3b1bc4fff4316e6390874e6f4add37b86c",
-        "urls": [
-          "bzz-raw://3720a6c1c427dcfcbdeeec15cbdb682115e44e0a9136af7e0ad9e5af2ea40672",
-          "dweb:/ipfs/QmP4bmaHw8MfX9MQLhhgnVQ9U9BTQAR3e5cCCE9RcoeX7w"
-        ],
-        "license": "MIT"
-      },
       "contracts/src/interfaces/IHyperdrive.sol": {
-        "keccak256": "0x5f4ebd8ae035c05b0a1f3f740dba21a1414306796082b814bcaa2e190ab845b7",
+        "keccak256": "0x833d56790728bfab7d35507b8584dc7ce607b26512a382e887483f61d528f6c5",
         "urls": [
-          "bzz-raw://1353dab25f7e01c7169f602b7d013ff90c77fe36d62d382e179649a10ae41e78",
-          "dweb:/ipfs/QmXQdQBcx6rKeVcoV5s7NG52DrqVvhBhgMNQwTxddAstE5"
+          "bzz-raw://3dd009d6ff5a89d1173f7330916e81a31ffd139bf6848b3f4400673652554a70",
+          "dweb:/ipfs/QmXkVovZSWqhRqrt8y9FFfHt1HWhnUuP9TMecQyd89yEQ3"
+        ],
+        "license": "Apache-2.0"
+      },
+      "contracts/src/interfaces/IHyperdriveCore.sol": {
+        "keccak256": "0x84c73d8c4b67da41635f57fce2f30b8f04fc826ff6fb54c605de23d376f3403d",
+        "urls": [
+          "bzz-raw://e6d636dff5c24916ae35a76695d741de2f14ee46876ea67c5393618bb7f9cf85",
+          "dweb:/ipfs/QmUwxh8JeAqSFA8Z2qabVx3YWRSz7PJ9V2TQgnfctAgqPF"
         ],
         "license": "Apache-2.0"
       },
       "contracts/src/interfaces/IHyperdriveDeployer.sol": {
-        "keccak256": "0x7f6184ad6c3b28650b6644e74d7fdf4af5854c6e80f813da468a496aeb8c6da0",
+        "keccak256": "0x8d6bb50b91a3598628e229d9fab3b76a5999fe95a0f7a661edc127aa523919c2",
         "urls": [
-          "bzz-raw://ce31b67fc912729ee56d8b53abf699882ea44ddd4c62052dc1685c9694685587",
-          "dweb:/ipfs/QmbUBE3V1ahsVKrKzHs8Ho5H4U1XVB182BsRDFgt4ZjLZB"
+          "bzz-raw://58cd34c632517be454d0f5ed3ab1c410433f4eb09a01d4c420b17b1b4ba7947e",
+          "dweb:/ipfs/QmS7vyMCaewtSuPVYuxfaRTDKV55prxLPacnDzTrzGdr6L"
         ],
         "license": "Apache-2.0"
       },
@@ -337,100 +343,57 @@ export const IHyperdriveDeployer =
         ],
         "license": "Apache-2.0"
       },
-      "contracts/src/interfaces/IHyperdriveWrite.sol": {
-        "keccak256": "0xd83e23e1894f3f4812d4812c5775c7a5267f3bfb80148b11f3ede3174ea936bc",
+      "contracts/src/interfaces/IMultiToken.sol": {
+        "keccak256": "0xcf3a4002275ea64e381f0a4aded3683e12960396ef79ba9dd153e2d1e395baad",
         "urls": [
-          "bzz-raw://ae5e91bb578ae9271426728ba69689ad659c6450853aa5ef0c52dd6d7c433206",
-          "dweb:/ipfs/QmR5VU1UmZ8BN3azCs3zmHkCqJHzDKTUnVecdPjNQr8vYt"
+          "bzz-raw://c9990491f7a5151fd696a45e6e5b0282a1dedf58521861dfb8c64db8cb60f5b6",
+          "dweb:/ipfs/QmaywmqqQhz7DeYqZdoeykagr5h4ZhQRv6GasHqvdWqzSy"
         ],
         "license": "Apache-2.0"
       },
-      "contracts/src/interfaces/IMultiToken.sol": {
-        "keccak256": "0xe3d64871148bdae5a714107b8b1a55f39cd4ede601436d2777a165d20d768a1a",
+      "contracts/src/interfaces/IMultiTokenCore.sol": {
+        "keccak256": "0xdb7f24663cff7307a468ef5e4c6f3e4d01ec0475157b3bbb3405890c3e9ab87d",
         "urls": [
-          "bzz-raw://9ebc0bfda35e9b7299c43f0efff38012b8074fcca867b781c0cedeede10cf3d0",
-          "dweb:/ipfs/QmbHRLezFhWavHakK5G26DB4ud5PueU6fNvZf3L3TwXnPb"
+          "bzz-raw://7f631a9a395fba5b07c3d9308fccac18d5aa59d890efe23442ed2a4da9871ae8",
+          "dweb:/ipfs/QmV2a4wiAPfWzSST3faYt58i2tqEyoqCLAJV8aNCdJyxVE"
         ],
         "license": "Apache-2.0"
       },
       "contracts/src/interfaces/IMultiTokenMetadata.sol": {
-        "keccak256": "0xcdc60ba02194150741a78cb0c52c306f5f577c5c814c63e98a13d46c02d2d9cc",
+        "keccak256": "0x476240ea4328bae9ab820b6f0f40afb11c74ee52d26bdbef69e4ece28dc10bdb",
         "urls": [
-          "bzz-raw://8f5866cb2c8c4342dba88c0e4d78296fef0e170b18b3613c796c29dc31a5ca87",
-          "dweb:/ipfs/QmZcoDTYhhYSB5ds3cNPJpdZTxrz6cF8M2vNVeuAcT8gw6"
+          "bzz-raw://843f73cb21eaec4e26952fd6cbde5e6815e3a28c438df9e026e249200d25076f",
+          "dweb:/ipfs/QmXzE7gsRKMaRGQfTDodA1RXxNxUuBj8RT7grTYjZUdbe6"
         ],
         "license": "Apache-2.0"
       },
       "contracts/src/interfaces/IMultiTokenRead.sol": {
-        "keccak256": "0x2e55fa961123a8bb7284c8388af9bd1302a7153441ffe641804ea79021bdca05",
+        "keccak256": "0x9b92d81f2f038fcd4bb5d069ab2b754efc153234c451d4ee4caa6d74aaca16b4",
         "urls": [
-          "bzz-raw://c7dc03bbab02976609dec59c201e5b57a2998d1c626cef58d7a9fa7c2b06b939",
-          "dweb:/ipfs/QmSifWr9cVWaUEmyKpGFcgpKCYdoBYgWtQBLgemtwo4a7x"
+          "bzz-raw://8686fddc99564c6b6524ea68a6b7ff081a9988fc795fc13197bb59ddaa2041c6",
+          "dweb:/ipfs/QmarJYJAgoH6Z4H1BmdPoRgqLubRu5S6NDXBNV2fDApPuW"
         ],
         "license": "Apache-2.0"
-      },
-      "contracts/src/interfaces/IMultiTokenWrite.sol": {
-        "keccak256": "0xa5ba8812e06fb6d38e1872603c8b80321cfd2f96cecbe7b67b92cb33e93b3fc8",
-        "urls": [
-          "bzz-raw://73afa34919c7d457e925b4be83abb1b1ed2ed731a382ebffad95a3005c04bd5a",
-          "dweb:/ipfs/QmauMxmgtYTS7RJQw1mS7Pwe5FUMDPHE2N1MBhFUjk6HPe"
-        ],
-        "license": "Apache-2.0"
-      },
-      "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol": {
-        "keccak256": "0x00c839ff53d07d19db2e7cfa1e5133f9ee90a8d64b0e2e57f50446a2d1a3a0e0",
-        "urls": [
-          "bzz-raw://3dac621d015a68a5251b1e5d41dda0faf252699bf6e8bcf46a958b29964d9dd1",
-          "dweb:/ipfs/QmP9axjgZv4cezAhALoTemM62sdLtMDJ9MGTxECnNwHgSJ"
-        ],
-        "license": "MIT"
-      },
-      "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Permit.sol": {
-        "keccak256": "0x35e258421ae206f3db37281cea70871b4c3553914734aa76139a41af60ac1abb",
-        "urls": [
-          "bzz-raw://2ef94b6bc4ee356db612a1849c615f7dd4b15542d6c8584c86bb9243a7913cf0",
-          "dweb:/ipfs/QmaxFj5NFpAjjitZtHPNS9PPtCuBATaRz9ktDDRCQCQ83y"
-        ],
-        "license": "MIT"
-      },
-      "lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol": {
-        "keccak256": "0x8a63ea9ec07788740e51046ca14c61f411aedb901e89749c9d55fa56ed43086a",
-        "urls": [
-          "bzz-raw://3035ae3f172ed9e172e1ba4d83bdc70279f63be51ce9218c530132def66ff577",
-          "dweb:/ipfs/QmTQ3zfC3YUNeY3KUVFiHgTWDuxfmcEMgpGC6HMoTpgZJL"
-        ],
-        "license": "MIT"
-      },
-      "lib/openzeppelin-contracts/contracts/utils/Address.sol": {
-        "keccak256": "0xa6dfb97ce947b7c846b054ee7d45d12383359778f4f3743654ae0a34fa421b26",
-        "urls": [
-          "bzz-raw://b97e7e5a77ea47c08ba422291df887eba76c80982f52a6e94a30106e9377a94f",
-          "dweb:/ipfs/Qme7N2XRC7mcDxB8wZxNWPk6T8S2qsnmhAqXeUj4CNvsGD"
-        ],
-        "license": "MIT"
       }
     },
     "version": 1
   },
   "ast": {
     "absolutePath": "contracts/src/interfaces/IHyperdriveDeployer.sol",
-    "id": 7456,
+    "id": 3940,
     "exportedSymbols": {
-      "IERC20": [
-        6731
-      ],
       "IHyperdrive": [
-        7431
+        3759
       ],
       "IHyperdriveDeployer": [
-        7455
+        3939
       ]
     },
     "nodeType": "SourceUnit",
-    "src": "39:382:22",
+    "src": "39:322:22",
     "nodes": [
       {
-        "id": 7433,
+        "id": 3919,
         "nodeType": "PragmaDirective",
         "src": "39:23:22",
         "nodes": [],
@@ -441,50 +404,24 @@ export const IHyperdriveDeployer =
         ]
       },
       {
-        "id": 7435,
+        "id": 3921,
         "nodeType": "ImportDirective",
-        "src": "64:38:22",
-        "nodes": [],
-        "absolutePath": "contracts/src/interfaces/IERC20.sol",
-        "file": "./IERC20.sol",
-        "nameLocation": "-1:-1:-1",
-        "scope": 7456,
-        "sourceUnit": 6732,
-        "symbolAliases": [
-          {
-            "foreign": {
-              "id": 7434,
-              "name": "IERC20",
-              "nodeType": "Identifier",
-              "overloadedDeclarations": [],
-              "referencedDeclaration": 6731,
-              "src": "73:6:22",
-              "typeDescriptions": {}
-            },
-            "nameLocation": "-1:-1:-1"
-          }
-        ],
-        "unitAlias": ""
-      },
-      {
-        "id": 7437,
-        "nodeType": "ImportDirective",
-        "src": "103:48:22",
+        "src": "64:48:22",
         "nodes": [],
         "absolutePath": "contracts/src/interfaces/IHyperdrive.sol",
         "file": "./IHyperdrive.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 7456,
-        "sourceUnit": 7432,
+        "scope": 3940,
+        "sourceUnit": 3760,
         "symbolAliases": [
           {
             "foreign": {
-              "id": 7436,
+              "id": 3920,
               "name": "IHyperdrive",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "referencedDeclaration": 7431,
-              "src": "112:11:22",
+              "referencedDeclaration": 3759,
+              "src": "73:11:22",
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
@@ -493,58 +430,58 @@ export const IHyperdriveDeployer =
         "unitAlias": ""
       },
       {
-        "id": 7455,
+        "id": 3939,
         "nodeType": "ContractDefinition",
-        "src": "153:267:22",
+        "src": "114:246:22",
         "nodes": [
           {
-            "id": 7454,
+            "id": 3938,
             "nodeType": "FunctionDefinition",
-            "src": "189:229:22",
+            "src": "150:208:22",
             "nodes": [],
-            "functionSelector": "e3420f4f",
+            "functionSelector": "7a77fb8f",
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "deploy",
-            "nameLocation": "198:6:22",
+            "nameLocation": "159:6:22",
             "parameters": {
-              "id": 7450,
+              "id": 3934,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 7440,
+                  "id": 3924,
                   "mutability": "mutable",
                   "name": "_config",
-                  "nameLocation": "244:7:22",
+                  "nameLocation": "205:7:22",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7454,
-                  "src": "214:37:22",
+                  "scope": 3938,
+                  "src": "175:37:22",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_PoolConfig_$7245_memory_ptr",
+                    "typeIdentifier": "t_struct$_PoolConfig_$3558_memory_ptr",
                     "typeString": "struct IHyperdrive.PoolConfig"
                   },
                   "typeName": {
-                    "id": 7439,
+                    "id": 3923,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 7438,
+                      "id": 3922,
                       "name": "IHyperdrive.PoolConfig",
                       "nameLocations": [
-                        "214:11:22",
-                        "226:10:22"
+                        "175:11:22",
+                        "187:10:22"
                       ],
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 7245,
-                      "src": "214:22:22"
+                      "referencedDeclaration": 3558,
+                      "src": "175:22:22"
                     },
-                    "referencedDeclaration": 7245,
-                    "src": "214:22:22",
+                    "referencedDeclaration": 3558,
+                    "src": "175:22:22",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_PoolConfig_$7245_storage_ptr",
+                      "typeIdentifier": "t_struct$_PoolConfig_$3558_storage_ptr",
                       "typeString": "struct IHyperdrive.PoolConfig"
                     }
                   },
@@ -552,13 +489,13 @@ export const IHyperdriveDeployer =
                 },
                 {
                   "constant": false,
-                  "id": 7442,
+                  "id": 3926,
                   "mutability": "mutable",
-                  "name": "_dataProvider",
-                  "nameLocation": "269:13:22",
+                  "name": "_target0",
+                  "nameLocation": "230:8:22",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7454,
-                  "src": "261:21:22",
+                  "scope": 3938,
+                  "src": "222:16:22",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -566,10 +503,10 @@ export const IHyperdriveDeployer =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 7441,
+                    "id": 3925,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "261:7:22",
+                    "src": "222:7:22",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -580,40 +517,13 @@ export const IHyperdriveDeployer =
                 },
                 {
                   "constant": false,
-                  "id": 7444,
+                  "id": 3928,
                   "mutability": "mutable",
-                  "name": "_linkerCodeHash",
-                  "nameLocation": "300:15:22",
+                  "name": "_target1",
+                  "nameLocation": "256:8:22",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7454,
-                  "src": "292:23:22",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_bytes32",
-                    "typeString": "bytes32"
-                  },
-                  "typeName": {
-                    "id": 7443,
-                    "name": "bytes32",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "292:7:22",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_bytes32",
-                      "typeString": "bytes32"
-                    }
-                  },
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 7446,
-                  "mutability": "mutable",
-                  "name": "_linkerFactory",
-                  "nameLocation": "333:14:22",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 7454,
-                  "src": "325:22:22",
+                  "scope": 3938,
+                  "src": "248:16:22",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -621,10 +531,10 @@ export const IHyperdriveDeployer =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 7445,
+                    "id": 3927,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "325:7:22",
+                    "src": "248:7:22",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -635,13 +545,13 @@ export const IHyperdriveDeployer =
                 },
                 {
                   "constant": false,
-                  "id": 7449,
+                  "id": 3931,
                   "mutability": "mutable",
                   "name": "_extraData",
-                  "nameLocation": "374:10:22",
+                  "nameLocation": "291:10:22",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7454,
-                  "src": "357:27:22",
+                  "scope": 3938,
+                  "src": "274:27:22",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -650,41 +560,34 @@ export const IHyperdriveDeployer =
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 7447,
+                      "id": 3929,
                       "name": "bytes32",
                       "nodeType": "ElementaryTypeName",
-                      "src": "357:7:22",
+                      "src": "274:7:22",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bytes32",
                         "typeString": "bytes32"
                       }
                     },
-                    "id": 7448,
+                    "id": 3930,
                     "nodeType": "ArrayTypeName",
-                    "src": "357:9:22",
+                    "src": "274:9:22",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
                       "typeString": "bytes32[]"
                     }
                   },
                   "visibility": "internal"
-                }
-              ],
-              "src": "204:186:22"
-            },
-            "returnParameters": {
-              "id": 7453,
-              "nodeType": "ParameterList",
-              "parameters": [
+                },
                 {
                   "constant": false,
-                  "id": 7452,
+                  "id": 3933,
                   "mutability": "mutable",
-                  "name": "",
-                  "nameLocation": "-1:-1:-1",
+                  "name": "_pool",
+                  "nameLocation": "319:5:22",
                   "nodeType": "VariableDeclaration",
-                  "scope": 7454,
-                  "src": "409:7:22",
+                  "scope": 3938,
+                  "src": "311:13:22",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -692,10 +595,10 @@ export const IHyperdriveDeployer =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 7451,
+                    "id": 3932,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "409:7:22",
+                    "src": "311:7:22",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -705,9 +608,44 @@ export const IHyperdriveDeployer =
                   "visibility": "internal"
                 }
               ],
-              "src": "408:9:22"
+              "src": "165:165:22"
             },
-            "scope": 7455,
+            "returnParameters": {
+              "id": 3937,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3936,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3938,
+                  "src": "349:7:22",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3935,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "349:7:22",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "348:9:22"
+            },
+            "scope": 3939,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
@@ -720,11 +658,11 @@ export const IHyperdriveDeployer =
         "contractKind": "interface",
         "fullyImplemented": false,
         "linearizedBaseContracts": [
-          7455
+          3939
         ],
         "name": "IHyperdriveDeployer",
-        "nameLocation": "163:19:22",
-        "scope": 7456,
+        "nameLocation": "124:19:22",
+        "scope": 3940,
         "usedErrors": []
       }
     ],

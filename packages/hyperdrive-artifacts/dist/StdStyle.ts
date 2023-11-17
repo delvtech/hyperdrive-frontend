@@ -2,17 +2,17 @@ export const StdStyle =
 {
   "abi": [],
   "bytecode": {
-    "object": "0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220ffd5abba5ef6350e65a616c1a6eff235b500938bcfa09fcaf9e8f13a41eec1ab64736f6c63430008130033",
-    "sourceMap": "100:10361:67:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;100:10361:67;;;;;;;;;;;;;;;;;",
+    "object": "0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212203527ed4746236c1b78c58cddc9f1521237ba3dbdd99c975ec8b99c914b939b5864736f6c63430008130033",
+    "sourceMap": "100:10361:73:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;100:10361:73;;;;;;;;;;;;;;;;;",
     "linkReferences": {}
   },
   "deployedBytecode": {
-    "object": "0x73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220ffd5abba5ef6350e65a616c1a6eff235b500938bcfa09fcaf9e8f13a41eec1ab64736f6c63430008130033",
-    "sourceMap": "100:10361:67:-:0;;;;;;;;",
+    "object": "0x73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212203527ed4746236c1b78c58cddc9f1521237ba3dbdd99c975ec8b99c914b939b5864736f6c63430008130033",
+    "sourceMap": "100:10361:73:-:0;;;;;;;;",
     "linkReferences": {}
   },
   "methodIdentifiers": {},
-  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"lib/forge-std/src/StdStyle.sol\":\"StdStyle\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@aave/=lib/aave-v3-core/contracts/\",\":aave-v3-core/=lib/aave-v3-core/\",\":create3-factory/=lib/yield-daddy/lib/create3-factory/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\",\":yield-daddy/=lib/yield-daddy/\"]},\"sources\":{\"lib/forge-std/src/StdStyle.sol\":{\"keccak256\":\"0x43e2a8a9b9c2574dabe74f11adf6f782df218f463540e3b5b563609fe108597d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://51363ca97404cf4128e1141428949768c31929e75e014b02c85e887fbbb4f1b8\",\"dweb:/ipfs/QmVhtbQc2fU4rRmbcfBtz34mAgG4BAZBsbna1Ca4SkoPsK\"]},\"lib/forge-std/src/Vm.sol\":{\"keccak256\":\"0xc37bdacd465b44feb78cdf9a86f62255884be84acd5a4b175f48f004386ce8f4\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://8109a9cb6c5b2f6c137e4bc119ce468d88eaf926ed60558e997a5505827c9241\",\"dweb:/ipfs/QmR1H3wWXwhYD4bXgFFxNubnEZYB28WvvUUHkL9oZx14cx\"]}},\"version\":1}",
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"lib/forge-std/src/StdStyle.sol\":\"StdStyle\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":aave-v3-core/=lib/aave-v3-core/\",\":create3-factory/=lib/yield-daddy/lib/create3-factory/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\",\":solmate/=lib/solmate/src/\",\":yield-daddy/=lib/yield-daddy/\"]},\"sources\":{\"lib/forge-std/src/StdStyle.sol\":{\"keccak256\":\"0x43e2a8a9b9c2574dabe74f11adf6f782df218f463540e3b5b563609fe108597d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://51363ca97404cf4128e1141428949768c31929e75e014b02c85e887fbbb4f1b8\",\"dweb:/ipfs/QmVhtbQc2fU4rRmbcfBtz34mAgG4BAZBsbna1Ca4SkoPsK\"]},\"lib/forge-std/src/Vm.sol\":{\"keccak256\":\"0xc37bdacd465b44feb78cdf9a86f62255884be84acd5a4b175f48f004386ce8f4\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://8109a9cb6c5b2f6c137e4bc119ce468d88eaf926ed60558e997a5505827c9241\",\"dweb:/ipfs/QmR1H3wWXwhYD4bXgFFxNubnEZYB28WvvUUHkL9oZx14cx\"]}},\"version\":1}",
   "metadata": {
     "compiler": {
       "version": "0.8.19+commit.7dd6d404"
@@ -33,14 +33,10 @@ export const StdStyle =
     },
     "settings": {
       "remappings": [
-        "@aave/=lib/aave-v3-core/contracts/",
         "aave-v3-core/=lib/aave-v3-core/",
         "create3-factory/=lib/yield-daddy/lib/create3-factory/",
         "ds-test/=lib/forge-std/lib/ds-test/src/",
-        "erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/",
         "forge-std/=lib/forge-std/src/",
-        "openzeppelin-contracts/=lib/openzeppelin-contracts/",
-        "openzeppelin/=lib/openzeppelin-contracts/contracts/",
         "solmate/=lib/solmate/src/",
         "yield-daddy/=lib/yield-daddy/"
       ],
@@ -78,22 +74,22 @@ export const StdStyle =
   },
   "ast": {
     "absolutePath": "lib/forge-std/src/StdStyle.sol",
-    "id": 26512,
+    "id": 27092,
     "exportedSymbols": {
       "StdStyle": [
-        26511
+        27091
       ],
       "VmSafe": [
-        28475
+        29055
       ]
     },
     "nodeType": "SourceUnit",
-    "src": "32:10430:67",
+    "src": "32:10430:73",
     "nodes": [
       {
-        "id": 25302,
+        "id": 25882,
         "nodeType": "PragmaDirective",
-        "src": "32:32:67",
+        "src": "32:32:73",
         "nodes": [],
         "literals": [
           "solidity",
@@ -106,24 +102,24 @@ export const StdStyle =
         ]
       },
       {
-        "id": 25304,
+        "id": 25884,
         "nodeType": "ImportDirective",
-        "src": "66:32:67",
+        "src": "66:32:73",
         "nodes": [],
         "absolutePath": "lib/forge-std/src/Vm.sol",
         "file": "./Vm.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 26512,
-        "sourceUnit": 28948,
+        "scope": 27092,
+        "sourceUnit": 29528,
         "symbolAliases": [
           {
             "foreign": {
-              "id": 25303,
+              "id": 25883,
               "name": "VmSafe",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "referencedDeclaration": 28475,
-              "src": "74:6:67",
+              "referencedDeclaration": 29055,
+              "src": "74:6:73",
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
@@ -132,43 +128,43 @@ export const StdStyle =
         "unitAlias": ""
       },
       {
-        "id": 26511,
+        "id": 27091,
         "nodeType": "ContractDefinition",
-        "src": "100:10361:67",
+        "src": "100:10361:73",
         "nodes": [
           {
-            "id": 25321,
+            "id": 25901,
             "nodeType": "VariableDeclaration",
-            "src": "123:92:67",
+            "src": "123:92:73",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "vm",
-            "nameLocation": "147:2:67",
-            "scope": 26511,
+            "nameLocation": "147:2:73",
+            "scope": 27091,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_VmSafe_$28475",
+              "typeIdentifier": "t_contract$_VmSafe_$29055",
               "typeString": "contract VmSafe"
             },
             "typeName": {
-              "id": 25306,
+              "id": 25886,
               "nodeType": "UserDefinedTypeName",
               "pathNode": {
-                "id": 25305,
+                "id": 25885,
                 "name": "VmSafe",
                 "nameLocations": [
-                  "123:6:67"
+                  "123:6:73"
                 ],
                 "nodeType": "IdentifierPath",
-                "referencedDeclaration": 28475,
-                "src": "123:6:67"
+                "referencedDeclaration": 29055,
+                "src": "123:6:73"
               },
-              "referencedDeclaration": 28475,
-              "src": "123:6:67",
+              "referencedDeclaration": 29055,
+              "src": "123:6:73",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_VmSafe_$28475",
+                "typeIdentifier": "t_contract$_VmSafe_$29055",
                 "typeString": "contract VmSafe"
               }
             },
@@ -184,14 +180,14 @@ export const StdStyle =
                               "arguments": [
                                 {
                                   "hexValue": "6865766d20636865617420636f6465",
-                                  "id": 25315,
+                                  "id": 25895,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": true,
                                   "kind": "string",
                                   "lValueRequested": false,
                                   "nodeType": "Literal",
-                                  "src": "193:17:67",
+                                  "src": "193:17:73",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_stringliteral_885cb69240a935d632d79c317109709ecfa91a80626ff3989d68f67f5b1dd12d",
                                     "typeString": "literal_string \"hevm cheat code\""
@@ -206,18 +202,18 @@ export const StdStyle =
                                     "typeString": "literal_string \"hevm cheat code\""
                                   }
                                 ],
-                                "id": 25314,
+                                "id": 25894,
                                 "name": "keccak256",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
                                 "referencedDeclaration": -8,
-                                "src": "183:9:67",
+                                "src": "183:9:73",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
                                   "typeString": "function (bytes memory) pure returns (bytes32)"
                                 }
                               },
-                              "id": 25316,
+                              "id": 25896,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
@@ -226,7 +222,7 @@ export const StdStyle =
                               "nameLocations": [],
                               "names": [],
                               "nodeType": "FunctionCall",
-                              "src": "183:28:67",
+                              "src": "183:28:73",
                               "tryCall": false,
                               "typeDescriptions": {
                                 "typeIdentifier": "t_bytes32",
@@ -241,26 +237,26 @@ export const StdStyle =
                                 "typeString": "bytes32"
                               }
                             ],
-                            "id": 25313,
+                            "id": 25893,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "lValueRequested": false,
                             "nodeType": "ElementaryTypeNameExpression",
-                            "src": "175:7:67",
+                            "src": "175:7:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_type$_t_uint256_$",
                               "typeString": "type(uint256)"
                             },
                             "typeName": {
-                              "id": 25312,
+                              "id": 25892,
                               "name": "uint256",
                               "nodeType": "ElementaryTypeName",
-                              "src": "175:7:67",
+                              "src": "175:7:73",
                               "typeDescriptions": {}
                             }
                           },
-                          "id": 25317,
+                          "id": 25897,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -269,7 +265,7 @@ export const StdStyle =
                           "nameLocations": [],
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "175:37:67",
+                          "src": "175:37:73",
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -284,26 +280,26 @@ export const StdStyle =
                             "typeString": "uint256"
                           }
                         ],
-                        "id": 25311,
+                        "id": 25891,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "lValueRequested": false,
                         "nodeType": "ElementaryTypeNameExpression",
-                        "src": "167:7:67",
+                        "src": "167:7:73",
                         "typeDescriptions": {
                           "typeIdentifier": "t_type$_t_uint160_$",
                           "typeString": "type(uint160)"
                         },
                         "typeName": {
-                          "id": 25310,
+                          "id": 25890,
                           "name": "uint160",
                           "nodeType": "ElementaryTypeName",
-                          "src": "167:7:67",
+                          "src": "167:7:73",
                           "typeDescriptions": {}
                         }
                       },
-                      "id": 25318,
+                      "id": 25898,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -312,7 +308,7 @@ export const StdStyle =
                       "nameLocations": [],
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "167:46:67",
+                      "src": "167:46:73",
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint160",
@@ -327,26 +323,26 @@ export const StdStyle =
                         "typeString": "uint160"
                       }
                     ],
-                    "id": 25309,
+                    "id": 25889,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
                     "lValueRequested": false,
                     "nodeType": "ElementaryTypeNameExpression",
-                    "src": "159:7:67",
+                    "src": "159:7:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_type$_t_address_$",
                       "typeString": "type(address)"
                     },
                     "typeName": {
-                      "id": 25308,
+                      "id": 25888,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "159:7:67",
+                      "src": "159:7:73",
                       "typeDescriptions": {}
                     }
                   },
-                  "id": 25319,
+                  "id": 25899,
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": true,
@@ -355,7 +351,7 @@ export const StdStyle =
                   "nameLocations": [],
                   "names": [],
                   "nodeType": "FunctionCall",
-                  "src": "159:55:67",
+                  "src": "159:55:73",
                   "tryCall": false,
                   "typeDescriptions": {
                     "typeIdentifier": "t_address",
@@ -370,18 +366,18 @@ export const StdStyle =
                     "typeString": "address"
                   }
                 ],
-                "id": 25307,
+                "id": 25887,
                 "name": "VmSafe",
                 "nodeType": "Identifier",
                 "overloadedDeclarations": [],
-                "referencedDeclaration": 28475,
-                "src": "152:6:67",
+                "referencedDeclaration": 29055,
+                "src": "152:6:73",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_type$_t_contract$_VmSafe_$28475_$",
+                  "typeIdentifier": "t_type$_t_contract$_VmSafe_$29055_$",
                   "typeString": "type(contract VmSafe)"
                 }
               },
-              "id": 25320,
+              "id": 25900,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -390,25 +386,25 @@ export const StdStyle =
               "nameLocations": [],
               "names": [],
               "nodeType": "FunctionCall",
-              "src": "152:63:67",
+              "src": "152:63:73",
               "tryCall": false,
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_VmSafe_$28475",
+                "typeIdentifier": "t_contract$_VmSafe_$29055",
                 "typeString": "contract VmSafe"
               }
             },
             "visibility": "private"
           },
           {
-            "id": 25324,
+            "id": 25904,
             "nodeType": "VariableDeclaration",
-            "src": "222:34:67",
+            "src": "222:34:73",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "RED",
-            "nameLocation": "238:3:67",
-            "scope": 26511,
+            "nameLocation": "238:3:73",
+            "scope": 27091,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -416,10 +412,10 @@ export const StdStyle =
               "typeString": "string"
             },
             "typeName": {
-              "id": 25322,
+              "id": 25902,
               "name": "string",
               "nodeType": "ElementaryTypeName",
-              "src": "222:6:67",
+              "src": "222:6:73",
               "typeDescriptions": {
                 "typeIdentifier": "t_string_storage_ptr",
                 "typeString": "string"
@@ -427,14 +423,14 @@ export const StdStyle =
             },
             "value": {
               "hexValue": "1b5b39316d",
-              "id": 25323,
+              "id": 25903,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "string",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "244:12:67",
+              "src": "244:12:73",
               "typeDescriptions": {
                 "typeIdentifier": "t_stringliteral_e865f62b1188865fdbe08fdbe8546369f5c78a8f677a27514aadc154b4263c18",
                 "typeString": "literal_string hex\"1b5b39316d\""
@@ -444,15 +440,15 @@ export const StdStyle =
             "visibility": "internal"
           },
           {
-            "id": 25327,
+            "id": 25907,
             "nodeType": "VariableDeclaration",
-            "src": "262:36:67",
+            "src": "262:36:73",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "GREEN",
-            "nameLocation": "278:5:67",
-            "scope": 26511,
+            "nameLocation": "278:5:73",
+            "scope": 27091,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -460,10 +456,10 @@ export const StdStyle =
               "typeString": "string"
             },
             "typeName": {
-              "id": 25325,
+              "id": 25905,
               "name": "string",
               "nodeType": "ElementaryTypeName",
-              "src": "262:6:67",
+              "src": "262:6:73",
               "typeDescriptions": {
                 "typeIdentifier": "t_string_storage_ptr",
                 "typeString": "string"
@@ -471,14 +467,14 @@ export const StdStyle =
             },
             "value": {
               "hexValue": "1b5b39326d",
-              "id": 25326,
+              "id": 25906,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "string",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "286:12:67",
+              "src": "286:12:73",
               "typeDescriptions": {
                 "typeIdentifier": "t_stringliteral_250c6c79af2fd59b948ba31b977e669524bbf27faba009961b135f1635e1e32b",
                 "typeString": "literal_string hex\"1b5b39326d\""
@@ -488,15 +484,15 @@ export const StdStyle =
             "visibility": "internal"
           },
           {
-            "id": 25330,
+            "id": 25910,
             "nodeType": "VariableDeclaration",
-            "src": "304:37:67",
+            "src": "304:37:73",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "YELLOW",
-            "nameLocation": "320:6:67",
-            "scope": 26511,
+            "nameLocation": "320:6:73",
+            "scope": 27091,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -504,10 +500,10 @@ export const StdStyle =
               "typeString": "string"
             },
             "typeName": {
-              "id": 25328,
+              "id": 25908,
               "name": "string",
               "nodeType": "ElementaryTypeName",
-              "src": "304:6:67",
+              "src": "304:6:73",
               "typeDescriptions": {
                 "typeIdentifier": "t_string_storage_ptr",
                 "typeString": "string"
@@ -515,14 +511,14 @@ export const StdStyle =
             },
             "value": {
               "hexValue": "1b5b39336d",
-              "id": 25329,
+              "id": 25909,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "string",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "329:12:67",
+              "src": "329:12:73",
               "typeDescriptions": {
                 "typeIdentifier": "t_stringliteral_801b445b8c4f71d86cf740b8fd9f85e172d35421144725dd58fed362de2e6cf5",
                 "typeString": "literal_string hex\"1b5b39336d\""
@@ -532,15 +528,15 @@ export const StdStyle =
             "visibility": "internal"
           },
           {
-            "id": 25333,
+            "id": 25913,
             "nodeType": "VariableDeclaration",
-            "src": "347:35:67",
+            "src": "347:35:73",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "BLUE",
-            "nameLocation": "363:4:67",
-            "scope": 26511,
+            "nameLocation": "363:4:73",
+            "scope": 27091,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -548,10 +544,10 @@ export const StdStyle =
               "typeString": "string"
             },
             "typeName": {
-              "id": 25331,
+              "id": 25911,
               "name": "string",
               "nodeType": "ElementaryTypeName",
-              "src": "347:6:67",
+              "src": "347:6:73",
               "typeDescriptions": {
                 "typeIdentifier": "t_string_storage_ptr",
                 "typeString": "string"
@@ -559,14 +555,14 @@ export const StdStyle =
             },
             "value": {
               "hexValue": "1b5b39346d",
-              "id": 25332,
+              "id": 25912,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "string",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "370:12:67",
+              "src": "370:12:73",
               "typeDescriptions": {
                 "typeIdentifier": "t_stringliteral_66ecf2e89553c52e360a74737e5e4e3d15e4d08217c17497ca50efb90c95d593",
                 "typeString": "literal_string hex\"1b5b39346d\""
@@ -576,15 +572,15 @@ export const StdStyle =
             "visibility": "internal"
           },
           {
-            "id": 25336,
+            "id": 25916,
             "nodeType": "VariableDeclaration",
-            "src": "388:38:67",
+            "src": "388:38:73",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "MAGENTA",
-            "nameLocation": "404:7:67",
-            "scope": 26511,
+            "nameLocation": "404:7:73",
+            "scope": 27091,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -592,10 +588,10 @@ export const StdStyle =
               "typeString": "string"
             },
             "typeName": {
-              "id": 25334,
+              "id": 25914,
               "name": "string",
               "nodeType": "ElementaryTypeName",
-              "src": "388:6:67",
+              "src": "388:6:73",
               "typeDescriptions": {
                 "typeIdentifier": "t_string_storage_ptr",
                 "typeString": "string"
@@ -603,14 +599,14 @@ export const StdStyle =
             },
             "value": {
               "hexValue": "1b5b39356d",
-              "id": 25335,
+              "id": 25915,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "string",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "414:12:67",
+              "src": "414:12:73",
               "typeDescriptions": {
                 "typeIdentifier": "t_stringliteral_b81cf1fd9bcd2b49f14457c6168490b5ff507c85cc3778934da8235d270d6b5b",
                 "typeString": "literal_string hex\"1b5b39356d\""
@@ -620,15 +616,15 @@ export const StdStyle =
             "visibility": "internal"
           },
           {
-            "id": 25339,
+            "id": 25919,
             "nodeType": "VariableDeclaration",
-            "src": "432:35:67",
+            "src": "432:35:73",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "CYAN",
-            "nameLocation": "448:4:67",
-            "scope": 26511,
+            "nameLocation": "448:4:73",
+            "scope": 27091,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -636,10 +632,10 @@ export const StdStyle =
               "typeString": "string"
             },
             "typeName": {
-              "id": 25337,
+              "id": 25917,
               "name": "string",
               "nodeType": "ElementaryTypeName",
-              "src": "432:6:67",
+              "src": "432:6:73",
               "typeDescriptions": {
                 "typeIdentifier": "t_string_storage_ptr",
                 "typeString": "string"
@@ -647,14 +643,14 @@ export const StdStyle =
             },
             "value": {
               "hexValue": "1b5b39366d",
-              "id": 25338,
+              "id": 25918,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "string",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "455:12:67",
+              "src": "455:12:73",
               "typeDescriptions": {
                 "typeIdentifier": "t_stringliteral_f73c74e3aa04446480bd18c1b857a46321f6d66d2bfb703d52333566c779447b",
                 "typeString": "literal_string hex\"1b5b39366d\""
@@ -664,15 +660,15 @@ export const StdStyle =
             "visibility": "internal"
           },
           {
-            "id": 25342,
+            "id": 25922,
             "nodeType": "VariableDeclaration",
-            "src": "473:34:67",
+            "src": "473:34:73",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "BOLD",
-            "nameLocation": "489:4:67",
-            "scope": 26511,
+            "nameLocation": "489:4:73",
+            "scope": 27091,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -680,10 +676,10 @@ export const StdStyle =
               "typeString": "string"
             },
             "typeName": {
-              "id": 25340,
+              "id": 25920,
               "name": "string",
               "nodeType": "ElementaryTypeName",
-              "src": "473:6:67",
+              "src": "473:6:73",
               "typeDescriptions": {
                 "typeIdentifier": "t_string_storage_ptr",
                 "typeString": "string"
@@ -691,14 +687,14 @@ export const StdStyle =
             },
             "value": {
               "hexValue": "1b5b316d",
-              "id": 25341,
+              "id": 25921,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "string",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "496:11:67",
+              "src": "496:11:73",
               "typeDescriptions": {
                 "typeIdentifier": "t_stringliteral_b25b1471c5d449346ad6b37b501b2d5911d6e2bad13ad71d09cdfa3d3b140a17",
                 "typeString": "literal_string hex\"1b5b316d\""
@@ -708,15 +704,15 @@ export const StdStyle =
             "visibility": "internal"
           },
           {
-            "id": 25345,
+            "id": 25925,
             "nodeType": "VariableDeclaration",
-            "src": "513:33:67",
+            "src": "513:33:73",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "DIM",
-            "nameLocation": "529:3:67",
-            "scope": 26511,
+            "nameLocation": "529:3:73",
+            "scope": 27091,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -724,10 +720,10 @@ export const StdStyle =
               "typeString": "string"
             },
             "typeName": {
-              "id": 25343,
+              "id": 25923,
               "name": "string",
               "nodeType": "ElementaryTypeName",
-              "src": "513:6:67",
+              "src": "513:6:73",
               "typeDescriptions": {
                 "typeIdentifier": "t_string_storage_ptr",
                 "typeString": "string"
@@ -735,14 +731,14 @@ export const StdStyle =
             },
             "value": {
               "hexValue": "1b5b326d",
-              "id": 25344,
+              "id": 25924,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "string",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "535:11:67",
+              "src": "535:11:73",
               "typeDescriptions": {
                 "typeIdentifier": "t_stringliteral_2f556fa434add49eadfa043e74ff00496b89a16068544c1118ec19f5d8603d51",
                 "typeString": "literal_string hex\"1b5b326d\""
@@ -752,15 +748,15 @@ export const StdStyle =
             "visibility": "internal"
           },
           {
-            "id": 25348,
+            "id": 25928,
             "nodeType": "VariableDeclaration",
-            "src": "552:36:67",
+            "src": "552:36:73",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "ITALIC",
-            "nameLocation": "568:6:67",
-            "scope": 26511,
+            "nameLocation": "568:6:73",
+            "scope": 27091,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -768,10 +764,10 @@ export const StdStyle =
               "typeString": "string"
             },
             "typeName": {
-              "id": 25346,
+              "id": 25926,
               "name": "string",
               "nodeType": "ElementaryTypeName",
-              "src": "552:6:67",
+              "src": "552:6:73",
               "typeDescriptions": {
                 "typeIdentifier": "t_string_storage_ptr",
                 "typeString": "string"
@@ -779,14 +775,14 @@ export const StdStyle =
             },
             "value": {
               "hexValue": "1b5b336d",
-              "id": 25347,
+              "id": 25927,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "string",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "577:11:67",
+              "src": "577:11:73",
               "typeDescriptions": {
                 "typeIdentifier": "t_stringliteral_3889f2814cfbcc60c7a881028023c05aed4a6dae60be0df554f690b1f4e7411f",
                 "typeString": "literal_string hex\"1b5b336d\""
@@ -796,15 +792,15 @@ export const StdStyle =
             "visibility": "internal"
           },
           {
-            "id": 25351,
+            "id": 25931,
             "nodeType": "VariableDeclaration",
-            "src": "594:39:67",
+            "src": "594:39:73",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "UNDERLINE",
-            "nameLocation": "610:9:67",
-            "scope": 26511,
+            "nameLocation": "610:9:73",
+            "scope": 27091,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -812,10 +808,10 @@ export const StdStyle =
               "typeString": "string"
             },
             "typeName": {
-              "id": 25349,
+              "id": 25929,
               "name": "string",
               "nodeType": "ElementaryTypeName",
-              "src": "594:6:67",
+              "src": "594:6:73",
               "typeDescriptions": {
                 "typeIdentifier": "t_string_storage_ptr",
                 "typeString": "string"
@@ -823,14 +819,14 @@ export const StdStyle =
             },
             "value": {
               "hexValue": "1b5b346d",
-              "id": 25350,
+              "id": 25930,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "string",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "622:11:67",
+              "src": "622:11:73",
               "typeDescriptions": {
                 "typeIdentifier": "t_stringliteral_48cbbbbdbcd789b35edf67deaad6f96f406603d9181318ca90ef32f90fedb5bb",
                 "typeString": "literal_string hex\"1b5b346d\""
@@ -840,15 +836,15 @@ export const StdStyle =
             "visibility": "internal"
           },
           {
-            "id": 25354,
+            "id": 25934,
             "nodeType": "VariableDeclaration",
-            "src": "639:37:67",
+            "src": "639:37:73",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "INVERSE",
-            "nameLocation": "655:7:67",
-            "scope": 26511,
+            "nameLocation": "655:7:73",
+            "scope": 27091,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -856,10 +852,10 @@ export const StdStyle =
               "typeString": "string"
             },
             "typeName": {
-              "id": 25352,
+              "id": 25932,
               "name": "string",
               "nodeType": "ElementaryTypeName",
-              "src": "639:6:67",
+              "src": "639:6:73",
               "typeDescriptions": {
                 "typeIdentifier": "t_string_storage_ptr",
                 "typeString": "string"
@@ -867,14 +863,14 @@ export const StdStyle =
             },
             "value": {
               "hexValue": "1b5b376d",
-              "id": 25353,
+              "id": 25933,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "string",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "665:11:67",
+              "src": "665:11:73",
               "typeDescriptions": {
                 "typeIdentifier": "t_stringliteral_963e08c830a620b3640a99ac46ac6850f28c8f20be064518b3acc7016c3e286e",
                 "typeString": "literal_string hex\"1b5b376d\""
@@ -884,15 +880,15 @@ export const StdStyle =
             "visibility": "internal"
           },
           {
-            "id": 25357,
+            "id": 25937,
             "nodeType": "VariableDeclaration",
-            "src": "682:35:67",
+            "src": "682:35:73",
             "nodes": [],
             "constant": true,
             "mutability": "constant",
             "name": "RESET",
-            "nameLocation": "698:5:67",
-            "scope": 26511,
+            "nameLocation": "698:5:73",
+            "scope": 27091,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -900,10 +896,10 @@ export const StdStyle =
               "typeString": "string"
             },
             "typeName": {
-              "id": 25355,
+              "id": 25935,
               "name": "string",
               "nodeType": "ElementaryTypeName",
-              "src": "682:6:67",
+              "src": "682:6:73",
               "typeDescriptions": {
                 "typeIdentifier": "t_string_storage_ptr",
                 "typeString": "string"
@@ -911,14 +907,14 @@ export const StdStyle =
             },
             "value": {
               "hexValue": "1b5b306d",
-              "id": 25356,
+              "id": 25936,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "string",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "706:11:67",
+              "src": "706:11:73",
               "typeDescriptions": {
                 "typeIdentifier": "t_stringliteral_289c700ce2c600d61adfc66f83b41c26150052f3ea6c772e582ea6afd03d1949",
                 "typeString": "literal_string hex\"1b5b306d\""
@@ -928,14 +924,14 @@ export const StdStyle =
             "visibility": "internal"
           },
           {
-            "id": 25377,
+            "id": 25957,
             "nodeType": "FunctionDefinition",
-            "src": "724:167:67",
+            "src": "724:167:73",
             "nodes": [],
             "body": {
-              "id": 25376,
+              "id": 25956,
               "nodeType": "Block",
-              "src": "823:68:67",
+              "src": "823:68:73",
               "nodes": [],
               "statements": [
                 {
@@ -944,36 +940,36 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 25370,
+                            "id": 25950,
                             "name": "style",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25359,
-                            "src": "864:5:67",
+                            "referencedDeclaration": 25939,
+                            "src": "864:5:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_string_memory_ptr",
                               "typeString": "string memory"
                             }
                           },
                           {
-                            "id": 25371,
+                            "id": 25951,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25361,
-                            "src": "871:4:67",
+                            "referencedDeclaration": 25941,
+                            "src": "871:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_string_memory_ptr",
                               "typeString": "string memory"
                             }
                           },
                           {
-                            "id": 25372,
+                            "id": 25952,
                             "name": "RESET",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25357,
-                            "src": "877:5:67",
+                            "referencedDeclaration": 25937,
+                            "src": "877:5:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_string_memory_ptr",
                               "typeString": "string memory"
@@ -996,32 +992,32 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 25368,
+                            "id": 25948,
                             "name": "abi",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": -1,
-                            "src": "847:3:67",
+                            "src": "847:3:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_abi",
                               "typeString": "abi"
                             }
                           },
-                          "id": 25369,
+                          "id": 25949,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "lValueRequested": false,
-                          "memberLocation": "851:12:67",
+                          "memberLocation": "851:12:73",
                           "memberName": "encodePacked",
                           "nodeType": "MemberAccess",
-                          "src": "847:16:67",
+                          "src": "847:16:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_abiencodepacked_pure$__$returns$_t_bytes_memory_ptr_$",
                             "typeString": "function () pure returns (bytes memory)"
                           }
                         },
-                        "id": 25373,
+                        "id": 25953,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1030,7 +1026,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "847:36:67",
+                        "src": "847:36:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes_memory_ptr",
@@ -1045,26 +1041,26 @@ export const StdStyle =
                           "typeString": "bytes memory"
                         }
                       ],
-                      "id": 25367,
+                      "id": 25947,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "lValueRequested": false,
                       "nodeType": "ElementaryTypeNameExpression",
-                      "src": "840:6:67",
+                      "src": "840:6:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_type$_t_string_storage_ptr_$",
                         "typeString": "type(string storage pointer)"
                       },
                       "typeName": {
-                        "id": 25366,
+                        "id": 25946,
                         "name": "string",
                         "nodeType": "ElementaryTypeName",
-                        "src": "840:6:67",
+                        "src": "840:6:73",
                         "typeDescriptions": {}
                       }
                     },
-                    "id": 25374,
+                    "id": 25954,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1073,17 +1069,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "840:44:67",
+                    "src": "840:44:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 25365,
-                  "id": 25375,
+                  "functionReturnParameters": 25945,
+                  "id": 25955,
                   "nodeType": "Return",
-                  "src": "833:51:67"
+                  "src": "833:51:73"
                 }
               ]
             },
@@ -1091,20 +1087,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "styleConcat",
-            "nameLocation": "733:11:67",
+            "nameLocation": "733:11:73",
             "parameters": {
-              "id": 25362,
+              "id": 25942,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25359,
+                  "id": 25939,
                   "mutability": "mutable",
                   "name": "style",
-                  "nameLocation": "759:5:67",
+                  "nameLocation": "759:5:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25377,
-                  "src": "745:19:67",
+                  "scope": 25957,
+                  "src": "745:19:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1112,10 +1108,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25358,
+                    "id": 25938,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "745:6:67",
+                    "src": "745:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1125,13 +1121,13 @@ export const StdStyle =
                 },
                 {
                   "constant": false,
-                  "id": 25361,
+                  "id": 25941,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "780:4:67",
+                  "nameLocation": "780:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25377,
-                  "src": "766:18:67",
+                  "scope": 25957,
+                  "src": "766:18:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1139,10 +1135,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25360,
+                    "id": 25940,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "766:6:67",
+                    "src": "766:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1151,21 +1147,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "744:41:67"
+              "src": "744:41:73"
             },
             "returnParameters": {
-              "id": 25365,
+              "id": 25945,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25364,
+                  "id": 25944,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25377,
-                  "src": "808:13:67",
+                  "scope": 25957,
+                  "src": "808:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1173,10 +1169,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25363,
+                    "id": 25943,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "808:6:67",
+                    "src": "808:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1185,46 +1181,46 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "807:15:67"
+              "src": "807:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "private"
           },
           {
-            "id": 25390,
+            "id": 25970,
             "nodeType": "FunctionDefinition",
-            "src": "897:117:67",
+            "src": "897:117:73",
             "nodes": [],
             "body": {
-              "id": 25389,
+              "id": 25969,
               "nodeType": "Block",
-              "src": "968:46:67",
+              "src": "968:46:73",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 25385,
+                        "id": 25965,
                         "name": "RED",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 25324,
-                        "src": "997:3:67",
+                        "referencedDeclaration": 25904,
+                        "src": "997:3:73",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 25386,
+                        "id": 25966,
                         "name": "self",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 25379,
-                        "src": "1002:4:67",
+                        "referencedDeclaration": 25959,
+                        "src": "1002:4:73",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
@@ -1242,18 +1238,18 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 25384,
+                      "id": 25964,
                       "name": "styleConcat",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 25377,
-                      "src": "985:11:67",
+                      "referencedDeclaration": 25957,
+                      "src": "985:11:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory,string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 25387,
+                    "id": 25967,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1262,17 +1258,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "985:22:67",
+                    "src": "985:22:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 25383,
-                  "id": 25388,
+                  "functionReturnParameters": 25963,
+                  "id": 25968,
                   "nodeType": "Return",
-                  "src": "978:29:67"
+                  "src": "978:29:73"
                 }
               ]
             },
@@ -1280,20 +1276,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "red",
-            "nameLocation": "906:3:67",
+            "nameLocation": "906:3:73",
             "parameters": {
-              "id": 25380,
+              "id": 25960,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25379,
+                  "id": 25959,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "924:4:67",
+                  "nameLocation": "924:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25390,
-                  "src": "910:18:67",
+                  "scope": 25970,
+                  "src": "910:18:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1301,10 +1297,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25378,
+                    "id": 25958,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "910:6:67",
+                    "src": "910:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1313,21 +1309,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "909:20:67"
+              "src": "909:20:73"
             },
             "returnParameters": {
-              "id": 25383,
+              "id": 25963,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25382,
+                  "id": 25962,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25390,
-                  "src": "953:13:67",
+                  "scope": 25970,
+                  "src": "953:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1335,10 +1331,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25381,
+                    "id": 25961,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "953:6:67",
+                    "src": "953:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1347,22 +1343,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "952:15:67"
+              "src": "952:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 25405,
+            "id": 25985,
             "nodeType": "FunctionDefinition",
-            "src": "1020:111:67",
+            "src": "1020:111:73",
             "nodes": [],
             "body": {
-              "id": 25404,
+              "id": 25984,
               "nodeType": "Block",
-              "src": "1085:46:67",
+              "src": "1085:46:73",
               "nodes": [],
               "statements": [
                 {
@@ -1371,12 +1367,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 25400,
+                            "id": 25980,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25392,
-                            "src": "1118:4:67",
+                            "referencedDeclaration": 25972,
+                            "src": "1118:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -1391,33 +1387,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 25398,
+                            "id": 25978,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "1106:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "1106:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 25399,
+                          "id": 25979,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "1109:8:67",
+                          "memberLocation": "1109:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 28007,
-                          "src": "1106:11:67",
+                          "referencedDeclaration": 28587,
+                          "src": "1106:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_uint256_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (uint256) pure external returns (string memory)"
                           }
                         },
-                        "id": 25401,
+                        "id": 25981,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1426,7 +1422,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "1106:17:67",
+                        "src": "1106:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -1441,24 +1437,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 25397,
+                      "id": 25977,
                       "name": "red",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        25390,
-                        25405,
-                        25420,
-                        25435,
-                        25450
+                        25970,
+                        25985,
+                        26000,
+                        26015,
+                        26030
                       ],
-                      "referencedDeclaration": 25390,
-                      "src": "1102:3:67",
+                      "referencedDeclaration": 25970,
+                      "src": "1102:3:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 25402,
+                    "id": 25982,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1467,17 +1463,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1102:22:67",
+                    "src": "1102:22:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 25396,
-                  "id": 25403,
+                  "functionReturnParameters": 25976,
+                  "id": 25983,
                   "nodeType": "Return",
-                  "src": "1095:29:67"
+                  "src": "1095:29:73"
                 }
               ]
             },
@@ -1485,20 +1481,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "red",
-            "nameLocation": "1029:3:67",
+            "nameLocation": "1029:3:73",
             "parameters": {
-              "id": 25393,
+              "id": 25973,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25392,
+                  "id": 25972,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "1041:4:67",
+                  "nameLocation": "1041:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25405,
-                  "src": "1033:12:67",
+                  "scope": 25985,
+                  "src": "1033:12:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1506,10 +1502,10 @@ export const StdStyle =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 25391,
+                    "id": 25971,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1033:7:67",
+                    "src": "1033:7:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1518,21 +1514,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "1032:14:67"
+              "src": "1032:14:73"
             },
             "returnParameters": {
-              "id": 25396,
+              "id": 25976,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25395,
+                  "id": 25975,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25405,
-                  "src": "1070:13:67",
+                  "scope": 25985,
+                  "src": "1070:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1540,10 +1536,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25394,
+                    "id": 25974,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1070:6:67",
+                    "src": "1070:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1552,22 +1548,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "1069:15:67"
+              "src": "1069:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 25420,
+            "id": 26000,
             "nodeType": "FunctionDefinition",
-            "src": "1137:110:67",
+            "src": "1137:110:73",
             "nodes": [],
             "body": {
-              "id": 25419,
+              "id": 25999,
               "nodeType": "Block",
-              "src": "1201:46:67",
+              "src": "1201:46:73",
               "nodes": [],
               "statements": [
                 {
@@ -1576,12 +1572,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 25415,
+                            "id": 25995,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25407,
-                            "src": "1234:4:67",
+                            "referencedDeclaration": 25987,
+                            "src": "1234:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -1596,33 +1592,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 25413,
+                            "id": 25993,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "1222:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "1222:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 25414,
+                          "id": 25994,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "1225:8:67",
+                          "memberLocation": "1225:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 28014,
-                          "src": "1222:11:67",
+                          "referencedDeclaration": 28594,
+                          "src": "1222:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_int256_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (int256) pure external returns (string memory)"
                           }
                         },
-                        "id": 25416,
+                        "id": 25996,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1631,7 +1627,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "1222:17:67",
+                        "src": "1222:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -1646,24 +1642,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 25412,
+                      "id": 25992,
                       "name": "red",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        25390,
-                        25405,
-                        25420,
-                        25435,
-                        25450
+                        25970,
+                        25985,
+                        26000,
+                        26015,
+                        26030
                       ],
-                      "referencedDeclaration": 25390,
-                      "src": "1218:3:67",
+                      "referencedDeclaration": 25970,
+                      "src": "1218:3:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 25417,
+                    "id": 25997,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1672,17 +1668,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1218:22:67",
+                    "src": "1218:22:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 25411,
-                  "id": 25418,
+                  "functionReturnParameters": 25991,
+                  "id": 25998,
                   "nodeType": "Return",
-                  "src": "1211:29:67"
+                  "src": "1211:29:73"
                 }
               ]
             },
@@ -1690,20 +1686,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "red",
-            "nameLocation": "1146:3:67",
+            "nameLocation": "1146:3:73",
             "parameters": {
-              "id": 25408,
+              "id": 25988,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25407,
+                  "id": 25987,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "1157:4:67",
+                  "nameLocation": "1157:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25420,
-                  "src": "1150:11:67",
+                  "scope": 26000,
+                  "src": "1150:11:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1711,10 +1707,10 @@ export const StdStyle =
                     "typeString": "int256"
                   },
                   "typeName": {
-                    "id": 25406,
+                    "id": 25986,
                     "name": "int256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1150:6:67",
+                    "src": "1150:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
@@ -1723,21 +1719,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "1149:13:67"
+              "src": "1149:13:73"
             },
             "returnParameters": {
-              "id": 25411,
+              "id": 25991,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25410,
+                  "id": 25990,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25420,
-                  "src": "1186:13:67",
+                  "scope": 26000,
+                  "src": "1186:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1745,10 +1741,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25409,
+                    "id": 25989,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1186:6:67",
+                    "src": "1186:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1757,22 +1753,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "1185:15:67"
+              "src": "1185:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 25435,
+            "id": 26015,
             "nodeType": "FunctionDefinition",
-            "src": "1253:111:67",
+            "src": "1253:111:73",
             "nodes": [],
             "body": {
-              "id": 25434,
+              "id": 26014,
               "nodeType": "Block",
-              "src": "1318:46:67",
+              "src": "1318:46:73",
               "nodes": [],
               "statements": [
                 {
@@ -1781,12 +1777,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 25430,
+                            "id": 26010,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25422,
-                            "src": "1351:4:67",
+                            "referencedDeclaration": 26002,
+                            "src": "1351:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -1801,33 +1797,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 25428,
+                            "id": 26008,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "1339:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "1339:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 25429,
+                          "id": 26009,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "1342:8:67",
+                          "memberLocation": "1342:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 27979,
-                          "src": "1339:11:67",
+                          "referencedDeclaration": 28559,
+                          "src": "1339:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_address_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (address) pure external returns (string memory)"
                           }
                         },
-                        "id": 25431,
+                        "id": 26011,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1836,7 +1832,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "1339:17:67",
+                        "src": "1339:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -1851,24 +1847,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 25427,
+                      "id": 26007,
                       "name": "red",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        25390,
-                        25405,
-                        25420,
-                        25435,
-                        25450
+                        25970,
+                        25985,
+                        26000,
+                        26015,
+                        26030
                       ],
-                      "referencedDeclaration": 25390,
-                      "src": "1335:3:67",
+                      "referencedDeclaration": 25970,
+                      "src": "1335:3:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 25432,
+                    "id": 26012,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1877,17 +1873,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1335:22:67",
+                    "src": "1335:22:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 25426,
-                  "id": 25433,
+                  "functionReturnParameters": 26006,
+                  "id": 26013,
                   "nodeType": "Return",
-                  "src": "1328:29:67"
+                  "src": "1328:29:73"
                 }
               ]
             },
@@ -1895,20 +1891,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "red",
-            "nameLocation": "1262:3:67",
+            "nameLocation": "1262:3:73",
             "parameters": {
-              "id": 25423,
+              "id": 26003,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25422,
+                  "id": 26002,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "1274:4:67",
+                  "nameLocation": "1274:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25435,
-                  "src": "1266:12:67",
+                  "scope": 26015,
+                  "src": "1266:12:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1916,10 +1912,10 @@ export const StdStyle =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 25421,
+                    "id": 26001,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1266:7:67",
+                    "src": "1266:7:73",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1929,21 +1925,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "1265:14:67"
+              "src": "1265:14:73"
             },
             "returnParameters": {
-              "id": 25426,
+              "id": 26006,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25425,
+                  "id": 26005,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25435,
-                  "src": "1303:13:67",
+                  "scope": 26015,
+                  "src": "1303:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1951,10 +1947,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25424,
+                    "id": 26004,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1303:6:67",
+                    "src": "1303:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1963,22 +1959,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "1302:15:67"
+              "src": "1302:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 25450,
+            "id": 26030,
             "nodeType": "FunctionDefinition",
-            "src": "1370:108:67",
+            "src": "1370:108:73",
             "nodes": [],
             "body": {
-              "id": 25449,
+              "id": 26029,
               "nodeType": "Block",
-              "src": "1432:46:67",
+              "src": "1432:46:73",
               "nodes": [],
               "statements": [
                 {
@@ -1987,12 +1983,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 25445,
+                            "id": 26025,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25437,
-                            "src": "1465:4:67",
+                            "referencedDeclaration": 26017,
+                            "src": "1465:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
                               "typeString": "bool"
@@ -2007,33 +2003,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 25443,
+                            "id": 26023,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "1453:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "1453:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 25444,
+                          "id": 26024,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "1456:8:67",
+                          "memberLocation": "1456:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 28000,
-                          "src": "1453:11:67",
+                          "referencedDeclaration": 28580,
+                          "src": "1453:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_bool_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (bool) pure external returns (string memory)"
                           }
                         },
-                        "id": 25446,
+                        "id": 26026,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -2042,7 +2038,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "1453:17:67",
+                        "src": "1453:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -2057,24 +2053,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 25442,
+                      "id": 26022,
                       "name": "red",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        25390,
-                        25405,
-                        25420,
-                        25435,
-                        25450
+                        25970,
+                        25985,
+                        26000,
+                        26015,
+                        26030
                       ],
-                      "referencedDeclaration": 25390,
-                      "src": "1449:3:67",
+                      "referencedDeclaration": 25970,
+                      "src": "1449:3:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 25447,
+                    "id": 26027,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2083,17 +2079,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1449:22:67",
+                    "src": "1449:22:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 25441,
-                  "id": 25448,
+                  "functionReturnParameters": 26021,
+                  "id": 26028,
                   "nodeType": "Return",
-                  "src": "1442:29:67"
+                  "src": "1442:29:73"
                 }
               ]
             },
@@ -2101,20 +2097,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "red",
-            "nameLocation": "1379:3:67",
+            "nameLocation": "1379:3:73",
             "parameters": {
-              "id": 25438,
+              "id": 26018,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25437,
+                  "id": 26017,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "1388:4:67",
+                  "nameLocation": "1388:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25450,
-                  "src": "1383:9:67",
+                  "scope": 26030,
+                  "src": "1383:9:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2122,10 +2118,10 @@ export const StdStyle =
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 25436,
+                    "id": 26016,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1383:4:67",
+                    "src": "1383:4:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -2134,21 +2130,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "1382:11:67"
+              "src": "1382:11:73"
             },
             "returnParameters": {
-              "id": 25441,
+              "id": 26021,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25440,
+                  "id": 26020,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25450,
-                  "src": "1417:13:67",
+                  "scope": 26030,
+                  "src": "1417:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -2156,10 +2152,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25439,
+                    "id": 26019,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1417:6:67",
+                    "src": "1417:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -2168,22 +2164,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "1416:15:67"
+              "src": "1416:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 25465,
+            "id": 26045,
             "nodeType": "FunctionDefinition",
-            "src": "1484:121:67",
+            "src": "1484:121:73",
             "nodes": [],
             "body": {
-              "id": 25464,
+              "id": 26044,
               "nodeType": "Block",
-              "src": "1559:46:67",
+              "src": "1559:46:73",
               "nodes": [],
               "statements": [
                 {
@@ -2192,12 +2188,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 25460,
+                            "id": 26040,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25452,
-                            "src": "1592:4:67",
+                            "referencedDeclaration": 26032,
+                            "src": "1592:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes_memory_ptr",
                               "typeString": "bytes memory"
@@ -2212,33 +2208,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 25458,
+                            "id": 26038,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "1580:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "1580:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 25459,
+                          "id": 26039,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "1583:8:67",
+                          "memberLocation": "1583:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 27986,
-                          "src": "1580:11:67",
+                          "referencedDeclaration": 28566,
+                          "src": "1580:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_bytes_memory_ptr_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (bytes memory) pure external returns (string memory)"
                           }
                         },
-                        "id": 25461,
+                        "id": 26041,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -2247,7 +2243,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "1580:17:67",
+                        "src": "1580:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -2262,24 +2258,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 25457,
+                      "id": 26037,
                       "name": "red",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        25390,
-                        25405,
-                        25420,
-                        25435,
-                        25450
+                        25970,
+                        25985,
+                        26000,
+                        26015,
+                        26030
                       ],
-                      "referencedDeclaration": 25390,
-                      "src": "1576:3:67",
+                      "referencedDeclaration": 25970,
+                      "src": "1576:3:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 25462,
+                    "id": 26042,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2288,17 +2284,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1576:22:67",
+                    "src": "1576:22:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 25456,
-                  "id": 25463,
+                  "functionReturnParameters": 26036,
+                  "id": 26043,
                   "nodeType": "Return",
-                  "src": "1569:29:67"
+                  "src": "1569:29:73"
                 }
               ]
             },
@@ -2306,20 +2302,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "redBytes",
-            "nameLocation": "1493:8:67",
+            "nameLocation": "1493:8:73",
             "parameters": {
-              "id": 25453,
+              "id": 26033,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25452,
+                  "id": 26032,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "1515:4:67",
+                  "nameLocation": "1515:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25465,
-                  "src": "1502:17:67",
+                  "scope": 26045,
+                  "src": "1502:17:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -2327,10 +2323,10 @@ export const StdStyle =
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 25451,
+                    "id": 26031,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1502:5:67",
+                    "src": "1502:5:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -2339,21 +2335,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "1501:19:67"
+              "src": "1501:19:73"
             },
             "returnParameters": {
-              "id": 25456,
+              "id": 26036,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25455,
+                  "id": 26035,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25465,
-                  "src": "1544:13:67",
+                  "scope": 26045,
+                  "src": "1544:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -2361,10 +2357,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25454,
+                    "id": 26034,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1544:6:67",
+                    "src": "1544:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -2373,22 +2369,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "1543:15:67"
+              "src": "1543:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 25480,
+            "id": 26060,
             "nodeType": "FunctionDefinition",
-            "src": "1611:118:67",
+            "src": "1611:118:73",
             "nodes": [],
             "body": {
-              "id": 25479,
+              "id": 26059,
               "nodeType": "Block",
-              "src": "1683:46:67",
+              "src": "1683:46:73",
               "nodes": [],
               "statements": [
                 {
@@ -2397,12 +2393,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 25475,
+                            "id": 26055,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25467,
-                            "src": "1716:4:67",
+                            "referencedDeclaration": 26047,
+                            "src": "1716:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes32",
                               "typeString": "bytes32"
@@ -2417,33 +2413,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 25473,
+                            "id": 26053,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "1704:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "1704:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 25474,
+                          "id": 26054,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "1707:8:67",
+                          "memberLocation": "1707:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 27993,
-                          "src": "1704:11:67",
+                          "referencedDeclaration": 28573,
+                          "src": "1704:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_bytes32_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (bytes32) pure external returns (string memory)"
                           }
                         },
-                        "id": 25476,
+                        "id": 26056,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -2452,7 +2448,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "1704:17:67",
+                        "src": "1704:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -2467,24 +2463,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 25472,
+                      "id": 26052,
                       "name": "red",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        25390,
-                        25405,
-                        25420,
-                        25435,
-                        25450
+                        25970,
+                        25985,
+                        26000,
+                        26015,
+                        26030
                       ],
-                      "referencedDeclaration": 25390,
-                      "src": "1700:3:67",
+                      "referencedDeclaration": 25970,
+                      "src": "1700:3:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 25477,
+                    "id": 26057,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2493,17 +2489,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1700:22:67",
+                    "src": "1700:22:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 25471,
-                  "id": 25478,
+                  "functionReturnParameters": 26051,
+                  "id": 26058,
                   "nodeType": "Return",
-                  "src": "1693:29:67"
+                  "src": "1693:29:73"
                 }
               ]
             },
@@ -2511,20 +2507,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "redBytes32",
-            "nameLocation": "1620:10:67",
+            "nameLocation": "1620:10:73",
             "parameters": {
-              "id": 25468,
+              "id": 26048,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25467,
+                  "id": 26047,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "1639:4:67",
+                  "nameLocation": "1639:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25480,
-                  "src": "1631:12:67",
+                  "scope": 26060,
+                  "src": "1631:12:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2532,10 +2528,10 @@ export const StdStyle =
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 25466,
+                    "id": 26046,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1631:7:67",
+                    "src": "1631:7:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -2544,21 +2540,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "1630:14:67"
+              "src": "1630:14:73"
             },
             "returnParameters": {
-              "id": 25471,
+              "id": 26051,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25470,
+                  "id": 26050,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25480,
-                  "src": "1668:13:67",
+                  "scope": 26060,
+                  "src": "1668:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -2566,10 +2562,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25469,
+                    "id": 26049,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1668:6:67",
+                    "src": "1668:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -2578,46 +2574,46 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "1667:15:67"
+              "src": "1667:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 25493,
+            "id": 26073,
             "nodeType": "FunctionDefinition",
-            "src": "1735:121:67",
+            "src": "1735:121:73",
             "nodes": [],
             "body": {
-              "id": 25492,
+              "id": 26072,
               "nodeType": "Block",
-              "src": "1808:48:67",
+              "src": "1808:48:73",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 25488,
+                        "id": 26068,
                         "name": "GREEN",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 25327,
-                        "src": "1837:5:67",
+                        "referencedDeclaration": 25907,
+                        "src": "1837:5:73",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 25489,
+                        "id": 26069,
                         "name": "self",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 25482,
-                        "src": "1844:4:67",
+                        "referencedDeclaration": 26062,
+                        "src": "1844:4:73",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
@@ -2635,18 +2631,18 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 25487,
+                      "id": 26067,
                       "name": "styleConcat",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 25377,
-                      "src": "1825:11:67",
+                      "referencedDeclaration": 25957,
+                      "src": "1825:11:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory,string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 25490,
+                    "id": 26070,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2655,17 +2651,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1825:24:67",
+                    "src": "1825:24:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 25486,
-                  "id": 25491,
+                  "functionReturnParameters": 26066,
+                  "id": 26071,
                   "nodeType": "Return",
-                  "src": "1818:31:67"
+                  "src": "1818:31:73"
                 }
               ]
             },
@@ -2673,20 +2669,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "green",
-            "nameLocation": "1744:5:67",
+            "nameLocation": "1744:5:73",
             "parameters": {
-              "id": 25483,
+              "id": 26063,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25482,
+                  "id": 26062,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "1764:4:67",
+                  "nameLocation": "1764:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25493,
-                  "src": "1750:18:67",
+                  "scope": 26073,
+                  "src": "1750:18:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -2694,10 +2690,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25481,
+                    "id": 26061,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1750:6:67",
+                    "src": "1750:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -2706,21 +2702,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "1749:20:67"
+              "src": "1749:20:73"
             },
             "returnParameters": {
-              "id": 25486,
+              "id": 26066,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25485,
+                  "id": 26065,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25493,
-                  "src": "1793:13:67",
+                  "scope": 26073,
+                  "src": "1793:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -2728,10 +2724,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25484,
+                    "id": 26064,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1793:6:67",
+                    "src": "1793:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -2740,22 +2736,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "1792:15:67"
+              "src": "1792:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 25508,
+            "id": 26088,
             "nodeType": "FunctionDefinition",
-            "src": "1862:115:67",
+            "src": "1862:115:73",
             "nodes": [],
             "body": {
-              "id": 25507,
+              "id": 26087,
               "nodeType": "Block",
-              "src": "1929:48:67",
+              "src": "1929:48:73",
               "nodes": [],
               "statements": [
                 {
@@ -2764,12 +2760,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 25503,
+                            "id": 26083,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25495,
-                            "src": "1964:4:67",
+                            "referencedDeclaration": 26075,
+                            "src": "1964:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -2784,33 +2780,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 25501,
+                            "id": 26081,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "1952:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "1952:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 25502,
+                          "id": 26082,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "1955:8:67",
+                          "memberLocation": "1955:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 28007,
-                          "src": "1952:11:67",
+                          "referencedDeclaration": 28587,
+                          "src": "1952:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_uint256_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (uint256) pure external returns (string memory)"
                           }
                         },
-                        "id": 25504,
+                        "id": 26084,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -2819,7 +2815,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "1952:17:67",
+                        "src": "1952:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -2834,24 +2830,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 25500,
+                      "id": 26080,
                       "name": "green",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        25493,
-                        25508,
-                        25523,
-                        25538,
-                        25553
+                        26073,
+                        26088,
+                        26103,
+                        26118,
+                        26133
                       ],
-                      "referencedDeclaration": 25493,
-                      "src": "1946:5:67",
+                      "referencedDeclaration": 26073,
+                      "src": "1946:5:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 25505,
+                    "id": 26085,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2860,17 +2856,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1946:24:67",
+                    "src": "1946:24:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 25499,
-                  "id": 25506,
+                  "functionReturnParameters": 26079,
+                  "id": 26086,
                   "nodeType": "Return",
-                  "src": "1939:31:67"
+                  "src": "1939:31:73"
                 }
               ]
             },
@@ -2878,20 +2874,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "green",
-            "nameLocation": "1871:5:67",
+            "nameLocation": "1871:5:73",
             "parameters": {
-              "id": 25496,
+              "id": 26076,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25495,
+                  "id": 26075,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "1885:4:67",
+                  "nameLocation": "1885:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25508,
-                  "src": "1877:12:67",
+                  "scope": 26088,
+                  "src": "1877:12:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2899,10 +2895,10 @@ export const StdStyle =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 25494,
+                    "id": 26074,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1877:7:67",
+                    "src": "1877:7:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2911,21 +2907,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "1876:14:67"
+              "src": "1876:14:73"
             },
             "returnParameters": {
-              "id": 25499,
+              "id": 26079,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25498,
+                  "id": 26078,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25508,
-                  "src": "1914:13:67",
+                  "scope": 26088,
+                  "src": "1914:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -2933,10 +2929,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25497,
+                    "id": 26077,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1914:6:67",
+                    "src": "1914:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -2945,22 +2941,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "1913:15:67"
+              "src": "1913:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 25523,
+            "id": 26103,
             "nodeType": "FunctionDefinition",
-            "src": "1983:114:67",
+            "src": "1983:114:73",
             "nodes": [],
             "body": {
-              "id": 25522,
+              "id": 26102,
               "nodeType": "Block",
-              "src": "2049:48:67",
+              "src": "2049:48:73",
               "nodes": [],
               "statements": [
                 {
@@ -2969,12 +2965,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 25518,
+                            "id": 26098,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25510,
-                            "src": "2084:4:67",
+                            "referencedDeclaration": 26090,
+                            "src": "2084:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -2989,33 +2985,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 25516,
+                            "id": 26096,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "2072:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "2072:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 25517,
+                          "id": 26097,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "2075:8:67",
+                          "memberLocation": "2075:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 28014,
-                          "src": "2072:11:67",
+                          "referencedDeclaration": 28594,
+                          "src": "2072:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_int256_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (int256) pure external returns (string memory)"
                           }
                         },
-                        "id": 25519,
+                        "id": 26099,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -3024,7 +3020,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "2072:17:67",
+                        "src": "2072:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -3039,24 +3035,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 25515,
+                      "id": 26095,
                       "name": "green",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        25493,
-                        25508,
-                        25523,
-                        25538,
-                        25553
+                        26073,
+                        26088,
+                        26103,
+                        26118,
+                        26133
                       ],
-                      "referencedDeclaration": 25493,
-                      "src": "2066:5:67",
+                      "referencedDeclaration": 26073,
+                      "src": "2066:5:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 25520,
+                    "id": 26100,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3065,17 +3061,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "2066:24:67",
+                    "src": "2066:24:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 25514,
-                  "id": 25521,
+                  "functionReturnParameters": 26094,
+                  "id": 26101,
                   "nodeType": "Return",
-                  "src": "2059:31:67"
+                  "src": "2059:31:73"
                 }
               ]
             },
@@ -3083,20 +3079,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "green",
-            "nameLocation": "1992:5:67",
+            "nameLocation": "1992:5:73",
             "parameters": {
-              "id": 25511,
+              "id": 26091,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25510,
+                  "id": 26090,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "2005:4:67",
+                  "nameLocation": "2005:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25523,
-                  "src": "1998:11:67",
+                  "scope": 26103,
+                  "src": "1998:11:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3104,10 +3100,10 @@ export const StdStyle =
                     "typeString": "int256"
                   },
                   "typeName": {
-                    "id": 25509,
+                    "id": 26089,
                     "name": "int256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1998:6:67",
+                    "src": "1998:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
@@ -3116,21 +3112,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "1997:13:67"
+              "src": "1997:13:73"
             },
             "returnParameters": {
-              "id": 25514,
+              "id": 26094,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25513,
+                  "id": 26093,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25523,
-                  "src": "2034:13:67",
+                  "scope": 26103,
+                  "src": "2034:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -3138,10 +3134,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25512,
+                    "id": 26092,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2034:6:67",
+                    "src": "2034:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -3150,22 +3146,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "2033:15:67"
+              "src": "2033:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 25538,
+            "id": 26118,
             "nodeType": "FunctionDefinition",
-            "src": "2103:115:67",
+            "src": "2103:115:73",
             "nodes": [],
             "body": {
-              "id": 25537,
+              "id": 26117,
               "nodeType": "Block",
-              "src": "2170:48:67",
+              "src": "2170:48:73",
               "nodes": [],
               "statements": [
                 {
@@ -3174,12 +3170,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 25533,
+                            "id": 26113,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25525,
-                            "src": "2205:4:67",
+                            "referencedDeclaration": 26105,
+                            "src": "2205:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -3194,33 +3190,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 25531,
+                            "id": 26111,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "2193:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "2193:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 25532,
+                          "id": 26112,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "2196:8:67",
+                          "memberLocation": "2196:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 27979,
-                          "src": "2193:11:67",
+                          "referencedDeclaration": 28559,
+                          "src": "2193:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_address_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (address) pure external returns (string memory)"
                           }
                         },
-                        "id": 25534,
+                        "id": 26114,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -3229,7 +3225,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "2193:17:67",
+                        "src": "2193:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -3244,24 +3240,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 25530,
+                      "id": 26110,
                       "name": "green",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        25493,
-                        25508,
-                        25523,
-                        25538,
-                        25553
+                        26073,
+                        26088,
+                        26103,
+                        26118,
+                        26133
                       ],
-                      "referencedDeclaration": 25493,
-                      "src": "2187:5:67",
+                      "referencedDeclaration": 26073,
+                      "src": "2187:5:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 25535,
+                    "id": 26115,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3270,17 +3266,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "2187:24:67",
+                    "src": "2187:24:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 25529,
-                  "id": 25536,
+                  "functionReturnParameters": 26109,
+                  "id": 26116,
                   "nodeType": "Return",
-                  "src": "2180:31:67"
+                  "src": "2180:31:73"
                 }
               ]
             },
@@ -3288,20 +3284,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "green",
-            "nameLocation": "2112:5:67",
+            "nameLocation": "2112:5:73",
             "parameters": {
-              "id": 25526,
+              "id": 26106,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25525,
+                  "id": 26105,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "2126:4:67",
+                  "nameLocation": "2126:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25538,
-                  "src": "2118:12:67",
+                  "scope": 26118,
+                  "src": "2118:12:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3309,10 +3305,10 @@ export const StdStyle =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 25524,
+                    "id": 26104,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2118:7:67",
+                    "src": "2118:7:73",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -3322,21 +3318,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "2117:14:67"
+              "src": "2117:14:73"
             },
             "returnParameters": {
-              "id": 25529,
+              "id": 26109,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25528,
+                  "id": 26108,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25538,
-                  "src": "2155:13:67",
+                  "scope": 26118,
+                  "src": "2155:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -3344,10 +3340,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25527,
+                    "id": 26107,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2155:6:67",
+                    "src": "2155:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -3356,22 +3352,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "2154:15:67"
+              "src": "2154:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 25553,
+            "id": 26133,
             "nodeType": "FunctionDefinition",
-            "src": "2224:112:67",
+            "src": "2224:112:73",
             "nodes": [],
             "body": {
-              "id": 25552,
+              "id": 26132,
               "nodeType": "Block",
-              "src": "2288:48:67",
+              "src": "2288:48:73",
               "nodes": [],
               "statements": [
                 {
@@ -3380,12 +3376,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 25548,
+                            "id": 26128,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25540,
-                            "src": "2323:4:67",
+                            "referencedDeclaration": 26120,
+                            "src": "2323:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
                               "typeString": "bool"
@@ -3400,33 +3396,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 25546,
+                            "id": 26126,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "2311:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "2311:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 25547,
+                          "id": 26127,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "2314:8:67",
+                          "memberLocation": "2314:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 28000,
-                          "src": "2311:11:67",
+                          "referencedDeclaration": 28580,
+                          "src": "2311:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_bool_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (bool) pure external returns (string memory)"
                           }
                         },
-                        "id": 25549,
+                        "id": 26129,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -3435,7 +3431,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "2311:17:67",
+                        "src": "2311:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -3450,24 +3446,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 25545,
+                      "id": 26125,
                       "name": "green",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        25493,
-                        25508,
-                        25523,
-                        25538,
-                        25553
+                        26073,
+                        26088,
+                        26103,
+                        26118,
+                        26133
                       ],
-                      "referencedDeclaration": 25493,
-                      "src": "2305:5:67",
+                      "referencedDeclaration": 26073,
+                      "src": "2305:5:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 25550,
+                    "id": 26130,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3476,17 +3472,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "2305:24:67",
+                    "src": "2305:24:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 25544,
-                  "id": 25551,
+                  "functionReturnParameters": 26124,
+                  "id": 26131,
                   "nodeType": "Return",
-                  "src": "2298:31:67"
+                  "src": "2298:31:73"
                 }
               ]
             },
@@ -3494,20 +3490,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "green",
-            "nameLocation": "2233:5:67",
+            "nameLocation": "2233:5:73",
             "parameters": {
-              "id": 25541,
+              "id": 26121,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25540,
+                  "id": 26120,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "2244:4:67",
+                  "nameLocation": "2244:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25553,
-                  "src": "2239:9:67",
+                  "scope": 26133,
+                  "src": "2239:9:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3515,10 +3511,10 @@ export const StdStyle =
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 25539,
+                    "id": 26119,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2239:4:67",
+                    "src": "2239:4:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -3527,21 +3523,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "2238:11:67"
+              "src": "2238:11:73"
             },
             "returnParameters": {
-              "id": 25544,
+              "id": 26124,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25543,
+                  "id": 26123,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25553,
-                  "src": "2273:13:67",
+                  "scope": 26133,
+                  "src": "2273:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -3549,10 +3545,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25542,
+                    "id": 26122,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2273:6:67",
+                    "src": "2273:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -3561,22 +3557,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "2272:15:67"
+              "src": "2272:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 25568,
+            "id": 26148,
             "nodeType": "FunctionDefinition",
-            "src": "2342:125:67",
+            "src": "2342:125:73",
             "nodes": [],
             "body": {
-              "id": 25567,
+              "id": 26147,
               "nodeType": "Block",
-              "src": "2419:48:67",
+              "src": "2419:48:73",
               "nodes": [],
               "statements": [
                 {
@@ -3585,12 +3581,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 25563,
+                            "id": 26143,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25555,
-                            "src": "2454:4:67",
+                            "referencedDeclaration": 26135,
+                            "src": "2454:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes_memory_ptr",
                               "typeString": "bytes memory"
@@ -3605,33 +3601,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 25561,
+                            "id": 26141,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "2442:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "2442:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 25562,
+                          "id": 26142,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "2445:8:67",
+                          "memberLocation": "2445:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 27986,
-                          "src": "2442:11:67",
+                          "referencedDeclaration": 28566,
+                          "src": "2442:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_bytes_memory_ptr_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (bytes memory) pure external returns (string memory)"
                           }
                         },
-                        "id": 25564,
+                        "id": 26144,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -3640,7 +3636,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "2442:17:67",
+                        "src": "2442:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -3655,24 +3651,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 25560,
+                      "id": 26140,
                       "name": "green",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        25493,
-                        25508,
-                        25523,
-                        25538,
-                        25553
+                        26073,
+                        26088,
+                        26103,
+                        26118,
+                        26133
                       ],
-                      "referencedDeclaration": 25493,
-                      "src": "2436:5:67",
+                      "referencedDeclaration": 26073,
+                      "src": "2436:5:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 25565,
+                    "id": 26145,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3681,17 +3677,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "2436:24:67",
+                    "src": "2436:24:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 25559,
-                  "id": 25566,
+                  "functionReturnParameters": 26139,
+                  "id": 26146,
                   "nodeType": "Return",
-                  "src": "2429:31:67"
+                  "src": "2429:31:73"
                 }
               ]
             },
@@ -3699,20 +3695,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "greenBytes",
-            "nameLocation": "2351:10:67",
+            "nameLocation": "2351:10:73",
             "parameters": {
-              "id": 25556,
+              "id": 26136,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25555,
+                  "id": 26135,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "2375:4:67",
+                  "nameLocation": "2375:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25568,
-                  "src": "2362:17:67",
+                  "scope": 26148,
+                  "src": "2362:17:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -3720,10 +3716,10 @@ export const StdStyle =
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 25554,
+                    "id": 26134,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2362:5:67",
+                    "src": "2362:5:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -3732,21 +3728,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "2361:19:67"
+              "src": "2361:19:73"
             },
             "returnParameters": {
-              "id": 25559,
+              "id": 26139,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25558,
+                  "id": 26138,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25568,
-                  "src": "2404:13:67",
+                  "scope": 26148,
+                  "src": "2404:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -3754,10 +3750,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25557,
+                    "id": 26137,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2404:6:67",
+                    "src": "2404:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -3766,22 +3762,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "2403:15:67"
+              "src": "2403:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 25583,
+            "id": 26163,
             "nodeType": "FunctionDefinition",
-            "src": "2473:122:67",
+            "src": "2473:122:73",
             "nodes": [],
             "body": {
-              "id": 25582,
+              "id": 26162,
               "nodeType": "Block",
-              "src": "2547:48:67",
+              "src": "2547:48:73",
               "nodes": [],
               "statements": [
                 {
@@ -3790,12 +3786,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 25578,
+                            "id": 26158,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25570,
-                            "src": "2582:4:67",
+                            "referencedDeclaration": 26150,
+                            "src": "2582:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes32",
                               "typeString": "bytes32"
@@ -3810,33 +3806,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 25576,
+                            "id": 26156,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "2570:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "2570:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 25577,
+                          "id": 26157,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "2573:8:67",
+                          "memberLocation": "2573:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 27993,
-                          "src": "2570:11:67",
+                          "referencedDeclaration": 28573,
+                          "src": "2570:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_bytes32_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (bytes32) pure external returns (string memory)"
                           }
                         },
-                        "id": 25579,
+                        "id": 26159,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -3845,7 +3841,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "2570:17:67",
+                        "src": "2570:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -3860,24 +3856,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 25575,
+                      "id": 26155,
                       "name": "green",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        25493,
-                        25508,
-                        25523,
-                        25538,
-                        25553
+                        26073,
+                        26088,
+                        26103,
+                        26118,
+                        26133
                       ],
-                      "referencedDeclaration": 25493,
-                      "src": "2564:5:67",
+                      "referencedDeclaration": 26073,
+                      "src": "2564:5:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 25580,
+                    "id": 26160,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3886,17 +3882,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "2564:24:67",
+                    "src": "2564:24:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 25574,
-                  "id": 25581,
+                  "functionReturnParameters": 26154,
+                  "id": 26161,
                   "nodeType": "Return",
-                  "src": "2557:31:67"
+                  "src": "2557:31:73"
                 }
               ]
             },
@@ -3904,20 +3900,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "greenBytes32",
-            "nameLocation": "2482:12:67",
+            "nameLocation": "2482:12:73",
             "parameters": {
-              "id": 25571,
+              "id": 26151,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25570,
+                  "id": 26150,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "2503:4:67",
+                  "nameLocation": "2503:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25583,
-                  "src": "2495:12:67",
+                  "scope": 26163,
+                  "src": "2495:12:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3925,10 +3921,10 @@ export const StdStyle =
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 25569,
+                    "id": 26149,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2495:7:67",
+                    "src": "2495:7:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -3937,21 +3933,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "2494:14:67"
+              "src": "2494:14:73"
             },
             "returnParameters": {
-              "id": 25574,
+              "id": 26154,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25573,
+                  "id": 26153,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25583,
-                  "src": "2532:13:67",
+                  "scope": 26163,
+                  "src": "2532:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -3959,10 +3955,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25572,
+                    "id": 26152,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2532:6:67",
+                    "src": "2532:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -3971,46 +3967,46 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "2531:15:67"
+              "src": "2531:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 25596,
+            "id": 26176,
             "nodeType": "FunctionDefinition",
-            "src": "2601:123:67",
+            "src": "2601:123:73",
             "nodes": [],
             "body": {
-              "id": 25595,
+              "id": 26175,
               "nodeType": "Block",
-              "src": "2675:49:67",
+              "src": "2675:49:73",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 25591,
+                        "id": 26171,
                         "name": "YELLOW",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 25330,
-                        "src": "2704:6:67",
+                        "referencedDeclaration": 25910,
+                        "src": "2704:6:73",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 25592,
+                        "id": 26172,
                         "name": "self",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 25585,
-                        "src": "2712:4:67",
+                        "referencedDeclaration": 26165,
+                        "src": "2712:4:73",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
@@ -4028,18 +4024,18 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 25590,
+                      "id": 26170,
                       "name": "styleConcat",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 25377,
-                      "src": "2692:11:67",
+                      "referencedDeclaration": 25957,
+                      "src": "2692:11:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory,string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 25593,
+                    "id": 26173,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -4048,17 +4044,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "2692:25:67",
+                    "src": "2692:25:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 25589,
-                  "id": 25594,
+                  "functionReturnParameters": 26169,
+                  "id": 26174,
                   "nodeType": "Return",
-                  "src": "2685:32:67"
+                  "src": "2685:32:73"
                 }
               ]
             },
@@ -4066,20 +4062,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "yellow",
-            "nameLocation": "2610:6:67",
+            "nameLocation": "2610:6:73",
             "parameters": {
-              "id": 25586,
+              "id": 26166,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25585,
+                  "id": 26165,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "2631:4:67",
+                  "nameLocation": "2631:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25596,
-                  "src": "2617:18:67",
+                  "scope": 26176,
+                  "src": "2617:18:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -4087,10 +4083,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25584,
+                    "id": 26164,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2617:6:67",
+                    "src": "2617:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -4099,21 +4095,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "2616:20:67"
+              "src": "2616:20:73"
             },
             "returnParameters": {
-              "id": 25589,
+              "id": 26169,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25588,
+                  "id": 26168,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25596,
-                  "src": "2660:13:67",
+                  "scope": 26176,
+                  "src": "2660:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -4121,10 +4117,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25587,
+                    "id": 26167,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2660:6:67",
+                    "src": "2660:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -4133,22 +4129,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "2659:15:67"
+              "src": "2659:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 25611,
+            "id": 26191,
             "nodeType": "FunctionDefinition",
-            "src": "2730:117:67",
+            "src": "2730:117:73",
             "nodes": [],
             "body": {
-              "id": 25610,
+              "id": 26190,
               "nodeType": "Block",
-              "src": "2798:49:67",
+              "src": "2798:49:73",
               "nodes": [],
               "statements": [
                 {
@@ -4157,12 +4153,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 25606,
+                            "id": 26186,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25598,
-                            "src": "2834:4:67",
+                            "referencedDeclaration": 26178,
+                            "src": "2834:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -4177,33 +4173,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 25604,
+                            "id": 26184,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "2822:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "2822:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 25605,
+                          "id": 26185,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "2825:8:67",
+                          "memberLocation": "2825:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 28007,
-                          "src": "2822:11:67",
+                          "referencedDeclaration": 28587,
+                          "src": "2822:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_uint256_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (uint256) pure external returns (string memory)"
                           }
                         },
-                        "id": 25607,
+                        "id": 26187,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -4212,7 +4208,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "2822:17:67",
+                        "src": "2822:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -4227,24 +4223,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 25603,
+                      "id": 26183,
                       "name": "yellow",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        25596,
-                        25611,
-                        25626,
-                        25641,
-                        25656
+                        26176,
+                        26191,
+                        26206,
+                        26221,
+                        26236
                       ],
-                      "referencedDeclaration": 25596,
-                      "src": "2815:6:67",
+                      "referencedDeclaration": 26176,
+                      "src": "2815:6:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 25608,
+                    "id": 26188,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -4253,17 +4249,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "2815:25:67",
+                    "src": "2815:25:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 25602,
-                  "id": 25609,
+                  "functionReturnParameters": 26182,
+                  "id": 26189,
                   "nodeType": "Return",
-                  "src": "2808:32:67"
+                  "src": "2808:32:73"
                 }
               ]
             },
@@ -4271,20 +4267,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "yellow",
-            "nameLocation": "2739:6:67",
+            "nameLocation": "2739:6:73",
             "parameters": {
-              "id": 25599,
+              "id": 26179,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25598,
+                  "id": 26178,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "2754:4:67",
+                  "nameLocation": "2754:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25611,
-                  "src": "2746:12:67",
+                  "scope": 26191,
+                  "src": "2746:12:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -4292,10 +4288,10 @@ export const StdStyle =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 25597,
+                    "id": 26177,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2746:7:67",
+                    "src": "2746:7:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -4304,21 +4300,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "2745:14:67"
+              "src": "2745:14:73"
             },
             "returnParameters": {
-              "id": 25602,
+              "id": 26182,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25601,
+                  "id": 26181,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25611,
-                  "src": "2783:13:67",
+                  "scope": 26191,
+                  "src": "2783:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -4326,10 +4322,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25600,
+                    "id": 26180,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2783:6:67",
+                    "src": "2783:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -4338,22 +4334,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "2782:15:67"
+              "src": "2782:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 25626,
+            "id": 26206,
             "nodeType": "FunctionDefinition",
-            "src": "2853:116:67",
+            "src": "2853:116:73",
             "nodes": [],
             "body": {
-              "id": 25625,
+              "id": 26205,
               "nodeType": "Block",
-              "src": "2920:49:67",
+              "src": "2920:49:73",
               "nodes": [],
               "statements": [
                 {
@@ -4362,12 +4358,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 25621,
+                            "id": 26201,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25613,
-                            "src": "2956:4:67",
+                            "referencedDeclaration": 26193,
+                            "src": "2956:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -4382,33 +4378,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 25619,
+                            "id": 26199,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "2944:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "2944:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 25620,
+                          "id": 26200,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "2947:8:67",
+                          "memberLocation": "2947:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 28014,
-                          "src": "2944:11:67",
+                          "referencedDeclaration": 28594,
+                          "src": "2944:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_int256_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (int256) pure external returns (string memory)"
                           }
                         },
-                        "id": 25622,
+                        "id": 26202,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -4417,7 +4413,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "2944:17:67",
+                        "src": "2944:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -4432,24 +4428,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 25618,
+                      "id": 26198,
                       "name": "yellow",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        25596,
-                        25611,
-                        25626,
-                        25641,
-                        25656
+                        26176,
+                        26191,
+                        26206,
+                        26221,
+                        26236
                       ],
-                      "referencedDeclaration": 25596,
-                      "src": "2937:6:67",
+                      "referencedDeclaration": 26176,
+                      "src": "2937:6:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 25623,
+                    "id": 26203,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -4458,17 +4454,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "2937:25:67",
+                    "src": "2937:25:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 25617,
-                  "id": 25624,
+                  "functionReturnParameters": 26197,
+                  "id": 26204,
                   "nodeType": "Return",
-                  "src": "2930:32:67"
+                  "src": "2930:32:73"
                 }
               ]
             },
@@ -4476,20 +4472,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "yellow",
-            "nameLocation": "2862:6:67",
+            "nameLocation": "2862:6:73",
             "parameters": {
-              "id": 25614,
+              "id": 26194,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25613,
+                  "id": 26193,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "2876:4:67",
+                  "nameLocation": "2876:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25626,
-                  "src": "2869:11:67",
+                  "scope": 26206,
+                  "src": "2869:11:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -4497,10 +4493,10 @@ export const StdStyle =
                     "typeString": "int256"
                   },
                   "typeName": {
-                    "id": 25612,
+                    "id": 26192,
                     "name": "int256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2869:6:67",
+                    "src": "2869:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
@@ -4509,21 +4505,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "2868:13:67"
+              "src": "2868:13:73"
             },
             "returnParameters": {
-              "id": 25617,
+              "id": 26197,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25616,
+                  "id": 26196,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25626,
-                  "src": "2905:13:67",
+                  "scope": 26206,
+                  "src": "2905:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -4531,10 +4527,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25615,
+                    "id": 26195,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2905:6:67",
+                    "src": "2905:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -4543,22 +4539,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "2904:15:67"
+              "src": "2904:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 25641,
+            "id": 26221,
             "nodeType": "FunctionDefinition",
-            "src": "2975:117:67",
+            "src": "2975:117:73",
             "nodes": [],
             "body": {
-              "id": 25640,
+              "id": 26220,
               "nodeType": "Block",
-              "src": "3043:49:67",
+              "src": "3043:49:73",
               "nodes": [],
               "statements": [
                 {
@@ -4567,12 +4563,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 25636,
+                            "id": 26216,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25628,
-                            "src": "3079:4:67",
+                            "referencedDeclaration": 26208,
+                            "src": "3079:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -4587,33 +4583,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 25634,
+                            "id": 26214,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "3067:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "3067:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 25635,
+                          "id": 26215,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "3070:8:67",
+                          "memberLocation": "3070:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 27979,
-                          "src": "3067:11:67",
+                          "referencedDeclaration": 28559,
+                          "src": "3067:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_address_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (address) pure external returns (string memory)"
                           }
                         },
-                        "id": 25637,
+                        "id": 26217,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -4622,7 +4618,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "3067:17:67",
+                        "src": "3067:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -4637,24 +4633,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 25633,
+                      "id": 26213,
                       "name": "yellow",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        25596,
-                        25611,
-                        25626,
-                        25641,
-                        25656
+                        26176,
+                        26191,
+                        26206,
+                        26221,
+                        26236
                       ],
-                      "referencedDeclaration": 25596,
-                      "src": "3060:6:67",
+                      "referencedDeclaration": 26176,
+                      "src": "3060:6:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 25638,
+                    "id": 26218,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -4663,17 +4659,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "3060:25:67",
+                    "src": "3060:25:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 25632,
-                  "id": 25639,
+                  "functionReturnParameters": 26212,
+                  "id": 26219,
                   "nodeType": "Return",
-                  "src": "3053:32:67"
+                  "src": "3053:32:73"
                 }
               ]
             },
@@ -4681,20 +4677,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "yellow",
-            "nameLocation": "2984:6:67",
+            "nameLocation": "2984:6:73",
             "parameters": {
-              "id": 25629,
+              "id": 26209,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25628,
+                  "id": 26208,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "2999:4:67",
+                  "nameLocation": "2999:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25641,
-                  "src": "2991:12:67",
+                  "scope": 26221,
+                  "src": "2991:12:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -4702,10 +4698,10 @@ export const StdStyle =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 25627,
+                    "id": 26207,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2991:7:67",
+                    "src": "2991:7:73",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -4715,21 +4711,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "2990:14:67"
+              "src": "2990:14:73"
             },
             "returnParameters": {
-              "id": 25632,
+              "id": 26212,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25631,
+                  "id": 26211,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25641,
-                  "src": "3028:13:67",
+                  "scope": 26221,
+                  "src": "3028:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -4737,10 +4733,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25630,
+                    "id": 26210,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3028:6:67",
+                    "src": "3028:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -4749,22 +4745,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "3027:15:67"
+              "src": "3027:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 25656,
+            "id": 26236,
             "nodeType": "FunctionDefinition",
-            "src": "3098:114:67",
+            "src": "3098:114:73",
             "nodes": [],
             "body": {
-              "id": 25655,
+              "id": 26235,
               "nodeType": "Block",
-              "src": "3163:49:67",
+              "src": "3163:49:73",
               "nodes": [],
               "statements": [
                 {
@@ -4773,12 +4769,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 25651,
+                            "id": 26231,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25643,
-                            "src": "3199:4:67",
+                            "referencedDeclaration": 26223,
+                            "src": "3199:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
                               "typeString": "bool"
@@ -4793,33 +4789,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 25649,
+                            "id": 26229,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "3187:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "3187:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 25650,
+                          "id": 26230,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "3190:8:67",
+                          "memberLocation": "3190:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 28000,
-                          "src": "3187:11:67",
+                          "referencedDeclaration": 28580,
+                          "src": "3187:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_bool_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (bool) pure external returns (string memory)"
                           }
                         },
-                        "id": 25652,
+                        "id": 26232,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -4828,7 +4824,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "3187:17:67",
+                        "src": "3187:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -4843,24 +4839,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 25648,
+                      "id": 26228,
                       "name": "yellow",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        25596,
-                        25611,
-                        25626,
-                        25641,
-                        25656
+                        26176,
+                        26191,
+                        26206,
+                        26221,
+                        26236
                       ],
-                      "referencedDeclaration": 25596,
-                      "src": "3180:6:67",
+                      "referencedDeclaration": 26176,
+                      "src": "3180:6:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 25653,
+                    "id": 26233,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -4869,17 +4865,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "3180:25:67",
+                    "src": "3180:25:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 25647,
-                  "id": 25654,
+                  "functionReturnParameters": 26227,
+                  "id": 26234,
                   "nodeType": "Return",
-                  "src": "3173:32:67"
+                  "src": "3173:32:73"
                 }
               ]
             },
@@ -4887,20 +4883,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "yellow",
-            "nameLocation": "3107:6:67",
+            "nameLocation": "3107:6:73",
             "parameters": {
-              "id": 25644,
+              "id": 26224,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25643,
+                  "id": 26223,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "3119:4:67",
+                  "nameLocation": "3119:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25656,
-                  "src": "3114:9:67",
+                  "scope": 26236,
+                  "src": "3114:9:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -4908,10 +4904,10 @@ export const StdStyle =
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 25642,
+                    "id": 26222,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3114:4:67",
+                    "src": "3114:4:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -4920,21 +4916,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "3113:11:67"
+              "src": "3113:11:73"
             },
             "returnParameters": {
-              "id": 25647,
+              "id": 26227,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25646,
+                  "id": 26226,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25656,
-                  "src": "3148:13:67",
+                  "scope": 26236,
+                  "src": "3148:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -4942,10 +4938,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25645,
+                    "id": 26225,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3148:6:67",
+                    "src": "3148:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -4954,22 +4950,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "3147:15:67"
+              "src": "3147:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 25671,
+            "id": 26251,
             "nodeType": "FunctionDefinition",
-            "src": "3218:127:67",
+            "src": "3218:127:73",
             "nodes": [],
             "body": {
-              "id": 25670,
+              "id": 26250,
               "nodeType": "Block",
-              "src": "3296:49:67",
+              "src": "3296:49:73",
               "nodes": [],
               "statements": [
                 {
@@ -4978,12 +4974,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 25666,
+                            "id": 26246,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25658,
-                            "src": "3332:4:67",
+                            "referencedDeclaration": 26238,
+                            "src": "3332:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes_memory_ptr",
                               "typeString": "bytes memory"
@@ -4998,33 +4994,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 25664,
+                            "id": 26244,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "3320:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "3320:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 25665,
+                          "id": 26245,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "3323:8:67",
+                          "memberLocation": "3323:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 27986,
-                          "src": "3320:11:67",
+                          "referencedDeclaration": 28566,
+                          "src": "3320:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_bytes_memory_ptr_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (bytes memory) pure external returns (string memory)"
                           }
                         },
-                        "id": 25667,
+                        "id": 26247,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -5033,7 +5029,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "3320:17:67",
+                        "src": "3320:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -5048,24 +5044,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 25663,
+                      "id": 26243,
                       "name": "yellow",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        25596,
-                        25611,
-                        25626,
-                        25641,
-                        25656
+                        26176,
+                        26191,
+                        26206,
+                        26221,
+                        26236
                       ],
-                      "referencedDeclaration": 25596,
-                      "src": "3313:6:67",
+                      "referencedDeclaration": 26176,
+                      "src": "3313:6:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 25668,
+                    "id": 26248,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -5074,17 +5070,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "3313:25:67",
+                    "src": "3313:25:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 25662,
-                  "id": 25669,
+                  "functionReturnParameters": 26242,
+                  "id": 26249,
                   "nodeType": "Return",
-                  "src": "3306:32:67"
+                  "src": "3306:32:73"
                 }
               ]
             },
@@ -5092,20 +5088,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "yellowBytes",
-            "nameLocation": "3227:11:67",
+            "nameLocation": "3227:11:73",
             "parameters": {
-              "id": 25659,
+              "id": 26239,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25658,
+                  "id": 26238,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "3252:4:67",
+                  "nameLocation": "3252:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25671,
-                  "src": "3239:17:67",
+                  "scope": 26251,
+                  "src": "3239:17:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -5113,10 +5109,10 @@ export const StdStyle =
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 25657,
+                    "id": 26237,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3239:5:67",
+                    "src": "3239:5:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -5125,21 +5121,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "3238:19:67"
+              "src": "3238:19:73"
             },
             "returnParameters": {
-              "id": 25662,
+              "id": 26242,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25661,
+                  "id": 26241,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25671,
-                  "src": "3281:13:67",
+                  "scope": 26251,
+                  "src": "3281:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -5147,10 +5143,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25660,
+                    "id": 26240,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3281:6:67",
+                    "src": "3281:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -5159,22 +5155,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "3280:15:67"
+              "src": "3280:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 25686,
+            "id": 26266,
             "nodeType": "FunctionDefinition",
-            "src": "3351:124:67",
+            "src": "3351:124:73",
             "nodes": [],
             "body": {
-              "id": 25685,
+              "id": 26265,
               "nodeType": "Block",
-              "src": "3426:49:67",
+              "src": "3426:49:73",
               "nodes": [],
               "statements": [
                 {
@@ -5183,12 +5179,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 25681,
+                            "id": 26261,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25673,
-                            "src": "3462:4:67",
+                            "referencedDeclaration": 26253,
+                            "src": "3462:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes32",
                               "typeString": "bytes32"
@@ -5203,33 +5199,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 25679,
+                            "id": 26259,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "3450:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "3450:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 25680,
+                          "id": 26260,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "3453:8:67",
+                          "memberLocation": "3453:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 27993,
-                          "src": "3450:11:67",
+                          "referencedDeclaration": 28573,
+                          "src": "3450:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_bytes32_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (bytes32) pure external returns (string memory)"
                           }
                         },
-                        "id": 25682,
+                        "id": 26262,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -5238,7 +5234,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "3450:17:67",
+                        "src": "3450:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -5253,24 +5249,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 25678,
+                      "id": 26258,
                       "name": "yellow",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        25596,
-                        25611,
-                        25626,
-                        25641,
-                        25656
+                        26176,
+                        26191,
+                        26206,
+                        26221,
+                        26236
                       ],
-                      "referencedDeclaration": 25596,
-                      "src": "3443:6:67",
+                      "referencedDeclaration": 26176,
+                      "src": "3443:6:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 25683,
+                    "id": 26263,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -5279,17 +5275,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "3443:25:67",
+                    "src": "3443:25:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 25677,
-                  "id": 25684,
+                  "functionReturnParameters": 26257,
+                  "id": 26264,
                   "nodeType": "Return",
-                  "src": "3436:32:67"
+                  "src": "3436:32:73"
                 }
               ]
             },
@@ -5297,20 +5293,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "yellowBytes32",
-            "nameLocation": "3360:13:67",
+            "nameLocation": "3360:13:73",
             "parameters": {
-              "id": 25674,
+              "id": 26254,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25673,
+                  "id": 26253,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "3382:4:67",
+                  "nameLocation": "3382:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25686,
-                  "src": "3374:12:67",
+                  "scope": 26266,
+                  "src": "3374:12:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -5318,10 +5314,10 @@ export const StdStyle =
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 25672,
+                    "id": 26252,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3374:7:67",
+                    "src": "3374:7:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -5330,21 +5326,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "3373:14:67"
+              "src": "3373:14:73"
             },
             "returnParameters": {
-              "id": 25677,
+              "id": 26257,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25676,
+                  "id": 26256,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25686,
-                  "src": "3411:13:67",
+                  "scope": 26266,
+                  "src": "3411:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -5352,10 +5348,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25675,
+                    "id": 26255,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3411:6:67",
+                    "src": "3411:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -5364,46 +5360,46 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "3410:15:67"
+              "src": "3410:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 25699,
+            "id": 26279,
             "nodeType": "FunctionDefinition",
-            "src": "3481:119:67",
+            "src": "3481:119:73",
             "nodes": [],
             "body": {
-              "id": 25698,
+              "id": 26278,
               "nodeType": "Block",
-              "src": "3553:47:67",
+              "src": "3553:47:73",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 25694,
+                        "id": 26274,
                         "name": "BLUE",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 25333,
-                        "src": "3582:4:67",
+                        "referencedDeclaration": 25913,
+                        "src": "3582:4:73",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 25695,
+                        "id": 26275,
                         "name": "self",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 25688,
-                        "src": "3588:4:67",
+                        "referencedDeclaration": 26268,
+                        "src": "3588:4:73",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
@@ -5421,18 +5417,18 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 25693,
+                      "id": 26273,
                       "name": "styleConcat",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 25377,
-                      "src": "3570:11:67",
+                      "referencedDeclaration": 25957,
+                      "src": "3570:11:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory,string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 25696,
+                    "id": 26276,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -5441,17 +5437,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "3570:23:67",
+                    "src": "3570:23:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 25692,
-                  "id": 25697,
+                  "functionReturnParameters": 26272,
+                  "id": 26277,
                   "nodeType": "Return",
-                  "src": "3563:30:67"
+                  "src": "3563:30:73"
                 }
               ]
             },
@@ -5459,20 +5455,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "blue",
-            "nameLocation": "3490:4:67",
+            "nameLocation": "3490:4:73",
             "parameters": {
-              "id": 25689,
+              "id": 26269,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25688,
+                  "id": 26268,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "3509:4:67",
+                  "nameLocation": "3509:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25699,
-                  "src": "3495:18:67",
+                  "scope": 26279,
+                  "src": "3495:18:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -5480,10 +5476,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25687,
+                    "id": 26267,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3495:6:67",
+                    "src": "3495:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -5492,21 +5488,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "3494:20:67"
+              "src": "3494:20:73"
             },
             "returnParameters": {
-              "id": 25692,
+              "id": 26272,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25691,
+                  "id": 26271,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25699,
-                  "src": "3538:13:67",
+                  "scope": 26279,
+                  "src": "3538:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -5514,10 +5510,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25690,
+                    "id": 26270,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3538:6:67",
+                    "src": "3538:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -5526,22 +5522,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "3537:15:67"
+              "src": "3537:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 25714,
+            "id": 26294,
             "nodeType": "FunctionDefinition",
-            "src": "3606:113:67",
+            "src": "3606:113:73",
             "nodes": [],
             "body": {
-              "id": 25713,
+              "id": 26293,
               "nodeType": "Block",
-              "src": "3672:47:67",
+              "src": "3672:47:73",
               "nodes": [],
               "statements": [
                 {
@@ -5550,12 +5546,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 25709,
+                            "id": 26289,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25701,
-                            "src": "3706:4:67",
+                            "referencedDeclaration": 26281,
+                            "src": "3706:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -5570,33 +5566,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 25707,
+                            "id": 26287,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "3694:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "3694:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 25708,
+                          "id": 26288,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "3697:8:67",
+                          "memberLocation": "3697:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 28007,
-                          "src": "3694:11:67",
+                          "referencedDeclaration": 28587,
+                          "src": "3694:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_uint256_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (uint256) pure external returns (string memory)"
                           }
                         },
-                        "id": 25710,
+                        "id": 26290,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -5605,7 +5601,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "3694:17:67",
+                        "src": "3694:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -5620,24 +5616,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 25706,
+                      "id": 26286,
                       "name": "blue",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        25699,
-                        25714,
-                        25729,
-                        25744,
-                        25759
+                        26279,
+                        26294,
+                        26309,
+                        26324,
+                        26339
                       ],
-                      "referencedDeclaration": 25699,
-                      "src": "3689:4:67",
+                      "referencedDeclaration": 26279,
+                      "src": "3689:4:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 25711,
+                    "id": 26291,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -5646,17 +5642,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "3689:23:67",
+                    "src": "3689:23:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 25705,
-                  "id": 25712,
+                  "functionReturnParameters": 26285,
+                  "id": 26292,
                   "nodeType": "Return",
-                  "src": "3682:30:67"
+                  "src": "3682:30:73"
                 }
               ]
             },
@@ -5664,20 +5660,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "blue",
-            "nameLocation": "3615:4:67",
+            "nameLocation": "3615:4:73",
             "parameters": {
-              "id": 25702,
+              "id": 26282,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25701,
+                  "id": 26281,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "3628:4:67",
+                  "nameLocation": "3628:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25714,
-                  "src": "3620:12:67",
+                  "scope": 26294,
+                  "src": "3620:12:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -5685,10 +5681,10 @@ export const StdStyle =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 25700,
+                    "id": 26280,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3620:7:67",
+                    "src": "3620:7:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -5697,21 +5693,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "3619:14:67"
+              "src": "3619:14:73"
             },
             "returnParameters": {
-              "id": 25705,
+              "id": 26285,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25704,
+                  "id": 26284,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25714,
-                  "src": "3657:13:67",
+                  "scope": 26294,
+                  "src": "3657:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -5719,10 +5715,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25703,
+                    "id": 26283,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3657:6:67",
+                    "src": "3657:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -5731,22 +5727,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "3656:15:67"
+              "src": "3656:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 25729,
+            "id": 26309,
             "nodeType": "FunctionDefinition",
-            "src": "3725:112:67",
+            "src": "3725:112:73",
             "nodes": [],
             "body": {
-              "id": 25728,
+              "id": 26308,
               "nodeType": "Block",
-              "src": "3790:47:67",
+              "src": "3790:47:73",
               "nodes": [],
               "statements": [
                 {
@@ -5755,12 +5751,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 25724,
+                            "id": 26304,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25716,
-                            "src": "3824:4:67",
+                            "referencedDeclaration": 26296,
+                            "src": "3824:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -5775,33 +5771,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 25722,
+                            "id": 26302,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "3812:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "3812:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 25723,
+                          "id": 26303,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "3815:8:67",
+                          "memberLocation": "3815:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 28014,
-                          "src": "3812:11:67",
+                          "referencedDeclaration": 28594,
+                          "src": "3812:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_int256_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (int256) pure external returns (string memory)"
                           }
                         },
-                        "id": 25725,
+                        "id": 26305,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -5810,7 +5806,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "3812:17:67",
+                        "src": "3812:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -5825,24 +5821,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 25721,
+                      "id": 26301,
                       "name": "blue",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        25699,
-                        25714,
-                        25729,
-                        25744,
-                        25759
+                        26279,
+                        26294,
+                        26309,
+                        26324,
+                        26339
                       ],
-                      "referencedDeclaration": 25699,
-                      "src": "3807:4:67",
+                      "referencedDeclaration": 26279,
+                      "src": "3807:4:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 25726,
+                    "id": 26306,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -5851,17 +5847,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "3807:23:67",
+                    "src": "3807:23:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 25720,
-                  "id": 25727,
+                  "functionReturnParameters": 26300,
+                  "id": 26307,
                   "nodeType": "Return",
-                  "src": "3800:30:67"
+                  "src": "3800:30:73"
                 }
               ]
             },
@@ -5869,20 +5865,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "blue",
-            "nameLocation": "3734:4:67",
+            "nameLocation": "3734:4:73",
             "parameters": {
-              "id": 25717,
+              "id": 26297,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25716,
+                  "id": 26296,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "3746:4:67",
+                  "nameLocation": "3746:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25729,
-                  "src": "3739:11:67",
+                  "scope": 26309,
+                  "src": "3739:11:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -5890,10 +5886,10 @@ export const StdStyle =
                     "typeString": "int256"
                   },
                   "typeName": {
-                    "id": 25715,
+                    "id": 26295,
                     "name": "int256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3739:6:67",
+                    "src": "3739:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
@@ -5902,21 +5898,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "3738:13:67"
+              "src": "3738:13:73"
             },
             "returnParameters": {
-              "id": 25720,
+              "id": 26300,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25719,
+                  "id": 26299,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25729,
-                  "src": "3775:13:67",
+                  "scope": 26309,
+                  "src": "3775:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -5924,10 +5920,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25718,
+                    "id": 26298,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3775:6:67",
+                    "src": "3775:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -5936,22 +5932,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "3774:15:67"
+              "src": "3774:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 25744,
+            "id": 26324,
             "nodeType": "FunctionDefinition",
-            "src": "3843:113:67",
+            "src": "3843:113:73",
             "nodes": [],
             "body": {
-              "id": 25743,
+              "id": 26323,
               "nodeType": "Block",
-              "src": "3909:47:67",
+              "src": "3909:47:73",
               "nodes": [],
               "statements": [
                 {
@@ -5960,12 +5956,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 25739,
+                            "id": 26319,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25731,
-                            "src": "3943:4:67",
+                            "referencedDeclaration": 26311,
+                            "src": "3943:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -5980,33 +5976,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 25737,
+                            "id": 26317,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "3931:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "3931:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 25738,
+                          "id": 26318,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "3934:8:67",
+                          "memberLocation": "3934:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 27979,
-                          "src": "3931:11:67",
+                          "referencedDeclaration": 28559,
+                          "src": "3931:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_address_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (address) pure external returns (string memory)"
                           }
                         },
-                        "id": 25740,
+                        "id": 26320,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -6015,7 +6011,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "3931:17:67",
+                        "src": "3931:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -6030,24 +6026,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 25736,
+                      "id": 26316,
                       "name": "blue",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        25699,
-                        25714,
-                        25729,
-                        25744,
-                        25759
+                        26279,
+                        26294,
+                        26309,
+                        26324,
+                        26339
                       ],
-                      "referencedDeclaration": 25699,
-                      "src": "3926:4:67",
+                      "referencedDeclaration": 26279,
+                      "src": "3926:4:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 25741,
+                    "id": 26321,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -6056,17 +6052,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "3926:23:67",
+                    "src": "3926:23:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 25735,
-                  "id": 25742,
+                  "functionReturnParameters": 26315,
+                  "id": 26322,
                   "nodeType": "Return",
-                  "src": "3919:30:67"
+                  "src": "3919:30:73"
                 }
               ]
             },
@@ -6074,20 +6070,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "blue",
-            "nameLocation": "3852:4:67",
+            "nameLocation": "3852:4:73",
             "parameters": {
-              "id": 25732,
+              "id": 26312,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25731,
+                  "id": 26311,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "3865:4:67",
+                  "nameLocation": "3865:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25744,
-                  "src": "3857:12:67",
+                  "scope": 26324,
+                  "src": "3857:12:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -6095,10 +6091,10 @@ export const StdStyle =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 25730,
+                    "id": 26310,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3857:7:67",
+                    "src": "3857:7:73",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -6108,21 +6104,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "3856:14:67"
+              "src": "3856:14:73"
             },
             "returnParameters": {
-              "id": 25735,
+              "id": 26315,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25734,
+                  "id": 26314,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25744,
-                  "src": "3894:13:67",
+                  "scope": 26324,
+                  "src": "3894:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -6130,10 +6126,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25733,
+                    "id": 26313,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3894:6:67",
+                    "src": "3894:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -6142,22 +6138,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "3893:15:67"
+              "src": "3893:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 25759,
+            "id": 26339,
             "nodeType": "FunctionDefinition",
-            "src": "3962:110:67",
+            "src": "3962:110:73",
             "nodes": [],
             "body": {
-              "id": 25758,
+              "id": 26338,
               "nodeType": "Block",
-              "src": "4025:47:67",
+              "src": "4025:47:73",
               "nodes": [],
               "statements": [
                 {
@@ -6166,12 +6162,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 25754,
+                            "id": 26334,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25746,
-                            "src": "4059:4:67",
+                            "referencedDeclaration": 26326,
+                            "src": "4059:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
                               "typeString": "bool"
@@ -6186,33 +6182,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 25752,
+                            "id": 26332,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "4047:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "4047:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 25753,
+                          "id": 26333,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "4050:8:67",
+                          "memberLocation": "4050:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 28000,
-                          "src": "4047:11:67",
+                          "referencedDeclaration": 28580,
+                          "src": "4047:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_bool_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (bool) pure external returns (string memory)"
                           }
                         },
-                        "id": 25755,
+                        "id": 26335,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -6221,7 +6217,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "4047:17:67",
+                        "src": "4047:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -6236,24 +6232,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 25751,
+                      "id": 26331,
                       "name": "blue",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        25699,
-                        25714,
-                        25729,
-                        25744,
-                        25759
+                        26279,
+                        26294,
+                        26309,
+                        26324,
+                        26339
                       ],
-                      "referencedDeclaration": 25699,
-                      "src": "4042:4:67",
+                      "referencedDeclaration": 26279,
+                      "src": "4042:4:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 25756,
+                    "id": 26336,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -6262,17 +6258,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "4042:23:67",
+                    "src": "4042:23:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 25750,
-                  "id": 25757,
+                  "functionReturnParameters": 26330,
+                  "id": 26337,
                   "nodeType": "Return",
-                  "src": "4035:30:67"
+                  "src": "4035:30:73"
                 }
               ]
             },
@@ -6280,20 +6276,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "blue",
-            "nameLocation": "3971:4:67",
+            "nameLocation": "3971:4:73",
             "parameters": {
-              "id": 25747,
+              "id": 26327,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25746,
+                  "id": 26326,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "3981:4:67",
+                  "nameLocation": "3981:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25759,
-                  "src": "3976:9:67",
+                  "scope": 26339,
+                  "src": "3976:9:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -6301,10 +6297,10 @@ export const StdStyle =
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 25745,
+                    "id": 26325,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3976:4:67",
+                    "src": "3976:4:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -6313,21 +6309,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "3975:11:67"
+              "src": "3975:11:73"
             },
             "returnParameters": {
-              "id": 25750,
+              "id": 26330,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25749,
+                  "id": 26329,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25759,
-                  "src": "4010:13:67",
+                  "scope": 26339,
+                  "src": "4010:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -6335,10 +6331,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25748,
+                    "id": 26328,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4010:6:67",
+                    "src": "4010:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -6347,22 +6343,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "4009:15:67"
+              "src": "4009:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 25774,
+            "id": 26354,
             "nodeType": "FunctionDefinition",
-            "src": "4078:123:67",
+            "src": "4078:123:73",
             "nodes": [],
             "body": {
-              "id": 25773,
+              "id": 26353,
               "nodeType": "Block",
-              "src": "4154:47:67",
+              "src": "4154:47:73",
               "nodes": [],
               "statements": [
                 {
@@ -6371,12 +6367,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 25769,
+                            "id": 26349,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25761,
-                            "src": "4188:4:67",
+                            "referencedDeclaration": 26341,
+                            "src": "4188:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes_memory_ptr",
                               "typeString": "bytes memory"
@@ -6391,33 +6387,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 25767,
+                            "id": 26347,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "4176:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "4176:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 25768,
+                          "id": 26348,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "4179:8:67",
+                          "memberLocation": "4179:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 27986,
-                          "src": "4176:11:67",
+                          "referencedDeclaration": 28566,
+                          "src": "4176:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_bytes_memory_ptr_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (bytes memory) pure external returns (string memory)"
                           }
                         },
-                        "id": 25770,
+                        "id": 26350,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -6426,7 +6422,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "4176:17:67",
+                        "src": "4176:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -6441,24 +6437,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 25766,
+                      "id": 26346,
                       "name": "blue",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        25699,
-                        25714,
-                        25729,
-                        25744,
-                        25759
+                        26279,
+                        26294,
+                        26309,
+                        26324,
+                        26339
                       ],
-                      "referencedDeclaration": 25699,
-                      "src": "4171:4:67",
+                      "referencedDeclaration": 26279,
+                      "src": "4171:4:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 25771,
+                    "id": 26351,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -6467,17 +6463,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "4171:23:67",
+                    "src": "4171:23:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 25765,
-                  "id": 25772,
+                  "functionReturnParameters": 26345,
+                  "id": 26352,
                   "nodeType": "Return",
-                  "src": "4164:30:67"
+                  "src": "4164:30:73"
                 }
               ]
             },
@@ -6485,20 +6481,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "blueBytes",
-            "nameLocation": "4087:9:67",
+            "nameLocation": "4087:9:73",
             "parameters": {
-              "id": 25762,
+              "id": 26342,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25761,
+                  "id": 26341,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "4110:4:67",
+                  "nameLocation": "4110:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25774,
-                  "src": "4097:17:67",
+                  "scope": 26354,
+                  "src": "4097:17:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -6506,10 +6502,10 @@ export const StdStyle =
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 25760,
+                    "id": 26340,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4097:5:67",
+                    "src": "4097:5:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -6518,21 +6514,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "4096:19:67"
+              "src": "4096:19:73"
             },
             "returnParameters": {
-              "id": 25765,
+              "id": 26345,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25764,
+                  "id": 26344,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25774,
-                  "src": "4139:13:67",
+                  "scope": 26354,
+                  "src": "4139:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -6540,10 +6536,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25763,
+                    "id": 26343,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4139:6:67",
+                    "src": "4139:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -6552,22 +6548,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "4138:15:67"
+              "src": "4138:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 25789,
+            "id": 26369,
             "nodeType": "FunctionDefinition",
-            "src": "4207:120:67",
+            "src": "4207:120:73",
             "nodes": [],
             "body": {
-              "id": 25788,
+              "id": 26368,
               "nodeType": "Block",
-              "src": "4280:47:67",
+              "src": "4280:47:73",
               "nodes": [],
               "statements": [
                 {
@@ -6576,12 +6572,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 25784,
+                            "id": 26364,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25776,
-                            "src": "4314:4:67",
+                            "referencedDeclaration": 26356,
+                            "src": "4314:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes32",
                               "typeString": "bytes32"
@@ -6596,33 +6592,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 25782,
+                            "id": 26362,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "4302:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "4302:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 25783,
+                          "id": 26363,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "4305:8:67",
+                          "memberLocation": "4305:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 27993,
-                          "src": "4302:11:67",
+                          "referencedDeclaration": 28573,
+                          "src": "4302:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_bytes32_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (bytes32) pure external returns (string memory)"
                           }
                         },
-                        "id": 25785,
+                        "id": 26365,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -6631,7 +6627,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "4302:17:67",
+                        "src": "4302:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -6646,24 +6642,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 25781,
+                      "id": 26361,
                       "name": "blue",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        25699,
-                        25714,
-                        25729,
-                        25744,
-                        25759
+                        26279,
+                        26294,
+                        26309,
+                        26324,
+                        26339
                       ],
-                      "referencedDeclaration": 25699,
-                      "src": "4297:4:67",
+                      "referencedDeclaration": 26279,
+                      "src": "4297:4:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 25786,
+                    "id": 26366,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -6672,17 +6668,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "4297:23:67",
+                    "src": "4297:23:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 25780,
-                  "id": 25787,
+                  "functionReturnParameters": 26360,
+                  "id": 26367,
                   "nodeType": "Return",
-                  "src": "4290:30:67"
+                  "src": "4290:30:73"
                 }
               ]
             },
@@ -6690,20 +6686,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "blueBytes32",
-            "nameLocation": "4216:11:67",
+            "nameLocation": "4216:11:73",
             "parameters": {
-              "id": 25777,
+              "id": 26357,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25776,
+                  "id": 26356,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "4236:4:67",
+                  "nameLocation": "4236:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25789,
-                  "src": "4228:12:67",
+                  "scope": 26369,
+                  "src": "4228:12:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -6711,10 +6707,10 @@ export const StdStyle =
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 25775,
+                    "id": 26355,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4228:7:67",
+                    "src": "4228:7:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -6723,21 +6719,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "4227:14:67"
+              "src": "4227:14:73"
             },
             "returnParameters": {
-              "id": 25780,
+              "id": 26360,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25779,
+                  "id": 26359,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25789,
-                  "src": "4265:13:67",
+                  "scope": 26369,
+                  "src": "4265:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -6745,10 +6741,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25778,
+                    "id": 26358,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4265:6:67",
+                    "src": "4265:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -6757,46 +6753,46 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "4264:15:67"
+              "src": "4264:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 25802,
+            "id": 26382,
             "nodeType": "FunctionDefinition",
-            "src": "4333:125:67",
+            "src": "4333:125:73",
             "nodes": [],
             "body": {
-              "id": 25801,
+              "id": 26381,
               "nodeType": "Block",
-              "src": "4408:50:67",
+              "src": "4408:50:73",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 25797,
+                        "id": 26377,
                         "name": "MAGENTA",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 25336,
-                        "src": "4437:7:67",
+                        "referencedDeclaration": 25916,
+                        "src": "4437:7:73",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 25798,
+                        "id": 26378,
                         "name": "self",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 25791,
-                        "src": "4446:4:67",
+                        "referencedDeclaration": 26371,
+                        "src": "4446:4:73",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
@@ -6814,18 +6810,18 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 25796,
+                      "id": 26376,
                       "name": "styleConcat",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 25377,
-                      "src": "4425:11:67",
+                      "referencedDeclaration": 25957,
+                      "src": "4425:11:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory,string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 25799,
+                    "id": 26379,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -6834,17 +6830,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "4425:26:67",
+                    "src": "4425:26:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 25795,
-                  "id": 25800,
+                  "functionReturnParameters": 26375,
+                  "id": 26380,
                   "nodeType": "Return",
-                  "src": "4418:33:67"
+                  "src": "4418:33:73"
                 }
               ]
             },
@@ -6852,20 +6848,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "magenta",
-            "nameLocation": "4342:7:67",
+            "nameLocation": "4342:7:73",
             "parameters": {
-              "id": 25792,
+              "id": 26372,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25791,
+                  "id": 26371,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "4364:4:67",
+                  "nameLocation": "4364:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25802,
-                  "src": "4350:18:67",
+                  "scope": 26382,
+                  "src": "4350:18:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -6873,10 +6869,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25790,
+                    "id": 26370,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4350:6:67",
+                    "src": "4350:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -6885,21 +6881,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "4349:20:67"
+              "src": "4349:20:73"
             },
             "returnParameters": {
-              "id": 25795,
+              "id": 26375,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25794,
+                  "id": 26374,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25802,
-                  "src": "4393:13:67",
+                  "scope": 26382,
+                  "src": "4393:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -6907,10 +6903,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25793,
+                    "id": 26373,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4393:6:67",
+                    "src": "4393:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -6919,22 +6915,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "4392:15:67"
+              "src": "4392:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 25817,
+            "id": 26397,
             "nodeType": "FunctionDefinition",
-            "src": "4464:119:67",
+            "src": "4464:119:73",
             "nodes": [],
             "body": {
-              "id": 25816,
+              "id": 26396,
               "nodeType": "Block",
-              "src": "4533:50:67",
+              "src": "4533:50:73",
               "nodes": [],
               "statements": [
                 {
@@ -6943,12 +6939,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 25812,
+                            "id": 26392,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25804,
-                            "src": "4570:4:67",
+                            "referencedDeclaration": 26384,
+                            "src": "4570:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -6963,33 +6959,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 25810,
+                            "id": 26390,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "4558:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "4558:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 25811,
+                          "id": 26391,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "4561:8:67",
+                          "memberLocation": "4561:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 28007,
-                          "src": "4558:11:67",
+                          "referencedDeclaration": 28587,
+                          "src": "4558:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_uint256_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (uint256) pure external returns (string memory)"
                           }
                         },
-                        "id": 25813,
+                        "id": 26393,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -6998,7 +6994,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "4558:17:67",
+                        "src": "4558:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -7013,24 +7009,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 25809,
+                      "id": 26389,
                       "name": "magenta",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        25802,
-                        25817,
-                        25832,
-                        25847,
-                        25862
+                        26382,
+                        26397,
+                        26412,
+                        26427,
+                        26442
                       ],
-                      "referencedDeclaration": 25802,
-                      "src": "4550:7:67",
+                      "referencedDeclaration": 26382,
+                      "src": "4550:7:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 25814,
+                    "id": 26394,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -7039,17 +7035,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "4550:26:67",
+                    "src": "4550:26:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 25808,
-                  "id": 25815,
+                  "functionReturnParameters": 26388,
+                  "id": 26395,
                   "nodeType": "Return",
-                  "src": "4543:33:67"
+                  "src": "4543:33:73"
                 }
               ]
             },
@@ -7057,20 +7053,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "magenta",
-            "nameLocation": "4473:7:67",
+            "nameLocation": "4473:7:73",
             "parameters": {
-              "id": 25805,
+              "id": 26385,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25804,
+                  "id": 26384,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "4489:4:67",
+                  "nameLocation": "4489:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25817,
-                  "src": "4481:12:67",
+                  "scope": 26397,
+                  "src": "4481:12:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -7078,10 +7074,10 @@ export const StdStyle =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 25803,
+                    "id": 26383,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4481:7:67",
+                    "src": "4481:7:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -7090,21 +7086,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "4480:14:67"
+              "src": "4480:14:73"
             },
             "returnParameters": {
-              "id": 25808,
+              "id": 26388,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25807,
+                  "id": 26387,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25817,
-                  "src": "4518:13:67",
+                  "scope": 26397,
+                  "src": "4518:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -7112,10 +7108,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25806,
+                    "id": 26386,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4518:6:67",
+                    "src": "4518:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -7124,22 +7120,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "4517:15:67"
+              "src": "4517:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 25832,
+            "id": 26412,
             "nodeType": "FunctionDefinition",
-            "src": "4589:118:67",
+            "src": "4589:118:73",
             "nodes": [],
             "body": {
-              "id": 25831,
+              "id": 26411,
               "nodeType": "Block",
-              "src": "4657:50:67",
+              "src": "4657:50:73",
               "nodes": [],
               "statements": [
                 {
@@ -7148,12 +7144,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 25827,
+                            "id": 26407,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25819,
-                            "src": "4694:4:67",
+                            "referencedDeclaration": 26399,
+                            "src": "4694:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -7168,33 +7164,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 25825,
+                            "id": 26405,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "4682:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "4682:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 25826,
+                          "id": 26406,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "4685:8:67",
+                          "memberLocation": "4685:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 28014,
-                          "src": "4682:11:67",
+                          "referencedDeclaration": 28594,
+                          "src": "4682:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_int256_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (int256) pure external returns (string memory)"
                           }
                         },
-                        "id": 25828,
+                        "id": 26408,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -7203,7 +7199,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "4682:17:67",
+                        "src": "4682:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -7218,24 +7214,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 25824,
+                      "id": 26404,
                       "name": "magenta",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        25802,
-                        25817,
-                        25832,
-                        25847,
-                        25862
+                        26382,
+                        26397,
+                        26412,
+                        26427,
+                        26442
                       ],
-                      "referencedDeclaration": 25802,
-                      "src": "4674:7:67",
+                      "referencedDeclaration": 26382,
+                      "src": "4674:7:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 25829,
+                    "id": 26409,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -7244,17 +7240,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "4674:26:67",
+                    "src": "4674:26:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 25823,
-                  "id": 25830,
+                  "functionReturnParameters": 26403,
+                  "id": 26410,
                   "nodeType": "Return",
-                  "src": "4667:33:67"
+                  "src": "4667:33:73"
                 }
               ]
             },
@@ -7262,20 +7258,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "magenta",
-            "nameLocation": "4598:7:67",
+            "nameLocation": "4598:7:73",
             "parameters": {
-              "id": 25820,
+              "id": 26400,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25819,
+                  "id": 26399,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "4613:4:67",
+                  "nameLocation": "4613:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25832,
-                  "src": "4606:11:67",
+                  "scope": 26412,
+                  "src": "4606:11:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -7283,10 +7279,10 @@ export const StdStyle =
                     "typeString": "int256"
                   },
                   "typeName": {
-                    "id": 25818,
+                    "id": 26398,
                     "name": "int256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4606:6:67",
+                    "src": "4606:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
@@ -7295,21 +7291,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "4605:13:67"
+              "src": "4605:13:73"
             },
             "returnParameters": {
-              "id": 25823,
+              "id": 26403,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25822,
+                  "id": 26402,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25832,
-                  "src": "4642:13:67",
+                  "scope": 26412,
+                  "src": "4642:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -7317,10 +7313,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25821,
+                    "id": 26401,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4642:6:67",
+                    "src": "4642:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -7329,22 +7325,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "4641:15:67"
+              "src": "4641:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 25847,
+            "id": 26427,
             "nodeType": "FunctionDefinition",
-            "src": "4713:119:67",
+            "src": "4713:119:73",
             "nodes": [],
             "body": {
-              "id": 25846,
+              "id": 26426,
               "nodeType": "Block",
-              "src": "4782:50:67",
+              "src": "4782:50:73",
               "nodes": [],
               "statements": [
                 {
@@ -7353,12 +7349,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 25842,
+                            "id": 26422,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25834,
-                            "src": "4819:4:67",
+                            "referencedDeclaration": 26414,
+                            "src": "4819:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -7373,33 +7369,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 25840,
+                            "id": 26420,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "4807:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "4807:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 25841,
+                          "id": 26421,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "4810:8:67",
+                          "memberLocation": "4810:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 27979,
-                          "src": "4807:11:67",
+                          "referencedDeclaration": 28559,
+                          "src": "4807:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_address_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (address) pure external returns (string memory)"
                           }
                         },
-                        "id": 25843,
+                        "id": 26423,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -7408,7 +7404,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "4807:17:67",
+                        "src": "4807:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -7423,24 +7419,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 25839,
+                      "id": 26419,
                       "name": "magenta",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        25802,
-                        25817,
-                        25832,
-                        25847,
-                        25862
+                        26382,
+                        26397,
+                        26412,
+                        26427,
+                        26442
                       ],
-                      "referencedDeclaration": 25802,
-                      "src": "4799:7:67",
+                      "referencedDeclaration": 26382,
+                      "src": "4799:7:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 25844,
+                    "id": 26424,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -7449,17 +7445,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "4799:26:67",
+                    "src": "4799:26:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 25838,
-                  "id": 25845,
+                  "functionReturnParameters": 26418,
+                  "id": 26425,
                   "nodeType": "Return",
-                  "src": "4792:33:67"
+                  "src": "4792:33:73"
                 }
               ]
             },
@@ -7467,20 +7463,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "magenta",
-            "nameLocation": "4722:7:67",
+            "nameLocation": "4722:7:73",
             "parameters": {
-              "id": 25835,
+              "id": 26415,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25834,
+                  "id": 26414,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "4738:4:67",
+                  "nameLocation": "4738:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25847,
-                  "src": "4730:12:67",
+                  "scope": 26427,
+                  "src": "4730:12:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -7488,10 +7484,10 @@ export const StdStyle =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 25833,
+                    "id": 26413,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4730:7:67",
+                    "src": "4730:7:73",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -7501,21 +7497,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "4729:14:67"
+              "src": "4729:14:73"
             },
             "returnParameters": {
-              "id": 25838,
+              "id": 26418,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25837,
+                  "id": 26417,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25847,
-                  "src": "4767:13:67",
+                  "scope": 26427,
+                  "src": "4767:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -7523,10 +7519,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25836,
+                    "id": 26416,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4767:6:67",
+                    "src": "4767:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -7535,22 +7531,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "4766:15:67"
+              "src": "4766:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 25862,
+            "id": 26442,
             "nodeType": "FunctionDefinition",
-            "src": "4838:116:67",
+            "src": "4838:116:73",
             "nodes": [],
             "body": {
-              "id": 25861,
+              "id": 26441,
               "nodeType": "Block",
-              "src": "4904:50:67",
+              "src": "4904:50:73",
               "nodes": [],
               "statements": [
                 {
@@ -7559,12 +7555,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 25857,
+                            "id": 26437,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25849,
-                            "src": "4941:4:67",
+                            "referencedDeclaration": 26429,
+                            "src": "4941:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
                               "typeString": "bool"
@@ -7579,33 +7575,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 25855,
+                            "id": 26435,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "4929:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "4929:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 25856,
+                          "id": 26436,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "4932:8:67",
+                          "memberLocation": "4932:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 28000,
-                          "src": "4929:11:67",
+                          "referencedDeclaration": 28580,
+                          "src": "4929:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_bool_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (bool) pure external returns (string memory)"
                           }
                         },
-                        "id": 25858,
+                        "id": 26438,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -7614,7 +7610,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "4929:17:67",
+                        "src": "4929:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -7629,24 +7625,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 25854,
+                      "id": 26434,
                       "name": "magenta",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        25802,
-                        25817,
-                        25832,
-                        25847,
-                        25862
+                        26382,
+                        26397,
+                        26412,
+                        26427,
+                        26442
                       ],
-                      "referencedDeclaration": 25802,
-                      "src": "4921:7:67",
+                      "referencedDeclaration": 26382,
+                      "src": "4921:7:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 25859,
+                    "id": 26439,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -7655,17 +7651,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "4921:26:67",
+                    "src": "4921:26:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 25853,
-                  "id": 25860,
+                  "functionReturnParameters": 26433,
+                  "id": 26440,
                   "nodeType": "Return",
-                  "src": "4914:33:67"
+                  "src": "4914:33:73"
                 }
               ]
             },
@@ -7673,20 +7669,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "magenta",
-            "nameLocation": "4847:7:67",
+            "nameLocation": "4847:7:73",
             "parameters": {
-              "id": 25850,
+              "id": 26430,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25849,
+                  "id": 26429,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "4860:4:67",
+                  "nameLocation": "4860:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25862,
-                  "src": "4855:9:67",
+                  "scope": 26442,
+                  "src": "4855:9:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -7694,10 +7690,10 @@ export const StdStyle =
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 25848,
+                    "id": 26428,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4855:4:67",
+                    "src": "4855:4:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -7706,21 +7702,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "4854:11:67"
+              "src": "4854:11:73"
             },
             "returnParameters": {
-              "id": 25853,
+              "id": 26433,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25852,
+                  "id": 26432,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25862,
-                  "src": "4889:13:67",
+                  "scope": 26442,
+                  "src": "4889:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -7728,10 +7724,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25851,
+                    "id": 26431,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4889:6:67",
+                    "src": "4889:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -7740,22 +7736,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "4888:15:67"
+              "src": "4888:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 25877,
+            "id": 26457,
             "nodeType": "FunctionDefinition",
-            "src": "4960:129:67",
+            "src": "4960:129:73",
             "nodes": [],
             "body": {
-              "id": 25876,
+              "id": 26456,
               "nodeType": "Block",
-              "src": "5039:50:67",
+              "src": "5039:50:73",
               "nodes": [],
               "statements": [
                 {
@@ -7764,12 +7760,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 25872,
+                            "id": 26452,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25864,
-                            "src": "5076:4:67",
+                            "referencedDeclaration": 26444,
+                            "src": "5076:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes_memory_ptr",
                               "typeString": "bytes memory"
@@ -7784,33 +7780,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 25870,
+                            "id": 26450,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "5064:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "5064:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 25871,
+                          "id": 26451,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "5067:8:67",
+                          "memberLocation": "5067:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 27986,
-                          "src": "5064:11:67",
+                          "referencedDeclaration": 28566,
+                          "src": "5064:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_bytes_memory_ptr_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (bytes memory) pure external returns (string memory)"
                           }
                         },
-                        "id": 25873,
+                        "id": 26453,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -7819,7 +7815,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "5064:17:67",
+                        "src": "5064:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -7834,24 +7830,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 25869,
+                      "id": 26449,
                       "name": "magenta",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        25802,
-                        25817,
-                        25832,
-                        25847,
-                        25862
+                        26382,
+                        26397,
+                        26412,
+                        26427,
+                        26442
                       ],
-                      "referencedDeclaration": 25802,
-                      "src": "5056:7:67",
+                      "referencedDeclaration": 26382,
+                      "src": "5056:7:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 25874,
+                    "id": 26454,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -7860,17 +7856,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "5056:26:67",
+                    "src": "5056:26:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 25868,
-                  "id": 25875,
+                  "functionReturnParameters": 26448,
+                  "id": 26455,
                   "nodeType": "Return",
-                  "src": "5049:33:67"
+                  "src": "5049:33:73"
                 }
               ]
             },
@@ -7878,20 +7874,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "magentaBytes",
-            "nameLocation": "4969:12:67",
+            "nameLocation": "4969:12:73",
             "parameters": {
-              "id": 25865,
+              "id": 26445,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25864,
+                  "id": 26444,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "4995:4:67",
+                  "nameLocation": "4995:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25877,
-                  "src": "4982:17:67",
+                  "scope": 26457,
+                  "src": "4982:17:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -7899,10 +7895,10 @@ export const StdStyle =
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 25863,
+                    "id": 26443,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4982:5:67",
+                    "src": "4982:5:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -7911,21 +7907,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "4981:19:67"
+              "src": "4981:19:73"
             },
             "returnParameters": {
-              "id": 25868,
+              "id": 26448,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25867,
+                  "id": 26447,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25877,
-                  "src": "5024:13:67",
+                  "scope": 26457,
+                  "src": "5024:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -7933,10 +7929,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25866,
+                    "id": 26446,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5024:6:67",
+                    "src": "5024:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -7945,22 +7941,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "5023:15:67"
+              "src": "5023:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 25892,
+            "id": 26472,
             "nodeType": "FunctionDefinition",
-            "src": "5095:126:67",
+            "src": "5095:126:73",
             "nodes": [],
             "body": {
-              "id": 25891,
+              "id": 26471,
               "nodeType": "Block",
-              "src": "5171:50:67",
+              "src": "5171:50:73",
               "nodes": [],
               "statements": [
                 {
@@ -7969,12 +7965,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 25887,
+                            "id": 26467,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25879,
-                            "src": "5208:4:67",
+                            "referencedDeclaration": 26459,
+                            "src": "5208:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes32",
                               "typeString": "bytes32"
@@ -7989,33 +7985,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 25885,
+                            "id": 26465,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "5196:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "5196:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 25886,
+                          "id": 26466,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "5199:8:67",
+                          "memberLocation": "5199:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 27993,
-                          "src": "5196:11:67",
+                          "referencedDeclaration": 28573,
+                          "src": "5196:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_bytes32_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (bytes32) pure external returns (string memory)"
                           }
                         },
-                        "id": 25888,
+                        "id": 26468,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -8024,7 +8020,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "5196:17:67",
+                        "src": "5196:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -8039,24 +8035,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 25884,
+                      "id": 26464,
                       "name": "magenta",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        25802,
-                        25817,
-                        25832,
-                        25847,
-                        25862
+                        26382,
+                        26397,
+                        26412,
+                        26427,
+                        26442
                       ],
-                      "referencedDeclaration": 25802,
-                      "src": "5188:7:67",
+                      "referencedDeclaration": 26382,
+                      "src": "5188:7:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 25889,
+                    "id": 26469,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -8065,17 +8061,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "5188:26:67",
+                    "src": "5188:26:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 25883,
-                  "id": 25890,
+                  "functionReturnParameters": 26463,
+                  "id": 26470,
                   "nodeType": "Return",
-                  "src": "5181:33:67"
+                  "src": "5181:33:73"
                 }
               ]
             },
@@ -8083,20 +8079,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "magentaBytes32",
-            "nameLocation": "5104:14:67",
+            "nameLocation": "5104:14:73",
             "parameters": {
-              "id": 25880,
+              "id": 26460,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25879,
+                  "id": 26459,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "5127:4:67",
+                  "nameLocation": "5127:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25892,
-                  "src": "5119:12:67",
+                  "scope": 26472,
+                  "src": "5119:12:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -8104,10 +8100,10 @@ export const StdStyle =
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 25878,
+                    "id": 26458,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5119:7:67",
+                    "src": "5119:7:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -8116,21 +8112,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "5118:14:67"
+              "src": "5118:14:73"
             },
             "returnParameters": {
-              "id": 25883,
+              "id": 26463,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25882,
+                  "id": 26462,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25892,
-                  "src": "5156:13:67",
+                  "scope": 26472,
+                  "src": "5156:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -8138,10 +8134,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25881,
+                    "id": 26461,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5156:6:67",
+                    "src": "5156:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -8150,46 +8146,46 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "5155:15:67"
+              "src": "5155:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 25905,
+            "id": 26485,
             "nodeType": "FunctionDefinition",
-            "src": "5227:119:67",
+            "src": "5227:119:73",
             "nodes": [],
             "body": {
-              "id": 25904,
+              "id": 26484,
               "nodeType": "Block",
-              "src": "5299:47:67",
+              "src": "5299:47:73",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 25900,
+                        "id": 26480,
                         "name": "CYAN",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 25339,
-                        "src": "5328:4:67",
+                        "referencedDeclaration": 25919,
+                        "src": "5328:4:73",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 25901,
+                        "id": 26481,
                         "name": "self",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 25894,
-                        "src": "5334:4:67",
+                        "referencedDeclaration": 26474,
+                        "src": "5334:4:73",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
@@ -8207,18 +8203,18 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 25899,
+                      "id": 26479,
                       "name": "styleConcat",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 25377,
-                      "src": "5316:11:67",
+                      "referencedDeclaration": 25957,
+                      "src": "5316:11:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory,string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 25902,
+                    "id": 26482,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -8227,17 +8223,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "5316:23:67",
+                    "src": "5316:23:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 25898,
-                  "id": 25903,
+                  "functionReturnParameters": 26478,
+                  "id": 26483,
                   "nodeType": "Return",
-                  "src": "5309:30:67"
+                  "src": "5309:30:73"
                 }
               ]
             },
@@ -8245,20 +8241,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "cyan",
-            "nameLocation": "5236:4:67",
+            "nameLocation": "5236:4:73",
             "parameters": {
-              "id": 25895,
+              "id": 26475,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25894,
+                  "id": 26474,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "5255:4:67",
+                  "nameLocation": "5255:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25905,
-                  "src": "5241:18:67",
+                  "scope": 26485,
+                  "src": "5241:18:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -8266,10 +8262,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25893,
+                    "id": 26473,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5241:6:67",
+                    "src": "5241:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -8278,21 +8274,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "5240:20:67"
+              "src": "5240:20:73"
             },
             "returnParameters": {
-              "id": 25898,
+              "id": 26478,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25897,
+                  "id": 26477,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25905,
-                  "src": "5284:13:67",
+                  "scope": 26485,
+                  "src": "5284:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -8300,10 +8296,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25896,
+                    "id": 26476,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5284:6:67",
+                    "src": "5284:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -8312,22 +8308,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "5283:15:67"
+              "src": "5283:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 25920,
+            "id": 26500,
             "nodeType": "FunctionDefinition",
-            "src": "5352:113:67",
+            "src": "5352:113:73",
             "nodes": [],
             "body": {
-              "id": 25919,
+              "id": 26499,
               "nodeType": "Block",
-              "src": "5418:47:67",
+              "src": "5418:47:73",
               "nodes": [],
               "statements": [
                 {
@@ -8336,12 +8332,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 25915,
+                            "id": 26495,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25907,
-                            "src": "5452:4:67",
+                            "referencedDeclaration": 26487,
+                            "src": "5452:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -8356,33 +8352,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 25913,
+                            "id": 26493,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "5440:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "5440:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 25914,
+                          "id": 26494,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "5443:8:67",
+                          "memberLocation": "5443:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 28007,
-                          "src": "5440:11:67",
+                          "referencedDeclaration": 28587,
+                          "src": "5440:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_uint256_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (uint256) pure external returns (string memory)"
                           }
                         },
-                        "id": 25916,
+                        "id": 26496,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -8391,7 +8387,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "5440:17:67",
+                        "src": "5440:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -8406,24 +8402,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 25912,
+                      "id": 26492,
                       "name": "cyan",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        25905,
-                        25920,
-                        25935,
-                        25950,
-                        25965
+                        26485,
+                        26500,
+                        26515,
+                        26530,
+                        26545
                       ],
-                      "referencedDeclaration": 25905,
-                      "src": "5435:4:67",
+                      "referencedDeclaration": 26485,
+                      "src": "5435:4:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 25917,
+                    "id": 26497,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -8432,17 +8428,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "5435:23:67",
+                    "src": "5435:23:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 25911,
-                  "id": 25918,
+                  "functionReturnParameters": 26491,
+                  "id": 26498,
                   "nodeType": "Return",
-                  "src": "5428:30:67"
+                  "src": "5428:30:73"
                 }
               ]
             },
@@ -8450,20 +8446,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "cyan",
-            "nameLocation": "5361:4:67",
+            "nameLocation": "5361:4:73",
             "parameters": {
-              "id": 25908,
+              "id": 26488,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25907,
+                  "id": 26487,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "5374:4:67",
+                  "nameLocation": "5374:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25920,
-                  "src": "5366:12:67",
+                  "scope": 26500,
+                  "src": "5366:12:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -8471,10 +8467,10 @@ export const StdStyle =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 25906,
+                    "id": 26486,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5366:7:67",
+                    "src": "5366:7:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -8483,21 +8479,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "5365:14:67"
+              "src": "5365:14:73"
             },
             "returnParameters": {
-              "id": 25911,
+              "id": 26491,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25910,
+                  "id": 26490,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25920,
-                  "src": "5403:13:67",
+                  "scope": 26500,
+                  "src": "5403:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -8505,10 +8501,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25909,
+                    "id": 26489,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5403:6:67",
+                    "src": "5403:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -8517,22 +8513,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "5402:15:67"
+              "src": "5402:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 25935,
+            "id": 26515,
             "nodeType": "FunctionDefinition",
-            "src": "5471:112:67",
+            "src": "5471:112:73",
             "nodes": [],
             "body": {
-              "id": 25934,
+              "id": 26514,
               "nodeType": "Block",
-              "src": "5536:47:67",
+              "src": "5536:47:73",
               "nodes": [],
               "statements": [
                 {
@@ -8541,12 +8537,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 25930,
+                            "id": 26510,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25922,
-                            "src": "5570:4:67",
+                            "referencedDeclaration": 26502,
+                            "src": "5570:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -8561,33 +8557,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 25928,
+                            "id": 26508,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "5558:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "5558:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 25929,
+                          "id": 26509,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "5561:8:67",
+                          "memberLocation": "5561:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 28014,
-                          "src": "5558:11:67",
+                          "referencedDeclaration": 28594,
+                          "src": "5558:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_int256_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (int256) pure external returns (string memory)"
                           }
                         },
-                        "id": 25931,
+                        "id": 26511,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -8596,7 +8592,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "5558:17:67",
+                        "src": "5558:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -8611,24 +8607,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 25927,
+                      "id": 26507,
                       "name": "cyan",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        25905,
-                        25920,
-                        25935,
-                        25950,
-                        25965
+                        26485,
+                        26500,
+                        26515,
+                        26530,
+                        26545
                       ],
-                      "referencedDeclaration": 25905,
-                      "src": "5553:4:67",
+                      "referencedDeclaration": 26485,
+                      "src": "5553:4:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 25932,
+                    "id": 26512,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -8637,17 +8633,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "5553:23:67",
+                    "src": "5553:23:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 25926,
-                  "id": 25933,
+                  "functionReturnParameters": 26506,
+                  "id": 26513,
                   "nodeType": "Return",
-                  "src": "5546:30:67"
+                  "src": "5546:30:73"
                 }
               ]
             },
@@ -8655,20 +8651,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "cyan",
-            "nameLocation": "5480:4:67",
+            "nameLocation": "5480:4:73",
             "parameters": {
-              "id": 25923,
+              "id": 26503,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25922,
+                  "id": 26502,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "5492:4:67",
+                  "nameLocation": "5492:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25935,
-                  "src": "5485:11:67",
+                  "scope": 26515,
+                  "src": "5485:11:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -8676,10 +8672,10 @@ export const StdStyle =
                     "typeString": "int256"
                   },
                   "typeName": {
-                    "id": 25921,
+                    "id": 26501,
                     "name": "int256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5485:6:67",
+                    "src": "5485:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
@@ -8688,21 +8684,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "5484:13:67"
+              "src": "5484:13:73"
             },
             "returnParameters": {
-              "id": 25926,
+              "id": 26506,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25925,
+                  "id": 26505,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25935,
-                  "src": "5521:13:67",
+                  "scope": 26515,
+                  "src": "5521:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -8710,10 +8706,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25924,
+                    "id": 26504,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5521:6:67",
+                    "src": "5521:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -8722,22 +8718,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "5520:15:67"
+              "src": "5520:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 25950,
+            "id": 26530,
             "nodeType": "FunctionDefinition",
-            "src": "5589:113:67",
+            "src": "5589:113:73",
             "nodes": [],
             "body": {
-              "id": 25949,
+              "id": 26529,
               "nodeType": "Block",
-              "src": "5655:47:67",
+              "src": "5655:47:73",
               "nodes": [],
               "statements": [
                 {
@@ -8746,12 +8742,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 25945,
+                            "id": 26525,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25937,
-                            "src": "5689:4:67",
+                            "referencedDeclaration": 26517,
+                            "src": "5689:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -8766,33 +8762,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 25943,
+                            "id": 26523,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "5677:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "5677:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 25944,
+                          "id": 26524,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "5680:8:67",
+                          "memberLocation": "5680:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 27979,
-                          "src": "5677:11:67",
+                          "referencedDeclaration": 28559,
+                          "src": "5677:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_address_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (address) pure external returns (string memory)"
                           }
                         },
-                        "id": 25946,
+                        "id": 26526,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -8801,7 +8797,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "5677:17:67",
+                        "src": "5677:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -8816,24 +8812,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 25942,
+                      "id": 26522,
                       "name": "cyan",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        25905,
-                        25920,
-                        25935,
-                        25950,
-                        25965
+                        26485,
+                        26500,
+                        26515,
+                        26530,
+                        26545
                       ],
-                      "referencedDeclaration": 25905,
-                      "src": "5672:4:67",
+                      "referencedDeclaration": 26485,
+                      "src": "5672:4:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 25947,
+                    "id": 26527,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -8842,17 +8838,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "5672:23:67",
+                    "src": "5672:23:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 25941,
-                  "id": 25948,
+                  "functionReturnParameters": 26521,
+                  "id": 26528,
                   "nodeType": "Return",
-                  "src": "5665:30:67"
+                  "src": "5665:30:73"
                 }
               ]
             },
@@ -8860,20 +8856,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "cyan",
-            "nameLocation": "5598:4:67",
+            "nameLocation": "5598:4:73",
             "parameters": {
-              "id": 25938,
+              "id": 26518,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25937,
+                  "id": 26517,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "5611:4:67",
+                  "nameLocation": "5611:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25950,
-                  "src": "5603:12:67",
+                  "scope": 26530,
+                  "src": "5603:12:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -8881,10 +8877,10 @@ export const StdStyle =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 25936,
+                    "id": 26516,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5603:7:67",
+                    "src": "5603:7:73",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -8894,21 +8890,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "5602:14:67"
+              "src": "5602:14:73"
             },
             "returnParameters": {
-              "id": 25941,
+              "id": 26521,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25940,
+                  "id": 26520,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25950,
-                  "src": "5640:13:67",
+                  "scope": 26530,
+                  "src": "5640:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -8916,10 +8912,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25939,
+                    "id": 26519,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5640:6:67",
+                    "src": "5640:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -8928,22 +8924,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "5639:15:67"
+              "src": "5639:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 25965,
+            "id": 26545,
             "nodeType": "FunctionDefinition",
-            "src": "5708:110:67",
+            "src": "5708:110:73",
             "nodes": [],
             "body": {
-              "id": 25964,
+              "id": 26544,
               "nodeType": "Block",
-              "src": "5771:47:67",
+              "src": "5771:47:73",
               "nodes": [],
               "statements": [
                 {
@@ -8952,12 +8948,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 25960,
+                            "id": 26540,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25952,
-                            "src": "5805:4:67",
+                            "referencedDeclaration": 26532,
+                            "src": "5805:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
                               "typeString": "bool"
@@ -8972,33 +8968,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 25958,
+                            "id": 26538,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "5793:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "5793:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 25959,
+                          "id": 26539,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "5796:8:67",
+                          "memberLocation": "5796:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 28000,
-                          "src": "5793:11:67",
+                          "referencedDeclaration": 28580,
+                          "src": "5793:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_bool_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (bool) pure external returns (string memory)"
                           }
                         },
-                        "id": 25961,
+                        "id": 26541,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -9007,7 +9003,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "5793:17:67",
+                        "src": "5793:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -9022,24 +9018,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 25957,
+                      "id": 26537,
                       "name": "cyan",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        25905,
-                        25920,
-                        25935,
-                        25950,
-                        25965
+                        26485,
+                        26500,
+                        26515,
+                        26530,
+                        26545
                       ],
-                      "referencedDeclaration": 25905,
-                      "src": "5788:4:67",
+                      "referencedDeclaration": 26485,
+                      "src": "5788:4:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 25962,
+                    "id": 26542,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -9048,17 +9044,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "5788:23:67",
+                    "src": "5788:23:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 25956,
-                  "id": 25963,
+                  "functionReturnParameters": 26536,
+                  "id": 26543,
                   "nodeType": "Return",
-                  "src": "5781:30:67"
+                  "src": "5781:30:73"
                 }
               ]
             },
@@ -9066,20 +9062,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "cyan",
-            "nameLocation": "5717:4:67",
+            "nameLocation": "5717:4:73",
             "parameters": {
-              "id": 25953,
+              "id": 26533,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25952,
+                  "id": 26532,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "5727:4:67",
+                  "nameLocation": "5727:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25965,
-                  "src": "5722:9:67",
+                  "scope": 26545,
+                  "src": "5722:9:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -9087,10 +9083,10 @@ export const StdStyle =
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 25951,
+                    "id": 26531,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5722:4:67",
+                    "src": "5722:4:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -9099,21 +9095,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "5721:11:67"
+              "src": "5721:11:73"
             },
             "returnParameters": {
-              "id": 25956,
+              "id": 26536,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25955,
+                  "id": 26535,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25965,
-                  "src": "5756:13:67",
+                  "scope": 26545,
+                  "src": "5756:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -9121,10 +9117,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25954,
+                    "id": 26534,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5756:6:67",
+                    "src": "5756:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -9133,22 +9129,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "5755:15:67"
+              "src": "5755:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 25980,
+            "id": 26560,
             "nodeType": "FunctionDefinition",
-            "src": "5824:123:67",
+            "src": "5824:123:73",
             "nodes": [],
             "body": {
-              "id": 25979,
+              "id": 26559,
               "nodeType": "Block",
-              "src": "5900:47:67",
+              "src": "5900:47:73",
               "nodes": [],
               "statements": [
                 {
@@ -9157,12 +9153,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 25975,
+                            "id": 26555,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25967,
-                            "src": "5934:4:67",
+                            "referencedDeclaration": 26547,
+                            "src": "5934:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes_memory_ptr",
                               "typeString": "bytes memory"
@@ -9177,33 +9173,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 25973,
+                            "id": 26553,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "5922:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "5922:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 25974,
+                          "id": 26554,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "5925:8:67",
+                          "memberLocation": "5925:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 27986,
-                          "src": "5922:11:67",
+                          "referencedDeclaration": 28566,
+                          "src": "5922:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_bytes_memory_ptr_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (bytes memory) pure external returns (string memory)"
                           }
                         },
-                        "id": 25976,
+                        "id": 26556,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -9212,7 +9208,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "5922:17:67",
+                        "src": "5922:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -9227,24 +9223,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 25972,
+                      "id": 26552,
                       "name": "cyan",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        25905,
-                        25920,
-                        25935,
-                        25950,
-                        25965
+                        26485,
+                        26500,
+                        26515,
+                        26530,
+                        26545
                       ],
-                      "referencedDeclaration": 25905,
-                      "src": "5917:4:67",
+                      "referencedDeclaration": 26485,
+                      "src": "5917:4:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 25977,
+                    "id": 26557,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -9253,17 +9249,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "5917:23:67",
+                    "src": "5917:23:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 25971,
-                  "id": 25978,
+                  "functionReturnParameters": 26551,
+                  "id": 26558,
                   "nodeType": "Return",
-                  "src": "5910:30:67"
+                  "src": "5910:30:73"
                 }
               ]
             },
@@ -9271,20 +9267,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "cyanBytes",
-            "nameLocation": "5833:9:67",
+            "nameLocation": "5833:9:73",
             "parameters": {
-              "id": 25968,
+              "id": 26548,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25967,
+                  "id": 26547,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "5856:4:67",
+                  "nameLocation": "5856:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25980,
-                  "src": "5843:17:67",
+                  "scope": 26560,
+                  "src": "5843:17:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -9292,10 +9288,10 @@ export const StdStyle =
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 25966,
+                    "id": 26546,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5843:5:67",
+                    "src": "5843:5:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -9304,21 +9300,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "5842:19:67"
+              "src": "5842:19:73"
             },
             "returnParameters": {
-              "id": 25971,
+              "id": 26551,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25970,
+                  "id": 26550,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25980,
-                  "src": "5885:13:67",
+                  "scope": 26560,
+                  "src": "5885:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -9326,10 +9322,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25969,
+                    "id": 26549,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5885:6:67",
+                    "src": "5885:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -9338,22 +9334,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "5884:15:67"
+              "src": "5884:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 25995,
+            "id": 26575,
             "nodeType": "FunctionDefinition",
-            "src": "5953:120:67",
+            "src": "5953:120:73",
             "nodes": [],
             "body": {
-              "id": 25994,
+              "id": 26574,
               "nodeType": "Block",
-              "src": "6026:47:67",
+              "src": "6026:47:73",
               "nodes": [],
               "statements": [
                 {
@@ -9362,12 +9358,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 25990,
+                            "id": 26570,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25982,
-                            "src": "6060:4:67",
+                            "referencedDeclaration": 26562,
+                            "src": "6060:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes32",
                               "typeString": "bytes32"
@@ -9382,33 +9378,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 25988,
+                            "id": 26568,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "6048:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "6048:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 25989,
+                          "id": 26569,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "6051:8:67",
+                          "memberLocation": "6051:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 27993,
-                          "src": "6048:11:67",
+                          "referencedDeclaration": 28573,
+                          "src": "6048:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_bytes32_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (bytes32) pure external returns (string memory)"
                           }
                         },
-                        "id": 25991,
+                        "id": 26571,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -9417,7 +9413,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "6048:17:67",
+                        "src": "6048:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -9432,24 +9428,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 25987,
+                      "id": 26567,
                       "name": "cyan",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        25905,
-                        25920,
-                        25935,
-                        25950,
-                        25965
+                        26485,
+                        26500,
+                        26515,
+                        26530,
+                        26545
                       ],
-                      "referencedDeclaration": 25905,
-                      "src": "6043:4:67",
+                      "referencedDeclaration": 26485,
+                      "src": "6043:4:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 25992,
+                    "id": 26572,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -9458,17 +9454,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "6043:23:67",
+                    "src": "6043:23:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 25986,
-                  "id": 25993,
+                  "functionReturnParameters": 26566,
+                  "id": 26573,
                   "nodeType": "Return",
-                  "src": "6036:30:67"
+                  "src": "6036:30:73"
                 }
               ]
             },
@@ -9476,20 +9472,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "cyanBytes32",
-            "nameLocation": "5962:11:67",
+            "nameLocation": "5962:11:73",
             "parameters": {
-              "id": 25983,
+              "id": 26563,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25982,
+                  "id": 26562,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "5982:4:67",
+                  "nameLocation": "5982:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25995,
-                  "src": "5974:12:67",
+                  "scope": 26575,
+                  "src": "5974:12:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -9497,10 +9493,10 @@ export const StdStyle =
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 25981,
+                    "id": 26561,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5974:7:67",
+                    "src": "5974:7:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -9509,21 +9505,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "5973:14:67"
+              "src": "5973:14:73"
             },
             "returnParameters": {
-              "id": 25986,
+              "id": 26566,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25985,
+                  "id": 26565,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 25995,
-                  "src": "6011:13:67",
+                  "scope": 26575,
+                  "src": "6011:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -9531,10 +9527,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25984,
+                    "id": 26564,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "6011:6:67",
+                    "src": "6011:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -9543,46 +9539,46 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "6010:15:67"
+              "src": "6010:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 26008,
+            "id": 26588,
             "nodeType": "FunctionDefinition",
-            "src": "6079:119:67",
+            "src": "6079:119:73",
             "nodes": [],
             "body": {
-              "id": 26007,
+              "id": 26587,
               "nodeType": "Block",
-              "src": "6151:47:67",
+              "src": "6151:47:73",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 26003,
+                        "id": 26583,
                         "name": "BOLD",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 25342,
-                        "src": "6180:4:67",
+                        "referencedDeclaration": 25922,
+                        "src": "6180:4:73",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 26004,
+                        "id": 26584,
                         "name": "self",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 25997,
-                        "src": "6186:4:67",
+                        "referencedDeclaration": 26577,
+                        "src": "6186:4:73",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
@@ -9600,18 +9596,18 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 26002,
+                      "id": 26582,
                       "name": "styleConcat",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 25377,
-                      "src": "6168:11:67",
+                      "referencedDeclaration": 25957,
+                      "src": "6168:11:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory,string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 26005,
+                    "id": 26585,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -9620,17 +9616,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "6168:23:67",
+                    "src": "6168:23:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 26001,
-                  "id": 26006,
+                  "functionReturnParameters": 26581,
+                  "id": 26586,
                   "nodeType": "Return",
-                  "src": "6161:30:67"
+                  "src": "6161:30:73"
                 }
               ]
             },
@@ -9638,20 +9634,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "bold",
-            "nameLocation": "6088:4:67",
+            "nameLocation": "6088:4:73",
             "parameters": {
-              "id": 25998,
+              "id": 26578,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25997,
+                  "id": 26577,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "6107:4:67",
+                  "nameLocation": "6107:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26008,
-                  "src": "6093:18:67",
+                  "scope": 26588,
+                  "src": "6093:18:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -9659,10 +9655,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25996,
+                    "id": 26576,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "6093:6:67",
+                    "src": "6093:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -9671,21 +9667,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "6092:20:67"
+              "src": "6092:20:73"
             },
             "returnParameters": {
-              "id": 26001,
+              "id": 26581,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26000,
+                  "id": 26580,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26008,
-                  "src": "6136:13:67",
+                  "scope": 26588,
+                  "src": "6136:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -9693,10 +9689,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 25999,
+                    "id": 26579,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "6136:6:67",
+                    "src": "6136:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -9705,22 +9701,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "6135:15:67"
+              "src": "6135:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 26023,
+            "id": 26603,
             "nodeType": "FunctionDefinition",
-            "src": "6204:113:67",
+            "src": "6204:113:73",
             "nodes": [],
             "body": {
-              "id": 26022,
+              "id": 26602,
               "nodeType": "Block",
-              "src": "6270:47:67",
+              "src": "6270:47:73",
               "nodes": [],
               "statements": [
                 {
@@ -9729,12 +9725,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 26018,
+                            "id": 26598,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 26010,
-                            "src": "6304:4:67",
+                            "referencedDeclaration": 26590,
+                            "src": "6304:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -9749,33 +9745,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 26016,
+                            "id": 26596,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "6292:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "6292:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 26017,
+                          "id": 26597,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "6295:8:67",
+                          "memberLocation": "6295:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 28007,
-                          "src": "6292:11:67",
+                          "referencedDeclaration": 28587,
+                          "src": "6292:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_uint256_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (uint256) pure external returns (string memory)"
                           }
                         },
-                        "id": 26019,
+                        "id": 26599,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -9784,7 +9780,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "6292:17:67",
+                        "src": "6292:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -9799,24 +9795,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 26015,
+                      "id": 26595,
                       "name": "bold",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        26008,
-                        26023,
-                        26038,
-                        26053,
-                        26068
+                        26588,
+                        26603,
+                        26618,
+                        26633,
+                        26648
                       ],
-                      "referencedDeclaration": 26008,
-                      "src": "6287:4:67",
+                      "referencedDeclaration": 26588,
+                      "src": "6287:4:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 26020,
+                    "id": 26600,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -9825,17 +9821,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "6287:23:67",
+                    "src": "6287:23:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 26014,
-                  "id": 26021,
+                  "functionReturnParameters": 26594,
+                  "id": 26601,
                   "nodeType": "Return",
-                  "src": "6280:30:67"
+                  "src": "6280:30:73"
                 }
               ]
             },
@@ -9843,20 +9839,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "bold",
-            "nameLocation": "6213:4:67",
+            "nameLocation": "6213:4:73",
             "parameters": {
-              "id": 26011,
+              "id": 26591,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26010,
+                  "id": 26590,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "6226:4:67",
+                  "nameLocation": "6226:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26023,
-                  "src": "6218:12:67",
+                  "scope": 26603,
+                  "src": "6218:12:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -9864,10 +9860,10 @@ export const StdStyle =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 26009,
+                    "id": 26589,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "6218:7:67",
+                    "src": "6218:7:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -9876,21 +9872,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "6217:14:67"
+              "src": "6217:14:73"
             },
             "returnParameters": {
-              "id": 26014,
+              "id": 26594,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26013,
+                  "id": 26593,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26023,
-                  "src": "6255:13:67",
+                  "scope": 26603,
+                  "src": "6255:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -9898,10 +9894,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 26012,
+                    "id": 26592,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "6255:6:67",
+                    "src": "6255:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -9910,22 +9906,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "6254:15:67"
+              "src": "6254:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 26038,
+            "id": 26618,
             "nodeType": "FunctionDefinition",
-            "src": "6323:112:67",
+            "src": "6323:112:73",
             "nodes": [],
             "body": {
-              "id": 26037,
+              "id": 26617,
               "nodeType": "Block",
-              "src": "6388:47:67",
+              "src": "6388:47:73",
               "nodes": [],
               "statements": [
                 {
@@ -9934,12 +9930,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 26033,
+                            "id": 26613,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 26025,
-                            "src": "6422:4:67",
+                            "referencedDeclaration": 26605,
+                            "src": "6422:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -9954,33 +9950,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 26031,
+                            "id": 26611,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "6410:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "6410:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 26032,
+                          "id": 26612,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "6413:8:67",
+                          "memberLocation": "6413:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 28014,
-                          "src": "6410:11:67",
+                          "referencedDeclaration": 28594,
+                          "src": "6410:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_int256_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (int256) pure external returns (string memory)"
                           }
                         },
-                        "id": 26034,
+                        "id": 26614,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -9989,7 +9985,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "6410:17:67",
+                        "src": "6410:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -10004,24 +10000,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 26030,
+                      "id": 26610,
                       "name": "bold",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        26008,
-                        26023,
-                        26038,
-                        26053,
-                        26068
+                        26588,
+                        26603,
+                        26618,
+                        26633,
+                        26648
                       ],
-                      "referencedDeclaration": 26008,
-                      "src": "6405:4:67",
+                      "referencedDeclaration": 26588,
+                      "src": "6405:4:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 26035,
+                    "id": 26615,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -10030,17 +10026,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "6405:23:67",
+                    "src": "6405:23:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 26029,
-                  "id": 26036,
+                  "functionReturnParameters": 26609,
+                  "id": 26616,
                   "nodeType": "Return",
-                  "src": "6398:30:67"
+                  "src": "6398:30:73"
                 }
               ]
             },
@@ -10048,20 +10044,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "bold",
-            "nameLocation": "6332:4:67",
+            "nameLocation": "6332:4:73",
             "parameters": {
-              "id": 26026,
+              "id": 26606,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26025,
+                  "id": 26605,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "6344:4:67",
+                  "nameLocation": "6344:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26038,
-                  "src": "6337:11:67",
+                  "scope": 26618,
+                  "src": "6337:11:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -10069,10 +10065,10 @@ export const StdStyle =
                     "typeString": "int256"
                   },
                   "typeName": {
-                    "id": 26024,
+                    "id": 26604,
                     "name": "int256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "6337:6:67",
+                    "src": "6337:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
@@ -10081,21 +10077,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "6336:13:67"
+              "src": "6336:13:73"
             },
             "returnParameters": {
-              "id": 26029,
+              "id": 26609,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26028,
+                  "id": 26608,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26038,
-                  "src": "6373:13:67",
+                  "scope": 26618,
+                  "src": "6373:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -10103,10 +10099,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 26027,
+                    "id": 26607,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "6373:6:67",
+                    "src": "6373:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -10115,22 +10111,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "6372:15:67"
+              "src": "6372:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 26053,
+            "id": 26633,
             "nodeType": "FunctionDefinition",
-            "src": "6441:113:67",
+            "src": "6441:113:73",
             "nodes": [],
             "body": {
-              "id": 26052,
+              "id": 26632,
               "nodeType": "Block",
-              "src": "6507:47:67",
+              "src": "6507:47:73",
               "nodes": [],
               "statements": [
                 {
@@ -10139,12 +10135,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 26048,
+                            "id": 26628,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 26040,
-                            "src": "6541:4:67",
+                            "referencedDeclaration": 26620,
+                            "src": "6541:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -10159,33 +10155,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 26046,
+                            "id": 26626,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "6529:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "6529:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 26047,
+                          "id": 26627,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "6532:8:67",
+                          "memberLocation": "6532:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 27979,
-                          "src": "6529:11:67",
+                          "referencedDeclaration": 28559,
+                          "src": "6529:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_address_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (address) pure external returns (string memory)"
                           }
                         },
-                        "id": 26049,
+                        "id": 26629,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -10194,7 +10190,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "6529:17:67",
+                        "src": "6529:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -10209,24 +10205,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 26045,
+                      "id": 26625,
                       "name": "bold",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        26008,
-                        26023,
-                        26038,
-                        26053,
-                        26068
+                        26588,
+                        26603,
+                        26618,
+                        26633,
+                        26648
                       ],
-                      "referencedDeclaration": 26008,
-                      "src": "6524:4:67",
+                      "referencedDeclaration": 26588,
+                      "src": "6524:4:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 26050,
+                    "id": 26630,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -10235,17 +10231,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "6524:23:67",
+                    "src": "6524:23:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 26044,
-                  "id": 26051,
+                  "functionReturnParameters": 26624,
+                  "id": 26631,
                   "nodeType": "Return",
-                  "src": "6517:30:67"
+                  "src": "6517:30:73"
                 }
               ]
             },
@@ -10253,20 +10249,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "bold",
-            "nameLocation": "6450:4:67",
+            "nameLocation": "6450:4:73",
             "parameters": {
-              "id": 26041,
+              "id": 26621,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26040,
+                  "id": 26620,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "6463:4:67",
+                  "nameLocation": "6463:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26053,
-                  "src": "6455:12:67",
+                  "scope": 26633,
+                  "src": "6455:12:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -10274,10 +10270,10 @@ export const StdStyle =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 26039,
+                    "id": 26619,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "6455:7:67",
+                    "src": "6455:7:73",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -10287,21 +10283,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "6454:14:67"
+              "src": "6454:14:73"
             },
             "returnParameters": {
-              "id": 26044,
+              "id": 26624,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26043,
+                  "id": 26623,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26053,
-                  "src": "6492:13:67",
+                  "scope": 26633,
+                  "src": "6492:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -10309,10 +10305,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 26042,
+                    "id": 26622,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "6492:6:67",
+                    "src": "6492:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -10321,22 +10317,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "6491:15:67"
+              "src": "6491:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 26068,
+            "id": 26648,
             "nodeType": "FunctionDefinition",
-            "src": "6560:110:67",
+            "src": "6560:110:73",
             "nodes": [],
             "body": {
-              "id": 26067,
+              "id": 26647,
               "nodeType": "Block",
-              "src": "6623:47:67",
+              "src": "6623:47:73",
               "nodes": [],
               "statements": [
                 {
@@ -10345,12 +10341,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 26063,
+                            "id": 26643,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 26055,
-                            "src": "6657:4:67",
+                            "referencedDeclaration": 26635,
+                            "src": "6657:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
                               "typeString": "bool"
@@ -10365,33 +10361,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 26061,
+                            "id": 26641,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "6645:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "6645:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 26062,
+                          "id": 26642,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "6648:8:67",
+                          "memberLocation": "6648:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 28000,
-                          "src": "6645:11:67",
+                          "referencedDeclaration": 28580,
+                          "src": "6645:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_bool_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (bool) pure external returns (string memory)"
                           }
                         },
-                        "id": 26064,
+                        "id": 26644,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -10400,7 +10396,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "6645:17:67",
+                        "src": "6645:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -10415,24 +10411,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 26060,
+                      "id": 26640,
                       "name": "bold",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        26008,
-                        26023,
-                        26038,
-                        26053,
-                        26068
+                        26588,
+                        26603,
+                        26618,
+                        26633,
+                        26648
                       ],
-                      "referencedDeclaration": 26008,
-                      "src": "6640:4:67",
+                      "referencedDeclaration": 26588,
+                      "src": "6640:4:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 26065,
+                    "id": 26645,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -10441,17 +10437,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "6640:23:67",
+                    "src": "6640:23:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 26059,
-                  "id": 26066,
+                  "functionReturnParameters": 26639,
+                  "id": 26646,
                   "nodeType": "Return",
-                  "src": "6633:30:67"
+                  "src": "6633:30:73"
                 }
               ]
             },
@@ -10459,20 +10455,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "bold",
-            "nameLocation": "6569:4:67",
+            "nameLocation": "6569:4:73",
             "parameters": {
-              "id": 26056,
+              "id": 26636,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26055,
+                  "id": 26635,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "6579:4:67",
+                  "nameLocation": "6579:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26068,
-                  "src": "6574:9:67",
+                  "scope": 26648,
+                  "src": "6574:9:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -10480,10 +10476,10 @@ export const StdStyle =
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 26054,
+                    "id": 26634,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "6574:4:67",
+                    "src": "6574:4:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -10492,21 +10488,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "6573:11:67"
+              "src": "6573:11:73"
             },
             "returnParameters": {
-              "id": 26059,
+              "id": 26639,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26058,
+                  "id": 26638,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26068,
-                  "src": "6608:13:67",
+                  "scope": 26648,
+                  "src": "6608:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -10514,10 +10510,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 26057,
+                    "id": 26637,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "6608:6:67",
+                    "src": "6608:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -10526,22 +10522,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "6607:15:67"
+              "src": "6607:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 26083,
+            "id": 26663,
             "nodeType": "FunctionDefinition",
-            "src": "6676:123:67",
+            "src": "6676:123:73",
             "nodes": [],
             "body": {
-              "id": 26082,
+              "id": 26662,
               "nodeType": "Block",
-              "src": "6752:47:67",
+              "src": "6752:47:73",
               "nodes": [],
               "statements": [
                 {
@@ -10550,12 +10546,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 26078,
+                            "id": 26658,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 26070,
-                            "src": "6786:4:67",
+                            "referencedDeclaration": 26650,
+                            "src": "6786:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes_memory_ptr",
                               "typeString": "bytes memory"
@@ -10570,33 +10566,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 26076,
+                            "id": 26656,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "6774:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "6774:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 26077,
+                          "id": 26657,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "6777:8:67",
+                          "memberLocation": "6777:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 27986,
-                          "src": "6774:11:67",
+                          "referencedDeclaration": 28566,
+                          "src": "6774:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_bytes_memory_ptr_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (bytes memory) pure external returns (string memory)"
                           }
                         },
-                        "id": 26079,
+                        "id": 26659,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -10605,7 +10601,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "6774:17:67",
+                        "src": "6774:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -10620,24 +10616,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 26075,
+                      "id": 26655,
                       "name": "bold",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        26008,
-                        26023,
-                        26038,
-                        26053,
-                        26068
+                        26588,
+                        26603,
+                        26618,
+                        26633,
+                        26648
                       ],
-                      "referencedDeclaration": 26008,
-                      "src": "6769:4:67",
+                      "referencedDeclaration": 26588,
+                      "src": "6769:4:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 26080,
+                    "id": 26660,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -10646,17 +10642,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "6769:23:67",
+                    "src": "6769:23:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 26074,
-                  "id": 26081,
+                  "functionReturnParameters": 26654,
+                  "id": 26661,
                   "nodeType": "Return",
-                  "src": "6762:30:67"
+                  "src": "6762:30:73"
                 }
               ]
             },
@@ -10664,20 +10660,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "boldBytes",
-            "nameLocation": "6685:9:67",
+            "nameLocation": "6685:9:73",
             "parameters": {
-              "id": 26071,
+              "id": 26651,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26070,
+                  "id": 26650,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "6708:4:67",
+                  "nameLocation": "6708:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26083,
-                  "src": "6695:17:67",
+                  "scope": 26663,
+                  "src": "6695:17:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -10685,10 +10681,10 @@ export const StdStyle =
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 26069,
+                    "id": 26649,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "6695:5:67",
+                    "src": "6695:5:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -10697,21 +10693,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "6694:19:67"
+              "src": "6694:19:73"
             },
             "returnParameters": {
-              "id": 26074,
+              "id": 26654,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26073,
+                  "id": 26653,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26083,
-                  "src": "6737:13:67",
+                  "scope": 26663,
+                  "src": "6737:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -10719,10 +10715,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 26072,
+                    "id": 26652,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "6737:6:67",
+                    "src": "6737:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -10731,22 +10727,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "6736:15:67"
+              "src": "6736:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 26098,
+            "id": 26678,
             "nodeType": "FunctionDefinition",
-            "src": "6805:120:67",
+            "src": "6805:120:73",
             "nodes": [],
             "body": {
-              "id": 26097,
+              "id": 26677,
               "nodeType": "Block",
-              "src": "6878:47:67",
+              "src": "6878:47:73",
               "nodes": [],
               "statements": [
                 {
@@ -10755,12 +10751,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 26093,
+                            "id": 26673,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 26085,
-                            "src": "6912:4:67",
+                            "referencedDeclaration": 26665,
+                            "src": "6912:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes32",
                               "typeString": "bytes32"
@@ -10775,33 +10771,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 26091,
+                            "id": 26671,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "6900:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "6900:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 26092,
+                          "id": 26672,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "6903:8:67",
+                          "memberLocation": "6903:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 27993,
-                          "src": "6900:11:67",
+                          "referencedDeclaration": 28573,
+                          "src": "6900:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_bytes32_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (bytes32) pure external returns (string memory)"
                           }
                         },
-                        "id": 26094,
+                        "id": 26674,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -10810,7 +10806,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "6900:17:67",
+                        "src": "6900:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -10825,24 +10821,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 26090,
+                      "id": 26670,
                       "name": "bold",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        26008,
-                        26023,
-                        26038,
-                        26053,
-                        26068
+                        26588,
+                        26603,
+                        26618,
+                        26633,
+                        26648
                       ],
-                      "referencedDeclaration": 26008,
-                      "src": "6895:4:67",
+                      "referencedDeclaration": 26588,
+                      "src": "6895:4:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 26095,
+                    "id": 26675,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -10851,17 +10847,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "6895:23:67",
+                    "src": "6895:23:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 26089,
-                  "id": 26096,
+                  "functionReturnParameters": 26669,
+                  "id": 26676,
                   "nodeType": "Return",
-                  "src": "6888:30:67"
+                  "src": "6888:30:73"
                 }
               ]
             },
@@ -10869,20 +10865,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "boldBytes32",
-            "nameLocation": "6814:11:67",
+            "nameLocation": "6814:11:73",
             "parameters": {
-              "id": 26086,
+              "id": 26666,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26085,
+                  "id": 26665,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "6834:4:67",
+                  "nameLocation": "6834:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26098,
-                  "src": "6826:12:67",
+                  "scope": 26678,
+                  "src": "6826:12:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -10890,10 +10886,10 @@ export const StdStyle =
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 26084,
+                    "id": 26664,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "6826:7:67",
+                    "src": "6826:7:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -10902,21 +10898,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "6825:14:67"
+              "src": "6825:14:73"
             },
             "returnParameters": {
-              "id": 26089,
+              "id": 26669,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26088,
+                  "id": 26668,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26098,
-                  "src": "6863:13:67",
+                  "scope": 26678,
+                  "src": "6863:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -10924,10 +10920,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 26087,
+                    "id": 26667,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "6863:6:67",
+                    "src": "6863:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -10936,46 +10932,46 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "6862:15:67"
+              "src": "6862:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 26111,
+            "id": 26691,
             "nodeType": "FunctionDefinition",
-            "src": "6931:117:67",
+            "src": "6931:117:73",
             "nodes": [],
             "body": {
-              "id": 26110,
+              "id": 26690,
               "nodeType": "Block",
-              "src": "7002:46:67",
+              "src": "7002:46:73",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 26106,
+                        "id": 26686,
                         "name": "DIM",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 25345,
-                        "src": "7031:3:67",
+                        "referencedDeclaration": 25925,
+                        "src": "7031:3:73",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 26107,
+                        "id": 26687,
                         "name": "self",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 26100,
-                        "src": "7036:4:67",
+                        "referencedDeclaration": 26680,
+                        "src": "7036:4:73",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
@@ -10993,18 +10989,18 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 26105,
+                      "id": 26685,
                       "name": "styleConcat",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 25377,
-                      "src": "7019:11:67",
+                      "referencedDeclaration": 25957,
+                      "src": "7019:11:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory,string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 26108,
+                    "id": 26688,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -11013,17 +11009,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "7019:22:67",
+                    "src": "7019:22:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 26104,
-                  "id": 26109,
+                  "functionReturnParameters": 26684,
+                  "id": 26689,
                   "nodeType": "Return",
-                  "src": "7012:29:67"
+                  "src": "7012:29:73"
                 }
               ]
             },
@@ -11031,20 +11027,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "dim",
-            "nameLocation": "6940:3:67",
+            "nameLocation": "6940:3:73",
             "parameters": {
-              "id": 26101,
+              "id": 26681,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26100,
+                  "id": 26680,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "6958:4:67",
+                  "nameLocation": "6958:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26111,
-                  "src": "6944:18:67",
+                  "scope": 26691,
+                  "src": "6944:18:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -11052,10 +11048,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 26099,
+                    "id": 26679,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "6944:6:67",
+                    "src": "6944:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -11064,21 +11060,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "6943:20:67"
+              "src": "6943:20:73"
             },
             "returnParameters": {
-              "id": 26104,
+              "id": 26684,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26103,
+                  "id": 26683,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26111,
-                  "src": "6987:13:67",
+                  "scope": 26691,
+                  "src": "6987:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -11086,10 +11082,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 26102,
+                    "id": 26682,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "6987:6:67",
+                    "src": "6987:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -11098,22 +11094,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "6986:15:67"
+              "src": "6986:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 26126,
+            "id": 26706,
             "nodeType": "FunctionDefinition",
-            "src": "7054:111:67",
+            "src": "7054:111:73",
             "nodes": [],
             "body": {
-              "id": 26125,
+              "id": 26705,
               "nodeType": "Block",
-              "src": "7119:46:67",
+              "src": "7119:46:73",
               "nodes": [],
               "statements": [
                 {
@@ -11122,12 +11118,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 26121,
+                            "id": 26701,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 26113,
-                            "src": "7152:4:67",
+                            "referencedDeclaration": 26693,
+                            "src": "7152:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -11142,33 +11138,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 26119,
+                            "id": 26699,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "7140:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "7140:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 26120,
+                          "id": 26700,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "7143:8:67",
+                          "memberLocation": "7143:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 28007,
-                          "src": "7140:11:67",
+                          "referencedDeclaration": 28587,
+                          "src": "7140:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_uint256_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (uint256) pure external returns (string memory)"
                           }
                         },
-                        "id": 26122,
+                        "id": 26702,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -11177,7 +11173,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "7140:17:67",
+                        "src": "7140:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -11192,24 +11188,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 26118,
+                      "id": 26698,
                       "name": "dim",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        26111,
-                        26126,
-                        26141,
-                        26156,
-                        26171
+                        26691,
+                        26706,
+                        26721,
+                        26736,
+                        26751
                       ],
-                      "referencedDeclaration": 26111,
-                      "src": "7136:3:67",
+                      "referencedDeclaration": 26691,
+                      "src": "7136:3:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 26123,
+                    "id": 26703,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -11218,17 +11214,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "7136:22:67",
+                    "src": "7136:22:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 26117,
-                  "id": 26124,
+                  "functionReturnParameters": 26697,
+                  "id": 26704,
                   "nodeType": "Return",
-                  "src": "7129:29:67"
+                  "src": "7129:29:73"
                 }
               ]
             },
@@ -11236,20 +11232,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "dim",
-            "nameLocation": "7063:3:67",
+            "nameLocation": "7063:3:73",
             "parameters": {
-              "id": 26114,
+              "id": 26694,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26113,
+                  "id": 26693,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "7075:4:67",
+                  "nameLocation": "7075:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26126,
-                  "src": "7067:12:67",
+                  "scope": 26706,
+                  "src": "7067:12:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -11257,10 +11253,10 @@ export const StdStyle =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 26112,
+                    "id": 26692,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "7067:7:67",
+                    "src": "7067:7:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -11269,21 +11265,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "7066:14:67"
+              "src": "7066:14:73"
             },
             "returnParameters": {
-              "id": 26117,
+              "id": 26697,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26116,
+                  "id": 26696,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26126,
-                  "src": "7104:13:67",
+                  "scope": 26706,
+                  "src": "7104:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -11291,10 +11287,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 26115,
+                    "id": 26695,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "7104:6:67",
+                    "src": "7104:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -11303,22 +11299,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "7103:15:67"
+              "src": "7103:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 26141,
+            "id": 26721,
             "nodeType": "FunctionDefinition",
-            "src": "7171:110:67",
+            "src": "7171:110:73",
             "nodes": [],
             "body": {
-              "id": 26140,
+              "id": 26720,
               "nodeType": "Block",
-              "src": "7235:46:67",
+              "src": "7235:46:73",
               "nodes": [],
               "statements": [
                 {
@@ -11327,12 +11323,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 26136,
+                            "id": 26716,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 26128,
-                            "src": "7268:4:67",
+                            "referencedDeclaration": 26708,
+                            "src": "7268:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -11347,33 +11343,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 26134,
+                            "id": 26714,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "7256:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "7256:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 26135,
+                          "id": 26715,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "7259:8:67",
+                          "memberLocation": "7259:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 28014,
-                          "src": "7256:11:67",
+                          "referencedDeclaration": 28594,
+                          "src": "7256:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_int256_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (int256) pure external returns (string memory)"
                           }
                         },
-                        "id": 26137,
+                        "id": 26717,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -11382,7 +11378,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "7256:17:67",
+                        "src": "7256:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -11397,24 +11393,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 26133,
+                      "id": 26713,
                       "name": "dim",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        26111,
-                        26126,
-                        26141,
-                        26156,
-                        26171
+                        26691,
+                        26706,
+                        26721,
+                        26736,
+                        26751
                       ],
-                      "referencedDeclaration": 26111,
-                      "src": "7252:3:67",
+                      "referencedDeclaration": 26691,
+                      "src": "7252:3:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 26138,
+                    "id": 26718,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -11423,17 +11419,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "7252:22:67",
+                    "src": "7252:22:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 26132,
-                  "id": 26139,
+                  "functionReturnParameters": 26712,
+                  "id": 26719,
                   "nodeType": "Return",
-                  "src": "7245:29:67"
+                  "src": "7245:29:73"
                 }
               ]
             },
@@ -11441,20 +11437,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "dim",
-            "nameLocation": "7180:3:67",
+            "nameLocation": "7180:3:73",
             "parameters": {
-              "id": 26129,
+              "id": 26709,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26128,
+                  "id": 26708,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "7191:4:67",
+                  "nameLocation": "7191:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26141,
-                  "src": "7184:11:67",
+                  "scope": 26721,
+                  "src": "7184:11:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -11462,10 +11458,10 @@ export const StdStyle =
                     "typeString": "int256"
                   },
                   "typeName": {
-                    "id": 26127,
+                    "id": 26707,
                     "name": "int256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "7184:6:67",
+                    "src": "7184:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
@@ -11474,21 +11470,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "7183:13:67"
+              "src": "7183:13:73"
             },
             "returnParameters": {
-              "id": 26132,
+              "id": 26712,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26131,
+                  "id": 26711,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26141,
-                  "src": "7220:13:67",
+                  "scope": 26721,
+                  "src": "7220:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -11496,10 +11492,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 26130,
+                    "id": 26710,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "7220:6:67",
+                    "src": "7220:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -11508,22 +11504,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "7219:15:67"
+              "src": "7219:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 26156,
+            "id": 26736,
             "nodeType": "FunctionDefinition",
-            "src": "7287:111:67",
+            "src": "7287:111:73",
             "nodes": [],
             "body": {
-              "id": 26155,
+              "id": 26735,
               "nodeType": "Block",
-              "src": "7352:46:67",
+              "src": "7352:46:73",
               "nodes": [],
               "statements": [
                 {
@@ -11532,12 +11528,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 26151,
+                            "id": 26731,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 26143,
-                            "src": "7385:4:67",
+                            "referencedDeclaration": 26723,
+                            "src": "7385:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -11552,33 +11548,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 26149,
+                            "id": 26729,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "7373:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "7373:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 26150,
+                          "id": 26730,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "7376:8:67",
+                          "memberLocation": "7376:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 27979,
-                          "src": "7373:11:67",
+                          "referencedDeclaration": 28559,
+                          "src": "7373:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_address_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (address) pure external returns (string memory)"
                           }
                         },
-                        "id": 26152,
+                        "id": 26732,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -11587,7 +11583,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "7373:17:67",
+                        "src": "7373:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -11602,24 +11598,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 26148,
+                      "id": 26728,
                       "name": "dim",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        26111,
-                        26126,
-                        26141,
-                        26156,
-                        26171
+                        26691,
+                        26706,
+                        26721,
+                        26736,
+                        26751
                       ],
-                      "referencedDeclaration": 26111,
-                      "src": "7369:3:67",
+                      "referencedDeclaration": 26691,
+                      "src": "7369:3:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 26153,
+                    "id": 26733,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -11628,17 +11624,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "7369:22:67",
+                    "src": "7369:22:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 26147,
-                  "id": 26154,
+                  "functionReturnParameters": 26727,
+                  "id": 26734,
                   "nodeType": "Return",
-                  "src": "7362:29:67"
+                  "src": "7362:29:73"
                 }
               ]
             },
@@ -11646,20 +11642,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "dim",
-            "nameLocation": "7296:3:67",
+            "nameLocation": "7296:3:73",
             "parameters": {
-              "id": 26144,
+              "id": 26724,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26143,
+                  "id": 26723,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "7308:4:67",
+                  "nameLocation": "7308:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26156,
-                  "src": "7300:12:67",
+                  "scope": 26736,
+                  "src": "7300:12:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -11667,10 +11663,10 @@ export const StdStyle =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 26142,
+                    "id": 26722,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "7300:7:67",
+                    "src": "7300:7:73",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -11680,21 +11676,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "7299:14:67"
+              "src": "7299:14:73"
             },
             "returnParameters": {
-              "id": 26147,
+              "id": 26727,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26146,
+                  "id": 26726,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26156,
-                  "src": "7337:13:67",
+                  "scope": 26736,
+                  "src": "7337:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -11702,10 +11698,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 26145,
+                    "id": 26725,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "7337:6:67",
+                    "src": "7337:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -11714,22 +11710,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "7336:15:67"
+              "src": "7336:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 26171,
+            "id": 26751,
             "nodeType": "FunctionDefinition",
-            "src": "7404:108:67",
+            "src": "7404:108:73",
             "nodes": [],
             "body": {
-              "id": 26170,
+              "id": 26750,
               "nodeType": "Block",
-              "src": "7466:46:67",
+              "src": "7466:46:73",
               "nodes": [],
               "statements": [
                 {
@@ -11738,12 +11734,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 26166,
+                            "id": 26746,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 26158,
-                            "src": "7499:4:67",
+                            "referencedDeclaration": 26738,
+                            "src": "7499:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
                               "typeString": "bool"
@@ -11758,33 +11754,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 26164,
+                            "id": 26744,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "7487:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "7487:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 26165,
+                          "id": 26745,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "7490:8:67",
+                          "memberLocation": "7490:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 28000,
-                          "src": "7487:11:67",
+                          "referencedDeclaration": 28580,
+                          "src": "7487:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_bool_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (bool) pure external returns (string memory)"
                           }
                         },
-                        "id": 26167,
+                        "id": 26747,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -11793,7 +11789,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "7487:17:67",
+                        "src": "7487:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -11808,24 +11804,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 26163,
+                      "id": 26743,
                       "name": "dim",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        26111,
-                        26126,
-                        26141,
-                        26156,
-                        26171
+                        26691,
+                        26706,
+                        26721,
+                        26736,
+                        26751
                       ],
-                      "referencedDeclaration": 26111,
-                      "src": "7483:3:67",
+                      "referencedDeclaration": 26691,
+                      "src": "7483:3:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 26168,
+                    "id": 26748,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -11834,17 +11830,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "7483:22:67",
+                    "src": "7483:22:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 26162,
-                  "id": 26169,
+                  "functionReturnParameters": 26742,
+                  "id": 26749,
                   "nodeType": "Return",
-                  "src": "7476:29:67"
+                  "src": "7476:29:73"
                 }
               ]
             },
@@ -11852,20 +11848,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "dim",
-            "nameLocation": "7413:3:67",
+            "nameLocation": "7413:3:73",
             "parameters": {
-              "id": 26159,
+              "id": 26739,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26158,
+                  "id": 26738,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "7422:4:67",
+                  "nameLocation": "7422:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26171,
-                  "src": "7417:9:67",
+                  "scope": 26751,
+                  "src": "7417:9:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -11873,10 +11869,10 @@ export const StdStyle =
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 26157,
+                    "id": 26737,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "7417:4:67",
+                    "src": "7417:4:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -11885,21 +11881,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "7416:11:67"
+              "src": "7416:11:73"
             },
             "returnParameters": {
-              "id": 26162,
+              "id": 26742,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26161,
+                  "id": 26741,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26171,
-                  "src": "7451:13:67",
+                  "scope": 26751,
+                  "src": "7451:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -11907,10 +11903,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 26160,
+                    "id": 26740,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "7451:6:67",
+                    "src": "7451:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -11919,22 +11915,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "7450:15:67"
+              "src": "7450:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 26186,
+            "id": 26766,
             "nodeType": "FunctionDefinition",
-            "src": "7518:121:67",
+            "src": "7518:121:73",
             "nodes": [],
             "body": {
-              "id": 26185,
+              "id": 26765,
               "nodeType": "Block",
-              "src": "7593:46:67",
+              "src": "7593:46:73",
               "nodes": [],
               "statements": [
                 {
@@ -11943,12 +11939,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 26181,
+                            "id": 26761,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 26173,
-                            "src": "7626:4:67",
+                            "referencedDeclaration": 26753,
+                            "src": "7626:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes_memory_ptr",
                               "typeString": "bytes memory"
@@ -11963,33 +11959,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 26179,
+                            "id": 26759,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "7614:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "7614:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 26180,
+                          "id": 26760,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "7617:8:67",
+                          "memberLocation": "7617:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 27986,
-                          "src": "7614:11:67",
+                          "referencedDeclaration": 28566,
+                          "src": "7614:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_bytes_memory_ptr_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (bytes memory) pure external returns (string memory)"
                           }
                         },
-                        "id": 26182,
+                        "id": 26762,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -11998,7 +11994,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "7614:17:67",
+                        "src": "7614:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -12013,24 +12009,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 26178,
+                      "id": 26758,
                       "name": "dim",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        26111,
-                        26126,
-                        26141,
-                        26156,
-                        26171
+                        26691,
+                        26706,
+                        26721,
+                        26736,
+                        26751
                       ],
-                      "referencedDeclaration": 26111,
-                      "src": "7610:3:67",
+                      "referencedDeclaration": 26691,
+                      "src": "7610:3:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 26183,
+                    "id": 26763,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -12039,17 +12035,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "7610:22:67",
+                    "src": "7610:22:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 26177,
-                  "id": 26184,
+                  "functionReturnParameters": 26757,
+                  "id": 26764,
                   "nodeType": "Return",
-                  "src": "7603:29:67"
+                  "src": "7603:29:73"
                 }
               ]
             },
@@ -12057,20 +12053,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "dimBytes",
-            "nameLocation": "7527:8:67",
+            "nameLocation": "7527:8:73",
             "parameters": {
-              "id": 26174,
+              "id": 26754,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26173,
+                  "id": 26753,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "7549:4:67",
+                  "nameLocation": "7549:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26186,
-                  "src": "7536:17:67",
+                  "scope": 26766,
+                  "src": "7536:17:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -12078,10 +12074,10 @@ export const StdStyle =
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 26172,
+                    "id": 26752,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "7536:5:67",
+                    "src": "7536:5:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -12090,21 +12086,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "7535:19:67"
+              "src": "7535:19:73"
             },
             "returnParameters": {
-              "id": 26177,
+              "id": 26757,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26176,
+                  "id": 26756,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26186,
-                  "src": "7578:13:67",
+                  "scope": 26766,
+                  "src": "7578:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -12112,10 +12108,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 26175,
+                    "id": 26755,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "7578:6:67",
+                    "src": "7578:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -12124,22 +12120,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "7577:15:67"
+              "src": "7577:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 26201,
+            "id": 26781,
             "nodeType": "FunctionDefinition",
-            "src": "7645:118:67",
+            "src": "7645:118:73",
             "nodes": [],
             "body": {
-              "id": 26200,
+              "id": 26780,
               "nodeType": "Block",
-              "src": "7717:46:67",
+              "src": "7717:46:73",
               "nodes": [],
               "statements": [
                 {
@@ -12148,12 +12144,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 26196,
+                            "id": 26776,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 26188,
-                            "src": "7750:4:67",
+                            "referencedDeclaration": 26768,
+                            "src": "7750:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes32",
                               "typeString": "bytes32"
@@ -12168,33 +12164,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 26194,
+                            "id": 26774,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "7738:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "7738:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 26195,
+                          "id": 26775,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "7741:8:67",
+                          "memberLocation": "7741:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 27993,
-                          "src": "7738:11:67",
+                          "referencedDeclaration": 28573,
+                          "src": "7738:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_bytes32_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (bytes32) pure external returns (string memory)"
                           }
                         },
-                        "id": 26197,
+                        "id": 26777,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -12203,7 +12199,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "7738:17:67",
+                        "src": "7738:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -12218,24 +12214,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 26193,
+                      "id": 26773,
                       "name": "dim",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        26111,
-                        26126,
-                        26141,
-                        26156,
-                        26171
+                        26691,
+                        26706,
+                        26721,
+                        26736,
+                        26751
                       ],
-                      "referencedDeclaration": 26111,
-                      "src": "7734:3:67",
+                      "referencedDeclaration": 26691,
+                      "src": "7734:3:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 26198,
+                    "id": 26778,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -12244,17 +12240,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "7734:22:67",
+                    "src": "7734:22:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 26192,
-                  "id": 26199,
+                  "functionReturnParameters": 26772,
+                  "id": 26779,
                   "nodeType": "Return",
-                  "src": "7727:29:67"
+                  "src": "7727:29:73"
                 }
               ]
             },
@@ -12262,20 +12258,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "dimBytes32",
-            "nameLocation": "7654:10:67",
+            "nameLocation": "7654:10:73",
             "parameters": {
-              "id": 26189,
+              "id": 26769,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26188,
+                  "id": 26768,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "7673:4:67",
+                  "nameLocation": "7673:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26201,
-                  "src": "7665:12:67",
+                  "scope": 26781,
+                  "src": "7665:12:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -12283,10 +12279,10 @@ export const StdStyle =
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 26187,
+                    "id": 26767,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "7665:7:67",
+                    "src": "7665:7:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -12295,21 +12291,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "7664:14:67"
+              "src": "7664:14:73"
             },
             "returnParameters": {
-              "id": 26192,
+              "id": 26772,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26191,
+                  "id": 26771,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26201,
-                  "src": "7702:13:67",
+                  "scope": 26781,
+                  "src": "7702:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -12317,10 +12313,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 26190,
+                    "id": 26770,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "7702:6:67",
+                    "src": "7702:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -12329,46 +12325,46 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "7701:15:67"
+              "src": "7701:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 26214,
+            "id": 26794,
             "nodeType": "FunctionDefinition",
-            "src": "7769:123:67",
+            "src": "7769:123:73",
             "nodes": [],
             "body": {
-              "id": 26213,
+              "id": 26793,
               "nodeType": "Block",
-              "src": "7843:49:67",
+              "src": "7843:49:73",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 26209,
+                        "id": 26789,
                         "name": "ITALIC",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 25348,
-                        "src": "7872:6:67",
+                        "referencedDeclaration": 25928,
+                        "src": "7872:6:73",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 26210,
+                        "id": 26790,
                         "name": "self",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 26203,
-                        "src": "7880:4:67",
+                        "referencedDeclaration": 26783,
+                        "src": "7880:4:73",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
@@ -12386,18 +12382,18 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 26208,
+                      "id": 26788,
                       "name": "styleConcat",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 25377,
-                      "src": "7860:11:67",
+                      "referencedDeclaration": 25957,
+                      "src": "7860:11:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory,string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 26211,
+                    "id": 26791,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -12406,17 +12402,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "7860:25:67",
+                    "src": "7860:25:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 26207,
-                  "id": 26212,
+                  "functionReturnParameters": 26787,
+                  "id": 26792,
                   "nodeType": "Return",
-                  "src": "7853:32:67"
+                  "src": "7853:32:73"
                 }
               ]
             },
@@ -12424,20 +12420,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "italic",
-            "nameLocation": "7778:6:67",
+            "nameLocation": "7778:6:73",
             "parameters": {
-              "id": 26204,
+              "id": 26784,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26203,
+                  "id": 26783,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "7799:4:67",
+                  "nameLocation": "7799:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26214,
-                  "src": "7785:18:67",
+                  "scope": 26794,
+                  "src": "7785:18:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -12445,10 +12441,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 26202,
+                    "id": 26782,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "7785:6:67",
+                    "src": "7785:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -12457,21 +12453,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "7784:20:67"
+              "src": "7784:20:73"
             },
             "returnParameters": {
-              "id": 26207,
+              "id": 26787,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26206,
+                  "id": 26786,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26214,
-                  "src": "7828:13:67",
+                  "scope": 26794,
+                  "src": "7828:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -12479,10 +12475,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 26205,
+                    "id": 26785,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "7828:6:67",
+                    "src": "7828:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -12491,22 +12487,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "7827:15:67"
+              "src": "7827:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 26229,
+            "id": 26809,
             "nodeType": "FunctionDefinition",
-            "src": "7898:117:67",
+            "src": "7898:117:73",
             "nodes": [],
             "body": {
-              "id": 26228,
+              "id": 26808,
               "nodeType": "Block",
-              "src": "7966:49:67",
+              "src": "7966:49:73",
               "nodes": [],
               "statements": [
                 {
@@ -12515,12 +12511,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 26224,
+                            "id": 26804,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 26216,
-                            "src": "8002:4:67",
+                            "referencedDeclaration": 26796,
+                            "src": "8002:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -12535,33 +12531,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 26222,
+                            "id": 26802,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "7990:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "7990:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 26223,
+                          "id": 26803,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "7993:8:67",
+                          "memberLocation": "7993:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 28007,
-                          "src": "7990:11:67",
+                          "referencedDeclaration": 28587,
+                          "src": "7990:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_uint256_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (uint256) pure external returns (string memory)"
                           }
                         },
-                        "id": 26225,
+                        "id": 26805,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -12570,7 +12566,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "7990:17:67",
+                        "src": "7990:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -12585,24 +12581,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 26221,
+                      "id": 26801,
                       "name": "italic",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        26214,
-                        26229,
-                        26244,
-                        26259,
-                        26274
+                        26794,
+                        26809,
+                        26824,
+                        26839,
+                        26854
                       ],
-                      "referencedDeclaration": 26214,
-                      "src": "7983:6:67",
+                      "referencedDeclaration": 26794,
+                      "src": "7983:6:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 26226,
+                    "id": 26806,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -12611,17 +12607,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "7983:25:67",
+                    "src": "7983:25:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 26220,
-                  "id": 26227,
+                  "functionReturnParameters": 26800,
+                  "id": 26807,
                   "nodeType": "Return",
-                  "src": "7976:32:67"
+                  "src": "7976:32:73"
                 }
               ]
             },
@@ -12629,20 +12625,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "italic",
-            "nameLocation": "7907:6:67",
+            "nameLocation": "7907:6:73",
             "parameters": {
-              "id": 26217,
+              "id": 26797,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26216,
+                  "id": 26796,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "7922:4:67",
+                  "nameLocation": "7922:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26229,
-                  "src": "7914:12:67",
+                  "scope": 26809,
+                  "src": "7914:12:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -12650,10 +12646,10 @@ export const StdStyle =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 26215,
+                    "id": 26795,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "7914:7:67",
+                    "src": "7914:7:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -12662,21 +12658,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "7913:14:67"
+              "src": "7913:14:73"
             },
             "returnParameters": {
-              "id": 26220,
+              "id": 26800,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26219,
+                  "id": 26799,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26229,
-                  "src": "7951:13:67",
+                  "scope": 26809,
+                  "src": "7951:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -12684,10 +12680,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 26218,
+                    "id": 26798,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "7951:6:67",
+                    "src": "7951:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -12696,22 +12692,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "7950:15:67"
+              "src": "7950:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 26244,
+            "id": 26824,
             "nodeType": "FunctionDefinition",
-            "src": "8021:116:67",
+            "src": "8021:116:73",
             "nodes": [],
             "body": {
-              "id": 26243,
+              "id": 26823,
               "nodeType": "Block",
-              "src": "8088:49:67",
+              "src": "8088:49:73",
               "nodes": [],
               "statements": [
                 {
@@ -12720,12 +12716,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 26239,
+                            "id": 26819,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 26231,
-                            "src": "8124:4:67",
+                            "referencedDeclaration": 26811,
+                            "src": "8124:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -12740,33 +12736,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 26237,
+                            "id": 26817,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "8112:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "8112:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 26238,
+                          "id": 26818,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "8115:8:67",
+                          "memberLocation": "8115:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 28014,
-                          "src": "8112:11:67",
+                          "referencedDeclaration": 28594,
+                          "src": "8112:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_int256_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (int256) pure external returns (string memory)"
                           }
                         },
-                        "id": 26240,
+                        "id": 26820,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -12775,7 +12771,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "8112:17:67",
+                        "src": "8112:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -12790,24 +12786,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 26236,
+                      "id": 26816,
                       "name": "italic",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        26214,
-                        26229,
-                        26244,
-                        26259,
-                        26274
+                        26794,
+                        26809,
+                        26824,
+                        26839,
+                        26854
                       ],
-                      "referencedDeclaration": 26214,
-                      "src": "8105:6:67",
+                      "referencedDeclaration": 26794,
+                      "src": "8105:6:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 26241,
+                    "id": 26821,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -12816,17 +12812,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "8105:25:67",
+                    "src": "8105:25:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 26235,
-                  "id": 26242,
+                  "functionReturnParameters": 26815,
+                  "id": 26822,
                   "nodeType": "Return",
-                  "src": "8098:32:67"
+                  "src": "8098:32:73"
                 }
               ]
             },
@@ -12834,20 +12830,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "italic",
-            "nameLocation": "8030:6:67",
+            "nameLocation": "8030:6:73",
             "parameters": {
-              "id": 26232,
+              "id": 26812,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26231,
+                  "id": 26811,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "8044:4:67",
+                  "nameLocation": "8044:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26244,
-                  "src": "8037:11:67",
+                  "scope": 26824,
+                  "src": "8037:11:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -12855,10 +12851,10 @@ export const StdStyle =
                     "typeString": "int256"
                   },
                   "typeName": {
-                    "id": 26230,
+                    "id": 26810,
                     "name": "int256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "8037:6:67",
+                    "src": "8037:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
@@ -12867,21 +12863,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "8036:13:67"
+              "src": "8036:13:73"
             },
             "returnParameters": {
-              "id": 26235,
+              "id": 26815,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26234,
+                  "id": 26814,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26244,
-                  "src": "8073:13:67",
+                  "scope": 26824,
+                  "src": "8073:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -12889,10 +12885,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 26233,
+                    "id": 26813,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "8073:6:67",
+                    "src": "8073:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -12901,22 +12897,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "8072:15:67"
+              "src": "8072:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 26259,
+            "id": 26839,
             "nodeType": "FunctionDefinition",
-            "src": "8143:117:67",
+            "src": "8143:117:73",
             "nodes": [],
             "body": {
-              "id": 26258,
+              "id": 26838,
               "nodeType": "Block",
-              "src": "8211:49:67",
+              "src": "8211:49:73",
               "nodes": [],
               "statements": [
                 {
@@ -12925,12 +12921,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 26254,
+                            "id": 26834,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 26246,
-                            "src": "8247:4:67",
+                            "referencedDeclaration": 26826,
+                            "src": "8247:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -12945,33 +12941,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 26252,
+                            "id": 26832,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "8235:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "8235:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 26253,
+                          "id": 26833,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "8238:8:67",
+                          "memberLocation": "8238:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 27979,
-                          "src": "8235:11:67",
+                          "referencedDeclaration": 28559,
+                          "src": "8235:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_address_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (address) pure external returns (string memory)"
                           }
                         },
-                        "id": 26255,
+                        "id": 26835,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -12980,7 +12976,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "8235:17:67",
+                        "src": "8235:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -12995,24 +12991,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 26251,
+                      "id": 26831,
                       "name": "italic",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        26214,
-                        26229,
-                        26244,
-                        26259,
-                        26274
+                        26794,
+                        26809,
+                        26824,
+                        26839,
+                        26854
                       ],
-                      "referencedDeclaration": 26214,
-                      "src": "8228:6:67",
+                      "referencedDeclaration": 26794,
+                      "src": "8228:6:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 26256,
+                    "id": 26836,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -13021,17 +13017,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "8228:25:67",
+                    "src": "8228:25:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 26250,
-                  "id": 26257,
+                  "functionReturnParameters": 26830,
+                  "id": 26837,
                   "nodeType": "Return",
-                  "src": "8221:32:67"
+                  "src": "8221:32:73"
                 }
               ]
             },
@@ -13039,20 +13035,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "italic",
-            "nameLocation": "8152:6:67",
+            "nameLocation": "8152:6:73",
             "parameters": {
-              "id": 26247,
+              "id": 26827,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26246,
+                  "id": 26826,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "8167:4:67",
+                  "nameLocation": "8167:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26259,
-                  "src": "8159:12:67",
+                  "scope": 26839,
+                  "src": "8159:12:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -13060,10 +13056,10 @@ export const StdStyle =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 26245,
+                    "id": 26825,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "8159:7:67",
+                    "src": "8159:7:73",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -13073,21 +13069,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "8158:14:67"
+              "src": "8158:14:73"
             },
             "returnParameters": {
-              "id": 26250,
+              "id": 26830,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26249,
+                  "id": 26829,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26259,
-                  "src": "8196:13:67",
+                  "scope": 26839,
+                  "src": "8196:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -13095,10 +13091,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 26248,
+                    "id": 26828,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "8196:6:67",
+                    "src": "8196:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -13107,22 +13103,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "8195:15:67"
+              "src": "8195:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 26274,
+            "id": 26854,
             "nodeType": "FunctionDefinition",
-            "src": "8266:114:67",
+            "src": "8266:114:73",
             "nodes": [],
             "body": {
-              "id": 26273,
+              "id": 26853,
               "nodeType": "Block",
-              "src": "8331:49:67",
+              "src": "8331:49:73",
               "nodes": [],
               "statements": [
                 {
@@ -13131,12 +13127,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 26269,
+                            "id": 26849,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 26261,
-                            "src": "8367:4:67",
+                            "referencedDeclaration": 26841,
+                            "src": "8367:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
                               "typeString": "bool"
@@ -13151,33 +13147,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 26267,
+                            "id": 26847,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "8355:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "8355:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 26268,
+                          "id": 26848,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "8358:8:67",
+                          "memberLocation": "8358:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 28000,
-                          "src": "8355:11:67",
+                          "referencedDeclaration": 28580,
+                          "src": "8355:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_bool_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (bool) pure external returns (string memory)"
                           }
                         },
-                        "id": 26270,
+                        "id": 26850,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -13186,7 +13182,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "8355:17:67",
+                        "src": "8355:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -13201,24 +13197,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 26266,
+                      "id": 26846,
                       "name": "italic",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        26214,
-                        26229,
-                        26244,
-                        26259,
-                        26274
+                        26794,
+                        26809,
+                        26824,
+                        26839,
+                        26854
                       ],
-                      "referencedDeclaration": 26214,
-                      "src": "8348:6:67",
+                      "referencedDeclaration": 26794,
+                      "src": "8348:6:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 26271,
+                    "id": 26851,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -13227,17 +13223,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "8348:25:67",
+                    "src": "8348:25:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 26265,
-                  "id": 26272,
+                  "functionReturnParameters": 26845,
+                  "id": 26852,
                   "nodeType": "Return",
-                  "src": "8341:32:67"
+                  "src": "8341:32:73"
                 }
               ]
             },
@@ -13245,20 +13241,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "italic",
-            "nameLocation": "8275:6:67",
+            "nameLocation": "8275:6:73",
             "parameters": {
-              "id": 26262,
+              "id": 26842,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26261,
+                  "id": 26841,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "8287:4:67",
+                  "nameLocation": "8287:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26274,
-                  "src": "8282:9:67",
+                  "scope": 26854,
+                  "src": "8282:9:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -13266,10 +13262,10 @@ export const StdStyle =
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 26260,
+                    "id": 26840,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "8282:4:67",
+                    "src": "8282:4:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -13278,21 +13274,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "8281:11:67"
+              "src": "8281:11:73"
             },
             "returnParameters": {
-              "id": 26265,
+              "id": 26845,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26264,
+                  "id": 26844,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26274,
-                  "src": "8316:13:67",
+                  "scope": 26854,
+                  "src": "8316:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -13300,10 +13296,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 26263,
+                    "id": 26843,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "8316:6:67",
+                    "src": "8316:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -13312,22 +13308,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "8315:15:67"
+              "src": "8315:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 26289,
+            "id": 26869,
             "nodeType": "FunctionDefinition",
-            "src": "8386:127:67",
+            "src": "8386:127:73",
             "nodes": [],
             "body": {
-              "id": 26288,
+              "id": 26868,
               "nodeType": "Block",
-              "src": "8464:49:67",
+              "src": "8464:49:73",
               "nodes": [],
               "statements": [
                 {
@@ -13336,12 +13332,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 26284,
+                            "id": 26864,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 26276,
-                            "src": "8500:4:67",
+                            "referencedDeclaration": 26856,
+                            "src": "8500:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes_memory_ptr",
                               "typeString": "bytes memory"
@@ -13356,33 +13352,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 26282,
+                            "id": 26862,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "8488:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "8488:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 26283,
+                          "id": 26863,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "8491:8:67",
+                          "memberLocation": "8491:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 27986,
-                          "src": "8488:11:67",
+                          "referencedDeclaration": 28566,
+                          "src": "8488:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_bytes_memory_ptr_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (bytes memory) pure external returns (string memory)"
                           }
                         },
-                        "id": 26285,
+                        "id": 26865,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -13391,7 +13387,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "8488:17:67",
+                        "src": "8488:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -13406,24 +13402,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 26281,
+                      "id": 26861,
                       "name": "italic",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        26214,
-                        26229,
-                        26244,
-                        26259,
-                        26274
+                        26794,
+                        26809,
+                        26824,
+                        26839,
+                        26854
                       ],
-                      "referencedDeclaration": 26214,
-                      "src": "8481:6:67",
+                      "referencedDeclaration": 26794,
+                      "src": "8481:6:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 26286,
+                    "id": 26866,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -13432,17 +13428,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "8481:25:67",
+                    "src": "8481:25:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 26280,
-                  "id": 26287,
+                  "functionReturnParameters": 26860,
+                  "id": 26867,
                   "nodeType": "Return",
-                  "src": "8474:32:67"
+                  "src": "8474:32:73"
                 }
               ]
             },
@@ -13450,20 +13446,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "italicBytes",
-            "nameLocation": "8395:11:67",
+            "nameLocation": "8395:11:73",
             "parameters": {
-              "id": 26277,
+              "id": 26857,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26276,
+                  "id": 26856,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "8420:4:67",
+                  "nameLocation": "8420:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26289,
-                  "src": "8407:17:67",
+                  "scope": 26869,
+                  "src": "8407:17:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -13471,10 +13467,10 @@ export const StdStyle =
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 26275,
+                    "id": 26855,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "8407:5:67",
+                    "src": "8407:5:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -13483,21 +13479,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "8406:19:67"
+              "src": "8406:19:73"
             },
             "returnParameters": {
-              "id": 26280,
+              "id": 26860,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26279,
+                  "id": 26859,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26289,
-                  "src": "8449:13:67",
+                  "scope": 26869,
+                  "src": "8449:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -13505,10 +13501,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 26278,
+                    "id": 26858,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "8449:6:67",
+                    "src": "8449:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -13517,22 +13513,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "8448:15:67"
+              "src": "8448:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 26304,
+            "id": 26884,
             "nodeType": "FunctionDefinition",
-            "src": "8519:124:67",
+            "src": "8519:124:73",
             "nodes": [],
             "body": {
-              "id": 26303,
+              "id": 26883,
               "nodeType": "Block",
-              "src": "8594:49:67",
+              "src": "8594:49:73",
               "nodes": [],
               "statements": [
                 {
@@ -13541,12 +13537,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 26299,
+                            "id": 26879,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 26291,
-                            "src": "8630:4:67",
+                            "referencedDeclaration": 26871,
+                            "src": "8630:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes32",
                               "typeString": "bytes32"
@@ -13561,33 +13557,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 26297,
+                            "id": 26877,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "8618:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "8618:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 26298,
+                          "id": 26878,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "8621:8:67",
+                          "memberLocation": "8621:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 27993,
-                          "src": "8618:11:67",
+                          "referencedDeclaration": 28573,
+                          "src": "8618:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_bytes32_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (bytes32) pure external returns (string memory)"
                           }
                         },
-                        "id": 26300,
+                        "id": 26880,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -13596,7 +13592,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "8618:17:67",
+                        "src": "8618:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -13611,24 +13607,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 26296,
+                      "id": 26876,
                       "name": "italic",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        26214,
-                        26229,
-                        26244,
-                        26259,
-                        26274
+                        26794,
+                        26809,
+                        26824,
+                        26839,
+                        26854
                       ],
-                      "referencedDeclaration": 26214,
-                      "src": "8611:6:67",
+                      "referencedDeclaration": 26794,
+                      "src": "8611:6:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 26301,
+                    "id": 26881,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -13637,17 +13633,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "8611:25:67",
+                    "src": "8611:25:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 26295,
-                  "id": 26302,
+                  "functionReturnParameters": 26875,
+                  "id": 26882,
                   "nodeType": "Return",
-                  "src": "8604:32:67"
+                  "src": "8604:32:73"
                 }
               ]
             },
@@ -13655,20 +13651,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "italicBytes32",
-            "nameLocation": "8528:13:67",
+            "nameLocation": "8528:13:73",
             "parameters": {
-              "id": 26292,
+              "id": 26872,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26291,
+                  "id": 26871,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "8550:4:67",
+                  "nameLocation": "8550:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26304,
-                  "src": "8542:12:67",
+                  "scope": 26884,
+                  "src": "8542:12:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -13676,10 +13672,10 @@ export const StdStyle =
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 26290,
+                    "id": 26870,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "8542:7:67",
+                    "src": "8542:7:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -13688,21 +13684,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "8541:14:67"
+              "src": "8541:14:73"
             },
             "returnParameters": {
-              "id": 26295,
+              "id": 26875,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26294,
+                  "id": 26874,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26304,
-                  "src": "8579:13:67",
+                  "scope": 26884,
+                  "src": "8579:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -13710,10 +13706,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 26293,
+                    "id": 26873,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "8579:6:67",
+                    "src": "8579:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -13722,46 +13718,46 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "8578:15:67"
+              "src": "8578:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 26317,
+            "id": 26897,
             "nodeType": "FunctionDefinition",
-            "src": "8649:129:67",
+            "src": "8649:129:73",
             "nodes": [],
             "body": {
-              "id": 26316,
+              "id": 26896,
               "nodeType": "Block",
-              "src": "8726:52:67",
+              "src": "8726:52:73",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 26312,
+                        "id": 26892,
                         "name": "UNDERLINE",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 25351,
-                        "src": "8755:9:67",
+                        "referencedDeclaration": 25931,
+                        "src": "8755:9:73",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 26313,
+                        "id": 26893,
                         "name": "self",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 26306,
-                        "src": "8766:4:67",
+                        "referencedDeclaration": 26886,
+                        "src": "8766:4:73",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
@@ -13779,18 +13775,18 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 26311,
+                      "id": 26891,
                       "name": "styleConcat",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 25377,
-                      "src": "8743:11:67",
+                      "referencedDeclaration": 25957,
+                      "src": "8743:11:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory,string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 26314,
+                    "id": 26894,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -13799,17 +13795,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "8743:28:67",
+                    "src": "8743:28:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 26310,
-                  "id": 26315,
+                  "functionReturnParameters": 26890,
+                  "id": 26895,
                   "nodeType": "Return",
-                  "src": "8736:35:67"
+                  "src": "8736:35:73"
                 }
               ]
             },
@@ -13817,20 +13813,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "underline",
-            "nameLocation": "8658:9:67",
+            "nameLocation": "8658:9:73",
             "parameters": {
-              "id": 26307,
+              "id": 26887,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26306,
+                  "id": 26886,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "8682:4:67",
+                  "nameLocation": "8682:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26317,
-                  "src": "8668:18:67",
+                  "scope": 26897,
+                  "src": "8668:18:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -13838,10 +13834,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 26305,
+                    "id": 26885,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "8668:6:67",
+                    "src": "8668:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -13850,21 +13846,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "8667:20:67"
+              "src": "8667:20:73"
             },
             "returnParameters": {
-              "id": 26310,
+              "id": 26890,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26309,
+                  "id": 26889,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26317,
-                  "src": "8711:13:67",
+                  "scope": 26897,
+                  "src": "8711:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -13872,10 +13868,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 26308,
+                    "id": 26888,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "8711:6:67",
+                    "src": "8711:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -13884,22 +13880,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "8710:15:67"
+              "src": "8710:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 26332,
+            "id": 26912,
             "nodeType": "FunctionDefinition",
-            "src": "8784:123:67",
+            "src": "8784:123:73",
             "nodes": [],
             "body": {
-              "id": 26331,
+              "id": 26911,
               "nodeType": "Block",
-              "src": "8855:52:67",
+              "src": "8855:52:73",
               "nodes": [],
               "statements": [
                 {
@@ -13908,12 +13904,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 26327,
+                            "id": 26907,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 26319,
-                            "src": "8894:4:67",
+                            "referencedDeclaration": 26899,
+                            "src": "8894:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -13928,33 +13924,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 26325,
+                            "id": 26905,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "8882:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "8882:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 26326,
+                          "id": 26906,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "8885:8:67",
+                          "memberLocation": "8885:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 28007,
-                          "src": "8882:11:67",
+                          "referencedDeclaration": 28587,
+                          "src": "8882:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_uint256_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (uint256) pure external returns (string memory)"
                           }
                         },
-                        "id": 26328,
+                        "id": 26908,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -13963,7 +13959,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "8882:17:67",
+                        "src": "8882:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -13978,24 +13974,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 26324,
+                      "id": 26904,
                       "name": "underline",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        26317,
-                        26332,
-                        26347,
-                        26362,
-                        26377
+                        26897,
+                        26912,
+                        26927,
+                        26942,
+                        26957
                       ],
-                      "referencedDeclaration": 26317,
-                      "src": "8872:9:67",
+                      "referencedDeclaration": 26897,
+                      "src": "8872:9:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 26329,
+                    "id": 26909,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -14004,17 +14000,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "8872:28:67",
+                    "src": "8872:28:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 26323,
-                  "id": 26330,
+                  "functionReturnParameters": 26903,
+                  "id": 26910,
                   "nodeType": "Return",
-                  "src": "8865:35:67"
+                  "src": "8865:35:73"
                 }
               ]
             },
@@ -14022,20 +14018,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "underline",
-            "nameLocation": "8793:9:67",
+            "nameLocation": "8793:9:73",
             "parameters": {
-              "id": 26320,
+              "id": 26900,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26319,
+                  "id": 26899,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "8811:4:67",
+                  "nameLocation": "8811:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26332,
-                  "src": "8803:12:67",
+                  "scope": 26912,
+                  "src": "8803:12:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -14043,10 +14039,10 @@ export const StdStyle =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 26318,
+                    "id": 26898,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "8803:7:67",
+                    "src": "8803:7:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -14055,21 +14051,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "8802:14:67"
+              "src": "8802:14:73"
             },
             "returnParameters": {
-              "id": 26323,
+              "id": 26903,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26322,
+                  "id": 26902,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26332,
-                  "src": "8840:13:67",
+                  "scope": 26912,
+                  "src": "8840:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -14077,10 +14073,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 26321,
+                    "id": 26901,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "8840:6:67",
+                    "src": "8840:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -14089,22 +14085,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "8839:15:67"
+              "src": "8839:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 26347,
+            "id": 26927,
             "nodeType": "FunctionDefinition",
-            "src": "8913:122:67",
+            "src": "8913:122:73",
             "nodes": [],
             "body": {
-              "id": 26346,
+              "id": 26926,
               "nodeType": "Block",
-              "src": "8983:52:67",
+              "src": "8983:52:73",
               "nodes": [],
               "statements": [
                 {
@@ -14113,12 +14109,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 26342,
+                            "id": 26922,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 26334,
-                            "src": "9022:4:67",
+                            "referencedDeclaration": 26914,
+                            "src": "9022:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -14133,33 +14129,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 26340,
+                            "id": 26920,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "9010:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "9010:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 26341,
+                          "id": 26921,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "9013:8:67",
+                          "memberLocation": "9013:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 28014,
-                          "src": "9010:11:67",
+                          "referencedDeclaration": 28594,
+                          "src": "9010:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_int256_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (int256) pure external returns (string memory)"
                           }
                         },
-                        "id": 26343,
+                        "id": 26923,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -14168,7 +14164,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "9010:17:67",
+                        "src": "9010:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -14183,24 +14179,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 26339,
+                      "id": 26919,
                       "name": "underline",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        26317,
-                        26332,
-                        26347,
-                        26362,
-                        26377
+                        26897,
+                        26912,
+                        26927,
+                        26942,
+                        26957
                       ],
-                      "referencedDeclaration": 26317,
-                      "src": "9000:9:67",
+                      "referencedDeclaration": 26897,
+                      "src": "9000:9:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 26344,
+                    "id": 26924,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -14209,17 +14205,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "9000:28:67",
+                    "src": "9000:28:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 26338,
-                  "id": 26345,
+                  "functionReturnParameters": 26918,
+                  "id": 26925,
                   "nodeType": "Return",
-                  "src": "8993:35:67"
+                  "src": "8993:35:73"
                 }
               ]
             },
@@ -14227,20 +14223,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "underline",
-            "nameLocation": "8922:9:67",
+            "nameLocation": "8922:9:73",
             "parameters": {
-              "id": 26335,
+              "id": 26915,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26334,
+                  "id": 26914,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "8939:4:67",
+                  "nameLocation": "8939:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26347,
-                  "src": "8932:11:67",
+                  "scope": 26927,
+                  "src": "8932:11:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -14248,10 +14244,10 @@ export const StdStyle =
                     "typeString": "int256"
                   },
                   "typeName": {
-                    "id": 26333,
+                    "id": 26913,
                     "name": "int256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "8932:6:67",
+                    "src": "8932:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
@@ -14260,21 +14256,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "8931:13:67"
+              "src": "8931:13:73"
             },
             "returnParameters": {
-              "id": 26338,
+              "id": 26918,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26337,
+                  "id": 26917,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26347,
-                  "src": "8968:13:67",
+                  "scope": 26927,
+                  "src": "8968:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -14282,10 +14278,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 26336,
+                    "id": 26916,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "8968:6:67",
+                    "src": "8968:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -14294,22 +14290,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "8967:15:67"
+              "src": "8967:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 26362,
+            "id": 26942,
             "nodeType": "FunctionDefinition",
-            "src": "9041:123:67",
+            "src": "9041:123:73",
             "nodes": [],
             "body": {
-              "id": 26361,
+              "id": 26941,
               "nodeType": "Block",
-              "src": "9112:52:67",
+              "src": "9112:52:73",
               "nodes": [],
               "statements": [
                 {
@@ -14318,12 +14314,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 26357,
+                            "id": 26937,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 26349,
-                            "src": "9151:4:67",
+                            "referencedDeclaration": 26929,
+                            "src": "9151:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -14338,33 +14334,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 26355,
+                            "id": 26935,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "9139:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "9139:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 26356,
+                          "id": 26936,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "9142:8:67",
+                          "memberLocation": "9142:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 27979,
-                          "src": "9139:11:67",
+                          "referencedDeclaration": 28559,
+                          "src": "9139:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_address_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (address) pure external returns (string memory)"
                           }
                         },
-                        "id": 26358,
+                        "id": 26938,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -14373,7 +14369,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "9139:17:67",
+                        "src": "9139:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -14388,24 +14384,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 26354,
+                      "id": 26934,
                       "name": "underline",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        26317,
-                        26332,
-                        26347,
-                        26362,
-                        26377
+                        26897,
+                        26912,
+                        26927,
+                        26942,
+                        26957
                       ],
-                      "referencedDeclaration": 26317,
-                      "src": "9129:9:67",
+                      "referencedDeclaration": 26897,
+                      "src": "9129:9:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 26359,
+                    "id": 26939,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -14414,17 +14410,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "9129:28:67",
+                    "src": "9129:28:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 26353,
-                  "id": 26360,
+                  "functionReturnParameters": 26933,
+                  "id": 26940,
                   "nodeType": "Return",
-                  "src": "9122:35:67"
+                  "src": "9122:35:73"
                 }
               ]
             },
@@ -14432,20 +14428,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "underline",
-            "nameLocation": "9050:9:67",
+            "nameLocation": "9050:9:73",
             "parameters": {
-              "id": 26350,
+              "id": 26930,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26349,
+                  "id": 26929,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "9068:4:67",
+                  "nameLocation": "9068:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26362,
-                  "src": "9060:12:67",
+                  "scope": 26942,
+                  "src": "9060:12:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -14453,10 +14449,10 @@ export const StdStyle =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 26348,
+                    "id": 26928,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "9060:7:67",
+                    "src": "9060:7:73",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -14466,21 +14462,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "9059:14:67"
+              "src": "9059:14:73"
             },
             "returnParameters": {
-              "id": 26353,
+              "id": 26933,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26352,
+                  "id": 26932,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26362,
-                  "src": "9097:13:67",
+                  "scope": 26942,
+                  "src": "9097:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -14488,10 +14484,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 26351,
+                    "id": 26931,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "9097:6:67",
+                    "src": "9097:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -14500,22 +14496,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "9096:15:67"
+              "src": "9096:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 26377,
+            "id": 26957,
             "nodeType": "FunctionDefinition",
-            "src": "9170:120:67",
+            "src": "9170:120:73",
             "nodes": [],
             "body": {
-              "id": 26376,
+              "id": 26956,
               "nodeType": "Block",
-              "src": "9238:52:67",
+              "src": "9238:52:73",
               "nodes": [],
               "statements": [
                 {
@@ -14524,12 +14520,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 26372,
+                            "id": 26952,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 26364,
-                            "src": "9277:4:67",
+                            "referencedDeclaration": 26944,
+                            "src": "9277:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
                               "typeString": "bool"
@@ -14544,33 +14540,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 26370,
+                            "id": 26950,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "9265:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "9265:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 26371,
+                          "id": 26951,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "9268:8:67",
+                          "memberLocation": "9268:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 28000,
-                          "src": "9265:11:67",
+                          "referencedDeclaration": 28580,
+                          "src": "9265:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_bool_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (bool) pure external returns (string memory)"
                           }
                         },
-                        "id": 26373,
+                        "id": 26953,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -14579,7 +14575,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "9265:17:67",
+                        "src": "9265:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -14594,24 +14590,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 26369,
+                      "id": 26949,
                       "name": "underline",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        26317,
-                        26332,
-                        26347,
-                        26362,
-                        26377
+                        26897,
+                        26912,
+                        26927,
+                        26942,
+                        26957
                       ],
-                      "referencedDeclaration": 26317,
-                      "src": "9255:9:67",
+                      "referencedDeclaration": 26897,
+                      "src": "9255:9:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 26374,
+                    "id": 26954,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -14620,17 +14616,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "9255:28:67",
+                    "src": "9255:28:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 26368,
-                  "id": 26375,
+                  "functionReturnParameters": 26948,
+                  "id": 26955,
                   "nodeType": "Return",
-                  "src": "9248:35:67"
+                  "src": "9248:35:73"
                 }
               ]
             },
@@ -14638,20 +14634,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "underline",
-            "nameLocation": "9179:9:67",
+            "nameLocation": "9179:9:73",
             "parameters": {
-              "id": 26365,
+              "id": 26945,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26364,
+                  "id": 26944,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "9194:4:67",
+                  "nameLocation": "9194:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26377,
-                  "src": "9189:9:67",
+                  "scope": 26957,
+                  "src": "9189:9:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -14659,10 +14655,10 @@ export const StdStyle =
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 26363,
+                    "id": 26943,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "9189:4:67",
+                    "src": "9189:4:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -14671,21 +14667,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "9188:11:67"
+              "src": "9188:11:73"
             },
             "returnParameters": {
-              "id": 26368,
+              "id": 26948,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26367,
+                  "id": 26947,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26377,
-                  "src": "9223:13:67",
+                  "scope": 26957,
+                  "src": "9223:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -14693,10 +14689,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 26366,
+                    "id": 26946,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "9223:6:67",
+                    "src": "9223:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -14705,22 +14701,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "9222:15:67"
+              "src": "9222:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 26392,
+            "id": 26972,
             "nodeType": "FunctionDefinition",
-            "src": "9296:133:67",
+            "src": "9296:133:73",
             "nodes": [],
             "body": {
-              "id": 26391,
+              "id": 26971,
               "nodeType": "Block",
-              "src": "9377:52:67",
+              "src": "9377:52:73",
               "nodes": [],
               "statements": [
                 {
@@ -14729,12 +14725,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 26387,
+                            "id": 26967,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 26379,
-                            "src": "9416:4:67",
+                            "referencedDeclaration": 26959,
+                            "src": "9416:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes_memory_ptr",
                               "typeString": "bytes memory"
@@ -14749,33 +14745,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 26385,
+                            "id": 26965,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "9404:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "9404:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 26386,
+                          "id": 26966,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "9407:8:67",
+                          "memberLocation": "9407:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 27986,
-                          "src": "9404:11:67",
+                          "referencedDeclaration": 28566,
+                          "src": "9404:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_bytes_memory_ptr_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (bytes memory) pure external returns (string memory)"
                           }
                         },
-                        "id": 26388,
+                        "id": 26968,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -14784,7 +14780,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "9404:17:67",
+                        "src": "9404:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -14799,24 +14795,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 26384,
+                      "id": 26964,
                       "name": "underline",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        26317,
-                        26332,
-                        26347,
-                        26362,
-                        26377
+                        26897,
+                        26912,
+                        26927,
+                        26942,
+                        26957
                       ],
-                      "referencedDeclaration": 26317,
-                      "src": "9394:9:67",
+                      "referencedDeclaration": 26897,
+                      "src": "9394:9:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 26389,
+                    "id": 26969,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -14825,17 +14821,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "9394:28:67",
+                    "src": "9394:28:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 26383,
-                  "id": 26390,
+                  "functionReturnParameters": 26963,
+                  "id": 26970,
                   "nodeType": "Return",
-                  "src": "9387:35:67"
+                  "src": "9387:35:73"
                 }
               ]
             },
@@ -14843,20 +14839,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "underlineBytes",
-            "nameLocation": "9305:14:67",
+            "nameLocation": "9305:14:73",
             "parameters": {
-              "id": 26380,
+              "id": 26960,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26379,
+                  "id": 26959,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "9333:4:67",
+                  "nameLocation": "9333:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26392,
-                  "src": "9320:17:67",
+                  "scope": 26972,
+                  "src": "9320:17:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -14864,10 +14860,10 @@ export const StdStyle =
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 26378,
+                    "id": 26958,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "9320:5:67",
+                    "src": "9320:5:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -14876,21 +14872,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "9319:19:67"
+              "src": "9319:19:73"
             },
             "returnParameters": {
-              "id": 26383,
+              "id": 26963,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26382,
+                  "id": 26962,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26392,
-                  "src": "9362:13:67",
+                  "scope": 26972,
+                  "src": "9362:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -14898,10 +14894,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 26381,
+                    "id": 26961,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "9362:6:67",
+                    "src": "9362:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -14910,22 +14906,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "9361:15:67"
+              "src": "9361:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 26407,
+            "id": 26987,
             "nodeType": "FunctionDefinition",
-            "src": "9435:130:67",
+            "src": "9435:130:73",
             "nodes": [],
             "body": {
-              "id": 26406,
+              "id": 26986,
               "nodeType": "Block",
-              "src": "9513:52:67",
+              "src": "9513:52:73",
               "nodes": [],
               "statements": [
                 {
@@ -14934,12 +14930,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 26402,
+                            "id": 26982,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 26394,
-                            "src": "9552:4:67",
+                            "referencedDeclaration": 26974,
+                            "src": "9552:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes32",
                               "typeString": "bytes32"
@@ -14954,33 +14950,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 26400,
+                            "id": 26980,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "9540:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "9540:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 26401,
+                          "id": 26981,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "9543:8:67",
+                          "memberLocation": "9543:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 27993,
-                          "src": "9540:11:67",
+                          "referencedDeclaration": 28573,
+                          "src": "9540:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_bytes32_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (bytes32) pure external returns (string memory)"
                           }
                         },
-                        "id": 26403,
+                        "id": 26983,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -14989,7 +14985,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "9540:17:67",
+                        "src": "9540:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -15004,24 +15000,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 26399,
+                      "id": 26979,
                       "name": "underline",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        26317,
-                        26332,
-                        26347,
-                        26362,
-                        26377
+                        26897,
+                        26912,
+                        26927,
+                        26942,
+                        26957
                       ],
-                      "referencedDeclaration": 26317,
-                      "src": "9530:9:67",
+                      "referencedDeclaration": 26897,
+                      "src": "9530:9:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 26404,
+                    "id": 26984,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -15030,17 +15026,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "9530:28:67",
+                    "src": "9530:28:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 26398,
-                  "id": 26405,
+                  "functionReturnParameters": 26978,
+                  "id": 26985,
                   "nodeType": "Return",
-                  "src": "9523:35:67"
+                  "src": "9523:35:73"
                 }
               ]
             },
@@ -15048,20 +15044,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "underlineBytes32",
-            "nameLocation": "9444:16:67",
+            "nameLocation": "9444:16:73",
             "parameters": {
-              "id": 26395,
+              "id": 26975,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26394,
+                  "id": 26974,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "9469:4:67",
+                  "nameLocation": "9469:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26407,
-                  "src": "9461:12:67",
+                  "scope": 26987,
+                  "src": "9461:12:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -15069,10 +15065,10 @@ export const StdStyle =
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 26393,
+                    "id": 26973,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "9461:7:67",
+                    "src": "9461:7:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -15081,21 +15077,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "9460:14:67"
+              "src": "9460:14:73"
             },
             "returnParameters": {
-              "id": 26398,
+              "id": 26978,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26397,
+                  "id": 26977,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26407,
-                  "src": "9498:13:67",
+                  "scope": 26987,
+                  "src": "9498:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -15103,10 +15099,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 26396,
+                    "id": 26976,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "9498:6:67",
+                    "src": "9498:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -15115,46 +15111,46 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "9497:15:67"
+              "src": "9497:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 26420,
+            "id": 27000,
             "nodeType": "FunctionDefinition",
-            "src": "9571:125:67",
+            "src": "9571:125:73",
             "nodes": [],
             "body": {
-              "id": 26419,
+              "id": 26999,
               "nodeType": "Block",
-              "src": "9646:50:67",
+              "src": "9646:50:73",
               "nodes": [],
               "statements": [
                 {
                   "expression": {
                     "arguments": [
                       {
-                        "id": 26415,
+                        "id": 26995,
                         "name": "INVERSE",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 25354,
-                        "src": "9675:7:67",
+                        "referencedDeclaration": 25934,
+                        "src": "9675:7:73",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
                         }
                       },
                       {
-                        "id": 26416,
+                        "id": 26996,
                         "name": "self",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 26409,
-                        "src": "9684:4:67",
+                        "referencedDeclaration": 26989,
+                        "src": "9684:4:73",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
                           "typeString": "string memory"
@@ -15172,18 +15168,18 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 26414,
+                      "id": 26994,
                       "name": "styleConcat",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 25377,
-                      "src": "9663:11:67",
+                      "referencedDeclaration": 25957,
+                      "src": "9663:11:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory,string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 26417,
+                    "id": 26997,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -15192,17 +15188,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "9663:26:67",
+                    "src": "9663:26:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 26413,
-                  "id": 26418,
+                  "functionReturnParameters": 26993,
+                  "id": 26998,
                   "nodeType": "Return",
-                  "src": "9656:33:67"
+                  "src": "9656:33:73"
                 }
               ]
             },
@@ -15210,20 +15206,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "inverse",
-            "nameLocation": "9580:7:67",
+            "nameLocation": "9580:7:73",
             "parameters": {
-              "id": 26410,
+              "id": 26990,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26409,
+                  "id": 26989,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "9602:4:67",
+                  "nameLocation": "9602:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26420,
-                  "src": "9588:18:67",
+                  "scope": 27000,
+                  "src": "9588:18:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -15231,10 +15227,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 26408,
+                    "id": 26988,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "9588:6:67",
+                    "src": "9588:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -15243,21 +15239,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "9587:20:67"
+              "src": "9587:20:73"
             },
             "returnParameters": {
-              "id": 26413,
+              "id": 26993,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26412,
+                  "id": 26992,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26420,
-                  "src": "9631:13:67",
+                  "scope": 27000,
+                  "src": "9631:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -15265,10 +15261,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 26411,
+                    "id": 26991,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "9631:6:67",
+                    "src": "9631:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -15277,22 +15273,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "9630:15:67"
+              "src": "9630:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 26435,
+            "id": 27015,
             "nodeType": "FunctionDefinition",
-            "src": "9702:119:67",
+            "src": "9702:119:73",
             "nodes": [],
             "body": {
-              "id": 26434,
+              "id": 27014,
               "nodeType": "Block",
-              "src": "9771:50:67",
+              "src": "9771:50:73",
               "nodes": [],
               "statements": [
                 {
@@ -15301,12 +15297,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 26430,
+                            "id": 27010,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 26422,
-                            "src": "9808:4:67",
+                            "referencedDeclaration": 27002,
+                            "src": "9808:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -15321,33 +15317,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 26428,
+                            "id": 27008,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "9796:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "9796:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 26429,
+                          "id": 27009,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "9799:8:67",
+                          "memberLocation": "9799:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 28007,
-                          "src": "9796:11:67",
+                          "referencedDeclaration": 28587,
+                          "src": "9796:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_uint256_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (uint256) pure external returns (string memory)"
                           }
                         },
-                        "id": 26431,
+                        "id": 27011,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -15356,7 +15352,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "9796:17:67",
+                        "src": "9796:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -15371,24 +15367,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 26427,
+                      "id": 27007,
                       "name": "inverse",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        26420,
-                        26435,
-                        26450,
-                        26465,
-                        26480
+                        27000,
+                        27015,
+                        27030,
+                        27045,
+                        27060
                       ],
-                      "referencedDeclaration": 26420,
-                      "src": "9788:7:67",
+                      "referencedDeclaration": 27000,
+                      "src": "9788:7:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 26432,
+                    "id": 27012,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -15397,17 +15393,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "9788:26:67",
+                    "src": "9788:26:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 26426,
-                  "id": 26433,
+                  "functionReturnParameters": 27006,
+                  "id": 27013,
                   "nodeType": "Return",
-                  "src": "9781:33:67"
+                  "src": "9781:33:73"
                 }
               ]
             },
@@ -15415,20 +15411,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "inverse",
-            "nameLocation": "9711:7:67",
+            "nameLocation": "9711:7:73",
             "parameters": {
-              "id": 26423,
+              "id": 27003,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26422,
+                  "id": 27002,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "9727:4:67",
+                  "nameLocation": "9727:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26435,
-                  "src": "9719:12:67",
+                  "scope": 27015,
+                  "src": "9719:12:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -15436,10 +15432,10 @@ export const StdStyle =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 26421,
+                    "id": 27001,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "9719:7:67",
+                    "src": "9719:7:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -15448,21 +15444,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "9718:14:67"
+              "src": "9718:14:73"
             },
             "returnParameters": {
-              "id": 26426,
+              "id": 27006,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26425,
+                  "id": 27005,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26435,
-                  "src": "9756:13:67",
+                  "scope": 27015,
+                  "src": "9756:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -15470,10 +15466,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 26424,
+                    "id": 27004,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "9756:6:67",
+                    "src": "9756:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -15482,22 +15478,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "9755:15:67"
+              "src": "9755:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 26450,
+            "id": 27030,
             "nodeType": "FunctionDefinition",
-            "src": "9827:118:67",
+            "src": "9827:118:73",
             "nodes": [],
             "body": {
-              "id": 26449,
+              "id": 27029,
               "nodeType": "Block",
-              "src": "9895:50:67",
+              "src": "9895:50:73",
               "nodes": [],
               "statements": [
                 {
@@ -15506,12 +15502,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 26445,
+                            "id": 27025,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 26437,
-                            "src": "9932:4:67",
+                            "referencedDeclaration": 27017,
+                            "src": "9932:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_int256",
                               "typeString": "int256"
@@ -15526,33 +15522,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 26443,
+                            "id": 27023,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "9920:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "9920:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 26444,
+                          "id": 27024,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "9923:8:67",
+                          "memberLocation": "9923:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 28014,
-                          "src": "9920:11:67",
+                          "referencedDeclaration": 28594,
+                          "src": "9920:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_int256_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (int256) pure external returns (string memory)"
                           }
                         },
-                        "id": 26446,
+                        "id": 27026,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -15561,7 +15557,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "9920:17:67",
+                        "src": "9920:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -15576,24 +15572,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 26442,
+                      "id": 27022,
                       "name": "inverse",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        26420,
-                        26435,
-                        26450,
-                        26465,
-                        26480
+                        27000,
+                        27015,
+                        27030,
+                        27045,
+                        27060
                       ],
-                      "referencedDeclaration": 26420,
-                      "src": "9912:7:67",
+                      "referencedDeclaration": 27000,
+                      "src": "9912:7:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 26447,
+                    "id": 27027,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -15602,17 +15598,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "9912:26:67",
+                    "src": "9912:26:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 26441,
-                  "id": 26448,
+                  "functionReturnParameters": 27021,
+                  "id": 27028,
                   "nodeType": "Return",
-                  "src": "9905:33:67"
+                  "src": "9905:33:73"
                 }
               ]
             },
@@ -15620,20 +15616,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "inverse",
-            "nameLocation": "9836:7:67",
+            "nameLocation": "9836:7:73",
             "parameters": {
-              "id": 26438,
+              "id": 27018,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26437,
+                  "id": 27017,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "9851:4:67",
+                  "nameLocation": "9851:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26450,
-                  "src": "9844:11:67",
+                  "scope": 27030,
+                  "src": "9844:11:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -15641,10 +15637,10 @@ export const StdStyle =
                     "typeString": "int256"
                   },
                   "typeName": {
-                    "id": 26436,
+                    "id": 27016,
                     "name": "int256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "9844:6:67",
+                    "src": "9844:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
@@ -15653,21 +15649,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "9843:13:67"
+              "src": "9843:13:73"
             },
             "returnParameters": {
-              "id": 26441,
+              "id": 27021,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26440,
+                  "id": 27020,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26450,
-                  "src": "9880:13:67",
+                  "scope": 27030,
+                  "src": "9880:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -15675,10 +15671,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 26439,
+                    "id": 27019,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "9880:6:67",
+                    "src": "9880:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -15687,22 +15683,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "9879:15:67"
+              "src": "9879:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 26465,
+            "id": 27045,
             "nodeType": "FunctionDefinition",
-            "src": "9951:119:67",
+            "src": "9951:119:73",
             "nodes": [],
             "body": {
-              "id": 26464,
+              "id": 27044,
               "nodeType": "Block",
-              "src": "10020:50:67",
+              "src": "10020:50:73",
               "nodes": [],
               "statements": [
                 {
@@ -15711,12 +15707,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 26460,
+                            "id": 27040,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 26452,
-                            "src": "10057:4:67",
+                            "referencedDeclaration": 27032,
+                            "src": "10057:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -15731,33 +15727,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 26458,
+                            "id": 27038,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "10045:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "10045:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 26459,
+                          "id": 27039,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "10048:8:67",
+                          "memberLocation": "10048:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 27979,
-                          "src": "10045:11:67",
+                          "referencedDeclaration": 28559,
+                          "src": "10045:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_address_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (address) pure external returns (string memory)"
                           }
                         },
-                        "id": 26461,
+                        "id": 27041,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -15766,7 +15762,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "10045:17:67",
+                        "src": "10045:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -15781,24 +15777,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 26457,
+                      "id": 27037,
                       "name": "inverse",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        26420,
-                        26435,
-                        26450,
-                        26465,
-                        26480
+                        27000,
+                        27015,
+                        27030,
+                        27045,
+                        27060
                       ],
-                      "referencedDeclaration": 26420,
-                      "src": "10037:7:67",
+                      "referencedDeclaration": 27000,
+                      "src": "10037:7:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 26462,
+                    "id": 27042,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -15807,17 +15803,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "10037:26:67",
+                    "src": "10037:26:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 26456,
-                  "id": 26463,
+                  "functionReturnParameters": 27036,
+                  "id": 27043,
                   "nodeType": "Return",
-                  "src": "10030:33:67"
+                  "src": "10030:33:73"
                 }
               ]
             },
@@ -15825,20 +15821,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "inverse",
-            "nameLocation": "9960:7:67",
+            "nameLocation": "9960:7:73",
             "parameters": {
-              "id": 26453,
+              "id": 27033,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26452,
+                  "id": 27032,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "9976:4:67",
+                  "nameLocation": "9976:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26465,
-                  "src": "9968:12:67",
+                  "scope": 27045,
+                  "src": "9968:12:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -15846,10 +15842,10 @@ export const StdStyle =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 26451,
+                    "id": 27031,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "9968:7:67",
+                    "src": "9968:7:73",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -15859,21 +15855,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "9967:14:67"
+              "src": "9967:14:73"
             },
             "returnParameters": {
-              "id": 26456,
+              "id": 27036,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26455,
+                  "id": 27035,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26465,
-                  "src": "10005:13:67",
+                  "scope": 27045,
+                  "src": "10005:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -15881,10 +15877,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 26454,
+                    "id": 27034,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "10005:6:67",
+                    "src": "10005:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -15893,22 +15889,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "10004:15:67"
+              "src": "10004:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 26480,
+            "id": 27060,
             "nodeType": "FunctionDefinition",
-            "src": "10076:116:67",
+            "src": "10076:116:73",
             "nodes": [],
             "body": {
-              "id": 26479,
+              "id": 27059,
               "nodeType": "Block",
-              "src": "10142:50:67",
+              "src": "10142:50:73",
               "nodes": [],
               "statements": [
                 {
@@ -15917,12 +15913,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 26475,
+                            "id": 27055,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 26467,
-                            "src": "10179:4:67",
+                            "referencedDeclaration": 27047,
+                            "src": "10179:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
                               "typeString": "bool"
@@ -15937,33 +15933,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 26473,
+                            "id": 27053,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "10167:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "10167:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 26474,
+                          "id": 27054,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "10170:8:67",
+                          "memberLocation": "10170:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 28000,
-                          "src": "10167:11:67",
+                          "referencedDeclaration": 28580,
+                          "src": "10167:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_bool_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (bool) pure external returns (string memory)"
                           }
                         },
-                        "id": 26476,
+                        "id": 27056,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -15972,7 +15968,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "10167:17:67",
+                        "src": "10167:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -15987,24 +15983,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 26472,
+                      "id": 27052,
                       "name": "inverse",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        26420,
-                        26435,
-                        26450,
-                        26465,
-                        26480
+                        27000,
+                        27015,
+                        27030,
+                        27045,
+                        27060
                       ],
-                      "referencedDeclaration": 26420,
-                      "src": "10159:7:67",
+                      "referencedDeclaration": 27000,
+                      "src": "10159:7:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 26477,
+                    "id": 27057,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -16013,17 +16009,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "10159:26:67",
+                    "src": "10159:26:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 26471,
-                  "id": 26478,
+                  "functionReturnParameters": 27051,
+                  "id": 27058,
                   "nodeType": "Return",
-                  "src": "10152:33:67"
+                  "src": "10152:33:73"
                 }
               ]
             },
@@ -16031,20 +16027,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "inverse",
-            "nameLocation": "10085:7:67",
+            "nameLocation": "10085:7:73",
             "parameters": {
-              "id": 26468,
+              "id": 27048,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26467,
+                  "id": 27047,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "10098:4:67",
+                  "nameLocation": "10098:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26480,
-                  "src": "10093:9:67",
+                  "scope": 27060,
+                  "src": "10093:9:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -16052,10 +16048,10 @@ export const StdStyle =
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 26466,
+                    "id": 27046,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "10093:4:67",
+                    "src": "10093:4:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -16064,21 +16060,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "10092:11:67"
+              "src": "10092:11:73"
             },
             "returnParameters": {
-              "id": 26471,
+              "id": 27051,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26470,
+                  "id": 27050,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26480,
-                  "src": "10127:13:67",
+                  "scope": 27060,
+                  "src": "10127:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -16086,10 +16082,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 26469,
+                    "id": 27049,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "10127:6:67",
+                    "src": "10127:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -16098,22 +16094,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "10126:15:67"
+              "src": "10126:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 26495,
+            "id": 27075,
             "nodeType": "FunctionDefinition",
-            "src": "10198:129:67",
+            "src": "10198:129:73",
             "nodes": [],
             "body": {
-              "id": 26494,
+              "id": 27074,
               "nodeType": "Block",
-              "src": "10277:50:67",
+              "src": "10277:50:73",
               "nodes": [],
               "statements": [
                 {
@@ -16122,12 +16118,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 26490,
+                            "id": 27070,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 26482,
-                            "src": "10314:4:67",
+                            "referencedDeclaration": 27062,
+                            "src": "10314:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes_memory_ptr",
                               "typeString": "bytes memory"
@@ -16142,33 +16138,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 26488,
+                            "id": 27068,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "10302:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "10302:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 26489,
+                          "id": 27069,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "10305:8:67",
+                          "memberLocation": "10305:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 27986,
-                          "src": "10302:11:67",
+                          "referencedDeclaration": 28566,
+                          "src": "10302:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_bytes_memory_ptr_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (bytes memory) pure external returns (string memory)"
                           }
                         },
-                        "id": 26491,
+                        "id": 27071,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -16177,7 +16173,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "10302:17:67",
+                        "src": "10302:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -16192,24 +16188,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 26487,
+                      "id": 27067,
                       "name": "inverse",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        26420,
-                        26435,
-                        26450,
-                        26465,
-                        26480
+                        27000,
+                        27015,
+                        27030,
+                        27045,
+                        27060
                       ],
-                      "referencedDeclaration": 26420,
-                      "src": "10294:7:67",
+                      "referencedDeclaration": 27000,
+                      "src": "10294:7:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 26492,
+                    "id": 27072,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -16218,17 +16214,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "10294:26:67",
+                    "src": "10294:26:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 26486,
-                  "id": 26493,
+                  "functionReturnParameters": 27066,
+                  "id": 27073,
                   "nodeType": "Return",
-                  "src": "10287:33:67"
+                  "src": "10287:33:73"
                 }
               ]
             },
@@ -16236,20 +16232,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "inverseBytes",
-            "nameLocation": "10207:12:67",
+            "nameLocation": "10207:12:73",
             "parameters": {
-              "id": 26483,
+              "id": 27063,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26482,
+                  "id": 27062,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "10233:4:67",
+                  "nameLocation": "10233:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26495,
-                  "src": "10220:17:67",
+                  "scope": 27075,
+                  "src": "10220:17:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -16257,10 +16253,10 @@ export const StdStyle =
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 26481,
+                    "id": 27061,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "10220:5:67",
+                    "src": "10220:5:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -16269,21 +16265,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "10219:19:67"
+              "src": "10219:19:73"
             },
             "returnParameters": {
-              "id": 26486,
+              "id": 27066,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26485,
+                  "id": 27065,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26495,
-                  "src": "10262:13:67",
+                  "scope": 27075,
+                  "src": "10262:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -16291,10 +16287,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 26484,
+                    "id": 27064,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "10262:6:67",
+                    "src": "10262:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -16303,22 +16299,22 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "10261:15:67"
+              "src": "10261:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           },
           {
-            "id": 26510,
+            "id": 27090,
             "nodeType": "FunctionDefinition",
-            "src": "10333:126:67",
+            "src": "10333:126:73",
             "nodes": [],
             "body": {
-              "id": 26509,
+              "id": 27089,
               "nodeType": "Block",
-              "src": "10409:50:67",
+              "src": "10409:50:73",
               "nodes": [],
               "statements": [
                 {
@@ -16327,12 +16323,12 @@ export const StdStyle =
                       {
                         "arguments": [
                           {
-                            "id": 26505,
+                            "id": 27085,
                             "name": "self",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 26497,
-                            "src": "10446:4:67",
+                            "referencedDeclaration": 27077,
+                            "src": "10446:4:73",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes32",
                               "typeString": "bytes32"
@@ -16347,33 +16343,33 @@ export const StdStyle =
                             }
                           ],
                           "expression": {
-                            "id": 26503,
+                            "id": 27083,
                             "name": "vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25321,
-                            "src": "10434:2:67",
+                            "referencedDeclaration": 25901,
+                            "src": "10434:2:73",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_VmSafe_$28475",
+                              "typeIdentifier": "t_contract$_VmSafe_$29055",
                               "typeString": "contract VmSafe"
                             }
                           },
-                          "id": 26504,
+                          "id": 27084,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
-                          "memberLocation": "10437:8:67",
+                          "memberLocation": "10437:8:73",
                           "memberName": "toString",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 27993,
-                          "src": "10434:11:67",
+                          "referencedDeclaration": 28573,
+                          "src": "10434:11:73",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_pure$_t_bytes32_$returns$_t_string_memory_ptr_$",
                             "typeString": "function (bytes32) pure external returns (string memory)"
                           }
                         },
-                        "id": 26506,
+                        "id": 27086,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -16382,7 +16378,7 @@ export const StdStyle =
                         "nameLocations": [],
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "10434:17:67",
+                        "src": "10434:17:73",
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -16397,24 +16393,24 @@ export const StdStyle =
                           "typeString": "string memory"
                         }
                       ],
-                      "id": 26502,
+                      "id": 27082,
                       "name": "inverse",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        26420,
-                        26435,
-                        26450,
-                        26465,
-                        26480
+                        27000,
+                        27015,
+                        27030,
+                        27045,
+                        27060
                       ],
-                      "referencedDeclaration": 26420,
-                      "src": "10426:7:67",
+                      "referencedDeclaration": 27000,
+                      "src": "10426:7:73",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                         "typeString": "function (string memory) pure returns (string memory)"
                       }
                     },
-                    "id": 26507,
+                    "id": 27087,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -16423,17 +16419,17 @@ export const StdStyle =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "10426:26:67",
+                    "src": "10426:26:73",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_memory_ptr",
                       "typeString": "string memory"
                     }
                   },
-                  "functionReturnParameters": 26501,
-                  "id": 26508,
+                  "functionReturnParameters": 27081,
+                  "id": 27088,
                   "nodeType": "Return",
-                  "src": "10419:33:67"
+                  "src": "10419:33:73"
                 }
               ]
             },
@@ -16441,20 +16437,20 @@ export const StdStyle =
             "kind": "function",
             "modifiers": [],
             "name": "inverseBytes32",
-            "nameLocation": "10342:14:67",
+            "nameLocation": "10342:14:73",
             "parameters": {
-              "id": 26498,
+              "id": 27078,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26497,
+                  "id": 27077,
                   "mutability": "mutable",
                   "name": "self",
-                  "nameLocation": "10365:4:67",
+                  "nameLocation": "10365:4:73",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26510,
-                  "src": "10357:12:67",
+                  "scope": 27090,
+                  "src": "10357:12:73",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -16462,10 +16458,10 @@ export const StdStyle =
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 26496,
+                    "id": 27076,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "10357:7:67",
+                    "src": "10357:7:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -16474,21 +16470,21 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "10356:14:67"
+              "src": "10356:14:73"
             },
             "returnParameters": {
-              "id": 26501,
+              "id": 27081,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 26500,
+                  "id": 27080,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 26510,
-                  "src": "10394:13:67",
+                  "scope": 27090,
+                  "src": "10394:13:73",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -16496,10 +16492,10 @@ export const StdStyle =
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 26499,
+                    "id": 27079,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "10394:6:67",
+                    "src": "10394:6:73",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -16508,9 +16504,9 @@ export const StdStyle =
                   "visibility": "internal"
                 }
               ],
-              "src": "10393:15:67"
+              "src": "10393:15:73"
             },
-            "scope": 26511,
+            "scope": 27091,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
@@ -16523,15 +16519,15 @@ export const StdStyle =
         "contractKind": "library",
         "fullyImplemented": true,
         "linearizedBaseContracts": [
-          26511
+          27091
         ],
         "name": "StdStyle",
-        "nameLocation": "108:8:67",
-        "scope": 26512,
+        "nameLocation": "108:8:73",
+        "scope": 27092,
         "usedErrors": []
       }
     ],
     "license": "MIT"
   },
-  "id": 67
+  "id": 73
 } as const;
