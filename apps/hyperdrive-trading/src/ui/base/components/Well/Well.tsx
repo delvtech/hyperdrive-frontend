@@ -7,7 +7,7 @@ interface WellProps {
   block?: boolean;
   disabled?: boolean;
   onClick?: () => void;
-  className?: string; // Add this line
+  className?: string;
 }
 
 export function Well({
@@ -17,12 +17,12 @@ export function Well({
   children,
   block,
   onClick,
-  className, // Include the new prop
+  className,
 }: PropsWithChildren<WellProps>): ReactElement {
   const isInteractive = !disabled && (interactive || onClick);
   const wellClassName = classNames(
     "daisy-card p-4 bg-base-200 border border-1",
-    className, // Use the new prop here
+    className,
     {
       "shadow-md": elevation === "elevated",
       "w-full": block,
