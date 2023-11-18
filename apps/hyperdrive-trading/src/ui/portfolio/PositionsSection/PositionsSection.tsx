@@ -4,20 +4,19 @@ import { ReactElement } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
 import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
-import { ClosedLongsTable } from "src/ui/portfolio/ClosedLongsTable/ClosedLongsTable";
+import { MARKET_DETAILS_FEATURE_FLAG } from "src/ui/markets/featureFlags";
 import { ClosedLpTable } from "src/ui/portfolio/ClosedLpTable/ClosedLpTable";
 import { ClosedShortsTable } from "src/ui/portfolio/ClosedShortsTable/ClosedShortsTable";
 import { LP_CARDS_FEATURE_FLAG } from "src/ui/portfolio/featureFlags";
 import { LpPortfolioCard } from "src/ui/portfolio/LpPortfolioCard/LpPortfolioCard";
-import { OpenLongsTable } from "src/ui/portfolio/OpenLongsTable/OpenLongsTable";
+import { LongsSection } from "src/ui/portfolio/OpenLongsTable/LongsSection";
+import { OpenOrClosedTab } from "src/ui/portfolio/OpenLongsTable/OpenOrClosedTabs";
 import { OpenLpTable } from "src/ui/portfolio/OpenLpTable/OpenLpTable";
 import { OpenShortsTable } from "src/ui/portfolio/OpenShortsTable/OpenShortsTable";
 import {
   PositionTab,
   PositionTabs,
 } from "src/ui/portfolio/PositionTabs/PositionTabs";
-
-export type OpenOrClosedTab = "Open" | "Closed";
 
 export function PositionsSection({
   hyperdrive,
@@ -48,33 +47,40 @@ export function PositionsSection({
     setSearchParams(newSearchParams);
   }
 
+  const { isFlagEnabled: showOpenClosedTabs } = useFeatureFlag(
+    MARKET_DETAILS_FEATURE_FLAG,
+  );
+
   return (
     <div>
-      <div className="mb-4 flex w-full items-end justify-between border-b-2">
+      <div className="flex w-full items-end justify-between border-b-2">
         <PositionTabs
           onTabClick={handleChangeTab}
           activePositionTab={activePositionTab}
         />
 
-        <div className="daisy-tabs mb-1">
-          <button
-            onClick={() => handleChangeOpenOrClosedTab("Open")}
-            className={classNames("daisy-tab", {
-              "daisy-tab-active font-medium": activeOpenOrClosedTab === "Open",
-            })}
-          >
-            Open
-          </button>
-          <button
-            onClick={() => handleChangeOpenOrClosedTab("Closed")}
-            className={classNames("daisy-tab", {
-              "daisy-tab-active font-medium":
-                activeOpenOrClosedTab === "Closed",
-            })}
-          >
-            Closed
-          </button>
-        </div>
+        {!showOpenClosedTabs ? (
+          <div className="daisy-tabs mb-1">
+            <button
+              onClick={() => handleChangeOpenOrClosedTab("Open")}
+              className={classNames("daisy-tab", {
+                "daisy-tab-active font-medium":
+                  activeOpenOrClosedTab === "Open",
+              })}
+            >
+              Open
+            </button>
+            <button
+              onClick={() => handleChangeOpenOrClosedTab("Closed")}
+              className={classNames("daisy-tab", {
+                "daisy-tab-active font-medium":
+                  activeOpenOrClosedTab === "Closed",
+              })}
+            >
+              Closed
+            </button>
+          </div>
+        ) : undefined}
       </div>
 
       <div className="flex w-full flex-col items-center">
@@ -82,10 +88,7 @@ export function PositionsSection({
           {(() => {
             switch (activePositionTab) {
               case "Longs":
-                if (activeOpenOrClosedTab === "Open") {
-                  return <OpenLongsTable hyperdrive={hyperdrive} />;
-                }
-                return <ClosedLongsTable hyperdrive={hyperdrive} />;
+                return <LongsSection hyperdrive={hyperdrive} />;
 
               case "Shorts":
                 if (activeOpenOrClosedTab === "Open") {

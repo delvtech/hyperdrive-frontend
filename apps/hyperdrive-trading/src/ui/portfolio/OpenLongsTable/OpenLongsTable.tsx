@@ -1,16 +1,16 @@
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
-  Long,
   calculateFixedRateFromOpenLong,
   calculateMatureLongYieldAfterFees,
+  Long,
 } from "@hyperdrive/sdk";
 import { useQuery } from "@tanstack/react-query";
 import {
-  Row,
   createColumnHelper,
   flexRender,
   getCoreRowModel,
   getSortedRowModel,
+  Row,
   useReactTable,
 } from "@tanstack/react-table";
 import classNames from "classnames";
@@ -38,10 +38,6 @@ const columnHelper = createColumnHelper<Long>();
 
 function getColumns({ hyperdrive }: { hyperdrive: Hyperdrive }) {
   return [
-    columnHelper.display({
-      header: `ID`,
-      cell: ({ row }) => <span>{Number(row.original.maturity)}</span>,
-    }),
     columnHelper.accessor("assetId", {
       id: "maturationDate",
       header: `Matures on`,
@@ -173,7 +169,7 @@ export function OpenLongsTable({
   });
 
   return (
-    <div className="max-h-96 overflow-y-scroll">
+    <div className="flex flex-col items-end">
       {/* Modal needs to be rendered outside of the table so that dialog can be used. Otherwise react throws a dom nesting error */}
       {tableInstance.getRowModel().rows.map((row) => {
         const modalId = `${row.original.assetId}`;
@@ -222,7 +218,7 @@ export function OpenLongsTable({
               return (
                 <tr
                   key={row.id}
-                  className="daisy-hover h-16 cursor-pointer items-center transition duration-300 ease-in-out"
+                  className="daisy-hover h-32 cursor-pointer items-center transition duration-300 ease-in-out"
                   onClick={() => {
                     const modalId = `${row.original.assetId}`;
                     (window as any)[modalId].showModal();

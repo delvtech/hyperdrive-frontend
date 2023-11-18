@@ -45,6 +45,28 @@ export function PositionTabs({
       >
         LP
       </button>
+      <button
+        onClick={() => onTabClick("LP")}
+        className={classNames(
+          "daisy-tab-lifted daisy-tab daisy-tab-sm border-b-base-100 md:daisy-tab-lg",
+          {
+            "daisy-tab-active": activePositionTab === "LP",
+          },
+        )}
+      >
+        Recent transactions
+      </button>
+      <button
+        onClick={() => onTabClick("LP")}
+        className={classNames(
+          "daisy-tab-lifted daisy-tab daisy-tab-sm border-b-base-100 md:daisy-tab-lg",
+          {
+            "daisy-tab-active": activePositionTab === "LP",
+          },
+        )}
+      >
+        FAQ
+      </button>
     </div>
   );
 }
