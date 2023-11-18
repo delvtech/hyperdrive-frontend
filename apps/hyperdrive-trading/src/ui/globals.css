@@ -8,6 +8,7 @@ body,
 #root,
 div[data-rk] {
   font-family: "Open Sans";
+  height: 100%;
 }
 
 @tailwind base;
