@@ -99,7 +99,7 @@ export function MarketsTable({
     getCoreRowModel: getCoreRowModel(),
   });
   return (
-    <div className="flex min-h-[50vh] min-w-[72rem] flex-col items-center overflow-y-scroll">
+    <div className="flex w-full flex-col items-center overflow-y-scroll">
       <h3 className="w-full font-lato text-h6">Available Markets</h3>
       <table className="daisy-table-zebra daisy-table daisy-table-lg border">
         <thead>
