@@ -4,11 +4,10 @@ import {
   SquaresPlusIcon,
 } from "@heroicons/react/24/outline";
 import { ReactElement } from "react";
-import { Link } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
+import Footer from "src/ui/app/Footer/Footer";
 import { CommonHeadTags } from "src/ui/app/Head/CommonHeadTags";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
-import DiscordIcon from "src/ui/base/icons/discord";
 import { PositionCard } from "src/ui/hyperdrive/PositionCard";
 import { FAQ } from "src/ui/onboarding/FAQ/FAQ";
 
@@ -43,7 +42,7 @@ function PositionCards({
     <div className="flex max-w-6xl flex-col items-center justify-evenly gap-10">
       <div className="flex flex-wrap justify-center gap-16 ">
         <PositionCard
-          title={"Long Assets"}
+          title={"Long"}
           subtitle={
             "Go long fixed rates and earn passive yield on your favourite assets."
           }
@@ -55,7 +54,7 @@ function PositionCards({
           ]}
         />
         <PositionCard
-          title={`Short Assets`}
+          title={`Short`}
           subtitle={
             "Profit when the price of hy-asset drops, maximize exposure to the yield source."
           }
@@ -84,7 +83,7 @@ function PositionCards({
         href={`/trade/${hyperdrive.address}?position=Longs&openOrClosed=Open`}
         className="daisy-btn-neutral daisy-btn-md daisy-btn mt-10 w-60 justify-between gap-0 hover:daisy-btn-ghost"
       >
-        <span className="flex-1 text-center">Choose Market</span>
+        <span className="flex-1 text-center">View Market</span>
       </a>
     </div>
   );
@@ -105,56 +104,5 @@ function Hero() {
         </div>
       </div>
     </div>
-  );
-}
-
-function Footer() {
-  return (
-    <footer className="daisy-footer p-10 text-base-content">
-      <aside>
-        <Link
-          to={"/"}
-          className="inline-flex items-center gap-2 font-lato text-h6 font-extrabold uppercase tracking-widest"
-        >
-          <div className="inline-flex w-full">
-            <div className="h-4 w-2.5 -skew-x-12 bg-[#007eed]"></div>
-            <div className="h-4 w-2.5 -skew-x-12 bg-[#522dae]"></div>
-            <div className="h-4 w-2.5 -skew-x-12 bg-[#f40000]"></div>
-          </div>
-          Hyperdrive
-        </Link>
-        <a
-          href="https://discord.gg/bdn9fxcs"
-          className="link link-hover"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <DiscordIcon />
-        </a>
-      </aside>
-      <nav>
-        <header className="daisy-footer-title">Services</header>
-        <Link
-          to={
-            "https://delv-tech.notion.site/Hyperdrive-Docs-6c014b9270af4483861b1c2ffa7f3a88"
-          }
-          className="link link-hover"
-        >
-          Documentation
-        </Link>
-      </nav>
-      <nav>
-        {/* TODO: Determine if company information is needed here */}
-        <header className="daisy-footer-title">Company</header>
-        <a className="link link-hover">About us</a>
-      </nav>
-      <nav>
-        {/* TODO: Add links to legal pages */}
-        <header className="daisy-footer-title">Legal</header>
-        <a className="link link-hover">Terms of use</a>
-        <a className="link link-hover">Privacy policy</a>
-        <a className="link link-hover">Cookie policy</a>
-      </nav>
-    </footer>
   );
 }

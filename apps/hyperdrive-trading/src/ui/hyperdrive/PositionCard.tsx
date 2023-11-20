@@ -20,7 +20,7 @@ export function PositionCard({
   emphasized,
 }: Props): ReactElement {
   return (
-    <Well className={emphasized ? "border-4 border-black" : ""}>
+    <Well elevation={emphasized ? "elevated" : "flat"}>
       <div className="flex h-full w-[300px] flex-col justify-between gap-2 p-3">
         {icon}
         <p className="text-h5 font-bold">{title}</p>
