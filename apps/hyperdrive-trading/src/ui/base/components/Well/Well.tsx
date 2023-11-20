@@ -19,7 +19,7 @@ export function Well({
 }: PropsWithChildren<WellProps>): ReactElement {
   const isInteractive = !disabled && (interactive || onClick);
   const className = classNames("daisy-card p-4 bg-base-200 border border-1", {
-    "shadow-md": elevation === "elevated",
+    "shadow-md border-4 border-black": elevation === "elevated",
     "w-full": block,
     "hover:cursor-pointer hover:-translate-y-1 transition duration-300 hover:shadow-xl ease-in-out":
       isInteractive,

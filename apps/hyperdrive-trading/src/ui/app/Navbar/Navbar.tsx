@@ -1,19 +1,23 @@
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { ReactElement } from "react";
+import { Link } from "react-router-dom";
 import { FeatureFlagPicker } from "src/ui/app/Navbar/FeatureFlagPicker";
 
 export function Navbar(): ReactElement {
   return (
     <div className="daisy-navbar bg-base-100 ">
       <div className="daisy-navbar-start ml-2">
-        <a className="inline-flex items-center gap-2 font-lato text-h6 font-extrabold uppercase tracking-widest">
+        <Link
+          to={"/"}
+          className="inline-flex items-center gap-2 font-lato text-h6 font-extrabold uppercase tracking-widest"
+        >
           <div className="inline-flex w-full">
             <div className="h-4 w-2.5 -skew-x-12 bg-[#007eed]"></div>
             <div className="h-4 w-2.5 -skew-x-12 bg-[#522dae]"></div>
             <div className="h-4 w-2.5 -skew-x-12 bg-[#f40000]"></div>
           </div>
           Hyperdrive
-        </a>
+        </Link>
       </div>
       <div className="daisy-navbar-end gap-8">
         {import.meta.env.DEV ? <FeatureFlagPicker /> : null}

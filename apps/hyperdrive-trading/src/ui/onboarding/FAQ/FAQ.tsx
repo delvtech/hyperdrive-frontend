@@ -5,7 +5,7 @@ export function FAQ(): ReactElement {
   const [selectedFAQKey, setSelectedFAQKey] = useState("faq1");
 
   return (
-    <div className="flex flex-col">
+    <div className="flex max-w-6xl flex-col">
       <span className="mb-2 text-h5 font-bold">Frequently Asked Questions</span>
       <div className="flex flex-row gap-6 rounded-md bg-base-200 p-12">
         <div className="w-[30%]">
