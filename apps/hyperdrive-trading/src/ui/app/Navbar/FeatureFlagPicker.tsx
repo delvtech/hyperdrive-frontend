@@ -1,6 +1,7 @@
 import { Cog6ToothIcon } from "@heroicons/react/24/outline";
 import { ReactElement } from "react";
 import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
+import { NEW_MARKET_LAYOUT_FEATURE_FLAG } from "src/ui/markets/featureFlags";
 import { LP_CARDS_FEATURE_FLAG } from "src/ui/portfolio/featureFlags";
 export function FeatureFlagPicker(): ReactElement {
   return (
@@ -15,6 +16,9 @@ export function FeatureFlagPicker(): ReactElement {
         <li className="daisy-menu-title">Feature flags</li>
         <FeatureFlagMenuItem flagName={LP_CARDS_FEATURE_FLAG}>
           New LP cards
+        </FeatureFlagMenuItem>
+        <FeatureFlagMenuItem flagName={NEW_MARKET_LAYOUT_FEATURE_FLAG}>
+          New market details
         </FeatureFlagMenuItem>
       </ul>
     </div>
