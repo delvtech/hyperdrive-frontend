@@ -9,12 +9,13 @@ import { useNavigate } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
-import { MARKETS_MODAL_KEY } from "src/ui/markets/MarketSelect/AllMarketsBreadcrumb";
+import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
 import {
   MarketTableRowData,
   useMarketRowData,
 } from "src/ui/markets/MarketsTable/useMarketRowData";
 import { YieldSourceLabel } from "src/ui/markets/YieldSourceLabel/YieldSourceLabel";
+import { useVaultRate } from "src/ui/vaults/useVaultRate";
 
 const columnHelper = createColumnHelper<MarketTableRowData>();
 
@@ -32,15 +33,30 @@ function getColumns() {
         );
       },
     }),
+    columnHelper.display({
+      header: "Yield Source APY",
+      cell: () => {
+        return <YieldSourceApy key="yield-source-apy" />;
+      },
+    }),
     columnHelper.accessor("market.termLengthMS", {
       header: "Term",
       cell: ({ getValue }) => {
         const termLength = getValue();
-        return (
-          <p key="term" className="font-semibold">
-            {convertMillisecondsToDays(termLength)} days
-          </p>
-        );
+        return <p key="term">{convertMillisecondsToDays(termLength)} days</p>;
+      },
+    }),
+    columnHelper.accessor("longAPR", {
+      header: "Fixed Rate",
+      cell: ({ getValue }) => {
+        const fixedRate = getValue();
+        return <span key="fixed-rate">{fixedRate}%</span>;
+      },
+    }),
+    columnHelper.display({
+      header: "LP APY",
+      cell: ({ row }) => {
+        return <LpApyCell key="lp-apy" hyperdrive={row.original.market} />;
       },
     }),
     columnHelper.accessor("liquidity", {
@@ -50,7 +66,7 @@ function getColumns() {
         return (
           <span
             key="liquidity"
-            className="flex flex-row items-center justify-start font-semibold"
+            className="flex flex-row items-center justify-start"
           >
             <img
               className="mr-1 h-4"
@@ -65,13 +81,6 @@ function getColumns() {
         );
       },
     }),
-    columnHelper.accessor("longAPR", {
-      header: "Fixed Rate",
-      cell: ({ getValue }) => {
-        const fixedRate = getValue();
-        return <span key="fixed-rate">{fixedRate}%</span>;
-      },
-    }),
   ];
 }
 
@@ -80,12 +89,10 @@ export function MarketsTable({
 }: {
   markets: Hyperdrive[];
 }): ReactElement {
-  // const { appConfig: config } = useAppConfig();
   const navigate = useNavigate();
   // // TODO: no loading state for now
   const { data: marketsRowData } = useMarketRowData(markets);
   const memoizedColumns = useMemo(() => getColumns(), []);
-  // console.log("infinite loop?", marketsRowData);
   const tableInstance = useReactTable({
     columns: memoizedColumns,
     data: marketsRowData || [],
@@ -93,7 +100,7 @@ export function MarketsTable({
   });
   return (
     <div className="flex min-h-[50vh] min-w-[72rem] flex-col items-center overflow-y-scroll">
-      <h3 className="mb-4 w-full font-lato text-h6">Available Markets</h3>
+      <h3 className="w-full font-lato text-h6">Available Markets</h3>
       <table className="daisy-table-zebra daisy-table daisy-table-lg border">
         <thead>
           {tableInstance.getHeaderGroups().map((headerGroup) => (
@@ -119,7 +126,6 @@ export function MarketsTable({
                 className="daisy-hover h-16 cursor-pointer grid-cols-4 items-center"
                 onClick={() => {
                   navigate(`/trade/${row.original.market}`);
-                  (window as any)[MARKETS_MODAL_KEY].close();
                 }}
               >
                 <>
@@ -140,5 +146,22 @@ export function MarketsTable({
         </tbody>
       </table>
     </div>
+  );
+}
+
+function LpApyCell({ hyperdrive }: { hyperdrive: Hyperdrive }): ReactElement {
+  const { lpApy } = useLpApy(hyperdrive);
+  return <span>{lpApy?.toFixed(2)}%</span>;
+}
+
+function YieldSourceApy(): ReactElement {
+  const { vaultRate } = useVaultRate({
+    // TODO: temporary for now until this available via addresses.json
+    vaultAddress: "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+  });
+  return (
+    <span className="flex items-center gap-1.5">
+      {vaultRate?.formatted || 0}% APY
+    </span>
   );
 }
