@@ -1,11 +1,12 @@
 import { ReactElement } from "react";
 import {
-  createBrowserRouter,
   Outlet,
-  redirect,
   RouterProvider,
+  createBrowserRouter,
+  redirect,
 } from "react-router-dom";
 import { Landing } from "src/pages/Landing";
+import { Markets } from "src/pages/Markets";
 import { Market } from "src/pages/market";
 import Footer from "src/ui/app/Footer/Footer";
 import { Navbar } from "src/ui/app/Navbar/Navbar";
@@ -40,6 +41,10 @@ export function App(): ReactElement | null {
         {
           path: "/",
           element: <Landing />,
+        },
+        {
+          path: "/markets",
+          element: <Markets />,
         },
         {
           path: "/market/:address",

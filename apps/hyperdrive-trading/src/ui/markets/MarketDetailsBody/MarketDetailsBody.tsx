@@ -5,6 +5,7 @@ import {
   SquaresPlusIcon,
 } from "@heroicons/react/24/outline";
 import { ReactElement } from "react";
+import { Link } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
 import { divideBigInt } from "src/base/divideBigInt";
 import { parseUnits } from "src/base/parseUnits";
@@ -19,7 +20,6 @@ import { OpenLongForm } from "src/ui/hyperdrive/longs/OpenLongForm/OpenLongForm"
 import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
 import { AddLiquidityForm } from "src/ui/hyperdrive/lp/AddLiquidityForm/AddLiquidityForm";
 import { OpenShortForm } from "src/ui/hyperdrive/shorts/OpenShortForm/OpenShortForm";
-import { AllMarketsBreadcrumb } from "src/ui/markets/MarketSelect/AllMarketsBreadcrumb";
 import { MarketStats } from "src/ui/markets/MarketStats/MarketStats";
 import { FAQ } from "src/ui/onboarding/FAQ/FAQ";
 import { PositionsSection } from "src/ui/portfolio/PositionsSection/PositionsSection";
@@ -135,7 +135,7 @@ function MarketBreadcrumbs({ hyperdrive }: { hyperdrive: Hyperdrive }) {
       <div className="daisy-breadcrumbs md:text-h6">
         <ul>
           <li>
-            <AllMarketsBreadcrumb />
+            <Link to="/markets">All Markets</Link>
           </li>
           <li>
             {hyperdrive.baseToken.symbol} / {`hy${hyperdrive.baseToken.symbol}`}
