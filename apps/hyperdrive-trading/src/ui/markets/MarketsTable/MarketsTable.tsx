@@ -125,7 +125,7 @@ export function MarketsTable({
                 key={row.id}
                 className="daisy-hover h-16 cursor-pointer grid-cols-4 items-center"
                 onClick={() => {
-                  navigate(`/trade/${row.original.market}`);
+                  navigate(`/market/${row.original.market}`);
                 }}
               >
                 <>

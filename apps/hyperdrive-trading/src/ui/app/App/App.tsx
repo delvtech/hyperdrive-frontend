@@ -1,20 +1,20 @@
 import { ReactElement } from "react";
 import {
-  createBrowserRouter,
   Outlet,
-  redirect,
   RouterProvider,
+  createBrowserRouter,
+  redirect,
 } from "react-router-dom";
 import { Landing } from "src/pages/Landing";
 import { Markets } from "src/pages/Markets";
-import { Trade } from "src/pages/Trade";
+import { Market } from "src/pages/market";
 import Footer from "src/ui/app/Footer/Footer";
 import { Navbar } from "src/ui/app/Navbar/Navbar";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 
 function BaseLayout(): ReactElement {
   return (
-    <div className="flex h-full flex-col">
+    <div className="flex h-full flex-col items-center">
       <Navbar />
       <Outlet />
       <Footer />
@@ -47,8 +47,8 @@ export function App(): ReactElement | null {
           element: <Markets />,
         },
         {
-          path: "/trade/:address",
-          element: <Trade />,
+          path: "/market/:address",
+          element: <Market />,
           loader: ({ params }) => {
             const market = appConfig?.hyperdrives.find(
               (market) => market.address === params.address,
@@ -60,7 +60,7 @@ export function App(): ReactElement | null {
 
             // we fall back to the first market in the config
             // this should rarely happen
-            return redirect(`/trade/${appConfig?.hyperdrives[0].address}`);
+            return redirect(`/market/${appConfig?.hyperdrives[0].address}`);
           },
         },
       ],

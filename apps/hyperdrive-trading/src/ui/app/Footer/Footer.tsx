@@ -4,7 +4,7 @@ import DiscordIcon from "src/ui/base/icons/discord";
 
 export default function Footer(): ReactElement {
   return (
-    <footer className="daisy-footer p-10 text-base-content">
+    <footer className="daisy-footer max-w-6xl p-10 text-base-content">
       <aside>
         <Link
           to={"/"}

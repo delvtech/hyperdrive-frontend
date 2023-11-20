@@ -29,7 +29,9 @@ import { useVaultRate } from "src/ui/vaults/useVaultRate";
 interface PositionsTableProps {
   hyperdrive: Hyperdrive;
 }
-export function TradeBody({ hyperdrive }: PositionsTableProps): ReactElement {
+export function MarketDetailsBody({
+  hyperdrive,
+}: PositionsTableProps): ReactElement {
   const { data: transactionData } = useTransactionData(hyperdrive);
   const { longPrice } = useCurrentLongPrice(hyperdrive);
   const { marketState } = useMarketState(hyperdrive.address);
