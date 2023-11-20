@@ -13,7 +13,7 @@ import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 
 function BaseLayout(): ReactElement {
   return (
-    <div className="flex h-full flex-col">
+    <div className="flex h-full flex-col items-center">
       <Navbar />
       <Outlet />
       <Footer />

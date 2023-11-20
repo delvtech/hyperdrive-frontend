@@ -12,7 +12,7 @@ export function Market(): ReactElement {
   useDevLogging(market);
 
   return (
-    <div className="flex h-full justify-center bg-base-100 py-8 px-4">
+    <div className="flex justify-center bg-base-100 py-8 px-4">
       <CommonHeadTags />
       <MarketDetailsBody hyperdrive={market} />
     </div>
