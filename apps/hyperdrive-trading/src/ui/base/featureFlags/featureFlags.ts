@@ -1,4 +1,4 @@
-import { useLocalStorage } from "src/ui/base/hooks/useLocalStorage";
+import { useLocalStorage } from "@uidotdev/usehooks";
 
 /**
  * Custom hook for managing feature flags via local storage.  It
