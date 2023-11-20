@@ -113,7 +113,7 @@ export function MarketsTable(): ReactElement {
                 key={row.id}
                 className="daisy-hover h-16 cursor-pointer grid-cols-4 items-center"
                 onClick={() => {
-                  navigate(`/trade/${row.original.market}`);
+                  navigate(`/market/${row.original.market}`);
                   (window as any)[MARKETS_MODAL_KEY].close();
                 }}
               >
