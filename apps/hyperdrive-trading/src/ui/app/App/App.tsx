@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import { Landing } from "src/pages/Landing";
 import { Trade } from "src/pages/Trade";
+import Footer from "src/ui/app/Footer/Footer";
 import { Navbar } from "src/ui/app/Navbar/Navbar";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 
@@ -15,6 +16,7 @@ function BaseLayout(): ReactElement {
     <div className="flex h-full flex-col">
       <Navbar />
       <Outlet />
+      <Footer />
     </div>
   );
 }

@@ -5,7 +5,6 @@ import {
 } from "@heroicons/react/24/outline";
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
-import Footer from "src/ui/app/Footer/Footer";
 import { CommonHeadTags } from "src/ui/app/Head/CommonHeadTags";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { PositionCard } from "src/ui/hyperdrive/PositionCard";
@@ -28,7 +27,6 @@ export function Landing(): ReactElement | null {
       <Hero />
       <PositionCards hyperdrive={hyperdrive} />
       <FAQ />
-      <Footer />
     </div>
   );
 }
