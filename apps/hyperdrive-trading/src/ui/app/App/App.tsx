@@ -6,6 +6,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { Landing } from "src/pages/Landing";
+import { Markets } from "src/pages/Markets";
 import { Trade } from "src/pages/Trade";
 import { Navbar } from "src/ui/app/Navbar/Navbar";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -38,6 +39,10 @@ export function App(): ReactElement | null {
         {
           path: "/",
           element: <Landing />,
+        },
+        {
+          path: "/markets",
+          element: <Markets />,
         },
         {
           path: "/trade/:address",

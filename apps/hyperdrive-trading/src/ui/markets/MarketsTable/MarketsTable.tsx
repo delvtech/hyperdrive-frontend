@@ -4,10 +4,10 @@ import {
   getCoreRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { ReactElement } from "react";
+import { ReactElement, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
+import { Hyperdrive } from "src/appconfig/types";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { MARKETS_MODAL_KEY } from "src/ui/markets/MarketSelect/AllMarketsBreadcrumb";
 import {
@@ -75,17 +75,22 @@ function getColumns() {
   ];
 }
 
-export function MarketsTable(): ReactElement {
-  const { appConfig: config } = useAppConfig();
+export function MarketsTable({
+  markets,
+}: {
+  markets: Hyperdrive[];
+}): ReactElement {
+  // const { appConfig: config } = useAppConfig();
   const navigate = useNavigate();
-  // TODO: no loading state for now
-  const { data: marketsRowData = [] } = useMarketRowData(config?.hyperdrives);
+  // // TODO: no loading state for now
+  const { data: marketsRowData } = useMarketRowData(markets);
+  const memoizedColumns = useMemo(() => getColumns(), []);
+  // console.log("infinite loop?", marketsRowData);
   const tableInstance = useReactTable({
-    columns: getColumns(),
+    columns: memoizedColumns,
     data: marketsRowData || [],
     getCoreRowModel: getCoreRowModel(),
   });
-
   return (
     <div className="flex max-h-96 flex-col items-center overflow-y-scroll">
       <h3 className="mb-4 font-lato">Markets</h3>

@@ -81,7 +81,7 @@ function PositionCards({
         />
       </div>
       <a
-        href={`/trade/${hyperdrive.address}?position=Longs&openOrClosed=Open`}
+        href={"/markets"}
         className="daisy-btn-neutral daisy-btn-md daisy-btn mt-10 w-60 justify-between gap-0 hover:daisy-btn-ghost"
       >
         <span className="flex-1 text-center">Choose Market</span>
