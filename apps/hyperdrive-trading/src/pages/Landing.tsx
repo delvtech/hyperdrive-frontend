@@ -5,7 +5,6 @@ import {
 } from "@heroicons/react/24/outline";
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
-import Footer from "src/ui/app/Footer/Footer";
 import { CommonHeadTags } from "src/ui/app/Head/CommonHeadTags";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { PositionCard } from "src/ui/hyperdrive/PositionCard";
@@ -28,7 +27,6 @@ export function Landing(): ReactElement | null {
       <Hero />
       <PositionCards hyperdrive={hyperdrive} />
       <FAQ />
-      <Footer />
     </div>
   );
 }
@@ -83,7 +81,7 @@ function PositionCards({
         href={"/markets"}
         className="daisy-btn-neutral daisy-btn-md daisy-btn mt-10 w-60 justify-between gap-0 hover:daisy-btn-ghost"
       >
-        <span className="flex-1 text-center">View Market</span>
+        <span className="flex-1 text-center">View Markets</span>
       </a>
     </div>
   );

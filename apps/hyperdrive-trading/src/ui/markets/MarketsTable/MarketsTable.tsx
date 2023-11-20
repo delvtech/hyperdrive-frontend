@@ -92,9 +92,9 @@ export function MarketsTable({
     getCoreRowModel: getCoreRowModel(),
   });
   return (
-    <div className="flex max-h-96 flex-col items-center overflow-y-scroll">
-      <h3 className="mb-4 font-lato">Markets</h3>
-      <table className="daisy-table-zebra daisy-table daisy-table-lg">
+    <div className="flex min-h-[50vh] min-w-[72rem] flex-col items-center overflow-y-scroll">
+      <h3 className="mb-4 w-full font-lato text-h6">Available Markets</h3>
+      <table className="daisy-table-zebra daisy-table daisy-table-lg border">
         <thead>
           {tableInstance.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
