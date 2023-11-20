@@ -12,6 +12,7 @@ interface UseCloseShortOptions {
   destination: Address | undefined;
   asBase?: boolean;
   enabled?: boolean;
+  onExecuted: () => void;
 }
 
 interface UseCloseShortResult {
@@ -27,6 +28,7 @@ export function useCloseShort({
   destination,
   asBase = true,
   enabled = true,
+  onExecuted,
 }: UseCloseShortOptions): UseCloseShortResult {
   const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
   const queryClient = useQueryClient();
@@ -57,6 +59,7 @@ export function useCloseShort({
           },
         });
         queryClient.resetQueries();
+        onExecuted?.();
       }
     },
   });

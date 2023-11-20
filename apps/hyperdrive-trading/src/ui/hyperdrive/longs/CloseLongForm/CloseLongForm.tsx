@@ -1,6 +1,7 @@
 import { Long, adjustAmountByPercentage } from "@hyperdrive/sdk";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
+import toast from "react-hot-toast";
 import { Hyperdrive } from "src/appconfig/types";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
@@ -52,6 +53,10 @@ export function CloseLongForm({
     minBaseAmountOut: closeLongAmountAfterSlippage,
     destination: account,
     enabled: previewCloseLongStatus === "success",
+    onExecuted: () => {
+      setAmount("");
+      toast.success("Long closed", { position: "top-center" });
+    },
   });
 
   return (

@@ -1,6 +1,7 @@
 import { OpenShort, adjustAmountByPercentage } from "@hyperdrive/sdk";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
+import toast from "react-hot-toast";
 import { Hyperdrive } from "src/appconfig/types";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
@@ -51,6 +52,10 @@ export function CloseShortForm({
     minBaseAmountOut: closeShortAmountAfterSlippage,
     destination: account,
     enabled: previewCloseShortStatus === "success",
+    onExecuted: () => {
+      setAmount("");
+      toast.success("Short closed", { position: "top-center" });
+    },
   });
 
   return (

@@ -1,5 +1,6 @@
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { ReactElement } from "react";
+import toast from "react-hot-toast";
 import { Hyperdrive } from "src/appconfig/types";
 import { MAX_UINT256 } from "src/base/constants";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
@@ -73,6 +74,7 @@ export function OpenShortForm({
     onExecuted: () => {
       // reset local state after successful transaction
       setAmount(undefined);
+      toast.success("Short opened", { position: "top-center" });
     },
   });
 

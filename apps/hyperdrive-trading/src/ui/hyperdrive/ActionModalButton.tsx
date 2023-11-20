@@ -30,6 +30,7 @@ export function ActionModalButton({
       {({ showModal }) => (
         <Well
           interactive
+          elevation="flat"
           onClick={() => {
             return showModal();
           }}
