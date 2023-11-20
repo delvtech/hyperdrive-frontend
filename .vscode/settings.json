@@ -4,6 +4,7 @@
   },
   "dotenv.enableAutocloaking": false,
   "cSpell.words": [
+    "dnum",
     "Mintable",
     "signale",
     "viem"
