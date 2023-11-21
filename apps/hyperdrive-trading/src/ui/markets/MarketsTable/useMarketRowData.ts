@@ -13,8 +13,6 @@ export interface MarketTableRowData {
   liquidity: bigint;
   yieldSource: YieldSource;
   longAPR: string;
-  shortAPR: string;
-  lpAPR: string;
 }
 export type MarketStatistics = Omit<MarketTableRowData, "market" | "liquidity">;
 
@@ -47,9 +45,6 @@ export function useMarketRowData(
                 liquidity,
                 longAPR: formatRate(longApr),
                 yieldSource: appConfig.yieldSources[hyperdrive.yieldSource],
-                // TODO: Stubbed for now
-                shortAPR: "1.25%",
-                lpAPR: "1.25%",
               };
             }),
           )
