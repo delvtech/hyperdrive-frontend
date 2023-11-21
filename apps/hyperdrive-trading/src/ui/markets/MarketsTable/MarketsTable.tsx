@@ -116,7 +116,6 @@ export function MarketsTable({
   markets: Hyperdrive[];
 }): ReactElement {
   const navigate = useNavigate();
-  // // TODO: no loading state for now
   const { data: marketsRowData } = useMarketRowData(markets);
   const memoizedColumns = useMemo(() => getColumns(), []);
   const tableInstance = useReactTable({
@@ -125,7 +124,7 @@ export function MarketsTable({
     getCoreRowModel: getCoreRowModel(),
   });
   return (
-    <div className="flex w-full flex-col items-center overflow-y-scroll rounded-md">
+    <div className="flex w-full flex-col items-center overflow-y-scroll">
       <h3 className="w-full font-lato text-h6">Available Markets</h3>
       <div className="flex w-full rounded-lg border p-6">
         <table className="daisy-table-zebra daisy-table daisy-table-lg ">
