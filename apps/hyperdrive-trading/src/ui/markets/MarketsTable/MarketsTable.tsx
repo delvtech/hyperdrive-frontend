@@ -37,7 +37,6 @@ function getColumns() {
             </span>
           </div>
         );
-        // return <p key="term">{convertMillisecondsToDays(termLength)} days</p>;
       },
     }),
     columnHelper.accessor("market.name", {
