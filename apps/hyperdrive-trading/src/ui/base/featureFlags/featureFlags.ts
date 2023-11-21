@@ -1,47 +1,36 @@
-import { useSearchParams } from "react-router-dom";
+import { useLocalStorage } from "@uidotdev/usehooks";
 
 /**
- * Custom hook for managing feature flags via URL search parameters.  It
+ * Custom hook for managing feature flags via local storage.  It
  * provides a mechanism to check if a flag is enabled, and functions to enable
  * or disable the flag.
  *
  * @param flagName The name of the feature flag to manage.
  * @returns An object with:
  * - `isFlagEnabled`: a boolean indicating if the flag is currently enabled,
- * - `enableFlag`: a function to enable the flag, adding it to the URL search parameters,
- * - `disableFlag`: a function to disable the flag, removing it from the URL search parameters.
+ * - `enableFlag`: a function to enable the flag, adding it to local storage
+ * - `disableFlag`: a function to disable the flag, removing it from local storage
  */
 export function useFeatureFlag(flagName: string): {
   isFlagEnabled: boolean;
   enableFlag: () => void;
   disableFlag: () => void;
 } {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const currentFlags = searchParams.get("feature_flags")?.split(",") || [];
+  const [existingFlags, setFlags] = useLocalStorage<string[]>(
+    "feature_flags",
+    [],
+  );
 
-  const isEnabled = currentFlags.includes(flagName);
+  const isFlagEnabled = existingFlags.includes(flagName);
 
   return {
-    isFlagEnabled: isEnabled,
+    isFlagEnabled,
     enableFlag: () => {
-      // Create a new search params so we retain all existing search params
-      const newSearchParams = new URLSearchParams(searchParams);
-
-      newSearchParams.set(
-        "feature_flags",
-        [...new Set([...currentFlags, flagName])].join(","),
-      );
-      setSearchParams(newSearchParams);
+      setFlags([...new Set([...existingFlags, flagName])]);
     },
 
     disableFlag: () => {
-      // Create a new search params so we retain all existing search params
-      const newSearchParams = new URLSearchParams(searchParams);
-      newSearchParams.set(
-        "feature_flags",
-        currentFlags.filter((name) => name !== flagName).join(","),
-      );
-      setSearchParams(newSearchParams);
+      setFlags(existingFlags.filter((flag) => flag !== flagName));
     },
   };
 }
