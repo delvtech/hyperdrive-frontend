@@ -15,6 +15,7 @@
     "watch:docs": "typedoc --watch"
   },
   "dependencies": {
+    "@hyperdrive/artifacts": "*",
     "@types/cli-table": "^0.3.3",
     "@types/prompts": "^2.4.7",
     "@types/signale": "^1.4.6",
