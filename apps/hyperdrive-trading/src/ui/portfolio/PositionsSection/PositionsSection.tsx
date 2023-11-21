@@ -4,6 +4,7 @@ import { ReactElement } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
 import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
+import { NEW_MARKET_LAYOUT_FEATURE_FLAG } from "src/ui/markets/featureFlags";
 import { ClosedLongsTable } from "src/ui/portfolio/ClosedLongsTable/ClosedLongsTable";
 import { ClosedLpTable } from "src/ui/portfolio/ClosedLpTable/ClosedLpTable";
 import { ClosedShortsTable } from "src/ui/portfolio/ClosedShortsTable/ClosedShortsTable";
@@ -26,6 +27,9 @@ export function PositionsSection({
 }): ReactElement {
   const [searchParams, setSearchParams] = useSearchParams();
   const { isFlagEnabled: showLpCards } = useFeatureFlag(LP_CARDS_FEATURE_FLAG);
+  const { isFlagEnabled: showNewMarketLayout } = useFeatureFlag(
+    NEW_MARKET_LAYOUT_FEATURE_FLAG,
+  );
 
   const activePositionTab =
     (searchParams.get("position") as PositionTab) || "Longs";
@@ -56,25 +60,28 @@ export function PositionsSection({
           activePositionTab={activePositionTab}
         />
 
-        <div className="daisy-tabs mb-1">
-          <button
-            onClick={() => handleChangeOpenOrClosedTab("Open")}
-            className={classNames("daisy-tab", {
-              "daisy-tab-active font-medium": activeOpenOrClosedTab === "Open",
-            })}
-          >
-            Open
-          </button>
-          <button
-            onClick={() => handleChangeOpenOrClosedTab("Closed")}
-            className={classNames("daisy-tab", {
-              "daisy-tab-active font-medium":
-                activeOpenOrClosedTab === "Closed",
-            })}
-          >
-            Closed
-          </button>
-        </div>
+        {showNewMarketLayout ? null : (
+          <div className="daisy-tabs mb-1">
+            <button
+              onClick={() => handleChangeOpenOrClosedTab("Open")}
+              className={classNames("daisy-tab", {
+                "daisy-tab-active font-medium":
+                  activeOpenOrClosedTab === "Open",
+              })}
+            >
+              Open
+            </button>
+            <button
+              onClick={() => handleChangeOpenOrClosedTab("Closed")}
+              className={classNames("daisy-tab", {
+                "daisy-tab-active font-medium":
+                  activeOpenOrClosedTab === "Closed",
+              })}
+            >
+              Closed
+            </button>
+          </div>
+        )}
       </div>
 
       <div className="flex w-full flex-col items-center">
