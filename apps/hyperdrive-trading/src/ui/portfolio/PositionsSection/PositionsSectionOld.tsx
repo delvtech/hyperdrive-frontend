@@ -19,7 +19,7 @@ import {
 
 export type OpenOrClosedTab = "Open" | "Closed";
 
-export function PositionsSection({
+export function PositionsSectionOld({
   hyperdrive,
 }: {
   hyperdrive: Hyperdrive;

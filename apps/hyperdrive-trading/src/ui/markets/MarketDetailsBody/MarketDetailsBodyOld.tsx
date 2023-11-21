@@ -19,7 +19,7 @@ import { MarketBreadcrumbs } from "src/ui/markets/MarketDetailsBody/MarketBreadc
 import { MarketHeader } from "src/ui/markets/MarketDetailsBody/MarketHeader";
 import { MarketStats } from "src/ui/markets/MarketStats/MarketStats";
 import { FAQ } from "src/ui/onboarding/FAQ/FAQ";
-import { PositionsSection } from "src/ui/portfolio/PositionsSection/PositionsSection";
+import { PositionsSectionOld } from "src/ui/portfolio/PositionsSection/PositionsSectionOld";
 import { YourBalanceWell } from "src/ui/portfolio/YourBalanceWell/YourBalanceWell";
 import { useVaultRate } from "src/ui/vaults/useVaultRate";
 
@@ -110,7 +110,7 @@ export function MarketDetailsBodyOld({
         />
       </div>
 
-      <PositionsSection hyperdrive={hyperdrive} />
+      <PositionsSectionOld hyperdrive={hyperdrive} />
       <div>
         <span className="mb-2 text-h5 font-bold ">Transactions</span>
         {transactionData && (
