@@ -158,6 +158,7 @@ export function MarketsTable({
                   <>
                     {row.getVisibleCells().map((cell) => {
                       return (
+                        // In order to round the edges of this row, we need to round the edges of the first and last <td> because border-radius doesn't work on <tr>
                         <td
                           className={classNames({
                             "rounded-l-lg":
