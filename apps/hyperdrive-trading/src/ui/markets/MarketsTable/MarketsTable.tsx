@@ -127,7 +127,7 @@ export function MarketsTable({
   return (
     <div className="flex w-full flex-col items-center overflow-y-scroll">
       <h3 className="w-full font-lato text-h6">Available Markets</h3>
-      <div className="flex w-full rounded-lg border p-6">
+      <div className="daisy-card-bordered daisy-card flex w-full p-6">
         <table className="daisy-table-zebra daisy-table daisy-table-lg">
           <thead>
             {tableInstance.getHeaderGroups().map((headerGroup) => (
