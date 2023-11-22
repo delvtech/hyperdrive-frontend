@@ -20,7 +20,7 @@ const typeScale = gudTypeScale(
   },
 );
 module.exports = {
-  content: ["./src/**/*.{js,ts,jsx,tsx}"],
+  content: ["./src/**/*.{js,ts,jsx,tsx}", "index.html"],
   theme: {
     extend: {
       fontFamily: {
@@ -54,7 +54,7 @@ module.exports = {
       h1: typeScale.h1.lineHeight,
     },
   },
-  plugins: [require("daisyui")],
+  plugins: [require("daisyui"), require("tailwindcss-debug-screens")],
   daisyui: {
     themes: [
       {
