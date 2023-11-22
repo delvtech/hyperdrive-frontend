@@ -5,6 +5,7 @@ import {
   getCoreRowModel,
   useReactTable,
 } from "@tanstack/react-table";
+import classNames from "classnames";
 import { ReactElement, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
@@ -156,13 +157,14 @@ export function MarketsTable({
                 >
                   <>
                     {row.getVisibleCells().map((cell) => {
-                      const firstCell = cell.column.id.includes("termLengthMS");
-                      const lastCell = cell.column.id.includes("go-to-market");
                       return (
                         <td
-                          className={`${firstCell && "rounded-l-lg"} ${
-                            lastCell && "rounded-r-lg"
-                          }`}
+                          className={classNames({
+                            "rounded-l-lg":
+                              cell.column.id.includes("termLengthMS"),
+                            "rounded-r-lg":
+                              cell.column.id.includes("go-to-market"),
+                          })}
                           key={cell.id}
                         >
                           {flexRender(
