@@ -1,7 +1,6 @@
 import {
   BoltIcon,
   ClockIcon,
-  ExclamationTriangleIcon,
   SquaresPlusIcon,
 } from "@heroicons/react/24/outline";
 import { ReactElement } from "react";
@@ -20,7 +19,7 @@ import { MarketBreadcrumbs } from "src/ui/markets/MarketDetailsBody/MarketBreadc
 import { MarketHeader } from "src/ui/markets/MarketDetailsBody/MarketHeader";
 import { MarketStats } from "src/ui/markets/MarketStats/MarketStats";
 import { FAQ } from "src/ui/onboarding/FAQ/FAQ";
-import { PositionsSection } from "src/ui/portfolio/PositionsSection/PositionsSection";
+import { PositionsSectionOld } from "src/ui/portfolio/PositionsSection/PositionsSectionOld";
 import { YourBalanceWell } from "src/ui/portfolio/YourBalanceWell/YourBalanceWell";
 import { useVaultRate } from "src/ui/vaults/useVaultRate";
 
@@ -51,10 +50,6 @@ export function MarketDetailsBodyOld({
 
         {/* Stats row */}
         <MarketStats hyperdrive={hyperdrive} />
-        <CustomBanner
-          icon={<ExclamationTriangleIcon className="h-6 w-6 text-warning" />}
-          description="No new positions can be opened as of October 31st at 2pm (EDT). Please close all your positions before November 1st or they will be forfeited in the trading competition scoring calculations."
-        />
         {marketState?.isPaused && (
           <CustomBanner description="This market has been paused. You may close your positions, but no new positions may be opened." />
         )}
@@ -115,7 +110,7 @@ export function MarketDetailsBodyOld({
         />
       </div>
 
-      <PositionsSection hyperdrive={hyperdrive} />
+      <PositionsSectionOld hyperdrive={hyperdrive} />
       <div>
         <span className="mb-2 text-h5 font-bold ">Transactions</span>
         {transactionData && (
