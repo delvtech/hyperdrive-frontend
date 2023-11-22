@@ -127,7 +127,7 @@ export function MarketsTable({
     <div className="flex w-full flex-col items-center overflow-y-scroll">
       <h3 className="w-full font-lato text-h6">Available Markets</h3>
       <div className="flex w-full rounded-lg border p-6">
-        <table className="daisy-table-zebra daisy-table daisy-table-lg ">
+        <table className="daisy-table-zebra daisy-table daisy-table-lg">
           <thead>
             {tableInstance.getHeaderGroups().map((headerGroup) => (
               <tr key={headerGroup.id}>
@@ -149,7 +149,7 @@ export function MarketsTable({
               return (
                 <tr
                   key={row.id}
-                  className="daisy-hover h-16 cursor-pointer items-center hover:border-b-0 "
+                  className="daisy-hover h-16 cursor-pointer items-center hover:border-b-0"
                   onClick={() => {
                     navigate(`/market/${row.original.market}`);
                   }}
