@@ -5,7 +5,6 @@ import { Hyperdrive } from "src/appconfig/types";
 import { MAX_UINT256 } from "src/base/constants";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
-import { useMaxShort } from "src/ui/hyperdrive/shorts/hooks/useMaxShort";
 import { useOpenShort } from "src/ui/hyperdrive/shorts/hooks/useOpenShort";
 import { usePreviewOpenShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewOpenShort";
 import { OpenShortPreview } from "src/ui/hyperdrive/shorts/OpenShortPreview/OpenShortPreview";
@@ -16,28 +15,26 @@ import { TokenInput } from "src/ui/token/TokenInput";
 import { useAccount, useBalance } from "wagmi";
 
 interface OpenShortPositionFormProps {
-  market: Hyperdrive;
+  hyperdrive: Hyperdrive;
 }
 
 export function OpenShortForm({
-  market,
+  hyperdrive,
 }: OpenShortPositionFormProps): ReactElement {
   const { address: account } = useAccount();
   const { openConnectModal } = useConnectModal();
   const { data: baseTokenBalance } = useBalance({
     address: account,
-    token: market.baseToken.address,
+    token: hyperdrive.baseToken.address,
   });
-
-  const { maxShort } = useMaxShort(market);
 
   const { amount, amountAsBigInt, setAmount } = useNumericInput({
-    decimals: market.baseToken.decimals,
+    decimals: hyperdrive.baseToken.decimals,
   });
 
-  const { poolInfo } = usePoolInfo(market.address);
+  const { poolInfo } = usePoolInfo(hyperdrive.address);
   const { baseAmountIn, status: openShortPreviewStatus } = usePreviewOpenShort({
-    market,
+    market: hyperdrive,
     amountBondShorts: amountAsBigInt,
     minSharePrice: poolInfo?.sharePrice,
     maxBaseAmountIn: MAX_UINT256, // todo add slippage control
@@ -49,13 +46,13 @@ export function OpenShortForm({
 
   const { tokenAllowance } = useTokenAllowance({
     account,
-    spender: market.address,
-    tokenAddress: market.baseToken.address,
+    spender: hyperdrive.address,
+    tokenAddress: hyperdrive.baseToken.address,
   });
 
   const { approve } = useTokenApproval({
-    tokenAddress: market.baseToken.address,
-    spender: market.address,
+    tokenAddress: hyperdrive.baseToken.address,
+    spender: hyperdrive.address,
     amount: MAX_UINT256,
   });
 
@@ -64,7 +61,7 @@ export function OpenShortForm({
     : true;
 
   const { openShort, openShortSubmittedStatus } = useOpenShort({
-    hyperdriveAddress: market.address,
+    hyperdriveAddress: hyperdrive.address,
     amountBondShorts: amountAsBigInt,
     minSharePrice: poolInfo?.sharePrice,
     // TODO: handle slippage
@@ -80,11 +77,10 @@ export function OpenShortForm({
 
   return (
     <TransactionView
-      heading={`Short hy${market.baseToken.symbol}`}
       tokenInput={
         <TokenInput
           token={{
-            symbol: `hy${market.baseToken.symbol}`,
+            symbol: `hy${hyperdrive.baseToken.symbol}`,
             address: "0x0",
             decimals: 18,
             name: "Bonds",
@@ -96,12 +92,12 @@ export function OpenShortForm({
       }
       transactionPreview={
         <OpenShortPreview
-          market={market}
+          market={hyperdrive}
           costBasis={baseAmountIn ?? 0n}
           shortSize={amountAsBigInt}
         />
       }
-      disclaimer={`Note: When you short hy${market.baseToken.symbol} you earn the variable rate on the equivalent amount of ${market.baseToken.symbol} deposited in the yield source.`}
+      disclaimer={`Note: When you short hy${hyperdrive.baseToken.symbol} you earn the variable rate on the equivalent amount of ${hyperdrive.baseToken.symbol} deposited in the yield source.`}
       actionButton={
         account ? (
           needsApproval ? (
@@ -115,7 +111,7 @@ export function OpenShortForm({
                 approve?.();
               }}
             >
-              <h5>Approve {market.baseToken.symbol}</h5>
+              <h5>Approve {hyperdrive.baseToken.symbol}</h5>
             </button>
           ) : (
             // Open short button
@@ -128,7 +124,7 @@ export function OpenShortForm({
               className="daisy-btn-accent daisy-btn"
               onClick={() => openShort?.()}
             >
-              Short hy{market.baseToken.symbol}
+              Short hy{hyperdrive.baseToken.symbol}
             </button>
           )
         ) : (

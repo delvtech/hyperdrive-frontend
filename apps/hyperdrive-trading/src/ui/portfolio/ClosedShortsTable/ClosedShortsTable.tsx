@@ -22,10 +22,6 @@ interface ClosedShortsTableProps {
 const columnHelper = createColumnHelper<ClosedShort>();
 const getColumns = (hyperdrive: Hyperdrive) => [
   columnHelper.display({
-    header: `ID`,
-    cell: ({ row }) => <span>{Number(row.original.maturity)}</span>,
-  }),
-  columnHelper.display({
     header: `Matures on`,
     cell: ({ row }) => {
       const maturity = new Date(Number(row.original.maturity * 1000n));

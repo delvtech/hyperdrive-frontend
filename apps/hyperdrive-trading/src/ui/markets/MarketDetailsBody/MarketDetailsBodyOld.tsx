@@ -84,7 +84,7 @@ export function MarketDetailsBodyOld({
           maximizing exposure to the yield source.`}
           modalId="openShortModal"
           icon={<BoltIcon className="mb-2 h-16" />}
-          modalContent={<OpenShortForm market={hyperdrive} />}
+          modalContent={<OpenShortForm hyperdrive={hyperdrive} />}
           checklist={[
             `Fixed rate up, hy${hyperdrive.baseToken.symbol} price down`,
             "Maximize exposure to yield source",

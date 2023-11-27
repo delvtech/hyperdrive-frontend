@@ -28,10 +28,6 @@ import { useAccount } from "wagmi";
 
 const columnHelper = createColumnHelper<OpenShort>();
 const getColumns = (hyperdrive: Hyperdrive) => [
-  columnHelper.display({
-    header: `ID`,
-    cell: ({ row }) => <span>{Number(row.original.maturity)}</span>,
-  }),
   columnHelper.accessor("assetId", {
     id: "maturationDate",
     header: `Matures on`,

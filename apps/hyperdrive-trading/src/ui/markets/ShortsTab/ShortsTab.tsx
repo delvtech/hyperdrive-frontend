@@ -2,14 +2,14 @@ import { ReactElement } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
 import { LongsFAQ } from "src/ui/hyperdrive/longs/LongsFAQ/LongsFAQ";
-import { OpenLongForm } from "src/ui/hyperdrive/longs/OpenLongForm/OpenLongForm";
+import { OpenShortForm } from "src/ui/hyperdrive/shorts/OpenShortForm/OpenShortForm";
 import { MarketDetailsTab } from "src/ui/markets/MarketDetailsTab/MarketDetailsTab";
-import { ClosedLongsTable } from "src/ui/portfolio/ClosedLongsTable/ClosedLongsTable";
+import { ClosedShortsTable } from "src/ui/portfolio/ClosedShortsTable/ClosedShortsTable";
 import { OpenClosedFilter } from "src/ui/portfolio/OpenClosedFilter/OpenClosedFilter";
-import { OpenLongsTable } from "src/ui/portfolio/OpenLongsTable/OpenLongsTable";
+import { OpenShortsTable } from "src/ui/portfolio/OpenShortsTable/OpenShortsTable";
 import { OpenOrClosedTab } from "src/ui/portfolio/PositionsSection/PositionsSection";
 
-export function LongsTab({
+export function ShortsTab({
   hyperdrive,
 }: {
   hyperdrive: Hyperdrive;
@@ -20,22 +20,22 @@ export function LongsTab({
 
   return (
     <MarketDetailsTab
-      positionsLabel="Long positions"
+      positionsLabel="Short positions"
       positions={
         <div className="flex flex-col">
           <div className="mb-2 flex items-center justify-end">
             <OpenClosedFilter />
           </div>
           {activeOpenOrClosedTab === "Open" ? (
-            <OpenLongsTable hyperdrive={hyperdrive} />
+            <OpenShortsTable hyperdrive={hyperdrive} />
           ) : (
-            <ClosedLongsTable hyperdrive={hyperdrive} />
+            <ClosedShortsTable hyperdrive={hyperdrive} />
           )}
         </div>
       }
       faq={<LongsFAQ />}
-      transactionForm={<OpenLongForm hyperdrive={hyperdrive} />}
-      transactionFormHeading={"Open long"}
+      transactionForm={<OpenShortForm hyperdrive={hyperdrive} />}
+      transactionFormHeading={"Open short"}
     />
   );
 }
