@@ -1,17 +1,26 @@
 import { expect, test } from "vitest";
-import { calculateLiquidity } from "./calculateLiquidity";
+import { calculateLiquidity } from "src/pool/calculateLiquidity";
 import { calculateEffectiveShareReserves } from "./calculateEffectiveShares";
+import { setupReadHyperdrive } from "src/hyperdrive/ReadHyperdrive/ReadHyperdrive.test";
+import { mockPoolInfo } from "src/pool/testing/PoolInfo";
 
 test("calculateLiquidity should return the liquidity for a given market", async () => {
-  const liquidity = calculateLiquidity(
-    1001353672959904753n,
-    calculateEffectiveShareReserves(
-      100000119271191525861204752n,
-      -10715885395142403501106n,
+  const { contract, readHyperdrive } = setupReadHyperdrive();
+  contract.stubRead({
+    functionName: "getPoolInfo",
+    args: [],
+    value: [mockPoolInfo],
+  });
+  const poolInfo = await readHyperdrive.getPoolInfo();
+  const liquidity = calculateLiquidity({
+    lpSharePrice: poolInfo.lpSharePrice,
+    shareReserves: calculateEffectiveShareReserves(
+      poolInfo.shareReserves,
+      poolInfo.shareAdjustment,
     ),
-    100085446136514194530n,
-    18,
-  );
+    longsOutstanding: poolInfo.longsOutstanding,
+    decimals: 18,
+  });
 
-  expect(liquidity).toEqual(100146117034389494757221591n);
+  expect(liquidity).toEqual(50000000000000000000000n);
 });

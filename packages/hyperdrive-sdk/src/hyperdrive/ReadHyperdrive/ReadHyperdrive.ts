@@ -430,12 +430,15 @@ export class ReadHyperdrive implements IReadHyperdrive {
     const { lpSharePrice, shareReserves, longsOutstanding, shareAdjustment } =
       await this.getPoolInfo(options);
 
-    const liquidity = calculateLiquidity(
+    const liquidity = calculateLiquidity({
       lpSharePrice,
-      calculateEffectiveShareReserves(shareReserves, shareAdjustment),
+      shareReserves: calculateEffectiveShareReserves(
+        shareReserves,
+        shareAdjustment,
+      ),
       longsOutstanding,
       decimals,
-    );
+    });
 
     return liquidity;
   }
