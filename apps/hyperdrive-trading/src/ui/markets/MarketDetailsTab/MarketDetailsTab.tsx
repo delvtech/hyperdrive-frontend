@@ -4,11 +4,13 @@ import { ReactElement, ReactNode, useState } from "react";
 import { Well } from "src/ui/base/components/Well/Well";
 
 export function MarketDetailsTab({
+  positionsLabel,
   positions,
   faq,
   transactionForm,
   transactionFormHeading,
 }: {
+  positionsLabel: string;
   positions: ReactNode;
   faq: ReactNode;
   transactionForm: ReactNode;
@@ -32,7 +34,7 @@ export function MarketDetailsTab({
                 })}
                 onClick={() => setActiveTab("positions")}
               >
-                <h5 className="mb-3 font-bold">Positions</h5>
+                <h5 className="mb-3 font-bold">{positionsLabel}</h5>
               </button>
               <button
                 className={classNames(detailsTabClassName, {

@@ -20,6 +20,7 @@ export function ShortsTab({
 
   return (
     <MarketDetailsTab
+      positionsLabel="Short positions"
       positions={
         <div className="flex flex-col">
           <div className="mb-2 flex items-center justify-end">
