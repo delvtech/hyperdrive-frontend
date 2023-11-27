@@ -1,11 +1,16 @@
 import * as dnum from "dnum";
 
-export function calculateLiquidity(
-  lpSharePrice: bigint,
-  shareReserves: bigint,
-  longsOutstanding: bigint,
-  decimals: number,
-): bigint {
+export function calculateLiquidity({
+  lpSharePrice,
+  shareReserves,
+  longsOutstanding,
+  decimals,
+}: {
+  lpSharePrice: bigint;
+  shareReserves: bigint;
+  longsOutstanding: bigint;
+  decimals: number;
+}): bigint {
   return dnum.subtract(
     dnum.multiply(
       [lpSharePrice, decimals],
