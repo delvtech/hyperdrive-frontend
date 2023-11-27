@@ -95,7 +95,6 @@ export function OpenLongForm({
 
   return (
     <TransactionView
-      heading={`Long hy${hyperdrive.baseToken.symbol}`}
       tokenInput={
         <TokenInput
           token={hyperdrive.baseToken}

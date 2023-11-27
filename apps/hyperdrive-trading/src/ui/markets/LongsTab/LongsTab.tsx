@@ -23,7 +23,7 @@ export function LongsTab({
 
   return (
     <div className="mt-2 flex flex-col gap-10">
-      <div className="flex gap-16">
+      <div className="flex flex-col gap-16 lg:flex-row">
         {/* positions and faq */}
         <div className="flex flex-1 flex-col">
           <div className="mb-2 flex flex-col">
@@ -59,7 +59,7 @@ export function LongsTab({
                 case "positions":
                   return (
                     <div className="flex flex-col">
-                      <div className="mb-2 flex items-center justify-between">
+                      <div className="mb-2 flex items-center justify-end">
                         <OpenClosedFilter />
                       </div>
                       {activeOpenOrClosedTab === "Open" ? (
