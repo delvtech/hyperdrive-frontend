@@ -16,7 +16,9 @@ export function MarketDetailsTab({
   transactionForm: ReactNode;
   transactionFormHeading: string;
 }): ReactElement {
-  const [activeTab, setActiveTab] = useState<"positions" | "faq">("positions");
+  type TabId = "positions" | "faq";
+
+  const [activeTab, setActiveTab] = useState<TabId>("positions");
 
   const detailsTabClassName =
     "daisy-tab daisy-tab-bordered daisy-tab-sm border-b-base-100 md:daisy-tab-lg";
