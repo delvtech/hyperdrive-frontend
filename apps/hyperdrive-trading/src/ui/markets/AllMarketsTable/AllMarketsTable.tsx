@@ -15,7 +15,7 @@ import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
 import {
   MarketTableRowData,
   useMarketRowData,
-} from "src/ui/markets/MarketsTable/useMarketRowData";
+} from "src/ui/markets/AllMarketsTable/useMarketRowData";
 import { useVaultRate } from "src/ui/vaults/useVaultRate";
 
 const columnHelper = createColumnHelper<MarketTableRowData>();
@@ -111,7 +111,7 @@ function getColumns() {
   ];
 }
 
-export function MarketsTable({
+export function AllMarketsTable({
   markets,
 }: {
   markets: Hyperdrive[];
