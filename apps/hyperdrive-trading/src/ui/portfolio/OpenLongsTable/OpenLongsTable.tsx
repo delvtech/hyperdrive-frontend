@@ -38,10 +38,6 @@ const columnHelper = createColumnHelper<Long>();
 
 function getColumns({ hyperdrive }: { hyperdrive: Hyperdrive }) {
   return [
-    columnHelper.display({
-      header: `ID`,
-      cell: ({ row }) => <span>{Number(row.original.maturity)}</span>,
-    }),
     columnHelper.accessor("assetId", {
       id: "maturationDate",
       header: `Matures on`,
@@ -222,7 +218,7 @@ export function OpenLongsTable({
               return (
                 <tr
                   key={row.id}
-                  className="daisy-hover h-16 cursor-pointer items-center transition duration-300 ease-in-out"
+                  className="daisy-hover h-24 cursor-pointer items-center transition duration-300 ease-in-out"
                   onClick={() => {
                     const modalId = `${row.original.assetId}`;
                     (window as any)[modalId].showModal();

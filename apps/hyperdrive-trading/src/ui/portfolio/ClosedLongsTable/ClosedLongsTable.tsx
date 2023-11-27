@@ -25,10 +25,6 @@ const columnHelper = createColumnHelper<ClosedLong>();
 function getColumns(hyperdrive: Hyperdrive) {
   return [
     columnHelper.display({
-      header: `ID`,
-      cell: ({ row }) => <span>{Number(row.original.maturity)}</span>,
-    }),
-    columnHelper.display({
       header: `Matures on`,
       cell: ({ row }) => {
         const maturity = new Date(Number(row.original.maturity * 1000n));
@@ -111,7 +107,7 @@ export function ClosedLongsTable({
           ) : (
             tableInstance.getRowModel().rows.map((row) => {
               return (
-                <tr key={row.id} className="h-16 items-center italic">
+                <tr key={row.id} className="h-24 items-center italic">
                   <>
                     {row.getVisibleCells().map((cell) => {
                       return (

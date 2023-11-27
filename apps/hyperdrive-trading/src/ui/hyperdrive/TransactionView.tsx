@@ -2,7 +2,7 @@ import { ReactElement, ReactNode } from "react";
 import { Well } from "src/ui/base/components/Well/Well";
 
 interface TransactionViewProps {
-  heading: string;
+  heading?: string;
   tokenInput: ReactNode;
   transactionPreview: ReactNode;
   disclaimer?: ReactNode;
@@ -19,7 +19,7 @@ export function TransactionView({
 }: TransactionViewProps): ReactElement {
   return (
     <div className="flex flex-col gap-4">
-      <h5 className="font-bold">{heading}</h5>
+      {heading !== undefined && <h5 className="font-bold">{heading}</h5>}
       {tokenInput}
 
       <div className="mt-4 flex flex-col gap-6">

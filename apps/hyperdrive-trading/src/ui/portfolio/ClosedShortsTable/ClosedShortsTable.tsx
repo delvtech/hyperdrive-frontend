@@ -110,7 +110,7 @@ export function ClosedShortsTable({
           ) : (
             tableInstance.getRowModel().rows.map((row) => {
               return (
-                <tr key={row.id} className="h-16 grid-cols-4 items-center">
+                <tr key={row.id} className="h-24 grid-cols-4 items-center">
                   <>
                     {row.getVisibleCells().map((cell) => {
                       return (

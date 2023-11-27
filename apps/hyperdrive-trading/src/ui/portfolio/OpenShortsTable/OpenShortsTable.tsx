@@ -226,7 +226,7 @@ export function OpenShortsTable({
               return (
                 <tr
                   key={row.id}
-                  className="daisy-hover h-16 cursor-pointer items-center transition duration-300 ease-in-out"
+                  className="daisy-hover h-24 cursor-pointer items-center transition duration-300 ease-in-out"
                   onClick={() => {
                     const modalId = `${row.original.assetId}`;
                     (window as any)[modalId].showModal();
