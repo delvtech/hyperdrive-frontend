@@ -77,7 +77,6 @@ export function OpenShortForm({
 
   return (
     <TransactionView
-      heading={`Short hy${hyperdrive.baseToken.symbol}`}
       tokenInput={
         <TokenInput
           token={{

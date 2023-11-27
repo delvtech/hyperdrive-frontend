@@ -4,7 +4,7 @@ import { useSearchParams } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
 import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
 import { LongsTab } from "src/ui/markets/LongsTab/LongsTab";
-import { MarketDetailsTab } from "src/ui/markets/MarketDetailsTab/MarketDetailsTab";
+import { ShortsTab } from "src/ui/markets/ShortsTab/ShortsTab";
 import { ClosedLpTable } from "src/ui/portfolio/ClosedLpTable/ClosedLpTable";
 import { LP_CARDS_FEATURE_FLAG } from "src/ui/portfolio/featureFlags";
 import { LpPortfolioCard } from "src/ui/portfolio/LpPortfolioCard/LpPortfolioCard";
@@ -53,7 +53,7 @@ export function PositionsSection({
                 return <LongsTab hyperdrive={hyperdrive} />;
 
               case "Shorts":
-                return <MarketDetailsTab hyperdrive={hyperdrive} />;
+                return <ShortsTab hyperdrive={hyperdrive} />;
 
               case "LP":
                 if (activeOpenOrClosedTab === "Open") {
