@@ -2,14 +2,14 @@ import { ReactElement } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
 import { LongsFAQ } from "src/ui/hyperdrive/longs/LongsFAQ/LongsFAQ";
-import { OpenLongForm } from "src/ui/hyperdrive/longs/OpenLongForm/OpenLongForm";
+import { AddLiquidityForm } from "src/ui/hyperdrive/lp/AddLiquidityForm/AddLiquidityForm";
 import { MarketDetailsTab } from "src/ui/markets/MarketDetailsTab/MarketDetailsTab";
 import { OpenOrClosedTab } from "src/ui/markets/PositionsSection/PositionsSection";
-import { ClosedLongsTable } from "src/ui/portfolio/ClosedLongsTable/ClosedLongsTable";
+import { ClosedLpTable } from "src/ui/portfolio/ClosedLpTable/ClosedLpTable";
 import { OpenClosedFilter } from "src/ui/portfolio/OpenClosedFilter/OpenClosedFilter";
-import { OpenLongsTable } from "src/ui/portfolio/OpenLongsTable/OpenLongsTable";
+import { LpPortfolioCard } from "src/ui/portfolio/OpenLpSharesCard/OpenLpSharesCard";
 
-export function LongsTab({
+export function LpTab({
   hyperdrive,
 }: {
   hyperdrive: Hyperdrive;
@@ -20,22 +20,24 @@ export function LongsTab({
 
   return (
     <MarketDetailsTab
-      positionsLabel="Long positions"
+      positionsLabel="LP position"
       positions={
         <div className="flex flex-col">
           <div className="mb-2 flex items-center justify-end">
             <OpenClosedFilter />
           </div>
           {activeOpenOrClosedTab === "Open" ? (
-            <OpenLongsTable hyperdrive={hyperdrive} />
+            <div className="flex">
+              <LpPortfolioCard hyperdrive={hyperdrive} />
+            </div>
           ) : (
-            <ClosedLongsTable hyperdrive={hyperdrive} />
+            <ClosedLpTable hyperdrive={hyperdrive} />
           )}
         </div>
       }
       faq={<LongsFAQ />}
-      transactionForm={<OpenLongForm hyperdrive={hyperdrive} />}
-      transactionFormHeading={"Open long"}
+      transactionForm={<AddLiquidityForm hyperdrive={hyperdrive} />}
+      transactionFormHeading={"Add liquidity"}
     />
   );
 }

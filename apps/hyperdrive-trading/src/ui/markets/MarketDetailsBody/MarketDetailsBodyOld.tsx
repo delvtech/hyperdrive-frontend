@@ -7,19 +7,19 @@ import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import CustomBanner from "src/ui/base/components/CustomBanner";
 import { ActionModalButton } from "src/ui/hyperdrive/ActionModalButton";
-import { useCurrentFixedAPR } from "src/ui/hyperdrive/hooks/useCurrentFixedAPR";
-import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
-import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
-import { OpenLongForm } from "src/ui/hyperdrive/longs/OpenLongForm/OpenLongForm";
-import { AddLiquidityForm } from "src/ui/hyperdrive/lp/AddLiquidityForm/AddLiquidityForm";
-import { OpenShortForm } from "src/ui/hyperdrive/shorts/OpenShortForm/OpenShortForm";
 import { TransactionTable } from "src/ui/hyperdrive/TransactionTable/TransactionsTable";
 import { useTransactionData } from "src/ui/hyperdrive/TransactionTable/useTransactionData";
+import { useCurrentFixedAPR } from "src/ui/hyperdrive/hooks/useCurrentFixedAPR";
+import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
+import { OpenLongForm } from "src/ui/hyperdrive/longs/OpenLongForm/OpenLongForm";
+import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
+import { AddLiquidityForm } from "src/ui/hyperdrive/lp/AddLiquidityForm/AddLiquidityForm";
+import { OpenShortForm } from "src/ui/hyperdrive/shorts/OpenShortForm/OpenShortForm";
 import { MarketBreadcrumbs } from "src/ui/markets/MarketDetailsBody/MarketBreadcrumbs";
 import { MarketHeader } from "src/ui/markets/MarketDetailsBody/MarketHeader";
 import { MarketStats } from "src/ui/markets/MarketStats/MarketStats";
+import { PositionsSectionOld } from "src/ui/markets/PositionsSection/PositionsSectionOld";
 import { FAQ } from "src/ui/onboarding/FAQ/FAQ";
-import { PositionsSectionOld } from "src/ui/portfolio/PositionsSection/PositionsSectionOld";
 import { YourBalanceWell } from "src/ui/portfolio/YourBalanceWell/YourBalanceWell";
 import { useVaultRate } from "src/ui/vaults/useVaultRate";
 
@@ -100,7 +100,7 @@ export function MarketDetailsBodyOld({
           yield source rate."
           modalId="addLpModal"
           icon={<SquaresPlusIcon className="mb-2 h-16" />}
-          modalContent={<AddLiquidityForm market={hyperdrive} />}
+          modalContent={<AddLiquidityForm hyperdrive={hyperdrive} />}
           checklist={[
             `Single-sided deposit with ${hyperdrive.baseToken.symbol}`,
             "Idle liquidity earns yield source rate",

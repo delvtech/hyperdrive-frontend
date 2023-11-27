@@ -21,7 +21,7 @@ interface LpPortfolioCardProps {
   hyperdrive: Hyperdrive;
 }
 
-export function LpPortfolioCard({
+export function OpenWithdrawalSharesCard({
   hyperdrive,
 }: LpPortfolioCardProps): ReactElement {
   const { address: account } = useAccount();
@@ -245,7 +245,7 @@ function DepositButton({
   return (
     <Modal
       modalId={"depositLpModal"}
-      modalContent={<AddLiquidityForm market={hyperdrive} />}
+      modalContent={<AddLiquidityForm hyperdrive={hyperdrive} />}
     >
       {({ showModal }) => (
         <button

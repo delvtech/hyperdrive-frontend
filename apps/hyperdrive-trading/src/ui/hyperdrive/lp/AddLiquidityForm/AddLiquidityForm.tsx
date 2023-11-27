@@ -16,33 +16,33 @@ import { TokenInput } from "src/ui/token/TokenInput";
 import { useAccount, useBalance } from "wagmi";
 
 interface AddLiquidityFormProps {
-  market: Hyperdrive;
+  hyperdrive: Hyperdrive;
 }
 
 export function AddLiquidityForm({
-  market,
+  hyperdrive,
 }: AddLiquidityFormProps): ReactElement {
   const { address: account } = useAccount();
   const { openConnectModal } = useConnectModal();
 
   const { data: baseTokenBalance } = useBalance({
     address: account,
-    token: market.baseToken.address,
+    token: hyperdrive.baseToken.address,
   });
 
   const { amount, amountAsBigInt, setAmount } = useNumericInput({
-    decimals: market.baseToken.decimals,
+    decimals: hyperdrive.baseToken.decimals,
   });
 
   const { tokenAllowance } = useTokenAllowance({
     account,
-    spender: market.address,
-    tokenAddress: market.baseToken.address,
+    spender: hyperdrive.address,
+    tokenAddress: hyperdrive.baseToken.address,
   });
 
   const { approve } = useTokenApproval({
-    tokenAddress: market.baseToken.address,
-    spender: market.address,
+    tokenAddress: hyperdrive.baseToken.address,
+    spender: hyperdrive.address,
     amount: MAX_UINT256,
   });
 
@@ -52,20 +52,20 @@ export function AddLiquidityForm({
 
   const { lpSharesOut, status: addLiquidityPreviewStatus } =
     usePreviewAddLiquidity({
-      market,
+      market: hyperdrive,
       contribution: amountAsBigInt,
       // TODO: Add slippage control
-      minAPR: parseUnits("0", market.baseToken.decimals),
-      maxAPR: parseUnits("999", market.baseToken.decimals),
+      minAPR: parseUnits("0", hyperdrive.baseToken.decimals),
+      maxAPR: parseUnits("999", hyperdrive.baseToken.decimals),
       destination: account,
       enabled: !needsApproval,
     });
 
   const { addLiquidity, addLiquidityStatus } = useAddLiquidity({
-    hyperdriveAddress: market.address,
+    hyperdriveAddress: hyperdrive.address,
     contribution: amountAsBigInt,
-    minAPR: parseUnits("0", market.baseToken.decimals),
-    maxAPR: parseUnits("999", market.baseToken.decimals),
+    minAPR: parseUnits("0", hyperdrive.baseToken.decimals),
+    maxAPR: parseUnits("999", hyperdrive.baseToken.decimals),
     destination: account,
     enabled: addLiquidityPreviewStatus === "success" && !needsApproval,
     onExecuted: () => {
@@ -76,10 +76,9 @@ export function AddLiquidityForm({
 
   return (
     <TransactionView
-      heading="Add liquidity"
       tokenInput={
         <TokenInput
-          token={market.baseToken}
+          token={hyperdrive.baseToken}
           value={amount ?? ""}
           maxValue={baseTokenBalance?.formatted}
           inputLabel="Amount to deposit"
@@ -87,16 +86,19 @@ export function AddLiquidityForm({
             baseTokenBalance
               ? `Balance: ${formatBalance({
                   balance: baseTokenBalance?.value,
-                  decimals: market.baseToken.decimals,
+                  decimals: hyperdrive.baseToken.decimals,
                   places: 4,
-                })} ${market.baseToken.symbol}`
+                })} ${hyperdrive.baseToken.symbol}`
               : undefined
           }
           onChange={(newAmount) => setAmount(newAmount)}
         />
       }
       transactionPreview={
-        <AddLiquidityPreview hyperdrive={market} lpShares={lpSharesOut || 0n} />
+        <AddLiquidityPreview
+          hyperdrive={hyperdrive}
+          lpShares={lpSharesOut || 0n}
+        />
       }
       disclaimer={
         "Note: You can withdraw liquidity at any time. If you're backing open positions, you'll receive Withdrawal Shares for later redemption."
@@ -114,7 +116,7 @@ export function AddLiquidityForm({
                 approve?.();
               }}
             >
-              Approve {market.baseToken.symbol}
+              Approve {hyperdrive.baseToken.symbol}
             </button>
           ) : (
             // Trade button

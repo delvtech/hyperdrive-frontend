@@ -3,19 +3,19 @@ import { ReactElement } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
 import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
-import { ClosedLongsTable } from "src/ui/portfolio/ClosedLongsTable/ClosedLongsTable";
-import { ClosedLpTable } from "src/ui/portfolio/ClosedLpTable/ClosedLpTable";
-import { ClosedShortsTable } from "src/ui/portfolio/ClosedShortsTable/ClosedShortsTable";
-import { LP_CARDS_FEATURE_FLAG } from "src/ui/portfolio/featureFlags";
-import { LpPortfolioCard } from "src/ui/portfolio/LpPortfolioCard/LpPortfolioCard";
-import { OpenClosedFilter } from "src/ui/portfolio/OpenClosedFilter/OpenClosedFilter";
-import { OpenLongsTable } from "src/ui/portfolio/OpenLongsTable/OpenLongsTable";
-import { OpenLpTable } from "src/ui/portfolio/OpenLpTable/OpenLpTable";
-import { OpenShortsTable } from "src/ui/portfolio/OpenShortsTable/OpenShortsTable";
 import {
   PositionTab,
   PositionTabs,
-} from "src/ui/portfolio/PositionTabs/PositionTabs";
+} from "src/ui/markets/PositionTabs/PositionTabs";
+import { ClosedLongsTable } from "src/ui/portfolio/ClosedLongsTable/ClosedLongsTable";
+import { ClosedLpTable } from "src/ui/portfolio/ClosedLpTable/ClosedLpTable";
+import { ClosedShortsTable } from "src/ui/portfolio/ClosedShortsTable/ClosedShortsTable";
+import { OpenClosedFilter } from "src/ui/portfolio/OpenClosedFilter/OpenClosedFilter";
+import { OpenLongsTable } from "src/ui/portfolio/OpenLongsTable/OpenLongsTable";
+import { LpPortfolioCard } from "src/ui/portfolio/OpenLpSharesCard/OpenLpSharesCard";
+import { OpenLpTable } from "src/ui/portfolio/OpenLpTable/OpenLpTable";
+import { OpenShortsTable } from "src/ui/portfolio/OpenShortsTable/OpenShortsTable";
+import { LP_CARDS_FEATURE_FLAG } from "src/ui/portfolio/featureFlags";
 
 export type OpenOrClosedTab = "Open" | "Closed";
 
