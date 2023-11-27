@@ -36,7 +36,7 @@ export function MarketDetailsTab({
                 })}
                 onClick={() => setActiveTab("positions")}
               >
-                <h5 className="mb-3 font-bold">{positionsLabel}</h5>
+                <h5 className="font-bold">{positionsLabel}</h5>
               </button>
               <button
                 className={classNames(detailsTabClassName, {
@@ -44,7 +44,7 @@ export function MarketDetailsTab({
                 })}
                 onClick={() => setActiveTab("faq")}
               >
-                <h5 className="mb-3 font-bold">FAQ</h5>
+                <h5 className="font-bold">FAQ</h5>
               </button>
             </div>
 
