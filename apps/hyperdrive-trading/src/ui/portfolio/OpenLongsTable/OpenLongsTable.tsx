@@ -38,10 +38,6 @@ const columnHelper = createColumnHelper<Long>();
 
 function getColumns({ hyperdrive }: { hyperdrive: Hyperdrive }) {
   return [
-    columnHelper.display({
-      header: `ID`,
-      cell: ({ row }) => <span>{Number(row.original.maturity)}</span>,
-    }),
     columnHelper.accessor("assetId", {
       id: "maturationDate",
       header: `Matures on`,
