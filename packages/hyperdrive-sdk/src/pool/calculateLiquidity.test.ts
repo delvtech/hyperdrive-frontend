@@ -14,10 +14,10 @@ test("calculateLiquidity should return the liquidity for a given market", async 
   const poolInfo = await readHyperdrive.getPoolInfo();
   const liquidity = calculateLiquidity({
     lpSharePrice: poolInfo.lpSharePrice,
-    shareReserves: calculateEffectiveShareReserves(
-      poolInfo.shareReserves,
-      poolInfo.shareAdjustment,
-    ),
+    shareReserves: calculateEffectiveShareReserves({
+      shareReserves: poolInfo.shareReserves,
+      shareAdjustment: poolInfo.shareAdjustment,
+    }),
     longsOutstanding: poolInfo.longsOutstanding,
     decimals: 18,
   });

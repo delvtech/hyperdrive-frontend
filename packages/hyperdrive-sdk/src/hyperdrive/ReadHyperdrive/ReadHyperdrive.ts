@@ -432,10 +432,10 @@ export class ReadHyperdrive implements IReadHyperdrive {
 
     const liquidity = calculateLiquidity({
       lpSharePrice,
-      shareReserves: calculateEffectiveShareReserves(
+      shareReserves: calculateEffectiveShareReserves({
         shareReserves,
         shareAdjustment,
-      ),
+      }),
       longsOutstanding,
       decimals,
     });
@@ -537,7 +537,7 @@ export class ReadHyperdrive implements IReadHyperdrive {
     const [spotPrice] = await this.mathContract.read(
       "calculateSpotPrice",
       [
-        calculateEffectiveShareReserves(shareReserves, shareAdjustment),
+        calculateEffectiveShareReserves({ shareReserves, shareAdjustment }),
         bondReserves,
         initialSharePrice,
         timeStretch,

@@ -11,10 +11,10 @@ test("calculateEffectiveShares should return `shareReserves - shareAdjustment`",
     value: [mockPoolInfo],
   });
   const poolInfo = await readHyperdrive.getPoolInfo();
-  const effectiveShares = calculateEffectiveShareReserves(
-    poolInfo.shareReserves,
-    poolInfo.shareAdjustment,
-  );
+  const effectiveShares = calculateEffectiveShareReserves({
+    shareReserves: poolInfo.shareReserves,
+    shareAdjustment: poolInfo.shareAdjustment,
+  });
 
   expect(effectiveShares).toEqual(50000000000000000000000n);
 });
