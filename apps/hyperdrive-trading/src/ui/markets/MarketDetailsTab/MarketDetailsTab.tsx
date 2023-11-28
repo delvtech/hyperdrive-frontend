@@ -3,6 +3,9 @@ import classNames from "classnames";
 import { ReactElement, ReactNode, useState } from "react";
 import { Well } from "src/ui/base/components/Well/Well";
 
+/**
+ * Layout component for the LongsTab, ShortsTab, and LpTab
+ */
 export function MarketDetailsTab({
   positionsLabel,
   positions,

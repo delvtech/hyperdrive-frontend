@@ -159,7 +159,7 @@ export function ClosedLpTable({
               return (
                 <tr
                   key={row.id}
-                  className="h-16 cursor-pointer grid-cols-4 items-center"
+                  className="h-24 cursor-pointer grid-cols-4 items-center"
                 >
                   <>
                     {row.getVisibleCells().map((cell) => {

@@ -4,10 +4,10 @@ import { Hyperdrive } from "src/appconfig/types";
 import { LongsFAQ } from "src/ui/hyperdrive/longs/LongsFAQ/LongsFAQ";
 import { OpenLongForm } from "src/ui/hyperdrive/longs/OpenLongForm/OpenLongForm";
 import { MarketDetailsTab } from "src/ui/markets/MarketDetailsTab/MarketDetailsTab";
+import { OpenOrClosedTab } from "src/ui/markets/PositionsSection/PositionsSection";
 import { ClosedLongsTable } from "src/ui/portfolio/ClosedLongsTable/ClosedLongsTable";
 import { OpenClosedFilter } from "src/ui/portfolio/OpenClosedFilter/OpenClosedFilter";
 import { OpenLongsTable } from "src/ui/portfolio/OpenLongsTable/OpenLongsTable";
-import { OpenOrClosedTab } from "src/ui/portfolio/PositionsSection/PositionsSection";
 
 export function LongsTab({
   hyperdrive,

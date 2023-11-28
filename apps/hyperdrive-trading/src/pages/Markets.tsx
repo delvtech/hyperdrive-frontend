@@ -1,6 +1,6 @@
 import { ReactElement, useMemo } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
-import { MarketsTable } from "src/ui/markets/MarketsTable/MarketsTable";
+import { AllMarketsTable } from "src/ui/markets/AllMarketsTable/AllMarketsTable";
 
 export function Markets(): ReactElement {
   const { appConfig: config } = useAppConfig();
@@ -29,7 +29,7 @@ export function Markets(): ReactElement {
           </div>
         </div>
       </div>
-      <MarketsTable markets={memoizedData} />
+      <AllMarketsTable markets={memoizedData} />
     </div>
   );
 }

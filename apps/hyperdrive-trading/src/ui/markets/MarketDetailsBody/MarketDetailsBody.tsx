@@ -6,7 +6,7 @@ import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLon
 import { MarketBreadcrumbs } from "src/ui/markets/MarketDetailsBody/MarketBreadcrumbs";
 import { MarketHeader } from "src/ui/markets/MarketDetailsBody/MarketHeader";
 import { MarketStats } from "src/ui/markets/MarketStats/MarketStats";
-import { PositionsSection } from "src/ui/portfolio/PositionsSection/PositionsSection";
+import { PositionsSection } from "src/ui/markets/PositionsSection/PositionsSection";
 import { YourBalanceWell } from "src/ui/portfolio/YourBalanceWell/YourBalanceWell";
 
 interface PositionsTableProps {

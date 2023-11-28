@@ -17,13 +17,13 @@ import { usePreviewRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreview
 import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
 
-interface LpPortfolioCardProps {
+interface OpenLpSharesCardProps {
   hyperdrive: Hyperdrive;
 }
 
-export function LpPortfolioCard({
+export function OpenLpSharesCard({
   hyperdrive,
-}: LpPortfolioCardProps): ReactElement {
+}: OpenLpSharesCardProps): ReactElement {
   const { address: account } = useAccount();
   const { poolInfo } = usePoolInfo(hyperdrive.address);
   const { lpShares } = useLpShares({
@@ -62,8 +62,8 @@ export function LpPortfolioCard({
 
   return (
     <Well>
-      <div className="flex max-w-xs flex-col gap-4">
-        <span className="text-h6 font-bold">LP Shares</span>
+      <div className="flex w-80 max-w-xs flex-col gap-4 ">
+        <span className="daisy-card-title font-bold">LP Shares</span>
         {lpShares !== 0n ? (
           <>
             <div className="mb-4 flex flex-col gap-2">
@@ -162,11 +162,7 @@ export function LpPortfolioCard({
                 to your utilization ratio.
               </p>
             </div>
-            <div className="flex items-center justify-end gap-1">
-              <DepositButton
-                hyperdrive={hyperdrive}
-                className="rounded-l-md rounded-r-none"
-              />
+            <div className="daisy-card-actions">
               <Modal
                 modalId={"withdrawalLpModal"}
                 modalContent={
@@ -178,10 +174,10 @@ export function LpPortfolioCard({
               >
                 {({ showModal }) => (
                   <button
-                    className="daisy-btn-neutral daisy-btn-sm daisy-btn rounded-l-none rounded-r-md hover:daisy-btn-ghost"
+                    className="daisy-btn-neutral daisy-btn-wide daisy-btn m-auto hover:daisy-btn-ghost"
                     onClick={showModal}
                   >
-                    Withdraw
+                    Remove liquidity
                   </button>
                 )}
               </Modal>
@@ -245,7 +241,7 @@ function DepositButton({
   return (
     <Modal
       modalId={"depositLpModal"}
-      modalContent={<AddLiquidityForm market={hyperdrive} />}
+      modalContent={<AddLiquidityForm hyperdrive={hyperdrive} />}
     >
       {({ showModal }) => (
         <button
