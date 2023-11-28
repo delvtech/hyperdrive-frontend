@@ -9,7 +9,6 @@ export default function TestPage(): JSX.Element {
   const readHyperdrive = useReadHyperdrive(
     "0xd8058efe0198ae9dD7D563e1b4938Dcbc86A1F81",
   );
-  // Get the current block and check it's timestamp agains the
   const queryEnabled = !!readHyperdrive && !!account;
   const { data: longs } = useQuery({
     queryKey: makeQueryKey("longPositions", { account }),
