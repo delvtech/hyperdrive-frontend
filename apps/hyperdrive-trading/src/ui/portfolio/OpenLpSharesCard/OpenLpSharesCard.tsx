@@ -62,8 +62,8 @@ export function OpenLpSharesCard({
 
   return (
     <Well>
-      <div className="flex w-80 max-w-xs flex-col gap-4">
-        <span className="text-h5 font-bold">LP Shares</span>
+      <div className="flex w-80 max-w-xs flex-col gap-4 ">
+        <span className="daisy-card-title font-bold">LP Shares</span>
         {lpShares !== 0n ? (
           <>
             <div className="mb-4 flex flex-col gap-2">
@@ -162,7 +162,7 @@ export function OpenLpSharesCard({
                 to your utilization ratio.
               </p>
             </div>
-            <div className="flex items-center justify-end gap-1">
+            <div className="daisy-card-actions">
               <Modal
                 modalId={"withdrawalLpModal"}
                 modalContent={

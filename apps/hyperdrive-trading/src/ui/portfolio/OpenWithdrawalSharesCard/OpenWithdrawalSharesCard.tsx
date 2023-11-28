@@ -36,7 +36,7 @@ export function OpenWithdrawalSharesCard({
   return (
     <Well>
       <div className="flex h-full w-80 flex-col justify-between gap-4">
-        <span className="text-h5 font-bold">Withdrawal Shares</span>
+        <span className="daisy-card-title font-bold">Withdrawal Shares</span>
         {withdrawalShares !== 0n ? (
           <div className="flex h-full flex-col justify-between">
             <div className="mb-4 flex flex-col gap-2">
@@ -92,7 +92,7 @@ export function OpenWithdrawalSharesCard({
               used to back new positions. They continue to earn the variable
               rate from the yield source.
             </p>
-            <div className="flex items-center justify-end gap-1">
+            <div className="daisy-card-actions">
               <Modal
                 modalId={"withdrawalLpModal"}
                 modalContent={
