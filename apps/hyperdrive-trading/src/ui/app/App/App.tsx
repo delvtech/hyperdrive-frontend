@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import { Landing } from "src/pages/Landing";
 import { Markets } from "src/pages/Markets";
+import TestPage from "src/pages/Test";
 import { Market } from "src/pages/market";
 import Footer from "src/ui/app/Footer/Footer";
 import { Navbar } from "src/ui/app/Navbar/Navbar";
@@ -45,6 +46,10 @@ export function App(): ReactElement | null {
         {
           path: "/markets",
           element: <Markets />,
+        },
+        {
+          path: "/test",
+          element: <TestPage />,
         },
         {
           path: "/market/:address",

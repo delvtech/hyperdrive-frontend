@@ -28,13 +28,18 @@ export class ViemReadContract<TAbi extends Abi = Abi>
 {
   readonly abi: TAbi;
   readonly address: Address;
-
+  totalReadCalls: number;
+  totalSimulateCalls: number;
+  totalEventCalls: number;
   protected readonly _publicClient: PublicClient;
 
   constructor({ abi, address, publicClient }: ViemReadContractOptions<TAbi>) {
     this.abi = abi;
     this.address = address;
     this._publicClient = publicClient;
+    this.totalReadCalls = 0;
+    this.totalSimulateCalls = 0;
+    this.totalEventCalls = 0;
   }
 
   async read<TFunctionName extends FunctionName<TAbi>>(
@@ -42,6 +47,14 @@ export class ViemReadContract<TAbi extends Abi = Abi>
     args: FunctionArgs<TAbi, TFunctionName>,
     options?: ContractReadOptions,
   ): Promise<FunctionReturnType<TAbi, TFunctionName>> {
+    this.totalReadCalls += 1;
+    console.log(
+      "read totals",
+      this.totalReadCalls,
+      functionName,
+      args,
+      options,
+    );
     const result = await this._publicClient.readContract({
       abi: this.abi as any,
       address: this.address,
@@ -71,6 +84,14 @@ export class ViemReadContract<TAbi extends Abi = Abi>
     args: FunctionArgs<TAbi, TFunctionName>,
     options?: ContractWriteOptions,
   ): Promise<FunctionReturnType<TAbi, TFunctionName>> {
+    this.totalSimulateCalls += 1;
+    console.log(
+      "simulateWrite totals ",
+      this.totalSimulateCalls,
+      functionName,
+      args,
+      options,
+    );
     const { result } = await this._publicClient.simulateContract({
       abi: this.abi as any,
       address: this.address,
@@ -97,6 +118,8 @@ export class ViemReadContract<TAbi extends Abi = Abi>
     eventName: TEventName,
     options?: ContractGetEventsOptions<TAbi, TEventName>,
   ): Promise<ContractEvent<TAbi, TEventName>[]> {
+    this.totalEventCalls += 1;
+    console.log("getEvents total", this.totalEventCalls, eventName, options);
     const filter = await this._publicClient.createContractEventFilter({
       address: this.address,
       abi: this.abi,
