@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { ReactElement } from "react";
 
-export type PositionTab = "Longs" | "Shorts" | "LP";
+export type PositionTab = "Longs" | "Shorts" | "LP" | "Transactions" | "FAQ";
 
 export function PositionTabs({
   onTabClick,
@@ -11,40 +11,23 @@ export function PositionTabs({
   activePositionTab: PositionTab;
 }): ReactElement {
   return (
-    <div className="daisy-tabs">
-      <button
-        onClick={() => onTabClick("Longs")}
-        className={classNames(
-          "daisy-tab-lifted daisy-tab daisy-tab-sm border-b-base-100 md:daisy-tab-lg",
-          {
-            "daisy-tab-active": activePositionTab === "Longs",
-          },
-        )}
-      >
-        Longs
-      </button>
-      <button
-        onClick={() => onTabClick("Shorts")}
-        className={classNames(
-          "daisy-tab-lifted daisy-tab daisy-tab-sm border-b-base-100 md:daisy-tab-lg",
-          {
-            "daisy-tab-active": activePositionTab === "Shorts",
-          },
-        )}
-      >
-        Shorts
-      </button>
-      <button
-        onClick={() => onTabClick("LP")}
-        className={classNames(
-          "daisy-tab-lifted daisy-tab daisy-tab-sm border-b-base-100 md:daisy-tab-lg",
-          {
-            "daisy-tab-active": activePositionTab === "LP",
-          },
-        )}
-      >
-        LP
-      </button>
+    <div className="daisy-tabs ">
+      {(["Longs", "Shorts", "LP", "Transactions", "FAQ"] as PositionTab[]).map(
+        (positionTab) => (
+          <button
+            key={positionTab}
+            onClick={() => onTabClick(positionTab)}
+            className={classNames(
+              "daisy-tab-bordered daisy-tab daisy-tab-sm border-b-base-100 md:daisy-tab-lg",
+              {
+                "daisy-tab-active font-bold": activePositionTab === positionTab,
+              },
+            )}
+          >
+            <h5>{positionTab}</h5>
+          </button>
+        ),
+      )}
     </div>
   );
 }

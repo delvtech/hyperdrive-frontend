@@ -13,7 +13,10 @@ import * as dnum from "dnum";
 import { useState } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { formatAddress } from "src/ui/base/formatting/formatAddress";
-import { TransactionData } from "src/ui/hyperdrive/TransactionTable/useTransactionData";
+import {
+  TransactionData,
+  useTransactionData,
+} from "src/ui/hyperdrive/TransactionTable/useTransactionData";
 import { Address } from "viem";
 
 export interface Transaction {
@@ -102,11 +105,10 @@ const getColumns = (hyperdrive: Hyperdrive) => [
 ];
 export function TransactionTable({
   hyperdrive,
-  data: transactionData,
 }: {
   hyperdrive: Hyperdrive;
-  data: TransactionData[];
 }): JSX.Element {
+  const { data: transactionData } = useTransactionData(hyperdrive);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const tableInstance = useReactTable({
     columns: getColumns(hyperdrive),
