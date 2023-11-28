@@ -1517,10 +1517,10 @@
   dependencies:
     "@jridgewell/trace-mapping" "0.3.9"
 
-"@delvtech/hyperdrive-wasm@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@delvtech/hyperdrive-wasm/-/hyperdrive-wasm-0.1.0.tgz#97ef462770b763048d99e100e8183fa5bfb8a31e"
-  integrity sha512-xweDx/ebzIuoPNiiagaP6VIz0XLei9YvUqo6p9vW7rsZAPteaBvPyOBi4L/ZkAxw0fZKNH2h0HArUu25d3z5DA==
+"@delvtech/hyperdrive-wasm@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@delvtech/hyperdrive-wasm/-/hyperdrive-wasm-0.2.0.tgz#d863d7c8206834bd88823feb4016850fedd0c7ad"
+  integrity sha512-Ksq2SchmJyuU6qm/7uNW8XTT9T/K0sk3KbqyScNnP9zBsSylch1+yv548BFJhm7sszA33jR+WuG+YQZEHIRbBA==
 
 "@discoveryjs/json-ext@0.5.7":
   version "0.5.7"
