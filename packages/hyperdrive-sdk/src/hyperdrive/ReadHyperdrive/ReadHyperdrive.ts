@@ -255,12 +255,7 @@ export interface IReadHyperdrive {
    */
   previewOpenLong(args: {
     baseAmount: bigint;
-    minBondAmountOut: bigint;
-    minSharePrice: bigint;
-    destination: Address;
-    asBase: boolean;
-    extraData?: `0x${string}`;
-    options: ContractWriteOptions;
+    options?: ContractReadOptions;
   }): Promise<{ maturityTime: bigint; bondProceeds: bigint }>;
 
   /**
@@ -268,12 +263,7 @@ export interface IReadHyperdrive {
    */
   previewOpenShort(args: {
     amountOfBondsToShort: bigint;
-    maxBaseAmountIn: bigint;
-    minSharePrice: bigint;
-    destination: Address;
-    asBase: boolean;
-    extraData?: `0x${string}`;
-    options: ContractWriteOptions;
+    options?: ContractReadOptions;
   }): Promise<{ maturityTime: bigint; traderDeposit: bigint }>;
 
   /**
@@ -1204,66 +1194,58 @@ export class ReadHyperdrive implements IReadHyperdrive {
 
   async previewOpenLong({
     baseAmount,
-    minBondAmountOut,
-    minSharePrice,
-    destination,
-    asBase = true,
-    extraData = DEFAULT_EXTRA_DATA,
     options,
-  }: {
-    baseAmount: bigint;
-    minBondAmountOut: bigint;
-    minSharePrice: bigint;
-    destination: Address;
-    asBase: boolean;
-    extraData?: `0x${string}`;
-    options?: ContractWriteOptions;
-  }): ReturnType<IReadHyperdrive, "previewOpenLong"> {
-    const [maturityTime, bondProceeds] = await this.contract.simulateWrite(
-      "openLong",
-      [
-        baseAmount,
-        minBondAmountOut,
-        minSharePrice,
-        { destination, asBase, extraData },
-      ],
-      options,
+  }: Parameters<IReadHyperdrive["previewOpenLong"]>[0]): ReturnType<
+    IReadHyperdrive,
+    "previewOpenLong"
+  > {
+    const config = await this.getPoolConfig(options);
+    const info = await this.getPoolInfo(options);
+
+    const { timestamp: blockTimestamp } = await this.network.getBlock(options);
+    const checkpointId = getCheckpointId(
+      blockTimestamp,
+      config.checkpointDuration,
     );
-    return { maturityTime, bondProceeds };
+
+    const bondProceeds = await hyperwasm.calcOpenLong(
+      convertBigIntsToStrings(info),
+      convertBigIntsToStrings(config),
+      baseAmount.toString(),
+    );
+
+    return {
+      maturityTime: checkpointId + config.positionDuration,
+      bondProceeds: dnum.from(bondProceeds, 18)[0],
+    };
   }
 
   async previewOpenShort({
     amountOfBondsToShort,
-    maxBaseAmountIn,
-    minSharePrice,
-    destination,
-    asBase = true,
-    extraData = DEFAULT_EXTRA_DATA,
     options,
-  }: {
-    amountOfBondsToShort: bigint;
-    maxBaseAmountIn: bigint;
-    minSharePrice: bigint;
-    destination: Address;
-    asBase?: boolean;
-    extraData?: `0x${string}`;
-    options?: ContractWriteOptions;
-  }): ReturnType<IReadHyperdrive, "previewOpenShort"> {
-    const [maturityTime, traderDeposit] = await this.contract.simulateWrite(
-      "openShort",
-      [
-        amountOfBondsToShort,
-        maxBaseAmountIn,
-        minSharePrice,
-        {
-          destination,
-          asBase,
-          extraData,
-        },
-      ],
-      options,
+  }: Parameters<IReadHyperdrive["previewOpenShort"]>[0]): ReturnType<
+    IReadHyperdrive,
+    "previewOpenShort"
+  > {
+    const config = await this.getPoolConfig(options);
+    const info = await this.getPoolInfo(options);
+
+    const { timestamp: blockTimestamp } = await this.network.getBlock(options);
+    const checkpointId = getCheckpointId(
+      blockTimestamp,
+      config.checkpointDuration,
     );
-    return { maturityTime, traderDeposit };
+
+    const baseDepositAmount = await hyperwasm.calcOpenShort(
+      convertBigIntsToStrings(info),
+      convertBigIntsToStrings(config),
+      amountOfBondsToShort.toString(),
+    );
+
+    return {
+      maturityTime: checkpointId + config.positionDuration,
+      traderDeposit: dnum.from(baseDepositAmount, 18)[0],
+    };
   }
 
   async previewCloseLong({

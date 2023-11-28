@@ -36,9 +36,6 @@ export function OpenShortForm({
   const { baseAmountIn, status: openShortPreviewStatus } = usePreviewOpenShort({
     market: hyperdrive,
     amountBondShorts: amountAsBigInt,
-    minSharePrice: poolInfo?.sharePrice,
-    maxBaseAmountIn: MAX_UINT256, // todo add slippage control
-    destination: account,
   });
 
   const hasEnoughBalance =
