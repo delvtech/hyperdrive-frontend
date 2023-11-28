@@ -12,7 +12,7 @@ import { ClosedLpTable } from "src/ui/portfolio/ClosedLpTable/ClosedLpTable";
 import { ClosedShortsTable } from "src/ui/portfolio/ClosedShortsTable/ClosedShortsTable";
 import { OpenClosedFilter } from "src/ui/portfolio/OpenClosedFilter/OpenClosedFilter";
 import { OpenLongsTable } from "src/ui/portfolio/OpenLongsTable/OpenLongsTable";
-import { LpPortfolioCard } from "src/ui/portfolio/OpenLpSharesCard/OpenLpSharesCard";
+import { OpenLpSharesCard } from "src/ui/portfolio/OpenLpSharesCard/OpenLpSharesCard";
 import { OpenLpTable } from "src/ui/portfolio/OpenLpTable/OpenLpTable";
 import { OpenShortsTable } from "src/ui/portfolio/OpenShortsTable/OpenShortsTable";
 import { LP_CARDS_FEATURE_FLAG } from "src/ui/portfolio/featureFlags";
@@ -71,7 +71,7 @@ export function PositionsSectionOld({
                 if (activeOpenOrClosedTab === "Open") {
                   return showLpCards ? (
                     <div className="flex">
-                      <LpPortfolioCard hyperdrive={hyperdrive} />
+                      <OpenLpSharesCard hyperdrive={hyperdrive} />
                     </div>
                   ) : (
                     <OpenLpTable hyperdrive={hyperdrive} />
