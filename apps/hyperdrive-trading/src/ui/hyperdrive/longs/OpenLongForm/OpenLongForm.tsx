@@ -67,9 +67,6 @@ export function OpenLongForm({
   const { longAmountOut, status: openLongPreviewStatus } = usePreviewOpenLong({
     market: hyperdrive,
     baseAmount: amountAsBigInt,
-    minBondAmountOut: 1n, // todo add slippage control
-    minSharePrice: poolInfo?.sharePrice,
-    destination: account,
     enabled: hasEnoughAllowance,
   });
 
