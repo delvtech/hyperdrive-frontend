@@ -8,6 +8,11 @@ body,
 #root,
 div[data-rk] {
   font-family: "Open Sans";
+
+  /* reserve space for the scrollbar, preventing unwanted layout changes as the
+   * content grows while also avoiding unnecessary visuals when scrolling isn't
+   * needed. */
+  scrollbar-gutter: stable;
 }
 
 @tailwind base;
