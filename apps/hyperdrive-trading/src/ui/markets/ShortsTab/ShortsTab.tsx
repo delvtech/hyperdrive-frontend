@@ -1,6 +1,7 @@
 import { ReactElement } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
+import { LongsFAQ } from "src/ui/hyperdrive/longs/LongsFAQ/LongsFAQ";
 import { OpenShortForm } from "src/ui/hyperdrive/shorts/OpenShortForm/OpenShortForm";
 import { MarketDetailsTab } from "src/ui/markets/MarketDetailsTab/MarketDetailsTab";
 import { OpenOrClosedTab } from "src/ui/markets/PositionsSection/PositionsSection";
@@ -33,6 +34,8 @@ export function ShortsTab({
       }
       transactionForm={<OpenShortForm hyperdrive={hyperdrive} />}
       transactionFormHeading={"Open short"}
+      positionsLabel={"Positions"}
+      faq={<LongsFAQ />}
     />
   );
 }
