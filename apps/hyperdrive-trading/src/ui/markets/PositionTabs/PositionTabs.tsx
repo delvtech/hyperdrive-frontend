@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { ReactElement } from "react";
 
-const POSITION_TABS = ["Longs", "Shorts", "LP", "Transactions", "FAQ"] as const;
+const POSITION_TABS = ["Longs", "Shorts", "LP", "Transactions"] as const;
 export type PositionTab = (typeof POSITION_TABS)[number];
 
 export function PositionTabs({
