@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import { useMemo } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
@@ -31,16 +32,21 @@ export function useTransactionData({ address }: Hyperdrive): {
     queryFn: async () => readHyperdrive?.getLpEvents(),
   });
 
-  const data = [];
-  if (longs) {
-    data.push(...longs);
-  }
-  if (shorts) {
-    data.push(...shorts);
-  }
-  if (lpEvents) {
-    data.push(...lpEvents);
-  }
+  // It's important to memoize this table data because creating new arrays of
+  // the same data will cause infinite renders in the TransactionTable.
+  const data = useMemo(() => {
+    const data = [];
+    if (longs) {
+      data.push(...longs);
+    }
+    if (shorts) {
+      data.push(...shorts);
+    }
+    if (lpEvents) {
+      data.push(...lpEvents);
+    }
+    return data;
+  }, [longs, lpEvents, shorts]);
 
   return { data };
 }
