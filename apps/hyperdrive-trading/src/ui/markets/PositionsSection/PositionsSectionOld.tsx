@@ -79,6 +79,10 @@ export function PositionsSectionOld({
                 }
                 return <ClosedLpTable hyperdrive={hyperdrive} />;
 
+              case "FAQ":
+                return null;
+              case "Transactions":
+                return null;
               default:
                 assertNever(activePositionTab);
             }

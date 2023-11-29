@@ -1,7 +1,6 @@
 import { ReactElement } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
-import { LongsFAQ } from "src/ui/hyperdrive/longs/LongsFAQ/LongsFAQ";
 import { OpenLongForm } from "src/ui/hyperdrive/longs/OpenLongForm/OpenLongForm";
 import { MarketDetailsTab } from "src/ui/markets/MarketDetailsTab/MarketDetailsTab";
 import { OpenOrClosedTab } from "src/ui/markets/PositionsSection/PositionsSection";
@@ -20,7 +19,6 @@ export function LongsTab({
 
   return (
     <MarketDetailsTab
-      positionsLabel="Long positions"
       positions={
         <div className="flex flex-col">
           <div className="mb-2 flex items-center justify-end">
@@ -33,7 +31,6 @@ export function LongsTab({
           )}
         </div>
       }
-      faq={<LongsFAQ />}
       transactionForm={<OpenLongForm hyperdrive={hyperdrive} />}
       transactionFormHeading={"Open long"}
     />

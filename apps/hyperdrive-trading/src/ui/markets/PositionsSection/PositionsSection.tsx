@@ -2,6 +2,8 @@ import assertNever from "assert-never";
 import { ReactElement } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
+import { TransactionTable } from "src/ui/hyperdrive/TransactionTable/TransactionsTable";
+import { LongsFAQ } from "src/ui/hyperdrive/longs/LongsFAQ/LongsFAQ";
 import { LongsTab } from "src/ui/markets/LongsTab/LongsTab";
 import { LpTab } from "src/ui/markets/LpTab/LpTab";
 import {
@@ -31,7 +33,7 @@ export function PositionsSection({
 
   return (
     <div>
-      <div className="mb-4 flex w-full items-end justify-between border-b-2">
+      <div className="mb-4 flex w-full items-end justify-between border-b">
         <PositionTabs
           onTabClick={handleChangeTab}
           activePositionTab={activeTab}
@@ -50,6 +52,12 @@ export function PositionsSection({
 
               case "LP":
                 return <LpTab hyperdrive={hyperdrive} />;
+              case "FAQ":
+                // TODO: Make proper FAQ tab
+                return <LongsFAQ />;
+              case "Transactions":
+                // TODO: Make proper Transactions tab
+                return <TransactionTable hyperdrive={hyperdrive} />;
 
               default:
                 assertNever(activeTab);

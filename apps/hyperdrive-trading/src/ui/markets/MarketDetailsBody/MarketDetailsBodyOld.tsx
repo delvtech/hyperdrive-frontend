@@ -113,9 +113,7 @@ export function MarketDetailsBodyOld({
       <PositionsSectionOld hyperdrive={hyperdrive} />
       <div>
         <span className="mb-2 text-h5 font-bold ">Transactions</span>
-        {transactionData && (
-          <TransactionTable data={transactionData} hyperdrive={hyperdrive} />
-        )}
+        {transactionData && <TransactionTable hyperdrive={hyperdrive} />}
       </div>
       <FAQ />
     </div>
