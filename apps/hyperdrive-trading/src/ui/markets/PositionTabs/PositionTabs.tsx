@@ -12,13 +12,13 @@ export function PositionTabs({
   activePositionTab: PositionTab;
 }): ReactElement {
   return (
-    <div className="daisy-tabs daisy-tabs-bordered " role="tablist">
+    <div className="daisy-tabs-bordered daisy-tabs " role="tablist">
       {POSITION_TABS.map((positionTab) => (
         <button
           key={positionTab}
           onClick={() => onTabClick(positionTab)}
           className={classNames(
-            "daisy-tab-sm md:daisy-tab-lg daisy-tab flex h-full pb-1",
+            "daisy-tab-sm md:daisy-tab-lg daisy-tab flex h-full px-8 pb-1",
             {
               "daisy-tab-active font-bold ": activePositionTab === positionTab,
             },
