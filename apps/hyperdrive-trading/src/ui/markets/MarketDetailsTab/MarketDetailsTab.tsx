@@ -24,7 +24,7 @@ export function MarketDetailsTab({
   const [activeTab, setActiveTab] = useState<TabId>("positions");
 
   const detailsTabClassName =
-    "daisy-tab daisy-tab-bordered daisy-tab-sm border-b-base-100 md:daisy-tab-lg";
+    "daisy-tab daisy-tab-sm border-b-base-100 md:daisy-tab-lg";
 
   return (
     <div className="mt-2 flex flex-col gap-10">
@@ -32,7 +32,10 @@ export function MarketDetailsTab({
         {/* positions and faq tabs */}
         <div className="flex flex-1 flex-col">
           <div className="mb-2 flex flex-col">
-            <div className="daisy-tabs mb-8 border-b">
+            <div
+              className="daisy-tabs daisy-tabs-bordered mb-8 border-b"
+              role="tablist"
+            >
               <button
                 className={classNames(detailsTabClassName, {
                   "daisy-tab-active": activeTab === "positions",

@@ -12,15 +12,15 @@ export function PositionTabs({
   activePositionTab: PositionTab;
 }): ReactElement {
   return (
-    <div className="daisy-tabs ">
+    <div className="daisy-tabs daisy-tabs-bordered " role="tablist">
       {POSITION_TABS.map((positionTab) => (
         <button
           key={positionTab}
           onClick={() => onTabClick(positionTab)}
           className={classNames(
-            "daisy-tab-bordered daisy-tab daisy-tab-sm border-b-base-100 md:daisy-tab-lg",
+            "daisy-tab-sm md:daisy-tab-lg daisy-tab flex h-full pb-1",
             {
-              "daisy-tab-active font-bold": activePositionTab === positionTab,
+              "daisy-tab-active font-bold ": activePositionTab === positionTab,
             },
           )}
         >
