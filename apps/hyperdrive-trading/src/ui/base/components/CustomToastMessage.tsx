@@ -1,3 +1,5 @@
+import { ArrowRightIcon } from "@heroicons/react/24/outline";
+
 export default function CustomToastMessage({
   message,
   link,
@@ -6,15 +8,15 @@ export default function CustomToastMessage({
   link: string;
 }): JSX.Element {
   return (
-    <span className="flex flex-col">
+    <span className="mx-6 flex flex-col">
       {message}
       <a
         href={link}
         target="_blank"
         rel="noopener noreferrer"
-        className="underline"
+        className="mt-1 flex cursor-pointer flex-row text-sm"
       >
-        View on Etherscan
+        View on Etherscan <ArrowRightIcon className="ml-1 h-4" />
       </a>
     </span>
   );

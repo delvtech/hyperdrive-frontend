@@ -1,4 +1,4 @@
-import { XCircleIcon } from "@heroicons/react/24/outline";
+import { XMarkIcon } from "@heroicons/react/24/outline";
 import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import "@rainbow-me/rainbowkit/styles.css";
 
@@ -23,17 +23,22 @@ if (import.meta.env.DEV) {
 
 root.render(
   <QueryClientProvider client={queryClient}>
-    <Toaster>
+    <Toaster position="top-right">
       {(t) => (
         <ToastBar toast={t}>
           {({ icon, message }) => (
-            <>
+            <div className="mx-4 flex flex-row">
               {icon}
               {message}
               {t.type !== "loading" && (
-                <XCircleIcon width={20} onClick={() => toast.dismiss(t.id)} />
+                <div className="flex items-center justify-center">
+                  <XMarkIcon
+                    className="h-7 cursor-pointer rounded-full bg-base-200 p-2"
+                    onClick={() => toast.dismiss(t.id)}
+                  />
+                </div>
               )}
-            </>
+            </div>
           )}
         </ToastBar>
       )}

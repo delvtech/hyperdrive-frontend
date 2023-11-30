@@ -85,14 +85,14 @@ export function OpenLongForm({
     minSharePrice: poolInfo?.sharePrice,
     destination: account,
     enabled: openLongPreviewStatus === "success" && hasEnoughAllowance,
-    onExecuted: () => {
+    onExecuted: (hash) => {
       setAmount("");
       toast.success(
         <CustomToastMessage
           message="Long Opened"
-          link="https://etherscan.com"
+          // TODO: Update link to point to correct block explorer.
+          link={`https://etherscan.com/tx/${hash}`}
         />,
-        { position: "top-center" },
       );
     },
   });

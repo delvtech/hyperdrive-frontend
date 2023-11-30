@@ -3,6 +3,7 @@ import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHype
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { MutationStatus } from "@tanstack/query-core";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useRef } from "react";
 import { Address } from "wagmi";
 
 interface UseOpenLongOptions {
@@ -18,7 +19,7 @@ interface UseOpenLongOptions {
   enabled?: boolean;
 
   /** Callback to be invoked when the transaction is finalized */
-  onExecuted?: () => void;
+  onExecuted?: (hash: string | undefined) => void;
 }
 
 interface UseOpenLongResult {
@@ -38,6 +39,7 @@ export function useOpenLong({
 }: UseOpenLongOptions): UseOpenLongResult {
   const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
   const addTransaction = useAddRecentTransaction();
+  const submittedHashRef = useRef<string | undefined>(undefined);
   const queryClient = useQueryClient();
   const mutationEnabled =
     !!baseAmount &&
@@ -58,6 +60,7 @@ export function useOpenLong({
           asBase,
           options: {
             onSubmitted: (hash) => {
+              submittedHashRef.current = hash;
               addTransaction({
                 hash,
                 description: "Open Long",
@@ -65,8 +68,9 @@ export function useOpenLong({
             },
           },
         });
+
         queryClient.resetQueries();
-        onExecuted?.();
+        onExecuted?.(submittedHashRef.current);
       }
     },
   });
