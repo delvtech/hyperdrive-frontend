@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { ReactElement } from "react";
 
-const POSITION_TABS = ["Longs", "Shorts", "LP", "Transactions"] as const;
+const POSITION_TABS = ["Longs", "Shorts", "LP"] as const;
 export type PositionTab = (typeof POSITION_TABS)[number];
 
 export function PositionTabs({
@@ -12,7 +12,7 @@ export function PositionTabs({
   activePositionTab: PositionTab;
 }): ReactElement {
   return (
-    <div className="daisy-tabs-bordered daisy-tabs " role="tablist">
+    <div className="daisy-tabs daisy-tabs-bordered " role="tablist">
       {POSITION_TABS.map((positionTab) => (
         <button
           key={positionTab}
