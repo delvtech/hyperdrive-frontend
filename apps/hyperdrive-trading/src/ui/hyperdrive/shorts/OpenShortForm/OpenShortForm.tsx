@@ -3,7 +3,7 @@ import { ReactElement } from "react";
 import toast from "react-hot-toast";
 import { Hyperdrive } from "src/appconfig/types";
 import { MAX_UINT256 } from "src/base/constants";
-import CustomToastMessage from "src/ui/base/components/CustomToastMessage";
+import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useOpenShort } from "src/ui/hyperdrive/shorts/hooks/useOpenShort";
