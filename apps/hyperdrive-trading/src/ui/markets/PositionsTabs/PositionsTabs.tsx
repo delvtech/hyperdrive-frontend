@@ -1,6 +1,6 @@
 import assertNever from "assert-never";
 import classNames from "classnames";
-import { ReactElement } from "react";
+import { Fragment, ReactElement } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
 import { LongsTab } from "src/ui/markets/LongsTab/LongsTab";
@@ -32,7 +32,7 @@ export function PositionsTabs({
   return (
     <div role="tablist" className="daisy-tabs daisy-tabs-lifted daisy-tabs-lg ">
       {POSITION_TABS.map((tabId) => (
-        <>
+        <Fragment key={tabId}>
           <input
             type="radio"
             name="positions_tabs"
@@ -74,7 +74,7 @@ export function PositionsTabs({
               }
             })()}
           </div>
-        </>
+        </Fragment>
       ))}
     </div>
   );

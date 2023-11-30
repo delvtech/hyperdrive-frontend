@@ -1,6 +1,6 @@
 import assertNever from "assert-never";
 import classNames from "classnames";
-import { ReactElement, useState } from "react";
+import { Fragment, ReactElement, useState } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { TransactionTable } from "src/ui/hyperdrive/TransactionTable/TransactionsTable";
 import { LongsFAQ } from "src/ui/hyperdrive/longs/LongsFAQ/LongsFAQ";
@@ -15,9 +15,9 @@ export function TransactionAndFaqTabs({
 }): ReactElement {
   const [activeTab, setActiveTab] = useState<Tab>("Transactions");
   return (
-    <div role="tablist" className="daisy-tabs daisy-tabs-lifted daisy-tabs-lg">
+    <div role="tablist" className="daisy-tabs-lifted daisy-tabs-lg daisy-tabs">
       {TABS.map((tab) => (
-        <>
+        <Fragment key={tab}>
           <input
             type="radio"
             name="transactions_and_faq_tab"
@@ -54,7 +54,7 @@ export function TransactionAndFaqTabs({
               }
             })()}
           </div>
-        </>
+        </Fragment>
       ))}
     </div>
   );
