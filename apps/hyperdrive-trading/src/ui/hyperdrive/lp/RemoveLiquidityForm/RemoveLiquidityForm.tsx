@@ -3,6 +3,7 @@ import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
 import toast from "react-hot-toast";
 import { Hyperdrive } from "src/appconfig/types";
+import CustomToastMessage from "src/ui/base/components/CustomToastMessage";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
@@ -52,9 +53,15 @@ export function RemoveLiquidityForm({
     minBaseAmountOut: minBaseAmountAfterSlippage,
     destination: account,
     enabled: previewRemoveLiquidityStatus === "success",
-    onExecuted: () => {
+    onExecuted: (hash) => {
       setAmount("");
-      toast.success("Liquidity removed", { position: "top-center" });
+      toast.success(
+        <CustomToastMessage
+          message="Liquidity Removed"
+          // TODO: Update link to point to correct block explorer.
+          link={`https://etherscan.com/tx/${hash}`}
+        />,
+      );
     },
   });
 

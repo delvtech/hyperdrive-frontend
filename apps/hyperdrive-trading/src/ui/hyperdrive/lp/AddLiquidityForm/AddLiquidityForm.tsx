@@ -4,6 +4,7 @@ import toast from "react-hot-toast";
 import { Hyperdrive } from "src/appconfig/types";
 import { MAX_UINT256 } from "src/base/constants";
 import { parseUnits } from "src/base/parseUnits";
+import CustomToastMessage from "src/ui/base/components/CustomToastMessage";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { AddLiquidityPreview } from "src/ui/hyperdrive/lp/AddLiquidityPreview/AddLiquidityPreview";
@@ -68,9 +69,15 @@ export function AddLiquidityForm({
     maxAPR: parseUnits("999", hyperdrive.baseToken.decimals),
     destination: account,
     enabled: addLiquidityPreviewStatus === "success" && !needsApproval,
-    onExecuted: () => {
+    onExecuted: (hash) => {
       setAmount("");
-      toast.success("Liquidity added", { position: "top-center" });
+      toast.success(
+        <CustomToastMessage
+          message="Liquidity Added"
+          // TODO: Update link to point to correct block explorer.
+          link={`https://etherscan.com/tx/${hash}`}
+        />,
+      );
     },
   });
 
