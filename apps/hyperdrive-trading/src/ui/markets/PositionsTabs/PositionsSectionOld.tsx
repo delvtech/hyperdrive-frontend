@@ -5,8 +5,8 @@ import { Hyperdrive } from "src/appconfig/types";
 import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
 import {
   PositionTab,
-  PositionTabs,
-} from "src/ui/markets/PositionTabs/PositionTabs";
+  PositionTabsOld,
+} from "src/ui/markets/PositionsTabs/PositionTabsOld";
 import { ClosedLongsTable } from "src/ui/portfolio/ClosedLongsTable/ClosedLongsTable";
 import { ClosedLpTable } from "src/ui/portfolio/ClosedLpTable/ClosedLpTable";
 import { ClosedShortsTable } from "src/ui/portfolio/ClosedShortsTable/ClosedShortsTable";
@@ -43,7 +43,7 @@ export function PositionsSectionOld({
   return (
     <div>
       <div className="mb-4 flex w-full items-end justify-between border-b-2">
-        <PositionTabs
+        <PositionTabsOld
           onTabClick={handleChangeTab}
           activePositionTab={activePositionTab}
         />

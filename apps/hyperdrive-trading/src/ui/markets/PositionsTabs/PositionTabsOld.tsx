@@ -4,7 +4,7 @@ import { ReactElement } from "react";
 const POSITION_TABS = ["Longs", "Shorts", "LP"] as const;
 export type PositionTab = (typeof POSITION_TABS)[number];
 
-export function PositionTabs({
+export function PositionTabsOld({
   onTabClick,
   activePositionTab,
 }: {

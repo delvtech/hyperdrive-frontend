@@ -4,7 +4,7 @@ import { Hyperdrive } from "src/appconfig/types";
 import { AddLiquidityForm } from "src/ui/hyperdrive/lp/AddLiquidityForm/AddLiquidityForm";
 import { useWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useWithdrawalShares";
 import { MarketDetailsTab } from "src/ui/markets/MarketDetailsTab/MarketDetailsTab";
-import { OpenOrClosedTab } from "src/ui/markets/PositionsSection/PositionsSection";
+import { OpenOrClosedTab } from "src/ui/markets/PositionsTabs/PositionsTabs";
 import { ClosedLpTable } from "src/ui/portfolio/ClosedLpTable/ClosedLpTable";
 import { OpenClosedFilter } from "src/ui/portfolio/OpenClosedFilter/OpenClosedFilter";
 import { OpenLpSharesCard } from "src/ui/portfolio/OpenLpSharesCard/OpenLpSharesCard";

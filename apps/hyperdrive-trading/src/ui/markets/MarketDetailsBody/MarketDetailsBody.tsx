@@ -6,7 +6,8 @@ import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLon
 import { MarketBreadcrumbs } from "src/ui/markets/MarketDetailsBody/MarketBreadcrumbs";
 import { MarketHeader } from "src/ui/markets/MarketDetailsBody/MarketHeader";
 import { MarketStats } from "src/ui/markets/MarketStats/MarketStats";
-import { PositionsSection } from "src/ui/markets/PositionsSection/PositionsSection";
+import { PositionsTabs } from "src/ui/markets/PositionsTabs/PositionsTabs";
+import { TransactionAndFaqTabs } from "src/ui/markets/TransactionsAndFaqTabs/TransactionsAndFaqTabs";
 import { YourBalanceWell } from "src/ui/portfolio/YourBalanceWell/YourBalanceWell";
 
 interface PositionsTableProps {
@@ -18,8 +19,8 @@ export function MarketDetailsBody({
   const { longPrice } = useCurrentLongPrice(hyperdrive);
   const { marketState } = useMarketState(hyperdrive.address);
   return (
-    <div className="flex w-[1280px] flex-col">
-      <div className="mb-12 flex w-full flex-col gap-6">
+    <div className="flex w-[1280px] flex-col gap-12">
+      <div className="flex w-full flex-col gap-6">
         <div className="flex flex-wrap items-start justify-center md:justify-between">
           <div className="flex flex-col">
             <MarketBreadcrumbs hyperdrive={hyperdrive} />
@@ -35,7 +36,8 @@ export function MarketDetailsBody({
         )}
       </div>
 
-      <PositionsSection hyperdrive={hyperdrive} />
+      <PositionsTabs hyperdrive={hyperdrive} />
+      <TransactionAndFaqTabs hyperdrive={hyperdrive} />
     </div>
   );
 }
