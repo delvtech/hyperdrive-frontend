@@ -39,15 +39,16 @@ export function TokenInput({
   autoFocus = false,
 }: TokenInputProps): ReactElement {
   return (
-    <div className="daisy-form-control flex-1">
+    <div className="flex flex-1 flex-col">
       <label className="daisy-label flex justify-between">
         <span className="daisy-label-text">{inputLabel}</span>
         {stat ? <span className="daisy-label-text">{stat}</span> : null}
       </label>
-      <label className="daisy-input-group">
-        <span>
-          <span className="daisy-label-text">{token.symbol}</span>
-        </span>
+
+      <label className="daisy-join items-center">
+        <div className="daisy-join-item flex h-12 items-center bg-base-300/5 px-4">
+          {token.symbol}
+        </div>
         <input
           type="number"
           // Setting step to `any` allows any number between min and max to be
@@ -62,7 +63,7 @@ export function TokenInput({
           name={`${token.symbol} input`}
           disabled={disabled}
           className={classNames(
-            "daisy-input-bordered daisy-input flex-1",
+            "daisy-input-bordered daisy-input daisy-join-item flex-1",
             HIDE_NUMERIC_INPUT_ARROWS_CLASS,
             {
               "daisy-input-error text-error": hasError,
@@ -74,9 +75,12 @@ export function TokenInput({
         />
         {maxValue !== undefined ? (
           <button
-            className={classNames("daisy-glass daisy-btn-square daisy-btn", {
-              "daisy-btn-error": hasError,
-            })}
+            className={classNames(
+              "daisy-btn-outline daisy-btn daisy-join-item",
+              {
+                "daisy-btn-error": hasError,
+              },
+            )}
             onClick={(e) => {
               e.preventDefault();
               onChange(maxValue);
