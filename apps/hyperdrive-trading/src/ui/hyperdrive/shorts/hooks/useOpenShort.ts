@@ -4,6 +4,7 @@ import {
   useMutation,
   useQueryClient,
 } from "@tanstack/react-query";
+import { useRef } from "react";
 import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
 import { Address } from "wagmi";
 
@@ -16,7 +17,7 @@ interface UseOpenShortOptions {
   asBase?: boolean;
   enabled?: boolean;
   /** Callback to be invoked when the transaction is finalized */
-  onExecuted?: () => void;
+  onExecuted?: (hash: string | undefined) => void;
 }
 
 interface UseOpenShortResult {
@@ -37,6 +38,7 @@ export function useOpenShort({
   const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
   const queryClient = useQueryClient();
   const addTransaction = useAddRecentTransaction();
+  const submittedHashRef = useRef<string | undefined>(undefined);
   const mutationEnabled =
     !!amountBondShorts &&
     !!maxBaseAmountIn &&
@@ -56,6 +58,7 @@ export function useOpenShort({
           asBase,
           options: {
             onSubmitted: (hash) => {
+              submittedHashRef.current = hash;
               addTransaction({
                 hash,
                 description: "Open Short",
@@ -64,7 +67,7 @@ export function useOpenShort({
           },
         });
         queryClient.resetQueries();
-        onExecuted?.();
+        onExecuted?.(submittedHashRef.current);
       }
     },
   });

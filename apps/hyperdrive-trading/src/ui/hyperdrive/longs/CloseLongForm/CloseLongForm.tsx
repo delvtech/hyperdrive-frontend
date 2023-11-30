@@ -3,6 +3,7 @@ import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
 import toast from "react-hot-toast";
 import { Hyperdrive } from "src/appconfig/types";
+import CustomToastMessage from "src/ui/base/components/CustomToastMessage";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
@@ -53,9 +54,15 @@ export function CloseLongForm({
     minBaseAmountOut: closeLongAmountAfterSlippage,
     destination: account,
     enabled: previewCloseLongStatus === "success",
-    onExecuted: () => {
+    onExecuted: (hash) => {
       setAmount("");
-      toast.success("Long closed", { position: "top-center" });
+      toast.success(
+        <CustomToastMessage
+          message="Long Closed"
+          // TODO: Update link to point to correct block explorer.
+          link={`https://etherscan.com/tx/${hash}`}
+        />,
+      );
     },
   });
 
