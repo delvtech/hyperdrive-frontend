@@ -89,7 +89,7 @@ export function OpenLongForm({
       setAmount("");
       toast.success(
         <CustomToastMessage
-          message="Long Opened"
+          message="Long opened"
           // TODO: Update link to point to correct block explorer.
           link={`https://etherscan.com/tx/${hash}`}
         />,

@@ -73,7 +73,7 @@ export function AddLiquidityForm({
       setAmount("");
       toast.success(
         <CustomToastMessage
-          message="Liquidity Added"
+          message="Liquidity added"
           // TODO: Update link to point to correct block explorer.
           link={`https://etherscan.com/tx/${hash}`}
         />,

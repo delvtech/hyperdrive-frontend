@@ -58,7 +58,7 @@ export function CloseLongForm({
       setAmount("");
       toast.success(
         <CustomToastMessage
-          message="Long Closed"
+          message="Long closed"
           // TODO: Update link to point to correct block explorer.
           link={`https://etherscan.com/tx/${hash}`}
         />,

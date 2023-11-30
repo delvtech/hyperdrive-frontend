@@ -57,7 +57,7 @@ export function CloseShortForm({
       setAmount("");
       toast.success(
         <CustomToastMessage
-          message="Short Closed"
+          message="Short closed"
           // TODO: Update link to point to correct block explorer.
           link={`https://etherscan.com/tx/${hash}`}
         />,

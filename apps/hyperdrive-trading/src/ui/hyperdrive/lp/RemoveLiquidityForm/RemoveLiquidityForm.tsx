@@ -57,7 +57,7 @@ export function RemoveLiquidityForm({
       setAmount("");
       toast.success(
         <CustomToastMessage
-          message="Liquidity Removed"
+          message="Liquidity removed"
           // TODO: Update link to point to correct block explorer.
           link={`https://etherscan.com/tx/${hash}`}
         />,
