@@ -1,7 +1,6 @@
 import { ReactElement } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
-import { LongsFAQ } from "src/ui/hyperdrive/longs/LongsFAQ/LongsFAQ";
 import { AddLiquidityForm } from "src/ui/hyperdrive/lp/AddLiquidityForm/AddLiquidityForm";
 import { useWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useWithdrawalShares";
 import { MarketDetailsTab } from "src/ui/markets/MarketDetailsTab/MarketDetailsTab";
@@ -47,8 +46,6 @@ export function LpTab({
       }
       transactionForm={<AddLiquidityForm hyperdrive={hyperdrive} />}
       transactionFormHeading={"Add liquidity"}
-      positionsLabel={"Positions"}
-      faq={<LongsFAQ />}
     />
   );
 }
