@@ -4,6 +4,7 @@ import { ReactElement } from "react";
 import toast from "react-hot-toast";
 import { Hyperdrive } from "src/appconfig/types";
 import { MAX_UINT256 } from "src/base/constants";
+import CustomToastMessage from "src/ui/base/components/CustomToastMessage";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
@@ -86,7 +87,13 @@ export function OpenLongForm({
     enabled: openLongPreviewStatus === "success" && hasEnoughAllowance,
     onExecuted: () => {
       setAmount("");
-      toast.success("Long opened", { position: "top-center" });
+      toast.success(
+        <CustomToastMessage
+          message="Long Opened"
+          link="https://etherscan.com"
+        />,
+        { position: "top-center" },
+      );
     },
   });
 

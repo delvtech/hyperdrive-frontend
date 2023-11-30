@@ -1,10 +1,11 @@
+import { XCircleIcon } from "@heroicons/react/24/outline";
 import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import "@rainbow-me/rainbowkit/styles.css";
 
 import { QueryClientProvider } from "@tanstack/react-query";
 import classNames from "classnames";
 import { createRoot } from "react-dom/client";
-import { Toaster } from "react-hot-toast";
+import toast, { ToastBar, Toaster } from "react-hot-toast";
 import { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { queryClient } from "src/network/queryClient";
@@ -22,7 +23,22 @@ if (import.meta.env.DEV) {
 
 root.render(
   <QueryClientProvider client={queryClient}>
-    <Toaster position="bottom-left" reverseOrder={false} />
+    <Toaster>
+      {(t) => (
+        <ToastBar toast={t}>
+          {({ icon, message }) => (
+            <>
+              {icon}
+              {message}
+              {t.type !== "loading" && (
+                <XCircleIcon width={20} onClick={() => toast.dismiss(t.id)} />
+              )}
+            </>
+          )}
+        </ToastBar>
+      )}
+    </Toaster>
+    ;
     <WagmiConfig config={wagmiConfig}>
       <RainbowKitProvider chains={wagmiChains} showRecentTransactions>
         <SkeletonTheme
