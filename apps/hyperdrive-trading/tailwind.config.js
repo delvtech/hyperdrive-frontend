@@ -58,9 +58,9 @@ module.exports = {
   daisyui: {
     themes: [
       {
-        night: {
+        lofi: {
           // eslint-disable-next-line @typescript-eslint/no-var-requires
-          ...require("daisyui/src/theming/themes")["[data-theme=lofi]"],
+          ...require("daisyui/src/theming/themes")["lofi"],
           // Tone down the pure black
           neutral: "#333333",
           primary: "#333333",
@@ -74,7 +74,6 @@ module.exports = {
           "--rounded-box": "0.4rem", // border radius rounded-box utility class, used in card and other large boxes
           "--rounded-btn": "0.4rem",
           "--rounded-badge": "0.4rem",
-          "--btn-text-case": "none", // set default text transform for buttons
         },
       },
     ],
