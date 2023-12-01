@@ -53,11 +53,11 @@ export function MarketStats({
         label="Yield source"
         value={
           <div className="flex flex-row">
+            {showVaultRate ? `${vaultRate?.formatted || 0}% APY` : ""}
             <img
               src={appConfig?.yieldSources[hyperdrive.yieldSource].iconUrl}
-              className="mr-2 h-6 rounded-full border p-1"
+              className="ml-1 h-6 rounded-full border p-1"
             />
-            {showVaultRate ? `${vaultRate?.formatted || 0}% APY` : ""}
           </div>
         }
         description={`The yield source backing the hy${hyperdrive.baseToken.symbol} in this pool`}
@@ -164,11 +164,11 @@ function AmountLabel({
         "daisy-tooltip daisy-tooltip-bottom flex flex-row items-center justify-start before:whitespace-pre-wrap before:font-normal before:content-[attr(data-tip)]"
       }
     >
-      {icon ? (
-        <img src={icon} className="mr-2 h-6 rounded-full border p-1" />
-      ) : undefined}
       {value}
       <span className="ml-1">{symbol}</span>
+      {icon ? (
+        <img src={icon} className="ml-1 h-6 rounded-full border p-1" />
+      ) : undefined}
     </p>
   );
 }
