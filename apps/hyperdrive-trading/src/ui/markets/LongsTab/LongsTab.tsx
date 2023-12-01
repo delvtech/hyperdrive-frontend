@@ -18,7 +18,7 @@ export function LongsTab({
     <MarketDetailsTab
       positions={
         <div className="flex flex-col">
-          <div className="mb-2 flex items-center justify-end">
+          <div className="flex items-center justify-end py-8">
             <OpenClosedFilter />
           </div>
           {activeOpenOrClosedTab === "Open" ? (
