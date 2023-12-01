@@ -7,21 +7,20 @@ import { LongsTab } from "src/ui/markets/LongsTab/LongsTab";
 import { LpTab } from "src/ui/markets/LpTab/LpTab";
 import { ShortsTab } from "src/ui/markets/ShortsTab/ShortsTab";
 
-export type OpenOrClosedTab = "Open" | "Closed";
+const TABS = ["Longs", "Shorts", "LP"] as const;
+type LongsShortsLpTab = (typeof TABS)[number];
 
-const POSITION_TABS = ["Longs", "Shorts", "LP"] as const;
-export type PositionTab = (typeof POSITION_TABS)[number];
-
-export function PositionsTabs({
+export function LongsShortsLpTabs({
   hyperdrive,
 }: {
   hyperdrive: Hyperdrive;
 }): ReactElement {
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const activeTab = (searchParams.get("position") as PositionTab) || "Longs";
+  const activeTab =
+    (searchParams.get("position") as LongsShortsLpTab) || "Longs";
 
-  function handleChangeTab(position: PositionTab) {
+  function handleChangeTab(position: LongsShortsLpTab) {
     // Create a new search params so we retain all existing search params
     const newSearchParams = new URLSearchParams(searchParams);
     newSearchParams.set("position", position);
@@ -31,7 +30,7 @@ export function PositionsTabs({
 
   return (
     <div role="tablist" className="daisy-tabs daisy-tabs-lifted daisy-tabs-lg ">
-      {POSITION_TABS.map((tabId) => (
+      {TABS.map((tabId) => (
         <Fragment key={tabId}>
           <input
             type="radio"

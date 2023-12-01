@@ -6,7 +6,7 @@ import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
 import {
   PositionTab,
   PositionTabsOld,
-} from "src/ui/markets/PositionsTabs/PositionTabsOld";
+} from "src/ui/markets/PositionsTabsOld/PositionTabsOld";
 import { ClosedLongsTable } from "src/ui/portfolio/ClosedLongsTable/ClosedLongsTable";
 import { ClosedLpTable } from "src/ui/portfolio/ClosedLpTable/ClosedLpTable";
 import { ClosedShortsTable } from "src/ui/portfolio/ClosedShortsTable/ClosedShortsTable";

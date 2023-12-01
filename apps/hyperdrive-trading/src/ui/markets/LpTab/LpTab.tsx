@@ -1,10 +1,9 @@
 import { ReactElement } from "react";
-import { useSearchParams } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
 import { AddLiquidityForm } from "src/ui/hyperdrive/lp/AddLiquidityForm/AddLiquidityForm";
 import { useWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useWithdrawalShares";
 import { MarketDetailsTab } from "src/ui/markets/MarketDetailsTab/MarketDetailsTab";
-import { OpenOrClosedTab } from "src/ui/markets/PositionsTabs/PositionsTabs";
+import { useOpenOrClosedSearchParam } from "src/ui/markets/hooks/useOpenOrClosedSearchParam";
 import { ClosedLpTable } from "src/ui/portfolio/ClosedLpTable/ClosedLpTable";
 import { OpenClosedFilter } from "src/ui/portfolio/OpenClosedFilter/OpenClosedFilter";
 import { OpenLpSharesCard } from "src/ui/portfolio/OpenLpSharesCard/OpenLpSharesCard";
@@ -16,9 +15,7 @@ export function LpTab({
 }: {
   hyperdrive: Hyperdrive;
 }): ReactElement {
-  const [searchParams] = useSearchParams();
-  const activeOpenOrClosedTab =
-    (searchParams.get("openOrClosed") as OpenOrClosedTab) || "Open";
+  const activeOpenOrClosedTab = useOpenOrClosedSearchParam();
 
   const { address: account } = useAccount();
   const { withdrawalShares } = useWithdrawalShares({

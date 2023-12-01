@@ -1,9 +1,8 @@
 import { ReactElement } from "react";
-import { useSearchParams } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
 import { OpenShortForm } from "src/ui/hyperdrive/shorts/OpenShortForm/OpenShortForm";
 import { MarketDetailsTab } from "src/ui/markets/MarketDetailsTab/MarketDetailsTab";
-import { OpenOrClosedTab } from "src/ui/markets/PositionsTabs/PositionsTabs";
+import { useOpenOrClosedSearchParam } from "src/ui/markets/hooks/useOpenOrClosedSearchParam";
 import { ClosedShortsTable } from "src/ui/portfolio/ClosedShortsTable/ClosedShortsTable";
 import { OpenClosedFilter } from "src/ui/portfolio/OpenClosedFilter/OpenClosedFilter";
 import { OpenShortsTable } from "src/ui/portfolio/OpenShortsTable/OpenShortsTable";
@@ -13,9 +12,7 @@ export function ShortsTab({
 }: {
   hyperdrive: Hyperdrive;
 }): ReactElement {
-  const [searchParams] = useSearchParams();
-  const activeOpenOrClosedTab =
-    (searchParams.get("openOrClosed") as OpenOrClosedTab) || "Open";
+  const activeOpenOrClosedTab = useOpenOrClosedSearchParam();
 
   return (
     <MarketDetailsTab

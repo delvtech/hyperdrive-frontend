@@ -3,10 +3,10 @@ import { Hyperdrive } from "src/appconfig/types";
 import CustomBanner from "src/ui/base/components/CustomBanner";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
+import { LongsShortsLpTabs } from "src/ui/markets/LongsShortsLpTabs/LongsShortsLpTabs";
 import { MarketBreadcrumbs } from "src/ui/markets/MarketDetailsBody/MarketBreadcrumbs";
 import { MarketHeader } from "src/ui/markets/MarketDetailsBody/MarketHeader";
 import { MarketStats } from "src/ui/markets/MarketStats/MarketStats";
-import { PositionsTabs } from "src/ui/markets/PositionsTabs/PositionsTabs";
 import { TransactionAndFaqTabs } from "src/ui/markets/TransactionsAndFaqTabs/TransactionsAndFaqTabs";
 import { YourBalanceWell } from "src/ui/portfolio/YourBalanceWell/YourBalanceWell";
 
@@ -36,7 +36,7 @@ export function MarketDetailsBody({
         )}
       </div>
 
-      <PositionsTabs hyperdrive={hyperdrive} />
+      <LongsShortsLpTabs hyperdrive={hyperdrive} />
       <TransactionAndFaqTabs hyperdrive={hyperdrive} />
     </div>
   );
