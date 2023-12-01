@@ -19,7 +19,7 @@ export function MarketDetailsBody({
   const { longPrice } = useCurrentLongPrice(hyperdrive);
   const { marketState } = useMarketState(hyperdrive.address);
   return (
-    <div className="flex w-[1280px] flex-col gap-8">
+    <div className="flex w-[1280px] flex-col gap-12">
       <div className="flex w-full flex-col gap-6">
         <div className="flex flex-wrap items-start justify-center md:justify-between">
           <div className="flex flex-col">

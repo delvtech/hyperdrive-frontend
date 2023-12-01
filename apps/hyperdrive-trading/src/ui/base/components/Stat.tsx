@@ -6,17 +6,11 @@ interface StatProps {
   label: string;
   value: ReactNode;
   description?: string;
-  className?: string;
 }
 
-export function Stat({
-  label,
-  value,
-  description,
-  className,
-}: StatProps): ReactElement {
+export function Stat({ label, value, description }: StatProps): ReactElement {
   return (
-    <div className={classNames(className, "group")}>
+    <div className="group">
       <div className="whitespace-nowrap text-h6">{value}</div>
       <p
         data-tip={description}
