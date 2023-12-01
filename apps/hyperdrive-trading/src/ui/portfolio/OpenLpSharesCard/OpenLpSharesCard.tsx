@@ -61,7 +61,7 @@ export function OpenLpSharesCard({
       : 0n;
 
   return (
-    <Well>
+    <Well elevation="flat">
       <div className="flex w-80 max-w-xs flex-col gap-4 ">
         <span className="daisy-card-title font-bold">LP Shares</span>
         {lpShares !== 0n ? (
@@ -174,7 +174,7 @@ export function OpenLpSharesCard({
               >
                 {({ showModal }) => (
                   <button
-                    className="daisy-btn-neutral daisy-btn-wide daisy-btn m-auto hover:daisy-btn-ghost"
+                    className="daisy-btn-neutral daisy-btn daisy-btn-wide m-auto hover:daisy-btn-ghost"
                     onClick={showModal}
                   >
                     Remove liquidity
@@ -246,7 +246,7 @@ function DepositButton({
       {({ showModal }) => (
         <button
           className={classNames(
-            "daisy-btn-neutral daisy-btn-sm daisy-btn  hover:daisy-btn-ghost",
+            "daisy-btn-neutral daisy-btn daisy-btn-sm  hover:daisy-btn-ghost",
             className,
           )}
           onClick={showModal}
