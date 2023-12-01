@@ -18,7 +18,7 @@ import { OpenShortForm } from "src/ui/hyperdrive/shorts/OpenShortForm/OpenShortF
 import { MarketBreadcrumbs } from "src/ui/markets/MarketDetailsBody/MarketBreadcrumbs";
 import { MarketHeader } from "src/ui/markets/MarketDetailsBody/MarketHeader";
 import { MarketStats } from "src/ui/markets/MarketStats/MarketStats";
-import { PositionsSectionOld } from "src/ui/markets/PositionsTabs/PositionsSectionOld";
+import { PositionsSectionOld } from "src/ui/markets/PositionsTabsOld/PositionsSectionOld";
 import { FAQ } from "src/ui/onboarding/FAQ/FAQ";
 import { YourBalanceWell } from "src/ui/portfolio/YourBalanceWell/YourBalanceWell";
 import { useVaultRate } from "src/ui/vaults/useVaultRate";

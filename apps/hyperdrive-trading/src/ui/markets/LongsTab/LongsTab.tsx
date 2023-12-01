@@ -1,9 +1,8 @@
 import { ReactElement } from "react";
-import { useSearchParams } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
 import { OpenLongForm } from "src/ui/hyperdrive/longs/OpenLongForm/OpenLongForm";
 import { MarketDetailsTab } from "src/ui/markets/MarketDetailsTab/MarketDetailsTab";
-import { OpenOrClosedTab } from "src/ui/markets/PositionsTabs/PositionsTabs";
+import { useOpenOrClosedSearchParam } from "src/ui/markets/hooks/useOpenOrClosedSearchParam";
 import { ClosedLongsTable } from "src/ui/portfolio/ClosedLongsTable/ClosedLongsTable";
 import { OpenClosedFilter } from "src/ui/portfolio/OpenClosedFilter/OpenClosedFilter";
 import { OpenLongsTable } from "src/ui/portfolio/OpenLongsTable/OpenLongsTable";
@@ -13,9 +12,7 @@ export function LongsTab({
 }: {
   hyperdrive: Hyperdrive;
 }): ReactElement {
-  const [searchParams] = useSearchParams();
-  const activeOpenOrClosedTab =
-    (searchParams.get("openOrClosed") as OpenOrClosedTab) || "Open";
+  const activeOpenOrClosedTab = useOpenOrClosedSearchParam();
 
   return (
     <MarketDetailsTab
