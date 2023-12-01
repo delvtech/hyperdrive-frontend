@@ -3,6 +3,7 @@ import { ReactElement } from "react";
 import toast from "react-hot-toast";
 import { Hyperdrive } from "src/appconfig/types";
 import { MAX_UINT256 } from "src/base/constants";
+import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useOpenShort } from "src/ui/hyperdrive/shorts/hooks/useOpenShort";
@@ -65,10 +66,15 @@ export function OpenShortForm({
     maxBaseAmountIn: MAX_UINT256,
     destination: account,
     enabled: openShortPreviewStatus === "success" && !needsApproval,
-    onExecuted: () => {
-      // reset local state after successful transaction
-      setAmount(undefined);
-      toast.success("Short opened", { position: "top-center" });
+    onExecuted: (hash) => {
+      setAmount("");
+      toast.success(
+        <CustomToastMessage
+          message="Short opened"
+          // TODO: Update link to point to correct block explorer.
+          link={`https://etherscan.com/tx/${hash}`}
+        />,
+      );
     },
   });
 

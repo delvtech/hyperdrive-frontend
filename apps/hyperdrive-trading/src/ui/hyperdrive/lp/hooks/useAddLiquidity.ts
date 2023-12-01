@@ -6,6 +6,7 @@ import {
   useMutation,
   useQueryClient,
 } from "@tanstack/react-query";
+import { useRef } from "react";
 import { Address } from "wagmi";
 interface UseAddLiquidityOptions {
   hyperdriveAddress: Address;
@@ -17,7 +18,7 @@ interface UseAddLiquidityOptions {
   /** Controls whether or not an `addLiquidity` callback will be returned to the
    * caller, useful for disabling buttons and other hooks */
   enabled?: boolean;
-  onExecuted: () => void;
+  onExecuted: (hash: string | undefined) => void;
 }
 
 interface UseAddLiquidityResult {
@@ -38,6 +39,7 @@ export function useAddLiquidity({
   const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
   const queryClient = useQueryClient();
   const addTransaction = useAddRecentTransaction();
+  const submittedHashRef = useRef<string | undefined>(undefined);
   const mutationEnabled =
     !!contribution &&
     minAPR !== undefined &&
@@ -57,6 +59,7 @@ export function useAddLiquidity({
           asBase,
           options: {
             onSubmitted(hash) {
+              submittedHashRef.current = hash;
               addTransaction({
                 hash,
                 description: "Add Liquidity",
@@ -65,7 +68,7 @@ export function useAddLiquidity({
           },
         });
         queryClient.resetQueries();
-        onExecuted?.();
+        onExecuted?.(submittedHashRef.current);
       }
     },
   });

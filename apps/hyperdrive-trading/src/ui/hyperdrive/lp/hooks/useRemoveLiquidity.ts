@@ -6,6 +6,7 @@ import {
   useMutation,
   useQueryClient,
 } from "@tanstack/react-query";
+import { useRef } from "react";
 import { Address } from "wagmi";
 interface UseRemoveLiquidityOptions {
   hyperdriveAddress: Address;
@@ -14,7 +15,7 @@ interface UseRemoveLiquidityOptions {
   destination: Address | undefined;
   asBase?: boolean;
   enabled?: boolean;
-  onExecuted: () => void;
+  onExecuted: (hash: string | undefined) => void;
 }
 
 interface UseRemoveLiquidityResult {
@@ -34,6 +35,7 @@ export function useRemoveLiquidity({
   const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
   const queryClient = useQueryClient();
   const addTransaction = useAddRecentTransaction();
+  const submittedHashRef = useRef<string | undefined>(undefined);
   const mutationEnabled =
     !!lpSharesIn &&
     minBaseAmountOut !== undefined &&
@@ -51,6 +53,7 @@ export function useRemoveLiquidity({
           asBase,
           options: {
             onSubmitted(hash) {
+              submittedHashRef.current = hash;
               addTransaction({
                 hash,
                 description: "Remove Liquidity",
@@ -59,7 +62,7 @@ export function useRemoveLiquidity({
           },
         });
         queryClient.resetQueries();
-        onExecuted?.();
+        onExecuted?.(submittedHashRef.current);
       }
     },
   });

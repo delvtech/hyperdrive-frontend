@@ -1,6 +1,7 @@
 import { Long } from "@hyperdrive/sdk";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useRef } from "react";
 import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
 import { Address } from "wagmi";
 interface UseCloseLongOptions {
@@ -11,7 +12,7 @@ interface UseCloseLongOptions {
   destination: Address | undefined;
   asBase?: boolean;
   enabled?: boolean;
-  onExecuted: () => void;
+  onExecuted: (hash: string | undefined) => void;
 }
 
 interface UseCloseLongResult {
@@ -32,6 +33,7 @@ export function useCloseLong({
   const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
   const queryClient = useQueryClient();
   const addTransaction = useAddRecentTransaction();
+  const submittedHashRef = useRef<string | undefined>(undefined);
   const mutationEnabled =
     !!long &&
     !!bondAmountIn &&
@@ -51,6 +53,7 @@ export function useCloseLong({
           long,
           options: {
             onSubmitted(hash) {
+              submittedHashRef.current = hash;
               addTransaction({
                 hash,
                 description: "Close Long",
@@ -59,7 +62,7 @@ export function useCloseLong({
           },
         });
         queryClient.resetQueries();
-        onExecuted?.();
+        onExecuted?.(submittedHashRef.current);
       }
     },
   });

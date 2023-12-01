@@ -4,6 +4,7 @@ import { ReactElement } from "react";
 import toast from "react-hot-toast";
 import { Hyperdrive } from "src/appconfig/types";
 import { MAX_UINT256 } from "src/base/constants";
+import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
@@ -84,9 +85,15 @@ export function OpenLongForm({
     minSharePrice: poolInfo?.sharePrice,
     destination: account,
     enabled: openLongPreviewStatus === "success" && hasEnoughAllowance,
-    onExecuted: () => {
+    onExecuted: (hash) => {
       setAmount("");
-      toast.success("Long opened", { position: "top-center" });
+      toast.success(
+        <CustomToastMessage
+          message="Long opened"
+          // TODO: Update link to point to correct block explorer.
+          link={`https://etherscan.com/tx/${hash}`}
+        />,
+      );
     },
   });
 
