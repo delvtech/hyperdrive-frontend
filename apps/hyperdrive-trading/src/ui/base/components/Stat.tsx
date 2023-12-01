@@ -1,3 +1,4 @@
+import { InformationCircleIcon } from "@heroicons/react/24/outline";
 import classNames from "classnames";
 import { ReactElement, ReactNode } from "react";
 
@@ -15,20 +16,19 @@ export function Stat({
   className,
 }: StatProps): ReactElement {
   return (
-    <div className={className}>
+    <div className={classNames(className, "group")}>
+      <div className="whitespace-nowrap text-h6">{value}</div>
       <p
         data-tip={description}
         // Future note: use before: to style the text inside the tooltip
         className={classNames(
-          "daisy-label-text daisy-tooltip mb-1 underline-offset-4",
-          description
-            ? "cursor-help border-b border-dashed border-current"
-            : "",
+          "daisy-tooltip flex items-center text-sm text-gray-500",
+          description ? "cursor-help" : "",
         )}
       >
         {label}
+        <InformationCircleIcon className="ml-1 inline-block w-4 text-gray-400 opacity-0 transition duration-150 ease-in-out group-hover:text-gray-500 group-hover:opacity-100" />
       </p>
-      <div className="whitespace-nowrap text-h6 font-bold">{value}</div>
     </div>
   );
 }

@@ -48,14 +48,17 @@ export function MarketStats({
   ].includes(chainId);
 
   return (
-    <div className="flex w-full flex-wrap items-center justify-center gap-16 md:justify-start">
+    <div className="flex w-full flex-wrap items-center justify-center  gap-16 border-y py-3 md:justify-start">
       <Stat
         label="Yield source"
         value={
-          <>
-            {appConfig?.yieldSources[hyperdrive.yieldSource].name}{" "}
-            {showVaultRate ? `@ ${vaultRate?.formatted || 0}% APY` : ""}
-          </>
+          <div className="flex flex-row">
+            <img
+              src={appConfig?.yieldSources[hyperdrive.yieldSource].iconUrl}
+              className="mr-2 h-6 rounded-full border p-1"
+            />
+            {showVaultRate ? `${vaultRate?.formatted || 0}% APY` : ""}
+          </div>
         }
         description={`The yield source backing the hy${hyperdrive.baseToken.symbol} in this pool`}
       />
@@ -119,6 +122,7 @@ export function MarketStats({
         description="The amount of capital that has been deployed by LPs to the pool"
         value={
           <AmountLabel
+            icon={hyperdrive.baseToken.iconUrl || ""}
             symbol={hyperdrive.baseToken.symbol}
             value={formatCompact({
               value: liquidity?.liquidity || 0n,
@@ -144,10 +148,12 @@ function formatTermLength(termLengthMS: number) {
 function AmountLabel({
   value,
   symbol,
+  icon,
   tooltip,
 }: {
   value: string;
   symbol: string;
+  icon?: string;
   tooltip?: string;
 }) {
   return (
@@ -158,6 +164,9 @@ function AmountLabel({
         "daisy-tooltip daisy-tooltip-bottom flex flex-row items-center justify-start before:whitespace-pre-wrap before:font-normal before:content-[attr(data-tip)]"
       }
     >
+      {icon ? (
+        <img src={icon} className="mr-2 h-6 rounded-full border p-1" />
+      ) : undefined}
       {value}
       <span className="ml-1">{symbol}</span>
     </p>
