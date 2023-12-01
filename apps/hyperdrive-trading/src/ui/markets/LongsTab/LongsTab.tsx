@@ -1,10 +1,9 @@
 import { ReactElement } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
-import { LongsFAQ } from "src/ui/hyperdrive/longs/LongsFAQ/LongsFAQ";
 import { OpenLongForm } from "src/ui/hyperdrive/longs/OpenLongForm/OpenLongForm";
 import { MarketDetailsTab } from "src/ui/markets/MarketDetailsTab/MarketDetailsTab";
-import { OpenOrClosedTab } from "src/ui/markets/PositionsSection/PositionsSection";
+import { OpenOrClosedTab } from "src/ui/markets/PositionsTabs/PositionsTabs";
 import { ClosedLongsTable } from "src/ui/portfolio/ClosedLongsTable/ClosedLongsTable";
 import { OpenClosedFilter } from "src/ui/portfolio/OpenClosedFilter/OpenClosedFilter";
 import { OpenLongsTable } from "src/ui/portfolio/OpenLongsTable/OpenLongsTable";
@@ -34,8 +33,6 @@ export function LongsTab({
       }
       transactionForm={<OpenLongForm hyperdrive={hyperdrive} />}
       transactionFormHeading={"Open long"}
-      positionsLabel={"Positions"}
-      faq={<LongsFAQ />}
     />
   );
 }

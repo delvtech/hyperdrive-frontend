@@ -17,7 +17,7 @@ export function OpenClosedFilter(): ReactElement {
   }
 
   return (
-    <div className="daisy-tabs daisy-tabs-boxed">
+    <div className="daisy-tabs daisy-tabs-boxed daisy-tabs-sm">
       <button
         onClick={() => handleChangeOpenOrClosedTab("Open")}
         className={classNames("daisy-tab", {
