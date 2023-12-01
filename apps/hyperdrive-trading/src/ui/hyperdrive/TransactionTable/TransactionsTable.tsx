@@ -126,7 +126,7 @@ export function TransactionTable({
 
   return (
     <div className="max-h-96 overflow-y-scroll">
-      <table className="daisy-table-zebra daisy-table daisy-table-lg mt-2">
+      <table className="daisy-table-zebra daisy-table daisy-table-lg ">
         <thead>
           {tableInstance.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
@@ -158,7 +158,7 @@ export function TransactionTable({
                               className={`${
                                 header.column.getFilterValue() !== filter
                                   ? "daisy-tab text-lg font-normal"
-                                  : "daisy-tab daisy-tab-active text-lg"
+                                  : "daisy-tab-active daisy-tab text-lg"
                               }`}
                               onClick={() =>
                                 header.column.setFilterValue(filter)

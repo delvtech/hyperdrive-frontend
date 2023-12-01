@@ -34,7 +34,7 @@ export function OpenWithdrawalSharesCard({
     });
 
   return (
-    <Well>
+    <Well elevation="flat">
       <div className="flex h-full w-80 flex-col justify-between gap-4">
         <span className="daisy-card-title font-bold">Withdrawal Shares</span>
         {withdrawalShares !== 0n ? (
@@ -104,7 +104,7 @@ export function OpenWithdrawalSharesCard({
               >
                 {({ showModal }) => (
                   <button
-                    className="daisy-btn-neutral daisy-btn-wide daisy-btn m-auto hover:daisy-btn-ghost"
+                    className="daisy-btn-neutral daisy-btn daisy-btn-wide m-auto hover:daisy-btn-ghost"
                     onClick={showModal}
                   >
                     Claim withdrawal shares

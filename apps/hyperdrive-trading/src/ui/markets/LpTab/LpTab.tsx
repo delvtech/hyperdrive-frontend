@@ -25,12 +25,12 @@ export function LpTab({
   return (
     <MarketDetailsTab
       positions={
-        <div className="flex flex-col">
-          <div className="mb-8 flex items-center justify-end">
+        <div className="flex flex-col gap-8">
+          <div className="flex items-center justify-end pt-8">
             <OpenClosedFilter />
           </div>
           {activeOpenOrClosedTab === "Open" ? (
-            <div className="flex gap-8">
+            <div className="flex gap-8 pb-8">
               <OpenLpSharesCard hyperdrive={hyperdrive} />
               {withdrawalShares ? (
                 <OpenWithdrawalSharesCard hyperdrive={hyperdrive} />
