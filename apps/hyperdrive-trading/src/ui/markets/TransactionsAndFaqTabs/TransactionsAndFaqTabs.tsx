@@ -27,6 +27,7 @@ export function TransactionAndFaqTabs({
             })}
             aria-label={tab}
             checked={activeTab === tab}
+            readOnly
             onClick={() => {
               setActiveTab(tab);
             }}

@@ -29,7 +29,7 @@ export function LongsShortsLpTabs({
   }
 
   return (
-    <div role="tablist" className="daisy-tabs daisy-tabs-lifted daisy-tabs-lg ">
+    <div role="tablist" className="daisy-tabs daisy-tabs-lifted daisy-tabs-lg">
       {TABS.map((tabId) => (
         <Fragment key={tabId}>
           <input
@@ -41,6 +41,7 @@ export function LongsShortsLpTabs({
             })}
             aria-label={tabId}
             checked={activeTab === tabId}
+            readOnly
             onClick={() => {
               handleChangeTab(tabId);
             }}
