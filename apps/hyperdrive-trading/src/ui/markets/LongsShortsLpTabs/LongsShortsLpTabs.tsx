@@ -41,8 +41,7 @@ export function LongsShortsLpTabs({
             })}
             aria-label={tabId}
             checked={activeTab === tabId}
-            readOnly
-            onClick={() => {
+            onChange={() => {
               handleChangeTab(tabId);
             }}
           />
