@@ -68,7 +68,6 @@ export function OpenLongForm({
   const { longAmountOut, status: openLongPreviewStatus } = usePreviewOpenLong({
     market: hyperdrive,
     baseAmount: amountAsBigInt,
-    enabled: hasEnoughAllowance,
   });
 
   const longAmountOutAfterSlippage =

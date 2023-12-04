@@ -1,12 +1,11 @@
 import { MutationStatus, useQuery } from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
+import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 
 interface UsePreviewOpenShortOptions {
   market: Hyperdrive;
   amountBondShorts: bigint | undefined;
-  enabled?: boolean;
 }
 
 interface UsePreviewOpenShortResult {
@@ -17,10 +16,9 @@ interface UsePreviewOpenShortResult {
 export function usePreviewOpenShort({
   market,
   amountBondShorts,
-  enabled = true,
 }: UsePreviewOpenShortOptions): UsePreviewOpenShortResult {
-  const readWriteHyperdrive = useReadWriteHyperdrive(market.address);
-  const queryEnabled = !!readWriteHyperdrive && !!amountBondShorts && enabled;
+  const readHyperdrive = useReadHyperdrive(market.address);
+  const queryEnabled = !!readHyperdrive && !!amountBondShorts;
 
   const { data, status } = useQuery({
     queryKey: makeQueryKey("previewOpenShort", {
@@ -30,7 +28,7 @@ export function usePreviewOpenShort({
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? async () => {
-          return readWriteHyperdrive.previewOpenShort({
+          return readHyperdrive.previewOpenShort({
             amountOfBondsToShort: amountBondShorts,
           });
         }
