@@ -79,7 +79,7 @@ function PositionCards({
       </div>
       <a
         href={"/markets"}
-        className="daisy-btn-neutral daisy-btn-md daisy-btn mt-10 w-60 justify-between gap-0 hover:daisy-btn-ghost"
+        className="daisy-btn-neutral daisy-btn daisy-btn-md mt-10 w-60 justify-between gap-0 hover:daisy-btn-ghost"
       >
         <span className="flex-1 text-center">View Markets</span>
       </a>
@@ -92,7 +92,7 @@ function Hero() {
     <div className="daisy-hero">
       <div className="daisy-hero-content text-center">
         <div className="max-w-2xl">
-          <span className="mb-5  text-h2 font-bold">Hyperdrive</span>
+          <span className="mb-5 text-h3 font-bold md:text-h2">Hyperdrive</span>
           <p className="mb-5">
             Hyperdrive marks a significant stride forward in exploring variable
             and fixed rate primitives. With no preset expiration dates, unified
