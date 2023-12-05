@@ -4,14 +4,16 @@ import {
   SquaresPlusIcon,
 } from "@heroicons/react/24/outline";
 import { ReactElement } from "react";
-import { Hyperdrive } from "src/appconfig/types";
 import { CommonHeadTags } from "src/ui/app/Head/CommonHeadTags";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { PositionCard } from "src/ui/hyperdrive/PositionCard";
 import { FAQ } from "src/ui/onboarding/FAQ/FAQ";
+import { MobileFaq } from "src/ui/onboarding/FAQ/MobileFaq";
 
 export function Landing(): ReactElement | null {
   const { appConfig } = useAppConfig();
+  const isSmallScreenView = useIsTailwindSmallScreen();
   if (appConfig) {
     // eslint-disable-next-line no-console
     console.log("appConfig", appConfig);
@@ -25,17 +27,13 @@ export function Landing(): ReactElement | null {
     <div className="flex flex-col items-center gap-10 bg-base-100 py-8 px-4">
       <CommonHeadTags />
       <Hero />
-      <PositionCards hyperdrive={hyperdrive} />
-      <FAQ />
+      <PositionCards />
+      {isSmallScreenView ? <MobileFaq /> : <FAQ />}
     </div>
   );
 }
 
-function PositionCards({
-  hyperdrive,
-}: {
-  hyperdrive: Hyperdrive;
-}): ReactElement {
+function PositionCards(): ReactElement {
   return (
     <div className="flex max-w-6xl flex-col items-center justify-evenly gap-10">
       <div className="flex flex-wrap justify-center gap-16 ">
@@ -79,7 +77,7 @@ function PositionCards({
       </div>
       <a
         href={"/markets"}
-        className="daisy-btn-neutral daisy-btn-md daisy-btn mt-10 w-60 justify-between gap-0 hover:daisy-btn-ghost"
+        className="daisy-btn-neutral daisy-btn daisy-btn-md mt-10 w-60 justify-between gap-0 hover:daisy-btn-ghost"
       >
         <span className="flex-1 text-center">View Markets</span>
       </a>
@@ -92,7 +90,7 @@ function Hero() {
     <div className="daisy-hero">
       <div className="daisy-hero-content text-center">
         <div className="max-w-2xl">
-          <span className="mb-5  text-h2 font-bold">Hyperdrive</span>
+          <span className="mb-5 text-h3 font-bold md:text-h2">Hyperdrive</span>
           <p className="mb-5">
             Hyperdrive marks a significant stride forward in exploring variable
             and fixed rate primitives. With no preset expiration dates, unified
