@@ -5,7 +5,6 @@ import { faqData } from "src/ui/onboarding/FAQ/faqData";
 export function FAQ(): ReactElement {
   const [selectedFAQKey, setSelectedFAQKey] = useState("faq1");
 
-  // Find the selected FAQ based on the selectedFAQKey
   const selectedFAQ = faqData.find((faq) => faq.key === selectedFAQKey);
 
   return (
