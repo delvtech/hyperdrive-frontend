@@ -1,11 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 import { Hyperdrive } from "src/appconfig/types";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
+import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 interface UsePreviewOpenLongOptions {
   market: Hyperdrive;
   baseAmount: bigint | undefined;
-  enabled?: boolean;
 }
 
 interface UsePreviewOpenLongResult {
@@ -17,10 +16,9 @@ interface UsePreviewOpenLongResult {
 export function usePreviewOpenLong({
   market,
   baseAmount,
-  enabled,
 }: UsePreviewOpenLongOptions): UsePreviewOpenLongResult {
-  const readWriteHyperdrive = useReadWriteHyperdrive(market.address);
-  const queryEnabled = !!readWriteHyperdrive && !!baseAmount && enabled;
+  const readHyperdrive = useReadHyperdrive(market.address);
+  const queryEnabled = !!readHyperdrive && !!baseAmount;
 
   const { data, status } = useQuery({
     queryKey: makeQueryKey("previewOpenLong", {
@@ -30,7 +28,7 @@ export function usePreviewOpenLong({
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? () =>
-          readWriteHyperdrive.previewOpenLong({
+          readHyperdrive.previewOpenLong({
             baseAmount,
           })
       : undefined,

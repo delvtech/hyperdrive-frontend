@@ -18,7 +18,8 @@ export function ShortsTab({
     <MarketDetailsTab
       positions={
         <div className="flex flex-col">
-          <div className="flex items-center justify-end py-8">
+          <div className="flex items-center justify-between py-8">
+            <h6>Short positions</h6>
             <OpenClosedFilter />
           </div>
           {activeOpenOrClosedTab === "Open" ? (
