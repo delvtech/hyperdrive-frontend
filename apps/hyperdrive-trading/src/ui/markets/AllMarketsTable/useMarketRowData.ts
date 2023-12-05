@@ -1,5 +1,6 @@
 import { ViemReadHyperdrive } from "@hyperdrive/sdk-viem";
 import { useQuery, UseQueryResult } from "@tanstack/react-query";
+import { useMemo } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { YieldSource } from "src/appconfig/yieldSources/yieldSources";
 import { formatRate } from "src/base/formatRate";
@@ -16,13 +17,14 @@ export interface MarketTableRowData {
 }
 export type MarketStatistics = Omit<MarketTableRowData, "market" | "liquidity">;
 
-export function useMarketRowData(
-  hyperdrives: Hyperdrive[] | undefined,
-): UseQueryResult<MarketTableRowData[]> {
+export function useMarketRowData(): UseQueryResult<MarketTableRowData[]> {
   const publicClient = usePublicClient();
   const { appConfig } = useAppConfig();
+  const hyperdrives = useMemo(
+    () => appConfig?.hyperdrives,
+    [appConfig?.hyperdrives],
+  );
   const queryEnabled = !!hyperdrives && !!appConfig;
-
   return useQuery<MarketTableRowData[]>({
     queryKey: makeQueryKey("app/markets", hyperdrives),
     enabled: queryEnabled,

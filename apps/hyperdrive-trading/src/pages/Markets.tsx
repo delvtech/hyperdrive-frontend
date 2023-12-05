@@ -1,9 +1,13 @@
 import { ReactElement, useMemo } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { AllMarketsTable } from "src/ui/markets/AllMarketsTable/AllMarketsTable";
+import MobileAllMarketsTable from "src/ui/markets/AllMarketsTable/MobileAllMarketsTable";
 
 export function Markets(): ReactElement {
   const { appConfig: config } = useAppConfig();
+  const isSmallScreenView = useIsTailwindSmallScreen();
+
   const memoizedData = useMemo(
     () => config?.hyperdrives,
     [config?.hyperdrives],
@@ -14,8 +18,8 @@ export function Markets(): ReactElement {
 
   return (
     <div className="flex min-h-screen w-3/4 flex-col items-center bg-base-100 py-8 px-4">
-      <div className="daisy-hero max-w-6xl justify-start">
-        <div className="daisy-hero-content px-0 text-start">
+      <div className="daisy-hero max-w-6xl justify-start text-center md:text-left">
+        <div className="daisy-hero-content px-0">
           <div className="max-w-2xl">
             <span className="mb-5 text-h3 font-bold">
               Explore Hyperdrive Markets
@@ -29,7 +33,7 @@ export function Markets(): ReactElement {
           </div>
         </div>
       </div>
-      <AllMarketsTable markets={memoizedData} />
+      {isSmallScreenView ? <MobileAllMarketsTable /> : <AllMarketsTable />}
     </div>
   );
 }

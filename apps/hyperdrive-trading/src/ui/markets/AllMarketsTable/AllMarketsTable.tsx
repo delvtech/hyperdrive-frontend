@@ -111,13 +111,9 @@ function getColumns() {
   ];
 }
 
-export function AllMarketsTable({
-  markets,
-}: {
-  markets: Hyperdrive[];
-}): ReactElement {
+export function AllMarketsTable(): ReactElement {
   const navigate = useNavigate();
-  const { data: marketsRowData } = useMarketRowData(markets);
+  const { data: marketsRowData } = useMarketRowData();
   const memoizedColumns = useMemo(() => getColumns(), []);
   const tableInstance = useReactTable({
     columns: memoizedColumns,
