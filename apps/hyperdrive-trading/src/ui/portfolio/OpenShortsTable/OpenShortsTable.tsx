@@ -1,6 +1,12 @@
 /* eslint-disable react/jsx-key */
-import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
+import {
+  ChevronDownIcon,
+  ChevronUpIcon,
+  SparklesIcon,
+  WalletIcon,
+} from "@heroicons/react/24/outline";
 import { OpenShort } from "@hyperdrive/sdk";
+import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { useQuery } from "@tanstack/react-query";
 import {
   Row,
@@ -157,6 +163,8 @@ export function OpenShortsTable({
   hyperdrive: Hyperdrive;
 }): ReactElement {
   const { address: account } = useAccount();
+  const { openConnectModal } = useConnectModal();
+
   const readHyperdrive = useReadHyperdrive(hyperdrive.address);
   const queryEnabled = !!readHyperdrive && !!account;
   const { data: shorts, isLoading } = useQuery({
@@ -172,6 +180,33 @@ export function OpenShortsTable({
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
   });
+  if (!account) {
+    return (
+      <NonIdealState
+        heading="No wallet connected"
+        text="Connect your wallet to view your Shorts."
+        icon={<WalletIcon height="64" />}
+        action={
+          <button
+            className="daisy-btn-secondary daisy-btn mt-8"
+            onClick={() => openConnectModal?.()}
+          >
+            Connect wallet
+          </button>
+        }
+      />
+    );
+  }
+
+  if (!shorts?.length) {
+    return (
+      <NonIdealState
+        heading="There are no Shorts in this wallet"
+        text="Open a short to populate this space with your positions."
+        icon={<SparklesIcon height="64" />}
+      />
+    );
+  }
 
   return (
     <div className="max-h-96 overflow-y-scroll">
