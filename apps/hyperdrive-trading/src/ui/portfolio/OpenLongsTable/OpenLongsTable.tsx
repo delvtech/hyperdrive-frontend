@@ -1,9 +1,15 @@
-import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
+import {
+  ChevronDownIcon,
+  ChevronUpIcon,
+  SparklesIcon,
+  WalletIcon,
+} from "@heroicons/react/24/outline";
 import {
   Long,
   calculateFixedRateFromOpenLong,
   calculateMatureLongYieldAfterFees,
 } from "@hyperdrive/sdk";
+import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { useQuery } from "@tanstack/react-query";
 import {
   Row,
@@ -150,6 +156,7 @@ export function OpenLongsTable({
   hyperdrive,
 }: OpenLongsTableProps): ReactElement {
   const { address: account } = useAccount();
+  const { openConnectModal } = useConnectModal();
 
   const readHyperdrive = useReadHyperdrive(hyperdrive.address);
   // Get the current block and check it's timestamp agains the
@@ -167,6 +174,34 @@ export function OpenLongsTable({
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
   });
+
+  if (!account) {
+    return (
+      <NonIdealState
+        heading="No wallet connected"
+        text="Connect your wallet to view your Longs."
+        icon={<WalletIcon height="64" />}
+        action={
+          <button
+            className="daisy-btn-secondary daisy-btn mt-8"
+            onClick={() => openConnectModal?.()}
+          >
+            Connect wallet
+          </button>
+        }
+      />
+    );
+  }
+
+  if (!longs?.length) {
+    return (
+      <NonIdealState
+        heading="There are no Longs in this wallet"
+        text="Open a long to populate this space with your positions."
+        icon={<SparklesIcon height="64" />}
+      />
+    );
+  }
 
   return (
     <div className="max-h-96 overflow-y-scroll">
