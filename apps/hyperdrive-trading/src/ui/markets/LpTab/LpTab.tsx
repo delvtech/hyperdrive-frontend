@@ -3,6 +3,7 @@ import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
+import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
 import { AddLiquidityForm } from "src/ui/hyperdrive/lp/AddLiquidityForm/AddLiquidityForm";
 import { useLpShares } from "src/ui/hyperdrive/lp/hooks/useLpShares";
 import { useWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useWithdrawalShares";
@@ -11,7 +12,9 @@ import { useOpenOrClosedSearchParam } from "src/ui/markets/hooks/useOpenOrClosed
 import { ClosedLpTable } from "src/ui/portfolio/ClosedLpTable/ClosedLpTable";
 import { OpenClosedFilter } from "src/ui/portfolio/OpenClosedFilter/OpenClosedFilter";
 import { OpenLpSharesCard } from "src/ui/portfolio/OpenLpSharesCard/OpenLpSharesCard";
+import { OpenLpSharesCardNew } from "src/ui/portfolio/OpenLpSharesCard/OpenLpSharesCardNew";
 import { OpenWithdrawalSharesCard } from "src/ui/portfolio/OpenWithdrawalSharesCard/OpenWithdrawalSharesCard";
+import { NO_LP_SHARES_FEATURE_FLAG } from "src/ui/portfolio/featureFlags";
 import { useAccount } from "wagmi";
 
 export function LpTab({
@@ -22,6 +25,9 @@ export function LpTab({
   const { address: account } = useAccount();
   const { openConnectModal } = useConnectModal();
 
+  const { isFlagEnabled: showNewLpCard } = useFeatureFlag(
+    NO_LP_SHARES_FEATURE_FLAG,
+  );
   const activeOpenOrClosedTab = useOpenOrClosedSearchParam();
 
   const { lpShares } = useLpShares({
@@ -74,7 +80,11 @@ export function LpTab({
                 }
                 return (
                   <>
-                    <OpenLpSharesCard hyperdrive={hyperdrive} />{" "}
+                    {showNewLpCard ? (
+                      <OpenLpSharesCardNew hyperdrive={hyperdrive} />
+                    ) : (
+                      <OpenLpSharesCard hyperdrive={hyperdrive} />
+                    )}{" "}
                     {withdrawalShares ? (
                       <OpenWithdrawalSharesCard hyperdrive={hyperdrive} />
                     ) : undefined}
