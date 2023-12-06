@@ -15,6 +15,7 @@ export function Markets(): ReactElement {
   if (!memoizedData?.length) {
     return <div>No markets found</div>;
   }
+  console.log(isSmallScreenView, "small");
 
   return (
     <div className="flex min-h-screen w-full flex-col items-center bg-base-100 py-8 px-4 md:w-3/4">

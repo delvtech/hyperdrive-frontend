@@ -84,30 +84,14 @@ export default function MobileAllMarketsTable(): JSX.Element {
   const memoizedColumns = useMemo(() => getColumns(), []);
   const tableInstance = useReactTable({
     columns: memoizedColumns,
-    data: (marketsRowData || []).concat(marketsRowData || []),
+    data: marketsRowData?.concat(marketsRowData) ?? [],
     getCoreRowModel: getCoreRowModel(),
   });
   return (
     <div className="flex w-full flex-col items-center overflow-y-scroll">
       <h3 className="w-full font-lato text-h6">Available Markets</h3>
-      <div className="daisy-card-bordered daisy-card flex w-full p-6">
+      <div className="daisy-card-bordered daisy-card flex w-full">
         <table className="daisy-table-zebra daisy-table daisy-table-lg">
-          <thead>
-            {tableInstance.getHeaderGroups().map((headerGroup) => (
-              <tr key={headerGroup.id}>
-                {headerGroup.headers.map((header) => (
-                  <th key={header.id}>
-                    {header.isPlaceholder
-                      ? null
-                      : flexRender(
-                          header.column.columnDef.header,
-                          header.getContext(),
-                        )}
-                  </th>
-                ))}
-              </tr>
-            ))}
-          </thead>
           <tbody>
             {tableInstance.getRowModel().rows.map((row) => {
               return (
