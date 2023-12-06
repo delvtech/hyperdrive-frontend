@@ -81,7 +81,7 @@ export default function MobileAllMarketsTable(): JSX.Element {
   const memoizedColumns = useMemo(() => getColumns(), []);
   const tableInstance = useReactTable({
     columns: memoizedColumns,
-    data: marketsRowData?.concat(marketsRowData) ?? [],
+    data: marketsRowData ?? [],
     getCoreRowModel: getCoreRowModel(),
   });
   return (
