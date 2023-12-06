@@ -71,30 +71,24 @@ export function RemoveLiquidityForm({
   const desiredBaseOut = parseEther("10000");
 
   // desiredBaseOut / lpSharePrice
-  const lpSharesForDesiredBaseOut = dnum.div(
+  const lpSharesIn = dnum.div(
     [desiredBaseOut, 18],
     [poolInfo?.lpSharePrice || 1n, 18],
   );
 
-  const lpSharesIn = dnum.mul(
-    lpSharesForDesiredBaseOut,
-    1n / (1n - utilizationRatio || 1n),
-  )[0];
-
   console.log({
     utilizationRatio,
-    lpSharesForDesiredBaseOut,
   });
 
   const { baseAmountOut: actualBaseOut } = usePreviewRemoveLiquidity({
     destination: account,
-    lpSharesIn,
+    lpSharesIn: lpSharesIn[0],
     market: hyperdrive,
     minBaseAmountOut: 1n,
   });
 
   console.log({
-    lpSharesIn: formatEther(lpSharesIn),
+    lpSharesIn: formatEther(lpSharesIn[0]),
     desiredBaseOut: formatEther(desiredBaseOut),
     actualBaseOut: formatEther(actualBaseOut || 0n),
   });
