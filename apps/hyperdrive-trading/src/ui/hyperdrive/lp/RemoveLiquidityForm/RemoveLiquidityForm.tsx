@@ -1,5 +1,6 @@
 import { adjustAmountByPercentage } from "@hyperdrive/sdk";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
+import * as dnum from "dnum";
 import { MouseEvent, ReactElement } from "react";
 import toast from "react-hot-toast";
 import { Hyperdrive } from "src/appconfig/types";
@@ -7,10 +8,11 @@ import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessag
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
+import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { usePreviewRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewRemoveLiquidity";
 import { useRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/useRemoveLiquidity";
 import { TokenInput } from "src/ui/token/TokenInput";
-import { formatUnits } from "viem";
+import { formatEther, formatUnits, parseEther } from "viem";
 import { useAccount } from "wagmi";
 
 interface RemoveLiquidityFormProps {
@@ -25,6 +27,7 @@ export function RemoveLiquidityForm({
   onRemoveLiquidity,
 }: RemoveLiquidityFormProps): ReactElement {
   const { decimals: baseDecimals } = hyperdrive.baseToken;
+  const { poolInfo } = usePoolInfo(hyperdrive.address);
 
   const { address: account } = useAccount();
 
@@ -40,12 +43,61 @@ export function RemoveLiquidityForm({
       destination: account,
     });
 
+  // Utilization ratio
+  const utilizationRatioPreview = usePreviewRemoveLiquidity({
+    market: hyperdrive,
+    lpSharesIn: lpShares,
+    minBaseAmountOut: 1n,
+    destination: account,
+  });
+  const utilizationRatio =
+    !!utilizationRatioPreview.withdrawalSharesOut &&
+    !!utilizationRatioPreview.baseAmountOut
+      ? calculateRatio({
+          a: utilizationRatioPreview.withdrawalSharesOut,
+          b: utilizationRatioPreview.baseAmountOut,
+          decimals: hyperdrive.baseToken.decimals,
+        })
+      : 0n;
+
   const minBaseAmountAfterSlippage =
     baseAmountOut &&
     adjustAmountByPercentage({
       amount: baseAmountOut,
       decimals: hyperdrive.baseToken.decimals,
     });
+
+  // desiredBaseOut / lpSharePrice * 1 / utilizationRatio
+  const desiredBaseOut = parseEther("10000");
+
+  // desiredBaseOut / lpSharePrice
+  const lpSharesForDesiredBaseOut = dnum.div(
+    [desiredBaseOut, 18],
+    [poolInfo?.lpSharePrice || 1n, 18],
+  );
+
+  const lpSharesIn = dnum.mul(
+    lpSharesForDesiredBaseOut,
+    1n / (1n - utilizationRatio || 1n),
+  )[0];
+
+  console.log({
+    utilizationRatio,
+    lpSharesForDesiredBaseOut,
+  });
+
+  const { baseAmountOut: actualBaseOut } = usePreviewRemoveLiquidity({
+    destination: account,
+    lpSharesIn,
+    market: hyperdrive,
+    minBaseAmountOut: 1n,
+  });
+
+  console.log({
+    lpSharesIn: formatEther(lpSharesIn),
+    desiredBaseOut: formatEther(desiredBaseOut),
+    actualBaseOut: formatEther(actualBaseOut || 0n),
+  });
 
   const { removeLiquidity, removeLiquidityStatus } = useRemoveLiquidity({
     hyperdriveAddress: hyperdrive.address,
@@ -140,4 +192,19 @@ export function RemoveLiquidityForm({
       }
     />
   );
+}
+
+function calculateRatio({
+  a,
+  b,
+  decimals,
+}: {
+  a: bigint;
+  b: bigint;
+  decimals: number;
+}) {
+  return dnum.multiply(
+    dnum.divide([a, decimals], [b, decimals], decimals),
+    dnum.from("100", decimals),
+  )[0];
 }

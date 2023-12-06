@@ -46,6 +46,23 @@ export function useRemoveLiquidity({
   const { mutate: removeLiquidity, status } = useMutation({
     mutationFn: async () => {
       if (mutationEnabled) {
+        /**
+         *
+         * state:
+         * 100k lp shares
+         * 20% utilization
+         * lp share price is 1.10 base
+         * we want to take out 10k base
+         *
+         *
+         * desiredBaseOut / lpSharePrice * 1 / utilizationRatio
+         *
+         * max input amount: lp shares * lp shares price
+         *
+         *
+         *
+         */
+
         await readWriteHyperdrive.removeLiquidity({
           lpSharesIn,
           minBaseAmountOut,
