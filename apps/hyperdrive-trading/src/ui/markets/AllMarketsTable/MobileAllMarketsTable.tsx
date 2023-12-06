@@ -4,7 +4,6 @@ import {
   getCoreRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import classNames from "classnames";
 import { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
@@ -15,7 +14,7 @@ import {
 } from "src/ui/markets/AllMarketsTable/useMarketRowData";
 import { LpApyCell, YieldSourceApy } from "./AllMarketsTable";
 const columnHelper = createColumnHelper<MarketTableRowData>();
-const mobileColumnGetters = (row: MarketTableRowData) => [
+const formatMobileColumnData = (row: MarketTableRowData) => [
   {
     name: "Term",
     value: `${convertMillisecondsToDays(row.market.termLengthMS)} days`,
@@ -46,8 +45,7 @@ function getColumns() {
     columnHelper.display({
       id: "ColumnNames",
       cell: ({ row }) => {
-        const rowData = row.original;
-        const data = mobileColumnGetters(rowData);
+        const data = formatMobileColumnData(row.original);
         return (
           <ul className="flex flex-col items-start justify-between">
             {data.map((column) => (
@@ -62,8 +60,7 @@ function getColumns() {
     columnHelper.display({
       id: "ColumnValues",
       cell: ({ row }) => {
-        const rowData = row.original;
-        const data = mobileColumnGetters(rowData);
+        const data = formatMobileColumnData(row.original);
         return (
           <ul className="flex flex-col items-start justify-between">
             {data.map((column) => (
@@ -97,7 +94,6 @@ export default function MobileAllMarketsTable(): JSX.Element {
               return (
                 <tr
                   key={row.id}
-                  className="daisy-hover h-16 cursor-pointer items-center hover:border-b-0"
                   onClick={() => {
                     navigate(`/market/${row.original.market}`);
                   }}
@@ -105,16 +101,7 @@ export default function MobileAllMarketsTable(): JSX.Element {
                   <>
                     {row.getVisibleCells().map((cell) => {
                       return (
-                        // In order to round the edges of this row, we need to round the edges of the first and last <td> because border-radius doesn't work on <tr>
-                        <td
-                          className={classNames({
-                            "rounded-l-lg":
-                              cell.column.id.includes("termLengthMS"),
-                            "rounded-r-lg":
-                              cell.column.id.includes("go-to-market"),
-                          })}
-                          key={cell.id}
-                        >
+                        <td key={cell.id}>
                           {flexRender(
                             cell.column.columnDef.cell,
                             cell.getContext(),
