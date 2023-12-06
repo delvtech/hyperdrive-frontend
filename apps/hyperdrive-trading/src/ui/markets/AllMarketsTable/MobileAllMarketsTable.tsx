@@ -17,7 +17,12 @@ const columnHelper = createColumnHelper<MarketTableRowData>();
 const formatMobileColumnData = (row: MarketTableRowData) => [
   {
     name: "Term",
-    value: `${convertMillisecondsToDays(row.market.termLengthMS)} days`,
+    value: (
+      <span>
+        {row.market.baseToken.symbol} -{" "}
+        {convertMillisecondsToDays(row.market.termLengthMS)} days
+      </span>
+    ),
   },
   { name: "Yield Source", value: row.yieldSource.name },
   { name: "Yield Source APY", value: <YieldSourceApy /> },
@@ -47,11 +52,9 @@ function getColumns() {
       cell: ({ row }) => {
         const data = formatMobileColumnData(row.original);
         return (
-          <ul className="flex flex-col items-start justify-between">
+          <ul className="flex flex-col items-start gap-1">
             {data.map((column) => (
-              <li key={column.name} className="text-left">
-                {column.name}
-              </li>
+              <li key={column.name}>{column.name}</li>
             ))}
           </ul>
         );
@@ -62,11 +65,9 @@ function getColumns() {
       cell: ({ row }) => {
         const data = formatMobileColumnData(row.original);
         return (
-          <ul className="flex flex-col items-start justify-between">
+          <ul className="flex flex-col items-start gap-1">
             {data.map((column) => (
-              <li key={column.name} className="text-left">
-                {column.value}
-              </li>
+              <li key={column.name}>{column.value}</li>
             ))}
           </ul>
         );
