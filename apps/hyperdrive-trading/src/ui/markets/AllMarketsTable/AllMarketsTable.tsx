@@ -182,12 +182,16 @@ export function AllMarketsTable(): ReactElement {
   );
 }
 
-function LpApyCell({ hyperdrive }: { hyperdrive: Hyperdrive }): ReactElement {
+export function LpApyCell({
+  hyperdrive,
+}: {
+  hyperdrive: Hyperdrive;
+}): ReactElement {
   const { lpApy } = useLpApy(hyperdrive);
   return <span>{lpApy?.toFixed(2)}%</span>;
 }
 
-function YieldSourceApy(): ReactElement {
+export function YieldSourceApy(): ReactElement {
   const { vaultRate } = useVaultRate({
     // TODO: temporary for now until this available via addresses.json
     vaultAddress: "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",

@@ -7,23 +7,52 @@ import {
 import classNames from "classnames";
 import { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
+import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
+import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import {
   MarketTableRowData,
   useMarketRowData,
 } from "src/ui/markets/AllMarketsTable/useMarketRowData";
+import { LpApyCell, YieldSourceApy } from "./AllMarketsTable";
 const columnHelper = createColumnHelper<MarketTableRowData>();
-
+const mobileColumnGetters = (row: MarketTableRowData) => [
+  {
+    name: "Term",
+    value: `${convertMillisecondsToDays(row.market.termLengthMS)} days`,
+  },
+  { name: "Yield Source", value: row.yieldSource.name },
+  { name: "Yield Source APY", value: <YieldSourceApy /> },
+  { name: "Fixed Rate", value: row.longAPR },
+  { name: "LP APY", value: <LpApyCell hyperdrive={row.market} /> },
+  {
+    name: "Liquidity",
+    value: (
+      <span
+        key="liquidity"
+        className="flex flex-row items-center justify-start"
+      >
+        <img className="mr-1 h-4" src={row.market.baseToken.iconUrl} />
+        {formatBalance({
+          balance: row.liquidity,
+          decimals: row.market.baseToken.decimals,
+          places: 0,
+        })}
+      </span>
+    ),
+  },
+];
 function getColumns() {
   return [
     columnHelper.display({
       id: "ColumnNames",
       cell: ({ row }) => {
         const rowData = row.original;
+        const data = mobileColumnGetters(rowData);
         return (
           <ul className="flex flex-col items-start justify-between">
-            {Object.keys(rowData).map((key) => (
-              <li key={key} className="text-left">
-                {key}
+            {data.map((column) => (
+              <li key={column.name} className="text-left">
+                {column.name}
               </li>
             ))}
           </ul>
@@ -34,13 +63,12 @@ function getColumns() {
       id: "ColumnValues",
       cell: ({ row }) => {
         const rowData = row.original;
+        const data = mobileColumnGetters(rowData);
         return (
           <ul className="flex flex-col items-start justify-between">
-            {Object.entries(rowData).map(([key, value]) => (
-              <li key={key} className="text-left">
-                {typeof value === "object"
-                  ? JSON.stringify(value)
-                  : value.toString()}
+            {data.map((column) => (
+              <li key={column.name} className="text-left">
+                {column.value}
               </li>
             ))}
           </ul>
@@ -56,7 +84,7 @@ export default function MobileAllMarketsTable(): JSX.Element {
   const memoizedColumns = useMemo(() => getColumns(), []);
   const tableInstance = useReactTable({
     columns: memoizedColumns,
-    data: marketsRowData || [],
+    data: (marketsRowData || []).concat(marketsRowData || []),
     getCoreRowModel: getCoreRowModel(),
   });
   return (
