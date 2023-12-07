@@ -6,16 +6,13 @@ import Skeleton from "react-loading-skeleton";
 import { Hyperdrive } from "src/appconfig/types";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
-import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { AddLiquidityForm } from "src/ui/hyperdrive/lp/AddLiquidityForm/AddLiquidityForm";
-import { RemoveLiquidityForm } from "src/ui/hyperdrive/lp/RemoveLiquidityForm/RemoveLiquidityForm";
 import { RemoveLiquidityFormNew } from "src/ui/hyperdrive/lp/RemoveLiquidityForm/RemoveLiquidityFormNew";
 import { useLpShares } from "src/ui/hyperdrive/lp/hooks/useLpShares";
 import { useLpSharesTotalSupply } from "src/ui/hyperdrive/lp/hooks/useLpSharesTotalSupply";
 import { usePreviewRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewRemoveLiquidity";
-import { NO_LP_SHARES_FEATURE_FLAG } from "src/ui/portfolio/featureFlags";
 import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
 import { calculateLpValue } from "./calculateLpValue";
@@ -36,9 +33,6 @@ export function OpenLpSharesCardNew({
   const { lpSharesTotalSupply } = useLpSharesTotalSupply({
     hyperdriveAddress: hyperdrive.address,
   });
-  const { isFlagEnabled: showNewForm } = useFeatureFlag(
-    NO_LP_SHARES_FEATURE_FLAG,
-  );
 
   const { baseAmountOut: lpBaseWithdrawable, withdrawalSharesOut } =
     usePreviewRemoveLiquidity({
@@ -121,27 +115,15 @@ export function OpenLpSharesCardNew({
                 <Modal
                   modalId={"withdrawalLpModal"}
                   modalContent={
-                    showNewForm ? (
-                      <RemoveLiquidityFormNew
-                        hyperdrive={hyperdrive}
-                        lpShares={lpShares || 0n}
-                        onRemoveLiquidity={(e) => {
-                          // preventDefault since we don't want to close the modal while the
-                          // tx is temporarily pending the user's signature in their wallet.
-                          e.preventDefault();
-                        }}
-                      />
-                    ) : (
-                      <RemoveLiquidityForm
-                        hyperdrive={hyperdrive}
-                        lpShares={lpShares || 0n}
-                        onRemoveLiquidity={(e) => {
-                          // preventDefault since we don't want to close the modal while the
-                          // tx is temporarily pending the user's signature in their wallet.
-                          e.preventDefault();
-                        }}
-                      />
-                    )
+                    <RemoveLiquidityFormNew
+                      hyperdrive={hyperdrive}
+                      lpShares={lpShares || 0n}
+                      onRemoveLiquidity={(e) => {
+                        // preventDefault since we don't want to close the modal while the
+                        // tx is temporarily pending the user's signature in their wallet.
+                        e.preventDefault();
+                      }}
+                    />
                   }
                 >
                   {({ showModal }) => (

@@ -84,9 +84,14 @@ export function RemoveLiquidityFormNew({
         })}`
       : null;
 
+  // to format the withdrawal shares out in terms of base, we need to multiply
+  // them by the lpSharePrice
   const formattedWithdrawalSharesOut = withdrawalSharesOut
     ? formatBalance({
-        balance: withdrawalSharesOut,
+        balance: dnum.multiply(
+          [withdrawalSharesOut, hyperdrive.baseToken.decimals],
+          [poolInfo?.lpSharePrice || 0n, hyperdrive.baseToken.decimals],
+        )[0],
         decimals: baseDecimals,
         places: 8,
       })
@@ -134,7 +139,9 @@ export function RemoveLiquidityFormNew({
 
           <div className="flex justify-between">
             <p>Pending withdrawal</p>
-            <p>{formattedWithdrawalSharesOut || 0} Shares</p>
+            <p>
+              {formattedWithdrawalSharesOut || 0} {hyperdrive.baseToken.symbol}
+            </p>
           </div>
         </div>
       }
