@@ -5,18 +5,18 @@ import {
   WalletIcon,
 } from "@heroicons/react/24/outline";
 import {
-  Long,
   calculateFixedRateFromOpenLong,
   calculateMatureLongYieldAfterFees,
+  Long,
 } from "@hyperdrive/sdk";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { useQuery } from "@tanstack/react-query";
 import {
-  Row,
   createColumnHelper,
   flexRender,
   getCoreRowModel,
   getSortedRowModel,
+  Row,
   useReactTable,
 } from "@tanstack/react-table";
 import classNames from "classnames";
@@ -29,6 +29,7 @@ import { makeQueryKey } from "src/base/makeQueryKey";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { usePoolConfig } from "src/ui/hyperdrive/hooks/usePoolConfig";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { CloseLongModalButton } from "src/ui/hyperdrive/longs/CloseLongModalButton/CloseLongModalButton";
@@ -42,7 +43,63 @@ interface OpenLongsTableProps {
 
 const columnHelper = createColumnHelper<Long>();
 
-function getColumns({ hyperdrive }: { hyperdrive: Hyperdrive }) {
+const formatOpenLongMobileColumnData = (row: Long, hyperdrive: Hyperdrive) => [
+  {
+    name: "Matures on",
+    value: <MaturesOnCell maturity={row.maturity} />,
+  },
+  // {
+  //   name: `Size (hy${hyperdrive.baseToken.symbol})`,
+  //   value: row.yieldSource.name,
+  // },
+  // {
+  //   name: `Amount paid (${hyperdrive.baseToken.symbol})`,
+  //   value: <YieldSourceApy />,
+  // },
+  // { name: "Fixed rate (APR)", value: row.longAPR },
+  // {
+  //   name: `Current value (${hyperdrive.baseToken.symbol})`,
+  //   value: <LpApyCell hyperdrive={row.market} />,
+  // },
+];
+
+function getColumns({
+  hyperdrive,
+  isSmallScreenView,
+}: {
+  hyperdrive: Hyperdrive;
+  isSmallScreenView: boolean;
+}) {
+  if (isSmallScreenView) {
+    return [
+      columnHelper.display({
+        id: "ColumnNames",
+        cell: ({ row }) => {
+          const data = formatOpenLongMobileColumnData(row.original, hyperdrive);
+          return (
+            <ul className="flex flex-col items-start gap-1">
+              {data.map((column) => (
+                <li key={column.name}>{column.name}</li>
+              ))}
+            </ul>
+          );
+        },
+      }),
+      columnHelper.display({
+        id: "ColumnValues",
+        cell: ({ row }) => {
+          const data = formatOpenLongMobileColumnData(row.original, hyperdrive);
+          return (
+            <ul className="flex flex-col items-start gap-1">
+              {data.map((column) => (
+                <li key={column.name}>{column.value}</li>
+              ))}
+            </ul>
+          );
+        },
+      }),
+    ];
+  }
   return [
     columnHelper.accessor("assetId", {
       id: "maturationDate",
@@ -157,7 +214,7 @@ export function OpenLongsTable({
 }: OpenLongsTableProps): ReactElement {
   const { address: account } = useAccount();
   const { openConnectModal } = useConnectModal();
-
+  const isSmallScreenView = useIsTailwindSmallScreen();
   const readHyperdrive = useReadHyperdrive(hyperdrive.address);
   // Get the current block and check it's timestamp agains the
   const queryEnabled = !!readHyperdrive && !!account;
@@ -169,7 +226,7 @@ export function OpenLongsTable({
     enabled: queryEnabled,
   });
   const tableInstance = useReactTable({
-    columns: getColumns({ hyperdrive }),
+    columns: getColumns({ hyperdrive, isSmallScreenView }),
     data: longs || [],
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
