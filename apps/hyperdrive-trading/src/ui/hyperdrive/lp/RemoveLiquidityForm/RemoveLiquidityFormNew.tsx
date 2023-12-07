@@ -1,10 +1,8 @@
-import { adjustAmountByPercentage } from "@hyperdrive/sdk";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import * as dnum from "dnum";
 import { MouseEvent, ReactElement } from "react";
 import toast from "react-hot-toast";
 import { Hyperdrive } from "src/appconfig/types";
-import { calculateRatio } from "src/base/calculateRatio";
 import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
@@ -12,8 +10,9 @@ import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { usePreviewRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewRemoveLiquidity";
 import { useRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/useRemoveLiquidity";
+import { calculateLpValue } from "src/ui/portfolio/OpenLpSharesCard/calculateLpValue";
 import { TokenInput } from "src/ui/token/TokenInput";
-import { formatEther, formatUnits, parseEther } from "viem";
+import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
 interface RemoveLiquidityFormNewProps {
   hyperdrive: Hyperdrive;
@@ -31,72 +30,37 @@ export function RemoveLiquidityFormNew({
 
   const { address: account } = useAccount();
 
-  const { amount, amountAsBigInt, setAmount } = useNumericInput({
+  // Let users type in an amount of base to withdraw
+  const {
+    amount,
+    amountAsBigInt: desiredBaseOut,
+    setAmount,
+  } = useNumericInput({
     decimals: baseDecimals,
   });
-
-  const { baseAmountOut, withdrawalSharesOut, previewRemoveLiquidityStatus } =
-    usePreviewRemoveLiquidity({
-      market: hyperdrive,
-      lpSharesIn: amountAsBigInt,
-      minBaseAmountOut: 0n,
-      destination: account,
-    });
-
-  // Utilization ratio
-  const utilizationRatioPreview = usePreviewRemoveLiquidity({
-    market: hyperdrive,
-    lpSharesIn: lpShares,
-    minBaseAmountOut: 1n,
-    destination: account,
-  });
-  const utilizationRatio =
-    !!utilizationRatioPreview.withdrawalSharesOut &&
-    !!utilizationRatioPreview.baseAmountOut
-      ? calculateRatio({
-          a: utilizationRatioPreview.withdrawalSharesOut,
-          b: utilizationRatioPreview.baseAmountOut,
-          decimals: hyperdrive.baseToken.decimals,
-        })
-      : 0n;
-
-  const minBaseAmountAfterSlippage =
-    baseAmountOut &&
-    adjustAmountByPercentage({
-      amount: baseAmountOut,
-      decimals: hyperdrive.baseToken.decimals,
-    });
-
-  // desiredBaseOut / lpSharePrice * 1 / utilizationRatio
-  const desiredBaseOut = parseEther("10000");
-
-  // desiredBaseOut / lpSharePrice
+  // Then calculate the lpSharesIn required to remove that amount of base
   const lpSharesIn = dnum.div(
-    [desiredBaseOut, 18],
+    [desiredBaseOut || 1n, 18],
     [poolInfo?.lpSharePrice || 1n, 18],
   );
 
-  console.log({
-    utilizationRatio,
-  });
-
-  const { baseAmountOut: actualBaseOut } = usePreviewRemoveLiquidity({
+  // Then we preview that trade to show users the split between the actual base
+  // and withdrawal shares they'll receive
+  const {
+    baseAmountOut: actualBaseOut,
+    previewRemoveLiquidityStatus,
+    withdrawalSharesOut,
+  } = usePreviewRemoveLiquidity({
     destination: account,
     lpSharesIn: lpSharesIn[0],
     market: hyperdrive,
     minBaseAmountOut: 1n,
   });
 
-  console.log({
-    lpSharesIn: formatEther(lpSharesIn[0]),
-    desiredBaseOut: formatEther(desiredBaseOut),
-    actualBaseOut: formatEther(actualBaseOut || 0n),
-  });
-
   const { removeLiquidity, removeLiquidityStatus } = useRemoveLiquidity({
     hyperdriveAddress: hyperdrive.address,
-    lpSharesIn: amountAsBigInt,
-    minBaseAmountOut: minBaseAmountAfterSlippage,
+    lpSharesIn: lpSharesIn[0],
+    minBaseAmountOut: 1n,
     destination: account,
     enabled: previewRemoveLiquidityStatus === "success",
     onExecuted: (hash) => {
@@ -112,9 +76,9 @@ export function RemoveLiquidityFormNew({
   });
 
   const formattedBaseAmountOut =
-    baseAmountOut !== undefined
+    actualBaseOut !== undefined
       ? `${formatBalance({
-          balance: baseAmountOut,
+          balance: actualBaseOut,
           decimals: baseDecimals,
           places: 8,
         })}`
@@ -128,6 +92,12 @@ export function RemoveLiquidityFormNew({
       })
     : null;
 
+  const currentLpValue = calculateLpValue({
+    lpShares,
+    lpSharePrice: poolInfo?.lpSharePrice || 0n,
+    decimals: hyperdrive.baseToken.decimals,
+  });
+
   return (
     <TransactionView
       heading="Remove liquidity"
@@ -140,14 +110,14 @@ export function RemoveLiquidityFormNew({
             address: "0x00",
           }}
           value={amount ?? ""}
-          maxValue={formatUnits(lpShares, baseDecimals)}
+          maxValue={formatUnits(currentLpValue, baseDecimals)}
           stat={
-            lpShares
+            lpShares && !!poolInfo
               ? `Current liquidity: ${formatBalance({
-                  balance: lpShares,
-                  decimals: baseDecimals,
-                  places: 6,
-                })} LP shares`
+                  balance: currentLpValue,
+                  decimals: hyperdrive.baseToken.decimals,
+                  places: 2,
+                })} ${hyperdrive.baseToken.symbol}`
               : undefined
           }
           onChange={(newAmount) => setAmount(newAmount)}
@@ -163,7 +133,7 @@ export function RemoveLiquidityFormNew({
           </div>
 
           <div className="flex justify-between">
-            <p>Withdrawal shares</p>
+            <p>Pending withdrawal</p>
             <p>{formattedWithdrawalSharesOut || 0} Shares</p>
           </div>
         </div>

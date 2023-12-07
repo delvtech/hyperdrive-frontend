@@ -14,6 +14,7 @@ import { OpenClosedFilter } from "src/ui/portfolio/OpenClosedFilter/OpenClosedFi
 import { OpenLpSharesCard } from "src/ui/portfolio/OpenLpSharesCard/OpenLpSharesCard";
 import { OpenLpSharesCardNew } from "src/ui/portfolio/OpenLpSharesCard/OpenLpSharesCardNew";
 import { OpenWithdrawalSharesCard } from "src/ui/portfolio/OpenWithdrawalSharesCard/OpenWithdrawalSharesCard";
+import { OpenWithdrawalSharesCardNew } from "src/ui/portfolio/OpenWithdrawalSharesCard/OpenWithdrawalSharesCardNew";
 import { NO_LP_SHARES_FEATURE_FLAG } from "src/ui/portfolio/featureFlags";
 import { useAccount } from "wagmi";
 
@@ -50,7 +51,7 @@ export function LpTab({
           </div>
 
           {activeOpenOrClosedTab === "Open" ? (
-            <div className="flex gap-8 pb-8">
+            <div className="flex gap-32 pb-8">
               {(() => {
                 if (!account) {
                   return (
@@ -86,7 +87,11 @@ export function LpTab({
                       <OpenLpSharesCard hyperdrive={hyperdrive} />
                     )}{" "}
                     {withdrawalShares ? (
-                      <OpenWithdrawalSharesCard hyperdrive={hyperdrive} />
+                      showNewLpCard ? (
+                        <OpenWithdrawalSharesCardNew hyperdrive={hyperdrive} />
+                      ) : (
+                        <OpenWithdrawalSharesCard hyperdrive={hyperdrive} />
+                      )
                     ) : undefined}
                   </>
                 );

@@ -18,6 +18,7 @@ import { usePreviewRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreview
 import { NO_LP_SHARES_FEATURE_FLAG } from "src/ui/portfolio/featureFlags";
 import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
+import { calculateLpValue } from "./calculateLpValue";
 
 interface OpenLpSharesCardProps {
   hyperdrive: Hyperdrive;
@@ -69,7 +70,7 @@ export function OpenLpSharesCardNew({
     <div className="flex flex-col">
       {lpShares !== 0n ? (
         <div>
-          <div className="daisy-stats daisy-stats-vertical bg-base-100">
+          <div className="flex flex-col gap-8">
             <div className="daisy-stat px-0">
               <div className="daisy-stat-title">Current value</div>
               <div className="daisy-stat-value">
@@ -81,7 +82,7 @@ export function OpenLpSharesCardNew({
                       decimals: hyperdrive.baseToken.decimals,
                     }),
                     decimals: hyperdrive.baseToken.decimals,
-                    places: 4,
+                    places: 2,
                   })} ${hyperdrive.baseToken.symbol}`
                 ) : (
                   <Skeleton />
@@ -95,7 +96,7 @@ export function OpenLpSharesCardNew({
                       {formatBalance({
                         balance: lpShares,
                         decimals: hyperdrive.baseToken.decimals,
-                        places: 4,
+                        places: 2,
                       })}
                     </span>
                   ) : (
@@ -145,7 +146,7 @@ export function OpenLpSharesCardNew({
                 >
                   {({ showModal }) => (
                     <button
-                      className="daisy-btn-neutral daisy-btn daisy-btn-wide daisy-btn-sm m-auto hover:daisy-btn-ghost"
+                      className="daisy-btn-neutral daisy-btn-outline daisy-btn daisy-btn-wide daisy-btn-sm m-auto hover:daisy-btn-ghost"
                       onClick={showModal}
                     >
                       Remove liquidity
@@ -188,13 +189,6 @@ export function OpenLpSharesCardNew({
               </div>
             </div>
           </div>
-          <div className="mb-4 flex flex-col gap-2">
-            <p className="text-center text-body">
-              Note: When you withdraw liquidity, you get back{" "}
-              {hyperdrive.baseToken.symbol} and withdrawal shares proportional
-              to your utilization ratio.
-            </p>
-          </div>
         </div>
       ) : (
         <NonIdealState
@@ -208,22 +202,6 @@ export function OpenLpSharesCardNew({
       )}
     </div>
   );
-}
-
-function calculateLpValue({
-  lpShares,
-  lpSharePrice,
-  decimals,
-}: {
-  lpShares: bigint;
-  lpSharePrice: bigint;
-  decimals: number;
-}) {
-  return dnum.multiply(
-    [lpShares, decimals],
-    [lpSharePrice, decimals],
-    decimals,
-  )[0];
 }
 
 function calculateRatio({
