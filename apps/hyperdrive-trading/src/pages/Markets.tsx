@@ -1,12 +1,9 @@
 import { ReactElement, useMemo } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
-import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { AllMarketsTable } from "src/ui/markets/AllMarketsTable/AllMarketsTable";
-import MobileAllMarketsTable from "src/ui/markets/AllMarketsTable/MobileAllMarketsTable";
 
 export function Markets(): ReactElement {
   const { appConfig: config } = useAppConfig();
-  const isSmallScreenView = useIsTailwindSmallScreen();
 
   const memoizedData = useMemo(
     () => config?.hyperdrives,
@@ -33,7 +30,7 @@ export function Markets(): ReactElement {
           </div>
         </div>
       </div>
-      {isSmallScreenView ? <MobileAllMarketsTable /> : <AllMarketsTable />}
+      <AllMarketsTable />
     </div>
   );
 }
