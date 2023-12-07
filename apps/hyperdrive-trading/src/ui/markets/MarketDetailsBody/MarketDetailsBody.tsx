@@ -19,7 +19,7 @@ export function MarketDetailsBody({
   const { marketState } = useMarketState(hyperdrive.address);
   return (
     <div className="flex flex-col gap-12">
-      <div className="flex flex-wrap items-start justify-center md:justify-between">
+      <div className="flex flex-wrap items-start justify-start md:justify-between">
         <div className="flex flex-col">
           <MarketBreadcrumbs hyperdrive={hyperdrive} />
           <MarketHeader hyperdrive={hyperdrive} longPrice={longPrice} />

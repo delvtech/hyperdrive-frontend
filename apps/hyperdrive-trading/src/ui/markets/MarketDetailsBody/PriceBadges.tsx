@@ -12,8 +12,8 @@ export function PriceBadges({
   longPrice: { price: bigint; formatted: string };
 }): ReactElement {
   return (
-    <div className="flex gap-4">
-      <div className="daisy-badge daisy-badge-ghost daisy-badge-lg border border-base-300/5">
+    <div className="flex flex-col gap-2 md:flex-row md:gap-4">
+      <div className="daisy-badge daisy-badge-ghost daisy-badge-lg border border-base-300/5 text-[12px] md:text-lg">
         1 hy{hyperdrive.baseToken.symbol} ≈{" "}
         {formatBalance({
           balance: longPrice.price,
@@ -22,7 +22,7 @@ export function PriceBadges({
         })}{" "}
         {hyperdrive.baseToken.symbol}
       </div>
-      <div className="daisy-badge daisy-badge-ghost daisy-badge-lg border border-base-300/5">
+      <div className="daisy-badge daisy-badge-ghost daisy-badge-lg border border-base-300/5 text-[12px] md:text-lg">
         1 {hyperdrive.baseToken.symbol} ≈{" "}
         {formatBalance({
           balance: divideBigInt(
