@@ -326,7 +326,7 @@ export function OpenLongsTable({
               return (
                 <tr
                   key={row.id}
-                  className="daisy-hover h-24 cursor-pointer items-center border transition duration-300 ease-in-out"
+                  className="daisy-hover h-24 cursor-pointer items-center transition duration-300 ease-in-out"
                   onClick={() => {
                     const modalId = `${row.original.assetId}`;
                     (window as any)[modalId].showModal();
@@ -335,7 +335,7 @@ export function OpenLongsTable({
                   <>
                     {row.getVisibleCells().map((cell) => {
                       return (
-                        <td className="text-[10px] sm:text-body" key={cell.id}>
+                        <td className="text-[12px] sm:text-lg" key={cell.id}>
                           {flexRender(
                             cell.column.columnDef.cell,
                             cell.getContext(),
