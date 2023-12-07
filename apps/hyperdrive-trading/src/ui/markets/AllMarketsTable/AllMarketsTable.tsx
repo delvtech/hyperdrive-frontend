@@ -11,16 +11,77 @@ import { useNavigate } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
 import {
   MarketTableRowData,
   useMarketRowData,
 } from "src/ui/markets/AllMarketsTable/useMarketRowData";
 import { useVaultRate } from "src/ui/vaults/useVaultRate";
-
+const formatMobileColumnData = (row: MarketTableRowData) => [
+  {
+    name: "Term",
+    value: (
+      <span>
+        {row.market.baseToken.symbol} -{" "}
+        {convertMillisecondsToDays(row.market.termLengthMS)} days
+      </span>
+    ),
+  },
+  { name: "Yield Source", value: row.yieldSource.name },
+  { name: "Yield Source APY", value: <YieldSourceApy /> },
+  { name: "Fixed Rate", value: row.longAPR },
+  { name: "LP APY", value: <LpApyCell hyperdrive={row.market} /> },
+  {
+    name: "Liquidity",
+    value: (
+      <span
+        key="liquidity"
+        className="flex flex-row items-center justify-start"
+      >
+        <img className="mr-1 h-4" src={row.market.baseToken.iconUrl} />
+        {formatBalance({
+          balance: row.liquidity,
+          decimals: row.market.baseToken.decimals,
+          places: 0,
+        })}
+      </span>
+    ),
+  },
+];
 const columnHelper = createColumnHelper<MarketTableRowData>();
 
-function getColumns() {
+function getColumns(isSmallScreenView: boolean) {
+  if (isSmallScreenView) {
+    return [
+      columnHelper.display({
+        id: "ColumnNames",
+        cell: ({ row }) => {
+          const data = formatMobileColumnData(row.original);
+          return (
+            <ul className="flex flex-col items-start gap-1">
+              {data.map((column) => (
+                <li key={column.name}>{column.name}</li>
+              ))}
+            </ul>
+          );
+        },
+      }),
+      columnHelper.display({
+        id: "ColumnValues",
+        cell: ({ row }) => {
+          const data = formatMobileColumnData(row.original);
+          return (
+            <ul className="flex flex-col items-start gap-1">
+              {data.map((column) => (
+                <li key={column.name}>{column.value}</li>
+              ))}
+            </ul>
+          );
+        },
+      }),
+    ];
+  }
   return [
     columnHelper.accessor("market.termLengthMS", {
       header: "Term",
@@ -111,14 +172,14 @@ function getColumns() {
   ];
 }
 
-export function AllMarketsTable({
-  markets,
-}: {
-  markets: Hyperdrive[];
-}): ReactElement {
+export function AllMarketsTable(): ReactElement {
+  const isSmallScreenView = useIsTailwindSmallScreen();
   const navigate = useNavigate();
-  const { data: marketsRowData } = useMarketRowData(markets);
-  const memoizedColumns = useMemo(() => getColumns(), []);
+  const { data: marketsRowData } = useMarketRowData();
+  const memoizedColumns = useMemo(
+    () => getColumns(isSmallScreenView),
+    [isSmallScreenView],
+  );
   const tableInstance = useReactTable({
     columns: memoizedColumns,
     data: marketsRowData || [],
@@ -185,7 +246,6 @@ export function AllMarketsTable({
     </div>
   );
 }
-
 function LpApyCell({ hyperdrive }: { hyperdrive: Hyperdrive }): ReactElement {
   const { lpApy } = useLpApy(hyperdrive);
   return <span>{lpApy?.toFixed(2)}%</span>;
