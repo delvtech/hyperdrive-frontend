@@ -9,10 +9,13 @@ import { useNavigate } from "react-router-dom";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import {
+  LpApyCell,
+  YieldSourceApy,
+} from "src/ui/markets/AllMarketsTable/AllMarketsTable";
+import {
   MarketTableRowData,
   useMarketRowData,
 } from "src/ui/markets/AllMarketsTable/useMarketRowData";
-import { LpApyCell, YieldSourceApy } from "./AllMarketsTable";
 const columnHelper = createColumnHelper<MarketTableRowData>();
 const formatMobileColumnData = (row: MarketTableRowData) => [
   {
