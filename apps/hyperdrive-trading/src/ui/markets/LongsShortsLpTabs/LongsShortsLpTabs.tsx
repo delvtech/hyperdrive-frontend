@@ -8,7 +8,7 @@ import { LpTab } from "src/ui/markets/LpTab/LpTab";
 import { ShortsTab } from "src/ui/markets/ShortsTab/ShortsTab";
 
 const TABS = ["Longs", "Shorts", "LP"] as const;
-type LongsShortsLpTab = (typeof TABS)[number];
+type LongsShortsLpTab = typeof TABS[number];
 
 export function LongsShortsLpTabs({
   hyperdrive,
