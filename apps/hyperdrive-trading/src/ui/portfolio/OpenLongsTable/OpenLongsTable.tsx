@@ -335,7 +335,7 @@ export function OpenLongsTable({
                   <>
                     {row.getVisibleCells().map((cell) => {
                       return (
-                        <td className="text-[12px] sm:text-lg" key={cell.id}>
+                        <td className="text-body sm:text-lg" key={cell.id}>
                           {flexRender(
                             cell.column.columnDef.cell,
                             cell.getContext(),
