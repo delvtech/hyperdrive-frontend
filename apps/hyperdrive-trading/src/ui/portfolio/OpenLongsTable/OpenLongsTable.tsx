@@ -181,50 +181,6 @@ function getColumns({
   ];
 }
 
-function FixedRateCell({
-  row,
-  hyperdrive,
-}: {
-  row: Long;
-  hyperdrive: Hyperdrive;
-}) {
-  const { poolConfig } = usePoolConfig(hyperdrive.address);
-  const { baseAmountPaid, bondAmount } = row;
-  const fixedRate = calculateFixedRateFromOpenLong({
-    baseAmount: baseAmountPaid,
-    bondAmount,
-    positionDuration: poolConfig?.positionDuration || 0n,
-    decimals: hyperdrive.baseToken.decimals,
-  });
-
-  const yieldAfterFlatFee = calculateMatureLongYieldAfterFees({
-    flatFee: poolConfig?.fees.flat || 0n,
-    bondAmount,
-    baseAmountPaid,
-    decimals: hyperdrive.baseToken.decimals,
-  });
-
-  return (
-    <div className="flex items-center gap-1 lg:flex-col">
-      <span className="font-bold lg:ml-2">{formatRate(fixedRate)}%</span>
-      <div
-        data-tip={"Yield after fees if held to maturity"}
-        className={
-          "daisy-badge daisy-badge-md daisy-tooltip inline-flex text-[10px] text-success md:text-body"
-        }
-      >
-        <span>{"+"}</span>
-        {formatBalance({
-          balance: yieldAfterFlatFee,
-          decimals: hyperdrive.baseToken.decimals,
-          places: 4,
-        })}{" "}
-        {hyperdrive.baseToken.symbol}
-      </div>
-    </div>
-  );
-}
-
 export function OpenLongsTable({
   hyperdrive,
 }: OpenLongsTableProps): ReactElement {
@@ -376,7 +332,7 @@ function CurrentValueCell({
     formatBalance({
       balance: baseAmountOut,
       decimals: hyperdrive.baseToken.decimals,
-      places: 4,
+      places: 2,
     });
 
   const isPositiveChangeInValue =
@@ -390,7 +346,7 @@ function CurrentValueCell({
       <div
         data-tip={"Profit/Loss since open"}
         className={classNames(
-          "daisy-badge daisy-badge-md daisy-tooltip inline-flex text-[10px] sm:text-body",
+          "daisy-badge daisy-badge-md daisy-tooltip inline-flex text-xs sm:text-sm",
           { "text-success": isPositiveChangeInValue },
           { "text-error": !isPositiveChangeInValue },
         )}
@@ -403,6 +359,50 @@ function CurrentValueCell({
               places: 4,
             })} ${hyperdrive.baseToken.symbol}`
           : undefined}
+      </div>
+    </div>
+  );
+}
+
+function FixedRateCell({
+  row,
+  hyperdrive,
+}: {
+  row: Long;
+  hyperdrive: Hyperdrive;
+}) {
+  const { poolConfig } = usePoolConfig(hyperdrive.address);
+  const { baseAmountPaid, bondAmount } = row;
+  const fixedRate = calculateFixedRateFromOpenLong({
+    baseAmount: baseAmountPaid,
+    bondAmount,
+    positionDuration: poolConfig?.positionDuration || 0n,
+    decimals: hyperdrive.baseToken.decimals,
+  });
+
+  const yieldAfterFlatFee = calculateMatureLongYieldAfterFees({
+    flatFee: poolConfig?.fees.flat || 0n,
+    bondAmount,
+    baseAmountPaid,
+    decimals: hyperdrive.baseToken.decimals,
+  });
+
+  return (
+    <div className="flex items-center gap-1 lg:flex-col">
+      <span className="font-bold lg:ml-2">{formatRate(fixedRate)}%</span>
+      <div
+        data-tip={"Yield after fees if held to maturity"}
+        className={
+          "daisy-badge daisy-badge-md daisy-tooltip inline-flex px-2 text-xs text-success md:text-sm"
+        }
+      >
+        <span>{"+"}</span>
+        {formatBalance({
+          balance: yieldAfterFlatFee,
+          decimals: hyperdrive.baseToken.decimals,
+          places: 4,
+        })}{" "}
+        {hyperdrive.baseToken.symbol}
       </div>
     </div>
   );
