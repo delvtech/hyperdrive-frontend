@@ -56,6 +56,14 @@ function formatTransactionTableMobileData(row: TransactionData) {
         { digits: 2 },
       ),
     },
+    {
+      name: "Account",
+      value: formatAddress(row.trader),
+    },
+    {
+      name: "Block number",
+      value: row.blockNumber?.toString(),
+    },
   ];
 }
 
@@ -198,73 +206,154 @@ export function TransactionTable({
 
   return (
     <div className="max-h-96 overflow-y-scroll">
-      <table className="daisy-table-zebra daisy-table daisy-table-lg ">
+      <table className="daisy-table-zebra daisy-table daisy-table-lg">
         <thead>
           {tableInstance.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
-                <th className="sticky top-0 bg-base-100" key={header.id}>
-                  {header.isPlaceholder ? null : (
-                    <>
-                      <div
-                        className={classNames({
-                          "flex cursor-pointer select-none items-center gap-2":
-                            header.column.getCanSort(),
-                        })}
-                        onClick={header.column.getToggleSortingHandler()}
-                      >
-                        {flexRender(
-                          header.column.columnDef.header,
-                          header.getContext(),
-                        )}
-                        {{
-                          asc: <ChevronUpIcon height={15} />,
-                          desc: <ChevronDownIcon height={15} />,
-                        }[header.column.getIsSorted() as string] ?? null}
-                      </div>
-                      {header.column.getCanFilter() ? (
-                        <div className="daisy-tabs-lg">
-                          {["All", "Longs", "Shorts", "LP"].map((filter) => (
-                            <a
-                              key={filter}
-                              className={`${
-                                header.column.getFilterValue() !== filter
-                                  ? "daisy-tab text-lg font-normal"
-                                  : "daisy-tab-active daisy-tab text-lg"
-                              }`}
-                              onClick={() =>
-                                header.column.setFilterValue(filter)
-                              }
-                            >
-                              {filter}
-                            </a>
-                          ))}
-                        </div>
-                      ) : null}
-                    </>
-                  )}
+                <th
+                  className="sticky top-0 z-10 h-16 bg-base-100"
+                  key={header.id}
+                >
+                  <div
+                    className={classNames({
+                      "flex cursor-pointer select-none items-center gap-2":
+                        header.column.getCanSort(),
+                    })}
+                    onClick={header.column.getToggleSortingHandler()}
+                  >
+                    {flexRender(
+                      header.column.columnDef.header,
+                      header.getContext(),
+                    )}
+                    {{
+                      asc: <ChevronUpIcon height={15} />,
+                      desc: <ChevronDownIcon height={15} />,
+                    }[header.column.getIsSorted() as string] ?? null}
+                  </div>
+                  {header.column.getCanFilter() ? (
+                    <div className="flex flex-wrap">
+                      {["All", "Longs", "Shorts", "LP"].map((filter) => (
+                        <a
+                          key={filter}
+                          className={`${
+                            header.column.getFilterValue() !== filter
+                              ? "daisy-tab text-sm  font-normal md:text-lg"
+                              : "daisy-tab-active daisy-tab text-sm md:text-lg"
+                          }`}
+                          onClick={() => header.column.setFilterValue(filter)}
+                        >
+                          {filter}
+                        </a>
+                      ))}
+                    </div>
+                  ) : null}
                 </th>
               ))}
             </tr>
           ))}
         </thead>
-        <tbody>
-          {tableInstance.getRowModel().rows.map((row) => (
-            <tr
-              className="h-16 grid-cols-4 items-center text-sm md:text-h6"
-              key={row.id}
-            >
-              {row.getVisibleCells().map((cell) => {
-                return (
-                  <td key={cell.id}>
-                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                  </td>
-                );
-              })}
-            </tr>
-          ))}
+
+        <tbody className="mt-10">
+          {tableInstance.getRowModel().rows.map((row) => {
+            return (
+              <tr
+                key={row.id}
+                className="daisy-hover mt-10 h-24 cursor-pointer items-center transition duration-300 ease-in-out"
+                onClick={() => {
+                  const modalId = `${row.original.assetId}`;
+                  (window as any)[modalId].showModal();
+                }}
+              >
+                <>
+                  {row.getVisibleCells().map((cell) => {
+                    return (
+                      <td className="text-body sm:text-lg" key={cell.id}>
+                        {flexRender(
+                          cell.column.columnDef.cell,
+                          cell.getContext(),
+                        )}
+                      </td>
+                    );
+                  })}
+                </>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>
   );
+
+  // return (
+  //   <div className="max-h-96 overflow-y-scroll">
+  //     <table className="daisy-table-zebra daisy-table daisy-table-lg ">
+  //       <thead>
+  //         {tableInstance.getHeaderGroups().map((headerGroup) => (
+  //           <tr key={headerGroup.id}>
+  //             {headerGroup.headers.map((header) => (
+  //               <th className="sticky top-0 bg-base-100" key={header.id}>
+  //                 {header.isPlaceholder ? null : (
+  //                   <>
+  //                     <div
+  //                       className={classNames({
+  //                         "flex cursor-pointer select-none items-center gap-2":
+  //                           header.column.getCanSort(),
+  //                       })}
+  //                       onClick={header.column.getToggleSortingHandler()}
+  //                     >
+  //                       {flexRender(
+  //                         header.column.columnDef.header,
+  //                         header.getContext(),
+  //                       )}
+  //                       {{
+  //                         asc: <ChevronUpIcon height={15} />,
+  //                         desc: <ChevronDownIcon height={15} />,
+  //                       }[header.column.getIsSorted() as string] ?? null}
+  //                     </div>
+  //                     {header.column.getCanFilter() ? (
+  //                       <div className="daisy-tabs-lg">
+  //                         {["All", "Longs", "Shorts", "LP"].map((filter) => (
+  //                           <a
+  //                             key={filter}
+  //                             className={`${
+  //                               header.column.getFilterValue() !== filter
+  //                                 ? "daisy-tab text-lg font-normal"
+  //                                 : "daisy-tab-active daisy-tab text-lg"
+  //                             }`}
+  //                             onClick={() =>
+  //                               header.column.setFilterValue(filter)
+  //                             }
+  //                           >
+  //                             {filter}
+  //                           </a>
+  //                         ))}
+  //                       </div>
+  //                     ) : null}
+  //                   </>
+  //                 )}
+  //               </th>
+  //             ))}
+  //           </tr>
+  //         ))}
+  //       </thead>
+  //       <tbody>
+  //         {tableInstance.getRowModel().rows.map((row) => (
+  //           <tr
+  //             className="h-16 grid-cols-4 items-center text-sm md:text-h6"
+  //             key={row.id}
+  //           >
+  //             {row.getVisibleCells().map((cell) => {
+  //               return (
+  //                 <td key={cell.id}>
+  //                   {flexRender(cell.column.columnDef.cell, cell.getContext())}
+  //                 </td>
+  //               );
+  //             })}
+  //           </tr>
+  //         ))}
+  //       </tbody>
+  //     </table>
+  //   </div>
+  // );
 }
