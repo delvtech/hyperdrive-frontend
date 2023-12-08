@@ -27,7 +27,7 @@ export function OpenLongPreview({
     [fixedAPR?.apr || 1n, 18],
   );
   return (
-    <div className="flex flex-col gap-1 ">
+    <div className="flex flex-col gap-1 text-body md:text-lg">
       <div className="flex justify-between">
         <p className="">You receive</p>
         <p className="font-bold">
@@ -74,7 +74,7 @@ export function OpenLongPreview({
               </span>
               <div
                 className={
-                  "daisy-badge daisy-badge-md inline-flex text-success"
+                  "md:text-l daisy-badge daisy-badge-md ml-1 inline-flex text-body text-success"
                 }
               >
                 <span>{long.bondAmount > long.baseAmountPaid ? "+" : ""}</span>

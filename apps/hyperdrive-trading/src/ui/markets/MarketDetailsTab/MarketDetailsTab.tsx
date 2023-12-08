@@ -14,13 +14,11 @@ export function MarketDetailsTab({
 }): ReactElement {
   return (
     <div className="flex flex-col items-center gap-10">
-      <div className="flex flex-col  gap-10 lg:flex-row">
+      <div className="flex flex-col gap-10 lg:flex-row">
         <div className="flex flex-1 flex-col md:px-8">
           {/* positions and faq tabs */}
           <div className="flex flex-col">{positions}</div>
         </div>
-
-        {/* <div className="flex w-[1px] bg-base-200 shrink-0" /> */}
 
         {/* transaction form */}
         <div className="bg-base-200 p-2 lg:max-w-sm">
