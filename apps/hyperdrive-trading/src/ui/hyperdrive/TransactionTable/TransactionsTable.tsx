@@ -86,7 +86,25 @@ function FilterSelect({
   );
 }
 
-function formatTransactionTableMobileData(row: TransactionData) {
+function formatTransactionTableMobileData(
+  row: TransactionData,
+  hyperdrive?: Hyperdrive,
+) {
+  const size = dnum.format(
+    [
+      row.eventName === "OpenShort" || row.eventName === "CloseShort"
+        ? row.bondAmount || 0n
+        : row.baseAmount || 0n,
+      18,
+    ],
+    { digits: 2 },
+  );
+
+  const isLpRow =
+    row.eventName === "AddLiquidity" ||
+    row.eventName === "RemoveLiquidity" ||
+    row.eventName === "RedeemWithdrawalShares";
+
   return [
     {
       name: "Event",
@@ -94,14 +112,13 @@ function formatTransactionTableMobileData(row: TransactionData) {
     },
     {
       name: "Size",
-      value: dnum.format(
-        [
-          row.eventName === "OpenShort" || row.eventName === "CloseShort"
-            ? row.bondAmount || 0n
-            : row.baseAmount || 0n,
-          18,
-        ],
-        { digits: 2 },
+      value: (
+        <span>
+          {size}{" "}
+          {isLpRow
+            ? hyperdrive?.baseToken.symbol
+            : `hy${hyperdrive?.baseToken.symbol}`}
+        </span>
       ),
     },
     {
@@ -117,7 +134,7 @@ function formatTransactionTableMobileData(row: TransactionData) {
 
 const columnHelper = createColumnHelper<TransactionData>();
 
-const getMobileColumns = () => [
+const getMobileColumns = (hyperdrive: Hyperdrive) => [
   columnHelper.accessor("eventName", {
     id: "eventName",
     enableSorting: false,
@@ -151,7 +168,7 @@ const getMobileColumns = () => [
   columnHelper.display({
     id: "ColumnValues",
     cell: ({ row }) => {
-      const data = formatTransactionTableMobileData(row.original);
+      const data = formatTransactionTableMobileData(row.original, hyperdrive);
       return (
         <ul className="flex flex-col items-end gap-1">
           {data.map((column) => (
