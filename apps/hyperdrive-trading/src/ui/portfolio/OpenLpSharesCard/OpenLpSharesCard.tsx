@@ -4,6 +4,8 @@ import * as dnum from "dnum";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { Hyperdrive } from "src/appconfig/types";
+import { calculateRatio } from "src/base/calculateRatio";
+import { calculateTotalValueFromPrice } from "src/base/calculateTotalValueFromPrice";
 import { Modal } from "src/ui/base/components/Modal/Modal";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Well } from "src/ui/base/components/Well/Well";
@@ -105,9 +107,9 @@ export function OpenLpSharesCard({
                 <p className="font-bold">
                   {!!poolInfo && !!lpShares ? (
                     `${formatBalance({
-                      balance: calculateLpValue({
-                        lpShares,
-                        lpSharePrice: poolInfo.lpSharePrice,
+                      balance: calculateTotalValueFromPrice({
+                        amount: lpShares,
+                        price: poolInfo.lpSharePrice,
                         decimals: hyperdrive.baseToken.decimals,
                       }),
                       decimals: hyperdrive.baseToken.decimals,
@@ -196,37 +198,6 @@ export function OpenLpSharesCard({
       </div>
     </Well>
   );
-}
-
-function calculateLpValue({
-  lpShares,
-  lpSharePrice,
-  decimals,
-}: {
-  lpShares: bigint;
-  lpSharePrice: bigint;
-  decimals: number;
-}) {
-  return dnum.multiply(
-    [lpShares, decimals],
-    [lpSharePrice, decimals],
-    decimals,
-  )[0];
-}
-
-function calculateRatio({
-  a,
-  b,
-  decimals,
-}: {
-  a: bigint;
-  b: bigint;
-  decimals: number;
-}) {
-  return dnum.multiply(
-    dnum.divide([a, decimals], [b, decimals], decimals),
-    dnum.from("100", decimals),
-  )[0];
 }
 
 function DepositButton({
