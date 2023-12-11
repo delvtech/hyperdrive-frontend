@@ -36,7 +36,7 @@ export function YourBalanceWell({ token }: { token: Token }): ReactElement {
               {chainId === 31337 ? (
                 <button
                   disabled={!mint}
-                  className="daisy-btn-outline daisy-btn-xs daisy-btn ml-1"
+                  className="daisy-btn-outline daisy-btn daisy-btn-xs ml-1"
                   onClick={() => mint?.()}
                 >
                   Mint

@@ -2,11 +2,11 @@ import assertNever from "assert-never";
 import classNames from "classnames";
 import { Fragment, ReactElement, useState } from "react";
 import { Hyperdrive } from "src/appconfig/types";
-import { TransactionTable } from "src/ui/hyperdrive/TransactionTable/TransactionsTable";
 import { LongsFAQ } from "src/ui/hyperdrive/longs/LongsFAQ/LongsFAQ";
+import { TransactionTable } from "src/ui/hyperdrive/TransactionTable/TransactionsTable";
 
 const TABS = ["Transactions", "FAQ"] as const;
-export type Tab = (typeof TABS)[number];
+export type Tab = typeof TABS[number];
 
 export function TransactionAndFaqTabs({
   hyperdrive,
@@ -15,7 +15,7 @@ export function TransactionAndFaqTabs({
 }): ReactElement {
   const [activeTab, setActiveTab] = useState<Tab>("Transactions");
   return (
-    <div role="tablist" className="daisy-tabs-lifted daisy-tabs-lg daisy-tabs">
+    <div role="tablist" className="daisy-tabs daisy-tabs-lifted daisy-tabs-lg">
       {TABS.map((tab) => (
         <Fragment key={tab}>
           <input
