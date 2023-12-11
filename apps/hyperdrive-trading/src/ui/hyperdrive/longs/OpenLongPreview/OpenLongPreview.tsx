@@ -74,7 +74,7 @@ export function OpenLongPreview({
               </span>
               <div
                 className={
-                  "md:text-l daisy-badge daisy-badge-md ml-1 inline-flex text-body text-success"
+                  "daisy-badge daisy-badge-md ml-1 inline-flex text-body text-success md:text-lg"
                 }
               >
                 <span>{long.bondAmount > long.baseAmountPaid ? "+" : ""}</span>

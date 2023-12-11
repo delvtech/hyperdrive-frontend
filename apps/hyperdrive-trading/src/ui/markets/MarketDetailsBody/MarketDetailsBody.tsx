@@ -7,7 +7,6 @@ import { LongsShortsLpTabs } from "src/ui/markets/LongsShortsLpTabs/LongsShortsL
 import { MarketBreadcrumbs } from "src/ui/markets/MarketDetailsBody/MarketBreadcrumbs";
 import { MarketHeader } from "src/ui/markets/MarketDetailsBody/MarketHeader";
 import { MarketStats } from "src/ui/markets/MarketStats/MarketStats";
-import { TransactionAndFaqTabs } from "src/ui/markets/TransactionsAndFaqTabs/TransactionsAndFaqTabs";
 import { YourBalanceWell } from "src/ui/portfolio/YourBalanceWell/YourBalanceWell";
 
 interface PositionsTableProps {
@@ -35,7 +34,7 @@ export function MarketDetailsBody({
       )}
 
       <LongsShortsLpTabs hyperdrive={hyperdrive} />
-      <TransactionAndFaqTabs hyperdrive={hyperdrive} />
+      {/* <TransactionAndFaqTabs hyperdrive={hyperdrive} /> */}
     </div>
   );
 }

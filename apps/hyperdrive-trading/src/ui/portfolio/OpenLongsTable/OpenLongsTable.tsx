@@ -77,45 +77,7 @@ const formatOpenLongMobileColumnData = (row: Long, hyperdrive: Hyperdrive) => [
   },
 ];
 
-function getColumns({
-  hyperdrive,
-  isSmallScreenView,
-}: {
-  hyperdrive: Hyperdrive;
-  isSmallScreenView: boolean;
-}) {
-  if (isSmallScreenView) {
-    return [
-      columnHelper.display({
-        id: "ColumnNames",
-        cell: ({ row }) => {
-          const data = formatOpenLongMobileColumnData(row.original, hyperdrive);
-          return (
-            <ul className="flex flex-col items-start gap-1">
-              {data.map((column) => (
-                <li key={column.name}>{column.name}</li>
-              ))}
-            </ul>
-          );
-        },
-      }),
-      columnHelper.display({
-        id: "ColumnValues",
-        cell: ({ row }) => {
-          const data = formatOpenLongMobileColumnData(row.original, hyperdrive);
-          return (
-            <ul className="flex flex-col items-start gap-1">
-              {data.map((column) => (
-                <li className="flex flex-row" key={column.name}>
-                  {column.value}
-                </li>
-              ))}
-            </ul>
-          );
-        },
-      }),
-    ];
-  }
+function getColumns({ hyperdrive }: { hyperdrive: Hyperdrive }) {
   return [
     columnHelper.accessor("assetId", {
       id: "maturationDate",
@@ -180,7 +142,38 @@ function getColumns({
     }),
   ];
 }
-
+function getMobileColumns({ hyperdrive }: { hyperdrive: Hyperdrive }) {
+  return [
+    columnHelper.display({
+      id: "ColumnNames",
+      cell: ({ row }) => {
+        const data = formatOpenLongMobileColumnData(row.original, hyperdrive);
+        return (
+          <ul className="flex flex-col items-start gap-1">
+            {data.map((column) => (
+              <li key={column.name}>{column.name}</li>
+            ))}
+          </ul>
+        );
+      },
+    }),
+    columnHelper.display({
+      id: "ColumnValues",
+      cell: ({ row }) => {
+        const data = formatOpenLongMobileColumnData(row.original, hyperdrive);
+        return (
+          <ul className="flex flex-col items-start gap-1">
+            {data.map((column) => (
+              <li className="flex flex-row" key={column.name}>
+                {column.value}
+              </li>
+            ))}
+          </ul>
+        );
+      },
+    }),
+  ];
+}
 export function OpenLongsTable({
   hyperdrive,
 }: OpenLongsTableProps): ReactElement {
@@ -198,7 +191,9 @@ export function OpenLongsTable({
     enabled: queryEnabled,
   });
   const tableInstance = useReactTable({
-    columns: getColumns({ hyperdrive, isSmallScreenView }),
+    columns: isSmallScreenView
+      ? getMobileColumns({ hyperdrive })
+      : getColumns({ hyperdrive }),
     data: longs || [],
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
