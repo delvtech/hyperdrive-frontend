@@ -1,12 +1,14 @@
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import CustomBanner from "src/ui/base/components/CustomBanner";
+import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
 import { LongsShortsLpTabs } from "src/ui/markets/LongsShortsLpTabs/LongsShortsLpTabs";
 import { MarketBreadcrumbs } from "src/ui/markets/MarketDetailsBody/MarketBreadcrumbs";
 import { MarketHeader } from "src/ui/markets/MarketDetailsBody/MarketHeader";
 import { MarketStats } from "src/ui/markets/MarketStats/MarketStats";
+import { TransactionAndFaqTabs } from "src/ui/markets/TransactionsAndFaqTabs/TransactionsAndFaqTabs";
 import { YourBalanceWell } from "src/ui/portfolio/YourBalanceWell/YourBalanceWell";
 
 interface PositionsTableProps {
@@ -17,6 +19,7 @@ export function MarketDetailsBody({
 }: PositionsTableProps): ReactElement {
   const { longPrice } = useCurrentLongPrice(hyperdrive);
   const { marketState } = useMarketState(hyperdrive.address);
+  const isTailwindSmallScreen = useIsTailwindSmallScreen();
   return (
     <div className="flex flex-col gap-12">
       <div className="flex flex-wrap items-center justify-start sm:justify-between">
@@ -24,7 +27,9 @@ export function MarketDetailsBody({
           <MarketBreadcrumbs hyperdrive={hyperdrive} />
           <MarketHeader hyperdrive={hyperdrive} longPrice={longPrice} />
         </div>
-        <YourBalanceWell token={hyperdrive.baseToken} />
+        {isTailwindSmallScreen ? undefined : (
+          <YourBalanceWell token={hyperdrive.baseToken} />
+        )}
       </div>
 
       {/* Stats row */}
@@ -34,7 +39,7 @@ export function MarketDetailsBody({
       )}
 
       <LongsShortsLpTabs hyperdrive={hyperdrive} />
-      {/* <TransactionAndFaqTabs hyperdrive={hyperdrive} /> */}
+      <TransactionAndFaqTabs hyperdrive={hyperdrive} />
     </div>
   );
 }
