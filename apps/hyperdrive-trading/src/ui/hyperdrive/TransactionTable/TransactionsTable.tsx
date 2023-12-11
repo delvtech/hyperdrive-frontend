@@ -116,54 +116,54 @@ function formatTransactionTableMobileData(row: TransactionData) {
 }
 
 const columnHelper = createColumnHelper<TransactionData>();
-const getColumns = (hyperdrive: Hyperdrive, isSmallScreenView: boolean) => {
-  if (isSmallScreenView) {
-    return [
-      columnHelper.accessor("eventName", {
-        id: "eventName",
-        enableSorting: false,
-        enableColumnFilter: true,
-        header: () => null,
-        cell: ({ row }) => {
-          const data = formatTransactionTableMobileData(row.original);
-          return (
-            <ul className="flex flex-col items-start gap-1">
-              {data.map((column) => (
-                <li key={column.name}>{column.name}</li>
-              ))}
-            </ul>
-          );
-        },
-        filterFn: (row, _, filterValue) => {
-          const type = row.getValue("eventName") as string;
-          const filters = {
-            All: true,
-            Longs: ["OpenLong", "CloseLong"].includes(type),
-            Shorts: ["OpenShort", "CloseShort"].includes(type),
-            LP: [
-              "AddLiquidity",
-              "RemoveLiquidity",
-              "RedeemWithdrawalShares",
-            ].includes(type),
-          } as const;
-          return filters[filterValue as keyof typeof filters];
-        },
-      }),
-      columnHelper.display({
-        id: "ColumnValues",
-        cell: ({ row }) => {
-          const data = formatTransactionTableMobileData(row.original);
-          return (
-            <ul className="flex flex-col items-end gap-1">
-              {data.map((column) => (
-                <li key={column.name}>{column.value}</li>
-              ))}
-            </ul>
-          );
-        },
-      }),
-    ];
-  }
+
+const getMobileColumns = () => [
+  columnHelper.accessor("eventName", {
+    id: "eventName",
+    enableSorting: false,
+    enableColumnFilter: true,
+    header: () => null,
+    cell: ({ row }) => {
+      const data = formatTransactionTableMobileData(row.original);
+      return (
+        <ul className="flex flex-col items-start gap-1">
+          {data.map((column) => (
+            <li key={column.name}>{column.name}</li>
+          ))}
+        </ul>
+      );
+    },
+    filterFn: (row, _, filterValue) => {
+      const type = row.getValue("eventName") as string;
+      const filters = {
+        All: true,
+        Longs: ["OpenLong", "CloseLong"].includes(type),
+        Shorts: ["OpenShort", "CloseShort"].includes(type),
+        LP: [
+          "AddLiquidity",
+          "RemoveLiquidity",
+          "RedeemWithdrawalShares",
+        ].includes(type),
+      } as const;
+      return filters[filterValue as keyof typeof filters];
+    },
+  }),
+  columnHelper.display({
+    id: "ColumnValues",
+    cell: ({ row }) => {
+      const data = formatTransactionTableMobileData(row.original);
+      return (
+        <ul className="flex flex-col items-end gap-1">
+          {data.map((column) => (
+            <li key={column.name}>{column.value}</li>
+          ))}
+        </ul>
+      );
+    },
+  }),
+];
+
+const getColumns = (hyperdrive: Hyperdrive) => {
   return [
     columnHelper.accessor("eventName", {
       id: "eventName",
@@ -239,7 +239,9 @@ export function TransactionTable({
   const isSmallScreenView = useIsTailwindSmallScreen();
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const tableInstance = useReactTable({
-    columns: getColumns(hyperdrive, isSmallScreenView),
+    columns: isSmallScreenView
+      ? getMobileColumns(hyperdrive)
+      : getColumns(hyperdrive),
     data: transactionData || [],
     state: {
       columnFilters,
