@@ -39,7 +39,7 @@ export function TokenInput({
   autoFocus = false,
 }: TokenInputProps): ReactElement {
   return (
-    <div className="flex flex-1 flex-col">
+    <div className="flex flex-col">
       <label className="daisy-label flex justify-between">
         <span className="daisy-label-text">{inputLabel}</span>
         {stat ? <span className="daisy-label-text">{stat}</span> : null}
@@ -63,7 +63,7 @@ export function TokenInput({
           name={`${token.symbol} input`}
           disabled={disabled}
           className={classNames(
-            "daisy-input-bordered daisy-input daisy-join-item flex-1",
+            "daisy-input-bordered daisy-input daisy-join-item w-full",
             HIDE_NUMERIC_INPUT_ARROWS_CLASS,
             {
               "daisy-input-error text-error": hasError,

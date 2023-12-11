@@ -16,18 +16,22 @@ export function MaturesOnCell({
   );
 
   return (
-    <div className="flex flex-col gap-1">
-      <span className="ml-2">{termEndDate.toLocaleDateString()}</span>
+    <div className="flex flex-row gap-1 lg:flex-col">
+      <span className="lg:ml-2">{termEndDate.toLocaleDateString()}</span>
       {isTermComplete ? (
         <div
           className={
-            "daisy-badge daisy-badge-primary daisy-badge-md inline-flex"
+            "daisy-badge daisy-badge-primary daisy-badge-md inline-flex text-xs lg:text-body"
           }
         >
-          <span>Term complete</span>
+          Term complete
         </div>
       ) : (
-        <div className={"daisy-badge daisy-badge-md inline-flex"}>
+        <div
+          className={
+            "daisy-badge daisy-badge-md  inline-flex text-xs sm:text-lg"
+          }
+        >
           <span>{daysLeft} days left</span>
         </div>
       )}

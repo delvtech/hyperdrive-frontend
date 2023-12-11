@@ -7,7 +7,6 @@ import { LongsShortsLpTabs } from "src/ui/markets/LongsShortsLpTabs/LongsShortsL
 import { MarketBreadcrumbs } from "src/ui/markets/MarketDetailsBody/MarketBreadcrumbs";
 import { MarketHeader } from "src/ui/markets/MarketDetailsBody/MarketHeader";
 import { MarketStats } from "src/ui/markets/MarketStats/MarketStats";
-import { TransactionAndFaqTabs } from "src/ui/markets/TransactionsAndFaqTabs/TransactionsAndFaqTabs";
 import { YourBalanceWell } from "src/ui/portfolio/YourBalanceWell/YourBalanceWell";
 
 interface PositionsTableProps {
@@ -19,25 +18,23 @@ export function MarketDetailsBody({
   const { longPrice } = useCurrentLongPrice(hyperdrive);
   const { marketState } = useMarketState(hyperdrive.address);
   return (
-    <div className="flex w-[1280px] flex-col gap-12">
-      <div className="flex w-full flex-col gap-6">
-        <div className="flex flex-wrap items-start justify-center md:justify-between">
-          <div className="flex flex-col">
-            <MarketBreadcrumbs hyperdrive={hyperdrive} />
-            <MarketHeader hyperdrive={hyperdrive} longPrice={longPrice} />
-          </div>
-          <YourBalanceWell token={hyperdrive.baseToken} />
+    <div className="flex flex-col gap-12">
+      <div className="flex flex-wrap items-center justify-start sm:justify-between">
+        <div className="flex flex-col">
+          <MarketBreadcrumbs hyperdrive={hyperdrive} />
+          <MarketHeader hyperdrive={hyperdrive} longPrice={longPrice} />
         </div>
-
-        {/* Stats row */}
-        <MarketStats hyperdrive={hyperdrive} />
-        {marketState?.isPaused && (
-          <CustomBanner description="This market has been paused. You may close your positions, but no new positions may be opened." />
-        )}
+        <YourBalanceWell token={hyperdrive.baseToken} />
       </div>
 
+      {/* Stats row */}
+      <MarketStats hyperdrive={hyperdrive} />
+      {marketState?.isPaused && (
+        <CustomBanner description="This market has been paused. You may close your positions, but no new positions may be opened." />
+      )}
+
       <LongsShortsLpTabs hyperdrive={hyperdrive} />
-      <TransactionAndFaqTabs hyperdrive={hyperdrive} />
+      {/* <TransactionAndFaqTabs hyperdrive={hyperdrive} /> */}
     </div>
   );
 }

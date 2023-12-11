@@ -28,9 +28,9 @@ export function MarketHeader({
         </div>
       </div>
       <div className="flex w-full flex-col items-start gap-1">
-        <h3 className="items-center font-semibold md:my-0">
+        <span className="items-center text-h4 font-semibold md:my-0 md:text-h3">
           {hyperdrive.baseToken.symbol} / hy{hyperdrive.baseToken.symbol}
-        </h3>
+        </span>
         {longPrice ? (
           <PriceBadges hyperdrive={hyperdrive} longPrice={longPrice} />
         ) : null}

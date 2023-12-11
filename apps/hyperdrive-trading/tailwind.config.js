@@ -2,10 +2,10 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { gudTypeScale, rounder } = require("gud-type");
 const typeScale = gudTypeScale(
-  ["sm", "body", "lg", "h6", "h5", "h4", "h3", "h2", "h1"],
+  ["xs", "sm", "body", "lg", "h6", "h5", "h4", "h3", "h2", "h1"],
   {
     // make "body" the 0 index
-    startingIndex: -1,
+    startingIndex: -2,
     // set the base size (size at 0) to 13
     base: 13,
     // Set the scale multiplier/ratio to 2
@@ -32,6 +32,7 @@ module.exports = {
       },
     },
     fontSize: {
+      xs: typeScale.xs.fontSize,
       sm: typeScale.sm.fontSize,
       body: typeScale.body.fontSize,
       lg: typeScale.lg.fontSize,
