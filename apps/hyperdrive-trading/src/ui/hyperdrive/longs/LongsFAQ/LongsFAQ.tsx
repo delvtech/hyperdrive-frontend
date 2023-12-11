@@ -1,5 +1,7 @@
 import classNames from "classnames";
 import { ReactElement, useState } from "react";
+import { Disclosure } from "src/ui/base/components/Disclosure/Disclosure";
+import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 
 const faqEntries = [
   {
@@ -74,7 +76,20 @@ const faqEntries = [
 
 export function LongsFAQ(): ReactElement {
   const [selectedEntry, setSelectedEntry] = useState(0);
-
+  const isTailwindSmallScreen = useIsTailwindSmallScreen();
+  if (isTailwindSmallScreen) {
+    return (
+      <div className="flex flex-col gap-y-2">
+        {faqEntries.map((faq) => (
+          <Disclosure
+            key={faq.question}
+            title={<span className="text-h6">{faq.question}</span>}
+            description={<p className="">{faq.answer}</p>}
+          />
+        ))}
+      </div>
+    );
+  }
   return (
     <div className="flex flex-col">
       <div className="grid grid-cols-3 gap-8">
@@ -85,7 +100,7 @@ export function LongsFAQ(): ReactElement {
               key={i}
               onClick={() => setSelectedEntry(i)}
               className={classNames(
-                "daisy-btn-ghost daisy-btn-wide daisy-btn justify-start",
+                "daisy-btn-ghost daisy-btn daisy-btn-wide justify-start",
                 {
                   "opacity-40": selectedEntry !== i,
                 },
