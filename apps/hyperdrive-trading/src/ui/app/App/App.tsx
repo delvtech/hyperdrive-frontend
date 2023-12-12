@@ -1,13 +1,13 @@
 import { ReactElement } from "react";
 import {
-  Outlet,
-  RouterProvider,
   createBrowserRouter,
+  Outlet,
   redirect,
+  RouterProvider,
 } from "react-router-dom";
 import { Landing } from "src/pages/Landing";
-import { Markets } from "src/pages/Markets";
 import { Market } from "src/pages/market";
+import { Markets } from "src/pages/Markets";
 import Footer from "src/ui/app/Footer/Footer";
 import { Navbar } from "src/ui/app/Navbar/Navbar";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -68,7 +68,7 @@ export function App(): ReactElement | null {
   ]);
 
   return (
-    <div className="flex h-full flex-col overflow-auto bg-base-100">
+    <div className="flex h-full flex-col overflow-x-clip bg-base-100 md:overflow-auto">
       <RouterProvider router={router} />
     </div>
   );

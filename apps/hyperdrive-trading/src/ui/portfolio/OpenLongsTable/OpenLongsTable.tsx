@@ -351,7 +351,7 @@ function CurrentValueCell({
           ? `${formatBalance({
               balance: baseAmountOut - row.baseAmountPaid,
               decimals: hyperdrive.baseToken.decimals,
-              places: 4,
+              places: 2,
             })} ${hyperdrive.baseToken.symbol}`
           : undefined}
       </div>
@@ -395,7 +395,7 @@ function FixedRateCell({
         {formatBalance({
           balance: yieldAfterFlatFee,
           decimals: hyperdrive.baseToken.decimals,
-          places: 4,
+          places: 2,
         })}{" "}
         {hyperdrive.baseToken.symbol}
       </div>
