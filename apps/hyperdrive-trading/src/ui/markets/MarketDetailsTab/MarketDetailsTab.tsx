@@ -17,7 +17,7 @@ export function MarketDetailsTab({
       <div className="flex flex-col gap-10 lg:flex-row">
         <div className="flex flex-1 flex-col md:px-8">
           {/* positions and faq tabs */}
-          <div className="flex flex-col">{positions}</div>
+          <div className="flex flex-col md:w-[750px]">{positions}</div>
         </div>
 
         {/* transaction form */}
