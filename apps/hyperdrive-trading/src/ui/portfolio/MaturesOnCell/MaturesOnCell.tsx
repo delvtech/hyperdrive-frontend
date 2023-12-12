@@ -29,7 +29,7 @@ export function MaturesOnCell({
       ) : (
         <div
           className={
-            "daisy-badge daisy-badge-md  inline-flex text-xs sm:text-body"
+            "daisy-badge daisy-badge-md inline-flex text-xs sm:text-body"
           }
         >
           <span>{daysLeft} days left</span>
