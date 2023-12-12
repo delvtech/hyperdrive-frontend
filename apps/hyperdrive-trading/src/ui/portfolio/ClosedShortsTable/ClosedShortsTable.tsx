@@ -27,23 +27,17 @@ function formatClosedShortMobileColumnData(
   return [
     {
       name: "Matures on",
-      value: (
-        <span>
-          {new Date(Number(closedShort.maturity * 1000n)).toLocaleDateString()}
-        </span>
-      ),
+      value: new Date(
+        Number(closedShort.maturity * 1000n),
+      ).toLocaleDateString(),
     },
     {
       name: `Size (hy${hyperdrive.baseToken.symbol})`,
-      value: (
-        <span>
-          {formatBalance({
-            balance: closedShort.bondAmount,
-            decimals: hyperdrive.baseToken.decimals,
-            places: 2,
-          })}
-        </span>
-      ),
+      value: formatBalance({
+        balance: closedShort.bondAmount,
+        decimals: hyperdrive.baseToken.decimals,
+        places: 2,
+      }),
     },
     {
       name: `Amount received (${hyperdrive.baseToken.symbol})`,
@@ -55,13 +49,9 @@ function formatClosedShortMobileColumnData(
     },
     {
       name: "Closed",
-      value: (
-        <span>
-          {new Date(
-            Number(closedShort.closedTimestamp * 1000n),
-          ).toLocaleDateString()}
-        </span>
-      ),
+      value: new Date(
+        Number(closedShort.closedTimestamp * 1000n),
+      ).toLocaleDateString(),
     },
   ];
 }
