@@ -51,14 +51,14 @@ export function RemoveLiquidityForm({
     withdrawalSharesOut,
   } = usePreviewRemoveLiquidity({
     destination: account,
-    lpSharesIn: lpSharesIn[0],
+    lpSharesIn: lpSharesIn,
     market: hyperdrive,
     minBaseAmountOut: 1n,
   });
 
   const { removeLiquidity, removeLiquidityStatus } = useRemoveLiquidity({
     hyperdriveAddress: hyperdrive.address,
-    lpSharesIn: lpSharesIn[0],
+    lpSharesIn: lpSharesIn,
     minBaseAmountOut: 1n,
     destination: account,
     enabled: previewRemoveLiquidityStatus === "success",
@@ -168,9 +168,9 @@ export function RemoveLiquidityForm({
 function calculateRequiredLpSharesIn(
   desiredBaseOut: bigint | undefined,
   poolInfo: PoolInfo | undefined,
-) {
+): bigint {
   return dnum.div(
     [desiredBaseOut || 1n, 18],
     [poolInfo?.lpSharePrice || 1n, 18],
-  );
+  )[0];
 }
