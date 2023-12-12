@@ -25,7 +25,7 @@ function formatClosedLongMobileColumnData(
   closedLong: ClosedLong,
   hyperdrive: Hyperdrive,
 ) {
-  const data = [
+  return [
     {
       name: "Matures on",
       value: (
@@ -47,7 +47,7 @@ function formatClosedLongMobileColumnData(
       ),
     },
     {
-      name: "Amount received",
+      name: `Amount received (${hyperdrive.baseToken.symbol})`,
       value: (
         <BaseAmountReceivedCell
           hyperdrive={hyperdrive}
@@ -66,7 +66,6 @@ function formatClosedLongMobileColumnData(
       ),
     },
   ];
-  return data;
 }
 
 function getMobileColumns(hyperdrive: Hyperdrive) {
