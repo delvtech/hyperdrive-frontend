@@ -68,7 +68,7 @@ export function App(): ReactElement | null {
   ]);
 
   return (
-    <div className="flex h-full flex-col overflow-x-clip bg-base-100 md:overflow-auto">
+    <div className="flex h-full flex-col overflow-auto bg-base-100">
       <RouterProvider router={router} />
     </div>
   );

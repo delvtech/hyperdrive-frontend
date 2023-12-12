@@ -171,7 +171,7 @@ export function ClosedLongsTable({
 
   return (
     <div className="max-h-96 overflow-y-scroll md:w-[750px]">
-      <table className="daisy-table-zebra daisy-table daisy-table-lg overflow-x-clip">
+      <table className="daisy-table-zebra daisy-table daisy-table-lg">
         <thead>
           {tableInstance.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
