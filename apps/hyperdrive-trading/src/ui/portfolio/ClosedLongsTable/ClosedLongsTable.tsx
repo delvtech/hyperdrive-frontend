@@ -1,7 +1,6 @@
 import { ClosedLong } from "@hyperdrive/sdk";
 import { useQuery } from "@tanstack/react-query";
 import {
-  Row,
   createColumnHelper,
   flexRender,
   getCoreRowModel,
@@ -13,6 +12,7 @@ import { makeQueryKey } from "src/base/makeQueryKey";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { useAccount } from "wagmi";
 
@@ -21,6 +21,85 @@ interface ClosedLongsTableProps {
 }
 
 const columnHelper = createColumnHelper<ClosedLong>();
+function formatClosedLongMobileColumnData(
+  closedLong: ClosedLong,
+  hyperdrive: Hyperdrive,
+) {
+  return [
+    {
+      name: "Matures on",
+      value: (
+        <span>
+          {new Date(Number(closedLong.maturity * 1000n)).toLocaleDateString()}
+        </span>
+      ),
+    },
+    {
+      name: `Size (hy${hyperdrive.baseToken.symbol})`,
+      value: (
+        <span>
+          {formatBalance({
+            balance: closedLong.bondAmount,
+            decimals: hyperdrive.baseToken.decimals,
+            places: 2,
+          })}
+        </span>
+      ),
+    },
+    {
+      name: `Amount received (${hyperdrive.baseToken.symbol})`,
+      value: (
+        <BaseAmountReceivedCell
+          hyperdrive={hyperdrive}
+          closedLong={closedLong}
+        />
+      ),
+    },
+    {
+      name: "Closed on",
+      value: (
+        <span>
+          {new Date(
+            Number(closedLong.closedTimestamp * 1000n),
+          ).toLocaleDateString()}
+        </span>
+      ),
+    },
+  ];
+}
+
+function getMobileColumns(hyperdrive: Hyperdrive) {
+  return [
+    columnHelper.display({
+      id: "ColumnNames",
+      cell: ({ row }) => {
+        const data = formatClosedLongMobileColumnData(row.original, hyperdrive);
+        return (
+          <ul className="flex flex-col items-start gap-1">
+            {data.map((column) => (
+              <li key={column.name}>{column.name}</li>
+            ))}
+          </ul>
+        );
+      },
+    }),
+    columnHelper.display({
+      id: "ColumnValues",
+      cell: ({ row }) => {
+        const data = formatClosedLongMobileColumnData(row.original, hyperdrive);
+        return (
+          <ul className="flex flex-col items-start gap-1">
+            {data.map((column) => (
+              <li className="flex flex-row" key={column.name}>
+                {column.value}
+              </li>
+            ))}
+          </ul>
+        );
+      },
+    }),
+  ];
+}
 
 function getColumns(hyperdrive: Hyperdrive) {
   return [
@@ -50,7 +129,12 @@ function getColumns(hyperdrive: Hyperdrive) {
       id: "baseReceived",
       header: `Amount received (${hyperdrive.baseToken.symbol})`,
       cell: ({ row }) => {
-        return <BaseAmountReceivedCell hyperdrive={hyperdrive} row={row} />;
+        return (
+          <BaseAmountReceivedCell
+            hyperdrive={hyperdrive}
+            closedLong={row.original}
+          />
+        );
       },
     }),
     columnHelper.accessor("closedTimestamp", {
@@ -68,6 +152,7 @@ export function ClosedLongsTable({
 }: ClosedLongsTableProps): ReactElement {
   const { address: account } = useAccount();
   const readHyperdrive = useReadHyperdrive(hyperdrive.address);
+  const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const queryEnabled = !!readHyperdrive && !!account;
   const { data: closedLongs, isLoading } = useQuery({
     queryKey: makeQueryKey("closedLongPositions", { account }),
@@ -77,13 +162,15 @@ export function ClosedLongsTable({
     enabled: queryEnabled,
   });
   const tableInstance = useReactTable({
-    columns: getColumns(hyperdrive),
+    columns: isTailwindSmallScreen
+      ? getMobileColumns(hyperdrive)
+      : getColumns(hyperdrive),
     data: [...(closedLongs || [])].reverse(), // show most recently closed first, TODO: refactor to interactive column sorting
     getCoreRowModel: getCoreRowModel(),
   });
 
   return (
-    <div className="max-h-96 overflow-y-scroll">
+    <div className="max-h-96 overflow-y-scroll md:w-[750px]">
       <table className="daisy-table-zebra daisy-table daisy-table-lg">
         <thead>
           {tableInstance.getHeaderGroups().map((headerGroup) => (
@@ -107,11 +194,11 @@ export function ClosedLongsTable({
           ) : (
             tableInstance.getRowModel().rows.map((row) => {
               return (
-                <tr key={row.id} className="h-24 items-center italic">
+                <tr key={row.id} className="h-24 items-center">
                   <>
                     {row.getVisibleCells().map((cell) => {
                       return (
-                        <td key={cell.id}>
+                        <td className="text-body sm:text-lg" key={cell.id}>
                           {flexRender(
                             cell.column.columnDef.cell,
                             cell.getContext(),
@@ -132,14 +219,14 @@ export function ClosedLongsTable({
 }
 
 function BaseAmountReceivedCell({
-  row,
+  closedLong,
   hyperdrive,
 }: {
-  row: Row<ClosedLong>;
+  closedLong: ClosedLong;
   hyperdrive: Hyperdrive;
 }) {
   const currentValueLabel = formatBalance({
-    balance: row.original.baseAmount,
+    balance: closedLong.baseAmount,
     decimals: hyperdrive.baseToken.decimals,
     places: 4,
   });

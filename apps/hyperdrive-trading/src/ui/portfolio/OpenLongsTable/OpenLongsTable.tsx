@@ -228,7 +228,7 @@ export function OpenLongsTable({
   }
 
   return (
-    <div className="max-h-96 overflow-y-scroll">
+    <div className="max-h-96 overflow-x-clip overflow-y-scroll">
       {/* Modal needs to be rendered outside of the table so that dialog can be used. Otherwise react throws a dom nesting error */}
       {tableInstance.getRowModel().rows.map((row) => {
         const modalId = `${row.original.assetId}`;
@@ -351,7 +351,7 @@ function CurrentValueCell({
           ? `${formatBalance({
               balance: baseAmountOut - row.baseAmountPaid,
               decimals: hyperdrive.baseToken.decimals,
-              places: 4,
+              places: 2,
             })} ${hyperdrive.baseToken.symbol}`
           : undefined}
       </div>
@@ -395,7 +395,7 @@ function FixedRateCell({
         {formatBalance({
           balance: yieldAfterFlatFee,
           decimals: hyperdrive.baseToken.decimals,
-          places: 4,
+          places: 2,
         })}{" "}
         {hyperdrive.baseToken.symbol}
       </div>
