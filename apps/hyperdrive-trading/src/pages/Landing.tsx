@@ -86,7 +86,7 @@ function Hero() {
     <div className="daisy-hero">
       <div className="daisy-hero-content text-center">
         <div className="max-w-4xl">
-          <h2 className="gradientText mb-5 text-h3 font-bold md:text-h2">
+          <h2 className="gradient-text mb-5 text-h3 font-bold md:text-h2">
             DeFi yields that match your risk tolerance
           </h2>
           <h4 className="mb-5 text-h5 text-gray-400">

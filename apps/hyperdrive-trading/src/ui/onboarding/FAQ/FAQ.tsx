@@ -9,10 +9,10 @@ export function FAQ(): ReactElement {
 
   return (
     <div className="mt-8 flex max-w-6xl flex-col">
-      <span className="gradientText mb-8 text-center text-h3">
+      <span className="gradient-text mb-8 text-center text-h3">
         Frequently Asked Questions
       </span>
-      <div className="flex flex-row gap-6 rounded-box bg-base-200 p-12">
+      <div className="rounde flex flex-row gap-6 rounded-box bg-base-200 p-12">
         <div className="w-[30%]">
           {faqData.map((faq) => (
             <div

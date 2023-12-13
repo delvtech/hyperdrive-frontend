@@ -36,10 +36,11 @@ module.exports = {
     },
     fontSize: {
       // body texts
-      p1: ["18px", { lineHeight: "22px" }],
-      p2: ["16px", { lineHeight: "20px" }],
-      p3: ["14px", { lineHeight: "16px" }],
-      p4: ["12px", { lineHeight: "14px" }],
+      lg: ["18px", { lineHeight: "22px" }],
+      md: ["16px", { lineHeight: "20px" }],
+      sm: ["14px", { lineHeight: "16px" }],
+      xs: ["12px", { lineHeight: "14px" }],
+      "2xs": ["10px", { lineHeight: "12px" }],
       // Headings
       h1: ["64px", { lineHeight: "77px" }],
       h2: ["40px", { lineHeight: "48px" }],
