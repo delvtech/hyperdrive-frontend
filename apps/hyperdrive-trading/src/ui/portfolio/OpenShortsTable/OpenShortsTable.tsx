@@ -9,7 +9,6 @@ import { OpenShort } from "@hyperdrive/sdk";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { useQuery } from "@tanstack/react-query";
 import {
-  Row,
   createColumnHelper,
   flexRender,
   getCoreRowModel,
@@ -24,6 +23,7 @@ import { parseUnits } from "src/base/parseUnits";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { useAccruedYield } from "src/ui/hyperdrive/hooks/useAccruedYield";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { getProfitLossText } from "src/ui/hyperdrive/shorts/CloseShortForm/getProfitLossText";
@@ -31,6 +31,73 @@ import { CloseShortModalButton } from "src/ui/hyperdrive/shorts/CloseShortModalB
 import { usePreviewCloseShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewCloseShort";
 import { MaturesOnCell } from "src/ui/portfolio/MaturesOnCell/MaturesOnCell";
 import { useAccount } from "wagmi";
+
+const formatOpenShortMobileColumnData = (
+  openShort: OpenShort,
+  hyperdrive: Hyperdrive,
+) => [
+  {
+    name: "Matures on",
+    value: <MaturesOnCell maturity={openShort.maturity} />,
+  },
+  {
+    name: `Size (hy${hyperdrive.baseToken.symbol})`,
+    value: formatBalance({
+      balance: openShort.bondAmount,
+      decimals: hyperdrive.baseToken.decimals,
+      places: 6,
+    }),
+  },
+  {
+    name: `Amount paid`,
+    value: formatBalance({
+      balance: openShort.baseAmountPaid,
+      decimals: hyperdrive.baseToken.decimals,
+      places: 6,
+    }),
+  },
+  {
+    name: `Yield (${hyperdrive.baseToken.symbol})`,
+    value: <AccruedYieldCell hyperdrive={hyperdrive} openShort={openShort} />,
+  },
+  {
+    name: `Current value`,
+    value: <CurrentValueCell hyperdrive={hyperdrive} openShort={openShort} />,
+  },
+];
+
+function getMobileColumns(hyperdrive: Hyperdrive) {
+  return [
+    columnHelper.display({
+      id: "ColumnNames",
+      cell: ({ row }) => {
+        const data = formatOpenShortMobileColumnData(row.original, hyperdrive);
+        return (
+          <ul className="flex flex-col items-start gap-1">
+            {data.map((column) => (
+              <li key={column.name}>{column.name}</li>
+            ))}
+          </ul>
+        );
+      },
+    }),
+    columnHelper.display({
+      id: "ColumnValues",
+      cell: ({ row }) => {
+        const data = formatOpenShortMobileColumnData(row.original, hyperdrive);
+        return (
+          <ul className="flex flex-col items-start gap-1">
+            {data.map((column) => (
+              <li className="flex flex-row" key={column.name}>
+                {column.value}
+              </li>
+            ))}
+          </ul>
+        );
+      },
+    }),
+  ];
+}
 
 const columnHelper = createColumnHelper<OpenShort>();
 const getColumns = (hyperdrive: Hyperdrive) => [
@@ -66,25 +133,29 @@ const getColumns = (hyperdrive: Hyperdrive) => [
   columnHelper.display({
     header: `Yield earned (${hyperdrive.baseToken.symbol})`,
     cell: ({ row }) => {
-      return <AccruedYieldCell hyperdrive={hyperdrive} row={row} />;
+      return (
+        <AccruedYieldCell hyperdrive={hyperdrive} openShort={row.original} />
+      );
     },
   }),
   columnHelper.display({
     header: `Current value (${hyperdrive.baseToken.symbol})`,
     cell: ({ row }) => {
-      return <CurrentValueCell hyperdrive={hyperdrive} row={row} />;
+      return (
+        <CurrentValueCell hyperdrive={hyperdrive} openShort={row.original} />
+      );
     },
   }),
 ];
 
 function AccruedYieldCell({
-  row,
+  openShort,
   hyperdrive,
 }: {
-  row: Row<OpenShort>;
+  openShort: OpenShort;
   hyperdrive: Hyperdrive;
 }) {
-  const { bondAmount, checkpointId } = row.original;
+  const { bondAmount, checkpointId } = openShort;
   const { accruedYield } = useAccruedYield({
     hyperdrive,
     bondAmount,
@@ -105,17 +176,17 @@ function AccruedYieldCell({
 }
 
 function CurrentValueCell({
-  row,
+  openShort,
   hyperdrive,
 }: {
-  row: Row<OpenShort>;
+  openShort: OpenShort;
   hyperdrive: Hyperdrive;
 }) {
   const { address: account } = useAccount();
   const { baseAmountOut } = usePreviewCloseShort({
-    hyperdriveAddress: row.original.hyperdriveAddress,
-    maturityTime: row.original.maturity,
-    shortAmountIn: row.original.bondAmount,
+    hyperdriveAddress: openShort.hyperdriveAddress,
+    maturityTime: openShort.maturity,
+    shortAmountIn: openShort.bondAmount,
     minBaseAmountOut: parseUnits("0", hyperdrive.baseToken.decimals),
     destination: account,
   });
@@ -128,23 +199,23 @@ function CurrentValueCell({
     });
 
   const isPositiveChangeInValue =
-    baseAmountOut && baseAmountOut > row.original.baseAmountPaid;
+    baseAmountOut && baseAmountOut > openShort.baseAmountPaid;
 
   return (
-    <div className="flex flex-col gap-1">
+    <div className="flex flex-row gap-1 sm:flex-col">
       <span className="ml-1 font-bold">{currentValue?.toString()}</span>
-      {baseAmountOut && row.original.bondAmount !== 0n ? (
+      {baseAmountOut && openShort.bondAmount !== 0n ? (
         <div
           data-tip={"Profit/Loss since open"}
           className={classNames(
-            "daisy-badge daisy-badge-md daisy-tooltip inline-flex",
+            "daisy-badge daisy-badge-md daisy-tooltip inline-flex text-xs sm:text-body",
             { "text-success": isPositiveChangeInValue },
             { "text-error": !isPositiveChangeInValue },
           )}
         >
           {getProfitLossText({
             baseAmountOut,
-            amountInput: row.original.baseAmountPaid,
+            amountInput: openShort.baseAmountPaid,
             baseDecimals: hyperdrive.baseToken.decimals,
             baseSymbol: hyperdrive.baseToken.symbol,
             showPercentage: false,
@@ -167,6 +238,7 @@ export function OpenShortsTable({
 
   const readHyperdrive = useReadHyperdrive(hyperdrive.address);
   const queryEnabled = !!readHyperdrive && !!account;
+  const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const { data: shorts, isLoading } = useQuery({
     queryKey: makeQueryKey("shortPositions", { account }),
     queryFn: queryEnabled
@@ -175,7 +247,9 @@ export function OpenShortsTable({
     enabled: queryEnabled,
   });
   const tableInstance = useReactTable({
-    columns: getColumns(hyperdrive),
+    columns: isTailwindSmallScreen
+      ? getMobileColumns(hyperdrive)
+      : getColumns(hyperdrive),
     data: shorts || [],
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
@@ -266,7 +340,7 @@ export function OpenShortsTable({
                   <>
                     {row.getVisibleCells().map((cell) => {
                       return (
-                        <td key={cell.id}>
+                        <td className="text-body sm:text-lg" key={cell.id}>
                           {flexRender(
                             cell.column.columnDef.cell,
                             cell.getContext(),

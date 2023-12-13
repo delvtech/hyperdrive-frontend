@@ -1,8 +1,8 @@
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { OpenShortForm } from "src/ui/hyperdrive/shorts/OpenShortForm/OpenShortForm";
-import { MarketDetailsTab } from "src/ui/markets/MarketDetailsTab/MarketDetailsTab";
 import { useOpenOrClosedSearchParam } from "src/ui/markets/hooks/useOpenOrClosedSearchParam";
+import { MarketDetailsTab } from "src/ui/markets/MarketDetailsTab/MarketDetailsTab";
 import { ClosedShortsTable } from "src/ui/portfolio/ClosedShortsTable/ClosedShortsTable";
 import { OpenClosedFilter } from "src/ui/portfolio/OpenClosedFilter/OpenClosedFilter";
 import { OpenShortsTable } from "src/ui/portfolio/OpenShortsTable/OpenShortsTable";
@@ -18,7 +18,7 @@ export function ShortsTab({
     <MarketDetailsTab
       positions={
         <div className="flex flex-col">
-          <div className="flex items-center justify-between py-8">
+          <div className="flex items-center justify-between px-4 py-8 md:px-0">
             <h6>Short positions</h6>
             <OpenClosedFilter />
           </div>

@@ -12,6 +12,7 @@ import { makeQueryKey } from "src/base/makeQueryKey";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { useAccount } from "wagmi";
 
@@ -19,7 +20,83 @@ interface ClosedShortsTableProps {
   hyperdrive: Hyperdrive;
 }
 
+function formatClosedShortMobileColumnData(
+  closedShort: ClosedShort,
+  hyperdrive: Hyperdrive,
+) {
+  return [
+    {
+      name: "Matures on",
+      value: new Date(
+        Number(closedShort.maturity * 1000n),
+      ).toLocaleDateString(),
+    },
+    {
+      name: `Size (hy${hyperdrive.baseToken.symbol})`,
+      value: formatBalance({
+        balance: closedShort.bondAmount,
+        decimals: hyperdrive.baseToken.decimals,
+        places: 2,
+      }),
+    },
+    {
+      name: `Amount received (${hyperdrive.baseToken.symbol})`,
+      value: formatBalance({
+        balance: closedShort.baseAmountReceived,
+        decimals: hyperdrive.baseToken.decimals,
+        places: 4,
+      }),
+    },
+    {
+      name: "Closed",
+      value: new Date(
+        Number(closedShort.closedTimestamp * 1000n),
+      ).toLocaleDateString(),
+    },
+  ];
+}
+
 const columnHelper = createColumnHelper<ClosedShort>();
+
+function getMobileColumns(hyperdrive: Hyperdrive) {
+  return [
+    columnHelper.display({
+      id: "ColumnNames",
+      cell: ({ row }) => {
+        const data = formatClosedShortMobileColumnData(
+          row.original,
+          hyperdrive,
+        );
+        return (
+          <ul className="flex flex-col items-start gap-1">
+            {data.map((column) => (
+              <li key={column.name}>{column.name}</li>
+            ))}
+          </ul>
+        );
+      },
+    }),
+    columnHelper.display({
+      id: "ColumnValues",
+      cell: ({ row }) => {
+        const data = formatClosedShortMobileColumnData(
+          row.original,
+          hyperdrive,
+        );
+        return (
+          <ul className="flex flex-col items-start gap-1">
+            {data.map((column) => (
+              <li className="flex flex-row" key={column.name}>
+                {column.value}
+              </li>
+            ))}
+          </ul>
+        );
+      },
+    }),
+  ];
+}
+
 const getColumns = (hyperdrive: Hyperdrive) => [
   columnHelper.display({
     header: `Matures on`,
@@ -68,6 +145,7 @@ export function ClosedShortsTable({
 }: ClosedShortsTableProps): ReactElement {
   const { address: account } = useAccount();
   const readHyperdrive = useReadHyperdrive(hyperdrive.address);
+  const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const queryEnabled = !!readHyperdrive && !!account;
   const { data: closedShorts, isLoading } = useQuery({
     queryKey: makeQueryKey("closedShortPositions", { account }),
@@ -77,7 +155,9 @@ export function ClosedShortsTable({
     enabled: queryEnabled,
   });
   const tableInstance = useReactTable({
-    columns: getColumns(hyperdrive),
+    columns: isTailwindSmallScreen
+      ? getMobileColumns(hyperdrive)
+      : getColumns(hyperdrive),
     data: closedShorts || [],
     getCoreRowModel: getCoreRowModel(),
   });
@@ -110,7 +190,7 @@ export function ClosedShortsTable({
                   <>
                     {row.getVisibleCells().map((cell) => {
                       return (
-                        <td key={cell.id}>
+                        <td className="text-body sm:text-lg" key={cell.id}>
                           {flexRender(
                             cell.column.columnDef.cell,
                             cell.getContext(),
