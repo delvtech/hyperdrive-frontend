@@ -31,7 +31,6 @@ const formatClosedLpMobileColumnData = (
     ? closedLpShares.withdrawalShareAmount
     : closedLpShares.lpAmount;
 
-  const withdrawalShareAmount = closedLpShares.withdrawalShareAmount;
   return [
     {
       name: "Closed on",
@@ -60,7 +59,7 @@ const formatClosedLpMobileColumnData = (
       value: isWithdrawalShare
         ? "N/A"
         : formatBalance({
-            balance: withdrawalShareAmount,
+            balance: closedLpShares.withdrawalShareAmount,
             decimals: hyperdrive.baseToken.decimals,
             places: 4,
           }),
@@ -214,7 +213,7 @@ export function ClosedLpTable({
   });
 
   return (
-    <div className="max-h-96 overflow-y-scroll">
+    <div className="max-h-96 w-full overflow-y-scroll">
       <table className="daisy-table-zebra daisy-table daisy-table-lg">
         <thead>
           {tableInstance.getHeaderGroups().map((headerGroup) => (
