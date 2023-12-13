@@ -1,5 +1,6 @@
 import { ReactElement } from "react";
 import { Link } from "react-router-dom";
+import { HyperdriveLogo } from "src/ui/app/Navbar/HyperdriveLogo";
 import DiscordIcon from "src/ui/base/icons/discord";
 
 export default function Footer(): ReactElement {
@@ -10,12 +11,7 @@ export default function Footer(): ReactElement {
           to={"/"}
           className="inline-flex items-center gap-2 font-lato text-h6 font-extrabold uppercase tracking-widest"
         >
-          <div className="inline-flex w-full">
-            <div className="h-4 w-2.5 -skew-x-12 bg-[#007eed]"></div>
-            <div className="h-4 w-2.5 -skew-x-12 bg-[#522dae]"></div>
-            <div className="h-4 w-2.5 -skew-x-12 bg-[#f40000]"></div>
-          </div>
-          Hyperdrive
+          <HyperdriveLogo />
         </Link>
         <a
           href="https://discord.gg/bdn9fxcs"

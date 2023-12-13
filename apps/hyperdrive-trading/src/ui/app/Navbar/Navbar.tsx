@@ -2,6 +2,7 @@ import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { ReactElement } from "react";
 import { Link } from "react-router-dom";
 import { FeatureFlagPicker } from "src/ui/app/Navbar/FeatureFlagPicker";
+import { HyperdriveLogo } from "src/ui/app/Navbar/HyperdriveLogo";
 
 export function Navbar(): ReactElement {
   return (
@@ -11,12 +12,7 @@ export function Navbar(): ReactElement {
           to={"/"}
           className="inline-flex items-center gap-2 font-lato text-h6 font-extrabold uppercase tracking-widest"
         >
-          <div className="inline-flex w-full">
-            <div className="h-4 w-2.5 -skew-x-12 bg-[#007eed]"></div>
-            <div className="h-4 w-2.5 -skew-x-12 bg-[#522dae]"></div>
-            <div className="h-4 w-2.5 -skew-x-12 bg-[#f40000]"></div>
-          </div>
-          Hyperdrive
+          <HyperdriveLogo />
         </Link>
       </div>
       <div className="daisy-navbar-end gap-8">
