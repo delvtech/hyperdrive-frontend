@@ -10,6 +10,7 @@ import { Hyperdrive } from "src/appconfig/types";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { useClosedLpShares } from "src/ui/hyperdrive/lp/hooks/useClosedLpShares";
 import { useRedeemedWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useRedeemedWithdrawalShares";
 import { useAccount } from "wagmi";
@@ -21,7 +22,85 @@ interface ClosedLpTablePRops {
 type ClosedLpSharesAndWithdrawalShares = ClosedLpShares &
   RedeemedWithdrawalShares;
 
+const formatClosedLpMobileColumnData = (
+  closedLpShares: ClosedLpSharesAndWithdrawalShares,
+  hyperdrive: Hyperdrive,
+) => {
+  const isWithdrawalShare = closedLpShares.redeemedTimestamp;
+  const shares = isWithdrawalShare
+    ? closedLpShares.withdrawalShareAmount
+    : closedLpShares.lpAmount;
+
+  const withdrawalShareAmount = closedLpShares.withdrawalShareAmount;
+  return [
+    {
+      name: "Closed on",
+      value: new Date(
+        Number(closedLpShares.closedTimestamp * 1000n),
+      ).toLocaleDateString(),
+    },
+    {
+      name: "Shares closed",
+      value: formatBalance({
+        balance: shares,
+        decimals: hyperdrive.baseToken.decimals,
+        places: 4,
+      }),
+    },
+    {
+      name: `Received (${hyperdrive.baseToken.symbol})`,
+      value: formatBalance({
+        balance: closedLpShares.baseAmount,
+        decimals: hyperdrive.baseToken.decimals,
+        places: 4,
+      }),
+    },
+    {
+      name: "Withdrawal shares",
+      value: isWithdrawalShare
+        ? "N/A"
+        : formatBalance({
+            balance: withdrawalShareAmount,
+            decimals: hyperdrive.baseToken.decimals,
+            places: 4,
+          }),
+    },
+  ];
+};
+
 const columnHelper = createColumnHelper<ClosedLpSharesAndWithdrawalShares>();
+function getMobileColumns(hyperdrive: Hyperdrive) {
+  return [
+    columnHelper.display({
+      id: "ColumnNames",
+      cell: ({ row }) => {
+        const data = formatClosedLpMobileColumnData(row.original, hyperdrive);
+        return (
+          <ul className="flex flex-col items-start gap-1">
+            {data.map((column) => (
+              <li key={column.name}>{column.name}</li>
+            ))}
+          </ul>
+        );
+      },
+    }),
+    columnHelper.display({
+      id: "ColumnValues",
+      cell: ({ row }) => {
+        const data = formatClosedLpMobileColumnData(row.original, hyperdrive);
+        return (
+          <ul className="flex flex-col items-start gap-1">
+            {data.map((column) => (
+              <li className="flex flex-row" key={column.name}>
+                {column.value}
+              </li>
+            ))}
+          </ul>
+        );
+      },
+    }),
+  ];
+}
 function getColumns(hyperdrive: Hyperdrive) {
   return [
     columnHelper.display({
@@ -106,7 +185,7 @@ export function ClosedLpTable({
   hyperdrive,
 }: ClosedLpTablePRops): ReactElement {
   const { address: account } = useAccount();
-
+  const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const { closedLpShares, closedLpSharesStatus } = useClosedLpShares({
     hyperdriveAddress: hyperdrive.address,
     account,
@@ -128,7 +207,9 @@ export function ClosedLpTable({
   }, [closedLpShares, redeemedWithdrawalShares]);
   const tableInstance = useReactTable({
     data: memoizedData as ClosedLpSharesAndWithdrawalShares[],
-    columns: getColumns(hyperdrive),
+    columns: isTailwindSmallScreen
+      ? getMobileColumns(hyperdrive)
+      : getColumns(hyperdrive),
     getCoreRowModel: getCoreRowModel(),
   });
 
@@ -161,7 +242,7 @@ export function ClosedLpTable({
                   <>
                     {row.getVisibleCells().map((cell) => {
                       return (
-                        <td key={cell.id}>
+                        <td className="text-body sm:text-lg" key={cell.id}>
                           {flexRender(
                             cell.column.columnDef.cell,
                             cell.getContext(),
