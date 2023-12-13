@@ -39,7 +39,6 @@
     "d3-format": "^3.1.0",
     "daisyui": "^4.4.19",
     "dnum": "^2.9.0",
-    "gud-type": "^1.0.4",
     "lightweight-charts": "^4.0.1",
     "lodash.uniqby": "^4.7.0",
     "process": "^0.11.10",
