@@ -5,7 +5,6 @@ import { Well } from "src/ui/base/components/Well/Well";
 interface Props {
   title: string;
   subtitle: string;
-  description?: string;
   icon: ReactNode;
   checklist: string[];
   emphasized?: boolean;
@@ -14,21 +13,21 @@ interface Props {
 export function PositionCard({
   title,
   subtitle,
-  description,
   icon,
   checklist,
   emphasized,
 }: Props): ReactElement {
   return (
     <Well outlined={emphasized}>
-      <div className="flex h-full w-[300px] flex-col justify-between gap-2 p-3">
-        {icon}
-        <p className="text-h5 font-bold">{title}</p>
-        <p className="font-bold">{subtitle}</p>
-        <p className="daisy-label-text">{description}</p>
-        <div className="mt-4 ml-4 flex flex-col gap-2 ">
+      <div className="flex w-[330px] flex-col p-3">
+        <div className="mb-8 flex w-12 justify-center rounded-lg bg-gray-600 p-4">
+          {icon}
+        </div>
+        <p className="mb-6 text-h4 font-bold">{title}</p>
+        <p className="mb-8 text-p2 text-gray-400">{subtitle}</p>
+        <div className="flex flex-col gap-6">
           {checklist.map((item, idx) => (
-            <ChecklistItem key={idx} checked readOnly>
+            <ChecklistItem key={idx} checked readOnly variant="success">
               {item}
             </ChecklistItem>
           ))}
