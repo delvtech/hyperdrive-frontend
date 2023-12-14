@@ -6,7 +6,7 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import classNames from "classnames";
-import { ReactElement, useMemo } from "react";
+import { ReactElement } from "react";
 import { useNavigate } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
@@ -50,38 +50,37 @@ const formatMobileColumnData = (row: MarketTableRowData) => [
   },
 ];
 const columnHelper = createColumnHelper<MarketTableRowData>();
-
-function getColumns(isSmallScreenView: boolean) {
-  if (isSmallScreenView) {
-    return [
-      columnHelper.display({
-        id: "ColumnNames",
-        cell: ({ row }) => {
-          const data = formatMobileColumnData(row.original);
-          return (
-            <ul className="flex flex-col items-start gap-1">
-              {data.map((column) => (
-                <li key={column.name}>{column.name}</li>
-              ))}
-            </ul>
-          );
-        },
-      }),
-      columnHelper.display({
-        id: "ColumnValues",
-        cell: ({ row }) => {
-          const data = formatMobileColumnData(row.original);
-          return (
-            <ul className="flex flex-col items-start gap-1">
-              {data.map((column) => (
-                <li key={column.name}>{column.value}</li>
-              ))}
-            </ul>
-          );
-        },
-      }),
-    ];
-  }
+function getMobileColumns() {
+  return [
+    columnHelper.display({
+      id: "ColumnNames",
+      cell: ({ row }) => {
+        const data = formatMobileColumnData(row.original);
+        return (
+          <ul className="flex flex-col items-start gap-1">
+            {data.map((column) => (
+              <li key={column.name}>{column.name}</li>
+            ))}
+          </ul>
+        );
+      },
+    }),
+    columnHelper.display({
+      id: "ColumnValues",
+      cell: ({ row }) => {
+        const data = formatMobileColumnData(row.original);
+        return (
+          <ul className="flex flex-col items-start gap-1">
+            {data.map((column) => (
+              <li key={column.name}>{column.value}</li>
+            ))}
+          </ul>
+        );
+      },
+    }),
+  ];
+}
+function getColumns() {
   return [
     columnHelper.accessor("market.termLengthMS", {
       header: "Term",
@@ -173,28 +172,29 @@ function getColumns(isSmallScreenView: boolean) {
 }
 
 export function AllMarketsTable(): ReactElement {
-  const isSmallScreenView = useIsTailwindSmallScreen();
+  const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const navigate = useNavigate();
   const { data: marketsRowData } = useMarketRowData();
-  const memoizedColumns = useMemo(
-    () => getColumns(isSmallScreenView),
-    [isSmallScreenView],
-  );
+  const memoizedColumns = isTailwindSmallScreen
+    ? getMobileColumns()
+    : getColumns();
   const tableInstance = useReactTable({
     columns: memoizedColumns,
     data: marketsRowData || [],
     getCoreRowModel: getCoreRowModel(),
   });
   return (
-    <div className="flex w-full flex-col items-center overflow-y-scroll">
-      <h3 className="text-h6 w-full">Available Markets</h3>
-      <div className="daisy-card daisy-card-bordered flex w-full p-6">
-        <table className="daisy-table daisy-table-zebra daisy-table-lg">
+    <div className="flex w-full flex-col items-center overflow-y-scroll px-4 md:px-0">
+      <h3 className="mb-5 w-full pl-1 text-h5 text-gray-50">
+        Available Markets
+      </h3>
+      <div className="daisy-card-bordered daisy-card flex w-full p-6">
+        <table className="daisy-table-zebra daisy-table daisy-table-lg">
           <thead>
             {tableInstance.getHeaderGroups().map((headerGroup) => (
               <tr key={headerGroup.id}>
                 {headerGroup.headers.map((header) => (
-                  <th key={header.id}>
+                  <th className="text-gray-400" key={header.id}>
                     {header.isPlaceholder
                       ? null
                       : flexRender(
@@ -211,7 +211,7 @@ export function AllMarketsTable(): ReactElement {
               return (
                 <tr
                   key={row.id}
-                  className="daisy-hover h-16 cursor-pointer items-center hover:border-b-0"
+                  className="daisy-hover h-16 cursor-pointer items-center border-b-0 text-gray-50"
                   onClick={() => {
                     navigate(`/market/${row.original.market}`);
                   }}
@@ -226,6 +226,7 @@ export function AllMarketsTable(): ReactElement {
                               cell.column.id.includes("termLengthMS"),
                             "rounded-r-lg":
                               cell.column.id.includes("go-to-market"),
+                            "text-sm": isTailwindSmallScreen,
                           })}
                           key={cell.id}
                         >
@@ -270,9 +271,9 @@ function GoToMarketButton({ market }: { market: Hyperdrive }): ReactElement {
       onClick={() => {
         navigate(`/market/${market}`);
       }}
-      className="daisy-btn-circle daisy-btn-sm flex items-center justify-center rounded-full border hover:daisy-btn-primary"
+      className="daisy-btn-md daisy-btn-circle flex items-center justify-center rounded-full bg-gray-600 hover:bg-gray-700"
     >
-      <ArrowRightIcon className="h-4" />
+      <ArrowRightIcon className="h-5" />
     </button>
   );
 }

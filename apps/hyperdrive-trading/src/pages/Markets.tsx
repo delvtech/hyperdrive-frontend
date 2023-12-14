@@ -14,14 +14,14 @@ export function Markets(): ReactElement {
   }
 
   return (
-    <div className="flex min-h-screen w-full flex-col items-center bg-base-100 py-8 px-4 md:w-3/4">
+    <div className="flex min-h-screen w-full flex-col items-center bg-base-100 py-8 md:w-3/4 md:items-start">
       <div className="daisy-hero max-w-6xl justify-start text-center md:text-left">
         <div className="daisy-hero-content px-0">
-          <div className="max-w-2xl">
-            <span className="mb-5 text-h3 font-bold">
+          <div className="mx-6 max-w-xl md:mx-0">
+            <span className="gradient-text mb-6 text-h2 font-bold md:text-h1">
               Explore Hyperdrive Markets
             </span>
-            <p className="mb-5">
+            <p className="mb-5 mt-3 text-gray-400 md:mb-16">
               Dive into our extensive table of pools, each offering unique term
               lengths to align with your strategic trading goals. Select the
               perfect pool for your next investment move in the dynamic world of
