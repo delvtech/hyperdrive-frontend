@@ -1,11 +1,23 @@
 {
-    "extends": ["plugin:react/recommended","plugin:react/jsx-runtime","plugin:@docusaurus/recommended","@hyperdrive/eslint-config"],
+    "extends": [
+        "plugin:react/recommended",
+        "plugin:react/jsx-runtime",
+        "plugin:@docusaurus/recommended",
+        "@hyperdrive/eslint-config"
+    ],
     "parserOptions": {
         "sourceType": "module"
     },
     "rules": {
-        "import/no-unresolved": [ 2, {"ignore": ["^@theme", "^@docusaurus", "^@site"]}]
+        "import/no-unresolved": [
+            2,
+            {
+                "ignore": [
+                    "^@theme",
+                    "^@docusaurus",
+                    "^@site"
+                ]
+            }
+        ]
     }
-
-
 }
