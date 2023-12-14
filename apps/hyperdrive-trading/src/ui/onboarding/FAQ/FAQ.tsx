@@ -19,7 +19,7 @@ export function FAQ(): ReactElement {
               key={faq.key}
               onClick={() => setSelectedFAQKey(faq.key)}
               className={classNames(" cursor-pointer", {
-                "bg-base-200 px-2 py-4 opacity-40": selectedFAQKey !== faq.key,
+                "bg-base-200 px-2 py-4": selectedFAQKey !== faq.key,
                 "rounded-lg bg-gray-600 px-2 py-4": selectedFAQKey === faq.key,
               })}
             >
