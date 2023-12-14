@@ -28,7 +28,7 @@
   },
   "resolutions": {
     "typescript": "^5.0.2",
-    "viem": "^1.10.14"
+    "viem": "^1.19.15"
   },
   "lint-staged": {
     "{apps,packages}/**/*.{gql,graphql,js,jsx,ts,tsx,json}": [
