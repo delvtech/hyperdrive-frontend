@@ -5,6 +5,8 @@
   "compilerOptions": {
     "rootDir": ".",
     "baseUrl": ".",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "allowSyntheticDefaultImports": true,
 
     // important to import JSON files from @hyperdrive/artifacts

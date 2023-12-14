@@ -4204,14 +4204,6 @@
   dependencies:
     "@types/node" "*"
 
-"@types/prompts@^2.4.7":
-  version "2.4.7"
-  resolved "https://registry.yarnpkg.com/@types/prompts/-/prompts-2.4.7.tgz#d9f2e53b00639721eddc949289843cef4fb1679b"
-  integrity sha512-5zTamE+QQM4nR6Ab3yHK+ovWuhLJXaa2ZLt3mT1en8U3ubWtjVT1vXDaVFC2+cL89uVn7Y+gIq5B3IcVvBl5xQ==
-  dependencies:
-    "@types/node" "*"
-    kleur "^3.0.3"
-
 "@types/prop-types@*":
   version "15.7.5"
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.5.tgz#5f19d2b85a98e9558036f6a3cacc8819420f05cf"
@@ -4396,13 +4388,6 @@
   version "21.0.0"
   resolved "https://registry.yarnpkg.com/@types/yargs-parser/-/yargs-parser-21.0.0.tgz#0c60e537fa790f5f9472ed2776c2b71ec117351b"
   integrity sha512-iO9ZQHkZxHn4mSakYV0vFHAVDyEOIJQrV2uZ06HxEPcx+mt8swXoZHIbaaJ2crJYFfErySgktuTZ3BeLz+XmFA==
-
-"@types/yargs@^17.0.29":
-  version "17.0.29"
-  resolved "https://registry.yarnpkg.com/@types/yargs/-/yargs-17.0.29.tgz#06aabc72497b798c643c812a8b561537fea760cf"
-  integrity sha512-nacjqA3ee9zRF/++a3FUY1suHTFKZeHba2n8WeDw9cCVdmzmHpIxyzOJBcpHvvEmS8E9KqWlSnWHUkOrkhWcvA==
-  dependencies:
-    "@types/yargs-parser" "*"
 
 "@types/yargs@^17.0.8":
   version "17.0.24"
@@ -6440,6 +6425,23 @@ cli-truncate@^3.1.0:
   dependencies:
     slice-ansi "^5.0.0"
     string-width "^5.0.0"
+
+clide-js@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/clide-js/-/clide-js-0.0.4.tgz#27d314e9961d029726deffd2c0ed1519048b933c"
+  integrity sha512-OSSQMnSfSBq4ErJ5P61gJhHxHudyAVJ5NqXZ06+s3k0ig2MdXd/W+9Ey5Vv1DYFksL5L29xfewW/j/9uKlL6eg==
+  dependencies:
+    cliui "^8.0.1"
+    prompts "^2.4.2"
+    yargs-parser "^21.1.1"
+
+clide-plugin-command-menu@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/clide-plugin-command-menu/-/clide-plugin-command-menu-0.0.4.tgz#a15f63f4979f197be68bfc0db468dfcf21ea2988"
+  integrity sha512-imDJDHzw9/7vpaTWAUnKG7+U1yXCwL2+5tZMg0oOylBPGJkUfMJhE1LMAQyVP+7nJ+rwl8rIiMdJScQk65bKUw==
+  dependencies:
+    cfonts "^3.2.0"
+    colors "^1.4.0"
 
 client-only@^0.0.1:
   version "0.0.1"
@@ -15774,19 +15776,6 @@ yargs@^15.3.1:
     which-module "^2.0.0"
     y18n "^4.0.0"
     yargs-parser "^18.1.2"
-
-yargs@^17.7.2:
-  version "17.7.2"
-  resolved "https://registry.yarnpkg.com/yargs/-/yargs-17.7.2.tgz#991df39aca675a192b816e1e0363f9d75d2aa269"
-  integrity sha512-7dSzzRQ++CKnNI/krKnYRV7JKKPUXMEh61soaHKg9mrWEhzFWhFnxPxGl+69cD1Ou63C13NUPCnmIcrvqCuM6w==
-  dependencies:
-    cliui "^8.0.1"
-    escalade "^3.1.1"
-    get-caller-file "^2.0.5"
-    require-directory "^2.1.1"
-    string-width "^4.2.3"
-    y18n "^5.0.5"
-    yargs-parser "^21.1.1"
 
 yn@3.1.1:
   version "3.1.1"

@@ -2,14 +2,15 @@
   "name": "@hyperdrive/cli",
   "version": "0.0.0",
   "license": "MIT",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/hyper.js",
+  "types": "dist/hyper.d.ts",
   "files": [
     "dist"
   ],
-  "bin": "dist/index.js",
+  "type": "module",
+  "bin": "dist/hyper.js",
   "scripts": {
-    "dev": "ts-node -r dotenv/config -r tsconfig-paths/register --files src/hyperdrive",
+    "dev": "ts-node --esm -r dotenv/config -r tsconfig-paths/register src/hyper.ts",
     "typecheck": "tsc --noEmit",
     "docs": "typedoc",
     "watch:docs": "typedoc --watch"
@@ -17,19 +18,15 @@
   "dependencies": {
     "@hyperdrive/artifacts": "*",
     "@types/cli-table": "^0.3.3",
-    "@types/prompts": "^2.4.7",
     "@types/signale": "^1.4.6",
-    "@types/yargs": "^17.0.29",
     "ajv": "^8.12.0",
-    "cfonts": "^3.2.0",
     "cli-table": "^0.3.11",
-    "colors": "^1.4.0",
+    "clide-js": "^0.0.4",
+    "clide-plugin-command-menu": "^0.0.4",
     "hardhat": "^2.18.3",
-    "prompts": "^2.4.2",
     "signale": "^1.4.0",
     "typedoc-plugin-markdown": "^3.16.0",
-    "viem": "^1.19.15",
-    "yargs": "^17.7.2"
+    "viem": "^1.19.15"
   },
   "devDependencies": {
     "@hyperdrive/eslint-config": "*",

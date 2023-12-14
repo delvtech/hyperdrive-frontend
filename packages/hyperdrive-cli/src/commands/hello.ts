@@ -1,11 +1,8 @@
-import signale from "signale";
-import { createCommandModule } from "src/utils/createCommandModule";
+import { command } from "clide-js";
 
-export const { command, describe, handler } = createCommandModule({
-  command: "hello",
-  describe: "Say hello",
-
-  handler: () => {
-    signale.success(`Hello, universe! 🌌`);
+export default command({
+  description: "Say hello",
+  handler: ({ context }) => {
+    context.client.log(`Hello, universe! 🌌`);
   },
 });
