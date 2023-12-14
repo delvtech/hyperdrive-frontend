@@ -187,9 +187,9 @@ export function AllMarketsTable(): ReactElement {
   });
   return (
     <div className="flex w-full flex-col items-center overflow-y-scroll">
-      <h3 className="w-full font-lato text-h6">Available Markets</h3>
-      <div className="daisy-card-bordered daisy-card flex w-full p-6">
-        <table className="daisy-table-zebra daisy-table daisy-table-lg">
+      <h3 className="text-h6 w-full">Available Markets</h3>
+      <div className="daisy-card daisy-card-bordered flex w-full p-6">
+        <table className="daisy-table daisy-table-zebra daisy-table-lg">
           <thead>
             {tableInstance.getHeaderGroups().map((headerGroup) => (
               <tr key={headerGroup.id}>
@@ -270,7 +270,7 @@ function GoToMarketButton({ market }: { market: Hyperdrive }): ReactElement {
       onClick={() => {
         navigate(`/market/${market}`);
       }}
-      className="daisy-btn-sm daisy-btn-circle flex items-center justify-center rounded-full border hover:daisy-btn-primary"
+      className="daisy-btn-circle daisy-btn-sm flex items-center justify-center rounded-full border hover:daisy-btn-primary"
     >
       <ArrowRightIcon className="h-4" />
     </button>

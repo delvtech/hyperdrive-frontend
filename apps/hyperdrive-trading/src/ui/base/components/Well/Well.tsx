@@ -22,7 +22,7 @@ export function Well({
   const isInteractive = !disabled && (interactive || onClick);
   const className = classNames(
     "daisy-card p-4 bg-base-200 border ",
-    outlined ? "border-4 border-black" : "border-1",
+    outlined ? "border-1 border-gray-700" : "border-1 border-gray-700",
     {
       "shadow-md": elevation === "elevated",
       "w-full": block,

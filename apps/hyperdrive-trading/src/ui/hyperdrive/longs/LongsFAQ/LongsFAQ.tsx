@@ -83,7 +83,7 @@ export function LongsFAQ(): ReactElement {
         {faqEntries.map((faq) => (
           <Disclosure
             key={faq.question}
-            title={<span className="text-h6">{faq.question}</span>}
+            title={<span className="text-h5">{faq.question}</span>}
             description={<p className="">{faq.answer}</p>}
           />
         ))}
@@ -94,13 +94,13 @@ export function LongsFAQ(): ReactElement {
     <div className="flex flex-col">
       <div className="grid grid-cols-3 gap-8">
         {/* questions */}
-        <div className="col-span-1 text-left">
+        <div className="col-span-1 flex flex-col text-left">
           {faqEntries.map(({ question }, i) => (
             <button
               key={i}
               onClick={() => setSelectedEntry(i)}
               className={classNames(
-                "daisy-btn-ghost daisy-btn daisy-btn-wide justify-start",
+                "daisy-btn daisy-btn-ghost daisy-btn-wide justify-start",
                 {
                   "opacity-40": selectedEntry !== i,
                 },
@@ -113,7 +113,7 @@ export function LongsFAQ(): ReactElement {
 
         {/* answers */}
         <div className="col-span-2 flex flex-col">
-          <span className="mb-2 text-h6 font-bold">
+          <span className="mb-2 text-h5 font-bold">
             {faqEntries[selectedEntry].question}
           </span>
           <div className="px-2">{faqEntries[selectedEntry].answer}</div>

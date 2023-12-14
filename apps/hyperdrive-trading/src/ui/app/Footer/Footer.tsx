@@ -9,7 +9,7 @@ export default function Footer(): ReactElement {
       <aside>
         <Link
           to={"/"}
-          className="inline-flex items-center gap-2 font-lato text-h6 font-extrabold uppercase tracking-widest"
+          className="text-h6 inline-flex items-center gap-2 font-extrabold uppercase tracking-widest"
         >
           <HyperdriveLogo />
         </Link>

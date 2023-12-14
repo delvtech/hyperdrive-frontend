@@ -1,13 +1,16 @@
 /* Google fonts */
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* set up the page to be full height */
 html,
 body,
 #root,
 div[data-rk] {
-  font-family: "Open Sans";
+  font-family: "Albert Sans";
 
   /* reserve space for the scrollbar, preventing unwanted layout changes as the
    * content grows while also avoiding unnecessary visuals when scrolling isn't
@@ -15,32 +18,30 @@ div[data-rk] {
   scrollbar-gutter: stable;
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @layer base {
   h1 {
-    @apply text-h1 leading-h1;
+    @apply text-h1;
   }
 
   h2 {
-    @apply text-h2 leading-h2;
+    @apply text-h2;
   }
 
   h3 {
-    @apply text-h3 leading-h3;
+    @apply text-h3;
   }
 
   h4 {
-    @apply text-h4 leading-h4;
+    @apply text-h4;
   }
 
   h5 {
-    @apply text-h5 leading-h5;
+    @apply text-h5;
   }
+}
 
-  h6 {
-    @apply text-h6 leading-h6;
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-teal-900 to-primary bg-clip-text text-transparent;
   }
 }

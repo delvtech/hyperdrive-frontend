@@ -6,8 +6,8 @@ import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { AddLiquidityForm } from "src/ui/hyperdrive/lp/AddLiquidityForm/AddLiquidityForm";
 import { useLpShares } from "src/ui/hyperdrive/lp/hooks/useLpShares";
 import { useWithdrawalShares } from "src/ui/hyperdrive/lp/hooks/useWithdrawalShares";
-import { MarketDetailsTab } from "src/ui/markets/MarketDetailsTab/MarketDetailsTab";
 import { useOpenOrClosedSearchParam } from "src/ui/markets/hooks/useOpenOrClosedSearchParam";
+import { MarketDetailsTab } from "src/ui/markets/MarketDetailsTab/MarketDetailsTab";
 import { ClosedLpTable } from "src/ui/portfolio/ClosedLpTable/ClosedLpTable";
 import { OpenClosedFilter } from "src/ui/portfolio/OpenClosedFilter/OpenClosedFilter";
 import { OpenLpSharesCard } from "src/ui/portfolio/OpenLpSharesCard/OpenLpSharesCard";
@@ -37,8 +37,8 @@ export function LpTab({
   return (
     <MarketDetailsTab
       positions={
-        <div className="flex flex-col">
-          <div className="flex items-center justify-between py-8">
+        <div className="flex flex-col items-center">
+          <div className="flex w-full justify-between px-4 py-8 md:px-0">
             <h6>LP positions</h6>
             <OpenClosedFilter />
           </div>
@@ -73,12 +73,12 @@ export function LpTab({
                   );
                 }
                 return (
-                  <>
+                  <div className="flex flex-col gap-2 md:flex-row">
                     <OpenLpSharesCard hyperdrive={hyperdrive} />{" "}
                     {withdrawalShares ? (
                       <OpenWithdrawalSharesCard hyperdrive={hyperdrive} />
                     ) : undefined}
-                  </>
+                  </div>
                 );
               })()}
             </div>

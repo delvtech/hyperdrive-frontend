@@ -4,7 +4,7 @@ import { ReactElement, ReactNode } from "react";
 interface ChecklistItemProps {
   readOnly?: boolean;
   checked?: boolean;
-  variant?: "primary" | "secondary" | "accent";
+  variant?: "primary" | "secondary" | "accent" | "success";
   children: ReactNode;
 }
 
@@ -22,12 +22,13 @@ export function ChecklistItem({
         readOnly={readOnly}
         tabIndex={readOnly ? -1 : undefined}
         className={classNames("daisy-checkbox daisy-checkbox-xs", {
+          "daisy-checkbox-success": variant === "success",
           "daisy-checkbox-primary": variant === "primary",
           "daisy-checkbox-secondary": variant === "secondary",
           "daisy-checkbox-accent": variant === "accent",
         })}
       />
-      <span className="daisy-label-text">{children}</span>
+      <span className="text-p2">{children}</span>
     </div>
   );
 }
