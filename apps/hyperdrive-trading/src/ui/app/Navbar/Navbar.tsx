@@ -5,11 +5,11 @@ import { FeatureFlagPicker } from "src/ui/app/Navbar/FeatureFlagPicker";
 
 export function Navbar(): ReactElement {
   return (
-    <div className="daisy-navbar bg-base-100 ">
+    <div className="daisy-navbar">
       <div className="daisy-navbar-start ml-2">
         <Link
           to={"/"}
-          className="inline-flex items-center gap-2 font-lato text-h6 font-extrabold uppercase tracking-widest"
+          className="text-h6 inline-flex items-center gap-2 font-extrabold uppercase tracking-widest"
         >
           <div className="inline-flex w-full">
             <div className="h-4 w-2.5 -skew-x-12 bg-[#007eed]"></div>

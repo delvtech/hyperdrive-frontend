@@ -8,9 +8,11 @@ export function FAQ(): ReactElement {
   const selectedFAQ = faqData.find((faq) => faq.key === selectedFAQKey);
 
   return (
-    <div className="flex max-w-6xl flex-col">
-      <span className="mb-2 text-h5 font-bold">Frequently Asked Questions</span>
-      <div className="flex flex-row gap-6 rounded-md bg-base-200 p-12">
+    <div className="mt-8 flex max-w-6xl flex-col">
+      <span className="gradient-text mb-8 text-center text-h3">
+        Frequently Asked Questions
+      </span>
+      <div className="rounde flex flex-row gap-6 rounded-box bg-base-200 p-12">
         <div className="w-[30%]">
           {faqData.map((faq) => (
             <div
