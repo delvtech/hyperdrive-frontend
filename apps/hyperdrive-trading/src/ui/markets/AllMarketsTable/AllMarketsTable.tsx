@@ -272,7 +272,7 @@ function GoToMarketButton({ market }: { market: Hyperdrive }): ReactElement {
       onClick={() => {
         navigate(`/market/${market}`);
       }}
-      className="daisy-btn-md daisy-btn-circle flex items-center justify-center rounded-full bg-gray-600 hover:daisy-btn-primary"
+      className="daisy-btn-md daisy-btn-circle flex items-center justify-center rounded-full bg-gray-600 hover:bg-gray-700"
     >
       <ArrowRightIcon className="h-5" />
     </button>
