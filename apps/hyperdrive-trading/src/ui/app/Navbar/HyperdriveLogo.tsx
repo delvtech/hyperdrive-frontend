@@ -6,11 +6,7 @@ export function HyperdriveLogo(): JSX.Element {
       </g>
       <defs>
         <clipPath id="a">
-          <path
-            //   fill="#fff"
-            fill="#000000"
-            d="M0 0h80v35H0z"
-          />
+          <path fill="#fff" d="M0 0h80v35H0z" />
         </clipPath>
       </defs>
     </svg>
