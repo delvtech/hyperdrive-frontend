@@ -27,9 +27,7 @@ root.render(
       <RainbowKitProvider
         chains={wagmiChains}
         showRecentTransactions
-        theme={{
-          ...customRainbowTheme(),
-        }}
+        theme={customRainbowTheme()}
       >
         <SkeletonTheme
           baseColor="hsl(var(--b1))"
