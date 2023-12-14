@@ -6,7 +6,7 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import classNames from "classnames";
-import { ReactElement, useMemo } from "react";
+import { ReactElement } from "react";
 import { useNavigate } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
@@ -175,10 +175,9 @@ export function AllMarketsTable(): ReactElement {
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const navigate = useNavigate();
   const { data: marketsRowData } = useMarketRowData();
-  const memoizedColumns = useMemo(
-    () => (isTailwindSmallScreen ? getMobileColumns() : getColumns()),
-    [isTailwindSmallScreen],
-  );
+  const memoizedColumns = isTailwindSmallScreen
+    ? getMobileColumns()
+    : getColumns();
   const tableInstance = useReactTable({
     columns: memoizedColumns,
     data: marketsRowData || [],
