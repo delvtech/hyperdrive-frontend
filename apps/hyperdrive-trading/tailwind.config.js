@@ -61,6 +61,9 @@ module.exports = {
           accent: "#9BF3F0", // teal DEFAULT
           "accent-content": "#10191D", // Neutral-900
 
+          neutral: "#1A272D", // Neutral-800
+          "neutral-content": "#9CBBC9", // Neutral-800
+
           "base-100": "#10191D", // Neutral-900
           "base-200": "#1A272D", // Neutral-800
           "base-content": "#EFF4F6", // Neutral-50

@@ -13,7 +13,7 @@ export function PriceBadges({
 }): ReactElement {
   return (
     <div className="flex flex-col gap-2 md:flex-row md:gap-4">
-      <div className="daisy-badge daisy-badge-ghost daisy-badge-lg border border-base-300/5 text-body md:text-lg">
+      <div className="daisy-badge daisy-badge-neutral daisy-badge-lg py-4 text-md text-gray-400">
         1 hy{hyperdrive.baseToken.symbol} ≈{" "}
         {formatBalance({
           balance: longPrice.price,
@@ -22,7 +22,7 @@ export function PriceBadges({
         })}{" "}
         {hyperdrive.baseToken.symbol}
       </div>
-      <div className="daisy-badge daisy-badge-ghost daisy-badge-lg border border-base-300/5 text-body md:text-lg">
+      <div className="daisy-badge daisy-badge-neutral daisy-badge-lg py-4 text-md text-gray-400">
         1 {hyperdrive.baseToken.symbol} ≈{" "}
         {formatBalance({
           balance: divideBigInt(
