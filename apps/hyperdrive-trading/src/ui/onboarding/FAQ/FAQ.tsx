@@ -12,14 +12,15 @@ export function FAQ(): ReactElement {
       <span className="gradient-text mb-8 text-center text-h3">
         Frequently Asked Questions
       </span>
-      <div className="rounde flex flex-row gap-6 rounded-box bg-base-200 p-12">
-        <div className="w-[30%]">
+      <div className="flex flex-row gap-6 rounded-box bg-base-200 p-12">
+        <div className="flex w-[40%] flex-col justify-center">
           {faqData.map((faq) => (
             <div
               key={faq.key}
               onClick={() => setSelectedFAQKey(faq.key)}
-              className={classNames("my-5 cursor-pointer", {
-                "bg-base-200 opacity-40": selectedFAQKey !== faq.key,
+              className={classNames(" cursor-pointer", {
+                "bg-base-200 px-2 py-4 opacity-40": selectedFAQKey !== faq.key,
+                "rounded-lg bg-gray-600 px-2 py-4": selectedFAQKey === faq.key,
               })}
             >
               <div>{faq.question}</div>
@@ -29,7 +30,9 @@ export function FAQ(): ReactElement {
         <div className="flex min-h-[400px] w-[70%] flex-col items-start justify-center overflow-auto">
           {selectedFAQ && (
             <div className="mb-6">
-              <div className="mb-1 text-h4">{selectedFAQ.question}</div>
+              <div className="mb-2 text-h4 text-gray-400">
+                {selectedFAQ.question}
+              </div>
               <span>{selectedFAQ.answer}</span>
             </div>
           )}

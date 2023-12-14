@@ -88,7 +88,7 @@ export const faqData = [
   },
   {
     key: "faq4",
-    question: "Can I close my long/short/LP position before maturity?",
+    question: "Can I close position before maturity?",
     answer: (
       <div>
         <span>
