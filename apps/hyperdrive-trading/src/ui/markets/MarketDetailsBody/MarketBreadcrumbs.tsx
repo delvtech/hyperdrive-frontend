@@ -1,13 +1,8 @@
 import { ArrowLeftIcon } from "@heroicons/react/24/outline";
 import { ReactElement } from "react";
 import { Link } from "react-router-dom";
-import { Hyperdrive } from "src/appconfig/types";
 
-export function MarketBreadcrumbs({
-  hyperdrive,
-}: {
-  hyperdrive: Hyperdrive;
-}): ReactElement {
+export function MarketBreadcrumbs(): ReactElement {
   return (
     <div className="flex flex-1 justify-between">
       <div className="daisy-breadcrumbs md:text-md">

@@ -24,7 +24,7 @@ export function MarketDetailsBody({
     <div className="flex flex-col gap-12">
       <div className="flex flex-wrap items-center justify-start sm:justify-between">
         <div className="flex flex-col">
-          <MarketBreadcrumbs hyperdrive={hyperdrive} />
+          <MarketBreadcrumbs />
           <MarketHeader hyperdrive={hyperdrive} longPrice={longPrice} />
         </div>
         {isTailwindSmallScreen ? undefined : (
