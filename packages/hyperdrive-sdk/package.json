@@ -46,6 +46,6 @@
     "lodash.groupby": "^4.6.0",
     "lodash.mapvalues": "^4.6.0",
     "lru-cache": "^10.0.1",
-    "viem": "^1.5.3"
+    "viem": "^1.19.15"
   }
 }

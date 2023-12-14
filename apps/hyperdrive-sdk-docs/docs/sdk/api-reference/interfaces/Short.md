@@ -1,16 +1,18 @@
 ---
-id: "ClosedShort"
-title: "Interface: ClosedShort"
-sidebar_label: "ClosedShort"
+id: "Short"
+title: "Interface: Short"
+sidebar_label: "Short"
 sidebar_position: 0
 custom_edit_url: null
 ---
 
 ## Hierarchy
 
-- [`Short`](Short.md)
+- **`Short`**
 
-  ↳ **`ClosedShort`**
+  ↳ [`ClosedShort`](ClosedShort.md)
+
+  ↳ [`OpenShort`](OpenShort.md)
 
 ## Properties
 
@@ -18,33 +20,15 @@ custom_edit_url: null
 
 • **assetId**: `bigint`
 
-#### Inherited from
-
-[Short](Short.md).[assetId](Short.md#assetid)
-
 #### Defined in
 
 [hyperdrive-sdk/src/shorts/types.ts:5](https://github.com/delvtech/hyperdrive-monorepo/blob/05d4ad8/packages/hyperdrive-sdk/src/shorts/types.ts#L5)
 
 ___
 
-### baseAmountReceived
-
-• **baseAmountReceived**: `bigint`
-
-#### Defined in
-
-[hyperdrive-sdk/src/shorts/types.ts:15](https://github.com/delvtech/hyperdrive-monorepo/blob/05d4ad8/packages/hyperdrive-sdk/src/shorts/types.ts#L15)
-
-___
-
 ### bondAmount
 
 • **bondAmount**: `bigint`
-
-#### Inherited from
-
-[Short](Short.md).[bondAmount](Short.md#bondamount)
 
 #### Defined in
 
@@ -56,33 +40,15 @@ ___
 
 • **checkpointId**: `bigint`
 
-#### Inherited from
-
-[Short](Short.md).[checkpointId](Short.md#checkpointid)
-
 #### Defined in
 
 [hyperdrive-sdk/src/shorts/types.ts:7](https://github.com/delvtech/hyperdrive-monorepo/blob/05d4ad8/packages/hyperdrive-sdk/src/shorts/types.ts#L7)
 
 ___
 
-### closedTimestamp
-
-• **closedTimestamp**: `bigint`
-
-#### Defined in
-
-[hyperdrive-sdk/src/shorts/types.ts:16](https://github.com/delvtech/hyperdrive-monorepo/blob/05d4ad8/packages/hyperdrive-sdk/src/shorts/types.ts#L16)
-
-___
-
 ### hyperdriveAddress
 
 • **hyperdriveAddress**: \`0x${string}\`
-
-#### Inherited from
-
-[Short](Short.md).[hyperdriveAddress](Short.md#hyperdriveaddress)
 
 #### Defined in
 
@@ -95,10 +61,6 @@ ___
 • **maturity**: `bigint`
 
 Time in seconds when this short will mature
-
-#### Inherited from
-
-[Short](Short.md).[maturity](Short.md#maturity)
 
 #### Defined in
 

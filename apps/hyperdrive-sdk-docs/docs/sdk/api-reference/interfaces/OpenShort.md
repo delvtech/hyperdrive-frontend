@@ -8,7 +8,7 @@ custom_edit_url: null
 
 ## Hierarchy
 
-- `Short`
+- [`Short`](Short.md)
 
   ↳ **`OpenShort`**
 
@@ -20,11 +20,11 @@ custom_edit_url: null
 
 #### Inherited from
 
-Short.assetId
+[Short](Short.md).[assetId](Short.md#assetid)
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/shorts/types.ts:5](https://github.com/delvtech/hyperdrive-monorepo/blob/de09d2d/packages/hyperdrive-sdk/src/shorts/types.ts#L5)
+[hyperdrive-sdk/src/shorts/types.ts:5](https://github.com/delvtech/hyperdrive-monorepo/blob/05d4ad8/packages/hyperdrive-sdk/src/shorts/types.ts#L5)
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/shorts/types.ts:19](https://github.com/delvtech/hyperdrive-monorepo/blob/de09d2d/packages/hyperdrive-sdk/src/shorts/types.ts#L19)
+[hyperdrive-sdk/src/shorts/types.ts:20](https://github.com/delvtech/hyperdrive-monorepo/blob/05d4ad8/packages/hyperdrive-sdk/src/shorts/types.ts#L20)
 
 ___
 
@@ -44,11 +44,25 @@ ___
 
 #### Inherited from
 
-Short.bondAmount
+[Short](Short.md).[bondAmount](Short.md#bondamount)
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/shorts/types.ts:6](https://github.com/delvtech/hyperdrive-monorepo/blob/de09d2d/packages/hyperdrive-sdk/src/shorts/types.ts#L6)
+[hyperdrive-sdk/src/shorts/types.ts:6](https://github.com/delvtech/hyperdrive-monorepo/blob/05d4ad8/packages/hyperdrive-sdk/src/shorts/types.ts#L6)
+
+___
+
+### checkpointId
+
+• **checkpointId**: `bigint`
+
+#### Inherited from
+
+[Short](Short.md).[checkpointId](Short.md#checkpointid)
+
+#### Defined in
+
+[hyperdrive-sdk/src/shorts/types.ts:7](https://github.com/delvtech/hyperdrive-monorepo/blob/05d4ad8/packages/hyperdrive-sdk/src/shorts/types.ts#L7)
 
 ___
 
@@ -58,11 +72,11 @@ ___
 
 #### Inherited from
 
-Short.hyperdriveAddress
+[Short](Short.md).[hyperdriveAddress](Short.md#hyperdriveaddress)
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/shorts/types.ts:4](https://github.com/delvtech/hyperdrive-monorepo/blob/de09d2d/packages/hyperdrive-sdk/src/shorts/types.ts#L4)
+[hyperdrive-sdk/src/shorts/types.ts:4](https://github.com/delvtech/hyperdrive-monorepo/blob/05d4ad8/packages/hyperdrive-sdk/src/shorts/types.ts#L4)
 
 ___
 
@@ -74,11 +88,11 @@ Time in seconds when this short will mature
 
 #### Inherited from
 
-Short.maturity
+[Short](Short.md).[maturity](Short.md#maturity)
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/shorts/types.ts:10](https://github.com/delvtech/hyperdrive-monorepo/blob/de09d2d/packages/hyperdrive-sdk/src/shorts/types.ts#L10)
+[hyperdrive-sdk/src/shorts/types.ts:11](https://github.com/delvtech/hyperdrive-monorepo/blob/05d4ad8/packages/hyperdrive-sdk/src/shorts/types.ts#L11)
 
 ___
 
@@ -88,4 +102,4 @@ ___
 
 #### Defined in
 
-[packages/hyperdrive-sdk/src/shorts/types.ts:20](https://github.com/delvtech/hyperdrive-monorepo/blob/de09d2d/packages/hyperdrive-sdk/src/shorts/types.ts#L20)
+[hyperdrive-sdk/src/shorts/types.ts:21](https://github.com/delvtech/hyperdrive-monorepo/blob/05d4ad8/packages/hyperdrive-sdk/src/shorts/types.ts#L21)
