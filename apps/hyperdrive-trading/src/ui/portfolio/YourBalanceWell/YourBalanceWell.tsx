@@ -22,11 +22,11 @@ export function YourBalanceWell({ token }: { token: Token }): ReactElement {
 
   return (
     <Well elevation="flat">
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 p-4">
         <Stat
           label="Your available balance"
           value={
-            <div className="-mt-1 flex items-center gap-1 text-h6">
+            <div className="text-h6 -mt-1 flex items-center gap-1">
               {formatBalance({
                 balance: balance?.value || 0n,
                 decimals: token.decimals,
@@ -36,7 +36,7 @@ export function YourBalanceWell({ token }: { token: Token }): ReactElement {
               {chainId === 31337 ? (
                 <button
                   disabled={!mint}
-                  className="daisy-btn-outline daisy-btn daisy-btn-xs ml-1"
+                  className="daisy-btn daisy-btn-outline daisy-btn-xs ml-1"
                   onClick={() => mint?.()}
                 >
                   Mint
