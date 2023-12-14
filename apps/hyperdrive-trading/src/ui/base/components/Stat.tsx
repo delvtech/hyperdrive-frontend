@@ -11,7 +11,7 @@ interface StatProps {
 export function Stat({ label, value, description }: StatProps): ReactElement {
   return (
     <div className="group">
-      <div className="whitespace-nowrap text-h6">{value}</div>
+      <div className="mb-1 whitespace-nowrap text-h4 font-bold">{value}</div>
       <div
         data-tip={description}
         // Future note: use before: to style the text inside the tooltip
@@ -20,9 +20,9 @@ export function Stat({ label, value, description }: StatProps): ReactElement {
           description ? "cursor-help" : "",
         )}
       >
-        <p className="text-sm opacity-50">
+        <p className="text-sm text-gray-400">
           {label}
-          <InformationCircleIcon className="ml-1 inline-block w-4 text-gray-400 opacity-0 transition duration-150 ease-in-out group-hover:text-gray-500 group-hover:opacity-100" />
+          <InformationCircleIcon className="group-hover:text-gray-500 ml-1 inline-block w-4 text-gray-400 opacity-0 transition duration-150 ease-in-out group-hover:opacity-100" />
         </p>
       </div>
     </div>

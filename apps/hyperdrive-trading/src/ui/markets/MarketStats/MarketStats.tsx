@@ -1,8 +1,6 @@
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { Hyperdrive } from "src/appconfig/types";
-import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
-import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Stat } from "src/ui/base/components/Stat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { formatCompact } from "src/ui/base/formatting/formatCompact";
@@ -17,8 +15,6 @@ export function MarketStats({
 }: {
   hyperdrive: Hyperdrive;
 }): ReactElement {
-  const { appConfig } = useAppConfig();
-  const formattedTermLength = formatTermLength(hyperdrive.termLengthMS);
   const { data: currentBlockNumber } = useBlockNumber();
 
   const chainId = useChainId();
@@ -48,31 +44,22 @@ export function MarketStats({
   ].includes(chainId);
 
   return (
-    <div className="grid grid-cols-2 gap-2 border-y border-gray-600 py-2 sm:grid-cols-3 md:grid-cols-6">
+    <div className="grid grid-cols-2 gap-2 border-y border-gray-600 py-8 sm:grid-cols-3 md:grid-cols-6">
       <Stat
-        label="Yield source"
+        label="Yield source APY"
         value={
           <div className="flex flex-row">
-            {showVaultRate ? `${vaultRate?.formatted || 0}% APY` : ""}
-            <img
-              src={appConfig?.yieldSources[hyperdrive.yieldSource].iconUrl}
-              className="ml-1 h-6 rounded-full border p-1"
-            />
+            {showVaultRate ? `${vaultRate?.formatted || 0}%` : ""}
           </div>
         }
         description={`The yield source backing the hy${hyperdrive.baseToken.symbol} in this pool`}
       />
       <Stat
-        label="Term"
-        value={formattedTermLength}
-        description={`Duration the hy${hyperdrive.baseToken.symbol} remains locked`}
-      />
-      <Stat
-        label="Fixed rate"
+        label="Fixed APR"
         value={
           fixedAPR ? (
             <span className="flex items-center gap-1.5">
-              {fixedAPR?.formatted || "0"}% APR
+              {fixedAPR?.formatted || "0"}%
             </span>
           ) : (
             <Skeleton className="opacity-50" />
@@ -85,7 +72,7 @@ export function MarketStats({
         value={
           lpApy || lpApy === 0 ? (
             <span className="flex items-center gap-1.5">
-              {lpApy.toFixed(2)}% APY
+              {lpApy.toFixed(2)}%
             </span>
           ) : (
             <Skeleton className="opacity-50" />
@@ -118,7 +105,7 @@ export function MarketStats({
         }
       />
       <Stat
-        label="Liquidity"
+        label="Available Liquidity"
         description="The amount of capital that has been deployed by LPs to the pool"
         value={
           <AmountLabel
@@ -138,11 +125,6 @@ export function MarketStats({
       />
     </div>
   );
-}
-
-function formatTermLength(termLengthMS: number) {
-  const numDays = convertMillisecondsToDays(termLengthMS);
-  return `${numDays} days`;
 }
 
 function AmountLabel({
