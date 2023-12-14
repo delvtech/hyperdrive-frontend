@@ -185,15 +185,17 @@ export function AllMarketsTable(): ReactElement {
     getCoreRowModel: getCoreRowModel(),
   });
   return (
-    <div className="flex w-full flex-col items-center overflow-y-scroll">
-      <h3 className="text-h6 w-full">Available Markets</h3>
+    <div className="flex w-full flex-col items-center overflow-y-scroll px-4 md:px-0">
+      <h3 className="mb-5 w-full pl-1 text-h5 text-gray-50">
+        Available Markets
+      </h3>
       <div className="daisy-card-bordered daisy-card flex w-full p-6">
         <table className="daisy-table-zebra daisy-table daisy-table-lg">
           <thead>
             {tableInstance.getHeaderGroups().map((headerGroup) => (
               <tr key={headerGroup.id}>
                 {headerGroup.headers.map((header) => (
-                  <th key={header.id}>
+                  <th className="text-gray-400" key={header.id}>
                     {header.isPlaceholder
                       ? null
                       : flexRender(
@@ -210,7 +212,7 @@ export function AllMarketsTable(): ReactElement {
               return (
                 <tr
                   key={row.id}
-                  className="daisy-hover h-16 cursor-pointer items-center border-b-0"
+                  className="daisy-hover h-16 cursor-pointer items-center border-b-0 text-gray-50"
                   onClick={() => {
                     navigate(`/market/${row.original.market}`);
                   }}
