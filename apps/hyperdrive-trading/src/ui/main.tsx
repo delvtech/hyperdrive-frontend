@@ -1,4 +1,4 @@
-import { darkTheme, RainbowKitProvider } from "@rainbow-me/rainbowkit";
+import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import "@rainbow-me/rainbowkit/styles.css";
 
 import { QueryClientProvider } from "@tanstack/react-query";
@@ -28,7 +28,6 @@ root.render(
         chains={wagmiChains}
         showRecentTransactions
         theme={{
-          ...darkTheme(),
           ...customRainbowTheme(),
         }}
       >

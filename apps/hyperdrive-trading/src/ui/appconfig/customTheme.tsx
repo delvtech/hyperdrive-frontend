@@ -1,60 +1,24 @@
 // eslint-disable-next-line import/named
-import { Theme } from "@rainbow-me/rainbowkit";
+import { darkTheme, Theme } from "@rainbow-me/rainbowkit";
 
 export function customRainbowTheme(): Theme {
+  const darkThemePresets = darkTheme();
+
   return {
-    blurs: {
-      modalOverlay: "...",
-    },
+    ...darkThemePresets,
     colors: {
-      accentColor: "...",
-      accentColorForeground: "...",
-      actionButtonBorder: "...",
-      actionButtonBorderMobile: "...",
-      actionButtonSecondaryBackground: "...",
-      closeButton: "...",
-      closeButtonBackground: "...",
-      connectButtonBackground: "...",
-      connectButtonBackgroundError: "...",
-      connectButtonInnerBackground: "...",
-      connectButtonText: "...",
-      connectButtonTextError: "...",
-      connectionIndicator: "...",
-      downloadBottomCardBackground: "...",
-      downloadTopCardBackground: "...",
-      error: "...",
-      generalBorder: "...",
-      generalBorderDim: "...",
-      menuItemBackground: "...",
-      modalBackdrop: "...",
+      ...darkThemePresets.colors,
       modalBackground: "#243942",
       modalBorder: "#202F36",
       modalText: "#EFF4F6",
-      modalTextDim: "...",
-      modalTextSecondary: "...",
-      profileAction: "...",
-      profileActionHover: "...",
-      profileForeground: "...",
-      selectedOptionBorder: "...",
-      standby: "...",
-    },
-    fonts: {
-      body: "...",
+      accentColor: "#9BF3F0",
     },
     radii: {
-      actionButton: "...",
-      connectButton: "...",
-      menuButton: "...",
+      ...darkThemePresets.radii,
       modal: "32px",
-      modalMobile: "...",
     },
     shadows: {
-      connectButton: "...",
-      dialog: "...",
-      profileDetailsAction: "...",
-      selectedOption: "...",
-      selectedWallet: "...",
-      walletLogo: "...",
+      ...darkThemePresets.shadows,
     },
   };
 }
