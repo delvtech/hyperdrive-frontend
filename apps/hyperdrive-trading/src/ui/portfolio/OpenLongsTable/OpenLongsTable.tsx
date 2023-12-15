@@ -5,9 +5,9 @@ import {
   WalletIcon,
 } from "@heroicons/react/24/outline";
 import {
+  Long,
   calculateFixedRateFromOpenLong,
   calculateMatureLongYieldAfterFees,
-  Long,
 } from "@hyperdrive/sdk";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { useQuery } from "@tanstack/react-query";
@@ -42,40 +42,42 @@ interface OpenLongsTableProps {
 
 const columnHelper = createColumnHelper<Long>();
 
-const formatOpenLongMobileColumnData = (row: Long, hyperdrive: Hyperdrive) => [
-  {
-    name: "Matures on",
-    value: <MaturesOnCell maturity={row.maturity} />,
-  },
-  {
-    name: `Size (hy${hyperdrive.baseToken.symbol})`,
-    value: (
-      <span>
-        {formatBalance({
-          balance: row.bondAmount,
-          decimals: hyperdrive.baseToken.decimals,
-          places: 2,
-        })}
-      </span>
-    ),
-  },
-  {
-    name: `Paid (${hyperdrive.baseToken.symbol})`,
-    value: formatBalance({
-      balance: row.baseAmountPaid,
-      decimals: hyperdrive.baseToken.decimals,
-      places: 2,
-    }),
-  },
-  {
-    name: "Fixed rate (APR)",
-    value: <FixedRateCell hyperdrive={hyperdrive} row={row} />,
-  },
-  {
-    name: `Current value`,
-    value: <CurrentValueCell hyperdrive={hyperdrive} row={row} />,
-  },
-];
+function formatOpenLongMobileColumnData(row: Long, hyperdrive: Hyperdrive) {
+  return [
+    {
+      name: "Matures on",
+      value: <MaturesOnCell maturity={row.maturity} />,
+    },
+    {
+      name: `Size (hy${hyperdrive.baseToken.symbol})`,
+      value: (
+        <span>
+          {formatBalance({
+            balance: row.bondAmount,
+            decimals: hyperdrive.baseToken.decimals,
+            places: 2,
+          })}
+        </span>
+      ),
+    },
+    {
+      name: `Paid (${hyperdrive.baseToken.symbol})`,
+      value: formatBalance({
+        balance: row.baseAmountPaid,
+        decimals: hyperdrive.baseToken.decimals,
+        places: 2,
+      }),
+    },
+    {
+      name: "Fixed rate (APR)",
+      value: <FixedRateCell hyperdrive={hyperdrive} row={row} />,
+    },
+    {
+      name: `Current value`,
+      value: <CurrentValueCell hyperdrive={hyperdrive} row={row} />,
+    },
+  ];
+}
 
 function getColumns({ hyperdrive }: { hyperdrive: Hyperdrive }) {
   return [
@@ -142,6 +144,7 @@ function getColumns({ hyperdrive }: { hyperdrive: Hyperdrive }) {
     }),
   ];
 }
+
 function getMobileColumns({ hyperdrive }: { hyperdrive: Hyperdrive }) {
   return [
     columnHelper.display({
@@ -207,7 +210,7 @@ export function OpenLongsTable({
         icon={<WalletIcon height="64" />}
         action={
           <button
-            className="daisy-btn-secondary daisy-btn mt-8"
+            className="daisy-btn daisy-btn-secondary mt-8"
             onClick={() => openConnectModal?.()}
           >
             Connect wallet
@@ -241,7 +244,7 @@ export function OpenLongsTable({
           />
         );
       })}
-      <table className="daisy-table-zebra daisy-table daisy-table-lg">
+      <table className="daisy-table daisy-table-zebra daisy-table-lg">
         <thead>
           {tableInstance.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
