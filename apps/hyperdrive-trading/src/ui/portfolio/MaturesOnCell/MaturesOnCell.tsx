@@ -21,17 +21,13 @@ export function MaturesOnCell({
       {isTermComplete ? (
         <div
           className={
-            "daisy-badge daisy-badge-primary daisy-badge-md inline-flex text-xs lg:text-body"
+            "daisy-badge daisy-badge-primary daisy-badge-md inline-flex text-xs"
           }
         >
           Term complete
         </div>
       ) : (
-        <div
-          className={
-            "daisy-badge daisy-badge-md inline-flex text-xs sm:text-body"
-          }
-        >
+        <div className={"daisy-badge daisy-badge-md inline-flex text-xs"}>
           <span>{daysLeft} days left</span>
         </div>
       )}

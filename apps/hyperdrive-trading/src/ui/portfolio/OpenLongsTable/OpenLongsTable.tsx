@@ -341,7 +341,7 @@ function CurrentValueCell({
       <div
         data-tip={"Profit/Loss since open"}
         className={classNames(
-          "daisy-badge daisy-badge-md daisy-tooltip inline-flex text-xs sm:text-sm",
+          "daisy-badge daisy-badge-md daisy-tooltip inline-flex text-xs",
           { "text-success": isPositiveChangeInValue },
           { "text-error": !isPositiveChangeInValue },
         )}
@@ -388,7 +388,7 @@ function FixedRateCell({
       <div
         data-tip={"Yield after fees if held to maturity"}
         className={
-          "daisy-badge daisy-badge-md daisy-tooltip inline-flex px-2 text-xs text-success md:text-sm"
+          "daisy-badge daisy-badge-md daisy-tooltip inline-flex px-2 text-xs text-success"
         }
       >
         <span>{"+"}</span>
