@@ -25,6 +25,7 @@ import { calculateAnnualizedPercentageChange } from "src/base/calculateAnnualize
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { formatRate } from "src/base/formatRate";
 import { makeQueryKey } from "src/base/makeQueryKey";
+import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -205,17 +206,10 @@ export function OpenLongsTable({
   if (!account) {
     return (
       <NonIdealState
+        icon={<WalletIcon height="64" />}
         heading="No wallet connected"
         text="Connect your wallet to view your Longs."
-        icon={<WalletIcon height="64" />}
-        action={
-          <button
-            className="daisy-btn daisy-btn-secondary mt-8"
-            onClick={() => openConnectModal?.()}
-          >
-            Connect wallet
-          </button>
-        }
+        action={<ConnectWalletButton />}
       />
     );
   }
@@ -223,9 +217,9 @@ export function OpenLongsTable({
   if (!longs?.length) {
     return (
       <NonIdealState
+        icon={<SparklesIcon height="64" />}
         heading="There are no Longs in this wallet"
         text="Open a long to populate this space with your positions."
-        icon={<SparklesIcon height="64" />}
       />
     );
   }

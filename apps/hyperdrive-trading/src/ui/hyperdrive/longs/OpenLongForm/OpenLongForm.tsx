@@ -1,9 +1,9 @@
 import { adjustAmountByPercentage } from "@hyperdrive/sdk";
-import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { ReactElement } from "react";
 import toast from "react-hot-toast";
 import { Hyperdrive } from "src/appconfig/types";
 import { MAX_UINT256 } from "src/base/constants";
+import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
@@ -27,7 +27,6 @@ export function OpenLongForm({
   hyperdrive: hyperdrive,
 }: OpenLongFormProps): ReactElement {
   const { address: account } = useAccount();
-  const { openConnectModal } = useConnectModal();
 
   const { data: baseTokenBalance } = useBalance({
     address: account,
@@ -136,7 +135,7 @@ export function OpenLongForm({
             // Approval button
             <button
               disabled={!approve}
-              className="daisy-btn-warning daisy-btn"
+              className="daisy-btn daisy-btn-warning"
               onClick={(e) => {
                 // Do this so we don't close the modal
                 e.preventDefault();
@@ -149,19 +148,14 @@ export function OpenLongForm({
             // Trade button
             <button
               disabled={!openLong || openLongStatus === "loading"}
-              className="daisy-btn-secondary daisy-btn"
+              className="daisy-btn daisy-btn-primary"
               onClick={() => openLong?.()}
             >
               Long hy{hyperdrive.baseToken.symbol}
             </button>
           )
         ) : (
-          <button
-            className="daisy-btn-secondary daisy-btn"
-            onClick={() => openConnectModal?.()}
-          >
-            <h5>Connect wallet</h5>
-          </button>
+          <ConnectWalletButton />
         )
       }
     />
