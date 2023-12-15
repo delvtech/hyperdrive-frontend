@@ -22,7 +22,7 @@ export function YourBalanceWell({ token }: { token: Token }): ReactElement {
 
   return (
     <Well elevation="flat">
-      <div className="flex items-center gap-4 p-2">
+      <div className="flex items-center gap-4">
         <Stat
           label="Your available balance"
           value={

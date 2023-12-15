@@ -12,7 +12,7 @@ export function NonIdealState({
   action?: ReactNode;
 }): ReactElement {
   return (
-    <div className="flex flex-col items-center justify-center gap-4 bg-base-200 p-10">
+    <div className="flex flex-col items-center justify-center gap-4 p-10">
       {icon}
       <div className="flex flex-col gap-1 text-center">
         <p className="text-h6 font-bold">{heading}</p>
