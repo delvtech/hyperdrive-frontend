@@ -4204,6 +4204,14 @@
   dependencies:
     "@types/node" "*"
 
+"@types/prompts@^2.4.9":
+  version "2.4.9"
+  resolved "https://registry.yarnpkg.com/@types/prompts/-/prompts-2.4.9.tgz#8775a31e40ad227af511aa0d7f19a044ccbd371e"
+  integrity sha512-qTxFi6Buiu8+50/+3DGIWLHM6QuWsEKugJnnP6iv2Mc4ncxE4A/OJkjuVOA+5X0X1S/nq5VJRa8Lu+nwcvbrKA==
+  dependencies:
+    "@types/node" "*"
+    kleur "^3.0.3"
+
 "@types/prop-types@*":
   version "15.7.5"
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.5.tgz#5f19d2b85a98e9558036f6a3cacc8819420f05cf"
@@ -6426,10 +6434,10 @@ cli-truncate@^3.1.0:
     slice-ansi "^5.0.0"
     string-width "^5.0.0"
 
-clide-js@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/clide-js/-/clide-js-0.0.4.tgz#27d314e9961d029726deffd2c0ed1519048b933c"
-  integrity sha512-OSSQMnSfSBq4ErJ5P61gJhHxHudyAVJ5NqXZ06+s3k0ig2MdXd/W+9Ey5Vv1DYFksL5L29xfewW/j/9uKlL6eg==
+clide-js@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/clide-js/-/clide-js-0.0.7.tgz#eb05cb783b0405d71b70d8ee1f682bd73cb7a2d6"
+  integrity sha512-h1pJxw23Q0nymTTpfuM5ZPVx/8jzmADqRLaqk6RqcSdbQNdaBjwWgqEduhRfhRLhV4VzjYczExhqwaViUeG1Xg==
   dependencies:
     cliui "^8.0.1"
     prompts "^2.4.2"
@@ -14368,6 +14376,11 @@ terser@^5.10.0, terser@^5.16.8:
     commander "^2.20.0"
     source-map-support "~0.5.20"
 
+tesm-node@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/tesm-node/-/tesm-node-1.3.1.tgz#306da50594ef3f1eef64f2bb55110047c583bb62"
+  integrity sha512-zyNa8mIJoTN8S61XSr9oYJaZft7/hAE7tPYu2Nu4FALJAexjgE4apD0NUp1x/8Bn4PmX16r0aHrwipUG82+Q1w==
+
 text-encoding-utf-8@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/text-encoding-utf-8/-/text-encoding-utf-8-1.0.2.tgz#585b62197b0ae437e3c7b5d0af27ac1021e10d13"
@@ -14767,7 +14780,7 @@ typedoc@^0.25.1:
     minimatch "^9.0.3"
     shiki "^0.14.1"
 
-typescript@^4.7.4, typescript@^4.9.3, typescript@^5.0.2:
+typescript@^4.7.4, typescript@^4.9.3, typescript@^5.0.2, typescript@^5.3.3:
   version "5.1.6"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.1.6.tgz#02f8ac202b6dad2c0dd5e0913745b47a37998274"
   integrity sha512-zaWCozRZ6DLEWAWFrVDz1H6FVXzUSfTy5FUMWsQlU8Ym5JP9eO4xkTIROFCQvhQf61z6O/G6ugw3SgAnvvm+HA==

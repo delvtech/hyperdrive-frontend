@@ -10,22 +10,17 @@
   "type": "module",
   "bin": "dist/hyper.js",
   "scripts": {
-    "dev": "ts-node --esm -r dotenv/config -r tsconfig-paths/register src/hyper.ts",
-    "typecheck": "tsc --noEmit",
-    "docs": "typedoc",
-    "watch:docs": "typedoc --watch"
+    "dev": "tesm-node -r dotenv/config src/hyper.ts",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@hyperdrive/artifacts": "*",
-    "@types/cli-table": "^0.3.3",
-    "@types/signale": "^1.4.6",
     "ajv": "^8.12.0",
     "cli-table": "^0.3.11",
-    "clide-js": "^0.0.4",
+    "clide-js": "^0.0.7",
     "clide-plugin-command-menu": "^0.0.4",
     "hardhat": "^2.18.3",
     "signale": "^1.4.0",
-    "typedoc-plugin-markdown": "^3.16.0",
     "viem": "^1.19.15"
   },
   "devDependencies": {
@@ -34,15 +29,19 @@
     "@hyperdrive/tsconfig": "*",
     "@nomicfoundation/hardhat-network-helpers": "^1.0.9",
     "@nomicfoundation/hardhat-toolbox": "^3.0.0",
+    "@types/cli-table": "^0.3.3",
+    "@types/prompts": "^2.4.9",
+    "@types/signale": "^1.4.6",
     "@types/sinon": "^10.0.16",
     "dotenv": "^16.0.3",
     "hardhat": "^2.18.3",
     "prettier-plugin-organize-imports": "^3.2.2",
     "sinon": "^15.2.0",
+    "tesm-node": "^1.3.1",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.1.0",
     "tsup": "^7.2.0",
-    "typescript": "^5.0.2",
+    "typescript": "^5.3.3",
     "vite-tsconfig-paths": "^4.2.0",
     "vitest": "^0.28.5"
   },
