@@ -8,5 +8,6 @@
     "Mintable",
     "signale",
     "viem"
-  ]
+  ],
+  "typescript.tsdk": "node_modules/typescript/lib"
 }
