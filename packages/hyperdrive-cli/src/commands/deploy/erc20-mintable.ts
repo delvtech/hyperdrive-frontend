@@ -1,15 +1,18 @@
 import { ERC20Mintable } from "@hyperdrive/artifacts/dist/ERC20Mintable.js";
 import { command } from "clide-js";
 import signale from "signale";
-import { chainOption, getChain } from "src/reusable-options/chain.js";
-import { getRpcUrl, rpcUrlOption } from "src/reusable-options/rpc-url.js";
+import { Chain, Hex, PrivateKeyAccount } from "viem";
+import { privateKeyToAccount } from "viem/accounts";
+import { chainOption, getChain } from "../../reusable-options/chain.js";
+import { getRpcUrl, rpcUrlOption } from "../../reusable-options/rpc-url.js";
 import {
   getWalletKey,
   walletKeyOption,
-} from "src/reusable-options/wallet-key.js";
-import { DeployedContract, deployContract } from "src/utils/deployContract.js";
-import { Chain, Hex, PrivateKeyAccount } from "viem";
-import { privateKeyToAccount } from "viem/accounts";
+} from "../../reusable-options/wallet-key.js";
+import {
+  DeployedContract,
+  deployContract,
+} from "../../utils/deployContract.js";
 
 export default command({
   description: "Deploy an ERC20Mintable contract for use during testing",

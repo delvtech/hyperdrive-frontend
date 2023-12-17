@@ -15,10 +15,6 @@
 
     // we don't need declaration files for a CLI
     "declaration": false,
-    "declarationMap": false,
-
-    "paths": {
-      "src/*": ["src/*"]
-    }
+    "declarationMap": false
   }
 }

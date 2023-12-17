@@ -4,8 +4,8 @@ import {
   OptionsGetter,
   UsageError,
 } from "clide-js";
-import { SupportedChain, supportedChains } from "src/utils/chains.js";
 import { Chain } from "viem";
+import { SupportedChain, supportedChains } from "../utils/chains.js";
 
 export const chainOption = {
   alias: ["chain"],
