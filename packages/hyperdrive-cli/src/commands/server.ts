@@ -8,36 +8,36 @@ export default command({
   options: {
     p: {
       alias: ["port"],
-      describe: "The port to listen on",
+      description: "The port to listen on",
       type: "number",
       default: 8545,
     },
     // h: {
     //   alias: ["host"],
-    //   describe: "The hostname to listen on",
+    //   description: "The hostname to listen on",
     //   type: "string",
     //   default: "127.0.0.1",
     // },
     b: {
       alias: ["balance"],
-      describe: "The ETH balance to assign to each account",
+      description: "The ETH balance to assign to each account",
       type: "number",
       default: 1_000,
     },
     t: {
       alias: ["block-time"],
-      describe: "The blockTime in seconds for automatic mining",
+      description: "The blockTime in seconds for automatic mining",
       type: "number",
     },
     c: {
       alias: ["chain-id"],
-      describe: "The id to use for the local blockchain",
+      description: "The id to use for the local blockchain",
       type: "number",
       default: 31337,
     },
   },
 
-  handler: async ({ options }) => {
+  handler: async ({ options, end }) => {
     const { balance, blockTime, chainId, port } = await options.values;
 
     hre.config.networks.hardhat = {
@@ -65,5 +65,7 @@ export default command({
     hre.run("node", {
       port,
     });
+
+    end();
   },
 });
