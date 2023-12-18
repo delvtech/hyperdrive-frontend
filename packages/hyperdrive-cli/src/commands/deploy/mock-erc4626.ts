@@ -81,7 +81,6 @@ export default command({
     const admin = await options.admin({
       prompt: {
         message: "Enter admin address",
-        type: "text",
         initial: account.address,
       },
     });

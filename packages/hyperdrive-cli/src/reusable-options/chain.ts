@@ -1,4 +1,4 @@
-import { OptionConfig, OptionGetter, UsageError } from "clide-js";
+import { OptionConfig, OptionGetter } from "clide-js";
 import { Chain } from "viem";
 import { SupportedChain, supportedChains } from "../utils/chains.js";
 
@@ -15,18 +15,14 @@ export async function getChain(getter: OptionGetter<string>): Promise<Chain> {
     prompt: {
       message: "Select chain",
       type: "select",
-      choices: [
-        { title: "Ethereum", value: "ethereum" },
-        { title: "Polygon", value: "polygon" },
-      ],
+      choices: Object.keys(supportedChains).map((chainName) => {
+        return {
+          title: chainName,
+          value: chainName,
+        };
+      }),
     },
   });
-
   const chain = supportedChains[chosenChain as SupportedChain];
-
-  if (!chain) {
-    throw new UsageError(`Unsupported chain: ${chosenChain}`);
-  }
-
   return chain;
 }
