@@ -6691,19 +6691,19 @@ cli-truncate@^3.1.0:
     slice-ansi "^5.0.0"
     string-width "^5.0.0"
 
-clide-js@^0.0.9:
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/clide-js/-/clide-js-0.0.9.tgz#3d0690cd880563cced2b58f6dc6097fc86c42640"
-  integrity sha512-3Xsoj5QshGdEzxwG9IqEvqTNDoTs+kgFKmfzjS6vNMCKfkbPv3zlu9nKzkUpzNSl6rUWfsuTWhbuvTGi5f7KDQ==
+clide-js@^0.0.11:
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/clide-js/-/clide-js-0.0.11.tgz#503f78c23a3f01b2a01cf60c12764e01a27292cd"
+  integrity sha512-t7JAUUgYL1f9i0WGNrM7PX4PspT+XG7lVi4Lflb31jxX4NmdJmvYsUe3XSRTr0uubYrXpQMWZGUqSmRU0zIjNw==
   dependencies:
     cliui "^8.0.1"
     prompts "^2.4.2"
     yargs-parser "^21.1.1"
 
-clide-plugin-command-menu@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/clide-plugin-command-menu/-/clide-plugin-command-menu-0.0.4.tgz#a15f63f4979f197be68bfc0db468dfcf21ea2988"
-  integrity sha512-imDJDHzw9/7vpaTWAUnKG7+U1yXCwL2+5tZMg0oOylBPGJkUfMJhE1LMAQyVP+7nJ+rwl8rIiMdJScQk65bKUw==
+clide-plugin-command-menu@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/clide-plugin-command-menu/-/clide-plugin-command-menu-0.0.5.tgz#71efa4aeb48a26a3a8e97b4a029fd5b8c9c17327"
+  integrity sha512-86Tbe1z6YYi+NTL3Ha1HmjEjX4y54gjzUuth8bshW31ObnTj0VR0c1G0IQ9L5yDhHs26LTZO6taKk+8+fgLFaA==
   dependencies:
     cfonts "^3.2.0"
     colors "^1.4.0"

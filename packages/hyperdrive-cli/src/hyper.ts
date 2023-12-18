@@ -7,6 +7,7 @@ run({
     help,
     commandMenu({
       title: "Hyperdrive CLI",
+      skip: (options) => !!options.help,
     }),
   ],
 });

@@ -1,9 +1,4 @@
-import {
-  OptionConfig,
-  OptionsConfig,
-  OptionsGetter,
-  UsageError,
-} from "clide-js";
+import { OptionConfig, OptionGetter, UsageError } from "clide-js";
 import { Chain } from "viem";
 import { SupportedChain, supportedChains } from "../utils/chains.js";
 
@@ -13,14 +8,10 @@ export const chainOption = {
   type: "string",
   required: true,
   default: process.env.CHAIN || "localhost",
-} satisfies OptionConfig;
+} as const satisfies OptionConfig;
 
-// TODO: This type param can be removed once the typescript version of the
-// monorepo is updated to >=5.2 (Yay for smarter type inference!)
-export async function getChain<T extends OptionsConfig>(
-  options: OptionsGetter<T>,
-): Promise<Chain> {
-  const chosenChain = await options.chain({
+export async function getChain(getter: OptionGetter<string>): Promise<Chain> {
+  const chosenChain = await getter({
     prompt: {
       message: "Select chain",
       type: "select",

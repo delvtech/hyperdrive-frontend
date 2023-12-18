@@ -1,14 +1,8 @@
 import { ERC20Mintable } from "@hyperdrive/artifacts/dist/ERC20Mintable.js";
 import { command } from "clide-js";
 import signale from "signale";
-import { Chain, Hex, PrivateKeyAccount } from "viem";
-import { privateKeyToAccount } from "viem/accounts";
-import { chainOption, getChain } from "../../reusable-options/chain.js";
-import { getRpcUrl, rpcUrlOption } from "../../reusable-options/rpc-url.js";
-import {
-  getWalletKey,
-  walletKeyOption,
-} from "../../reusable-options/wallet-key.js";
+import { Chain, PrivateKeyAccount } from "viem";
+import { DeployOptions } from "../../commands/deploy.js";
 import {
   DeployedContract,
   deployContract,
@@ -52,17 +46,10 @@ export default command({
       required: true,
       default: false,
     },
-    c: chainOption,
-    r: rpcUrlOption,
-    w: walletKeyOption,
   },
 
-  handler: async ({ options, next }) => {
-    const chain = await getChain(options);
-    const rpcUrl = await getRpcUrl(options);
-    const walletKey = await getWalletKey(options);
-
-    const account = privateKeyToAccount(walletKey as Hex);
+  handler: async ({ data, options, next }) => {
+    const { account, chain, rpcUrl } = data as DeployOptions;
 
     const name = await options.name({
       prompt: "Enter token name",
@@ -101,7 +88,6 @@ export default command({
     });
 
     signale.success(`ERC20Mintable deployed @ ${address}`);
-
     next(address);
   },
 });
