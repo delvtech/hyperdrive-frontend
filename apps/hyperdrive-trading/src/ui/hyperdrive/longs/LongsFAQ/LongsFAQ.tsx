@@ -3,7 +3,7 @@ import { ReactElement, useState } from "react";
 import { Disclosure } from "src/ui/base/components/Disclosure/Disclosure";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 
-const faqEntries = [
+export const longFaqEntries = [
   {
     question: "How do fixed rates work?",
     answer: (
@@ -74,7 +74,11 @@ const faqEntries = [
   },
 ];
 
-export function LongsFAQ(): ReactElement {
+export function PositionFAQ({
+  faqEntries,
+}: {
+  faqEntries: { question: string; answer: string | JSX.Element }[];
+}): ReactElement {
   const [selectedEntry, setSelectedEntry] = useState(0);
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
   if (isTailwindSmallScreen) {
@@ -100,7 +104,7 @@ export function LongsFAQ(): ReactElement {
               key={i}
               onClick={() => setSelectedEntry(i)}
               className={classNames(
-                "daisy-btn daisy-btn-ghost daisy-btn-wide justify-start",
+                "daisy-btn-ghost daisy-btn daisy-btn-wide justify-start text-left",
                 {
                   "opacity-40": selectedEntry !== i,
                 },

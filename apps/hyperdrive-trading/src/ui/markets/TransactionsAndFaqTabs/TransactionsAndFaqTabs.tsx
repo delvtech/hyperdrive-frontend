@@ -2,8 +2,14 @@ import assertNever from "assert-never";
 import classNames from "classnames";
 import { Fragment, ReactElement, useState } from "react";
 import { Hyperdrive } from "src/appconfig/types";
-import { LongsFAQ } from "src/ui/hyperdrive/longs/LongsFAQ/LongsFAQ";
+import {
+  longFaqEntries,
+  PositionFAQ,
+} from "src/ui/hyperdrive/longs/LongsFAQ/LongsFAQ";
+import { LPFaqEntries } from "src/ui/hyperdrive/lp/LPFAQ/LPFAQ";
+import { shortsFaqEntries } from "src/ui/hyperdrive/shorts/ShortsFAQ/ShortsFAQ";
 import { TransactionTable } from "src/ui/hyperdrive/TransactionTable/TransactionsTable";
+import { useActivePositionType } from "src/ui/markets/hooks/useActivePositionType";
 
 const TABS = ["Transactions", "FAQ"] as const;
 export type Tab = typeof TABS[number];
@@ -14,6 +20,7 @@ export function TransactionAndFaqTabs({
   hyperdrive: Hyperdrive;
 }): ReactElement {
   const [activeTab, setActiveTab] = useState<Tab>("Transactions");
+  const activePositionType = useActivePositionType();
   return (
     <div role="tablist" className="daisy-tabs daisy-tabs-lifted daisy-tabs-lg">
       {TABS.map((tab) => (
@@ -41,7 +48,15 @@ export function TransactionAndFaqTabs({
               switch (activeTab) {
                 case "FAQ":
                   if (tab === "FAQ") {
-                    return <LongsFAQ />;
+                    if (activePositionType === "Longs") {
+                      return <PositionFAQ faqEntries={longFaqEntries} />;
+                    }
+                    if (activePositionType === "Shorts") {
+                      return <PositionFAQ faqEntries={shortsFaqEntries} />;
+                    }
+                    if (activePositionType === "LP") {
+                      return <PositionFAQ faqEntries={LPFaqEntries} />;
+                    }
                   }
                   return null;
                 case "Transactions":
