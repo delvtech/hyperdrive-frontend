@@ -3,7 +3,7 @@ import { ReactElement, useState } from "react";
 import { Disclosure } from "src/ui/base/components/Disclosure/Disclosure";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 
-export const longFaqEntries = [
+export const longsFaqEntries = [
   {
     question: "How do fixed rates work?",
     answer: (
