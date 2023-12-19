@@ -1,9 +1,9 @@
-import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { ReactElement } from "react";
 import toast from "react-hot-toast";
 import { Hyperdrive } from "src/appconfig/types";
 import { MAX_UINT256 } from "src/base/constants";
 import { parseUnits } from "src/base/parseUnits";
+import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
@@ -24,7 +24,6 @@ export function AddLiquidityForm({
   hyperdrive,
 }: AddLiquidityFormProps): ReactElement {
   const { address: account } = useAccount();
-  const { openConnectModal } = useConnectModal();
 
   const { data: baseTokenBalance } = useBalance({
     address: account,
@@ -129,19 +128,14 @@ export function AddLiquidityForm({
             // Trade button
             <button
               disabled={!addLiquidity || addLiquidityStatus === "loading"}
-              className="daisy-btn-primary daisy-btn"
+              className="daisy-btn-primary daisy-btn disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
               onClick={() => addLiquidity?.()}
             >
               Add liquidity
             </button>
           )
         ) : (
-          <button
-            className="daisy-btn-primary daisy-btn"
-            onClick={() => openConnectModal?.()}
-          >
-            Connect wallet
-          </button>
+          <ConnectWalletButton />
         )
       }
     />

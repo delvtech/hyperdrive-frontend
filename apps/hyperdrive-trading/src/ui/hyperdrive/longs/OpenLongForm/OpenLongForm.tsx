@@ -135,7 +135,7 @@ export function OpenLongForm({
             // Approval button
             <button
               disabled={!approve}
-              className="daisy-btn daisy-btn-warning"
+              className="daisy-btn-warning daisy-btn"
               onClick={(e) => {
                 // Do this so we don't close the modal
                 e.preventDefault();
@@ -148,7 +148,7 @@ export function OpenLongForm({
             // Trade button
             <button
               disabled={!openLong || openLongStatus === "loading"}
-              className="daisy-btn daisy-btn-primary"
+              className="daisy-btn-primary daisy-btn disabled:bg-primary disabled:text-base-100 disabled:opacity-30"
               onClick={() => openLong?.()}
             >
               Long hy{hyperdrive.baseToken.symbol}

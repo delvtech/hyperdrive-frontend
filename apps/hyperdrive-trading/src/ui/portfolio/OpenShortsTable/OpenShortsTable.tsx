@@ -6,7 +6,6 @@ import {
   WalletIcon,
 } from "@heroicons/react/24/outline";
 import { OpenShort } from "@hyperdrive/sdk";
-import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { useQuery } from "@tanstack/react-query";
 import {
   createColumnHelper,
@@ -20,6 +19,7 @@ import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { parseUnits } from "src/base/parseUnits";
+import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { TableSkeleton } from "src/ui/base/components/TableSkeleton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -208,7 +208,7 @@ function CurrentValueCell({
         <div
           data-tip={"Profit/Loss since open"}
           className={classNames(
-            "daisy-badge daisy-badge-md daisy-tooltip inline-flex text-xs sm:text-body",
+            "sm:text-body daisy-badge daisy-badge-md daisy-tooltip inline-flex text-xs",
             { "text-success": isPositiveChangeInValue },
             { "text-error": !isPositiveChangeInValue },
           )}
@@ -234,7 +234,6 @@ export function OpenShortsTable({
   hyperdrive: Hyperdrive;
 }): ReactElement {
   const { address: account } = useAccount();
-  const { openConnectModal } = useConnectModal();
 
   const readHyperdrive = useReadHyperdrive(hyperdrive.address);
   const queryEnabled = !!readHyperdrive && !!account;
@@ -260,14 +259,7 @@ export function OpenShortsTable({
         heading="No wallet connected"
         text="Connect your wallet to view your Shorts."
         icon={<WalletIcon height="64" />}
-        action={
-          <button
-            className="daisy-btn-secondary daisy-btn mt-8"
-            onClick={() => openConnectModal?.()}
-          >
-            Connect wallet
-          </button>
-        }
+        action={<ConnectWalletButton />}
       />
     );
   }
