@@ -91,7 +91,7 @@ export function LongsFAQ(): ReactElement {
     );
   }
   return (
-    <div className="flex flex-col">
+    <div className="flex max-w-6xl flex-col">
       <div className="grid grid-cols-3 gap-8">
         {/* questions */}
         <div className="col-span-1 flex flex-col text-left">
@@ -100,7 +100,7 @@ export function LongsFAQ(): ReactElement {
               key={i}
               onClick={() => setSelectedEntry(i)}
               className={classNames(
-                "daisy-btn daisy-btn-ghost daisy-btn-wide justify-start",
+                "daisy-btn-ghost daisy-btn daisy-btn-wide justify-start",
                 {
                   "opacity-40": selectedEntry !== i,
                 },

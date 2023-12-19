@@ -23,7 +23,6 @@ export function Landing(): ReactElement | null {
   if (!appConfig) {
     return null;
   }
-  const hyperdrive = appConfig?.hyperdrives[0];
   return (
     <div className="flex flex-col items-center gap-10 px-4 py-8">
       <CommonHeadTags />
@@ -73,7 +72,7 @@ function PositionCards(): ReactElement {
       </div>
       <a
         href={"/markets"}
-        className="daisy-btn daisy-btn-circle daisy-btn-primary daisy-btn-md mt-8 w-60 justify-between gap-0"
+        className="daisy-btn-primary daisy-btn daisy-btn-md daisy-btn-circle mt-8 w-60 justify-between gap-0"
       >
         <span className="flex-1 text-center">View Markets</span>
       </a>
@@ -93,10 +92,14 @@ function Hero() {
             Hyperdrive is an AMM that lets you buy fixed rates upfront, or
             maximize your exposure to variable rates like stETH and sDAI.
           </h4>
-
-          <button className="daisy-btn daisy-btn-ghost text-accent">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://delv-tech.notion.site/Hyperdrive-Docs-6c014b9270af4483861b1c2ffa7f3a88"
+            className="daisy-btn-ghost daisy-btn text-accent"
+          >
             Learn more <ArrowRightIcon className="inline h-4" />
-          </button>
+          </a>
         </div>
       </div>
     </div>

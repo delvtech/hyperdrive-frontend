@@ -14,7 +14,7 @@ export function Markets(): ReactElement {
   }
 
   return (
-    <div className="flex min-h-screen w-full flex-col items-center bg-base-100 py-8 md:w-3/4 md:items-start">
+    <div className="flex min-h-screen w-full flex-col items-center bg-base-100 py-8 md:w-3/4">
       <div className="daisy-hero max-w-6xl justify-start text-center md:text-left">
         <div className="daisy-hero-content px-0">
           <div className="mx-6 max-w-xl md:mx-0">
