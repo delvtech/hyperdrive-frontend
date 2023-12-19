@@ -2,6 +2,7 @@ import { SparklesIcon, WalletIcon } from "@heroicons/react/24/outline";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { ReactElement } from "react";
 import { Hyperdrive } from "src/appconfig/types";
+import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { AddLiquidityForm } from "src/ui/hyperdrive/lp/AddLiquidityForm/AddLiquidityForm";
 import { useLpShares } from "src/ui/hyperdrive/lp/hooks/useLpShares";
@@ -52,14 +53,7 @@ export function LpTab({
                       heading="No wallet connected"
                       text="Connect your wallet to view your Longs."
                       icon={<WalletIcon height="64" />}
-                      action={
-                        <button
-                          className="daisy-btn-secondary daisy-btn mt-8"
-                          onClick={() => openConnectModal?.()}
-                        >
-                          Connect wallet
-                        </button>
-                      }
+                      action={<ConnectWalletButton />}
                     />
                   );
                 }

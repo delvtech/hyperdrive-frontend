@@ -1,8 +1,8 @@
-import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { ReactElement } from "react";
 import toast from "react-hot-toast";
 import { Hyperdrive } from "src/appconfig/types";
 import { MAX_UINT256 } from "src/base/constants";
+import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import CustomToastMessage from "src/ui/base/components/Toaster/CustomToastMessage";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
@@ -23,7 +23,6 @@ export function OpenShortForm({
   hyperdrive,
 }: OpenShortPositionFormProps): ReactElement {
   const { address: account } = useAccount();
-  const { openConnectModal } = useConnectModal();
   const { data: baseTokenBalance } = useBalance({
     address: account,
     token: hyperdrive.baseToken.address,
@@ -124,19 +123,14 @@ export function OpenShortForm({
                 !openShort ||
                 openShortSubmittedStatus === "loading"
               }
-              className="daisy-btn-accent daisy-btn"
+              className="daisy-btn-accent daisy-btn disabled:bg-accent disabled:text-base-100 disabled:opacity-30"
               onClick={() => openShort?.()}
             >
               Short hy{hyperdrive.baseToken.symbol}
             </button>
           )
         ) : (
-          <button
-            className="daisy-btn-secondary daisy-btn"
-            onClick={() => openConnectModal?.()}
-          >
-            <h5>Connect wallet</h5>
-          </button>
+          <ConnectWalletButton />
         )
       }
     />
