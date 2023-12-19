@@ -14,7 +14,7 @@ import { Chain } from "viem/chains";
 import { DeployOptions } from "../deploy.js";
 
 export default command({
-  description: "Deploy an MockERC4626 contract for use during testing",
+  description: "Deploy a MockERC4626 contract",
 
   options: {
     t: {

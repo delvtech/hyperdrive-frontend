@@ -10,7 +10,7 @@ import {
 import { DeployOptions } from "../deploy.js";
 
 export default command({
-  description: "Deploy an ForwarderFactory contract",
+  description: "Deploy a ForwarderFactory contract",
 
   handler: async ({ data, next }) => {
     const { account, chain, rpcUrl } = data as DeployOptions;

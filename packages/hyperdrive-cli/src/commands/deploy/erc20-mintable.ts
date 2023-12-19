@@ -9,7 +9,7 @@ import {
 } from "../../utils/deployContract.js";
 
 export default command({
-  description: "Deploy an ERC20Mintable contract for use during testing",
+  description: "Deploy an ERC20Mintable contract",
 
   options: {
     n: {
