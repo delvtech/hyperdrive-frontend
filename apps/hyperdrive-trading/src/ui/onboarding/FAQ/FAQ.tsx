@@ -58,10 +58,10 @@ export function FAQEntries(): JSX.Element {
 
         {/* answers */}
         <div className="col-span-2 flex flex-col">
-          <span className="mb-2 text-h5 font-bold">
+          <span className="mb-4 text-h5 font-bold">
             {selectedFAQ?.question}
           </span>
-          <div className="px-2">{selectedFAQ?.answer}</div>
+          <div>{selectedFAQ?.answer}</div>
         </div>
       </div>
     </div>
