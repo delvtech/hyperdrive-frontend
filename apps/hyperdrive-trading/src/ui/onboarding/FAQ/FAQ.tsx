@@ -40,9 +40,9 @@ export function FAQEntries(): JSX.Element {
       <div className="grid grid-cols-3 gap-8">
         {/* questions */}
         <div className="col-span-1 flex flex-col text-left">
-          {faqData.map(({ question, key }, i) => (
+          {faqData.map(({ question, key }) => (
             <button
-              key={i}
+              key={key}
               onClick={() => setSelectedFAQKey(key)}
               className={classNames(
                 "daisy-btn-ghost daisy-btn daisy-btn-wide justify-start text-left",
