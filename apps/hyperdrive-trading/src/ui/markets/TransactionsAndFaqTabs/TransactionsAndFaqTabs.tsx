@@ -3,7 +3,6 @@ import classNames from "classnames";
 import { Fragment, ReactElement, useState } from "react";
 import { Hyperdrive } from "src/appconfig/types";
 import { TransactionTable } from "src/ui/hyperdrive/TransactionTable/TransactionsTable";
-import { useActivePositionType } from "src/ui/markets/hooks/useActivePositionType";
 import { FAQEntries } from "src/ui/onboarding/FAQ/FAQ";
 
 const TABS = ["Transactions", "FAQ"] as const;
@@ -15,7 +14,6 @@ export function TransactionAndFaqTabs({
   hyperdrive: Hyperdrive;
 }): ReactElement {
   const [activeTab, setActiveTab] = useState<Tab>("Transactions");
-  const activePositionType = useActivePositionType();
   return (
     <div role="tablist" className="daisy-tabs daisy-tabs-lifted daisy-tabs-lg">
       {TABS.map((tab) => (
