@@ -96,10 +96,9 @@ function Hero() {
             target="_blank"
             rel="noreferrer"
             href="https://delv-tech.notion.site/Hyperdrive-Docs-6c014b9270af4483861b1c2ffa7f3a88"
+            className="daisy-btn-ghost daisy-btn text-accent"
           >
-            <button className="daisy-btn-ghost daisy-btn text-accent">
-              Learn more <ArrowRightIcon className="inline h-4" />
-            </button>
+            Learn more <ArrowRightIcon className="inline h-4" />
           </a>
         </div>
       </div>
