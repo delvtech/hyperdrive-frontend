@@ -12,34 +12,30 @@ export default command({
   description: "Deploy an ERC20Mintable contract",
 
   options: {
-    n: {
-      alias: ["name"],
+    name: {
       description: "The name of the token",
       type: "string",
       required: true,
       default: "Base",
     },
-    s: {
-      alias: ["symbol"],
+    symbol: {
       description: "The symbol of the token",
       type: "string",
       required: true,
       default: "BASE",
     },
-    d: {
-      alias: ["decimals"],
+    decimals: {
       description: "The decimals of the token. Defaults to 18.",
       type: "number",
       required: true,
       default: 18,
     },
-    a: {
-      alias: ["admin"],
+    admin: {
       description: "The admin of the token",
       type: "string",
       required: true,
     },
-    m: {
+    competition: {
       alias: ["competition-mode"],
       description: "Whether to deploy in competition mode",
       type: "boolean",

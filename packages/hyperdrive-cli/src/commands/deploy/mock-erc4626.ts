@@ -17,40 +17,36 @@ export default command({
   description: "Deploy a MockERC4626 contract",
 
   options: {
-    t: {
-      alias: ["token"],
+    token: {
       description: "The address of the MockERC4626 token contract",
       type: "string",
       required: true,
     },
-    n: {
-      alias: ["name"],
+    name: {
       description: "The name of the token",
       type: "string",
       required: true,
       default: "Delvnet Yield Source",
     },
-    s: {
-      alias: ["symbol"],
+    symbol: {
       description: "The symbol of the token",
       type: "string",
       required: true,
       default: "DELV",
     },
-    i: {
-      alias: ["rate", "initial-rate"],
+    rate: {
+      alias: ["initial-rate"],
       description: "The rate to start the contract at",
       type: "string",
       required: true,
       default: "0.05",
     },
-    a: {
-      alias: ["admin"],
+    admin: {
       description: "The admin of the vault",
       type: "string",
       required: true,
     },
-    m: {
+    competition: {
       alias: ["competition-mode"],
       description: "Whether to deploy in competition mode",
       type: "boolean",
