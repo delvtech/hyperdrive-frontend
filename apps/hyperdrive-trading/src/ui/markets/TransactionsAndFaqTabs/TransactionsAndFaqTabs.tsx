@@ -2,8 +2,8 @@ import assertNever from "assert-never";
 import classNames from "classnames";
 import { Fragment, ReactElement, useState } from "react";
 import { Hyperdrive } from "src/appconfig/types";
-import { LongsFAQ } from "src/ui/hyperdrive/longs/LongsFAQ/LongsFAQ";
 import { TransactionTable } from "src/ui/hyperdrive/TransactionTable/TransactionsTable";
+import { FAQEntries } from "src/ui/onboarding/FAQ/FAQ";
 
 const TABS = ["Transactions", "FAQ"] as const;
 export type Tab = typeof TABS[number];
@@ -41,7 +41,7 @@ export function TransactionAndFaqTabs({
               switch (activeTab) {
                 case "FAQ":
                   if (tab === "FAQ") {
-                    return <LongsFAQ />;
+                    return <FAQEntries />;
                   }
                   return null;
                 case "Transactions":
