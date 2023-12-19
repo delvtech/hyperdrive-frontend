@@ -184,7 +184,7 @@ export function AllMarketsTable(): ReactElement {
     getCoreRowModel: getCoreRowModel(),
   });
   return (
-    <div className="flex w-full flex-col items-center overflow-y-scroll px-4 md:px-0">
+    <div className="flex w-full max-w-6xl flex-col items-center overflow-y-scroll px-4 md:px-0">
       <h3 className="mb-5 w-full pl-1 text-h5 text-gray-50">
         Available Markets
       </h3>

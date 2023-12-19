@@ -95,7 +95,7 @@ export function PositionFAQ({
     );
   }
   return (
-    <div className="flex flex-col">
+    <div className="flex max-w-6xl flex-col">
       <div className="grid grid-cols-3 gap-8">
         {/* questions */}
         <div className="col-span-1 flex flex-col text-left">
