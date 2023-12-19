@@ -17,7 +17,7 @@
     "@hyperdrive/artifacts": "*",
     "ajv": "^8.12.0",
     "cli-table": "^0.3.11",
-    "clide-js": "^0.0.14",
+    "clide-js": "^0.0.16",
     "clide-plugin-command-menu": "^0.0.6",
     "hardhat": "^2.19.2",
     "signale": "^1.4.0",
