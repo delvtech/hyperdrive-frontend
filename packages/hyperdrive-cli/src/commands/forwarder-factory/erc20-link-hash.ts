@@ -9,19 +9,19 @@ export default command({
   description: "Get the ERC20LINK_HASH from a ForwarderFactory contract",
 
   options: {
+    chain: chainOption,
+    rpc: rpcUrlOption,
     a: {
       alias: ["address"],
       description: "The address of the ForwarderFactory contract",
       type: "string",
     },
-    chain: chainOption,
-    ["rpc-url"]: rpcUrlOption,
   },
 
   handler: async ({ options, next }) => {
     const chain = await getChain(options.chain);
 
-    const rpcUrl = await options.rpcUrl({
+    const rpcUrl = await options.rpc({
       prompt: "Enter RPC URL",
     });
 

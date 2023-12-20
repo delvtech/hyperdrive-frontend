@@ -11,18 +11,18 @@ export default command({
 
   options: {
     chain: chainOption,
-    ["rpc-url"]: rpcUrlOption,
-    ["wallet-key"]: walletKeyOption,
+    rpc: rpcUrlOption,
+    wallet: walletKeyOption,
   },
 
   handler: async ({ options, next }) => {
     const chain = await getChain(options.chain);
 
-    const rpcUrl = await options.rpcUrl({
+    const rpcUrl = await options.rpc({
       prompt: "Enter RPC URL",
     });
 
-    const walletKey = await options.walletKey({
+    const walletKey = await options.wallet({
       prompt: "Enter wallet key",
     });
 
