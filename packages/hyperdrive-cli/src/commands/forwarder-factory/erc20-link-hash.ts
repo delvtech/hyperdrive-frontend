@@ -11,7 +11,7 @@ export default command({
   options: {
     a: {
       alias: ["address"],
-      describe: "The address of the ForwarderFactory contract",
+      description: "The address of the ForwarderFactory contract",
       type: "string",
     },
     chain: chainOption,
