@@ -228,6 +228,7 @@ export default command({
     });
 
     signale.success(`ERC4626HyperdriveFactory deployed @ ${address}`);
+    next(address);
   },
 });
 
