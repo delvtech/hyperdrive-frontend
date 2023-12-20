@@ -2,7 +2,6 @@ import { ERC20Mintable } from "@hyperdrive/artifacts/dist/ERC20Mintable.js";
 import { MockERC4626 } from "@hyperdrive/artifacts/dist/MockERC4626.js";
 import { command } from "clide-js";
 import signale from "signale";
-import { DeployedContract, deployContract } from "src/utils/deployContract.js";
 import {
   PrivateKeyAccount,
   createPublicClient,
@@ -11,6 +10,10 @@ import {
   parseUnits,
 } from "viem";
 import { Chain } from "viem/chains";
+import {
+  DeployedContract,
+  deployContract,
+} from "../../utils/deployContract.js";
 import { DeployOptions } from "../deploy.js";
 
 export default command({
