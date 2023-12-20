@@ -4,9 +4,12 @@ import { commandMenu } from "clide-plugin-command-menu";
 
 run({
   plugins: [
+    // Help generator with --help and -h options
     help({
       maxWidth: 100,
     }),
+
+    // Interactive prompts for incomplete commands
     commandMenu({
       title: "Hyperdrive CLI",
       skip: (options) => !!options.help,
@@ -23,7 +26,7 @@ run({
     },
   },
 
-  // Apply default values to options after parsing if -y or --yes are passed
+  // Apply default values to options after parsing if --tes or -y are passed
   afterParse: async ({ parsedOptions, context }) => {
     if (parsedOptions.yes) {
       for (const [key, config] of Object.entries(context.options)) {
