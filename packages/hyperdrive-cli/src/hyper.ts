@@ -4,7 +4,9 @@ import { commandMenu } from "clide-plugin-command-menu";
 
 run({
   plugins: [
-    help,
+    help({
+      maxWidth: 100,
+    }),
     commandMenu({
       title: "Hyperdrive CLI",
       skip: (options) => !!options.help,
