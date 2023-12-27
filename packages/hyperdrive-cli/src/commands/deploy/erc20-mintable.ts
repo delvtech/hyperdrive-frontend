@@ -60,7 +60,10 @@ export default command({
     });
 
     const admin = await options.admin({
-      prompt: "Enter admin address",
+      prompt: {
+        message: "Enter admin address",
+        initial: account.address,
+      },
     });
 
     const isCompetitionMode = await options.competitionMode({
