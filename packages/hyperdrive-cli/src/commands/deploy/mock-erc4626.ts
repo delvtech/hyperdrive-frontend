@@ -15,15 +15,16 @@ import {
   deployContract,
 } from "../../utils/deployContract.js";
 import { DeployOptions } from "../deploy.js";
+import { deployERC20Mintable } from "./erc20-mintable.js";
 
 export default command({
   description: "Deploy a MockERC4626 contract",
 
   options: {
     token: {
-      description: "The address of the MockERC4626 token contract",
+      description:
+        "The address of the MockERC4626 token contract (leave blank to deploy ERC20Mintable)",
       type: "string",
-      required: true,
     },
     name: {
       description: "The name of the token",
@@ -61,8 +62,8 @@ export default command({
   handler: async ({ data, options, next }) => {
     const { account, chain, rpcUrl } = data as DeployOptions;
 
-    const token = await options.token({
-      prompt: "Enter token address",
+    let token = await options.token({
+      prompt: "Enter token address (leave blank to deploy ERC20Mintable)",
     });
 
     const name = await options.name({
@@ -93,11 +94,32 @@ export default command({
       chain,
     });
 
-    const decimals = await publicClient.readContract({
-      abi: ERC20Mintable.abi,
-      address: token as `0x${string}`,
-      functionName: "decimals",
-    });
+    const decimals = token
+      ? await publicClient.readContract({
+          abi: ERC20Mintable.abi,
+          address: token as `0x${string}`,
+          functionName: "decimals",
+        })
+      : 18;
+
+    if (!token) {
+      signale.pending("Deploying ERC20Mintable...");
+      const { address } = await deployERC20Mintable({
+        account,
+        rpcUrl,
+        admin,
+        chain,
+        decimals,
+        isCompetitionMode,
+        tokenName: `${name} Token`,
+        tokenSymbol: `${symbol}T`,
+        onSubmitted: (txHash) => {
+          signale.pending(`ERC20Mintable deployment tx submitted: ${txHash}`);
+        },
+      });
+      signale.success(`ERC20Mintable deployed @ ${address}`);
+      token = address;
+    }
 
     signale.pending("Deploying MockERC4626...");
 

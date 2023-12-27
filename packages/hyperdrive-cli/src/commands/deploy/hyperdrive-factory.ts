@@ -9,6 +9,7 @@ import {
   deployContract,
 } from "../../utils/deployContract.js";
 import { DeployOptions } from "../deploy.js";
+import { deployForwarderFactory } from "./forwarder-factory.js";
 
 export default command({
   description: "Deploy an ERC4626HyperdriveFactory contract",
@@ -38,7 +39,6 @@ export default command({
       type: "string",
       required: true,
     },
-
     decimals: {
       description: "The number of decimals for the token, used to scale fees",
       type: "number",
@@ -101,9 +101,9 @@ export default command({
     },
     linker: {
       alias: ["linker-factory"],
-      description: "The address of the linker factory",
+      description: "The address of the linker factory (leave blank to deploy)",
       type: "string",
-      required: true,
+      // required: true,
     },
     // TODO: Does this need to be manually set?
     // "linker-hash": {
@@ -181,14 +181,30 @@ export default command({
       prompt: "Enter maximum governance zombie fee",
     });
 
-    const linkerFactory = await options.linkerFactory({
-      prompt: "Enter linker factory address",
+    let linkerFactory = await options.linkerFactory({
+      prompt: "Enter linker factory address (leave blank to deploy)",
     });
 
     const publicClient = createPublicClient({
       transport: http(rpcUrl),
       chain,
     });
+
+    if (!linkerFactory) {
+      signale.pending("Deploying ForwarderFactory...");
+      const { address } = await deployForwarderFactory({
+        account,
+        chain,
+        rpcUrl,
+        onSubmitted: (txHash) => {
+          signale.pending(
+            `ForwarderFactory deployment tx submitted: ${txHash}`,
+          );
+        },
+      });
+      linkerFactory = address;
+      signale.success(`ForwarderFactory deployed @ ${address}`);
+    }
 
     const linkerCodeHash = await publicClient.readContract({
       abi: ForwarderFactory.abi,
@@ -204,16 +220,16 @@ export default command({
       defaultPausers,
       feeCollector,
       fees: {
-        curve: parseUnits(curveFee.toString(), decimals),
-        flat: parseUnits(flatFee.toString(), decimals),
-        governanceLP: parseUnits(govLpFee.toString(), decimals),
-        governanceZombie: parseUnits(govZombieFee.toString(), decimals),
+        curve: parseUnits(curveFee, decimals),
+        flat: parseUnits(flatFee, decimals),
+        governanceLP: parseUnits(govLpFee, decimals),
+        governanceZombie: parseUnits(govZombieFee, decimals),
       },
       maxFees: {
-        curve: parseUnits(maxCurveFee.toString(), decimals),
-        flat: parseUnits(maxFlatFee.toString(), decimals),
-        governanceLP: parseUnits(maxGovLpFee.toString(), decimals),
-        governanceZombie: parseUnits(maxGovZombieFee.toString(), decimals),
+        curve: parseUnits(maxCurveFee, decimals),
+        flat: parseUnits(maxFlatFee, decimals),
+        governanceLP: parseUnits(maxGovLpFee, decimals),
+        governanceZombie: parseUnits(maxGovZombieFee, decimals),
       },
       linkerFactory,
       linkerCodeHash,

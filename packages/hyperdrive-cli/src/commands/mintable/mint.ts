@@ -1,28 +1,28 @@
-import { HyperdriveFactory } from "@hyperdrive/artifacts/dist/HyperdriveFactory.js";
+import { ERC20Mintable } from "@hyperdrive/artifacts/dist/ERC20Mintable.js";
 import { command } from "clide-js";
 import signale from "signale";
-import { createPublicClient, createWalletClient, http } from "viem";
+import { createPublicClient, createWalletClient, http, parseUnits } from "viem";
 import { privateKeyToAccount } from "viem/accounts";
 import { chainOption, getChain } from "../../reusable-options/chain.js";
 import { rpcUrlOption } from "../../reusable-options/rpc-url.js";
 import { walletKeyOption } from "../../reusable-options/wallet-key.js";
 
 export default command({
-  description: "Add a Hyperdrive deployer to a HyperdriveFactory contract",
+  description: "Mint some ERC20Mintable tokens",
 
   options: {
     chain: chainOption,
     rpc: rpcUrlOption,
     wallet: walletKeyOption,
-    a: {
-      alias: ["address"],
-      description: "The address of the HyperdriveFactory contract",
+    address: {
+      description: "The address of the ERC20Mintable contract",
       type: "string",
+      required: true,
     },
-    d: {
-      alias: ["deployer"],
-      description: "The address of the Hyperdrive deployer",
+    amount: {
+      description: "The amount of tokens to mint",
       type: "string",
+      required: true,
     },
   },
 
@@ -33,35 +33,42 @@ export default command({
       prompt: "Enter RPC URL",
     });
 
-    const walletKey = await options.wallet({
+    const wallerKey = await options.wallet({
       prompt: "Enter wallet key",
     });
 
     const address = await options.address({
-      prompt: "Enter factory address",
+      prompt: "Enter ERC20Mintable address",
     });
 
-    const deployer = await options.deployer({
-      prompt: "Enter deployer address",
+    const amount = await options.amount({
+      prompt: "Enter amount to mint",
     });
+
+    const account = privateKeyToAccount(wallerKey as `0x${string}`);
 
     const publicClient = createPublicClient({
       transport: http(rpcUrl),
       chain,
     });
-    const walletClient = createWalletClient({
-      account: privateKeyToAccount(walletKey as `0x${string}`),
-      transport: http(rpcUrl),
-      chain,
+
+    const decimals = await publicClient.readContract({
+      abi: ERC20Mintable.abi,
+      address: address as `0x${string}`,
+      functionName: "decimals",
     });
 
-    signale.pending("Adding deployer to HyperdriveFactory contract...");
-
     const { request } = await publicClient.simulateContract({
-      abi: HyperdriveFactory.abi,
+      abi: ERC20Mintable.abi,
       address: address as `0x${string}`,
-      functionName: "addHyperdriveDeployer",
-      args: [deployer as `0x${string}`],
+      functionName: "mint",
+      args: [parseUnits(amount, decimals)],
+    });
+
+    const walletClient = createWalletClient({
+      account,
+      transport: http(rpcUrl),
+      chain,
     });
 
     const txHash = await walletClient.writeContract(request);

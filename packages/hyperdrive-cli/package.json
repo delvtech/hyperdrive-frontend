@@ -16,8 +16,9 @@
   "dependencies": {
     "@hyperdrive/artifacts": "*",
     "ajv": "^8.12.0",
+    "big.js": "^6.2.1",
     "cli-table": "^0.3.11",
-    "clide-js": "^0.1.0-alpha.0",
+    "clide-js": "^0.1.0-alpha.1",
     "clide-plugin-command-menu": "^0.0.6",
     "hardhat": "^2.19.2",
     "signale": "^1.4.0",
@@ -29,6 +30,7 @@
     "@hyperdrive/tsconfig": "*",
     "@nomicfoundation/hardhat-network-helpers": "^1.0.10",
     "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@types/big.js": "^6.2.2",
     "@types/cli-table": "^0.3.4",
     "@types/prompts": "^2.4.9",
     "@types/signale": "^1.4.7",

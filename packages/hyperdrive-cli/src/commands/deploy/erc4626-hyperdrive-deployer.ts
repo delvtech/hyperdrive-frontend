@@ -7,6 +7,11 @@ import {
   deployContract,
 } from "../../utils/deployContract.js";
 import { DeployOptions } from "../deploy.js";
+import { deployERC4626HyperdriveCoreDeployer } from "./erc4626-hyperdrive-core-deployer.js";
+import { deployERC4626Target0Deployer } from "./erc4626-target-0-deployer.js";
+import { deployERC4626Target1Deployer } from "./erc4626-target-1-deployer.js";
+import { deployERC4626Target2Deployer } from "./erc4626-target-2-deployer.js";
+import { deployERC4626Target3Deployer } from "./erc4626-target-3-deployer.js";
 
 export default command({
   description: "Deploy an ERC4626HyperdriveDeployer contract",
@@ -14,58 +19,139 @@ export default command({
   options: {
     core: {
       alias: ["core-deployer", "hyperdrive-core-deployer"],
-      description: "The address of the ERC4626HyperdriveCoreDeployer contract",
+      description:
+        "The address of the ERC4626HyperdriveCoreDeployer contract (leave blank to deploy)",
       type: "string",
-      required: true,
     },
     ["target-0"]: {
       alias: ["target-0-deployer"],
-      description: "The address of the ERC4626Target0Deployer contract",
+      description:
+        "The address of the ERC4626Target0Deployer contract (leave blank to deploy)",
       type: "string",
-      required: true,
     },
     ["target-1"]: {
       alias: ["target-1-deployer"],
-      description: "The address of the ERC4626Target1Deployer contract",
+      description:
+        "The address of the ERC4626Target1Deployer contract (leave blank to deploy)",
       type: "string",
-      required: true,
     },
     ["target-2"]: {
       alias: ["target-2-deployer"],
-      description: "The address of the ERC4626Target2Deployer contract",
+      description:
+        "The address of the ERC4626Target2Deployer contract (leave blank to deploy)",
       type: "string",
-      required: true,
     },
     ["target-3"]: {
       alias: ["target-3-deployer"],
-      description: "The address of the ERC4626Target3Deployer contract",
+      description:
+        "The address of the ERC4626Target3Deployer contract (leave blank to deploy)",
       type: "string",
-      required: true,
     },
   },
 
   handler: async ({ data, options, next }) => {
     const { account, chain, rpcUrl } = data as DeployOptions;
 
-    const hyperdriveCoreDeployer = await options.hyperdriveCoreDeployer({
-      prompt: "Enter ERC4626HyperdriveCoreDeployer address",
+    let hyperdriveCoreDeployer = await options.hyperdriveCoreDeployer({
+      prompt:
+        "Enter ERC4626HyperdriveCoreDeployer address (leave blank to deploy)",
     });
 
-    const target0Deployer = await options.target0Deployer({
-      prompt: "Enter ERC4626Target0Deployer address",
+    if (!hyperdriveCoreDeployer) {
+      signale.pending("Deploying ERC4626HyperdriveCoreDeployer contract...");
+      const { address } = await deployERC4626HyperdriveCoreDeployer({
+        account,
+        rpcUrl,
+        chain,
+        onSubmitted: (txHash) => {
+          signale.pending(
+            `ERC4626HyperdriveCoreDeployer deployment tx submitted: ${txHash}`,
+          );
+        },
+      });
+      hyperdriveCoreDeployer = address;
+      signale.success(`ERC4626HyperdriveCoreDeployer deployed @ ${address}`);
+    }
+
+    let target0Deployer = await options.target0Deployer({
+      prompt: "Enter ERC4626Target0Deployer address (leave blank to deploy)",
     });
 
-    const target1Deployer = await options.target1Deployer({
-      prompt: "Enter ERC4626Target1Deployer address",
+    if (!target0Deployer) {
+      signale.pending("Deploying ERC4626Target0Deployer contract...");
+      const { address } = await deployERC4626Target0Deployer({
+        account,
+        rpcUrl,
+        chain,
+        onSubmitted: (txHash) => {
+          signale.pending(
+            `ERC4626Target0Deployer deployment tx submitted: ${txHash}`,
+          );
+        },
+      });
+      target0Deployer = address;
+      signale.success(`ERC4626Target0Deployer deployed @ ${address}`);
+    }
+
+    let target1Deployer = await options.target1Deployer({
+      prompt: "Enter ERC4626Target1Deployer address (leave blank to deploy)",
     });
 
-    const target2Deployer = await options.target2Deployer({
-      prompt: "Enter ERC4626Target2Deployer address",
+    if (!target1Deployer) {
+      signale.pending("Deploying ERC4626Target1Deployer contract...");
+      const { address } = await deployERC4626Target1Deployer({
+        account,
+        rpcUrl,
+        chain,
+        onSubmitted: (txHash) => {
+          signale.pending(
+            `ERC4626Target1Deployer deployment tx submitted: ${txHash}`,
+          );
+        },
+      });
+      target1Deployer = address;
+      signale.success(`ERC4626Target1Deployer deployed @ ${address}`);
+    }
+
+    let target2Deployer = await options.target2Deployer({
+      prompt: "Enter ERC4626Target2Deployer address (leave blank to deploy)",
     });
 
-    const target3Deployer = await options.target3Deployer({
-      prompt: "Enter ERC4626Target3Deployer address",
+    if (!target2Deployer) {
+      signale.pending("Deploying ERC4626Target2Deployer contract...");
+      const { address } = await deployERC4626Target2Deployer({
+        account,
+        rpcUrl,
+        chain,
+        onSubmitted: (txHash) => {
+          signale.pending(
+            `ERC4626Target2Deployer deployment tx submitted: ${txHash}`,
+          );
+        },
+      });
+      target2Deployer = address;
+      signale.success(`ERC4626Target2Deployer deployed @ ${address}`);
+    }
+
+    let target3Deployer = await options.target3Deployer({
+      prompt: "Enter ERC4626Target3Deployer address (leave blank to deploy)",
     });
+
+    if (!target3Deployer) {
+      signale.pending("Deploying ERC4626Target3Deployer contract...");
+      const { address } = await deployERC4626Target3Deployer({
+        account,
+        rpcUrl,
+        chain,
+        onSubmitted: (txHash) => {
+          signale.pending(
+            `ERC4626Target3Deployer deployment tx submitted: ${txHash}`,
+          );
+        },
+      });
+      target3Deployer = address;
+      signale.success(`ERC4626Target3Deployer deployed @ ${address}`);
+    }
 
     signale.pending("Deploying ERC4626HyperdriveDeployer contract...");
 
