@@ -138,22 +138,22 @@ export const IForwarderFactory =
   },
   "ast": {
     "absolutePath": "contracts/src/interfaces/IForwarderFactory.sol",
-    "id": 3321,
+    "id": 4186,
     "exportedSymbols": {
       "IForwarderFactory": [
-        3320
+        4185
       ],
       "IMultiToken": [
-        4168
+        5121
       ]
     },
     "nodeType": "SourceUnit",
-    "src": "39:180:19",
+    "src": "39:180:27",
     "nodes": [
       {
-        "id": 3309,
+        "id": 4174,
         "nodeType": "PragmaDirective",
-        "src": "39:23:19",
+        "src": "39:23:27",
         "nodes": [],
         "literals": [
           "solidity",
@@ -162,24 +162,24 @@ export const IForwarderFactory =
         ]
       },
       {
-        "id": 3311,
+        "id": 4176,
         "nodeType": "ImportDirective",
-        "src": "64:48:19",
+        "src": "64:48:27",
         "nodes": [],
         "absolutePath": "contracts/src/interfaces/IMultiToken.sol",
         "file": "./IMultiToken.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 3321,
-        "sourceUnit": 4169,
+        "scope": 4186,
+        "sourceUnit": 5122,
         "symbolAliases": [
           {
             "foreign": {
-              "id": 3310,
+              "id": 4175,
               "name": "IMultiToken",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "referencedDeclaration": 4168,
-              "src": "73:11:19",
+              "referencedDeclaration": 5121,
+              "src": "73:11:27",
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
@@ -188,63 +188,63 @@ export const IForwarderFactory =
         "unitAlias": ""
       },
       {
-        "id": 3320,
+        "id": 4185,
         "nodeType": "ContractDefinition",
-        "src": "114:104:19",
+        "src": "114:104:27",
         "nodes": [
           {
-            "id": 3319,
+            "id": 4184,
             "nodeType": "FunctionDefinition",
-            "src": "148:68:19",
+            "src": "148:68:27",
             "nodes": [],
             "functionSelector": "600eb4ba",
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "getDeployDetails",
-            "nameLocation": "157:16:19",
+            "nameLocation": "157:16:27",
             "parameters": {
-              "id": 3312,
+              "id": 4177,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "173:2:19"
+              "src": "173:2:27"
             },
             "returnParameters": {
-              "id": 3318,
+              "id": 4183,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3315,
+                  "id": 4180,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3319,
-                  "src": "194:11:19",
+                  "scope": 4184,
+                  "src": "194:11:27",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_IMultiToken_$4168",
+                    "typeIdentifier": "t_contract$_IMultiToken_$5121",
                     "typeString": "contract IMultiToken"
                   },
                   "typeName": {
-                    "id": 3314,
+                    "id": 4179,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 3313,
+                      "id": 4178,
                       "name": "IMultiToken",
                       "nameLocations": [
-                        "194:11:19"
+                        "194:11:27"
                       ],
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 4168,
-                      "src": "194:11:19"
+                      "referencedDeclaration": 5121,
+                      "src": "194:11:27"
                     },
-                    "referencedDeclaration": 4168,
-                    "src": "194:11:19",
+                    "referencedDeclaration": 5121,
+                    "src": "194:11:27",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_IMultiToken_$4168",
+                      "typeIdentifier": "t_contract$_IMultiToken_$5121",
                       "typeString": "contract IMultiToken"
                     }
                   },
@@ -252,13 +252,13 @@ export const IForwarderFactory =
                 },
                 {
                   "constant": false,
-                  "id": 3317,
+                  "id": 4182,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3319,
-                  "src": "207:7:19",
+                  "scope": 4184,
+                  "src": "207:7:27",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -266,10 +266,10 @@ export const IForwarderFactory =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 3316,
+                    "id": 4181,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "207:7:19",
+                    "src": "207:7:27",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -278,9 +278,9 @@ export const IForwarderFactory =
                   "visibility": "internal"
                 }
               ],
-              "src": "193:22:19"
+              "src": "193:22:27"
             },
-            "scope": 3320,
+            "scope": 4185,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
@@ -293,15 +293,15 @@ export const IForwarderFactory =
         "contractKind": "interface",
         "fullyImplemented": false,
         "linearizedBaseContracts": [
-          3320
+          4185
         ],
         "name": "IForwarderFactory",
-        "nameLocation": "124:17:19",
-        "scope": 3321,
+        "nameLocation": "124:17:27",
+        "scope": 4186,
         "usedErrors": []
       }
     ],
     "license": "Apache-2.0"
   },
-  "id": 19
+  "id": 27
 } as const;

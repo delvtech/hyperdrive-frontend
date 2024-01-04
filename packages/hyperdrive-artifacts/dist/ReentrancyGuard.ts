@@ -66,19 +66,19 @@ export const ReentrancyGuard =
   },
   "ast": {
     "absolutePath": "lib/solmate/src/utils/ReentrancyGuard.sol",
-    "id": 60565,
+    "id": 63915,
     "exportedSymbols": {
       "ReentrancyGuard": [
-        60564
+        63914
       ]
     },
     "nodeType": "SourceUnit",
-    "src": "42:560:87",
+    "src": "42:560:98",
     "nodes": [
       {
-        "id": 60540,
+        "id": 63890,
         "nodeType": "PragmaDirective",
-        "src": "42:24:87",
+        "src": "42:24:98",
         "nodes": [],
         "literals": [
           "solidity",
@@ -88,20 +88,20 @@ export const ReentrancyGuard =
         ]
       },
       {
-        "id": 60564,
+        "id": 63914,
         "nodeType": "ContractDefinition",
-        "src": "389:212:87",
+        "src": "389:212:98",
         "nodes": [
           {
-            "id": 60544,
+            "id": 63894,
             "nodeType": "VariableDeclaration",
-            "src": "429:26:87",
+            "src": "429:26:98",
             "nodes": [],
             "constant": false,
             "mutability": "mutable",
             "name": "locked",
-            "nameLocation": "445:6:87",
-            "scope": 60564,
+            "nameLocation": "445:6:98",
+            "scope": 63914,
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -109,10 +109,10 @@ export const ReentrancyGuard =
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 60542,
+              "id": 63892,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "429:7:87",
+              "src": "429:7:98",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -120,14 +120,14 @@ export const ReentrancyGuard =
             },
             "value": {
               "hexValue": "31",
-              "id": 60543,
+              "id": 63893,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "454:1:87",
+              "src": "454:1:98",
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_1_by_1",
                 "typeString": "int_const 1"
@@ -137,14 +137,14 @@ export const ReentrancyGuard =
             "visibility": "private"
           },
           {
-            "id": 60563,
+            "id": 63913,
             "nodeType": "ModifierDefinition",
-            "src": "462:137:87",
+            "src": "462:137:98",
             "nodes": [],
             "body": {
-              "id": 60562,
+              "id": 63912,
               "nodeType": "Block",
-              "src": "494:105:87",
+              "src": "494:105:98",
               "nodes": [],
               "statements": [
                 {
@@ -155,18 +155,18 @@ export const ReentrancyGuard =
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 60549,
+                        "id": 63899,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
-                          "id": 60547,
+                          "id": 63897,
                           "name": "locked",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 60544,
-                          "src": "512:6:87",
+                          "referencedDeclaration": 63894,
+                          "src": "512:6:98",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -176,21 +176,21 @@ export const ReentrancyGuard =
                         "operator": "==",
                         "rightExpression": {
                           "hexValue": "31",
-                          "id": 60548,
+                          "id": 63898,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "522:1:87",
+                          "src": "522:1:98",
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_1_by_1",
                             "typeString": "int_const 1"
                           },
                           "value": "1"
                         },
-                        "src": "512:11:87",
+                        "src": "512:11:98",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -198,14 +198,14 @@ export const ReentrancyGuard =
                       },
                       {
                         "hexValue": "5245454e5452414e4359",
-                        "id": 60550,
+                        "id": 63900,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "525:12:87",
+                        "src": "525:12:98",
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_180a23d5434c537ca84b1e47f534d18e25bd055e02a65ce20bae4afd9c835f59",
                           "typeString": "literal_string \"REENTRANCY\""
@@ -224,7 +224,7 @@ export const ReentrancyGuard =
                           "typeString": "literal_string \"REENTRANCY\""
                         }
                       ],
-                      "id": 60546,
+                      "id": 63896,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -232,13 +232,13 @@ export const ReentrancyGuard =
                         -18
                       ],
                       "referencedDeclaration": -18,
-                      "src": "504:7:87",
+                      "src": "504:7:98",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 60551,
+                    "id": 63901,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -247,31 +247,31 @@ export const ReentrancyGuard =
                     "nameLocations": [],
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "504:34:87",
+                    "src": "504:34:98",
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 60552,
+                  "id": 63902,
                   "nodeType": "ExpressionStatement",
-                  "src": "504:34:87"
+                  "src": "504:34:98"
                 },
                 {
                   "expression": {
-                    "id": 60555,
+                    "id": 63905,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 60553,
+                      "id": 63903,
                       "name": "locked",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 60544,
-                      "src": "549:6:87",
+                      "referencedDeclaration": 63894,
+                      "src": "549:6:98",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -281,49 +281,49 @@ export const ReentrancyGuard =
                     "operator": "=",
                     "rightHandSide": {
                       "hexValue": "32",
-                      "id": 60554,
+                      "id": 63904,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "558:1:87",
+                      "src": "558:1:98",
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_2_by_1",
                         "typeString": "int_const 2"
                       },
                       "value": "2"
                     },
-                    "src": "549:10:87",
+                    "src": "549:10:98",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 60556,
+                  "id": 63906,
                   "nodeType": "ExpressionStatement",
-                  "src": "549:10:87"
+                  "src": "549:10:98"
                 },
                 {
-                  "id": 60557,
+                  "id": 63907,
                   "nodeType": "PlaceholderStatement",
-                  "src": "570:1:87"
+                  "src": "570:1:98"
                 },
                 {
                   "expression": {
-                    "id": 60560,
+                    "id": 63910,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 60558,
+                      "id": 63908,
                       "name": "locked",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 60544,
-                      "src": "582:6:87",
+                      "referencedDeclaration": 63894,
+                      "src": "582:6:98",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -333,39 +333,39 @@ export const ReentrancyGuard =
                     "operator": "=",
                     "rightHandSide": {
                       "hexValue": "31",
-                      "id": 60559,
+                      "id": 63909,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "591:1:87",
+                      "src": "591:1:98",
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_1_by_1",
                         "typeString": "int_const 1"
                       },
                       "value": "1"
                     },
-                    "src": "582:10:87",
+                    "src": "582:10:98",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 60561,
+                  "id": 63911,
                   "nodeType": "ExpressionStatement",
-                  "src": "582:10:87"
+                  "src": "582:10:98"
                 }
               ]
             },
             "name": "nonReentrant",
-            "nameLocation": "471:12:87",
+            "nameLocation": "471:12:98",
             "parameters": {
-              "id": 60545,
+              "id": 63895,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "483:2:87"
+              "src": "483:2:98"
             },
             "virtual": true,
             "visibility": "internal"
@@ -377,22 +377,22 @@ export const ReentrancyGuard =
         "contractDependencies": [],
         "contractKind": "contract",
         "documentation": {
-          "id": 60541,
+          "id": 63891,
           "nodeType": "StructuredDocumentation",
-          "src": "68:321:87",
+          "src": "68:321:98",
           "text": "@notice Gas optimized reentrancy protection for smart contracts.\n @author Solmate (https://github.com/transmissions11/solmate/blob/main/src/utils/ReentrancyGuard.sol)\n @author Modified from OpenZeppelin (https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/security/ReentrancyGuard.sol)"
         },
         "fullyImplemented": true,
         "linearizedBaseContracts": [
-          60564
+          63914
         ],
         "name": "ReentrancyGuard",
-        "nameLocation": "407:15:87",
-        "scope": 60565,
+        "nameLocation": "407:15:98",
+        "scope": 63915,
         "usedErrors": []
       }
     ],
     "license": "AGPL-3.0-only"
   },
-  "id": 87
+  "id": 98
 } as const;

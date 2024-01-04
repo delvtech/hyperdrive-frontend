@@ -738,22 +738,22 @@ export const ILido =
   },
   "ast": {
     "absolutePath": "contracts/src/interfaces/ILido.sol",
-    "id": 4063,
+    "id": 5016,
     "exportedSymbols": {
       "IERC20": [
-        3030
+        3872
       ],
       "ILido": [
-        4062
+        5015
       ]
     },
     "nodeType": "SourceUnit",
-    "src": "39:565:25",
+    "src": "39:565:35",
     "nodes": [
       {
-        "id": 4019,
+        "id": 4972,
         "nodeType": "PragmaDirective",
-        "src": "39:23:25",
+        "src": "39:23:35",
         "nodes": [],
         "literals": [
           "solidity",
@@ -762,24 +762,24 @@ export const ILido =
         ]
       },
       {
-        "id": 4021,
+        "id": 4974,
         "nodeType": "ImportDirective",
-        "src": "64:38:25",
+        "src": "64:38:35",
         "nodes": [],
         "absolutePath": "contracts/src/interfaces/IERC20.sol",
         "file": "./IERC20.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 4063,
-        "sourceUnit": 3031,
+        "scope": 5016,
+        "sourceUnit": 3873,
         "symbolAliases": [
           {
             "foreign": {
-              "id": 4020,
+              "id": 4973,
               "name": "IERC20",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "referencedDeclaration": 3030,
-              "src": "73:6:25",
+              "referencedDeclaration": 3872,
+              "src": "73:6:35",
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
@@ -788,34 +788,34 @@ export const ILido =
         "unitAlias": ""
       },
       {
-        "id": 4062,
+        "id": 5015,
         "nodeType": "ContractDefinition",
-        "src": "104:499:25",
+        "src": "104:499:35",
         "nodes": [
           {
-            "id": 4030,
+            "id": 4983,
             "nodeType": "FunctionDefinition",
-            "src": "136:70:25",
+            "src": "136:70:35",
             "nodes": [],
             "functionSelector": "a1903eab",
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "submit",
-            "nameLocation": "145:6:25",
+            "nameLocation": "145:6:35",
             "parameters": {
-              "id": 4026,
+              "id": 4979,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4025,
+                  "id": 4978,
                   "mutability": "mutable",
                   "name": "_referral",
-                  "nameLocation": "160:9:25",
+                  "nameLocation": "160:9:35",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4030,
-                  "src": "152:17:25",
+                  "scope": 4983,
+                  "src": "152:17:35",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -823,10 +823,10 @@ export const ILido =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 4024,
+                    "id": 4977,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "152:7:25",
+                    "src": "152:7:35",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -836,21 +836,21 @@ export const ILido =
                   "visibility": "internal"
                 }
               ],
-              "src": "151:19:25"
+              "src": "151:19:35"
             },
             "returnParameters": {
-              "id": 4029,
+              "id": 4982,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4028,
+                  "id": 4981,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4030,
-                  "src": "197:7:25",
+                  "scope": 4983,
+                  "src": "197:7:35",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -858,10 +858,10 @@ export const ILido =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 4027,
+                    "id": 4980,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "197:7:25",
+                    "src": "197:7:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -870,37 +870,37 @@ export const ILido =
                   "visibility": "internal"
                 }
               ],
-              "src": "196:9:25"
+              "src": "196:9:35"
             },
-            "scope": 4062,
+            "scope": 5015,
             "stateMutability": "payable",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 4039,
+            "id": 4992,
             "nodeType": "FunctionDefinition",
-            "src": "212:116:25",
+            "src": "212:116:35",
             "nodes": [],
             "functionSelector": "8fcb4e5b",
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "transferShares",
-            "nameLocation": "221:14:25",
+            "nameLocation": "221:14:35",
             "parameters": {
-              "id": 4035,
+              "id": 4988,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4032,
+                  "id": 4985,
                   "mutability": "mutable",
                   "name": "_recipient",
-                  "nameLocation": "253:10:25",
+                  "nameLocation": "253:10:35",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4039,
-                  "src": "245:18:25",
+                  "scope": 4992,
+                  "src": "245:18:35",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -908,10 +908,10 @@ export const ILido =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 4031,
+                    "id": 4984,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "245:7:25",
+                    "src": "245:7:35",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -922,13 +922,13 @@ export const ILido =
                 },
                 {
                   "constant": false,
-                  "id": 4034,
+                  "id": 4987,
                   "mutability": "mutable",
                   "name": "_sharesAmount",
-                  "nameLocation": "281:13:25",
+                  "nameLocation": "281:13:35",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4039,
-                  "src": "273:21:25",
+                  "scope": 4992,
+                  "src": "273:21:35",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -936,10 +936,10 @@ export const ILido =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 4033,
+                    "id": 4986,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "273:7:25",
+                    "src": "273:7:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -948,21 +948,21 @@ export const ILido =
                   "visibility": "internal"
                 }
               ],
-              "src": "235:65:25"
+              "src": "235:65:35"
             },
             "returnParameters": {
-              "id": 4038,
+              "id": 4991,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4037,
+                  "id": 4990,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4039,
-                  "src": "319:7:25",
+                  "scope": 4992,
+                  "src": "319:7:35",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -970,10 +970,10 @@ export const ILido =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 4036,
+                    "id": 4989,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "319:7:25",
+                    "src": "319:7:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -982,43 +982,43 @@ export const ILido =
                   "visibility": "internal"
                 }
               ],
-              "src": "318:9:25"
+              "src": "318:9:35"
             },
-            "scope": 4062,
+            "scope": 5015,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 4044,
+            "id": 4997,
             "nodeType": "FunctionDefinition",
-            "src": "334:60:25",
+            "src": "334:60:35",
             "nodes": [],
             "functionSelector": "47b714e0",
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "getBufferedEther",
-            "nameLocation": "343:16:25",
+            "nameLocation": "343:16:35",
             "parameters": {
-              "id": 4040,
+              "id": 4993,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "359:2:25"
+              "src": "359:2:35"
             },
             "returnParameters": {
-              "id": 4043,
+              "id": 4996,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4042,
+                  "id": 4995,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4044,
-                  "src": "385:7:25",
+                  "scope": 4997,
+                  "src": "385:7:35",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1026,10 +1026,10 @@ export const ILido =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 4041,
+                    "id": 4994,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "385:7:25",
+                    "src": "385:7:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1038,43 +1038,43 @@ export const ILido =
                   "visibility": "internal"
                 }
               ],
-              "src": "384:9:25"
+              "src": "384:9:35"
             },
-            "scope": 4062,
+            "scope": 5015,
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 4049,
+            "id": 5002,
             "nodeType": "FunctionDefinition",
-            "src": "400:63:25",
+            "src": "400:63:35",
             "nodes": [],
             "functionSelector": "37cfdaca",
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "getTotalPooledEther",
-            "nameLocation": "409:19:25",
+            "nameLocation": "409:19:35",
             "parameters": {
-              "id": 4045,
+              "id": 4998,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "428:2:25"
+              "src": "428:2:35"
             },
             "returnParameters": {
-              "id": 4048,
+              "id": 5001,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4047,
+                  "id": 5000,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4049,
-                  "src": "454:7:25",
+                  "scope": 5002,
+                  "src": "454:7:35",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1082,10 +1082,10 @@ export const ILido =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 4046,
+                    "id": 4999,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "454:7:25",
+                    "src": "454:7:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1094,43 +1094,43 @@ export const ILido =
                   "visibility": "internal"
                 }
               ],
-              "src": "453:9:25"
+              "src": "453:9:35"
             },
-            "scope": 4062,
+            "scope": 5015,
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 4054,
+            "id": 5007,
             "nodeType": "FunctionDefinition",
-            "src": "469:58:25",
+            "src": "469:58:35",
             "nodes": [],
             "functionSelector": "d5002f2e",
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "getTotalShares",
-            "nameLocation": "478:14:25",
+            "nameLocation": "478:14:35",
             "parameters": {
-              "id": 4050,
+              "id": 5003,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "492:2:25"
+              "src": "492:2:35"
             },
             "returnParameters": {
-              "id": 4053,
+              "id": 5006,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4052,
+                  "id": 5005,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4054,
-                  "src": "518:7:25",
+                  "scope": 5007,
+                  "src": "518:7:35",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1138,10 +1138,10 @@ export const ILido =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 4051,
+                    "id": 5004,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "518:7:25",
+                    "src": "518:7:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1150,37 +1150,37 @@ export const ILido =
                   "visibility": "internal"
                 }
               ],
-              "src": "517:9:25"
+              "src": "517:9:35"
             },
-            "scope": 4062,
+            "scope": 5015,
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 4061,
+            "id": 5014,
             "nodeType": "FunctionDefinition",
-            "src": "533:68:25",
+            "src": "533:68:35",
             "nodes": [],
             "functionSelector": "f5eb42dc",
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "sharesOf",
-            "nameLocation": "542:8:25",
+            "nameLocation": "542:8:35",
             "parameters": {
-              "id": 4057,
+              "id": 5010,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4056,
+                  "id": 5009,
                   "mutability": "mutable",
                   "name": "_account",
-                  "nameLocation": "559:8:25",
+                  "nameLocation": "559:8:35",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4061,
-                  "src": "551:16:25",
+                  "scope": 5014,
+                  "src": "551:16:35",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1188,10 +1188,10 @@ export const ILido =
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 4055,
+                    "id": 5008,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "551:7:25",
+                    "src": "551:7:35",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1201,21 +1201,21 @@ export const ILido =
                   "visibility": "internal"
                 }
               ],
-              "src": "550:18:25"
+              "src": "550:18:35"
             },
             "returnParameters": {
-              "id": 4060,
+              "id": 5013,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4059,
+                  "id": 5012,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4061,
-                  "src": "592:7:25",
+                  "scope": 5014,
+                  "src": "592:7:35",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1223,10 +1223,10 @@ export const ILido =
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 4058,
+                    "id": 5011,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "592:7:25",
+                    "src": "592:7:35",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1235,9 +1235,9 @@ export const ILido =
                   "visibility": "internal"
                 }
               ],
-              "src": "591:9:25"
+              "src": "591:9:35"
             },
-            "scope": 4062,
+            "scope": 5015,
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
@@ -1247,18 +1247,18 @@ export const ILido =
         "baseContracts": [
           {
             "baseName": {
-              "id": 4022,
+              "id": 4975,
               "name": "IERC20",
               "nameLocations": [
-                "123:6:25"
+                "123:6:35"
               ],
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 3030,
-              "src": "123:6:25"
+              "referencedDeclaration": 3872,
+              "src": "123:6:35"
             },
-            "id": 4023,
+            "id": 4976,
             "nodeType": "InheritanceSpecifier",
-            "src": "123:6:25"
+            "src": "123:6:35"
           }
         ],
         "canonicalName": "ILido",
@@ -1266,16 +1266,16 @@ export const ILido =
         "contractKind": "interface",
         "fullyImplemented": false,
         "linearizedBaseContracts": [
-          4062,
-          3030
+          5015,
+          3872
         ],
         "name": "ILido",
-        "nameLocation": "114:5:25",
-        "scope": 4063,
+        "nameLocation": "114:5:35",
+        "scope": 5016,
         "usedErrors": []
       }
     ],
     "license": "Apache-2.0"
   },
-  "id": 25
+  "id": 35
 } as const;
