@@ -1,4 +1,4 @@
-import { ArrowRightIcon } from "@heroicons/react/24/outline";
+import { ArrowRightIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import {
   createColumnHelper,
   flexRender,
@@ -29,7 +29,7 @@ const formatMobileColumnData = (row: MarketTableRowData) => [
     ),
   },
   { name: "Yield Source", value: row.yieldSource.name },
-  { name: "Yield Source APY", value: <YieldSourceApy /> },
+  { name: "Annual Yield", value: <YieldSourceApy /> },
   { name: "Fixed Rate", value: row.longAPR },
   { name: "LP APY", value: <LpApyCell hyperdrive={row.market} /> },
   {
@@ -57,7 +57,7 @@ function getMobileColumns() {
       cell: ({ row }) => {
         const data = formatMobileColumnData(row.original);
         return (
-          <ul className="flex flex-col items-start gap-1">
+          <ul className="flex flex-col items-start gap-2">
             {data.map((column) => (
               <li key={column.name}>{column.name}</li>
             ))}
@@ -70,13 +70,22 @@ function getMobileColumns() {
       cell: ({ row }) => {
         const data = formatMobileColumnData(row.original);
         return (
-          <ul className="flex flex-col items-start gap-1">
+          <ul className="flex flex-col items-start gap-2">
             {data.map((column) => (
               <li key={column.name}>{column.value}</li>
             ))}
           </ul>
         );
       },
+    }),
+    columnHelper.display({
+      header: "",
+      id: "go-to-market",
+      cell: ({ row }) => (
+        <span className="flex w-4 items-center justify-center">
+          <ChevronRightIcon className="h-4" />
+        </span>
+      ),
     }),
   ];
 }
@@ -121,7 +130,7 @@ function getColumns() {
       },
     }),
     columnHelper.display({
-      header: "Yield Source APY",
+      header: "Annual Yield",
       cell: () => {
         return <YieldSourceApy key="yield-source-apy" />;
       },
@@ -185,16 +194,16 @@ export function AllMarketsTable(): ReactElement {
   });
   return (
     <div className="flex w-full max-w-6xl flex-col items-center overflow-y-scroll px-4 md:px-0">
-      <h3 className="mb-5 w-full pl-1 text-h5 text-gray-50">
+      <h3 className="mb-5 w-full pl-1 text-h5 text-gray-400">
         Available Markets
       </h3>
-      <div className="daisy-card-bordered daisy-card flex w-full p-6">
-        <table className="daisy-table-zebra daisy-table daisy-table-lg">
+      <div className="daisy-card-bordered daisy-card flex w-full flex-row  md:p-6">
+        <table className="daisy-table-zebra daisy-table daisy-table-lg overflow-auto">
           <thead>
             {tableInstance.getHeaderGroups().map((headerGroup) => (
               <tr key={headerGroup.id}>
                 {headerGroup.headers.map((header) => (
-                  <th className="text-gray-400" key={header.id}>
+                  <th className="font-normal text-gray-400" key={header.id}>
                     {header.isPlaceholder
                       ? null
                       : flexRender(
