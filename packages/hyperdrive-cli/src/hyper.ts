@@ -26,16 +26,11 @@ run({
     },
   },
 
-  // Apply default values to options after parsing if --tes or -y are passed
+  // Apply default values to options after parsing if --yes or -y are passed
   afterParse: async ({ parsedOptions, context }) => {
     if (parsedOptions.yes) {
       for (const [key, config] of Object.entries(context.options)) {
-        const isMissingValue = parsedOptions[key] === undefined;
-        const hasDefault = config.default !== undefined;
-
-        if (isMissingValue && hasDefault) {
-          (parsedOptions[key] as any) = config.default;
-        }
+        (parsedOptions[key] as any) = parsedOptions[key] ?? config.default;
       }
     }
   },
