@@ -81,11 +81,7 @@ function getMobileColumns() {
     columnHelper.display({
       header: "",
       id: "go-to-market",
-      cell: ({ row }) => (
-        <span className="flex w-4 items-center justify-center">
-          <ChevronRightIcon className="h-4" />
-        </span>
-      ),
+      cell: () => <ChevronRightIcon className="h-4" />,
     }),
   ];
 }
@@ -197,8 +193,8 @@ export function AllMarketsTable(): ReactElement {
       <h3 className="mb-5 w-full pl-1 text-h5 text-gray-400">
         Available Markets
       </h3>
-      <div className="daisy-card-bordered daisy-card flex w-full flex-row md:p-6">
-        <table className="daisy-table-zebra daisy-table daisy-table-lg overflow-hidden">
+      <div className="daisy-card-bordered daisy-card flex w-full overflow-auto md:p-6">
+        <table className="daisy-table-zebra daisy-table daisy-table-lg">
           <thead>
             {tableInstance.getHeaderGroups().map((headerGroup) => (
               <tr key={headerGroup.id}>
