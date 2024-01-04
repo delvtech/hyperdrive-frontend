@@ -18,8 +18,8 @@
     "ajv": "^8.12.0",
     "big.js": "^6.2.1",
     "cli-table": "^0.3.11",
-    "clide-js": "^0.1.0-alpha.1",
-    "clide-plugin-command-menu": "^0.0.6",
+    "clide-js": "^0.1.0-alpha.4",
+    "clide-plugin-command-menu": "^0.0.7-alpha.1",
     "hardhat": "^2.19.2",
     "signale": "^1.4.0",
     "viem": "^1.20.0"

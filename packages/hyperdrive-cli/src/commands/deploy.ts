@@ -32,6 +32,7 @@ export default command({
       chain,
       rpcUrl,
       account,
+      walletKey: walletKey as `0x${string}`,
     };
     next(payload);
   },
@@ -41,4 +42,5 @@ export interface DeployOptions {
   chain: Chain;
   rpcUrl: string;
   account: PrivateKeyAccount;
+  walletKey: `0x${string}`;
 }

@@ -9,10 +9,10 @@ import {
   deployContract,
 } from "../../utils/deployContract.js";
 import { DeployOptions } from "../deploy.js";
-import { deployForwarderFactory } from "./forwarder-factory.js";
+import deployForwarderFactory from "./forwarder-factory.js";
 
 export default command({
-  description: "Deploy an ERC4626HyperdriveFactory contract",
+  description: "Deploy a HyperdriveFactory contract",
 
   options: {
     governance: {
@@ -114,7 +114,7 @@ export default command({
     // },
   },
 
-  handler: async ({ data, options, next }) => {
+  handler: async ({ context, data, options, next }) => {
     const { account, chain, rpcUrl } = data as DeployOptions;
 
     const governance = await options.governance({
@@ -185,26 +185,18 @@ export default command({
       prompt: "Enter linker factory address (leave blank to deploy)",
     });
 
+    if (!linkerFactory) {
+      const address = await context.invokeCommands({
+        commands: [deployForwarderFactory],
+        initialData: data,
+      });
+      linkerFactory = address as string;
+    }
+
     const publicClient = createPublicClient({
       transport: http(rpcUrl),
       chain,
     });
-
-    if (!linkerFactory) {
-      signale.pending("Deploying ForwarderFactory...");
-      const { address } = await deployForwarderFactory({
-        account,
-        chain,
-        rpcUrl,
-        onSubmitted: (txHash) => {
-          signale.pending(
-            `ForwarderFactory deployment tx submitted: ${txHash}`,
-          );
-        },
-      });
-      linkerFactory = address;
-      signale.success(`ForwarderFactory deployed @ ${address}`);
-    }
 
     const linkerCodeHash = await publicClient.readContract({
       abi: ForwarderFactory.abi,
@@ -212,7 +204,7 @@ export default command({
       functionName: "ERC20LINK_HASH",
     });
 
-    signale.pending("Deploying ERC4626HyperdriveFactory...");
+    signale.pending("Deploying HyperdriveFactory...");
 
     const { address } = await deployHyperdriveFactory({
       governance,
@@ -237,13 +229,11 @@ export default command({
       rpcUrl,
       chain,
       onSubmitted: (txHash) => {
-        signale.pending(
-          `ERC4626HyperdriveFactory deployment tx submitted: ${txHash}`,
-        );
+        signale.pending(`HyperdriveFactory deployment tx submitted: ${txHash}`);
       },
     });
 
-    signale.success(`ERC4626HyperdriveFactory deployed @ ${address}`);
+    signale.success(`HyperdriveFactory deployed @ ${address}`);
     next(address);
   },
 });

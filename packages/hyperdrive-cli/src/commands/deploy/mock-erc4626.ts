@@ -15,7 +15,7 @@ import {
   deployContract,
 } from "../../utils/deployContract.js";
 import { DeployOptions } from "../deploy.js";
-import { deployERC20Mintable } from "./erc20-mintable.js";
+import deployERC20Mintable from "./erc20-mintable.js";
 
 export default command({
   description: "Deploy a MockERC4626 contract",
@@ -59,12 +59,20 @@ export default command({
     },
   },
 
-  handler: async ({ data, options, next }) => {
+  handler: async ({ context, data, options, next }) => {
     const { account, chain, rpcUrl } = data as DeployOptions;
 
     let token = await options.token({
       prompt: "Enter token address (leave blank to deploy ERC20Mintable)",
     });
+
+    if (!token) {
+      const address = await context.invokeCommands({
+        commands: [deployERC20Mintable],
+        initialData: data,
+      });
+      token = address as string;
+    }
 
     const name = await options.name({
       prompt: "Enter vault name",
@@ -94,32 +102,11 @@ export default command({
       chain,
     });
 
-    const decimals = token
-      ? await publicClient.readContract({
-          abi: ERC20Mintable.abi,
-          address: token as `0x${string}`,
-          functionName: "decimals",
-        })
-      : 18;
-
-    if (!token) {
-      signale.pending("Deploying ERC20Mintable...");
-      const { address } = await deployERC20Mintable({
-        account,
-        rpcUrl,
-        admin,
-        chain,
-        decimals,
-        isCompetitionMode,
-        tokenName: `${name} Token`,
-        tokenSymbol: `${symbol}T`,
-        onSubmitted: (txHash) => {
-          signale.pending(`ERC20Mintable deployment tx submitted: ${txHash}`);
-        },
-      });
-      signale.success(`ERC20Mintable deployed @ ${address}`);
-      token = address;
-    }
+    const decimals = await publicClient.readContract({
+      abi: ERC20Mintable.abi,
+      address: token as `0x${string}`,
+      functionName: "decimals",
+    });
 
     signale.pending("Deploying MockERC4626...");
 
