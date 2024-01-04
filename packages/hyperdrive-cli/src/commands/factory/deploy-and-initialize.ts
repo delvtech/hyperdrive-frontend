@@ -8,6 +8,7 @@ import { ZERO_ADDRESS } from "src/constants.js";
 import {
   createPublicClient,
   createWalletClient,
+  decodeEventLog,
   encodeAbiParameters,
   http,
   parseAbiParameters,
@@ -321,9 +322,30 @@ export default command({
       ],
     });
 
+    signale.pending("Deploying and initializing Hyperdrive...");
     const txHash = await walletClient.writeContract(request);
+    signale.pending(`Deploy and initialize tx submitted: ${txHash}`);
+    const result = await publicClient.waitForTransactionReceipt({
+      hash: txHash,
+    });
 
-    signale.success(txHash);
+    let hyperdriveAddress: string | undefined;
+
+    for (const log of result.logs) {
+      if (log.address === address) {
+        hyperdriveAddress = decodeEventLog({
+          abi: HyperdriveFactory.abi,
+          eventName: "Deployed",
+          topics: log.topics,
+          data: log.data,
+        }).args.hyperdrive;
+      }
+    }
+
+    signale.success(
+      `Successfully deployed and initialized Hyperdrive @ ${hyperdriveAddress}`,
+    );
+
     next(txHash);
   },
 });
