@@ -193,12 +193,12 @@ export function AllMarketsTable(): ReactElement {
     getCoreRowModel: getCoreRowModel(),
   });
   return (
-    <div className="flex w-full max-w-6xl flex-col items-center overflow-y-scroll px-4 md:px-0">
+    <div className="flex w-full max-w-6xl flex-col items-center overflow-y-scroll p-2 md:p-4 md:px-0">
       <h3 className="mb-5 w-full pl-1 text-h5 text-gray-400">
         Available Markets
       </h3>
-      <div className="daisy-card-bordered daisy-card flex w-full flex-row  md:p-6">
-        <table className="daisy-table-zebra daisy-table daisy-table-lg overflow-auto">
+      <div className="daisy-card-bordered daisy-card flex w-full flex-row md:p-6">
+        <table className="daisy-table-zebra daisy-table daisy-table-lg overflow-hidden">
           <thead>
             {tableInstance.getHeaderGroups().map((headerGroup) => (
               <tr key={headerGroup.id}>
