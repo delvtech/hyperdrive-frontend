@@ -12,6 +12,7 @@ import {
 } from "@hyperdrive/evm-client";
 import { MockHyperdriveMath } from "@hyperdrive/artifacts/dist/MockHyperdriveMath";
 import { CheckpointEvent } from "src/pool/Checkpoint";
+import { setupReadHyperdrive } from "./testing/setupReadHyperdrive";
 
 // The sdk should return the exact PoolConfig from the contracts. It should not
 // do any conversions or transformations, eg: converting seconds to ms,
@@ -246,23 +247,3 @@ test("getCheckpointEvents should return an array of CheckpointEvents", async () 
 
   expect(events).toEqual(checkPointEvents);
 });
-
-// No need to explicitly set return types as they are alread set in the Stubs
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-export function setupReadHyperdrive() {
-  const contract = new ReadContractStub(IHyperdrive.abi);
-  const cachedContract = new CachedReadContract({ contract });
-
-  const mathContract = new ReadContractStub(MockHyperdriveMath.abi);
-  const cachedMathContract = new CachedReadContract({ contract: mathContract });
-
-  const network = new NetworkStub();
-
-  const readHyperdrive = new ReadHyperdrive({
-    contract: cachedContract,
-    mathContract: cachedMathContract,
-    network: network,
-  });
-
-  return { contract, mathContract, network, readHyperdrive };
-}

@@ -1,7 +1,7 @@
 import { expect, test } from "vitest";
 import { calculateEffectiveShareReserves } from "src/pool/calculateEffectiveShares";
-import { setupReadHyperdrive } from "src/hyperdrive/ReadHyperdrive/ReadHyperdrive.test";
 import { mockPoolInfo } from "src/pool/testing/PoolInfo";
+import { setupReadHyperdrive } from "src/hyperdrive/ReadHyperdrive/testing/setupReadHyperdrive";
 
 test("calculateEffectiveShares should return `shareReserves - shareAdjustment`", async () => {
   const { contract, readHyperdrive } = setupReadHyperdrive();
