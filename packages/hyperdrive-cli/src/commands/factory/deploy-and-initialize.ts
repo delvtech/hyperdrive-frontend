@@ -167,10 +167,6 @@ export default command({
       prompt: "Enter vault address",
     });
 
-    // const token = await options.token({
-    //   prompt: "Enter token address",
-    // });
-
     const linkerFactory = await options.linkerFactory({
       prompt: "Enter linker factory address",
     });
@@ -274,6 +270,26 @@ export default command({
       chain,
     });
 
+    const allowance = await publicClient.readContract({
+      abi: ERC20Mintable.abi,
+      address: baseToken as `0x${string}`,
+      functionName: "allowance",
+      args: [account.address, address as `0x${string}`],
+    });
+
+    const parsedContribution = parseUnits(contribution, decimals);
+
+    if (allowance < parsedContribution) {
+      const { request } = await publicClient.simulateContract({
+        abi: ERC20Mintable.abi,
+        address: baseToken as `0x${string}`,
+        functionName: "approve",
+        args: [address as `0x${string}`, parsedContribution - allowance],
+      });
+
+      await walletClient.writeContract(request);
+    }
+
     const { request } = await publicClient.simulateContract({
       abi: HyperdriveFactory.abi,
       address: address as `0x${string}`,
@@ -299,7 +315,7 @@ export default command({
           },
         },
         extraData,
-        parseUnits(contribution, decimals),
+        parsedContribution,
         parseUnits(apr, decimals),
         initializeExtraData as `0x${string}`,
       ],
