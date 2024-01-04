@@ -4,14 +4,17 @@ import { ReactElement, ReactNode } from "react";
 
 interface StatProps {
   label: string;
-  value: ReactNode;
+  value?: ReactNode;
   description?: string;
 }
 
 export function Stat({ label, value, description }: StatProps): ReactElement {
   return (
     <div className="group">
-      <div className="mb-1 whitespace-nowrap text-h4 font-bold">{value}</div>
+      {value ? (
+        <div className="mb-1 whitespace-nowrap text-h4 font-bold">{value}</div>
+      ) : undefined}
+
       {description ? (
         <div
           data-tip={description}

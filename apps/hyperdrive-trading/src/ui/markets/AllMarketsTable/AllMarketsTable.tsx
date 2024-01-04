@@ -10,6 +10,7 @@ import { ReactElement } from "react";
 import { useNavigate } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
+import { Stat } from "src/ui/base/components/Stat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
@@ -83,7 +84,9 @@ function getMobileColumns() {
 function getColumns() {
   return [
     columnHelper.accessor("market.termLengthMS", {
-      header: "Term",
+      header: () => (
+        <Stat label="Term" description="The duration of the market" />
+      ),
       cell: ({ getValue, row }) => {
         const termLength = getValue();
         return (
@@ -101,7 +104,12 @@ function getColumns() {
       },
     }),
     columnHelper.accessor("market.name", {
-      header: "Yield Source",
+      header: () => (
+        <Stat
+          label="Yield Source"
+          description="The underlying yield bearing asset"
+        />
+      ),
       cell: ({ getValue, row }) => {
         const marketName = getValue();
         return (
@@ -121,26 +129,55 @@ function getColumns() {
       },
     }),
     columnHelper.display({
-      header: "Yield Source APY",
+      id: "yield-source-apy",
+      header: ({ table }) => {
+        // TODO: determine if this method of grabbing the first row basetoken is misleading. Markets may have different base tokens so we might just make this generic.
+        const baseToken = table.options.data[0].market.baseToken;
+
+        return (
+          <Stat
+            label="Yield Source APY"
+            description={`The yield source backing the hy${baseToken.symbol} in this pool`}
+          />
+        );
+      },
       cell: () => {
         return <YieldSourceApy key="yield-source-apy" />;
       },
     }),
     columnHelper.accessor("longAPR", {
-      header: "Fixed Rate",
+      id: "fixed-apr",
+      header: () => (
+        <Stat
+          label="Fixed Rate"
+          description={`Fixed rate earned from opening longs, before fees and slippage are applied`}
+        />
+      ),
       cell: ({ getValue }) => {
         const fixedRate = getValue();
         return <span key="fixed-rate">{fixedRate}%</span>;
       },
     }),
     columnHelper.display({
-      header: "LP APY",
+      id: "lp-apy",
+      header: () => (
+        <Stat
+          label="LP APY"
+          description={`This represents the LP projected annual return based on the performance observed over the past 12 hours. It assumes the rate of return seen in this period continues consistently for an entire year.`}
+        />
+      ),
       cell: ({ row }) => {
         return <LpApyCell key="lp-apy" hyperdrive={row.original.market} />;
       },
     }),
     columnHelper.accessor("liquidity", {
-      header: "Liquidity",
+      id: "liquidity",
+      header: () => (
+        <Stat
+          label="Liquidity"
+          description="The amount of capital that has been deployed by LPs to the pool"
+        />
+      ),
       cell: ({ getValue, row }) => {
         const liquidity = getValue();
         return (
