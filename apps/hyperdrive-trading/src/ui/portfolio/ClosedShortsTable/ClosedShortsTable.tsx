@@ -169,7 +169,7 @@ export function ClosedShortsTable({
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
                 <th
-                  className="sticky bg-base-100 font-normal text-gray-400"
+                  className="sticky font-normal text-gray-400"
                   key={header.id}
                 >
                   {header.isPlaceholder

@@ -294,7 +294,7 @@ export function OpenShortsTable({
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
                 <th
-                  className="sticky z-10 bg-base-100 font-normal text-gray-400"
+                  className="sticky z-10 font-normal text-gray-400"
                   key={header.id}
                 >
                   <div

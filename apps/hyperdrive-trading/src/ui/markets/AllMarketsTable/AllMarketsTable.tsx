@@ -79,7 +79,6 @@ function getMobileColumns() {
       },
     }),
     columnHelper.display({
-      header: "",
       id: "go-to-market",
       cell: () => <ChevronRightIcon className="h-4" />,
     }),
