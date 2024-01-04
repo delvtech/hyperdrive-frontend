@@ -14,6 +14,7 @@ export const simplePoolInfo: PoolInfo = {
   withdrawalSharesProceeds: 0n,
   lpSharePrice: 0n,
   longExposure: 0n,
+  zombieShareReserves: 0n,
 };
 
 export const mockPoolInfo: PoolInfo = {
@@ -30,4 +31,5 @@ export const mockPoolInfo: PoolInfo = {
   lpSharePrice: 1000000000000000000n,
   withdrawalSharesProceeds: 0n,
   withdrawalSharesReadyToWithdraw: 0n,
+  zombieShareReserves: 0n,
 };
