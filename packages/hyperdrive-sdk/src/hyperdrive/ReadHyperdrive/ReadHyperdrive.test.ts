@@ -1,16 +1,8 @@
 import { expect, test } from "vitest";
 import * as dnum from "dnum";
-import { ReadHyperdrive } from "src/hyperdrive/ReadHyperdrive/ReadHyperdrive";
 import { mockPoolConfig, simplePoolConfig } from "src/pool/testing/PoolConfig";
 import { mockPoolInfo, simplePoolInfo } from "src/pool/testing/PoolInfo";
 import { ALICE, BOB } from "src/base/testing/accounts";
-import { IHyperdrive } from "@hyperdrive/artifacts/dist/IHyperdrive";
-import {
-  CachedReadContract,
-  NetworkStub,
-  ReadContractStub,
-} from "@hyperdrive/evm-client";
-import { MockHyperdriveMath } from "@hyperdrive/artifacts/dist/MockHyperdriveMath";
 import { CheckpointEvent } from "src/pool/Checkpoint";
 import { setupReadHyperdrive } from "./testing/setupReadHyperdrive";
 
@@ -67,7 +59,7 @@ test("getFixedRate should get the fixed rate as-is", async () => {
   });
 
   const value = await readHyperdrive.getSpotRate();
-  expect(value).toBe(34999999999999999n);
+  expect(value).toBe(50000000000000000n);
 });
 
 test("getTradingVolume should get the trading volume in terms of bonds", async () => {

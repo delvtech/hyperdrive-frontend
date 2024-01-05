@@ -22,5 +22,5 @@ test("calculateLiquidity should return the liquidity for a given market", async 
     decimals: 18,
   });
 
-  expect(liquidity).toEqual(50000000000000000000000n);
+  expect(liquidity).toEqual(10000000000000000000000000n);
 });

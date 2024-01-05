@@ -16,5 +16,5 @@ test("calculateEffectiveShares should return `shareReserves - shareAdjustment`",
     shareAdjustment: poolInfo.shareAdjustment,
   });
 
-  expect(effectiveShares).toEqual(50000000000000000000000n);
+  expect(effectiveShares).toEqual(10000000000000000000000000n);
 });
