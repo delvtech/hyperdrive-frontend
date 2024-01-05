@@ -90,7 +90,7 @@ function Hero() {
           <h2 className="gradient-text mb-5 text-h3 font-bold md:text-h2">
             DeFi yields that match your risk tolerance
           </h2>
-          <h4 className="mb-5 text-h5 text-gray-400">
+          <h4 className="mb-5 text-h5 text-neutral-content">
             Hyperdrive is an AMM that lets you buy fixed rates upfront, or
             maximize your exposure to variable rates like stETH and sDAI.
           </h4>

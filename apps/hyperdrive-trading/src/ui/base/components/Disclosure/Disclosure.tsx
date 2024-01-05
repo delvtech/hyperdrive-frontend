@@ -12,7 +12,7 @@ export function Disclosure({
 }: DisclosureProps): ReactElement {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="group daisy-collapse daisy-collapse-plus items-center border border-gray-400">
+    <div className="group daisy-collapse daisy-collapse-plus items-center border border-neutral-content">
       <input
         type="checkbox"
         onChange={() => {
@@ -21,7 +21,7 @@ export function Disclosure({
       />
       <div
         className={classNames(
-          "text-xl daisy-collapse-title font-medium text-gray-400 group-hover:opacity-100",
+          "text-xl daisy-collapse-title font-medium text-neutral-content group-hover:opacity-100",
           isOpen ? "opacity-100" : "opacity-80",
         )}
       >

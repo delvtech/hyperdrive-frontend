@@ -21,7 +21,7 @@ export function Markets(): ReactElement {
             <span className="gradient-text mb-6 text-h2 font-bold md:text-h1">
               Explore Hyperdrive Markets
             </span>
-            <p className="mb-5 mt-3 text-gray-400 md:mb-16">
+            <p className="mb-5 mt-3 text-neutral-content md:mb-16">
               Dive into our extensive table of pools, each offering unique term
               lengths to align with your strategic trading goals. Select the
               perfect pool for your next investment move in the dynamic world of
