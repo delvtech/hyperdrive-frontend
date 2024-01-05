@@ -134,14 +134,11 @@ function getColumns() {
     }),
     columnHelper.display({
       id: "yield-source-apy",
-      header: ({ table }) => {
-        // TODO: determine if this method of grabbing the first row basetoken is misleading. Markets may have different base tokens so we might just make this generic.
-        const baseToken = table.options.data[0].market.baseToken;
-
+      header: () => {
         return (
           <Stat
             label="Yield Source APY"
-            description={`The yield source backing the hy${baseToken.symbol} in this pool`}
+            description={`The yield source backing the base token in this pool`}
           />
         );
       },
@@ -167,7 +164,7 @@ function getColumns() {
       header: () => (
         <Stat
           label="LP APY"
-          description={`This represents the LP projected annual return based on the performance observed over the past 12 hours. It assumes the rate of return seen in this period continues consistently for an entire year.`}
+          description={`This indicates the LP's yearly return projection, derived from the past 12 hours' performance. It presumes the same return rate persists throughout the year.`}
         />
       ),
       cell: ({ row }) => {
@@ -312,7 +309,7 @@ function GoToMarketButton({ market }: { market: Hyperdrive }): ReactElement {
       onClick={() => {
         navigate(`/market/${market}`);
       }}
-      className="daisy-btn-circle daisy-btn-md flex items-center justify-center rounded-full bg-gray-600 hover:bg-gray-700"
+      className="daisy-btn-md daisy-btn-circle flex items-center justify-center rounded-full bg-gray-600 hover:bg-gray-700"
     >
       <ArrowRightIcon className="h-5" />
     </button>
