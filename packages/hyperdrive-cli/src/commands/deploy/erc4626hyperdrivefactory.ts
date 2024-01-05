@@ -1,4 +1,4 @@
-import { ERC4626HyperdriveFactory } from "@hyperdrive/artifacts/dist/ERC4626HyperdriveFactory";
+import { HyperdriveFactory } from "@hyperdrive/artifacts/dist/HyperdriveFactory";
 import signale from "signale";
 import { chainOption, requiredChain } from "src/options/chain";
 import { requiredRpcUrl, rpcUrlOption } from "src/options/rpc-url";
@@ -14,9 +14,9 @@ import { Chain } from "viem/chains";
 
 export const { command, aliases, describe, builder, handler } =
   createCommandModule({
-    command: "erc4626hyperdrivefactory [OPTIONS]",
-    aliases: ["ERC4626HyperdriveFactory"],
-    describe: "Deploy an ERC4626HyperdriveFactory contract",
+    command: "hyperdrivefactory [OPTIONS]",
+    aliases: ["HyperdriveFactory"],
+    describe: "Deploy a HyperdriveFactory contract",
 
     builder: (yargs) => {
       return yargs.options({
@@ -55,35 +55,38 @@ export const { command, aliases, describe, builder, handler } =
           describe: "The maximum LP fee applied to the flat portion of a trade",
           type: "string",
         },
-        "gov-fee": {
-          alias: ["governance-fee"],
-          describe: "The portion of the LP fee that goes to governance",
+        "gov-lp-fee": {
+          alias: ["governance-lp-fee"],
+          description: "The portion of the LP fee that goes to governance",
           type: "string",
+          default: "0.01",
         },
-        "max-gov-fee": {
-          alias: ["max-governance-fee"],
-          describe: "The maximum portion of the LP fee that goes to governance",
+        "max-gov-lp-fee": {
+          alias: ["max-governance-lp-fee"],
+          description:
+            "The upper bound of the governance lp fee that governance can set",
           type: "string",
+          default: "0.3",
+        },
+        "gov-zombie-fee": {
+          alias: ["governance-zombie-fee"],
+          description:
+            "The portion of the zombie interest that goes to governance",
+          type: "string",
+          default: "0.1",
+        },
+        "max-gov-zombie-fee": {
+          alias: ["max-governance-zombie-fee"],
+          description:
+            "The upper bound of the governance zombie fee that governance can set",
+          type: "string",
+          default: "0.3",
         },
         pausers: {
           alias: ["default-pausers"],
           describe:
             "The default addresses which will be set to have the pauser role",
           type: "array",
-        },
-        deployer: {
-          describe: "The Hyperdrive deployer",
-          type: "string",
-        },
-        target0: {
-          alias: ["target0-deployer"],
-          describe: "The Hyperdrive target0 deployer",
-          type: "string",
-        },
-        target1: {
-          alias: ["target1-deployer"],
-          describe: "The Hyperdrive target1 deployer",
-          type: "string",
         },
         linker: {
           alias: ["linker-factory"],
@@ -94,15 +97,6 @@ export const { command, aliases, describe, builder, handler } =
           alias: ["linker-code-hash"],
           describe: "The admin of the token",
           type: "string",
-        },
-        pool: {
-          describe: "The ERC4626 pool",
-          type: "string",
-        },
-        targets: {
-          alias: ["sweep-targets"],
-          describe: "The addresses that can be swept by the fee collector",
-          type: "array",
         },
         c: chainOption,
         r: rpcUrlOption,
@@ -163,35 +157,36 @@ export const { command, aliases, describe, builder, handler } =
         message: "Enter maximum flat fee",
       });
 
-      const governanceFee = await requiredString(args.governanceFee, {
-        name: "governance-fee",
-        message: "Enter governance fee",
+      const governanceLpFee = await requiredString(args.governanceLpFee, {
+        name: "governance-lp-fee",
+        message: "Enter governance LP fee",
       });
 
-      const maxGovernanceFee = await requiredString(args.maxGovernanceFee, {
-        name: "max-governance-fee",
-        message: "Enter maximum governance fee",
+      const maxGovernanceLpFee = await requiredString(args.maxGovernanceLpFee, {
+        name: "max-governance-lp-fee",
+        message: "Enter maximum governance LP fee",
       });
+
+      const governanceZombieFee = await requiredString(
+        args.governanceZombieFee,
+        {
+          name: "governance-zombie-fee",
+          message: "Enter governance zombie fee",
+        },
+      );
+
+      const maxGovernanceZombieFee = await requiredString(
+        args.maxGovernanceZombieFee,
+        {
+          name: "max-governance-zombie-fee",
+          message: "Enter maximum governance zombie fee",
+        },
+      );
 
       const pausers = await requiredArray(args.pausers?.map(String), {
         name: "pausers",
         message: "Enter pauser addresses",
         initial: governance,
-      });
-
-      const deployer = await requiredString(args.deployer, {
-        name: "deployer",
-        message: "Enter deployer address",
-      });
-
-      const target0 = await requiredString(args.target0, {
-        name: "target0-deployer",
-        message: "Enter target0 deployer address",
-      });
-
-      const target1 = await requiredString(args.target1, {
-        name: "target1-deployer",
-        message: "Enter target1 deployer address",
       });
 
       const linker = await requiredString(args.linker, {
@@ -204,115 +199,101 @@ export const { command, aliases, describe, builder, handler } =
         message: "Enter linker code hash",
       });
 
-      const sweepTargets = (
-        await requiredArray(args.targets?.map(String), {
-          name: "sweep-targets",
-          message: "Enter sweep targets",
-          validate: () => true,
-        })
-      ).filter(Boolean);
+      signale.pending("Deploying HyperdriveFactory...");
 
-      signale.pending("Deploying ERC4626HyperdriveFactory...");
-
-      const { address } = await deployERC4626HyperdriveFactory({
+      const { address } = await deployHyperdriveFactory({
         governance,
         hyperdriveGovernance,
         feeCollector,
         fees: {
           curve: parseUnits(curveFee.toString(), decimals),
           flat: parseUnits(flatFee.toString(), decimals),
-          governance: parseUnits(governanceFee.toString(), decimals),
+          governanceLP: parseUnits(governanceLpFee.toString(), decimals),
+          governanceZombie: parseUnits(
+            governanceZombieFee.toString(),
+            decimals,
+          ),
         },
         maxFees: {
           curve: parseUnits(maxCurveFee.toString(), decimals),
           flat: parseUnits(maxFlatFee.toString(), decimals),
-          governance: parseUnits(maxGovernanceFee.toString(), decimals),
+          governanceLP: parseUnits(maxGovernanceLpFee.toString(), decimals),
+          governanceZombie: parseUnits(
+            maxGovernanceZombieFee.toString(),
+            decimals,
+          ),
         },
         pausers,
-        deployer,
-        target0,
-        target1,
         linker,
         linkerCodeHash,
-        sweepTargets,
         account,
         rpcUrl,
         chain,
         onSubmitted: (txHash) => {
           signale.pending(
-            `ERC4626HyperdriveFactory deployment tx submitted: ${txHash}`,
+            `HyperdriveFactory deployment tx submitted: ${txHash}`,
           );
         },
       });
 
-      signale.success(`ERC4626HyperdriveFactory deployed @ ${address}`);
+      signale.success(`HyperdriveFactory deployed @ ${address}`);
     },
   });
 
-export interface DeployERC4626HyperdriveFactoryOptions {
+export interface DeployHyperdriveFactoryOptions {
   governance: string;
   hyperdriveGovernance: string;
   feeCollector: string;
   fees: {
     curve: bigint;
     flat: bigint;
-    governance: bigint;
+    governanceLP: bigint;
+    governanceZombie: bigint;
   };
   maxFees: {
     curve: bigint;
     flat: bigint;
-    governance: bigint;
+    governanceLP: bigint;
+    governanceZombie: bigint;
   };
   pausers: string[];
-  deployer: string;
-  target0: string;
-  target1: string;
   linker: string;
   linkerCodeHash: string;
-  sweepTargets: string[];
   account: PrivateKeyAccount;
   rpcUrl: string;
   chain: Chain;
   onSubmitted?: (txHash: string) => void;
 }
 
-export async function deployERC4626HyperdriveFactory({
+export async function deployHyperdriveFactory({
   governance,
   hyperdriveGovernance,
   feeCollector,
   fees,
   maxFees,
   pausers,
-  deployer,
-  target0,
-  target1,
   linker,
   linkerCodeHash,
-  sweepTargets,
   account,
   rpcUrl,
   chain,
   onSubmitted,
-}: DeployERC4626HyperdriveFactoryOptions): Promise<DeployedContract> {
+}: DeployHyperdriveFactoryOptions): Promise<DeployedContract> {
   return await deployContract({
-    abi: ERC4626HyperdriveFactory.abi,
+    abi: HyperdriveFactory.abi,
     args: [
       {
         governance: governance as `0x${string}`,
         hyperdriveGovernance: hyperdriveGovernance as `0x${string}`,
+        defaultPausers: pausers as `0x${string}`[],
         feeCollector: feeCollector as `0x${string}`,
         fees,
         maxFees,
-        defaultPausers: pausers as `0x${string}`[],
-        hyperdriveDeployer: deployer as `0x${string}`,
-        target0Deployer: target0 as `0x${string}`,
-        target1Deployer: target1 as `0x${string}`,
         linkerFactory: linker as `0x${string}`,
         linkerCodeHash: linkerCodeHash as `0x${string}`,
       },
-      sweepTargets as `0x${string}`[],
     ],
-    bytecode: ERC4626HyperdriveFactory.bytecode.object as `0x${string}`,
+    bytecode: HyperdriveFactory.bytecode.object as `0x${string}`,
     account,
     rpcUrl,
     chain,
