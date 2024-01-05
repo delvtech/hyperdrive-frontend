@@ -10,7 +10,7 @@ import { ReactElement } from "react";
 import { useNavigate } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
-import { Stat } from "src/ui/base/components/Stat";
+import { TextWithTooltip } from "src/ui/base/components/Tooltip/TextWithTooltip";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
@@ -89,7 +89,10 @@ function getColumns() {
   return [
     columnHelper.accessor("market.termLengthMS", {
       header: () => (
-        <Stat label="Term" description="The duration of the market" />
+        <TextWithTooltip
+          label="Term"
+          tooltip="The position duration of the market"
+        />
       ),
       cell: ({ getValue, row }) => {
         const termLength = getValue();
@@ -109,9 +112,9 @@ function getColumns() {
     }),
     columnHelper.accessor("market.name", {
       header: () => (
-        <Stat
+        <TextWithTooltip
           label="Yield Source"
-          description="The underlying yield bearing asset"
+          tooltip="The underlying yield bearing asset"
         />
       ),
       cell: ({ getValue, row }) => {
@@ -136,9 +139,9 @@ function getColumns() {
       id: "yield-source-apy",
       header: () => {
         return (
-          <Stat
+          <TextWithTooltip
             label="Yield Source APY"
-            description={`The yield source backing the base token in this pool`}
+            tooltip={`Yield Source APY (Annual Percentage Yield) reflects the annualized rate you could earn from the yield source's variable returns.`}
           />
         );
       },
@@ -149,9 +152,9 @@ function getColumns() {
     columnHelper.accessor("longAPR", {
       id: "fixed-apr",
       header: () => (
-        <Stat
+        <TextWithTooltip
           label="Fixed Rate"
-          description={`Fixed rate earned from opening longs, before fees and slippage are applied`}
+          tooltip={`Fixed rate earned from opening longs, before fees and slippage are applied`}
         />
       ),
       cell: ({ getValue }) => {
@@ -162,9 +165,9 @@ function getColumns() {
     columnHelper.display({
       id: "lp-apy",
       header: () => (
-        <Stat
+        <TextWithTooltip
           label="LP APY"
-          description={`This indicates the LP's yearly return projection, derived from the past 12 hours' performance. It presumes the same return rate persists throughout the year.`}
+          tooltip={`This indicates the LP's yearly return projection, derived from the past 12 hours' performance. It presumes the same return rate persists throughout the year.`}
         />
       ),
       cell: ({ row }) => {
@@ -174,9 +177,9 @@ function getColumns() {
     columnHelper.accessor("liquidity", {
       id: "liquidity",
       header: () => (
-        <Stat
+        <TextWithTooltip
           label="Liquidity"
-          description="The amount of capital that has been deployed by LPs to the pool"
+          tooltip="The amount of capital that has been deployed by LPs to the pool"
         />
       ),
       cell: ({ getValue, row }) => {
