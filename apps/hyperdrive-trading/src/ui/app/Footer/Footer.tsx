@@ -4,6 +4,8 @@ import { HyperdriveLogo } from "src/ui/app/Navbar/HyperdriveLogo";
 import DiscordIcon from "src/ui/base/icons/discord";
 
 export default function Footer(): ReactElement {
+  const footerTitleClassName =
+    "daisy-footer-title text-neutral-content opacity-100"; // need to set opacity here to override daisy-footer-title
   return (
     <footer className="daisy-footer max-w-6xl p-10 text-base-content">
       <aside>
@@ -23,7 +25,7 @@ export default function Footer(): ReactElement {
         </a>
       </aside>
       <nav>
-        <header className="daisy-footer-title">Services</header>
+        <header className={footerTitleClassName}>Services</header>
         <Link
           to={
             "https://delv-tech.notion.site/Hyperdrive-Docs-6c014b9270af4483861b1c2ffa7f3a88"
@@ -35,12 +37,12 @@ export default function Footer(): ReactElement {
       </nav>
       <nav>
         {/* TODO: Determine if company information is needed here */}
-        <header className="daisy-footer-title">Company</header>
+        <header className={footerTitleClassName}>Company</header>
         <a className="link link-hover">About us</a>
       </nav>
       <nav>
         {/* TODO: Add links to legal pages */}
-        <header className="daisy-footer-title">Legal</header>
+        <header className={footerTitleClassName}>Legal</header>
         <a className="link link-hover">Terms of use</a>
         <a className="link link-hover">Privacy policy</a>
         <a className="link link-hover">Cookie policy</a>
