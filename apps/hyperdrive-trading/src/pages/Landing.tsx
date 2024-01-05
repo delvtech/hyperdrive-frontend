@@ -1,6 +1,7 @@
 import {
   ArrowRightIcon,
   BoltIcon,
+  ChevronRightIcon,
   ClockIcon,
   SquaresPlusIcon,
 } from "@heroicons/react/24/outline";
@@ -72,9 +73,10 @@ function PositionCards(): ReactElement {
       </div>
       <a
         href={"/markets"}
-        className="daisy-btn-primary daisy-btn daisy-btn-md daisy-btn-circle mt-8 w-60 justify-between gap-0"
+        className="daisy-btn daisy-btn-circle daisy-btn-primary daisy-btn-md mt-8 w-60 justify-between gap-0 px-4"
       >
-        <span className="flex-1 text-center">View Markets</span>
+        <span className="ml-14">View Markets</span>
+        <ChevronRightIcon className="-left-8 h-4" />
       </a>
     </div>
   );
@@ -96,7 +98,7 @@ function Hero() {
             target="_blank"
             rel="noreferrer"
             href="https://delv-tech.notion.site/Hyperdrive-Docs-6c014b9270af4483861b1c2ffa7f3a88"
-            className="daisy-btn-ghost daisy-btn text-accent"
+            className="daisy-btn daisy-btn-ghost text-accent"
           >
             Learn more <ArrowRightIcon className="inline h-4" />
           </a>
