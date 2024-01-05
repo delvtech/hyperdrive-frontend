@@ -229,7 +229,7 @@ export function AllMarketsTable(): ReactElement {
       <h3 className="mb-5 w-full pl-1 text-h5 text-gray-400">
         Available Markets
       </h3>
-      <div className="daisy-card-bordered daisy-card flex w-full overflow-auto md:p-6">
+      <div className="daisy-card-bordered daisy-card flex w-full md:p-6">
         <table className="daisy-table-zebra daisy-table daisy-table-lg">
           <thead>
             {tableInstance.getHeaderGroups().map((headerGroup) => (

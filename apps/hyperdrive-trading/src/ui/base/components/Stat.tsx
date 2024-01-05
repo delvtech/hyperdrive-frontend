@@ -20,7 +20,7 @@ export function Stat({ label, value, description }: StatProps): ReactElement {
           data-tip={description}
           // Future note: use before: to style the text inside the tooltip
           className={classNames(
-            "daisy-tooltip flex items-center transition duration-150 ease-in-out",
+            "daisy-tooltip flex items-center transition duration-150 ease-in-out before:whitespace-normal",
             description ? "cursor-help" : "",
           )}
         >
