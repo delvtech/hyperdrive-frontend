@@ -10,6 +10,7 @@ import { ReactElement } from "react";
 import { useNavigate } from "react-router-dom";
 import { Hyperdrive } from "src/appconfig/types";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
+import { TextWithTooltip } from "src/ui/base/components/Tooltip/TextWithTooltip";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
@@ -87,7 +88,12 @@ function getMobileColumns() {
 function getColumns() {
   return [
     columnHelper.accessor("market.termLengthMS", {
-      header: "Term",
+      header: () => (
+        <TextWithTooltip
+          label="Term"
+          tooltip="The position duration of the market"
+        />
+      ),
       cell: ({ getValue, row }) => {
         const termLength = getValue();
         return (
@@ -105,7 +111,12 @@ function getColumns() {
       },
     }),
     columnHelper.accessor("market.name", {
-      header: "Yield Source",
+      header: () => (
+        <TextWithTooltip
+          label="Yield Source"
+          tooltip="The underlying yield bearing asset"
+        />
+      ),
       cell: ({ getValue, row }) => {
         const marketName = getValue();
         return (
@@ -125,26 +136,52 @@ function getColumns() {
       },
     }),
     columnHelper.display({
-      header: "Yield Source APY",
+      id: "yield-source-apy",
+      header: () => {
+        return (
+          <TextWithTooltip
+            label="Yield Source APY"
+            tooltip={`Yield Source APY (Annual Percentage Yield) reflects the annualized rate you could earn from the yield source's variable returns.`}
+          />
+        );
+      },
       cell: () => {
         return <YieldSourceApy key="yield-source-apy" />;
       },
     }),
     columnHelper.accessor("longAPR", {
-      header: "Fixed Rate",
+      id: "fixed-apr",
+      header: () => (
+        <TextWithTooltip
+          label="Fixed Rate"
+          tooltip={`Fixed rate earned from opening longs, before fees and slippage are applied`}
+        />
+      ),
       cell: ({ getValue }) => {
         const fixedRate = getValue();
         return <span key="fixed-rate">{fixedRate}%</span>;
       },
     }),
     columnHelper.display({
-      header: "LP APY",
+      id: "lp-apy",
+      header: () => (
+        <TextWithTooltip
+          label="LP APY"
+          tooltip={`This indicates the LP's yearly return projection, derived from the past 12 hours' performance. It presumes the same return rate persists throughout the year.`}
+        />
+      ),
       cell: ({ row }) => {
         return <LpApyCell key="lp-apy" hyperdrive={row.original.market} />;
       },
     }),
     columnHelper.accessor("liquidity", {
-      header: "Liquidity",
+      id: "liquidity",
+      header: () => (
+        <TextWithTooltip
+          label="Liquidity"
+          tooltip="The amount of capital that has been deployed by LPs to the pool"
+        />
+      ),
       cell: ({ getValue, row }) => {
         const liquidity = getValue();
         return (
@@ -192,7 +229,7 @@ export function AllMarketsTable(): ReactElement {
       <h3 className="mb-5 w-full pl-1 text-h5 text-neutral-content">
         Available Markets
       </h3>
-      <div className="daisy-card-bordered daisy-card flex w-full overflow-auto md:p-6">
+      <div className="daisy-card-bordered daisy-card flex w-full md:p-6">
         <table className="daisy-table-zebra daisy-table daisy-table-lg">
           <thead>
             {tableInstance.getHeaderGroups().map((headerGroup) => (
@@ -275,7 +312,7 @@ function GoToMarketButton({ market }: { market: Hyperdrive }): ReactElement {
       onClick={() => {
         navigate(`/market/${market}`);
       }}
-      className="daisy-btn-circle daisy-btn-md flex items-center justify-center rounded-full bg-gray-600 hover:bg-gray-700"
+      className="daisy-btn-md daisy-btn-circle flex items-center justify-center rounded-full bg-gray-600 hover:bg-gray-700"
     >
       <ArrowRightIcon className="h-5" />
     </button>
