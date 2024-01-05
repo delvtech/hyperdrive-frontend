@@ -176,7 +176,10 @@ export function ClosedLongsTable({
           {tableInstance.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
-                <th className="sticky top-0 bg-base-100" key={header.id}>
+                <th
+                  className="sticky font-normal text-gray-400"
+                  key={header.id}
+                >
                   {header.isPlaceholder
                     ? null
                     : flexRender(
