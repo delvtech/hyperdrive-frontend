@@ -7,7 +7,7 @@ import {
 } from "@hyperdrive/evm-client";
 import { ReadHyperdrive } from "src/hyperdrive/ReadHyperdrive/ReadHyperdrive";
 
-// No need to explicitly set return types as they are alread set in the Stubs
+// No need to explicitly set return types as they are already set in the Stubs
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function setupReadHyperdrive() {
   const contract = new ReadContractStub(IHyperdrive.abi);

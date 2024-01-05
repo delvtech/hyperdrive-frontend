@@ -78,12 +78,12 @@ export const { command, aliases, describe, builder, handler } =
 
       const target2 = await requiredString(args.target2, {
         name: "target-2-deployer",
-        message: "Enter target1 deployer address",
+        message: "Enter target2 deployer address",
       });
 
       const target3 = await requiredString(args.target3, {
         name: "target-3-deployer",
-        message: "Enter target1 deployer address",
+        message: "Enter target3 deployer address",
       });
 
       signale.pending("Deploying ERC4626HyperdriveDeployer...");
